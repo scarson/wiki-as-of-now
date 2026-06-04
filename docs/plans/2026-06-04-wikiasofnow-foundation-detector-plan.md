@@ -72,7 +72,7 @@ notes and commit messages.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Foundation | ✅ Shipped · 📤 PR [#3](https://github.com/scarson/wiki-as-of-now/pull/3) → `dev` | `3846c90`…`f4290d3` | all 5 tasks + 3-round batch review + WITHOUT ROWID hardening; 13 tests, tsc+lint clean; awaiting Sam's review/merge |
+| 1 — Foundation | ✅ Shipped · ✅ MERGED to `dev` (PR [#3](https://github.com/scarson/wiki-as-of-now/pull/3), merge `380c6f7`) | `3846c90`…`f4290d3` | all 5 tasks + 3-round batch review + WITHOUT ROWID hardening; 13 tests, tsc+lint clean |
 | 2 — Deterministic detector + fixtures | ⬜ Not started | — | depends on Phase 1 types + Task 2.1 |
 
 ### Task completion log
@@ -148,7 +148,7 @@ These bind every task; they are stated once here rather than repeated per task (
 
 ## Phase 1 — Foundation
 
-**Execution Status:** ✅ SHIPPED 2026-06-04 on branch `claude/wikiasofnow-foundation-detector-o2yCO` (`3846c90`…`1d592cd`). All 5 tasks done with per-task two-stage review + a 3-round batch review (correctness/compliance/test-rigor — see Execution Status §Phase 1 batch review and `docs/plans/phase1-review/`). 12 tests passing (deterministic), `tsc --noEmit` clean, `lint` clean. Not yet merged to the default branch / no PR (awaiting Sam).
+**Execution Status:** ✅ SHIPPED & MERGED 2026-06-04 — branch `claude/wikiasofnow-foundation-detector-o2yCO` (`3846c90`…`f4290d3`) merged to `dev` via PR [#3](https://github.com/scarson/wiki-as-of-now/pull/3) (merge commit `380c6f7`). All 5 tasks done with per-task two-stage review + a 3-round batch review (correctness/compliance/test-rigor — see Execution Status §Phase 1 batch review and `docs/plans/phase1-review/`) + WITHOUT ROWID hardening. 13 tests passing (deterministic), `tsc --noEmit` clean, `lint` clean.
 
 > Compliance touchpoints: the audit log (Task 1.3) is the "audit log is foundational" guardrail — append-only, built now, not later. The research provider (Task 1.4) is the boundary that keeps the LLM layer swappable and bounded.
 
