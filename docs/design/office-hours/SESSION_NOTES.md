@@ -18,5 +18,19 @@ The spec answers HOW exhaustively (sync model, detector heuristics, schema, cost
 controls, phases). It barely answers WHO specifically needs this and WHAT EVIDENCE
 of demand exists. Office hours should push hardest there.
 
+## Mode decision
+**Builder / scratch-your-own-itch**, with build-in-public portfolio lens.
+Sam: infrequent/casual editor today, wants to contribute more; out-of-date
+articles are a personal pet peeve. "Thrilled if others used it." Also wants a
+live public portfolio project in the build-in-public spirit.
+
+Implication: demand test = "will Sam actually use it to make real edits,"
+not market TAM. Push hard on scope/shipping and on whether the detector is
+actually good enough to be useful to him.
+
 ## Q&A log
-(to be filled in as the session runs)
+- Q (mode/goal): Builder / scratch-own-itch + portfolio. Answered above.
+- Q ("what is a WikiProject"): answered — volunteer topic working groups;
+  talk-page banners are a free high-quality topic label; also the realistic
+  "others use it" channel (cleanup drives).
+- Q1 (status quo / self-demand): ASKED — see below, awaiting answer.
