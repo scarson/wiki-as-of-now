@@ -154,31 +154,69 @@ exact platform," removing a spike and a class of deployment risk.
    D1 migrations — including the **foundational append-only audit/activity log** from
    commit one (the contract's audit-log guardrail makes this non-deferrable; it is also
    the backbone for disclosures, verification gating, and later engagement stats).
+   **Async execution primitive (decided, not deferred):** Cloudflare Workers have no
+   long-running process model, and the flagship "drop a URL → research runs in the
+   background → return later" flow cannot exist without one. v1 uses **Cloudflare
+   Queues** for research jobs (a producer enqueues on URL-drop; a consumer worker runs
+   the research pipeline and writes results + audit entries). Cloudflare Workflows or
+   Durable Objects are the alternatives if multi-step durability/retries outgrow Queues;
+   pick at Foundation time. Verify whether the tee-times pattern already includes a
+   background primitive — if not, treat this as net-new.
 2. **Deterministic detector + fixtures.** Date-anchored stale-claim detector with an
    explainable score breakdown, developed TDD against a small real **fixture corpus**
    (SBX-1 plus a handful of procurement articles) and a hand-labeled gold set. Precision
    over recall; track false-positive rate. (No LLM — contract guardrail.)
+   **Blocking dependency:** the precision target depends on having parse context to
+   suppress false positives (historical quotations, already-resolved-nearby claims,
+   completed-narrative dates — the spec's negative-pattern list). So the article-text
+   representation (parsed, section-aware text plus the stale claim's original wikitext
+   offset/span, so the detector has context and the assembler knows where the edit goes)
+   must be decided and built *before* the detector, not parked. This is a real
+   dependency of this milestone, not an open question.
 3. **Single-article loop (Approach A).** Paste a URL → live MediaWiki fetch + revision
    validation → detect → candidate display → research one candidate through the provider
    interface (structured official-source retrieval and/or Gemini grounding behind the
    interface; verbatim-quote check; advisory support) → evidence cards → snippet
    assembler (plaintext sentence + mechanical wikitext `<ref>` tags) → mechanical
    disclosure + summary derivation → copy native wikitext.
-4. **Transparency surface (slice of Approach C).** "Show your work" view: rankings, the
-   non-selected candidate set, and the per-edit audit trail. Cheap once the audit log
-   and cards exist; it is the portfolio differentiator and a contract requirement
-   (show-your-work guardrail).
-5. **Auth + anonymous mode + quotas (Approach B, part 1).** Arctic Google OAuth,
-   anonymous demo/browse mode, per-user quotas on research, an admin kill-switch for the
-   research layer, and basic (unverified) Wikipedia-account linking.
+   **Contract-critical constraint on any grounding path:** the verbatim-quote check
+   (guardrail G8) and the untrusted-content separation (G15) both require the tool to
+   hold the *real fetched page text*. So any provider path — including Gemini Google
+   Search grounding — MUST result in the tool independently fetching the candidate URL's
+   page text to run the deterministic verbatim check against. A grounding path that
+   returns only model-summarized results without tool-fetched page text bypasses a
+   sacrosanct guardrail and is not permitted. The provider interface must therefore
+   yield resolvable URLs whose pages the tool fetches itself, not model-asserted answers.
+   **Degradation states (the contract requires honesty):** the worksheet must clearly
+   show "likely stale, but no strong current source found," "possible update, weak
+   support," "research provider unavailable (cached/none)," and "article changed since
+   detection" — never a false impression of resolution.
+4. **Transparency surface (Approach C, part 1 — C is delivered across steps 4 and 7).**
+   "Show your work" view: rankings, the non-selected candidate set, and the per-edit
+   audit trail. Cheap once the audit log and cards exist; it is the portfolio
+   differentiator and a contract requirement (show-your-work guardrail).
+5. **Auth + anonymous mode + quotas (Approach B, part 1).** Arctic Google OAuth (Arctic
+   is the edge-native OAuth library from the tee-times pattern), anonymous demo/browse
+   mode, per-user quotas on research, and an admin kill-switch for the research layer.
+   Quotas meter the expensive unit — research-job invocations per user per day (config-
+   driven default) — per the spec's quota model. **Wikipedia-account linking** is a thin,
+   *optional* v1 feature: an unverified self-declared username shown on the user's
+   profile (low blast radius, like listing a LinkedIn URL on a GitHub profile) that also
+   seeds the per-user attribution the deferred engagement stats will use. If it isn't
+   wired to that seam, cut it from v1.
 6. **Two-mode queue + seed list (Approach B, part 2).** Ad-hoc capture queue;
    pageview-ranked batch queue within the military-procurement seed list (category ×
-   Wikimedia Pageviews API); async research jobs (drop URL → background research → return
-   to a worksheet).
-7. **Public About + transparency polish (Approach C, full).** About page rendered from
+   Wikimedia Pageviews API); async research jobs over Cloudflare Queues (drop URL →
+   background research → return to a worksheet). **Async revision race:** because the
+   article can change between detection/research time and worksheet-open time, the
+   worksheet re-validates the article's current revision on open and flags any candidate
+   whose source revision drifted or whose stale claim no longer exists (honoring the
+   spec's live-validation invariant).
+7. **Public About + transparency polish (Approach C, part 2).** About page rendered from
    the compliance contract; build-in-public artifacts; engagement/stats **data capture**
-   wired through the audit log (dashboard/streaks themselves deferred to v2 per
-   `docs/design/future-features.md`, and gamifying quality-not-volume per that doc).
+   as additive columns/views over the existing day-one audit log (not a second event
+   pipeline), with the dashboard/streaks themselves deferred to v2 per
+   `docs/design/future-features.md`, and gamifying quality-not-volume per that doc.
 
 ---
 
@@ -208,18 +246,29 @@ The spec remains authoritative on architecture; this session changes or sharpens
 
 ---
 
+## Blocking dependencies (must be decided before the milestone that consumes them)
+
+- **Async execution primitive** → Foundation (step 1). Decided: Cloudflare Queues for
+  research jobs; Workflows/Durable Objects if durability needs grow.
+- **Article-text representation** → detector (step 2). Decided in principle: parsed,
+  section-aware text plus the stale claim's original wikitext offset/span. Residual: the
+  exact parser/library and how offsets survive into the snippet assembler.
+- **Grounding must yield tool-fetched page text** → single-article loop (step 3), so the
+  verbatim-quote check can run. Non-negotiable (sacrosanct guardrail).
+
 ## Open Questions (to track, not blocking)
 
-- **Article text representation:** the detector needs section-aware parsed text, and the
-  snippet assembler needs the original wikitext span/location of the stale claim so the
-  human knows where the edit goes. Decide the stored representation (parsed sections +
-  the claim's wikitext offset is the likely answer).
-- **Structured official-source connectors:** which to build first (defense.gov daily
-  contract announcements, SAM.gov, USAspending, GAO) and how they sit behind the
-  provider interface alongside Gemini grounding.
-- **"Verified = opened source" enforcement in the UI:** open-in-new-tab tracking vs. an
-  explicit "I opened and read this" confirmation; how the audit log records it honestly
-  (it is a proxy for reading, per the contract).
+- **Structured official-source connectors — scope v1 to one (or zero).** Each connector
+  (defense.gov contract announcements as fragile HTML; SAM.gov and USAspending as APIs
+  with registration; GAO as HTML) is its own normalization + metadata + rate-limit
+  problem — roughly M-effort each, not S. v1 ships with at most **one** structured
+  connector behind the provider interface, or zero (Gemini grounding with mandatory
+  tool-side page fetch + verbatim check only); the rest are deferred. Don't treat "which
+  first" as if they're cheap to add in bulk.
+- **"Verified = opened source" enforcement.** Primary mechanism is an explicit "I opened
+  and read this source" confirmation, because browser tab-focus tracking for a
+  `target=_blank` open is unreliable and not worth instrumenting. The audit log records
+  this honestly as a proxy for reading (per the contract's G5 proxy admission).
 - **Citation metadata extraction depth:** how far the deterministic parser goes before
   falling back to human-supplied metadata.
 - **Pageviews integration specifics:** ranking window, refresh cadence, and how it
@@ -279,3 +328,27 @@ distribution needed.
   summary if it didn't generate the edit?") and the markdown-vs-wikitext copy-paste
   trap. You think about correctness and the seams between systems, not just the happy
   path.
+
+---
+
+## Spec review (adversarial, 2026-06-04)
+
+Independent reviewer pass on five dimensions (completeness, consistency, clarity, scope,
+feasibility). Score: 7.5/10 on first pass; issues addressed in this revision:
+
+- **Async execution primitive** was unspecified though the async value prop depends on
+  it → named Cloudflare Queues and moved into Foundation as a decided dependency.
+- **Detector precision** depended on the article-text representation, which was parked as
+  "non-blocking" → promoted to a blocking dependency of the detector milestone.
+- **Grounding vs. the verbatim-quote check (sacrosanct G8):** added the constraint that
+  any grounding path must still yield tool-fetched page text, or the deterministic
+  guardrail can't run.
+- Added research-layer **degradation states** and the **async revision-race** recheck.
+- Scoped **structured connectors to one (or zero)** for v1 instead of leaving "which
+  first" open as if cheap.
+- Leaned **"verified = opened"** to an explicit confirmation (tab-focus tracking is
+  unreliable).
+- Clarified quota unit, that Approach C is delivered across two steps, that step 7 stats
+  are additive over the audit log, and that Wikipedia-account linking is thin/optional.
+
+Scope discipline and compliance-subordination passed cleanly.
