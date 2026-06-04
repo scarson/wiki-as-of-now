@@ -72,7 +72,7 @@ notes and commit messages.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Foundation | ✅ Shipped | `3846c90`…`1d592cd` | all 5 tasks done + 3-round batch review (correctness/compliance/test-rigor); 12 tests, tsc+lint clean, on `claude/wikiasofnow-foundation-detector-o2yCO` |
+| 1 — Foundation | ✅ Shipped · 📤 PR [#3](https://github.com/scarson/wiki-as-of-now/pull/3) → `dev` | `3846c90`…`f4290d3` | all 5 tasks + 3-round batch review + WITHOUT ROWID hardening; 13 tests, tsc+lint clean; awaiting Sam's review/merge |
 | 2 — Deterministic detector + fixtures | ⬜ Not started | — | depends on Phase 1 types + Task 2.1 |
 
 ### Task completion log
