@@ -174,6 +174,23 @@ low-quality-flood harm the social contract prevents (and reverts = negative
 progress). v1 stubs: event log/data collection, schema seams, pageview capture,
 a stats-surface UI hook. Build dashboard/streaks later.
 
+### Compliance doc review round (Sam) → v0.2
+- Removed opaque `§` refs (violated CLAUDE.md self-identifying-ref rule); now
+  plain-English + titles; added "how to reference this doc" note (name guardrails,
+  don't cite bare numbers — they leak/rot in code/commits/PRs).
+- Disclosure: tool GENERATES the edit summary incl. disclosure, ready to copy, but
+  disclosure text is MECHANICAL (deterministic template from the activity log),
+  NEVER model-authored → sidesteps no-machine-prose guardrail (form-filling +
+  meta-info, not article content); zero hallucination. Generation is itself logged.
+- Enforcement boundary stated honestly: tool can't police Wikipedia's edit box
+  (submission is human, per no-auto-edit); it makes the compliant path the default.
+- **AUDIT/ACTIVITY LOG = FOUNDATIONAL (new guardrail G13).** Source of truth for
+  disclosures + verification gating + show-your-work. Built day one, robust, not a
+  bolt-on. Serves THREE masters: compliance/disclosure (contract), engagement
+  stats (future-features gamification), observability/debugging. → design doc +
+  spec reconciliation MUST treat the audit/event log as foundational schema, and
+  it's the SAME backbone the gamification stubs need (event log). Synergy.
+
 ### STILL TODO IN SESSION
 - Phase 4: present 2-3 architecture approaches for the build; get Sam's pick.
 - Phase 5: write the reframed office-hours design doc to docs/design/office-hours/.

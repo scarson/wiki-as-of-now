@@ -5,7 +5,7 @@
 
 ## How this project operates within the letter — and the spirit — of the rules
 
-**Status:** Draft v0.1 — **social contract with the Wikipedia community. Sacrosanct.**
+**Status:** Draft v0.2 — **social contract with the Wikipedia community. Sacrosanct.**
 **Audience:** Every contributor, human or agent. Read this before touching any
 detection, research, LLM, or citation code.
 **Last policy review:** 2026-06-04
@@ -17,11 +17,19 @@ cadence thereafter.
 > **This document is the project's social contract with the Wikipedia community, and
 > it is sacrosanct.** Its guardrails are not preferences to be balanced against
 > velocity, cleverness, or convenience. No feature, optimization, deadline, or
-> "it would be so much easier if" ever justifies crossing a guardrail in §4 or doing
-> anything on the §5 list. If a proposed change would weaken this contract, it does
-> not ship — it gets escalated to a human maintainer and debated in the open. The
-> bar for changing this document is deliberately higher than for any code in the
-> repository.
+> "it would be so much easier if" ever justifies crossing one of the enumerated
+> guardrails below, or doing anything on the "What the tool will never do" list. If a
+> proposed change would weaken this contract, it does not ship — it gets escalated to
+> a human maintainer and debated in the open. The bar for changing this document is
+> deliberately higher than for any code in the repository.
+
+> **How to reference this document (so references don't rot).** Refer to a guardrail
+> by its **name**, not a bare number — write "the no-cross-source-synthesis
+> guardrail," not "G4." The short IDs (G1, G2, …) exist only as stable anchors; a
+> reference that carries only the number is opaque the moment it leaves this page
+> (in code, a commit, a PR comment) and breaks silently if anchors ever change. Same
+> rule for sections: name them ("the disclosure-practice section"), don't cite a bare
+> number. This mirrors the self-identifying-reference rule in `CLAUDE.md`.
 
 ---
 
@@ -31,9 +39,10 @@ cadence thereafter.
    single most important constraint is not technical — it is that an AI-assisted
    Wikipedia tool must stay clearly inside Wikipedia's rules. This document is the
    canonical statement of where that line is and how our architecture respects it.
-   Treat the guardrails in §4 like the architectural invariants in the design spec
-   (`docs/design/WikiAsOfNow_design_spec.md` §26): do not cross them without an
-   explicit, documented decision.
+   Treat the guardrails below like the architectural invariants in the design spec
+   (the "Implementation Recommendations for a Coding Agent" section of
+   `docs/design/WikiAsOfNow_design_spec.md`): do not cross them without an explicit,
+   documented decision.
 2. **It is the basis for the public "About" page.** We are building in public. A
    clear, honest account of how we respect Wikipedia's AI rules — written in full
    knowledge of them — is both the ethical baseline and the trust foundation for the
@@ -42,11 +51,12 @@ cadence thereafter.
    editor*, never an author of article content and never a source. Everything below
    follows from that bet.
 
-> **Provenance note (honesty).** The quotations in §1 were captured on 2026-06-04 via
-> automated fetches that pass page text through a summarization layer. They are
-> faithful in substance and each is attributed to its source page, but exact wording
-> MUST be re-verified verbatim against the live pages before any public use. Doing
-> otherwise would contradict the conscientiousness this document is about.
+> **Provenance note (honesty).** The quotations in the "rules as they stand" section
+> below were captured on 2026-06-04 via automated fetches that pass page text through
+> a summarization layer. They are faithful in substance and each is attributed to its
+> source page, but exact wording MUST be re-verified verbatim against the live pages
+> before any public use. Doing otherwise would contradict the conscientiousness this
+> document is about.
 
 ---
 
@@ -80,8 +90,9 @@ The editor-facing guidance points to an essay whose position is blunt:
 Source: [Wikipedia:LLMs are bad search engines](https://en.wikipedia.org/wiki/Wikipedia:LLMs_are_bad_search_engines),
 referenced from [Wikipedia:Artificial intelligence](https://en.wikipedia.org/wiki/Wikipedia:Artificial_intelligence).
 
-The essay's stated concerns (its *intent*, analyzed in §2) go beyond hallucination:
-auditability, improper synthesis, incompleteness, and editor skill atrophy.
+The essay's stated concerns — analyzed below in the "intent behind the rules"
+section — go beyond hallucination: auditability, improper synthesis, incompleteness,
+and editor skill atrophy.
 
 ### 1.3 Machine-learning output as a source
 
@@ -91,14 +102,16 @@ LLM output may not be cited, and LLMs are known to fabricate citations that look
 legitimate but lead nowhere.
 
 Source: [Wikipedia:Reliable sources](https://en.wikipedia.org/wiki/Wikipedia:Reliable_sources)
-(§ on sources produced by machine learning).
+(in the section on sources produced by machine learning).
 
 ### 1.4 Disclosure
 
 > "LLM use disclosure is highly recommended."
 
 Disclosure of AI assistance is strongly encouraged, though not strictly mandated in
-edit summaries.
+edit summaries. How we operationalize this — generating the disclosure *mechanically
+from our own activity log* rather than with a model — is described in the
+"disclosure and transparency practice" section below.
 
 Source: [Wikipedia:LLM use disclosure](https://en.wikipedia.org/wiki/Wikipedia:LLM_use_disclosure)
 (referenced from [Wikipedia:Artificial intelligence](https://en.wikipedia.org/wiki/Wikipedia:Artificial_intelligence)).
@@ -108,7 +121,8 @@ Source: [Wikipedia:LLM use disclosure](https://en.wikipedia.org/wiki/Wikipedia:L
 The guidance notes that sanctions require evidence that edits violate **core content
 policies**, not merely that AI was involved: "When evaluating possible LLM use, it is
 best to consider the full pattern of the editor's recent edits and whether the edits
-comply with core content policies." The practical implication for us is in §3.
+comply with core content policies." The practical implication for us is in the "our
+position" section below.
 
 ---
 
@@ -156,65 +170,77 @@ real metadata of sources the human approved. Verification is human and mandatory
 Under this design, **every edit a contributor makes stands on its own content-policy
 merits** — a real, reliable source that genuinely supports the exact claim, properly
 cited, with the AI assistance disclosed. That is the robust defense the enforcement
-framing (§1.5) points to: the edit is good regardless of how the source was found.
+framing above points to (sanctions hinge on core-content-policy violations, not AI
+involvement): the edit is good regardless of how the source was found.
 
 We acknowledge a residual *social* reality: the letter is harsh, and some editors
-react to "AI-assisted" reflexively. We address that with radical transparency
-(§6), not by hiding the workflow.
+react to "AI-assisted" reflexively. We address that with radical transparency (see
+the disclosure-practice section below), not by hiding the workflow.
 
 ---
 
 ## 4. Enumerated guardrails (project invariants)
 
-These are hard rules. They have the same status as the architectural invariants in
-the design spec. Each is tagged with the concern from §2 it answers.
+These are hard rules with the same status as the architectural invariants in the
+design spec. Each is tagged with the concern (from the intent section above) it
+answers. Reference them by name, not bare number.
 
-- **G1 — No machine-written article text, ever.** The tool never emits prose intended
+- **No machine-written article text, ever (G1).** The tool never emits prose intended
   for an article. The human writes every sentence that lands in Wikipedia.
   *(prohibition; improper synthesis)*
-- **G2 — No machine-derived citations, ever.** Every citation is generated
+- **No machine-derived citations, ever (G2).** Every citation is generated
   mechanically from the real metadata of a source URL the human approved and opened
   (title, publisher, date), never from model output.
-  *(hallucinated citations; WP:RS)*
-- **G3 — Every surfaced claim anchors to one real, resolving URL,** shown alongside
+  *(hallucinated citations; reliable-sources rule)*
+- **Every surfaced claim anchors to one real, resolving URL (G3),** shown alongside
   the supporting quote/snippet from that page. No free-floating assertions.
   *(hallucination; auditability)*
-- **G4 — No cross-source synthesis by the machine.** One claim ↔ one source. Combining
-  multiple facts into a sentence is done only by the human.
-  *(improper synthesis; WP:SYNTH / no original research)*
-- **G5 — Human verification is mandatory and gated.** The human must open and verify
+- **No cross-source synthesis by the machine (G4).** One claim ↔ one source.
+  Combining multiple facts into a sentence is done only by the human.
+  *(improper synthesis; synthesis / no-original-research rules)*
+- **Human verification is mandatory and gated (G5).** The human must open and verify
   each source before it can be cited. The tool surfaces; it never decides. Cards not
   human-verified are clearly marked and cannot produce a finished citation.
   *(verification; auditability)*
-- **G6 — The tool shows its work.** For every high-signal flag, it displays *why* (the
+- **The tool shows its work (G6).** For every high-signal flag, it displays *why* (the
   matching snippet) and also shows the non-selected results, so the human can audit
   the ranking rather than trust it.
   *(opacity; biased source selection)*
-- **G7 — Prefer primary/official sources; never hide the candidate set.** Sources are
+- **Prefer primary/official sources; never hide the candidate set (G7).** Sources are
   labeled by type; the full retrieved set is visible.
   *(biased source selection)*
-- **G8 — Support-checking before "resolves."** Before a card is presented as
+- **Support-checking before "resolves" (G8).** Before a card is presented as
   appearing to resolve the question, the tool verifies the claim is actually
   supported by text on the fetched page and flags weak support (refchecker-style
   claim↔source checking).
   *(hallucination; text-source integrity)*
-- **G9 — The LLM's role is boxed to three jobs:** (a) normalize the hanging question
+- **The LLM's role is boxed to three jobs (G9):** (a) normalize the hanging question
   into search queries, (b) relevance-triage real retrieved documents, (c) extract one
   candidate fact per source with its supporting quote. Anything beyond these three is
   out of bounds.
   *(defines the box)*
-- **G10 — Detection is deterministic and explainable.** Stale-claim detection uses no
-  LLM (per design spec §9, §26). The model is only in the optional research-assist
-  layer.
+- **Detection is deterministic and explainable (G10).** Stale-claim detection uses no
+  LLM (see the "Stale-Claim Detection Model" section of the design spec and its
+  coding-agent invariants). The model is only in the optional research-assist layer.
   *(auditability)*
-- **G11 — Stay in the safe lane.** The tool targets high-volume, low-complexity
+- **Stay in the safe lane (G11).** The tool targets high-volume, low-complexity
   temporal fixes with strong official sourcing. It does not surface contentious,
   interpretive, or biography-of-living-persons-sensitive material as "easy wins";
   such cases are flagged for human-only handling.
-  *(incompleteness / unknown-unknowns; BLP risk)*
-- **G12 — Disclosure by default.** AI assistance is disclosed in edit summaries and
-  explained on the public About page; the method is open-source and inspectable.
+  *(incompleteness / unknown-unknowns; living-persons risk)*
+- **Disclosure is mechanical and on by default (G12).** The tool produces a
+  ready-to-paste edit summary whose AI-assistance disclosure is generated
+  mechanically from the activity log (a deterministic template filled with logged
+  facts), never authored by a model. The human pastes it when they submit. See the
+  disclosure-practice section for why this does not conflict with the
+  no-machine-written-text guardrail.
   *(disclosure norm; good faith)*
+- **The audit log is foundational and self-recording (G13).** A tamper-evident
+  activity/audit log is a first-class system built from day one, not a later add-on.
+  It is the single source of truth that makes disclosures (G12), verification gating
+  (G5), and "show your work" (G6) real rather than asserted. The act of generating a
+  disclosure is itself logged. If the log is not robust, the contract is not real.
+  *(auditability; good faith)*
 
 ---
 
@@ -225,6 +251,7 @@ the design spec. Each is tagged with the concern from §2 it answers.
   source.
 - Assert what "happened" as fact from model knowledge.
 - Combine multiple sources into a single claim or sentence.
+- Author the disclosure text with a model (the disclosure is mechanical; see below).
 - Auto-submit edits to Wikipedia.
 - Present its ranking as a decision the human can skip verifying.
 
@@ -232,8 +259,26 @@ the design spec. Each is tagged with the concern from §2 it answers.
 
 ## 6. Disclosure and transparency practice
 
-- **Edit summaries** carry a short, honest disclosure that AI assistance was used to
-  surface and triage candidate sources, which the editor then verified.
+**The enforcement boundary, stated honestly.** Submitting an edit — including typing
+the edit summary — happens on Wikipedia, by the human. Our tool does not (and per the
+no-auto-submit guardrail, must not) submit edits or reach into Wikipedia's edit box.
+So the tool **cannot enforce** that a disclosure is present. What it can do is make
+the compliant path the path of least resistance:
+
+- **The tool generates the complete edit summary, disclosure included, ready to
+  copy.** The human pastes it on submit. Because the disclosure is right there in the
+  text they already need, the easy action is also the compliant one.
+- **The disclosure is mechanical, not authored.** Its wording is a deterministic
+  template instantiated from facts in the activity log — for example, that AI-assisted
+  retrieval and relevance-triage were used to surface candidate sources, which the
+  editor then opened and verified. No model writes or phrases it. This keeps it
+  zero-hallucination and squarely outside the no-machine-written-text guardrail: it
+  is form-filling from a factual log (the same category as the mechanical citation
+  skeletons), and it is meta-information attached to the edit, never article content.
+  We deliberately do **not** use an LLM to phrase the disclosure; doing so would make
+  it machine-authored meta-text and reintroduce the very risk we are avoiding.
+- **Generating a disclosure is itself logged,** so the transparency trail is complete:
+  the log records both the assisted activity and the disclosure produced from it.
 - **The About page** explains this workflow in plain language and links to this
   document, so any reader (or scrutinizing editor) can see exactly how AI is and is
   not used.
@@ -261,7 +306,16 @@ break it.
 
 ## 8. Change log
 
-- **2026-06-04** — v0.1 drafted during the office-hours design session. Captured the
-  March 2026 LLM guideline, the bad-search-engines essay, WP:RS machine-learning
-  guidance, and disclosure norm; established the oracle-vs-classifier distinction and
-  the G1–G12 guardrails. Quotations pending verbatim re-verification.
+- **2026-06-04 (v0.2)** — Removed opaque section-symbol references in favor of
+  plain-English, self-identifying references (carrying titles) per the `CLAUDE.md`
+  cross-reference rule; added a "how to reference this document" note. Reworked
+  disclosure handling: the tool generates the edit summary's disclosure mechanically
+  from the activity log (never model-authored) and logs that generation; clarified
+  the enforcement boundary (the tool cannot police Wikipedia's edit box, only make
+  the compliant path the default). Elevated the audit/activity log to a foundational
+  guardrail (G13) and added the mechanical-disclosure guardrail framing (G12).
+- **2026-06-04 (v0.1)** — Drafted during the office-hours design session. Captured the
+  March 2026 LLM guideline, the bad-search-engines essay, the reliable-sources
+  machine-learning guidance, and the disclosure norm; established the
+  oracle-vs-classifier distinction and the initial guardrails. Quotations pending
+  verbatim re-verification.
