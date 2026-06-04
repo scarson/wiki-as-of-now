@@ -10,9 +10,12 @@ describe("research job consumer", () => {
     const appended: AuditEntry[] = [];
     const audit = { append: (e: AuditEntry) => { appended.push(e); } };
     const store = new Map<number, unknown>();
-    await handleResearchMessage({ candidateId: 7, claim: { claimText: "x", sectionHeading: "S", year: 2017 } }, { provider, audit, store });
-    await handleResearchMessage({ candidateId: 7, claim: { claimText: "x", sectionHeading: "S", year: 2017 } }, { provider, audit, store });
+    const msg = { candidateId: 7, claim: { claimText: "x", sectionHeading: "S", year: 2017 } };
+    await handleResearchMessage(msg, { provider, audit, store });
+    await handleResearchMessage(msg, { provider, audit, store }); // re-delivery of the same message
     expect(provider.research).toHaveBeenCalledTimes(1); // idempotent
     expect(appended.filter(e => e.eventType === "research.completed").length).toBe(1);
+    expect(store.has(7)).toBe(true); // result persisted under candidateId
+    expect(store.get(7)).toEqual({ providerName: "stub", candidates: [] });
   });
 });

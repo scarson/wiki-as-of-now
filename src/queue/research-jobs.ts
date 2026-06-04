@@ -43,6 +43,10 @@ export async function handleResearchMessage(
   }
   const result = await deps.provider.research(msg.claim);
   deps.store.set(msg.candidateId, result);
+  // If audit.append throws after store.set, the result is already stored: a
+  // re-delivery will skip the provider (store.has is true) AND skip this audit
+  // entry, so completion goes unlogged. Transactional completion-logging is a
+  // later milestone (D1 can't half-commit across tables anyway).
   deps.audit.append({
     actor: "system",
     eventType: "research.completed",
