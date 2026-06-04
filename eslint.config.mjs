@@ -15,6 +15,20 @@ const eslintConfig = [
 	},
 	...coreWebVitals,
 	...typescript,
+	{
+		rules: {
+			// Unused vars are an error, except intentionally-unused names prefixed
+			// with `_` (e.g. interface params a stub/handler must accept but ignore).
+			"@typescript-eslint/no-unused-vars": [
+				"error",
+				{
+					argsIgnorePattern: "^_",
+					varsIgnorePattern: "^_",
+					caughtErrorsIgnorePattern: "^_",
+				},
+			],
+		},
+	},
 ];
 
 export default eslintConfig;
