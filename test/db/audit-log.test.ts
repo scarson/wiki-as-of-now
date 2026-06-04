@@ -11,8 +11,10 @@ describe("audit log", () => {
     log.append({ actor: "u1", eventType: "source.opened", payload: { candidateId: 7 } });
     const rows = log.read();
     expect(rows.map(r => r.eventType)).toEqual(["detector.run", "source.opened"]);
+    expect(rows.map(r => r.actor)).toEqual(["system", "u1"]);
     expect(rows[0].payload).toEqual({ pageId: 42 });
-    expect(rows[0].ts).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/); // ISO 8601 UTC
+    expect(rows[1].payload).toEqual({ candidateId: 7 });
+    expect(rows[0].ts).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/); // ISO 8601 UTC
   });
 
   it("returns an empty array when no rows have been appended", () => {

@@ -17,5 +17,22 @@ describe("research job consumer", () => {
     expect(appended.filter(e => e.eventType === "research.completed").length).toBe(1);
     expect(store.has(7)).toBe(true); // result persisted under candidateId
     expect(store.get(7)).toEqual({ providerName: "stub", candidates: [] });
+    // Audit payload is identifiers-only — never the research result/content (compliance).
+    const completion = appended.find(e => e.eventType === "research.completed");
+    expect(completion?.actor).toBe("system");
+    expect(completion?.payload).toEqual({ candidateId: 7 });
+  });
+
+  it("stores nothing and logs nothing when research fails (re-delivery can retry)", async () => {
+    const provider = { research: vi.fn().mockRejectedValue(new Error("provider unavailable")) };
+    const appended: AuditEntry[] = [];
+    const audit = { append: (e: AuditEntry) => { appended.push(e); } };
+    const store = new Map<number, unknown>();
+    const msg = { candidateId: 9, claim: { claimText: "x", sectionHeading: "S", year: 2017 } };
+    await expect(handleResearchMessage(msg, { provider, audit, store })).rejects.toThrow(
+      "provider unavailable"
+    );
+    expect(store.has(9)).toBe(false); // nothing persisted, so the retry will re-run research
+    expect(appended).toHaveLength(0); // no completion logged for failed work
   });
 });
