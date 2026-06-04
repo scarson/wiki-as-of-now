@@ -166,6 +166,14 @@ Elevated in-doc to social-contract status; bar for changing it is higher than
 any code. Anchors every agent; seeds the public About page. Quotes flagged for
 verbatim re-verification before public use.
 
+### NEW (Sam, mid-session): engagement/gamification — v2 feature + v1 principle
+Recorded in `docs/design/future-features.md`. Make tedious editing fun/rewarding,
+drive return engagement. KEY CONSTRAINT surfaced: gamify QUALITY + VERIFICATION,
+never volume/speed — rewarding edit-count on an AI tool would push the exact
+low-quality-flood harm the social contract prevents (and reverts = negative
+progress). v1 stubs: event log/data collection, schema seams, pageview capture,
+a stats-surface UI hook. Build dashboard/streaks later.
+
 ### STILL TODO IN SESSION
 - Phase 4: present 2-3 architecture approaches for the build; get Sam's pick.
 - Phase 5: write the reframed office-hours design doc to docs/design/office-hours/.
