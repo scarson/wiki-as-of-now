@@ -5,7 +5,7 @@
 
 ## How this project operates within the letter — and the spirit — of the rules
 
-**Status:** Draft v0.5 — **a sacrosanct social contract with the Wikipedia community.**
+**Status:** Draft v0.6 — **a sacrosanct social contract with the Wikipedia community.**
 "Draft" refers to wording and pending verbatim-quote verification, *not* to the
 bindingness of the commitments: the guardrails are binding now.
 **Audience:** Every contributor, human or agent. Read this before touching any
@@ -31,6 +31,16 @@ recurring cadence thereafter.
 > (in code, a commit, a PR comment) and breaks silently if anchors ever change. Same
 > rule for sections: name them ("the disclosure-practice section"), don't cite a bare
 > number. This mirrors the self-identifying-reference rule in `CLAUDE.md`.
+
+> **The guardrails at a glance** (names only — the authoritative text is in the
+> enumerated-guardrails section): no machine-written article text · no machine-derived
+> citations · anchor every claim to a real URL · no cross-source synthesis by the
+> machine · human verification is a gated act of opening the source · the tool shows
+> its work · prefer official sources and never hide the candidate set · support-check
+> with a verbatim-quote check · the LLM's role is boxed to three jobs · detection is
+> deterministic · stay in the safe lane · disclosure is mechanical · the audit log is
+> foundational · responsible automated access · fetched content is untrusted data ·
+> no copying of source prose.
 
 ---
 
@@ -220,8 +230,10 @@ bare number.
 - **No machine-derived citations, ever (G2).** Every citation is generated mechanically
   from the source's real metadata obtained by a deterministic parser (HTTP headers,
   embedded structured metadata, the page's own citation fields) — never from model
-  output. Page-asserted publication dates can be wrong, which matters acutely for a
-  staleness tool, so the date is surfaced for the human to confirm against the source.
+  output. When deterministic metadata is missing or unreliable, the human supplies or
+  corrects it; the model never fills the gap. Page-asserted publication dates can be
+  wrong, which matters acutely for a staleness tool, so the date is surfaced for the
+  human to confirm against the source.
   *(hallucinated citations; reliable-sources rule)*
 - **Every surfaced claim anchors to one real, resolving URL (G3),** shown alongside the
   supporting quote/snippet from that page. No free-floating assertions.
@@ -252,12 +264,15 @@ bare number.
   *(hallucination; text-source integrity; prompt injection)*
 - **The LLM's role is boxed to three jobs (G9):** (a) normalize the hanging question
   into *neutral* search queries, (b) relevance-triage real retrieved documents, (c)
-  extract one candidate fact per source with its supporting quote (presented as a
-  pointer into the source the human must open, never a substitute for reading). Queries
-  must be neutral retrieval terms, not assertions that presuppose the answer; they are
-  shown to the human, editable, and logged. Anything beyond these three jobs is out of
-  bounds.
-  *(defines the box; auditability; leading-question bias)*
+  point the human at the passage that appears to resolve the question. For job (c) the
+  real artifact is the **verbatim quote** (confirmed by the verbatim-quote check); any
+  model phrasing of "the candidate fact" is a disposable navigation label that must
+  never flow into the edit, the citation, or the change-description. The quote is a
+  pointer the human must open the source to confirm, never a substitute for reading.
+  Queries must be neutral retrieval terms, not assertions that presuppose the answer;
+  they are shown to the human, editable, and logged. Anything beyond these three jobs
+  is out of bounds.
+  *(defines the box; auditability; leading-question bias; authorship channel)*
 - **Detection is deterministic and explainable (G10).** Stale-claim detection uses no
   LLM (see the "Stale-Claim Detection Model" section of the design spec). The model is
   only in the optional research-assist layer.
@@ -266,7 +281,7 @@ bare number.
   fixes with strong official sourcing. Because the deterministic detector cannot itself
   judge "contentious," the safe lane is enforced by concrete, conservative mechanisms —
   topic/category and template denylists, living-persons-namespace heuristics, and
-  excluding flagged/﻿disputed articles — and these are imperfect. Anything outside the
+  excluding flagged or disputed articles — and these are imperfect. Anything outside the
   conservative allowlist, and any potentially contentious or negative claim *about* a
   living person, is not offered as an "easy win" but flagged for human-only handling.
   Merely naming an official in a routine procurement fact is fine; the bar is
@@ -399,7 +414,9 @@ that changes the risk picture — so we state the boundaries:
   Wikipedia. The About page makes this explicit.
 - **Structural blast-radius limit.** Because the tool never submits edits (the
   no-auto-submit guardrail) and the human must paste each one into Wikipedia by hand, the
-  tool cannot itself become an automated mass-edit firehose.
+  tool cannot *automate* submission or become a hands-off mass-edit firehose. (It does
+  not make abuse impossible — a determined user could still assemble many edits and paste
+  them quickly — which is why per-user quotas and the kill-switch below also apply.)
 - **Shared-access accountability.** Expensive research and edit-assembly are gated behind
   authentication and per-user quotas; anonymous mode is scoped to low-risk browsing and
   demonstration. A shared User-Agent means one abuser could tarnish the tool's standing
@@ -430,6 +447,14 @@ held to it, and we would rather ship less than break it.
 
 ## 10. Change log
 
+- **2026-06-04 (v0.6)** — Adversarial review round 3 (self). Removed a stray
+  zero-width character from the safe-lane guardrail. Closed the residual authorship
+  channel in the bounded-LLM-role guardrail (the verbatim, checked quote is the only
+  artifact; any model phrasing of "the fact" is a disposable navigation label that
+  never enters the edit, citation, or change-description). Added the human-supplies-
+  metadata fallback to the mechanical-citation guardrail for sources lacking clean
+  structured metadata. Added a names-only "guardrails at a glance" index for
+  scannability without duplicating authoritative text.
 - **2026-06-04 (v0.5)** — Adversarial review round 2 (independent Opus reviewer).
   Dropped the "the essay doesn't apply to us" framing as motivated reasoning; now
   concede the source-finding concerns apply and map each concern to a guardrail.
