@@ -78,6 +78,7 @@ notes and commit messages.
 ### Task completion log
 - **Task 1.1** (scaffold + Vitest): ✅ DONE — impl `3846c90`, code-review follow-up `e26a1be`. Spec review ✅, code-quality review ✅. Gates: `pnpm test` green, `pnpm exec tsc --noEmit` clean, `pnpm lint` exit 0.
 - **Task 1.2** (D1 migration + SqlExecutor): ✅ DONE — impl `ff905c0`, code-review follow-up `c1cdd9a`. Spec review ✅, code-quality review ✅ (with concerns, triaged below). Gates: `pnpm test` 3/3, `tsc` clean, `lint` clean. Three tables match spec; `audit_log` is PII-clean; SQL byte-identical across the two files; `DB` D1 binding + `migrations_dir` set; env types regenerated.
+- **Task 1.3** (append-only audit log): ✅ DONE — impl `39bc9ad`, code-review follow-up `4cd4226`. Spec review ✅ (append-only verified structurally — only `append`+`read`, no mutation/removal path; payload opaque `unknown`), code-quality review ✅ (concerns fixed). Gates: `pnpm test` 6/6, `tsc` clean, `lint` clean. Added `test/helpers/db.ts:freshTestDb()` (FK-on) used by both DB test files.
 
 ### Deviations
 - **Task 1.1 — eslint/scripts fixed beyond bare scaffold (`e26a1be`).** Code-quality review found the C3 scaffold shipped no `test` script, a broken `lint` script (`next lint` was removed in Next 16), and `@types/node ^20` skewed against the Node 24 runtime. Fixed all three (added `test`/`test:watch`, migrated eslint to native flat config, bumped `@types/node` to `^24`). Slightly beyond "scaffolding only," but in-scope bug fixes per the project's broken-windows rule; no new product surface added.
