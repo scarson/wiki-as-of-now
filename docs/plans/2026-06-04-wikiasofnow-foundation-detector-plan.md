@@ -68,11 +68,11 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started. 0/2 phases shipped.
+**Overall:** In progress. 0/2 phases shipped.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Foundation | ⬜ Not started | — | — |
+| 1 — Foundation | 🚧 In progress | — | claimed 2026-06-04T20:12:59Z on `claude/wikiasofnow-foundation-detector-o2yCO` (subagent-driven execution) |
 | 2 — Deterministic detector + fixtures | ⬜ Not started | — | depends on Phase 1 types + Task 2.1 |
 
 ### Deviations
@@ -130,7 +130,7 @@ These bind every task; they are stated once here rather than repeated per task (
 
 ## Phase 1 — Foundation
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-04T20:12:59Z on branch `claude/wikiasofnow-foundation-detector-o2yCO`. Liveness: recent commits on that branch + this banner.
 
 > Compliance touchpoints: the audit log (Task 1.3) is the "audit log is foundational" guardrail — append-only, built now, not later. The research provider (Task 1.4) is the boundary that keeps the LLM layer swappable and bounded.
 
