@@ -135,8 +135,40 @@ What it says:
   stronger, more credible build-in-public story than "AI writes my edits."
   Constraint improves the project.
 
-### OPEN DECISION FOR SAM (Phase 3 premise)
-Where to draw the LLM's role given his risk tolerance + editor reputation:
-spectrum from "LLM grounding does the research, I verify" (riskier vs norms) to
-"deterministic retrieval finds official sources, LLM only normalizes the
-question + privately summarizes what I'm about to read" (cleaner). Asked next.
+### OPEN DECISION FOR SAM (Phase 3 premise) — RESOLVED
+Sam pushed back (correctly): grounding ≈ search API; the mechanism isn't the
+policy risk. Real axis = LLM-as-oracle-of-facts (prohibited) vs
+LLM-as-classifier-over-real-retrieved-documents (fine). Read the essay
+WP:LLMs are bad search engines — intent is auditability, improper synthesis,
+hallucination, incompleteness, skill atrophy; it does NOT address grounded
+retrieval. Sam's two desired LLM jobs:
+  Q1 relevance triage ("is this REAL hit high-signal?") — most defensible.
+  Q2 flag follow-up events — OK IF anchored to a real retrieved doc (guardrail).
+Key new insight: Sam's example output fuses 2 sources into 1 sentence = WP:SYNTH.
+→ output shape becomes PER-CLAIM EVIDENCE CARD (one fact ↔ one source ↔ quote ↔
+cite skeleton); human assembles the sentence. Drafted prose is OUT (policy + SYNTH).
+
+### REVISED PREMISES (Sam-confirmed)
+- P1: TWO MODES. (a) ad-hoc capture: drop link to queue, no context switch;
+  (b) batch session: work a pageview-ranked priority queue within a topic
+  ("sit down 1-2 hrs, make a dent"). Detection is first-class over a working set.
+- P7: no full dump pipeline for v1; substitute (a) pageview-informed seed list
+  within the domain (category/WikiProject × pageviews via live MediaWiki +
+  Pageviews APIs) and (b) a small real FIXTURE CORPUS for dev/testing
+  (SBX-1 + handful of military-procurement articles w/ known stale claims).
+- P3/P4 hold, sharpened by the evidence-card + G1-G12 guardrails.
+
+### NEW FIRST-CLASS DELIVERABLE (Sam-requested, created this session)
+`docs/policy/wikipedia-genai-compliance.md` — quotes + citations + intent
+analysis + our position (letter & spirit) + enumerated guardrails G1-G12.
+Sam: **"our social contract with the Wikipedia community ... sacrosanct."**
+Elevated in-doc to social-contract status; bar for changing it is higher than
+any code. Anchors every agent; seeds the public About page. Quotes flagged for
+verbatim re-verification before public use.
+
+### STILL TODO IN SESSION
+- Phase 4: present 2-3 architecture approaches for the build; get Sam's pick.
+- Phase 5: write the reframed office-hours design doc to docs/design/office-hours/.
+- Spec reconciliation note: how the reframe updates WikiAsOfNow_design_spec.md
+  (esp. §2.1 thesis, §3.2 no-prose now hardened, §11 research layer reframed to
+  evidence-cards, §7/§17 corpus pipeline deferred for v1).
