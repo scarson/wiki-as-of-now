@@ -1,0 +1,71 @@
+---
+source_url: https://raw.githubusercontent.com/scarson/twin-cities-tee-times/main/package.json
+fetched: 2026-06-04T18:31:32Z
+http_status: 200
+word_count: 289
+content_hash_sha256: 4a63e7ca599c8e20e706969acb87c6e048d3a2f8b3f857e8ba7a535ebcc4985a
+---
+{
+  "name": "twin-cities-tee-times",
+  "version": "1.0.0",
+  "description": "App that checks and displays tee times at public golf courses in the Minnesota Twin Cities metro area",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "vitest run --pass-with-no-tests",
+    "test:smoke": "vitest run --config vitest.smoke.config.ts --pass-with-no-tests",
+    "test:a11y": "npx playwright test",
+    "test:watch": "vitest",
+    "preview": "opennextjs-cloudflare build && wrangler dev",
+    "deploy": "opennextjs-cloudflare build && wrangler deploy",
+    "seed:generate": "npx tsx scripts/seed.ts",
+    "seed:local": "npx tsx scripts/seed.ts && npx wrangler d1 execute tee-times-db --local --file=scripts/seed.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scarson/twin-cities-tee-times.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/scarson/twin-cities-tee-times/issues"
+  },
+  "homepage": "https://github.com/scarson/twin-cities-tee-times#readme",
+  "dependencies": {
+    "arctic": "^3.7.0",
+    "aws4fetch": "^1.0.20",
+    "jose": "^6.2.2",
+    "next": "^16.2.2",
+    "react": "^19.2.4",
+    "react-day-picker": "^9.14.0",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
+    "@cloudflare/workers-types": "^4.20260402.1",
+    "@eslint/eslintrc": "^3.3.5",
+    "@opennextjs/cloudflare": "^1.18.0",
+    "@playwright/test": "^1.59.1",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@testing-library/react": "^16.3.2",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@vitejs/plugin-react": "^5.1.4",
+    "better-sqlite3": "^12.8.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.1.7",
+    "jsdom": "^28.1.0",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vitest": "^4.0.18",
+    "vitest-axe": "^0.1.0",
+    "wrangler": "^4.71.0"
+  }
+}

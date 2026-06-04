@@ -37,3 +37,7 @@ next-env.d.ts
 
 # Git worktrees — see docs/git-strategy.md
 .claude/worktrees/
+
+# Python bytecode caches (e.g. from gstack skills like url-to-markdown)
+__pycache__/
+*.pyc
