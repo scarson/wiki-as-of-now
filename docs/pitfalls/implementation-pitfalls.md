@@ -26,43 +26,38 @@ This document serves three audiences. Start here, then go directly to the sectio
 
 | § | Section | You're working on... | Entries | Checklist |
 |---|---------|---------------------|---------|-----------|
-| 1 | [EXAMPLE-DOMAIN-1](#1-example-domain-1) | TODO — describe what this section covers | PREFIX-1 – PREFIX-N | §1.C |
+| 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 | §1.C |
 | 2 | [EXAMPLE-DOMAIN-2](#2-example-domain-2) | TODO — describe what this section covers | PREFIX-1 – PREFIX-N | §2.C |
-| — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 | §Orchestration.C |
+| — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-2 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
 
 ---
 
-# Section 1: EXAMPLE-DOMAIN-1
+# Section 1: Data Layer (D1 / SQLite)
 
-<!-- TODO: rename this section to your project's first domain (e.g. "Authentication & Security", "Data Pipeline", "API Handlers"). Delete this comment. -->
-
-> **Reader context:** I'm building or reviewing [what this domain covers].
+> **Reader context:** I'm building or reviewing schema (`migrations/*.sql`, `src/db/schema.sql`), the `SqlExecutor`/audit-log code, or anything that reads/writes D1.
 >
-> TODO — describe the shape of the pitfalls in this section and why they matter.
+> D1 is SQLite under the hood, and SQLite has sharp, non-obvious edges around rowid tables, type affinity, and constraint evaluation order. Local tests run on `better-sqlite3`, which is the same engine but not configured identically (see testing-pitfalls §8). These pitfalls are about not getting silently-wrong behavior that passes tests but corrupts data.
 
 ---
 
-### PREFIX-1: TODO — First Pitfall Title
+### DB-1: `NOT NULL` Is a No-Op on an `INTEGER PRIMARY KEY` (Rowid Alias)
 
-<!-- TODO: replace this example with a real pitfall entry. Use the Flaw → Why → Fix → Lesson structure for complex findings, or a single condensed paragraph for simple ones. See §How to Add a Pitfall below. -->
+**The Flaw:** Declaring `page_id INTEGER PRIMARY KEY NOT NULL` (or `... NOT NULL PRIMARY KEY`, or adding `CHECK (page_id IS NOT NULL)`) to *prevent* a NULL insert. None of these reject NULL. An `INTEGER PRIMARY KEY` is an alias for the table's rowid, and SQLite **replaces a NULL with an auto-assigned rowid before any `NOT NULL`/`CHECK` constraint is evaluated.** Verified on SQLite 3.53.1: all three variants accept `INSERT ... (page_id) VALUES (NULL)` and silently fabricate a key.
 
-**The Flaw:** TODO — what the code does wrong or what's missing.
+**Why It Matters:** For a table keyed by a *natural external ID* (e.g. `articles.page_id` = a Wikipedia pageid), a NULL insert from a bug upstream doesn't fail loudly — it creates a row with a fabricated id that collides with nothing and looks valid. Downstream joins/FKs resolve against a garbage key. The "guard" you added gives false confidence because it reads as if NULL is impossible.
 
-**Why It Matters:** TODO — the production failure mode. What breaks, for whom, and why it's hard to detect.
+**The Fix:** Make the table `WITHOUT ROWID` with the natural key as `PRIMARY KEY NOT NULL`. In a `WITHOUT ROWID` table the PK is the real key (not a rowid alias), so NULL is rejected. This cannot be applied via `ALTER` — it must be set at `CREATE TABLE`, so it belongs in the initial migration (edit the unreleased migration directly; once a migration has run against real D1, you cannot retrofit `WITHOUT ROWID` without a table rebuild migration). Example: `articles` uses `CREATE TABLE articles (page_id INTEGER PRIMARY KEY NOT NULL, …) WITHOUT ROWID;`. FKs that reference a `WITHOUT ROWID` table's PK work normally. Add a regression test that a NULL key is rejected.
 
-**The Fix:** TODO — the specific code change or pattern to apply. Include a code example when the fix is non-trivial.
-
-**The Lesson:** TODO — the generalizable principle. What should the reader watch for in future code?
+**The Lesson:** In SQLite, `PRIMARY KEY` does NOT imply `NOT NULL` (a long-standing spec deviation), and for the special `INTEGER PRIMARY KEY` rowid alias, `NOT NULL` is silently ineffective. Whenever a column is a *natural* key (not a surrogate you're happy to auto-generate), reach for `WITHOUT ROWID` and verify NULL-rejection with an actual insert test — don't trust the DDL to mean what the SQL standard says.
 
 ---
 
 ### Review Checklist
 
-<!-- TODO: one checkbox per pitfall above. Each item is a pass/fail check. Example format: -->
-
-- [ ] **Check derived from PREFIX-1** — TODO
+- [ ] **Natural-key tables are `WITHOUT ROWID` with `PRIMARY KEY NOT NULL`** — a plain `INTEGER PRIMARY KEY` silently auto-assigns a rowid on NULL insert; `NOT NULL`/`CHECK` don't stop it (DB-1)
+- [ ] **NULL-rejection is proven by a test, not assumed from the DDL** — insert a NULL key and assert it throws (DB-1)
 
 ---
 
@@ -88,11 +83,23 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 
 **Why this is in implementation-pitfalls:** because the plan-writing skill mandates reading this file, and this rule has to be noticed at plan-write time (when the dispatch prompts are being drafted), not at execution time (when it's too late). The failure mode — orchestrator context compacting mid-consolidation and lossily dropping findings — is predictable and preventable if the plan author builds persistence into the dispatch prompts from the start.
 
+### ORCH-2: Subagents Sharing the Working Tree Must Not Move HEAD
+
+**The Flaw:** A dispatched subagent (commonly a *review* subagent inspecting a specific commit) runs `git checkout <sha>` / `git switch` / `git reset` in the shared repository. Subagents in this environment operate in the *same* working tree as the orchestrator, so moving HEAD detaches it for everyone.
+
+**Why It Matters:** After a reviewer detaches HEAD at some commit, the orchestrator's next `git commit` lands on the **detached HEAD**, not on the feature branch. The branch ref silently stops advancing; `git push` fails with `HEAD (no branch)` or, worse, the commit looks fine locally but isn't on the branch anyone is tracking. Recovery is possible (`git branch -f <branch> <sha>` + `git checkout <branch>`) but only if you notice before more work piles on the wrong ref. This actually happened in Phase 1: a Task 1.2 reviewer ran `git checkout` to inspect a commit and a follow-up controller commit detached off the branch.
+
+**The Fix:** (1) Every review/inspection subagent prompt MUST forbid HEAD-moving commands and direct the agent to inspect via `git show <sha>`, `git diff <a> <b>`, `git log`, and reading files in place — none of which move HEAD. (2) The orchestrator checks `git status -sb` (first line shows `## <branch>...`, not `## HEAD (no branch)`) after each subagent batch and before each commit.
+
+**The Lesson:** In a shared-working-tree multi-agent setup, HEAD/branch state is global mutable state. Treat any subagent git command that moves HEAD the way you'd treat a subagent `cd` that escapes the repo — prohibit it in the prompt, and verify the invariant after the batch.
+
 ### Review Checklist
 
 - [ ] **Dispatch prompts include the mandatory-persistence block** — copy from `docs/git-strategy.md` §Output persistence; substitute `<PERSISTENCE_PATH>` with a durable per-subagent path (ORCH-1)
 - [ ] **Plan specifies exact persistence paths, not "write somewhere useful"** — ambiguous paths default to `/tmp` under pressure, which doesn't survive (ORCH-1)
 - [ ] **Orchestrator commits subagent artifacts wave-by-wave** — committed files land on the campaign branch before consolidation begins (ORCH-1)
+- [ ] **Review/inspection subagent prompts forbid `git checkout`/`switch`/`reset`** — shared working tree; use `git show`/`diff`/`log` instead (ORCH-2)
+- [ ] **Orchestrator verifies `git status -sb` shows the branch (not detached HEAD) after each subagent batch and before committing** (ORCH-2)
 
 ---
 
@@ -114,7 +121,8 @@ TODO — add entries as this document evolves.
 | ID | Title | Severity | Status | Domain |
 |----|-------|----------|--------|--------|
 | ORCH-1 | Analysis Dispatches Must Persist Findings | HIGH | VALIDATED | Orchestration |
-| PREFIX-1 | TODO | TODO | TODO | Section 1 |
+| ORCH-2 | Subagents Sharing the Working Tree Must Not Move HEAD | HIGH | VALIDATED | Orchestration |
+| DB-1 | `NOT NULL` Is a No-Op on an `INTEGER PRIMARY KEY` (Rowid Alias) | MEDIUM | VALIDATED | Data Layer |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
 

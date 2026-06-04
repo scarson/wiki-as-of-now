@@ -1432,6 +1432,9 @@ Need decision on whether first semantic index should include:
 ## 26. Implementation Recommendations for a Coding Agent
 
 ### 26.1 Architectural invariants
+
+These invariants are subordinate to the project's compliance contract — the sacrosanct social contract for operating within Wikipedia's generative-AI rules: [docs/policy/wikipedia-genai-compliance.md](../policy/wikipedia-genai-compliance.md). Several invariants below are direct expressions of its guardrails (notably the deterministic, LLM-free detector and the LLM-research provider boundary); where this list and the contract appear to diverge, the contract governs and must not be weakened without explicit human sign-off.
+
 A coding agent should preserve these invariants:
 
 1. The stale detector must be explainable.

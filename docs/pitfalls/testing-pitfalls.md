@@ -99,17 +99,13 @@ The test suite itself is code. It decays if not maintained. Messy test infrastru
 
 ---
 
-## 8. TODO — Project-Specific Topic
+## 8. Local SQLite ↔ Cloudflare D1 Parity
 
-<!-- TODO: add topic sections as the project surfaces specific testing disciplines. Examples from other projects:
-- AOT Correctness (for .NET AOT-compiled code)
-- Serialization Boundary (round-trip JSON tests)
-- Sandbox Bindings (JS sandbox API coverage)
-- Cross-Platform (tests that must pass on Windows and Linux)
-Each section follows the same [ ] checkbox format as the sections above.
-Delete this placeholder when you add real content. -->
+Tests run against `better-sqlite3` (in-memory) as a stand-in for D1. The two are NOT configured identically out of the box, so a test DB built with bare defaults can **false-pass** on violations that real D1 would reject. Keep the stand-in faithful.
 
-TODO — project-specific topic.
+- [ ] **Foreign keys must be ON in the test DB.** `better-sqlite3` leaves `PRAGMA foreign_keys` **OFF** by default; D1 enforces FKs. A bare `new Database(":memory:")` silently ignores `REFERENCES` constraints, so a test inserting a `stale_candidates` row with a non-existent `page_id` would pass locally but fail on D1. Build every test DB via `test/helpers/db.ts:freshTestDb()` (it sets `foreign_keys = ON` and applies the migration), never a raw `new Database()`. There is a regression test asserting the `stale_candidates → articles` FK actually fires.
+- [ ] **Schema under test is the real migration.** `freshTestDb()` applies `migrations/0001_init.sql` (kept byte-identical to `src/db/schema.sql`). Don't hand-roll table DDL in a test — exercise the shipped migration so column/constraint drift is caught.
+- [ ] **The sync/async seam is a known divergence.** `SqlExecutor` is synchronous (better-sqlite3); D1's API is async (Promises). Tests are sync today; when D1 is wired, the data-layer read/write methods become `async` and tests must `await`. Don't write tests that bake in the sync contract as if it were permanent — see the `src/db/client.ts` note and the plan's Discoveries.
 
 ---
 
