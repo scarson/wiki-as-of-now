@@ -1,0 +1,66 @@
+[
+  {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "will be ready to test the CPS in 2025",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Forward claim with a now-past target year (2025); no leading dateline. Genuine stale candidate."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "introduction is expected in 2017",
+    "stale": true,
+    "expectedYear": 2017,
+    "note": "Expectation tied to a now-past target year (2017). Genuine stale candidate."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "will be fielded in 2018",
+    "stale": true,
+    "expectedYear": 2018,
+    "note": "Future-tense fielding tied to a now-past target year (2018). Genuine stale candidate."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "Knifefish unmanned underwater vehicle (UUV) to find and detect buried mines in 2019",
+    "stale": true,
+    "expectedYear": 2019,
+    "note": "Future-tense milestone tied to a now-past target year (2019). Genuine stale candidate."
+  },
+  {
+    "fixture": "sbx-1.wikitext",
+    "sentenceSubstring": "smaller radars in the Pacific will",
+    "stale": false,
+    "note": "Negative (historical dateline narration + quotation): 'In July 2011, a ... spokesman explained that ... will \"pick up the slack\"'. The year is the dateline of a 2011 statement, not a forward target. Suppressed by the dateline rule."
+  },
+  {
+    "fixture": "ground-based_midcourse_defense.wikitext",
+    "sentenceSubstring": "announced plans to add 14 interceptors",
+    "stale": false,
+    "note": "Negative (historical month-dateline narration): 'In March 2013, the Obama administration announced plans to add 14 interceptors...'. Frame year 2013 == claim year; suppressed."
+  },
+  {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "announced plans to name the first ship of the class Zumwalt",
+    "stale": false,
+    "note": "Negative (historical month-dateline narration): 'In April 2006, the Navy announced plans to name...'. Suppressed by the dateline rule."
+  },
+  {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "no plans to continue the project",
+    "stale": false,
+    "note": "Negative (historical bare-year dateline, negated plan): 'In 2021, ... ceased with no plans to continue the project.'. Suppressed by the dateline rule."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "revealed plans to reduce the procurement rate in 2016",
+    "stale": false,
+    "note": "Negative (historical month-dateline narration): 'In August 2013, the USN revealed plans to reduce the procurement rate in 2016.'. Frame year 2013 == earliest past year; suppressed."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "As of January 2026, in light of China's expanding fleet",
+    "stale": false,
+    "note": "Negative (year gate): 'As of January 2026, ... the Navy had canceled plans to retire seven LCS hulls and will keep a fleet of 28.'. Year 2026 is not past relative to asOfYear 2026; never flagged."
+  }
+]
