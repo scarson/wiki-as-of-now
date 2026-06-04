@@ -1,11 +1,9 @@
 import { describe, it, expect } from "vitest";
-import Database from "better-sqlite3";
-import { readFileSync } from "node:fs";
+import { freshTestDb } from "../helpers/db";
 
 describe("0001_init migration", () => {
   it("creates audit_log, articles, stale_candidates", () => {
-    const db = new Database(":memory:");
-    db.exec(readFileSync("migrations/0001_init.sql", "utf8"));
+    const db = freshTestDb();
     const tables = db
       .prepare<[], { name: string }>(
         "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name"
@@ -18,8 +16,7 @@ describe("0001_init migration", () => {
   });
 
   it("audit_log has an append-only shape (id, ts, actor, event_type, payload_json)", () => {
-    const db = new Database(":memory:");
-    db.exec(readFileSync("migrations/0001_init.sql", "utf8"));
+    const db = freshTestDb();
     const cols = db
       .prepare<[], { name: string }>("PRAGMA table_info(audit_log)")
       .all()

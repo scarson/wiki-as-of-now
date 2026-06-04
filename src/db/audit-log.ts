@@ -41,6 +41,11 @@ export function makeAuditLog(db: SqlExecutor) {
       ).run(ts, entry.actor, entry.eventType, payloadJson);
     },
 
+    // Reads all audit rows in insertion order, parsing each payload from JSON.
+    // NOTE: JSON.parse throws if a row's payload_json is corrupt (e.g. a manual
+    // DB edit); append() always writes valid JSON, so this cannot happen for rows
+    // this module wrote. Before read() is used in a user-facing path (disclosure /
+    // show-your-work), wrap per-row parsing so one bad row cannot abort the read.
     read(): AuditRow[] {
       const rows = db
         .prepare("SELECT id, ts, actor, event_type, payload_json FROM audit_log ORDER BY id")
