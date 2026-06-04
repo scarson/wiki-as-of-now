@@ -88,11 +88,23 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 
 **Why this is in implementation-pitfalls:** because the plan-writing skill mandates reading this file, and this rule has to be noticed at plan-write time (when the dispatch prompts are being drafted), not at execution time (when it's too late). The failure mode — orchestrator context compacting mid-consolidation and lossily dropping findings — is predictable and preventable if the plan author builds persistence into the dispatch prompts from the start.
 
+### ORCH-2: Subagents Sharing the Working Tree Must Not Move HEAD
+
+**The Flaw:** A dispatched subagent (commonly a *review* subagent inspecting a specific commit) runs `git checkout <sha>` / `git switch` / `git reset` in the shared repository. Subagents in this environment operate in the *same* working tree as the orchestrator, so moving HEAD detaches it for everyone.
+
+**Why It Matters:** After a reviewer detaches HEAD at some commit, the orchestrator's next `git commit` lands on the **detached HEAD**, not on the feature branch. The branch ref silently stops advancing; `git push` fails with `HEAD (no branch)` or, worse, the commit looks fine locally but isn't on the branch anyone is tracking. Recovery is possible (`git branch -f <branch> <sha>` + `git checkout <branch>`) but only if you notice before more work piles on the wrong ref. This actually happened in Phase 1: a Task 1.2 reviewer ran `git checkout` to inspect a commit and a follow-up controller commit detached off the branch.
+
+**The Fix:** (1) Every review/inspection subagent prompt MUST forbid HEAD-moving commands and direct the agent to inspect via `git show <sha>`, `git diff <a> <b>`, `git log`, and reading files in place — none of which move HEAD. (2) The orchestrator checks `git status -sb` (first line shows `## <branch>...`, not `## HEAD (no branch)`) after each subagent batch and before each commit.
+
+**The Lesson:** In a shared-working-tree multi-agent setup, HEAD/branch state is global mutable state. Treat any subagent git command that moves HEAD the way you'd treat a subagent `cd` that escapes the repo — prohibit it in the prompt, and verify the invariant after the batch.
+
 ### Review Checklist
 
 - [ ] **Dispatch prompts include the mandatory-persistence block** — copy from `docs/git-strategy.md` §Output persistence; substitute `<PERSISTENCE_PATH>` with a durable per-subagent path (ORCH-1)
 - [ ] **Plan specifies exact persistence paths, not "write somewhere useful"** — ambiguous paths default to `/tmp` under pressure, which doesn't survive (ORCH-1)
 - [ ] **Orchestrator commits subagent artifacts wave-by-wave** — committed files land on the campaign branch before consolidation begins (ORCH-1)
+- [ ] **Review/inspection subagent prompts forbid `git checkout`/`switch`/`reset`** — shared working tree; use `git show`/`diff`/`log` instead (ORCH-2)
+- [ ] **Orchestrator verifies `git status -sb` shows the branch (not detached HEAD) after each subagent batch and before committing** (ORCH-2)
 
 ---
 
@@ -114,6 +126,7 @@ TODO — add entries as this document evolves.
 | ID | Title | Severity | Status | Domain |
 |----|-------|----------|--------|--------|
 | ORCH-1 | Analysis Dispatches Must Persist Findings | HIGH | VALIDATED | Orchestration |
+| ORCH-2 | Subagents Sharing the Working Tree Must Not Move HEAD | HIGH | VALIDATED | Orchestration |
 | PREFIX-1 | TODO | TODO | TODO | Section 1 |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
