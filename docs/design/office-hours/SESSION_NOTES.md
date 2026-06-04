@@ -242,8 +242,23 @@ foundational audit log (G13).
 - Spec reconciliation captured in the design doc ("How this reconciles with the
   main spec").
 
+### VERBATIM GROUNDING — DONE (contract v1.0)
+Re-fetched all source pages with url-to-markdown (not WebFetch's summarizer);
+committed transcriptions under docs/policy/sources/ as the evidence trail.
+Key corrections from verification:
+- Guideline prohibition quote: verified exact.
+- RfC rationale: guideline "does not aim to restrict" LLM use "as research assistants
+  to citation-formatting tools" → reframed "our position" to supported-by-guideline +
+  humbled-by-(non-binding)-essay. Big favorable, accurate shift.
+- Essay: "research topics AND find sources" (was "or"); it's an essay (WP:AIESSAY) =
+  opinion, not guideline.
+- Dropped unverifiable "44-2" tally (not on primary pages).
+- Disclosure: must identify AI NAME + VERSION in edit summary → wired into G12.
+- RS "generally unreliable" + hallucinated-citations: verified verbatim.
+Lesson: use url-to-markdown (python3.12) for any Wikipedia/source grounding, NOT
+WebFetch (lossy). Sam built url-to-markdown for exactly this.
+
 ### FOLLOW-ONS (next sessions, not blockers to this session)
-- Verify the 4 Wikipedia rule quotes verbatim against live pages; lock contract.
 - Wire contract's operational teeth: MUST-READ pointer in CLAUDE.md/AGENTS.md +
   cross-ref from spec's coding-agent-invariants section.
 - writing-plans for the dependency-ordered build, starting Foundation + audit log.

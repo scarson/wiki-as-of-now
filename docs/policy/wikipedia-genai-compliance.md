@@ -5,9 +5,10 @@
 
 ## How this project operates within the letter — and the spirit — of the rules
 
-**Status:** Draft v0.9 — **a sacrosanct social contract with the Wikipedia community.**
-"Draft" refers to wording and pending verbatim-quote verification, *not* to the
-bindingness of the commitments: the guardrails are binding now.
+**Status:** v1.0 — **a sacrosanct social contract with the Wikipedia community.**
+The quoted Wikipedia rules below have been **verified verbatim** against primary-source
+transcriptions committed under `docs/policy/sources/` (captured with the
+`url-to-markdown` skill, not a lossy summarizer). The guardrails are binding.
 **Audience:** Every contributor, human or agent. Read this before touching any
 detection, research, LLM, or citation code.
 **Last policy review:** 2026-06-04
@@ -65,14 +66,15 @@ recurring cadence thereafter.
    editor*, never an author of article content and never a source. Everything below
    follows from that bet.
 
-> **Provenance note (honesty) — READ BEFORE QUOTING.** The wording shown for the
-> Wikipedia rules below is **captured paraphrase, NOT certified verbatim** — it was
-> retrieved on 2026-06-04 through a summarization layer. Specific figures (e.g., the
-> RfC vote tally) are likewise reported-pending-verification. Each item is attributed
-> to its source page. Exact wording and figures MUST be verified verbatim against the
-> live pages before any public use. Quoting Wikipedia inexactly in a document about
-> being conscientious would contradict its whole purpose — so we present paraphrase as
-> paraphrase, not inside quotation marks.
+> **Provenance note.** The Wikipedia wording quoted below was **verified verbatim** on
+> 2026-06-04 against full-text transcriptions of the source pages, captured with the
+> `url-to-markdown` skill and committed under `docs/policy/sources/` as the evidence
+> trail. Block quotes (`>`) are exact; surrounding prose is our summary. An earlier
+> draft relied on a lossy summarizer and was corrected during this verification — for
+> example, an unverifiable "44–2" RfC tally was dropped, and the essay's wording was
+> fixed to "research topics **and** find sources." Wikipedia pages evolve; re-verify
+> against `docs/policy/sources/` (and refresh those captures) on a recurring cadence
+> and before any public republication.
 
 > **Scope of this contract.** It covers two commitments to the Wikipedia community:
 > (1) how we use AI in relation to article content (the bulk of this document), and
@@ -84,15 +86,30 @@ recurring cadence thereafter.
 
 ---
 
-## 1. The rules as they stand (captured 2026-06-04, paraphrased pending verbatim check)
+## 1. The rules as they stand (verified verbatim 2026-06-04 against primary sources)
 
 ### 1.1 The core guideline — generating or rewriting article content
 
-Wikipedia adopted a guideline via an RfC that closed on 2026-03-20 with a clear
-consensus to adopt (exact vote tally pending verbatim verification). In substance:
-**using LLMs to generate or rewrite article content is prohibited.**
+Wikipedia adopted this as a **guideline** via an RfC that closed on 2026-03-20 with a
+clear consensus to adopt. The guideline states (verbatim):
 
-Two narrow carve-outs exist:
+> the use of LLMs to generate or rewrite article content is prohibited
+
+except for basic copyedits and translation, as below.
+
+Crucially, the RfC's closing rationale states the guideline's *scope* explicitly
+(verbatim):
+
+> More specialized, constructive use cases do exist, from using them as research
+> assistants to citation-formatting tools, and this guideline does not aim to restrict
+> any of these use cases.
+
+That is the binding instrument's own statement that LLM use as a **research assistant**
+and **citation-formatting tool** — which is exactly what WikiAsOfNow is — is not what the
+guideline restricts. (See "our position" for how we hold this alongside the cautionary
+essay below, which is opinion, not a guideline.)
+
+Two narrow carve-outs to the content-generation prohibition exist:
 
 - **Basic copyediting** of the editor's *own* writing, after human review, provided
   the LLM introduces no content of its own (e.g., spelling, punctuation,
@@ -104,42 +121,61 @@ Two narrow carve-outs exist:
 Source: [Wikipedia:Writing articles with large language models](https://en.wikipedia.org/wiki/Wikipedia:Writing_articles_with_large_language_models)
 (and its [RfC](https://en.wikipedia.org/wiki/Wikipedia:Writing_articles_with_large_language_models/RfC)).
 
-### 1.2 Using LLMs to research topics or find sources
+### 1.2 The cautionary essay on LLMs and source-finding
 
-The editor-facing guidance points to an essay whose position is blunt: in substance,
-**editors should never use LLMs to research topics or find sources.**
+An **essay** (tagged WP:AIESSAY — opinion, *not* a policy or guideline) opens (verbatim):
+
+> You should never use LLMs ... to research topics and find sources.
 
 Source: [Wikipedia:LLMs are bad search engines](https://en.wikipedia.org/wiki/Wikipedia:LLMs_are_bad_search_engines),
 referenced from [Wikipedia:Artificial intelligence](https://en.wikipedia.org/wiki/Wikipedia:Artificial_intelligence).
 
-The essay's stated concerns — analyzed below in the "intent behind the rules"
-section — go beyond hallucination: auditability, improper synthesis, incompleteness,
-and editor skill atrophy. **We take this rule as applying to us** (see "our position").
+Its concerns — analyzed below in the "intent behind the rules" section — go beyond
+hallucination: auditability, improper synthesis, incompleteness, and editor skill
+atrophy. It is opinion rather than a binding rule, and it sits in tension with the
+*guideline's* explicit non-restriction of research-assistant and citation-tool use noted
+above. We do not hide behind that distinction: we take the essay's concerns seriously
+and mitigate each (see "our position"), rather than dismiss them because an essay is
+non-binding.
 
 ### 1.3 Machine-learning output as a source
 
-In substance: **content produced by LLMs is generally unreliable.** LLM output may not
-be cited, and LLMs are known to fabricate citations that look legitimate but lead
-nowhere.
+The reliable-sources guideline states (verbatim):
+
+> Content produced by LLMs, such as AI chatbots (eg. ChatGPT) and Grokipedia, is
+> generally unreliable.
+
+and that LLMs "have a tendency to 'hallucinate' false information, including source
+citations that look as if they are from reputable publications but do not actually
+exist." So LLM output may not be cited, and LLM-produced citations are untrustworthy.
 
 Source: [Wikipedia:Reliable sources](https://en.wikipedia.org/wiki/Wikipedia:Reliable_sources)
 (in the section on sources produced by machine learning).
 
 ### 1.4 Disclosure
 
-In substance: **disclosure of LLM use is strongly recommended.** How we operationalize
-this — generating the disclosure mechanically from our own activity log rather than
-with a model — is described in the disclosure-practice section below.
+The disclosure page's nutshell (verbatim): "If the content you add comes from an LLM, it
+is highly recommended that you disclose that." It elaborates (verbatim):
+
+> Every edit assisted by a large language model (LLM) should be marked as LLM-assisted by
+> identifying the name and, if possible, version of the AI in the edit summary. This
+> applies to all namespaces.
+
+Requiring disclosure *as policy* reached no consensus, so it is best treated as "highly
+encouraged" — but the **specific form** (the AI's name and version, in the edit summary)
+is clear, and our mechanical disclosure follows it exactly: the activity log records the
+model name and version, and the template emits them. See the disclosure-practice section.
 
 Source: [Wikipedia:LLM use disclosure](https://en.wikipedia.org/wiki/Wikipedia:LLM_use_disclosure)
 (referenced from [Wikipedia:Artificial intelligence](https://en.wikipedia.org/wiki/Wikipedia:Artificial_intelligence)).
 
 ### 1.5 Enforcement framing
 
-In substance: sanctions require evidence that edits violate **core content policies**,
-not merely that AI was involved; reviewers weigh the full pattern of an editor's edits
-and whether they comply with core content policies. The practical implication for us
-is in the "our position" section below.
+The guideline states (verbatim): "The imposition of sanctions requires evidence beyond
+basic stylistic or linguistic indications. When evaluating possible LLM use, it is best
+to consider the full pattern of the editor's recent edits and whether the edits comply
+with core content policies." So enforcement turns on core-content-policy compliance, not
+mere AI involvement. The practical implication for us is in the "our position" section.
 
 ---
 
@@ -159,10 +195,13 @@ defending against. The essay and guideline reveal five concerns:
 4. **Incompleteness.** Models miss "unknown unknowns" and do the bare minimum.
 5. **Skill atrophy.** Over-reliance erodes editors' own research ability.
 
-**We do not claim an exemption.** An LLM relevance-triage step is itself a form of
-LLM-assisted source-finding, so the essay's concerns apply to us. We claim
-*mitigation*, not exemption — and where a concern is only partly answerable, we say so.
-Each concern maps to a specific guardrail below:
+**Where we stand: supported by the guideline, humbled by the essay.** The binding
+guideline's own scope statement does not restrict LLM use as a research assistant or
+citation-formatting tool — which is what we are. We rely on that. At the same time, an
+LLM relevance-triage step is a form of source-finding, which the (non-binding) essay
+warns against; rather than wave that away because it is "only an essay," we treat its
+concerns as legitimate engineering risks and mitigate each. Where a concern is only
+partly answerable, we say so. Each concern maps to a specific guardrail below:
 
 - **Auditability** → the show-your-work guardrail (rankings and non-selected results
   shown), the bounded-LLM-role guardrail (queries shown, editable, logged), the
@@ -189,8 +228,9 @@ Each concern maps to a specific guardrail below:
 
 ## 3. Our position: letter and spirit
 
-The classifier-vs-oracle distinction is *why* our use is lower-risk — not a claim that
-it falls outside the rules:
+The classifier-vs-oracle distinction is *why* our use is the research-assistant /
+citation-formatting use the guideline does not restrict, and why it stays clear of the
+essay's cautions:
 
 - **LLM as an oracle of facts** — you ask "what happened to program X?" and it answers
   from its weights and supplies citations it generated. This is the prohibited,
@@ -321,8 +361,10 @@ reassuring.
 - **Disclosure is mechanical and on by default (G12).** The tool produces a
   ready-to-paste edit summary whose AI-assistance disclosure is generated mechanically
   from the activity log (a deterministic template filled with logged facts), never
-  authored by a model. The human pastes it when they submit. See the disclosure-practice
-  section for why this does not conflict with the no-machine-written-text guardrail.
+  authored by a model. Per Wikipedia:LLM use disclosure, the disclosure **identifies the
+  AI's name and version** (read from the activity log), in the edit summary. The human
+  pastes it when they submit. See the disclosure-practice section for why this does not
+  conflict with the no-machine-written-text guardrail.
   *(disclosure norm; good faith)*
 - **The audit log is foundational and self-recording (G13).** An append-only, durable
   activity/audit log is a first-class system built from day one, not a later add-on. It
@@ -480,6 +522,21 @@ held to it, and we would rather ship less than break it.
 
 ## 10. Change log
 
+- **2026-06-04 (v1.0)** — **Verbatim grounding pass.** Re-fetched every source page with
+  the `url-to-markdown` skill (faithful transcription, not a lossy summarizer) and
+  committed the transcriptions under `docs/policy/sources/` as the evidence trail. All
+  quoted rules are now exact block quotes verified against primary text. Substantive
+  corrections from verification: (a) added the RfC closing rationale's explicit scope
+  statement — the guideline "does not aim to restrict" LLM use "as research assistants
+  to citation-formatting tools," which is exactly our posture — and reframed "our
+  position" from a defensive no-exemption stance to "supported by the binding guideline,
+  humbled by the (non-binding) essay"; (b) corrected the essay quote to "research topics
+  **and** find sources" and labeled it an essay (WP:AIESSAY = opinion, not a guideline);
+  (c) dropped the unverifiable "44–2" tally (not on the primary pages); (d) added the
+  disclosure page's specific expectation — identify the AI's **name and version** in the
+  edit summary — and wired it into the mechanical-disclosure guardrail; (e) replaced
+  remaining paraphrase with verified verbatim for the reliable-sources and enforcement
+  passages. Status moves from Draft to v1.0.
 - **2026-06-04 (v0.9)** — Adversarial review round 6 (independent Opus reviewer;
   confirming pass). Verdict: no major issues remain (9/10); all prior fixes confirmed
   holding and the at-a-glance index confirmed matching G1–G16. Fixed the one minor

@@ -301,9 +301,10 @@ distribution needed.
 
 ## Next Steps
 
-1. Freeze the compliance contract at its current reviewed version (or note any final
-   edits) and wire its "operational teeth": a MUST-READ pointer from `CLAUDE.md` /
-   `AGENTS.md`, and a cross-reference from the spec's coding-agent-invariants section.
+1. The compliance contract is at v1.0 with all quotes verified verbatim against
+   primary-source transcriptions in `docs/policy/sources/`. Remaining: wire its
+   "operational teeth" — a MUST-READ pointer from `CLAUDE.md` / `AGENTS.md`, and a
+   cross-reference from the spec's coding-agent-invariants section.
 2. Turn the dependency-ordered build sequence above into an implementation plan
    (writing-plans), starting with Foundation + the audit-log schema.
 3. Stand up the fixture corpus (SBX-1 + procurement articles) and the detector gold set
