@@ -5,7 +5,7 @@
 
 ## How this project operates within the letter — and the spirit — of the rules
 
-**Status:** Draft v0.3 — **social contract with the Wikipedia community. Sacrosanct.**
+**Status:** Draft v0.4 — **social contract with the Wikipedia community. Sacrosanct.**
 **Audience:** Every contributor, human or agent. Read this before touching any
 detection, research, LLM, or citation code.
 **Last policy review:** 2026-06-04
@@ -51,16 +51,27 @@ cadence thereafter.
    editor*, never an author of article content and never a source. Everything below
    follows from that bet.
 
-> **Provenance note (honesty).** The quotations in the "rules as they stand" section
-> below were captured on 2026-06-04 via automated fetches that pass page text through
-> a summarization layer. They are faithful in substance and each is attributed to its
-> source page, but exact wording MUST be re-verified verbatim against the live pages
-> before any public use. Doing otherwise would contradict the conscientiousness this
-> document is about.
+> **Provenance note (honesty) — READ BEFORE QUOTING.** The wording shown in quotation
+> marks in the "rules as they stand" section below was captured on 2026-06-04 via
+> automated fetches that pass page text through a summarization layer. **Treat it as
+> faithful paraphrase, NOT certified verbatim** — the same applies to specific numbers
+> (e.g., the RfC vote tally). Each item is attributed to its source page. Exact
+> wording and figures MUST be re-verified verbatim against the live pages before any
+> public use or before this text is quoted anywhere outside this repository. Quoting
+> Wikipedia inexactly in a document about being conscientious would contradict its
+> whole purpose.
+
+> **Scope of this contract.** It covers two commitments to the Wikipedia community:
+> (1) how we use AI in relation to article content (the bulk of this document), and
+> (2) responsible automated *access* to Wikimedia services (see the responsible-access
+> guardrail). Both are part of being a good citizen of the project.
 
 ---
 
 ## 1. The rules as they stand (captured 2026-06-04)
+
+> Quoted wording below is captured paraphrase pending verbatim verification — see the
+> provenance note above.
 
 ### 1.1 The core guideline — generating or rewriting article content
 
@@ -173,7 +184,18 @@ cited, with the AI assistance disclosed. That is the robust defense the enforcem
 framing above points to (sanctions hinge on core-content-policy violations, not AI
 involvement): the edit is good regardless of how the source was found.
 
-We acknowledge a residual *social* reality: the letter is harsh, and some editors
+**The central tension we must keep naming.** This product's value is throughput —
+clearing many small temporal fixes without breaking the editor's flow. That very goal
+creates pressure to rush, and rushing erodes the human-verification gate that the
+whole contract depends on. If verification degrades into rubber-stamping, every
+guardrail above becomes theater. We hold this tension deliberately, not silently:
+verification is a hard gate, not a skippable step (see the human-verification
+guardrail); the friction on "open and confirm the source" is intentional and must not
+be optimized away; and any engagement or stats features reward *verified, accepted*
+edits, never raw speed or volume (see `docs/design/future-features.md`). A tool that
+makes bad editing faster is worse than no tool.
+
+We also acknowledge a residual *social* reality: the letter is harsh, and some editors
 react to "AI-assisted" reflexively. We address that with radical transparency (see
 the disclosure-practice section below), not by hiding the workflow.
 
@@ -210,9 +232,10 @@ answers. Reference them by name, not bare number.
   labeled by type; the full retrieved set is visible.
   *(biased source selection)*
 - **Support-checking before "resolves" (G8).** Before a card is presented as
-  appearing to resolve the question, the tool verifies the claim is actually
-  supported by text on the fetched page and flags weak support (refchecker-style
-  claim↔source checking).
+  appearing to resolve the question, the tool performs automated claim-to-source
+  support checking — verifying the claim is actually supported by text on the fetched
+  page — and flags weak support. (Tools such as RefChecker are one example of the
+  technique; the requirement is the check, not any specific implementation.)
   *(hallucination; text-source integrity)*
 - **The LLM's role is boxed to three jobs (G9):** (a) normalize the hanging question
   into search queries, (b) relevance-triage real retrieved documents, (c) extract one
@@ -224,10 +247,13 @@ answers. Reference them by name, not bare number.
   coding-agent invariants). The model is only in the optional research-assist layer.
   *(auditability)*
 - **Stay in the safe lane (G11).** The tool targets high-volume, low-complexity
-  temporal fixes with strong official sourcing. It does not surface contentious,
-  interpretive, or biography-of-living-persons-sensitive material as "easy wins";
-  such cases are flagged for human-only handling.
-  *(incompleteness / unknown-unknowns; living-persons risk)*
+  temporal fixes with strong official sourcing. It does not surface contentious or
+  interpretive material, or potentially contentious/negative claims *about* living
+  persons (the living-persons policy bar), as "easy wins"; such cases are flagged for
+  human-only handling. Merely mentioning a named official in a routine procurement
+  fact is fine — the bar is contentious or sensitive *claims*, not the presence of a
+  person's name.
+  *(incompleteness / unknown-unknowns; living-persons policy)*
 - **Disclosure is mechanical and on by default (G12).** The tool produces a
   ready-to-paste edit summary whose AI-assistance disclosure is generated
   mechanically from the activity log (a deterministic template filled with logged
@@ -235,12 +261,21 @@ answers. Reference them by name, not bare number.
   disclosure-practice section for why this does not conflict with the
   no-machine-written-text guardrail.
   *(disclosure norm; good faith)*
-- **The audit log is foundational and self-recording (G13).** A tamper-evident
+- **The audit log is foundational and self-recording (G13).** An append-only, durable
   activity/audit log is a first-class system built from day one, not a later add-on.
-  It is the single source of truth that makes disclosures (G12), verification gating
-  (G5), and "show your work" (G6) real rather than asserted. The act of generating a
-  disclosure is itself logged. If the log is not robust, the contract is not real.
+  It is the single source of truth that makes the mechanical disclosure (G12), the
+  human-verification gate (G5), and "show your work" (G6) real rather than asserted.
+  The act of generating a disclosure is itself logged. If the log is not robust, the
+  contract is not real. (Stronger tamper-evidence — e.g., hash-chaining — is a
+  possible future hardening, not claimed today.)
   *(auditability; good faith)*
+- **Responsible automated access to Wikimedia (G14).** When the tool reads from
+  Wikimedia services (article text, revisions, pageviews), it is a good API citizen:
+  it identifies itself with a descriptive User-Agent per Wikimedia policy, respects
+  rate limits and maxlag, prefers bulk/dump endpoints over live crawling for batch
+  work, and caches to avoid redundant load. The community we are accountable to runs
+  the servers too.
+  *(responsible access; good faith)*
 
 ---
 
@@ -304,8 +339,9 @@ the compliant path the path of least resistance:
 
 ## 7. Good-faith statement
 
-This project is built by people who edit Wikipedia and care about it. We read the
-rules, including the ones that appear to point against AI tooling, and we designed
+This project is built by a Wikipedia editor, for their own editing, with AI coding
+agents operating under the guardrails above. We read the rules, including the ones
+that appear to point against AI tooling, and we designed
 the system specifically so that AI acts as a grounded assistant to a human editor —
 never an author and never a source — with enumerated guardrails that keep it out of
 prohibited territory. Where the letter and the spirit could diverge, we chose the
@@ -321,6 +357,15 @@ break it.
 
 ## 8. Change log
 
+- **2026-06-04 (v0.4)** — Adversarial review round 1 (self). Marked captured wording
+  as paraphrase-pending-verbatim (not certified quotes) and flagged the vote tally
+  likewise. Softened the audit-log "tamper-evident" overclaim to append-only/durable.
+  Replaced the brand-named "refchecker-style" with the technique (claim-to-source
+  support checking), keeping the tool only as an example. Narrowed the living-persons
+  guardrail to contentious/sensitive *claims*, not mere mention of a named official.
+  Added the central throughput-vs-verification tension and its mitigation. Added the
+  responsible-automated-access guardrail (G14) and a scope note. Corrected the
+  good-faith statement's authorship claim to be accurate (one editor + AI agents).
 - **2026-06-04 (v0.3)** — Resolved the edit-summary circularity: the summary is
   *derived from the human-assembled edit as the final step*, never predicted; split
   into a process-derived disclosure part (always accurate) and a mechanical
