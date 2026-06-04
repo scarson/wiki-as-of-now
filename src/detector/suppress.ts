@@ -21,27 +21,29 @@ const SUPPRESSION_PENALTY = 100;
  * false-positive pattern and should be down-weighted by the scorer.
  *
  * @param sentence - The sentence under evaluation.
- * @param _year    - The year extracted from the claim. Reserved for future
- *                  year-aware suppression rules; the current three rules are
- *                  year-agnostic. Kept in the signature for symmetry with
- *                  `scoreClaim` (Task 2.5).
+ * @param year     - The claim's anchor year (the past year the scorer is
+ *                  scoring). Used by the dateline rule: a leading temporal
+ *                  frame is only narration when its year IS the claim's year.
  */
-export function suppressionScore(sentence: string, _year: number): number {
+export function suppressionScore(sentence: string, year: number): number {
   let rulesHit = 0;
 
-  // Rule 1 — historical past-frame narration.
-  // Fires when the sentence BOTH:
-  //   (a) opens with a past-time frame (In/By/During/As of + a 4-digit year), AND
-  //   (b) contains a past-tense verb cue (planned, expected, was scheduled).
-  // Guards: historical narration of a past plan is not an unresolved expectation
-  // (e.g. "In 1944, the Army planned to invade.").
+  // Rule 1 — historical dateline narration.
+  // Fires when the sentence opens with a temporal frame (In/By/During/As of +
+  // an optional month/qualifier + a 4-digit year) AND that frame year equals
+  // the claim's anchor `year`. A leading dateline whose year is the claim year
+  // means the marker reports a past intention/statement made AT that time
+  // (e.g. "In March 2013, the administration announced plans to add..."), not
+  // an unresolved forward claim. The year-match keeps this precise: a claim
+  // whose target year differs from the dateline (e.g. "In 2015, ... expected
+  // to deliver in 2020.") is NOT suppressed, preserving the forward target.
   //
-  // ⚠ The year alternatives MUST stay grouped — the un-grouped form lets the
-  // bare `20[0-2]\d` branch match any 20xx year anywhere in the sentence and
-  // over-suppress valid claims.
-  const pastFrameRegex = /^(In|By|During|As of)\s+(1[89]\d\d|20[0-2]\d)\b/i;
-  const pastVerbRegex = /\b(planned|expected|was scheduled)\b/i;
-  if (pastFrameRegex.test(sentence) && pastVerbRegex.test(sentence)) {
+  // ⚠ The year alternatives MUST stay grouped — an un-grouped `...|20[0-2]\d`
+  // would let the bare year branch match any 20xx year anywhere in the
+  // sentence and over-suppress valid claims.
+  const datelineRegex = /^(?:In|By|During|As of)\s+(?:[A-Za-z]+\.?\s+)?(1[89]\d\d|20[0-2]\d)\b/i;
+  const datelineMatch = datelineRegex.exec(sentence);
+  if (datelineMatch && Number(datelineMatch[1]) === year) {
     rulesHit++;
   }
 
