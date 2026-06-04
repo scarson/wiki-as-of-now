@@ -336,6 +336,7 @@ Example: "**No anonymous types in JSON under AOT.** Use concrete types. (AOT-1)"
 
 - **No secrets in CLI flags or command-line env var overrides.** Credentials come from files, keychain, prompts, or scoped environment — never `--secret` / `--password` flags. Visible in `ps` and shell history.
 - **No PII in audit/debug logs.** Log identifiers (entry IDs, correlation IDs, command names) — never field values or document content.
+- **Grounding web sources: use the `url-to-markdown` skill, not a summarizing fetcher (e.g. `WebFetch`).** Summarizing fetchers paraphrase lossily — fine for a quick gist, a footgun whenever exact wording, quotes, figures, or faithful content matter (verifying a claim, quoting a source, grounding a doc). They silently alter text: in this project `WebFetch` fabricated a nonexistent RfC vote tally and changed a quoted rule's wording. For anything you will quote, cite, or rely on verbatim, transcribe with `url-to-markdown` (runs via `python3.12`; emits faithful markdown with a `content_hash_sha256`), then commit the transcription as an evidence trail when grounding a durable artifact. See `docs/policy/sources/` for a worked example.
 
 ### Comparative Evaluation Rules
 
