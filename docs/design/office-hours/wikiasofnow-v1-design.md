@@ -143,7 +143,9 @@ that never builds on an unproven foundation.
 
 **Stack decision (resolves the spec's open frontend question):** Next.js on Cloudflare
 Workers + D1, reusing the proven pattern from `scarson/twin-cities-tee-times`
-(Next.js + Wrangler + D1 + **Arctic** for edge-native Google OAuth). This trades the
+(Next.js + Wrangler + D1 + **Arctic** for edge-native Google OAuth, with `jose` for
+session JWTs — verified against `docs/design/office-hours/sources/package-json.md`).
+This trades the
 spec's deferred React-Vite-vs-Next decision for "reuse what already works on this
 exact platform," removing a spike and a class of deployment risk.
 
