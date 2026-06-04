@@ -5,7 +5,7 @@
 
 ## How this project operates within the letter — and the spirit — of the rules
 
-**Status:** Draft v0.6 — **a sacrosanct social contract with the Wikipedia community.**
+**Status:** Draft v0.7 — **a sacrosanct social contract with the Wikipedia community.**
 "Draft" refers to wording and pending verbatim-quote verification, *not* to the
 bindingness of the commitments: the guardrails are binding now.
 **Audience:** Every contributor, human or agent. Read this before touching any
@@ -82,9 +82,9 @@ recurring cadence thereafter.
 
 ### 1.1 The core guideline — generating or rewriting article content
 
-Wikipedia adopted a guideline via an RfC that closed on 2026-03-20 (reported as 44 in
-favor, 2 opposed — pending verbatim verification). In substance: **using LLMs to
-generate or rewrite article content is prohibited.**
+Wikipedia adopted a guideline via an RfC that closed on 2026-03-20 with a clear
+consensus to adopt (exact vote tally pending verbatim verification). In substance:
+**using LLMs to generate or rewrite article content is prohibited.**
 
 Two narrow carve-outs exist:
 
@@ -164,8 +164,10 @@ Each concern maps to a specific guardrail below:
 - **Improper synthesis** → the no-cross-source-synthesis guardrail and the
   no-machine-written-text guardrail (the human writes every claim, from one source).
 - **Hallucination** → the anchor-to-a-real-URL guardrail, the support-checking
-  guardrail (with a deterministic verbatim-quote check), and the mechanical-citation
-  guardrail (citations from deterministic metadata, never model output).
+  guardrail (whose deterministic verbatim-quote check catches *fabricated* quotes —
+  while *misattributed* support is caught by the human opening and reading the source),
+  and the mechanical-citation guardrail (citations from deterministic metadata, never
+  model output).
 - **Incompleteness** → the show-the-full-candidate-set guardrail, the safe-lane
   guardrail, and the mandatory human-verification gate (the human still does the real
   reading and judgment).
@@ -224,6 +226,16 @@ These are hard rules with the same status as the architectural invariants in the
 design spec. Each is tagged with the concern it answers. Reference them by name, not
 bare number.
 
+**The bright line for machine-generated text.** Any text a model produces falls into
+exactly two permitted buckets: (1) **disposable navigation** — search queries and
+"this passage looks relevant" pointers that are shown to the human and never persisted
+into any artifact (edit, citation, change-description, or disclosure); and (2) nothing
+else. All text that *does* persist into an artifact is either written by the human or
+deterministically template-filled from logged facts — never model-authored. If a piece
+of machine text is neither disposable navigation nor a deterministic template fill, it
+does not ship. This single test makes the bounded-LLM-role and mechanical-disclosure
+guardrails checkable rather than merely reassuring.
+
 - **No machine-written article text, ever (G1).** The tool never emits prose intended
   for an article. The human writes every sentence that lands in Wikipedia.
   *(prohibition; improper synthesis; skill atrophy)*
@@ -244,9 +256,12 @@ bare number.
 - **Human verification is a mandatory, gated act of opening the source (G5).** "Verified"
   means the human opened the actual source page — not that they approved a card from the
   worksheet. A card cannot produce a finished citation until the source has been opened,
-  and that open is logged. The tool decides what to *surface* and how to *rank* it
-  (transparently — see the show-your-work guardrail); it never decides what gets cited.
-  That decision is the human's, and it is gated.
+  and that open is logged. An "open" is the strongest signal the tool can observe; it is
+  a necessary precondition for verification, not proof of it — the contract relies on the
+  human actually reading and judging support, which no tool can confirm (this is why the
+  throughput-vs-verification tension matters). The tool decides what to *surface* and how
+  to *rank* it (transparently — see the show-your-work guardrail); it never decides what
+  gets cited. That decision is the human's, and it is gated.
   *(verification; auditability; automation bias)*
 - **The tool shows its work (G6).** For every high-signal flag, it displays *why* (the
   matching snippet) and also shows the non-selected results, so the human can audit the
@@ -256,17 +271,23 @@ bare number.
   labeled by type; the full retrieved set is visible.
   *(biased source selection; incompleteness)*
 - **Support-checking before "resolves," with a verbatim-quote check (G8).** Before a
-  card is presented as appearing to resolve the question, the tool performs automated
-  claim-to-source support checking, and a **deterministic, non-LLM string check
-  confirms the displayed supporting quote actually appears verbatim in the fetched page
-  text.** Weak or unverifiable support is flagged. (Tools such as RefChecker illustrate
-  the support-checking technique; the requirement is the check, not any implementation.)
+  card is presented as appearing to resolve the question, the tool performs an automated,
+  *advisory* claim-to-source support assessment, and a **deterministic, non-LLM string
+  check confirms the displayed supporting quote actually appears verbatim in the fetched
+  page text.** Weak or unverifiable support is flagged. **The verbatim check guarantees
+  only that the quote is really on the page; whether the quote actually *supports* the
+  claim is a judgment the human makes by opening the source — the deterministic check is
+  not a support oracle, and the model's support assessment is advisory only.** (Tools
+  such as RefChecker illustrate the support-checking technique; the requirement is the
+  check, not any implementation.)
   *(hallucination; text-source integrity; prompt injection)*
 - **The LLM's role is boxed to three jobs (G9):** (a) normalize the hanging question
   into *neutral* search queries, (b) relevance-triage real retrieved documents, (c)
-  point the human at the passage that appears to resolve the question. For job (c) the
-  real artifact is the **verbatim quote** (confirmed by the verbatim-quote check); any
-  model phrasing of "the candidate fact" is a disposable navigation label that must
+  point the human at the passage that appears to resolve the question. The advisory
+  support assessment in the support-checking guardrail is part of jobs (b)/(c) — it
+  ranks and points, it does not adjudicate; the human adjudicates support. For job (c)
+  the real artifact is the **verbatim quote** (confirmed by the verbatim-quote check);
+  any model phrasing of "the candidate fact" is a disposable navigation label that must
   never flow into the edit, the citation, or the change-description. The quote is a
   pointer the human must open the source to confirm, never a substitute for reading.
   Queries must be neutral retrieval terms, not assertions that presuppose the answer;
@@ -281,7 +302,10 @@ bare number.
   fixes with strong official sourcing. Because the deterministic detector cannot itself
   judge "contentious," the safe lane is enforced by concrete, conservative mechanisms —
   topic/category and template denylists, living-persons-namespace heuristics, and
-  excluding flagged or disputed articles — and these are imperfect. Anything outside the
+  excluding flagged or disputed articles — and these are imperfect. One hard,
+  fail-closed floor anchors the heuristics: **any article in a biography-of-living-persons
+  category is excluded from the easy-win queue by default, period** — it can only be
+  worked through explicit human-only handling. Beyond that floor, anything outside the
   conservative allowlist, and any potentially contentious or negative claim *about* a
   living person, is not offered as an "easy win" but flagged for human-only handling.
   Merely naming an official in a routine procurement fact is fine; the bar is
@@ -447,6 +471,17 @@ held to it, and we would rather ship less than break it.
 
 ## 10. Change log
 
+- **2026-06-04 (v0.7)** — Adversarial review round 4 (independent Opus reviewer; index
+  confirmed accurate, no drift). Fixed the central overclaim: the verbatim-quote check
+  proves a quote *exists on the page*, not that it *supports the claim* — support is the
+  human's judgment on opening the source; corrected the related hallucination mapping.
+  Clarified that the model's support assessment is advisory and part of the bounded
+  relevance-triage role, so the "three jobs" box is not silently exceeded. Added a
+  testable bright line for machine-generated text (disposable navigation vs.
+  deterministic template fill; nothing else persists). Admitted that a logged "open" is
+  a proxy for, not proof of, human reading. Dropped the unverified RfC vote tally. Added
+  a hard fail-closed floor to the safe-lane guardrail (living-persons-category articles
+  excluded from the easy-win queue by default).
 - **2026-06-04 (v0.6)** — Adversarial review round 3 (self). Removed a stray
   zero-width character from the safe-lane guardrail. Closed the residual authorship
   channel in the bounded-LLM-role guardrail (the verbatim, checked quote is the only
