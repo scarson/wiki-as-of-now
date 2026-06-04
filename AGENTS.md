@@ -17,6 +17,8 @@ WikiAsOfNow — a deterministic stale-claim finder for Wikipedia paired with a s
 
 **Design spec:** [docs/design/WikiAsOfNow_design_spec.md](docs/design/WikiAsOfNow_design_spec.md) — the authoritative product, architecture, and implementation document. Read it before non-trivial work; §26 ("Implementation Recommendations for a Coding Agent") lists the architectural invariants.
 
+**MUST READ — compliance contract:** [docs/policy/wikipedia-genai-compliance.md](docs/policy/wikipedia-genai-compliance.md) — the sacrosanct social contract governing how WikiAsOfNow operates within Wikipedia's generative-AI rules. Its enumerated guardrails are inviolable project invariants; for this codebase the load-bearing two are that stale-claim **detection stays deterministic and LLM-free** and the **audit log is append-only**. Read it before touching any detection, research, LLM, audit-log, or citation code. A guardrail may not be weakened without explicit human sign-off and a change-log rationale (the bar for changing that document is higher than for any code here).
+
 ## Principles
 
 Rule #1: If you want exception to ANY rule, YOU MUST STOP and get explicit permission from Sam first. BREAKING THE LETTER OR SPIRIT OF THE RULES IS FAILURE.
