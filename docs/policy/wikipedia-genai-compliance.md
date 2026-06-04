@@ -5,7 +5,7 @@
 
 ## How this project operates within the letter — and the spirit — of the rules
 
-**Status:** Draft v0.7 — **a sacrosanct social contract with the Wikipedia community.**
+**Status:** Draft v0.8 — **a sacrosanct social contract with the Wikipedia community.**
 "Draft" refers to wording and pending verbatim-quote verification, *not* to the
 bindingness of the commitments: the guardrails are binding now.
 **Audience:** Every contributor, human or agent. Read this before touching any
@@ -22,7 +22,10 @@ recurring cadence thereafter.
 > guardrails below, or doing anything on the "What the tool will never do" list. If a
 > proposed change would weaken this contract, it does not ship — it gets escalated to
 > a human maintainer and debated in the open. The bar for changing this document is
-> deliberately higher than for any code in the repository.
+> deliberately higher than for any code in the repository. **Amendment process:** every
+> change is recorded in the change log with its rationale, and any change that would
+> weaken or remove a guardrail requires explicit human-maintainer sign-off — agents may
+> not relax this contract on their own.
 
 > **How to reference this document (so references don't rot).** Refer to a guardrail
 > by its **name**, not a bare number — write "the no-cross-source-synthesis
@@ -75,6 +78,9 @@ recurring cadence thereafter.
 > (1) how we use AI in relation to article content (the bulk of this document), and
 > (2) responsible automated *access* to Wikimedia services (see the responsible-access
 > guardrail). A separate section covers what changes when others use a hosted instance.
+> Data-handling and user-privacy specifics — including what is sent to the LLM provider
+> (only public web content and the editor's own queries, never private user data) —
+> belong in the project's privacy documentation, not here.
 
 ---
 
@@ -226,15 +232,16 @@ These are hard rules with the same status as the architectural invariants in the
 design spec. Each is tagged with the concern it answers. Reference them by name, not
 bare number.
 
-**The bright line for machine-generated text.** Any text a model produces falls into
-exactly two permitted buckets: (1) **disposable navigation** — search queries and
-"this passage looks relevant" pointers that are shown to the human and never persisted
-into any artifact (edit, citation, change-description, or disclosure); and (2) nothing
-else. All text that *does* persist into an artifact is either written by the human or
-deterministically template-filled from logged facts — never model-authored. If a piece
-of machine text is neither disposable navigation nor a deterministic template fill, it
-does not ship. This single test makes the bounded-LLM-role and mechanical-disclosure
-guardrails checkable rather than merely reassuring.
+**The bright line for machine-generated text.** Text that a *model authors* is
+permitted in exactly one place: **disposable navigation** — search queries and "this
+passage looks relevant" pointers, shown to the human and never persisted into any
+artifact (edit, citation, change-description, or disclosure). Everything that *does*
+persist into an artifact is either written by the human or deterministically
+template-filled from logged facts — neither of which is model-authored prose. So any
+piece of machine-produced text must be either disposable navigation or a deterministic
+template fill; if it is neither, it does not ship. This single test makes the
+bounded-LLM-role and mechanical-disclosure guardrails checkable rather than merely
+reassuring.
 
 - **No machine-written article text, ever (G1).** The tool never emits prose intended
   for an article. The human writes every sentence that lands in Wikipedia.
@@ -471,6 +478,12 @@ held to it, and we would rather ship less than break it.
 
 ## 10. Change log
 
+- **2026-06-04 (v0.8)** — Adversarial review round 5 (self; no major issues found).
+  Reworded the machine-generated-text bright line (model-authored text is permitted only
+  as disposable navigation; deterministic template fills are not model-authored).
+  Added a privacy/data-handling scope pointer (only public web content and the editor's
+  queries go to the LLM provider). Added an explicit amendment process to the standing
+  clause (changelog rationale required; guardrail-weakening changes need human sign-off).
 - **2026-06-04 (v0.7)** — Adversarial review round 4 (independent Opus reviewer; index
   confirmed accurate, no drift). Fixed the central overclaim: the verbatim-quote check
   proves a quote *exists on the page*, not that it *supports the claim* — support is the
