@@ -5,7 +5,7 @@
 
 ## How this project operates within the letter — and the spirit — of the rules
 
-**Status:** Draft v0.8 — **a sacrosanct social contract with the Wikipedia community.**
+**Status:** Draft v0.9 — **a sacrosanct social contract with the Wikipedia community.**
 "Draft" refers to wording and pending verbatim-quote verification, *not* to the
 bindingness of the commitments: the guardrails are binding now.
 **Audience:** Every contributor, human or agent. Read this before touching any
@@ -343,7 +343,9 @@ reassuring.
   data, never as instructions; system/task instructions and fetched content are kept in
   separate channels. The verbatim-quote check (in the support-checking guardrail) is the
   deterministic backstop against a page coaxing the model into emitting a fabricated
-  quote or inflating a junk source's ranking.
+  quote; a page coaxing the model into *inflating its own ranking* is caught instead by
+  showing the full candidate set (the show-your-work and full-candidate-set guardrails)
+  and ultimately by the human-open verification gate.
   *(prompt injection; hallucination; biased selection)*
 - **No copying of source prose; the human writes original text (G16).** The extracted
   supporting snippet is a pointer for verification, not draft text. The human is
@@ -478,6 +480,13 @@ held to it, and we would rather ship less than break it.
 
 ## 10. Change log
 
+- **2026-06-04 (v0.9)** — Adversarial review round 6 (independent Opus reviewer;
+  confirming pass). Verdict: no major issues remain (9/10); all prior fixes confirmed
+  holding and the at-a-glance index confirmed matching G1–G16. Fixed the one minor
+  finding: the untrusted-content guardrail no longer overclaims that the verbatim-quote
+  check defends against ranking inflation (that is caught by the full-candidate-set and
+  show-your-work guardrails and the human-open gate). Review process complete: six rounds
+  (self / Opus / self / Opus / self / Opus), final independent round major-free.
 - **2026-06-04 (v0.8)** — Adversarial review round 5 (self; no major issues found).
   Reworded the machine-generated-text bright line (model-authored text is permitted only
   as disposable navigation; deterministic template fills are not model-authored).

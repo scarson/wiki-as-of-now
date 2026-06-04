@@ -209,6 +209,28 @@ Sam spotted: tool can't summarize an edit it didn't author. Resolution:
   infobox/timeline-row edits fall OUT of the simple-assembler lane (tool still
   gives cards+refs; human composes those in Wikipedia). Clean alignment.
 
+### Compliance doc adversarial review — COMPLETE (v0.9)
+6 rounds, alternating self/Opus: R1 self, R2 Opus, R3 self, R4 Opus, R5 self, R6 Opus.
+Major findings fixed along the way: dropped "essay doesn't apply to us" exemption
+framing → mitigation-not-exemption + concern→guardrail mapping; added skill-atrophy
+handling; added prompt-injection/untrusted-content guardrail (G15) + deterministic
+verbatim-quote check; fixed verbatim-check overclaim (proves quote EXISTS not that it
+SUPPORTS — support is human judgment); added incident-response section; multi-user/
+public scope section; machine-text bright line; hard fail-closed BLP rule. R6 (Opus
+confirming pass): NO MAJOR ISSUES, 9/10, index matches G1-G16. New invariants the
+build must honor: G15 (untrusted fetched content / injection), G16 (no close-paraphrase),
+G2 human-supplies-metadata fallback, G5 "verified = opened source" + proxy honesty,
+foundational audit log (G13).
+
+### Auth/user system requirements (Sam)
+- Optional Google OAuth/OIDC. Borrow pattern from scarson/twin-cities-tee-times.
+- Users can LINK Wikipedia editor account (basic, likely unverified; low blast radius
+  — "like putting someone else's LinkedIn on your GitHub profile"). Verification of
+  wiki-account ownership NOT required for v1.
+- Anonymous mode important for demo/portfolio showcase.
+- Ties to compliance multi-user scope: anonymous = low-risk browse/demo; expensive
+  research + edit-assembly gated behind auth + per-user quotas + kill-switch.
+
 ### STILL TODO IN SESSION
 - Phase 4: present 2-3 architecture approaches for the build; get Sam's pick.
 - Phase 5: write the reframed office-hours design doc to docs/design/office-hours/.
