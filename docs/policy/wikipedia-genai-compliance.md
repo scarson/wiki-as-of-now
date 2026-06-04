@@ -5,7 +5,7 @@
 
 ## How this project operates within the letter — and the spirit — of the rules
 
-**Status:** Draft v0.2 — **social contract with the Wikipedia community. Sacrosanct.**
+**Status:** Draft v0.3 — **social contract with the Wikipedia community. Sacrosanct.**
 **Audience:** Every contributor, human or agent. Read this before touching any
 detection, research, LLM, or citation code.
 **Last policy review:** 2026-06-04
@@ -265,18 +265,33 @@ no-auto-submit guardrail, must not) submit edits or reach into Wikipedia's edit 
 So the tool **cannot enforce** that a disclosure is present. What it can do is make
 the compliant path the path of least resistance:
 
-- **The tool generates the complete edit summary, disclosure included, ready to
-  copy.** The human pastes it on submit. Because the disclosure is right there in the
-  text they already need, the easy action is also the compliant one.
-- **The disclosure is mechanical, not authored.** Its wording is a deterministic
-  template instantiated from facts in the activity log — for example, that AI-assisted
-  retrieval and relevance-triage were used to surface candidate sources, which the
-  editor then opened and verified. No model writes or phrases it. This keeps it
-  zero-hallucination and squarely outside the no-machine-written-text guardrail: it
-  is form-filling from a factual log (the same category as the mechanical citation
-  skeletons), and it is meta-information attached to the edit, never article content.
-  We deliberately do **not** use an LLM to phrase the disclosure; doing so would make
-  it machine-authored meta-text and reintroduce the very risk we are avoiding.
+- **The edit summary is derived from the human-assembled edit, as the final step
+  before hand-off — never predicted.** The human assembles their edit in the tool (a
+  plain-text sentence plus the verified sources they chose to cite, emitted as
+  wikitext `<ref>` tags). Only after that does the tool derive the summary, so it
+  describes an edit that already exists. This resolves the would-be circularity of
+  "summarizing an edit the tool didn't author": the tool *records and describes* the
+  human's edit, it does not author one.
+- **The summary has two parts with different provenance.** The **disclosure part**
+  (that AI-assisted retrieval and relevance-triage surfaced candidate sources, which
+  the editor opened and verified) is generated mechanically from the activity log and
+  is always accurate, independent of the edit's content. The **change-description
+  part** (which section, which references added) is generated mechanically from the
+  human's structured selections, not by interpreting their prose.
+- **The summary is human-editable.** The editor can tweak or rewrite it before
+  pasting; it is their summary and their responsibility. The mechanical generation is
+  a correct default, not a lock.
+- **The disclosure is mechanical, not authored.** No model writes or phrases it. This
+  keeps it zero-hallucination and squarely outside the no-machine-written-text
+  guardrail: it is form-filling from a factual log (the same category as the
+  mechanical citation skeletons), and it is meta-information attached to the edit,
+  never article content. We deliberately do **not** use an LLM to phrase the
+  disclosure; doing so would make it machine-authored meta-text and reintroduce the
+  very risk we are avoiding.
+- **Output is native wikitext.** The human copies wikitext (plain prose plus
+  mechanically-formatted `<ref>` tags) into Wikipedia's source editor — the native
+  format — so there is no markdown-to-wikitext conversion step to introduce
+  copy-paste corruption. Final touch-up, if any, happens in Wikipedia's own editor.
 - **Generating a disclosure is itself logged,** so the transparency trail is complete:
   the log records both the assisted activity and the disclosure produced from it.
 - **The About page** explains this workflow in plain language and links to this
@@ -306,6 +321,13 @@ break it.
 
 ## 8. Change log
 
+- **2026-06-04 (v0.3)** — Resolved the edit-summary circularity: the summary is
+  *derived from the human-assembled edit as the final step*, never predicted; split
+  into a process-derived disclosure part (always accurate) and a mechanical
+  change-description from the human's structured selections; made the summary
+  human-editable. Specified native-wikitext output (plain prose + mechanical `<ref>`
+  tags) to avoid a markdown-to-wikitext conversion step and its copy-paste corruption
+  risk.
 - **2026-06-04 (v0.2)** — Removed opaque section-symbol references in favor of
   plain-English, self-identifying references (carrying titles) per the `CLAUDE.md`
   cross-reference rule; added a "how to reference this document" note. Reworked

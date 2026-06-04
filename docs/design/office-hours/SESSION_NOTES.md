@@ -191,6 +191,24 @@ a stats-surface UI hook. Build dashboard/streaks later.
   spec reconciliation MUST treat the audit/event log as foundational schema, and
   it's the SAME backbone the gamification stubs need (event log). Synergy.
 
+### Edit-summary circularity → RESOLVED (compliance doc v0.3)
+Sam spotted: tool can't summarize an edit it didn't author. Resolution:
+- Summary derived AFTER human assembles edit (proposed-edit object), not predicted.
+- Two-provenance split: disclosure (from log, always accurate) + change-desc
+  (mechanical from human's STRUCTURED SELECTIONS = choice (a)). Summary EDITABLE.
+- Composer sanity check: do NOT rebuild Wikipedia's editor. Markdown editor is a
+  TRAP — Wikipedia is WIKITEXT not markdown; the md→wikitext conversion IS the
+  copy-paste corruption risk Sam feared. Fix: plain prose is identical in md and
+  wikitext; tool emits citations as native wikitext `<ref>{{cite ...}}</ref>`.
+  Composer collapses to: plaintext box + insert-verified-ref + copy-as-wikitext.
+  Output is native wikitext → paste into WP source editor, minimal transform.
+- Final touch-up happens in Wikipedia's own editor (we get them ~95% there).
+- Optional faithful preview later via MediaWiki action=parse API (no renderer
+  reimpl). v1.x, not v1.
+- Composer scope == detector scope: prose sentence-level edits only. Table/
+  infobox/timeline-row edits fall OUT of the simple-assembler lane (tool still
+  gives cards+refs; human composes those in Wikipedia). Clean alignment.
+
 ### STILL TODO IN SESSION
 - Phase 4: present 2-3 architecture approaches for the build; get Sam's pick.
 - Phase 5: write the reframed office-hours design doc to docs/design/office-hours/.
