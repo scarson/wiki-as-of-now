@@ -45,5 +45,39 @@ fi
 claude plugin marketplace add anthropics/claude-plugins-official >/dev/null 2>&1 || true
 claude plugin install superpowers@claude-plugins-official        >/dev/null 2>&1 || true
 
+# 3. Node 24 (.nvmrc pin) -----------------------------------------------------
+# The base image ships Node 22 on PATH (/etc/profile.d/nodejs.sh), but this
+# project pins Node 24 (.nvmrc, CLAUDE.md runtime policy). We install 24 via the
+# system nvm and shim node/pnpm into $HOME/.local/bin, which $HOME/.local/bin/env
+# prepends to PATH ahead of /opt/node22 ("override system binaries"). We shim into
+# a directory already on PATH rather than mutating PATH itself: the shell's PATH is
+# snapshotted per session, but directory CONTENTS resolve live at command time, so
+# every later shell — the agent's tool calls and any subagents — gets Node 24
+# regardless of when this hook runs relative to the shell snapshot. pnpm is the
+# package manager (corepack-provided alongside node24).
+BIN_DIR="$HOME/.local/bin"
+mkdir -p "$BIN_DIR"
+if ! "$BIN_DIR/node" --version 2>/dev/null | grep -q '^v24\.'; then
+  log "Provisioning Node 24 (.nvmrc pin)…"
+  export NVM_DIR="${NVM_DIR:-/opt/nvm}"
+  if [ -s "$NVM_DIR/nvm.sh" ]; then
+    # shellcheck disable=SC1090,SC1091
+    . "$NVM_DIR/nvm.sh"
+    nvm install 24 >/dev/null 2>&1 \
+      || log "WARN: nvm install 24 failed (network?) — Node 24 unavailable this session"
+    N24BIN="$(dirname "$(nvm which 24 2>/dev/null)" 2>/dev/null)"
+    if [ -n "${N24BIN:-}" ] && [ -x "$N24BIN/node" ]; then
+      # corepack ships with node24; enable pnpm so `pnpm`/`pnpx` shims exist
+      "$N24BIN/corepack" enable --install-directory "$N24BIN" pnpm >/dev/null 2>&1 || true
+      for b in node npm npx corepack pnpm pnpx; do
+        [ -e "$N24BIN/$b" ] && ln -sf "$N24BIN/$b" "$BIN_DIR/$b"
+      done
+      log "Node $("$BIN_DIR/node" --version 2>/dev/null) + pnpm $("$BIN_DIR/pnpm" --version 2>/dev/null) ready"
+    fi
+  else
+    log "WARN: nvm not found at $NVM_DIR — cannot provision Node 24 (.nvmrc)"
+  fi
+fi
+
 log "bootstrap complete"
 exit 0
