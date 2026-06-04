@@ -8,11 +8,11 @@ CREATE TABLE audit_log (
   payload_json TEXT NOT NULL        -- identifiers only; never PII/document content (see compliance + PII pitfall)
 );
 CREATE TABLE articles (
-  page_id INTEGER PRIMARY KEY,
+  page_id INTEGER PRIMARY KEY NOT NULL,  -- Wikipedia pageid (natural key); WITHOUT ROWID rejects NULL
   title TEXT NOT NULL,
   revision_id INTEGER NOT NULL,
   fetched_at TEXT NOT NULL
-);
+) WITHOUT ROWID;
 CREATE TABLE stale_candidates (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   page_id INTEGER NOT NULL REFERENCES articles(page_id),

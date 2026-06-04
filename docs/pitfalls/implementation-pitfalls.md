@@ -26,43 +26,38 @@ This document serves three audiences. Start here, then go directly to the sectio
 
 | § | Section | You're working on... | Entries | Checklist |
 |---|---------|---------------------|---------|-----------|
-| 1 | [EXAMPLE-DOMAIN-1](#1-example-domain-1) | TODO — describe what this section covers | PREFIX-1 – PREFIX-N | §1.C |
+| 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 | §1.C |
 | 2 | [EXAMPLE-DOMAIN-2](#2-example-domain-2) | TODO — describe what this section covers | PREFIX-1 – PREFIX-N | §2.C |
-| — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 | §Orchestration.C |
+| — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-2 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
 
 ---
 
-# Section 1: EXAMPLE-DOMAIN-1
+# Section 1: Data Layer (D1 / SQLite)
 
-<!-- TODO: rename this section to your project's first domain (e.g. "Authentication & Security", "Data Pipeline", "API Handlers"). Delete this comment. -->
-
-> **Reader context:** I'm building or reviewing [what this domain covers].
+> **Reader context:** I'm building or reviewing schema (`migrations/*.sql`, `src/db/schema.sql`), the `SqlExecutor`/audit-log code, or anything that reads/writes D1.
 >
-> TODO — describe the shape of the pitfalls in this section and why they matter.
+> D1 is SQLite under the hood, and SQLite has sharp, non-obvious edges around rowid tables, type affinity, and constraint evaluation order. Local tests run on `better-sqlite3`, which is the same engine but not configured identically (see testing-pitfalls §8). These pitfalls are about not getting silently-wrong behavior that passes tests but corrupts data.
 
 ---
 
-### PREFIX-1: TODO — First Pitfall Title
+### DB-1: `NOT NULL` Is a No-Op on an `INTEGER PRIMARY KEY` (Rowid Alias)
 
-<!-- TODO: replace this example with a real pitfall entry. Use the Flaw → Why → Fix → Lesson structure for complex findings, or a single condensed paragraph for simple ones. See §How to Add a Pitfall below. -->
+**The Flaw:** Declaring `page_id INTEGER PRIMARY KEY NOT NULL` (or `... NOT NULL PRIMARY KEY`, or adding `CHECK (page_id IS NOT NULL)`) to *prevent* a NULL insert. None of these reject NULL. An `INTEGER PRIMARY KEY` is an alias for the table's rowid, and SQLite **replaces a NULL with an auto-assigned rowid before any `NOT NULL`/`CHECK` constraint is evaluated.** Verified on SQLite 3.53.1: all three variants accept `INSERT ... (page_id) VALUES (NULL)` and silently fabricate a key.
 
-**The Flaw:** TODO — what the code does wrong or what's missing.
+**Why It Matters:** For a table keyed by a *natural external ID* (e.g. `articles.page_id` = a Wikipedia pageid), a NULL insert from a bug upstream doesn't fail loudly — it creates a row with a fabricated id that collides with nothing and looks valid. Downstream joins/FKs resolve against a garbage key. The "guard" you added gives false confidence because it reads as if NULL is impossible.
 
-**Why It Matters:** TODO — the production failure mode. What breaks, for whom, and why it's hard to detect.
+**The Fix:** Make the table `WITHOUT ROWID` with the natural key as `PRIMARY KEY NOT NULL`. In a `WITHOUT ROWID` table the PK is the real key (not a rowid alias), so NULL is rejected. This cannot be applied via `ALTER` — it must be set at `CREATE TABLE`, so it belongs in the initial migration (edit the unreleased migration directly; once a migration has run against real D1, you cannot retrofit `WITHOUT ROWID` without a table rebuild migration). Example: `articles` uses `CREATE TABLE articles (page_id INTEGER PRIMARY KEY NOT NULL, …) WITHOUT ROWID;`. FKs that reference a `WITHOUT ROWID` table's PK work normally. Add a regression test that a NULL key is rejected.
 
-**The Fix:** TODO — the specific code change or pattern to apply. Include a code example when the fix is non-trivial.
-
-**The Lesson:** TODO — the generalizable principle. What should the reader watch for in future code?
+**The Lesson:** In SQLite, `PRIMARY KEY` does NOT imply `NOT NULL` (a long-standing spec deviation), and for the special `INTEGER PRIMARY KEY` rowid alias, `NOT NULL` is silently ineffective. Whenever a column is a *natural* key (not a surrogate you're happy to auto-generate), reach for `WITHOUT ROWID` and verify NULL-rejection with an actual insert test — don't trust the DDL to mean what the SQL standard says.
 
 ---
 
 ### Review Checklist
 
-<!-- TODO: one checkbox per pitfall above. Each item is a pass/fail check. Example format: -->
-
-- [ ] **Check derived from PREFIX-1** — TODO
+- [ ] **Natural-key tables are `WITHOUT ROWID` with `PRIMARY KEY NOT NULL`** — a plain `INTEGER PRIMARY KEY` silently auto-assigns a rowid on NULL insert; `NOT NULL`/`CHECK` don't stop it (DB-1)
+- [ ] **NULL-rejection is proven by a test, not assumed from the DDL** — insert a NULL key and assert it throws (DB-1)
 
 ---
 
@@ -127,7 +122,7 @@ TODO — add entries as this document evolves.
 |----|-------|----------|--------|--------|
 | ORCH-1 | Analysis Dispatches Must Persist Findings | HIGH | VALIDATED | Orchestration |
 | ORCH-2 | Subagents Sharing the Working Tree Must Not Move HEAD | HIGH | VALIDATED | Orchestration |
-| PREFIX-1 | TODO | TODO | TODO | Section 1 |
+| DB-1 | `NOT NULL` Is a No-Op on an `INTEGER PRIMARY KEY` (Rowid Alias) | MEDIUM | VALIDATED | Data Layer |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
 

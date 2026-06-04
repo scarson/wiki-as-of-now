@@ -59,6 +59,17 @@ describe("0001_init migration", () => {
     );
   });
 
+  it("rejects a NULL articles.page_id (WITHOUT ROWID natural key)", () => {
+    const db = freshTestDb();
+    // articles is WITHOUT ROWID, so a NULL page_id is rejected rather than
+    // silently auto-assigned a rowid (which a plain INTEGER PRIMARY KEY would do).
+    const insertNull = () =>
+      db
+        .prepare("INSERT INTO articles (page_id, title, revision_id, fetched_at) VALUES (?, ?, ?, ?)")
+        .run(null, "Some title", 1, "2026-06-04T00:00:00.000Z");
+    expect(insertNull).toThrow(/NOT NULL/i);
+  });
+
   it("enforces the stale_candidates -> articles foreign key", () => {
     const db = freshTestDb();
     // page_id 999 has no matching articles row; FK enforcement (PRAGMA foreign_keys=ON
