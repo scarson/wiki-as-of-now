@@ -5,7 +5,7 @@ Running gstack /office-hours against `docs/design/WikiAsOfNow_design_spec.md`.
 This file is a live scratchpad, committed frequently so work survives container restarts.
 The polished output is a separate design doc in this directory once the session converges.
 
-## Status: IN PROGRESS
+## Status: COMPLETE (design doc written + adversarially reviewed; compliance contract v0.9)
 
 ## Phase 1 — Context
 - Repo: scarson/wiki-as-of-now
@@ -231,9 +231,19 @@ foundational audit log (G13).
 - Ties to compliance multi-user scope: anonymous = low-risk browse/demo; expensive
   research + edit-assembly gated behind auth + per-user quotas + kill-switch.
 
-### STILL TODO IN SESSION
-- Phase 4: present 2-3 architecture approaches for the build; get Sam's pick.
-- Phase 5: write the reframed office-hours design doc to docs/design/office-hours/.
-- Spec reconciliation note: how the reframe updates WikiAsOfNow_design_spec.md
-  (esp. §2.1 thesis, §3.2 no-prose now hardened, §11 research layer reframed to
-  evidence-cards, §7/§17 corpus pipeline deferred for v1).
+### SESSION OUTCOME
+- Build decision: boil the lake — full v1 (A+B+C) sequenced by build dependency.
+  Sam won't use it until all three done.
+- Stack: Next.js on CF Workers + D1 + Arctic Google OAuth (reuse tee-times pattern;
+  resolves spec's open frontend question). Async = Cloudflare Queues.
+- Design doc written: docs/design/office-hours/wikiasofnow-v1-design.md (reviewed,
+  7.5→fixed: async primitive, detector dep, G8 grounding constraint, degradation
+  states, async revision race, connectors scoped to one, verified=explicit-confirm).
+- Spec reconciliation captured in the design doc ("How this reconciles with the
+  main spec").
+
+### FOLLOW-ONS (next sessions, not blockers to this session)
+- Verify the 4 Wikipedia rule quotes verbatim against live pages; lock contract.
+- Wire contract's operational teeth: MUST-READ pointer in CLAUDE.md/AGENTS.md +
+  cross-ref from spec's coding-agent-invariants section.
+- writing-plans for the dependency-ordered build, starting Foundation + audit log.
