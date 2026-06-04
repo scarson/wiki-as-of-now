@@ -1,0 +1,57 @@
+// ABOUTME: Append-only audit-log module — insert and read audit_log rows.
+// ABOUTME: Compliance invariant: exposes only append and read; no mutation or deletion.
+import type { SqlExecutor } from "./client";
+
+/** Input shape for a single audit-log entry. Payload is identifiers only — never PII or document content. */
+export interface AuditEntry {
+  actor: string;
+  eventType: string;
+  payload: unknown;
+}
+
+/** A row returned from the audit log, with payload parsed from JSON. */
+export interface AuditRow {
+  id: number;
+  ts: string;
+  actor: string;
+  eventType: string;
+  payload: unknown;
+}
+
+/** Internal shape of a raw DB row before mapping. */
+interface RawAuditRow {
+  id: number;
+  ts: string;
+  actor: string;
+  event_type: string;
+  payload_json: string;
+}
+
+/**
+ * Creates the append-only audit log bound to the given database.
+ * Only `append` and `read` are exposed — no update, delete, or truncate.
+ */
+export function makeAuditLog(db: SqlExecutor) {
+  return {
+    append(entry: AuditEntry): void {
+      const ts = new Date().toISOString();
+      const payloadJson = JSON.stringify(entry.payload);
+      db.prepare(
+        "INSERT INTO audit_log (ts, actor, event_type, payload_json) VALUES (?, ?, ?, ?)"
+      ).run(ts, entry.actor, entry.eventType, payloadJson);
+    },
+
+    read(): AuditRow[] {
+      const rows = db
+        .prepare("SELECT id, ts, actor, event_type, payload_json FROM audit_log ORDER BY id")
+        .all() as RawAuditRow[];
+      return rows.map(row => ({
+        id: row.id,
+        ts: row.ts,
+        actor: row.actor,
+        eventType: row.event_type,
+        payload: JSON.parse(row.payload_json),
+      }));
+    },
+  };
+}
