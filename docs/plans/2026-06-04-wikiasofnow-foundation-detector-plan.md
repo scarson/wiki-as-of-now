@@ -73,7 +73,7 @@ notes and commit messages.
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Foundation | ✅ Shipped · ✅ MERGED to `dev` (PR [#3](https://github.com/scarson/wiki-as-of-now/pull/3), merge `380c6f7`) | `3846c90`…`f4290d3` | all 5 tasks + 3-round batch review + WITHOUT ROWID hardening; 13 tests, tsc+lint clean |
-| 2 — Deterministic detector + fixtures | ⬜ Not started | — | depends on Phase 1 types + Task 2.1 |
+| 2 — Deterministic detector + fixtures | 🚧 In progress (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`, claimed 2026-06-04) | — | depends on Phase 1 types + Task 2.1 |
 
 ### Task completion log
 - **Task 1.1** (scaffold + Vitest): ✅ DONE — impl `3846c90`, code-review follow-up `e26a1be`. Spec review ✅, code-quality review ✅. Gates: `pnpm test` green, `pnpm exec tsc --noEmit` clean, `pnpm lint` exit 0.
@@ -342,7 +342,7 @@ Review the batch from multiple perspectives. Minimum 3 review rounds (correctnes
 
 ## Phase 2 — Deterministic detector + fixtures
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-04 (UTC), branch `claude/wikiasofnow-detector-phase2-ZP1uQ` (off `origin/dev` `8edcd9c`). Subagent-driven flow (implementer → spec review → code-quality review → controller triage/fix → gates → commit), strict TDD.
 
 > Compliance touchpoint: this entire phase is LLM-free (the "detection is deterministic and explainable" guardrail). No model calls anywhere in `src/detector/`.
 
