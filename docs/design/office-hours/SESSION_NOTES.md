@@ -73,4 +73,70 @@ Design implications:
 - Domain expertise (military procurement/defense) ✓
 - Self-corrected scope (VPN out of scope) ✓ — taste/agency
 
-- Q2 (precision bar + output format): ASKED next.
+- Q2 (precision + output): ANSWERED.
+  - v1 scope = future-tense-with-explicit-past-year. Accepted the narrow,
+    high-precision wedge. ✓
+  - Wants drafted replacement sentence + formatted citation. Target **<5 min
+    edit cycle per edit** (background research can take longer). **Async OK**:
+    drop URL → background research → return later to review + edit.
+  - Asked me to verify Wikipedia's current generative-AI-content policy. Done —
+    see below. "Resolve" = answer the hanging question (what procurement decision
+    DoD made) + surface follow-ups. Example target output:
+    "In 2017, DoD selected Raytheon (RTX) for a $100M LRIP contract, and in 2025
+    announced a new competitive tender for full-volume production of Mk 2 units."
+
+### WIKIPEDIA AI-CONTENT POLICY FINDINGS (June 2026) — LOAD-BEARING
+Sources:
+- WP:Writing articles with large language models (guideline; RfC closed
+  2026-03-20, 44-2 in favor)
+  https://en.wikipedia.org/wiki/Wikipedia:Writing_articles_with_large_language_models
+- WP:Artificial intelligence (editor-facing essay/guidance)
+  https://en.wikipedia.org/wiki/Wikipedia:Artificial_intelligence
+- WP:Reliable sources § machine-learning sources
+  https://en.wikipedia.org/wiki/Wikipedia:Reliable_sources
+
+What it says:
+1. **"the use of LLMs to generate or rewrite article content is prohibited"** —
+   except (a) basic copyedits of the editor's OWN writing where the LLM
+   introduces no content of its own, and (b) LLM-assisted translation.
+2. **"you should never use LLMs to research topics or find sources"**
+   (WP:LLMs are bad search engines).
+3. **"Content produced by LLMs ... is generally unreliable"** (WP:RS) — LLM
+   output and LLM-surfaced/hallucinated citations cannot be cited.
+4. **Disclosure "highly recommended"** (WP:LLM use disclosure), not mandated.
+5. GAP: policies do NOT explicitly address the case where an AI tool *surfaces
+   candidate sources* that the human then independently opens, reads, verifies,
+   and cites from the real source. That gap is the design's safe-harbor lane —
+   and also its risk.
+
+### DESIGN CONSEQUENCES (the reframe)
+- "Draft the replacement sentence to paste" as originally imagined is squarely
+  in the PROHIBITED zone, even with human verification. The spec's "no prose"
+  non-goal (§3.2) was MORE right than Sam remembered; policy now hardens it.
+- The Gemini-grounded-research layer runs against #2/#3 if its output is treated
+  as fact/citation. It is defensible ONLY as PRIVATE research scaffolding:
+  LLM normalizes the hanging question + surfaces candidate URLs; **Sam opens,
+  reads, verifies the real source himself** before citing. LLM text is never
+  pasted; citations come from REAL fetched page metadata, not the LLM.
+- Safe, high-value automation that survives policy:
+  * detection (deterministic, no LLM) — fine
+  * "hanging question" normalization — fine (private)
+  * candidate-source discovery — prefer DETERMINISTIC/structured retrieval
+    (news APIs, defense.gov daily contracts, SAM.gov, USAspending, GAO) over
+    LLM grounding for Sam's domain; both higher quality AND clearly clean
+  * citation skeleton: fetch the URL Sam approves, emit {{cite web/news/
+    press release}} from REAL metadata = mechanical formatting, not generation
+  * pre-filled edit summary WITH AI-assist disclosure
+- The human keeps: writing the actual sentence, and verifying each source.
+  This drops the SLOW parts (find question, find candidate sources, format cite)
+  to near-zero while keeping prose authorship + verification human → still hits
+  the <5-min target via the async flow.
+- PORTFOLIO ANGLE: "AI tool that respects Wikipedia's 2026 AI policy" is a
+  stronger, more credible build-in-public story than "AI writes my edits."
+  Constraint improves the project.
+
+### OPEN DECISION FOR SAM (Phase 3 premise)
+Where to draw the LLM's role given his risk tolerance + editor reputation:
+spectrum from "LLM grounding does the research, I verify" (riskier vs norms) to
+"deterministic retrieval finds official sources, LLM only normalizes the
+question + privately summarizes what I'm about to read" (cleaner). Asked next.
