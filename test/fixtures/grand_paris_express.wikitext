@@ -1,0 +1,312 @@
+{{Short description|Rapid transit project in Île-de-France}}
+{{Use dmy dates|date=May 2022}}
+{{Infobox Public transit
+| box_width = 280px
+| name = Grand Paris Express
+| image = Grand paris express.svg
+| alt = 
+| imagesize = 280px
+| caption = The planned network of the Grand Paris Express
+| image2 = 
+| alt2 = 
+| imagesize2 = 
+| caption2 = 
+| native_name = 
+| locale = [[Île-de-France]]
+| transit_type = [[Rapid transit]]
+| began_operation = 24 June 2024 (Line 14 extension)
+| operator = [[RATP Group|RATP]] for lines [[Paris Metro Line 11|11]] and [[Paris Metro Line 14|14]] <br/> ORA ([[RATP Dev]], [[Alstom]], [[ComfortDelGro]]) for [[Paris Metro Line 15#Line 15 South|Line 15 south]]<ref name="Le Parisien">{{cite web |url=https://www.leparisien.fr/info-paris-ile-de-france-oise/transports/grand-paris-express-la-ligne-15-sud-sera-exploitee-par-ratp-dev-a-partir-de-fin-2025-30-06-2023-JBTTQ6F23BHURGXAOBFLTH734M.php |title=Grand Paris Express : la ligne 15 sud sera exploitée par RATP Dev à partir de fin 2025 |date=30 June 2023 |publisher=[[Le Parisien]] |access-date=2024-12-25 }}</ref> <br/>
+[[Keolis]] for lines [[Paris Metro Line 16|16]], [[Paris Metro Line 17|17]] and [[Paris Metro Line 18|18]]<ref name="Le Figaro">{{cite web |url=https://www.lefigaro.fr/societes/keolis-remporte-le-droit-d-exploitation-de-la-ligne-18-du-grand-paris-express-20240618 |title=Keolis remporte le droit d'exploitation de la ligne 18 du Grand Paris Express |date=18 June 2024 |publisher=[[Le Figaro]] |access-date=2024-12-25 }}</ref>
+| owner = [[RATP Group|RATP]]
+| lines = 6 (4 new lines, 2 extended lines)
+| vehicles = 
+| stations = 68<ref name="Paris-Metro">{{cite web |url= http://www.ratp.fr/en/ratp/c_10556/the-metro-a-parisian-institution/ |title=The Metro: a Parisian institution |publisher=[[RATP Group|RATP]] |access-date=2014-01-29 |url-status=dead |archive-url=https://web.archive.org/web/20170218211345/http://www.ratp.fr/en/ratp/c_10556/the-metro-a-parisian-institution/ |archive-date=18 February 2017}} The [[Montmartre funicular]] is considered to be part of the metro system, within which is represented by a 303rd fictive station "Funiculaire".</ref>
+| ridership = 
+| annual_ridership = 
+| system_length = {{convert|200|km|mi|abbr=on}}<ref name="france.fr">{{cite web |url=http://www.france.fr/en/paris-and-its-surroundings/brief-history-paris-metro |title=Brief history of the Paris metro |website=france.fr – The official website of France |access-date=2013-09-21 |url-status=dead |archive-url=https://web.archive.org/web/20130926181613/http://www.france.fr/en/paris-and-its-surroundings/brief-history-paris-metro |archive-date=26 September 2013}}</ref>
+| track_gauge = {{Track gauge|sg|allk=on}}
+| el = 
+}}
+
+The '''Grand Paris Express''' ({{IPA|fr|ɡʁɑ̃ paʁi ɛkspʁɛs|lang}}; '''GPE''') is a [[megaproject]] currently being built consisting of new rapid transit lines and the extension of existing lines in the [[Île-de-France]] region of France. The project comprises four new lines for the [[Paris Metro]], plus extensions of the existing lines [[Paris Metro Line 11|11]] and [[Paris Metro Line 14|14]]. A total of {{convert|200|km|mi}} of new tracks and 68 new stations are to be added, serving a projected 2 million passengers a day,<ref name="sgp_en">{{Cite web|title = Grand Paris Express, the largest transport project in Europe|url = https://www.societedugrandparis.fr/info/grand-paris-express-largest-transport-project-europe-1061|access-date = 11 January 2020|website = Société du Grand Paris|archive-date = 11 April 2022|archive-url = https://web.archive.org/web/20220411214218/https://www.societedugrandparis.fr/info/grand-paris-express-largest-transport-project-europe-1061|url-status = dead}}</ref> making it Europe's largest public transport project in history.
+
+The new lines were originally indexed by colour (Red Line, Pink Line, Green Line, Blue Line), but this was changed in 2013 to continue the numbering convention that the [[RATP Group|RATP]] uses. They are therefore now known as lines [[Paris Metro Line 15|15]], [[Paris Metro Line 16|16]], [[Paris Metro Line 17|17]] and [[Paris Metro Line 18|18]].<ref>{{Cite web |title=Dominique Perrault Architecture - The New Grand Paris |url=https://www.perraultarchitecture.com/en/blog/grand_paris/3081-the_new_grand_paris.html |access-date=2025-07-11 |website=www.perraultarchitecture.com}}</ref> The constructed lines are planned to open in stages, starting with the Line 14 extension in June 2024, until 2031.<ref name="stif.org">{{cite web|url=http://www.stif.org/developpements-avenir/nouveau-grand-paris/metro/projets/lignes-16-17-18-du-nouveau-grand-paris-4899.html |title=Création des nouvelles lignes reliant le Nouveau Grand Paris |work=[[Syndicat des transports d'Île-de-France|STIF]] |language=fr |url-status=dead |archive-url=https://web.archive.org/web/20141119113117/http://www.stif.org/developpements-avenir/nouveau-grand-paris/metro/projets/lignes-16-17-18-du-nouveau-grand-paris-4899.html |archive-date=19 November 2014 }}</ref>
+
+Since August 2013, the New Grand Paris steering committee has met quarterly.<ref>{{Cite web|title = Installation du comité de pilotage du Nouveau Grand Paris|url = http://www.developpement-durable.gouv.fr/Installation-du-comite-de-pilotage.html|website = developpement-durable.gouv.fr|access-date = 21 June 2015|last = Ministère de l'écologie, du développement durable et de l'énergie|date = 28 August 2013|archive-date = 22 June 2015|archive-url = https://web.archive.org/web/20150622024544/http://www.developpement-durable.gouv.fr/Installation-du-comite-de-pilotage.html|url-status = dead}}</ref> The first public inquiry, focused on the southern section of Line 15 from {{stl|Paris Metro|Pont de Sèvres}} to [[Noisy–Champs station|Noisy–Champs]], was held from October to mid-November 2013.<ref>{{Cite web|title=Métro ligne 15 – STIF |url=http://www.stif.org/developpements-et-avenir/nouveau-grand-paris/metro/projets/article/metro-ligne-quinze.html |website=stif.org |access-date=21 June 2015 |url-status=dead |archive-url=https://web.archive.org/web/20150608014202/http://www.stif.org/developpements-et-avenir/nouveau-grand-paris/metro/projets/article/metro-ligne-quinze.html |archive-date=8 June 2015 }}</ref> Work on Line 15 began in 2015. Its first section between {{stl|Paris Metro|Pont de Sèvres}} metro station and Noisy–Champs [[RER A]] station was scheduled at that time to open around 2020, but this has now been pushed back to late 2026.<ref> 
+Grand Paris Express: inauguration of line 15 Sud postponed ...
+
+Sortir à Paris
+https://www.sortiraparis.com › Home › News › News </ref> This line was first proposed in the ''Orbival'' project, then integrated into the [[Arc Express]].
+<!--== Nertwork ==
+[[File:Grand paris express.svg|frame|center||The planned network of the Grand Paris Express]]-->
+
+== Line 11 extension ==
+{{Main|Paris Metro Line 11}}
+{{Paris Metro Line 11}}
+A six-station {{convert|5.4|km|adj=on}} eastern extension of Line 11 from Mairie des Lilas to [[Rosny-sous-Bois]], not considered part of the Grand Paris Express project, improves commuter service to the inner northeastern suburbs. The scheme was initially lobbied for by the local authorities of these suburbs, and was adopted during the 2007 review of the Île-de-France Transportation Plan. Work on the extension to ''Rosny – Bois-Perrier'' started in 2015<ref name=francetvinfo.2023-1725603>{{Cite web|title=Prolongement de la ligne 11: le tunnelier inauguré, six nouvelles stations de métro en 2023|url=https://france3-regions.francetvinfo.fr/paris-ile-de-france/seine-saint-denis/prolongement-ligne-11-tunnelier-inaugure-six-nouvelles-stations-metro-2023-1725603.html|access-date=6 June 2020|website=France 3 Paris Ile-de-France|date=20 September 2019 |language=fr|archive-date=30 October 2020|archive-url=https://web.archive.org/web/20201030204525/https://france3-regions.francetvinfo.fr/paris-ile-de-france/seine-saint-denis/prolongement-ligne-11-tunnelier-inaugure-six-nouvelles-stations-metro-2023-1725603.html|url-status=live}}</ref> and opened on 13 June 2024.<ref name="line11ext1open">{{cite press release |date=13 June 2024 |title=Focus on the extension of line 11 |url=https://www.ratp.fr/en/extension-metro-line-11 |agency=[[RATP Group]] |access-date=2024-06-13}}</ref> It provides connections with the [[RER E]] and with [[Île-de-France tramway Line 1]], which better links central Paris with the commuter hub of [[Châtelet–Les Halles station|Châtelet–Les Halles]].
+
+{| class="wikitable" style="margin-left:auto; margin-right:auto;"
+|+ List of new stations and connections (with opening dates)
+|-
+! New stations
+! Towns served
+! Connection
+! Opening<br/>date<ref name=francetvinfo.2023-1725603/><ref name="line11ext1open"/>
+|-
+| Serge Gainsbourg
+| Les Lilas
+|
+| rowspan="6" | 13 June 2024
+|-
+| Place Carnot
+| Romainville, Noisy-le-Sec
+| {{rint|paris|T}}{{rint|paris|T|1}}
+|-
+| Montreuil Hôpital
+| Montreuil, Noisy-le-Sec
+| {{rint|paris|M|9}} (potential)
+|-
+| La Dhuys
+| Montreuil, Noisy-le-Sec, Rosny-sous-Bois
+|
+|-
+| Côteaux Beauclair
+| Noisy-le-Sec, Rosny-sous-Bois
+|
+|-
+| Rosny – Bois-Perrier
+| Rosny-sous-Bois
+| {{rint|paris|R}}{{rint|paris|R|E}}
+|}
+
+=== Revisions in the Grand Paris Express Plan and possible automation ===
+A revised plan for the proposed Grand Paris Express subway system unveiled on 6 March 2013 calls for a second extension of Line 11 to be built towards {{station|Noisy–Champs}}. This second extension would be considered part of the Grand Paris Express project. Its target opening date was 2030, but might be pushed back. Should the second extension be built, Line 11 will eventually be fully automated.<ref>{{cite news |url=http://www.lesechos.fr/06/03/2013/lesechos.fr/0202626990936_-nouveau-grand-paris----l-etat-engage-27-milliards-pour-le-metro-parisien.htm |title=Nouveau Grand Paris» : l'État engage 27 milliards pour le métro parisien |date=6 March 2013 |language=fr |access-date=25 June 2016 |archive-date=3 March 2016 |archive-url=https://web.archive.org/web/20160303222856/http://www.lesechos.fr/06/03/2013/lesechos.fr/0202626990936_-nouveau-grand-paris----l-etat-engage-27-milliards-pour-le-metro-parisien.htm |url-status=live }}</ref> Automatic train operation was not implemented with the Rosny extension, although the RATP and STIF considered the possibility of adding it later on.
+
+===Rolling stock===
+[[File:MP 59 n°6080 Place des Fêtes.jpg|thumb|left|An [[MP 59]]-trainset, this model was fully retired from the line on 23 May 2024.]]
+[[File:MP 14 - Ligne 11 - Châtelet - 01.06.2023.jpg|thumb|left|An [[MP 14 (Paris Metro)|MP 14 CC]]-trainset, which entered on service on 1 June 2023.]]
+
+Line 11 was the first metro line converted to rubber-tyred pneumatic operation, and its first set of rubber-tyred rolling stock  was the [[MP 55]], which operated from October 1956 through January 1999. They were then replaced by refurbished [[MP 59]] stock from Line 4. The MP 55 stock consisted of 4 carriages, as did the replacement MP 59 stock. One [[MP 73]] of [[Paris Metro Line 6|line 6]] was in service on the 11 as well.
+
+[[Île-de-France Mobilités]] planned to replace the aging fleet of Line 11 with {{nobr|[[MP 14 (Paris Metro)|MP 14]]}} series trains around the time of the opening of the extension to [[Rosny–Bois-Perrier station|Rosny-sous-Bois]]. The new trains are driver-operated as the MP 59 fleet was, but they are 5 cars long and have open gangways.<ref name="stif_enquete_publique">Press release: [http://www.stif.org/IMG/pdf/13022013_-_CP_Conseil_STIF_-_Prolongement_ligne_11.pdf "Le prolongement de la ligne 11 du métro à Rosny-Bois-Perrier à l’enquête publique en 2013"] {{Webarchive|url=https://web.archive.org/web/20131002093151/http://www.stif.org/IMG/pdf/13022013_-_CP_Conseil_STIF_-_Prolongement_ligne_11.pdf |date=2 October 2013 }}, STIF, 13 February 2013</ref><ref>{{cite web|url=http://beta.leparisien.fr/info-paris-ile-de-france-oise/transports/le-metro-change-de-couleur-11-12-2018-7965513.php|title=Le métro parisien passe au bleu|website=Le Parisien|date=11 December 2018|first=Jila|last=Varoquier|access-date=12 December 2018|language=fr}}</ref>
+An initial 20 trains were ordered in February 2018, with an additional 19 trains ordered in July 2021.<ref name=":0" /> Production began in late 2020, and testing in summer 2021.<ref name=":0" />
+
+The first new MP 14 CC (manual transit) were deployed in June 2023, with four new trains entering service each Tuesday to replace four MP 59 transferred to the Rosny-sous-Bois workshop on Monday nights to be retired. Twenty new MP 14 CC were deployed by summer 2023, with an additional nineteen new trains deployed in spring 2024 to serve the extension to {{stn|Rosny–Bois-Perrier}}.<ref>{{Cite web|url=https://www.leparisien.fr/info-paris-ile-de-france-oise/transports/grand-paris-la-ligne-11-du-metro-fait-sa-revolution-en-sequipant-enfin-de-rames-neuves-09-06-2023-ZLPHHVSMONHNLE4HV4X7NJGE34.php|title=Grand Paris : la ligne 11 du métro fait sa révolution en s'équipant (enfin) de rames neuves|trans-title=Grand Paris: line 11 of the metro is undergoing a revolution by (finally) equipping itself with new trains|language=French|last=Hasse|first=Benoît|date=2023-07-09}} Retrieved 2023-07-09</ref> The ceremonial final runs of the MP 59 took place on 23 May 2024, with #'s 6069, 6073 and 6087 being the final three to be withdrawn.[https://www.youtube.com/watch?v=Wt2YQNJviYg]
+
+{{Clear}}
+
+== Line 14 extension ==
+{{Paris Metro Line 14}}
+{{Main|Paris Metro Line 14}}
+
+=== Northern extension of Line 14 ===
+The automated '''Line 14''' was extended north from {{stl|Paris Metro|Saint-Lazare}} to [[Mairie de Saint-Ouen station|Mairie de Saint-Ouen]], with the primary aim of reducing overcrowding on [[Paris Metro Line 13|Line 13]].<ref name=extension>{{cite web|title=Prolongement de la ligne 14 de Saint-Lazare à Mairie de Saint-Ouen|url=http://www.ratp.fr/fr/ratp/c_11634/carte-d-identite/|publisher=RATP|language=fr|access-date=17 November 2011|archive-date=10 September 2013|archive-url=https://web.archive.org/web/20130910220025/http://www.ratp.fr/fr/ratp/c_11634/carte-d-identite/|url-status=dead}}</ref> The adopted solution connects both branches of Line 13 to Line 14, with stations at {{stl|Paris Metro|Porte de Clichy}} on the Asnières – Gennevilliers branch and {{stl|Paris Metro|Mairie de Saint-Ouen}} on the Saint-Denis branch. An additional station connects with the {{stl|Réseau Express Régional|Saint-Ouen}} [[RER C]] station, and another with the [[Transilien Paris-Saint-Lazare]] lines at {{stn|Pont Cardinet}}, and the final one with the [[RER D]] at {{stn|Saint-Denis–Pleyel}}. Construction on the extension began in 2014, with an aim of completion by 2019.<ref>{{Cite web|url=https://www.leparisien.fr/archives/grand-paris-le-prolongement-de-la-ligne-14-du-metro-retarde-a-mi-2019-23-10-2014-4236029.php|title=Grand Paris : le prolongement des lignes 12 et 14 du métro retardé de deux ans|first=Par Julien Duffé Le 23 octobre 2014|last=à 13h09|date=23 October 2014|website=Le Parisien|access-date=18 May 2022|archive-date=18 May 2022|archive-url=https://web.archive.org/web/20220518234000/https://www.leparisien.fr/archives/grand-paris-le-prolongement-de-la-ligne-14-du-metro-retarde-a-mi-2019-23-10-2014-4236029.php|url-status=live}}</ref> Completion was later pushed back to 2020 after flooding from the water table stopped the tunnel works for a year. The COVID-19 pandemic then further delayed the opening to December 2020.<ref name=lemonde_20210305_a>{{Cite web|url=https://www.lemonde.fr/economie/article/2021/03/05/a-paris-la-ligne-14-du-metro-en-plein-essor-la-13-toujours-aussi-chargee_6072116_3234.html|title=A Paris, la ligne 14 du métro en plein essor, la 13 toujours aussi chargée|date=5 March 2021|work=Le Monde|access-date=5 March 2021|archive-date=5 March 2021|archive-url=https://web.archive.org/web/20210305222740/https://www.lemonde.fr/economie/article/2021/03/05/a-paris-la-ligne-14-du-metro-en-plein-essor-la-13-toujours-aussi-chargee_6072116_3234.html|url-status=live}}</ref> The extension opened on 24 June 2024, just a month before the [[2024 Summer Olympics]].<ref name="24 June 2024">{{Cite web |last1=Compagnon |first1=Sébastian |last2=Gairaud |first2=Marie-Anne |date=2024-06-24 |title=Ligne 14 de Saint-Denis - Pleyel à l'aéroport d'Orly : "Ces nouvelles stations, c'est vraiment waouh !" |url=https://www.leparisien.fr/info-paris-ile-de-france-oise/transports/ligne-14-de-saint-denis-pleyel-a-laeroport-dorly-ces-nouvelles-stations-cest-vraiment-waouh-24-06-2024-XCDH4PAG2RFYTLS4Z4VIVJT66Y.php |access-date=2024-06-24 |website=leparisien.fr |language=fr-FR}}</ref>
+
+=== Southern extension of Line 14 ===
+Line 14 was also extended south from {{stn|Olympiades}} towards [[Aéroport d'Orly station|Orly Airport]]. The extension travels southeastward from Olympiades to {{stl|Paris Metro|Maison Blanche}}, interchanging with [[Paris Metro Line 7|Line 7]]'s [[Villejuif–Louis Aragon station|Villejuif]] branch, and opened on 24 June 2024 (again, just a month before the 2024 Summer Olympics).<ref name="24 June 2024" />
+
+With both extensions complete, it is expected that Line 14 will eventually be merged into the proposed Grand Paris Express system.<ref>{{in lang|fr}} https://www.symbioz.net/index.php?id=99 {{Webarchive|url=https://web.archive.org/web/20210116171330/https://www.symbioz.net/index.php?id=99 |date=16 January 2021 }} Grand Paris Express</ref>
+
+=== Rolling stock ===
+[[File:Metro-Meteor-M2-p1010695.jpg|thumb|left|150px|1/10 scale model of the MP 89 for [[Lausanne Metro Line 2|Line M2]] of the [[Lausanne Metro]], of the same type as for line 14]]
+In February 2012 the STIF announced that with the two extensions planned, the brand new [[MP 14 (Paris Metro)|MP 14]] class of rolling stock would replace the [[MP 89#MP89 CA|MP 89 CA]] and [[MP 05]] stock on Line 14 starting from 2020. This new stock is in eight-car train formations, longer than previously employed anywhere on the Paris Metro but which the length of all Line 14 stations was planned for. The previous MP 89 CA and MP 05 stock was then reassigned to the newly automated line 4, alongside some 6-car new MP 14s. They replaced its manually driven [[MP 89#MP89 CC|MP 89 CC]] rolling stock, which was refurbished before going to line 6 to replace the aging [[MP 73]] rolling stock.<ref name="stif.info">{{cite web |url=http://www.stif.info/IMG/pdf/STIF_-_Modernisation_du_metro.pdf |title=Archived copy |access-date=8 March 2012 |url-status=dead |archive-url=https://web.archive.org/web/20121014065246/http://www.stif.info/IMG/pdf/STIF_-_Modernisation_du_metro.pdf |archive-date=14 October 2012 }} Modernisation du métro (in French). STIF. Retrieved 11 February 2012</ref>
+
+{{Clear}}
+
+== Line 15 ==
+{{Main|Paris Metro Line 15}}
+{{For|the previously-planned Line 15|Merger of Paris Metro lines 3bis and 7bis}}
+{{Infobox Paris Metro line
+| box_width = 350px
+| image = {{rint|Paris|M|15|size=50}}
+| image_caption = 
+| line_color = #{{rcr|Paris Metro|15}}
+| text_color = white
+| line_name = Line 15
+| network = [[Paris Metro]]
+| locale = 
+| year_opened = 2026–2031
+| terminus = {{station|Noisy–Champs}}<br/>[[Champigny Centre station]]
+| operator_org = Will be retained by Ile de France Mobilités after a call for tenders
+| conducting_system = Automated
+| rolling_stock = [[Alstom Metropolis MR6V]]
+| number_stations = 36
+| length = 75
+| gauge = {{RailGauge|sg|al=on}}
+| route_time =
+| dist_between_stations = 
+| passengers_per_year = 
+| traffic_rank = 
+| connecting_lines = {{rint|paris|m}} {{rint|paris|m|1}} {{rint|paris|m|4}} {{rint|paris|m|5}} {{rint|paris|m|7}} {{rint|paris|m|8}} {{rint|paris|m|9}} {{rint|paris|m|11}} {{rint|paris|m|12}} {{rint|paris|m|13}} {{rint|paris|m|14}} {{rint|paris|m|16}} {{rint|paris|m|17}} {{rint|paris|m|18}}
+| map = [[File:Tracé ligne 15 Grand Paris Express.svg|thumb|center|upright=2.]]
+}}
+{{Paris Metro Line 15}}
+'''Line 15''' will be a high-capacity underground rail line, providing a new ring line around Paris in the departments of [[Hauts-de-Seine]], Val-de-Marne and [[Seine-Saint-Denis]]. It will enable direct journeys between the suburbs, bypassing central Paris.<ref>{{Cite web|title = Acte motivé|url = https://www.societedugrandparis.fr/liste-documents-multimedia/documents-de-reference|website = societedugrandparis.fr|access-date = 21 June 2015|date = 26 May 2011|pages = 34, 35, 45|archive-url = https://web.archive.org/web/20150708120938/http://www.societedugrandparis.fr/liste-documents-multimedia/documents-de-reference|archive-date = 8 July 2015|url-status = dead}}</ref><ref>{{Cite web|title = ratp.fr – The Greater Paris Express project|url = http://www.ratp.fr/en/ratp/r_33841/the-greater-paris-express-project/|website = ratp.fr|access-date = 21 June 2015|archive-url = https://web.archive.org/web/20150801074659/http://www.ratp.fr/en/ratp/r_33841/the-greater-paris-express-project/|archive-date = 1 August 2015|url-status = dead}}</ref> The configuration of the line is very similar to that of the [[Arc Express]], proposed by the [[RATP Group|RATP]] in 2006. It was later included in the red line project of the Grand Paris public transportation network, introduced by French President [[Nicolas Sarkozy]] in 2009. In March 2013, the "New Grand Paris" project was announced by the Prime Minister at the time, [[Jean-Marc Ayrault]]. At this time, the line acquired its current line 15 naming.<ref>{{Cite web|title = Le Nouveau Grand Paris : pour une région compétitive et solidaire|url = http://archives.gouvernement.fr/ayrault/premier-ministre/le-nouveau-grand-paris-pour-une-region-competitive-et-solidaire.html|website = archives.gouvernement.fr|access-date = 21 June 2015|date = 6 March 2013|archive-date = 22 June 2015|archive-url = https://web.archive.org/web/20150622024714/http://archives.gouvernement.fr/ayrault/premier-ministre/le-nouveau-grand-paris-pour-une-region-competitive-et-solidaire.html|url-status = dead}}</ref>
+
+Line 15 is planned to open in phases from 2026 through 2031.<ref>{{cite web|url=https://www.lefigaro.fr/conjoncture/grand-paris-express-la-mise-en-service-des-lignes-15-sud-16-et-17-a-nouveau-retardee-de-plusieurs-mois-20250218|title=Grand Paris Express : la mise en service des lignes 15 sud, 16 et 17 à nouveau retardée de plusieurs mois|date=18 February 2025 |access-date=20 February 2025}}</ref> It will create a loop connecting Noisy–Champs to Champigny, passing through [[Champigny-sur-Marne]], [[Créteil]], [[Villejuif]], [[La Défense]], [[Saint-Denis, Seine-Saint-Denis|Saint-Denis]] and [[Rosny-sous-Bois]].
+
+=== Proposed timeline ===
+On 22 February 2018, a new timeline is announced by Prime minister [[Édouard Philippe]]:<ref>{{Cite web |url = https://www.societedugrandparis.fr/gpe/actualite/la-nouvelle-feuille-de-route-du-grand-paris-express-1683 |title = La nouvelle feuille de route du Grand Paris Express |date = 22 February 2018 |website = societedugrandparis.fr |access-date = 16 May 2021 |archive-date = 30 September 2020 |archive-url = https://web.archive.org/web/20200930221345/https://www.societedugrandparis.fr/gpe/actualite/la-nouvelle-feuille-de-route-du-grand-paris-express-1683 |url-status = live }}.</ref>
+
+* During 2014: Public inquiry on the eastern section from Saint-Denis–Pleyel to Champigny Centre.
+* Early 2015: Groundbreaking of the southern section spanning Pont-de-Sèvres to Noisy–Champs.
+* 2024, postponed to 2025 in September 2018: Southern section from Pont de Sèvres to Noisy–Champs put into service.
+* 2030: western section from Pont de Sèvres to Saint-Denis–Pleyel and eastern section from Saint-Denis–Pleyel to Champigny Centre put into service.
+
+=== Previous timeline ===
+In 2013, the government led by Ayrault proposed this timeline for the line 15 project:<ref>{{Cite web|url = http://archives.gouvernement.fr/ayrault/sites/default/files/fichiers_joints/nouveau-grand-paris_0.pdf|title = Le Nouveau Grand Paris|date = 6 March 2013|access-date = 21 June 2015|website = archives.gouvernement.fr/|last = Service de presse de Matignon|archive-date = 22 June 2015|archive-url = https://web.archive.org/web/20150622025147/http://archives.gouvernement.fr/ayrault/sites/default/files/fichiers_joints/nouveau-grand-paris_0.pdf|url-status = dead}}</ref><ref>{{Cite web|title = Nouveau Grand Paris : le comité de pilotage installé|url = http://www.actu-environnement.com/ae/news/comite-pilotage-nouveau-grand-paris-19303.php4|access-date = 21 June 2015|last = Boughriet|first = Rachida|date = 28 August 2013|website = Actu Environnement|archive-date = 23 February 2014|archive-url = https://web.archive.org/web/20140223113904/http://www.actu-environnement.com/ae/news/comite-pilotage-nouveau-grand-paris-19303.php4|url-status = live}}</ref>
+* 2014: Public inquiry on the eastern section from Saint-Denis–Pleyel to Champigny Centre.
+* Early-2015: Groundbreaking for the southern section between Pont-de-Sèvres and Noisy–Champs.
+* 2020: Groundbreaking of the section from Pont-de-Sèvres to Nanterre and from Saint-Denis–Pleyel to Rosny-Bois-Perrier on the northern section.
+* 2022: Southern section from Pont-de-Sèvres to Noisy–Champs opens.
+* Early 2025: Segments from Pont-de-Sèvres to Nanterre and from Saint-Denis–Pleyel to Rosny-Bois-Perrier of the northern section put into service.
+* 2025: Groundbreaking of the segment from Nanterre to Saint-Denis–Pleyel via La Défense-Grande-Arche of the northern section.
+* Early 2030: Segment from Nanterre to Saint-Denis–Pleyel via La Défense-Grande-Arche of the northern section put into service.
+* End of 2030: Northern section from Rosny to Champigny completed.
+
+=== Rolling stock ===
+
+The proposed rolling stock for line 15 is a new automated design, using conventional steel wheel on steel rail technology and overhead electrification, with a width of {{convert|2.80|m}}. Alstom has been chosen to build these trains. The names of the trains are the Alstom Metropolis [[MR3V/MR6V]] (MR6V (6-car variant for line 15) and MR3V (3-car variant for lines 16 and 17)).<ref>{{cite web |title=Le Grand Paris Express Un projet pour le XXIe siècle |url=https://www.iledefrance-mobilites.fr/medias/portail-idfm/d2b73925-aa17-452d-b662-c466dbbe3e04_Journe%CC%81e-dinformation-aux-ope%CC%81rateurs-_Socie%CC%81te%CC%81-du-Grand-Paris-_-13062019.pdf |website=Île-de-France Mobilités |publisher=Société du Grand Paris |access-date=13 July 2023 |language=fr |date=13 June 2019 |archive-date=18 January 2024 |archive-url=https://web.archive.org/web/20240118035758/https://www.iledefrance-mobilites.fr/medias/portail-idfm/d2b73925-aa17-452d-b662-c466dbbe3e04_Journe%CC%81e-dinformation-aux-ope%CC%81rateurs-_Socie%CC%81te%CC%81-du-Grand-Paris-_-13062019.pdf |url-status=live }}</ref>
+
+The specifications of the trains travelling line 15 and their operation are as follows:<ref>{{Cite web|title = Dossier d'enquête préalable à la déclaration d'utilité publique – Tronçon Pont-de-Sèvres < > Noisy–Champs (Ligne rouge – 15 Sud) – Pièce C – Présentation du programme|url = http://www.enquetepubliquelignerouge15sud.fr/assets/files/DEP03.pdf|website = enquetepubliquelignerouge15sud.fr|access-date = 21 June 2015|last = Préfecture d'Île-de-France|language=fr}}</ref><ref>{{Cite web|title = Transports: Le Grand Paris rebaptisé et précisé|url = http://www.20minutes.fr/paris/1113363-20130306-transports-nouveau-grand-paris-voit-jour|access-date = 21 June 2015|last = Gabriel|first = Oihana|date = 6 March 2013|website = 20 minutes|language = fr|archive-date = 18 June 2015|archive-url = https://web.archive.org/web/20150618031542/http://www.20minutes.fr/paris/1113363-20130306-transports-nouveau-grand-paris-voit-jour|url-status = live}}</ref>
+* Train width: {{convert|2.80|m}} minimum
+* Train length: {{convert|108|m}}, made up of 6 cars with full-open interior gangways
+* Train capacity: 960 passengers (at 4 passengers per m²)
+* [[Bearing (mechanical)|Bearings]]: iron
+* [[Railway electrification system#Direct current|Electric traction current]]: 1500 volt direct current via [[Pantograph (transport)|pantograph]] and contact wires<ref>{{Cite journal|title = Egis et Setec décrochent un gros lot du Grand Paris|url = http://www.usinenouvelle.com/article/egis-et-setec-decrochent-un-gros-lot-du-grand-paris.N204515|access-date = 21 June 2015|website = Usinenouvelle.com|date = 11 September 2013|last = Ragu|first = Didier|language = fr|archive-date = 22 June 2015|archive-url = https://web.archive.org/web/20150622031639/http://www.usinenouvelle.com/article/egis-et-setec-decrochent-un-gros-lot-du-grand-paris.N204515|url-status = live}}</ref>
+* Operation: Fully automated
+* Maximum speed: {{convert|120|km/h}}<ref name=":0">{{Cite web|title = Une offre adaptée aux territoires|url = https://www.societedugrandparis.fr/focus/le-systeme-de-transport/offre-adaptee-aux-territoires|access-date = 21 June 2015|website = Société du Grand Paris|date = 1 April 2014|archive-url=https://web.archive.org/web/20170701042441/https://www.societedugrandparis.fr/focus/le-systeme-de-transport/offre-adaptee-aux-territoires|archive-date=1 July 2017|language=fr}}</ref>
+* Average operating speed: {{convert|55|km/h}}<ref name=":0" />
+* Theoretical morning rush hour throughput: 34 560 passengers per hour<ref>{{Cite web|title = Étude Prévisions de trafic (RATP)|url = http://cpdp.debatpublic.fr/cpdp-grandparis/site/DEBATPUBLIC_GRANDPARIS_ORG/_SCRIPT/NTSP_DOCUMENT_FILE_DOWNLOAD500D.PDF|website = cpdp.debatpublic.fr|access-date = 21 June 2015|date = 18 October 2010|last = Société du Grand Paris|language = fr|archive-date = 20 October 2016|archive-url = https://web.archive.org/web/20161020233548/http://cpdp.debatpublic.fr/cpdp-grandparis/site/DEBATPUBLIC_GRANDPARIS_ORG/_SCRIPT/NTSP_DOCUMENT_FILE_DOWNLOAD500D.PDF|url-status = live}}</ref>
+* Average interval: 3 to 4 minutes<ref name=":0" />
+* Minimum interval: 2 minutes<ref name=":0" />
+{{Clear}}
+
+== Lines 16 and 17 ==
+{{Main|Paris Metro Line 16|Paris Metro Line 17}}
+
+{|
+|
+{{Infobox Paris Metro line
+| box_width = 350px
+| logo = {{rint|Paris|M|16|size=50}}
+| image = 
+| image_caption = 
+| line_color = #{{rcr|Paris Metro|16}}
+| text_color = white
+| line_name = Line 16
+| network = [[Paris Metro]]
+| locale = 
+| year_opened = 2027-2028
+| terminus = {{station|Noisy–Champs}}<br/>{{stn|Saint-Denis–Pleyel}}
+| operator_org = Will be retained by Ile de France Mobilités after a call for tenders
+| conducting_system = Automated
+| rolling_stock = [[Alstom Metropolis MR3V]]
+| number_stations = 10
+| length = 25
+| gauge = {{RailGauge|sg|al=on}}
+| route_time =
+| dist_between_stations = 
+| passengers_per_year = 
+| traffic_rank = 
+| connecting_lines = {{rint|paris|m}} {{rint|paris|m|11}} {{rint|paris|m|14}} {{rint|paris|m|15}} {{rint|paris|m|17}}
+| map = 
+}}
+|
+{{Infobox Paris Metro line
+| box_width = 350px
+| logo = {{rint|Paris|M|17|size=50}}
+| image = 
+| image_caption = 
+| line_color = #{{rcr|Paris Metro|17}}
+| text_color = white
+| line_name = Line 17
+| network = [[Paris Metro]]
+| locale = 
+| year_opened = 2027–2030
+| terminus = {{stn|Le Mesnil–Amelot}}<br/>{{stn|Saint-Denis–Pleyel}}
+| operator_org = Will be retained by Ile de France Mobilités after a call for tenders
+| conducting_system = Automated
+| rolling_stock = [[Alstom Metropolis MR3V]]
+| number_stations = 9
+| length = 25
+| gauge = {{RailGauge|sg|al=on}}
+| route_time =
+| dist_between_stations = 
+| passengers_per_year = 
+| traffic_rank = 
+| connecting_lines = {{rint|paris|m}} {{rint|paris|m|14}} {{rint|paris|m|15}} {{rint|paris|m|16}}
+| map = 
+}}
+|}
+{{Paris Metro lines 16 and 17}}
+'''Line 16''' is planned to open in between 2027 and 2028.
+
+'''Line 17''' is planned to open in phases between 2027 and 2030.
+
+=== Rolling stock ===
+The proposed rolling stock for lines 16 and 17 is a new automated design with a width of {{convert|2.80|m}}, using conventional steel wheel on steel rail technology and overhead electrification. The rolling stocks for the line is the [[Alstom Metropolis MR3V]] (3-car variant) [https://www.iledefrance-mobilites.fr/medias/portail-idfm/d2b73925-aa17-452d-b662-c466dbbe3e04_Journe%CC%81e-dinformation-aux-ope%CC%81rateurs-_Socie%CC%81te%CC%81-du-Grand-Paris-_-13062019.pdf]
+
+== Line 18 ==
+{{Main|Paris Metro Line 18}}
+
+{{Infobox Paris Metro line
+| box_width = 350px
+| logo = {{rint|Paris|M|18|size=50}}
+| image = 
+| image_caption = 
+| line_color = #{{rcr|Paris Metro|18}}
+| text_color = white
+| line_name = Line 18
+| network = [[Paris Metro]]
+| locale = 
+| year_opened = 2026–2030
+| terminus = [[Versailles Chantiers station|Versailles Chantiers]]<br/>[[Aéroport d'Orly station|Aéroport d'Orly]]
+| operator_org = Will be retained by Ile de France Mobilités after a call for tenders
+| conducting_system = Automated
+| rolling_stock = 
+| number_stations = 13
+| length = 50
+| gauge = {{RailGauge|sg|al=on}}
+| route_time =
+| dist_between_stations = 
+| passengers_per_year = 
+| traffic_rank = 
+| connecting_lines = {{rint|paris|m}} {{rint|paris|m|14}} {{rint|paris|m|15}}
+| map = {{Paris Metro Line 18}}
+}}
+'''Line 18''' is planned to open in phases between 2026 and 2030.<ref name="stif.org"/>
+
+=== Rolling stock ===
+The proposed rolling stock for line 18 is the [[MRV (Paris Metro)|MRV]] (Matériel Roulant Voyageurs), a new automated design with a width of {{convert|2.45|m}}, using conventional steel wheel on steel rail technology and third rail electrification. Alstom has been chosen to build these trains.
+
+==Reception==
+The Grand Paris Express development has received the [[Veronica Rudge Green Prize in Urban Design]] from [[Harvard University]]'s [[Harvard Graduate School of Design|Graduate School of Design]] in 2023.<ref>
+{{cite web |title=Veronica Rudge Green Prize in Urban Design |url=https://www.gsd.harvard.edu/urban-planning-design/fellowships-prizes-and-travel-programs/veronica-rudge-green-prize-in-urban-design/ |archive-url= |archive-date= |access-date=Oct 16, 2024 |website=gsd.harvard.edu}}
+</ref>
+
+==References==
+{{Reflist}}
+
+== External links ==
+* {{in lang|fr}} {{Official website|https://www.societedugrandparis.fr}}
+
+{{Paris transport network}}
+{{Paris Metro Line 11 navbox|collapse=yes}}
+{{Paris Metro Line 14 navbox|collapse=yes}}
+{{Paris Metro Line 15 navbox|collapse=yes}}
+{{Paris Metro Line 16 navbox|collapse=yes}}
+{{Paris Metro Line 17 navbox|collapse=yes}}
+{{Paris Metro Line 18 navbox|collapse=yes}}
+{{Authority control}}
+
+[[Category:Rail transport in Paris]]
+[[Category:Proposed rail infrastructure in Europe]]
+[[Category:Paris Metro lines]]
+[[Category:Paris Metro Line 11]]
+[[Category:Paris Metro Line 14]]
+[[Category:Paris Metro Line 15]]
+[[Category:Paris Metro Line 16]]
+[[Category:Paris Metro Line 17]]
+[[Category:Paris Metro Line 18]]
+[[Category:Rapid transit systems under construction]]

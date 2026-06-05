@@ -1,0 +1,22 @@
+{{short description|U.S. Air Force R&D program}}
+{{for|the video game|Skyborg: Into the Vortex}}
+
+[[File:XQ-58A_Valkyrie_demonstrator_first_flight.jpg|thumb|right|[[Kratos XQ-58 Valkyrie]]]]
+The '''Skyborg''' project is a [[United States Air Force]] Vanguard program developing [[unmanned combat aerial vehicle]]s intended to accompany a manned fighter aircraft.<ref>{{Cite web|date=2019-08-28|title=Skyborg: the US Air Force's future AI fleet|url=https://www.airforce-technology.com/features/skyborg-the-us-air-forces-future-ai-fleet/|access-date=2020-08-21|website=Airforce Technology|language=en-GB}}</ref> {{As of|2020}}, contracts have been awarded to [[Boeing]], [[General Atomics]], [[Kratos Unmanned Aerial Systems]] and [[Northrop Grumman]].<ref>{{Cite web|date=2020-07-24|title=4 Companies Move Forward in Skyborg Competition|url=https://www.airforcemag.com/4-companies-move-forward-in-skyborg-competition/|access-date=2020-08-21|website=Air Force Magazine|language=en-US}}</ref><ref>{{Cite web|last=Insinna|first=Valerie|date=2020-07-23|title=Four companies win contracts to build the Air Force's Skyborg drone|url=https://www.defensenews.com/unmanned/2020/07/23/four-companies-got-contracts-to-build-the-air-forces-skyborg-drone/|access-date=2020-08-21|website=Defense News|language=en-US}}</ref>
+
+== Development ==
+On September 29, 2020, the US Air Force contracted nine corporations (AeroVironment, Autonodyne LLC, BAE Systems, Blue Force Technologies (since purchased by Anduril<ref>{{Cite web|title=Anduril acquires Blue Force Technologies/|url=https://www.anduril.com/article/anduril-acquires-blue-force-technologies/|website=Anduril|language=en-US}}</ref>), Fregata Systems LLC, Lockheed Martin, NextGen Aeronautic, Sierra Technical Services, and Wichita State University) to work on Skyborg prototyping and experimentation.<ref>{{Cite web|title=Contracts for September 29, 2020|url=https://www.defense.gov/Newsroom/Contracts/Contract/Article/2365695//|archive-url=https://web.archive.org/web/20210517014135/https://www.defense.gov/Newsroom/Contracts/Contract/Article/2365695/|url-status=dead|archive-date=May 17, 2021|access-date=2021-01-27|website=U.S. DEPARTMENT OF DEFENSE|language=en-US}}</ref> On December 21, 2020, Voly Defense Solutions LLC of Concord, California, was added to the contract.<ref>{{Cite web|title=Contracts for December 21, 2020|url=https://www.defense.gov/Newsroom/Contracts/Contract/Article/2454191//|archive-url=https://web.archive.org/web/20210727210515/https://www.defense.gov/Newsroom/Contracts/Contract/Article/2454191/|url-status=dead|archive-date=July 27, 2021|access-date=2021-01-27|website=U.S. DEPARTMENT OF DEFENSE|language=en-US}}</ref>
+
+==See also==
+* [[AVIC Dark Sword]]
+* [[Baykar Bayraktar Kızılelma]] 
+* [[Boeing MQ-28 Ghost Bat]], formerly the Boeing Airpower Teaming System
+* [[Kratos XQ-58 Valkyrie]]
+* [[X-62A VISTA]], formerly the NF-16D VISTA
+
+==References==
+{{reflist}}
+
+{{USAF-stub}}
+
+[[Category:Drone warfare]]

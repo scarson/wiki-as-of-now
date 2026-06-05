@@ -1,0 +1,171 @@
+{{Short description|British 155 mm self-propelled howitzer}}
+{{Use dmy dates|date=August 2017}}
+{{Use British English|date=August 2017}}
+{{Infobox weapon
+| name               = AS-90
+| image              = AS90 (52931434897).jpg
+| image_size         = 300
+| alt                = 
+| caption            = AS-90 in Hertfordshire
+| type               = [[Self-propelled howitzer]]
+| origin             = United Kingdom
+<!-- Type selection -->
+| is_ranged          = y
+| is_artillery       = y
+| is_vehicle         = y
+| is_UK              = y
+<!-- Service history -->
+| service            = 1992–present
+| used_by            = See ''[[AS-90#Operators|Operators]]''
+| wars               = 
+* [[Yugoslav Wars]] (peacekeeping)
+* [[Iraq War]]
+* [[Russo-Ukrainian War]]
+<!-- Production history -->
+| designer           = 
+| design_date        = 1982–1987
+| manufacturer       = [[Vickers Shipbuilding and Engineering Limited]]
+| unit_cost          = 
+| production_date    = 1992–1995
+| number             = 179
+| variants           = See ''[[AS-90#Variants|Variants]]''
+| spec_label         = 
+| mass               = {{cvt|45|t|LT ST}}
+| length             = {{ubl|{{cvt|9.9|m|ftin}} overall|{{cvt|7.2|m|ftin}} hull}}
+| part_length        = {{cvt|6.022|m|ftin}} [[Caliber (artillery)|L/39]]
+| width              = {{cvt|3.4|m|ftin}}
+| height             = {{cvt|3|m|ftin}}
+| crew               = 5
+<!-- Ranged weapon specifications -->
+| cartridge          = 
+| cartridge_weight   = 
+| caliber            = [[155 mm caliber|{{cvt|155|mm|in}}]]
+| barrels            = L31 ordnance with double-baffle [[muzzle brake]]
+| action             = 
+| rate               = {{ubl|3 rds/< 10 seconds – burst|6 rds/min for 3 mins – intense|2 rds/min – sustained}}
+| velocity           = 
+| range              = {{cvt|24.7|km|mi}} standard ammunition
+| max_range          = 
+| feed               = 
+| sights             = <!-- Artillery specifications -->
+| breech             = Split-block
+| recoil             = 2 diametrically opposed [[Recoil buffer|buffers]]<br />& 1 [[recuperator]] {{cvt|800|mm|in}} max length
+| carriage           = 
+| elevation          = +1,244 mils (+70°) elevation<br />-89 mils (-5°) depression
+| traverse           = 6,400 mils (360°)
+<!-- Vehicle specifications -->
+| armour             = All-welded steel armour<br />{{cvt|17|mm|in}} max thickness
+| primary_armament   = BAE Systems' 155 mm L/39 (48 rounds)
+| secondary_armament = 7.62 mm [[L7 (machine gun)|L7 Machine Gun]]
+| engine             = [[Cummins]] VTA-903T-660<br />{{cvt|14.8|L|cuin}} V8 [[Diesel engine|diesel]]
+| engine_power       = {{cvt|660|hp|kW|order=flip}} at 2,800 rpm
+| pw_ratio           = 
+| payload_capacity   = 
+| drive              = [[Continuous track|Tracked]]
+| transmission       = [[ZF Friedrichshafen]] LSG 2000<br />[[Automatic transmission|Automatic]] 4F2R
+| suspension         = [[Hydropneumatic suspension|Hydropneumatic]]
+| clearance          = {{cvt|410|mm|in}}
+| fuel_capacity      = {{cvt|750|L|impgal}}
+| vehicle_range      = {{cvt|370|km|mi}}
+| speed              = {{cvt|55|km/h|mph}}
+| guidance           = 
+| steering           = <!-- For all -->
+| ref                = [[Janes Information Services|Janes]]<ref name=Janes-AS-90>{{Citation |author=[[Janes Information Services|Janes]] |url=https://customer.janes.com/display/JAA_0455-JAAD |title=AS90 (155 mm) |date=28 January 2022 |website=Janes Land Warfare Platforms: Artillery & Air Defence |publisher=Jane's Group UK Limited. |publication-place=[[Coulsdon]], [[Surrey]] |url-access=subscription |access-date=27 March 2023}}</ref>
+}}
+
+The '''AS-90''' ("'''Artillery System for the 1990s'''"), known officially as '''Gun Equipment 155&nbsp;mm L131''', is an armoured [[self-propelled howitzer]] formerly used by the [[British Army]] and subsequently donated for use by the [[Ukrainian Army]].<ref name="endofas90"/>
+
+It can fire standard charges up to {{convert|24.7|km|mi|abbr=on}} using 39-calibre long barrel and {{convert|30|km|mi|abbr=on}} with 52-calibre long barrel.<ref name=armyrecognition-20230623/> The maximum rate of fire is 3 rounds in 10 seconds (burst); 6 per minute for 3 minutes (intense); and 2 per minute for 60 minutes (sustained).{{Citation needed|date=December 2024}}
+
+==History==
+[[File:A crew member of an AS90 moves a round, prior to preparing the fuse for firing during Exercise Steel Sabre. MOD 45158545.jpg|thumb|right|Crew member with AS-90 shell]]
+AS-90 started in the mid-1980s as a private venture on the gamble that the tri-national [[SP70]] would fail. When this did occur, the [[Ministry of Defence (United Kingdom)|Ministry of Defence]] (MoD) issued a cardinal point specification on one page for a new 155&nbsp;mm self-propelled gun. The MoD was also required to consider the US "Paladin", an upgraded [[M109 howitzer]].
+
+AS-90 was designed and built by the armaments division of [[Vickers Shipbuilding and Engineering]] (VSEL). Between 1992 and 1995, VSEL supplied 179 vehicles at a cost of £300 million ($480 million). The AS-90 was first deployed by the British Army in 1993.<ref>{{Cite web |title=AS-90 |url=http://www.deagel.com/Self-Propelled-Howitzers/AS90_a000472001.aspx |url-status=dead |archive-url=https://web.archive.org/web/20160303191307/http://www.deagel.com/Self-Propelled-Howitzers/AS90_a000472001.aspx |archive-date=3 March 2016 |website=deagel.com}}</ref> The AS-90s were acquired to re-equip six of the eight self-propelled field artillery regiments (each of 24 guns) in the [[I (BR) Corps]], replacing the 105&nbsp;mm [[Abbot (artillery)|FV433 Abbot]] and older [[M109 howitzer|M109 155&nbsp;mm Self Propelled Gun]] and [[FH70]] towed howitzer. In 1999, VSEL became a part of [[BAE Systems]].
+
+In 1999, [[Marconi Electronic Systems]] was contracted to upgrade British Army AS-90s to include a 52 calibre gun in order to increase the range of the artillery.<ref>{{citation|url=https://api.parliament.uk/historic-hansard/written-answers/1999/jun/09/as90-howitzer|title=AS90 Howitzer |author=George Robertson  |work=House of Commons Debates |date=9 June 1999 | volume= 332 |at=cc330-1W |access-date=28 December 2016 |publisher=UK Parliament}}</ref> Critical to the programme was a bi-modular charge system from [[Somchem]] of South Africa (selected after extensive trials of ammunition from many suppliers), which offered greatly reduced barrel wear. However, this ammunition failed to meet the requirement for [[insensitive munitions]] and the project was terminated.<ref>{{cite web |title=AS90 Braveheart 155mm Self-Propelled Howitzer |url=http://www.army-technology.com/projects/as90/ |url-status=live |archive-url=https://web.archive.org/web/20240116220946/https://www.army-technology.com/projects/as90/ |archive-date=16 January 2024 |access-date=28 December 2016 |website=Army Technology}}</ref>
+
+The MoD undertook [[CORDA (UK)#Fitting 155mm guns to warships|studies in 2006–09 to "up-gun" the Royal Navy's main shipboard gun armament]], the [[4.5 inch Mark 8 naval gun]], to accept 155{{spaces}}mm ammunition from the AS-90.<ref>{{Cite web |date=14 December 2007 |title=155MM Study Looks To Pack More Punch Into The Royal Navy's Fleet |url=http://www.baesystems.com/Newsroom/NewsReleases/autoGen_1071114103911.html |url-status=dead |archive-url=https://web.archive.org/web/20120212183534/http://www.baesystems.com/Newsroom/NewsReleases/autoGen_1071114103911.html |archive-date=12 February 2012 |website=BAE Systems}}</ref> This would have introduced a common gun calibre for the British Army and [[Royal Navy]], helping with ammunition logistics, and encouraging joint Army-Navy development of extended-range and precision-guided shells.<ref>{{Cite web |date=20 November 2007 |title=Army to get new precision "search and destroy" anti-armour weapon |url=http://www.mod.uk/DefenceInternet/DefenceNews/EquipmentAndLogistics/ArmyToGetNewPrecisionsearchAndDestroyAntiarmourWeapon.htm |url-status=dead |archive-url=https://web.archive.org/web/20071211233430/http://www.mod.uk/DefenceInternet/DefenceNews/EquipmentAndLogistics/ArmyToGetNewPrecisionsearchAndDestroyAntiarmourWeapon.htm |archive-date=11 December 2007 |website=UK Ministry of Defence}}</ref> The development of this gun for the Royal Navy was stopped due to budget cuts in the [[Strategic Defence and Security Review 2010]].
+
+In 2008 and 2009, a capability enhancement programme primarily upgraded AS-90's electronic system.{{Citation needed|date=December 2024}}
+
+In 2008, there were 134 AS-90 in service further reduced to 117 by 2015.<ref>{{Cite web |date=23 April 2015 |title=Vehicle & Aircraft Holdings within the scope of the Conventional Armed Forces in Europe Treaty - 2015 Edition |url=https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/423149/CFE_2015.pdf |url-status=live |archive-url=https://web.archive.org/web/20231030091536/https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/423149/CFE_2015.pdf |archive-date=30 October 2023 |website=UK Ministry of Defence |page=4}}</ref> By April 2016, there were 89 AS-90 in active service. This was how it remained until the beginning of [[Russian invasion of Ukraine]] in 2022.<ref>{{Cite web |title=UK armed forces equipment and formations 2024 |url=https://www.gov.uk/government/statistics/uk-armed-forces-equipment-and-formations-2024/uk-armed-forces-equipment-and-formations-2024 |access-date=2025-02-28 |website=GOV.UK |language=en}}</ref>
+
+The initial expected out-of-service date for the AS-90 had been 2030,<ref>{{Cite web |last=Francois |first=Mark |last2=Quin |first2=Jeremy |date=9 March 2020 |title=Artillery: Decommissioning:Written question&nbsp;&ndash; 24276 |url=https://www.parliament.uk/business/publications/written-questions-answers-statements/written-question/Commons/2020-03-03/24276 |url-status=live |archive-url=https://web.archive.org/web/20231026023719/https://questions-statements.parliament.uk/written-questions/detail/2020-03-03/24276 |archive-date=26 October 2023 |access-date=10 March 2020 |publisher=UK Parliament |language=en}}</ref> but this was later delayed to 2032 with a replacement planned to enter service in 2029.<ref>{{Cite web |last=Chuter |first=Andrew |date=29 July 2020 |title=British Army's AS90 howitzers to stick around amid replacement delay |url=https://www.defensenews.com/land/2020/07/29/british-armys-as90-howitzers-to-stick-around-amid-replacement-delay/ |url-status=live |archive-url=https://archive.today/20200802080958/https://www.defensenews.com/land/2020/07/29/british-armys-as90-howitzers-to-stick-around-amid-replacement-delay/ |archive-date=2 August 2020 |access-date=5 July 2022 |website=Defense News}}</ref> The [[Russian invasion of Ukraine]] in 2022 changed these plans.<ref name="endofas90"/>
+
+On 24 April 2022, the ''[[Daily Express]]'' reported that AS-90s and 45,000 artillery rounds would be sent to Ukraine<ref>{{cite web |date=24 April 2022 |title=United Kingdom to provide AS90 155mm tracked self-propelled howitzers to Ukraine |url=https://www.armyrecognition.com/defense_news_april_2022_global_security_army_industry/united_kingdom_to_provide_as90_155mm_tracked_self-propelled_howitzers_to_ukraine.html |url-status=live |archive-url=https://web.archive.org/web/20231021105942/https://www.armyrecognition.com/defense_news_april_2022_global_security_army_industry/united_kingdom_to_provide_as90_155mm_tracked_self-propelled_howitzers_to_ukraine.html |archive-date=21 October 2023 |access-date=24 April 2022 |website=Army Recognition}}</ref> but that was subsequently denied by Defence Secretary [[Ben Wallace (politician)|Ben Wallace]].<ref>{{Cite web |last=Sabbagh |first=Dan |date=25 April 2022 |title=UK military aid to Ukraine could rise to £500m, MPs told |url=https://www.theguardian.com/politics/2022/apr/25/uk-military-aid-to-ukraine-could-rise-to-500m-mps-told |url-status=live |archive-url=https://web.archive.org/web/20230718182058/https://www.theguardian.com/politics/2022/apr/25/uk-military-aid-to-ukraine-could-rise-to-500m-mps-told |archive-date=18 July 2023 |access-date=25 April 2022 |website=The Guardian |language=en}}</ref> On 14 January 2023, British Prime Minister [[Rishi Sunak]] announced that Britain would send 30 AS-90 to Ukraine, amongst other supplies (including 14 [[Challenger 2]] tanks), for use in the ongoing [[Russo-Ukrainian War]].<ref>{{cite news |last1=Beale |first1=Jonathan |last2=Andersson |first2=Jasmine |date=15 January 2023 |title=UK to send Challenger 2 tanks to Ukraine, Rishi Sunak confirms |url=https://www.bbc.co.uk/news/uk-64274755 |url-status=live |archive-url=https://web.archive.org/web/20231113083915/https://www.bbc.co.uk/news/uk-64274755 |archive-date=13 November 2023 |access-date=15 January 2023 |publisher=BBC News}}</ref>
+
+To fill the gap in British Army artillery left by the donation, the UK government announced they were buying 14 [[Archer Artillery System]]s in March 2023. The deal was negotiated in just eight weeks as part of the [[Urgent Operational Requirement]] procurement process; the first vehicles were planned to be fully operational by April 2024. The purchase was meant to fill a hole in capabilities until a new system would be decided upon as part of the Mobile Fires Platform programme, where Archer was a competitor.<ref>{{Cite web |last=Chuter |first=Andrew |date=16 March 2023 |title=British Army buys 14 Archer howitzers to fill gap left by Ukraine aid |url=https://www.defensenews.com/land/2023/03/16/british-army-buys-14-archer-howitzers-to-fill-gap-left-by-ukraine-aid/ |url-status=live |archive-url=https://archive.today/20240119143245/https://www.defensenews.com/land/2023/03/16/british-army-buys-14-archer-howitzers-to-fill-gap-left-by-ukraine-aid/ |archive-date=19 January 2024 |website=Defense News}}</ref> On April 23, 2024 the UK government announced that the AS-90 would be replaced by the [[RCH 155]].<ref>{{Cite web |last=Allison |first=George |date=2024-04-24 |title=Britain to purchase Boxer-based RCH155 artillery systems |url=https://ukdefencejournal.org.uk/britain-to-purchase-boxer-based-rch155-artillery-systems/ |access-date=2024-05-20 |language=en-GB}}</ref>
+
+In 2025 it was reported in defence news websites that all British AS-90 had been donated to Ukraine and the British Army had ended its usage of AS-90.<ref name="endofas90">{{cite web |url=https://www.army-technology.com/news/revealed-british-army-no-longer-operates-as90-artillery/ |title=Revealed: British Army no longer operates AS90 artillery |author=Richard Thomas |date=May 2, 2025 |website=ArmyTechnology}}</ref><ref>{{cite web |url=https://militarnyi.com/en/news/britain-has-handed-over-all-as-90-self-propelled-artillery-systems-to-ukraine/ |title=Britain has handed over all AS-90 self-propelled artillery systems to Ukraine |author=Roman Pryhodko |date=3 May 2025 |website=MILITARNYI }}</ref>
+
+==Design==
+[[File:Crew inside an AS-90 live firing during Exercise Steel Sabre. MOD 45158560.jpg|thumb|right|Inside AS-90 on Exercise Steel Sabre, 2015]]
+In 1963 certain NATO nations, including the UK, agreed to a "Ballistics Memorandum of Understanding" for a 155&nbsp;mm 39 calibre ordnance and a baseline [[projectile]] with the shape used for the US M549 [[Rocket Assisted Projectile|rocket-assisted]] shell.  The AS-90 uses a conforming 39 calibre barrel which fires the L15 unassisted projectile out to a range of {{Convert|24.7|km|mi|abbr=on}}. However, this was a new design of ordnance using a split sliding block [[Breech-loading weapon|breech]] with Crossley obturation,<ref>{{cite web |title=Obturator for ordnance |url=http://www.freepatentsonline.com/2444633.html |url-status=live |archive-url=https://web.archive.org/web/20231030160807/https://www.freepatentsonline.com/2444633.html |archive-date=30 October 2023 |website=Free Patents Online}}</ref> instead of the more usual screw breech, to permit [[Shell (projectile)#Separate loading bagged charge|bagged charge]]s (no metal cartridge cases). The breech mechanism has a primer magazine holding 18 primers. The standard ammunition is that designed for FH-70 (L15 HE and associated propelling charges) although in training the less effective but cheaper M107 with Green and White propelling charges is used.{{Citation needed|date=December 2024}}
+
+It is fitted with an auxiliary power unit to eliminate the need to run the main [[engine]] to keep the batteries charged while stationary; electrical [[servomotor|servo]]s drive the automated elevation, traverse, magazine, shell transfer arm and loader as well as power for electronics and communications.{{Citation needed|date=December 2024}}
+
+The vehicle is fitted with an autonomous navigation and [[gun laying]] dynamic reference unit (DRU) mounted on the [[trunnion]]. All main turret functions are controlled by a Turret Control Computer (TCC) with control and display units for the No 1 (Detachment Commander), No 2 (loader) and No 3 (layer). The combination of the DRU, TCC and powered laying controls provide autolaying.  Every gun is fitted with a radar Muzzle Velocity Measuring Device. Reversionary mode laying uses deflection laying via the direct fire sight.{{Citation needed|date=December 2024}}
+
+The gun can be brought into action fully closed down; the barrel can be clamped and unclamped from within the vehicle. In-to and out-of action times are less than one minute.{{Citation needed|date=December 2024}}
+
+The gun is compatible with the extended-range guided projectile [[M982 Excalibur]].<ref name=armyrecognition-20230623/>
+
+==Combat history==
+[[File:AS-90 self-propelled artillery.JPG|thumb|AS-90s deployed in Iraq]]
+The AS-90 was deployed in [[Bosnia]] and [[Kosovo]] in the 1990s to support NATO peacekeeping efforts during the [[Yugoslav Wars]].<ref>{{cite web |title=British Army Review - The Yugoslav Wars |url=https://www.army.mod.uk/umbraco/Surface/Download/Get/15069 |website=British Army |access-date=7 March 2024}}</ref> 32 AS-90s were also deployed during the 2003 [[Iraq War]].<ref>{{cite web |title=Iraq – in the House of Lords at 6:27 pm on 20 January 2003 |url=https://www.theyworkforyou.com/lords/?id=2003-01-20a.492.3&s=AS90#g492.4 |website=Hansard |publisher=Parliament |access-date=7 March 2024}}</ref> Speaking of their capability, Commander of the British land component, [[Robin Brims|General Brims]], commented that "the phenomenal accuracy of it, [was] way beyond anything that one might have expected".<ref>{{Cite web |title=Hansard, July 2003 |url=https://publications.parliament.uk/pa/cm200304/cmselect/cmdfence/57/3062508.htm}}</ref> AS-90s were used to shell Iraqi mortar positions during the [[Battle of Basra (2003)|Battle of Basra]], one of the opening battles of the conflict.<ref>{{cite news |title=Troops lay siege to Basra |url=https://www.theguardian.com/world/2003/mar/26/iraq.uk1 |access-date=7 March 2024 |work=[[The Guardian]] |date=26 Mar 2003}}</ref> In October 2003, Defence Minister [[Adam Ingram (Labour politician)|Adam Ingram]] stated it had a 92% availability rate during the war.<ref>{{cite web |title=Defence Procurement |url=https://publications.parliament.uk/pa/cm200203/cmhansrd/vo031023/debtext/31023-10.htm#31023-10_spnew5 |website=Hansard |publisher=Parliament}}</ref>
+
+=== Ukraine ===
+A total of 20 battle-ready AS-90s and 12 non-functional spares were donated to [[Ukraine]] by the UK in 2023 during the [[Russian invasion of Ukraine]],<ref name="mod-20230316">{{cite web |date=16 March 2023 |title=DE&S secures Archer artillery systems to replace AS-90 for British Army |url=https://des.mod.uk/des-secures-archer-artillery-systems-to-replace-as90-for-british-army/ |url-status=live |archive-url=https://web.archive.org/web/20230720122736/https://des.mod.uk/des-secures-archer-artillery-systems-to-replace-as90-for-british-army/ |archive-date=20 July 2023 |access-date=20 July 2023 |website=UK Ministry of Defence}}</ref> with first combat usage in June 2023.<ref name="armyrecognition-20230623">{{cite news |date=23 June 2023 |title=First combat operation for Ukrainian AS90 howitzers donated by UK against Russian forces |url=https://www.armyrecognition.com/ukraine_-_russia_conflict_war_2022/first_combat_operation_for_ukrainian_as-90_howitzers_donated_by_uk_against_russian_forces.html |url-status=live |archive-url=https://web.archive.org/web/20231021115047/https://www.armyrecognition.com/ukraine_-_russia_conflict_war_2022/first_combat_operation_for_ukrainian_as-90_howitzers_donated_by_uk_against_russian_forces.html |archive-date=21 October 2023 |access-date=21 July 2023 |website=Army Recognition Group}}</ref> According to Ukrainian forces, the AS-90 outperformed their existing Soviet-era artillery systems, such as the [[2S1 Gvozdika]] and [[2S3 Akatsiya]], in both range and accuracy.<ref>{{cite news |title=UK-Donated AS90 Howitzers Outperform Old Soviet-Made Artillery in Accuracy and Range in Ukraine |url=https://armyrecognition.com/ukraine_-_russia_conflict_war_2022/uk-donated_as90_howitzers_outperform_old_soviet-made_artillery_in_accuracy_and_range_in_ukraine.html |access-date=7 March 2024 |work=Army Recognition |date=6 March 2024 |archive-date=7 March 2024 |archive-url=https://web.archive.org/web/20240307153907/https://www.armyrecognition.com/ukraine_-_russia_conflict_war_2022/uk-donated_as90_howitzers_outperform_old_soviet-made_artillery_in_accuracy_and_range_in_ukraine.html |url-status=dead }}</ref>
+In July 2024, the UK Ministry of Defence announced a new package of support for Ukraine including 10 AS-90s and support for previously gifted ones.<ref name="independent 07-07-2024">{{Cite web |last=Watling |first=Tom |date=2024-07-07 |title=Defence Secretary directs officials to fast-track military support to Ukraine |url=https://www.independent.co.uk/news/uk/john-healey-ukraine-mod-defence-secretary-government-b2575623.html |access-date=2024-07-08 |website=The Independent |language=en}}</ref><ref name="sky 08-07-2024">{{Cite web |title=Labour defence secretary travels to Ukraine as govt pledges new supplies to Kyiv |url=https://news.sky.com/story/labour-defence-secretary-travels-to-ukraine-as-govt-pledges-new-supplies-to-kyiv-13174839 |last=Baker |first=Tim |date=8 July 2024 |access-date=8 July 2024 |website=Sky News |language=en}}</ref> In May 2025 it was reported that the UK's entire AS-90 fleet of 68 vehicles had been donated to Ukraine and thus the British Army had ended its usage of AS-90.<ref name="endofas90"/><ref name="entire">{{Cite web|url=https://united24media.com/latest-news/uk-sends-entire-as-90-howitzer-fleet-to-ukraine-retiring-the-iconic-artillery-system-8112|title=UK Sends Entire AS-90 Howitzer Fleet to Ukraine, Retiring the Iconic Artillery System|date=2025-05-05|website=united24media.com|last=Khomenko|first=Ivan|access-date=2025-08-19}}</ref>
+
+As of July 2025, [[Oryx (website)|Oryx]] blog recorded Ukrainian losses at 19 units (13 destroyed and 6 damaged).<ref name="oryx">{{Cite web |last=Oryx |title=Attack On Europe: Documenting Ukrainian Equipment Losses During The Russian Invasion Of Ukraine |url=https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html |access-date=3 July 2025 |website=Oryx }}</ref>
+
+==Specifications==
+[[File:AS-90 Howitzer 1.jpg|thumb|right|AS-90 on Salisbury Plain]]
+* Crew: 5, onboard when moving (driver plus 4 gun detachment), full gun detachment 10 including driver, 4 detachment members in the turret.
+* Length: 9.07 m
+* Width: 3.3 m
+* Height: 3 m
+* Armour: 17&nbsp;mm (maximum, steel)
+* Weight: 45 tons{{vague|which tons?|date=December 2009}}
+* Calibre: 155&nbsp;mm
+* Range: {{Convert|24.7|km|mi|abbr=on}} (39 cal) standard charges, {{Convert|30|km|mi|abbr=on}} (52 cal) 52-calibre long barrel
+* Rate of fire: 3 rounds in 10 seconds (burst), 6 rounds per minute for 3 minutes (intense), 2 rounds per minute for 60 minutes (sustained)
+* Secondary armament: 7.62&nbsp;mm [[L7 (machine gun)|L7 GPMG]]
+* Ammunition carried: 48 projectiles and charges (31 turret and 17 hull), 1000 MG rounds
+* Main engine: [[Cummins]] VTA903T 660&nbsp;bhp 90 degree V8, 4 stroke, liquid cooled, turbo [[Diesel engine|diesel]]
+* Max speed: {{Convert|55|km/h|mph|abbr=on}} (Road)
+* Vehicle range: {{Convert|370|km|mi|abbr=on}} (Road)
+* Ground clearance: 0.41 m; Gradient: 60°; Vertical obstacle: 0.75 m; Trench crossing: 2.8 m; Fording depth: 1.5 m
+
+==Variants==
+[[File:AHS Krab SPH Exercise Dynamic Front 22.jpg|thumb|AHS Krab]]
+'''AS-90D'''
+:Modified for desert use. Thermal protection for crew and extra cooling for engine and machinery. Tracks adapted for reduced wear in sandy conditions.
+
+'''AS-90 Braveheart'''
+:AS-90 fitted with 52-[[caliber (artillery)|calibre]] main gun. The project was terminated due to non-compliant propellant charges.{{citation needed|date=July 2013}}
+
+'''[[AHS Krab]]'''&nbsp;&ndash; (''Armatohaubica Krab'', Cannon-howitzer [[crab]])
+:Licensed Braveheart turret on a South Korean [[K9 Thunder]] self-propelled howitzer chassis, with Polish ''Azalia'' BMS. Designed and integrated in Poland, by Huta Stalowa Wola and WB Electronics. Two ''Krab'' prototypes were built in 2001, and successfully completed all required evaluations and state acceptance trials. Initial serial production started in 2008, with eight units delivered to the [[Polish Land Forces]] for testing on a locally built chassis.<ref>{{cite web |date=8 October 2012 |title=Kraby dla 11. MPA |url=http://www.altair.com.pl/news/view?news_id=8763 |website=Altair |publisher=Altair Agencja Lotnicza |location=Warsaw, Poland |language=pl |trans-title=Krabs for the 11th Masurian Artillery Regiment |access-date=28 December 2016 |url-status=live |archive-url=https://web.archive.org/web/20231026030318/https://www.altair.com.pl/news/view?news_id=8763 |archive-date=26 October 2023}}</ref> In 2014 production of the Krab chassis was forwarded to [[Samsung Techwin]], which agreed to provide 120 units, replacing the Polish-built UPG chassis in series production vehicles.<ref>{{cite news |last=Palowski |first=Jakub |date=18 December 2014 |title=Krab Howitzers to get Korean Chassis. PGZ Decision Ends the Crisis. |url=https://defence24.com/industry/krab-howitzers-to-get-korean-chassis-pgz-decision-ends-the-crisis |work=Defence24 |publisher=Defence24 Sp. z o.o. |location=Warsaw, Poland |access-date=10 July 2024}}</ref>
+
+==Operators==
+===Current operators===
+* {{flagcountry|Ukraine}}: [[Ukrainian Ground Forces]] received 68 AS artillery systems <ref>https://www.whatdotheyknow.com/request/clarification_regarding_military/response/3202439/attach/html/3/FOI2025%2018900.pdf.html</ref> + spares were donated by the United Kingdom<ref name="entire"/> (of which 29 have been recorded by Oryx as destroyed or damaged during the [[Russo-Ukrainian War]]).<ref>{{Cite web |title=Attack On Europe: Documenting Ukrainian Equipment Losses During The Russian Invasion Of Ukraine |url=https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html |website=oryxspioenkop.com}}</ref>
+
+===Former operators===
+* {{flagicon|United Kingdom}} [[British Army]]: 68 AS-90 donated to Ukraine, the rest in storage.<ref name="endofas90"/><ref name="sky 15-01-2023">{{Cite news |author=<!--Not stated--> |date=15 January 2023 |title=Ukraine war: UK reveals number of tanks to be sent to Kyiv for first time |url=https://news.sky.com/story/uk-to-send-challenger-2-tanks-to-ukraine-number-10-confirms-12786361 |url-status=live |archive-url=https://web.archive.org/web/20230131220649/https://news.sky.com/story/uk-to-send-challenger-2-tanks-to-ukraine-number-10-confirms-12786361 |archive-date=31 January 2023 |access-date=15 January 2023 |website=Sky News}}</ref><ref>{{Cite web |date=14 January 2023 |title=PM accelerates Ukraine support ahead of anniversary of Putin's war |url=https://www.gov.uk/government/news/pm-accelerates-ukraine-support-ahead-of-anniversary-of-putins-war |url-status=live |archive-url=https://web.archive.org/web/20240104161231/https://www.gov.uk/government/news/pm-accelerates-ukraine-support-ahead-of-anniversary-of-putins-war |archive-date=4 January 2024 |access-date=15 January 2023 |website=GOV.UK}}</ref>
+
+==References==
+{{Commons category|position=left}}
+{{Reflist}}
+
+{{ModernUKAFVsNav | style= wide }}
+
+[[Category:Self-propelled howitzers of the United Kingdom]]
+[[Category:Self-propelled artillery of the Cold War]]
+[[Category:155 mm artillery]]
+[[Category:Tracked self-propelled howitzers]]
+[[Category:Military vehicles introduced in the 1990s]]
+[[Category:Vickers]]

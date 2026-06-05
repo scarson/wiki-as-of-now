@@ -1,0 +1,225 @@
+{{Short description|Electric Class 8 semi-trailer truck}}
+{{Use American English|date=December 2022}}
+{{Use mdy dates|date=October 2025}}
+{{Infobox electric vehicle
+| name = Tesla Semi
+| image = Tesla Semi Pepsi 2023-10-31-13-39-37 DSCF2583 dllu.jpg
+| caption = Tesla Semi operated by [[PepsiCo]] in [[Sacramento]], California, October 2023. This is one of the units that were first delivered in December 2022.
+| manufacturer = [[Tesla, Inc.]]
+| production = 2022–present
+| assembly = United States: [[Storey County, Nevada]] ([[Gigafactory Nevada]])
+| designer = 
+| class = [[Semi-trailer truck]] ([[Truck classification#Class 8|Class 8]])
+| body_style = [[Tractor unit]]
+| layout = 
+| platform = 
+| chassis = 
+| related = 
+| motor = 
+| powerout = 
+| battery = 822 & 548 kWh, 1,000 V<ref name="riz2026"/><ref name="EnsideEv-1000v">{{cite news |url=https://insideevs.com/news/624822/tesla-1000volt-powertrain-semi-first/ |title=Tesla Launches 1,000-Volt Powertrain: Semi Is First But Not The Last |first=Mark |last=Kane |work=Inside EVs |location=US |date=December 4, 2022 |access-date=December 30, 2022 |archive-date=December 30, 2022  |archive-url= https://web.archive.org/web/20221230012347/https://insideevs.com/news/624822/tesla-1000volt-powertrain-semi-first/ |url-status=live }}</ref>
+| electric_range = {{convert|500|mi|km|abbr=on}}
+| charging = 1.2 [[Watt#Megawatt|MW]] [[Megawatt Charging System|MCS]]
+| transmission = 
+| propulsion = 3 electric motors
+| wheelbase = 
+| length = 
+| width = 
+| height = 
+| weight = 
+| predecessor = 
+| successor = 
+| sp = us
+| doors = 
+}}
+
+The '''Tesla Semi''' is a battery electric [[semi-trailer truck]] built by [[Tesla, Inc.]] since 2022. The truck is powered by three motors, has approximately three times the power of a typical diesel semi truck, and can operate at an energy use of less than {{Convert|2|kWh/mile|kWh/km|abbr=out|spell=in}}.<ref name=yahooNews20221205/> The Semi has two models: one is rated for {{cvt|325|miles|km|round=10}}, the other for {{cvt|500|miles|km|round=10}}. It can haul {{cvt|45,000|lb|ton|adj=on}} loads.<ref name=":0">{{Cite AV media |url=https://www.youtube.com/watch?v=BCXSq1dmEB8 |title=Jay Leno Drives the 500-Mile Tesla Semi: The Death of Diesel? {{!}} Jay Leno's Garage |date=2026-03-23 |last=Jay Leno's Garage |access-date=2026-03-25 |via=YouTube}}</ref>
+
+Two [[concept vehicles]] were unveiled in November 2017. Tesla CEO [[Elon Musk]] predicted production would begin in 2019,<ref name="beckford">{{Cite magazine |last=Beckford |first=Andrew |date=October 21, 2022 |title=Long-Delayed Tesla Semi Truck Seemingly Breaks Down, Causing Highway Delays |url=https://www.motortrend.com/news/tesla-semi-truck-breaks-down-video/ |access-date=February 25, 2023 |magazine=[[Motor Trend]]|publisher=[[Motor Trend Group]] |language=en}}</ref> but it began in October 2022,<ref>{{cite magazine |last= Montanez|first=Abby |date= October 7, 2022|title= Tesla Will Deliver Its First Hotly Anticipated Semi Trucks to PepsiCo This December |url= https://robbreport.com/motors/cars/tesla-semi-trucks-pepsi-1234757840/ |magazine=[[Robb Report]] |location= |publisher=[[Penske Media Corporation]] |access-date=January 6, 2024}}</ref> with initial deliveries to [[PepsiCo]]<!-- Both Pepsi Beverages and FritoLay branded trucks in the initial deliveries. --> in December 2022.<ref name=engadget20221202/> Production then stalled.<ref>{{cite news |url=https://electrek.co/2025/04/04/tesla-semi-suffers-delays-dramatic-price-increase/ |title=Tesla Semi suffers more delays and 'dramatic' price increase |first=Fred |last=Lambert |date=April 4, 2025 |access-date=April 5, 2025}}</ref>
+
+[[Mass production|Volume production]] of the Semi started on April 29, 2026. The manufacturing facility, located adjacent to the existing [[Gigafactory Nevada|Giga Nevada]] facility, is planned to produce 50,000 Semis annually. The volume-production Semi is expected by Tesla to weigh the same as a comparable diesel truck.<ref>{{Cite web |last=Aregay |first=Tinsae |date=July 18, 2024 |title=Tesla's Semi Factory Construction Advancing Rapidly to 50,000 Tesla Semis a Year {{!}} Torque News |url=https://www.torquenews.com/11826/teslas-semi-factory-construction-advancing-rapidly-50000-tesla-semis-year |access-date=July 21, 2024 |website=TorqueNews |location=US |archive-date=July 21, 2024  |archive-url= https://web.archive.org/web/20240721011920/https://www.torquenews.com/11826/teslas-semi-factory-construction-advancing-rapidly-50000-tesla-semis-year |url-status=live }}</ref>
+
+== History ==
+The Semi was first mentioned in the Tesla 2016 Master Plan.<ref>{{cite news|last1=Bhuiyan|first1=Johana |title=Elon Musk's Master Plan: Solar power, Tesla trucks, self-driving cars and car-sharing|url=https://www.recode.net/2016/7/20/12243702/elon-musk-master-plan-solarcity-tesla |publisher=Recode|date=July 20, 2016|access-date=November 18, 2017 |archive-date=December 1, 2017 |archive-url= https://web.archive.org/web/20171201035411/https://www.recode.net/2016/7/20/12243702/elon-musk-master-plan-solarcity-tesla |url-status=live}}</ref> Tesla said at the time that they had a working prototype that used 'a bunch' of [[Tesla Model 3]] electric motors.<ref>{{cite news|title=Tesla Semi is using 'a bunch' of Model 3 electric motors, says Elon Musk|url=https://electrek.co/2017/05/03/tesla-semi-model-3-electric-motors-elon-musk/ |publisher=Electrek|date=May 3, 2017|last=Lambert|first=Fred|access-date=November 17, 2017 |archive-date=November 12, 2020 |archive-url= https://web.archive.org/web/20201112014216/https://electrek.co/2017/05/03/tesla-semi-model-3-electric-motors-elon-musk/ |url-status=live}}</ref> {{as of|2017|04}}, [[Jerome Guillen]] had been leading the Tesla Semi program. Guillen was once in charge of [[Freightliner Cascadia|Freightliner's Cascadia]] [[Diesel engine|Diesel-engine]] [[Class 8 truck|Class 8 semi]], before joining Tesla to configure the [[Tesla Model S|Model S]] production line,<ref>{{cite web|title=Tesla Semi all-electric truck to be unveiled in September and be 'next level', says Elon Musk|url=https://electrek.co/2017/04/13/tesla-semi-all-electric-truck-september-elon-musk/ |date=April 13, 2017|last=Lambert|first=Fred|work=Electrek |access-date=November 17, 2017 |archive-date=September 8, 2017 |archive-url= https://web.archive.org/web/20170908111720/https://electrek.co/2017/04/13/tesla-semi-all-electric-truck-september-elon-musk/ |url-status=live}}</ref><ref>{{cite news|last1=Lambert|first1=Fred |title=Tesla's VP of Trucks talks about new electric semi, weight, charging, and more|url=https://electrek.co/2017/11/26/tesla-semi-vp-trucks-electric-presentation/ |work=Electrek|date=November 26, 2017|access-date=November 26, 2017 |archive-date=December 1, 2017 |archive-url= https://web.archive.org/web/20171201032022/https://electrek.co/2017/11/26/tesla-semi-vp-trucks-electric-presentation/ |url-status=live}}</ref> but left the Semi program a year later to lead one of the Model 3 general assembly lines<ref name=cnbc20180616>{{cite news |url=https://www.cnbc.com/2018/06/16/elon-musk-e-mail-to-tesla-employees-says-radical-improvements-needed.html |title=Elon Musk tells Tesla employees that 'radical improvements' are needed to hit quarterly targets |date=June 16, 2018 |accessdate=October 16, 2019 |work=CNBC News |first=Lora |last=Kolodny |archive-date=October 17, 2019  |archive-url= https://web.archive.org/web/20191017003757/https://www.cnbc.com/2018/06/16/elon-musk-e-mail-to-tesla-employees-says-radical-improvements-needed.html |url-status=live }}</ref> and subsequently became president of Tesla's automotive division in September 2018.<ref name=cnbc20170917>{{cite news |url=https://www.cnbc.com/2018/09/07/tesla-says-jerome-guillen-has-been-promoted-to-president-of-automotive.html |title=Tesla says Jerome Guillen has been promoted to president of automotive |date=September 7, 2018 |accessdate=October 16, 2019 |work=CNBC News |first=Christine |last=Wang |archive-date=October 17, 2019  |archive-url= https://web.archive.org/web/20191017003751/https://www.cnbc.com/2018/09/07/tesla-says-jerome-guillen-has-been-promoted-to-president-of-automotive.html |url-status=live }}</ref> The current lead for the Semi program is Dan Priestly, a Tesla engineer since 2015.<ref>{{Cite web | title=The Tesla Semi effort is growing fast! {{!}} Dan Priestley | url=https://www.linkedin.com/posts/dan-priestley_build-your-career-at-tesla-activity-7018932028788137984-qitI | access-date=August 18, 2025 | website=www.linkedin.com}}</ref>
+
+A [[concept car|concept prototype]] of the Semi was unveiled at a press conference on November 16, 2017, where [[Elon Musk]] provided additional specifics. He claimed that the electric Semi would cost {{convert|20|¢/mi|¢/km|abbr=on}} less to operate than a diesel truck if charged at a [[Tesla Megacharger|Megacharger]], for which Tesla said in 2017 they could guarantee a price of 7 ¢/kWh (in the United States).<ref name=WaPo2017>{{cite news |url=https://www.washingtonpost.com/news/innovations/wp/2017/11/17/teslas-latest-creation-an-electric-big-rig-that-can-travel-500-miles-on-a-single-charge/ |title=Tesla's latest creation: An electric big rig that can travel up to 500 miles on a single charge |first1=Peter |last1=Holley |date=November 17, 2017 |newspaper=The Washington Post |access-date=December 7, 2022 |archive-date=November 20, 2017  |archive-url= https://web.archive.org/web/20171120081227/https://www.washingtonpost.com/news/innovations/wp/2017/11/17/teslas-latest-creation-an-electric-big-rig-that-can-travel-500-miles-on-a-single-charge/ |url-status=live }}</ref><ref name="CarDriverBlog2017">{{Cite news |last1=Harris |first1=Mark |date=November 20, 2017 |title=More Logical Than Ludicrous: Tesla Semi Will Need to Deliver Reliability |magazine=Car and Driver |url=https://www.caranddriver.com/news/a15338914/more-logical-than-ludicrous-tesla-semi-will-need-to-deliver-reliability/ |access-date=December 7, 2022 |archive-date=June 13, 2020  |archive-url= https://web.archive.org/web/20200613171547/https://www.caranddriver.com/news/a15338914/more-logical-than-ludicrous-tesla-semi-will-need-to-deliver-reliability/ |url-status=live }}</ref>
+
+[[File:Tesla Semi 5.jpg|thumb|upright=1.2|Two prototype Tesla Semis in [[Rocklin, California]]<!-- DO NOT LINK BOTH SEPARATELY, see [[MOS:GEOLINK]] for further guidance. -->]]
+
+Tesla indicated that the Semi would be equipped with Enhanced Autopilot as standard equipment, offering semi-autonomous capability,<ref name=Verge2017>{{cite news|last1=Estrada|first1=Zac |title=This is the Tesla Semi truck|url=https://www.theverge.com/2017/11/16/16667366/tesla-semi-truck-announced-price-release-date-electric-self-driving |work=The Verge|date=November 16, 2017}}</ref> and that new technology with [[Electronic stability control|active safety controls]] on the independent motors and wheels would detect and prevent [[jackknifing]].<ref name=CarDriverBlog2017/> Musk said that the system could eventually allow several units to operate in an autopilot-based convoy, led by a truck with a driver, that would be a cheaper alternative to rail transport.<ref name=LAT2017/> At the time, [[Platoon (automobile)|platooning]] was legal in only eight U.S. states and all required a human driver in each truck, so changes in legislation would be necessary to achieve that technology capability.<ref name="LAT2017">{{Cite news |last1=Lien |first1=Russ |last2=Mitchell |first2=Tracey |title=Tesla's Semi and Roadster impress, but "production hell" raises doubts about follow-through |url=http://www.latimes.com/business/technology/la-fi-tn-tesla-stock-20171117-story.html |access-date=November 25, 2017 |work=Los Angeles Times |language=en-US |archive-date=November 24, 2017  |archive-url= https://web.archive.org/web/20171124115558/http://www.latimes.com/business/technology/la-fi-tn-tesla-stock-20171117-story.html |url-status=live }}</ref> The battery packs are located under the floor of the cab, between the front and driving wheels.<ref name=wired2017>{{cite magazine|last1=Davies|first1=Alex|title=Elon Musk Has Unveiled Tesla's All-Electric Semitruck|url=https://www.wired.com/story/tesla-truck-revealed/|magazine=Wired|date=November 16, 2017|access-date=November 20, 2017 |archive-date=January 24, 2021 |archive-url= https://web.archive.org/web/20210124193944/https://www.wired.com/story/tesla-truck-revealed/|url-status=live}}</ref> Running empty, the long-range Tesla Semi was expected to have a range of {{convert|997|km|mi|disp=flip}}.<ref>{{cite news|url=https://www.usine-digitale.fr/article/tesla-semi-ce-qu-il-faut-savoir-sur-le-camion-electrique-semi-autonome-de-tesla.N615453 |title=Tesla Semi : ce qu'il faut savoir sur le camion électrique semi-autonome de Tesla|trans-title=Tesla Semi: What you need to know|first=Klervi|last=Drouglazet |work=L'Usine nouvelle|date=November 17, 2017|access-date=September 18, 2018|language=fr|quote=Il a une autonomie de 997 km à vide et de 804&nbsp;km à charge maximum : 40 tonnes de marchandises.}}</ref> In 2017, Tesla projected that the price of production versions for the {{Convert|300|mile|km|abbr=out|disp=|adj=on}} and {{Convert|500|mile|km|abbr=out|disp=|adj=on}} range versions would be {{USD|150,000}} and {{USD|180,000}} respectively. The company stated they would offer a Founder's Series Semi at {{USD|200,000}}.<ref>{{cite news |last1=Tung |first1=Liam |title=Tesla's all-electric Semi truck: Prices start at $150,000 and you can reserve one today |url=https://www.zdnet.com/article/teslas-all-electric-semi-truck-prices-start-at-150000-and-you-can-reserve-one-today/ |publisher=ZDNet |date=November 24, 2017 |language=en |access-date=December 7, 2022}}</ref>{{update after|2023|4|6}}<!-- what is Tesla pricing these for now in 2023?, now that they are in production? --> At the Semi and Roadster unveiling event, Musk stated "Production [of the semi] begins in 2019, so if you order now, you get the truck in 2 years." Tesla intends to warrant the drivetrain for 1 million miles.<ref name=tesla20171204>{{cite AV media |title=Tesla Semi & Roadster Unveil |via=YouTube |url=https://www.youtube.com/watch?v=5RRmepp7i5g |date=December 14, 2017 |publisher=Tesla |access-date=December 7, 2022 |archive-date=September 13, 2024  |archive-url= https://web.archive.org/web/20240913160800/https://www.youtube.com/watch?v=5RRmepp7i5g |url-status=live }}</ref>
+
+In 2018, Tesla announced that Semi prototypes were being tested with real cargo, hauling battery packs from Nevada to California.<ref>{{Cite news |last1=Fingas |first1=Jon |url=https://www.msn.com/en-us/news/technology/teslas-semi-truck-is-traveling-cross-country-alone/ar-BBMu9hH |title=Tesla's Semi truck is traveling cross-country 'alone' |date=August 27, 2018 |publisher=MSN |language=en-US |access-date=August 27, 2018 |archive-url= https://web.archive.org/web/20180827142521/https://www.msn.com/en-us/news/technology/teslas-semi-truck-is-traveling-cross-country-alone/ar-BBMu9hH |archive-date=August 27, 2018 |url-status=dead}}</ref><ref>{{Cite news |last1=Lambert |first1=Fred |url=https://electrek.co/2018/08/25/tesla-semi-drove-across-country-supercharger-elon-musk/ |title=Tesla Semi made it 'across the country alone' with only Supercharger network and an extension cord, says Elon Musk |date=August 25, 2018 |work=Electrek |access-date=August 27, 2018 |language=en-US |archive-date=August 27, 2018  |archive-url= https://web.archive.org/web/20180827142448/https://electrek.co/2018/08/25/tesla-semi-drove-across-country-supercharger-elon-musk/ |url-status=live }}</ref><ref>{{Cite news |last1=Fingas |first1=Jon |url=https://www.engadget.com/2018/08/26/tesla-semi-truck-travels-cross-country-alone/ |title=Tesla's Semi truck is traveling cross-country 'alone' |date=August 27, 2018 |work=Engadget |access-date=August 27, 2018 |language=en-US |archive-date=September 13, 2024  |archive-url= https://web.archive.org/web/20240913160639/https://www.engadget.com/2018-08-26-tesla-semi-truck-travels-cross-country-alone.html |url-status=live }}</ref>
+
+The company's plans to put the Semi into production were substantially delayed. At the 2017 unveiling, production was slated to begin in 2019.<ref name=tesla20171204/> In January 2020, Musk stated that a lack of battery production capability was one limiting factor for the conservative Semi production timeline, with the company choosing to use its battery supply for passenger cars instead.<ref>{{Cite web
+ |url          = https://www.nasdaq.com/articles/tesla-inc.-tsla-q4-2019-earnings-call-transcript-2020-01-30
+ |title        = Tesla, Inc. (TSLA) Q4 2019 Earnings Call Transcript
+ |last         = Motley Fool Transcribers
+ |date         = January 29, 2020
+ |publisher    = NASDAQ
+ |language     = en
+ |access-date  = February 9, 2020
+ |archive-date = September 13, 2024 
+ |archive-url  = https://web.archive.org/web/20240913160649/https://www.nasdaq.com/articles/tesla-inc.-tsla-q4-2019-earnings-call-transcript-2020-01-30
+ |url-status   = live
+}}</ref><ref>{{Cite web
+ |last         = Kolodny
+ |first        = Lora
+ |url          = https://www.cnbc.com/2020/01/29/elon-musk-tesla-wont-raise-capital-will-focus-on-battery-cost.html
+ |title        = Elon Musk says Tesla won't raise capital, will focus on lowering cost of batteries
+ |website      = [[CNBC]]
+ |language     = en
+ |date         = January 30, 2020
+ |access-date  = February 9, 2020
+ |archive-date = September 13, 2024 
+ |archive-url  = https://web.archive.org/web/20240913160707/https://www.cnbc.com/2020/01/29/elon-musk-tesla-wont-raise-capital-will-focus-on-battery-cost.html
+ |url-status   = live
+}}</ref> In January 2021, the company announced that Semi production would be delayed until the end of 2021,<ref>{{Cite web|last=Kolodny|first=Lora |date=January 28, 2021|title=Tesla Semi production on hold until company can make its own batteries|url=https://www.cnbc.com/2021/01/28/tesla-semi-production-on-hold-until-company-can-make-its-own-batteries.html |access-date=March 4, 2021|publisher=CNBC|language=en|archive-date=February 9, 2021 |archive-url= https://web.archive.org/web/20210209182807/https://www.cnbc.com/2021/01/28/tesla-semi-production-on-hold-until-company-can-make-its-own-batteries.html |url-status=live}}</ref> as the company hoped to ramp up high-volume production of its "tabless" [[4680 battery|4680 battery cell]]s<ref>{{Cite web|last=Field|first=Kyle|date=September 22, 2020|title=Everything You Need To Know About Tesla's New 4680 Battery Cell|url=https://cleantechnica.com/2020/09/22/everything-you-need-to-know-about-teslas-new-4680-battery-cell/ |access-date=March 4, 2021|website=CleanTechnica|language=en-US|archive-date=December 8, 2023 |archive-url= https://web.archive.org/web/20231208083020/https://cleantechnica.com/2020/09/22/everything-you-need-to-know-about-teslas-new-4680-battery-cell/ |url-status=live}}</ref> (previewed in September 2020) to meet the demand for the Semi and other vehicles. In October 2021, Musk announced that production of the Semi would slip into 2023.<ref>{{Cite web
+ |title        = 2021 Shareholder Meeting
+ |url          = https://www.tesla.com/2021shareholdermeeting
+ |date         = October 7, 2021
+ |access-date  = October 10, 2021
+ |work         = [[Tesla, Inc.]]
+ |language     = en
+ |archive-date = October 9, 2021 
+ |archive-url  = https://web.archive.org/web/20211009121518/https://www.tesla.com/2021shareholdermeeting
+ |url-status   = live
+}}</ref><ref>{{Cite web
+ |last         = Shahan
+ |first        = Zachary
+ |title        = Tesla Cybertruck Delayed Till End Of 2022, Semi 2023 – Lot Of Supply Chain Challenges
+ |url          = https://cleantechnica.com/2021/10/08/tesla-cybertruck-delayed-till-end-of-2022-semi-2023-lot-of-supply-chain-challenges/
+ |date         = October 8, 2021
+ |access-date  = January 3, 2022
+ |work         = [[CleanTechnica]]
+ |language     = en
+ |archive-date = September 13, 2024 
+ |archive-url  = https://web.archive.org/web/20240913160641/https://cleantechnica.com/2021/10/08/tesla-cybertruck-delayed-till-end-of-2022-semi-2023-lot-of-supply-chain-challenges/
+ |url-status   = live
+}}</ref><ref>{{Cite web
+ |last         = Lockridge
+ |first        = Deborah
+ |title        = Tesla Semi in 2023?
+ |url          = https://www.truckinginfo.com/10153675/tesla-semi-in-2023
+ |date         = October 11, 2021
+ |access-date  = January 3, 2022
+ |work         = Heavy Duty Trucking
+ |language     = en
+ |archive-date = January 3, 2022 
+ |archive-url  = https://web.archive.org/web/20220103231838/https://www.truckinginfo.com/10153675/tesla-semi-in-2023
+ |url-status   = live
+}}</ref>
+
+In October 2022, Musk announced on Twitter the start of production of the {{convert|500|mile|km|abbr=out|adj=on}} range model that would be delivered in December.<ref>{{cite web |url=https://www.cnn.com/2022/10/07/business/tesla-semi-truck-production/index.html |title=Tesla set to deliver long-delayed electric trucks to Pepsi in December |date=October 7, 2022 |website=CNN Business |last=McFarland |first=Matt |access-date=October 10, 2022  |archive-date=November 2, 2022  |archive-url= https://web.archive.org/web/20221102120652/https://www.cnn.com/2022/10/07/business/tesla-semi-truck-production/index.html |url-status=live }}</ref> In November 2022, the company reported that a Tesla Semi had completed a {{convert|500|mile|km|abbr=out|adj=on}} drive while weighing {{Convert|81000|lb|kg}}.<ref>{{cite news |url=https://www.drive.com.au/news/tesla-semi-reportedly-completes-800km-range-test-us-deliveries-to-begin-within-days/ |website=Drive |title=Tesla Semi reportedly completes 800km range test, US deliveries to begin within days |first1=Jordan |last1=Mulach |date=November 29, 2022 |access-date=November 29, 2022 |archive-date=November 29, 2022  |archive-url= https://web.archive.org/web/20221129202055/https://www.drive.com.au/news/tesla-semi-reportedly-completes-800km-range-test-us-deliveries-to-begin-within-days/ |url-status=live }}</ref><ref>{{Cite news |last1=Sriram |first1=Akash |date=December 2, 2022 |title=Musk delivers first Tesla truck, but no update on output, pricing |language=en |work=Reuters |url=https://www.reuters.com/business/autos-transportation/musk-delivers-first-tesla-semi-trucks-2022-12-02/ |access-date=December 2, 2022}}</ref> 
+
+On December 1, 2022, Tesla began customer deliveries at an evening event hosted at the manufacturing facility in Nevada. [[PepsiCo]] received the first Semis of their large order for use with [[Pepsi]] beverage and [[Frito-Lay]] snack food transportation fleets.<ref name=engadget20221202>{{cite news |url=https://www.engadget.com/tesla-finally-delivers-its-first-production-semi-to-pepsi-014214184.html |title=Tesla finally delivers its first production Semi |first1=A. |last1=Tarantola |work=Engadget |date=December 1, 2022 |access-date=December 2, 2022 |archive-date=January 31, 2023  |archive-url= https://web.archive.org/web/20230131081212/https://www.engadget.com/tesla-finally-delivers-its-first-production-semi-to-pepsi-014214184.html |url-status=live }}</ref> PepsiCo Vice President Mike O'Connell stated that the Semis can haul Frito-Lay food products for around 425 miles (684&nbsp;km), but for heavier loads of sodas, the trucks will make shorter trips of around 100 miles (160&nbsp;km).<ref>{{cite news |url=https://www.cnbc.com/2022/12/16/pepsico-is-using-36-tesla-semis-in-its-fleet-and-is-upgrading-facilities-for-more-in-2023-exec-says.html |title=PepsiCo is using 36 Tesla Semis in its fleet and is upgrading facilities for more in 2023, exec says |work=CNBC |location=US |date=December 16, 2022 |access-date=December 30, 2022 |archive-date=April 4, 2023  |archive-url= https://web.archive.org/web/20230404084223/https://www.cnbc.com/2022/12/16/pepsico-is-using-36-tesla-semis-in-its-fleet-and-is-upgrading-facilities-for-more-in-2023-exec-says.html |url-status=live }}</ref>
+
+In late 2023, Tesla announced plans to establish a charging network for the Semi in the southwestern US. The network is expected to cost around $100M.<ref>{{cite web | url=https://www.greencarreports.com/news/1140373_report-tesla-seeks-100m-from-us-for-semi-charging-route | title=Report: Tesla seeks $100M from US for Semi charging route | date=August 2, 2023 | access-date=October 18, 2023  | archive-date=November 2, 2023  | archive-url= https://web.archive.org/web/20231102005922/https://www.greencarreports.com/news/1140373_report-tesla-seeks-100m-from-us-for-semi-charging-route | url-status=live }}</ref>
+
+Following years of delays, Tesla used ACT Expo 2024 to provide updated production and deployment plans for the Tesla Semi program including plans for volume Semi production beginning in 2026 and outlined additional deployments for [[PepsiCo|PepsiCo’s]] fleet.<ref>{{Cite web |last=Ohnsman |first=Alan |title=Elon Musk Said Tesla’s Semi Would Transform Trucking. 6 Years Later, Customers Are Still Waiting |url=https://www.forbes.com/sites/alanohnsman/2023/05/10/elon-musk-said-teslas-semi-would-transform-trucking-6-years-later-customers-are-still-waiting/ |access-date=2026-06-02 |website=Forbes |language=en}}</ref>
+
+As of May 2024, [[Walmart]], [[Costco]], [[Sysco]], [[Martin-Brower|Martin Brower]], and [[US Foods]] were also testing the Semi.<ref>{{cite news |date=May 9, 2024 |title=Tesla's Power Play: Costco, Sysco, and US Foods Jump on the 'Electric Semi Bandwagon' |url=https://ev-a2z.com/news/teslas-power-play-costco-sysco-and-us-foods-jump-on-the-electric-semi-bandwagon/ |url-status=live |archive-url= https://web.archive.org/web/20240913160640/https://ev-a2z.com/news/teslas-power-play-costco-sysco-and-us-foods-jump-on-the-electric-semi-bandwagon/ |archive-date=September 13, 2024 |access-date=May 10, 2024 |work=EV-a2z |location=US}}</ref> In August 2024, third-party logistics provider NFI tested the Semi and reported an efficiency of {{cvt|1.64|kWh/mile|kWh/km}}.<ref>{{Cite web |last=Klender |first=Joey |date=August 20, 2024 |title=Tesla Semi's latest fleet customer details efficiency advantages |url=https://www.teslarati.com/tesla-semi-latest-fleet-customer-details-efficiency-advantages/}}</ref> In October 2024, [[DHL]] reported an efficiency of {{cvt|1.72|kWh/mile|kWh/km}} loaded with {{Convert|34000|kg|order=flip}} gross-combined weight over {{cvt|625|km|miles|order=flip|0}} on a single charge.<ref>{{Cite web |last=Lambert |first=Fred |date=October 14, 2024 |title=DHL tests Tesla Semi and confirms the electric truck's impressive performance |url=https://electrek.co/2024/10/14/dhl-tests-tesla-semi-and-confirms-the-electric-trucks-impressive-performance/ |access-date=October 18, 2024 |website=Electrek |language=en-US}}</ref>
+
+On August 19, 2024, a Tesla Semi caught fire after a crash in [[Placer County, California|Placer County]], California, which closed [[Interstate 80|I-80]] for sixteen hours.<ref>{{Cite web |last=Sandra |first=McDonald |date=August 19, 2024 |title=Tesla big-rig battery ignites after crash, spewing fumes and shutting California freeway |url=https://www.latimes.com/california/story/2024-08-19/tesla-semi-fire-toxic-fumes-highway |access-date=August 20, 2024 |website=Los Angeles Times |language=en-US |archive-date=September 13, 2024  |archive-url= https://web.archive.org/web/20240913160719/https://www.latimes.com/california/story/2024-08-19/tesla-semi-fire-toxic-fumes-highway |url-status=live }}</ref>
+
+In May 2025, Tesla announced plans at ACT Expo to develop a [https://electrek.co/2025/04/30/tesla-semi-public-charging-network-coming-with-46-stations-in-2027/ public, 46-station Megacharger network] to support broader deployment of the Tesla Semi.<ref>{{Cite news |last=Lambert |first=Fred |date=2025-04-30 |title=Tesla Semi public charging network coming with 46 stations in 2027 |url=https://electrek.co/2025/04/30/tesla-semi-public-charging-network-coming-with-46-stations-in-2027/ |archive-url=http://web.archive.org/web/20250723102140/https://electrek.co/2025/04/30/tesla-semi-public-charging-network-coming-with-46-stations-in-2027/ |archive-date=2025-07-23 |access-date=2026-06-02 |work=Electrek |language=en-US}}</ref>
+
+On March 23, 2026, a new model of the Tesla Semi was shown with a sleeker front fascia and nearly {{cvt|1000|lb|kg}} less weight.<ref>{{Cite AV media |url=https://www.youtube.com/watch?v=BCXSq1dmEB8 |title=Jay Leno Drives the 500-Mile Tesla Semi: The Death of Diesel? {{!}} Jay Leno's Garage |date=2026-03-23 |last=Jay Leno's Garage |access-date=2026-03-24 |via=YouTube}}</ref> On April 29, serial production was announced by Tesla.<ref name=":1">{{Cite web |last=John |first=Darryn |date=2026-04-29 |title=Tesla Semi finally reaches high-volume production after years of delays |url=https://driveteslacanada.ca/semi/tesla-semi-high-volume-production/ |access-date=2026-04-29 |website=Drive Tesla |language=en-US}}</ref>
+
+== Design ==
+[[File:Tesla Semi cockpit.jpg|thumb|upright=1.2|Cabin of a Semi prototype]]
+Tesla Semi is powered by three carbon-fiber-wrapped motors; one operates continuously at optimal efficiency, while the other two motors provide additional power for acceleration and hills.<ref name=yahooNews20221205>{{Cite news |last1=Subramanian |first1=Pras |date=December 2, 2022 |title=Tesla Semi unveiled with tri-motor setup, megawatt charging tech |url=https://finance.yahoo.com/news/tesla-semi-unveiled-with-tri-motor-setup-megawatt-charging-tech-121619247.html |access-date=December 5, 2022 |publisher=Yahoo! Finance |language=en-US |archive-date=December 4, 2022  |archive-url= https://web.archive.org/web/20221204233255/https://finance.yahoo.com/news/tesla-semi-unveiled-with-tri-motor-setup-megawatt-charging-tech-121619247.html |url-status=live }}</ref> The stator and inverter are the same as in the [[Tesla Cybertruck|Cybertruck]].<ref name=":0" />
+
+The driver's seat is centered inside the bullet-shaped cab. The ceiling allows an adult to stand. [[Touchscreen]] displays are set on both sides of the steering wheel, with no other instrument panels.<ref name="truckscom2017-11-17">{{cite web |last1=O'Dell |first1=John |date=November 17, 2017 |title=Elon Musk Unveils Superfast, 500-mile Range Tesla Electric Semi-Truck |url=https://www.trucks.com/2017/11/17/elon-musk-unveils-tesla-electric-semi-truck/ |access-date=November 17, 2017 |publisher=Trucks.com |quote=He provided no pricing information or specifics as to horsepower or torque figures. |archive-date=November 22, 2017  |archive-url= https://web.archive.org/web/20171122142424/https://www.trucks.com/2017/11/17/elon-musk-unveils-tesla-electric-semi-truck/ |url-status=live }}</ref> The production model has side windows that completely retract.<ref name=":0" /><!-- For current "in production" design, will need more recent source. -->
+
+It has a {{Cd|long=yes|link=car|0.4}}.<ref name=":0" />
+
+The performance drop in cold weather is similar to diesel trucks (colder tires, etc.) Thermal management is active, routing heat to wherever it is needed (interior, battery).<ref name=":0" />
+
+It includes the same camera set as Tesla's passenger vehicles. Tesla claims that its safety system can prevent jackknifing.<ref name="CarDriverBlog2017" />{{better source needed|date=December 2022}}<!-- For current "in production" design, will need more recent source. -->
+
+The Tesla Semi has a 1.2-megawatt powertrain and charging system. It uses the same [[Lithium nickel manganese cobalt oxides|NMCA]] [[List of battery sizes#Lithium-ion batteries (rechargeable)|4680 cells]]<ref name="riz2026"/> found in the Cybertruck. The battery is rated to last {{cvt|1|E6miles|E6km}}. High-speed charging is supported at Tesla Megachargers. The battery is located near the ground to keep a low center of mass.<ref name=":0" />
+
+The truck supports commercial semi tires. Downhill driving uses [[regenerative braking]], recharging the battery, without touching the brake pedal.<ref name=":0" />
+
+The truck is able to power a refrigerated trailer or other high-powered machine without a [[Starter (engine)|pony motor]].<ref name=":0" />
+
+The cab has two rear axles. One provides maximum torque: starting to drive, and driving uphill. The second one is for efficiency during cruising, avoiding a multi-speed transmission.<ref name=":0" />
+
+It has a shorter wheelbase and a smaller battery.<ref name=":0" />
+
+The infotainment system matches Tesla's other vehicles, and supports Bluetooth phone access.<ref name=":0" />
+
+Compared to the initial version, the 2026 model offers:<ref name=":0" />
+
+* {{cvt|1,000|lb|kg|adj=on}} weight reduction, in part by shifting to 48 volts
+* 7% aerodynamic efficiency improvement
+* Electric rather than hydraulic steering (not steer-by-wire)
+
+== Costs ==
+Semis cost under US$300,000, twice as much as a diesel truck, but $100,000 less than other battery-electric trucks.{{r | WSJ_2026-03-19 }} Because of a California $200,000 subsidy, California companies have placed over 1,000 Semi orders, which would double the number of battery-electric trucks serving the ports of [[Port of Long Beach|Long Beach]] and [[Port of Los Angeles|Los Angeles]].<ref name="WSJ_2026-03-19"> {{cite news | url=https://www.wsj.com/business/logistics/truckers-tesla-fans-semi-b0a66e6e | title=Tesla Finally Has Its First Semi-Truck and It’s Already a Hit With Truckers | last=Berger | first=Paul | newspaper=[[Wall Street Journal]] | date=2026-03-19 }} </ref> The company states that operating costs are 20% less than for comparable diesel trucks across the US, and 50% less in California.<ref name=":0" />
+
+== Specifications ==
+Semi comes in two trims, Long Range and Standard Range:<ref name=":1" /><ref name=":0" /><ref name="jay leno">{{Cite web |last=Levin |first=Tim |date=October 3, 2023 |title=Jay Leno towed 30 tons with a Tesla Semi and said it felt like nothing |url=https://www.businessinsider.com/tesla-semi-truck-jay-leno-drive-review-video-2023-10 |website=Business Insider |access-date=November 2, 2023  |archive-date=September 13, 2024  |archive-url= https://web.archive.org/web/20240913161207/https://www.businessinsider.com/tesla-semi-truck-jay-leno-drive-review-video-2023-10 |url-status=live }}</ref>
+
+=== Long Range ===
+* Range: ~500 miles 
+* 4680 cells 
+* Electric steering assist
+* Strengthened [[Tesla Cybertruck|Cybertruck]] actuators 
+* 48 volt architecture (supports 12-volt accessories)
+* Motors: 3 independent motors on rear axles 
+* Power: up to 800 kW 
+* Battery: 822 kWh<ref name="riz2026">{{cite web |last1=Akhtar |first1=Riz |title=Tesla Semi electric truck features massive 822 kWh battery pack and 800 km of range |url=https://thedriven.io/2026/05/09/tesla-semi-electric-truck-features-massive-822-kwh-battery-pack-and-800-km-of-range/ |website=The Driven |language=en-AU |date=9 May 2026}}</ref>
+* Curb weight: 23,000 lbs 
+* Energy consumption: 1.7 kWh/mi
+* Charge speed: ~60% of range in 30 minutes
+* Charge type: MCS 3.2 
+* ePTO (electric [[power take off]]): ~25 kW
+
+=== Standard Range (shorter version) ===
+* Range: ~325 miles 
+* Turning radius: similar to [[Tesla Model Y|Model Y]] 
+* 4680 cells
+* Electric steering assist
+* Strengthened Cybertruck actuators 
+* 48 volt architecture (supports 12-volt accessories)
+* Motors: 3 independent motors on rear axles 
+* Power: up to 800 kW 
+* Battery: 548 kWh<ref name="riz2026"/>
+* Curb weight: <20,000 lbs 
+* Energy consumption: 1.7 kWh per mile 
+* Charge speed: ~60% of range in 30 minutes 
+* Charge type: MCS 3.2 
+* ePTO: ~ 25 kW
+
+== Prototype results ==
+Prior to the 2026 production release:<ref name=":0" />
+
+* The prototype fleet (a few hundred trucks) drove more than {{cvt|13.5|E6miles|E6km}}. 
+* The busiest truck covered {{cvt|440,000|miles|km}}. 
+* Fleet uptime was 95%. 
+* 75-80% of Semi breakdowns were resolved and returned to the customer in less than 24 hours, with >50% returned within 30 minutes.
+
+== See also ==
+* [[Megawatt Charging System]] – Direct current (DC) charging system for large battery electric vehicles
+
+== References ==
+{{Reflist}}
+
+== External links ==
+{{Commons category}}
+* {{Official website}}
+* "[https://www.reuters.com/article/us-dhl-tesla/numbers-starting-to-add-up-for-tesla-trucks-dhl-executive-idUSKCN1G71DW Numbers starting to add up for Tesla trucks: DHL executive]", president at DHL Supply Chain comments, [[Reuters]], February 23, 2018
+* [https://docs.google.com/spreadsheets/u/1/d/1g8545si6JX6PWpffxI4ovzAHa64y0IRhmaJHH9_ma9A/preview Tesla Semi orders list]; 646 as of July 29, 2019
+
+{{Tesla, Inc.}}
+{{Tesla timeline}}
+{{Electric vehicles}}
+{{Authority control}}
+
+[[Category:Class 8 trucks]]
+[[Category:Electric trucks]]
+[[Category:Proposed vehicles]]
+[[Category:Tesla vehicles|Semi]]
+[[Category:Tractor units]]
+[[Category:Vehicles introduced in 2017]]

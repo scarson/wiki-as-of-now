@@ -5,5 +5,13 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     environment: "node",
+    coverage: {
+      provider: "v8",
+      // Cover application/library source only — exclude the Next.js UI shell,
+      // ambient declarations, and pure type modules (no executable lines).
+      include: ["src/**/*.ts"],
+      exclude: ["src/app/**", "src/**/*.d.ts"],
+      reporter: ["text", "html"],
+    },
   },
 });

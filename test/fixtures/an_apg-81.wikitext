@@ -1,0 +1,63 @@
+{{Short description|F-35 Lightning II fire-control radar}}
+{{Use dmy dates|date=January 2022}}
+{{Infobox Radar 
+|name        = AN/APG-81
+|image       = AN-APG-81 Antenna, 2005 - National Electronics Museum - DSC00393.JPG
+|caption     = AN/APG-81 antenna display at the [[National Electronics Museum]] in 2005
+|country     = United States 
+|introdate   = 
+|number      =
+|type        = [[Solid state (electronics)|Solid-state]] [[active electronically scanned array|AESA]] [[fire-control radar]]
+|frequency   = 
+|range       = > 150 km, 93 miles{{Citation needed|date=January 2025}}
+|altitude    =
+|diameter    = 
+|azimuth     = 
+|elevation   = 
+|precision   = 
+|power       = 
+}}
+
+The '''AN/APG-81''' is an [[active electronically scanned array]] (AESA) [[fire-control radar]] designed by [[Northrop Grumman Electronic Systems]] (formerly [[Westinghouse Electronic Systems]]) for [[Lockheed Martin]]’s [[F-35 Lightning II]].<ref name=grumman>{{Cite web |title=AN/APG-81 Active Electronically Scanned Array (AESA) Fire Control Radar |url=https://www.northropgrumman.com/what-we-do/air/an-apg-81-active-electronically-scanned-array-aesa-fire-control-radar |publisher=[[Northrop Grumman]]}}</ref>
+
+The APG-81 is a successor radar to the [[F-22 Raptor]]’s [[AN/APG-77]], and has an antenna composed of 1,676 [[transceiver]]s.<ref>{{cite web |url=https://www.jsf.mil/aesa |title=Active Electronically Scanned Array |publisher=F-35 Joint Program Office |access-date=27 August 2025}}</ref> Over three thousand APG-81 AESA systems are expected to be ordered for the F-35, with production to run beyond 2035, including large quantities of international orders.<ref name="debrief">{{citation |title=The Weekly Debrief: F-35 Program Sneaks Major Radar Upgrade Into Block 4 |date=January 9, 2023 |url=https://aviationweek.com/defense-space/sensors-electronic-warfare/weekly-debrief-f-35-program-sneaks-major-radar-upgrade}}</ref><ref name="grumman" />
+
+The APG-81 enhances the F-35's multirole mission requirement operating as an  [[electronic warfare]] (EW) aperture utilizing the AESA's multifunction array (MFA). Using electronic protection (EP), electronic attack (EA) and electronic support measures (ESM), it enables the F-35's capability to [[Suppression of enemy air defenses|suppress and destroy]] advanced enemy air defenses.<ref name=grumman />
+
+This [[Joint Strike Fighter]] AESA radar is a result of the US government's competition for the world's largest AESA acquisition contract. [[Westinghouse Electronic Systems]] (acquired by [[Northrop Grumman]] in 1996) and [[Hughes Aircraft]] (acquired by [[Raytheon]] in 1997) received contracts for the development of the Multifunction Integrated [[Radio frequency|RF]] System/Multi-Function Array (MIRFS/MFA) in February 1996.<ref>{{citation |title=Hughes, Westinghouse picked for JAST multi-function array work |url= https://aviationweek.com/hughes-westinghouse-picked-jast-multi-function-array-work |website= Aviation Week Network |date=15 February 1996 |access-date= December 16, 2024}}</ref> [[Lockheed Martin]] and Northrop Grumman were selected as the winners of the Joint Strike Fighter competition; the System Development and Demonstration (SDD) contract was announced on 26 October 2001.
+
+Capabilities of the AN/APG-81 include the [[AN/APG-77]]'s air-to-air modes, plus advanced air-to-ground modes, including  [[synthetic aperture radar]] high resolution mapping, multiple ground [[moving target indication]] and track, combat identification, [[electronic warfare]], and [[ultra high bandwidth]] communications.<ref>{{cite web|url=https://www.defenseindustrydaily.com/elec-tricks-turning-aesa-radars-into-broadband-comlinks-01629/ |title=Elec Tricks: Turning AESA Radars into Broadband Comlinks |publisher=DefenseIndustryDaily.com |accessdate=2 February 2017}}</ref> The F-22 radar from Lot 5 aircraft onward is the APG-77(V)1 drawing heavily on APG-81 hardware and software for its upgraded air-to-ground capabilities.<ref>{{cite web|url=http://www.irconnect.com/noc/press/pages/news_releases.html?d=116105 |title=Northrop Grumman Successfully Completes F-22 Radar Flight-Test Certification |publisher=Irconnect.com |access-date=15 February 2012}}</ref>
+
+In August 2005, the APG-81 radar was flown for the first time aboard Northrop Grumman's [[BAC 1-11]] test aircraft. The radar system accumulated over 300 flight hours by 2010. The first test flight on Lockheed Martin's [[Lockheed Martin CATBird|CATBird]] avionics test-bed occurred in November 2008.<ref name=AP-81/>
+
+In June 2009, the F-35's APG-81 radar was integrated in the large-scale military  [[Exercise Northern Edge]] 2009 mounted on the front of a Northrop Grumman test aircraft. The test events "validated years of laboratory testing versus a wide array of threat systems, showcasing the extremely robust [[electronic warfare]] capabilities of the world's most advanced fighter [[fire-control radar]]."<ref name="Branch25Jun09">{{Citation |url= https://www.jber.jb.mil/ |title= Northern Edge fields new radar system |date= June 25, 2009 |archive-url= https://web.archive.org/web/20131027014134/http://www.jber.af.mil/news/story.asp?id=123156090 |access-date= December 16, 2024 |first= Sgt Ricardo |last= Branch |website= Joint Base Elmendorf-Richardson |url-status= live |archive-date= October 27, 2013}}</ref>
+
+Announced on 22 June 2010, the radar met and exceeded its performance objectives successfully tracking long-range targets as part of the first mission systems test flights of the F-35 Lightning II BF-4 aircraft.<ref name=AP-81>{{cite web |url=http://investor.northropgrumman.com/phoenix.zhtml?c=112386&p=irol-newsArticle_print&ID=1440869 |archive-url=https://archive.today/20160123050256/http://investor.northropgrumman.com/phoenix.zhtml?c=112386&p=irol-newsArticle_print&ID=1440869 |url-status=dead |archive-date=23 January 2016 |title=Northrop Grumman's APG-81 Radar Sensor Performs Flawlessly on First Mission Systems Flight of Lockheed Martin F-35 Aircraft |publisher=Northrop Grumman Corp. |date=22 June 2010 |access-date=28 October 2015 }}</ref>
+
+The AN/APG-81 team won the [[Department of Defense]] 2010 [[David Packard]] Excellence in Acquisition Award for performance against jammers.<ref>{{Citation |url= http://www.qualitymag.com/Articles/Industry_Headlines/BNP_GUID_9-5-2006_A_10000000000000943597 |title= Northrop Grumman Awarded DOD Honor for Electronic Protection Achievements |website= QualityMag |date= November 17, 2010 |access-date= December 16, 2024}}</ref>
+
+In January 2023, it was reported that the AN/APG-81 would be replaced by a new radar, the [[AN/APG-85]] on Block 4 F-35s. The APG-85 had been mentioned in a budgetary document in December 2022.<ref>{{cite news |last1=Helfrich |first1=Emma |title=F-35 Will Get New Radar Under Massive Upgrade Initiative |url=https://www.thedrive.com/the-war-zone/f-35-will-get-new-radar-under-massive-upgrade-initiative |work=The Drive |access-date=4 January 2023 |date=Jan 3, 2023}}</ref>
+
+In accordance with the [[Joint Electronics Type Designation System]] (JETDS), the "''AN/APG-81''" designation represents the 81st design of an Army-Navy airborne electronic device for [[radar]] [[fire-control]] equipment. The JETDS system also now is used to name all [[Department of Defense]] and some [[NATO]] electronic systems.
+
+==See also==
+{{Portal|Electronics|Aviation}}
+*[[List of radars]]
+*[[List of military electronics of the United States]]
+
+==References==
+{{Reflist}}
+
+==External links==
+*[https://web.archive.org/web/20110828164723/http://www.es.northropgrumman.com/solutions/f35aesaradar/index.html Northrop Grumman: APG-81]
+*[https://www.youtube.com/watch?v=wIwAOupjMeM Northrop Grumman YouTube channel's "APG-81 AESA Radar for the F-35 JSF" video]
+
+{{Lockheed Martin F-35 Lightning II}}
+{{Northrop Grumman|state=autocollapse}}
+
+[[Category:Aircraft radars]]
+[[Category:Military radars of the United States]]
+[[Category:Military electronics of the United States]]
+[[Category:Northrop Grumman radars]]
+[[Category:Radars of the United States Air Force]]
+[[Category:Military equipment introduced in the 2000s]]

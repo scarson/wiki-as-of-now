@@ -1,0 +1,119 @@
+{{Short description|Part of US ballistic missile defense system}}
+{{Use dmy dates|date=June 2022}}
+[[Image:Sbx underway.jpg|thumb|300px|right|The Sea-Based X-Band Radar underway]]
+The '''Sea-Based X-band radar''' ('''SBX-1''') is a floating, self-propelled, mobile [[active electronically scanned array]] [[early-warning radar]] station designed to operate in high winds and heavy seas. It was developed as part of the United States Department of Defense [[Missile Defense Agency|Missile Defense Agency's]] (MDA) Ballistic Missile Defense System.
+
+The radar is mounted on a fifth-generation CS-50 twin-hulled [[Semi-submersible platform|semi-submersible]] [[oil platform]]. Conversion of the vessel was carried out at the [[Keppel Corporation|AmFELS yard]] in [[Brownsville, Texas]]; the radar mount was built and mounted on the vessel at the [[Kiewit Corporation|Kiewit]] yard in [[Ingleside, Texas]]. It is nominally based at [[Adak Island]] in [[Alaska]] but has spent significant time at Pearl Harbor in test status.
+
+== Specifications ==
+* Vessel length: {{convert|389|ft|sp=us}} <ref>{{cite web |title=Sea-Based X-Band Radar-1 (SBX-1) |url=https://www.naval-technology.com/projects/sea-based-x-band-radar-1-sbx-1/ |website=Naval Technology |publisher=Verdict Media Limited |access-date=25 March 2021}}</ref>
+* Vessel beam: {{convert|238|ft|sp=us}}
+* Vessel height: {{convert|85|m|ft|order=flip}} from keel to top of [[radome]]
+* Vessel [[Draft (hull)|draft]]: approximately {{convert|33|ft|sp=us}} when in motion or not on station; approximately {{convert|98|ft|sp=us}} when on station
+* Vessel stability: remains within 10 degrees of horizontal on station (fully passive stabilization)
+* Vessel speed: {{convert|9|knots|sp=us}}
+* Cost: {{USD|900 million}}
+* Crew: Approximately 75-85 members, mostly civilian contractors
+* Radar height: {{convert|103|ft|sp=us}}
+* Radar diameter: {{convert|120|ft|sp=us}}
+* Radar weight: {{convert|18,000|lb|sp=us}}
+* Radar range: {{convert|2000|km|order=flip}}
+* Displacement: {{convert|50000|short ton|kg}}
+
+==Details==
+SBX-1 is part of the [[Ground-Based Midcourse Defense]] (GMD) system under development by the [[Missile Defense Agency]] (MDA). The decision to place the system on a mobile sea-based platform was intended to allow the vessel to be moved to areas needed for enhanced missile defense. Fixed radars provide coverage for a minimal area due to the curvature of the [[Earth]]. Even though the same limitation applies to the SBX, its moving ability mitigates it. SBX's primary task is to discriminate enemy warheads from decoys, followed by precision tracking the identified warheads. Testing has raised doubts about the system's ability to perform these tasks, deal with multiple targets, and report accurately to command authorities.<ref name=willman1>{{cite news | last1 = Willman | first1 = David | title = The Pentagon's $10-billion bet gone bad | url = http://graphics.latimes.com/missile-defense/ | access-date = 5 April 2015 | newspaper = [[Los Angeles Times]] | date = 5 April 2015}}</ref>
+
+The vessel has many small [[radome]]s for various communications tasks and a large central dome that encloses a [[phased-array]], {{convert|1800|t|lb|adj=on}} [[X band|X-band]] radar antenna. The small radomes are rigid, but the central dome is not - the flexible cover is supported by positive air pressure amounting to a few inches of water. The amount of air pressure is variable depending on weather conditions.
+
+The radar antenna is {{convert|384|m2|abbr=on}}. It has 45,000<ref name=Cole2011 /> solid-state transmit-receive modules mounted on an octagonal flat base, which can move ±270 degrees in azimuth and 0 to 85 degrees elevation (although software currently limits the maximum physical elevation to 80 degrees). The maximum azimuth and elevation velocities are approximately 5–8 degrees per second. In addition to the physical motion of the base, the beam can be electronically steered off [[Antenna boresight|bore-sight]] (details classified).
+
+There are currently 22,000 modules installed on the base. Each module has one transmit-receive [[feed horn]], and one auxiliary receive feed horn for a second polarization, totaling 44,000 feed horns. The base is roughly 2/3 populated, with space for the installation of additional modules. The current modules are concentrated toward the center to minimize grating lobes. This configuration allows it to support the very-long-range target discrimination and tracking that GMD's midcourse segment requires. The radar never points at land for the safety of the inhabitants.<ref name=Cole2011 />
+
+In addition to the power consumed by the radar, the thrusters that propel the vessel are electric and require substantial power. The maximum speed is approximately {{convert|8|kn|mph km/h}}. The vessel has six 3.6-megawatt generators (12-cylinder Caterpillar diesel) to support this and all other electrical equipment. The generators are in two compartments, one port and one starboard.
+
+[[Image:US Navy 060109-N-3019M-012 The heavy lift vessel MV Blue Marlin enters Pearl Harbor, Hawaii with the Sea Based X-Band Radar (SBX) aboard.jpg|thumb|right|SBX entering [[Pearl Harbor]], [[Hawaii]] for repairs on 9 January 2006]]
+The radar is derived from the radar used in the [[Terminal High Altitude Area Defense|THAAD theater ballistic missile defense system]]. It is a part of the layered [[ballistic missile defense]] system (BMDS) program of the [[United States]] [[Missile Defense Agency]] (MDA). One important difference from Aegis is using the X band in the SBX. Aegis uses [[S band]], and [[MIM-104 Patriot|Patriot]] uses the higher-frequency [[C band (IEEE)|C band]]. The X band frequency is higher still, so its shorter wavelength enables finer resolution of tracked objects.
+
+The radar was described by [[Lieutenant General|Lt. Gen]] [[Henry Obering|Trey Obering]] (former director of MDA) as being able to track an object the size of a [[baseball (object)|baseball]] over [[San Francisco]] in California from [[Chesapeake Bay]] in Virginia, approximately {{convert|2900|mi|km}} away.<ref>{{cite web | url = http://www.jeffhead.com/usn21/sbx1.htm | title = US Navy 21st Century US NAVY RAIL GUN | website = www.jeffhead.com}}{{dead link|date=March 2025|bot=medic}}{{cbignore|bot=medic}}</ref><ref>{{cite web | url = http://climateviewer.com/2014/12/11/haarp-report-weatherwar101-dont-know-haarp/ | title = The HAARP Report & WeatherWar101 don't know HAARP |date=11 December 2014 |website=ClimateViewer News |url-status=dead | archive-url = https://web.archive.org/web/20150403072249/http://climateviewer.com/2014/12/11/haarp-report-weatherwar101-dont-know-haarp/ | archive-date = 3 April 2015}}</ref> The radar will guide land-based missiles from Alaska and [[California]], as well as in-theater assets, depending on the mission.
+
+The vessel is [[classification society|classed]] by [[American Bureau of Shipping|ABS]] and has the [[International Maritime Organization|IMO]] number of 8765412.
+
+[[Image:SBX Pearl Harbor.jpg|thumb|right|SBX departing Pearl Harbor, Hawaii on 31 March 2006]]
+The first such vessel is scheduled to be based in [[Adak Island]], [[Alaska]], part of the [[Aleutian Islands]]. From that location, it will be able to track missiles launched toward the US from both [[North Korea]] and [[China]]. Although her homeport is in Alaska, she will be tasked with moving throughout the [[Pacific Ocean]] to support her mission. The [[hull code]] number given to the SBX vessel, "SBX-1", indicates the possibility of further units of the class. When a vessel must be continually on duty over a long period, common naval practice is to have at least three units of the type available to allow for replenishment, repair, and overhaul. Three further CS-50/Moss Sirius design vessels were under construction or contract at the [[Sevmash|Severodvinsk Shipyard]] in Russia as of early 2007 but were configured for oil production. On 11 May 2011, Col. Mark Arn, the SBX project manager for MDA, said that the "SBX is the only one of its kind and there are no current plans for another one".<ref>{{cite web | url = http://westseattleblog.com/2011/05/followup-sea-based-x-band-radar-sbx-in-seattle-in-daylight | title = Followup: Sea-Based X-Band Radar (SBX) in Seattle, in daylight | website = [[West Seattle Blog]] | date = 11 May 2011}}</ref> In July 2011, a Missile Defense Agency spokesman explained that other, smaller radars in the Pacific will "pick up the slack" while SBX is in port with its radar turned off.<ref>{{cite web | url = http://blogs.seattleweekly.com/dailyweekly/2011/07/1_billion_floating_radar_able.php | title = Gigantic $1 Billion Radar Chugs Through Elliott Bay at 9 MPH (But It Isn't Leaving Yet) | last = Walczak | first = Jonathan | website = [[Seattle Weekly]] | date = 20 July 2011 | archive-url = https://archive.today/20120707055225/http://blogs.seattleweekly.com/dailyweekly/2011/07/1_billion_floating_radar_able.php | archive-date = 7 July 2012 | url-status = dead | access-date = 24 July 2011}}</ref>
+
+==Operational history==
+The SBX was deployed in 2006. The ship has spent time for maintenance and repair at [[Pearl Harbor]], Hawaii, several times, including 170 days in 2006, 63 days in 2007, 63 days in 2008, 177 days in 2009, and 51 days in 2010. When not in Hawaii, the SBX has been on operational deployments in the Pacific, including the waters off Alaska. The ship has not moored in Alaska, despite the construction of an eight-point, $26 million mooring chain system installed in 2007 in [[Adak Island|Adak]]'s [[Kuluk Bay]]. On 23 June 2009, the SBX was moved to offshore Hawaii in response to a potential North Korean missile launch. Between 2009 and 2010, the vessel spent 396 continuous days at sea.<ref name=Cole2011>{{Cite news | last = Cole | first = William | title = On the ball: Pearl Harbor has become the X-Band radar's informal home | url = http://www.staradvertiser.com/news/20110123_On_the_ball.html?id=114443724 | newspaper = [[Honolulu Star-Advertiser]] | date = 23 January 2011 | archive-url = https://web.archive.org/web/20141217102249/http://www.staradvertiser.com/news/20110123_On_the_ball.html?id=114443724 | archive-date = 17 December 2014 | page = B5 | url-status = dead}}</ref><ref name=Cole2015>{{cite news | last1 = Cole | first1 = William | title = Floating 'golf ball' radar back in port | url = https://www.staradvertiser.com/2011/03/24/breaking-news/floating-golf-ball-radar-back-in-port/ | newspaper = [[Honolulu Star-Advertiser]] | date = 24 March 2011 | archive-url = https://web.archive.org/web/20171009144327/https://www.staradvertiser.com/2011/03/24/breaking-news/floating-golf-ball-radar-back-in-port/ | archive-date = 9 October 2017}}</ref>
+
+The SBX failed during a flight test on 31 January 2010, designated FTG-06. The test was a simulation of a North Korean or Iranian missile launch.<ref name="US anti-missile test of 'Iran or N Korea' attack fails">{{Cite web | url = https://news.bbc.co.uk/2/hi/americas/8492677.stm | title = US anti-missile test of 'Iran or N Korea' attack fails | website = [[BBC News]] | date = 2 February 2010 | access-date = 4 February 2010}}</ref> The test failure arose from two factors, the first being that algorithms in the SBX radar software (designed to filter out extraneous information from the target scene) were left disengaged for the test, and the second was a mechanical failure in a thruster on the kill vehicle.<ref>{{cite magazine | url = http://www.aviationweek.com/aw/generic/story_channel.jsp?channel=defense&id=news/asd/2010/04/06/07.xml | title = GBI Test Failure Result Of Two Problems | magazine = [[Aviation Week]] | date = 6 April 2010 | access-date = 14 November 2011 }}{{dead link|date=September 2019}}</ref>
+
+During flight test FTG-06a on 15 December 2010, the SBX performed as expected, but the target missile was again not intercepted.
+
+In May 2011, the SBX-1 entered [[Vigor Shipyards]] (formerly the Todd Pacific Shipyard) in Seattle for a $27 million upgrade and maintenance work by contractor Boeing.<ref>{{Cite news | url = http://seattletimes.nwsource.com/html/localnews/2015012804_apwaradarvessel.html | title = Unusual radar vessel visiting Puget Sound | newspaper = [[Seattle Times]] | date = 10 May 2011 | archive-url = https://web.archive.org/web/20110514005554/http://seattletimes.nwsource.com/html/localnews/2015012804_apwaradarvessel.html | archive-date = 14 May 2011 | url-status = dead}}</ref> The work was completed in about three months and in August 2011, SBX-1 departed Seattle for deployment.<ref>{{Cite web | url = https://www.mda.mil/news/11fyi0002.html | title = SBX Radar Completes Maintenance and Repair | date = 20 August 2011 | website = [[Missile Defense Agency]] | access-date = 8 October 2019 | quote = The Missile Defense Agency's Sea-Based X-Band Radar (SBX) will depart August 20th from Seattle, Washington where it has been undergoing scheduled maintenance and planned upgrades at Vigor Shipyards since May. The work has taken about three months to complete...}}</ref>
+
+In December 2011, MDA transferred responsibility for the SBX vessel management and physical security to the [[United States Navy|U.S. Navy's]] [[Military Sealift Command]].<ref>{{Cite web | url = https://www.msc.usff.navy.mil/Ships/Ship-Inventory/Sea-Based-X-Band-Radar/ | title = Military Sealift Command, Ship Inventory, Sea-Based X-Band Radar | website = www.msc.usff.navy.mil}}</ref> MDA retains responsibility for communications, the X-band Radar, and for mission integration.
+
+In February 2012, the Missile Defense Agency requested only $9.7 million per year for Fiscal Years 2013 through 2017, down from $176.8 million in fiscal 2012. This reduced amount would be used to maintain SBX in a "limited test support" role "while also retaining the ability to recall it to an active, operational status if and when it is needed."<ref name=willman1/><ref>{{Cite magazine | url = https://aviationweek.com/defense/mda-budget-slashed-nearly-1-billion-sbx-radar-shelved | title = MDA Slashes $1B from Budget; SBX Shelved | last = Butler | first = Amy | magazine = [[Aviation Week]] | date = 13 February 2012 }}{{Dead link|date=October 2023 |bot=InternetArchiveBot |fix-attempted=yes }}</ref>
+
+In April 2012, it was reported that SBX-1 had left [[Pearl Harbor]] and was assumed to be being deployed to monitor North Korea's planned [[Unha-3]] missile in the launch window of 12–16 April 2012.<ref>{{Cite web |url=http://english.chosun.com/site/data/html_dir/2012/04/02/2012040200739.html |title=U.S. Sends Radar System Ahead of N.Korean Rocket Launch |newspaper=[[The Chosun Ilbo]] |date=2 April 2012 |archive-date=2012-04-04 |archive-url=https://web.archive.org/web/20120404192326/http://english.chosun.com/site/data/html_dir/2012/04/02/2012040200739.html |url-status=dead}}</ref> The vessel returned to Pearl Harbor on 21 May 2012.<ref name=":0">{{Cite news | last = Cole | first = William | url = https://www.staradvertiser.com/2012/05/22/hawaii-news/golf-ball-back-after-2-months-at-sea/ | title = 'Golf Ball' Back After 2 Months At Sea | newspaper = [[Honolulu Star-Advertiser]] | date = 22 May 2012 | page = B3 | url-access = subscription}}</ref> It redeployed to monitor the next North Korean launch attempt at the end of 2012.<ref>{{Cite news | url = http://english.chosun.com/site/data/html_dir/2012/12/06/2012120601027.html | title = High-Spec U.S. Radar to Monitor N.Korean Rocket | newspaper = [[The Chosun Ilbo]] | date = 6 December 2012}}</ref>
+
+In April 2013, it was reported that SBX-1 was being deployed to monitor North Korea.<ref>{{Cite web | url = http://www.cnn.com/2013/04/01/world/asia/us-north-korea-radar/index.html | title = Sea-based radar to watch North Korea | first1 = Barbara | last1 = Starr | first2 = Jethro | last2 = Mullen | first3 = K.J. | last3 = Kwon | website = [[CNN]] | date = 1 April 2013}}</ref> It has never been deployed to Adak.<ref name=willman1/>
+
+In November 2015, it was moved to Pearl Harbor for repairs and testing. It departed Pearl Harbor in November 2017 for North Pacific Ocean waters to monitor North Korea's ballistic missile operations.
+
+In January 2017, the SBX-1 was deployed into the Pacific during North Korean threats of ICBM and nuclear attacks on other nations. The radar was able to perform its mission of tracking a target operating at ICBM speeds during the interception of a mock ICBM by a GMD interceptor on 30 May 2017.<ref>{{Cite news | url = https://www.washingtonpost.com/news/checkpoint/wp/2017/05/30/with-eyes-on-north-korea-u-s-successfully-destroys-mock-icbm-over-pacific/ | title = With eyes on North Korea, U.S. successfully destroys mock ICBM over Pacific | last = Lamothe | first = Dan | newspaper = [[The Washington Post]] | date = 30 May 2017}}</ref><ref>{{Cite web | url = http://www.military.com/daily-news/2017/05/30/us-successfully-intercepts-ballistic-missile-target-in-pacific.html | title = US Successfully Intercepts Ballistic Missile Target in Pacific | last = Sisk | first = Richard | website = [[Military.com]] | date = 30 May 2017}}</ref><ref>{{Cite news | url = http://www.latimes.com/nation/la-na-missile-defense-test-realism-20170706-story.html | title = Was that shootdown of a mock enemy warhead in May 'realistic'? Not exactly | last = Willman | first = David | newspaper = [[Los Angeles Times]] | date = 7 July 2017}}</ref>
+
+In May 2019, the SBX-1 docked on the north side of Ford Island in Pearl Harbor, where it underwent maintenance. It departed Pearl Harbor on 26 September 2019.<ref>{{Cite news | url = https://www.staradvertiser.com/2019/10/08/hawaii-news/golf-ball-radar-leaves-pearl-harbor-after-24m-upgrade/ | title = 'Golf ball' radar leaves Pearl Harbor after $24M upgrade | last = Cole | first = William | newspaper = [[Honolulu Star-Advertiser]] | date = 8 October 2019 | url-access = subscription}}</ref>
+
+==Gallery==
+<gallery mode="packed">
+Image:Sbx 050701 001.jpg|
+Image:X_band_radar_platform_entering_Pearl_on_Heavy_lift_Marlin.jpg|The platform entering [[Pearl Harbor]] on the {{MV|Blue Marlin}}
+Image:Sea-based X-band Radar at Port of Seattle.jpg|The vessel at Vigor Shipyards in [[Seattle]]
+Image:SXB1 2013mar22.png|SBX-1 leaving [[Pearl Harbor]] on 22 March 2013
+Image:Sea-based_X-ban_Radar_at_Ford_Island.jpg|SBX-1 stationed at [[Ford Island]]
+</gallery>
+
+==In popular culture==
+A fictionalized version of SBX-1, armed with "Interceptor" [[anti-ballistic missile]]s, is used as the setting for the 2022 action drama film ''[[Interceptor (film)|Interceptor]]''.<ref>{{cite web|url=https://screenrant.com/interceptor-movie-trailer-netflix/|title=Interceptor Trailer: First Look at Matthew Reilly's Netflix Action Movie|publisher=screenrant.com|date=5 May 2022|access-date=6 June 2022}}</ref><ref>{{YouTube|id=OQSoII4Bj1o|title=Netflix: Interceptor (Official trailer)}}</ref>
+
+The SBX-1 has become known to locals of [[Oahu]] as the "[[Golf ball|Golf Ball]]" or the "Pearl of Pearl Harbor" due to its color and shape.<ref name=":0" />
+
+An SBX-1 was credited with detecting a mysterious missile launch in the 2025 movie [[A House of Dynamite]]
+
+==See also==
+* [[Texas Towers]], similar structures from the Cold War era for aircraft detection
+* [[USNS Observation Island (T-AGM-23)]], similar observation stations
+* [[USNS Invincible (T-AGM-24)]], similar radar
+* [[USNS Howard O. Lorenzen (T-AGM-25)]], similar observation stations
+
+== References ==
+{{Reflist}}
+<!--
+Sea-Based X-band Radar (SBX) vessel entered Elliott Bay Tuesday night http://www.westseattleherald.com/2011/05/10/news/slideshow-update-3-sea-based-x-band-radar-sbx-ves
+Sea-Based X-Band Radar (SBX) vessel up close and personal at Vigor Shipyard http://www.westseattleherald.com/2011/05/11/news/sea-based-x-band-radar-sbx-vessel-close-and-perso
+* ''Big rigs: Large, powerful radar systems underpin U.S. missile-defense efforts'', Goodman, Glen W., [[C4ISTAR|C4ISR]] pp.&nbsp;26–28, March 2006.
+* ''[[Washington Times]]'', "[http://washingtontimes.com/news/2009/apr/15/us-failed-to-use-best-radar-for-n-korea-missile/ U.S. Failed To Use Best Radar For N. Korea Missile]", 15 April 2009, p.&nbsp;1.
+* ''[[New York Times]]'', "[https://www.nytimes.com/2009/06/23/us/23hawaii.html?hp Hawaii Prepares for Missile Threat]", 23 June 2009
+
+
+-->
+
+== External links ==
+{{Commons category|IMO 8765412}}
+* [http://www.fas.org/man/eprint/sbx.pdf Sea-Based X-Band Radar (SBX) Sourcebook], July 2007 (24M PDF) via Federation of American Scientists
+* [http://www.fas.org/man/eprint/sbx-v2.pdf Sea-Based X-Band Radar (SBX) Sourcebook Volume II], via Federation of American Scientists
+* [http://www.fas.org/sgp/crs/weapons/RL33745.pdf Sea-Based Ballistic Missile Defense -- Background and Issues for Congress], Congressional Research Service, June 2007, via Federation of American Scientists
+* [http://www.boeing.com/defense-space/space/gmd/gallery/photos1.html Boeing Multimedia Sea-Based X-band Radar Image Gallery]
+* [http://www.news.navy.mil/search/display.asp?story_id=21914 Sea-Based X-Band Radar Arrives in Pearl Harbor] {{Webarchive|url=https://web.archive.org/web/20060929102213/http://www.news.navy.mil/search/display.asp?story_id=21914 |date=29 September 2006 }}, 2006-01-10
+
+{{Naval combat systems}}
+{{Raytheon}}
+{{United States Missile Defense}}
+
+{{DEFAULTSORT:Sea-based X-band radar}}
+[[Category:Sea radars|SBX]]
+[[Category:Missile defense]]
+[[Category:Missile Defense Agency]]
+[[Category:Raytheon Company products|SBX]]
+[[Category:Military equipment introduced in the 2000s]]
+[[Category:Military electronics of the United States]]

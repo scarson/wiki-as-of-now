@@ -1,0 +1,357 @@
+{{Short description|German 155 mm self-propelled howitzer}}
+{{Use dmy dates|date=December 2022}}
+{{Infobox weapon
+| name               = Panzerhaubitze 2000
+| image              = Lithuanian PzH 2000 (2).jpg
+| image_size         = 300
+| caption            = Lithuanian Panzerhaubitze 2000 from the front
+| origin             = [[Germany]]
+| type               = [[Self-propelled howitzer]]
+| is_vehicle         = yes
+| is_ranged          = yes
+| is_artillery       = yes
+| service            = 1998–present
+| design_date        = 1987–1995
+| production_date    = 1995–present
+| unit_cost          = [[€]]17 million (2022)<ref>{{cite web | url=https://www.armyrecognition.com/defense_news_april_2022_global_security_army_industry/kmw_from_germany_offers_to_ukraine_to_purchase_100_pzh_2000_155mm_howitzers.html | title=KMW from Germany offers Ukraine to purchase 100 PZH 2000 155mm howitzers &#124; Defense News April 2022 Global Security army industry &#124; Defense Security global news industry army year 2022 &#124; Archive News year | date=10 April 2022 }}</ref>
+| used_by            = See [[#Operators|Operators]]
+| wars               = 
+{{Tree list}}
+*[[War in Afghanistan (2001–14)|War in Afghanistan]]
+*[[Russo-Ukrainian War]]
+**[[Russian invasion of Ukraine]]
+{{Tree list/end}}
+| range              = DM121 Boattail: {{convert|30|km|mi|abbr=on}}<br />M1711 [[base bleed]]: {{convert|40|km|mi|abbr=on}}<br />M2005 V-LAP ([[rocket-assisted projectile|RAP]]): {{convert|54|km|mi|abbr=on}}
+| rate               = 3 rounds in 9 seconds (burst)<br />10 rounds per minute
+| length             = {{convert|11.7|m|ftin|abbr=on}}
+| width              = {{convert|3.6|m|ftin|abbr=on}}
+| height             = {{convert|3.1|m|ftin|abbr=on}}
+| weight             = Combat: {{convert|55.8|t|ST|abbr=on}}
+| suspension         = [[Torsion bar]]
+| speed              = Road: 67 km/h (41 mph)<br />Off-road: 45&nbsp;km/h (28&nbsp;mph)
+| vehicle_range      = {{convert|420|km|mi|abbr=on}}
+| primary_armament   = [[Rheinmetall]] [[155 mm]] L52 Artillery Gun<br />60 rounds
+| secondary_armament = [[7.62 × 51 mm NATO|7.62 mm]] Rheinmetall [[MG3]] machine gun
+| armour             = Welded steel, 14.5 mm resistant<br /> Additional bomblet protection
+| engine             = MTU MT881 Ka-500
+| crew               = 5 (commander, driver, gunner, and two loaders)
+| engine_power       = 1,000 PS (986 hp, 736 kW)
+| pw_ratio           = 17.92 PS/t
+| transmission       = Renk HSWL284C <ref name="Transmission">{{Cite web|date=8 October 2024 |title=RENK to supply 50 gearboxes for the Panzerhaubitze 2000 |url=https://www.hartpunkt.de/renk-soll-50-getriebe-fuer-die-panzerhaubitze-2000-liefern/ |language=German}}</ref>
+}}
+
+The '''Panzerhaubitze 2000''' ({{IPA|de|ˈpant͡sɐhaʊ̯ˌbɪt͡sə t͡svaɪ̯ˈtaʊ̯zn̩t}}), meaning "armoured howitzer 2000"<ref>{{cite web |url=https://www.kmweg.com/gb/frame.php?page=19 |title=Krauss-Maffei Wegmann – PZH 2000 – Ihr Partner rund um Wehrtechnik |website=Kmweg.com |access-date=20 July 2022 |archive-url=https://web.archive.org/web/20071028115025/https://www.kmweg.com/gb/frame.php?page=19 |archive-date=28 October 2007 |url-status=dead}}</ref> and abbreviated '''PzH 2000''', is a German [[155 mm]] [[Self-propelled gun|self-propelled howitzer]] developed by [[KNDS Deutschland]] (formerly Krauss-Maffei Wegmann (KMW)) and [[Rheinmetall]] in the 1980s and 1990s for the [[German Army]]. The PzH 2000 has automatic support for up to five rounds of [[Artillery#Multiple round simultaneous impact|multiple round simultaneous impact]]. Replenishment of shells is automated. Two operators can load 60 shells and propelling charges in less than 12&nbsp;minutes. The PzH 2000 equips the armies of [[German Army|Germany]], [[Italian Army|Italy]], [[Ukrainian Ground Forces|Ukraine]], [[Royal Netherlands Army|Netherlands]], [[Hellenic Army|Greece]], [[Lithuanian Armed Forces|Lithuania]], [[Hungarian Defence Forces|Hungary]], [[Qatar Armed Forces|Qatar]], and [[Croatian Army|Croatia]], mostly replacing older systems such as the [[M109 howitzer]].
+
+In November 2019, a PzH 2000 L52 gun fired a shell a distance of almost {{Convert|67|km|abbr=on}}.<ref>{{Cite web|url=https://www.edrmagazine.eu/rheinmetall-sets-three-new-distance-records-for-indirect-fire-in-south-africa|title=Rheinmetall sets three new distance records for indirect fire in South Africa |website=edrmagazine.eu |date=27 November 2019 |access-date=4 May 2023}}</ref> Rheinmetall started testing a prototype L52 gun barrel with a new charge for a range of at least {{Convert|75|km|abbr=on}} since 2020.<ref name=janescw>{{Cite web|url=https://www.janes.com/defence-news/news-detail/rheinmetall-develops-new-long-range-howitzer|title=Rheinmetall develops new long-range howitzer|website=Janes.com|date=29 November 2019 |access-date=28 July 2022}}</ref> In May 2024, Rheinmetall announced that it would supply "a three-digit number" of L52 gun barrel systems for the Panzerhaubitze 2000 for "a European customer country".<ref>{{cite web |title=Press release - L52 gun barrel systems to European customer country |url=https://www.rheinmetall.com/en/media/news-watch/news/2024/05/2024-05-27-l52-gun-barrel-systems-to-european-customer-country |website=[[Rheinmetall]] |access-date=28 July 2024}}</ref>
+
+== Development ==
+In 1986, Italy, the United Kingdom and Germany agreed to terminate their existing development of the PzH 155-1 ([[SP70]]) programme, which had run into reliability problems and had design defects, notably being mounted on a modified tank chassis. German industry was asked for proposals to build a new design with a gun conforming to the JBMOU. Of the proposed designs, Wegmann's was selected.
+
+== Design ==
+[[File:De afsluiter van het kanon in een Duitse Panzerhaubitze 2000 (2138-012-008).jpg|thumb|left|The fighting compartment]]
+
+[[Rheinmetall]] designed the 155&nbsp;mm 52-calibre JBMOU compliant rifled gun (60-rifles, right-hand spiral), which is [[chromium]]-lined over its entire 8 m length and includes a [[muzzle brake]] on the end. The gun uses a new modular charge system with six charges (five identical), which can be combined to provide the optimal total charge for the range to the target, as well as the conventional [[Shell (projectile)#Separate loading bagged charge|bagged charge]] systems. Primer is loaded separately via a conveyor belt, and the entire loading, laying and clearing are completely automated.
+
+The maximum range of the gun with standard issue DM92 propellant charges is 30&nbsp;km with the standard DM121 boattail round, 40&nbsp;km with [[base bleed]] rounds, and 54&nbsp;km with M2005 V-LAP [[assisted projectile|rocket-assisted projectile]].<ref>{{Cite web |title=155mm Artillery Modular Charge System |url=https://www.rheinmetall.com/Rheinmetall%20Group/brochure-download/Weapon-Ammmunition/B284e0920-155mm-artillery-modular-charge-system.pdf}}</ref> With Rheinmetall's ERC (Extender Range Charge, previously known as the Top Charge) high pressure unitary charge, the range is 36&nbsp;km with DM121 BT round, 47&nbsp;km with M0121 BB round and 67&nbsp;km with the M2005 V-LAP RAP.<ref>{{Cite web |title=Extended Range Charge for 155mm artillery |date=27 November 2019 |url=https://www.edrmagazine.eu/rheinmetall-sets-three-new-distance-records-for-indirect-fire-in-south-africa}}</ref><ref>{{Cite web |last=Valpolini |first=Paolo |date=2019-11-27 |title=Rheinmetall sets three new distance records for indirect fire in South Africa |url=https://www.edrmagazine.eu/rheinmetall-sets-three-new-distance-records-for-indirect-fire-in-south-africa |access-date=2023-11-28 |website=EDR Magazine |language=en-GB}}</ref> The gun can also fire the [[SMArt 155]] artillery round used by Germany and Greece.
+
+Wegmann supplied both the chassis, sharing some components with the [[Leopard 2]], and the turret for the gun. The system has superb cross-country performance because of its use of continuous tracks and considerable protection in the case of counter-fire. The turret includes a [[phased array]] [[radar]] on the front glacis for measuring the muzzle velocity of each round fired. Laying data can be automatically provided via encrypted radio from the battery fire direction centre.
+
+A lighter, more air-portable version developed by KMW and called the [[Artillery Gun Module]] uses the gun in a module fitted to a lighter chassis.
+
+In December 2013, [[Raytheon]] and the German Army completed compatibility testing for the [[M982 Excalibur]] extended range guided artillery shell with the PzH 2000. Ten Excaliburs were fired at ranges from 9 to 48&nbsp;km. Shells hit within 3 m of their targets, with an average miss distance of 1 m at 48&nbsp;km.<ref>[http://www.deagel.com/news/German-Army-PzH-2000-Howitzer-Test-Fires-Excalibur-155mm-Artillery-Projectile_n000012199.aspx German Army PzH 2000 Howitzer Test Fires Excalibur 155mm Artillery Projectile] {{Webarchive|url=https://web.archive.org/web/20140810155806/http://www.deagel.com/news/German-Army-PzH-2000-Howitzer-Test-Fires-Excalibur-155mm-Artillery-Projectile_n000012199.aspx |date=10 August 2014 }} - Deagel.com, 10 December 2013</ref>
+
+=== Upgrades ===
+
+==== PzH 2000 A1 ====
+Upgrades:<ref name=":4">{{Cite web |last=Valpolini |first=Paolo |date=2025-10-29 |title=KNDS Deutschland, where does the PzH 2000 go? |url=https://www.edrmagazine.eu/knds-deutschland-where-does-the-pzh-2000-go |access-date=2025-11-25 |website=EDR Magazine |language=en-GB}}</ref>
+
+* Improved barrel laying system for a better accuracy.
+* Navigation system more accurate.
+
+==== PzH 2000 A2 ====
+Upgrades:<ref>{{Cite web |title=Panzerhaubitze 2000 A2 |url=https://www.panzer-modell.de/referenz/in_detail/pzh2000a2/pzh2000.htm |access-date=2025-11-25 |website=www.panzer-modell.de}}</ref><ref name=":4" />
+
+* Auxiliary power unit of 1.9 kW added on the PzH 2000.
+* Ventilation opening at the rear of the turret added.
+* Cooling system added for the charges.
+* Stowage of the tow cable relocated.
+
+==== PzH 2000 A3 ====
+The PzH 2000 A3 focused on the anti-mine protection, but it never enter service, and the upgrades were not included in the A4 variant.<ref name=":5">{{Cite web |last=Valpolini |first=Paolo |date=2025-10-29 |title=KNDS Deutschland, where does the PzH 2000 go? |url=https://www.edrmagazine.eu/knds-deutschland-where-does-the-pzh-2000-go |access-date=2025-11-25 |website=EDR Magazine |language=en-GB}}</ref>
+
+==== PzH 2000 A4 ====
+The first PzH 2000 in that variant was rolled out in November 2025. It is a newly produced gun, one that replaces the guns supplied to Ukraine for the German Army.<ref name=":5" />
+
+The upgrades focus on the electronic aspect:<ref name=":5" />
+
+* The architecture of the weapon system remains a mix of analogue and digital systems.
+* KNDS Deutschland Centurion: a new fire control computer, replacing the MICMOS (1980s /1990s technology).
+* A new fuse programming station installed.
+* Improvement of the electronic architecture. 
+* Integration of the Vulcano 155mm ammunition.
+
+==== PzH 2000 A5 ====
+In 2021, Germany and the Netherlands agreed to jointly define & execute a Mid-Life Update to the operational Pzh2000 in their inventories and ensure standardisation and availability.
+
+The MLU variant is the PzH 2000 A5, it is designed for all customers, with core common elements, and optional elements, it is expected to be ready by 2028.<ref name=":5" />
+
+Upgrades:<ref name=":5" />
+
+* Transition to a fully electronic / digital architecture, with a semi-open architecture (standardised electronic interfaces) of the weapon system. 
+* Ammunition auto loader improvements.
+* Gun laying system improvements.
+* Two-slip ring solution for the turret (to cope with the ammunition handling system).
+
+==Combat record and alterations==
+[[File:Panzerhaubitze 2000 - Bundeswehr Military History Museum, Dresden.jpg|thumb|Panzerhaubitze 2000 – Bundeswehr Military History Museum, Dresden]]{{See also|War in Afghanistan (2001–2021)}}
+The PzH 2000 was used for the first time in combat by the [[Fire Support Command]] of the [[Royal Netherlands Army]] in August 2006 against [[Taliban]] targets in [[Kandahar Province]], [[Afghanistan]], in support of [[Operation Medusa]].<ref>{{cite web |url=http://www.kmweg.com/gb/spezial.php?id%3D21 |title=Krauss-Maffei Wegmann – Ihr Partner rund um Wehrtechnik |access-date=2 March 2007 |url-status=dead |archive-url=https://web.archive.org/web/20070928100123/https://www.kmweg.com/gb/spezial.php?id=21 |archive-date=28 September 2007 }}</ref> It was then used regularly in support of coalition troops in [[Uruzgan Province|Uruzgan province]]. The PzH 2000 was also used extensively during the [[Battle of Chora]] in June 2007. It was known as "the long arm of [[International Security Assistance Force|ISAF]]" and proved to be accurate and effective. However, the gun was criticised by the Dutch in Uruzgan province as the [[NBC protection system|NBC system]], designed for use in Europe, could not cope with the high level of dust in Afghanistan.
+
+The guns have been modified with additional armor being fitted to the roof to protect against mortar rounds. There have been reports of other problems, including the need to keep it in the shade unless actually firing, the damage done when traveling on poorly built roads, and a significant 'cold gun' effect{{Clarify|date=August 2022}} necessitating the use of 'warmers'.
+
+Starting in June 2010 as a result of the [[Good Friday Battle]], German ISAF troops at PRT [[Kunduz]] had three PzH 2000s at their disposal. They were first used on 10 July 2010 to provide support for the recovery of a damaged vehicle. This was the first time in its history that the [[Bundeswehr]] has used heavy artillery in combat.<ref>[http://www.abendblatt.de/politik/ausland/article1564057/Bundeswehr-setzt-erstmals-schwere-Artillerie-ein.html Bundeswehr setzt erstmals schwere Artillerie ein] {{Webarchive|url=https://web.archive.org/web/20131205135045/http://www.abendblatt.de/politik/ausland/article1564057/Bundeswehr-setzt-erstmals-schwere-Artillerie-ein.html |date=5 December 2013 }}. Hamburger Abendblatt, 12 July 2010</ref> The PzH 2000 also played a key role during [[Operation Halmazag]] in November 2010, when the villages of Isa Khel and Quatliam were retaken from the Taliban by German paratroopers.<ref>[http://www.derwesten-recherche.org/2012/11/der-kampf-um-quatliam/ Der Kampf um Quatliam] {{webarchive |url=https://web.archive.org/web/20131204070922/http://www.derwesten-recherche.org/2012/11/der-kampf-um-quatliam/ |date=4 December 2013 }}, by [[David Schraven]] {{in lang|de}}</ref>
+
+=== Russian invasion of Ukraine ===
+On 21 June 2022, twelve PzH 2000s were deployed to Ukraine; seven came from Germany and five from the Netherlands.<ref>{{Cite web |date=21 June 2022 |title=First heavy weapons from Germany arrive in Ukraine| url=https://www.dw.com/en/first-heavy-weapons-from-germany-arrive-in-ukraine/a-62211051 |access-date=22 June 2022 |website=www.dw.com |language=en}}</ref> After a couple of weeks of intensive use, the guns required repairs, and error messages were being displayed as they are designed and built to fire no more than 100 shots a day.<ref name=faz2022>[https://www.faz.net/aktuell/politik/ausland/ukraine-krieg-panzerhaubitzen-muessen-schon-repariert-werden-18208150.html?GEPC=s6 Gelieferte Panzerhaubitzen müssen schon repariert werden], FAZ, 29 July 2022.</ref> Germany considers 100 shots per day "a high-intensity mission". Ukraine has consistently exceeded this number, placing stress on the loading mechanism. Ukraine also fired "special ammunition at too great a distance." The Bundeswehr sent spare parts and a repair facility in [[Lithuania]] was chosen to repair the weapons.<ref>{{Cite web |date=14 October 2022|title= Lithuania Has Repaired PzH 2000 Howitzer and Returning Them to Service of Ukraine's Armed Forces|author1=| url= https://en.defence-ua.com/industries/lithuania_has_repaired_pzh_2000_howitzer_and_returning_them_to_service_of_ukraines_armed_forces-4531.html |access-date=2 December 2022 |website= defence-ua.com| language=en}}</ref> This came as Ukraine and KMW entered into a 1.7 billion euro deal to purchase 100 PzH 2000s.<ref>{{Cite web |date=30 July 2022|title= German PzH 2000s in Ukraine wear out: error message after heavy fire | author1= Boyko Nikolov | url= https://bulgarianmilitary.com/amp/2022/07/30/german-pzh-2000s-in-ukraine-wear-out-error-message-after-heavy-fire/ |access-date=2 August 2022 |website= bulgarianmilitary.com |language=en}}</ref>
+
+Russian state news agency [[TASS]] reported that a PzH 2000 was destroyed by Russian forces in [[Kherson Oblast]] on 30 October 2022.<ref>{{Cite web |title=Russian forces wipe out German PzH 2000 artillery system in Ukraine operation |url=https://tass.com/politics/1530253 |access-date=31 October 2022 |website=TASS}}</ref> 
+
+The open-source intelligence site [[Oryx (website)|Oryx]] reported one visually confirmed destroyed and one damaged Ukrainian PzH 2000 based on publicly available footage.<ref>{{Cite web |last=Oryx |title=Attack On Europe: Documenting Ukrainian Equipment Losses During The 2022 Russian Invasion Of Ukraine |url=https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html |access-date=2023-01-12|website=Oryx}}</ref>
+
+Due to the intensity of artillery fire on the battlefield, Lithuania undertook to repair twelve of the howitzers,<ref>[https://mil.in.ua/en/news/lithuania-to-repair-12-pzh-2000-howitzers-for-ukraine/ Lithuania to repair 12 PzH 2000 howitzers for Ukraine]</ref> finishing repair work on six by December 2022. By this time, the number of PzH 2000s sent to Ukraine rose to twenty-two; fourteen from Germany and eight from the Netherlands.<ref>[https://mil.in.ua/en/news/lithuania-hands-over-two-more-repaired-pzh-2000-and-ammunition-to-ukraine/ Lithuania hands over two more repaired PzH 2000 and ammunition to Ukraine]</ref> As of February 2023, fifteen of the howitzers were waiting to be repaired in [[Slovakia]], but were being held up at the border for several weeks due to legal issues.<ref>[https://www.businessinsider.de/politik/deutschland/ukraine-krieg-slowakei-blockiert-reparatur-deutscher-waffen/ An der Grenze stauen sich kaputte Panzerhaubitzen: Slowakei blockiert Reparatur deutscher Waffen für den Ukraine-Krieg]</ref><ref>[https://www.pravda.com.ua/eng/news/2023/02/16/7389678/ Slovakia is not allowing German howitzers to cross border from Ukraine for repairs for several weeks]</ref>
+
+According to the Rheinmetall CEO Armin Papperger the barrels of the PzH 2000 had an expected lifetime of around 4,500 shots, but to the surprise of the manufacturer they have achieved up to 20,000 in Ukraine.<ref>{{Cite web |author=n-tv NACHRICHTEN |url=https://www.n-tv.de/wirtschaft/Rheinmetall-Chef-raeumt-Verluste-deutscher-Waffen-in-Ukraine-ein-article24181343.html |title=Rheinmetall-Chef räumt Verluste deutscher Waffen in Ukraine ein |language=de |access-date=2023-06-11}}</ref>
+
+== Production status ==
+As of June 2024, 41 remain to be manufactured, it includes 1 for Hungary, 22 for Germany and 18 for Ukraine.<ref name=":2">{{Cite web |date=18 June 2024 |title=KNDS OFFERS THE COMPLETE RANGE OF PROVEN ARTILLERY SYSTEMS |url=https://www.knds.fr/en/our-news/latest-news/knds-offers-complete-range-proven-artillery-systems}}</ref>
+
+==Operators==<!--READ FIRST: This section is for cited entries only. Please do not add entries to this list without a citation from a reliable source. All entries without a citation will be removed. Thank you.-->
+
+=== Summary ===
+{| class="wikitable"
+|-
+! style="text-align:left ; width: 150px; background:#EAECF0;border-bottom:solid 2px black;border-left:solid 2px black;border-top:solid 2px black" | Operators <br />October 2024
+! style="text-align:center; width: 50px; background:#EAECF0;border-left:solid 2px black;border-bottom:solid 2px black;border-top:solid 2px black" | Order
+! style="text-align:center; width: 50px; background:#EAECF0;border-left:dashed 2px black;border-top:solid 2px black;border-bottom:solid 2px black;" | Deliveries
+! style="text-align:center; width: 50px; background:#EAECF0;border-left:solid 2px black;border-top:solid 2px black;border-bottom:solid 2px black;" | Sold<br />[ – ]<br />/ Bought<br />[ + ]
+! style="text-align:center; width: 50px; background:#EAECF0;border-top:solid 2px black;border-bottom:solid 2px black;" | Donation<br />[ – ] / [ + ]
+! style="text-align:center; width: 50px; background:#EAECF0;border-top:solid 2px black;border-bottom:solid 2px black;"  | Known Losses<br />[ – ]
+! style="width: 50px; background:#EAECF0;border-left:solid 2px black;border-top:solid 2px black;border-bottom:solid 2px black;border-right:solid 2px black"  | Operational
+|-
+| style="border-right:solid 2px black;border-left:solid 2px black" |{{flagicon|DE}} [[German Army]]
+| style="text-align:right; border-right:dashed 2px black" |225
+| style="text-align:right; border-right:solid 2px black" |185
+{{font color||#ADE2B8|+ 22}}
+
+{{font color||#ADE2B8|+ 18}}
+| style="text-align:right;" |- 25
+| style="text-align:right;" |- 14
+{{font color||#F2CECE|- 7}}
+| style="text-align:right; border-right:solid 2px black" |– 
+| style="text-align:right; border-right:solid 2px black" |'''139'''
+|-
+| style="border-right:solid 2px black;border-left:solid 2px black" |{{flagicon|Croatia}} [[Croatian Army]]
+| style="text-align:right; border-right:dashed 2px black" |–
+| style="text-align:right; border-right:solid 2px black" |–
+| style="text-align:right;" |+ 16
+| style="text-align:right;" |– 
+| style="text-align:right; border-right:solid 2px black" |– 
+| style="text-align:right; border-right:solid 2px black" |'''16'''
+|-
+| style="border-right:solid 2px black;border-left:solid 2px black" |{{flagicon|GRE}} [[Hellenic Army]]
+| style="text-align:right; border-right:dashed 2px black" |25
+| style="text-align:right; border-right:solid 2px black" |25
+| style="text-align:right;" |–
+| style="text-align:right;" |– 
+| style="text-align:right; border-right:solid 2px black" |– 
+| style="text-align:right; border-right:solid 2px black" |'''25'''
+|-
+| style="border-right:solid 2px black;border-left:solid 2px black" |{{flagicon|HUN}} [[Hungarian Army]]
+| style="text-align:right; border-right:dashed 2px black" |24
+| style="text-align:right; border-right:solid 2px black" |23
+{{font color||#ADE2B8|+ 1}}
+| style="text-align:right;" |–
+| style="text-align:right;" |– 
+| style="text-align:right; border-right:solid 2px black" |– 
+| style="text-align:right; border-right:solid 2px black" |'''23'''
+|-
+| style="border-right:solid 2px black;border-left:solid 2px black" |{{flagicon|ITA}} [[Italian Army]]
+| style="text-align:right; border-right:dashed 2px black" |70
+| style="text-align:right; border-right:solid 2px black" |70
+| style="text-align:right;" |–
+| style="text-align:right;" |-6 
+| style="text-align:right; border-right:solid 2px black" | – 
+| style="text-align:right; border-right:solid 2px black" |'''64'''
+|-
+| style="border-right:solid 2px black;border-left:solid 2px black" |{{flagicon|LIT}} [[Lithuanian Armed Forces|Lithuanian Army]]
+| style="text-align:right; border-right:dashed 2px black" |–
+| style="text-align:right; border-right:solid 2px black" |–
+| style="text-align:right;" | + 21
+| style="text-align:right;" | – 
+| style="text-align:right; border-right:solid 2px black" | – 
+| style="text-align:right; border-right:solid 2px black" |'''21'''
+|-
+| style="border-right:solid 2px black;border-left:solid 2px black" |{{flagicon|NED}} [[Royal Netherlands Army|Dutch Army]]
+| style="text-align:right; border-right:dashed 2px black"  |57
+| style="text-align:right; border-right:solid 2px black" |57
+| style="text-align:right;" |–
+| style="text-align:right;" | - 8 
+| style="text-align:right; border-right:solid 2px black" | – 
+| style="text-align:right; border-right:solid 2px black" |'''49'''
+|-
+| style="border-right:solid 2px black;border-left:solid 2px black" |{{flagicon|QAT}} [[Qatar Armed Forces|Qatari Army]]
+| style="text-align:right; border-right:dashed 2px black" |24
+| style="text-align:right; border-right:solid 2px black" |24
+| style="text-align:right;" | - 12
+| style="text-align:right;" | – 
+| style="text-align:right; border-right:solid 2px black" | – 
+| style="text-align:right; border-right:solid 2px black" |'''12'''
+|-
+| style="border-bottom:solid 2px black;border-right:solid 2px black;border-left:solid 2px black;" |{{flagdeco|Ukraine}} [[Ukrainian Ground Forces]]
+| style="text-align:right; border-bottom:solid 2px black;border-right:dashed 2px black;" |–
+| style="text-align:right; border-bottom:solid 2px black;border-right:solid 2px black;;" |–
+| style="text-align:right; border-bottom:solid 2px black;" |–
+| style="text-align:right; border-bottom:solid 2px black;" | + 39
+{{font color||#F2CECE|+ 7}}
+| style="text-align:right; border-right:solid 2px black;border-bottom:solid 2px black" | –
+| style="text-align:right; border-right:solid 2px black;" |'''39'''
+|-
+! style="text-align:right; background:#EAECF0;border-bottom:solid 2px black;border-left:solid 2px black;border-top:solid 2px black;border-right:solid 2px black" | Total
+! style="text-align:right; border-right:dashed 2px black;border-bottom:solid 2px black" |425
+! style="text-align:right; border-right:solid 2px black;border-bottom:solid 2px black" |384
+! style="text-align:right; border-bottom:solid 2px black" |0
+! style="text-align:right; border-bottom:solid 2px black" |0
+! style="background:#EAECF0; text-align:right; border-right:solid 2px black;border-bottom:solid 2px black" |–
+! style="text-align:right; border-right:solid 2px black;border-bottom:solid 2px black;border-top:solid 2px black" |384
+|}
+
+{{legend-inline|#F2CECE|Planned transfer to Ukraine}}
+
+{{legend-inline|#ADE2B8|Order not completed yet}}
+
+=== Current operators ===
+[[File:PzH-2000 operators 2022-06-23.png|thumb|upright=1.35|PzH 2000 operators in blue]]
+[[File:Italian Army - 8th Field Artillery Regiment "Pasubio" - PzH2000 self-propelled howitzer in Qatar.png|thumb|[[Italian Army]] PzH 2000 in [[Qatar]]]]
+; {{flag|Croatia}} (16)
+: 16 ordered (second-hand from Germany);<ref name="auto">{{Cite web |date=14 November 2019 |title=Panzerhaubitze 2000 – Konzepte zur Schließung der Reichweitenlücke |url=https://esut.de/2019/11/fachbeitraege/ruestung/16730/panzerhaubitze-2000-konzepte-zur-schliessung-der-reichweitenluecke/}}</ref> 12 to be modernized and overhauled, 3 for spare parts, 1 for training. Total value of the contract was 55 million [[euros]].<ref>{{cite press release |url=https://www.morh.hr/en/news/press-releases/14925-pzh-howitzer-test-firing.html |title=PzH Howitzer test firing |publisher=Ministry of Defence of Croatia |date=28 June 2017 |access-date=29 June 2017 |archive-url=https://web.archive.org/web/20170806181852/https://www.morh.hr/en/news/press-releases/14925-pzh-howitzer-test-firing.html |archive-date=6 August 2017 |url-status=live}}</ref> The first PzH 2000 was delivered on 29 July 2015.<ref>{{cite news |last1=Nicholas |first1=de Larrinaga |date=29 July 2015 |title=Croatia receives first PzH 2000 |url=http://www.janes.com/article/53313/croatia-receives-first-pzh-2000 |archive-url=https://web.archive.org/web/20150802055803/http://www.janes.com/article/53313/croatia-receives-first-pzh-2000 |archive-date=2 August 2015 |access-date=8 August 2015 |website=IHS Jane's 360 |publisher=IHS Jane's 360}}</ref> Agreement for the procurement was signed in 2014, deliveries were to take place between 2015 and 2016, howitzers to be introduced in service by 2019.<ref>{{cite press release |url=https://www.morh.hr/en/news/press-releases/10704-signing-of-agreement-on-procurement-of-german-pzh-2000-howitzers.html |title=Signing of Agreement on Procurement of German PzH 2000 Howitzers |publisher=Ministry of Defence of Croatia |date=9 December 2014 |access-date=29 June 2018 |archive-url=https://web.archive.org/web/20180629235749/https://www.morh.hr/en/news/press-releases/10704-signing-of-agreement-on-procurement-of-german-pzh-2000-howitzers.html |archive-date=29 June 2018 |url-status=live}}</ref>
+; {{flag|Germany}} (134 in service, 12 on order)
+: Orders:
+:* Initial purchase of 185 between 1998 and 2002<ref name="greece">{{cite press release |title=Contract For 24 PzH 2000 Self-Propelled Howitzers Signed With Greece |url=http://www.defense-aerospace.com/articles-view/release/3/5868/greece-buys-24-pzh-2000-sp-howitzers-(july-6).html |access-date=29 June 2018 |work=defense-aerospace.com |publisher=Briganti et Associés |date=5 July 2001 |archive-url=https://web.archive.org/web/20180629211614/http://www.defense-aerospace.com/articles-view/release/3/5868/greece-buys-24-pzh-2000-sp-howitzers-(july-6).html |archive-date=29 June 2018 |url-status=live}}</ref><ref>{{Cite web |date=2022-05-06 |title=Panzerhaubitze 2000 – Kiew bekommt eines der modernsten und gefährlichsten Artilleriesysteme der Welt |url=https://www.stern.de/digital/technik/panzerhaubitze-2000-fuer-ukraine--eins-der-gefaehrlichen-artilleriesysteme-31798894.html |access-date=2024-04-03 |website=stern.de |language=de}}</ref>
+:* 10 in March 2023<ref name=":1">{{Cite web |title=Ukraine conflict: Germany orders 10 PzH 2000 SPHs to replace those sent to Kyiv |url=https://www.janes.com/defence-news/news-detail/ukraine-conflict-germany-orders-10-pzh-2000-sphs-to-replace-those-sent-to-kyiv |access-date=2024-04-03 |website=Janes.com |date=31 March 2023 |language=en}}</ref>
+:* 12 in May 2023<ref name="Reuters">{{cite news |date=2023-05-24 |title=Germany to buy Leopard tanks, howitzers to make up for Ukraine supplies - source |url=https://www.reuters.com/world/europe/germany-buy-leopard-tanks-howitzers-make-up-ukraine-supplies-source-2023-05-24/ |access-date=2023-05-26 |work=Reuters |language=en}}</ref>
+:* Option remaining for 6 additional PzH 2000<ref name=":1" />
+:* 18 ordered to be donated to Ukraine<ref name=":3" /><ref name=":2" />
+:Second hand sales:
+:* 16 sold to Croatia in 2014<ref>{{cite web | url=https://defence24.com/armed-forces/german-howitzers-transferred-to-croatia | title=German Howitzers Transferred to Croatia | date=August 2015 }}</ref>
+:* 21 sold to Lithuania in September 2015 (18 modernised)<ref>{{Cite web |last=Editorial |first=Defense Brief |date=2022-03-24 |title=Lithuania receives final upgraded PzH 2000 self-propelled howitzer |url=https://defbrief.com/2022/03/24/lithuania-receives-final-upgraded-pzh-2000-self-propelled-howitzer/ |access-date=2024-04-03 |website=Defense Brief |language=en-US}}</ref>
+:Donations to Ukraine: 
+:* 14 (7+3+4) were sent to Ukraine by October 2022.<ref>{{Cite web |title=Militärische Unterstützungsleistungen für die Ukraine {{!}} Bundesregierung |url=https://www.bundesregierung.de/breg-de/themen/krieg-in-der-ukraine/lieferungen-ukraine-2054514 |access-date=26 October 2022 |website=Webseite der Bundesregierung {{!}} Startseite |language=de}}</ref>
+:* 18 additional to be donated to Ukraine<ref name=":3">{{Cite web |date=2024-03-28 |title=Military support for Ukraine {{!}} Federal Government |url=https://www.bundesregierung.de/breg-en/news/military-support-ukraine-2054992 |access-date=2024-04-03 |website=Website of the Federal Government {{!}} Bundesregierung |language=en}}</ref>
+:Spare parts orders:
+:* 50 Renk HSWL284C gearboxes ordered in October 2024<ref>{{Cite web |last=admin |date=2024-10-09 |title=RENK Receives Order for 50 Transmissions for PzH2000 Self-propelled Howitzer - MilitaryLeak.COM |url=https://militaryleak.com/2024/10/09/renk-receives-order-for-50-transmissions-for-pzh2000-self-propelled-howitzer/ |access-date=2024-10-10 |website=militaryleak.com |language=en-US}}</ref>
+:* 3-digit number of gun barrels ordered in May 2024 (delivery 2024-2029)<ref>{{Cite web |date=2024-05-27 |title=Rheinmetall secures major Contract for Panzerhaubitze 2000 gun barrel systems |url=https://defence-industry.eu/rheinmetall-secures-major-contract-for-panzerhaubitze-2000-gun-barrel-systems/ |access-date=2024-10-10 |language=en}}</ref>
+; {{flag|Greece}} (25)
+: 25 ordered in 2001 and delivered between 2003 and 2004.<ref name="greece" />
+; {{flag|Hungary}} (24)
+: 24 were ordered in December 2018.<ref name="StatementHungary">{{cite web |last1=Braatz |first1=Kurt |date=19 December 2018 |title=Krauss-Maffei Wegmann unterstützt ungarische Heeres-Modernisierung |url=https://www.kmweg.de/fileadmin/user_upload/pdfs/Press_Releases/2018/Krauss-Maffei-Wegmann-unterstuetzt-ungarische-Heeres-Modernisierung_19-12-2018.pdf |url-status=live |archive-url=https://web.archive.org/web/20181220230842/https://www.kmweg.de/fileadmin/user_upload/pdfs/Press_Releases/2018/Krauss-Maffei-Wegmann-unterstuetzt-ungarische-Heeres-Modernisierung_19-12-2018.pdf |archive-date=20 December 2018 |access-date=22 December 2018 |website=Krauss-Maffei Wegmann |language=de |location=Munich}}</ref><ref name="JanesHungary">{{cite web |last1=Dunai |first1=Peter |date=20 December 2018 |title=Update: Hungary orders Leopard 2 MBTs and PzH 2000 SPHs |url=https://www.janes.com/article/85369/update-hungary-orders-leopard-2-mbts-and-pzh-2000-sphs |url-status=live |archive-url=https://web.archive.org/web/20181221152550/https://www.janes.com/article/85369/update-hungary-orders-leopard-2-mbts-and-pzh-2000-sphs |archive-date=21 December 2018 |access-date=22 December 2018 |website=IHS Jane's 360 |location=Budapest}}</ref> As of 2024, 23 were delivered.<ref>{{Cite web |last=Gábor |first=Baranyai |date=3 December 2022 |title=Növelnék az aktív katonák számát |url=https://magyarnemzet.hu/belfold/2022/12/novelnek-az-aktiv-katonak-szamat |access-date=22 December 2022 |website=Növelnék az aktív katonák számát |language=hu}}</ref>
+; {{flag|Italy}} (64)
+: 70 ordered in 2002 and delivered between 2004 and 2008.<ref>{{cite press release |title=Oto Melara: Italian Army Contract for 70 PZH 2000 Self-Propelled Howitzers |url=http://www.defense-aerospace.com/articles-view/release/3/13273/italian-army-orders-70-self_propelled-guns-(dec.-18).html |access-date=29 June 2018 |work=defense-aerospace.com |publisher=Briganti et Associés |date=17 December 2002 |archive-url=https://web.archive.org/web/20180629211436/http://www.defense-aerospace.com/articles-view/release/3/13273/italian-army-orders-70-self_propelled-guns-(dec.-18).html |archive-date=29 June 2018 |url-status=live}}</ref> 6 donated to Ukraine.
+[[File:P3 Lithuanian PzH 2000 in Germany.jpg|thumb|Lithuanian Army PzH 2000 firing]]
+; {{flag|Lithuania}} (21)
+: 21 delivered between 2015 and 2022. 16 active, 3 for spare parts, and 2 for training.<ref>{{cite web |title=Lietuva iš Vokietijos perka kelias dešimtis haubicų |url=http://www.delfi.lt/news/daily/lithuania/lietuva-is-vokietijos-perka-kelias-desimtis-haubicu.d?id=69123838 |url-status=live |archive-url=https://web.archive.org/web/20171023174327/https://www.delfi.lt/news/daily/lithuania/lietuva-is-vokietijos-perka-kelias-desimtis-haubicu.d?id=69123838 |archive-date=23 October 2017 |access-date=28 December 2016}}</ref><ref>{{cite web |title=NSPA DELIVERS PZH 2000 SELF-PROPELLED HOWITZER TO THE LITHUANIAN ARMED FORCES |url=https://www.nspa.nato.int/news/2022/nspa-delivers-pzh-2000-selfpropelled-howitzer-to-the-lithuanian-armed-forces--2 |access-date=28 April 2022}}</ref>
+; {{flag|Netherlands}} (49)
+: 57 ordered in 2002. Replaced the [[M109 howitzer|M109]].<ref>{{cite web |author=Evert Brouwer |date=18 February 2025 |title=Mijn materieel: Pantserhouwitser 2000NL |url=https://magazines.defensie.nl/materieelgezien/2025/01/pantserhouwitser-2000nl |website=Materieelgezien |publisher=Defensie.nl |language=Dutch}}</ref> Prior to the war in Ukraine, 33 were in storage, 18 in active service, and 6 used for training. Now, 46 to be modernised  by 2024.<ref>{{cite press release |title=The Netherlands Sign Contract For PzH 2000 Self-Propelled Howitzers |url=http://www.defense-aerospace.com/articles-view/release/3/9881/netherlands-order-sp-howitzers-(may-3).html |access-date=29 June 2018 |work=defense-aerospace.com |publisher=Briganti et Associés |date=1 May 2002 |archive-url=https://web.archive.org/web/20180629211651/http://www.defense-aerospace.com/articles-view/release/3/9881/netherlands-order-sp-howitzers-(may-3).html |archive-date=29 June 2018 |url-status=live}}</ref><ref>{{cite web |date=23 September 2019 |title=Vuursteun Commando Koninklijke Landmacht |url=https://www.defensie.nl/organisatie/landmacht/eenheden/oocl/vuursteun-commando |access-date=1 December 2019 |website=defensie.nl |publisher=Ministerie van Defensie |language=nl}}</ref> In 2022,  5+3 were sent to Ukraine.
+; {{flag|Qatar}} (12)
+: 24 ordered in 2013,<ref>{{cite press release |title=Krauss-Maffei Wegmann Supports Qatar's Army Moderni zation |date=18 April 2013 |publisher=Krauss-Maffei Wegmann GmbH & Co. KG |url=http://www.kmweg.de/de/fileadmin/user_upload/pdfs/Press_Releases/Press_Release_Army_modernization_Qatar.pdf |access-date=18 April 2013 |archive-url=https://web.archive.org/web/20130531091044/http://www.kmweg.de/de/fileadmin/user_upload/pdfs/Press_Releases/Press_Release_Army_modernization_Qatar.pdf |archive-date=31 May 2013 |url-status=live}}</ref> first three delivered in 2015.<ref>{{cite web |last1=Hickmann |first1=Christoph |last2=Berlin |first2=Georg Mascolo |date=22 October 2015 |title=Waffenexporte: Deutschland liefert Kampfpanzer nach Katar |url=http://www.sueddeutsche.de/politik/waffenexporte-deutschland-liefert-kampfpanzer-nach-katar-1.2703573 |url-status=live |archive-url=https://web.archive.org/web/20170102032945/http://www.sueddeutsche.de/politik/waffenexporte-deutschland-liefert-kampfpanzer-nach-katar-1.2703573 |archive-date=2 January 2017 |access-date=28 December 2016 |via=Sueddeutsche.de}}</ref> In September 2024 12 were returned to Germany to be provided to Ukraine in a ''Ringtausch'' arrangement in exchange for replacement with 12 [[RCH 155|RCH-155]].<ref>{{cite web |last1=Stritzel |first1=Björn |date=15 September 2024 |title=Waffen für Katar, aber nicht für Israel? |url=https://www.bild.de/politik/ausland-und-internationales/ruestungsdeals-der-regierung-waffen-fuer-katar-aber-nicht-fuer-israel-66e45994cb180e1cf920787c |via=Bild.de}}</ref>
+; {{flag|Ukraine}} (38)
+: 28 delivered.<ref>{{Cite web |title=Cannoni e mezzi hi tech, ecco le armi date dall'Italia per l'offensiva ucraina |url=https://www.repubblica.it/esteri/2022/10/29/news/ucraina_kiev_armi_italia-372176795/ |access-date=30 October 2022 |website=la Repubblica |language=it}}</ref> During the [[Russian invasion of Ukraine]], it was announced on 20 April 2022 that five Dutch PzH 2000s would be transferred to Ukraine, with ammunition and training to be provided by Germany.<ref>{{cite news |date=20 April 2022 |title=Deutschland bildet offenbar Ukrainer an Panzerhaubitze 2000 aus |url=https://www.handelsblatt.com/politik/deutschland/ukraine-krieg-deutschland-bildet-offenbar-ukrainer-an-panzerhaubitze-2000-aus/28264476.html |access-date=20 April 2022 |work=Handelsblatt |language=German}}</ref> On 6 May, it was announced that Ukraine would receive seven units from German army stocks which were undergoing maintenance.<ref>{{cite news |date=6 May 2022 |title=Deutschland liefert Panzerhaubitzen |url=https://www.tagesschau.de/inland/ukraine-lambrecht-panzerhaubitzen-101.html |access-date=2 July 2022 |work=Tagesschau |language=German}}</ref> On 7 May, Chancellor [[Olaf Scholz]] agreed to supply the ammunition required, straight from industry to Ukrainian forces, without having to go through the German government for approval in the future.<ref name="reut7">{{cite news |date=7 May 2022 |title=Germany to send seven howitzers to Ukraine in further policy reversal |url=https://www.reuters.com/world/europe/germany-send-seven-self-propelled-howitzers-ukraine-2022-05-06/ |access-date=7 May 2022 |work=Reuters |language=English}}</ref> Training of Ukrainian artillery crews started on 11 May 2022 at the Bundeswehr's artillery school in [[Idar-Oberstein]].<ref>{{cite news |date=11 May 2022 |title=Ukrainische Soldaten zur Ausbildung in Rheinland-Pfalz angekommen |url=https://www.swr.de/swraktuell/rheinland-pfalz/trier/soldaten-ukraine-ausbildung-100.html |access-date=2 July 2022 |work=SWR Aktuell |language=German |archive-date=1 July 2022 |archive-url=https://web.archive.org/web/20220701231253/https://www.swr.de/swraktuell/rheinland-pfalz/trier/soldaten-ukraine-ausbildung-100.html |url-status=dead }}</ref> On 21 June, Ukrainian [[Minister of Defence of Ukraine|Minister of Defence]] [[Oleksii Reznikov]] announced that the first PzH 2000s had entered Ukrainian service.<ref>{{cite tweet |number=1539225560588734466 |user=oleksiireznikov |title=Panzerhaubitze 2000 are finally part of 155 mm howitzer arsenal of the Ukrainian artillery |first=Oleksii |last=Reznikov |author-link=Oleksii Reznikov |date=21 June 2022 |access-date=26 December 2022 |language=en |archive-url=https://web.archive.org/web/20221208005725/https://twitter.com/oleksiireznikov/status/1539225560588734466 |archive-date=8 December 2022 |url-status=live}}</ref> ''[[Der Spiegel]]'' reported on 27 July that Germany had agreed to sell 100 more PzH 2000s to Ukraine.<ref name=":0">{{Cite web |last1=Gebauer |first1=Matthias |last2=Traufetter |first2=Gerald |date=28 July 2022 |title=(S+) Ukraine-Krieg: Berlin genehmigt Verkauf von 100 Panzerhaubitzen |url=https://www.spiegel.de/politik/deutschland/ukraine-darf-100-panzerhaubitzen-kaufen-a-6e1c331d-0da2-4218-9653-2ee96560da9d |access-date=28 July 2022 |website=Spiegel.de}}</ref> By this time, many PzH 2000 ammo loading mechanisms had broken down due to considerable strain: while the PzH 2000 is designed to fire 100 shells per day, the Ukrainians likely fired the gun much more often. In addition to shipping necessary spare parts to Ukraine, the German government was negotiating the creation of a repair center for its equipment in Poland.<ref>{{Cite web |title=Front News - Ukraine appealed to Germany because of problems with PzH 2000 howitzers |url=https://frontnews.eu/en/news/details/37325}}</ref> In October 2022, the howitzers were sent to Lithuania because Poland denied the German request for exclusive access to the [[Huta Stalowa Wola]] facilities, as it would halt all production in the factory (HSW manufactures and services [[AHS Krab|Krab]] SPGs for Poland and Ukraine, among other weapon systems).<ref>{{Cite web |last=Behrendt |first=Paweł |date=2022-10-08 |title=Remonty ukraińskich PzH 2000 w Polsce – co i jak? |url=https://www.konflikty.pl/aktualnosci/wiadomosci/remonty-pzh-2000-w-polsce/ |access-date=2023-01-13 |website=Konflikty.pl |language=pl-PL}}</ref> Eventually, a planned repair center in Slovakia will shorten the route to and from the war zone in Ukraine. In late 2023, it emerged that Ukraine did not sign the purchase agreement for the delivery of 100 PzH 2000.<ref>{{Cite web |title=Ukraine and Germany fail to seal deal for 100 PzH 2000 self-propelled howitzers |url=https://newsukraine.rbc.ua/news/ukraine-and-germany-fail-to-seal-deal-for-1700057548.html |access-date=2024-01-18 |website=RBC-Ukraine |language=en}}</ref>
+: In February 2024, Germany announced supporting Ukraine with 18 additional PzH 2000 and 18 more [[RCH 155|RCH-155]].<ref>{{Cite web |date=2024-02-16 |title=Military support for Ukraine {{!}} Federal Government |url=https://www.bundesregierung.de/breg-en/search/military-support-ukraine-2054992 |access-date=2024-02-18 |website=Website of the Federal Government {{!}} Bundesregierung |language=en}}</ref><ref>{{Cite web |last=ES&T Redaktion |date=2024-02-18 |title=Deutschland unterstützt die Ukraine weiter mit einer Sicherheitsvereinbarung und dem "Münchner Paket" |url=https://esut.de/2024/02/meldungen/47608/deutschland-unterstuetzt-die-ukraine-weiter-mit-einer-sicherheitsvereinbarung-und-dem-muenchner-paket/ |access-date=2024-02-18 |website=esut.de |language=de-DE}}</ref>
+
+=== Potential sales ===
+
+;{{flag|Germany}} (54)
+: 54 additional systems are in discussion as of June 2024, to be supplied to Germany and to Ukraine.<ref name=":2" />
+
+=== Failed bids ===
+
+;{{flag|Australia}}
+: The PzH 2000 was a contender for Phase 1C of Australia's Land 17 Artillery Replacement Programme, until that phase of the project was cancelled in May 2012.<ref>{{cite news |date=3 May 2012 |title=Rethink of Defence projects to save billions |url=http://www.abc.net.au/news/2012-05-03/defence-white-paper-now-due-in-2013/3987042 |url-status=live |archive-url=https://web.archive.org/web/20120503202448/http://www.abc.net.au/news/2012-05-03/defence-white-paper-now-due-in-2013/3987042 |archive-date=3 May 2012 |access-date=3 May 2012 |publisher=[[ABC Online]]}}</ref>
+;{{flag|Finland}} 
+: Finland tested a PzH 2000 alongside the [[155mm SpGH ZUZANA]] and [[AS-90]] "Braveheart". Tests ended in 1998; more of the cheaper [[155 GH 52 APU|155 K 98]] field guns were bought instead of self-propelled systems.<ref>{{cite web |title=Eversti J.A.Alasjärvi - Suomen Tykistömuseo |url=http://www.tykistomuseo.fi/historia/tykiston_tarkastajat/alasjarvi/ |url-status=dead |archive-url=https://web.archive.org/web/20110514123854/http://www.tykistomuseo.fi/historia/tykiston_tarkastajat/alasjarvi/ |archive-date=14 May 2011 |access-date=4 March 2011}}</ref>
+;{{flag|Germany}} - Navy
+: The [[German Navy]] evaluated a modified system known as [[MONARC]] for installation onboard [[frigate]]s; while the system performed well, components were difficult to protect against corrosion. Sweden evaluated a slightly modified version, but selected the [[Archer Artillery System]] instead.
+;{{flag|Romania}} (54)
+: The PzH 2000 participated in the Romanian tracked self-propelled artillery system competition against the Korean [[K9 Thunder]] and the Turkish [[T-155 Fırtına|T-155 Fırtına II]] which included 54 howitzers in total.<ref>{{Cite web |title=Romania Short-lists German, Turkish & S.Korean howitzers |url=https://www.defensemirror.com/news/35081/Romania_Short_lists_German__Turkish___S_Korean_howitzers |access-date=2024-01-26 |website=www.defensemirror.com}}</ref><ref>{{Cite web |last=Adamowski |first=Jaroslaw |date=2024-01-22 |title=Romanian government readies fighting vehicle, howitzer deals in 2024 |url=https://www.defensenews.com/global/europe/2024/01/22/romanian-government-readies-fighting-vehicle-howitzer-deals-in-2024/ |access-date=2024-01-26 |website=Defense News |language=en}}</ref> The Korean offer was the only one to progress in the contract bid, and negotiations between South Korea and Romania were finished in April 2024,<ref>{{cite web|url=https://monitorulapararii.ro/sud-coreenii-de-la-hanwha-au-pus-ochii-pe-romania-vor-deschiderea-unui-centru-de-logistica-si-mentenanta-pentru-obuzierele-autopropulsate-k9-dar-1-54656|title=Sud coreenii de la Hanwha au pus ochii pe România. Vor deschiderea unui centru de logistică şi mentenanţă pentru obuzierele autopropulsate K9, dar planurile sunt mult mai mari. Partea I|language=ro|author=Andreea Soare|website=monitorulapararii.ro|date=26 April 2024}}</ref> with the contract signed in June 2024.<ref>{{cite web|url=https://tvrinfo.ro/armata-romana-cumpara-cateva-zeci-de-obuziere-senilate-k-9-tunet-din-coreea-de-sud/|title=Armata română cumpără câteva zeci de obuziere șenilate K-9 Tunet, din Coreea de Sud|language=ro|website=tvrinfo.ro|date=19 June 2024}}</ref>
+;{{flag|Turkey}}
+: In 1999, despite showing interest in K9 Thunder, there was no business deals made as Turkey was planning to produce German Panzerhaubitze 2000 at that time. Another meeting was held on 4 October, regarding K9 production in Turkey and solution for import restriction on MTU Friedrichshafen engines by German government. As Turkey's plan to build PzH2000 eventually became halted by Germany, South Korea and Turkey signed MOU for [[T-155 Fırtına]].<ref name="Turkey Sales">{{cite news |url=https://www.haebyeong.com/mnddata/12348 |script-title=ko:[첨단무기 개발비화]세계 최강의 K-9 자주포(VIII) 신인호 국방일보 |publisher=Republic of Korea Marine Corps |date=2010-06-28 |language=Korean |newspaper=해병닷컴 }}</ref>
+;{{flag|United States}}
+: The PzH 2000 was considered for the [[United States Army|US Army]]'s [[XM2001 Crusader|Crusader]] concept system, but several requirements of the Crusader made it unsuitable. The Crusader specifications placed the crew and gun in separate compartments, allowing a single highly armoured crew compartment to control the firing of an entire battery of guns through intervehicle links. In addition, the Crusader included an automated ammunition tender, and an active cooled barrel.<ref>{{Cite web |title=General Accounting Office |url=https://fas.org/man/gao/nsiad-97-121.htm |url-status=live |archive-url=https://web.archive.org/web/20150409032325/https://fas.org/man/gao/nsiad-97-121.htm |archive-date=9 April 2015 |access-date=4 April 2015}}</ref>
+
+==RCH 155 vs Panzerhaubitze 2000==
+The [[RCH 155]] (Remote Controlled Howitzer 155&nbsp;mm) is a wheeled [[self-propelled howitzer]] developed by [[Krauss-Maffei Wegmann]] (now [[KNDS Deutschland]]), a German defence company.
+
+The RCH 155 Module takes the firepower and the [[External ballistics|range]] of the Panzerhaubitze 2000 by using its gun ([[155 mm calibre|155 mm L/52]]), and combines it with an automated and remotely controlled gun module. 
+It is the world's first howitzer that can fire while in motion (like i.e. the [[Leopard 2]]).<ref>{{cite web |last=Hoffmann |first=Lars |date=20 August 2021 |title=Radhaubitze RCH 155 – KMW shows firing on the move for the first time |url=https://esut.de/2021/08/fachbeitraege/ruestung/29196/rch-155-kmw-zeigt-schuss-aus-der-bewegung/}}</ref>
+This is mainly to avoid enemy counter-artillery fire, as modern [[counter-battery radar]]s (as [[COBRA (radar)|COBRA]]) can reconnoitre fire positions after firing in near real-time.
+
+The crew of the RCH 155 consists of only two people: a commander and a military driver. 
+The Panzerhaubitze 2000 has five: commander, driver, gunner, and two loaders.
+
+==Gallery==
+<gallery mode=packed heights="150" class="center">
+File:Pzh-2000 inside of a C-17.jpg|Dutch howitzer being transported to Afghanistan (2006)
+File:Dutch army Pzh-2000 firing on Taliban in Chura. June 16, 2007. Photo by David Axe.jpg|[[Dutch army|Dutch]] PzH-2000 firing on targets in Chora. June 16, 2007
+File:Panzerhaubitze 2000, Military Parade, Zagreb, 4-8-2015.JPG|Croatian PzH 2000 at Zagreb Military Parade (2015)
+File:Panzerhaubitze 2000 im scharfen Schuss (Seil).jpg|Remote firing of the PzH 2000 by a German Army soldier in [[Kunduz]], Afghanistan (July 2010)
+File:PzH2000Munition.jpg|Ammunition
+File:Italian PZH 2000.JPG|Italian Pzh-2000 on display at [[Rome|Rome's]] [[Circus Maximus]] for the 2009 Army Day
+File:Pzh interno.jpg|Interior view of an Italian Pzh-2000 
+File:Dynamic Front 18 (39811016235).jpg|German soldiers with 4th Battery, 131st Artillery Battalion carry out a fire mission with self-propelled howitzers (2018)
+File:Allied Spirit I 150117-A-FO275-006.jpg|Dutch soldiers of Bravo Battery, Fire Support Battalion drive Panzerhaubitze 2000 into a simulated ambush (2015)
+File:Pantserhouwitser 2000NL (PzH2000) photo-006.JPG|Panzerhaubitze 2000 engine
+File:Lithuanian PzH 2000 unit during exercises.jpg|Lithuanian PzH 2000 unit during exercises (August, 2022)
+</gallery>
+
+==See also==
+* [[List of artillery]]
+* {{lwc|Archer Artillery System}}
+* {{lwc|Artillery Gun Module}}
+*{{lwc|AS-90}}
+*{{lwc|15,5 cm bandkanon 1|Bandkanon 1C}}
+* {{lwc|2S35 Koalitsiya-SV}}, derived from Msta
+* {{lwc|2S19 Msta-S}}
+* {{lwc|Type 99 155 mm self-propelled howitzer}}
+* {{lwc|M109 howitzer}}
+* {{lwc|AMX-30 AuF1}}
+* {{lwc|K9 Thunder}}
+* {{lwc|AHS Krab}}
+* {{lwc|T-155 Fırtına}}
+* {{lwc|PLZ-05}}
+* {{lwc|SSPH Primus}}
+* {{lwc|Merkava#Merkava Howitzer Sholef|Sholef}}
+
+==References==
+{{reflist}}
+
+==External links==
+{{Commons}}
+* [http://armour.ws/pzh-2000-panzerhaubitze-2000/ Armored Vehicles - PzH 2000]
+* [https://web.archive.org/web/20071028115025/https://www.kmweg.com/gb/frame.php?page=19 Manufacturer's website (en)]
+* [http://www.primeportal.net/artillery/pzh2000_home.htm PzH 2000 Photos at Prime Portal]
+* [https://web.archive.org/web/20060331234943/http://www.deutschesheer.de/portal/a/heer/kcxml/04_Sj9SPykssy0xPLMnMz0vM0Y_QjzKLd483NzEASYGYZu7m-pEwsaCUVH1fj_zcVH1v_QD9gtyIckdHRUUAqVrUjA!!/delta/base64xml/L3dJdyEvd0ZNQUFzQUMvNElVRS82X0dfNzNV Article on the Official Heer website (in German)]
+* [https://fas.org/man/dod-101/sys/land/row/pzh2000.htm Federation of American Scientists]
+* {{usurped|1=[https://web.archive.org/web/20090709114432/http://www.military-today.com/artillery/pzh_2000.htm Military Today]}}
+* [https://www.youtube.com/watch?v=Ct1uOjhuUuE Dutch PzH 2000 Firing at Taliban Positions at Youtube]
+
+{{ModernGermanAFVsNav}}
+{{knds}}
+{{Authority control}}
+
+{{DEFAULTSORT:Pzh 2000}}
+[[Category:155 mm artillery]]
+[[Category:Field artillery of Germany]]
+[[Category:Military vehicles introduced in the 1990s]]
+[[Category:Post–Cold War artillery of Germany]]
+[[Category:Post–Cold War weapons of Germany]]
+[[Category:Rheinmetall]]
+[[Category:Self-propelled artillery of Germany]]
+[[Category:Tracked self-propelled howitzers]]

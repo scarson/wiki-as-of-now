@@ -1,0 +1,151 @@
+// ABOUTME: Negative-pattern suppression — returns a penalty score that reduces false positives
+// ABOUTME: in stale-claim detection by identifying historical narration, quotations, and resolved claims.
+import { findExpectationMarkers } from "./markers";
+
+/**
+ * A single "date-ish" token that can legitimately sit between a leading frame
+ * word and the year: a day number (1–2 digits), a month name (full or common
+ * abbreviation), or a loose qualifier (early/late/mid), each optionally trailed
+ * by a `.`/`,` and required whitespace. Allowing a small, bounded run of these
+ * lets the dateline frame absorb full dates ("On 30 August 2018", "On April 6,
+ * 2009") and month datelines ("In March 2013", "In early 2007") — while NOT
+ * matching filler words, so "In the 2008 budget, the Navy plans to..." is left
+ * alone (the forward claim survives).
+ */
+const DATELINE_DATE_TOKEN =
+  "(?:\\d{1,2}|January|February|March|April|May|June|July|August|September|October|November|December|" +
+  "Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sept|Sep|Oct|Nov|Dec|early|late|mid)\\.?,?\\s+";
+
+/**
+ * A sentence-initial temporal frame: In/By/During/As of/On + up to three
+ * date-ish tokens + a 4-digit year (1900–2099, kept identical to the range
+ * `extractYears` recognizes so the frame year can match a claim's anchor year).
+ * The year is captured in group 1. "On" is included because "On <date>, X did
+ * Y" is overwhelmingly historical narration (the dominant real false-positive
+ * class); genuine forward claims begin with their subject, not a leading date.
+ *
+ * ⚠ The year alternatives MUST stay grouped — an un-grouped `...|20\d\d`
+ * would let the bare year branch match any 20xx year anywhere in the sentence
+ * and over-suppress valid claims.
+ */
+const DATELINE_REGEX = new RegExp(
+  `^(?:In|By|During|As of|On)\\s+(?:${DATELINE_DATE_TOKEN}){0,3}(19\\d\\d|20\\d\\d)\\b`,
+  "i"
+);
+
+/**
+ * A resolution cue (later/subsequently/ultimately) IMMEDIATELY followed by a
+ * past-participle resolution verb — the form that signals the article resolved
+ * the claim nearby (e.g. "later completed", "subsequently cancelled"). Bare
+ * "later"/"ultimately" are ordinary temporal adverbs ("deployed later in 2017")
+ * and must NOT suppress, so the verb is required.
+ */
+const RESOLUTION_REGEX =
+  /\b(?:later|subsequently|ultimately)\s+(?:was\s+|were\s+|been\s+)?(?:completed|cancell?ed|abandoned|withdrawn|terminated|scrapped|halted|shelved|delivered|finished|resolved|retired|decommissioned|dropped|suspended|postponed|delayed|moved|pushed|slipped|revised|rescheduled|deferred)\b/i;
+
+/**
+ * Past-tense speech/announcement/acquisition-event verbs. When one of these is
+ * followed (within the same clause) by an "on/in <date>" of the claim's year,
+ * the sentence is narrating a past event and attributing the forward claim to
+ * it ("X announced plans to ... in January 2010", "Reuters reported on 1 June
+ * 2022 that ... plans to ..."). The list is deliberately limited to event /
+ * reporting verbs — NOT forward-action verbs (deliver, field, build, launch,
+ * test), which are usually the claim itself — so a directly-asserted forward
+ * target ("will be delivered in 2019") is never mistaken for a dateline.
+ */
+const REPORTING_VERB =
+  "announced|reported|stated|said|revealed|disclosed|noted|explained|pledged|confirmed|" +
+  "unveiled|released|awarded|ordered|signed|allocated|published|selected|approved|adopted|" +
+  "claimed|predicted|estimated|warned|suggested|indicated|wrote|forecast|projected";
+
+/**
+ * Veto-strength penalty applied when a suppression rule fires.
+ *
+ * Magnitude is calibrated to out-weigh `temporalRisk` in score.ts's
+ * `total = max(0, temporalRisk + futureTenseConfidence - suppression)`,
+ * ensuring a fired suppression rule drops even old claims that would
+ * otherwise score high. Calibrated against the Task 2.7 precision gate;
+ * this value embodies the precision-over-recall design choice.
+ */
+const SUPPRESSION_PENALTY = 100;
+
+/**
+ * Computes a non-negative suppression penalty for `sentence`.
+ *
+ * Returns `SUPPRESSION_PENALTY × (number of rules that fire)`, or `0` if
+ * none fire. A non-zero return signals that the sentence matches a known
+ * false-positive pattern and should be down-weighted by the scorer.
+ *
+ * @param sentence - The sentence under evaluation.
+ * @param year     - The claim's anchor year (the past year the scorer is
+ *                  scoring). Used by the dateline rule: a leading temporal
+ *                  frame is only narration when its year IS the claim's year.
+ */
+export function suppressionScore(sentence: string, year: number): number {
+  let rulesHit = 0;
+
+  // Rule 1 — historical dateline narration.
+  // Fires when the sentence opens with a temporal frame (DATELINE_REGEX) AND
+  // that frame year equals the claim's anchor `year`. A leading dateline whose
+  // year IS the claim year means the marker reports a past intention/statement
+  // made AT that time (e.g. "In March 2013, the administration announced plans
+  // to add...") rather than an unresolved forward claim.
+  //
+  // The `year` argument is the year detect.ts chose for this candidate. detect.ts
+  // picks the EARLIEST past year in the sentence, so for a sentence that opens
+  // with a dateline AND carries a later forward target (e.g. "In 2015, ... was
+  // expected to deliver in 2020."), the chosen year is the dateline (2015) and
+  // the whole sentence is suppressed. That is the deliberate precision-over-recall
+  // choice: such "In <year-A>, ... <marker> ... in <year-B>" sentences are
+  // ambiguous between historical narration and a live forward claim, and we
+  // favour suppression. The accepted recall gap is recorded in the plan's
+  // Discoveries and docs/pitfalls (DET-1). Called directly with year == the
+  // later target (B != A), Rule 1 does NOT fire — but detect.ts never passes B.
+  const datelineMatch = DATELINE_REGEX.exec(sentence);
+  if (datelineMatch && Number(datelineMatch[1]) === year) {
+    rulesHit++;
+  }
+
+  // Rule 2 — quotation.
+  // Fires when an expectation marker sits inside a quoted span.
+  // Guards: a marker quoted from a source is not asserted by the article
+  // (e.g. 'a spokesman said it "is expected to launch in 2017"').
+  const quotedSpanPattern = /"([^"]*)"/g;
+  let quotedMatch: RegExpExecArray | null;
+  while ((quotedMatch = quotedSpanPattern.exec(sentence)) !== null) {
+    const span = quotedMatch[1];
+    if (findExpectationMarkers(span).length >= 1) {
+      rulesHit++;
+      break; // one fired quote is enough to count the rule once
+    }
+  }
+
+  // Rule 3 — later-resolution cue.
+  // Fires only when a resolution cue is followed by a resolution verb
+  // (RESOLUTION_REGEX), i.e. the article resolved the claim nearby
+  // (e.g. "The merger, later completed, was expected to close in 2018.").
+  // A bare temporal "later"/"ultimately" ("deployed later in 2017") is a
+  // forward statement and must NOT suppress.
+  if (RESOLUTION_REGEX.test(sentence)) {
+    rulesHit++;
+  }
+
+  // Rule 4 — mid-sentence attribution (the residual FP class the leading
+  // dateline rule can't reach). Fires when a past reporting/event verb is
+  // followed, within the same clause (no sentence break) and a bounded gap, by
+  // an "on/in <date>" whose year is the claim's anchor `year`. That dates the
+  // claim to a past announcement/report/award rather than asserting it now
+  // (e.g. "X announced plans to acquire ... in January 2010", "Reuters reported
+  // on 1 June 2022 that ... plans to ..."). Tying the date to the claim year and
+  // requiring the verb to PRECEDE the date keeps it precise — a directly-asserted
+  // forward target ("will be delivered in 2019") has no reporting verb before it.
+  const attributionRegex = new RegExp(
+    `\\b(?:${REPORTING_VERB})\\b[^.]{0,80}?\\b(?:on|in)\\s+(?:${DATELINE_DATE_TOKEN}){0,3}${year}\\b`,
+    "i"
+  );
+  if (attributionRegex.test(sentence)) {
+    rulesHit++;
+  }
+
+  return SUPPRESSION_PENALTY * rulesHit;
+}

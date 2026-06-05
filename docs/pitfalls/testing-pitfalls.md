@@ -109,6 +109,19 @@ Tests run against `better-sqlite3` (in-memory) as a stand-in for D1. The two are
 
 ---
 
+## 9. Detector Precision Gate & Gold-Set Honesty
+
+The detector's precision gate (`test/detector/precision.test.ts`) runs the real detector over real Wikipedia fixtures and a hand-labeled gold set. It is only meaningful if the gold set is honest. These checks exist because precision is trivially gameable.
+
+- [ ] **🔥 Found in Phase 2: the precision gate measures the LABELED subset only — it is a regression gate, not true precision.** It asks "does the detector flag the labeled positives and avoid the labeled negatives?", NOT "what fraction of ALL flags are correct?". Keep the in-test NOTE that says so. Do not read a passing gate as "the detector has 100% precision in production" — there are known residual false positives outside the gold set (see DET-2).
+- [ ] **🔥 Found in Phase 2: the gold set MUST contain real negatives, and a composition guard MUST enforce it.** Precision over a positives-only set is trivially 1.0. `precision.test.ts` asserts ≥3 positives AND ≥3 negatives so a future edit cannot pass the gate by deleting the negatives. If you tune precision, do it by *improving suppression*, never by removing a gold negative — removing a real negative to make the gate pass is the exact rigor regression the plan's TDD rules forbid; STOP and escalate instead.
+- [ ] **🔥 Found in Phase 2: build the gold set from real detector output, not idealized sentences.** Run the detector on the fixtures, read what it actually flags, and label *those* sentences. Hand-writing "obviously stale" sentences hides the dominant real false-positive class (historical dateline narration — DET-1) and produces a gate that passes while the detector is noisy on real articles.
+- [ ] **Negatives must be genuine false-positive-class examples the detector correctly avoids — not throwaway sentences.** Each negative should represent a real class (historical-narration dateline, year-gate future claim, quotation, resolved-nearby) and be not-flagged for a *principled* reason (suppression or the year gate), not by accident. Independently re-derive each label by running the detector; flag any you'd dispute.
+- [ ] **Fixtures are pinned-`asOfYear` and committed, never fetched in-test.** Tests pass a fixed `asOfYear` (2026) so labels stay stable as the live articles age, and the `.wikitext` fixtures are committed files — no network call at test time (that would be nondeterministic and an integration test in disguise; see §7).
+- [ ] **A suppression rule added to pass the gate must generalize, not overfit the fixtures.** Probe a new/tuned suppression rule on fresh invented sentences across the pattern class (not just the committed fixtures). If it only works on the curated sentences, it is overfit — a precision number that does not transfer.
+
+---
+
 ## How to Add a Testing-Pitfall
 
 When a bug reaches production (or staging, or late integration testing) because a test was missing:

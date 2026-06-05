@@ -1,0 +1,465 @@
+{{Short description|American 155 mm self-propelled howitzer}}
+{{redirect|M109}}
+{{Infobox weapon
+| name               = M109
+| image              = File:Kings of battle keep the fire; 1-9 FA fires its last rounds 140910-A-CW513-046.jpg
+| image_size         = 300
+| caption            = M109A6
+| origin             = United States
+| type               = [[Self-propelled artillery]]
+| service            = M109: 1963–present<br />M109A1: 1973–present<br />M109A2: 1979–present<br />M109A6: 1994–present<br />M109A7: 2015–present
+| used_by            = See [[#Operators|Operators]]
+| wars               = [[Vietnam War]] <br /> [[Cambodian Civil War]] <br /> [[Yom Kippur War]] <br/> [[Western Sahara War]] <br /> [[Iran–Iraq War]]  <br /> [[1982 Lebanon war]] <br /> [[South Lebanon conflict (1985–2000)]] <br /> [[Gulf War|Persian Gulf War]] <br /> [[Iraq War]]<br />[[Gaza War (2008–09)|Gaza War]] <br /> [[2014 Israel–Gaza conflict]] <br /> [[War in Iraq (2013-2017)]]<ref>{{cite web|url= https://www.youtube.com/watch?v=iLro9vsdW40 |archive-url= https://ghostarchive.org/varchive/youtube/20211211/iLro9vsdW40| archive-date=2021-12-11 |url-status=live|title= Battle of Mosul 2016– French Artillery Fire on ISIS / M109 Paladins Fire Support|website=YouTube|date= 6 November 2016}}{{cbignore}}</ref> <br />[[Yemeni Civil War (2014–present)]], <br /> [[Saudi Arabian-led intervention in Yemen]] <br /> [[Syrian Civil War]] <br /> [[Russian invasion of Ukraine]] <br /> [[Gaza war]]<br>[[2025 Cambodian–Thai clashes]]<ref>{{cite news |last1=Coughlan |first1=Joe |last2=Fulton |first2=Adam |last3=Coughlan (now) |first3=Joe |last4=Fulton (earlier) |first4=Adam |title=Thailand-Cambodia border dispute live: Thailand closes border with Cambodia as death toll from fighting rises |url=https://www.theguardian.com/world/live/2025/jul/24/thailand-cambodia-border-clashes-live-soldiers-fire-at-each-other-along-disputed-border?filterKeyEvents=false&page=with%3Ablock-6881db058f0889d810c83fc6#block-6881db058f0889d810c83fc6 |access-date=24 July 2025 |work=the Guardian |date=24 July 2025}}</ref>
+| is_vehicle         = yes
+| is_ranged          = yes
+| is_artillery       = yes
+| length             = M109 : hull length of 20.3 ft and length with gun forward of 30 ft 
+
+M109A1/A2/A3/A4/A5/A6/A7 : hull length of 20.3 ft , length with gun forward of 32 ft
+| width              = {{convert|10|ft|4|in|m|abbr=on}}
+| height             = {{convert|10|ft|8|in|m|abbr=on}}
+| designer           = 
+| design_date        = 1952–1962
+| manufacturer       = [[Cadillac]]<br />[[General Motors]]<br />[[Chrysler]]<br />BMY [[Harsco]], formerly Bowen & McLaughlin York (1974–1994)<br />[[United Defense]] (1994–2005)<br />[[BAE Systems Inc.]] (2005–present)<hr /> [[Samsung]] (1985–2015)<br /> [[Hanwha]] (2015–present)
+| production         = 
+| weight             = M109A1/A2/A3/A4/A5: empty weight of 52,000 lbs (23.6 metric tons) and combat weight of 55,000 lbs (24.95 metric tons)
+
+M109A6 : non-combat weight of 56,400 lbs (25.6 metric tons) and combat weight of 62,000 lbs to 63,615 lbs (28.1 metric tons to 28.9 metric tons) 
+
+M109A7 : non- combat weight of 74,000 to 78,000 lbs (33.6 metric tons to 35.4 metric tons) and combat weight of 84,000 lbs (38 metric tons) 
+<!-- Ranged weapon specifications -->| cartridge          = separate loading, [[Shell (projectile)#Separate loading bagged charge|bagged charge]]
+| action             = 
+| rate               = Maximum: 4 rpm/3 min.<ref name = "youtube.com">{{cite web |url= https://www.youtube.com/watch?v=8JD92G3DZqA |url-status= dead |title= M109 155mm Howitzer Self-Propelled from "Weapons of the Field Artillery" 1965 US Army |first= Jeff |last= Quitney |date= 14 March 2012 |via= YouTube |access-date= 9 May 2016 |archive-date= 17 January 2020 |archive-url= https://web.archive.org/web/20200117202116/https://www.youtube.com/watch?v=8JD92G3DZqA }}</ref><br />Sustained: 1 rpm<ref name="youtube.com"/>
+| velocity           = 
+| range              = M109A1–A4:<br />{{convert |18.1|km|mi|abbr=on}} (M107, HE)<br />{{convert |23.5|km|mi|abbr=on}} (M549A1, RAP/HE)<hr />M109A5–A7:<br />HE: {{convert|21|km|mi|abbr=on}}<br />[[rocket-assisted projectile|RAP]]: {{convert |30|km|mi|abbr=on}} <br /> [[M982 Excalibur|Excalibur]]: {{cvt |40|km|mi}}<ref>{{Cite web|url= http://www.raytheonmissilesanddefense.com/what-we-do/land-warfare/precision-weapons/excalibur-projectile|title=Excalibur Projectile|website= Raytheon missiles & defense}}</ref>
+| max_range          = 
+| feed               = 
+| sights             = <!-- Artillery specifications -->
+| breech             = [[interrupted screw]]
+| recoil             = 
+| carriage           = 
+| elevation          = 
+| traverse           = 360°
+| clearance          = M109A7:<br />longitudinal slope: 60 %<br />lateral slope: 40 %<br />trench: 72 in (1.8 m)<br />fording: 42 in (1.07 m)
+<!-- Vehicle specifications -->| suspension         = [[torsion bar]]
+| speed              = 35 mph (56 km/h)<br />M109A7: 38 mph (61 km/h)
+| vehicle_range      = 216 mi (350 km)<br />M109A7: 186 mi (300 km)
+| primary_armament   = M109: M126 155 mm 23 caliber, 28 rounds<hr />M109A1–A4: [[Watervliet Arsenal]] M185 155 mm 39 caliber, 28 rounds (A1) or 36 rounds (A2–A4)<hr />M109A5–A7: M284 155 mm 39 caliber<ref name="Army Technology">{{cite web |url= http://www.army-technology.com/projects/paladin/ |title= Paladin 155mm Self-Propelled Howitzer | work =Army Technology |access-date=2010-12-23 |archive-url= https://web.archive.org/web/20101222021652/http://www.army-technology.com/projects/paladin/ |archive-date=22 December 2010 |url-status=live }}</ref>
+| secondary_armament = [[M2 Browning machine gun|.50 caliber (12.7 mm) M2 machine gun]]
+| armour             = Aluminum alloy
+| engine             = {{plainlist |
+* M109: [[Detroit Diesel]] 8V71T [[8-cylinder]] [[water-cooled]] [[turbocharged]] [[diesel engine]] 390 hp @ 2,300 rpm
+* M109A1–A4: Detroit Diesel 8V71T 8-cylinder water-cooled supercharged diesel engine 405 hp @ 2.300 rpm
+* M109A5–A6: Detroit Diesel 8V71T 8-cylinder water-cooled supercharged diesel engine 440 hp
+* M109A7: V903 675 hp
+}}
+| transmission       = [[Allison Transmission]] XTG-411-2A, 4 forward, 2 reverse<hr />M109A6: Allison Transmission XTG-411-4<hr />M109A7: HMPT-800
+| crew               = 6 (commander, driver, gunner, 3 loaders)<br />M109A6–A7: 4 (commander, driver, gunner, loader)
+| engine_power       = 
+| pw_ratio           = 
+}}
+
+The '''M109,''' widely known as the '''Paladin''',<ref>{{cite web |last1=Meier |first1=Vanessa |title=M109A7 |url=https://www.baesystems.com/en/product/m109a7 |website=[[BAE Systems]] |publisher=© BAE Systems |access-date=10 April 2026 |date=October 2019}}</ref> is an American [[155 mm]] turreted [[Self-propelled artillery|self-propelled]] [[howitzer]], first introduced in the early 1960s to replace the [[M44 self-propelled howitzer|M44]] and [[M52 self-propelled howitzer|M52]]. It has been upgraded a number of times, most recently to the '''M109A7'''. The M109 family is the most common [[Western world|Western]] [[indirect-fire]] support weapon of maneuver brigades of armored and mechanized infantry divisions. It has a crew of four: the section chief/commander, the driver, the gunner, and the ammunition handler/loader.
+[[File:M109 Austria.jpg|thumb|M109 at the [[Museum of Military History, Vienna]]]]
+The [[British Army]] replaced its M109s with the [[AS-90]]. Several European armed forces have or are currently replacing older M109s with the German [[Panzerhaubitze 2000|PzH 2000]]. Upgrades to the M109 were introduced by the U.S. (see [[#types|variants]]) and by Switzerland (KAWEST). With the cancellation of the U.S. [[XM2001 Crusader|Crusader]], [[non-line-of-sight cannon]] and [[M1299 howitzer|M1299]], the M109A6 ("Paladin") will likely remain the principal self-propelled howitzer for the U.S. until a replacement enters service.
+
+==Operational history==
+[[File:Dutch M109 155 mm Self-propelled Howitzer Right Side.jpg|thumb|left|Early M109 howitzer of the [[Royal Netherlands Army]]]]
+
+The M109 was the medium variant of a U.S. program to adopt a common [[chassis]] for its self-propelled artillery units. The light version, the [[M108 Howitzer]], was phased out during the [[Vietnam War]], but many were rebuilt as M109s.
+
+The M109 saw its combat debut in Vietnam. Around 200 vehicles were deployed in 1966, but the entire fleet suffered a mechanical malfunction within a year of operation. The U.S. dispatched engineers and mechanics, but all M109s were recalled back to the U.S. in 1967 after failing to repair in the field. The howitzer underwent upgrades afterward, which resulted in the M109A1.<ref name="K55 interview">{{Citation |title=[첨단국가의 초석, 방위산업] 자주포 개발사 - 전설의 시작 K-55 | date=16 September 2015 |url=https://www.youtube.com/watch?v=Iufpdyj0fhk |language=ko |access-date=2022-08-06}}</ref>
+
+Israel used the M109 against Egypt in the 1973 [[Yom Kippur War]] and in the [[1982 Lebanon War|1982]] and [[2006 Lebanon War]]s. Iran used the M109 in the [[Iran–Iraq War]] in the 1980s. The M109 saw service with the [[British Army|British]], U.S. Army, [[Egyptian Army|Egyptian]] and [[Saudi Arabian Army|Saudi Arabian]] Armies in the 1991 [[Gulf War]]. The M109 also saw service with the U.S. Army in the [[Iraq War]] from 2003 to 2011.
+
+[[File:DS1991.jpg|thumb|M109 howitzers belonging to 4th Battalion of the [[3rd Field Artillery Regiment (United States)|3rd Field Artillery Regiment]], 2nd Armored Division (FWD) conducts artillery strikes on [[Iraq]]i positions during the [[Gulf War]] ]]
+
+Upgrades to the cannon, ammunition, fire control, survivability, and other electronics systems over the design's lifespan have expanded the system's capabilities, including [[W48|tactical nuclear projectiles]], guided projectiles ([[M712 Copperhead|Copperhead]]), [[rocket-assisted projectile]]s (RAP), family of scatterable mines ([[FASCAM]]), and cluster munitions (the [[dual-purpose improved conventional munition]], DPICM).
+
+In August 2015, South Korean K55A1s fired rounds behind the [[Military Demarcation Line]] as a warning after several North Korean provocations.<ref>{{cite web|title=복면지왕, 북한의 양면전술|url=https://h21.hani.co.kr/arti/cover/cover_general/40220.html|access-date=2022-02-17|website=h21.hani.co.kr|language=ko}}</ref>
+
+During the [[Russian invasion of Ukraine]], Ukraine has used M109 howitzers donated by Western countries.<ref>{{Cite web |date=2022-06-09 |title=Norway supplies 22 M109 self-propelled howitzers to Ukraine |url=https://www.army-technology.com/news/norway-m109-self-propelled-howitzers-ukraine/ |access-date=2022-11-05 |website=Army Technology |language=en-US}}</ref> According to video and photographic evidence compiled by the [[open-source intelligence]] website [[Oryx (website)|Oryx]], as of 24 September 2024, at least 70 units of different variants had been lost (54 destroyed and 16 damaged).<ref name="oryx">{{cite web |url=https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html#:~:text=155mm%20M109A3 |title=Attack On Europe: Documenting Ukrainian Equipment Losses During The 2022 Russian Invasion Of Ukraine |last1=Mitzer |first1=Stijn |last2=Janovsky |first2=Jakub |date=June 11, 2024 |orig-date=February 24, 2022 |access-date=11 June 2024 |website=Oryx |publisher=Oryxspioenkop}}</ref>
+
+==Design==
+The M109 was developed by the Ground System Division of [[United Defense|United Defense LP]], later [[BAE Systems Platforms & Services]].<ref name="Army Technology" />
+
+===Armament===
+[[File:M109BREECH.JPG|left|thumb|Open breech of a M109A5 howitzer]]
+* Primary by [[Watervliet Arsenal]]: M126 Cannon (or M126A1) 155&nbsp;mm Howitzer (M109), M185 Cannon 155&nbsp;mm Howitzer (A1/A2/A3/A4), or M284 Cannon 155&nbsp;mm Howitzer (A5/A6)
+* Secondary: [[M2 Browning machine gun|.50 caliber (12.7&nbsp;mm) M2 machine gun]], [[Mk 19 grenade launcher|Mk 19 Mod 3 40&nbsp;mm Automatic Grenade Launcher]], [[M60 machine gun|7.62&nbsp;mm M60]], [[M240 machine gun]] or [[L4 machine gun]]
+
+=== Mobility ===
+The M109 was powered by the 8V71T, a 8-cylinder water-cooled diesel engine, produced by the Detroit Diesel Engine Division of General Motors Corporation. The 8V71T is a turbocharged version of the 8V71 commercial truck engine. It was rated 390 hp at 2300 rpm and was used in the M107, M108, M110, and M578 series as well.<ref>{{Cite book |title=Arsenal for the Brave: A History of the United States Army Materiel Command, 1962-1968 |publisher=United States, Army Materiel Command, Historical Office |year=1969 |pages=133}}</ref>
+
+==Variants<span class="anchor" id="types"></span>==
+
+=== M109 ===
+First produced in 1963. It had a 155&nbsp;mm M126 cannon in an M127 mount, and carried 28 rounds of 155&nbsp;mm ammunition. It was also armed with a .50cal [[M2 Browning machine gun|M2HB]] machine gun with 500 rounds of ammunition. Easily identified by its short barrel and a double baffle [[muzzle brake]] with a large fume extractor just behind it. Maximum range of 14,600 meters.
+
+==== M109G ====
+[[File:M109 der Bundeswehr.jpg|left|thumb|M109G of the [[Bundeswehr]] in 1982]]
+The [[West German]] army M109s were designated as the M109G, and featured a [[breechblock]] system developed by Rheinmetall extending the effective range to {{convert|18|km|mi}} or {{convert|18.5|km|mi}} according to some sources, a new fire control system, and three smoke dischargers mounted on either side of the turret as well.{{sfn|Foss|1979|page=358}}{{sfn|Foss|2011|page=868}}
+
+In December 1966, the United States and Norway signed an agreement related to the co-production of the M109G.<ref>{{Cite book |title=Treaties in Force: A List of Treaties and Other International Agreements of the United States in Force on January 1, 1986 |publisher=United States Department of State |year=1986 |page =135}}</ref>
+
+=== M109A1 ===
+[[File:United States Army M109A1 self-propelled howitzer in Germany during exercise REFORGER '82.jpg|thumb|US Army M109A1 in 1982|left]]
+Fielded in 1973, this modification replaced the M126 cannon with a 39 caliber M185, featuring a longer barrel while increasing maximum range to 18,100 meters.<ref name=":0">{{Cite journal |date=October 1989 |title=Numbering the M109 Howitzers |url=https://books.google.com/books?id=Hgh5tz5WsQoC&pg=PA52 |journal=Field Artillery |publisher=US Field Artillery Association |pages=52 |issn=0899-2525}}</ref>
+
+==== M109A1B ====
+The M109 rebuilt to M109A1 standard.
+
+==== M109 66/74 ====
+{{Main|M109 in the Swiss Armed Forces}}
+
+The M109 (Pz Hb) 66/74 is a Swiss upgraded M109 (Pz Hb 66) to M109A1B (Pz Hb 74) standard.
+
+Switzerland purchased 146 M109 under the armament program 1968, and introduction of the howitzer started in 1971.<ref name="Pz Hb 66">{{Cite web |title= Panzerhaubitze 66 M-109 / L-2315,5 cm Pz Hb 66 - Panzerhaubitzen - Raupenfahrzeuge {{!}} militärfahrzeuge.ch |url=https://militaerfahrzeuge.ch/unterkategorie_13_31_355.html |access-date=2023-07-28 |website=militaerfahrzeuge.ch}}</ref> All vehicles received upgrade to M109A1B (Pz Hb 74) standard and were delivered from May 1977 to February 1979.<ref name="Pz Hb 66/74">{{Cite web |title=Panzerhaubitze 66/74 M-109 / L-39Pz Hb 66/74 - Panzerhaubitzen - Raupenfahrzeuge  |url=https://militaerfahrzeuge.ch/unterkategorie_13_31_475.html |access-date=2023-07-28 |website= Militaerfahrzeuge}}</ref>
+
+=== M109A2 ===
+Incorporated 27 [[Reliability, availability, maintainability and safety|Reliability, Availability, and Maintainability (RAM)]] mid-life improvements. Most notably, the long barreled 155&nbsp;mm M185 Cannon in the new M178 gun mount, ballistic protection for the panoramic telescope, counterbalanced travel lock, and the ability to mount the M140 bore sight alignment device. Stowage of 155 mm rounds increased from 28 to 36 rounds; .50cal ammunition remained at 500 rounds. Fielded in 1979.<ref name=":0" />
+
+During M109A2 production, a slightly simplified version was also produced for export. This had minor internal changes and deleted the hull flotation feature. These were designated '''M109A1B'''.<ref>{{cite book |last1=Lathrop|first1=R.|title=M109 155mm Self-Propelled Howitzer 1960–2005|date=5 Feb 2005|publisher=Osprey |isbn=978-1-84176631-7|page=15}}</ref>
+
+==== K55 ====
+[[File:2013.3. 해병대 자주포 기동훈련 Rep.of Korea Marine Corps Self-propelled artillery Maneuvers (8553361055).jpg|left|thumb|K55 howitzers of [[Republic of Korea Marine Corps]] in 2013]]
+The K55 is a South Korean license produced variant of the M109A2. In the 1960s, the [[Republic of Korea Army|South Korean Army]] received [[M107 self-propelled gun|M107]] and [[M110 howitzer|M110]] from the United States. However, the number of these self-propelled guns was insufficient to counter rapidly-growing North Korean artillery capabilities. In the 1970s, South Korea began mass-producing towed howitzers locally, but intelligence reports of North Korean [[M-1978 Koksan|170 mm self-propelled artillery]] forced South Korea to look for a new self-propelled artillery system.<ref name="K55 interview" />
+
+In December 1983, defense officials of the United States and South Korea signed a [[memorandum of understanding]] (MOU) to co-produce M109A2 in South Korea using American technical data. The United States delivered two completed M109A2s to South Korea for operational review, and the [[Agency for Defense Development]] began to translate the data package and created field and maintenance manuals for soldiers. South Korea wanted to produce every part of the vehicle domestically; however, due to the amendment bill by Rep. [[Samuel S. Stratton]] of New York, which established a limit for foreign military technology cooperation, the turret and the M185 cannon from [[Watervliet Arsenal]] were imported from the United States.<ref name="K55 interview"/>
+
+Compared to the M109A2, besides 63 percent of parts being produced locally, K55 has a driver's night periscope and light exposure minimization device to enhance night-time operations as well as additional radio systems. The vehicle has a [[CBRN defense|nuclear, biological and chemical]] protection system and halon fire extinguishers. A total of 1,180 K55s were produced between 1985 and 1996.<ref name="K55 interview"/><ref name="K66">{{Cite web |title=[김대영의 무기 인사이드] 우리 군에서 영구 결번된 비운의 국산장갑차 'K66' |url=https://nownews.seoul.co.kr/news/newsView.php?id=20210316601008 |access-date=2022-08-08 |website=나우뉴스 | date=16 March 2021 |language=ko}}</ref> The vehicle's name was changed from KM109A2 to K55, originally a code name from the Samsung factory.
+
+In November 1990, the United States and South Korea signed an agreement to allow South Korea to supply M109 parts to third parties.<ref>{{Cite web |last=李敦琯|title=한반도 전쟁발발시 美전투력 즉각 증강 |url=https://n.news.naver.com/mnews/article/001/0003458242?sid=102 |access-date=2022-08-08 |website=[[Naver News]] |language=ko}}</ref> In May 1997, during the Security Cooperation Committee held in Washington D.C., South Korea requested that the United States revise the MOU to export complete K55s, originally intended for domestic use only. South Korea was expecting to export 72 K55s and four ammunition support vehicles to Brazil for $160 million over Belgium's offer, but the [[United States Department of Defense]] declined the request to avoid an arms race in the region.<ref>{{Cite web |title=국산 1백55mm 자주포 대량수출 전망 |url=https://n.news.naver.com/mnews/article/001/0004226305?sid=102 |access-date=2022-08-08 |website=[[Naver News]] |language=ko}}</ref><ref>{{Cite web |title=1백55mm 국산자주포 수출 무산 |url=https://n.news.naver.com/mnews/article/001/0004248291?sid=102 |access-date=2022-08-08 |website=[[Naver News]] |language=ko}}</ref>
+
+In May 1998, the South Korean military began operating a K55 simulator to boost artillery operator training. The simulator took a year and a billion [[South Korean won|KRW]] budget to develop. It is expected to save 150 million KRW per year per device.<ref>{{Cite web |last=朴成雨|title=포병학교 자주포 조종 시뮬레이터 개발 |url=https://n.news.naver.com/mnews/article/001/0004367835?sid=102 |access-date=2022-08-08 |website=[[Naver News]] |language=ko}}</ref>
+
+=== M109A3 ===
+M109A1s rebuilt to M109A2 standard, also fielded in 1979.<ref name=":0" /> Some A3s feature three contact arm assemblies, while all A2s have five, which are part of the turret's electrical system. The contact arms provide multiple points of contact on the hull to the tank's main electrical systems, this ensures the turret has continuous power while rotating. Some variants have additional contacts for redundancy.<ref>{{cite web |title=CAB, ARMAMENT, SIGHTING AND FIRE CONTROL, ELEVATING AND TRAVERSING SYSTEMS, AND ASSOCIATED COMPONENTS HOWITZER, MEDIUM, SELF-PROPELLED: 155MM |url=http://www.combatindex.com/store/tech_man/Sample/M109/TM_9-2350-311-24P-2.pdf |website=Combat Index |publisher=[[United States Department of the Army]] |access-date=10 April 2026 |pages=5, 82, 83 |format=PDF |date=31 July 1998}}</ref> 
+
+==== M109A3B ====
+M109A1B rebuilt to M109A2 standard.
+
+==== M109A3G ====
+In 1983, the [[German Army]] purchased 586 conversion kits from the FMS Corporation (now Marvin Land Systems) to convert its fleet of M109Gs to the M109A3G standard. This upgraded variant uses a new gun barrel developed by Rheinmetall, giving an extended range of {{convert|24|km|mi}}. It also features a new fire-control system, and three forward firing 76&nbsp;mm smoke grenade launchers on either side of the turret.{{sfn|Foss|2011|page=868}}
+
+==== M109A3GN ====
+[[File:UA 72nd bde M109A3GN 04.jpg|thumb|Ukraine's [[72nd Mechanized Brigade (Ukraine)|72nd Mechanized Brigade]] operating an M109A3GN during the [[Russian invasion of Ukraine]]]]
+Between 1969 and 1971 Norway acquired 126 M109Gs from West Germany.<ref>{{cite news |title=Watch: Norwegian Self-propelled Howitzers Used by Ukrainian Ground Forces |url=https://sofrep.com/news/watch-norwegian-self-propelled-howitzers-used-by-ukrainian-ground-forces/ |access-date=10 April 2026 |work=SOFREP |publisher=© Military Content Group |date=25 September 2022}}</ref><ref>{{cite news |last1=Muczyński |first1=Rafał |last2=Gruchała |first2=Wojciech |title=Norway to Purchase 24 More K9 VIDAR Howitzers |url=https://milmag.pl/en/norway-to-purchase-24-more-k9-vidar-howitzers/ |access-date=10 April 2026 |work=The Military Magazine |publisher=MILMAG sp. z o.o. |date=4 July 2025 |location=Myślenice, Poland}}</ref> They were then upgraded to the M109A3GN configuration during the latter half of the 1980s.<ref name="M109A3GNM">{{cite web|url=https://www.forsvaret.no/aktuelt-og-presse/aktuelt/feature/denne-gjor-haeren-sterkere|title=Denne gjør Hæren sterkere|language=no|work=[[Norwegian Armed Forces|Forsvaret]]|date=2020-09-04|access-date=2022-06-04}}</ref>
+
+==== M109L ====
+
+=== M109A4 ===
+Soon after the adoption of A2/A3 versions, the Division Weapon Support System study was initiated in 1980, which by the end of the decade resulted in the development of several modernization packages.<ref name=":0" /> The most modest one was the Howitzer Extended Life Program update originally designated as M1903A3E1<ref name=":1">{{Cite journal |last=Fogle |first=Charles J. |date=July–August 1986 |title=Howitzer Modernization Program Comparisons |url=https://books.google.com/books?id=l6QrAAAAYAAJ&pg=RA3-PA26 |journal=Field Artillery |publisher=US Field Artillery Association |pages=26}}</ref> and later adopted as M109A4, initially scheduled for 1985-1987<ref>{{Cite book |last=Defense |first=United States Congress House Committee on Appropriations Subcommittee on Department of |url=https://books.google.com/books?id=3oi2AAAAIAAJ&pg=RA3-PA329 |title=Department of Defense appropriations for 1984: hearings before a subcommittee of the Committee on Appropriations, House of Representatives, Ninety-eighth Congress, first session |date=1983 |publisher=U.S. Government Printing Office |language=en}}</ref> but actually fielded in 1989 in the [[United States Army Reserve|Reserve Component of the US Army]].<ref name=":0" />
+
+This modernization program fitted M109A2s and M109A3s with Nuclear, Biological, and Chemical / Reliability, Availability, and Maintainability (NBC/RAM) improvements, including air purifiers, heaters, and [[MOPP (protective gear)|Mission Oriented Protective Posture (MOPP) (protective)]] gear.
+
+The traversing mechanism's clutch was changed to be hydraulic (as compared to the electric mechanism on previous M109s), and added a manual override. The M109A4 also gained a second hydraulic filter and more reliable engine starting equipment which greatly improved the ability to start the vehicle in an emergency.
+
+Ammunition stowage remained the same as in previous models.
+
+=== M109A5 ===
+[[File:Egyptian M109 self-propelled howitzer being decontaminated during Operation Desert Shield.JPEG|right|thumb|An Egyptian M109A5 being decontaminated during [[Operation Desert Shield]].]]
+
+This modification was also designed for the US Army Reserve, originally planned as an update for all M109A4s under the second phase of the Reserve Component Modified Armament System to bring the range up to the version adopted as M109A6.<ref name=":0" /><ref>{{Cite book |last=Office |first=United States General Accounting |url=https://books.google.com/books?id=Sk8sAAAAIAAJ&pg=PA24 |title=Army's M109 Howitzer: Required Testing Should be Completed Before Full-rate Production : Report to the Secretary of Defense |date=1992 |publisher=The Office |language=en}}</ref> It was fielded in 1991 in much smaller numbers than originally devised<ref>{{Cite book |last=Pierrot |first=Lane |url=https://books.google.com/books?id=gCkzXGSh_70C&pg=PA51 |title=The Long-term Implications of Current Defense Plans |date=2003 |publisher=Congress of the United States, Congressional Budget Office |isbn=978-0-16-051268-1 |language=en}}</ref> due to the [[Cold War (1985–1991)|end of the Cold War]].
+
+It replaced the 155&nbsp;mm M185 cannon in an M178 mount with a 39-caliber 155&nbsp;mm M284 cannon in an M182 mount developed for the M109A3E2 (see below), giving the A5 a maximum range of 22,000 meters with unassisted projectiles and 30,000 meters with [[rocket-assisted projectile]] (RAP) rounds.<ref>{{Cite web |url=http://fas.org/man/dod-101/sys/land/m109.htm |title=M109 155mm SP Howitzer |access-date=9 May 2016 |archive-url=https://web.archive.org/web/20160507184707/http://fas.org/man/dod-101/sys/land/m109.htm |archive-date=7 May 2016 |url-status=live }}</ref> The vehicle can carry 36 complete rounds of ammunition and has a 440&nbsp;hp engine instead of the standard 405&nbsp;hp engine.
+
+==== M109A5+ ====
+Various manufacturers have upgraded the fire control and other components of the M109A5. BAE Systems in [[York, PA]] delivered 12 M109A5+ vehicles to Chile in 2011 and 32 M109A5+ vehicles for Brazil in 2016.<ref>{{cite news |last1=Gray |first1=Alicia |title=Upgrading Howitzers for Chile |url=https://www.baesystems.com/en/article/upgrading-howitzers-for-chile |access-date=10 April 2026 |work=[[BAE Systems]] |issue=Platforms & Services |publisher=© 2026 BAE Systems |date=4 October 2011}}</ref><ref>{{cite news |last1=Gray |first1=Alicia |title=BAE Systems to Provide Upgraded Self-Propelled Howitzers to Brazilian Army |url=https://www.baesystems.com/en/article/bae-systems-to-provide-upgraded-self-propelled-howitzers-to-brazilian-army |access-date=10 April 2026 |work=[[BAE Systems]] |issue=Platforms & Services |publisher=© 2026 BAE Systems |date=19 September 2016}}</ref>
+
+=== M109A6 Paladin ===
+[[File:M-109A6 Paladin firing.jpg|right|thumb|A M109A6 "Paladin" firing at night]]
+[[File:Fallujah11092004-11-09.jpg|right|thumb|An M109A6 firing a shell during combat operations in Fallujah, Iraq]]
+
+Also originating in the Division Weapon Support System study in early 1980s, the Howitzer Improvement Program was devised as a more extensive modernization than the Howitzer Extended Life Program. The vehicle was originally designed as M109A3E2 before being adopted as M109A6<ref name=":0" /> and is now better known as Paladin (M109A3E3 was to feature a longer barrel<ref name=":1" /> but was not adopted). 
+
+The Paladin model has improvements in the areas of survivability, RAM, and armament. This includes increased armor, a redesigned internal arrangement for safer ammunition and equipment storage, engine and suspension upgrades, and improvement of the M284 Cannon and M182A1 Mount. The greatest difference is the integration of an inertial navigation system, sensors detecting the weapons' lay, automation, and an encrypted digital communication system, which utilizes computer controlled frequency-hopping to avoid enemy [[electronic warfare]] and allow the howitzer to send grid location and altitude to the battery [[fire direction center|Fire Direction Center (FDC)]]. 
+
+The battery FDCs coordinates fire through a battalion or higher FDC. This allows the Paladin to halt from the move and fire within 30 seconds, with an accuracy equivalent to the previous models when properly emplaced, laid, and safed—a process that previously required several minutes under the best of circumstances. Tactically, this improves the system's survivability by allowing the battery to operate dispersed in pairs across the countryside, and allowing the howitzer to quickly move between salvos, or if attacked by indirect fire, aircraft, or ground forces.
+
+Ammunition storage of 155&nbsp;mm rounds was increased from 36 to 39.
+
+Developed from 1984, it was adopted in 1990 with original plans to field the weapon in 1991<ref name=":0" /> later slipping to 1992<ref>{{Cite book |url=https://books.google.com/books?id=3ShMsInluuEC&pg=RA1-PA42 |title=Army RD & A. |date=1991 |publisher=Office for the Deputy Director, Acquisition Career Management |language=en}}</ref> and finally to 1993.<ref>{{Cite book |url=https://books.google.com/books?id=CagrAAAAYAAJ&pg=PA155 |title=Weapon Systems |publisher=Department of the Army, Office of the Deputy Chief of Staff for Research, Development, and Acquisition |language=en}}</ref> The US Army received the last of 950 Paladins it had ordered in June 1999.<ref name=":3">{{Cite web |last=Carter |first=Rakeem |date=2022-06-06 |title=Raiders kick off modernization process |url=https://www.army.mil/article/257286/raiders_kick_off_modernization_process#:~:text=It%20is%20also%20the%20year,and%20campaigns%20across%20the%20globe. |access-date=2025-01-25 |website=www.army.mil |language=en}}</ref> Seven further Paladins were ordered for the National Guard in July 2000, with an additional eighteen received in January 2002.<ref name=":4">{{Cite web |title=Paladin M109A6 155mm Artillery System |url=https://www.army-technology.com/projects/paladin/ |access-date=2025-01-25 |website=Army Technology |language=en-US}}</ref> In May 2022, the US Army began shipping its M109A6 Paladins for refitting to the M109A7 standard in order to begin the process of modernization.<ref name=":3" />
+
+=== M109 KAWEST ===
+{{See also|M109 in the Swiss Armed Forces}}[[File:M109kawest.JPG|thumb|A Swiss M109 KAWEST howitzer in 2009]]
+This Swiss improved version produced by [[RUAG]] incorporates a new Swiss-designed L47 155&nbsp;mm gun with an increased firing range of up to 36&nbsp;km. It features an [[inertial navigation system]] coupled with a new gun-laying system, along with an ammunition storage increase of 40 rounds and 64 charges. The KAWEST (lit. ''Kampfwertsteigerung'' = upgrade of combat capabilities) requires only six crew members instead of eight. It is able to fire three-round bursts within 15 seconds, or maintain a constant firing rate of over one round per minute.<ref name = 'RUAG'>{{cite web|title = M109|website = ruag.com|url = https://www.ruag.com/en/products-services/land/vehicles-weapon-systems/indirect-fire-artillery/m109|access-date = 9 May 2018|archive-url = https://web.archive.org/web/20180709193055/https://www.ruag.com/en/products-services/land/vehicles-weapon-systems/indirect-fire-artillery/m109|archive-date = 9 July 2018|url-status = live}}</ref><ref name = 'Chile'>{{cite web|title = Chile Requests a Mechanized Artillery Battalion|website = Defense Industry Daily|url = https://www.defenseindustrydaily.com/Chile-Requests-a-Mechanized-Artillery-Battalion-05515/|date = 6 October 2011|access-date = 9 May 2018|archive-url = https://web.archive.org/web/20180509220622/https://www.defenseindustrydaily.com/Chile-Requests-a-Mechanized-Artillery-Battalion-05515/|archive-date = 9 May 2018|url-status = live}}</ref>
+
+Upgraded Swiss PzHb (Panzerhaubitze)74, 79 and 88 (M109A1B) are known as respectively '''PzHb 74/95'',''''' '''PzHb 79/95''' and '''PzHb 88/95'''.<ref>{{Cite web |title=Panzerhaubitze 74/95, 79/95, 88/95 M-109A1B / L-47, 15,5 cm Pz Hb KAWEST L47 - Panzerhaubitzen - Kettenfahrzeuge {{!}} militärfahrzeuge.ch |url=https://militaerfahrzeuge.ch/unterkategorie_13_31_478.html |access-date=2023-01-29 |website=militaerfahrzeuge.ch}}</ref>
+
+* 33 of the 120 PzHb 74 were modernized to the standard PzHb 74/95 KAWEST.<ref name=":9">{{Cite web |title=Panzerhaubitze 74 M-109A1B/ L-39Pz Hb 74 M-109 - Panzerhaubitzen - Raupenfahrzeuge {{!}} militärfahrzeuge.ch |url=https://militaerfahrzeuge.ch/unterkategorie_13_31_356.html |access-date=2023-07-28 |website=militaerfahrzeuge.ch}}</ref>
+* 207 of the 207 PzHb 79 were modernized to the standard PzHb 79/95 KAWEST.<ref name=":10">{{Cite web |title=Panzerhaubitze 79 M-109A1B / L-39Pz Hb 79 M-109 - Panzerhaubitzen - Raupenfahrzeuge {{!}} militärfahrzeuge.ch |url=https://militaerfahrzeuge.ch/unterkategorie_13_31_357.html |access-date=2023-07-28 |website=militaerfahrzeuge.ch}}</ref> 
+* 108 of the 108 PzHb 88 were modernized to the standard PzHb 88/95 KAWEST.<ref>{{Cite web |title=Panzerhaubitze 74/95, 79/95, 88/95 M-109A1B / L-47, 15,5 cm Pz Hb KAWEST L47 - Panzerhaubitzen - Raupenfahrzeuge {{!}} militärfahrzeuge.ch |url=https://militaerfahrzeuge.ch/unterkategorie_13_31_478.html |access-date=2023-07-28 |website=militaerfahrzeuge.ch}}</ref>
+
+=== M109A3GNM ===
+The latest version in service with the Norwegian Army's [[Artillery Battalion (Norway)|Artilleribataljonen]]. 
+
+In 2006, there were 56 M109A3GNs in the Army's inventory, meaning that at least 70 SPGs had been scrapped after the end of the Cold War. 14 of the M109A3GNs received upgrades in 2007, and were designated M109A3GNM. The upgrade includes a new intercom and new navigation and positioning systems.<ref name="M109A3GNM" />
+
+In 2020 the 14 units with A3GNM upgrades and those still with A3GN specs were placed in storage because all the new Korean [[K9 Thunder]] units had been delivered.<ref name="M109A3GNM"/> In May 2022, Norway donated 22 A3GN-spec M109s to Ukraine.<ref name=donation>{{cite web|url=https://www.regjeringen.no/en/aktuelt/norge-har-donert-artilleriskyts-til-ukraina/id2917760/|title=Norway has donated M109 to Ukraine|website=regjeringen.no (Norwegian Government)|date=8 June 2022}}</ref> Two M109A3GN howitzers were destroyed and three damaged during the [[2022 Russian invasion of Ukraine]].<ref>{{Cite web |last=Oryx |title=Attack On Europe: Documenting Ukrainian Equipment Losses During The 2022 Russian Invasion Of Ukraine |url=https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html |access-date=2022-11-05 |website=Oryx}}</ref>
+
+=== M109 KAWEST WE ===
+Improvement of the Swiss Kawest variant, 133 in total were brought up to this standard:
+
+* 25 of the 207 PzHb 79/95 were modernized to the standard PzHb KAWEST WE.<ref name=":112">{{Cite web |title=Panzerhaubitze M-109A1B KAWEST WEPz Hb M-109 KAWEST WE - Panzerhaubitzen - Raupenfahrzeuge {{!}} militärfahrzeuge.ch |url=https://militaerfahrzeuge.ch/unterkategorie_13_31_724.html |access-date=2023-07-28 |website=militaerfahrzeuge.ch}}</ref> Those are currently in service.
+* 108 of the 108 PzHb 88/95 were modernized to the standard PzHb KAWEST WE.<ref name=":112"/> Those are currently in service.
+
+=== K55A1 ===
+[[File:2013.1.2 육군 1군단 K-55A1 포병사격 Rep.of Korea Army K-55A1 (8340099583).jpg|thumb|K55A1 howitzers firing on an exercise in 2013]]
+The K55A1 is a South Korean overhaul and modernization of the K55, augmenting the proven systems of the [[K9 Thunder]] and the K9A1. The development took three years between 2007 and 2010. The upgrade started in 2010.<ref name="K55 interview"/> In November 2010, in the wake of the [[Bombardment of Yeonpyeong|North Korean artillery attack]], the South Korean government authorized a massive increase in military spending. South Korea allocated 11.5 billion KRW on K55A1 upgrades for FY2011, more than a 1500% increase from 700 million KRW for FY2010.<ref>{{Cite web |last=김 |first=남권 |title=국방위, 내년 국방예산 7천146억원 증액 의결 |url=https://n.news.naver.com/mnews/article/001/0004795198?sid=100 |access-date=2022-08-12 |website=[[Naver News]] |language=ko}}</ref> The upgrade was performed by Samsung Techwin, and the first vehicle was fielded by the South Korean Army in early 2011.<ref>{{Cite web  |title=K55A1 자주포 |url=https://kookbang.dema.mil.kr/newsWeb/m/20181211/1/BBSMSTR_000000100036/view.do |access-date=2022-08-10 |website=국방일보 |archive-date=7 April 2023 |archive-url=https://web.archive.org/web/20230407115918/https://kookbang.dema.mil.kr/newsWeb/20181211/1/BBSMSTR_000000100036/view.do |language= ko |url-status=live }}</ref>
+
+The K55A1 is fitted with the same electronics and fire control system as the K9. The self-propelled gun has significantly enhanced field operability and accuracy through the installation of [[Honeywell Aerospace]]'s TALIN 5000 INS (inertial navigation system), a satellite navigation device (GPS), and a speed calibrator. As a result, the vehicle automatically lays the gun in the desired direction and delivers a first round within 45 seconds between stops, or 75 seconds between maneuvers after receiving the shooting specification, which required 2 minutes and 11 minutes, respectively, on the K55.<ref name="K55 interview"/><ref name="K55A1">{{Cite web  |title=생존·기동·효율성 완벽 호흡…'환상의 짝꿍' 자랑 |url=https://kookbang.dema.mil.kr/newsWeb/m/20210803/1/BBSMSTR_000000100115/view.do |access-date=2022-08-14 |website=국방일보 |archive-date=7 April 2023 |archive-url=https://web.archive.org/web/20230407115922/https://kookbang.dema.mil.kr/newsWeb/20210803/1/BBSMSTR_000000100115/view.do |language = ko |url-status=live }}</ref><ref name="youtube_MITm4IWHwpo">{{Citation |title=똑똑하게 다시 태어났다 K55A1 자주포 | date=20 January 2021 |url=https://www.youtube.com/watch?v=MITm4IWHwpo |language=en |access-date=2022-08-12}}</ref>
+
+With the help of a new semi-autoloader, while charges are still inserted manually, the howitzer can fire 4 rounds per minute, increased from 2 to 3 rounds per minute. The improved suspension, involving a strut-type hydropneumatic buffer from Mottrol Co, Ltd., along with an enhanced chamber, allowed the vehicle to shoot K307 and K310 ammunition designed for K9 platform without laying spades at a maximum distance of 32&nbsp;km. An APU (auxiliary power unit) was installed to operate the howitzer without turning on the main engine.<ref name="K55 interview"/><ref name="K55A1"/><ref name="youtube_MITm4IWHwpo"/>
+
+The Army Consolidated Maintenance Depot joined the K55A1 upgrade, releasing its first results in December 2013.<ref>{{Cite web  |title=전투장비 100% 성능발휘 보장 |url=https://kookbang.dema.mil.kr/newsWeb/m/20131224/2/BBSMSTR_000000010023/view.do |access-date=2022-08-10 |website=국방일보 |archive-date=7 April 2023 |archive-url=https://web.archive.org/web/20230407115918/https://kookbang.dema.mil.kr/newsWeb/20131224/2/BBSMSTR_000000010023/view.do| language= ko|url-status=live }}</ref> The upgrade cost 20% of the K9 Thunder, 800 million KRW, as of 2021.<ref name="K55A1"/> The K55A1 upgrade program was completed in December 2022.<ref>{{Citation |title=K-9만큼 똑똑해진 K55A1 업그레이드! (feat. K56) 리얼웨폰172 | date=3 January 2023 |url=https://www.youtube.com/watch?v=INi6I8Jx99o |access-date=2023-05-28 |language=ko}}</ref>
+
+=== M109A7 ===
+The newest M109 version for U.S. service is the M109A7, formerly known as the M109A6 Paladin Integrated Management (PIM). The M109A7 shares common chassis components with the [[Bradley Fighting Vehicle|Bradley Fighting Vehicle (BFV)]] such as the engine, transmission, and tracks. This creates commonality with other systems and maximizes cost savings in production, parts inventory, and maintenance personnel. The M109A7's 600-volt onboard power system harnesses technologies originally developed for the [[XM1203 non-line-of-sight cannon]], including the electric turret drives and electric gun rammer.<ref name="Kris Osborn"/>
+
+The electric drive is faster than the previous hydraulic system, and the automatic rammer more consistently rams the round into the gun for consistent velocities and better accuracy.<ref name="Kris Osborn"/> The updated power system was intended to "accommodate emerging networking technologies as they become ready" including "automation or electronic packages".<ref name="Kris Osborn"/> The M109A7 can sustain a one-round per-minute rate of fire and a maximum rate of fire of four rounds per minute.<ref name="Kris Osborn"/> Weighing {{convert|78,000|lb|kg|abbr=on}}, the M109A7 is {{convert|10,000|lb|kg|abbr=on}} heavier than its predecessor, and it has the capacity to grow to {{convert|110,000|lb|kg|abbr=on}}. Even with the weight increase, the M109A7 can travel faster than previous versions at {{convert|38|mph|km/h|abbr=on}} and is more maneuverable than a BFV.<ref>[http://webarchive.loc.gov/all/20140427212218/http://www.defensenews.com/article/20140427/DEFREG02/304270019/US%2DArmy%2DBreaking%2DOut%2DBig%2DNew%2DGuns US Army Breaking Out the Big New Guns] – Defensenews.com, 27 April 2014</ref>
+
+[[File:Weapons of the Field Artillery (1966).webm|thumb|''"Weapons of the Field Artillery"'' (1966).]]
+Prototypes of the vehicle underwent government testing in preparation for a [[Low rate initial production|Low-Rate Initial Production (LRIP)]] decision. The testing included RAM, mission and ballistic hull and turret testing. The M109A7 was slated to begin LRIP by 2013. The U.S. Army planned on procuring a fleet of 580 sets of M109A7 howitzers and [[M992 field artillery ammunition supply vehicle|M992A3 field artillery ammunition supply vehicles]].<ref name="Kris Osborn">{{cite web|url=https://www.army.mil/article/64728/Army_developing_new_self_propelled_howitzer/|title=Army developing new self-propelled howitzer|date=1 September 2011|access-date=5 September 2011|archive-url=https://web.archive.org/web/20121011131704/http://www.army.mil/article/64728/Army_developing_new_self_propelled_howitzer/|archive-date=11 October 2012|url-status=live}}</ref>
+
+In October 2013, the [[Defense Acquisition Board]] approved the decision to start M109A7 production. The FY 2014 budget called for $340.8 million in Paladin funding, which would be two dozen vehicle sets at $14.4 million per vehicle. The Army plans to buy 133 vehicles, in 66 one-half vehicle sets starting in 2014. One M109A7 howitzer and two supporting M992A3 ammunition carriers will be destroyed during tests. A Full-Rate Production (FRP) decision was planned for February 2017.<ref>[http://www.armyrecognition.com/october_2013_defense_industry_military_news_uk/bae_systems_could_obtain_contract_u.s._army_for_m109a6_pim_155m_self-propelled_howitzer_2610134.html BAE Systems could obtain new contract from U.S. Army for M109A7 155m self-propelled howitzer] {{Webarchive|url=https://web.archive.org/web/20131029030258/http://www.armyrecognition.com/october_2013_defense_industry_military_news_uk/bae_systems_could_obtain_contract_u.s._army_for_m109a6_pim_155m_self-propelled_howitzer_2610134.html |date=29 October 2013 }} – Armyrecognition.com, 26 October 2013</ref><ref>[https://archive.today/20131026162811/http://www.defensenews.com/article/20131021/SHOWSCOUT04/310210031/New-Paladin-Enter-Low-Rate-Production New Paladin to Enter Low-Rate Production] – Defensenews.com, 21 October 2013</ref> 
+
+In October 2013, BAE received a $668 million contract to begin LRIP of the M109A7.<ref>[http://www.baesystems.com/article/BAES_162972/bae-systems-awarded-contract-to-begin-production-of-paladin-integrated-management?_afrLoop=38999698147000 BAE Systems Awarded Contract to Begin Production of Paladin Integrated Management] {{Webarchive|url=https://web.archive.org/web/20131102100557/http://www.baesystems.com/article/BAES_162972/bae-systems-awarded-contract-to-begin-production-of-paladin-integrated-management?_afrLoop=38999698147000 |date=2 November 2013 }} – BAE press release, 31 October 2013</ref> The first M109A6 and M992A2 vehicles were rebuilt to M109A7 and M992A3 standards as part of LRIP beginning in summer 2014.<ref>[http://www.armyrecognition.com/may_2014_global_defense_security_news_uk/self-propelled_howitzer_m109a7_and_m992a3_carrier_ammunition_enter_in_service_with_u.s._army_2005141.html Self-propelled howitzer M109A7 and M992A3 carrier ammunition enter in service with U.S. Army] {{Webarchive|url=https://web.archive.org/web/20150716133646/http://www.armyrecognition.com/may_2014_global_defense_security_news_uk/self-propelled_howitzer_m109a7_and_m992a3_carrier_ammunition_enter_in_service_with_u.s._army_2005141.html |date=16 July 2015 }} – Armyrecognition.com, 20 May 2014</ref> LRIP deliveries began in April 2015.<ref>[https://www.army.mil/article/146200/Army_accepts_delivery_of_first_M109A7_Self_Propelled_Howitzer_system/ Army accepts delivery of first M109A7 Self-Propelled Howitzer system]  – Army.mil, 9 April 2015</ref> The contract for FRP was signed in December 2017, with 48 vehicles slated for construction.<ref>{{cite web|url=http://mil-embedded.com/news/u-s-army-contracts-for-full-rate-production-on-m109a7-weapon-vehicle/|title=U.S. Army contracts for full-rate production on M109A7 weapon vehicle – Military Embedded Systems|website=mil-embedded.com|access-date=28 December 2017|archive-url=https://web.archive.org/web/20171227213426/http://mil-embedded.com/news/u-s-army-contracts-for-full-rate-production-on-m109a7-weapon-vehicle/|archive-date=27 December 2017|url-status=live}}</ref> The Army plans to upgrade 689 Paladins to A7-standard.<ref>[https://www.armytimes.com/news/your-army/2019/03/22/plan-would-double-artillery-upgrades-in-army-arsenal-over-the-next-five-years/ Plan would double artillery upgrades in Army arsenal over the next five years]. ''Army Times''. 22 March 2019.</ref>
+
+[[File:XM1113 in flight.jpg|thumb|A XM1113 extended range artillery round, shown here at a range demonstration, uses a rocket-assist motor]]
+The Army is looking to increase the capabilities of the M109A7. By introducing the new XM1113 [[Rocket-Assisted Projectile|Rocket-Assisted Projectile (RAP)]],<ref name=judson20180320 /> it can reach {{cvt|40|km|abbr=on}} from the current 39-caliber barrel. An additional XM1113 improvement over the legacy RAP round is the replacement of the high explosive, TNT, with an insensitive munition that is less volatile and less prone to unplanned detonation.<ref>{{Cite web |last=Eshel |first=Tamir |date=2016-10-14 |title=US Army to Deploy Safer, Extended Range Rocket-Assisted Artillery Round - Defense Update |url=https://defense-update.com/20161014_xm1113.html |access-date=2025-01-01 |language=en-US}}</ref> The Army is working on an autoloader called the Extended Range Cannon Artillery (ERCA) to increase the sustained rate of fire to 6–10 rounds per minute.<ref name=judson20180320 >[https://www.defensenews.com/land/2018/03/20/army-to-demonstrate-precision-strike-hypersonics-and-ramjet-capabilities-in-just-a-few-years/ US Army to demo precision strike, hypersonics, ramjet capabilities in just a few years]. ''Defense News''. 20 March 2018.</ref>
+
+Another part of the effort is the use of a new supercharged propellant to fire the shells, which required redesigning the howitzer to handle higher pressures.<ref>[https://breakingdefense.com/2020/03/new-army-cannon-doubles-range/ New Army Cannon Doubles Range; Ramjet Ammo May Be Next]. ''Breaking Defense''. 6 March 2020.</ref>
+
+The Army canceled deployment of the ERCA program in March of 2024,<ref>{{cite news |title=Paladin M109A7 155mm Artillery System, USA |url=https://www.army-technology.com/projects/paladin-m109a7-155mm-artillery-system/?cf-view |access-date=10 April 2026 |work=Army Technology |publisher=© GlobalData Plc 2026 |date=22 April 2024}}</ref> citing engineering challenges such as excessive barrel wear.<ref>{{cite news |last1=Felstead |first1=Peter |title=The US Army’s search for new self-propelled artillery: A long haul for long guns |url=https://euro-sd.com/2025/10/articles/exclusive/47218/the-us-armys-search-for-new-self-propelled-artillery-a-long-haul-for-long-guns |access-date=10 April 2026 |work=ESD - European Security & Defence |publisher=Mittler Report Verlag GmbH |date=14 October 2025}}</ref>
+
+==== Hypervelocity projectile (HVP) ====
+In January 2016, the U.S. Army test-fired hypervelocity projectiles originally designed for use by [[U.S. Navy]] [[electromagnetic railgun]]s. They found that they significantly increased the gun's range. The Army is looking into using the M109 Paladin firing the HVP for [[ballistic missile defense]], as traditional missile interceptors are expensive, and gun-based missile defense used for point defense would use artillery at a much lower cost per round.<ref>[http://www.defenseone.com/technology/2016/02/New-weapons-pentagon-wants-tomorrows-wars/125611/  These Are the New Weapons the Pentagon Chief Wants for Tomorrow’s Wars] {{Webarchive|url= https://web.archive.org/web/20160203091722/http://www.defenseone.com/technology/2016/02/New-weapons-pentagon-wants-tomorrows-wars/125611/ |date=3 February 2016}}, Defense one, 2 February 2016</ref><ref>[http://www.military.com/daily-news/2016/02/02/micro-drones-arsenal-plane-railguns-funded-new-defense-budget.html  'Micro' Drones, 'Arsenal' Plane, Railguns Funded in New Defense Budget] {{Webarchive|url= https://web.archive.org/web/20161008083056/http://www.military.com/daily-news/2016/02/02/micro-drones-arsenal-plane-railguns-funded-new-defense-budget.html |date= 8 October 201}}, Military.com, 2 February 2016.</ref>  
+
+The HVP is capable of being fired out to {{convert|50|nmi|mi km}} from a conventional cannon. It weighs {{convert|68|lb|kg|abbr=on}} with a {{convert |46|lb|kg|abbr=on}} flight body containing its guidance and warhead—less powerful, but more agile to hit small, high-speed targets. Modifications will be needed for the Paladin to effectively shoot the HVP, possibly including different propellant to achieve higher velocities, automated reloading systems to fire quickly enough to defeat salvo launches, improved barrel life, and a new fire control and sensor system.<ref>[http://breakingdefense.com/2016/02/carters-strategic-capabilities-office-arsenal-plane-missile-defense-gun/ Robot Boats, Smart Guns & Super B-52s: Carter’s Strategic Capabilities Office] {{Webarchive |url= https://web.archive.org/web/20160209230845/http://breakingdefense.com/2016/02/carters-strategic-capabilities-office-arsenal-plane-missile-defense-gun/ |date=9 February 2016}}, ''Breaking defense'', 5 February 2016</ref> During a test of the Air Force's Advanced Battle Management System (ABMS) in September 2020, an HVP fired from an Army Paladin howitzer successfully intercepted a [[Composite Engineering BQM-167 Skeeter|BQM-167]] target drone simulating a [[cruise missile]].<ref>[https://breakingdefense.com/2020/09/abms-demo-proves-ai-chops-for-c2/ ABMS Demo Proves AI Chops For C2]. ''Breaking Defense''. 3 September 2020.</ref><ref>[https://www.airforcemag.com/smart-bullet-downs-cruise-missile-in-2nd-abms-test/ ‘Smart’ Bullet Downs Cruise Missile in 2nd ABMS Test]. ''Air Force Magazine''. 4 September 2020.</ref>
+
+HVP was renamed to gun-launched guided projectile (GLGP),<ref>{{cite news |url=https://news.usni.org/2023/04/27/report-to-congress-on-navy-shipboard-lasers-4 |title= Report to Congress on Navy Shipboard Lasers |last1=O'Rourke |first1=Ronald |date=21 April 2023 |website= USNI |publisher=Congressional Research Service |accessdate=29 August 2023}}</ref> canceled in the 2022 budget,<ref>{{cite news |url=https://www.military.com/daily-news/2021/06/04/it-may-be-end-of-line-navys-hypervelocity-projectile.html |title=It May Be the End of the Line for the Navy's Hypervelocity Projectile |last1=Seck |first1=Hope Hodge |date=4 June 2021 |accessdate=28 August 2023}}</ref> and tests continued in 2023.<ref>{{cite news |url=https://insidedefense.com/daily-news/army-executes-prototype-cannon-launched-hypervelocity-guided-projectile-sets-record |title=Army executes prototype cannon-launched, hypervelocity guided projectile, sets record |last1= Sherman |first1=Jason |date=29 March 2023 |accessdate=28 August 2023}}</ref>
+
+<gallery mode="packed" heights="180">
+File:Bae PIM upgrade.jpg|A prototype M109A7
+File:M109A7_Self-propelled_Howitzer.jpg|A M109A7 155 mm SPH being tested at Yuma Proving Ground, Arizona
+</gallery>
+
+=== Experimental vehicles ===
+==== P-52 ====
+The P-52 was a 52-caliber variant of M109A6 Paladin offered to South Korea by BMY Combat Systems in 1992. It was rejected by South Korea in favor of K9 Thunder. Proposal stage only.<ref name="K9 Developer Interview (2)">{{cite AV media |date=2015-10-15 |title=[첨단국가의 초석, 방위산업] 자주포의 새 차원을 열다 – K-9 천둥(2부) |language=ko |url=https://www.youtube.com/watch?v=Lh_CVAm3XNo  |archive-url=https://ghostarchive.org/varchive/youtube/20211222/Lh_CVAm3XNo |archive-date= 2021-12-22 |url-status=live|publisher=국방TV}}{{cbignore}}</ref><ref>{{Cite web  |title=[K9 14회] "우리 자주포 우리가 개발한다"며 미측 제안 거부 |url= https://kookbang.dema.mil.kr/newsWeb/20220418/2/BBSMSTR_000000100185/view.do |access-date=2022-06-05 |website=국방일보 |archive-date=4 April 2023 |archive-url= https://web.archive.org/web/20230404151106/https://kookbang.dema.mil.kr/newsWeb/20220418/2/BBSMSTR_000000100185/view.do |url-status=dead }}</ref>
+
+==== M109L52 ====
+Jointly developed by the Dutch firm RDM and the German firm [[Rheinmetall]], the M109L52 was first revealed in 2002. The main improvement was replacing the M126 series gun with the longer 52-caliber cannon from the [[PzH 2000]], thus the MTLS ammunition of the PzH 2000 can be used. Improvements to the loading system were also made, resulting in an increased rate of fire from 3 rds/min to 9–10 rds/min, able to be sustained for up to 2 minutes. A total of 35 rounds can be carried.
+
+==== M109-52 ====
+The M109-52 is a 52-caliber variant of M109 developed by BAE Systems by integrating Rheinmetall L52 cannon.<ref>{{Cite web |url=https://www.baesystems.com/en-us/product/m109-52-self-propelled-howitzer |title=M109-52 self-propelled howitzer |publisher=BAE Systems |access-date=2023-12-01}}</ref>
+
+==== M1299 ====
+{{Main|M1299 howitzer}}
+
+The M1299 was a prototype [[self-propelled howitzer]] developed by BAE Systems in 2019 under the '''Extended Range Cannon Artillery''' (ERCA) program. It was based on the M109A7, and was primarily designed for the purpose of improving the M109A7's effective range.  One battalion of vehicles is planned to begin a year-long operational assessment in 2023. It was expected to be fitted with an [[autoloader]], which would have increased its rate of fire from 3 to 10 rounds per minute.<ref>{{cite web | url=https://breakingdefense.com/2020/03/new-army-cannon-doubles-range/ | title=New Army Cannon Doubles Range; Ramjet Ammo May be Next | date=6 March 2020 }}</ref><ref>[https://breakingdefense.com/2021/03/army-outlines-ambitious-schedule-for-robots-armor/ Army Outlines Ambitious Schedule For Robots, Armor]. ''Breaking Defense''. 19 March 2021.</ref> The M1299 was cancelled in March 2024 due, at least in part, to excessive barrel wear. Advanced ammunition developed for the M1299 will continue development, and the U.S. Army will look for existing alternatives to fulfil its re-evaluated long-range fire support needs.<ref>{{Cite web |last=Judson |first=Jen |date=2024-03-11 |title=US Army scraps Extended Range Cannon Artillery prototype effort |url=https://www.defensenews.com/land/2024/03/11/us-army-scraps-extended-range-cannon-artillery-prototype-effort/ |access-date=2024-03-22 |website=Defense News |language=en}}</ref>
+
+==Derivatives==
+
+===M992===
+{{Main|M992 field artillery ammunition supply vehicle}}
+
+[[File:M109A7 - 200916-A-BT735-939.jpg|thumb|An M992A3 FAASV]]
+
+The M992 field artillery ammunition supply vehicle (FAASV) is built on the chassis of the M109. It replaced the [[M548]]. Unlike the M548, it is armored. This ammunition vehicle has no turret, but has a taller superstructure to store 93 rounds and an equivalent number of powders and primers.
+
+This vehicle is fitted with a [[Halon systems|Halon fire suppression system]] and a weapons mount similar to that on the M109 turret, usually mounting a [[Mk 19 grenade launcher]] for local defense against infantry and light armored vehicles.
+
+The vehicle contains a 2-stroke diesel powered auxiliary power unit that can power all non-automotive energy requirements on the FAASV and on the M109.
+
+===K66===
+The K66 was a planned ammunition support vehicle for the K55. As a follow-up to the K55 program, Samsung Aerospace Industries prepared for licensing a local variant of the M992, featuring such modifications as NBC protection and an increase of ammunition storage capacity to 110 rounds, 116 packs of powders, and 132 primers.<ref>{{cite web|url=http://www.jcs.mil.kr/views/jsp/weapon/weapon_read.jsp?id=176&depth1=A&depth2=03&depth3=01|title=K66|url-status=dead|archiveurl=https://web.archive.org/web/20110430092508/http://www.jcs.mil.kr/views/jsp/weapon/weapon_read.jsp?id=176&depth1=A&depth2=03&depth3=01|archivedate=2011-04-30}}</ref>
+
+In 1987, Samsung Aerospace Industries competed against the Daewoo Heavy Industries' ammunition support vehicle based on the [[K200 KIFV|K200 APC]]. Daewoo Heavy Industries' vehicle was selected as the K66, but failed the test evaluation. The K66 project was cancelled in the mid-1990s, resulting in a lawsuit.<ref name="K66"/>
+
+===K77 FDCV (fire direction center vehicle)===
+The K77 FDCV is a command & control post vehicle variant based on the K55 platform.<ref>{{Cite web |title=Hanwha Defense K77 |url=https://www.hanwha-defense.co.kr/eng/products/firearms-system-k77.do |access-date=2022-08-08 |website=www.hanwha-defense.co.kr |language=en |archive-date=20 January 2022 |archive-url=https://web.archive.org/web/20220120223739/https://www.hanwha-defense.co.kr/eng/products/firearms-system-k77.do |url-status=dead }}</ref>
+
+===K56 ARV (ammunition resupply vehicle)===
+The K56 ARV is an ammunition resupply vehicle based on the K55 platform.<ref>{{Cite web |title=한화디펜스 K56 |url=https://www.hanwha-defense.co.kr/kor/products/firearms-system-k56.do |access-date=2022-08-08 |website=www.hanwha-defense.co.kr |language=ko |archive-date=30 October 2021 |archive-url=https://web.archive.org/web/20211030085647/https://www.hanwha-defense.co.kr/kor/products/firearms-system-k56.do |url-status=dead }}</ref> Unlike the K10 ARV, the K56 can resupply both the K55A1 and the [[K9 Thunder]]. It has a 45.7% (4,197 out of 9,191 total parts) compatibility with the K55A1.<ref name="K56">{{Cite web |title=K55A1자주포의 단짝 K56탄약운반장갑차 실전 배치 |url=https://www.korea.kr/news/pressReleaseView.do?newsId=156437911 |access-date=2022-08-19 |website=www.korea.kr |language=ko}}</ref>
+
+After 10 months of pilot experiment, the K56 program was authorized by the DAPPC (Defense Acquisition Program Promotion Committee) in February 2007.<ref>{{Cite web |title=제13회 방위사업추진위원회 개최 결과 |url=https://n.news.naver.com/mnews/article/234/0000000054?sid=123 |access-date=2022-08-12 |website=[[Naver News]] |language=ko}}</ref> In May 2007, the DAPPC allocated 16 billion KRW for research and development for 2008 to 2010, with plans to produce 520 vehicles between 2011 and 2020.<ref>{{Cite web |title=K-55용 탄약운반 장갑차 3년내 개발 |url=https://n.news.naver.com/mnews/article/001/0001624797?sid=100 |access-date=2022-08-19 |website=[[Naver News]] |language=ko}}</ref> In June 2008, Samsung Techwin was selected as the main contractor for the project.<ref name="K56 audit">{{Cite web |last=송 |first=한진 |title=李 국방, 제28회 방위사업추진위원회 주재 |url=https://n.news.naver.com/mnews/article/003/0002160787?sid=100 |access-date=2022-08-19 |website=[[Naver News]] |language=ko}}</ref> Later, the development completion schedule was delayed to 2011, while the total production amount was increased to 700 vehicles with a cost of 1.3 trillion KRW between 2012 and 2021.<ref>{{Cite web |date=2010-09-27 |title=자주포 탄약운반장갑차 개발, 엉터리 조사 토대로… 軍, 1조2000억원대 사업 강행 |url=https://news.kmib.co.kr/article/view.asp?arcid=0004155324 |access-date=2022-08-19 |website=[[Kukmin Ilbo]] |language=ko}}</ref>
+
+In September 2010, the Board of Audit and Inspection claimed that the [[Republic of Korea Army|Army]] was biased during evaluation, and demanded re-analysis of the project regarding inefficiency of the system. The [[Defense Acquisition Program Administration]] (DAPA) ignored the Board and continued with the project while the Army purposely delayed complying.<ref name="K56 audit"/> In June 2011, the Ministry of Defense again ordered a reexamination of the resupply vehicle.<ref>{{Cite web |date=2011-06-14 |title=軍 중기 전력 13개 사업 재검토 |url=https://news.kmib.co.kr/article/view.asp?arcid=0005058445 |access-date=2022-08-19 |website=[[Kukmin Ilbo]] |language=ko}}</ref> DAPA instead requested a budget for the program, and the development was completed in October 2011.<ref>{{Cite web |last=홍 |first=장기 |title=탱크 여러대 잡는 '확산탄' 2014년 도입 |url=https://n.news.naver.com/mnews/article/086/0002058096?sid=102 |access-date=2022-08-19 |website=[[Naver News]] |language=ko}}</ref><ref name="K56"/> In July 2013, the DAPA announced the 1st production batch of the K56 between 2013 and 2015 for 65 billion KRW.<ref>{{Cite web |title=제 68회 방위사업추진위원회 개최결과 |url=https://www.korea.kr/news/pressReleaseView.do?newsId=155909059 |access-date=2022-08-10 |website=www.korea.kr |language=ko}}</ref>
+
+In December 2015, Hanwha Techwin signed a contract with the DAPA for a 2nd production batch. In January 2018, Hanwha Land Systems announced a 166.4 billion KRW contract with the DAPA for a 3rd production batch and related products.<ref>{{Cite web |last=NEWSIS |date=2018-01-02 |title=한화테크윈 종속사, 방위청과 4729억원 규모 공급 계약 체결 |url=https://www.newsis.com/view/?id=NISX20180102_0000192400 |access-date=2022-08-22 |website=[[Newsis]] |language=ko}}</ref> In June 2020, Hanwha Defense announced 380.3 billion KRW contract with the DAPA for a 4th production batch.<ref>{{Cite web  |date=2020-06-30 |title=한화디펜스, 3803억원 규모 K56 장갑차 4차 양산 계약 |url=https://news.mt.co.kr/mtview.php?no=2020063008480370321 |access-date=2022-08-22 |website=Money Today |language=ko}}</ref> South Korea plans a 5th production batch and to achieve full operational capability by 2025. All K56s were delivered to the western front.<ref>{{Cite web  |title=K56 탄약운반장갑차 |url=https://kookbang.dema.mil.kr/newsWeb/20210322/1/BBSMSTR_000000100160/view.do |access-date=2022-08-22 |website=국방일보 |archive-date=31 January 2023 |archive-url=https://web.archive.org/web/20230131175543/https://kookbang.dema.mil.kr/newsWeb/20210322/1/BBSMSTR_000000100160/view.do |url-status=dead }}</ref>
+
+===Training systems===
+The US Army uses the fire support combined arms tactical trainer (FSCATT) in two versions, for initial and sustainment training of the M109A6 and M109A5.<ref>{{cite web|title=Fire Support Combined Arms Tactical Trainer (FS-CATT)|url=http://www.peostri.army.mil/PRODUCTS/FS-CATT/|publisher=US Army|access-date=10 December 2011|url-status=dead|archive-url=https://web.archive.org/web/20111109074435/http://www.peostri.army.mil/PRODUCTS/FS-CATT/|archive-date=9 November 2011}}</ref> The system uses an actual surplus turret and a simulated ammunition system.
+
+The Swiss Army uses a highly advanced KAWEST trainer from Van Halteren Metaal of the Netherlands.<ref name="Trainer">{{cite web |title=Howitzer Crew Trainers |url=https://vanhalteren.com/army/products/howitzer-crew-trainers/ |website=Van Halteren |publisher=© 2026 Van Halteren Technologies |access-date=10 April 2026}}</ref>
+
+The Dutch, Belgian, Thai, and Israeli armies have various configurations of the Van Halteren Metaal M109 Howitzer Crew Trainer (HCT).<ref name="Trainer" /><ref>{{cite news |title=Go back The Netherlands Chooses Advanced Howitzer Crew Trainers from Van Halteren Technologies |url=https://vanhalteren.com/news/the-netherlands-chooses-advanced-howitzer-crew-trainers/ |access-date=10 April 2026 |work=Van Halteren |publisher=© 2026 Van Halteren Technologies |date=21 November 2024}}</ref>
+
+The US Army PEO STRI had a program called M109A7 Howitzer Crew Trainer (HCT). The plan was to procure 16 systems beginning in the 3rd Quarter of FY 20.<ref>
+{{Cite web |url=https://www.fbo.gov/index?s=opportunity&mode=form&id=bfa37012ddb08eb848b2ee5653f562d3&tab=core&_cview=1 |title=Howitzer Crew Trainer (HCT)- Sources Sought - W900KK-19-C-HCT1 - Federal Business Opportunities: Opportunities |access-date=21 January 2019 |archive-url=https://web.archive.org/web/20190122094642/https://www.fbo.gov/index?s=opportunity&mode=form&id=bfa37012ddb08eb848b2ee5653f562d3&tab=core&_cview=1 |archive-date=22 January 2019 |url-status=live }}
+</ref>
+
+== Successors ==
+The U.S. Army sought to replace the M109 with the [[XM2001 Crusader]], initially part of the [[Armored Systems Modernization]] program. The program was canceled in May 2002 amid criticism that the program was not in line with the Army's long-term plans for lighter armored brigades.<ref name="Bush orders halt">{{cite news |last1=Shanker |first1=Thom |title=President Formally Seeks Halt to Crusader Artillery Program |url=https://www.nytimes.com/2002/05/30/us/president-formally-seeks-halt-to-crusader-artillery-program.html |access-date=5 August 2018 |work=The New York Times |date=30 May 2002}}</ref> Funding was redirected to the [[Future Combat Systems]] [[Future Combat Systems Manned Ground Vehicles|Manned Ground Vehicles]] program, which produced the 18-ton [[XM1203 non-line-of-sight cannon]] as the program's lead effort. The Pentagon terminated the MGV program in 2009 due to concerns over its affordability.<ref name= "terminated">{{cite news |last1=Censer |first1=Marjorie |title=Promising thorough vehicle review…: DOD Acquisition Chief Formally Terminates Army's NLOS Cannon |url=https://www.jstor.org/stable/24831487 |access-date=18 February 2022 |work=Inside the Army |issue=49 |publisher=Inside Washington Publishers |date= 14 December 2009|volume=21 |jstor=24831487 }}</ref> The U.S. Army's [[M1299]] howitzer was planned to be completed in 2021 and was to undergo operational assessment in 2023.<ref>{{Cite web|last=Vandiver|first=John |title=New Army cannon hits target 43 miles away in test|url= https://www.stripes.com/news/us/new-army-cannon-hits-target-43-miles-away-in-test-1.656176 |website=Stars & Stripes}}</ref> Due to issues with excessive wear on its barrel, the project was cancelled in April 2024.<ref>{{Cite web |last=Judson |first=Jen |date=2024-03-11 |title=US Army scraps Extended Range Cannon Artillery prototype effort |url=https://www.defensenews.com/land/2024/03/11/us-army-scraps-extended-range-cannon-artillery-prototype-effort/ |access-date=2024-03-12 |website=Defense News |language=en}}</ref> Sometime after, the U.S. Army initiated the Next Generation Howitzer (NGH) program utilizing studies and tests from the ERCA program, with the U.S. Army requesting $8 million for NGH RDT&E for FY2025.<ref name=":2">{{Cite web |date=23 September 2024 |title=The Army's Next Generation Howitzer (NGH) Program |url=https://crsreports.congress.gov/product/pdf/IF/IF12772/2 |access-date=3 January 2025 |website=Congressional Research Service}}</ref>
+
+== Operators ==
+
+=== Current ===
+
+==== M109A1 ====
+* {{DJI}} − 10 M109L as of 2024,{{sfn|IISS|2024|page=488}} former Italian vehicles<ref name="SIPRI">{{cite web |title=Arms transfer database |url=https://armstransfers.sipri.org/ArmsTransfer/TransferRegister |website=Stockholm International Peace Research Institute |access-date=14 May 2024}}</ref>
+* {{GRE}} − 51 M109A1B in 2011.{{sfn|Foss|2011|page=870}} 418 M109A1B/A2/A3GEA1/A5 in service as of 2024{{sfn|IISS|2024|page=100}}
+* {{IRQ}} − 6 M109A1 as of 2024{{sfn|IISS|2024|page=358}}
+* {{IRN}} − 150+ M109A1 including [[Raad-2]]s in service as of 2024{{sfn|IISS|2024|page=353}}
+* {{JOR}} − 358 M109A1/A2 in service as of 2024{{sfn|IISS|2024|page=364}}
+* {{MAR}} − 36 M109A1B in 2011,{{sfn|Foss|2011|page=870}} ca. 130 M109A1/A1B/A2/A3/A4 in service as of 2024{{sfn|IISS|2024|page=374}}
+* {{SAU}} − 87 M109A1B in 2011,{{sfn|Foss|2011|page=870}} 110 M109A1B/A2 as of 2024{{sfn|IISS|2024|page=382}}
+
+==== M109A2/A3/A3B ====
+* {{BRA}} − 37 M109A3 as of 2024,{{sfn|IISS|2024|page=417}} will be refurbished{{sfn|IISS|2024|page=398}}
+* {{CHI}} − 24 M109A3 as of 2024{{sfn|IISS|2024|page=421}}
+* {{GRE}} − 84 M109A2, and 50 M109A3GE in 2011.{{sfn|Foss|2011|page=870}} 418 M109A1B/A2/A3GEA1/A5 in service as of 2024{{sfn|IISS|2024|page=100}}
+* {{EGY}} − 164 M109A2 as of 2024{{sfn|IISS|2024|page=348}}
+* {{JOR}} − 108 M109A2 in 2011,{{sfn|Foss|2011|page=870}} 358 M109A1/A2 in service as of 2024{{sfn|IISS|2024|page=364}}
+* {{KWT}} − 37 M109A3 as of 2024{{sfn|IISS|2024|page=366}}
+* {{LBN}} − 12 M109A2 as of 2024{{sfn|IISS|2024|page=368}}
+* {{MAR}} − 3 M109A2 in 2011,{{sfn|Foss|2011|page=870}} ca. 130 M109A1/A1B/A2/A3/A4 in service as of 2024{{sfn|IISS|2024|page=374}}
+* {{PAK}} − 200 A2 and 123 M109L as of 2024{{sfn|IISS|2024|page=302}}
+* {{PER}} − 12 M109A2 as of 2024{{sfn|IISS|2024|page=447}}
+* {{SAU}} − 24 in 2011,{{sfn|Foss|2011|page=870}} 110 M109A1B/A2 as of 2024{{sfn|IISS|2024|page=382}}
+* {{ESP}} − 6 M109A2 used by the [[Spanish Marine Infantry|Marine Infantry]] as of 2024{{sfn|IISS|2024|page=140}}
+* {{TWN}} − 197 M109A2 in 2011,{{sfn|Foss|2011|page=870}} 225 M109A2/A5 as of 2024{{sfn|IISS|2024|page=315}}
+* {{UKR}} − 23 M109A3GN and 60 M109L delivered between 2022 and 2023.<ref name="SIPRI" /> 90 M109A3GN/A4/A5Öe/A6/L in service as of 2024{{sfn|IISS|2024|page=212}}
+* {{UAE}} − 85 M109A3 as of 2024{{sfn|IISS|2024|page=391}}
+
+==== M109A4 ====
+* {{INA}} − 36 M109A4 as of 2024<ref>{{Cite web |last=indomiliter |date=2018-07-12 |title=Gelombang Kedua M109A4 BE Tiba, Armed TNI AD Kini Punya 36 Unit Self Tracked Propelled Howitzer |url=https://www.indomiliter.com/gelombang-kedua-m109a4-be-tiba-armed-tni-ad-kini-punya-36-unit-self-tracked-propelled-howitzer/ |access-date=2025-01-11 |website=Indomiliter.com |language=en-US}}</ref><ref>{{Cite web |last=office_zzam |date=2018-07-12 |title=Indonesia takes delivery of 18 second-hand Belgian M109A4 155mm self-p |url=https://www.armyrecognition.com/news/army-news/2018/indonesia-takes-delivery-of-18-second-hand-belgian-m109a4-155mm-self-propelled-howitzers |access-date=2025-01-11 |website=www.armyrecognition.com |language=en-gb}}</ref>
+* {{MAR}} − ca. 130 M109A1/A1B/A2/A3/A4 in service as of 2024{{sfn|IISS|2024|page=374}}
+* {{UKR}} − 28 M109A4BE delivered in 2022.<ref name="SIPRI" /> 90 M109A3GN/A4/A5Öe/A6/L in service as of 2024{{sfn|IISS|2024|page=212}}
+
+==== M109A5 ====
+* {{AUT}} − 48 M109A5Öe as of 2024{{sfn|IISS|2024|page=72}}
+* {{BHR}} − 20 M109A5 as of 2024{{sfn|IISS|2024|page=348}}
+* {{BRA}} − 40 M109A5 and 32 M109A5+ as of 2024{{sfn|IISS|2024|page=421}}
+* {{CHI}} − 24 M109A5+ as of 2024{{sfn|IISS|2024|page=417}}
+* {{GRE}} − 12 M109A5 in 2011.{{sfn|Foss|2011|page=870}} 418 M109A1B/A2/A3GEA1/A5 in service as of 2024{{sfn|IISS|2024|page=100}}
+* {{EGY}} − 204 M109A5 as of 2024{{sfn|IISS|2024|page=348}}
+* {{IRQ}} − 24 M109A5 as of 2024{{sfn|IISS|2024|page=358}}
+* {{ISR}} − 250 M109A5 as of 2024{{sfn|IISS|2024|page=361}}
+* {{LAT}} − 59 M109A5Öe as of 2024{{sfn|IISS|2024|page=112}}
+* {{LBN}} − 24 M109A5 as of 2024{{sfn|IISS|2024|page=368}}
+* {{MAR}} − 70 M109A5 as of 2024{{sfn|IISS|2024|page=374}}
+* {{PAK}} − ca. 115 M109A5 as of 2024{{sfn|IISS|2024|page=302}}
+* {{POR}} − 18 M109A5 as of 2024{{sfn|IISS|2024|page=128}}
+* {{ESP}} − 95 M109A5 as of 2024{{sfn|IISS|2024|page=140}}
+* {{TWN}} − 28 M109A5 in 2011,{{sfn|Foss|2011|page=870}} 225 M109A2/A5 as of 2024{{sfn|IISS|2024|page=315}}
+* {{THA}} − 20 M109A5 as of 2024{{sfn|IISS|2024|page=319}}
+* {{UKR}} − 6 M109A5Öe delivered in 2022.<ref name="SIPRI" /> 90 M109A3GN/A4/A5Öe/A6/L in service as of 2024{{sfn|IISS|2024|page=212}}
+
+==== M109A6 Paladin ====
+* {{USA}} − Estimated 370 M109A6 in service, ca. 850 M109A6 in storage as of January 2025 <ref name="Military Balance 2025">{{cite book |title=The Military Balance |date=2025 |publisher=[[International Institute for Strategic Studies]] |isbn=978-1-041-04967-8}}</ref>{{rp|37}}{{sfn|IISS|2024|page=39}}
+* {{UKR}} − 18 M109A6s delivered in 2023.<ref name="SIPRI" /> 90 M109A3GN/A4/A5Öe/A6/L in service as of 2024{{sfn|IISS|2024|page=212}}
+
+==== M109A7 ====
+* {{USA}} − Estimated 300 M109A7 as of January 2025 <ref name="Military Balance 2025"/>{{rp|37}}{{sfn|IISS|2024|page=39}}
+* {{TWN}} − 60 ordered<ref>{{Cite web|url=https://media.defense.gov/2025/Dec/17/2003844311/-1/-1/0/PRESS%20RELEASE%20-%20TECRO%2025-108%20CN.PDF|title=Taipei Economic and Cultural Representative Office in the United States – M109A7 Self-Propelled Howitzers|date=2025-12-17|website=[[Defense Security Cooperation Agency]]|url-status=dead|access-date=18 December 2025|archive-date=18 December 2025|archive-url=https://web.archive.org/web/20251218070709/https://media.defense.gov/2025/Dec/17/2003844311/-1/-1/0/PRESS%20RELEASE%20-%20TECRO%2025-108%20CN.PDF}}</ref>
+
+==== KAWEST/KAWEST WE ====
+* {{CHE}} − 133 M109 KAWEST WE as of 2024{{sfn|IISS|2024|page=145}}
+
+==== K55A1 ====
+* {{ROK}} − 1,180 K55A1 in service with the [[Republic of Korea Army|Army]] and the [[Republic of Korea Marine Corps|Marine Corps]].<ref>{{Cite web |date=2022-04-24 |title=미·러, 사거리 100km 미래형 자주포 경쟁에 K-9도 진화 중 |url=https://www.g-enews.com/ko-kr/news/article/news_all/20220424132740533414fb262fcb_1/article.html |access-date=2024-09-07 |website=글로벌이코노믹 |language=ko}}</ref>
+
+=== Potential ===
+* {{KSA}} − 177 M109A6 ordered in April 2018<ref>{{cite web |url= http://www.dsca.mil/major-arms-sales/kingdom-saudi-arabia-155mm-m109a6-paladin-medium-self-propelled-howitzer-system |title=The Kingdom of Saudi Arabia – 155mm M109A6 Paladin Medium Self-Propelled Howitzer System |publisher=Defense Security Cooperation Agency |date=5 April 2018 |access-date=7 April 2018 |archive-url= https://web.archive.org/web/20180407183404/http://www.dsca.mil/major-arms-sales/kingdom-saudi-arabia-155mm-m109a6-paladin-medium-self-propelled-howitzer-system |archive-date= 7 April 2018 |url-status=live}}</ref>{{needs update|date=May 2024}}
+
+=== Former ===
+==== M109 ====
+* {{flagdeco|Ethiopia|1987}} [[Derg|Ethiopia]]: Received 12 (possibly second-hand) from the United States in 1975,<ref name="SIPRI"/> it was estimated in 1989 to have 6 in service<ref name="IISS1989">{{cite book |last1=Institute for Strategic Studies |title=The military balance, 1989-1990 |date=1989 |publisher=Brassey's |location=London |isbn=978-0080375694 |author1-link=Institute for Strategic Studies}}</ref>{{rp|127}}
+* {{flagicon|Libya|1977}} [[Great Socialist People's Libyan Arab Jamahiriya|Libya]] − 14 in 2011{{sfn|Foss|2011|page=870}}
+* {{flagicon|Libya}} [[Libya Dawn]] − At least one was used against [[Islamic State]] forces in [[Sirte]] in late 2016<ref>{{cite web |last1=Mitzer |first1=Stijn |last2=Oliemans |first2=Joost |title=Disaster at Tarhuna: When Haftar Lost Another Stronghold In Crushing Defeat To The GNA |url=https://www.oryxspioenkop.com/2020/09/disaster-at-tarhuna-how-haftar-blew-yet.html |website=Oryx |access-date=14 May 2024 |date=15 March 2021}}</ref>
+* {{CHE}}: Purchased 146 M109 (Pz Hb 66) and introduced from 1971<ref name="Pz Hb 66"/> All vehicles were upgraded to M109A1B (Pz Hb 66/74) from 1977 to 1979.<ref name="Pz Hb 66/74"/>
+
+==== M109A1/A1B ====
+* {{CHE}}: Purchased M109A1B and introduced them in 3 batches: 120 Pz Hb 74 from 1974 to 1978, 207 Pz Hb 79 from 1981 to 1983, and 108 Pz Hb 88 from 1991 to 1992. Also upgraded 146 M109 to M109A1B standard from 1977 to 1979.<ref name="Pz Hb 66/74"/> The total number of received vehicles is 581{{Citation needed|date=November 2024}}
+
+==== M109A2/A3/A3B ====
+[[File:Operation Guardian of the Walls, May 2021. LII.jpg|thumb|Israeli M109 used to [[Gaza war|bombard the Gaza Strip]]<ref>{{Cite web |date=2023-10-12 |title=Israeli artillery fires on Gaza every 30 seconds |url=https://www.france24.com/en/live-news/20231012-israeli-artillery-fires-on-gaza-every-30-seconds |access-date=2025-09-22 |website=France 24 |language=en}}</ref>]]
+* {{BEL}} − 167 A2, of which 64 were upgraded to the -A4BE standard, 31 sold to Brazil (1999–2001), 43 sold to Morocco (2008), the remainder sold to private companies in 2015<ref>{{cite web |url= https://www.vrt.be/vrtnws/nl/2022/09/20/stock-met-uit-dienst-genomen-belgische-houwitsers-voor-oekraine/| title = Belgische houwitsers nu toch naar Oekraïne, dankzij … de Britten |newspaper = VERT NWS |language = nl |access-date = 17 January 2023 |date = 21 September 2022 |first = Jens |last = Franssen}}</ref>
+* {{DEN}} − 2–6 (upgraded to M109 A3DK, used to be 76)<ref>[http://ing.dk/artikel/stort-set-intet-fungerende-dansk-artilleri-tilbage-179643 Stort set intet fungerende dansk artilleri tilbage] ''[[Ingeniøren]]'', October 2015. Quote: "Of the 6 operative, are only 2–4 available"</ref>
+* {{GER}}{{sfn|Foss|2011|page=868}} − 570 A3GE A1/A2, phased out by 1 July 2007{{citation needed|date=May 2024}} and replaced by the [[PzH 2000]]{{sfn|Foss|2011|page=810}}
+* {{ISR}} − 30 M109A2 in storage as of 2024{{sfn|IISS|2024|page=361}}
+* {{ITA}} − 221 M109L (M109 modernized to A3 equivalent with Italian-made 155&nbsp;mm/39 calibre barrels),<ref>{{cite web |url= http://www.janes.com/articles/Janes-Armour-and-Artillery/Oto-Melara-155-mm-M109L-self-propelled-howitzer-Italy.html |title=Oto Melara 155 mm M109L self-propelled howitzer (Italy) |work= Armour and Artillery |publisher=Jane's |date= 2010-02-09 |access-date=2010-12-23 |archive-url= https://web.archive.org/web/20091212171047/http://www.janes.com/articles/Janes-Armour-and-Artillery/Oto-Melara-155-mm-M109L-self-propelled-howitzer-Italy.html |archive-date=12 December 2009 |url-status=live}}</ref> replaced by the PzH 2000{{sfn|Foss|2011|page=810}}
+* {{NLD}} − 126 as of 1998, replaced by the PzH 2000,<ref>{{cite web |author=Evert Brouwer |date=18 February 2025 |title=Mijn materieel: Pantserhouwitser 2000NL |url=https://magazines.defensie.nl/materieelgezien/2025/01/pantserhouwitser-2000nl |website=Materieelgezien |publisher=Defensie.nl |language=Dutch}}</ref> 5 sold to Austria (1997), 87 to United Arab Emirates (1997), 121 to Jordan (2011–2012).{{Citation needed|date=November 2024}} It is speculated that some remaining M109A2s might have been donated to Ukraine during the [[Russian invasion of Ukraine]].<ref>{{cite web |url=https://armyrecognition.com/focus-analysis-conflicts/army/conflicts-in-the-world/ukraine-russia-conflict/did-netherlands-secretly-supply-m109a2-howitzers-to-ukraine |title= Did Netherlands Secretly Supply M109A2 Howitzers to Ukraine?.|author=<!--Not stated--> |date=21 November 2024 |website=Army Recognition  |publisher= |access-date= |quote=}}</ref>  
+* {{NOR}} − 33 in storage after donation of 22 to Ukraine in 2022.<ref name=donation /> 55 in storage in 2021.<ref>[https://www.fremover.no/bekrefter-norsk-artilleri-til-ukraina/s/5-17-981664 Fremover], ''Bekrefter norsk artilleri til Ukraina'' (2022-05-24)</ref> Replaced by the [[K9 Thunder]]<ref>{{cite web |last1=Axe |first1=David |title=NATO Countries Are Giving Ukraine Hundreds Of Their Old Howitzers—and Replacing Them With South Korea's Excellent K-9 |url=https://www.forbes.com/sites/davidaxe/2023/01/23/nato-countries-are-giving-ukraine-hundreds-of-their-old-howitzers-and-replacing-them-with-south-koreas-excellent-k-9/?sh=23b98ebd23a6 |website=Forbes |access-date=14 May 2024 |language=en |date=23 January 2023}}</ref>
+* {{POR}} − 6 M109A2 replaced by 18 M109A5{{sfn|IISS|2024|page=128}}
+* {{ROK}} − 1,180 K55 were produced by [[Hanwha Techwin|Samsung Aerospace Industries]] between 1985 and 1996.<ref name="K55 interview"/> All vehicles were upgraded to K55A1 and delivered from 2011 to 2022<ref name="K55A1"/>
+* {{UK}} − 140+ entered service in 1965, upgraded to -A1 and -A2 standards, 83 sold to Austria in 1994 (51 A2, 32 A3)
+
+==== M109A4 ====
+* {{BEL}} − 64 A4BE of which 36 A4BE sold to Indonesia (2017–2018), the others to private companies in 2015. From these 28 units were bought by the UK to be delivered to Ukraine.<ref>{{cite news |url= https://www.vrt.be/vrtnws/nl/2022/09/20/stock-met-uit-dienst-genomen-belgische-houwitsers-voor-oekraine/| title = Belgische houwitsers nu toch naar Oekraïne, dankzij … de Britten |newspaper = VRT NWS |language = nl |access-date = 17 January 2023 |date = 21 September 2022 |first = Jens |last = Franssen}}</ref>
+* {{CAN}} − 76 A4B+.<ref>{{cite web |url= http://www.army.forces.gc.ca/lf/English/1_6_3_2.asp |archive-url= https://web.archive.org/web/20080607182117/http://www.army.forces.gc.ca/lf/English/1_6_3_2.asp |publisher =The Canadian Army |year = 2006 |work = Structure |type = fact sheet |title = Transformation |archive-date=2008-06-07}}</ref> Used by the [[Canadian Forces]] from 1967 until 2005, when they were phased out. All the vehicles had been modernized to the M109A4B+ SPH standard in the 1980s. They were primarily used by the [[4 Canadian Mechanized Brigade Group]] in Germany<ref>{{cite book |first1 =R. |last1 =Lathrop |first2 =Steven J. |last2 =Zaloga |title =M109 155mm Self-Propelled Howitzer 1960–2005 |url =https://books.google.com/books?id=Hv7DB_R0KtQC&pg=PA48 |year =2005 |publisher =Bloomsbury USA |isbn =978-1-84176-631-7 |page =48}}{{Dead link|date=June 2023 |bot=InternetArchiveBot |fix-attempted=yes}}</ref>
+
+==== M109A5 ====
+*{{SAU}} − 48 second-hand M109A5 delivered between 2002 and 2004.<ref name="SIPRI" />{{sfn|Foss|2011|page=867}} None remained in service by 2011{{sfn|Foss|2011|page=870}}
+
+== International equivalents ==
+{{Div col|colwidth=20em}}
+* {{lwc|2S3 Akatsiya}}
+* {{lwc|2S19 Msta-S}}
+* {{lwc|2S35 Koalitsiya-SV}}
+* {{lwc|AHS Krab}}
+* {{lwc|Panzerhaubitze 2000}}
+* {{lwc|AMX-30 AuF1}}
+* {{lwc|AS-90}}
+* {{lwc|K9 Thunder}}
+* {{lwc|152 mm SpGH DANA}}
+* [[Type 75 155 mm self-propelled howitzer|Type 75]] · {{lwc|Type 99 155 mm self-propelled howitzer|Type 99}}
+* {{lwc|Palmaria (artillery)|Palmaria}}
+* {{lwc|PLZ-05}}
+* {{lwc|Raad-2}}
+* {{lwc|Merkava#Merkava Howitzer Sholef|Sholef}}  prototype
+* {{lwc|15,5 cm bandkanon 1}}
+* {{Lwc|ZUZANA}}{{Div col end}}
+
+== See also ==
+* [[List of howitzers#Self-propelled howitzers|List of self-propelled howitzers]]
+* [[List of artillery]]
+* [[List of land vehicles of the U.S. Armed Forces]]
+* [[M107 projectile|M107]] standard 155 mm High Explosive (HE) projectile
+* [[M549|M549 HE Rocket Assisted (HERA) projectile]]
+* [[M864]] [[Dual-Purpose Improved Conventional Munition|Dual-Purpose Improved Conventional Munition (DPICM)]]
+* [[M795]], a more lethal, longer range version of the M107 HE projectile
+* [[M109 in the Swiss Armed Forces]], the full status of the modernisation and sales of the 581 M109 purchased by the Swiss Army
+
+==Bibliography==
+
+*{{cite book |editor1-last=Foss |editor1-first=Christopher F |editor1-link=Christopher F Foss |title=Jane's Armour and Artillery 1979–80 |publisher=Jane's Publishing Company |location=London |year=1979 |isbn=0-354-00588-X |pages= |edition=1st |chapter= |url=https://archive.org/details/janesarmourartil0000unse_e3c2}}
+*{{cite book |editor1-last=Foss |editor1-first=Christopher F |title=Jane's Armour and Artillery 2011–2012 |publisher=Janes Information Group |location=Surrey |year=2011 |isbn=978-0-71062-960-9 |edition=32nd |url=https://archive.org/details/janesarmourartil0000unse}}
+* {{cite book |last1=International Institute for Strategic Studies |title=The Military Balance 2024 |date=2024 |publisher=Taylor & Francis |isbn=978-1-040-05115-3 |language=en |ref={{SfnRef|IISS|2024}} |author1-link=International Institute for Strategic Studies}}
+
+==References==
+{{Reflist}}
+
+==External links==
+{{Commons}}
+* [http://www.inetres.com/gp/military/cv/arty/M109.html Gary's Combat Vehicle Reference Guide]
+* [https://web.archive.org/web/20141021072726/http://www.armyrecognition.com/united_states_us_army_artillery_vehicles_system_uk/m109a7_155mm_self-propelled_howitzer_technical_data_sheet_specifications_information_description_int.html M109A7 155mm self-propelled tracked howitzer artillery vehicle (United States) on armyrecognition.com]
+* [https://fas.org/man/dod-101/sys/land/m109.htm Fas.org] {{Webarchive|url=https://web.archive.org/web/20170312062819/https://fas.org/man/dod-101/sys/land/m109.htm |date=12 March 2017 }}
+* [http://www.israeli-weapons.com/weapons/vehicles/self_propelled_artillery/m109/M109.html Israeli-weapons.com] {{Webarchive|url=https://web.archive.org/web/20170309040706/http://www.israeli-weapons.com/weapons/vehicles/self_propelled_artillery/m109/M109.html |date=9 March 2017 }}
+* [https://www.nsnlookup.com/equipment-intelligence/land/m109 M109 Technical Manuals] M109 Technical Library & M109 Spare Parts
+* [https://www.youtube.com/watch?v=b1Eb-IeC8Zc Video paints rosy picture of U.S. Paladin Artillery working in Ukraine]
+
+{{Use dmy dates|date=August 2019}}
+
+{{Authority control}}
+
+{{DEFAULTSORT:M109 Howitzer}}
+[[Category:155 mm artillery]]
+[[Category:Self-propelled howitzers of the United States]]
+[[Category:Tracked self-propelled howitzers]]
+[[Category:BAE Systems land vehicles]]
+[[Category:Cold War artillery of the United States]]
+[[Category:Military vehicles introduced in the 1960s]]

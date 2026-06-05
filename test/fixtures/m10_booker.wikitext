@@ -1,0 +1,132 @@
+{{Short description|American armored fighting vehicle}}
+{{distinguish|M10 tank destroyer}}
+{{Use dmy dates|date=June 2023}}
+{{use American English|date=June 2023}}<!-- such as 'armor' instead of 'armour' -->
+{{Infobox weapon
+| name               = M10 Booker
+| image              = File:M10 Booker at its unveiling June 2023 - 7.jpg
+| image_size         = 300
+| caption            = M10 Booker at its unveiling in June 2023
+| is_vehicle         = yes
+| type               = [[Assault gun]]<ref name="ESD 1/25"/> <br>Armored infantry support vehicle<ref name="Moran 2023-01-08"/>
+| origin             = United States
+| service            = 2024–2025 (testing)<ref name="delivery"/>
+| used_by            = See [[#Operators|Operators]]
+| manufacturer       = 
+| developed_from     = [[ASCOD 2]]
+| designer           = [[General Dynamics Land Systems]]
+| introduced         = 
+| length             = 
+| width              = 
+| height             = 
+| weight             = Roughly {{convert|38|-|42|t}}<ref>{{cite web |url=https://defensemaven.io/warriormaven/land/army-to-buy-500-new-light-tank-mobile-protected-firepower-vehicles-hfQIKlru8ESGlEiG_xiuDw |title=Army to Buy 500 New "Light Tank" Mobile Protected FirePower Vehicles |date=2018-11-26 }}</ref><ref name="stripes.com"/>
+| suspension         = [[Hydropneumatic suspension|Hydropneumatic]]<ref>{{cite web |date=2023-06-21 |title=The M10 Booker Is the Army's New Mobile Assault Gun |url=https://www.popularmechanics.com/military/weapons/a44189312/army-mobile-assault-gun-m10-booker/ |access-date=2023-07-10 |website=Popular Mechanics }}</ref>
+| speed              = {{cvt|40|mph}}<ref name="delivery">{{cite web |last=John |first=Ashley |date=2024-04-18 |title=Army takes delivery of first M10 Booker Combat Vehicle |url=https://www.army.mil/article/275419/army_takes_delivery_of_first_m10_booker_combat_vehicle |access-date=2025-02-08 |website=U.S. Army}}</ref>
+| primary_armament   = 1 × [[105 mm calibre|105 mm]] [[M35 tank gun]]
+| secondary_armament = 1 × [[.50 BMG|12.7 mm]] [[M2 Browning|M2HB]] [[heavy machine gun]] <br/>1 × [[7.62×51mm NATO|7.62 mm]] [[M240 machine gun|M240B]] [[machine gun]]
+| vehicle_range      = {{cvt|250|-|350|mi}}
+| armor              = 
+| crew               = 4 (commander, gunner, driver, loader)
+| engine             = [[diesel engine|Diesel]] MTU 8V199 TE23<ref>{{cite news |title=Rolls-Royce delivers first mtu Series 199 PowerPacks for M10 Booker Combat Vehicle Program |url=https://www.mtu-solutions.com/na/en/pressreleases/2023/rolls-royce-delivers-first-mtu-series-199-powerpacks-for-m10-booker-combat-vehicle-program.html |access-date=2023-12-12 |work=www.mtu-solutions.com |date=2023-10-11 }}</ref> <br>15.9 L, {{cvt|800|hp}}
+| transmission       = Allison Transmission 3040 MX cross-drive
+}}
+
+The '''M10 Booker''' is an American [[assault gun]]<ref name="ESD 1/25"/> produced by [[General Dynamics Land Systems]] (GDLS) for the [[United States Army]]. The M10 was developed from the [[General Dynamics Griffin|GDLS Griffin II]] armored fighting vehicle as the winner of its [[Mobile Protected Firepower]] (MPF) program in June 2022. The initial contract was for 96 [[low rate initial production]] (LRIP) vehicles, the first of which were delivered in February 2024.<ref name="Eversden">{{cite web |last=Eversden |first=Andrew |date=2022-06-28 |title=General Dynamics wins $1.14 billion Mobile Protected Firepower contract |url=https://breakingdefense.com/2022/06/general-dynamics-wins-1-14-billion-mobile-protected-firepower-contract/ |url-status=live |archive-url=https://web.archive.org/web/20220704110532/https://breakingdefense.com/2022/06/general-dynamics-wins-1-14-billion-mobile-protected-firepower-contract/ |archive-date=2022-07-04 |access-date=2022-06-28 |website=Breaking Defense}}</ref><ref name="delivery"/>
+
+The Army canceled the Booker in 2025, partly due to its excessive weight, but according to tank historian [[Nicholas Moran]], due to shifting priorities in the US military budget, where the M10 did not meet the required need for continued funding.<ref name="Moran 31/01-26">{{cite web |last1=Moran |first1=Nicholas |title=The Tragic Tale of M10 Booker |url=https://www.youtube.com/watch?v=N6N3rYpfGnI |website=youtube.com |publisher=The Chieftain |access-date=2026-01-31}}</ref> The Army had taken delivery of at least 26 vehicles before the program's cancelation. These have an uncertain future and may be transferred to armored units, sold abroad, or placed in storage.
+
+== Classification ==
+The vehicle has been called a [[light tank]] by some military officers and media due to its design, thinner armor and appearance,<ref name= "MT_2306">{{cite web |url= https://www.militarytimes.com/off-duty/military-culture/2023/06/21/the-armys-m10-booker-is-a-tank-prove-us-wrong/ |title=The Army's M10 Booker is a tank. Prove us wrong. |website= Military Times |date=2023-06-22 |first= Davis |last=Winkle }}</ref><ref>{{cite magazine |last=Atherton |first=Kelsey D. |date=2022-09-09 |title=Everything to know about the Army's new 38-ton light tank |magazine=Popular Science |url=https://www.popsci.com/technology/army-tank-mobile-protected-firepower/ |accessdate= 2023-03-06 }}</ref> despite Army officials connected to the MPF program pointing out the statement as false.<ref name="MT_2306" /><ref name="military.com">{{cite web |last= Bonenberger |first=Adrian |date=2023-06-10 |title=It's Not a Light Tank: Army Unveils New Armored Combat Vehicle |url= https://www.military.com/daily-news/2023/06/10/its-not-light-tank-army-unveils-new-armored-combat-vehicle.html |access-date= 2023-06-13 |website=Military.com }}</ref><ref>{{cite news |last=Osborn |first=Kris |date= 2022-07-16 |title=Army Says New Mobile Protected Firepower Vehicle is NOT a 'Light Tank' |work=Warrior Maven |url= https://warriormaven.com/land/army-mobile-protected-firepower-vehicle-abrams |access-date= 2023-03-06 }}</ref> The vehicle weighs about 38–42 tons (roughly the same weight as a [[T-72|T-72A]]),<ref name= "stripes.com">{{cite news |last=Dickstein |first= Corey |date=2023-06-10 |title=Army unveils the M10 Booker, its first new combat vehicle in two decades |url= https://www.stripes.com/branches/army/2023-06-10/army-combat-vehicle-m10-booker-10387122.html |access-date=2023-06-10 |newspaper=[[Stars and Stripes (newspaper)|Stars and Stripes]] }}</ref> which is equivalent to various [[Medium tank|medium]] and older Russian [[main battle tank]]s operated by other nations.<ref name="Moran 2023-01-19">{{cite episode |author-link=Nicholas Moran |first= Nicholas |last=Moran |title=Ten Responses to the MPF Discussion |url= https://www.youtube.com/watch?v=mF_5jnVre90|via=YouTube |series=The Chieftain |access-date=2024-10-20 |date=2023-01-19 }}</ref> Due to its light armor in combination with its heavy weight, it is not fit to be described as a light tank. Even by design philosophy, it is not designed to fit the typical tank role by modern standards, and will essentially serve the role of an [[assault gun]] based on its description.<ref name="Moran 2023-01-19"/>
+
+The defense industry magazine ''ESD'' (''European Security & Defence'') reported in January 2025 that [[the Pentagon]] had spoken out against the light tank characterization, stating: "The primary objection to the light tank label is found in the vehicle’s mission statement, which is to provide direct fire to neutralize obstacles typically faced by infantry, such as bunkers, gun emplacements or light armored vehicles."<ref name="ESD 1/25">{{cite web |last1= Dean |first1=Sidney E. |title=Tracked fire support vehicles: A return to ‘light tanks’? |url= https://euro-sd.com/wp-content/uploads/2025/01/ESD_1_2025_WEB.pdf |publisher=European Security & Defence (ESD) |access-date= 2025-01-24}}</ref> 
+
+Ashley John, a spokeswoman for the Army’s Program Executive Office Ground Systems stated in 2022 that the "MPF is not designed to be able to engage enemy tanks".<ref name="ESD 1/25"/> [[Major general|Major General]] Glenn Dean, Program Executive Officer for Ground Combat Systems, separately stressed that "light tanks" historically have performed reconnaissance functions, "and this is not a reconnaissance vehicle, it’s an assault gun".<ref name="ESD 1/25"/>
+
+A later quote by Maj. Gen. Glenn Dean states:
+{{quote|quote=The M10 Booker is an armored vehicle that is intended to support our Infantry Brigade Combat Teams by suppressing and destroying fortifications, gun systems and trench routes, and then secondarily providing protection against enemy armored vehicles.|author=Maj. Gen. Glenn Dean, program executive officer of Army Ground Combat Systems<ref name="military.com"/>}}
+
+According to Lt. Col. Pete George, [[product manager]] for the M10 Booker Combat Vehicle, the vehicle is defined as an "armored infantry support vehicle".<ref name="Moran 2023-01-08">{{cite episode |author-link=Nicholas Moran |first=Nicholas |last=Moran |title=Inside the Chieftain's Hatch Snapshot: XM10 Booker |url=https://www.youtube.com/watch?v=BdPmpidUbWo&t=154s |via=YouTube |series=The Chieftain |access-date=2024-10-20 |date= 2023-01-08 |time=2:34 }}</ref>
+
+== Background and selection ==
+{{main|General Dynamics Griffin}}
+[[File:M10 Booker.jpg|thumb|An M10 Booker on the move]]
+
+Derived from the Austrian-Spanish [[ASCOD 2]] [[infantry fighting vehicle]]-platform,<ref>{{cite web |last1=Dean |first1=Sidney E.|date=31 January 2025|title=Tracked fire support vehicles: A return to ‘light tanks’? |url=https://euro-sd.com/2025/01/articles/42354/tracked-fire-support-vehicles-a-return-to-light-tanks/ |website=euro-sd.com |publisher=European Security & Defence / Mittler Report Verlag GmbH |access-date=26 June 2025}}</ref><ref>{{cite web|last=Freedberg|first=Sydney J. Jr.|title=General Dynamics' Griffin III For US Army Next Generation Combat Vehicle (NGCV)|url=https://breakingdefense.com/2018/10/gdls-griffin-iii-next-generation-combat-vehicle-ngcv-concept/|access-date=2020-09-02|website=Breaking Defense|date=2018-10-09}}</ref> the GDLS Griffin II was developed under the Army's MPF program. In accordance with the program's caliber requirements, it incorporated a [[105 mm]] [[M35 tank gun]] and a redesigned chassis.<ref>{{cite web|last=Tegler|first=Eric|date=2021-03-07|title=Two Light Tank Prototypes Battle for the Future of Army Firepower|url=https://www.popularmechanics.com/military/weapons/a35634134/army-mpf-tank/|website=Popular Mechanics}}</ref><ref>{{cite web|last=Brooks|first=Drew|title=Tomorrow Talk|url=http://www.nationalguardmagazine.com/publication/?i=630500&article_id=3519118&view=articleBrowser&ver=html5|website=National Guard Magazine}}</ref><ref>{{cite web|last=Turnbull|first=Grant|date=2018-09-08|title=AUSA 2018: General Dynamics swoops in with 50mm-equipped Griffin - Shephard Media|url=https://www.shephardmedia.com/news/landwarfareintl/ausa-2018-general-dynamics-swoops-50mm-equipped-gr/}}</ref> 
+
+The M35 was originally designed and developed by [[Benét Laboratories]], [[Watervliet Arsenal]], in 1983 for the Marine Corps' Mobile Protected Gun Program. It was later incorporated in the Army's [[M8 Armored Gun System]] light tank, which was canceled in 1996.<ref name="Jane's 18th">{{cite book|editor1-last=Foss|editor1-first=Christopher F.|editor1-link=Christopher F. Foss|title=Jane's Armour and Artillery|year=1997|isbn=978-0710615428|publisher=Jane's Publishing Group|location=London|pages=171–173|edition=18th|chapter=Light Tanks}}</ref><ref>{{cite thesis|last=Freeman|first=Major Marshall A.|date=1991-04-05|title=The Army Needs a Strategic Armored Gun System—Now!|type=War College Individual Study Project|publisher=U.S. Army War College, Carlisle Barracks|url=https://apps.dtic.mil/sti/pdfs/ADA236965.pdf|archive-url=https://web.archive.org/web/20220512222853/https://apps.dtic.mil/sti/pdfs/ADA236965.pdf|url-status=live|archive-date=2022-05-12|access-date=2022-03-10|pages=23–24}}{{PD-notice}}</ref> The M35 is about {{cvt|1800|lb|kg|0}} lighter than the [[M68 tank gun]] used on the [[M60 tank]].<ref name="weight loss">{{cite news|title=Armored Gun System Loses Weight to Be Deployed by C-130|jstor=43990667|work=Inside the Pentagon|volume=9|issue=31|publisher=Inside Washington Publishers|date=1993-08-05}}</ref>
+
+[[File:M10 Booker firing.jpg|thumb|An M10 Booker firing its 105 mm [[M35 tank gun|M35]] cannon in 2024]]
+In December 2018, GDLS was selected, along with [[BAE Systems]], to develop prototypes.<ref>{{cite press release|url=https://www.prnewswire.com/news-releases/us-army-awards-general-dynamics-contract-for-mobile-protected-firepower-300768433.html|title=U.S. Army awards General Dynamics contract for Mobile Protected Firepower|date=2018-12-18|website=PR Newswire}}</ref> GDLS presented its first prototype in April 2020.<ref>{{cite web|last=Keller|first=Jared|title=This could be the Army's next light tank of choice|url=https://taskandpurpose.com/military-tech/army-mobile-protected-firepower-general-dynamics-submission|access-date=2020-09-04|website=Task & Purpose|date=2020-04-24}}</ref> BAE's M8 AGS proposal was disqualified in March 2022.<ref>{{cite web|last=Roque|first=Ashley|date=2022-03-02|title=US Army eliminates BAE Systems from 'light tank' competition|url=https://www.janes.com/defence-news/news-detail/us-army-eliminates-bae-systems-from-light-tank-competition|website=Janes.com}}</ref> In June 2022, GDLS won the MPF program competition and was awarded a contract worth up to $1.14 billion to build up to 96 vehicles.<ref>{{cite web|last=Trevithick|first=Joseph|date=2022-06-28|title=The Army Just Selected Its First Light Tank in Decades|url=https://www.twz.com/the-army-just-selected-its-first-light-tank-in-decades|website=The Warzone}}</ref><ref name="first lot"/><ref name="Eversden"/> The first lot consisted of 26 vehicles.<ref name="first lot">{{cite news |last1=Eversden |first1=Andrew |title=General Dynamics wins $1.14 billion Mobile Protected Firepower contract |url=https://breakingdefense.com/2022/06/general-dynamics-wins-1-14-billion-mobile-protected-firepower-contract/ |access-date=17 September 2025 |work=Breaking Defense |date=28 June 2022}}</ref>
+
+=== Name ===
+The MPF was officially designated "M10 Booker" in June 2023, named for American soldiers Private [[Robert D. Booker]] and Staff Sergeant Stevon<!--spelling Stevon is correct--> Booker. Robert Booker was killed on 9 April 1943 during the [[Tunisian campaign]] of World War II, and was posthumously awarded the [[Medal of Honor]]. Stevon Booker was killed on 5 April 2003 during a "[[Battle of Baghdad (2003)#Thunder Runs|Thunder Run]]" in the [[2003 invasion of Iraq]], and was awarded the [[Distinguished Service Cross (United States)|Distinguished Service Cross]].<ref name="stripes.com"/><ref>{{cite web|url=https://www.defensenews.com/land/2023/06/10/us-armys-new-combat-vehicle-named-for-soldiers-killed-in-iraq-wwii/|title=US Army's new combat vehicle named for soldiers killed in Iraq, WWII|last=Judson|first=Jen|date=2023-06-10|work=Defense News|accessdate=2024-02-12}}</ref>
+
+==Development==
+=== Design ===
+The M10 Booker was developed to address a gap in [[United States Army|U.S. Army]] Infantry Brigade Combat Teams ([[IBCT]]s) by providing a mobile, protected, direct fire capability to neutralize enemy fortified positions, heavy machine guns, and armored vehicle threats. The U.S. Army planned to field 14 M10 Bookers per IBCT, ensuring enhanced firepower and maneuverability in both offensive and defensive operations.<ref name="CRS report" >{{Cite web |last=Congressional Research Service |date=7 July 2025 |title=The Army’s M-10 Booker (Formerly Known as Mobile Protected Firepower [MPF]) System |url=https://crsreports.congress.gov/product/pdf/IF/IF11859}}{{PD-notice}}</ref>
+
+[[File:M10 Booker C-17.jpg|thumb|Two M10 Bookers being loaded onto a [[C-17]]]]
+The M10 Booker features a fully tracked chassis, a four-person crew, and is armed with an [[M35 tank gun|M35]] 105mm main gun controlled by the same fire control system as the [[M1A2 Abrams]], along with an [[M240C]] 7.62mm coaxial machine gun, and an [[M2 .50 Caliber Machine Gun|M2 .50 caliber machine gun]] for the commander.<ref>{{Cite web |title=DCMA Land Systems supports M10 Booker combat vehicle |url=https://www.dcma.mil/News/Article-View/Article/3812220/dcma-land-systems-supports-m10-booker-combat-vehicle/ |access-date=2025-02-03 |website=Defense Contract Management Agency |language=en-US}}</ref> It incorporates modular armor, smoke grenade launchers, ammunition stowage [[Blowout panel|blowout panels]], and an automatic fire suppression system to enhance battlefield survivability. The Booker is also equipped with [[Safran Electronics & Defense|Safran Optics 1]]'s PASEO Commander's Independent Tactical Viewer (CITV) to increase the commander's situational awareness and to improve targeting capabilities.<ref>{{Cite web |title=Safran Optics 1 selected to provide Panoramic Sight to General Dynamics Land Systems for the US Army's Mobile Protected Fire Program |url=https://www.optics1.com/blog/2022/12/28/safran-optics-1-selected-to-provide-panoramic-sight-to-general-dynamics-land-systems-for-the-us-army |url-status=live |archive-url=https://web.archive.org/web/20240626182138/https://www.optics1.com/blog/2022/12/28/safran-optics-1-selected-to-provide-panoramic-sight-to-general-dynamics-land-systems-for-the-us-army |archive-date=26 June 2024 |access-date=2025-02-03 |website=Site Name |language=en }}</ref> 
+
+A feature of the M10 Booker was supposed to be its air transportability; its intended 38-ton weight would have allowed two M10 Bookers to be carried in a single [[Boeing C-17 Globemaster III|C-17 Globemaster III]], whereas the C-17 can only carry one [[M1 Abrams]] tank,<ref>{{Cite web |last=Royal Australian Air Force |title=C-17A Globemaster III |url=https://www.airforce.gov.au/aircraft/c-17-globemaster |access-date=3 February 2025}}</ref> which supposedly would have enhanced rapid deployment capabilities. However, the Booker's weight increased to 42 tons and the [[U.S. Air Force]] ruled that a C-17 could only carry one Booker.<ref name=where/> The Army initially wanted a vehicle that could be airdropped, but at 42 tons, the Booker cannot be airdropped.<ref name=where/> The Army envisioned the M10 Booker as a crucial asset for IBCT operations, particularly in forced and early entry missions where [[anti-access/area denial]] (A2/AD) conditions exist.<ref>{{Cite web |last=Malyasov |first=Dylan |date=2025-02-01 |title=US Army’s M10 Booker nears full-rate production decision |url=https://defence-blog.com/us-armys-m10-booker-nears-full-rate-production-decision/ |access-date=2025-02-03 |website=defence-blog.com |language=en-US}}</ref><ref>{{Cite web |last=ESD |date=2023-10-24 |title=US Army Ground Combat Systems Update |url=https://euro-sd.com/2023/10/articles/34757/us-army-ground-combat-systems-update/ |access-date=2025-02-03 |language=en-US}}</ref>
+
+=== Production and testing ===
+{{multiple image
+| perrow            = 2
+| total_width       = 510
+| image1            = US Army M10 Testing at YTC.jpg
+| caption1          = M10 desert testing at [[Yuma Proving Ground|Yuma Test Center]]
+| image2            = US Army M10 Testing at ARTC.jpg
+| caption2          = M10 arctic testing at Arctic Regions Test Center
+}}
+
+The U.S. Army took delivery of the first production vehicle in February 2024.<ref name="delivery"/> The M10 underwent testing and evaluation in Arizona and Alaska in early 2025.<ref>{{cite news |title=M10 Booker tested at US Army Yuma Proving Ground |url=https://www.army.mil/article/283010/m10_booker_tested_at_us_army_yuma_proving_ground |access-date=25 April 2025 |publisher=US Army}}</ref> In May 2024, the U.S. Army issued a solicitation for full-rate production;<ref>{{cite news|url=https://insidedefense.com/insider/army-seeks-full-rate-production-m10-booker-combat-vehicle|website=Inside Defense|title=Army seeks full-rate production for M10 Booker combat vehicle|last1=Sukharev|first1=Nickolai|date=2024-05-08|accessdate=2024-05-08}}</ref> however, this solicitation was cancelled in May 2025 after approximately 26 vehicles were produced.<ref name="CRS report" />
+
+=== Allocation ===
+The U.S. Army was initially set to procure up to 504 M10s, all of which would have been allotted to light [[Division (military)|divisions]] in the active duty and National Guard. The [[82nd Airborne Division]] became the first unit equipped when 33 M10s entered the [[Fort Bragg]] motor pools in late FY2025, while other M10s were distributed to [[Fort Campbell]] with the [[101st Airborne Division]], to [[Fort Carson]] with the [[4th Infantry Division (United States)|4th Infantry Division]], and to [[Fort Johnson]] at the Joint Readiness Training Center; however, the future use of the M10, if any, is in doubt.<ref name=where>{{cite web |last1=Myers |first1=Meghann |date=27 April 2025 |title=The Army made a tank it doesn’t need and can’t use. Now it’s figuring out what to do with it. |url=https://www.defenseone.com/policy/2025/04/army-made-tank-it-doesnt-need-and-cant-use-now-its-figuring-out-what-do-it/404877/ |website=defenseone.com |publisher=[[Government Executive#21st century|Defense One]] |access-date=4 May 2025}}</ref>
+
+===Cancellation===
+Equipping the 101st Airborne Division at [[Fort Campbell]], Kentucky, with the Booker was complicated by an analysis that determined that most bridges on the base were not capable of supporting the vehicle's weight.<ref name=where/>
+
+In April 2025, the Army’s chief technology officer Alex Miller told a reporter that the Booker was an example of "the requirements process creating so much inertia that the Army couldn't get out of its own way".<ref name=where/> In May 2025, [[United States Secretary of the Army|Army Secretary]] [[Daniel P. Driscoll|Dan Driscoll]] and [[Chief of Staff of the United States Army|Army Chief of Staff]] General [[Randy A. George]] published "Letter to the Force: Army Transformation Initiative." This letter was in response to [[United States Secretary of Defense|Secretary of Defense]] [[Pete Hegseth]]'s April 2025, memorandum for senior Pentagon leadership titled "Army Transformation and Acquisition Reform." The Army Transformation Initiative directive stated that the Army would "end procurement of obsolete systems, and cancel or scale back ineffective or redundant programs." The Department of Defense announced in May 2025 that the Booker program was being cancelled. Driscoll indicated that the program was cancelled primarily due to its heavy 42 ton weight.<ref name="CRS report" /><ref name=Scrapping>{{Cite web |last=Rommen |first=Rebecca |date= 2 May 2025|title=The US Army says it's scrapping a new light assault vehicle that got 'too heavy' |url=https://www.businessinsider.com/us-army-scrapping-m10-booker-light-tank-vehicle-too-heavy-2025-5 |access-date=3 May 2025|website=Business Insider |language=en-US}}{{unreliable source|date=September 2025}}</ref><ref name="Hegseth orders">{{Cite web |last1=Mehta |last2=Roque |first1=Aaron |first2=Ashley |date=1 May 2025|title=Hegseth orders 'comprehensive transformation' of US Army, merging offices and cutting weapons |url=https://breakingdefense.com/2025/05/hegseth-orders-transformation-of-us-army-combining-offices-and-cutting-roles/ |access-date=2 May 2025|website=Breaking Defense |language=en-US}}</ref> Driscoll derided the Booker as a "heavy tank" and called the program "a classic example of [[sunk cost fallacy]], and the Army doing something wrong".<ref>{{cite news |last1=Minadeo |first1=Dominic |title=Army axes M10 Booker, a prime example of poor acquisition practice, Driscoll says |url=https://insidedefense.com/daily-news/army-axes-m10-booker-prime-example-poor-acquisition-practice-driscoll-says |access-date=17 September 2025 |work=insidedefense.com |date=1 May 2025}}</ref>
+
+As of June 2025 program costs exceeded $1 billion and the Army had taken delivery of 26 vehicles. Vehicles in final stages of production will be accepted by the Army.<ref name="DoA">{{cite news |last1=Judson |first1=Jen |title=Dead on arrival: Army pulls plug on M10 Booker light tank |url=https://www.defensenews.com/land/2025/06/12/dead-on-arrival-army-pulls-plug-on-m10-booker-light-tank/ |access-date=10 September 2025 |work=Defense News |date=12 June 2025 |language=en}}</ref> The vehicles have an uncertain future and may be transferred to armored units, sold abroad, or placed in storage.{{cn|date=September 2025}}
+
+== Operators ==
+{{flag|United States}}
+*{{flag|United States Army}} – 26 (some additional tanks under production)<ref name= "CRS report" />
+
+== See also ==
+* [[M1128 mobile gun system]] – US Army's previous assault gun based on [[Stryker]]
+* [[M551 Sheridan]] – US Army's last light tank, retired in 1997
+* [[M41 Walker Bulldog]] – light American tank in the early days of the Cold War
+* [[Stingray light tank|Commando Stingray]] – light US tank for export only
+
+'''International:'''
+* [[2S25 Sprut-SD]] – Russian light tank
+* [[Kaplan MT / Harimau]] – Turkish/Indonesian light tank
+* [[Zorawar LT]] – light tank by India's DRDO and L&T
+* [[Sabrah light tank]] – Philippine light tank system based on [[ASCOD 2]] and [[Pandur II]]
+* [[Type 15 tank]] – Chinese light tank
+* [[Tanque Argentino Mediano|TAM]] – Argentinian light tank developed by [[Thyssen Henschel]]
+* [[B1 Centauro]] – Italian light tank
+
+== Further information ==
+* [https://www.youtube.com/watch?v=N6N3rYpfGnI The Tragic Tale of M10 Booker] – [[Nicholas Moran]] on youtube.com
+
+==References==
+{{reflist}}
+
+==External links==
+{{Commons category-inline|M10 Booker}}
+
+{{US tanks|style=wide}}
+{{Post-Cold War tanks}}
+{{General Dynamics}}
+{{Authority control}}
+
+[[Category:Assault guns]]
+[[Category:General Dynamics land vehicles]]
+[[Category:Post–Cold War armored fighting vehicles of the United States]]
+[[Category:Tanks named after individuals]]
+[[Category:Tracked armoured fighting vehicles]]

@@ -1,0 +1,43 @@
+{{Short description|US Space Force space surveillance system}}
+{{other uses|Air Force Space Surveillance System}}
+[[File:Space Fence.png|thumb|Diagram of the Space Fence]]
+
+The '''Space Fence''' is a second-generation [[space surveillance]] system operated by the [[United States Space Force]] in order to track [[artificial satellites]] and [[space debris]] in [[Earth's orbit|Earth orbit]].<ref name=sn20141121/> It was constructed and designed by [[Lockheed Martin]], [[Northrop Grumman]], and [[Raytheon]] starting in 2009, with it being declared operational in March 2020.<ref name=sn20141121>{{cite news |last1=Gruss|first1=Mike |title=Haney: U.S. Partners To Have Indirect Access to Space Fence Data |url=http://www.spacenews.com/article/military-space/42619haney-us-partners-to-have-indirect-access-to-space-fence-data |archive-url=https://archive.today/20141201175242/http://www.spacenews.com/article/military-space/42619haney-us-partners-to-have-indirect-access-to-space-fence-data |url-status=dead |archive-date=December 1, 2014 |access-date=2014-12-01 |work=Space News |date=2014-11-21 }}</ref><ref name="operational">{{Cite web |url=https://spacenews.com/space-fence-surveillance-radar-site-declared-operational/ |last=Erwin |first=Sandra |date=March 28, 2020 |access-date=March 29, 2020 |title=Space Fence surveillance Radar Site Declared Operational}}</ref>  The budget is {{USD|1.594 billion}} (FY15).<ref name=GAO-15-342SP>{{cite web | url=http://www.gao.gov/assets/670/668986.pdf#page=133 | page=125 | title= GAO-15-342SP DEFENSE ACQUISITIONS Assessments of Selected Weapon Programs | publisher=US Government Accountability Office | date=March 2015 | access-date=16 July 2015 }}</ref> The main facility is located at [[Kwajalein Atoll]] in the [[Marshall Islands]].<ref name=sn20141121/><ref name=indiansat2019>[https://spacenews.com/indian-anti-satellite-test-proves-early-test-for-space-fence/ Indian anti-satellite test proves early test for Space Fence], by Debra Werner — April 11, 2019, SpaceNews.com, ''...Still in testing mode, the U.S. Air Force Space Fence on Kwajalein Atoll detected India’s March 27 anti-satellite test and issued a break-up alert...The Air Force is scheduled to begin initial operation...in the fourth quarter of this year...''</ref>
+
+== History ==
+[[File:AFSPC Unveils Space Fence Model (3834946).jpeg|thumb|Deputy Commander of [[Air Force Space Command]], accepts a model of the Space Fence radar site at [[Peterson Air Force Base]].]]
+The initial plans to upgrade the legacy [[Air Force Space Surveillance System]] were made in 2009.  The USAF 850th Electronic Systems Group, [[Electronic Systems Center]] awarded three $30-million study contracts to [[Lockheed Martin]], [[Northrop Grumman]], [[General Dynamics]], and [[Raytheon]] on 11 June 2009.<ref name="afmil20090730">{{cite news |newspaper= USAF News |url= https://www.hanscom.af.mil/News/story/id/123161236/ |title= Space Fence program awards contracts for concept development |first= Monica D. |last= Morales |date= July 30, 2009 |access-date= September 13, 2014 |url-status= live|archive-url= https://web.archive.org/web/20160304060635/http://www.hanscom.af.mil/news/story.asp?id=123161236 |archive-date= March 4, 2016 }}</ref>
+
+The new Space Fence was envisioned to be a system of two or three [[S-band]] ground-based radars designed to perform uncued detection, tracking and accurate measurement of orbiting space objects, and was intended to replace the Air Force Space Surveillance System, or VHF Fence, that was transferred from the [[US Navy]] to the [[US Air Force]] in 2004. The shorter wavelength of the S-band Space Fence will allow for the detection of much smaller satellites and [[Space debris|debris]].<ref name="afmil20090730" />
+
+The [[2009 satellite collision]] of the [[Iridium 33]] and [[Kosmos 2251]] communications satellites, which added hundreds more pieces of debris in orbit, highlighted the need for more precise [[Space debris#Tracking and measurement|tracking of space objects]].<ref>{{cite news|url=http://www.space.com/news/090211-satellite-collision.html |publisher=Space.com |title=U.S. Satellite Destroyed in Space Collision |first=Becky |last=Iannotta |date=February 22, 2009 |access-date=2 November 2016 |archive-url=https://web.archive.org/web/20090213230913/http://www.space.com/news/090211-satellite-collision.html |archive-date=13 February 2009 |url-status=live}}</ref>
+
+{{asof|2009}}, data collected from the new Space Fence's sensors was planned to feed into the [[Joint Space Operations Center]] Mission System, which is used to track objects orbiting the Earth, monitor [[space weather]], and assess foreign launches. Used by operators at the USAF [[614th Air and Space Operations Center]] at Vandenberg Air Force Base, Calif., the 614 AOC's 24-hour-a-day, seven-day-a-week support provides vigilance of global and theater operations, and equips the Joint Functional Component Command for space operations with the tools to conduct command and control of space forces.<ref name="afmil20090730" />
+
+Plans to award the final contract were delayed by the federal government's [[budget sequestration in 2013|budget sequestration]] in early 2013<ref>{{cite web |url= https://www.forbes.com/sites/davidewalt/2013/07/17/budget-cuts-threaten-the-air-forces-new-space-fence/ |title= Budget Cuts Threaten The Air Force's New 'Space Fence' |website= Forbes.com |first= David M. |last= Ewalt |date= July 17, 2013 |access-date= September 13, 2014 }}</ref> and the AFSSS system was scheduled to be discontinued in October 2013 due to budget cuts.<ref>{{cite news |url= https://www.af.mil/News/Article-Display/Article/466832/air-force-space-command-to-discontinue-space-surveillance-system/ |title= Air Force Space Command to discontinue space surveillance system |newspaper= US Air Force News |date= August 13, 2013 |access-date= September 13, 2014 }}</ref>
+
+In 2014, [[Lockheed Martin]] awarded a contract for the Space Fence ground structures to [[General Dynamics]]. The ground structures include the receive array, cooling equipment, radomes and other buildings. The primary Space Fence system is located on [[Kwajalein Atoll]] in the [[Marshall Islands]]. The [[U. S. Space Force]] declared the system operational on March 28, 2020.<ref name="operational">{{Cite web |url=https://spacenews.com/space-fence-surveillance-radar-site-declared-operational/ |last=Erwin |first=Sandra |date=March 28, 2020 |access-date=March 29, 2020 |title=Space Fence surveillance Radar Site Declared Operational}}</ref>
+
+== Technical characteristics ==
+The Space Fence will use [[S-band]] radar and will track a larger number of small objects than previous space radars: "about 200,000 objects and make 1.5 million observations per day, about 10 times the number" made by existing or recently retired US assets.<ref name=sn20141121/>
+
+== Data-sharing agreements ==
+Countries with space situational awareness data-sharing agreements in place with the USAF include Australia, Japan, Italy, Canada, France, South Korea, and the United Kingdom. It also "has agreements with the [[European Space Agency]] and Europe’s [[Eumetsat]] weather satellite organization."<ref name=sn20141121/>
+
+== Predecessor system ==
+A previous system used by the USAF for the same purpose was the [[Air Force Space Surveillance System]], which ceased operation in September 2013.<ref name=sfn-20140602>{{cite news |url=http://spaceflightnow.com/news/n1406/02spacefence/ |title=Lockheed Martin wins contract for Space Fence |first=Stephen |last=Clark |publisher=Spaceflight Now |date=2014-06-02 |access-date=2014-12-01 }}</ref>
+
+== References ==
+{{Reflist}}
+
+{{United States Space Force}}
+{{National Reconnaissance Office}}
+{{Raytheon}}
+{{Lockheed Martin}}
+
+[[Category:United States Space Surveillance Network]]
+[[Category:2020 establishments in the Marshall Islands]]
+[[Category:Equipment of the United States Space Force]]
+[[Category:Programs of the United States Space Force]]
+[[Category:Lockheed Martin]]
+[[Category:Raytheon Company]]

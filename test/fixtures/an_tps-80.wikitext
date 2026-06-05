@@ -1,0 +1,103 @@
+{{Short description|US Marine Corps transportable air defense and control AESA radar}}
+{{Infobox radar
+| name        = AN/TPS-80 Ground/Air Task Oriented Radar
+| image       = USMC-16064.jpg
+| caption     = Ground/Air Task Oriented Radar (G/ATOR) prototype at [[Marine Corps Base Quantico]], September 2010
+| country     = [[United States]]
+| introdate   = 2019
+| number      = 
+| type        = Short/Medium Range Multi-Role Radar System
+| frequency   = 2–4 GHz
+| PRF         = 
+| beamwidth   = <!--X° (horizontal), X° (vertical)-->
+| pulsewidth  = 
+| RPM         = 
+| range       = 
+| altitude    = 
+| diameter    = 
+| azimuth     = 
+| elevation   = 
+| precision   = 
+| power       = 
+| other names = G/ATOR
+}}
+The '''AN/TPS-80 Ground/Air Task Oriented Radar''' (G/ATOR) is the [[United States Marine Corps]] next-generation Air Surveillance/[[Air Defense]] and [[Air Traffic Control]] (ATC) Radar. The mobile [[active electronically scanned array]] [[radar system]] is being developed and produced by [[Northrop Grumman#Electronic System|Northrop Grumman]] and was expected to reach [[initial operating capability]] in August 2016.<ref name="DTIC">{{cite web |date=16 April 2014 |title=Selected Acquisition Report (SAR), Ground/Air Task Oriented Radar (G/ATOR) |url=https://apps.dtic.mil/sti/pdfs/ADA613516.pdf |accessdate=21 October 2015 |website=Defense Technical Information Center |publisher=Department of Defense}}</ref> Initial production began in June of 2019.<ref name="20251202DN">{{cite news |last1=South |first1=Todd |title=Marines more than halfway through fielding of new 360-degree radar |url=https://www.defensenews.com/air/2025/04/28/marines-more-than-halfway-through-fielding-of-new-360-degree-radar/ |access-date=2 December 2025 |work=[[Defense News]] |publisher=[[Michael Reinstein]] |date=28 April 2025}}</ref> In October of 2025, one unit was controversially deployed to the Island nation of [[Trinidad and Tobago]], which is just 7 miles off the coast of [[Venezuela]].<ref name="20251202TG">{{cite news |last1=Duncan |first1=Natricia |last2=Haynes |first2=Kejan |title=Radar revelation stokes fears Caribbean could be drawn into US-Venezuela crisis |url=https://www.theguardian.com/us-news/2025/dec/02/us-venezuela-crisis-trinidad-tobago |access-date=2 December 2025 |work=[[The Guardian]] |publisher=[[Guardian Media Group]] |date=2 December 2025}}</ref>
+
+In accordance with the [[Joint Electronics Type Designation System]] (JETDS), the "''AN/TPS-80''" designation represents the 80th design of an Army-Navy [[Electronics|electronic device]] for ground transportable search radar system. The JETDS system also now is used to name all [[Department of Defense]] electronic systems.
+
+==Mission and description==
+The Ground/Air Task Oriented Radar (G/ATOR) is a single material solution for the mobile Multi-Role Radar System and Ground Weapons Locating Radar (GWLR) requirements. It is a [[3D radar|three-dimensional]], medium/long-range multi-role radar designed to detect [[unmanned aerial vehicles|unmanned aerial systems]], [[cruise missiles]], air-breathing targets, [[rockets]], [[artillery]], and [[Mortar (weapon)|mortars]]. G/ATOR is designed to fulfil expeditionary needs across the [[Marine Air-Ground Task Force]] spectrum, replacing five legacy radar systems with a single solution.<ref name=Gourley>{{cite web|last1=Gourley|first1=Scott R.|title=Ground-based Air Defense and Ground/Air Task Oriented Radar|url=http://www.marcorsyscom.marines.mil/Portals/105/PELandSystem/GATOR_090412.pdf|website=Program Executive Officer Land Systems|publisher=Marine Corps Systems Command|date=Summer 2012|accessdate=21 October 2015}}{{Dead link|date=July 2025 |bot=InternetArchiveBot |fix-attempted=yes }}</ref>  
+
+The five Marine Corps legacy radar systems being replaced by this multi-function capability include: the [[AN/TPS-63]] (air defense), AN/TPS-73 (air-traffic control), [[AN/MPQ-62]] (short-range air defense), AN/TPQ-46 ([[Counter-battery fire|counter-fire]] target acquisition) and UPS-3 (target tracking).<ref name=Burgess>{{cite journal|last1=Burgess|first1=Richard R.|title=A Radar for All Missions|journal=Seapower|date=November 2010|volume=53|issue=11|pages=42–44|url=http://www.seapower-digital.com/seapower/201011?pg=44#pg44|archive-url=https://web.archive.org/web/20160307105017/http://www.seapower-digital.com/seapower/201011?pg=44#pg44|archive-date=March 7, 2016|url-status=usurped|accessdate=21 October 2015}}</ref> Additionally, it will augment the [[AN/TPS-59]] long-range radar.<ref name=DOTE/>
+
+The Program Executive Office (PEO), Land Systems Marine Corps is executing the G/ATOR program, as an evolutionary acquisition program of four capabilities, referred to as blocks.<ref name=DOTE/>
+* Block 1 completes the primary material system acquisition, and can support the short-range air defense and air surveillance mission, as well as provide an Air Defence/Surveillance Radar (AD/SR) capability to the MAGTF Commander.
+* Block 2 includes software to perform the missions of ground counter-battery/fire control (Ground Locating Weapons Radar).
+* Block 3 capabilities are not currently defined or resourced, and have been deferred indefinitely.
+* Block 4 provides air traffic control capabilities (Expeditionary Airport Surveillance Radar).
+[[File:GATOR.png|thumb|G/ATOR System Configuration]]
+G/ATOR provides real-time radar measurement data to the Tactical Air Operations Module, Common Aviation Command and Control System (CAC2S), Composite Tracking Network, and [[Advanced Field Artillery Tactical Data System]].<ref name=Keller1410/>
+
+The G/ATOR baseline system configuration consists of three subsystems:<ref name=DOTE/>
+* Communications Equipment Group (CEG). The CEG provides the ability to communicate with and control the radar and is mounted on a [[High Mobility Multi-purpose Wheeled Vehicle]].
+* Radar Equipment Group (REG). The REG consists of a phased-array radar mounted on an integrated trailer. The trailer is towed by the [[Medium Tactical Vehicle Replacement]] (MTVR).
+* Power Equipment Group (PEG). The PEG includes a 60-kilowatt generator and associated power cables mounted on a pallet. The generator pallet is carried by the MTVR.
+{{clear}}
+
+==Development==
+[[File:AN TPS-80 Ground Air Task Oriented Radar.webm|300px|thumb|AN/TPS-80 Ground/Air Task Oriented Radar, at Marine Corps Air Station Yuma]]
+Development of the G/ATOR began in September 2005 when the Marine Corps awarded a $7.9 million contract to [[Northrop Grumman Electronic Systems]]. Initial design requirements required planning for short-range air surveillance, counter-battery fire and target acquisition, and sensor networking.  The requirement required Block 1 to allow for incremental implementation of the following blocks without equipment or software redesign.<ref name=Keller1410>{{cite journal|last1=Keller|first1=John|title=After nine years, Marine Corp finally may have full production of G/ATOR radar in sight|journal=Military Aerospace Electronics Magazine|date=October 24, 2014|url=https://www.militaryaerospace.com/articles/2014/10/gator-radar-production.html|accessdate=3 November 2015}}</ref>
+
+In 2009, a $14 million cost overrun for the G/ATOR, was attributed to [[requirements creep]] and the increasing cost of scarce materials required in advanced electronic components. In 2012 the Marine Corps and Northrop Grumman began Block 2 development, beginning with upgrading the Block 1 equipment and software for performing GWLR requirements.<ref name=Keller1410/><ref name=Keller1503/>
+
+The G/ATOR program obtained a successful Milestone C decision in March 2014. In October 2014, a 207.3 million dollar [[low rate initial production]] (LRIP) contract was awarded to Northrop Grumman for the first four systems.<ref name=Keller1410/><ref name=Concepts>{{cite web|title=AN/TPS-80 Ground/Air Task Oriented Radar (G/ATOR)|url=https://marinecorpsconceptsandprograms.com/programs/aviation/antps-80-groundair-task-oriented-radar-gator|website=Marine Corps Concepts and Programs|publisher=United States Marine Corps|accessdate=21 October 2015|date=18 May 2015|archive-url=https://web.archive.org/web/20160304070551/https://marinecorpsconceptsandprograms.com/programs/aviation/antps-80-groundair-task-oriented-radar-gator|archive-date=4 March 2016|url-status=dead|df=dmy-all}}</ref> In March 2015, another contract worth $113 million was awarded to produce two additional systems to be delivered in October 2017.<ref name=Keller1503>{{cite journal|last1=Keller|first1=John|title=Latest order for Marine Corps G/ATOR radar systems brings total number of radars to six|journal=Military Aerospace Electronics Magazine|date=March 17, 2015|url=https://www.militaryaerospace.com/articles/2015/03/gator-radar-order.html|accessdate=3 November 2015}}</ref><ref name=AMRPulseAug15>{{cite news|last1=Withington |first1=Thomas |title=AMR Pulse - Radar |url=http://www.asianmilitaryreview.com/category/amr-pulse/ |accessdate=21 October 2015 |work=Asian Military Review }}{{dead link|date=June 2017 |bot=InternetArchiveBot |fix-attempted=yes }}</ref>
+
+In September 2015, the Marine Corps awarded Northrop Grumman a $58.7 million contract to incorporate and test the GWLR mode for the G/ATOR.<ref name=GWLR>{{cite news|title=Northrop Grumman Receives Contract to Add Ground Capabilities to AN/TPS-80 Ground/Air Task-Oriented Radar|url=http://www.irconnect.com/noc/press/pages/news_releases.html?d=10152245|accessdate=21 October 2015|publisher=Globe Newswire}}</ref>
+
+In September 2016, the Marine Corps awarded Northrop Grumman a $375 million contract for nine additional LRIP systems that will incorporate [[gallium nitride]] (GaN) technology.<ref>{{cite news|title=Northrop Grumman Awarded Contract for Nine GaN G/ATOR Systems|url=http://news.northropgrumman.com/news/releases/northrop-grumman-awarded-contract-for-nine-gan-g-ator-systems|accessdate=11 October 2016|publisher=Northrop Grumman}}</ref>
+
+In June 2019, the Marine Corps awarded Northrop Grumman a $958 million contract for full-rate production of 30 GaN G/ATOR Systems.<ref>{{cite news|title=Northrop Grumman Awarded Contract to Provide Marine Corps Full-Rate Production G/ATOR Radar Systems|url=https://news.northropgrumman.com/news/releases/northrop-grumman-awarded-contract-to-provide-marine-corps-full-rate-production-gator-radar-systems|accessdate=9 August 2019|publisher=Northrop Grumman}}</ref>
+
+A total of 60 G/ATOR systems are planned for procurement through 2029.<ref name=DTIC /><ref name="20251202DN" /><ref name=DOTE>{{cite web|title=Ground/Air Task Oriented Radar (G/ATOR)|url=http://www.dote.osd.mil/pub/reports/FY2013/pdf/navy/2013gator.pdf|website=The Office of the Director, Operational Test & Evaluation|publisher=Director, Operational Test & Evaluation|accessdate=21 October 2015}}</ref>
+
+In December 2019, the Marine Corps awarded Northrop Grumman a $188 million contract, for the firm-fixed-price portion of a previously awarded contract (M67854-19-C-0043). This modification is for the purchase of six Gallium Nitride full-rate-production systems and associated travel in support of Program Executive Officer Land Systems, Quantico, Virginia.<ref>{{cite news|title=Contracts For Dec. 6, 2019|url=https://www.defense.gov/Newsroom/Contracts/Contract/Article/2034460/source/GovDelivery/|archive-url=https://web.archive.org/web/20191207132201/https://www.defense.gov/Newsroom/Contracts/Contract/Article/2034460/source/GovDelivery/|url-status=dead|archive-date=December 7, 2019|access-date=7 December 2019|publisher=Department of Defense}}</ref>
+
+Saab is subcontracted by Northrop Grumman Corporation and has delivered major subsystems and assemblies as well as software since Lot1 and has been part of the development since originally contracted in 2007.<ref>{{cite web |url=https://www.saab.com/newsroom/press-releases/2015/saab-to-supply-key-components-in-support-of-the-u.s.-marine-corps-groundair-task-oriented-radar-gator-program |title=Saab to Supply Key Components in Support of the U.S. Marine Corps Ground/Air Task Oriented Radar (G/ATOR) Program |archive-url=https://web.archive.org/web/20201031164750/https://www.saab.com/newsroom/press-releases/2015/saab-to-supply-key-components-in-support-of-the-u.s.-marine-corps-groundair-task-oriented-radar-gator-program |archive-date=2020-10-31 |url-status=live |date=Feb 12, 2015}}</ref><ref>{{cite web |url=https://www.saab.com/newsroom/press-releases/2016/saab-receives-contract-for-components-to-the-u.s.-marine-corps-groundair-task-oriented-radar-program |title=Saab Receives Contract for Components to the U.S. Marine Corps' Ground/Air Task-Oriented Radar Program |archive-url=https://web.archive.org/web/20201025164415/https://www.saab.com/newsroom/press-releases/2016/saab-receives-contract-for-components-to-the-u.s.-marine-corps-groundair-task-oriented-radar-program |archive-date=2020-10-25 |url-status=live |date=Dec 5, 2016}}</ref><ref>{{cite web |url=https://www.saab.com/markets/united-states/news-and-press-releases/2019/saab-receives-order-for-components-for-the-u.s.-marine-corps-gator-radar |title=Saab Receives Order for Components for the U.S. Marine Corps G/ATOR Radar |archive-url=https://web.archive.org/web/20201027234023/https://www.saab.com/markets/united-states/news-and-press-releases/2019/saab-receives-order-for-components-for-the-u.s.-marine-corps-gator-radar |archive-date=2020-10-27 |url-status=live |date=Dec 9, 2019}}</ref><ref>{{cite web |url=https://www.saab.com/newsroom/press-releases/2020/saab-receives-order-for-radar-system-components-for-the-u.s.-marine-corps |title=Saab receives order for radar system components for the U.S. Marine Corps |archive-url=https://web.archive.org/web/20201025110617/https://www.saab.com/newsroom/press-releases/2020/saab-receives-order-for-radar-system-components-for-the-u.s.-marine-corps |archive-date=2020-10-25 |url-status=live |date=Sep 23, 2020}}</ref><ref>{{cite press release |url=https://www.saab.com/globalassets/cision/documents/2020/20200923-saab-far-bestallning-pa-radarkomponenter-till-amerikanska-marinen-sv-0-3778430.pdf |lang=swedish |title=Saab får beställning på radarkomponenter till amerikanska marinen |trans-title=Saab receives order for radar system components for the U.S. Marine Corps |archive-url=https://web.archive.org/web/20201225003127/https://www.saab.com/globalassets/cision/documents/2020/20200923-saab-far-bestallning-pa-radarkomponenter-till-amerikanska-marinen-sv-0-3778430.pdf |archive-date=2020-12-25 |url-status=live |publisher=Saab AB}}</ref>
+
+==Main characteristics==
+{{Promotional section|date=July 2025}}
+* Multipurpose tracking and surveillance [[S-band]] {{cvt|2–4|GHz|cm}} [[3D radar]]
+* Detects [[Fixed-wing aircraft|fixed-]] and [[rotary-wing aircraft]], [[cruise missiles]], and [[UAVs]]
+* Performs [[Air traffic control|ATC]] and [[counter-battery radar|fire finder]] roles
+* High mobility, transportability, and reliability
+* The entire system can be airlifted into an operational site by three [[CH-53E Super Stallion]] heavy-lift helicopters or [[Bell Boeing V-22 Osprey#Variants|MV-22B Osprey]] tilt-rotor aircraft, or by a single [[C-130 Hercules]] transport.
+* The system is required to be set up on-site within 45 minutes.
+* Provides identification of friendly aircraft using a Telephonics AN/UPX-44 IFF ([[Identification Friend or Foe]]) integrated with the main radar.
+
+==See also==
+{{Portal|Electronics}}
+*[[List of radars]]
+*[[List of military electronics of the United States]]
+*[[Counter-battery radar]]
+*[[AN/TPQ-36 Firefinder radar]]
+*[[AN/TPQ-37 Firefinder radar]]
+*[[ARTHUR (radar)]]
+*[[AN/TPQ-53 Quick Reaction Capability Radar]]
+*[[AN/MPQ-64 Sentinel]]
+
+==References==
+{{reflist}}
+{{Marine Corps}}<br/>
+{{Include-USGov|agency=U.S. Department of Defense}}
+
+==External links==
+*[https://web.archive.org/web/20170618151524/http://www.northropgrumman.com/Capabilities/GATOR/Pages/default.aspx ''Northrop Grumman'' - AN/TPS-80 Ground/Air Task Oriented Radar (G/ATOR)] (Archived)
+{{Northrop Grumman|state=autocollapse}}
+
+[[Category:Ground radars]]
+[[Category:Military radars of the United States]]
+[[Category:Northrop Grumman radars]]
+[[Category:Weapon locating radar]]
+[[Category:Targeting (warfare)]]
+[[Category:Military radars of the United States Marine Corps]]
+[[Category:Military electronics of the United States]]

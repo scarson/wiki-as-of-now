@@ -1,0 +1,478 @@
+[
+  {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "will be ready to test the CPS in 2025",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Forward claim with a now-past target year (2025); no leading dateline."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "introduction is expected in 2017",
+    "stale": true,
+    "expectedYear": 2017,
+    "note": "Expectation tied to a now-past target year (2017)."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "will be fielded in 2018",
+    "stale": true,
+    "expectedYear": 2018,
+    "note": "Future-tense fielding tied to a now-past target year (2018)."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "Knifefish unmanned underwater vehicle (UUV) to find and detect buried mines in 2019",
+    "stale": true,
+    "expectedYear": 2019,
+    "note": "Future-tense milestone tied to a now-past target year (2019)."
+  },
+  {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "will request FY 2022 funding",
+    "stale": true,
+    "expectedYear": 2022,
+    "note": "Forward funding request tied to a now-past fiscal year (2022)."
+  },
+  {
+    "fixture": "panzerhaubitze_2000.wikitext",
+    "sentenceSubstring": "it is expected to be ready by",
+    "stale": true,
+    "expectedYear": 2000,
+    "note": "Strong stale: an MLU variant 'expected to be ready by 2000', ~26 years past asOfYear."
+  },
+  {
+    "fixture": "m109_howitzer.wikitext",
+    "sentenceSubstring": "plans to buy 133 vehicles",
+    "stale": true,
+    "expectedYear": 2014,
+    "note": "Forward procurement plan starting in a now-past year (2014)."
+  },
+  {
+    "fixture": "ground_combat_vehicle.wikitext",
+    "sentenceSubstring": "will each receive $50 million in FY 2015",
+    "stale": true,
+    "expectedYear": 2015,
+    "note": "Forward funding tied to a now-past fiscal year (2015)."
+  },
+  {
+    "fixture": "future_vertical_lift.wikitext",
+    "sentenceSubstring": "build technology demonstration aircraft with flight tests starting in 2017",
+    "stale": true,
+    "expectedYear": 2017,
+    "note": "Forward milestone (flight tests starting 2017), now past; begins with its subject, not a date."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "HSW will begin producing PK9 chassis starting in 2017",
+    "stale": true,
+    "expectedYear": 2017,
+    "note": "Forward production milestone tied to a now-past year (2017)."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "All Korean K9s will receive A1 upgrades",
+    "stale": true,
+    "expectedYear": 2018,
+    "note": "Forward upgrade program 'starting in 2018', now past."
+  },
+  {
+    "fixture": "robotic_combat_vehicle.wikitext",
+    "sentenceSubstring": "Testing of the vehicle is expected to begin in 2020",
+    "stale": true,
+    "expectedYear": 2020,
+    "note": "Clean forward expectation tied to a now-past year (2020)."
+  },
+  {
+    "fixture": "boeing_insitu_rq-21_blackjack.wikitext",
+    "sentenceSubstring": "plans to add a sensor to the Blackjack",
+    "stale": true,
+    "expectedYear": 2020,
+    "note": "Forward plan tied to a now-past year (2020); begins with its subject."
+  },
+  {
+    "fixture": "m1156_precision_guidance_kit.wikitext",
+    "sentenceSubstring": "will be designed to operate with the GPS-M satellite constellation",
+    "stale": true,
+    "expectedYear": 2022,
+    "note": "Forward design intent ('in 2022 will be designed to operate'), now past."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "The manufacturing will start in 2022",
+    "stale": true,
+    "expectedYear": 2022,
+    "note": "Forward manufacturing start tied to a now-past year (2022)."
+  },
+  {
+    "fixture": "precision_strike_missile.wikitext",
+    "sentenceSubstring": "achieve initial operational capability in 2023",
+    "stale": true,
+    "expectedYear": 2023,
+    "note": "IOC planned for a now-past year (2023)."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "manufacturing is expected to start in Q4 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Forward expectation tied to a now-past quarter (Q4 2024)."
+  },
+  {
+    "fixture": "dark_eagle.wikitext",
+    "sentenceSubstring": "field the weapon aboard its Zumwalt-class destroyers by 2025",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Deadline-style forward claim ('by 2025'), now past."
+  },
+  {
+    "fixture": "long_range_discrimination_radar.wikitext",
+    "sentenceSubstring": "The first operation is expected to start from 2025",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Clean forward expectation tied to a now-past year (2025)."
+  },
+  {
+    "fixture": "precision_strike_missile.wikitext",
+    "sentenceSubstring": "upgraded seeker is expected to be part of a major program improvement",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Forward expectation ('planned for 2025'), now past."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "24 units will be manufactured in South Korea",
+    "stale": true,
+    "expectedYear": 2015,
+    "note": "Forward production plan ('From 2015 to 2022 ... will be manufactured'); earliest past year 2015."
+  },
+
+  {
+    "fixture": "sbx-1.wikitext",
+    "sentenceSubstring": "smaller radars in the Pacific will",
+    "stale": false,
+    "note": "Negative (historical dateline narration): 'In July 2011, a ... spokesman explained that ... will \"pick up the slack\"'. Suppressed by the dateline rule; the marker 'will' sits OUTSIDE the quoted span."
+  },
+  {
+    "fixture": "ground-based_midcourse_defense.wikitext",
+    "sentenceSubstring": "announced plans to add 14 interceptors",
+    "stale": false,
+    "note": "Negative (historical month-dateline narration): 'In March 2013, the Obama administration announced plans to add...'. Frame year == claim year; suppressed."
+  },
+  {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "announced plans to name the first ship of the class Zumwalt",
+    "stale": false,
+    "note": "Negative (historical month-dateline narration): 'In April 2006, the Navy announced plans to name...'."
+  },
+  {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "no plans to continue the project",
+    "stale": false,
+    "note": "Negative (historical bare-year dateline, negated plan): 'In 2021, ... ceased with no plans to continue the project.'."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "revealed plans to reduce the procurement rate in 2016",
+    "stale": false,
+    "note": "Negative (historical month-dateline narration): 'In August 2013, the USN revealed plans to reduce the procurement rate in 2016.'. Suppression depends on detect.ts choosing the EARLIEST past year (2013 == the dateline frame year); if year-selection ever changed to prefer the later target (2016), Rule 1 would no longer fire and this TN would flip to a false positive (see DET-1)."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "As of January 2026, in light of China's expanding fleet",
+    "stale": false,
+    "note": "Negative (year gate): 'As of January 2026, ...'. Year 2026 is not past relative to asOfYear 2026; never flagged."
+  },
+  {
+    "fixture": "boeing_mq-25_stingray.wikitext",
+    "sentenceSubstring": "announced Boeing as the winner",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 30 August 2018, the U.S. Navy announced Boeing as the winner and awarded a contract.'. Suppressed by the 'On <date>' dateline rule."
+  },
+  {
+    "fixture": "extended_range_cannon_artillery.wikitext",
+    "sentenceSubstring": "Hanwha Aerospace announced a partnership with DEVCOM-AC",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 18 December 2025, Hanwha Aerospace announced a partnership...'."
+  },
+  {
+    "fixture": "future_combat_systems.wikitext",
+    "sentenceSubstring": "Gates announced plans to cut FCS spending",
+    "stale": false,
+    "note": "Negative (leading 'On <Month> <day>, <year>' dateline): 'On April 6, 2009, ... Robert Gates announced plans to cut FCS spending...'."
+  },
+  {
+    "fixture": "future_vertical_lift.wikitext",
+    "sentenceSubstring": "Lockheed Martin said it will offer a new mission equipment package",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 6 August 2013, Lockheed Martin said it will offer...'."
+  },
+  {
+    "fixture": "future_vertical_lift.wikitext",
+    "sentenceSubstring": "stated that the Army plans to downselect to two companies",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 21 October 2013, defense executives ... stated that the Army plans to downselect ... in 2014'. Earliest past year (2013) == frame year; suppressed."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "the Ministry of Defense announced that Finland will acquire 48 used K9s",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 17 February 2017, the Ministry of Defense announced that Finland will acquire...'."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "the media reported that STX Engine completed the durability test",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 8 December 2023, the media reported that STX Engine completed...'."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "Republic of Korea Army and Hanwha Aerospace signed an MOU",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 20 June 2024, the Republic of Korea Army and Hanwha Aerospace signed an MOU...'."
+  },
+  {
+    "fixture": "long_range_discrimination_radar.wikitext",
+    "sentenceSubstring": "the Japanese government approved a plan to purchase two pairs",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 30 July 2018, the Japanese government approved a plan to purchase...'."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "Norway plans to almost double its K9s",
+    "stale": false,
+    "note": "Negative (historical month-dateline narration): 'In April 2025, it was announced that Norway plans to almost double its K9s...'."
+  },
+  {
+    "fixture": "general_atomics_mq-1c_gray_eagle.wikitext",
+    "sentenceSubstring": "completion of construction of hangars and supporting facilities",
+    "stale": false,
+    "note": "Negative (historical month-dateline narration): 'In February 2018 it was announced that ... 12 MQ-1Cs ...'."
+  },
+  {
+    "fixture": "an_tps-80.wikitext",
+    "sentenceSubstring": "the Marine Corps awarded Northrop Grumman a $375 million contract",
+    "stale": false,
+    "note": "Negative (historical month-dateline narration): 'In September 2016, the Marine Corps awarded Northrop Grumman a $375 million contract...'."
+  },
+  {
+    "fixture": "m777_howitzer.wikitext",
+    "sentenceSubstring": "first announced plans to acquire 145 M777s",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'The Indian Army first announced plans to acquire 145 M777s ... in January 2010.'. Reporting verb 'announced' dated to the claim year (2010); attribution, not a live assertion."
+  },
+  {
+    "fixture": "general_atomics_mq-1c_gray_eagle.wikitext",
+    "sentenceSubstring": "the Biden administration plans to sell four Gray Eagle drones",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'Reuters reported on 1 June 2022 that the Biden administration plans to sell four Gray Eagle drones...'."
+  },
+  {
+    "fixture": "future_attack_reconnaissance_aircraft.wikitext",
+    "sentenceSubstring": "released a draft solicitation on June 22, 2018",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'The US Army released a draft solicitation on June 22, 2018 for ... proposals ...'."
+  },
+  {
+    "fixture": "aerovironment_switchblade.wikitext",
+    "sentenceSubstring": "ordered more than 100 Switchblade 600s",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'The U.S. Army ordered more than 100 Switchblade 600s in October 2023 ...'. Past acquisition event dated to the claim year."
+  },
+  {
+    "fixture": "expeditionary_fighting_vehicle.wikitext",
+    "sentenceSubstring": "awarded a cost-plus contract to General Dynamics",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): '... the Marine Corps awarded a cost-plus contract to General Dynamics in July 2001 ...'."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "South Korea plans to upgrade 600 vehicles",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'According to the magazine published by the DAPA in October 2024, South Korea plans to upgrade 600 vehicles to A1 standard.'."
+  },
+
+  {
+    "fixture": "fehmarn_belt_fixed_link.wikitext",
+    "sentenceSubstring": "originally expected to be completed by 2018",
+    "stale": true,
+    "expectedYear": 2018,
+    "note": "Infrastructure: 'The Fehmarn Belt bridge was originally expected to be completed by 2018.' — completion target now past."
+  },
+  {
+    "fixture": "gordie_howe_international_bridge.wikitext",
+    "sentenceSubstring": "to be completed by the end of 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Infrastructure: 'The bridge was to be completed by the end of 2024.' — completion target now past."
+  },
+  {
+    "fixture": "honolulu_rail_transit.wikitext",
+    "sentenceSubstring": "is expected to be completed in August 2025",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Transit: utility relocations 'expected to be completed in August 2025' — now past."
+  },
+  {
+    "fixture": "gateway_program_northeast_corridor.wikitext",
+    "sentenceSubstring": "was expected to be completed in October 2025",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Transit: 'The Tonnelle Avenue overpass was expected to be completed in October 2025 ...' — now past."
+  },
+  {
+    "fixture": "brightline_west.wikitext",
+    "sentenceSubstring": "to be completed by the end of 2013",
+    "stale": true,
+    "expectedYear": 2013,
+    "note": "Rail: 'the earliest environmental work was to be completed by the end of 2013.' — now past."
+  },
+  {
+    "fixture": "gaganyaan.wikitext",
+    "sentenceSubstring": "scheduled to be launched no earlier than 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Space: crewed spacecraft 'scheduled to be launched no earlier than 2024' — now past."
+  },
+  {
+    "fixture": "hinkley_point_c.wikitext",
+    "sentenceSubstring": "announced plans to expand its nuclear power stations",
+    "stale": false,
+    "note": "Negative (leading bare-year dateline): 'In 1981, the UK government announced plans to expand its nuclear power stations ...'."
+  },
+  {
+    "fixture": "hinkley_point_c.wikitext",
+    "sentenceSubstring": "EDF announced plans to sell",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 25 April 2016, EDF announced plans to sell €4bn of new shares ...'."
+  },
+  {
+    "fixture": "type_26_frigate.wikitext",
+    "sentenceSubstring": "the Norwegian government confirmed plans to acquire at least five Type 26 frigates",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 31 August 2025, the Norwegian government confirmed plans to acquire at least five Type 26 frigates ...'."
+  },
+  {
+    "fixture": "boeing_777x.wikitext",
+    "sentenceSubstring": "China Airlines announced plans to order ten 777-9s",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On December 19, 2024, China Airlines announced plans to order ten 777-9s ...'."
+  },
+  {
+    "fixture": "columbia-class_submarine.wikitext",
+    "sentenceSubstring": "the lead vessel of the class will be named USS District of Columbia",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 3 June 2022, the Navy announced that the lead vessel of the class will be named USS District of Columbia ...'."
+  },
+  {
+    "fixture": "iter.wikitext",
+    "sentenceSubstring": "the first plasma production in the project will not take place",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 3 July 2024, ITER director-general Pietro Barabaschi announced the first plasma production in the project will not take place ...'."
+  },
+  {
+    "fixture": "comac_c919.wikitext",
+    "sentenceSubstring": "the C919 aircraft will undergo certification processes",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 20 September 2023, Brunei's GallopAir said the C919 aircraft will undergo certification processes ...'."
+  },
+  {
+    "fixture": "high_speed_2.wikitext",
+    "sentenceSubstring": "the Scottish Government announced plans to build a 46 mi high-speed rail link",
+    "stale": false,
+    "note": "Negative (leading month-dateline): 'In November 2012 the Scottish Government announced plans to build a 46 mi high-speed rail link ...'."
+  },
+
+  {
+    "fixture": "hiv_vaccine_development.wikitext",
+    "sentenceSubstring": "phase one trial is expected to conclude July 2023",
+    "stale": true,
+    "expectedYear": 2023,
+    "note": "Biomedical: 'The phase one trial is expected to conclude July 2023.' — clinical-trial completion target now past."
+  },
+  {
+    "fixture": "m72_as01e.wikitext",
+    "sentenceSubstring": "is scheduled to begin in 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Biomedical: TB-vaccine trial 'is scheduled to begin in 2024' — exercises the 'is scheduled to' marker; target now past."
+  },
+  {
+    "fixture": "aducanumab.wikitext",
+    "sentenceSubstring": "is expected to continue for existing commercial patients until November 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Biomedical: 'Availability is expected to continue ... until November 2024.' — expectation tied to a now-past date."
+  },
+  {
+    "fixture": "inflation_reduction_act.wikitext",
+    "sentenceSubstring": "claimed in July 2022 that",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'While the healthcare consulting firm Avalere claimed in July 2022 that $455 billion in revenue would be lost ...'. 'claimed' added to the reporting-verb list for policy/biomedical prose."
+  },
+  {
+    "fixture": "neuralink.wikitext",
+    "sentenceSubstring": "later moved that to 2023",
+    "stale": false,
+    "note": "Negative (resolution cue, Rule 3): 'It anticipated starting experiments with humans in 2020, but later moved that to 2023.' — the article resolves the 2020 date itself; 'moved' added to the resolution-verb list."
+  },
+  {
+    "fixture": "windsor_framework.wikitext",
+    "sentenceSubstring": "former prime minister Boris Johnson said it will be",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 2 March 2023, former prime minister Boris Johnson said it will be \"very difficult\" for him to vote for the Windsor Framework.'."
+  },
+
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "TSMC plans to start volume production",
+    "stale": true,
+    "expectedYear": 2023,
+    "note": "Semiconductor roadmap: 'TSMC plans to start volume production of the \"3 nm\" process node in 2023.' — milestone now past."
+  },
+  {
+    "fixture": "pci_express.wikitext",
+    "sentenceSubstring": "The specification is expected to be finalized in 2025",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Standards roadmap: PCIe spec 'expected to be finalized in 2025' — target now past."
+  },
+  {
+    "fixture": "project_kuiper.wikitext",
+    "sentenceSubstring": "is expected to open in June 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Corporate buildout: logistics center 'expected to open in June 2024' — now past."
+  },
+  {
+    "fixture": "rivian.wikitext",
+    "sentenceSubstring": "Construction is planned to begin in summer 2022",
+    "stale": true,
+    "expectedYear": 2022,
+    "note": "Corporate buildout: 'Construction is planned to begin in summer 2022 ...' — start date now past."
+  },
+  {
+    "fixture": "rivian.wikitext",
+    "sentenceSubstring": "Rivian unveiled the R2 SUV",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On March 7, 2024, Rivian unveiled the R2 SUV ... that w[ill] ...'."
+  },
+  {
+    "fixture": "google_pixel.wikitext",
+    "sentenceSubstring": "Google announced it will not further develop the product line",
+    "stale": false,
+    "note": "Negative (leading month-dateline): 'In June 2019, Google announced it will not further develop the product line, and cancelled two models ...'."
+  },
+  {
+    "fixture": "steam_deck.wikitext",
+    "sentenceSubstring": "the Steam Deck will be made officially available",
+    "stale": false,
+    "note": "Negative (leading month-dateline): 'In October 2024, Valve announced that ... the Steam Deck will be made officially available ...'."
+  },
+  {
+    "fixture": "tesla_semi.wikitext",
+    "sentenceSubstring": "Tesla announced plans to establish a charging network for the Semi",
+    "stale": false,
+    "note": "Negative (leading qualifier dateline): 'In late 2023, Tesla announced plans to establish a charging network for the Semi ...'."
+  }
+]

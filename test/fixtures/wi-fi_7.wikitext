@@ -1,0 +1,422 @@
+{{Short description|IEEE standard for wireless networks}}
+{{Distinguish|IEEE 802.11b}}
+<noinclude>{{Requested move notice|1=?|2=Template talk:Wi-Fi generations#Requested move 26 May 2026}}
+</noinclude>{{Use dmy dates|date=June 2023}}
+{{Infobox protocol
+| image     = [[File:Wi-Fi 7 – Generational Wi-Fi UI Visual.svg|frameless|upright=0.3|class=skin-invert]]
+| caption = Icon used by the [[Wi-Fi Alliance]] for Wi-Fi 7
+| alt       = Waves originating from bottom left. 7 ball in the upper right.
+| developer = 
+| introdate = 
+| industry  = 
+| connector = 
+| hardware  = 
+| range     = 
+}}
+{{Wi-Fi Generations}}
+
+'''IEEE 802.11be-2024'''<ref>{{Cite web |title=IEEE 802.11be-2024 |url=https://standards.ieee.org/ieee/802.11be/7516/ |access-date=2025-09-17 |website=IEEE Standards Association |language=en}}</ref> or '''802.11be''', dubbed ''Extremely High Throughput (EHT)'', is a [[wireless network]]ing standard in the [[IEEE 802.11]] set of protocols<ref>{{cite web |title=Wi-Fi 7 |url=https://www.wi-fi.org/who-we-are/current-work-areas#Wi-Fi%207 |publisher=Wi-Fi Alliance |access-date=16 January 2023}}</ref><ref>{{Cite web |last=Jackson |first=Mark |date=2024-01-08 |title=Wi-Fi Alliance Officially Certifies Kit for New Wi-Fi 7 Standard |url=https://www.ispreview.co.uk/index.php/2024/01/wi-fi-alliance-officially-certifies-kit-for-new-wi-fi-7-standard.html |access-date=2024-01-11 |website=ISPreview UK |language=en}}</ref> which is designated '''{{nowrap|Wi-Fi 7}}''' by the [[Wi-Fi Alliance]].<ref name="cnet-wifi7">{{Cite web |last=Shankland |first=Stephen |date=2019-09-03 |title=Wi-Fi 6 is barely, but Wi-Fi 7 is already on the way – With improvements to Wi-Fi 6 and its successor, Qualcomm is working to boost speeds and overcome congestion on wireless networks. |url=https://www.cnet.com/news/wi-fi-6-is-barely-here-but-wi-fi-7-is-already-on-the-way/ |access-date=2020-08-20 |website=[[CNET]]}}</ref><ref name="ieee-wifi7hi">{{Cite journal |last=Khorov |first=Evgeny |date=2020-05-08 |title=Current Status and Directions of IEEE 802.11be, the Future Wi-Fi 7 |journal=[[IEEE]]|volume=8 |pages=88664–88688 |doi=10.1109/ACCESS.2020.2993448 |bibcode=2020IEEEA...888664K |s2cid=218834597 |doi-access=free }}</ref><ref>{{cite web |title=Wi-Fi Generations |url=https://www.wi-fi.org/discover-wi-fi |publisher=Wi-Fi Alliance |access-date=16 January 2023}}</ref> It is built upon [[Wi-Fi 6]] (IEEE 802.11ax), focusing on [[Wireless LAN|WLAN]] indoor and outdoor operation with stationary and pedestrian speeds in the 2.4, 5, and 6&nbsp;[[GHz]] frequency bands.<ref>{{Cite arXiv|title=IEEE 802.11be – Extremely High Throughput: The Next Generation of Wi-Fi Technology Beyond 802.11ax|last=López-Pérez|first=David|date=12 Feb 2019|class=cs.IT|eprint=1902.04320}}</ref>
+
+In a single band, [[Network throughput|throughput]] reaches a theoretical maximum of 23&nbsp;Gbit/s, although actual results are much lower.
+
+Development of the 802.11be amendment began with an initial draft in March 2021 and the final version was published on 22 July 2025.<ref>{{Cite web |date=2024-12-03 |title=Wi-Fi 7 (802.11be) Technical Guide |url=https://documentation.meraki.com/MR/Wi-Fi_Basics_and_Best_Practices/Wi-Fi_7_(802.11be)_Technical_Guide |access-date=2025-06-11 |website=Cisco Meraki Documentation |language=en}}</ref><ref name="ieee-wifi7hi" /><ref>{{Cite web |title=IEEE 802.11, The Working Group Setting the Standards for Wireless LANs |url=https://www.ieee802.org/11/Reports/802.11_Timelines.htm |access-date=2023-05-12 |website=www.ieee802.org}}</ref><ref name="auto">{{Cite web |title=IEEE P802.11 – TASK GROUP BE (EHT) – GROUP INFORMATION UPDATE |url=https://www.ieee802.org/11/Reports/tgbe_update.htm |access-date=2023-05-12 |website=www.ieee802.org}}</ref> Despite this, numerous products were announced in 2022 based on [[draft standard]]s, with retail availability in early 2023. On 8 January 2024, the Wi-Fi Alliance introduced its ''Wi-Fi Certified 7'' program to certify Wi-Fi 7 devices as the technical requirements were essentially complete.<ref>{{Cite news |date=2024-02-16 |title=The Next Generation of Wi-Fi Is Officially Here. But You Don't Need It (Yet). |url=https://www.nytimes.com/wirecutter/reviews/do-you-need-wi-fi-7/ |access-date=2024-06-06 |work=The New York Times |language=en-US |issn=0362-4331}}</ref><ref>{{Cite web |last=Boever |first=Nick |date=2024-01-17 |title=The First Wi-Fi 7 Certified Devices Have Begun to Hit the Market |url=https://www.cepro.com/products/first-wi-fi-7-certified-products-now-available/ |access-date=2024-06-06 |website=CEPRO |language=en-US}}</ref><ref>{{Cite web |title=Intel® Wi-Fi 7 Series Products and Solutions with Intel® Wi-Fi 7... |url=https://www.intel.com/content/www/us/en/products/details/wireless/wi-fi-7-series.html |access-date=2024-06-06 |website=Intel |language=en}}</ref>
+
+==Core features==
+The following are core features that have been approved as of Draft 3.0:
+
+* 4096-[[Quadrature amplitude modulation|QAM]] (4K-QAM) enables each symbol to carry 12 bits rather than 10 bits, resulting in 20% higher theoretical transmission rates than Wi-Fi 6's 1024-QAM, at the same symbol or baud rate. This feature is '''optional''' for Wi-Fi 7 certification.<ref name="meraki7" />
+* Contiguous and non-contiguous 320/160+160&nbsp;MHz and 240/160+80&nbsp;MHz bandwidth. This feature is '''optional''' for Wi-Fi 7 certification.<ref name="meraki7" />{{efn|name=fn320|see 3.2. – 320 MHz Channel Width}}
+* Multi-link Operation (MLO), a feature that increases capacity by simultaneously sending and receiving data across different frequency bands and channels. (2.4&nbsp;GHz, 5&nbsp;GHz, 6&nbsp;GHz). This feature is '''mandatory''' for Wi-Fi 7 certification.<ref name="meraki7" />  Wi-Fi 7 builds on the technology of Wi-Fi 6 through the introduction of Multi-Link Operation (MLO), allowing users to connect to 2.4 GHz, 5 GHz, and 6 GHz bands simultaneously.<ref>{{Cite web |date=2024-05-30 |title=A Complete Guide to Wi-Fi 7 |url=https://myrepublic.net/sg/blog/broadband/a-complete-guide-to-wifi-7/ |website=MyRepublic}}</ref>
+* 8 spatial streams and Multiple Input Multiple Output ([[MIMO]]) protocol enhancements. (Initial 16 but removed from the specs in 2024).
+* Flexible Channel Utilization – Interference currently can negate an entire Wi-Fi channel. With preamble puncturing, a portion of the channel that is affected by interference can be blocked off while continuing to use the rest of the channel. This feature is '''mandatory''' for Wi-Fi 7 certification.<ref name="meraki7" />{{efn|see 3.4. – Preamble Puncturing}}
+* Multiple [[Resource Unit]] (MRU) – Improves OFDMA technology from Wi-Fi 6, allowing a single user to have multiple Resource Units. This feature is '''mandatory''' for Wi-Fi 7 certification.<ref name="meraki7">{{cite web |title=Wi-Fi 7 (802.11be) Technical Guide |website=Cisco Meraki – Documentation |date=3 December 2024 |url=https://documentation.meraki.com/MR/Wi-Fi_Basics_and_Best_Practices/Wi-Fi_7_(802.11be)_Technical_Guide |access-date=3 March 2025 }}</ref>
+
+==Candidate features==
+The main candidate features mentioned in the 802.11be Project Authorization Request (PAR) are:<ref>{{Cite web|url=https://mentor.ieee.org/802.11/dcn/18/11-18-1231-06-0eht-eht-draft-proposed-par.docx|title=802.11be Project Authorization Request (PAR)|access-date=12 March 2024 }}</ref>
+
+* Multi-Access Point (AP) Coordination (e.g. coordinated and joint transmission),
+* Enhanced link adaptation and retransmission protocol (e.g. Hybrid Automatic Repeat Request (HARQ)).
+* If needed, adaptation to regulatory rules specific to 6&nbsp;GHz spectrum.{{Update needed|date=February 2025}}<ref name="meraki7" />{{efn|name=fn320}}
+* Integrating [[Time-Sensitive Networking]] (TSN) [[IEEE 802.1Q]] extensions for low-latency real-time traffic:<ref>{{cite web |url=https://datatracker.ietf.org/meeting/106/materials/slides-106-raw-04-ieee-status-00 |title=IEEE 802.11 features towards RAW |date=November 2003 |author1=Dave Cavalcanti|author2=Jerome Henry|author3=Ganesh Venkatesan |website=[[IETF]]}}</ref><ref>[https://datatracker.ietf.org/meeting/108/materials/slides-108-raw-wi-fi-tsn-low-latency-00.pdf Wi-Fi TSN Capabilities] datatracker.ietf.org</ref><ref>[https://www.ieee802.org/1/files/public/docs2020/new-Cavalcanti-802-1TSN-over-802-11-1120-v02.pdf 802.1 TSN over 802.11 with updates from developments in 802.11be] ieee802.org</ref>
+** [[IEEE 802.1AS]] timing and synchronization
+** IEEE 802.11aa MAC Enhancements for Robust Audio Video Streaming ([[Stream Reservation Protocol]] over IEEE 802.11)
+** IEEE 802.11ak Enhancements for Transit Links Within Bridged Networks (802.11 links in 802.1Q networks)
+** Bounded latency: credit-based (IEEE 802.1Qav) and cyclic/time-aware traffic shaping (IEEE 802.1Qch/Qbv), asynchronous traffic scheduling (IEEE 802.1Qcr-2020)
+** IEEE 802.11ax Scheduled Operation extensions for reduced jitter/latency
+
+==Additional features==
+
+Apart from the features mentioned in the PAR, there are newly introduced features:<ref>{{Cite journal|title=Current Status and Directions of IEEE 802.11be, the Future Wi-Fi 7|author=E. Khorov |author2=I. Levitsky |author3=I. F. Akyildiz |publisher=IEEE|issue=in press|doi=10.1109/ACCESS.2020.2993448|volume=8|pages=88664–88688|doi-access=free|journal=IEEE Access|year=2020|bibcode=2020IEEEA...888664K }}</ref>
+* Frame formats with improved forward-compatibility.
+* Enhanced resource allocation in [[OFDMA]].
+* Implicit [[channel sounding]], optimized to require less airtime.
+* Support for direct links, managed by an access point.{{Clarify|reason=How is this superior to Wi-Fi Direct?|date=February 2025}}
+
+==Rate set==
+{{mw-datatable}}
+{| class="wikitable mw-datatable" 
+|+
+Modulation and coding schemes
+! rowspan="3" |MCS index{{Efn-lr|MCS 9 is not applicable to all combinations of channel width and spatial stream count.}}
+! rowspan="3" |Modulation type
+! rowspan="3" |Coding rate
+! colspan="15" |Data rate (Mbit/s){{Efn-lr|Per spatial stream}}
+|-
+! colspan="3" |20&nbsp;MHz channels
+! colspan="3" |40&nbsp;MHz channels
+! colspan="3" |80&nbsp;MHz channels
+! colspan="3" |160&nbsp;MHz channels
+! colspan="3" |320&nbsp;MHz channels
+|-
+!3200&nbsp;ns GI{{Efn-lr|''GI'' stands for ''guard interval''.}}
+!1600&nbsp;ns GI
+!800&nbsp;ns GI
+!3200&nbsp;ns GI
+!1600&nbsp;ns GI
+!800&nbsp;ns GI
+!3200&nbsp;ns GI
+!1600&nbsp;ns GI
+!800&nbsp;ns GI
+!3200&nbsp;ns GI
+!1600&nbsp;ns GI
+!800&nbsp;ns GI
+!3200&nbsp;ns GI
+!1600&nbsp;ns GI
+!800&nbsp;ns GI
+|-
+|0
+|BPSK
+|1/2
+|7
+|8
+|9
+|15
+|16
+|17
+|31
+|34
+|36
+|61
+|68
+|72
+|123
+|136
+|144
+|-
+|1
+|QPSK
+|1/2
+|15
+|16
+|17
+|29
+|33
+|34
+|61
+|68
+|72
+|122
+|136
+|144
+|245
+|272
+|288
+|-
+|2
+|QPSK
+|3/4
+|22
+|24
+|26
+|44
+|49
+|52
+|92
+|102
+|108
+|184
+|204
+|216
+|368
+|408
+|432
+|-
+|3
+|16-QAM
+|1/2
+|29
+|33
+|34
+|59
+|65
+|69
+|123
+|136
+|144
+|245
+|272
+|288
+|490
+|544
+|577
+|-
+|4
+|16-QAM
+|3/4
+|44
+|49
+|52
+|88
+|98
+|103
+|184
+|204
+|216
+|368
+|408
+|432
+|735
+|817
+|865
+|-
+|5
+|64-QAM
+|2/3
+|59
+|65
+|69
+|117
+|130
+|138
+|245
+|272
+|288
+|490
+|544
+|576
+|980
+|1089
+|1153
+|-
+|6
+|64-QAM
+|3/4
+|66
+|73
+|77
+|132
+|146
+|155
+|276
+|306
+|324
+|551
+|613
+|649
+|1103
+|1225
+|1297
+|-
+|7
+|64-QAM
+|5/6
+|73
+|81
+|86
+|146
+|163
+|172
+|306
+|340
+|360
+|613
+|681
+|721
+|1225
+|1361
+|1441
+|-
+|8
+|256-QAM
+|3/4
+|88
+|98
+|103
+|176
+|195
+|207
+|368
+|408
+|432
+|735
+|817
+|865
+|1470
+|1633
+|1729
+|-
+|9
+|256-QAM
+|5/6
+|98
+|108
+|115
+|195
+|217
+|229
+|408
+|453
+|480
+|817
+|907
+|961
+|1633
+|1815
+|1922
+|-
+|10
+|1024-QAM
+|3/4
+|110
+|122
+|129
+|219
+|244
+|258
+|459
+|510
+|540
+|919
+|1021
+|1081
+|1838
+|2042
+|2162
+|-
+|11
+|1024-QAM
+|5/6
+|122
+|135
+|143
+|244
+|271
+|287
+|510
+|567
+|600
+|1021
+|1134
+|1201
+|2042
+|2269
+|2402
+|-
+|12
+|4096-QAM
+|3/4
+|131
+|146
+|155
+|263
+|293
+|310
+|551
+|613
+|649
+|1103
+|1225
+|1297
+|2205
+|2450
+|2594
+|-
+|13
+|4096-QAM
+|5/6
+|146
+|163
+|172
+|293
+|325
+|344
+|613
+|681
+|721
+|1225
+|1361
+|1441
+|2450
+|2722
+|2882
+|-
+|14
+|BPSK-DCM-DUP
+|1/2
+|
+|
+|
+|
+|
+|
+|7
+|8
+|9
+|15
+|17
+|18
+|31
+|34
+|36
+|-
+|15
+|BPSK-DCM
+|1/2
+|4
+|4
+|4
+|7
+|8
+|9
+|15
+|17
+|18
+|31
+|34
+|36
+|61
+|68
+|72
+|}
+
+== Comparison ==
+{{802.11 network standards|state=mw-expanded}}
+
+==802.11be Task Group ==
+The 802.11be Task Group is led by individuals affiliated with Qualcomm, Intel, and Broadcom. Those affiliated with [[Huawei]], [[Maxlinear]], [[NXP]], and [[Apple Inc.|Apple]] also have senior positions.<ref name="auto"/>
+
+== Commercial availability ==
+
+===Hardware===
+The Wi-Fi Alliance maintains a list of Wi-Fi 7 certified devices.<ref>{{cite web |title=Product Finder Results {{!}} Wi-Fi Alliance |url=https://www.wi-fi.org/product-finder |website=www.wi-fi.org}}</ref>
+
+===Software===
+[[Android 13]] and higher provide support for Wi-Fi 7.<ref>{{cite web | url=https://www.tomsguide.com/reviews/android-13 | title=Android 13 review | date=20 October 2022 }}</ref>
+
+The [[Linux kernel|Linux]] 6.2 kernel provides support for Wi-Fi 7 devices. The 6.4 kernel added Wi-Fi 7 mesh support.<ref>{{cite web | url=https://www.phoronix.com/news/Linux-6.4-Networking | title=Linux 6.4 Has Many Networking Changes from a New Performance Tunable to More WiFi 7}}</ref> Linux 6.5 included significant driver support by Intel engineers, particularly support for MLO.<ref>{{cite web | url=https://www.phoronix.com/news/WiFi-7-Linux-6.5 | title=Linux 6.5 Continues Making Preparations for WiFi 7, Enabling New Hardware }}</ref>
+
+Support for Wi-Fi 7 was added to [[Windows 11]], as of build 26063.1.<ref>{{Cite web |last=Blog |first=Windows Insider |title=Announcing Windows 11 Insider Preview Build 26063 (Canary Channel) |url=https://blogs.windows.com/windows-insider/2024/02/22/announcing-windows-11-insider-preview-build-26063-canary-channel/ |access-date=2024-02-23 |website=Windows Insider Blog |date=22 February 2024 |language=en-US}}</ref><ref>{{Cite web |last=Carrasqueira |first=João |date=2024-02-22 |title=Windows 11 preview adds support for Wi-Fi 7 |url=https://www.xda-developers.com/windows-11-build-26063/ |access-date=2024-02-24 |website=XDA Developers |language=en}}</ref>
+
+== Notes ==
+{{notelist-lr|30em}}
+{{notelist}}
+
+==References==
+{{Reflist}}
+
+{{IEEE standards}}
+
+[[Category:IEEE 802.11|be]]
+[[Category:Wi-Fi| ]]
+[[Category:Networking standards]]
+[[Category:Wireless communication systems]]

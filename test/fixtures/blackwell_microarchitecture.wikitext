@@ -1,0 +1,395 @@
+<!-- Do not write Nvidia in all caps or various other obnoxious stylizations. See: [[MOS:ALLCAPS]] -->{{Short description|GPU microarchitecture designed by Nvidia}}
+{{Use mdy dates|date=May 2024}}
+{{Infobox GPU microarchitecture
+| name                   = Blackwell
+| image                  = 
+| caption                = 
+| alt                    = 
+| launched               = Q4 2024
+| discontinued           = 
+| soldby                 = [[Nvidia]]
+| designfirm             = [[Nvidia]]
+| manuf1                 = [[TSMC]]
+| process                = TSMC [[5 nm process|4NP]] (Datacenter<ref>{{cite web |title=NVIDIA Blackwell Architecture Technical Brief |url=https://resources.nvidia.com/en-us-blackwell-architecture |publisher=NVIDIA |access-date=2 February 2025}}</ref>)
+<br>TSMC [[5 nm process|4N]] (Consumer<ref name="arch">{{cite web |title=NVIDIA RTX BLACKWELL GPU ARCHITECTURE |url=https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf |publisher=NVIDIA |access-date=2 February 2025}}</ref>)
+| codename               = GB100 <br/> GB20x
+
+<!------------------  Product Series  ------------------->
+| products-desktop1      = [[GeForce RTX 50 series]]
+| products-hedt1         = RTX PRO Blackwell series
+| products-server1       =
+
+<!------------------  Supported Graphics APIs  ------------------->
+| directx-version        = [[DirectX#DirectX 12 Ultimate|DirectX 12 Ultimate (Feature Level 12_2)]]
+| direct3d-version       = [[Direct3D#Direct3D 12|Direct3D 12]]
+| shadermodel-version    = [[High-Level Shader Language|Shader Model 6.8]]
+| opencl-version         = [[OpenCL#OpenCL 3.0|OpenCL 3.0]] (64-bit only, 32-bit support removed)<ref name="nbcheck">{{cite news |last=Deakin |first=Daniel R |date=February 26, 2025 |title=Strange GeForce RTX 50-series benchmark issues solved but new problem for gamers arises |url=https://www.notebookcheck.net/Strange-GeForce-RTX-50-series-benchmark-issues-solved-but-new-problem-for-gamers-arises.967614.0.html |work=Notebookcheck |location= |publisher= |access-date=February 26, 2025}}</ref>
+| opengl-version         = [[OpenGL#OpenGL 4.6|OpenGL 4.6]]
+| opengles-version       = 
+| cuda-version           = 
+| optix-version          = 
+| mantle-api             = 
+| vulkan-api             = [[Vulkan#Vulkan 1.4|Vulkan 1.4]]
+
+<!------------------  Supported Compute APIs  ------------------->
+| opengl-compute-version = [[OpenCL#OpenCL 3.0|OpenCL 3.0]]
+| cuda-compute-version   = [[CUDA#Version features and specifications|Compute Capability 10.x]] (64-bit only, 32-bit support removed)<ref name="nbcheck"/><br/> [[CUDA#Version features and specifications|Compute Capability 12.x]] (64-bit only)<ref name="nbcheck"/>
+| directcompute-version  = Yes
+
+<!------------------  Specifications  ------------------->
+| compute                = 
+| slowest                = 
+| slow-unit              = 
+| fastest                = 
+| fast-unit              = 
+| shader-clock           = 
+| l0-cache               = 
+| l1-cache               = <!--{{nbsp}}KB (per SM) -->
+| l2-cache               = <!-- {{nbsp}}MB -->
+| l3-cache               = 
+| memory-support         = [[GDDR7 SDRAM|GDDR7]] (Consumer) <br/> [[High Bandwidth Memory#HBM3E|HBM3E]] (Datacenter)
+| memory-clock           = 
+| pcie-support           = [[PCI Express#PCI Express 5.0|PCIe 5.0]] (Consumer) <br/> [[PCI Express#PCI Express 6.0|PCIe 6.0]] (Datacenter)
+
+<!------------------  Media  Engine ------------------->
+| encode-codec           = 
+| decode-codec           = 
+| color-depth            = 
+| encoders               = [[NVENC]]
+| display-outputs        =
+
+<!------------------  History  ------------------->
+| predecessor            = [[Ada Lovelace (microarchitecture)|Ada Lovelace]] {{small|(consumer)}} <br/> [[Hopper (microarchitecture)|Hopper]] {{small|(datacenter)}}
+| variant                = 
+| successor              = [[Rubin (microarchitecture)|Rubin]]
+}}
+
+'''Blackwell''' is a [[graphics processing unit]] (GPU) [[microarchitecture]] developed by [[Nvidia]] as the successor to the [[Hopper (microarchitecture)|Hopper]] and [[Ada Lovelace (microarchitecture)|Ada Lovelace]] microarchitectures.
+
+[[File:AI助手能帮我超频？COMPUTEX NV展区体验 (极客湾Geekerwan) 07.png|thumb|A GB200 die with Blackwell processors]]
+
+Named after statistician and mathematician [[David Blackwell]], the name of the Blackwell architecture was leaked in 2022 with the B40 and B100 accelerators being confirmed in October 2023 with an official Nvidia [[technology roadmap|roadmap]] shown during an investors presentation.<ref>{{Cite web |title=Nvidia Corporation - Nvidia Investor Presentation October 2023 |url=https://investor.nvidia.com/events-and-presentations/presentations/presentation-details/2023/NVIDIA-Investor-Presentation-October-2023/default.aspx |website=Nvidia |language=en-US |access-date=March 19, 2024}}</ref> It was officially announced at Nvidia's GTC 2024 keynote on March 18, 2024.<ref>{{Cite web |title=Nvidia Blackwell Platform Arrives to Power a New Era of Computing |url=http://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing  |website=Nvidia Newsroom |language=en-US |access-date=2024-03-19}}</ref>
+
+== History ==
+In March 2022, Nvidia announced the [[Hopper (microarchitecture)|Hopper]] datacenter architecture for AI accelerators. Demand for Hopper products was high throughout 2023's AI hype.<ref>{{cite web |last1=Szewczyk |first1=Chris |date=August 18, 2023 |title=The AI hype means Nvidia is making shiploads of cash |url=https://www.pcgamer.com/the-ai-hype-means-nvidia-is-making-shiploads-of-cash/ |website=Tom's Hardware |language=en-US |access-date=March 24, 2024}}</ref> The lead time from order to delivery of H100-based servers was between 36 and 52 weeks due to shortages and high demand.<ref name="Shilov">{{cite web |last1=Shilov |first1=Anton |date=November 28, 2023 |title=Nvidia sold half a million H100 AI GPUs in Q3 thanks to Meta, Facebook — lead times stretch up to 52 weeks: Report |url=https://www.tomshardware.com/tech-industry/nvidia-ai-and-hpc-gpu-sales-reportedly-approached-half-a-million-units-in-q3-thanks-to-meta-facebook |website=Tom's Hardware |language=en-US |access-date=March 24, 2024}}</ref> Nvidia reportedly sold 500,000 Hopper-based H100 accelerators in Q3 2023 alone.<ref name="Shilov"/> Nvidia's AI dominance with Hopper products led to the company increasing its market capitalization to over $2 trillion, behind only [[Microsoft]] and [[Apple Inc.|Apple]].<ref>{{cite web |last1=King |first1=Ian |date=March 19, 2024 |title=Nvidia Looks to Extend AI Dominance With New Blackwell Chips |url=https://uk.finance.yahoo.com/news/nvidia-unveils-successor-conquering-ai-203211758.html |website=Yahoo! Finance |language=en-GB |access-date=March 24, 2024}}</ref>
+
+The Blackwell architecture is named after American mathematician [[David Blackwell]] who was known for his contributions to the mathematical fields of [[game theory]], [[probability theory]], [[information theory]], and statistics. These areas have influenced or are implemented in transformer-based generative AI model designs or their [[Boltzmann machine|training algorithms]]. Blackwell was the first [[African Americans|African American]] scholar to be inducted into the [[National Academy of Sciences]].<ref>{{cite web |last1=Lee |first1=Jane Lanhee |date=March 19, 2024 |title=Why Nvidia's New Blackwell Chip Is Key to the Next Stage of AI |url=https://www.bloomberg.com/news/articles/2024-03-19/nvidia-s-nvda-blackwell-b200-chip-why-it-s-so-powerful-what-it-means-for-ai |website=Bloomberg |language=en-GB |access-date=March 24, 2024}}</ref>
+
+In Nvidia's October 2023 Investor Presentation, its datacenter roadmap was updated to include reference to its B100 and B40 accelerators and the Blackwell architecture.<ref>{{cite web |title=Investor Presentation |url=https://s201.q4cdn.com/141608511/files/doc_presentations/2023/Oct/01/ndr_presentation_oct_2023_final.pdf |website=Nvidia |language=en-US |date=October 2023 |access-date=March 24, 2024}}</ref><ref>{{cite web |last1=Garreffa |first1=Anthony |date=October 10, 2023 |title=Nvidia's next-gen GB200 'Blackwell' GPU listed on its 2024 data center roadmap |url=https://www.tweaktown.com/news/93703/nvidias-next-gen-gb200-blackwell-gpu-listed-on-its-2024-data-center-roadmap/index.html |website=TweakTown |language=en-US |access-date=March 24, 2024}}</ref> Previously, the successor to Hopper was simply named on roadmaps as "Hopper-Next". Nvidia's updated roadmap emphasized the move from a two-year release cadence for datacenter products to yearly releases targeted for [[x86-64|x86]] and [[ARM architecture family|ARM]] systems.
+
+At the Graphics Technology Conference (GTC) on March 18, 2024, Nvidia officially announced the Blackwell architecture with focus placed on its B100 and B200 datacenter accelerators and associated products, such as the eight-GPU HGX B200 board and the 72-GPU NVL72 rack-scale system.<ref>{{Cite web |title=Nvidia GB200 NVL72 |url=https://www.nvidia.com/en-us/data-center/gb200-nvl72/ |website=Nvidia |language=en-US |access-date=July 4, 2024}}</ref> Nvidia CEO [[Jensen Huang]] said that with Blackwell, "we created a processor for the [[Generative artificial intelligence|generative AI]] era" and emphasized the overall Blackwell platform combining Blackwell accelerators with Nvidia's ARM-based Grace CPU.<ref>{{cite web |last1=Leswing |first1=Kif |date=March 18, 2024 |title=Nvidia CEO Jensen Huang announces new AI chips: 'We need bigger GPUs' |url=https://www.cnbc.com/2024/03/18/nvidia-announces-gb200-blackwell-ai-chip-launching-later-this-year.html |website=CNBC |language=en-US |access-date=March 24, 2024}}</ref><ref name="Caufield">{{cite web |last1=Caulfield |first1=Brian |date=March 18, 2024 |title='We Created a Processor for the Generative AI Era,' Nvidia CEO Says |url=https://blogs.nvidia.com/blog/2024-gtc-keynote/ |website=Nvidia |language=en-US |access-date=March 24, 2024}}</ref> Nvidia touted endorsements of Blackwell from the CEOs of [[Google]], [[Meta Platforms|Meta]], [[Microsoft]], [[OpenAI]] and [[Oracle Corporation|Oracle]].<ref name="Caufield"/> The keynote did not mention gaming.
+
+It was reported in October 2024 that there was a design flaw in the Blackwell architecture that had been fixed in collaboration with TSMC.<ref>{{cite web |last1=Gronholt-Pedersen |first1=Jacob |last2=Mukherjee |first2=Supantha |date=October 23, 2024 |title=Nvidia's design flaw with Blackwell AI chips now fixed, CEO says |url=https://www.reuters.com/technology/artificial-intelligence/nvidias-design-flaw-with-blackwell-ai-chips-now-fixed-ceo-says-2024-10-23/ |work=Reuters |language=en-US |access-date=December 17, 2024}}</ref> According to Huang, the design flaw was "functional" and "caused the yield[s] to be low".<ref>{{cite web |last1=Shilov |first1=Anton |date=October 23, 2024 |title=Nvidia's Jensen Huang admits AI chip design flaw was '100% Nvidia's fault' — TSMC not to blame, now-fixed Blackwell chips are in production |url=https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidias-jensen-huang-admits-ai-chip-design-flaw-was-100-percent-nvidias-fault-tsmc-not-to-blame-now-fixed-blackwell-chips-are-in-production |website=Tom's Hardware |language=en-US |access-date=December 17, 2024}}</ref> By November 2024, [[Morgan Stanley]] was reporting that "the entire 2025 production" of Blackwell silicon was "already sold out".<ref name="Kahn">{{cite news |last1=Kahn |first1=Jeremy |title=60 direct reports, but no 1-on-1 meetings: How an unconventional leadership style helped Jensen Huang of Nvidia become one of the most powerful people in business |url=https://fortune.com/2024/11/12/jensen-huang-nvidia-ceo-leadership-mpp/ |access-date=November 16, 2024 |work=Fortune |date=November 12, 2024 |url-access=subscription}}</ref>
+
+During the company's [[Consumer Electronics Show|CES 2025]] keynote, Nvidia announced that the [[Foundation model|foundation models]] for Blackwell will include models from Black Forest Labs ([[Flux (text-to-image model)|Flux]]), [[Meta AI]], [[Mistral AI]], and [[Stability AI]].<ref>{{Cite web |last=Takahashi |first=Dean |date=2025-01-07 |title=Nvidia unveils AI foundation models running on RTX AI PCs |url=https://venturebeat.com/ai/nvidia-unveils-ai-foundation-models-running-on-rtx-ai-pcs/ |access-date=2025-01-19 |website=VentureBeat |language=en-US}}</ref>
+
+== Architecture ==
+Blackwell is an architecture designed for both datacenter compute applications, and for gaming and workstation applications with dedicated dies for each purpose.
+
+=== Process node ===
+Blackwell is fabricated on the custom 4NP process node for datacenter products, and on the custom 4N process node for consumer products, from [[TSMC]]. 4NP is an enhancement of the 4N node used for the Hopper and Ada Lovelace architectures. The Nvidia-specific 4NP process likely adds metal layers to the standard TSMC N4P technology.<ref>{{Cite web |last=Byrne |first=Joseph |date=March 28, 2024 |title=Monster Nvidia Blackwell GPU Promises 30× Speedup, but Expect 3× |url=https://xpu.pub/2024/03/28/nvidia-blackwell/ |website=XPU.pub |language=en-US |access-date=July 4, 2024}}</ref> The GB100 die contains 104 billion transistors, a 30% increase over the 80 billion transistors in the previous generation Hopper GH100 die.<ref>{{cite web |last1=Smith |first1=Ryan |date=March 18, 2024 |title=Nvidia Blackwell Architecture and B200/B100 Accelerators Announced: Going Bigger With Smaller Data |url=https://www.anandtech.com/show/21310/nvidia-blackwell-architecture-and-b200b100-accelerators-announced-going-bigger-with-smaller-data |archive-url=https://web.archive.org/web/20240318220630/https://www.anandtech.com/show/21310/nvidia-blackwell-architecture-and-b200b100-accelerators-announced-going-bigger-with-smaller-data |url-status=dead |archive-date=March 18, 2024 |website=AnandTech |language=en-US |access-date=March 24, 2024}}</ref> As Blackwell cannot reap the benefits that come with a major process node advancement, it must achieve power efficiency and performance gains through underlying architectural changes.<ref>{{cite web |last=Prickett Morgan |first=Timothy |date=March 18, 2024 |title=With Blackwell GPUs, AI Gets Cheaper and Easier, Competing with Nvidia Gets Harder |url=https://www.nextplatform.com/2024/03/18/with-blackwell-gpus-ai-gets-cheaper-and-easier-competing-with-nvidia-gets-harder/ |website=The Next Platform |language=en-US |access-date=March 24, 2024}}</ref>
+
+The GB100 die is at the reticle limit of semiconductor fabrication.<ref name="Nvidia 2024-03-18">{{cite web |title=Nvidia Blackwell Platform Arrives to Power a New Era of Computing |url=https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing |website=Nvidia Newsroom |language=en-US |date=March 18, 2024 |access-date=March 24, 2024}}</ref> The reticle limit in semiconductor fabrication is the maximum size of features that lithography machines can etch into a silicon die. Previously, Nvidia had nearly hit TSMC's reticle limit with GH100's 814&nbsp;mm<sup>2</sup> die. In order to not be constrained by die size, Nvidia's B100 accelerator utilizes two GB100 dies in a single package, connected with a 10 TB/s link that Nvidia calls the NV-High Bandwidth Interface (NV-HBI). NV-HBI is based on the [[NVLink|NVLink 7]] protocol. Nvidia CEO Jensen Huang said in an interview with ''[[CNBC]]'' that Nvidia had spent around $10 billion in [[research and development]] for Blackwell's NV-HBI die interconnect. Veteran semiconductor engineer [[Jim Keller (engineer)|Jim Keller]], who had worked on AMD's K7, [[AMD K12|K12]] and [[Zen (first generation)|Zen]] architectures, criticized this figure and claimed that the same outcome could be achieved for $1 billion through using Ultra Ethernet rather than the proprietary NVLink system.<ref>{{cite web |last1=Garreffa |first1=Anthony |date=April 14, 2024 |title=Jim Keller laughs at $10B R&D cost for Nvidia Blackwell, should've used ethernet for $1B |url=https://www.tweaktown.com/news/97563/jim-keller-laughs-at-10b-cost-for-nvidia-blackwell-shouldve-used-ethernet-1b/index.html |website=TweakTown |language=en-US |access-date=April 16, 2024}}</ref> The two connected GB100 dies are able to act like a large monolithic piece of silicon with full [[Cache coherence|cache coherency]] between both dies.<ref>{{cite web |last1=Hagedoom |first1=Hilbert |date=March 18, 2024 |title=Nvidia B200 and GB200 AI GPUs Technical Overview: Unveiled at GTC 2024 |url=https://www.guru3d.com/story/nvidia-b200-and-gb200-ai-gpus-technical-overview-unveiled-at-gtc-2024/ |website=Guru3D |language=en-US |access-date=April 7, 2024}}</ref> The dual die package totals 208 billion transistors.<ref name="Nvidia 2024-03-18"/> Those two GB100 dies are placed on top of a silicon interposer produced using TSMC's CoWoS-L 2.5D packaging technique.<ref>{{cite web |title=Nvidia Blackwell "B100" to feature 2 dies and 192GB of HBM3e memory, B200 with 288GB |url=https://videocardz.com/newz/nvidia-blackwell-b100-to-feature-2-dies-and-192gb-of-hbm3e-memory-b200-with-288gb |website=VideoCardz |language=en-US |date=March 17, 2024 |access-date=March 24, 2024}}</ref>
+
+On the consumer side, Blackwell's largest die, GB202, measures in at 750mm<sup>2</sup> which is 20% larger than AD102, Ada Lovelace's largest die.<ref>{{cite web |title=Nvidia GeForce RTX 5090 GB202 GPU die reportedly measures 744 mm2, 20% larger than AD102 |url=https://videocardz.com/newz/nvidia-geforce-rtx-5090-gb202-gpu-die-reportedly-measures-744-mm2-20-larger-than-ad102 |website=VideoCardz |language=en-US |date=November 22, 2024 |access-date=January 7, 2025}}</ref> GB202 contains a total of 24,576 CUDA cores, 28.5% more than the 18,432 CUDA cores in AD102. GB202 is the largest consumer die designed by Nvidia since the 754mm<sup>2</sup> TU102 die in 2018, based on the [[Turing (microarchitecture)|Turing]] microarchitecture. The gap between GB202 and GB203 has also gotten much wider compared to previous generations. GB202 features more than double the number of CUDA cores than GB203 which was not the case with AD102 over AD103.
+
+=== Streaming multiprocessor ===
+==== CUDA cores ====
+[[CUDA]] Compute Capability 10.0 and Compute Capability 12.0 are added with Blackwell.<ref>{{cite web |title=CUDA C Programming Guide |url=https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-capability-12-0 |website=Nvidia |access-date=28 January 2025}}</ref>
+
+==== Tensor Cores ====
+The Blackwell architecture introduces fifth-generation Tensor Cores for AI compute and performing [[Floating-point arithmetic|floating-point]] calculations. In the data center, Blackwell adds native support for sub-8-bit data types, including new Open Compute Project (OCP) community-defined MXFP6 and MXFP4 microscaling formats to improve efficiency and accuracy in low-precision computations.<ref>{{cite web |last=Edwards |first=Benj |date=March 18, 2024 |title=Nvidia unveils Blackwell B200, the "world's most powerful chip" designed for AI |url=https://arstechnica.com/information-technology/2024/03/nvidia-unveils-blackwell-b200-the-worlds-most-powerful-chip-designed-for-ai/ |website=Ars Technica |language=en-US |access-date=March 24, 2024}}</ref><ref>{{cite web |title=Blackwell Architecture |url=https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/ |website=Nvidia |language=en-US |access-date=February 5, 2025}}</ref><ref>{{Cite arXiv |eprint=2310.10537 |title=Microscaling Data Formats for Deep Learning |last1=Rouhani |first1=Bita Darvish |last2=Zhao |first2=Ritchie |last3=More |first3=Ankit |last4=Hall |first4=Mathew |last5=Khodamoradi |first5=Alireza |last6=Deng |first6=Summer |last7=Choudhary |first7=Dhruv |last8=Cornea |first8=Marius |last9=Dellinger |first9=Eric |last10=Denolf |first10=Kristof |date=2023 |class=cs.LG }}</ref><ref>{{Cite web |url=https://www.opencompute.org/documents/ocp-microscaling-formats-mx-v1-0-spec-final-pdf |title=OCP Microscaling Formats (MX) v1.0 Specification |website=Open Compute Project |date=2024 |access-date=2025-02-05 }}</ref><ref>{{Cite web |url=https://developer.nvidia.com/blog/openai-triton-on-nvidia-blackwell-boosts-ai-performance-and-programmability/ |title=OpenAI Triton on NVIDIA Blackwell Boosts AI Performance and Programmability |website=NVIDIA Developer Blog |publisher=NVIDIA |date=2024 |access-date=2025-02-05 }}</ref> The previous Hopper architecture introduced the Transformer Engine, software to facilitate quantization of higher-precision models (e.g., FP32) to lower precision, for which Hopper has greater throughput. Blackwell's second-generation Transformer Engine adds support for MXFP4 and MXFP6. Using 4-bit data allows greater efficiency and throughput for model inference during generative AI training. Nvidia claims 20 petaflops (excluding the 2x gain the company claims for sparsity) of FP4 compute for the dual-GPU GB200 superchip.<ref>{{Cite web |title=Nvidia GB200 NVL72 |url=https://www.nvidia.com/en-us/data-center/gb200-nvl72/ |website=Nvidia |language=en-US |access-date=July 4, 2024}}</ref>
+
+==== Ray Tracing Cores ====
+The fourth generation of ray tracing cores are introduced in Blackwell and include a new Triangle Cluster Intersection Engine for Mega Geometry and Linear Swept Spheres for accelerated ray tracing of finer details, like hair.<ref name="arch"></ref>
+
+=== AI Management Processor ===
+Blackwell introduces an AI Management Processor (AMP), a dedicated scheduler chip on the GPU built on [[RISC-V]].<ref name="arch"></ref> It is designed to offload scheduling from the CPU to a greater degree than what previous generations did and helps the GPU better control its own resources. It is utilized through Windows Hardware-Accelerated GPU Scheduling (HAGS).
+
+== Blackwell dies ==
+'''Datacenter'''
+{| class="wikitable" style="text-align:center; font-size:90%; height:3em; white-space:nowrap;"
+! colspan="2" | [[Die (integrated circuit)|Die]]
+! style="width:12em; height:3em;" | [https://www.techpowerup.com/gpu-specs/nvidia-gb100.g1069 GB100]
+![https://www.techpowerup.com/gpu-specs/nvidia-gb102.g1090 GB102]
+![https://www.techpowerup.com/gpu-specs/nvidia-gb200.g1089 GB200]
+|-
+! colspan="2" style="text-align: left;" | Variant(s)
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
+|-
+! colspan="2" style="text-align: left;" | Release date
+| {{dts|2024|December||format=mdy|abbr=on}}
+| Nov 2024
+| {{unknown}}
+|-
+
+! rowspan="5" | Cores
+! style="text-align: left;" | [[Unified shader model|CUDA Cores]]
+| colspan="3" | 18,432
+|-
+! style="text-align: left;" | [[Texture mapping unit|TMUs]]
+| colspan="3" | 576
+|-
+! style="text-align: left;" | [[Render output unit|ROPs]]
+| colspan="3" | 24
+|-
+! style="text-align: left;" | [[Nvidia RTX|RT Cores]]
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
+|-
+! style="text-align: left;" | [[Deep learning super sampling#Architecture|Tensor Cores]]
+| colspan="3" | 576
+|-
+
+
+! colspan="2" style="text-align: left;" | Streaming Multiprocessors
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
+|-
+
+! rowspan="2" | Cache
+! style="text-align: left;" | L1
+| colspan="3" | 8.25 MB
+|-
+! style="text-align: left;" | L2
+| colspan="3" | 60 MB
+|-
+
+! colspan="2" style="text-align: left;" | Memory interface
+| colspan="3" | 8192-bit
+|-
+
+! colspan="2" style="text-align: left;" | Die size
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
+|-
+
+! colspan="2" style="text-align: left;" | Transistor count
+| colspan="3" | 104{{nbsp}}<small>bn.</small>
+|-
+
+! colspan="2" style="text-align: left;" | Transistor density
+| {{unknown}}
+| {{unknown}}
+| {{unknown}}
+|-
+
+! colspan="2" style="text-align: left;" | Package socket
+| colspan="3" | SXM6
+|-
+
+! colspan="2" style="text-align: left;" | Products
+| B200 SXM 192GB
+| B100
+| {{unknown}}
+|-
+|}
+
+'''Consumer'''
+{| class="wikitable" style="text-align:center; font-size:90%; height:3em; white-space:nowrap;"
+! colspan="2" | [[Die (integrated circuit)|Die]]
+![https://www.techpowerup.com/gpu-specs/nvidia-dgx-spark.b13048 GB10]
+! style="width:12em; height:3em;" | [https://www.techpowerup.com/gpu-specs/nvidia-gb202.g1072 GB202]
+! style="width:12em; height:3em;" | [https://www.techpowerup.com/gpu-specs/nvidia-gb203.g1073 GB203]
+! style="width:12em; height:3em;" | [https://www.techpowerup.com/gpu-specs/nvidia-gb205.g1074 GB205]
+! style="width:12em; height:3em;" | [https://www.techpowerup.com/gpu-specs/nvidia-gb206.g1075 GB206]
+! style="width:12em; height:3em;" | [https://www.techpowerup.com/gpu-specs/nvidia-gb207.g1076 GB207]
+|-
+
+! colspan="2" style="text-align: left;" | Variant(s)
+|
+| GB202-300-A1
+| GB203-200-A1 <br/> GB203-300-A1 <br/> GB203-400-A1
+| GB205-300-A1
+| GB206-250-A1 <br/> GB206-300-A1	
+| GB207-300-A1
+|-
+
+! colspan="2" style="text-align: left;" | Release date
+|Oct 15th, 2025
+| {{dts|2025|January|30|format=mdy|abbr=on}}
+| {{dts|2025|January|30|format=mdy|abbr=on}}
+| {{dts|2025|March|4|format=mdy|abbr=on}}
+| {{dts|2025|April|16|format=mdy|abbr=on}}
+| {{dts|2025|June|24|format=mdy|abbr=on}}
+|-
+
+! rowspan="5" | Cores
+! style="text-align: left;" | [[Unified shader model|CUDA Cores]]
+|6,144
+| 24,576
+| 10,752
+| 6,400
+| 4,608
+| 2,560
+|-
+! style="text-align: left;" | [[Texture mapping unit|TMUs]]
+|384
+| 768
+| 336
+| 200
+| 144
+| 80
+|-
+! style="text-align: left;" | [[Render output unit|ROPs]]
+|48
+| 192
+| 112
+| 80
+| 48
+| 32
+|-
+! style="text-align: left;" | [[Nvidia RTX|RT Cores]]
+|48
+| 192
+| 84
+| 50
+| 36
+| 20
+|-
+! style="text-align: left;" | [[Deep learning super sampling#Architecture|Tensor Cores]]
+|384
+| 768
+| 336
+| 200
+| 144
+| 80
+|-
+
+
+! colspan="2" style="text-align: left;" | {{abbr|SMs|Streaming Multiprocessors}}
+|48
+| 192
+| 84
+| 50
+| 36
+| 20
+|-
+
+! colspan="2" style="text-align: left;" | [[GPU cluster|GPCs]] 
+|4
+| 12
+| 7
+| 5
+| 3
+| 2
+|-
+
+! rowspan="2" | Cache
+! style="text-align: left;" | L1
+|6{{nbsp}}<small>MB</small>
+| 24{{nbsp}}<small>MB</small>
+| 10.5{{nbsp}}<small>MB</small>
+| 6.25{{nbsp}}<small>MB</small>
+| 4.5{{nbsp}}<small>MB</small>
+| 2.5{{nbsp}}<small>MB</small>
+|-
+! style="text-align: left;" | L2
+|50 MB
+| 128{{nbsp}}<small>MB</small>
+| 64{{nbsp}}<small>MB</small>
+| 48{{nbsp}}<small>MB</small>
+| 32{{nbsp}}<small>MB</small>
+| 32{{nbsp}}<small>MB</small>
+|-
+
+! colspan="2" style="text-align: left;" | Memory interface
+|256-bit
+| 512-bit
+| 256-bit
+| 192-bit
+| 128-bit
+| 128-bit
+|-
+
+! colspan="2" style="text-align: left;" | Die size
+|Unknown
+| 750{{nbsp}}<small>mm<sup>2</sup></small>
+| 378{{nbsp}}<small>mm<sup>2</sup></small>
+| 263{{nbsp}}<small>mm<sup>2</sup></small>
+| 181{{nbsp}}<small>mm<sup>2</sup></small>
+|149 mm<sup>2</sup>
+|-
+
+! colspan="2" style="text-align: left;" | Transistor count
+|Unknown
+| 92.2{{nbsp}}<small>bn.</small>
+| 45.6{{nbsp}}<small>bn.</small>
+| 31.1{{nbsp}}<small>bn.</small>
+| 21.9 bn.
+|16.9 bn.
+|-
+
+! colspan="2" style="text-align: left;" | Transistor density
+|Unknown
+| 122.6{{nbsp}}<small>MTr/mm<sup>2</sup></small>
+| 120.6{{nbsp}}<small>MTr/mm<sup>2</sup></small>
+| 118.3{{nbsp}}<small>MTr/mm<sup>2</sup></small>
+| 121.0 <small>MTr/mm<sup>2</sup></small>
+|113.4 <small>MTr/mm<sup>2</sup></small>
+|-
+
+! colspan="8" | Products
+|-
+! rowspan="2" | Consumer
+! style="text-align: left;" | Desktop
+|N/A
+| RTX 5090 <br/> RTX 5090 D
+| RTX 5070 Ti <br/> RTX 5080{{spaces|3|nbsp}}
+| RTX 5070
+| RTX 5060 <br/> RTX 5060 Ti
+| RTX 5050
+|-
+! style="text-align: left;" | Mobile
+| RTX Spark
+| N/A
+| RTX 5090 Laptop <br/> RTX 5080 Laptop
+| RTX 5070 Ti Laptop
+| RTX 5060 Laptop<br/> RTX 5070 Laptop
+| RTX 5050 Laptop
+|-
+
+! rowspan="2" | Workstation
+! style="text-align: left;" | Desktop
+|DGX Spark GB20B
+| RTX PRO 5000<br/> RTX PRO 6000
+| RTX PRO 4000<br/> RTX PRO 4500
+| {{n/a}}
+| {{n/a}}
+| {{n/a}}
+|-
+! style="text-align: left;" | Mobile
+| N/A
+| N/A
+| N/A
+| RTX PRO 3000 Mobile
+| RTX PRO 2000 Mobile
+| RTX PRO 500 Mobile<br/> RTX PRO 1000 Mobile
+|-
+
+! colspan="2" style="text-align: left;" | Server
+|
+| RTX PRO 6000 Server Edition
+| RTX PRO 4500 Server Edition
+| {{n/a}}
+| {{n/a}}
+| {{n/a}}
+|-
+|}
+
+== See also ==
+* [[List of Nvidia graphics processing units]]
+* [[List of eponyms of Nvidia GPU microarchitectures]]
+
+== References ==
+{{Reflist}}
+
+{{Nvidia}}
+
+[[Category:Nvidia microarchitectures]]
+[[Category:Graphics microarchitectures|Nvidia Blackwell]]

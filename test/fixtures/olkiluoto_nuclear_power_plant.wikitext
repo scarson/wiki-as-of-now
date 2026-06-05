@@ -1,0 +1,456 @@
+{{Short description|Nuclear power plant in Eurajoki, Finland}}
+{{Use dmy dates|date=October 2023}}
+{{Infobox power station
+| name = Olkiluoto Nuclear Power Plant
+| name_official = Olkiluodon ydinvoimalaitos
+| image = Olkiluoto Nuclear Power Plant 2015-07-21 001 (cropped).jpg
+| image_caption = Olkiluoto Nuclear Power Plant in 2015
+| country = [[Finland]]
+| location = [[Eurajoki]], [[Satakunta|Region of Satakunta]]
+| coordinates = {{coord|61|14|13|N|21|26|27|E|type:landmark|display=inline,title}}
+| status = Operational
+| construction_began = Unit 1: {{start date|1974|02|01|df=y}}<br />Unit 2: {{start date|1975|11|01|df=y}}<br />Unit 3: {{start date|2005|08|12|df=y}}
+| commissioned = Unit 1: {{start date|1979|10|10|df=y}}<br />Unit 2: {{start date|1982|07|10|df=y}}<br />Unit 3: {{start date|2023|04|16|df=y}}
+| decommissioned = 
+| cost = 
+| owner = [[Teollisuuden Voima|Teollisuuden Voima Oyj]] (TVO)
+| operator = [[Teollisuuden Voima|TVO]]
+| employees = 1000 (2021)<!-- In 2021 according to the TVO websites. -->
+<!------------------------- NUCLEAR POWER STATIONS -->
+| np_reactors = 3
+| np_reactor_type = Units 1–2: [[Boiling water reactor|BWR]]<br />Unit 3: [[Pressurized water reactor|PWR]] ([[EPR (nuclear reactor)|EPR]])
+| np_reactor_supplier = 
+Units 1–2: [[ASEA|AB ASEA-ATOM]]<br />
+Unit 3: [[Areva|Areva S.A.]]
+
+<!------------------------- GENERAL -->
+| ps_cooling_source = [[Gulf of Bothnia]]
+| ps_thermal_capacity = 
+2&nbsp;×&nbsp;2,500&nbsp;MW<sub>th</sub> ''(Units 1–2)''<br />
+1&nbsp;×&nbsp;4,300&nbsp;MW<sub>th</sub> ''(Unit 3)''<br />
+Combined: 9,300&nbsp;MW<sub>th</sub><!-- 2 × 2,500 MW + 4,300 MW = 9,300 MW -->
+
+<!------------------------- PRODUCTION -->
+| ps_units_operational = 2&nbsp;×&nbsp;890&nbsp;MW<sub>e</sub> (net) ''(Units 1–2)''<br />1&nbsp;×&nbsp;1,600&nbsp;MW<sub>e</sub> (net) ''(Unit 3)''
+| ps_units_manu_model = Units 1–2: [[ASEA]]-III, BWR-2500<br />Unit 3: [[Framatome]] [[EPR (nuclear reactor)|EPR]]
+| ps_units_planned = 
+| ps_units_cancelled = 
+| ps_units_uc = 
+| ps_units_decommissioned = 
+| ps_electrical_capacity = 3,380<!-- 2 × 890 MW + 1,600 MW = 3,380 MW -->
+| ps_electrical_cap_fac = 92.8% (2021)<!-- In 2021 according to the TVO websites. -->
+| ps_annual_generation = 14,400&nbsp;GW·h (2021)<!-- In 2021 according to the TVO websites. -->
+| website = [https://www.tvo.fi/en/index.html Olkiluoto nuclear power plant]
+}}
+
+The '''Olkiluoto Nuclear Power Plant''' ({{langx|fi|Olkiluodon ydinvoimalaitos}}, {{langx|sv|Olkiluoto kärnkraftverk}}) is one of [[Finland]]'s two [[nuclear power plant]]s, the other being the two-unit [[Loviisa Nuclear Power Plant]]. The plant is owned and operated by [[Teollisuuden Voima]] (TVO), and is located on Olkiluoto Island, on the shore of the [[Gulf of Bothnia]], in the municipality of [[Eurajoki]] in western Finland, about {{convert|20|km}} from the town of [[Rauma, Finland|Rauma]] and about {{convert|50|km}} from the city of [[Pori]].
+
+The Olkiluoto plant consists of two [[boiling water reactor]]s (BWRs), each with a capacity of 890 [[Megawatt|MW]], and one [[EPR (nuclear reactor)|EPR]] type reactor (unit 3) with a capacity of 1,600 MW.{{r| ESN_1}} This makes unit 3 currently the most powerful nuclear power plant unit in Europe and the third most powerful globally.<ref name=TVO-2022-09-30/><ref name="arab-news" /> Construction of unit 3 began in 2005. Commercial operation, originally scheduled for May 2009,<ref>[http://www2.ans.org/pubs/magazines/nn/docs/2004-4-3.pdf EPR development. An evolutionary design process] {{Webarchive|url=https://web.archive.org/web/20161204080320/http://www2.ans.org/pubs/magazines/nn/docs/2004-4-3.pdf|date=4 December 2016}} </ref><ref>{{Cite web |date=15 April 2023 |title=Olkiluoto 3 starts full electricity production a day early – but 14 years late |url=https://yle.fi/a/74-20027268 |url-status=live |archive-url=https://web.archive.org/web/20230416022501/https://yle.fi/a/74-20027268 |archive-date=16 April 2023 |access-date=16 April 2023}}</ref> began on 1 May 2023.<ref name=OL3-commercialoperation/> 
+
+A decision-in-principle for a fourth reactor to be built at the site was granted by the Finnish parliament in July 2010,<ref name="Reuters-2010-07-01" /><ref name="WNN-2012-07-17" /><ref name="BBC-2012-07-16" /> but in June 2015 TVO decided that it would not apply for a construction license for Olkiluoto 4.<ref name="TVO-2015-06-24" />
+
+== Units 1 and 2 ==
+Units 1 and 2 consists of two [[Boiling water reactor|BWRs]], each producing 890&nbsp;MW of electricity.<ref>{{Cite web |title=OL1 and OL2 |url=https://www.tvo.fi/en/index/production/plantunits/ol1andol2.html |access-date=16 April 2023 |publisher=TVO |archive-date=16 April 2023 |archive-url=https://web.archive.org/web/20230416021622/https://www.tvo.fi/en/index/production/plantunits/ol1andol2.html |url-status=live }}</ref> The main contractor was [[Allmänna Svenska Elektriska Aktiebolaget|ASEA-Atom]], now a part of [[Westinghouse Electric Company|Westinghouse Electric Sweden AB]]. Turbine generators were supplied by [[Stal-Laval]]. The units' architecture was designed by ASEA-Atom. The reactor pressure vessels were constructed by Uddcomb Sweden AB, and reactor internal parts, mechanical components by Finnatom. The electrical equipment was supplied by [[Stromberg (company)|Strömberg]].<ref name="TVO-2011-03-13" /> Unit 1 was constructed by Atomirakennus and unit 2 by Jukola and Työyhtymä.<ref name="INSC-TVO-1" /><ref name="INSC-TVO-2" /> Unit 1 achieved its initial criticality in July 1978 and it started commercial operations in October 1979.<ref name="INSC-TVO-1" /> Unit 2 achieved its initial criticality in October 1979 and it started commercial operations in July 1982.<ref>{{Cite web |title=Olkiluoto-2 |url=https://pris.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=160 |access-date=16 April 2023 |website=Power Reactor Information System |publisher=IAEA |archive-date=27 October 2018 |archive-url=https://web.archive.org/web/20181027101252/https://pris.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=160 |url-status=live }}</ref>
+
+The original power of the reactors was 660&nbsp;MW. They were uprated to 710&nbsp;MW in 1983–1984, to 840&nbsp;MW in 1995–1998, and further to 860&nbsp;MW in 2005–2006.<ref name="TVO-2011-03-13" /> Major upgrades were carried out to the units in 2010 and 2011, including replacement of turbines and generators, isolation valves, electrical [[switchgear]] and [[seawater]] pumps. The upgrades increased the net electrical output by 20&nbsp;MW to 880&nbsp;MW each.<ref name="NEI-2012-01-09" />
+
+In 2017, unit 2 was upgraded and modernized, increasing the output further to 890&nbsp;MW from the beginning of 2018.<ref name="TVO-2018-01-03" /> A similar upgrade to unit 1 was performed in 2018.<ref>{{Cite web |date=2 January 2019 |title=The third best production year ever for Olkiluoto 2 plant unit |url=https://www.tvo.fi/news/2077 |access-date=2 February 2020 |publisher=TVO |archive-date=2 February 2020 |archive-url=https://web.archive.org/web/20200202155359/https://www.tvo.fi/news/2077 |url-status=live }}</ref> The extended maintenance was also made to prepare for a license renewal application. The license extension was granted in September 2018 and allows the reactors to operate until 2038.<ref name="TVO-2018-09-20" />
+
+In 2023, TVO announced it is considering seeking another license extension of at least 10 years and a power uprate of 80&nbsp;MW to 970&nbsp;MW.<ref name=wnn-20231010>{{cite news |url=https://www.world-nuclear-news.org/Articles/TVO-eyes-extended,-expanded-use-of-Olkiluoto-units |title=TVO eyes extended, expanded use of Olkiluoto units |website=World Nuclear News |date=10 October 2023 |access-date=12 October 2023}}</ref> The [[environmental impact assessment]] program, published in January 2024, investigates options to extend the lifetime by 10 or 20 years at the current power or uprating to 970&nbsp;MW (in 2028 at the earliest) in addition to the 10 or 20-year extension.<ref>{{cite web|url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2024/theenvironmentalimpactassessmenteiaprogramforthepossibleextensionoftheoperationallifespanandpowerincreaseofolkiluoto1andolkiluoto2plantunitshasbeencompleted.html|title=The Environmental Impact Assessment (EIA) program for the possible extension of the operational lifespan and power increase of Olkiluoto 1 and Olkiluoto 2 plant units has been completed|publisher=TVO|date=9 January 2024|accessdate=20 January 2024}}</ref>
+
+== Unit 3 ==
+[[File:Rafael Mariano Grossi visit to Olkiluoto NPP (01890390) (50663382008).jpg|thumb|right|[[Rafael Grossi]] visit to Olkiluoto NPP on 26 November 2020]]
+[[File:OL3.jpg|thumb|Olkiluoto 3 in 2009]]
+Unit 3 is a [[EPR (nuclear reactor)|EPR]], a type of [[Generation III reactor|third generation]] [[pressurized water reactor]]. It has a [[nameplate capacity]] of 1600 MW. [[Japan Steel Works]] and [[Mitsubishi Heavy Industries]] manufactured the unit's 526-ton [[reactor pressure vessel]].<ref name="TVO-2009-01-04" />
+
+Construction started in 2005, and the start of commercial operation was planned for 2010.<ref name="Areva-2007-09-27" /> This has been pushed back several times<ref name="WNN-2016-01-14" /><ref name=wnn-20220616/> only starting regular production in 2023, 18 years after the start of construction.<ref>{{Cite web |date=18 April 2023 |title=14 years late, Finland's new reactor, Olkiluoto 3, starts generating power |url=https://www.globalconstructionreview.com/14-years-late-finlands-new-reactor-olkiluoto-3-starts-generating-power/ |access-date=18 April 2023 |archive-date=17 April 2023 |archive-url=https://web.archive.org/web/20230417144337/https://www.globalconstructionreview.com/14-years-late-finlands-new-reactor-olkiluoto-3-starts-generating-power/ |url-status=live }}</ref>
+
+===History===
+In February 2005, the [[Finnish government]] gave its permission to [[Teollisuuden voima|TVO]] to construct a new nuclear reactor, making Finland the first Western European country in 15 years to order one.<ref name="Worldwatch-2010" /> The construction of the unit began in 2005. Olkiluoto 3 was the first [[EPR (nuclear reactor)|EPR]] to have begun construction. 
+At the start of construction, the main contractor was Areva NP (now [[Framatome]]), a [[joint venture]] of [[Areva]] and [[Siemens]]. However, in 2009, Siemens sold its one-third share of Areva NP to Areva, which became the main contractor.<ref name="HS-2009-01-27" /><ref name="WNN-2011-09-19" /> Siemens remained on the project as the subcontractor with the main responsibility for constructing the [[turbine hall]]. Areva later sold its majority stake in Framatome, its nuclear reactor and fuel business, to [[Électricité de France]].
+
+According to [[Teollisuuden voima|TVO]], the construction phase of the project would create a total of about 30,000 person-years of employment directly and indirectly; that the highest number of on-site employees has been almost 4,400; and that the operation phase would create 150 to 200 permanent jobs.<ref name="TVO-2012" /> A 90 MW [[battery storage power station|battery storage]] was scheduled for 2022.<ref name="ESN_1">{{Cite web |last=Colthorpe |first=Andy |date=16 June 2021 |title=Hitachi ABB Power Grids to deploy 90MW battery storage system at Finnish nuclear plant |url=https://www.energy-storage.news/news/hitachi-abb-power-grids-to-deploy-90mw-battery-storage-system-at-finnish-nu |url-status=live |archive-url=https://web.archive.org/web/20210616131520/https://www.energy-storage.news/news/hitachi-abb-power-grids-to-deploy-90mw-battery-storage-system-at-finnish-nu |archive-date=16 June 2021 |website=Energy Storage News |language=en |quote=Finnish power company Teollisuuden Voima (TVO) operates and owns two nuclear power stations on the island of Olkiluoto which supply about one-sixth of Finland's energy consumption and represent about 22% of all power generated in the country. This year, TVO is about to open its third plant on the island, Olkiluoto 3 (OL3), which will have a nameplate capacity of 1,600MWe and will be capable of meeting about 14% of the country's electricity demand.}}</ref>{{update-inline|date=September 2024}}
+
+On 8 December 2021, the company submitted its application to Finland's [[Radiation and Nuclear Safety Authority]] asking permission to start up Unit 3 and to move forward with initial testing of the unit.<ref name="NS12821">{{Cite news |date=8 December 2021 |title=TVO Requests Permission To Fire Up Olkiluoto 3 |work=Nuclear Street |url=https://nuclearstreet.com/nuclear_power_industry_news/b/nuclear_power_news/archive/2021/12/08/tvo-requests-permission-to-fire-up-olkiluoto-3-120803#.YbIXkS-B1rR |access-date=9 December 2021 |archive-date=8 December 2021 |archive-url=https://web.archive.org/web/20211208230706/https://nuclearstreet.com/nuclear_power_industry_news/b/nuclear_power_news/archive/2021/12/08/tvo-requests-permission-to-fire-up-olkiluoto-3-120803#.YbIXkS-B1rR |url-status=live }}</ref> This was granted on 16 December 2021.<ref name=":2">{{Cite web |title=STUK has granted permission to start the OL3 reactor – stuk-en |url=http://www.stuk.fi/web/en/-/stuk-has-granted-permission-to-start-the-ol3-reactor |access-date=16 December 2021 |website=Tiedote-en |language=en |archive-date=16 December 2021 |archive-url=https://web.archive.org/web/20211216083836/https://www.stuk.fi/web/en/-/stuk-has-granted-permission-to-start-the-ol3-reactor |url-status=live }}</ref> First criticality of the OL3 EPR plant unit was reached on 21 December 2021. An unplanned [[SCRAM]] occurred on 14 January 2022, delaying connection to the national grid to February 2022.<ref name="wnn-20220127">{{Cite news |date=27 January 2022 |title=Grid connection of Finnish EPR postponed |publisher=World Nuclear News |url=https://www.world-nuclear-news.org/Articles/Grid-connection-of-Finnish-EPR-postponed |access-date=29 January 2022 |archive-date=29 January 2022 |archive-url=https://web.archive.org/web/20220129200840/https://www.world-nuclear-news.org/Articles/Grid-connection-of-Finnish-EPR-postponed |url-status=live }}</ref> Electricity production of Olkiluoto's third nuclear power plant unit started on 12 March 2022 at 12.01 p.m.<ref name=":4">{{Cite web |date={{fdate|2022-04-29}} |title=The start of OL3 EPR's regular electricity production postponed to September |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2022/thestartofol3epr8217sregularelectricityproductionpostponedtoseptember.html |website=[[Teollisuuden Voima|TVO]] |access-date=12 May 2022 |archive-date=29 April 2022 |archive-url=https://web.archive.org/web/20220429055457/https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2022/thestartofol3epr8217sregularelectricityproductionpostponedtoseptember.html |url-status=live }}</ref> In May 2022, foreign material detached from the steam guide plates was found in the turbine steam reheater, and the plant was shut down for about three months of repair work.<ref name="wnn-20220616">{{Cite news |date=16 June 2022 |title=Olkiluoto 3 test production to continue until December |publisher=World Nuclear News |url=https://www.world-nuclear-news.org/Articles/Olkiluoto-3-test-production-to-continue-until-Dece |access-date=17 June 2022 |archive-date=16 June 2022 |archive-url=https://web.archive.org/web/20220616162242/https://www.world-nuclear-news.org/Articles/Olkiluoto-3-test-production-to-continue-until-Dece |url-status=live }}</ref>
+
+In September 2022, the [[Radiation and Nuclear Safety Authority]] (STUK) granted a licence for the Olkiluoto 3 reactor to increase its power output to more than 60 percent to a full 4,300 MW of thermal capacity.<ref>{{Cite web |date=6 September 2022 |title=Long-delayed nuclear reactor approved to exceed 60% energy production |url=https://yle.fi/news/3-12611342 |access-date=6 September 2022 |publisher=[[Yle News]] |archive-date=6 September 2022 |archive-url=https://web.archive.org/web/20220906174356/https://yle.fi/news/3-12611342 |url-status=live }}</ref> On 30 September 2022, the reactor achieved its design output power.<ref name=TVO-2022-09-30/><ref name="arab-news">[https://www.arabnews.com/node/2172451/business-economy Europe's biggest nuclear reactor reaches full power] {{Webarchive|url=https://web.archive.org/web/20230415121440/https://www.arabnews.com/node/2172451/business-economy |date=15 April 2023 }} – ''[[Arab News]]''</ref> In October 2022, damage was discovered in the feedwater pumps and unit 3 was shut down for an investigation, delaying the end of commissioning testing.<ref name="wnn-20221019">{{Cite news |date=19 October 2022 |title=Feedwater pump damage delays Finnish EPR commissioning |publisher=World Nuclear News |url=https://www.world-nuclear-news.org/Articles/Feedwater-pump-damage-delays-Finnish-EPR-commissio |access-date=23 October 2022 |archive-date=23 October 2022 |archive-url=https://web.archive.org/web/20221023170558/https://www.world-nuclear-news.org/Articles/Feedwater-pump-damage-delays-Finnish-EPR-commissio |url-status=live }}</ref> On 28 October, it was announced that cracks a few centimetres long had been found in all four of the feedwater pump impellers.<ref>{{Cite web |title=Olkiluoto 3:n syöttövesipumppujen sisäosien vaurioiden selvitystyöt jatkuvat |url=https://www.tvo.fi/ajankohtaista/tiedotteetporssitiedotteet/2022/olkiluoto3nsyottovesipumppujensisaosienvaurioidenselvitystyotjatkuvat.html |access-date=3 November 2022 |publisher=TVO |language=fi |archive-date=3 November 2022 |archive-url=https://web.archive.org/web/20221103044809/https://www.tvo.fi/ajankohtaista/tiedotteetporssitiedotteet/2022/olkiluoto3nsyottovesipumppujensisaosienvaurioidenselvitystyotjatkuvat.html |url-status=live }}</ref><ref name="wnn-20221028">{{Cite news |date=28 October 2022 |title=Cracks found in all four OL3 feedwater pumps |publisher=World Nuclear News |url=https://www.world-nuclear-news.org/Articles/Cracks-found-in-all-four-OL3-feedwater-pumps |access-date=31 October 2022 |archive-date=31 October 2022 |archive-url=https://web.archive.org/web/20221031003459/https://www.world-nuclear-news.org/Articles/Cracks-found-in-all-four-OL3-feedwater-pumps |url-status=live }}</ref><ref>{{Cite web |title=TVO – The investigation is still ongoing regarding the damages in the internals of Olkiluoto 3's feedwater pumps |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2022/theinvestigationisstillongoingregardingthedamagesintheinternalsofolkiluoto38217sfeedwaterpumps.html |access-date=21 November 2022 |website=www.tvo.fi |archive-date=21 November 2022 |archive-url=https://web.archive.org/web/20221121202135/https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2022/theinvestigationisstillongoingregardingthedamagesintheinternalsofolkiluoto38217sfeedwaterpumps.html |url-status=live }}</ref> The feedwater pumps are larger than in other nuclear reactors.<ref name="nei-20221101">{{Cite news |date=1 November 2022 |title=Investigation of damage continues at OL3 |publisher=Nuclear Engineering International |url=https://www.neimagazine.com/news/newsinvestigation-of-damage-continues-at-ol3-10137422 |access-date=8 November 2022 |archive-date=8 November 2022 |archive-url=https://web.archive.org/web/20221108124240/https://www.neimagazine.com/news/newsinvestigation-of-damage-continues-at-ol3-10137422 |url-status=live }}</ref> In January 2023, it was announced that new more robust impellers will be installed in all four feedwater pumps, and test operation at full power should restart in February.<ref name="nei-20230125">{{Cite news |date=25 January 2023 |title=New impellers for OL3's feedwater pumps |publisher=Nuclear Engineering International |url=https://www.neimagazine.com/news/newsnew-impellers-for-ol3s-feedwater-pumps-10541385 |access-date=30 January 2023 |archive-date=29 January 2023 |archive-url=https://web.archive.org/web/20230129195734/https://www.neimagazine.com/news/newsnew-impellers-for-ol3s-feedwater-pumps-10541385 |url-status=live }}</ref> 
+
+The plant started regular electricity production on 16 April 2023 after test production and commercial operation on 1 May 2023.<ref name=OL3-regularproduction> {{Cite web |date=16 April 2023 |title=Regular electricity production has started at Olkiluoto 3 |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2023/regularelectricityproductionhasstartedatolkiluoto3epr.html |access-date=16 April 2023 |website=TVO |archive-date=16 April 2023 |archive-url=https://web.archive.org/web/20230416015221/https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2023/regularelectricityproductionhasstartedatolkiluoto3epr.html |url-status=live }}</ref><ref name=OL3-commercialoperation> {{Cite web |date=20 April 2023 |title=TVO confirms acceptance of Olkiluoto 3 EPR and start of warranty period |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2023/tvoconfirmsacceptanceofolkiluoto3eprandstartofwarrantyperiod.html |access-date=4 May 2023 |website=TVO }}</ref><ref>{{Cite web |date=17 April 2023 |title=Olkiluoto's third unit started regular production on Sunday |url=https://www.helsinkitimes.fi/finland/finland-news/domestic/23379-olkiluoto-s-third-unit-started-regular-production-on-sunday.html |access-date=17 April 2023 |website=[[Helsinki Times]] |archive-date=17 April 2023 |archive-url=https://web.archive.org/web/20230417125159/https://www.helsinkitimes.fi/finland/finland-news/domestic/23379-olkiluoto-s-third-unit-started-regular-production-on-sunday.html |url-status=live }}</ref> Unusual for nuclear reactors in Scandinavia, OL3 reduced production in May 2023 due to negative market prices during the spring thaw when hydropower was unable to absorb surplus.<ref>{{cite web |title=Finnish nuclear plant throttles production as electricity price plunges |url=https://yle.fi/a/74-20032375 |website=[[Yle]] News |language=en |date=17 May 2023}}</ref>
+
+=== Construction delays ===
+The first licence application for the third unit was made in December 2000<ref name="STUK-2009-04-27" /> and the date of the unit's entry into service was estimated to be 2010.<ref name="Areva-2007-09-27" /> However, since the start of construction, several delays to the schedule have been announced. In July 2012, TVO announced that the unit would not go into service before 2015,<ref name="WNN-2012-07-17" /><ref name="FT-2012-07-16" /> five years after the original estimate. In a statement, the operator said it was "not pleased with the situation" although solutions to various problems were being found and work was "progressing", and that it was waiting for a new launch date from Areva and Siemens.<ref name="BBC-2012-07-16" />
+
+At the end of 2013, TVO said that the Areva-Siemens consortium plans to reduce workers and subcontractors on the construction site and says that it expects the contractor to provide details about the expected impact on the project's schedule.<ref name="Reuters-2013-12-10" />
+
+In February 2014, TVO said that it could not give an estimate of the plant's startup date because it was still waiting for the Areva-Siemens consortium to provide it with an updated overall schedule for the project."<ref name="WNN-2014-02-17" /> Later the same month it was reported that Areva was shutting down construction due to the dispute over compensations and unfinished automation planning. According to [[Kauppalehti]], the estimated opening was delayed until sometime between 2018 and 2020.<ref name="Kauppalehti-2014-02-28" />
+
+In July 2019, TVO announced that regular electricity generation is expected to start in July 2020. The delay was caused by slower than expected modification works.<ref name=":1">{{Cite web |date=17 July 2019 |title=OL3 EPR's regular electricity generation starts in July 2020 |url=https://www.tvo.fi/news/2124 |access-date=17 July 2019 |publisher=TVO |archive-date=17 July 2019 |archive-url=https://web.archive.org/web/20190717133020/https://www.tvo.fi/news/2124 |url-status=live }}</ref> In August 2020, TVO announced that regular electricity generation was delayed to February 2022 due to slow progress in [[system testing]], technical problems found in the testing, and delivery time of spare parts to replace faulty components.<ref name="YleAug20">{{Cite web |date=28 August 2020 |title=Olkiluoto kolmoselle viimein aikataulu: säännöllinen sähköntuotanto alkaa helmikuussa vuonna 2022 |url=https://yle.fi/uutiset/3-11516011 |access-date=28 August 2020 |publisher=Yle |language=fi |archive-date=16 August 2022 |archive-url=https://web.archive.org/web/20220816175303/http://yle.fi/uutiset/3-11516011 |url-status=live }}</ref>
+
+The delays have been due to various problems with planning, supervision, and workmanship,<ref name="WNN-2012-07-17" /> and have been the subject of an inquiry by [[Säteilyturvakeskus|STUK]], the Finnish nuclear safety regulator.<ref name="WNN-2009-10-16" /> The first problems that surfaced were irregularities in the foundation concrete, and caused a delay of months. Later, it was found that subcontractors had provided heavy forgings that were not up to project standards and which had to be re-cast. An apparent problem constructing the reactor's unique double-containment structure also caused delays, as the welders had not been given proper instructions.<ref name="WNN-2009-10-16" />
+
+In 2009, Petteri Tiippana, the director of STUK's nuclear power plant division, told the [[BBC]] that it was difficult to deliver nuclear power plant projects on schedule because builders were not used to working to the exacting standards required on nuclear construction sites, since so few new reactors had been built in recent years.<ref name="BBC-2009-11-25" />
+
+In 2010, Jukka Laaksonen, Director General of STUK at that time, analyzed reasons for the delay:<ref name="PowerEng">{{Cite web |last=Laaksonen |first=Jukka |date=1 September 2010 |title=Lessons Learned from Olkiluoto 3 Plant |url=https://www.power-eng.com/2010/09/01/lessons-learned-from-olkiluoto-3-plant/ |access-date=23 November 2019 |website=Power Engineering |archive-date=22 November 2019 |archive-url=https://web.archive.org/web/20191122215122/https://www.power-eng.com/2010/09/01/lessons-learned-from-olkiluoto-3-plant/ |url-status=live }}</ref>
+* Many nuclear power plants were constructed in Europe in the 1970s and 1980s. After that there was a long break in the construction, and experienced experts retired.
+* Areva did not have experience in construction of nuclear power plants. In all the earlier projects in which Areva supplied the reactor, [[Électricité de France]] was responsible for the construction management. Many experienced subcontractors had left the business, and Areva had to find new subcontractors and to coach them in nuclear manufacturing.
+* The original schedule, four years from construction start to grid connection, was too ambitious for a first-of-a-kind plant that is larger than any earlier reactor.
+* The project started very slowly because Areva was not adequately prepared. When the construction permit was given in 2005, parts of the detailed design were not yet available. Areva did not recognize how much additional work was needed to complete it. The construction started to proceed in a controlled manner two years later.
+* Areva was not used to STUK's regulatory approach with an early focus on the quality of structures and components. Manufacturing information and a quality control plan must be approved by both the licensee and STUK before manufacturing of the most important components is allowed to start. Inspections with hold points are made during the manufacturing.
+* The large size of the reactor and the application of new technologies brought major challenges. Some manufacturing technologies had not been used before. For instance, new [[welding]] techniques were used in the reactor pressure vessel. Many large components, such as [[pressurizer]] [[forging]]s and some reactor internal parts, had to be re-manufactured once or twice to achieve the specified quality.
+* TVO's key persons did not have experience from management of a large construction project.
+
+Construction of the turbine succeeded better under the responsibility of Siemens. Installations of the main turbine equipment were completed about one year behind the original schedule.<ref name="PowerEng" />
+
+After the construction of the unit started in 2005, Areva began constructing EPRs in [[Flamanville Nuclear Power Plant|Flamanville]], [[France]], and in [[Taishan Nuclear Power Plant|Taishan]], [[China]]. However, as of 2019, the construction of the EPR in France is ten years behind schedule.<ref>{{Cite web |date=9 October 2019 |title=EDF warns of added costs of Flamanville EPR weld repairs |url=https://world-nuclear-news.org/Articles/EDF-warns-of-added-costs-of-Flamanville-EPR-weld-r |access-date=23 November 2019 |website=World Nuclear News |archive-date=9 December 2019 |archive-url=https://web.archive.org/web/20191209041541/http://www.world-nuclear-news.org/Articles/EDF-warns-of-added-costs-of-Flamanville-EPR-weld-r |url-status=live }}</ref> Taishan 1 in China became the first EPR to start power generation on 29 June 2018,<ref name=":0">{{Cite web |date=29 November 2018 |title=New delay in start-up of Finnish EPR |url=http://www.world-nuclear-news.org/Articles/New-delay-in-start-up-of-Finnish-EPR |access-date=29 November 2018 |website=World Nuclear News |archive-date=29 November 2018 |archive-url=https://web.archive.org/web/20181129193249/http://www.world-nuclear-news.org/Articles/New-delay-in-start-up-of-Finnish-EPR |url-status=live }}</ref> and the second one (Taishan 2) came online in 2019.<ref name="taishan2">{{Cite web |title=PRIS – Reactor Details |url=https://pris.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=919 |access-date=27 April 2020 |archive-date=30 June 2020 |archive-url=https://web.archive.org/web/20200630004828/https://pris.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=919 |url-status=live }}</ref>
+
+=== Cost ===
+The main contractor, Areva, was expected to build the unit for a fixed price of €3 billion, with any construction costs above that price falling on Areva. In July 2012, those overruns were estimated at more than €2 billion,<ref name="FT-2012-07-16" /> and in December 2012, Areva estimated that the full cost of building the reactor would be about €8.5 billion, well over the previous estimate of €6.4 billion.<ref name="HS-2012-12-13" /><ref name="WSJ-2012-12-13" /> Because of the delays, TVO and Areva both sought compensation from each other through the [[International Court of Arbitration]].
+
+In October 2013, TVO's demand for compensation from Areva had risen to €1.8 billion, and Areva's from TVO to €2.6 billion.<ref name="YLE-2013-10-29" /> In December 2013, Areva increased its demand to €2.7 billion.<ref name="YLE-2014-01-18" /> On 10 March 2018 French newspaper ''[[Le Monde]]'' announced that Areva and TVO had reached an agreement.<ref name="Metropolitan-2018-03-12" /> A day later, TVO confirmed that Areva would pay it €450 million in compensation over the delays and lost income.<ref name="TVO-2018-03-11">{{Cite news |date=11 March 2018 |title=TVO confirms a settlement agreement signed on OL3 EPR project completion and related disputes |publisher=[[Teollisuuden Voima|TVO]] |url=https://www.tvo.fi/news/1966 |access-date=12 March 2018 |archive-date=11 March 2018 |archive-url=https://web.archive.org/web/20180311230830/https://www.tvo.fi/news/1966 |url-status=live }}</ref> The agreement would settle all legal actions between the two companies. With the settlement, TVO disclosed its total investment to be around €5.5 billion. Areva had accumulated losses of €5.5 billion. The total cost of the project, therefore, is estimated to be €11 billion.<ref>{{Cite web |last1=Schneider |first1=Mycle |last2=Froggatt |first2=Antony |date=1 September 2019 |title=The World Nuclear Industry Status Report 2019 |url=https://www.worldnuclearreport.org/IMG/pdf/wnisr2019-v2-hr.pdf |access-date=11 April 2023 |publisher=A Mycle Schneider Consulting Project |quote=TVO's current capital expenditure assumptions and  the effect of the settlement agreement estimates its total investment to be around € 5.5 billion (US$ 6.42 billion); on top of this AREVA had losses of € 5.5 billion, for a total of € 11 billion (US$ 12.4 billion) compared with the initial estimate cost in 2003 of "around € 3 billion". (p. 66) |location=Paris, Budapest |archive-date=15 December 2019 |archive-url=https://web.archive.org/web/20191215182900/https://www.worldnuclearreport.org/IMG/pdf/wnisr2019-v2-hr.pdf |url-status=live }}</ref>
+
+Between 2013 and 2017 OL1 and OL2 produced between 13,385 GWh and 14,740 GWh per year at [[capacity factor]]s between 87.2% and 96%. OL3 is expected to produce an additional 12,000–13,000 GWh annually. Even taking into account all OL3 construction delays the long-term target for operational production cost (not including investments and subsidies) for all three plants is 33 €/MWh.<ref>{{Cite web |title=Finnish Nuclear Producer Teollisuuden Voima Upgraded To 'BBB-' From 'BB+' On OL3 Plant Commissioning; Outlook Stable |url=https://disclosure.spglobal.com/ratings/en/regulatory/article/-/view/type/HTML/id/2978425 |access-date=10 August 2023 |website=spglobal.com}}</ref> Production cost for the OL3 reactor alone is estimated at 49 €/MWh, as OL1-2 had a production cost of app. 18 €/MWh during 2016-2020, prior to OL3 entering service.<ref>{{Cite web |date=June 2021 |title=TVO Credit Investor Presentation June-2021 |url=https://www.tvo.fi/material/collections/20210713150018/7RllfhpQP/TVO_Credit_Investor_Presentation_June_2021.pdf |access-date=10 August 2023 }}</ref>
+
+=== Criticism ===
+In 2009, [[Stephen Thomas (economist)|Stephen Thomas]] wrote: "Olkiluoto has become an example of all that can go wrong in economic terms with new reactors," and Areva and the TVO "are in bitter dispute over who will bear the cost overruns and there is a real risk now that the utility will default."<ref name="thomas" /> The project has also been criticized by [[Säteilyturvakeskus|STUK]] because "instructions have not been observed in the welding of pipes and the supervision of welding."<ref name="WNN-2009-10-16" /> STUK has also noted that there have been delays in submitting proper paperwork.<ref name="NEI-2009-05-11" /><ref name="Bloomberg-2007-09-11" />
+
+Olkiluoto 3 was supposed to be the first reactor of [[Generation III reactor|3+ generation]] which would pave the way for a new wave of identical reactors across Europe that were safe, affordable, and delivered on time. The delays and cost overruns have had knock-on effects in other countries.<ref name="BBC-2009-11-25" />
+
+The construction workforce included about 3,800 employees from 500 companies. 80% of the workers were foreigners, mostly from [[Central and Eastern Europe|eastern European countries]]. In 2012, it was reported that one Bulgarian contracting firm is owned by the [[mafia]], and that Bulgarian workers were required to pay weekly [[Protection racket|protection fees]] to the mafia, wages have been unpaid, employees have been told not to join a union and that employers also reneged on social security payments.<ref name="HS-2013-12-04" /><ref name="YLE-2012-10-05" />
+
+=== Project timeline ===
+{| class="wikitable"
+ |+ Main milestones of the project and other surrounding events<ref name="WNN-2011-09-19" /><ref name="Areva-timeline" /><ref name="MOEE-timeline" />
+ ! Date
+ ! Event
+ |-
+ | December 2000
+ | TVO applies to the Finnish cabinet for a decision-in-principle on the new unit<ref name="STUK-2018-08-10" />
+ |-
+ | 17 January 2002
+ | decision-in-principle by the Finnish cabinet
+ |-
+ | 24 May 2002
+ | the Finnish parliament approves the decision-in-principle
+ |-
+ | 8 January 2004
+ | TVO submits construction application to the Finnish cabinet
+ |-
+ | style="white-space: nowrap" | 17 February 2005
+ | the Finnish cabinet approves the construction application
+ |-
+ | July 2005
+ | start of construction
+ |-
+ | May 2006
+ | lifting and installation of the bottom part of containment liner
+ |-
+ | June 2007
+ | reactor building containment liner rises to level +12.5 m
+ |-
+ | May 2008
+ | fuel building APC shell completed
+ |-
+ | January 2009
+ | Siemens withdraws from the joint venture with Areva, leaving the latter as the main contractor<ref>{{Cite web |url=https://www.tekniikkatalous.fi/tekniikka/energia/2009-01-27/Siemens-voi-p%C3%A4%C3%A4st%C3%A4-irti-Olkiluodon-korvausvastuista-3265856.html |title=Tekniikka & Talous: Siemens voi päästä irti Olkiluodon korvausvastuista |date=27 January 2009 |access-date=24 June 2018 |archive-date=24 June 2018 |archive-url=https://web.archive.org/web/20180624175612/https://www.tekniikkatalous.fi/tekniikka/energia/2009-01-27/Siemens-voi-p%C3%A4%C3%A4st%C3%A4-irti-Olkiluodon-korvausvastuista-3265856.html |url-status=live }}</ref>
+ |-
+ | January 2009
+ | reactor pressure vessel and vessel head arrive on site
+ |-
+ | May 2009
+ | main control room lifting in Safeguard Building 2
+ |-
+ | Summer 2009
+ | polar crane installation, dome installation
+ |-
+ | Autumn 2009
+ | steam generators arrive on site
+ |-
+ | September 2009
+ | EPR dome installed
+ |-
+ | June 2010
+ | installation of the reactor pressure vessel in the reactor building
+ |-
+ | June 2011
+ | [[Anne Lauvergeon]] leaves her position as CEO of Areva<ref name="Bloomberg-2012-08-10" />
+ |-
+ | November 2011
+ | installation of heavy components of the primary cooling system complete
+ |-
+ | July 2012
+ | delay in start of production to no earlier than 2015 announced<ref name="WNN-2012-07-17" />
+ |-
+ | December 2012
+ | Areva estimates that the full cost of building the reactor will be about €8.5 billion, or almost three times the delivery price of €3 billion<ref name="HS-2012-12-13" /><ref name="WSJ-2012-12-13" />
+ |-
+ | February 2013
+ | TVO said that it is "preparing for the possibility" that the third unit at Olkiluoto may not start operating until 2016<ref name="WNN-2013-02-11" />
+ |-
+ | February 2014
+ | Areva shutting down construction due to dispute over compensations and unfinished automation planning. Operation estimated to be delayed until 2018–2020.<ref name="Kauppalehti-2014-02-28" />
+ |-
+ | September 2014
+ | Areva announced it expected construction completion and commissioning to start in mid-2016, with operation expected to start in 2018. TVO stated they were surprised that commissioning was expected to take so long.<ref name="WNN-2014-09-01" />
+ |-
+ | December 2015
+ | The operational automation systems began to be delivered and installed.<ref name="YLE-2015-12-04" /> Commercial operation is estimated for December 2018.<ref name="YLE-2015-12-14" />
+ |-
+ | January 2016
+ | Testing of the operational automation systems begins.<ref name="YLE-2016-01-13" />
+ |-
+ | April 2016
+ | TVO submits operating license application to the Finnish government <ref name="TVO-2016-04-14" />
+ |-
+ | October 2016
+ | TVO calls on [[Siemens]] to take financial responsibility for the completion of the project because its project partner, the French [[Areva]] Group, is being broken up by the French government.<ref name="clew-2016" /><ref name="klaesgen-and-bueschmann-2016" />
+ |-
+ | October 2017
+ | The completion is delayed to May 2019 as announced by TVO.<ref name="TVO-2017-10-09" />
+ |-
+ | December 2017
+ | Hot functional testing begins.<ref name="WNN-2017-12-19" />
+ |-
+ | February 2018
+ | Fuel for the reactor is on site.<ref name="TVO-2018-02-08" />
+ |-
+ | March 2018
+ | TVO and Areva come to agreement on delays. Areva will pay €450 million in compensation.<ref name="TVO-2018-03-11" />
+|-
+| 30 May 2018
+| Hot functional tests completed.<ref>{{Cite web |title=Olkiluoto EPR prepares for fuel loading – World Nuclear News |url=http://www.world-nuclear-news.org/NN-Olkiluoto-EPR-prepares-for-fuel-loading-3005184.html |access-date=10 June 2018 |archive-date=12 June 2018 |archive-url=https://web.archive.org/web/20180612140530/http://www.world-nuclear-news.org/NN-Olkiluoto-EPR-prepares-for-fuel-loading-3005184.html |url-status=live }}</ref>
+ |-
+ |June 2018
+ | The completion is delayed to September 2019 due to delays in the hot functional testing.<ref name="wnn-20180614">{{Cite news |date=14 June 2018 |title=Start-up of Finnish EPR put back four months |publisher=World Nuclear News |url=http://www.world-nuclear-news.org/NN-Start-up-of-Finnish-EPR-put-back-four-months-1406184.html |access-date=15 June 2018 |archive-date=3 April 2019 |archive-url=https://web.archive.org/web/20190403200405/http://www.world-nuclear-news.org/NN-Start-up-of-Finnish-EPR-put-back-four-months-1406184.html |url-status=live }}</ref>
+|-
+|November 2018
+|The completion is delayed to January 2020 due to commissioning tests taking longer than expected.<ref name=":0" />
+|-
+|February 2019
+|STUK issued a statement stating that the power plant is safe and can be granted an operating license.<ref>{{Cite web |date=25 February 2019 |title=Radiation and Nuclear Safety Authority (STUK): Operating licence can be granted to Olkiluoto 3 |url=https://www.stuk.fi/web/en/-/radiation-and-nuclear-safety-authority-stuk-operating-licence-can-be-granted-to-olkiluoto-3 |access-date=25 February 2019 |publisher=STUK |archive-date=3 November 2020 |archive-url=https://web.archive.org/web/20201103020200/https://www.stuk.fi/web/en/-/radiation-and-nuclear-safety-authority-stuk-operating-licence-can-be-granted-to-olkiluoto-3 |url-status=live }}</ref>
+|-
+|March 2019
+|The Finnish Government granted an operating license to the reactor.<ref>{{Cite web |date=7 March 2019 |title=The Government granted an operating licence to the nuclear power plant unit Olkiluoto 3 |url=https://tem.fi/en/article/-/asset_publisher/valtioneuvosto-myonsi-kayttoluvan-olkiluoto-3-ydinvoimalaitosyksikolle |access-date=7 March 2019 |website=Ministry of Economic Affairs and Employment |archive-date=8 March 2019 |archive-url=https://web.archive.org/web/20190308092258/https://tem.fi/en/article/-/asset_publisher/valtioneuvosto-myonsi-kayttoluvan-olkiluoto-3-ydinvoimalaitosyksikolle |url-status=live }}</ref>
+|-
+|April 2019
+|TVO indicated that the January 2020 deadline for production is expected to be pushed back by two months due to delays.<ref>{{Cite news |date=10 April 2019 |title=UPDATE 2-Fresh setback for Finland's delayed Olkiluoto 3 reactor |language=en |work=Reuters |url=https://www.reuters.com/article/finland-nuclear-idUSL8N21S3EX |access-date=18 June 2019 |archive-date=18 June 2019 |archive-url=https://web.archive.org/web/20190618150449/https://www.reuters.com/article/finland-nuclear-idUSL8N21S3EX |url-status=live }}</ref>
+|-
+|July 2019
+|Areva delays another 4 months to startup in July 2020.<ref name=":1" />
+|-
+|November 2019
+|Further delays: updated schedule expected in December.<ref>{{Cite web |date=8 November 2019 |title=Olkiluodon uudessa ydinvoimalassa jälleen viivästys: Projekti arviolta kuusi viikkoa myöhässä |url=https://yle.fi/uutiset/3-11059399 |access-date=10 November 2019 |archive-date=9 November 2019 |archive-url=https://web.archive.org/web/20191109160510/https://yle.fi/uutiset/3-11059399 |url-status=live }}</ref>
+|-
+|December 2019
+|Areva announces new schedule: connection to power grid in November 2020, commercial production in March 2021.<ref>{{Cite web |date=20 December 2019 |title=Olkiluoto 3 nuke delayed yet again, now 12 years behind schedule |url=https://yle.fi/uutiset/osasto/news/olkiluoto_3_nuke_delayed_yet_again_now_12_years_behind_schedule/11128489 |access-date=22 December 2019 |website=Yle Uutiset |archive-date=23 February 2020 |archive-url=https://web.archive.org/web/20200223202508/https://yle.fi/uutiset/osasto/news/olkiluoto_3_nuke_delayed_yet_again_now_12_years_behind_schedule/11128489 |url-status=live }}</ref>
+|-
+|August 2020
+|Areva announces new schedule: fuel loading in March 2021, connection to power grid in October 2021, commercial production in February 2022.<ref>{{Cite web |date=28 August 2020 |title=Further delay in commissioning of Finnish EPR |url=https://www.world-nuclear-news.org/Articles/Further-delay-in-commissioning-of-Finnish-EPR |access-date=28 August 2020 |publisher=World Nuclear News |language=en |archive-date=29 August 2020 |archive-url=https://web.archive.org/web/20200829000146/https://www.world-nuclear-news.org/Articles/Further-delay-in-commissioning-of-Finnish-EPR |url-status=live }}</ref><ref name="YleAug20" />
+|-
+|March 2021
+|STUK grants fuel loading permit for the reactor.<ref>{{Cite web |date=26 March 2021 |title=STUK: The third nuclear reactor of Olkiluoto received the fuel loading permit |url=https://www.stuk.fi/web/en/-/stuk-the-third-nuclear-reactor-of-olkiluoto-received-the-fuel-loading-permit |url-status=live |archive-url=https://web.archive.org/web/20210326080249/https://www.stuk.fi/web/en/-/stuk-the-third-nuclear-reactor-of-olkiluoto-received-the-fuel-loading-permit |archive-date=26 March 2021 |access-date=26 March 2021 |publisher=STUK}}</ref>
+|-
+|April 2021
+|Finished loading of all 241 fuel assemblies to the reactor.<ref>{{Cite web |date=16 April 2021 |title=Fuel loading at OL3, a historical event in many respects, successfully brought to finishing line! |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2021/fuelloadingatol3ahistoricaleventinmanyrespectssuccessfullybroughttofinishingline.html |access-date=16 April 2021 |publisher=TVO |archive-date=16 April 2021 |archive-url=https://web.archive.org/web/20210416115854/https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2021/fuelloadingatol3ahistoricaleventinmanyrespectssuccessfullybroughttofinishingline.html |url-status=live }}</ref>
+|-
+|August 2021
+|Turbine refurbishment takes longer than expected, causing another delay of at least three months. Reactor start expected in January 2022, production of electricity in February 2022 and commercial production in June 2022.<ref>{{Cite web |date=20 August 2021 |title=Olkiluoto kolmonen viivästyy taas – turbiinin huolto kestää odotettua pidempään |url=https://yle.fi/uutiset/3-12067308 |access-date=23 August 2021 |publisher=Yle |archive-date=21 August 2021 |archive-url=https://web.archive.org/web/20210821000409/https://yle.fi/uutiset/3-12067308 |url-status=live }}</ref>
+|-
+|December 2021
+|TVO applied for and was granted permission for startup, with production of electricity revised to start late January 2022.<ref name=":2" />
+|-
+|December 2021
+|The reactor achieved [[Criticality (status)|criticality]] on 21 December 2021.<ref name="productionStart">{{Cite web |date=12 March 2022 |title=The Olkiluoto 3 EPR plant unit's electricity production has started |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2022/theolkiluoto3eprplantunit8217selectricityproductionhasstarted.html |publisher=TVO |access-date=12 March 2022 |archive-date=12 March 2022 |archive-url=https://web.archive.org/web/20220312113212/https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2022/theolkiluoto3eprplantunit8217selectricityproductionhasstarted.html |url-status=live }}</ref>
+|-
+|March 2022
+|Electricity production started on 12 March 2022.<ref name="productionStart" />
+|-
+|May 2022
+|Foreign material found in the turbine steam reheater, and the plant was shut down for about three months of repair work.<ref name=wnn-20220616/>
+|-
+|30 September 2022
+|The reactor achieved its design output power.<ref name=TVO-2022-09-30/>
+|-
+|16 April 2023
+|The plant began regular electricity production at 02:00 AM.<ref name=OL3-regularproduction/>
+|-
+|1 May 2023
+|The plant began commercial operation.<ref name=OL3-commercialoperation/>
+|}
+
+=== Operations ===
+The first annual maintenance outage started on 2 March 2024, and was expected to take 37 days. The outage was delayed from the original plan due to the shutdown process and inspections of the fuel elements taking longer than expected, and technical problems identified during the maintenance. The outage lasted 74 days, and the plant resumed electricity production on 16 May.<ref>{{Cite web |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2024/4824555.html |title=Olkiluoto 3 annual outage completed |date=2024-05-16 |access-date=2024-05-18 |publisher=TVO}}</ref>
+
+=== Incidents ===
+On 7 March 2025, during a maintenance outage from 1 March 2025 until early May. 100 cubic metres of radioactive coolant water leaked from the reactor into containment space rooms because a hatch in the reactor refueling pool had not been properly closed due to human error. TVO said "a significant operating event occurred during the maintenance work when radioactive coolant leaked ... the significance of the event to radiation safety was low".<ref name=wnn-20250310>{{cite news |url=https://www.world-nuclear-news.org/articles/human-error-leads-to-water-spill-at-finnish-epr |title=Human error leads to water spill at Finnish EPR |website=World Nuclear News |date=10 March 2025 |access-date=10 March 2025}}</ref><ref name=tvo-20250310>{{cite web |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2025/radioactivecoolantleakageintocontainmentareasclosedtoenvironmentduringannualoutageatolkiluoto3.html |title=Radioactive coolant leakage into containment areas closed to environment during annual outage at Olkiluoto 3 |website=TVO |date=10 March 2025 |access-date=10 March 2025}}</ref>
+
+== Unit 4 ==
+[[File:Loppusijoituskapseli.jpg|thumb|Final disposal capsule for waste nuclear fuel as shown at the Olkiluoto Nuclear Power Plant Visitor Centre]]
+On 14 February 2008, TVO submitted an environmental impact assessment of unit four to the Ministry of Employment and Economy.<ref name="WNN-2008-02-21" /> On 21 April 2010, the government of Finland decided to grant a decision-in-principle to Teollisuuden Voima for the fourth reactor in Olkiluoto. The decision was approved by the parliament on 1 July 2010.<ref name="Reuters-2010-07-01" /> If constructed, the fourth unit would be a [[Pressurized water reactor|PWR]] or a [[Boiling water reactor|BWR]] with a power output of 1,000 to 1,800&nbsp;MW.<ref name="WNN-2008-02-21" />
+
+In September 2014, with unit 3 still unfinished, the Finnish government rejected TVO's request for time extension of the unit 4 decision-in-principle. Economic Affairs Minister [[Jan Vapaavuori]] referred to the long delay of the 3rd reactor and to unsatisfactory assurances by TVO that the 4th unit would ever be built. Nevertheless PM [[Alexander Stubb|Stubb]] stated that the rejection didn't spell the end for the OL4 project, and that TVO would have the opportunity to apply for a construction license before the decision-in-principle expires in June 2015.<ref name="YLE-2014-09-25" />
+
+In June 2015, TVO decided not to apply for a construction permit for the Olkiluoto 4 unit because of delays with unit 3, however saying they are prepared to file for a new decision-in-principle later.<ref name="YLE-2015-06-24" /><ref name="TVO-2015-06-24" />
+
+== Onkalo spent nuclear fuel repository ==
+[[File:Onkalo 2.jpg|thumb|upright|Onkalo pilot repository cave]]
+{{Main|Onkalo spent nuclear fuel repository}}
+
+The ''Onkalo spent nuclear fuel repository'' is a [[deep geological repository]] for the final disposal of [[spent nuclear fuel]], the first such repository in the world. It is currently under construction at the Olkiluoto plant by the company [[Posiva]], owned by the nuclear power plant operators [[Fortum]] and [[Teollisuuden Voima|TVO]].
+
+== Agriculture ==
+The [[waste heat]], an output common to all [[thermal power plants]], which heats the cooling water (at 13&nbsp;°C) is utilized for small-scale agriculture before being pumped back to the sea. The power plant hosts the northernmost [[vineyard]] in the world, a 0.1 ha experimental plot that yields 850&nbsp;kg Zilga [[grapes]] annually.<ref name="Tiede-2013-02-13" /> Another use is a pond for growing crabs, [[Coregonus lavaretus|whitefish]] and [[sturgeon]] for [[caviar]].<ref name="TVO-dead-link" />
+
+== Incidents ==
+[[File:Kyltti Olkiluoto.jpg|thumb|upright|A sign near the Olkiluoto nuclear power plant says: "NUCLEAR POWER PLANT AREA. Moving and staying in the area without a proper permit is prohibited under threat of a fine. (Police Act § 52)"]]
+In April 2014, a turbine steam condenser of unit 1 had a small seawater leak, at a rate of two litres per hour. According to the operator, the leak forced to limit the plant output down to 300 MW, but was not serious and was to be repaired in a day.<ref name="YLE-2014-04-14" />
+
+An incident occurred at unit 2 on 10 December 2020 at 12:22. Because of valve repair work, excessively hot water flowed to the reactor water clean-up system filters. The hot water dissolved materials from the filters. When the clean-up system was restarted, the dissolved materials flowed to the reactor core, where they [[Neutron activation|became radioactive]]. This caused the radiation levels in the steam line to momentarily rise to 3–4 times higher than normal. The increase of the radiation level activated safety systems, which operated as planned and triggered reactor [[scram]], closed containment isolation valves, and started the containment spray system. The operators followed procedures and declared a site area emergency at 12:32.<ref name="incidentTVO">{{Cite web |date=13 December 2020 |title=More information on the plant disturbance at Olkiluoto 2 |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2020/moreinformationontheplantdisturbanceatolkiluoto2.html |access-date=14 December 2020 |publisher=[[Teollisuuden Voima]] |archive-date=13 December 2020 |archive-url=https://web.archive.org/web/20201213194501/https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2020/moreinformationontheplantdisturbanceatolkiluoto2.html |url-status=live }}</ref> The event caused a full-scale emergency response at the power plant and at the [[Radiation and Nuclear Safety Authority]]. There was no radioactive release to the environment, and the workers were not exposed to radiation.<ref>{{Cite web |date=10 December 2020 |title=The unit 2 at Olkiluoto will be shut down to a cold state so that the cause of the fault can be determined – the situation is stable |url=https://www.stuk.fi/web/en/-/the-unit-2-at-olkiluoto-will-be-shut-down-to-a-cold-state-so-that-the-cause-of-the-fault-can-be-determined-the-situation-is-stable |access-date=14 December 2020 |publisher=[[Radiation and Nuclear Safety Authority]] |archive-date=12 December 2020 |archive-url=https://web.archive.org/web/20201212023341/https://www.stuk.fi/web/en/-/the-unit-2-at-olkiluoto-will-be-shut-down-to-a-cold-state-so-that-the-cause-of-the-fault-can-be-determined-the-situation-is-stable |url-status=live }}</ref> The event was categorized as 0 on the [[International Nuclear Event Scale|INES scale]], which means that it was an exceptional event with no safety significance.<ref name="incidentTVO" /> The reactor was restarted on 19 December, nine days after the incident.<ref>{{Cite web |date=20 December 2020 |title=The Olkiluoto 2 plant unit was reconnected to the Finnish national grid |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2020/theolkiluoto2plantunitwasreconnectedtothefinnishnationalgrid.html |access-date=22 December 2020 |publisher=Teollisuuden Voima |archive-date=20 December 2020 |archive-url=https://web.archive.org/web/20201220070702/https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2020/theolkiluoto2plantunitwasreconnectedtothefinnishnationalgrid.html |url-status=live }}</ref>
+
+On 3 June 2024 at 11:41, electricity production of unit 3 was briefly interrupted due to a turbine malfunction. An immediate investigation found the cause to be a failure in the differential [[pressure measurement]] of the generator's sealing oil and hydrogen coolant. The unit returned to normal production on the following night. The incident had no impact on nuclear safety.<ref>{{Cite web |title=TVO - Electricity production at Olkiluoto 3 will resume next night |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2024/electricityproductionatolkiluoto3willresumenextnight.html |access-date=2024-06-04 |website=www.tvo.fi}}</ref>
+
+== See also ==
+{{div col}}
+* [[Flamanville Nuclear Power Plant]]
+* [[List of commercial nuclear reactors#Finland|List of nuclear reactors in Finland]]
+** [[Hanhikivi Nuclear Power Plant]]
+* [[Nuclear engineering]]
+* [[Nuclear power in Finland]]
+* ''[[Into Eternity (film)|Into Eternity]]'', a 2010 documentary about the construction of a Finnish waste depository
+{{div col end}}
+
+== Notes and references ==
+
+{{Reflist|30em|refs=
+
+<ref name="Areva-2007-09-27">{{Cite news |date=27 September 2007 |title=Chronology of Olkiluoto 3 project |publisher=[[Areva]] |url=http://www.ol3.areva-np.com/project/chrono.htm |url-status=dead |archive-url=https://web.archive.org/web/20070927094543/http://www.ol3.areva-np.com/project/chrono.htm |archive-date=27 September 2007}}</ref>
+
+<ref name="Areva-timeline">{{Cite web |title=OLKILUOTO 3 – FINLAND |url=http://www.areva.com/EN/operations-2389/finland--olkiluoto-3.html#tab=tab7 |url-status=dead |archive-url=https://web.archive.org/web/20170118084442/http://www.areva.com/EN/operations-2389/finland--olkiluoto-3.html |archive-date=18 January 2017 |publisher=Areva}}</ref>
+
+<ref name="BBC-2009-11-25">{{Cite news |last=Jones |first=Meirion |date=25 November 2009 |title=New UK nuclear stations unlikely to be ready on time |publisher=[[BBC]] |url=https://news.bbc.co.uk/1/hi/programmes/newsnight/8379274.stm |access-date=10 August 2012}}</ref>
+
+<ref name="BBC-2012-07-16">{{Cite news |date=16 July 2012 |title=Finland's Olkiluoto 3 nuclear plant delayed again |publisher=[[BBC]] |url=https://www.bbc.co.uk/news/world-europe-18862422 |access-date=10 August 2012 |archive-date=23 July 2012 |archive-url=https://web.archive.org/web/20120723161230/http://www.bbc.co.uk/news/world-europe-18862422 |url-status=live }}</ref>
+
+<ref name="Bloomberg-2007-09-11">{{Cite web |last=Katz |first=Alan |date=11 September 2007 |title=Finnish plant demonstrates nuclear power industry's perennial problems |url=http://www.climatesceptics.org/europe/finland/finnish-plant-demonstrates-nuclear-power-industry-s-perennial-problems |publisher=[[Bloomberg L.P.|Bloomberg]] |access-date=10 August 2012 |archive-date=23 July 2012 |archive-url=https://web.archive.org/web/20120723055550/http://www.climatesceptics.org/europe/finland/finnish-plant-demonstrates-nuclear-power-industry-s-perennial-problems |url-status=live }}</ref>
+
+<ref name="Bloomberg-2012-08-10">{{Cite news |date=18 June 2011 |title=Lauvergeon Leaves Areva on 'Good' Track-Record, Besson Says |publisher=[[Bloomberg L.P.|Bloomberg]] |url=http://mobile.bloomberg.com/news/2011-06-18/lauvergeon-leaves-areva-on-good-track-record-besson-says |access-date=10 August 2012}}</ref>
+
+<ref name="FT-2012-07-16">{{Cite news |last=Boxell |first=James |date=16 July 2012 |title=Areva's atomic reactor faces further delays |publisher=[[Financial Times]] |url=http://www.ft.com/intl/cms/s/0/6e90de68-cf5c-11e1-a1d2-00144feabdc0.html |access-date=10 August 2012 |archive-date=21 April 2023 |archive-url=https://web.archive.org/web/20230421192840/https://www.ft.com/content/6e90de68-cf5c-11e1-a1d2-00144feabdc0 |url-status=live }}</ref>
+
+<ref name="HS-2009-01-27">{{Cite news |date=27 January 2009 |title=Siemens to give up nuclear joint venture with Areva |publisher=[[Helsingin Sanomat]] |url=http://www.hs.fi/english/article/Siemens+to+give+up+nuclear+joint+venture+with+Areva/1135243067027 |url-status=dead |access-date=10 August 2012 |archive-url=https://web.archive.org/web/20121020234153/http://www.hs.fi/english/article/Siemens+to+give+up+nuclear+joint+venture+with+Areva/1135243067027 |archive-date=20 October 2012}}</ref>
+
+<ref name="HS-2012-12-13">{{Cite news |date=13 December 2012 |title=Suomenkin uusi ydinvoimala maksaa 8,5 miljardia euroa |publisher=[[Helsingin Sanomat]] |url=http://www.hs.fi/talous/Suomenkin+uusi+ydinvoimala+maksaa+85+miljardia+euroa/a1305627982885 |access-date=13 December 2012 |archive-date=15 December 2012 |archive-url=https://web.archive.org/web/20121215140343/http://www.hs.fi/talous/Suomenkin+uusi+ydinvoimala+maksaa+85+miljardia+euroa/a1305627982885 |url-status=live }}</ref>
+
+<ref name="HS-2013-12-04">{{Cite news |date=10 May 2012 |title=TVO: Arevalta vaadittu suomalaisten sopimusten noudattamista |publisher=[[Helsingin Sanomat]] |url=http://www.hs.fi/kotimaa/TVO+Arevalta+vaadittu+suomalaisten+sopimusten+noudattamista+/a1305603665335 |access-date=4 December 2013 |archive-date=16 March 2013 |archive-url=https://web.archive.org/web/20130316103356/http://www.hs.fi/kotimaa/TVO+Arevalta+vaadittu+suomalaisten+sopimusten+noudattamista+/a1305603665335 |url-status=live }}</ref>
+
+<ref name="INSC-TVO-1">{{Cite web |title=TVO 1 |url=http://www.insc.anl.gov/cgi-bin/sql_interface?view=rx_com_matrix&qvar=unit&qval=57 |url-status=dead |archive-url=https://web.archive.org/web/19990904021216/http://www.insc.anl.gov/cgi-bin/sql_interface?view=rx_com_matrix&qvar=unit&qval=57 |archive-date=4 September 1999 |access-date=13 March 2011 |publisher=[[International Nuclear Safety Center]]}}</ref>
+
+<ref name="INSC-TVO-2">{{Cite web |title=TVO 2 |url=http://www.insc.anl.gov/cgi-bin/sql_interface?view=rx_com_matrix&qvar=unit&qval=58 |url-status=dead |archive-url=https://web.archive.org/web/19990904045811/http://www.insc.anl.gov/cgi-bin/sql_interface?view=rx_com_matrix&qvar=unit&qval=58 |archive-date=4 September 1999 |access-date=13 March 2011 |publisher=[[International Nuclear Safety Center]]}}</ref>
+
+<ref name="Kauppalehti-2014-02-28">{{Cite news |last=Paula Nikula |date=28 February 2014 |title=Areva ajaa Olkiluodon työmaata alas |language=fi |publisher=Kauppalehti |url=http://www.kauppalehti.fi/etusivu/areva+ajaa+olkiluodon+tyomaata+alas/201402652139 |url-status=dead |access-date=28 February 2014 |archive-url=https://web.archive.org/web/20140304095114/http://www.kauppalehti.fi/etusivu/areva+ajaa+olkiluodon+tyomaata+alas/201402652139 |archive-date=4 March 2014}}</ref>
+
+<ref name="MOEE-timeline">{{Cite web |date=26 January 2012 |title=Nuclear power plant Olkiluoto 3 |url=http://www.tem.fi/index.phtml?l=en&s=187 |url-status=dead |archive-url=https://web.archive.org/web/20160304060734/http://www.tem.fi/index.phtml?l=en&s=187 |archive-date=4 March 2016 |publisher=[[Ministry of Economic Affairs and Employment (Finland)]]}}</ref>
+
+<ref name="Metropolitan-2018-03-12">{{Cite news |date=10 March 2018 |title=Le Monde: Areva to pay hundreds of millions in compensation for delayed OL3 Nuclear Power Plant in Finland |publisher=Metropolitan.fi |url=https://metropolitan.fi/entry/le-monde-areva-ol3-nuclear-powerplant-compensation-olkiluoto-finland |access-date=12 March 2018 |archive-date=12 March 2018 |archive-url=https://web.archive.org/web/20180312144706/https://metropolitan.fi/entry/le-monde-areva-ol3-nuclear-powerplant-compensation-olkiluoto-finland |url-status=live }}</ref>
+
+<ref name="NEI-2009-05-11">{{Cite web |date=11 May 2009 |title=Leaked Olkiluoto letter |url=http://www.neimagazine.com/story.asp?sc=2052909 |archive-url=https://web.archive.org/web/20110613090904/http://www.neimagazine.com/story.asp?sc=2052909 |archive-date=13 June 2011 |publisher=Nuclear Engineering International}}</ref>
+
+<ref name="NEI-2012-01-09">{{Cite news |date=9 January 2012 |title=2011 sees record outage at Olkiluoto 2 |publisher=Nuclear Engineering International |url=http://www.neimagazine.com/story.asp?storyCode=2061540 |url-status=dead |access-date=12 January 2012 |archive-url=https://archive.today/20120904084048/http://www.neimagazine.com/story.asp?storyCode=2061540 |archive-date=4 September 2012}}</ref>
+
+<ref name="Reuters-2010-07-01">{{Cite news |last=Kinnunen |first=Terhi |date=1 July 2010 |title=Finnish parliament agrees plans for two reactors |publisher=[[Reuters]] |url=http://uk.reuters.com/article/idUKLDE6600ED |access-date=2 July 2010 |archive-date=3 March 2016 |archive-url=https://web.archive.org/web/20160303185447/http://uk.reuters.com/article/idUKLDE6600ED |url-status=dead }}</ref>
+
+<ref name="Reuters-2013-12-10">{{Cite news |date=10 December 2013 |title=Areva-Siemens to cut staff at Olkiluoto 3 site -TVO |publisher=[[Reuters]] |url=https://fr.reuters.com/article/idFRL6N0JP2ZJ20131210 |url-status=dead |access-date=18 January 2014 |archive-url=https://web.archive.org/web/20140201140725/http://fr.reuters.com/article/idFRL6N0JP2ZJ20131210 |archive-date=1 February 2014}}</ref>
+
+<ref name="STUK-2009-04-27">{{Cite web |date=27 April 2009 |title=Licensing of Olkiluoto 3: Preliminary safety assessment on the application for a fifth nuclear power plant |url=http://www.stuk.fi/ydinturvallisuus/ydinvoimalaitokset/ydinvoimalaitosluvat/viides/en_GB/viides_voimala/ |url-status=dead |archive-url=https://web.archive.org/web/20120226180828/http://www.stuk.fi/ydinturvallisuus/ydinvoimalaitokset/ydinvoimalaitosluvat/viides/en_GB/viides_voimala/ |archive-date=26 February 2012 |access-date=10 August 2012 |publisher=STUK}}</ref>
+
+<ref name="STUK-2018-08-10">{{Cite web |date=27 April 2009 |title=Licensing of Olkiluoto 3 |url=http://www.stuk.fi/ydinturvallisuus/ydinvoimalaitokset/ydinvoimalaitosluvat/viides/en_GB/viides_voimala/ |url-status=dead |archive-url=https://web.archive.org/web/20120226180828/http://www.stuk.fi/ydinturvallisuus/ydinvoimalaitokset/ydinvoimalaitosluvat/viides/en_GB/viides_voimala/ |archive-date=26 February 2012 |access-date=10 August 2012 |publisher=[[Säteilyturvakeskus|STUK]]}}</ref>
+
+<ref name="TVO-2009-01-04">{{Cite web |date=4 January 2009 |title=OL3 Reactor Pressure Vessel Arrived in Olkiluoto |url=http://www.tvo.fi/page-2085 |publisher=TVO |quote=The OL3 reactor pressure vessel was manufactured at Japan Steel Works and Mitsubishi Heavy Industries |access-date=21 March 2013 |archive-date=29 August 2013 |archive-url=https://web.archive.org/web/20130829122705/http://www.tvo.fi/page-2085 |url-status=live }}</ref>
+
+<ref name="TVO-2011-03-13">{{Cite web |date=January 2008 |title=Nuclear power plant units Olkiluoto 1 and Olkiluoto 2 |url=http://www.tvo.fi/uploads/File/nuclear-power-plant-units.pdf |access-date=16 April 2018 |publisher=[[Teollisuuden Voima]] |archive-date=26 March 2017 |archive-url=https://web.archive.org/web/20170326102330/http://www.tvo.fi/uploads/File/nuclear-power-plant-units.pdf |url-status=live }}</ref>
+
+<ref name="TVO-2012">{{Cite web |title=OL3 – koko Suomen projekti |url=http://www.tvo.fi/www/page/183/ |url-status=dead |archive-url=https://web.archive.org/web/20120919173926/http://www.tvo.fi/www/page/183/ |archive-date=19 September 2012 |access-date=10 August 2012 |website=Power Reactor Information System |publisher=[[Teollisuuden Voima|TVO]]}}</ref>
+
+<ref name="TVO-2015-06-24">{{Cite press release |title=TVO will not now apply for construction license for OL4 |date=24 June 2015 |url=http://www.tvo.fi/news/1615 |access-date=15 April 2016 |archive-date=24 March 2016 |archive-url=https://web.archive.org/web/20160324093752/http://www.tvo.fi/news/1615 |url-status=live }}</ref>
+
+<ref name="TVO-2016-04-14">{{Cite web |date=14 April 2016 |title=TVO submits OL3 Operating License application to the Ministry of Employment and the Economy |url=https://www.tvo.fi/news/1711 |access-date=13 March 2018 |publisher=TVO |archive-date=13 March 2018 |archive-url=https://web.archive.org/web/20180313092605/https://www.tvo.fi/news/1711 |url-status=live }}</ref>
+
+<ref name="TVO-2017-10-09">{{Cite news |date=9 October 2017 |title=Plant supplier informs that regular electricity production of Olkiluoto 3 EPR starts in May 2019 |work=TVO |url=http://www.tvo.fi/news/1918 |access-date=9 October 2017 |archive-date=10 October 2017 |archive-url=https://web.archive.org/web/20171010211059/http://www.tvo.fi/news/1918 |url-status=live }}</ref>
+
+<ref name="TVO-2018-01-03">{{Cite web |date=3 January 2018 |title=Olkiluodon ydinvoimalaitoksella modernisointeja, tehonkorotuksia ja tasaista sähköntuotantoa |url=http://tvo.fi/news/1942 |access-date=7 January 2018 |publisher=TVO |archive-date=8 January 2018 |archive-url=https://web.archive.org/web/20180108062625/http://tvo.fi/news/1942 |url-status=live }}</ref>
+
+<ref name="TVO-2018-02-08">{{Cite web |date=8 February 2018 |title=Fuel for Olkiluoto 3 EPR is in Olkiluoto |url=http://www.tvo.fi/news/1957 |access-date=11 February 2018 |publisher=TVO |archive-date=12 February 2018 |archive-url=https://web.archive.org/web/20180212005206/http://www.tvo.fi/news/1957 |url-status=live }}</ref>
+
+<ref name="TVO-2018-09-20">{{Cite news |date=20 September 2018 |title=Finnish Government approves extension of operating licences for OL1 and OL2 plant units |publisher=[[Teollisuuden Voima|TVO]] |url=https://www.tvo.fi/news/2042 |access-date=20 September 2018 |archive-date=20 September 2018 |archive-url=https://web.archive.org/web/20180920234437/https://www.tvo.fi/news/2042 |url-status=live }}</ref>
+
+<ref name="TVO-dead-link">{{Cite web |title=a dead link with an unknown title |url=http://www.tvo.fi/www/page/3140/ |access-date=1 January 2013 |archive-date=22 April 2023 |archive-url=https://web.archive.org/web/20230422105351/https://www.tvo.fi/www/page/3140/ |url-status=dead }}<!-- Wayback machine can't find this link. Please find another source for the claim and then replace this reference. --></ref>
+
+<ref name="Tiede-2013-02-13">{{Cite web |date=13 February 2013 |title=Totuus Olkiluodon viinirypäleistä |trans-title=The truth about the grapes at Olkiluoto |url=http://www.tiede.fi/keskustelut/biologia-ja-ymparisto-f9/totuus-olkiluodon-viinirypaleista-t17157.html |url-status=dead |archive-url=https://archive.today/20130213113133/http://www.tiede.fi/keskustelut/biologia-ja-ymparisto-f9/totuus-olkiluodon-viinirypaleista-t17157.html |archive-date=13 February 2013 |language=fi}}</ref>
+
+<ref name="WNN-2008-02-21">{{Cite news |date=15 February 2008 |title=Environmental study for Olkiluoto 4 |publisher=[[World Nuclear Association#Public information|World Nuclear News]] |url=http://www.world-nuclear-news.org/NN/Environmental_study_for_Olkiluoto_4_150208.html |access-date=21 February 2008 |archive-date=21 February 2008 |archive-url=https://web.archive.org/web/20080221115801/http://www.world-nuclear-news.org/NN/Environmental_study_for_Olkiluoto_4_150208.html |url-status=live }}</ref>
+
+<ref name="WNN-2009-10-16">{{Cite news |date=16 October 2009 |title=Olkiluoto pipe welding 'deficient', says regulator |publisher=[[World Nuclear Association#Public information|World Nuclear News]] |url=http://www.world-nuclear-news.org/NN-Olkiluoto_pipe_welding_deficient_says_regulator-1610095.html |access-date=10 August 2012 |archive-date=20 October 2012 |archive-url=https://web.archive.org/web/20121020133236/http://www.world-nuclear-news.org/NN-Olkiluoto_pipe_welding_deficient_says_regulator-1610095.html |url-status=live }}</ref>
+
+<ref name="WNN-2011-09-19">{{Cite news |date=19 September 2011 |title=Siemens quits the nuclear game |publisher=[[World Nuclear Association#Public information|World Nuclear News]] |url=http://www.world-nuclear-news.org/C_Siemens_quits_the_nuclear_game_1909111.html |access-date=10 August 2012 |archive-date=8 August 2012 |archive-url=https://web.archive.org/web/20120808071051/http://www.world-nuclear-news.org/C_Siemens_quits_the_nuclear_game_1909111.html |url-status=live }}</ref>
+
+<ref name="WNN-2012-07-17">{{Cite news |date=17 July 2012 |title=Olkiluoto 3 delayed beyond 2014 |publisher=[[World Nuclear Association#Public information|World Nuclear News]] |url=http://www.world-nuclear-news.org/NN-Olkiluoto_3_delayed_beyond_2014-1707124.html |access-date=24 July 2012 |archive-date=24 October 2017 |archive-url=https://web.archive.org/web/20171024095911/http://www.world-nuclear-news.org/NN-Olkiluoto_3_delayed_beyond_2014-1707124.html |url-status=live }}</ref>
+
+<ref name="WNN-2013-02-11">{{Cite news |date=11 February 2013 |title=TVO prepares for further Olkiluoto 3 delay |publisher=[[World Nuclear Association#Public information|World Nuclear News]] |url=http://www.world-nuclear-news.org/NN-TVO_prepares_for_further_Olkiluoto_3_delay-1102134.html |access-date=27 February 2014 |archive-date=1 March 2014 |archive-url=https://web.archive.org/web/20140301203645/http://www.world-nuclear-news.org/NN-TVO_prepares_for_further_Olkiluoto_3_delay-1102134.html |url-status=live }}</ref>
+
+<ref name="WNN-2014-02-17">{{Cite news |date=17 February 2014 |title=Finnish EPR passes integrity tests |publisher=[[World Nuclear Association#Public information|World Nuclear News]] |url=http://www.world-nuclear-news.org/NN-Finnish-EPR-passes-integrity-tests-1702144.html |access-date=27 February 2014 |archive-date=28 February 2014 |archive-url=https://web.archive.org/web/20140228090138/http://www.world-nuclear-news.org/NN-Finnish-EPR-passes-integrity-tests-1702144.html |url-status=live }}</ref>
+
+<ref name="WNN-2014-09-01">{{Cite news |date=1 September 2014 |title=Olkiluoto 3 startup pushed back to 2018 |publisher=[[World Nuclear Association#Public information|World Nuclear News]] |url=http://www.world-nuclear-news.org/NN-Olkiluoto-3-start-up-pushed-back-to-2018-0109147.html |access-date=2 September 2014 |archive-date=4 September 2014 |archive-url=https://web.archive.org/web/20140904033804/http://www.world-nuclear-news.org/NN-Olkiluoto-3-start-up-pushed-back-to-2018-0109147.html |url-status=live }}</ref>
+
+<ref name="WNN-2016-01-14">{{Cite news |date=14 January 2016 |title=Olkiluoto 3 begins instrumentation and control tests |publisher=[[World Nuclear Association#Public information|World Nuclear News]] |url=http://www.world-nuclear-news.org/NN-Olkiluoto-3-begins-instrumentation-and-control-tests-1401164.html |access-date=2 February 2016 |archive-date=11 June 2016 |archive-url=https://web.archive.org/web/20160611083412/http://www.world-nuclear-news.org/NN-Olkiluoto-3-begins-instrumentation-and-control-tests-1401164.html |url-status=live }}</ref>
+
+<ref name="WNN-2017-12-19">{{Cite news |date=19 December 2017 |title=Hot functional tests begin at Finnish EPR |publisher=[[World Nuclear Association#Public information|World Nuclear News]] |url=http://world-nuclear-news.org/NN-Hot-functional-tests-begin-at-Finnish-EPR-1912174.html |access-date=16 April 2018 |archive-date=4 May 2018 |archive-url=https://web.archive.org/web/20180504090048/http://www.world-nuclear-news.org/NN-Hot-functional-tests-begin-at-Finnish-EPR-1912174.html |url-status=live }}</ref>
+
+<ref name="WSJ-2012-12-13">{{Cite news |date=13 December 2012 |title=Areva Again Raises Estimate of Cost of Olkiluoto Reactor |publisher=[[The Wall Street Journal]] |url=https://online.wsj.com/article/BT-CO-20121213-703038.html |access-date=13 December 2012}}</ref>
+
+<ref name="Worldwatch-2010">{{Cite web |last1=Schneider |first1=Mycle |last2=Froggatt |first2=Antony |last3=Thomas |first3=Steve |date=2011 |title=The World Nuclear Industry Status Report 2010–2011: Nuclear Power in a Post-Fukushima World |url=http://www.worldwatch.org/system/files/pdf/WorldNuclearIndustryStatusReport2011_%20FINAL.pdf |access-date=16 April 2018 |publisher=[[Worldwatch Institute]] |page=60 |archive-date=2 June 2019 |archive-url=https://web.archive.org/web/20190602110303/http://www.worldwatch.org/system/files/pdf/WorldNuclearIndustryStatusReport2011_%20FINAL.pdf |url-status=live }}</ref>
+
+<ref name="YLE-2012-10-05">{{Cite news |date=5 October 2012 |title=Paper: Workers at Olkiluoto forced to pay protection money to mafia |publisher=[[YLE]] |url=http://yle.fi/uutiset/paper_workers_at_olkiluoto_forced_to_pay_protection_money_to_mafia/6323719 |access-date=4 December 2013 |archive-date=13 November 2013 |archive-url=https://web.archive.org/web/20131113121016/http://yle.fi/uutiset/paper_workers_at_olkiluoto_forced_to_pay_protection_money_to_mafia/6323719 |url-status=live }}</ref>
+
+<ref name="YLE-2013-10-29">{{Cite news |date=29 October 2013 |title=Olkiluoto-kiista kovenee: Areva nosti korvausvaatimuksensa 2,6 miljardiin |publisher=[[YLE]] |url=http://yle.fi/uutiset/olkiluoto-kiista_kovenee_areva_nosti_korvausvaatimuksensa_26_miljardiin/6906426 |access-date=4 December 2013 |archive-date=3 December 2013 |archive-url=https://web.archive.org/web/20131203033157/http://yle.fi/uutiset/olkiluoto-kiista_kovenee_areva_nosti_korvausvaatimuksensa_26_miljardiin/6906426 |url-status=live }}</ref>
+
+<ref name="YLE-2014-01-18">{{Cite news |date=4 December 2013 |title=Claim for Olkiluoto 3 delays explodes to 2.7 billion |publisher=[[YLE]] |url=http://yle.fi/uutiset/claim_for_olkiluoto_3_delays_explodes_to_27_billion/6968417 |access-date=18 January 2014 |archive-date=17 January 2014 |archive-url=https://web.archive.org/web/20140117175914/http://yle.fi/uutiset/claim_for_olkiluoto_3_delays_explodes_to_27_billion/6968417 |url-status=live }}</ref>
+
+<ref name="YLE-2014-04-14">{{Cite news |date=14 April 2014 |title=Fault at Olkiluoto: Seawater leaks into nuclear condenser |publisher=[[YLE]] |url=http://yle.fi/uutiset/fault_at_olkiluoto_seawater_leaks_into_nuclear_condenser/7189387 |access-date=16 April 2018 |archive-date=7 March 2016 |archive-url=https://web.archive.org/web/20160307203302/http://yle.fi/uutiset/fault_at_olkiluoto_seawater_leaks_into_nuclear_condenser/7189387 |url-status=live }}</ref>
+
+<ref name="YLE-2014-09-25">{{Cite news |date=25 September 2014 |title=Stubb: Nuclear reactor project still possible despite cabinet rejection |publisher=[[YLE]] |url=https://yle.fi/uutiset/osasto/news/stubb_nuclear_reactor_project_still_possible_despite_cabinet_rejection/7491990 |access-date=29 November 2018 |archive-date=18 June 2018 |archive-url=https://web.archive.org/web/20180618230157/https://yle.fi/uutiset/osasto/news/stubb_nuclear_reactor_project_still_possible_despite_cabinet_rejection/7491990 |url-status=live }}</ref>
+
+<ref name="YLE-2015-06-24">{{Cite news |date=24 June 2015 |title=TVO ei aio hakea rakentamislupaa Olkiluoto 4:lle |publisher=[[YLE]] |url=http://yle.fi/uutiset/tvo_ei_aio_hakea_rakentamislupaa_olkiluoto_4lle/8099876 |access-date=15 April 2016 |archive-date=24 April 2016 |archive-url=https://web.archive.org/web/20160424062906/http://yle.fi/uutiset/tvo_ei_aio_hakea_rakentamislupaa_olkiluoto_4lle/8099876 |url-status=live }}</ref>
+
+<ref name="YLE-2015-12-04">{{Cite news |date=4 December 2015 |title=Olkiluodon työmaalla jälleen vipinää |publisher=[[YLE]] |url=http://yle.fi/uutiset/olkiluodon_tyomaalla_jalleen_vipinaa/8502607 |access-date=24 January 2016 |archive-date=1 February 2016 |archive-url=https://web.archive.org/web/20160201072420/http://yle.fi/uutiset/olkiluodon_tyomaalla_jalleen_vipinaa/8502607 |url-status=live }}</ref>
+
+<ref name="YLE-2015-12-14">{{Cite news |date=14 December 2015 |title=Projektijohtaja: OL3 aikataulu TVO:n hanskassa |publisher=[[YLE]] |url=http://yle.fi/uutiset/projektijohtaja_ol3_aikataulu_tvon_hanskassa/8528049 |access-date=24 January 2016 |archive-date=1 February 2016 |archive-url=https://web.archive.org/web/20160201072408/http://yle.fi/uutiset/projektijohtaja_ol3_aikataulu_tvon_hanskassa/8528049 |url-status=live }}</ref>
+
+<ref name="YLE-2016-01-13">{{Cite news |date=13 January 2016 |title=TVO innoissaan: Olkiluodon kolmosreaktorissa alettu testata tärkeää järjestelmää |publisher=[[YLE]] |url=http://yle.fi/uutiset/tvo_innoissaan_olkiluodon_kolmosreaktorissa_alettu_testata_tarkeaa_jarjestelmaa/8591552 |access-date=24 January 2016 |archive-date=1 February 2016 |archive-url=https://web.archive.org/web/20160201072417/http://yle.fi/uutiset/tvo_innoissaan_olkiluodon_kolmosreaktorissa_alettu_testata_tarkeaa_jarjestelmaa/8591552 |url-status=live }}</ref>
+
+<ref name="clew-2016">{{Cite news |date=26 October 2016 |title=How Siemens could become a nuclear company again |work=Clean Energy Wire (CLEW) |location=Berlin, Germany |url=https://www.cleanenergywire.org/news/environment-minister-german-conventional-car-sales-end-2030/how-siemens-could-become-nuclear-company-again |access-date=1 November 2016 |archive-date=1 November 2016 |archive-url=https://web.archive.org/web/20161101165227/https://www.cleanenergywire.org/news/environment-minister-german-conventional-car-sales-end-2030/how-siemens-could-become-nuclear-company-again |url-status=live }}</ref>
+
+<ref name="klaesgen-and-bueschmann-2016">{{Cite news |last1=Kläsgen |first1=Michael |last2=Büschemann |first2=Karl-Heinz |date=25 October 2016 |title=Kernenergie: Wie Siemens doch wieder zum Atomkonzern werden könnte |language=de |trans-title=Nuclear power: How Siemens could become a nuclear enterprise again |work=Süddeutsche Zeitung |location=Munich, Germany |url=http://www.sueddeutsche.de/wirtschaft/2.220/kernenergie-wie-siemens-doch-wieder-zum-atomkonzern-werden-koennte-1.3221186 |access-date=1 November 2016 |archive-date=1 November 2016 |archive-url=https://web.archive.org/web/20161101165148/http://www.sueddeutsche.de/wirtschaft/2.220/kernenergie-wie-siemens-doch-wieder-zum-atomkonzern-werden-koennte-1.3221186 |url-status=live }}</ref>
+
+<ref name="thomas">{{Cite web |date=20 May 2009 |title=The Myth of the European "Nuclear Renaissance" |url=http://www.psr.org/safe-energy/the-myth-of-the-european.html |url-status=dead |archive-url=https://web.archive.org/web/20130728115821/http://www.psr.org/safe-energy/the-myth-of-the-european.html |archive-date=28 July 2013 |publisher=[[Physicians for Social Responsibility]]}}</ref>
+
+<ref name="TVO-2022-09-30">{{Cite web |date=30 September 2022 |title=Olkiluoto 3 at full power for the first time |url=https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2022/olkiluoto3atfullpowerforthefirsttime.html |access-date=30 September 2022 |publisher=[[Teollisuuden Voima|TVO]] |archive-date=30 September 2022 |archive-url=https://web.archive.org/web/20220930040551/https://www.tvo.fi/en/index/news/pressreleasesstockexchangereleases/2022/olkiluoto3atfullpowerforthefirsttime.html |url-status=live }}</ref>
+
+}}
+
+== External links ==
+{{Commons category-inline|Olkiluoto Nuclear Power Plant}}
+* [http://www.stuk.fi/en_GB/ Radiation and Nuclear Safety Authority in Finland]
+* [https://web.archive.org/web/20070927034349/http://www.largeassociates.com/3149%20Olkiluoto/R3149-A1%20Final%20Issue.pdf ''European Pressurised Reactor at Olkiluoto 3, Finland – Brief Interim Review of the Porosity and Durability Properties of the In Situ Cast Concrete at the Olkiluoto EPR Construction'', ''Reactor at Olkiluoto 3, Finland – Review of the Finnish Radiation Nuclear Safety Authority (STUK) Assessment'', R3123-A2, July 2005]
+* [https://web.archive.org/web/20070927034136/http://www.largeassociates.com/R3123-a2%20final%20Issue.pdf ''Reactor at Olkiluoto 3, Finland – Review of the Finnish Radiation Nuclear Safety Authority (STUK) Assessment'', R3123-A2, July 2005]
+* [https://www.nea.fr/html/general/profiles/finland.html#nppstatus Status of Nuclear Power in Finland].
+
+{{Portal bar|Finland|Energy|Nuclear technology}}
+{{Authority control}}
+
+[[Category:Nuclear power stations in Finland]]
+[[Category:Radioactive waste repositories]]
+[[Category:Nuclear power stations using boiling water reactors]]
+[[Category:Nuclear power stations using pressurized water reactors]]
+[[Category:Nuclear power stations with proposed reactors]]
+[[Category:Nuclear power stations using EPR reactors]]
+[[Category:Eurajoki]]
+[[Category:Buildings and structures in Satakunta]]

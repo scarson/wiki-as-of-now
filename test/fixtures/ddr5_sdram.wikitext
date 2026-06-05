@@ -1,0 +1,230 @@
+{{Short description|Type of computer memory}}
+{{About |DDR5 SDRAM|graphics DDR5, based on DDR3|GDDR5 SDRAM}}
+{{Use mdy dates|date=January 2026}}
+{{Infobox memory
+| abbr           = DDR5 SDRAM
+| name           = Double Data Rate 5 Synchronous Dynamic Random-Access Memory
+| image          = DDR5 SDRAM IMGP6304 smial wp.jpg
+| caption        = 16&nbsp;[[Gigabyte|GB]]{{binpre|first}} DDR5-4800 1.1&nbsp;V [[UDIMM]]
+| developer      = [[JEDEC]]
+| type           = [[Synchronous dynamic random-access memory]]
+| generation     = 5th generation
+| release        = {{start date and age|2020|07|14}}<ref name="anandtech-ddr5">{{cite web |url=https://www.anandtech.com/show/15912/ddr5-specification-released-setting-the-stage-for-ddr56400-and-beyond |archive-url=https://web.archive.org/web/20200714225042/https://www.anandtech.com/show/15912/ddr5-specification-released-setting-the-stage-for-ddr56400-and-beyond |url-status=dead |archive-date=July 14, 2020 |title=DDR5 Memory Specification Released: Setting the Stage for DDR5-6400 and Beyond |last=Smith |first=Ryan |date=July 14, 2020 |website=AnandTech |access-date=July 15, 2020 }}</ref>
+| standards      = {{Unbulleted list|DDR5-4000 (PC5-32000)|DDR5-4400 (PC5-35200)|DDR5-4800 (PC5-38400)|DDR5-5200 (PC5-41600)|DDR5-5600 (PC5-44800)|DDR5-6000 (PC5-48000)|DDR5-6200 (PC5-49600)|DDR5-6400 (PC5-51200)|DDR5-6800 (PC5-54400)|DDR5-7200 (PC5-57600)|DDR5-7600 (PC5-60800)|DDR5-8000 (PC5-64000)|DDR5-8200 (PC5-65600)|DDR5-8400 (PC5-67200)|DDR5-8800 (PC5-70400)}}<ref name="kingston-ddr5">{{cite web |url=https://www.kingston.com/en/blog/pc-performance/ddr5-overview | title=DDR5 Memory Standard: An introduction to the next generation of DRAM module technology | author= | date=January 2024 | website= | publisher=[[Kingston Technology]] | access-date=February 19, 2023}}
+</ref><ref name="micronsdramcore">{{cite tech report |type=Data Sheet |url=https://media-www.micron.com/-/media/client/global/documents/products/data-sheet/dram/ddr5/ddr5_sdram_core.pdf |title=DDR5 SDRAM Product Core |date=October 2022 |website= |publisher=[[Micron Technology|Micron]] |id=CCM005-1684161373-23 |access-date=May 15, 2023 |archive-url=https://web.archive.org/web/20230621221722/https://www.micron.com/-/media/client/global/documents/products/data-sheet/dram/ddr5/ddr5_sdram_core.pdf |archive-date=June 21, 2023 |url-status=dead }}</ref>
+| clock_rate     = 2,000–4,400 MHz
+| cycle_time     = 16n bank structure 
+| prefetch       = 4n
+| bus_clock_rate = 
+| transfer_rate  = 4.0–8.8 GT/s
+| band_width     = 32.0–70.4 GB/s{{efn|64 GB/s assumes 8 GT/s, each with 64 bits of bus width, then divided by 8 to convert from bits to bytes.}}
+| voltage        = 1.1 V nominal (actual levels are regulated by on-the-module regulators)
+| predecessor    = [[DDR4 SDRAM]] (2014)
+| successor      = [[DDR6 SDRAM]]
+| prefecth       = 4n
+}}
+
+'''Double Data Rate 5 Synchronous Dynamic Random-Access Memory''' ('''DDR5 SDRAM''') is a type of [[synchronous dynamic random-access memory]]. Compared to its predecessor [[DDR4 SDRAM]], DDR5 was planned to reduce power consumption, while doubling [[Bandwidth (computing)|bandwidth]].<ref>{{cite news|last=Manion |first=Wayne |title=DDR5 will boost bandwidth and lower power consumption |url=https://techreport.com/news/31673/ddr5-will-boost-bandwidth-and-lower-power-consumption|access-date= April 1, 2017 |publisher= Tech Report |date= March 31, 2017}}</ref> The standard, originally targeted for 2018,<ref>{{cite news |last=Cunningham |first=Andrew |title=Next-generation DDR5 RAM will double the speed of DDR4 in 2018 |url=https://arstechnica.com/gadgets/2017/03/next-generation-ddr5-ram-will-double-the-speed-of-ddr4-in-2018/ |access-date=January 15, 2018 |publisher=Ars Technica |date=March 31, 2017}}</ref> was released on July 14, 2020.<ref name="anandtech-ddr5" />
+
+A new feature called Decision Feedback Equalization (DFE) enables input/output (I/O) speed scalability for higher bandwidth and performance improvement. DDR5 has about the same {{val|14|ul=ns}} [[memory timings|latency]] as DDR4 and DDR3.<ref>{{cite web|url=https://www.anandtech.com/show/16143/insights-into-ddr5-subtimings-and-latencies |archive-url=https://web.archive.org/web/20201006164336/https://www.anandtech.com/show/16143/insights-into-ddr5-subtimings-and-latencies |url-status=dead |archive-date=October 6, 2020 |title=Insights into DDR5 Sub-timings and Latencies |author=Dr. Ian Cutress |date=October 6, 2020 |publisher=AnandTech |quote=In terms of single access latency, we are ultimately not going to be any faster than we were by the end of the DDR3 era. DDR3-1866 at CL13 was already at 13.93 nanoseconds.}}</ref> DDR5 octuples the maximum [[DIMM|dual in-line memory module]] (DIMM) capacity from 64&nbsp;GB to 512&nbsp;GB.<ref name="kingston-ddr5" /><ref>{{cite web |url=https://www.rambus.com/blogs/get-ready-for-ddr5-dimm-chipsets/ |title=DDR5 vs DDR4 – All the Design Challenges & Advantages}}</ref> DDR5 also has higher frequencies than DDR4, up to 9.6 [[Transfers per second|GT/s]] is currently possible, 8.2 GT/s translates into around 64 GB/s of bandwidth. Speeds of more than 13 GT/s have been achieved using [[liquid nitrogen]] cooling.<ref>{{Cite web |title=DDR5 memory overclock surpasses 13,020 MT/s for the first time |url=https://videocardz.com/newz/ddr5-memory-overclock-surpasses-13020-mt-s-for-the-first-time |access-date=September 23, 2025 |website=VideoCardz.com |language=en-US}}</ref>
+
+[[Rambus]] announced a working DDR5 DIMM in September 2017.<ref name="pcgamer">{{cite news|last1=Lilly|first1=Paul|title=DDR5 memory is twice as fast as DDR4 and slated for 2019|url=http://www.pcgamer.com/ddr5-memory-is-twice-as-fast-as-ddr4-and-slated-for-2019/|access-date=January 15, 2018|publisher=PC Gamer|date=September 22, 2017}}</ref><ref name=hexus/> On November 15, 2018, [[SK Hynix]] announced completion of its first DDR5 RAM chip; running at 5.2&nbsp;[[Transfers per second|GT/s]] at 1.1&nbsp;V.<ref>{{Cite press release |url=http://www.skhynix.com/eng/pr/pressReleaseView.do?seq=2588&offset=1 |title=SK Hynix Inc. Announces 1Ynm 16Gb DDR5 DRAM |date=November 15, 2018 |publisher=[[SK Hynix]] |access-date=November 18, 2018 |archive-url=https://web.archive.org/web/20181231090216/http://www.skhynix.com/eng/pr/pressReleaseView.do?seq=2588&offset=1 |archive-date=December 31, 2018 |url-status=dead |quote=The new 16Gb DDR5 DRAM supports a data transfer rate of 5200Mbps}}</ref> In February 2019, SK Hynix announced a 6.4&nbsp;GT/s chip, the highest speed specified by the preliminary DDR5 standard.<ref>{{Cite web|url=https://www.anandtech.com/show/13999/sk-hynix-details-its-ddr56400-dram-chip|archive-url=https://web.archive.org/web/20190226211326/https://www.anandtech.com/show/13999/sk-hynix-details-its-ddr56400-dram-chip|url-status=dead|archive-date=February 26, 2019|title=SK Hynix Details DDR5-6400|first=Anton|last=Shilov|website=anandtech.com}}</ref> The first production DDR5 DRAM chip was officially launched by SK Hynix on October 6, 2020.<ref>{{Cite web |url=https://www.hpcwire.com/off-the-wire/sk-hynix-launches-worlds-first-ddr5-dram/ |title=SK hynix Launches World's First DDR5 DRAM |website=hpcwire.com }}</ref><ref>{{Cite web |last1=Hyun-Woo |first1=Doh |url=http://www.businesskorea.co.kr/news/articleView.html?idxno=52858 |title=SK hynix: DDR5 DRAM Launches |website=businesskorea.co.kr |date=October 7, 2020 }}</ref> 
+ 
+The separate [[JEDEC]] standard [[LPDDR5|Low Power Double Data Rate 5]] (LPDDR5), intended for laptops and smartphones, was released in February 2019.<ref>{{cite press release |url=https://www.jedec.org/news/pressreleases/jedec-updates-standard-low-power-memory-devices-lpddr5 |title=JEDEC Updates Standard for Low Power Memory Devices: LPDDR5 |publisher=[[JEDEC]] |date=February 19, 2019}}</ref>
+
+Compared to DDR4, DDR5 further reduces memory voltage to {{val|1.1|ul=V}}, a reduction from the 1.2 V required by DDR4. DDR5 modules incorporate on-board voltage regulators in order to reach higher speeds.<ref name="hexus">{{Cite web |url=https://hexus.net/tech/news/ram/110387-rambus-announces-industrys-first-fully-functional-ddr5-dimm/ |title=Rambus announces industry's first fully functional DDR5 DIMM |website=hexus.net |first=Mark |last=Tyson |date=September 22, 2017 }}</ref>{{Fv|date=December 2024}}<ref>{{cite news |title=DDR5 Specification Released: Fast RAM With Built-In Voltage Regulators |first=Zhiye |last=Liu |date=July 15, 2020 |journal=Tom's Hardware |url=https://www.tomshardware.com/news/ddr5-specification-released-fast-ram-with-built-in-voltage-regulators }}</ref>
+
+In 2024 the first [[CUDIMM]] (clocked unbuffered DIMM) and CSODIMM (clocked SODIMM) modules were introduced together with Intel Arrow Lake. These modules include a component to re-drive the clock signal to help reach higher speeds.<ref>{{cite web |title=What is a CUDIMM / CSODIMM? - Kingston Technology |url=https://www.kingston.com/en/blog/system-builder/what-is-a-cudimm-csodimm |website=Kingston Technology Company |language=en}}</ref> AMD does not support CUDIMM, though Zen 5 will accept CUDIMMs in bypass mode.
+
+In 2026 [[ASRock]] and [[Intel]] released the DDR5 HUDIMM (half unbuffered DIMM) modules, it populating one 32-bit subchannel per DIMM, designed for budget but reduced-performance computer markets.<ref>https://www.techpowerup.com/348323/asrock-develops-hudimm-memory-standard-ddr5-with-just-one-sub-channel</ref> It requires the [[UEFI/BIOS]] to support HUDIMM.
+
+==Features==
+
+=== On-die ECC===
+Unlike DDR4, all DDR5 chips have on-die [[error-correction code]], that detects and corrects  storage errors before forwarding data to the CPU, to improve reliability and allow denser RAM chips with higher per-chip defect rate to be used.<ref>{{cite tech report |date=July 2020 |location=Arlington County, Virginia |title=DDR5 SDRAM |url=https://www.jedec.org/standards-documents/docs/jesd79-5 |url-access=subscription |format=PDF |type=Standard |publisher=[[JEDEC]] |page=243 |series=JESD79-5 |url-status=live}}</ref>
+
+On-die ECC happens at a lower level than true [[ECC memory]]. It does not have extra chips and data lines to the CPU and does not report any details about whether errors are detected, unlike externally-controlled ECC. Sophisticated algorithms have been built to infer the existence of corrected errors based on non-corrected errors.<ref>{{cite conference |last1=Patel |first1=M. |last2=Kim |first2=J.S. |last3=Hassan |first3=H. |author4-link=Onur Mutlu|last4=Mutlu |first4=O. |date=2019 |title=Understanding and Modeling On-Die Error Correction in Modern DRAM: An Experimental Study Using Real Devices |conference=2019 49th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN) |location=Portland, Oregon, US |pages=13–25 |doi=10.1109/DSN.2019.00017 }}</ref>
+
+=== Subchannels ===
+Each DDR5 [[DIMM]] has two independent channels. Earlier DIMM generations featured only a single channel and one CA (Command/Address) bus controlling the whole memory module with its 64 (for non-ECC) or 72 (for ECC) data lines. Both subchannels on a DDR5 DIMM each have their own CA bus, controlling 32 bits for non-ECC memory and either 36 or 40 data lines for ECC memory, resulting in a total number of either 64, 72 or 80 data lines. The reduced bus width is compensated by a doubled minimum burst length of 16, which preserves the minimum access size of 64 bytes, which matches the [[cache line]] size used by modern [[x86]] microprocessors.<ref>{{cite web|title=Introducing Micron DDR5 SDRAM: More Than a Generational Update|url=https://www.micron.com/-/media/client/global/documents/products/white-paper/ddr5_more_than_a_generational_update_wp.pdf?la=en|access-date=July 10, 2023|archive-date=July 15, 2023|archive-url=https://web.archive.org/web/20230715060154/http://www.micron.com/-/media/client/global/documents/products/white-paper/ddr5_more_than_a_generational_update_wp.pdf?la=en|url-status=dead}}</ref>
+
+=== Refreshing ===
+DDR5 also decreased the refresh interval from 64 ms to 32 ms when operating up to 85°C. At 85°C to 95°C refresh times are 16 ms. The tRFC4 mechanism from DDR4 is retired. A tRFCsb timing is added.
+
+It also provides two refresh commands: REFab and REFsb.
+
+==Memory modules==
+[[File:Desktop DDR Memory Comparison.svg|thumb|upright=1|Physical comparison of [[DDR SDRAM|DDR]], [[DDR2 SDRAM|DDR2]], [[DDR3 SDRAM|DDR3]], and [[DDR4 SDRAM|DDR4]] SDRAM{{Update inline|reason=Add DDR5.|date=January 2026}}]]
+
+Multiple DDR5 memory chips can be mounted on a circuit board to form memory modules. For use in personal computers and servers, DDR5 memory is usually supplied in 288-pin dual in-line memory modules, more commonly known as [[DIMM]]s. As with previous memory generations, there are multiple DIMM variants available for DDR5.
+
+Unbuffered memory modules (UDIMMs) directly expose the memory chip interface to the module connector. Registered or load-reduced variants (RDIMMs/LRDIMMs) use additional active circuitry on the memory module in order to buffer the signals between the memory controller and the DRAM chips. This reduces the [[Capacitance|capacitive]] load on the DDR5 bus.{{Citation needed|date=January 2026}}
+
+DDR5 UDIMMs use 5&nbsp;[[Voltage|V]] input, whereas RDIMMs and LRDIMMs use 12&nbsp;V.<ref>{{cite web |title=DDR5 SDRAM UDIMM Core: Product Description |url=https://media-www.micron.com/-/media/client/global/documents/products/data-sheet/modules/unbuffered_dimm/ddr5/ddr5_udimm_core.pdf?rev=fdbd9476506c4e019360a5e402827caa |publisher=Micron Technology |archive-url=https://web.archive.org/web/20231225163238/https://media-www.micron.com/-/media/client/global/documents/products/data-sheet/modules/unbuffered_dimm/ddr5/ddr5_udimm_core.pdf?rev=fdbd9476506c4e019360a5e402827caa |archive-date=December 25, 2023 |page=1 |quote=Voltage (external supply, nominal) / VIN_Bulk: 5V / Bulk input DC supply voltage from system}}</ref> In order to prevent damage by accidental insertion of the wrong memory type, DDR5 UDIMMs and (L)RDIMMs are not mechanically compatible. Additionally, DDR5 DIMMs are supplied with management interface power at 3.3&nbsp;V,<ref>{{cite web |title=P8900 PMIC for DDR5 RDIMMs and LRDIMMs |url=https://www.idt.com/us/en/products/power-management/power-management-ics-pmic-and-pmus/p8900-pmic-ddr5-rdimms-and-lrdimms |publisher=[[Renesas]] |access-date=July 19, 2020}}<br />{{cite web |title=P8911 PMIC for Client DDR5 Memory Modules |url=https://www.idt.com/us/en/products/power-management/power-management-ics-pmic-and-pmus/p8911-pmic-client-ddr5-memory-modules |publisher=[[Renesas]] |access-date=July 19, 2020}}</ref><ref>{{cite web |author1-link=SK Hynix |title=DDR5 SDRAM RDIMM Based on 16Gb M-die |url=https://mis-prod-koce-producthomepage-cdn-01-blob-ep.azureedge.net/web/TR-20210526195932644.pdf |website=SK Hynix |access-date=October 29, 2021 |archive-url=https://web.archive.org/web/20211029163115/https://mis-prod-koce-producthomepage-cdn-01-blob-ep.azureedge.net/web/TR-20210526195932644.pdf |archive-date=October 29, 2021 |page=7 |quote=VIN_BULK[:] 12 V power input supply pin to the PMIC. VIN_MGMT[:] 3.3 V power input supply pin to the PMIC for VOUT_1.8V & VOUT_1.0V LDO output, side band management access, internal memory read operation.}}</ref> and use on-board circuitry (a [[power management integrated circuit]]<ref>{{cite patent |country=US |number=10769082 |status=patent |title=DDR5 PMIC Interface Protocol and Operation |pubdate=2019-11-07 |fdate=2018-05-01 |pridate=2018-05-01 |invent1=Patel, Shwetal Arvind |invent2=Zhang, Andy |invent3=Meng, Wen Jie |invent4=Chenxiao Ren, Alejandro F.Gonzalez |assign1=[[Integrated Device Technology]] }}</ref> and associated [[passive component]]s) to convert to the lower voltage required by the memory chips. Final voltage regulation close to the point of use provides more stable power, and mirrors the development of [[voltage regulator module]]s for CPU power supplies.{{Citation needed|date=January 2026}}
+
+==Operation==
+Standard DDR5 memory speeds range from 4,000 to 6,400 million [[transfers per second]] (PC5-32000 to PC5-51200).<ref name="kingston-ddr5"/> Higher speeds may be added later, as happened with previous generations. XMP profiles currently allow 8000 MT/s with 1.400 V/1.450 V, which is much higher than 1.1 V in the JEDEC standard.
+
+Compared to DDR4 SDRAM, the minimum burst length was doubled to 16, with the option of "burst chop" after eight transfers. The addressing range is also slightly extended as follows:
+
+* The number of chip ID bits remains at three bits, allowing up to eight stacked chips (3 → 3).
+* A third bank group bit (BG2) was added, allowing up to eight bank groups (2 → 3).
+* The maximum number of banks per bank group remains at four (2 → 2),
+* The number of row address bits remains at 17, for a maximum of 128K rows (17 → 17).
+* One more column address bit (C10) is added, allowing up to 8192 columns (1&nbsp;KB pages) in ×4 chips (11 → 12).
+* The least-significant three column-address bits (C0, C1, C2) are ''removed''. All reads and writes must begin at a column address which is a multiple of 8 (3 → 0). This is necessary due to the internal ECC.
+* One bit is reserved for addressing expansion as ''either'' a fourth chip ID bit (CID3) ''or'' an additional row address bit (R17) (0 → 1).
+
+===Command encoding===
+{| class="wikitable plainrowheaders" style= "text-align: center; font-size: 95%;"
+|+ DDR5 command encoding<ref>{{Cite web |title=JEDEC DDR5 SDRAM Specification|url=https://www.jedec.org/standards-documents/docs/jesd79-5|publisher=JEDEC committee JC42.3 |access-date=May 15, 2023}}</ref><ref name="micronsdramcore" />
+|-
+!rowspan=2| Command !!rowspan=2| {{overline|CS}} !!colspan=14| Command/address (CA) bits
+|-
+! 0 !! 1 !! 2 !! 3 !! 4 !! 5 !! 6 !! 7 !! 8 !! 9 !! 10 !! 11 !! 12 !! 13
+|-
+|style="text-align:left;" rowspan=2| Activate <br />(Open a row)
+| {{yes|L}} || {{yes|L}} || {{yes|L}} ||colspan=4| Row R0–3 ||colspan=2| Bank ||colspan=3| Bank group ||colspan=3| Chip CID0–2
+|- style="line-height:100%"
+| {{no|H}} ||colspan=13| Row R4–16  ||  {{n/a|R17/<br />CID3}}
+|-
+|style="text-align:left; background: #ececec; color: #2C2C2C;" rowspan=2| ''reserved''
+| {{yes|L}} || {{yes|L}} || {{no|H}} ||colspan=12 {{n/a|Reserved}}
+|-
+| {{no|H}} ||colspan=14 {{n/a|Reserved}}
+|-
+|style="text-align:left; background: #ececec; color: #2C2C2C;" rowspan=2| ''reserved for future use''
+| {{yes|L}} || {{no|H}} || {{yes|L}} || {{yes|L}} || {{yes|L}} ||colspan=10 {{n/a|V}}
+|-
+| {{no|H}} ||colspan=14 {{n/a|V}}
+|-
+|style="text-align:left;" rowspan=2| Write pattern
+| {{yes|L}} || {{no|H}} || {{yes|L}} || {{yes|L}} || {{no|H}} || {{yes|L}} || {{no|H}} ||colspan=2| Bank ||colspan=3| Bank group ||colspan=3| Chip CID0–2
+|-
+| {{no|H}} || {{n/a|V}} ||colspan=8| Column C3–10 || {{n/a|V}} || {{overline|AP}} || {{no|H}} || {{n/a|V}} || {{n/a|CID3}}
+|-
+|style="text-align:left; background: #ececec; color: #2C2C2C;" rowspan=2| ''reserved for future use''
+| {{yes|L}} || {{no|H}} || {{yes|L}} || {{yes|L}} || {{no|H}} || {{no|H}} ||colspan=9 {{n/a|V}}
+|-
+| {{no|H}} ||colspan=14 {{n/a|V}}
+|-
+|style="text-align:left;" rowspan=2| Mode register write
+| {{yes|L}} || {{no|H}} || {{yes|L}} || {{no|H}} || {{yes|L}} || {{yes|L}} ||colspan=8| Address MRA0–7 || {{n/a|V}}
+|-
+| {{no|H}} ||colspan=8| Opcode OP0-7 ||colspan=2 {{n/a|V}} || CW ||colspan=3 {{n/a|V}}
+|-
+|style="text-align:left;" rowspan=2| Mode register read
+| {{yes|L}} || {{no|H}} || {{yes|L}} || {{no|H}} || {{yes|L}} || {{no|H}} ||colspan=8| Address MRA0–7 || {{n/a|V}}
+|-
+| {{no|H}} ||colspan=10 {{n/a|V}} || CW ||colspan=3 {{n/a|V}}
+|-
+|style="text-align:left;" rowspan=2| Write
+| {{yes|L}} || {{no|H}} || {{yes|L}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{overline|BL}} ||colspan=2| Bank ||colspan=3| Bank group ||colspan=3| Chip CID0–2
+|-
+| {{no|H}} || {{n/a|V}} ||colspan=8| Column C3–10 || {{n/a|V}} || {{overline|AP}} || {{overline|WRP}} || {{n/a|V}} || {{n/a|CID3}}
+|-
+|style="text-align:left;" rowspan=2| Read
+| {{yes|L}} || {{no|H}} || {{yes|L}} || {{no|H}} || {{no|H}} || {{no|H}} || {{overline|BL}} ||colspan=2| Bank ||colspan=3| Bank group ||colspan=3| Chip CID0–2
+|-
+| {{no|H}} || {{n/a|V}} ||colspan=8| Column C3–10 || {{n/a|V}} || {{overline|AP}} ||colspan=2 {{n/a|V}} || {{n/a|CID3}}
+|-
+|style="text-align:left;"| Vref CA
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{yes|L}} || {{yes|L}} ||colspan=7| Opcode OP0-6 || {{yes|L}}||{{n/a|V}}
+|-
+|style="text-align:left;"| Vref CS
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{yes|L}} || {{yes|L}} ||colspan=7| Opcode OP0-6 || {{no|H}}||{{n/a|V}}
+|-
+|style="text-align:left;"| Refresh all
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{yes|L}} || {{no|H}} || {{n/a|CID3}} ||colspan=3 {{n/a|V}} || {{no|H}}|| {{yes|L}} ||colspan=3| Chip CID0–2
+|-
+|style="text-align:left;"| Refresh management all
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{yes|L}} || {{no|H}} || {{n/a|CID3}} ||colspan=3 {{n/a|V}} || colspan=2 {{yes|L}} ||colspan=3| Chip CID0–2
+|-
+|style="text-align:left;"| Refresh same bank
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{yes|L}} || {{no|H}} || {{n/a|CID3}} ||colspan=2| Bank ||{{n/a|V}} || colspan=2 {{no|H}} ||colspan=3| Chip CID0–2
+|-
+|style="text-align:left;"| Refresh management same bank
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{yes|L}} || {{no|H}} || {{n/a|CID3}} ||colspan=2| Bank ||{{n/a|V}} || {{yes|L}}|| {{no|H}} ||colspan=3| Chip CID0–2
+|-
+|style="text-align:left;"| Precharge all
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{no|H}} || {{yes|L}} || {{n/a|CID3}} ||colspan=4 {{n/a|V}} || {{yes|L}} ||colspan=3| Chip CID0–2
+|-
+|style="text-align:left;"| Precharge same bank
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{no|H}} || {{yes|L}} || {{n/a|CID3}} ||colspan=2| Bank ||colspan=2 {{n/a|V}} || {{no|H}} ||colspan=3| Chip CID0–2
+|-
+|style="text-align:left;"| Precharge
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{no|H}} || {{no|H}} || {{n/a|CID3}} ||colspan=2| Bank ||colspan=3| Bank group ||colspan=3| Chip CID0–2
+|-
+|style="text-align:left; background: #ececec; color: #2C2C2C;"| ''reserved for future use''
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{yes|L}} ||colspan=9 {{n/a|V}}
+|-
+|style="text-align:left;"| Self-refresh entry
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{no|H}} ||colspan=5 {{n/a|V}} || {{yes|L}} ||colspan=3 {{n/a|V}}
+|-
+|style="text-align:left;"| Power-down entry
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{no|H}} || {{yes|L}} || {{no|H}} ||colspan=5 {{n/a|V}} || {{no|H}} || {{overline|ODT}} ||colspan=2 {{n/a|V}}
+|-
+|style="text-align:left;"| Multi-purpose command
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{no|H}} || {{no|H}} || {{yes|L}} ||colspan=8| Opcode OP0–7 || {{n/a|V}}
+|-
+|style="text-align:left;"| Power-down exit; No operation
+| {{yes|L}} || {{no|H}} || {{no|H}} || {{no|H}} || {{no|H}} || {{no|H}} ||colspan=9 {{n/a|V}}
+|-
+|style="text-align:left;"| Deselect (no operation)
+| {{no|H}}  ||colspan=14 {{n/a|X}}
+|-
+| colspan=16 style="background-color:#FFF;" | <small>{{flatlist|
+*Signal level
+**H, high
+**L, low
+**V, valid, either low or high
+**X, irrelevant
+*Logic level
+**{{color box|#9f9}} Active
+**{{color box|#f99}} Inactive
+**{{color box|#ececec}} Unused
+}}{{flatlist|
+*Control bits
+**{{overline|AP}}, Auto-precharge
+**CW, Control word
+**{{overline|BL}}, Burst length ≠ 16
+**{{overline|WRP}}, Write partial
+**{{overline|ODT}}, [[On-die termination|ODT]] remains enabled
+}}</small>
+|}
+
+The command encoding was significantly rearranged and takes inspiration from that of [[LPDDR#LPDDR4|LPDDR4]]; commands are sent using either one or two cycles with 14-bit bus. Some simple commands (e.g. precharge) take one cycle, while any that include an address (activate, read, write) use two cycles to include 28 bits of information.
+
+Also like LPDDR, there are now 256 8-bit mode registers, rather than eight 13-bit mode registers. Also, rather than one register (MR7) being reserved for use by the registered clock driver chip, a complete second bank of mode registers is defined (selected using the CW bit).
+
+The "Write Pattern" command is new for DDR5; it is similar to a normal write command, but instead of taking data from the bus, the range is filled in with copies of a one-byte mode register (which defaults to all-zero) instead of individual data. While this takes just as long to complete as a normal write, it frees up the command bus for other operations.
+
+The multi-purpose command includes various sub-commands for training and calibration of the data bus.
+
+==Support==
+===Intel===
+The 12th generation [[Alder Lake]], 13th generation [[Raptor Lake]], as well as 14th generation [[Raptor Lake Refresh]] CPUs support both DDR5 and DDR4 but, usually, there are only DIMM sockets for either one or the other on a motherboard. Some mainboards with Intel's H610 chipset support both DDR4 and DDR5, but not simultaneously.<ref>{{cite web | url=https://www.computerbase.de/2022-03/intel-h610-ddr4-ddr5-speicher/ | title=DDR4 und DDR5: H610-Mainboard kombiniert beide Speicher-Generationen | date=March 7, 2022 }}</ref>
+
+[[Sapphire Rapids]] server CPUs, Core Ultra Series 1 [[Meteor Lake]] mobile CPUs, and the latest Core Ultra Series 2 [[Arrow Lake (microprocessor)|Arrow Lake]] desktop CPUs all exclusively support DDR5 and Arrow Lake also supports CUDIMM DDR5 memory standard that allows for higher default speed of 6400 MT/s.
+
+===AMD===
+DDR5 and [[LPDDR5]] are supported by the [[Ryzen 6000]] series mobile APUs, powered by their [[Zen 3+]] architecture. [[Ryzen 7000]] and [[Ryzen 9000]] series desktop processors also support DDR5 memory as standard.<ref>{{Cite web |last=Copeman |first=Anyron |date=June 15, 2023 |title=Everything you need to know about the AMD Ryzen 7000 Series |url=https://www.techadvisor.com/article/743561/amd-ryzen-7000-series-everything-we-know-so-far.html |url-status=live |archive-url=https://web.archive.org/web/20230617083049/https://www.techadvisor.com/article/743561/amd-ryzen-7000-series-everything-we-know-so-far.html |archive-date=June 17, 2023 |access-date=June 28, 2023 |website=Tech Advisor |language=en}}</ref>
+
+[[Epyc]] fourth-generation ''Genoa'' and ''Bergamo'' server CPUs have support for 12-channel DDR5 on the [[Socket SP5|SP5]] socket.<ref>{{Cite web |last=Goetting |first=Chris |date=November 10, 2022 |title=AMD 4th Gen EPYC 9004 Series Launched: Genoa Tested In A Data Center Benchmark Gauntlet |url=https://hothardware.com/reviews/amd-genoa-data-center-cpu-launch |access-date=June 28, 2023 |website=HotHardware |language=en-us}}</ref><ref>{{Cite web |last=Goetting |first=Chris |date=June 13, 2023 |title=AMD Unleashes EPYC Bergamo And Genoa-X Data Center CPUs, AI-Ready Instinct MI300X GPUs |url=https://hothardware.com/news/amd-epyc-bergamo-genoa-x-instinct-mi300x |access-date=June 28, 2023 |website=HotHardware |language=en-us}}</ref>
+
+{{Clear|right}}
+
+==Notes==
+{{Notelist}}
+
+==References==
+{{Reflist}}
+
+==External links==
+*[https://www.jedec.org/category/technology-focus-area/main-memory-ddr3-ddr4-sdram Main Memory: DDR4 & DDR5 SDRAM] / JEDEC
+
+{{DRAM}}
+
+[[Category:Synchronous dynamic random-access memory]]
+
+[[de:DDR-SDRAM#DDR5-SDRAM]]

@@ -1,0 +1,474 @@
+{{Short description|Future frigate of the Royal Navy}}
+{{Use dmy dates|date=October 2023}}
+{{Use British English|date=April 2017}}
+{{Infobox ship
+|section1={{Infobox ship/image
+ | image = HMS Venturer launched a missile illustration.jpg
+ | image_caption = A graphic of Type 31 frigate launching a missile
+ }}
+
+|section2={{Infobox ship/class overview
+ | name = Type 31 Frigate
+ | builders = *[[Babcock International]]<ref name="Vavasseur">{{cite news |last=Vavasseur |first=Xavier |date=15 November 2019 |title=UK MoD Formally Awards Type 31 Frigate Contract To Babcock |url=https://www.navalnews.com/naval-news/2019/11/uk-mod-formally-awards-type-31-frigate-contract-to-babcock/ |work=Naval News |access-date=16 November 2019}}</ref>
+              *[[PAL Indonesia]]<ref name="indodefence22"/>
+              *[[Polish Navy Shipyard|PGZ Stocznia Wojenna]]<ref>{{cite news |first=B.|last=Donnelly |year=2022 |title=Scottish shipyard wins Polish Navy frigate contracts |url=https://www.heraldscotland.com/news/21648618.babcock-rosyth-wins-polish-navy-frigate-contracts/ |access-date=27 February 2023}}</ref>
+ | operators = *{{naval|United Kingdom}}
+               *{{naval|Indonesia}}
+               *{{navy|Poland}}
+ | class_before = [[Type 23 frigate]]
+ | class_after = 
+ | subclasses = *[[Balaputradewa-class frigate]] (Indonesia)<ref>{{cite news |last=Malufti |first=Fauzan |date=19 December 2025 |title=Indonesia Launches First Domestically Built Arrowhead 140–Based Frigate |url=https://www.navalnews.com/naval-news/2025/12/indonesia-launches-first-domestically-built-arrowhead-140-based-frigate/ |work=Naval News |access-date=19 December 2025}}</ref>
+                *''Wicher''-class frigate (Poland)
+ | cost = {{ShipCost|GBR|268|m|year=2019|r=0|ref=<ref>{{cite web|url=https://www.navylookout.com/royal-navy-frigate-programme-update/|title=Royal Navy frigate programme update|date=20 July 2021|website=www.navylookout.com}}</ref>}} per unit (est., UK)
+ | built_range = 
+ | in_service_range = 2027<ref>{{cite web|url=https://ukdefencejournal.org.uk/type-31-frigate-in-service-date-slips-by-four-years/|title=Type 31 Frigate in-service date slips by four years|first=George|last=Allison|date=7 February 2020}}</ref>
+ | in_commission_range = 
+ | total_ships_building = 9
+ | total_ships_planned = *12 (total)<ref>{{cite web |date=21 January 2026 |title=Babcock signs initial agreement under Indonesia Maritime Partnership Programme |url=https://www.babcockinternational.com/news/babcock-signs-initial-agreement-under-indonesia-maritime-partnership-programme/ |publisher=Babcock International |access-date=21 January 2026}}</ref>
+                         *5 (UK)
+                         *4 (Indonesia)
+                         *3 (Poland)
+ | total_ships_completed = 3 (Fitting out)
+ | total_ships_canceled = 
+ | total_ships_active = 
+ | total_ships_laid_up = 
+ | total_ships_lost = 
+ | total_ships_retired = 
+ | total_ships_preserved = 
+ }}
+
+|section3={{Infobox ship/characteristics
+| hide_header = 
+| header_caption = 
+| type = General purpose [[Frigate]]
+| displacement = 
+* '''UK & Poland:'''
+** {{cvt|5700|t|LT}}
+** {{cvt|7000|t}} (Also listed)<ref>{{cite conference |last=Johnson |first=J. |year=2022 |title=Type 31 Frigate: Complex Warship Design for a Dynamic Operational Environment |conference=International Naval Engineering Conference and Exhibition |url=https://library.imarest.org/record/10665?p=Type+31+frigate/ |access-date=26 August 2023}}</ref>
+* '''Indonesia:'''
+** {{cvt|5996|t}} (Standard)<ref name="navalnews-mp">{{cite news |last=Malufti |first=Fauzan |date=26 August 2023 |title=Indonesia Lays Keel of First 'Red White' Frigate |url=https://www.navalnews.com/naval-news/2023/08/indonesia-lays-keel-of-first-red-white-frigate/ |work=Naval News |access-date=26 August 2023}}</ref>
+** {{cvt|6625|t}} (Full load)<ref>{{cite news |date=January 2026 |title=Indonesia Launches Its First Arrowhead Frigate |url=https://www.asianmilitaryreview.com/2026/01/indonesia-launches-its-first-arrowhead-frigate-foc/ |work=Asian Military Review |access-date= }}</ref>
+| length = 
+* '''UK & Poland:''' {{cvt|138.7|m|ftin}}
+* '''Indonesia:''' {{cvt|140|m|ftin}}<ref name="navalnews-mp"/>
+| power = 
+* 4 × Rolls Royce/MTU 20V 8000 M71 (8.2 MW) diesel engines<ref name="navalnews.com">{{cite news|title=Rolls-Royce Seals Propulsion Systems Contract For Royal Navy's Type 31 Frigates |url=https://www.navalnews.com/naval-news/2020/05/rolls-royce-seals-propulsion-systems-contract-for-royal-navys-type-31-frigates/ |date=29 May 2020 |access-date=30 May 2020}}</ref>
+* 4 × Rolls Royce/MTU 16V 2000 M41B (900 kW) generators
+* or 4 × Caterpillar 3512C (1360 kW) generators
+| propulsion = 
+* [[Combined diesel and diesel|CODAD]] propulsion system
+* MAN Alpha VBS Mk 5 controllable pitch propeller
+* 2 × Shafts<ref>{{cite news|title=MAN to supply propulsion for Royal Navy frigates |url=https://www.rivieramm.com/news-content-hub/news-content-hub/man-energy-solutions-to-supply-propellers-for-uk-modrsquos-type-31-frigate-programme-59087 |date=27 April 2020 |access-date=30 May 2020 |website=rivieramm.com}}</ref>
+| speed = In excess of {{convert|28|kn|lk=in}}
+| range = 
+| endurance = {{convert|9,000|nmi|abbr=on|lk=in}} at {{convert|18|kn}}<ref name="navalnews-mp"/>
+| complement = c. 110 (accommodation for up to 190)<ref name="navylookout.com">{{cite web|title=The development of a lean crewing solution for the Royal Navy's Type 31 frigate |url=https://www.navylookout.com/the-development-of-a-lean-crewing-solution-for-the-royal-navys-type-31-frigate/ |date=23 September 2024 |access-date=23 September 2024 |website=Navy Lookout}}</ref>
+| troops = 
+| boats = 
+| sensors = 
+* '''UK & Poland:'''
+** [[Thales Nederland#Naval Systems & Sensors|Thales Nederland]] TACTICOS combat management system
+** Thales NS110 4D Dual-Axis Multi-Beam AESA Radar
+** Thales Artemis 360 Naval InfraRed search and track system
+** Anschütz Warship Integrated Navigation and Bridge System
+** Terma Scanter and Anschütz NSX navigation radars
+** 2 × Mirador Mk2 EOS
+** Viasat Ultrahigh-frequency satellite communications<ref>{{cite news |last=Chuter |first=Andrew |date=3 November 2020 |title=Viasat to supply Britain's future frigate with satellite communications tech |url=https://www.defensenews.com/industry/2020/11/03/viasat-to-supply-britains-future-frigate-with-satellite-communications-tech/ |work=defensenews.com |access-date=4 November 2020}}</ref>
+* '''Indonesia ([[Balaputradewa-class frigate|Balaputradewa class]]) - Main Contract:'''
+** [[HAVELSAN]] ADVENT combat management system (CMS)<ref name="turdef2025">{{cite web |date=10 February 2025 |title=ASELSAN Provides Mete Han MFR to Indonesia's Future Frigates |url=https://turdef.com/article/aselsan-provides-mete-han-mfr-to-indonesia-s-future-frigates |work=TurDef |access-date=10 February 2025}}</ref>
+** [[ASELSAN]] CENK 350-N (''Mete Han'') X-band fixed-face AESA multi-function radar<ref name="turdef2026">{{cite web |date=21 January 2026 |title=Indonesia to Build Two More Balaputradewa-class Frigates |url=https://turdef.com/article/indonesia-to-build-two-more-balaputradewa-class-frigates |work=TurDef |access-date=21 January 2026}}</ref><ref name="janes2025">{{cite news |date=19 December 2025 |title=PT PAL launches Indonesia's first Red White frigate |url=https://www.janes.com/osint-insights/defence-news/sea/pt-pal-launches-indonesias-first-red-white-frigate |work=Janes |access-date=19 December 2025}}</ref>
+** ASELSAN MAR-D / CENK 200-N air and surface surveillance and helicopter approach control radar<ref name="turdef2025"/><ref name="janes2025"/>
+** ASELSAN AKREP fire-control radar<ref name="janes2025"/>
+** ASELSAN FERSAH 100-N/MF hull-mounted sonar<ref name="turdef2025"/><ref name="janes2025"/>
+** ELT Group electronic warfare suite (R-ESM, C-ESM, COMINT, R-ECM)<ref name="navalnews-whatyouneed">{{cite news |date=24 April 2025 |title=Indonesia's Merah Putih-class Frigate: What You Need to Know |url=https://www.navalnews.com/naval-news/2025/02/indonesias-merah-putih-class-frigate-what-you-need-to-know/ |work=Naval News |access-date=24 April 2025}}</ref>
+* '''Indonesia - Fitted For But Not With (FFBNW):'''{{citation needed|date=April 2026}}
+** ASELSAN CENK 400-N S-band AESA long-range air and surface surveillance radar<ref name="turdef2026"/><ref name="janes2025"/>
+| EW = 
+* '''UK & Poland:'''
+** MEWSIC<ref>{{cite web |website=Defence Equipment and Support |year=2022 |title=DE&S awards contract for new Royal Navy electronic warfare capabilities |url=https://des.mod.uk/electronic-warfare-royal-navy-des-mewsic-babcock-elbit/}}</ref>
+** SEA Ancilia countermeasures system
+** [[SSTD|Surface Ship Torpedo Defence]]
+* '''Indonesia:'''
+** ELT Group suite including R-ESM, C-ESM, COMINT, and R-ECM jammers<ref name="navalnews-whatyouneed"/>
+** ASELSAN decoy launchers<ref name="turdef2025"/>
+| armament = 
+* '''UK:'''
+** Missiles:
+*** [[CAMM (missile family)#Naval-based air defence (Sea Ceptor)|Sea Ceptor]] surface-to-air missile silos fitted with CAMM missiles;<ref>{{cite web |url=https://www.naval-technology.com/news/flight-deck-complete-in-build-of-type-31-frigate-hms-active/?cf-view |title=Flight deck complete in build of Type 31 frigate HMS Active |last=Thomas |first=Richard |date=1 May 2025 |website=Naval Technology |access-date=5 June 2025}}</ref> 32-cell Mk 41 VLS possibly from hull 3 onwards; first two ships to be retrofitted after service entry<ref>{{cite web |date=17 February 2026 |title=Building the Royal Navy's general purpose frigates: Type 31 programme update |url=https://www.navylookout.com/building-the-royal-navys-general-purpose-frigates-type-31-programme-update/ |access-date=9 March 2026 |website=Navy Lookout}}</ref>
+** Guns:
+*** 1 × [[Bofors 57 mm L/70 naval artillery gun|57 mm Mark 110 gun]]
+*** 2 × [[Bofors 40 Mk4]] gun
+*** 12.7 mm Heavy Machine Guns
+* '''Indonesia ([[Balaputradewa-class frigate|Balaputradewa class]]) - Main Contract:'''{{citation needed|date=April 2026}}
+** Guns:
+*** 2 × [[OTO Melara 76 mm|Leonardo OTO Melara 76 mm Super Rapid]] (A and B position, tandem bow configuration)<ref name="janes2025"/>
+*** 1 × [[Rheinmetall Oerlikon Millennium gun|Rheinmetall Oerlikon 35 mm Millennium Gun]] (CIWS)<ref name="janes2025"/>
+*** 4 × 12.7 mm Leonardo Lionfish RCWS{{citation needed|date=April 2026}}
+* '''Indonesia - Fitted For But Not With (FFBNW) (Contract signed 11 June 2025):'''{{citation needed|date=April 2026}}
+** Missiles:
+*** 64-cell [[ROKETSAN]] MİDLAS Universal VLS (8 × 8-cell modules); capable of launching:<ref name="turdef2026"/><ref name="navylookout-launch">{{cite web |date=19 December 2025 |title=Indonesia names KRI Balaputradewa, first of their Arrowhead 140-derived frigates |url=https://www.navylookout.com/indonesia-names-kri-balaputradewa-first-of-their-arrowhead-140-derived-frigates/ |website=Navy Lookout |access-date=19 December 2025}}</ref>
+**** HİSAR-D medium-range surface-to-air missile (~25 km range)
+**** SİPER Block 1-D long-range surface-to-air missile (~150 km range)
+**** [[ATMACA]] vertically-launched anti-ship missile
+** Anti-submarine warfare:
+*** 2 × Leonardo B515/3 triple 324 mm torpedo launchers for [[MU90 Impact|MU90]] lightweight torpedoes<ref name="janes2025"/>
+| armour = 
+| aircraft = 
+* 1 × [[AgustaWestland AW159|AgustaWestland AW159 Wildcat]] + UAV
+* or 1 × [[AgustaWestland AW101|AgustaWestland AW101 Merlin]]
+| aircraft_facilities = Helicopter hangar sized for Merlin and flight deck sized for [[Boeing CH-47 Chinook]]
+| notes = 
+* Mission bay under flight deck for 6 [[Twenty-foot equivalent unit|TEU]]s
+* 3 boat bays for [[Rigid inflatable boat|RHIBs]] and USVs/UUVs
+}}
+}}
+
+The '''Type 31 frigate''', also known as the '''Inspiration class''', formerly known as the '''Type 31e frigate''' or '''General Purpose Frigate''' ('''GPF'''), is a [[Ship class|class]] of five [[frigate]]s being built for the [[United Kingdom|United Kingdom's]] [[Royal Navy]], with variants also being built for the Indonesian and Polish navies. The Type 31 is intended to enter service in the 2020s alongside the eight submarine-hunting [[Type 26 frigate]]s, replacing five general-purpose [[Type 23 frigate]]s.<ref name="auto">{{cite news |date=21 July 2016 |title=Oral evidence: Naval Procurement: Type 26 and Type 45 HC 221 |publisher=UK House of Commons Defence Select Committee |url=http://data.parliament.uk/writtenevidence/committeeevidence.svc/evidencedocument/defence-committee/naval-procurement-type-26-and-type-45/oral/35261.html |access-date=21 July 2016}}</ref> The Type 31 is part of the British government's "National Shipbuilding Strategy".<ref name=":10" />
+
+Under construction by [[Babcock International]], it is based on the Odense Maritime Technology (OMT) {{sclass|Iver Huitfeldt|frigate|0}} frigate hull and is marketed under the name Arrowhead 140.<ref>{{citation |title=One more country is modernizing its naval fleet with Type 31 frigates |url=https://www.navaltoday.com/2022/01/03/one-more-country-is-modernizing-its-naval-fleet-with-type-31-frigates/ |date=3 January 2022 |access-date=12 March 2023 |last=Bahtić |first=F.}}</ref><ref name="selection">{{cite news |last=Tovey |first=Alan |date=30 June 2021 |title=Babcock in talks to sell 'budget frigates' to five countries |website=The Telegraph |url=https://www.telegraph.co.uk/business/2021/06/30/babcock-talks-sell-budget-battleships-five-countries |url-access=subscription}}</ref> The design was sold to Indonesia as the four ship ''[[Balaputradewa-class frigate]]'', equipped with Turkish [[MiDLAS vertical launching system|MiDLAS VLS]], in September 2021, and to Poland for the three ship ''Wicher''-class frigates in March 2022''.''<ref name="indokeellaying">{{cite web |last=Malufti |first=Fauzan |date=26 August 2023 |title=Indonesia Lays Keel Of First 'Red White' Frigate |url=https://www.navalnews.com/naval-news/2023/08/indonesia-lays-keel-of-first-red-white-frigate/ |access-date=26 August 2023 |website=navalnews.com }}</ref><ref name="indosteelcut">{{cite web |first=Rangga Baswara |last=Sawiyya|date=10 December 2022 |title=Pemotongan baja pertama Kapal Fregat Merah Putih telah dilakukan oleh PT PAL |trans-title=The first steel cutting of the Red White Frigate Ship was carried out by PT PAL |url=https://www.airspace-review.com/2022/12/10/pemotongan-baja-pertama-kapal-fregat-merah-putih-telah-dilakukan-oleh-pt-pal/ |access-date=19 December 2022 |website=Airspace Review  |language=id }}</ref><ref name=":3">{{cite web |last=Allison |first=George |date=4 March 2022 |title=British company Babcock wins Polish frigate competition |url=https://ukdefencejournal.org.uk/british-company-babcock-wins-polish-frigate-competition/ |access-date=4 March 2022 |website=UK Defence Journal}}</ref>
+
+==Development==
+The [[Strategic Defence and Security Review 2010|2010 Strategic Defence and Security Review]] (SDSR) authorised the Global Combat Ship (GCS) programme, which would replace the Royal Navy's thirteen Type 23 frigates. Earlier that year, [[BAE Systems Maritime – Naval Ships|BAE Systems]] was awarded a four-year, £127&nbsp;million contract by the [[Ministry of Defence (United Kingdom)|Ministry of Defence]] (MoD) to design the new class.<ref>{{cite news |url=https://news.bbc.co.uk/1/hi/business/8587060.stm |title=BAE wins £127m contract to design Navy warship |work=BBC |date=25 March 2010 |access-date=26 July 2011}}</ref> It was planned that two variants of the class would be built: five general purpose frigates and eight [[anti-submarine warfare]] frigates. There was to be little difference between the two variants, except for the [[Sonar 2087]]. Initial expectations were that construction would start in 2016 and the ships would gradually replace the Type 23 frigates by the mid-2030s. The [[Strategic Defence and Security Review 2015|2015 Defence Review]] decided that only the eight anti-submarine warfare [[Type 26 frigate]]s would be ordered and five general purpose frigates to an altogether different design would be ordered to give at least 13 frigates in RN service.<ref>[https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/478933/52309_Cm_9161_NSS_SD_Review_web_only.pdf National Security Strategy and Strategic Defence and Security Review 2015], www.gov.uk</ref>
+
+===General Purpose Frigate===
+The resultant General Purpose Frigate (GPFF) was to be a lighter, flexible and more affordable general purpose frigate class.<ref>{{cite news |last=Collingridge |first=John |date=7 August 2016 |title=New frigate order will keep shipyards afloat |work=[[The Times]] |url=https://www.thetimes.com/uk/defence/article/new-frigate-order-will-keep-shipyards-afloat-h8zk7zh59}}</ref><ref>{{cite web |url=https://publications.parliament.uk/pa/cm201617/cmselect/cmdfence/221/221.pdf |title=Restoring the Fleet: Naval Procurement and the National Shipbuilding Strategy |date= 21 November 2016 |website=publications.parliament.uk |publisher=House of Commons Defence Committee  |access-date=30 May 2020}}</ref> According to the 2015 SDSR, the lower cost of these frigates could lead to the Royal Navy acquiring more than five, therefore increasing its overall numbers of frigates and destroyers.<ref>{{cite web |url=https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/478933/52309_Cm_9161_NSS_SD_Review_web_only.pdf |title=National Security Strategy and Strategic Defence and Security Review 2015: A Secure and Prosperous United Kingdom |publisher=Government of the United Kingdom |date=November 2015 |access-date=18 March 2016}}</ref> During a defence and security lecture in July 2016, GPFF was referred to as the Type 31 frigate by the [[First Sea Lord]], Admiral Sir [[Philip Jones (Royal Navy officer)|Philip Jones]],<ref name="UK Ministry of Defence">{{cite web|url=https://www.gov.uk/government/speeches/first-sea-lords-defence-and-security-lecture-to-the-city-of-london|title=First Sea Lord's defence and security lecture to the City of London|date=21 July 2016 |publisher=UK Ministry of Defence|access-date=24 July 2016}}</ref> who also stated that Type 31 frigates could permanently operate "[[East of Suez]]"—from the [[Persian Gulf]] region to the [[Asia-Pacific]].<ref name="UK Ministry of Defence"/> 
+
+During the same month, BAE Systems revealed two general purpose frigate designs: the "Avenger class", which was based on the "[[River-class patrol vessel|''Amazonas''-class/River-class Batch 2]] offshore patrol vessel", and the "Cutlass class" that was described as a "significantly stretched and enhanced derivation of the [[Khareef-class corvette|''Al Shamikh''-class corvette]] design".<ref>{{cite web |last=Scott |first=Richard |date=13 July 2016 |title=BAE unveils General Purpose Frigate concepts |url=http://www.janes.com/article/62246/bae-unveils-general-purpose-frigate-concepts |url-status=dead |archive-url=https://web.archive.org/web/20160801004624/http://www.janes.com/article/62246/bae-unveils-general-purpose-frigate-concepts |archive-date=1 August 2016 |access-date=15 July 2016 |publisher=IHS Janes}}</ref>  ''[[The Sunday Times]]'' stated that [[Babcock International]] and [[BMT Limited|BMT]] had also submitted one design each.<ref>{{cite web|url=https://modmedia.blog.gov.uk/2016/08/07/defence-in-the-media-7-august-2016/|title=Defence in the Media: 7 August 2016|date=7 August 2016 |publisher=UK Ministry of Defence|access-date=8 August 2016}}</ref><ref>{{cite news |last=Collingridge |first=John |date=7 August 2016 |title=New frigate order will keep shipyards afloat |work=[[The Times]] |agency=The Sunday Times |url=https://www.thetimes.com/uk/defence/article/new-frigate-order-will-keep-shipyards-afloat-h8zk7zh59 |access-date=8 August 2016}}</ref> 
+
+Jones described the GPFF as "to be a much less high-end ship. It is still a complex warship, and it is still able to protect and defend and to exert influence around the world, but it is deliberately shaped with lessons from wider industry and off-the-shelf technology to make it... more appealing to operate at a slightly lower end of Royal Navy operations."<ref name="auto" /> [[Janes Information Services|IHS Janes]] described it as a "credible frigate" that will cover "maritime security, maritime counter-terrorism and counter-piracy operations, escort duties, and naval fire support... [sitting] between the high-end capability delivered by the Type 26 and [[Type 45 Destroyer|Type 45]], and the constabulary-oriented outputs to be delivered by the five [[River-class offshore patrol vessel|River-class Batch 2 OPVs]]."<ref>{{cite web |title=Credible choices UK General Purpose Frigate programme |url=http://www.janes360.com/images/assets/408/62408/Credible_choices_UK_General_Purpose_Frigate_programme.pdf |archive-url=https://web.archive.org/web/20160918103842/http://www.janes360.com/images/assets/408/62408/Credible_choices_UK_General_Purpose_Frigate_programme.pdf |archive-date=18 September 2016 |access-date=24 July 2016 |publisher=IHS Janes}}</ref>
+
+A September 2017 graphic released by the Royal Navy stressed modular adaptability and flexible construction of the design for export opportunities. Core requirements of the Type 31e frigate included a medium calibre gun, point defence systems, hangar and a flight deck for Wildcat or ten tonne helicopter operated by a crew of around 100 with space for 40 more personnel.<ref>{{cite web |title=Type 31e launch folder |url=http://www.royalnavy.mod.uk/-/media/royal-navy-responsive/documents/events/20170901-t31e-launch-folder-line-diagram-v4-1.pdf?la=en-gb |access-date=7 September 2017}}</ref> The British government released a Request for information (RFI) in September 2017, detailing the desired characteristics of the Type 31e. The RFI provided greater details such as a "Medium Calibre Gun" of greater than {{convert|57|mm|in|abbr=on}}, a point defence anti-air missile system and the optional ability to launch and recover [[unmanned aerial vehicle]]s.<ref>{{cite web |title=Request for information to support Type 31e market testing |url=https://www.gov.uk/government/publications/request-for-information-to-support-type-31e-market-testing |access-date=24 October 2018 |publisher=gov.uk}}</ref>
+
+===National Shipbuilding Strategy===
+In October 2017, the ''[[Financial Times]]'' stated that "officials inside the Ministry of Defence, [[HM Treasury|the Treasury]] and Royal Navy have long resented the obligation, set a decade ago, to maintain skills and shipbuilding capacity at BAE's shipyards on [[River Clyde|the Clyde]] regardless of naval needs. It quoted Francis Tusa, a defence analyst, who argued that the competition appeared to be designed to break BAE's hold on naval shipbuilding; "were they to have bid as BAE Systems, they wouldn't win. That is absolutely obvious. The fact is that the Type 31 is slanted probably to exclude any bid that includes BAE." However, this was denied by the MoD, which stated that the competition was designed to improve speed of delivery and reduce cost.<ref name="ft">{{cite news |last=Hollinger |first=Peggy |date=25 July 2018 |title=BAE Systems takes below-deck role on UK's Type 31 frigate |website=ft.com |agency=Financial Times |url=https://www.ft.com/content/572e3292-b41d-11e7-aa26-bb002965bce8 |access-date=25 July 2018}}</ref>
+
+In order to maintain national shipbuilding capacity, the 2017 national shipbuilding strategy proposed ordering an initial batch of five Type 31e frigates with an initial in-service date in 2023, with their cost limited to a maximum of £250m each, to be followed by a second batch order of Type 31 for the Royal Navy.<ref name=":10">{{cite web |url=https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/643873/NationalShipbuildingStrategy_lowres.pdf |title=National Shipbuilding Strategy: the future of naval shipbuilding in the UK |author=<!--Not stated--> |date=6 September 2017 |website=gov.uk |publisher=British Ministry of Defence |access-date=26 August 2019 |quote=We have set a maximum £250 million per ship price for the Type 31e}}</ref>
+
+The refresh to the National Shipbuilding Strategy published by the UK Government in March 2022 stated: Type 31, the pathfinder project of the 2017 strategy, got to contract on schedule and for the headline price demanded, with the capability exceeding many expectations.<ref>{{Cite web |title=Refresh to the National Shipbuilding Strategy |url=https://www.gov.uk/government/publications/refresh-to-the-national-shipbuilding-strategy |access-date=2023-12-30 |website=GOV.UK |language=en}}</ref>
+
+===Design tenders===
+Throughout 2017, several designs from different companies were suggested as contenders for the Type 31. BAE submitted two designs, "Avenger", essentially an improved Batch 3 [[River-class offshore patrol vessel|River-class OPV]],<ref>{{cite web|url=https://ukdefencejournal.org.uk/avenger-possible-yet-unpopular-contender-type-31-frigate/|title=The Avenger, a possible yet unpopular contender for the Type 31 Frigate|first=George|last=Allison|date=6 September 2017}}</ref> and "Cutlass", a significantly stretched and enhanced derivation of the [[Al-Shamikh|''Al Shamikh''-class corvette]].<ref>{{cite web|url=https://ukdefencejournal.org.uk/bae-cutlass-new-type-31-frigate/|title=The BAE Cutlass, could this be the new Type 31 Frigate?|first=George|last=Allison|date=5 September 2017}}</ref> BMT submitted a design called "Venator 110",<ref>{{cite web|url=https://ukdefencejournal.org.uk/bmt-tout-venator-110-natural-design-choice-type-31-frigate/|title=BMT tout Venator-110 as the 'natural design choice' for the Type 31 Frigate|first=George|last=Allison|date=6 September 2017}}</ref> with Steller Systems putting forward project "Spartan",<ref>{{cite web|url=https://ukdefencejournal.org.uk/spartan-contender-type-31-frigate/|title=Spartan – A contender for the Type 31 Frigate?|first=George|last=Allison|date=5 July 2017}}</ref> and Babcock offered a design named "Arrowhead 120".<ref>{{cite web|url=https://ukdefencejournal.org.uk/babcock-unveil-arrowhead-120-contender-type-31-frigate/|title=Babcock unveil Arrowhead 120, a contender for the Type 31 Frigate|first=George|last=Allison|date=8 September 2017}}</ref>
+
+In October 2017, BAE Systems announced that it would withdraw from the Type 31e competition as a main contractor, citing the capacity constraints of its shipyards on the Clyde, which were full with the work on the new [[River-class offshore patrol vessel|River-class]] patrol vessels and Type 26 frigates. Instead, BAE announced a partnership with [[Cammell Laird]], whereby BAE would provide its expertise in design and systems integration, while Cammell Laird would be the prime contractor and be responsible for the assembly of the ships at its yard at [[Birkenhead]].<ref>{{cite web |url=http://www.naval-technology.com/news/newsbae-cammell-laird-to-bid-for-uks-125bn-type-31e-frigate-programme-5954211 |title=BAE and Cammell Laird to bid for UK's £1.25bn Type 31 frigate programme |author=<!--Not stated--> |date=23 October 2017 |website=Naval Technology |access-date=25 October 2017 |archive-date=24 October 2017 |archive-url=https://web.archive.org/web/20171024085511/http://www.naval-technology.com/news/newsbae-cammell-laird-to-bid-for-uks-125bn-type-31e-frigate-programme-5954211 }}</ref> The planned design was named "Leander", a reference to [[Leander class (disambiguation)|three previous classes]] of ship in the Royal Navy.<ref>{{cite web |url=http://navaltoday.com/2017/10/18/bae-systems-teams-with-cammell-laird-for-uk-type-31-frigate-build/ |title=BAE Systems teams with Cammell Laird for UK Type 31 frigate build |author=<!--Not stated--> |date=18 October 2017 |website=Naval Today |access-date=25 October 2017 }}</ref>
+
+In November 2017, it was announced that BMT and Babcock signed a co-operation agreement for the Type 31. They did not choose between their respective "Venator 110" or "Arrowhead 120" designs, but instead would explore their designs to determine the best possible option.<ref>{{cite web |url= https://ukdefencejournal.org.uk/babcock-bmt-team-type-31e-frigate-bid|title=Babcock and BMT team up on Type 31e Frigate bid |first=George |last=Allison |date=9 November 2017 |website=UK Defence Journal |access-date=9 November 2017 }}</ref> In late May 2018, Babcock, partnered with BMT, and [[Thales Group]] announced the "Arrowhead 140" design, based on the hull of the Danish {{sclass|Iver Huitfeldt|frigate|1}}s.<ref>{{cite web|url=https://ukdefencejournal.org.uk/babcock-launches-team-31-selects-arrowhead-140-design-for-type-31e-frigate-competition/|title=Babcock launches 'Team 31', selects Arrowhead 140 design for Type 31e frigate competition|first=George|last=Allison|date=31 May 2018}}</ref>
+
+The competition was suspended on 20 July 2018 due to 'insufficient compliant bids' being received; however, ''[[The Times]]'' claimed this was due to a "funding crisis".<ref>{{cite news |last=Haynes |first=Deborah |date=25 July 2018 |title=Contest to build a 'budget frigate' on hold as MoD runs out of funds |work=[[The Times]] |agency=The Times |url=https://www.thetimes.com/uk/politics/article/contest-to-build-a-budget-frigate-on-hold-as-mod-runs-out-of-funds-wgvvkq0p3 |access-date=25 July 2018}}</ref> The competition was restarted in August 2018.<ref>{{cite news |last=Gleeson |first=Bill |date=23 August 2018 |title=Laird's bids for £1.25bn Navy ships contract |work=Liverpool Echo}}</ref>
+
+===Competitive design phase selection===
+On 10 December 2018, three groups were selected for the competitive design phase:{{Citation needed|date=September 2025}}
+* BAE Systems/Cammell Laird with their planned Leander design
+* Babcock/BMT/Thales with their Arrowhead 140 design (AH140)
+* [[Atlas Elektronik|Atlas Elektronik UK]]/[[ThyssenKrupp Marine Systems]], which was likely to be based on the [[MEKO 200|MEKO A-200]] design
+
+Both the BAE Systems and Babcock led entrants had already been put forward when the competition was temporarily suspended. The third bid was submitted by the Atlas Elektronik UK-led team. Both the Babcock and Atlas proposals included [[Ferguson Marine Engineering|Ferguson Marine]] on the Clyde and [[Harland and Wolff|Harland & Wolff]] in [[Belfast]].<ref>{{cite web |url=https://www.savetheroyalnavy.org/three-bids-for-the-royal-navy-type-31e-frigate-competition-formally-accepted-by-the-mod/ |title=Three bids for the Royal Navy Type 31e frigate competition formally accepted by the MoD |author=<!--Not stated--> |date=10 December 2018 |website=Save the Royal Navy |access-date=13 December 2018}}</ref> By August 2019, both of these companies announced that they were in financial difficulties.<ref name="BBC09082019">{{cite news |title=Clyde shipyard Ferguson set to go into administration |url=https://www.bbc.co.uk/news/uk-scotland-scotland-business-49299585 |access-date=16 August 2019 |work=BBC News |date=9 August 2019}}</ref><ref name="BT16082019">{{cite news |title=Iconic Belfast shipyard Harland & Wolff enters administration after 160 years |url=https://www.belfasttelegraph.co.uk/ulsterbusiness/news/iconic-belfast-shipyard-harland-wolff-enters-administration-after-160-years-38407319.html |access-date=16 August 2019 |work=Belfast Telegraph Digital |date=15 August 2019}}</ref>
+
+In September 2019 the Arrowhead 140 design was selected as the base design for the Type 31 frigate.<ref>{{cite news |last=Tovey |first=Alan |date=24 August 2019 |title=Babcock set to build new cut-price frigates and weaken BAE shipbuilding monopoly  |url=https://www.telegraph.co.uk/business/2019/08/24/babcock-set-build-new-cut-price-frigates-weaken-bae-shipbuilding/ |work=Daily Telegraph |location=London |access-date=26 August 2019}}</ref> A contract was formally awarded to Babcock on 15 November 2019, for an average production cost of £250&nbsp;million per ship and an overall programme cost set to be £2&nbsp;billion with £1.25&nbsp;billion value to Babcock.<ref name="Vavasseur"/>
+
+On 20 January 2020, the [[Public Accounts Committee (United Kingdom)|Public Accounts Committee]] was informed by the [[Permanent secretary|Permanent Secretary]] for Defence that the first ship will be launched by 2023, but the in-service date will be in 2027.<ref>{{cite web |url=https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/860019/20200120_-_Meg_Hillier_T31_AOA.pdf |title=Type 31 Programme Accounting Officer Assessment|last=Lovegrove |first=Stephen |date=20 January 2020 |website=assets.publishing.service.gov.uk |publisher=UK Ministry of Defence |access-date=6 February 2020 }}</ref> Earlier statements had been for an in-service date would be in 2023.<ref>{{cite web |url=https://researchbriefings.parliament.uk/ResearchBriefing/Summary/CBP-8807 |title=Naval shipbuilding: February 2020 update |last=Brooke-Holland |first=Louise |date=5 February 2020 |website=researchbriefings.parliament.uk |publisher=UK parliament library |access-date=6 February 2020 }}</ref> In September 2022, John Howie, chief corporate affairs officer for Babcock International, stated that all five ships would be "delivered" to the Navy by 2028,<ref>{{cite web |last=Bahtić |first=Fatima |date=12 September 2022 |title=UK: All five Type 31 frigates to be delivered by 2028 |url=https://www.navaltoday.com/2022/09/12/uk-all-five-type-31-frigates-to-be-delivered-by-2028/}}</ref> though other sources{{Who|date=November 2023}} suggested that the actual "in service" date might be somewhat later.<ref>{{cite web|url=https://www.navylookout.com/royal-navy-formally-announces-the-names-of-the-inspiration-class-type-31-frigates/|title = Royal Navy formally announces the names of the 'inspiration class' Type 31 frigates &#124; Navy Lookout| date=19 May 2021 }}</ref>
+
+== Arrowhead 140 ==
+The AH140 design submitted by Babcock, BMT, and Thales is a development of the {{sclass|Iver Huitfeldt|frigate|1}}s in service with the [[Royal Danish Navy]].{{Citation needed|date=September 2025}}
+
+The Type 31 frigate, developed from Babcock's Arrowhead-140 design and based on the Royal Danish Navy's Iver Huitfeldt class, is not a direct copy but a significantly reworked platform. It has been extensively redesigned to comply with modern standards, including Lloyd's Register Naval Ship Rules, NATO's ANEP-77 Naval Ship Code, and a broad range of UK defence requirements such as DefStan 02-900. This redesign delivers enhanced survivability, system redundancy, and resilience compared to older Royal Navy escort ships like the Type 23 and Type 45, which were built to earlier generations of standards.<ref name=":11" /><ref name=":0">{{cite web |title=Adaptable Configuration |url=https://www.arrowhead140.com/modular-system-specific-roles/ |access-date=2 October 2023 |website=www.arrowhead140.com}}</ref>
+* General Purpose – default option (Type 31).
+* [[Anti-aircraft warfare|Anti-air warfare]] – Leverages the existing anti-air capabilities of the parent design through use of an additional long range radar such as the SMART/L or [[S1850M]] enabling wide area air defence and [[Anti-ballistic missile|ballistic missile defence (BMD)]].
+* [[Anti-submarine warfare]] – additional acoustic reduction measures such as the rafting of machinery spaces as well as provisions for a [[towed array sonar]] to the stern.
+* [[Mine countermeasures vessel|Mine countermeasure]] / [[Amphibious warfare ship|amphibious warfare]] / Multi-Mission platform – In 2023 Babcock revealed their Multi-Role Naval Platform (A140 MNP), a variant of the AH140 with mission modularity in mind and likely as a contending design for the Royal Navy's [[Type 32 frigate]] program.<ref name=":1" /> The design features a stern boat ramp connected to the existing mission bay under the flight deck, a side hydraulic ramp, an enlarged hangar with capacity for up to 2x [[AgustaWestland AW101|AugustaWestland Merlin AW101]] sized helicopters, directly connected to a full-width mission bay replacing the 32-cell VLS complex amidships capable of supporting up to three 11-metre craft (e.g. [[unmanned surface vehicle]]s, [[rigid inflatable boat]]s) or containers.<ref name=":1">{{cite web |date=26 June 2023 |title=Babcock showcases Arrowhead 140 Multi-Role Naval Platform concept with view to Type 32 frigate competition {{!}} Navy Lookout |url=https://www.navylookout.com/babcock-showcases-stretched-arrowhead-140-multi-role-naval-platform-concept-with-view-to-type-32-frigate-competition/ |access-date=2 October 2023 |website=www.navylookout.com }}</ref> The design is also compatible with SH Defence's CUBE system for the embarkation and movement of container stores on board.<ref>{{cite web |title=The Cube – SH Defence |url=https://shdefence.com/the-cube/ |access-date=2 October 2023 |language=da-DK}}</ref>
+
+AH140 also features a wide degree of flexibility in the component systems. It is capable of being fitted with a variety of radar masts (fixed or rotating), up to four boat bays for RHIBs or small USVs and the customer's choice of medium and small calibre gun options (up-to [[5"/54 caliber Mark 45 gun|127 mm]] in position A and up-to [[OTO Melara 76 mm|76 mm]] in position B).<ref>{{cite web |date=16 January 2023 |title=Developing the Type 31 frigate {{!}} Navy Lookout |url=https://www.navylookout.com/developing-the-type-31-frigate/ |access-date=2 October 2023 |website=www.navylookout.com }}</ref><ref name=":2">{{citation |title=Babcock's Arrowhead 140 Frigate at DSEI 2021 | date=17 September 2021 |url=https://www.youtube.com/watch?v=PZxLg8v8bUY |access-date=2 October 2023 }}</ref> There are several options for [[vertical launching system]]s (VLS) available; from a 24-cell [[CAMM (missile family)|CAMM]] 'mushroom farm' configuration as cost and weight saving option, up to a 32-cell strike length [[Mark 41 Vertical Launching System|Mark 41 vertical launch system]] for long range [[surface-to-air missile]]s (SAMs) or [[surface-to-surface missile]]s (SSMs) that can be positioned amidships.<ref name=":0" /> 
+
+An additional 16-cell Mark 41 complex can be positioned forward of the bridge by removing the gun mount from Position B enabling either a 48-cell loadout or to free up the central sections for other facilities such as a full-width mission bay.<ref name=":2" /><ref name=":1" /><ref name=":5">{{cite journal |editor-last=Johnson |editor-first=J. |editor2-last=Howard |editor2-first=M. |title=Type 31 Frigate: Complex Warship Design for a Dynamic Operational Environment |url=https://library.imarest.org/record/10665?p=Type+31+frigate |journal=Conference Proceedings of INEC |doi=10.24868/10665 |doi-access=free }}</ref> Previous renderings of the Red-White frigate design for Indonesia have also shown an additional 56 cells of an indeterminant type and length added to the rear of the main gun suggesting that even greater level weapon customisation is available in the design.<ref>{{cite web |author=Navy Lookout |title=PT PAL shipyard Indonesia about to cut steel on the first Arrowhead-140/Type 31 derivate frigate. |url=https://twitter.com/NavyLookout/status/1589949469818294273 |access-date=2 October 2023 |via=Twitter }}</ref>
+
+Another major characteristic of the AH140 is that it has dedicated accommodation for more than 180 personnel but only requires a crew of less than 100, allowing for both lower sustainment costs but also for a large number of mission specific personnel such as flight crew, remote system operators, marines / special forces to be embarked, or refugees in the case of humanitarian operations.<ref>{{cite web |title=Arrowhead 140 |url=https://www.arrowhead140.com/ |access-date=30 October 2023 |website=www.arrowhead140.com}}</ref>
+
+==Exports==
+[[File:KRI Balaputradewa (322) launching (1).jpg|thumb|{{KRI|Balaputradewa}}, the first Indonesian Red White frigate, during its launching]]
+In September 2021, Babcock signed an agreement with [[PT PAL Indonesia]] allowing it to design two AH140 derivatives for the [[Indonesian Navy]].<ref name="indolicense">{{cite web |date=16 September 2021 |title=Babcock sells first new frigate design licence to Indonesia |url=https://www.babcockinternational.com/news/babcock-sells-first-new-frigate-design-licence-to-indonesia/ |access-date=16 September 2021 |website=Babcock International }}</ref> The class are known locally as ''[[Balaputradewa-class frigate|Fregat Merah Putih]]'' ("Red-White Frigate").<ref name="indodefence22">{{cite web |date=7 November 2022 |title=Indo Defence 2022: Indonesia prepares to cut steel on first 'Red-White' frigate |url=https://www.janes.com/defence-news/news-detail/indo-defence-2022-indonesia-prepares-to-cut-steel-on-first-red-white-frigate |access-date=19 December 2022 |website=janes.com}}</ref> The first Red White frigate had its steel cut in December 2022.<ref name="indosteelcut" /> In January 2026, Indonesia ordered two additional units, bringing the total purchased to four.<ref name=indo2>{{cite web |date=21 January 2026 |title=Indonesia to build a further two Arrowhead 140-derived frigates |url=https://www.navylookout.com/indonesia-to-build-a-further-two-arrowhead-140-derived-frigates/ |access-date=21 January 2026 |website=Navy Lookout}}</ref>
+
+In March 2022, Babcock won the frigate competition for the [[Polish Navy]]. The Polish Armaments Agency selected Babcock's AH140 from three different platform design proposals provided by the PGZ-Miecznik consortium ("''miecznik''" is Polish for "swordfish"). In August 2023, the construction of the first in a series of three Project 106 frigates began at [[Polish Navy Shipyard|PGZ Stocznia Wojenna]].<ref name=":3" />
+
+Following suggestions that the [[Royal Australian Navy]] (RAN) might adopt a "two-tier" surface combatant mix pairing the tier one [[Hobart-class destroyer|''Hobart''-class destroyers]] and [[Hunter-class frigate|''Hunter''-class frigates]] with a smaller, less capable, but cheaper class for the RAN, Babcock Australasia reportedly offered the Arrowhead 140 to meet this possible requirement.<ref name=":4">{{cite web |last=Felton |first=Ben |date=5 October 2023 |title=Australian Navy Force Structure Decisions Delayed Again |url=https://www.navalnews.com/event-news/indo-pacific-2023/2023/10/australian-navy-force-structure-decisions-delayed-again/ |access-date=6 October 2023 |website=Naval News }}</ref> However, the AH140 design was subsequently not selected as a candidate for the [[Australian general purpose frigate program]] after it was officially announced by the Australian government in 2024.<ref>{{Cite web |date=20 February 2024 |title=Enhanced Lethality Surface Combatant Fleet – Independent Analysis of the Navy's Surface Combatant Fleet |url=https://www.defence.gov.au/sites/default/files/2024-02/Enhanced_Lethality_Surface_Combatant_Fleet_web.pdf |access-date=26 February 2024 |website=Defence.gov.au}}</ref> On 5 August 2025 the RAN selected the [[New FFM|Improved ''Mogami''-class frigate]].<ref>{{Cite web |date=2025-08-05 |title=Mogami-class frigate selected for the Navy’s new general purpose frigates |url=https://www.minister.defence.gov.au/media-releases/2025-08-05/mogami-class-frigate-selected-navys-new-general-purpose-frigates |access-date=2026-05-12 |website=minister.defence.gov.au}}</ref>
+
+In October 2023, Babcock formally began building its bid for the [[Royal New Zealand Navy|Royal New Zealand Navy (RNZN)]] and started looking for New Zealand-based small medium enterprises (SMEs) to develop a domestic supply chain.<ref>{{cite web |date=26 October 2023 |title=Babcock to Offer Arrowhead to Aotearoa New Zealand |url=https://www.navalnews.com/event-news/indo-pacific-2023/2023/10/babcock-to-offer-arrowhead-to-aotearoa-new-zealand/ |access-date=27 October 2023 |website=Naval News }}</ref> On 7 May 2026 the New Zealand Ministry of Defense confirmed that the Type 31 and the improved ''Mogami'' were the two contenders to replace the RNZN's [[Anzac-class frigate|''Anzac''-class frigate]]s.<ref>{{cite web|url=https://www.beehive.govt.nz/release/frigate-project-progress-key-maritime-security|title=Frigate project progress key for maritime security|publisher=New Zealand Government|date=7 May 2026|access-date=12 May 2026}}</ref>
+
+In September 2025, the [[Financial Times]] reported on discussions related to the potential purchase of Type 31 derived units by both the [[Royal Swedish Navy|Royal Swedish]] and [[Royal Danish Navy|Royal Danish]] navies. Denmark's purchase would involve three ships built primarily in the UK, with the potential for additional units to be constructed domestically, to replace the existing {{sclass|Iver Huitfeldt|frigate|4}}. These would be primarily intended for the air defence mission, with a weapon and sensor fit comparable to the Polish ''Wicher''-class. Sweden's requirement is for four ships to constitute the [[Luleå-class corvette|Luleå-class]] ships currently under procurement. Denmark's purchase was said to be very close to being finalised, while the Swedish purchase was more uncertain, with the competition eventually won by the French [[Amiral Ronarc'h-class frigate|FDI class]] frigate.<ref>{{Cite web |last1=Sheppard |first1=David |last2=Pfeifer |first2=Sylvia |last3=Milne |first3=Richard |date=2 September 2025 |title=UK in advanced talks to build warships for Denmark and Sweden |url=https://www.ft.com/content/c84e2df3-2cc0-453c-9f11-b1db1ba99b28 |url-access=subscription |access-date=2025-09-07 |website=www.ft.com}}</ref><ref>{{cite web |date=3 September 2025 |title=Royal Navy's Type 31 frigate on course for export success in Scandinavia |url=https://www.navylookout.com/royal-navys-type-31-frigate-on-course-for-export-success-in-scandinavia/ |access-date=3 September 2025 |website=Navy Lookout }}</ref><ref>{{Cite web |last=Staff |first=Naval News |date=2025-08-31 |title=Norway selects British Type 26 frigates |url=https://www.navalnews.com/naval-news/2025/08/norway-selects-british-type-26-frigates/ |access-date=2026-05-26 |website=Naval News |language=en-US}}</ref> 
+
+==Characteristics==
+
+=== Royal Navy – Type 31 (Inspiration class) ===
+The Inspiration class will have a length of {{convert|138.7|m|ftin|abbr=on}}, a beam of {{convert|20.36|m|ft|abbr=on}} and a displacement of {{convert|7000|t|LT|abbr=off}}. It will have a crew complement of about 110 sailors (with available accommodation for about 80 additional personnel),<ref name="navylookout.com">{{cite web|title=The development of a lean crewing solution for the Royal Navy's Type 31 frigate |url=https://www.navylookout.com/the-development-of-a-lean-crewing-solution-for-the-royal-navys-type-31-frigate/ |date=23 September 2024 |access-date=23 September 2024|website=Navy Lookout}}</ref> a total range of 7500 [[Nautical mile|nmi]], and a top speed of 26+ [[Knot (unit)|knots]].<ref name=":5" /><ref>{{cite web |date=31 October 2023 |title=Inspiration Class |url=https://www.royalnavy.mod.uk/the-equipment/ships/frigates/inspiration-class |access-date=31 October 2023 |website=Royal Navy}}</ref><ref name=":11">{{Cite web |last=Johnson |first=J |date=18 June 2024 |title=From UMS to Full Autonomy: Experience from a Complex Warship Programme |url=https://www.babcockinternational.com/wp-content/uploads/2024/07/From-UMS-to-Full-Autonomy-Experience-from-a-Complex-Warship-Programme-WARSHIPS-2024-Babcock-002.pdf |website=Paper discussing the crew solution for the Type 31 Frigate}}</ref>
+
+The procurement of the equipment fit for the Type 31 differs greatly from traditional practices, with design decisions being made by the prime contractor [[Babcock]] or mission systems integrator [[Thales Group|Thales]] acting as the design authority rather than the [[Defence Equipment and Support]] (DE&S) organisation or Royal Navy personnel, in accordance to key characteristics laid down by the MoD for a general purpose frigate.<ref name=":6">{{cite web |date=16 January 2023 |title=Developing the Type 31 frigate|url=https://www.navylookout.com/developing-the-type-31-frigate/ |access-date=31 October 2023 |website=www.navylookout.com }}</ref> The published Babcock engineering paper states: "The various rule sets and standards used worldwide to design ships deliver varying levels of capability into a warship, even amongst NATO navies. The RN’s requirements have been honed by real-world and hard-won naval combat experience in the missile age; driving some of the most exacting standards to which a warship can be designed. The Type 31 Frigate now complies with these requirements and latest standards, materially increasing its performance over many overseas Frigate designs and the legacy 1980s-designed Type 23 General Purpose Frigate that it will replace in RN service."''<ref name=":12">{{Cite journal |editor-last=Johnson |editor-first=J. |editor2-last=Howard |editor2-first=M. |title=Type 31 Frigate: Complex Warship Design for a Dynamic Operational Environment |url=https://library.imarest.org/record/10665?p=Type+31+frigate&v=pdf |journal=Conference Proceedings of INEC |doi=10.24868/10665|doi-access=free }}</ref>''
+
+On 1 October 2020, BAE Systems Bofors announced it was under contract to supply five [[Bofors 57 mm L/70 naval artillery gun|Bofors 57 mm Mk3 medium calibre guns]] and ten [[Bofors 40 Mk4|Bofors 40 mm Mk4]] small calibre guns to the Royal Navy for the first five Type 31 frigates.<ref name="Bofors">{{cite news |author=<!--Staff writer(s); no by-line.--> |title=BAE Systems awarded naval guns contract for U.K.'s Type 31 frigate program |url=https://www.baesystems.com/en/article/bae-systems-awarded-naval-guns-contract-for-uks-type-31-frigate-program |work=BAE Systems International |date=1 October 2020 |access-date=1 October 2020}}</ref> The 57&nbsp;mm Mk3 will equip the A position whilst two 40&nbsp;mm Mk4s will be mounted in positions B and Y in a [[Broadside (naval)|broadside]] configuration.<ref name=":6" /> In November 2022 the MoD placed a contract with BAE Systems Bofors training facilities for the Bofors 57 mm Mk3 and 40 mm Mk4 naval gun systems that will be supplied with the five Type 31 Frigates<ref>{{Cite web |last=Allison |first=George |date=2022-11-21 |title=Contract awarded for Type 31 Frigate gun ammunition |url=https://ukdefencejournal.org.uk/contract-awarded-for-type-31-frigate-gun-ammunition/ |access-date=2023-12-30 |language=en-GB}}</ref>
+
+In 2019, Forces News reported that the design would have [[CAMM (missile family)|Sea Ceptor (CAMM)]] missiles, an advanced air and surface surveillance and target indication radar such as the Thales NS110<ref>{{cite news |last=Thomas |first=Richard |date=27 December 2019 |title=Naval review 2019: The never-ending Year of the (Royal) Navy |url=https://www.shephardmedia.com/news/imps-news/naval-review-2019-never-ending-year-royal-navy/ |work=Shephard News |location=London |access-date=31 December 2019 }}</ref> and be able to operate either an [[AgustaWestland AW159 Wildcat|AgustaWestland Wildcat HMA2]] or an [[AgustaWestland AW101|AgustaWestland Merlin HM2]].<ref>{{cite news |author=<!--Staff writer(s); no by-line.--> |title=Babcock Set For Type 31 Contract To 'Bring Shipbuilding Home' |url=https://www.forces.net/news/boris-johnson-bring-shipbuilding-home-ahead-type-31-announcement |work=Forces News |location=London |date=12 September 2019 |access-date=12 September 2019 }}</ref> Type 31 will have the first 4D Dual-Axis, Multi-Beam, Active Electronically Scanned Array (AESA) Radar to be fitted to a RN Frigate [Thales NS110].<ref name=":5" />
+
+The vertical launching system for the Type 31 and its associated missile loadout has gone through a number of revisions over the course of its development. Originally, the design would retain, but would however be [[For but not with|"fitted-for-but-not-with"]] its 32-cell strike length Mark 41 Vertical Launching System and in its place was to be a Sea Ceptor 24-cell '[[CAMM (missile family)|mushroom farm]]' in a similar configuration as found on the Type 23 frigates.<ref name="mk41">{{cite news |date=2 November 2021 |title=Royal Navy looking to 'increase lethality' of Type 31 Frigates |work=[[UK Defence Journal]] |url=https://ukdefencejournal.org.uk/royal-navy-looking-to-increase-lethality-of-type-31-frigates/ |access-date=3 November 2021}}</ref><ref>{{cite web |date=5 July 2019 |title=In focus – the Arrowhead 140 Type 31e frigate candidate  |url=https://www.navylookout.com/in-focus-the-arrowhead-140-type-31e-frigate-candidate/ |access-date=31 October 2023 |website=www.navylookout.com }}</ref> This was later revised with a more modular version of the launcher consisting of two 2x3-cell launch modules with a reduction from 24 to 12 missiles possibly as a cost-saving venture.<ref>{{Cite web |date=2020-02-07 |title=The Type 31 frigate in view {{!}} Navy Lookout |url=https://www.navylookout.com/the-type-31-frigate-in-view/ |access-date=2023-11-07 |website=www.navylookout.com |language=en-GB}}</ref> 
+
+In May 2023, the First Sea Lord [[Ben Key]] stated that Type 31 frigates would be fitted with the 32-cell Mark 41 Strike-Length complex.<ref name=":7">{{cite web |url=https://www.navylookout.com/royal-navys-type-31-frigates-to-be-fitted-with-mk41-vertical-launch-system/ |title=Royal Navy's Type 31 frigates to be fitted with Mk41 vertical launch system |date=17 May 2023 |website=Navy Lookout}}</ref><ref name=":9">{{Citation |title=How new Mk 41 Vertical Missile systems increase firepower for Royal Navy | date=29 May 2023 |url=https://www.youtube.com/watch?v=Jact6fXTZtw |access-date=2023-11-07 |language=en}}</ref> The exact missile mix for the Type 31 with the Mark-41 has yet to be confirmed but will likely eventually consist of at least 32x Sea Ceptor missiles quad-packed into one of the four 8-cell launch modules in addition to possibly integrating the forthcoming surface launched variant(s) of the [[Future Cruise/Anti-Ship Weapon|Future Cruise/Anti-Ship Weapon(s)]] being developed jointly by the UK, France, and Italy for surface warfare capability.<ref name=":7" /><ref name=":9" /> Other sources have previously suggested that the ship might incorporate the canister-launched [[Naval Strike Missile]]s which could be migrated over from the retiring Type 23 frigates and be fitted on the Type 31.<ref>{{cite web |date=23 November 2022 |title=New missile selection ends UK's anti-ship dilemma, for now |url=https://www.naval-technology.com/features/new-missile-selection-ends-uks-anti-ship-dilemma-for-now/}}</ref> In early 2024, it was reported that the Mark 41 system would not be integrated into the first Type 31 frigates and instead only be added during future capability insertion periods.<ref>{{cite web |url=https://www.naval-technology.com/news/type-31-frigates-could-get-mk-41-during-future-capability-insertion-periods/?cf-view |title=Type 31 frigates could get Mk 41 during future capability insertion periods |last=Thomas |first=Richard |date=9 February 2024 |website=Naval Technology |access-date=1 January 2025 }}</ref> 
+
+In early 2025 it became apparent that the decision to upgrade the armament would not come in time for the first two ships of the class to be fitted out with Mark 41, although contracts valued at £65 million for a Capability Insertion Period (CIP) for the five ships of the class were awarded in August of that year.<ref>{{cite web |url=https://www.navylookout.com/first-type-31-frigate-hms-venturer-due-to-be-launched-in-this-spring/ |title=First Type 31 frigate HMS Venturer due to be launched this Spring |date=30 January 2025 |website=Navy Lookout |access-date=1 February 2025 }}</ref> Defence officials stated in March of 2026 that the Royal Navy was still in discussions with the US Navy on procurement and installation of Mark 41 VLS hardware, however they declined to give any details as regards timescale of delivery.<ref>{{Cite web |title=Written questions and answers - Written questions, answers and statements - UK Parliament |url=https://questions-statements.parliament.uk/written-questions/detail/2026-02-27/116567 |access-date=2026-04-25 |website=questions-statements.parliament.uk |language=en}}</ref>
+
+In June 2023, the completed bow stem of the lead unit, HMS ''Venturer'', revealed <ref name=":11" /> that a bow-mounted sonar will also not be part of the initial build of the ship.<ref>{{cite tweet |url=https://twitter.com/NavyLookout/status/1669240137799041024?cxt=HHwWgICwpfbDqqouAAAA|title=The bow stem of HMS Venturer moved into the paint hall in Rosyth yesterday. Confirms Type 31 frigates will not have bow-mounted sonar |number=1669240137799041024 |user=NavyLookout |date=14 June 2023 |access-date=17 June 2023}}</ref>
+
+On 26 March 2024, it was announced that [[Seagnat|Sea Gnat]] fixed decoy launching system would be replaced across the entire Royal Navy's escort fleet with SEA's Ancilia trainable decoy launcher including on the Type 31 following a £135 million contract. A pair of launchers will be mounted to the deck and will each provide twelve ready rounds of Infrared seduction decoys and radio frequency distraction decoys to defeat missile threats and possibly the ability to launch [[Martlet (missile)|Martlet]] missiles in the future.<ref>{{Cite web |last=Staff |first=Naval News |date=2024-03-26 |title=Royal Navy Selects SEA's Ancilia Decoy Launching System |url=https://www.navalnews.com/naval-news/2024/03/royal-navy-selects-seas-ancilia-decoy-launching-system/ |access-date=2024-04-29 |website=Naval News |language=en-US}}</ref><ref>{{Cite web |date=2024-04-29 |title=Royal Navy to equip 19 ships with trainable decoy launchers {{!}} Navy Lookout |url=https://www.navylookout.com/royal-navy-to-equip-19-ships-with-trainable-decoy-launchers/ |access-date=2024-04-29 |website=www.navylookout.com |language=en-GB}}</ref>
+
+On 14 May 2024, First Sea Lord Ben Key announced that the Type 31 frigate would be equipped with land strike capabilities. The three missiles under consideration are the Naval Strike Missile, [[Tomahawk (missile family)|Tomahawk cruise missile]] and the [[Future Cruise/Anti-Ship Weapon]].<ref name="UKDJ1">{{cite news |title=Britain to arm frigates with land attack missiles |url=https://ukdefencejournal.org.uk/britain-to-arm-frigates-with-land-attack-missiles/ |access-date=21 May 2024 |work=[[UK Defence Journal]] |date=14 May 2024}}</ref>
+
+In June 2024, Babcock International published a technical paper outlining the development of the crewing model for the Royal Navy's Type 31 frigate. The aim was to minimise crew size while ensuring effective operation of a large surface combatant. The resulting crew complement reflects the smallest practical and sustainable ship's company for a 7,000-tonne general-purpose frigate capable of global combat operations, enabled by mature, high-readiness technologies and aligned with the latest naval rules and design standards.<ref name=":11" />
+
+In May 2026 it was reported that £140 million in cost overruns had been incurred "as a result of changes to the design and the long-term impacts of out-of-sequence build activity earlier in the programme".<ref>{{cite news |title=Babcock raises Type 31 Frigate cost estimate due to rework |url=https://ukdefencejournal.org.uk/babcock-raises-type-31-frigate-cost-estimate-after-outfit/ |access-date=13 May 2026 |work=[[UK Defence Journal]] |date=13 May 2026 |last=West |first=Lisa}}</ref>
+
+=== Indonesian Navy – Red White Frigate ===
+{{main|Balaputradewa-class frigate}}
+As part of the main contract, the Red White Frigate is to be armed with two [[OTO Melara 76 mm]], one 35&nbsp;mm [[Rheinmetall Oerlikon Millennium Gun]], and two 12.7&nbsp;mm [[Leonardo (company)|Leonardo]] Lionfish RCWS, while the electronics and sensors includes [[Aselsan]] Mete Han / CENK-350-N AESA multi-function radar,<ref>{{cite web |first=Tayfun |last=Ozberk |url=https://www.navalnews.com/naval-news/2025/12/indonesias-merah-putih-frigate-is-being-fitted-with-new-radar-by-aselsan/ |title=Indonesia's Merah Putih Frigate is being fitted with new radar by Aselsan |website=navalnews.com |date=4 December 2025 |access-date=19 February 2025 }}</ref> Aselsan MAR-D / CENK-200-N air and surface surveillance and helicopter control radar, Aselsan FERSAH hull-mounted sonar, Aselsan Target Designation Sight, [[HAVELSAN]] ADVENT combat management system, HAVELSAN-made combat information center equipment, two 8x6 130&nbsp;mm Aselsan KARTACA-N decoy launching systems, IFF system from Leonardo, and Elettronica electronic warfare suite.<ref name="FMPwep1">{{cite web |first=Dimitris |last=Mitsopoulos |url=https://www.navalnews.com/naval-news/2025/02/indonesias-merah-putih-class-frigate-what-you-need-to-know/ |title=Indonesia's Merah Putih-class Frigate: What You Need to Know |website=navalnews.com |date=11 February 2025 |access-date=12 February 2025 }}</ref><ref name="FMPwep2">{{cite web |url=https://turdef.com/article/aselsan-provides-mete-han-mfr-to-indonesia-s-future-frigates |title=ASELSAN Provides Mete Han MFR to Indonesia's Future Frigates |website=turdef.com |date=10 February 2025 |access-date=12 February 2025 }}</ref>
+
+Additional equipment in "fitted for-but not with" (FFBNW) configuration includes additional single OTO Melara 76&nbsp;mm gun, additional two 12.7&nbsp;mm Leonardo Lionfish RCWS, 8x8 cells (total 64 cells) [[Roketsan]] MİDLAS vertical launching system (VLS) for surface-to-surface and surface-to-air missiles, two Leonardo B515/3 triple 324mm torpedo launchers for [[MU90 Impact|MU90 LWT]] torpedoes, and Aselsan CENK 400-N AESA long-range air and surface surveillance radar.<ref name="FMPwep1"/><ref name="FMPwep2"/>
+
+=== Polish Navy – ''Wicher'' class ===
+
+{{Infobox ship
+|section1={{Infobox ship/class overview
+ | name = ''Wicher''-class frigate
+ | builders = [[Polish Navy Shipyard|PGZ Stocznia Wojenna]]<ref>{{cite news |last=Donnelly |first=B. | year=2022 | title=Scottish shipyard wins Polish Navy frigate contracts | url=https://www.heraldscotland.com/news/21648618.babcock-rosyth-wins-polish-navy-frigate-contracts/ | access-date=27 February 2023}}</ref>
+ | operators = {{navy|Poland}}
+ | class_before = 
+ | class_after = 
+ | subclasses = 
+ | cost = 
+ | built_range = 
+ | in_service_range = 
+ | in_commission_range = 
+ | total_ships_building = 3
+ | total_ships_planned = 3
+ | total_ships_completed = 0
+ | total_ships_canceled = 
+ | total_ships_active = 
+ | total_ships_laid_up = 
+ | total_ships_lost = 
+ | total_ships_retired = 
+ | total_ships_preserved = 
+ }}
+
+|section2={{Infobox ship/characteristics
+ | hide_header = 
+ | header_caption = <ref>{{cite web |author=Kamil Sadowski |date=24 February 2025 |title=Miecznik – Poland's ambitious adaptation of the Arrowhead 140 frigate |url=https://www.navylookout.com/miecznik-polands-ambitious-adaptation-of-the-arrowhead-140-frigate/ |website=Navy Lookout}}</ref>
+ | type = [[Frigate]]
+ | displacement = *{{cvt|7000|t|LT}}
+ | length = {{cvt|138.7|m|ftin}}
+ | beam = 
+ | height = 
+ | draught = 
+ | power = * 4 × Rolls Royce/MTU 20V 8000 M71 (8.2{{nbsp}}MW) diesel engines<ref name="navalnews.com">{{cite news|title=Rolls-Royce Seals Propulsion Systems Contract For Royal Navy's Type 31 Frigates |url=https://www.navalnews.com/naval-news/2020/05/rolls-royce-seals-propulsion-systems-contract-for-royal-navys-type-31-frigates/ |date=29 May 2020 |access-date=30 May 2020 }}</ref>
+           * 4 × Rolls Royce/MTU 16V 2000 M41B (900{{nbsp}}kW) generators
+           * or 4 × Caterpillar 3512C (1,360{{nbsp}}kW) generators
+ | propulsion = * [[Combined diesel and diesel|CODAD]] propulsion system
+                * MAN Alpha VBS Mk 5 controllable pitch propeller
+                * 2 × Shafts<ref>{{cite news|title=MAN to supply propulsion for Royal Navy frigates |url=https://www.rivieramm.com/news-content-hub/news-content-hub/man-energy-solutions-to-supply-propellers-for-uk-modrsquos-type-31-frigate-programme-59087 |date=27 April 2020 |access-date=30 May 2020 }}</ref>
+ | speed = In excess of {{convert|28|kn|lk=in}}
+ | range = 
+ | endurance = {{convert|9,000|nmi|abbr=on|lk=in}}
+ | complement = 80–100 (accommodation for >180)
+ | troops = 
+ | boats = 
+ | sensors = Blue Hunter hull sonar and CAPTAS-2 towed sonar
+Thales SM400 Sea Master AESA radar
+Thales NS50 4D AESA Radar <ref name="Grotnik">{{cite web |url=https://www.navalnews.com/naval-news/2023/07/new-details-on-polands-miecznik-class-frigates/ |title=New Details On Poland's Miecznik Class Frigates |last=Grotnik |first=Tomasz |date=17 July 2013 |website=Naval News |access-date=17 July 2023}}</ref>
+ | EW = 
+ | armament = * 32-cell [[Mark 41 Vertical Launching System|Mark 41 VLS]] for [[CAMM (missile family)#Naval-based air defence (Sea Ceptor)|CAMM]] family of anti-air missiles
+              * 1 × [[OTO Melara 76 mm|Leonardo 76mm Super Rapido Strales]] gun
+              * 2 × PIT-Radwar 35mm [[OSU-35K]] close-in weapon system
+              * 2 × ZM Tarnów 12.7 mm ZSMU A3B remote-controlled weapon station
+              * 2 × ZM Tarnów 12.7 mm WKM-Bm machine guns
+              *16 × [[Kongsberg Defence & Aerospace|Kongsberg]] [[Naval Strike Missile|NSM]] anti-ship missiles
+              * 2 × B515/2V launchers for 324 mm ASW torpedoes<ref name="Grotnik">{{cite web |url=https://www.navalnews.com/naval-news/2023/07/new-details-on-polands-miecznik-class-frigates/ |title=New Details On Poland's Miecznik Class Frigates |last=Grotnik |first=Tomasz |date=17 July 2013 |website=Naval News |access-date=17 July 2023}}</ref>
+ | armour = 
+ | aircraft = 
+ | aircraft_facilities = 
+ | notes = *2 boat bays for up to 7.5m [[Rigid inflatable boat|RHIBs]]
+           *2 boat bays for up to 11m [[Rigid inflatable boat|RHIBs]] or [[Unmanned surface vehicle|USVs]]/[[Unmanned underwater vehicle|UUVs]]
+ }}
+}}
+
+On 16 August 2023, a steel-cutting ceremony took place for the first of the ''Wicher''-class frigates, ORP ''Wicher''. The ceremony was held at PGZ Stocznia Wojenna in Gdynia.<ref>{{cite web|url=https://www.navalnews.com/naval-news/2023/08/poland-could-order-five-more-miecznik-frigates/ |title=Poland Could Order Five More Miecznik Frigates |date=18 August 2023 }}</ref>
+
+Also on 16 August 2023, it was announced that PGZ and Babcock signed an agreement including an option to build five more units. If exercised, this would result in at total of eight ''Wicher''-class vessels being procured by Poland.{{Citation needed|date=September 2025}}
+
+At the MSPO 2024 defense expo, it was announced that the ''Wicher''-class frigates will be fitted with [[Kongsberg Gruppen|Kongsberg's]] [[Naval Strike Missile|NSM]] anti-ship missiles instead of [[Saab AB|Saab's]] [[RBS 15|RBS 15 Mk3]].<ref>{{Cite web |last=Ciślak |first=Jarosław |date=2024-09-10 |title=Mieczniki z innymi rakietami. Zmiany na polskich fregatach [ANALIZA] |url=https://defence24.pl/sily-zbrojne/mieczniki-z-innymi-rakietami-zmiany-na-polskich-fregatach-analiza |access-date=2024-10-17 |website=defence24.pl |language=pl}}</ref>
+
+On 9 May 2025, Polish shipbuilder PGZ cut the first steel to be used in the construction of the second Wicher-class frigate ordered by the Polish Navy.<ref>{{cite web|url=https://www.bairdmaritime.com/security/naval/naval-ships/first-steel-cut-for-second-miecznik-class-frigate-for-polish-navy |title=First steel cut for second Miecznik-class frigate for Polish Navy |date=9 May 2025 }}</ref>
+
+{{clear}}
+
+==Ships of the class==
+The Royal Navy's five ships will be known as the "Inspiration class". In May 2021, the names of the five Type 31 ships were announced by the First Sea Lord; these were selected to represent key themes of the future plans of the Royal Navy and [[Royal Marines]]:<ref>{{cite web |url=https://www.royalnavy.mod.uk/news-and-latest-activity/news/2021/may/19/20210519-inspiration-class |title=Ships to inspire – names of Type 31 frigates revealed |author=<!--Not stated--> |date=19 May 2021 |website=Royal Navy | access-date=19 May 2021}}</ref>
+
+*''Active'', named after [[HMS Active (F171)|the Type 21 frigate]] which served in the [[Falklands War]] and in support of Britain's Overseas Territories, symbolising forward deployment of ships overseas.
+*''Bulldog'', named after the World War II {{sclass2|B|destroyer}} {{HMS|Bulldog|H91|6}}, which escorted shipping [[convoy]]s in the Atlantic, was chosen to represent operations in the [[North Atlantic]].  ''Bulldog'' captured the {{GS|U-110|1940|6}} and its top-secret [[Enigma machine]].
+*''Formidable'', named after the World War II-era aircraft carrier {{HMS|Formidable|67|6}}, represents carrier operations. ''Formidable'' took part in the war in the Mediterranean, Atlantic and Pacific.
+*''Venturer'', named after the World War II submarine {{HMS|Venturer|P68|6}}, which while underwater, destroyed an enemy submarine, symbolising technology and innovation.
+*''Campbeltown'', named after {{HMS|Campbeltown|I42|6}}, which was involved in the daring [[St Nazaire raid]] was chosen to symbolise the [[Future Commando Force]].<ref>{{cite web |title=Royal Navy's Type 31 frigates have names; HMS Active recalls her predecessor and Falklands liberation |work=MercoPress South Atlantic |date=19 June 2021 |url= https://en.mercopress.com/2021/05/27/royal-navy-s-type-31-frigates-have-names-hms-active-recalls-her-predecessor-and-falklands-liberation  |access-date= 20 June 2021}}</ref>
+
+As of 2021, all ships were planned to be service by February 2030,<ref name="inspiration">{{cite web |url=https://www.navylookout.com/royal-navy-formally-announces-the-names-of-the-inspiration-class-type-31-frigates/ |title=Royal Navy formally announces the names of the 'inspiration class' Type 31 frigates |author=<!--Not stated--> |date=19 May 2021 |website=Navy Lookout|access-date=19 May 2021}}</ref> though by mid-2024, that plan may have slipped by at least a few months.<ref name="WorseBefore">{{cite web |website=Navy Lookout |date=2 August 2024 |title=Royal Navy frigate strength to get worse before it gets better |url=https://www.navylookout.com/royal-navy-frigate-strength-to-get-worse-before-it-gets-better/ |access-date=4 August 2024}}</ref> ''Italics'' indicate estimated date.
+
+{| class="wikitable"
+|- valign="top"
+! Name
+! [[Pennant number|Pennant No.]]
+! Builder
+! Ordered
+! First steel cut
+! Laid down
+! Launched
+! Commissioned
+! Status
+|-
+! colspan="10" | {{RN}}
+|-
+| {{HMS|Venturer|Type 31 frigate|2}}<ref name="babcocktweet">{{cite tweet|number=1421117592945704960|user=NavyLookout|title=Babcock plans to cut steel on HMS...|date=30 July 2021}}</ref>
+|F12
+| rowspan="5" | Babcock International, [[Rosyth]]
+| rowspan="5" | 15 November 2019
+| 23 September 2021<ref>{{cite web|url=https://www.navylookout.com/steel-cut-for-first-type-31-frigate-hms-venturer/|title = Steel cut for first Type 31 frigate – HMS Venturer &#124; Navy Lookout| date=23 September 2021 }}</ref><ref>{{cite press release |url=https://www.gov.uk/government/news/first-steel-cut-for-royal-navy-type-31-programme |title=First steel cut for Royal Navy Type 31 programme |publisher=Government of the United Kingdom |date=23 September 2021 |access-date=23 September 2021}}</ref> 
+| 26 April 2022<ref>{{cite web |url=https://www.babcockinternational.com/news/keel-laying-for-royal-navys-type-31-frigate-showcases-babcock-workforce/ |title=Keel laying for Royal Navy's Type 31 frigate showcases Babcock workforce |publisher=Babcock International |date=26 April 2022 |access-date=28 April 2020}}</ref>
+| 14 June 2025<ref>{{Cite web | url=https://www.royalnavy.mod.uk/news/2025/june/15/20250615-hms-venturer-float-off| title=New frigate HMS Venturer makes impressive debut as she sails under iconic Forth bridges | date=15 June 2025 | access-date=14 June 2025 |website=Royal Navy }}</ref>
+| ''Projected late possibly 2026/early 2027''<ref name="WorseBefore"/><ref>{{cite web |last=Suciu |first=Peter |title=The Royal Navy's Type 31 Frigate Looks Like a Real Powerhouse |url=https://nationalinterest.org/blog/buzz/royal-navys-type-31-frigate-looks-real-powerhouse-209909 |website=The National Interest |date=7 March 2024 |access-date=27 April 2024}}</ref> or later<ref>{{cite web |date=17 February 2026 |title=Building the Royal Navy’s general purpose frigates: Type 31 programme update |url=https://www.navylookout.com/building-the-royal-navys-general-purpose-frigates-type-31-programme-update/ |access-date=9 March 2026 |website=Navy Lookout}}</ref>
+| Fitting out
+|-
+| {{HMS|Active|Type 31 frigate|2}}
+| F08
+| 24 January 2023<ref>{{cite web |first1=David |last1=Sivills-McCann |first2=Simon |last2=Hunter |title=First steel cut on Royal Navy's second Type 31 frigate |url=https://www.forces.net/services/navy/first-steel-cut-construction-begins-royal-navys-second-type-31-frigate |access-date=24 January 2023 |website=Forces Network |date=24 January 2023 }}</ref>
+| 16 September 2023<ref>{{cite web |title=Keel laid for second Type 31 frigate – HMS Active |url=https://www.navylookout.com/keel-laid-for-second-type-31-frigate-hms-active/ |date=16 September 2023 |access-date=16 September 2023 |website=Navy Lookout}}</ref>
+| 21 March 2026<ref>{{cite news |title=Second Type 31 frigate, HMS Active afloat for the first time |url=https://www.navylookout.com/2nd-type-31-frigatehms-active-afloat-for-the-first-time/ |access-date=24 March 2026 |publisher=Navy Lookout |date=23 March 2026}}</ref>
+|
+| Fitting out
+|-
+| {{HMS|Formidable|Type 31 frigate|2}}
+| F11
+| 9 October 2024<ref>{{cite web |url=https://www.navylookout.com/steel-cut-for-hms-formidable-the-royal-navys-third-type-31-frigate/ |title=Steel cut for HMS Formidable – the Royal Navy's third Type 31 frigate |date=9 October 2024 |website=Navy Lookout |access-date=9 October 2024}}</ref>
+| 9 December 2025<ref>{{cite web |title=Keel laid for third Type 31 Frigate, HMS Formidable - Navy Lookout |url=https://www.navylookout.com/keel-laid-for-third-type-31-frigate-hms-formidable/ |website=Navy Lookout |access-date=9 December 2025 |date=9 December 2025}}</ref>
+|
+|
+| Under construction
+|-
+| {{HMS|Bulldog|Type 31 frigate|2}}
+| F09
+| 24 February 2026<ref>{{cite web |url=https://www.navylookout.com/first-steel-cut-for-4th-type-31-frigate-hms-bulldog/ |title=First steel cut for 4th Type 31 frigate |date=24 February 2026|access-date=24 February 2026|website=Navy Lookout}}</ref>
+|
+|
+|
+| Under construction<ref name="type 31 names">{{cite web |url=https://www.gov.uk/government/news/new-inspiration-class-type-31-warships-named |title=New 'Inspiration Class' Type-31 warships named |website=UK Government |date=19 May 2021 |access-date=21 January 2026}}</ref>
+|-
+| {{HMS|Campbeltown|Type 31 frigate|2}}
+| F10
+|
+|
+|
+|
+| Announced<ref name="type 31 names" />
+|-
+! colspan="10" | {{naval|Indonesia}} ([[Red White frigate]])
+|-
+| {{KRI|Balaputradewa|322|2}}
+|322
+| rowspan="4" |[[PAL Indonesia]], [[Surabaya]]
+Babcock International, Rosyth
+| rowspan="2" |30 April 2020
+| 9 December 2022<ref name="indosteelcut" />
+| 25 August 2023<ref name="indokeellaying" />
+| 18 December 2025<ref>{{cite web |url=https://www.kemhan.go.id/2025/12/18/wamenhan-pimpin-shipnaming-dan-launching-kri-balaputradewa-322-wujudkan-kemandirian-pertahanan-maritim-indonesia.html |title=Wamenhan Pimpin Shipnaming dan Launching KRI Balaputradewa-322, Wujudkan Kemandirian Pertahanan Maritim Indonesia |work=Ministry of Defense of Indonesia |date=18 December 2025 |access-date=18 December 2025 |language=ID}}</ref><ref>{{cite web |url=https://berkas.dpr.go.id/akd/dokumen/komisi7-12-2209ab34fb10db8f6a9d37548f7fb680.pdf |title=News Release: Komisi VII DPR RI Kaji Strategi Penguatan Industri Maritim dan Alutsista Nasional di PT PAL Indonesia |work=Sekretariat Komisi VII DPR RI |date=9 December 2025 |access-date=12 December 2025 |language=ID}}</ref>
+| ''Projected 2028/2029''<ref name="FMPcomplete2">{{cite web |first1=Nirmala Maulana |last1=Achmad |last2=Ihsanuddin |url=https://nasional.kompas.com/read/2024/07/02/10023991/dua-kapal-fregat-merah-putih-tni-al-diharapkan-bisa-beroperasi-pada-2028 |title=Dua Kapal Fregat Merah Putih TNI AL Diharapkan Bisa Beroperasi pada 2028 |website=kompas.com |date=2 July 2024 |access-date=12 February 2025 |language=ID}}</ref><ref name="FMPcomplete1"/>
+|Fitting out
+|-
+| TBC
+|
+|5 June 2024<ref>{{Cite web |date=5 June 2024 |title=Indonesia Mulai Bangun Unit Kedua Fregat Merah Putih untuk TNI AL |url=https://indonesiadefense.com/indonesia-mulai-bangun-unit-kedua-fregat-merah-putih-untuk-tni-al/ |website=[[Indonesia Defense]]}}</ref>  
+|15 November 2024<ref name="indokeellaying2">{{cite web |first=Ambrosius Harto |last=Manumoyoso |url=https://www.kompas.id/artikel/indonesia-percepat-produksi-fregat-merah-putih-ke-2 |title=Indonesia Percepat Produksi Fregat Merah Putih Ke-2 |website=kompas.id |date=15 November 2024 |access-date=15 November 2024 |language=ID}}</ref>
+| 
+| ''Projected 2028/2029''<ref name="FMPcomplete1">{{cite web |first=Hanif |last=Nashrullah |editor-first=Vicki |editor-last=Febrianto |url=https://jatim.antaranews.com/berita/874034/menhan-targetkan-dua-unit-fregat-merah-putih-beroperasi-akhir-2025 |title=Menhan targetkan dua unit Fregat Merah Putih beroperasi akhir 2025 |website=ANTARAnews.com |date=24 January 2025 |access-date=12 February 2025 |language=ID }}</ref><ref name="FMPcomplete2"/>
+|Under construction
+|-
+| TBC
+|
+|rowspan=2|21 January 2026
+|
+|
+|
+|
+|Announced<ref name=indo2 />
+|-
+| TBC
+|
+|
+|
+|
+|
+|Announced<ref name=indo2 />
+|-
+! colspan="10" | {{navy|Poland}}
+|-
+| ''Wicher'' (Gale)
+|
+| rowspan="3" |[[Polish Navy Shipyard|PGZ Stocznia Wojenna]], [[Gdynia]]
+Babcock International, Rosyth
+| rowspan="3" |4 March 2022
+| 16 August 2023<ref>{{cite web |date=10 April 2022 |first=Tayfun |last=Ozberk  |url=https://www.navalnews.com/naval-news/2022/04/first-look-at-polands-new-miecznik-frigate/#prettyPhoto|title=First Look At Poland's New Miecznik Frigate|website=www.navalnews.com|access-date=10 April 2022|archive-url=https://web.archive.org/web/20220410092917/https://www.navalnews.com/naval-news/2022/04/first-look-at-polands-new-miecznik-frigate|archive-date=10 April 2022|url-status=live}}</ref><ref>{{cite web |date=16 August 2023 |title=Poland Starts Construction on New Miecznik Frigate |url=https://www.navalnews.com/naval-news/2023/08/poland-starts-construction-on-new-miecznik-frigate/ |access-date=26 August 2023 |website=Naval News }}</ref>
+|31 January 2024<ref>{{cite web |title=Poland lays keel of first Miecznik-class frigate |url=https://www.navalnews.com/naval-news/2024/02/poland-lays-keel-of-first-miecznik-class-frigate/ |website=Naval News|date=February 2024 }}</ref>
+|''August 2026''<ref name="polandatsea.com">{{cite web |title=PGZ Announces Launch of First Frigate in Miecznik Program Next Year  |url=https://www.polandatsea.com/pgz-announces-launch-of-first-frigate-in-miecznik-program-next-year/ |date=4 September 2025}}</ref>
+| ''Projected 2029''<ref name="polskieradio.pl">{{cite web |title=Poland begins building new frigate for Baltic defence |url=https://www.polskieradio.pl/395/7786/artykul/3519312,poland-begins-building%C2%A0new-frigate-for-baltic-defence |date=5 May 2025}}</ref>
+|Under construction
+|-
+| ''Burza'' (Storm)
+|
+| 5 May 2025<ref>{{cite web |title= Poland launches construction of second Miecznik-class frigate: ORP Burza begins to take shape |url= https://dailymare.com/news/poland-launches-construction-of-second-miecznik-class-frigate-orp-burza-begins-to-take-shape,1318 |date= 5 May 2025 |access-date= 15 November 2025}}</ref>
+| 18 December 2025<ref>{{cite web |last=Bahtić |first=Fatima |title=PHOTOS: Keel laid for Polands second Miecznik-class frigate | url= https://www.navaltoday.com/2025/12/19/photos-keel-laid-for-polands-second-miecznik-class-frigate |website=navaltoday.com |date= 19 December 2025 | access-date= 25 December 2025}}</ref>
+|
+| ''Projected 2030''<ref name="polskieradio.pl"/>
+|Under construction
+|-
+| ''Huragan'' (Hurricane)
+|
+| 28 April 2026<ref>{{cite web |title= Poland cuts steel for third and final miecznik frigate |url= https://www.janes.com/defence-intelligence-insights/defence-news/sea/poland-cuts-steel-for-third-and-final-miecznik-frigate|date= 28 April 2026 |access-date= 28 April 2026}}</ref>
+|
+|
+| ''Projected 2031''<ref name="polskieradio.pl"/>
+|Under construction
+|-
+|}
+
+== See also ==
+* [[Future of the Royal Navy]]
+* {{anl|Type 32 frigate}}
+* {{anl|Type 26 frigate}}, Larger vessel for [[Anti-submarine warfare]] (ASW)
+
+'''Equivalent modern general purpose frigates'''
+* {{lwc|Thaon di Revel-class offshore patrol vessel|Thaon di Revel-class offshore patrol vessel}} Officially known as Multi Purpose Combat Ship (MPCS), in Full configuration, its armaments and capabilities are equivalent to frigates
+* {{lwc|Frégate de défense et d'intervention|FDI-class frigates}} 
+* {{lwc|Mogami-class frigate|Mogami-class frigates}} 
+** {{lwc|New FFM|Upgraded Mogami-class}} – (Japan)
+* {{lwc|Tamandaré-class frigate|Tamandaré-class frigates}}
+* {{lwc|Formidable-class frigate|Formidable-class frigates}}
+* {{lwc|Victory-class multi-role combat vessel|Victory-class multirole combat vessel}} Officially referred to as multirole combat vessels (MRCV) but capabilities are equivalent to frigates
+* {{lwc|Pohjanmaa-class corvette|Pohjanmaa-class corvettes}} Officially referred to as [[corvettes]] but by displacement and capabilities de facto [[frigates]]
+
+==References==
+{{Reflist}}
+
+==Bibliography==
+*{{cite journal |last1=Osborne |first1=Richard|editor1-last=Osborne |editor1-first=Richard |title=Type 31 Frigates |journal=Warships: Marine News Supplement |date=August 2021 |volume=75 |issue=8 |pages=434–440 |issn=0966-6958}}
+*Johnson, J. Howard, M (November 2022). "''Type 31 Frigate: Complex Warship Design for a Dynamic Operational Environment"'' Proceedings of International Naval Engineering Conference (INEC) 2022 [[Doi (identifier)|doi]] [[doi:10.24868/10665|10.24868/10665]]
+*Johnson, J. Howard, M (June 2024). "''From UMS to Full Autonomy; Experience from a Complex Warship Programme"'' Proceedings of RINA Warships 2024: Future Surface Combatants Conference [https://www.babcockinternational.com/wp-content/uploads/2024/07/From-UMS-to-Full-Autonomy-Experience-from-a-Complex-Warship-Programme-WARSHIPS-2024-Babcock-002.pdf]
+
+==External links==
+{{commons category-inline|Type 31 frigates}}
+
+{{Type 31 frigate}}
+
+[[Category:Type 31 frigates| ]]
+[[Category:Frigate classes]]
+[[Category:Proposed ships of the Royal Navy|31]]
+[[Category:Ship classes of the Royal Navy]]
+[[Category:United Kingdom defence procurement]]
+[[Category:CODAD ships]]

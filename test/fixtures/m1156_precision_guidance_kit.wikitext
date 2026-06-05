@@ -1,0 +1,101 @@
+{{Short description|U.S. Army smart munitions system}}
+{{Infobox weapon
+| name               = M1156 precision guidance kit
+| image              = XM1156-PGK.svg
+| image_size         = 300
+| alt                = 
+| caption            = Diagram of XM1156 alongside standard fuse profile
+| type               = [[GPS]]-guided [[artillery fuze]] kit
+| origin             = United States
+<!-- Type selection -->
+| is_missile         = y
+<!-- Service history -->
+| service            = 2015–present
+| used_by            = {{ubl|[[US Army]]|[[US Marine Corps]]|[[Australian Army]]|[[Canadian Army]]|[[Finnish Army]]}}
+| wars               = 
+<!-- Production history -->
+| designer           = [[Alliant Techsystems]]
+| design_date        = 2007–2013
+| manufacturer       = [[Northrop Grumman Innovation Systems]]
+| unit_cost          = US $13,541{{refn|group=note|Price per unit in the 2013 fiscal year. That price was expected to fall as production increased.<ref name=Janes-PGK/>}}
+| production_date    = 2013–present
+| number             = Over 100,000{{refn|group=note|According to Northrop Grumman, as of September 2022 over 100,000 PGKs had been produced and delivered.<ref name=Janes-PGK/>}}
+| variants           = 
+<!-- General specifications -->
+| mass               = {{convert|3|lb|kg|abbr=on}}
+| length             = {{ubl|{{cvt|220.2|mm|in|order=flip}} overall|{{cvt|95.25|mm|in|order=flip|2}} visible|{{cvt|124.7|mm|in|order=flip}} intrusion}}
+| diameter           = 
+<!-- Specific specifications -->
+| detonation         = [[Contact fuze|Impact]] and [[Proximity fuze|proximity]]-detonation functions
+| guidance           = [[GPS]]
+| steering           = Four fixed canards
+| wingspan           = 
+| accuracy           = [[Circular error probable|CEP]] of less-than {{cvt|30|m|ft}}{{refn|group=note|A majority of rounds attained a [[Circular error probable|CEP]] of {{cvt|10|m|ft}} during the 2015 First Article Acceptance Test.<ref name=Janes-PGK/>}}
+| launch_platform    = {{ubl|[[M549|M549 HERA projectile]]|[[M795 projectile|M795 HE projectile]]}}
+<!-- For all -->
+| ref                = [[Janes Information Services|Janes]]<ref name=Janes-PGK>{{Citation |author=[[Janes Information Services|Janes]] |url=https://customer.janes.com/display/JAH_A452-JAH_ |title=Northrop Grumman M1156 Precision Guidance Kit |date=7 February 2023 |website=Janes Land Warfare Weapons: Ammunition |publisher=Jane's Group UK Limited. |publication-place=[[Coulsdon]], [[Surrey]] |url-access=subscription |access-date=6 March 2023}}</ref>
+}}
+
+The '''M1156 precision guidance kit (PGK)''', formerly '''XM1156''', is a [[U.S. Army]]-designed [[precision guidance]] system to turn existing [[155&nbsp;mm]] [[artillery shell]]s into smart weapons.<ref name="GLOBSEC">[http://www.globalsecurity.org/military/systems/munitions/m1156.htm XM1156 Precision Guidance Kit (PGK)]. Global Security.</ref> The prime contractor was [[Alliant Techsystems]] – later merging with [[Orbital Sciences Corporation]] to form Orbital ATK, in turn being taken over by Northrop Grumman and renamed [[Northrop Grumman Innovation Systems]] – and the industry team includes Interstate Electronics Corporation.<ref name="ATKPGK_01">{{Cite web |url=http://www.atk.com/capabilities_defense/cs_ms_w_gp_pgk.asp |title=ATK Precision Guidance Kit (PGK) |website=ATK}}</ref> By April 2018, more than 25,000 PGKs had been produced.<ref>[https://www.defensenews.com/land/2018/04/11/orbital-atk-expansions-anticipate-surge-in-dod-advanced-munitions-technology-needs/ Orbital ATK is expanding to prepare for what they predict will be a surge in DoD buys of more lethal munitions]. ''Defense News''. 12 April 2018.</ref>
+
+==Overview==
+[[File:U.S. Soldiers with Alpha Battery, 2nd Battalion, 320th Field Artillery Regiment, 1st Brigade Combat Team, 101st Airborne Division practice using the Enhanced Portable Inductive Artillery Fuze Setter on an XM1156 130428-A-ZQ422-024.jpg|thumb|right|Setting the fuze]]
+
+In operation the PGK screws into the nose of the [[projectile]] much like conventional [[fuze]]s. In addition to the fuzing function, it provides a [[Global Positioning System|GPS]] [[Missile guidance|guidance]] package and [[Flight control surfaces|control surface]]s to correct the flight of the shell.  This is analogous to the addition of a [[Joint Direct Attack Munition]] (JDAM) tail-kit to a [[dumb bomb|dumb iron bomb]], creating a [[precision guided munition|precision-guided munition]].  The system began production in 2009 and was first expected to be in service by 2010,<ref name="DEFNEWS_01">{{Cite web |url=http://defensenews.com/story.php?F=2793630&C=america |title=ATK To Make Precision Artillery Shell - defensenews.com |url-status=dead |access-date=2007-07-14 |archive-url=https://archive.today/20130121093542/http://defensenews.com/story.php?F=2793630&C=america |archive-date=2013-01-21 }}</ref> but was ultimately fielded in spring 2013.<ref name="first">{{Cite news|url=https://www.army.mil/article/92810/|title=Fort Bliss Soldiers First To Fire Army's New Near-Precision Artillery Rounds|first=Audra|last=Calloway|website=Army.mil|date=December 13, 2012}}</ref>
+
+A conventional unguided [[M549|M549A1]] 155 mm artillery projectile has a [[circular error probable]] (CEP) of {{convert|267|m|ft|abbr=on}} at its maximum range, meaning that half of the rounds can be expected to land within {{convert|267|m|ft|abbr=on}} of their intended target. This has made unguided artillery dangerous to use in close combat for fear of friendly fire and collateral damage. The [[M982 Excalibur]] was fielded as a guided shell that effectively hit within {{convert|6|m|ft|abbr=on}} of a target, but the Army developed the XM1156 as a cheaper alternative. The PGK fuse can be screwed onto existing M549A1 and [[M795]] projectiles, be fired from [[M109 Paladin|M109A6 Paladin]] and [[M777 howitzer|M777A2 Howitzer]] artillery systems, and hits within {{convert|50|m|ft|abbr=on}} of the target at any range.<ref name="dmn26april13">[http://www.defensemedianetwork.com/stories/xm1156-155mm-precision-guidance-kit-heads-to-afghanistan/ XM1156 Precision Guidance Kit Heads to Afghanistan] - Defensemedianetwork.com, 26 April 2013</ref><ref name="defensetech10may13">{{usurped|1=[https://web.archive.org/web/20130607025954/http://defensetech.org/2013/05/10/army-ships-precision-guidance-kits-to-artillery-units-in-afghanistan/ Army Ships Precision Guidance Kits to Artillery Units in Afghanistan]}} - Defensetech.org, 10 May 2013</ref>
+
+Small aerodynamic fins allow the system to steer the shell on target.  Its GPS receiver compares the PGK's flight pattern to the coordinates of where it should hit, and the fins adjust its path to match where the round will actually impact.  A failsafe exists where, if the shell does not impact within {{convert|150|m|ft|abbr=on}} of the intended target, it will land but not explode; the PGK "decides" five seconds after launch whether it expects to impact close enough to detonate.  This safety feature is expected to give soldiers more confidence when calling in artillery support close to their position.<ref name="dmn26april13"/><ref name="defensetech10may13"/> The PGK fuze weighs {{convert|3|lb|kg|abbr=on}}, {{convert|1|lb|kg|abbr=on}} more than a standard fuze because of the addition of fins and an [[alternator]].  The self-contained system does not need a battery since the alternator inside generates power in flight.  Not only is the PGK fuze cheaper to produce than whole purpose-built guided artillery shells, but its purpose to turn standard shells into more accurate rounds enables the millions of rounds already in inventories to be upgraded, while new smart shells have to be built to create a stockpile.<ref name="defensenews13march15">[http://www.defensenews.com/story/defense/land/weapons/2015/03/13/orbital-atk-wins-us-army-deal-for-pgk/70222932/ US Army 'Dumb' 155mm Rounds Get Smart] - Defensenews.com, 13 March 2015</ref>
+
+The PGK is compatible with various 155 mm artillery stockpiles to reduce dispersion.  It was demonstrated on German DM111 shells in September 2014 fired from a [[PzH2000]] self-propelled howitzer.  From a distance of {{convert|27|km|mi|abbr=on}}, 90 percent of the PGK-equipped German shells landed within 5 meters of the target.
+
+===Program timeline===
+* June 2006: [[Raytheon]] removed from XM1156 competition.
+* July 2006: [[BAE Systems]] and Alliant Techsystems selected to take part in a competitive Technical Development (TD) program.
+* May 2007: System Demonstration and Development (SDD) contract awarded to Alliant Techsystems.<ref>{{Cite web|url=http://atk.mediaroom.com/index.php?s=press_releases&item=679 |title=ATK Awarded Precision Guidance Kit Contract After Multi-Day Competitive Shoot-Off - ATK |url-status=dead |archiveurl=https://web.archive.org/web/20071009193930/http://atk.mediaroom.com/index.php?s=press_releases&item=679 |archivedate=October 9, 2007 }}</ref>
+* October 2012: Soldiers from [[Fort Bliss]] became the first troops to fire the XM1156 guidance kit.  24 PGK-equipped projectiles were fired.<ref name="first" />
+
+===Trials===
+Following fielding in Afghanistan under an urgent materiel release, the PGK underwent First Article Acceptance Tests to verify performance, reliability, and safety.  During tests, PGK-fuzed rounds had consistent performance across towed and self-propelled artillery platforms, passing the accuracy objective requirement of {{convert|30|m|ft|abbr=on}} or less CEP with a majority of rounds being placed within {{convert|10|m|ft|abbr=on}}.  On 6 February 2015, ATK announced that the PGK had passed acceptance testing and been approved for [[Low rate initial production|low-rate initial production]] (LRIP). In April 2015, the PGK completed a first Production Lot Acceptance Test to assess the reliability and provide acceptance of the first low rate initial production lot. 41 out of 42 PGK rounds fired from an M109A6 Paladin performed reliably, a 97 percent success rate.<ref name="army30april15">
+[https://www.army.mil/article/147555/Army_s_precision_guidance_kit_achieves_new_acquisition_milestone__demonstrates_high_reliability/ Army's precision guidance kit achieves new acquisition milestone, demonstrates high reliability] - Army.mil, 30 April 2015</ref>
+
+On 29 June 2015, Orbital ATK announced that the PGK had completed its first production Lot Acceptance Test, demonstrating a median accuracy of less than {{convert|10|m|ft|abbr=on}} and passing all safety and reliability requirements.  Two additional Lot Acceptance Tests are to confirm production consistency and provide information for product improvements over the course of production.<ref>[http://armyrecognition.com/june_2015_global_defense_security_news_uk/orbital_atk_s_155mm_artillery_precision_guidance_kit_meets_all_requirements_during_test_33006151.html Orbital ATK's 155mm Artillery Precision Guidance Kit Meets All Requirements During Test] - Armyrecognition.com, 30 June 2015</ref> By mid-2016, 4,779 PGK fuses had been produced under the low-rate initial production contract, with full-rate production commencing through 2019.<ref>[http://armyrecognition.com/august_2016_global_defense_security_news_industry/orbital_atk_signs_$69_million_contract_to_produce_artillery_precision_guidance_kits_through_2019_50408163.html Orbital ATK Signs $69 Million Contract to Produce Artillery Precision Guidance Kits Through 2019] {{Webarchive|url=https://web.archive.org/web/20190603151654/http://armyrecognition.com/august_2016_global_defense_security_news_industry/orbital_atk_signs_$69_million_contract_to_produce_artillery_precision_guidance_kits_through_2019_50408163.html |date=2019-06-03 }} - Armyrecognition.com, 4 August 2016</ref>
+
+===Variants===
+[[File:XM1113 in flight.jpg|thumb|XM1113 extended range artillery round, shown here at a range demonstration, uses a rocket-assist motor]]
+
+In 2021,{{Update inline|date=December 2025}} the U.S. Army plans to produce the upgraded M1156E2/A1, compatible with newer [[XM1128]] high explosive and [[XM1113]] [[rocket-assisted projectile]]s to achieve {{convert|10|m|ft|abbr=on}} accuracy at {{convert|30|and|40|km|abbr=on}} respectively when fired from a 39-caliber barrel. The follow-on M1156E3/A2 in 2022 will be designed to operate with the [[GPS Block III|GPS-M satellite constellation]] along with having a cheaper electronic module. After that, a new version known as the Long Range PGK will enable accuracy with XM1113 projectiles out to {{convert|70|km|abbr=on}} when fired from 58-caliber barrels of artillery pieces developed from the [[Extended Range Cannon Artillery]] (ERCA) program, as well as being compatible with legacy projectiles and being able to operate in a near-peer GPS threat environment.<ref>[https://www.edrmagazine.eu/us-army-new-rounds-for-155-mm-artillery US Army: new rounds for 155 mm artillery]. ''European Defence Review''. 4 November 2020.</ref> As of March 2024, the LR-PGK is expected to undergo its [[Design review (U.S. government)|Critical Design Review]] in Q4 2025, followed by Full Materiel Release (FMR) qualification testing from Q1 2027 through Q3 2028, culminating in readiness to enter the Production and Deployment phase in Q3 2028.<ref>{{cite web |author1=Office of the Under Secretary of Defense (Comptroller) |title=Department of Defense Fiscal Year (FY) 2025 Budget Estimates, Army, Budget Justification Book Volume 3b of 3, RDT&E Program − Volume II, Budget Activity 5B |url=https://www.asafm.army.mil/Portals/72/Documents/BudgetMaterial/2025/Base%20Budget/Research,%20Development,%20Test%20and%20Evaluation/RDTE%20-%20Vol%202%20-%20Budget%20Activity%205B.pdf |publisher=Assistant Secretary of the Army for Financial Management and Comptroller |access-date=30 August 2025 |pages=202–208 |date=March 2024 }}</ref>
+
+===Export===
+On 8 August 2013, [[Australia]] requested the sale of 4,002 M1156 Precision Guidance Kits with training and associated equipment for $54 million,<ref>[http://www.deagel.com/news/FMS-Australia-Requests-Precision-Guidance-Kits-for-155mm-Munitions_n000011806.aspx FMS: Australia Requests Precision Guidance Kits for 155mm Munitions] - Deagel.com, 12 August 2013</ref> something unusual for an item still in low-rate initial production.<ref>[http://www.armytimes.com/article/20131108/NEWS/311080017/Army-halts-mortar-buys-looks-trade-up "Army halts mortar buys, looks to trade up"]. Armytimes.com, 8 November 2013.</ref> PGKs were ordered for Australia and Canada in February 2015.<ref>[http://armyrecognition.com/march_2015_global_defense_security_news_uk/orbital_atk_to_provide_precision_guidance_kit_xm1156_to_us_australia_and_canada.html Orbital ATK to provide Precision Guidance Kit XM1156 to US, Australia and Canada] - Armyrecognition.com, 3 March 2015</ref> Australia is to begin receiving PGKs in the December 2015–January 2016 timeframe.{{Update inline|date=December 2025}}<ref>[http://www.shephardmedia.com/news/landwarfareintl/dsei-2015-aussie-precision-munitions-en-route/ Aussie precision munitions en route] - Shephardmedia.com, 9 September 2015</ref> On 24 April 2018, the US [[Defense Security Cooperation Agency]] approved the [[Foreign Military Sales|foreign military sale]] of 3,500 M1156 kits to the Netherlands at an estimated cost of {{US$|70 million}}.<ref>{{cite web|title=Netherlands – M1156 Precision Guided Kits|url=http://www.dsca.mil/major-arms-sales/netherlands-m1156-precision-guided-kits|website=Defense Security Cooperation Agency|publisher=US Department of Defense|accessdate=3 May 2018|archiveurl=https://web.archive.org/web/20180425161857/http://www.dsca.mil/major-arms-sales/netherlands-m1156-precision-guided-kits|archivedate=25 April 2018|location=Washington, D.C.|date=24 April 2018|url-status=live}}</ref> In August 2024, Finland bought some 5,500 M1156A1 Precision Guidance Kits, valued at $70m.<ref>https://www.army-technology.com/news/us-expands-nordic-allies-arsenal-with-precision-munitions-sales/?cf-view</ref>
+
+==Deployment==
+In March 2013, the [[15th Field Artillery Regiment (United States)|15th Field Artillery Regiment]] in Afghanistan began training on equipment related to the XM1156, and began fielding PGK rounds shortly after, with initial fielding completed by the end of June.  The U.S. Army received 2,400 PGK-equipped shells and the U.S. Marine Corps received 700 shells.<ref name="dmn26april13"/><ref name="defensetech10may13"/> 
+
+==Specifications==
+* Guidance: GPS
+* Accuracy:
+** Increment I: < 50 m [[circular error probable]] (CEP)
+** Increment II: < 30 m CEP<ref name="DEFUP_01">{{Cite web|url=http://www.defense-update.com/products/p/pgk.htm|title=Precision Guidance Kit (PGK) Improving the Accuracy of Artillery Fire – Defense Update|access-date=2007-07-14|archive-url=https://web.archive.org/web/20171001041315/http://www.defense-update.com/products/p/pgk.htm|archive-date=2017-10-01|url-status=dead}}</ref>
+* Unit cost: < $10,000<ref name="defensenews13march15"/>
+* Fusing options: Point detonating or [[Proximity fuze|proximity]] [[air burst|airburst]]<ref name="army30april15"/>
+
+==See also==
+* {{lwc|M982 Excalibur}}
+* {{lwc|XM395 precision guided mortar munition}}
+* {{lwc|Joint Direct Attack Munition}}
+
+==Footnotes==
+{{reflist|group=note}}
+
+== References ==
+{{Reflist}}
+
+==External links==
+* [https://web.archive.org/web/20070731232718/http://www.atk.com/Customer_Solutions_MissionSystems/cs_ms_w_gp_pgk.asp Precision Guidance Kit (PGK) - ATK]
+
+{{Alliant Techsystems}}
+
+{{DEFAULTSORT:Xm1156 Precision Guidance Kit}}
+[[Category:Cannon-launched guided projectiles]]
+[[Category:Military equipment introduced in the 2000s]]

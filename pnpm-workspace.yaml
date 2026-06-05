@@ -1,0 +1,12 @@
+# Dependencies whose install/build lifecycle scripts are allowed to run.
+# pnpm 11 reads this allowlist here; pnpm <=10 read it from package.json's
+# "pnpm.onlyBuiltDependencies" field (removed when the pnpm@11 pin landed).
+# Native addons (better-sqlite3, sharp, workerd, unrs-resolver) and esbuild
+# need their build step; wtf_wikipedia is pure JS and does not.
+allowBuilds:
+  better-sqlite3: true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true
+  wtf_wikipedia: false

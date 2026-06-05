@@ -1,0 +1,343 @@
+{{Short description|United States anti-ballistic missile system}}
+{{Use dmy dates|date=October 2019}}
+{{Use American English |date=January 2014}}
+[[File:OBV GBI 1.jpg|thumb|right|A [[Ground-Based Interceptor]] loaded into a silo at [[Fort Greely]], Alaska in July 2004.]]
+'''Ground-Based Midcourse Defense''' ('''GMD'''), previously [[United States national missile defense|National Missile Defense]] (NMD), is an [[anti-ballistic missile]] system implemented by the United States of America for defense against [[ballistic missile]]s, during the [[Missile defense#Mid-course phase|midcourse phase]] of [[ballistic trajectory]] flight. It is a major component of the American [[United States national missile defense|missile defense strategy]] to counter ballistic missiles, including [[intercontinental ballistic missile]]s (ICBMs) carrying [[nuclear weapon|nuclear]], [[Chemical warfare|chemical]], [[Biological warfare|biological]] or conventional [[warhead]]s.<ref>{{Cite web |title=MDA - The Ballistic Missile Defense System |url=https://www.mda.mil/system/system.html |access-date=2024-04-14 |website=www.mda.mil |language=en}}</ref>
+
+As of 2018, the system is composed of two interceptor staging bases in the states of Alaska and California, with 40 staged in the former, 4 staged in the latter, for a total of 44 interceptors, as well as the component early warning and targeting sensors based on land, sea, and in orbit.<ref name="economist,0">{{Cite news |url=https://www.economist.com/news/united-states/21734465-someone-ought-explain-commander-chief-there-no-guaranteed-defence |title=There is no guaranteed defence against ballistic missiles—yet |newspaper=The Economist |language=en |access-date=28 January 2018 |url-access=subscription}}</ref><ref>{{cite web |url=https://missilethreat.csis.org/system/gmd/ |title=Ground-based Midcourse Defense (GMD) System |website=Missile Threat}}</ref> As of 2019, a Missile Defense Review has requested 20 additional interceptors to be based in Fort Greely, Alaska, though their delivery has not materialized.<ref name="2019mdr">{{cite magazine |url=https://time.com/5506284/donald-trump-nuclear-weapons-missile-defense/ |title=President Trump's Plans to Boost Missile Defense Could Spark Arms Race |magazine=Time |date=17 January 2019 |access-date= 18 January 2019}}</ref>
+
+GMD is administered by the U.S. [[Missile Defense Agency]] (MDA), while operational control is provided by the [[United States Army|U.S. Army]], with support functions provided by the [[United States Air Force|U.S. Air Force]] and [[United States Space Force|U.S. Space Force]]. 
+
+== Background ==
+{{See also|United States national missile defense}}
+GMD after its renaming in 2002 remains a limited defense system, intended to protect the continental United States from limited launches of ballistic missiles.<ref>{{Cite web |title=Ground-based Midcourse Defense (GMD) System |url=https://missilethreat.csis.org/system/gmd/ |access-date=2024-04-14 |website=Missile Threat |language=en-US}}</ref> Examples given in the past have included countries such as North Korea.<ref>{{Cite web |title=Official Discusses Steps to Deter, Defeat Missile Threats |last=Vergun|first=David |url=https://www.war.gov/News/News-Stories/Article/Article/3367914/official-discusses-steps-to-deter-defeat-missile-threats/ |date=April 19, 2023|access-date=May 9, 2025 |website=U.S. Department of Defense |language=en-US}}</ref>
+
+GMD has undergone some controversy over its operational lifetime, such as with a study in 2000 by the [[Union of Concerned Scientists]] and the Security Studies Program at the [[Massachusetts Institute of Technology]] concluding that "[a]ny country capable of deploying a long-range missile would also be able to deploy countermeasures that would defeat the planned NMD system." Countermeasures studied in detail were bomblets containing biological or chemical agents, aluminized balloons to serve as decoys and to disguise warheads, and cooling warheads to reduce the kill vehicle's ability to detect them.<ref>Union of Concerned Scientists/MIT Security Studies Program. [http://www.ucsusa.org/assets/documents/nwgs/cm_all.pdf ''Countermeasures: A Technical Evaluation of the Operational Effectiveness of the Planned U.S. National Missile Defense System(Executive Summary and full text)''] {{Webarchive|url=https://web.archive.org/web/20140723003245/http://www.ucsusa.org/assets/documents/nwgs/cm_all.pdf |date=23 July 2014 }}(PDF). UCS-MIT Study, A.M. Sessler (Chair of the Study Group), J.M. Cornwall, R. Dietz, S.A. Fetter, S. Frankel, R.L. Garwin, K. Gottfried, L. Gronlund, G.N. Lewis, T.A. Postol, and D.C. Wright, April 2000.</ref> Currently, the Union of Concerned Scientists maintains that GMD is "unproven, unaccountable, and unhelpful for reducing the nuclear threat."<ref>{{Cite web |title=US Missile Defense {{!}} Union of Concerned Scientists |url=https://www.ucsusa.org/nuclear-weapons/missile-defense |access-date=2024-04-14 |website=www.ucsusa.org |language=en}}</ref>
+
+More recently, questions have been asked about the Pentagon characterizing the January 28 test in 2016 as a success, when LA Times reported that the EKV suffered a fault in its reaction control system thrusters, which resulted in "a distance 20 times greater than what was expected" according to an anonymous Pentagon scientist.<ref>{{Cite web |last=Willman |first=David |date=2016-07-06 |title=A test of America's homeland missile defense system found a problem. Why did the Pentagon call it a success? |url=http://www.latimes.com/projects/la-na-missile-defense/ |access-date=2024-04-14 |website=www.latimes.com |language=en}}</ref>
+
+Under the Missile Defense Agency, GMD has conducted multiple test exercises, with mixed results. Early testing revealed deficiencies in the Ground Based Interceptor missile, as well as the Exoatmospheric Kill Vehicle. However, with time, success rates increased, marred by the occasional technical failure such as in 2010's FTG-06 (Flight Test Ground-Based Interceptor) where the Sea-based X Band Radar failed to perform as expected,<ref name=":0" /> and the subsequent FTG-06a where despite all elements performing correctly, intercept failed to occur.<ref name=":1" />
+
+==Description==
+[[File:Exoatmospheric Kill Vehicle prototype.jpg|thumb|right|Prototype of the [[Exoatmospheric Kill Vehicle]]]]
+[[File:X band radar platform entering Pearl on Heavy lift Marlin.jpg|thumb|[[Sea-based X-band Radar]] platform arriving in Pearl Harbor in January 2006.]]
+
+GMD is tied into existing United States missile warning infrastructure, as well as purpose-built radar sites. It also encompasses 44 ground-based missile interceptors housed at two military bases. 
+
+[[Boeing Defense, Space & Security]] is the prime contractor of the program, tasked to oversee and integrate systems from other major defense sub-contractors, such as [[Computer Sciences Corporation]] and [[Raytheon]].
+
+The key sub-systems of the GMD system are:
+* [[Exoatmospheric Kill Vehicle]] (EKV) – Raytheon
+* [[Ground-Based Interceptor]] (GBI) – boost vehicle built by [[Orbital Sciences]]; for every interceptor missile there is a [[missile silo]] and a silo interface vault (SIV), which is an underground electronics room adjacent to the silo.
+* [[Battle management]] [[command, control and communications]] (BMC3) – [[Northrop Grumman]]
+* Ground-based radars (GBR) – Raytheon
+* [[AN/FPS-132 Upgraded Early Warning Radar]] (UEWR) – Raytheon
+* Forward-based [[X band]] radars (FBXB), such as the [[Sea-based X-band Radar|sea-based X-band]] platform and the [[AN/TPY-2]] — Raytheon
+
+Interceptor sites are at [[Fort Greely]], [[Alaska]]<ref>{{cite news |url=http://www.alaskajournal.com/stories/060509/loc_img2_001.shtml |title=Begich, Gates visit Alaska missile defense base |archive-url=https://web.archive.org/web/20101129160036/http://www.alaskajournal.com/stories/060509/loc_img2_001.shtml |archive-date=29 November 2010 |first=Tim |last=Bradner |publisher=[[Alaska Journal of Commerce]] |date=5 June 2009}}</ref><ref>{{cite news |url=https://www.reuters.com/article/pressRelease/idUS197994+30-Oct-2009+GNW20091030 |title=Northrop Grumman Contribution to Support Missile Defense Workforce in Alaska |archive-url= https://web.archive.org/web/20091104221744/http://www.reuters.com/article/pressRelease/idUS197994+30-Oct-2009+GNW20091030 |archive-date= 4 November 2009 |work=reuters.com |url-status= dead |date=30 October 2009}}</ref><ref>{{cite web |url=https://www.blackfive.net/main/2008/08/commanding-the.html |title=Commanding Alaska's Guard w/ 24/7 missile defense |website=BlackFive |date=31 August 2008 |access-date=18 January 2019 |archive-date=19 January 2019 |archive-url=https://web.archive.org/web/20190119121505/https://www.blackfive.net/main/2008/08/commanding-the.html |url-status=dead }}</ref> and [[Vandenberg Space Force Base]], California. A third site was planned for a proposed [[US missile defense complex in Poland]],<ref>{{cite web |url=https://apps.dtic.mil/descriptivesum/Y2008/MDA/0603882C.pdf |archive-url=https://web.archive.org/web/20070906220514/http://www.dtic.mil/descriptivesum/Y2008/MDA/0603882C.pdf |url-status=live |archive-date=6 September 2007 |title=Missile Defense Agency (MDA) Exhibit R-2 RDT&E Budget Item Justification |website=dtic.mil |publisher=[[Defense Technical Information Center]]}}</ref> but was canceled in September 2009.
+
+In late 2013, there were plans for a proposed Eastern United States site to house a battery of these missiles.<ref name="ShalalEsa">{{cite news |last=Shalal-Esa |first=Andrea |title=Maine among candidates named for possible East Coast missile defense sites |url=http://bangordailynews.com/2013/09/12/news/state/maine-among-candidates-named-for-possible-east-coast-missile-defense-sites/ |date=12 September 2013| access-date= 19 November 2013 |newspaper=[[Bangor Daily News]]}}</ref> Four sites were shortlisted in January 2014 for an East Coast site - [[Survival, Evasion, Resistance and Escape|SERE]] Remote Training Site in Maine ([[Rangeley, Maine|Rangeley]]), [[Fort Drum]] in [[New York (state)|New York]], [[Camp James A. Garfield]] in [[Ohio]], and [[Fort Custer Training Center]] in [[Michigan]].  [[Camp Ethan Allen Training Site]] in [[Vermont]] was dropped from consideration in late 2013.<ref name="Shalal-Esa">{{cite news|last=Shalal-Esa|first=Andrea|title=Pentagon to further study four possible East Coast missile defense sites |url=https://www.reuters.com/article/us-usa-military-missile-idUSBREA1001C20140201 |accessdate=2014-03-16|newspaper=[[Reuters]]|date=31 January 2014}}</ref>
+
+In January 2014 the Pentagon announced they were starting a two-year environmental impact study under the 2013 defense authorization bill, which required two missile-defense sites to be identified on the East Coast.<ref name="Shalal-Esa" /> The CBO has estimated that a site would cost US$3.5bn.<ref name="Shalal-Esa" />
+
+In June 2019, [[Fort Drum]] in [[New York (state)|New York]] was chosen as the location for the potential East Coast missile defense site.<ref name="Atkinson">{{cite news|last=Atkinson|first=Scott|title=Fort Drum picked as site for east coast missile defense |url=https://www.wwnytv.com/2019/06/27/fort-drum-picked-site-east-coast-missile-defense/ |accessdate=2020-01-18|newspaper=[[WWNY]]|date=26 June 2019}}</ref>
+
+In December 2008, the U.S. Missile Defense Agency awarded Boeing a $397.9&nbsp;million contract to continue development of the program.<ref>{{cite news |title=Boeing Wins Missile Deal |newspaper=[[The Washington Post]] |date=31 December 2008 |page=D2}}</ref>
+
+In March 2013, the Obama administration announced plans to add 14 interceptors to the current 26 at Fort Greely in response to North Korean threats.<ref>{{Cite web |url=https://www.google.com/hostednews/ap/article/ALeqM5jjgYiSBIdiEZeKQ36g4JFDGYSEcw?docId=bcdce67d004f4898bf0d44919e2072a6 |archive-url=https://archive.today/20130411024303/http://www.google.com/hostednews/ap/article/ALeqM5jjgYiSBIdiEZeKQ36g4JFDGYSEcw?docId=bcdce67d004f4898bf0d44919e2072a6 |url-status=dead |archive-date=11 April 2013 |title=US to beef up missile defense against NKorea.}}</ref> The deployment of a second TPY-2 radar to Japan was announced at the same time.<ref>{{cite web |url=https://defense-update.com/20130316_alaska-to-pivot-us-missile-defenses-again.html |title=Alaska's Ground Based Interceptors to Pivot US Defenses Against North Korea |first=Tamir |last=Eshel |date=16 March 2013 |publisher=Defense Update}}</ref> While President Obama said that the additional deployment was a hedge against unexpected capabilities, Chinese Ministry of Foreign Affairs spokesman Hong Lei complained that the additional defenses would affect the global strategic balance and strategic trust.<ref>{{cite web |url=https://www.cnn.com/2013/03/18/world/asia/china-us-north-korea/index.html |title=China: U.S. risks antagonizing North Korea |first=Jethro |last=Mullen |website=CNN |date=18 March 2013}}</ref>
+
+On 30 April 2014, the Government Accountability Office issued a report stating that the system may not be operational any time soon because "its development was flawed". It said the GBI missile was at that point "capable of intercepting a simple threat in a limited way".<ref name="Mann1015">{{cite web |url=https://www.army.mil/article/153770/mann_addresses_missile_defense_future_during_symposium |title=Mann addresses missile defense future during symposium |website= army.mil |date=12 August 2015}}</ref> On 12 August 2015, Lt. General David L. Mann (commanding general [[SMDC|USASMDC]]/[[United States Strategic Command#Subordinate Commands|ARSTRAT]]) characterized GMD as the nation's only ground-based defense against limited [[ICBM]] attacks.<ref name="Mann1015" />
+
+Issues with the EKV prompted the MDA to work with Raytheon, Boeing, and Lockheed Martin on a new Redesigned Kill Vehicle (RKV), scheduled to debut in 2025.<ref>{{Cite news |url=https://tucson.com/business/icbm-target-downed-in-key-test-of-missile-defense-raytheon/article_bb1da10a-d726-593d-a3e6-07f8f74f3748.html |title=ICBM target downed in key test of missile defense, Raytheon Warhead |last=Wichner |first=David |work=[[Arizona Daily Star]] |language=en |access-date=26 March 2019 |date=26 March 2019 |via=tucson.com}}</ref> In 2019, the government issued a stop work order for the RKV after recent test results indicated that the current RKV plan is not viable.  The government "initiated an analysis of alternative courses of action";<ref name="stopWorkOrder">{{Cite news |url=https://www.bloomberg.com/news/articles/2019-06-06/raytheon-s-flawed-missile-defense-warhead-faulted-by-watchdog |title=As North Korea Threat Grows, U.S. Anti-Missile Warhead Stumbles |last=Capaccio |first=Anthony |date=6 June 2019 |access-date= 14 July 2019}}</ref> on 21 August the MDA cancelled the $5.8&nbsp;billion contract for the RKV.<ref name="cancellationOfRKV" /> This initiates new work on bids for the successor to the Exo-Atmospheric Kill Vehicle (EKV) to 2025.<ref name="cancellationOfRKV">{{Cite web |url=https://breakingdefense.com/2019/08/pentagon-cancels-multi-billion-boeing-missile-defense-program/ |title=Pentagon Cancels Multi-Billion $ Boeing Missile Defense Program |first=Valerie |last=Insinna |date=21 August 2019}}</ref><ref name="ngi2019">[https://www.forbes.com/sites/lorenthompson/2019/10/08/inside-the-missile-defense-agencys-secret-next-generation-interceptor/#471ded112663 Loren Thompson (8 Oct 2019) Inside The U.S. Missile Defense Agency's Secret Next Generation Interceptor]
+*50 threat scenarios have been defined (Classified)
+*The GBIs will be Hit-to-kill
+*Each GBI will have multiple warheads (multiple kill vehicles)
+*The GBIs will fit in existing silos
+*The GBIs are expected by 2026
+*The interim GBI solution until then is to be determined</ref> The current GMD programs continue per plan, with up to 64 GBIs (meaning an additional 20) in the missile fields for 2019.<ref name="tripled">{{Cite web |url=https://www.defensenews.com/land/2020/07/23/canceled-missile-defense-warheads-cost-tripled-schedule-slipped-despite-numerous-warnings-gao-finds/ |title=Cost tripled for missile defense warhead, despite prior warnings, GAO finds |first=Jen |last=Judson |date=23 July 2020 |website=Defense News}}</ref>
+
+==Program costs==
+Expenditures on the Ground-Based Midcourse Defense program were estimated to be US$30.7&nbsp;billion by 2007.<ref>[http://oversight.house.gov/features/moredollars/contractdetails.asp?id=14 "More Dollars, Less Sense, Individual Contract Report: Ground-Based Midcourse Defense (Missile Defense)"] {{webarchive |url=https://web.archive.org/web/20081103223332/http://oversight.house.gov/features/moredollars/contractdetails.asp?id=14 |date=3 November 2008 }}. United States House of Representatives, Committee on Oversight And Government Reform, June 2007.</ref> In 2013, it was estimated that the program would cost $40.926&nbsp;billion from inception through fiscal year 2017; in 2013–17 spending was to total $4.46&nbsp;billion, an average of $892&nbsp;million per year.<ref name=GAO-13-294SP>{{cite web |url=http://www.gao.gov/assets/660/653379.pdf |title=GAO-13-294SP, DEFENSE ACQUISITIONS Assessments of Selected Weapon Programs |publisher=US Government Accountability Office |date=26 March 2013 |access-date= 26 May 2013 |page=51}}</ref>
+
+==Flight tests==
+[[File:Ground-Based_Interceptor_Successful_Test_2019.webp|thumb|A US Exoatmospheric Kill Vehicle from a Ground-Based Interceptor missile destroys a high-altitude target, 2019]]
+
+:BV: Booster Verification Test
+:CMCM: Critical Measurements and Countermeasures
+:CTV: Control Test Vehicle
+:FTG: Flight Test Ground-Based Interceptor
+:FTX: Flight Test Other<ref>{{cite news |last=Lehner |first=Rick |title=Missile Defense Agency Successfully Completes Ground Test for Data Collection to Improve Modeling and Simulation |url=https://www.mda.mil/global/documents/pdf/08news0091.pdf |access-date= 8 July 2013 |date=20 December 2008}}</ref>
+:IFT: Integrated Flight Test
+
+===Intercept tests===
+After the FTG-12 test on 11 December 2023, 12 of the 21 (57%) hit-to-kill intercept tests have succeeded. No flight intercept tests from 2010 to 2013 were successful.<ref>{{cite web |url=http://armscontrolcenter.org/issues/missiledefense/articles/the_defense_that_does_not_defend_more_problems_for_national_missile_defense/ |title=The Defense That Does not Defend: More problems for national missile defense |last1=Reif |first1=Kingston |date=11 February 2014 |website=armscontrolcenter.org |publisher=Center for Arms Control and Non-Proliferation |access-date= 12 February 2014 |url-status=dead |archive-url= https://web.archive.org/web/20140221182254/http://armscontrolcenter.org/issues/missiledefense/articles/the_defense_that_does_not_defend_more_problems_for_national_missile_defense/ |archive-date= 21 February 2014}}</ref> In response the Pentagon asked for a budget increase and another test for the fielded program.<ref>{{cite web |url=http://aviationweek.com/blog/15-mda-request-ignites-old-debate-cost-success |title=2015 MDA Request Ignite Old Debate On the Cost of Success |last1=Hills |first1=Amy |date=14 February 2014 |website= aviationweek.com |publisher=Penton |access-date= 14 February 2014 |archive-date= 31 August 2014 |archive-url= https://web.archive.org/web/20140831125915/http://aviationweek.com/blog/15-mda-request-ignites-old-debate-cost-success |url-status= dead}}</ref> The successful intercept FTG-15 was accomplished by an operational team of the [[100th Missile Defense Brigade]] using their standard operating procedures (round-the-clock 24/7).<ref name=18dec2017 /> Although they knew in advance that there would be a test launch, they did not know exactly when it would occur or its exact nature.<ref name=18dec2017>{{cite web |url=https://www.army.mil/article/198388/in_their_words_missile_defense_crew_recounts_intercontinental_ballistic_missile_target_flight_test |date=18 December 2017 |title=In Their Words: Missile defense crew recounts intercontinental ballistic missile target flight test |website= army.mil |quote=Flight Test Ground-based Interceptor-15, or FTG-15, showcased the system's capabilities, as it was the first successful interception of a simulated intercontinental ballistic missile target by a ground-based interceptor launched by the GMD system. [] while the crew was aware there would be a test launch, they were not privy to the exact nature of what they would face and when.}}</ref>
+
+{| class="wikitable sortable"
+! Name
+! date
+! Result
+! class="unsortable" |Description<ref name="CDI IFT">{{cite web |url=http://www.cdi.org/pdfs/gmd%20ift2.pdf |title=Missile Defense Integrated Test Flights |work=Center for Defense Information |date=18 June 2007 |archive-url= https://web.archive.org/web/20120414164509/http://www.cdi.org/pdfs/gmd%20ift2.pdf |archive-date=14 April 2012}}</ref><ref name=DOTE_FY2012/><ref name=test_record>{{cite web |url=https://www.mda.mil/global/documents/pdf/testrecord.pdf |title=Ballistic Missile Defense Intercept Flight Test Record |work=Missile Defense Agency |date=8 July 2013 |access-date= 8 July 2013 |archive-date= 27 September 2017 |archive-url= https://web.archive.org/web/20170927155243/https://www.mda.mil/global/documents/pdf/testrecord.pdf |url-status= dead}}</ref>
+|-
+|IFT-3
+|{{dts|format=dmy|1999|Oct|2}}
+|{{success}}
+|This was an element test of the EKV that relied on a surrogate booster vehicle. Because the Inertial Measurement Unit malfunctioned, the EKV used a backup acquisition mode to acquire the target.
+|-
+|IFT-4
+|{{dts|format=dmy|2000|Jan|18}}
+|{{failure}}
+|This was the first end-to-end system test, again relying on a surrogate booster vehicle. The test was designed to target a mock warhead, transmitting its location by [[Global Positioning System|GPS]], and ignore a single large decoy balloon. The failure to intercept was traced to an obstructed cooling line on the EKV that disrupted the IR sensors' ability to cool down to their operating temperatures in time, leaving the EKV unable to detect its target.
+|-
+|IFT-5
+|{{dts|format=dmy|2000|Jul|8}}
+|{{failure}}
+|This was the second end-to-end system test. The test was designed to target a mock warhead, transmitting its location by [[C band (IEEE)|C-band]], and ignore a single large decoy balloon. The failure to intercept occurred because the EKV did not separate from the boost vehicle due to an apparent failure of the [[MIL-STD-1553|1553 data bus]] in the booster.
+|-
+|IFT-6
+|{{dts|format=dmy|2001|Jul|14}}
+|{{success}}
+|This test repeated IFT-5. The prototype X-Band radar falsely reported a missed target but was confirmed by a satellite, jet, and ground stations.
+|-
+|IFT-7
+|{{dts|format=dmy|2001|Dec|3}}
+|{{success}}
+|This test repeated IFT-6 except that the target booster used Orbital's Target Launch Vehicle instead of Lockheed Martin's Multi-Service Launch System.
+|-
+|IFT-8
+|{{dts|format=dmy|2002|Mar|15}}
+|{{success}}
+|The test was designed to target a mock warhead, transmitting its location by C-band, and ignore both a large decoy balloon and two small decoy balloons.
+|-
+|IFT-9
+|{{dts|format=dmy|2002|Oct|14}}
+|{{success}}
+|Twice delayed from August, this was the first test to use the [[AN/SPY-1|Aegis SPY-1 radar]], although it was not used to achieve the intercept. After the classification of decoys since May 2002, no information is known on their details.
+|-
+|IFT-10
+|{{dts|format=dmy|2002|Dec|11}}
+|{{failure}}
+|The failure to intercept occurred because the EKV did not separate from the boost vehicle because a pin broke that should have activated a laser to release the boost vehicle's restraining units.
+|-
+|IFT-13C
+|{{dts|format=dmy|2004|Dec|15}}
+|{{failure}}
+|Delayed several times from December 2003 due to bad circuitry, this test was designed to use the Orbital Sciences booster from [[Kwajalein]] to hit a target from [[Kodiak, Alaska]]. The target flew as planned but the booster failed to leave the ground. The failure was traced to a software problem on the 1553 communications data bus, which may be incapable of processing messages at a rate that is fast enough for the GMD system to work effectively.
+|-
+|IFT-14
+|{{dts|format=dmy|2005|Feb|13}}
+|{{failure}}
+|This test repeated IFT-13C, with a booster from Kwajalein designed to hit a target from Kodiak, Alaska. Again, the target flew as planned but the booster failed to leave the ground. The failure was traced to the arms that hold the interceptor up in the silo. When they failed to fully retract, the launch was automatically aborted.
+|-
+|FTG-02
+|{{dts|format=dmy|2006|Sep|1}}
+|{{success}}
+|This test involved the first ground-based interceptor launched from [[Vandenberg Air Force Base]] to intercept a "threat-representative" target from Kodiak, Alaska. This was the first time that operational radar was used to capture targeting information. Not officially an intercept test, this was originally designed to collect data on the phenomenology of the intercept and act as a radar certification test. No decoys were used.<ref>{{cite web |url=https://mda.mil/global/documents/pdf/06news0020.pdf |title=Missile Defense Exercise and Flight Test Successfully Completed |publisher=[[Missile Defense Agency]] |date=1 September 2006 |access-date= 18 January 2019 |archive-date= 17 October 2020 |archive-url= https://web.archive.org/web/20201017125839/https://mda.mil/global/documents/pdf/06news0020.pdf |url-status= dead}}</ref>
+|-
+|FTG-03
+|{{dts|format=dmy|2007|May|25}}
+|{{failure}}
+|With the same setup as FTG-02, the test target flew off-course and an intercept did not occur.
+|-
+|FTG-03A
+|{{dts|format=dmy|2007|Sep|28}}
+|{{success}}
+|This test was scheduled in response to the failure of FTG-03, this time with a successful intercept.
+|-
+|FTG-05
+|{{dts|format=dmy|2008|Dec|5}}
+|{{success}}
+|This test launched a threat-representative mock warhead from [[Kodiak Launch Complex]], Alaska followed by a Ground-Based Interceptor from Vandenberg AFB. All components performed as designed.<ref>{{cite web |url=https://www.mda.mil/global/documents/pdf/08news0090.pdf |title=Missile Defense Flight Test Results in Successful Intercept |work=[[Missile Defense Agency]] |access-date= 6 December 2008 |date=5 December 2008}}</ref>
+|-
+|FTG-06
+|{{dts|format=dmy|2010|Jan|31}}
+|{{failure}}
+|This test was to be the first to assess both a CE-II EKV and a complex target scene and the first test to use a newly developed FTF LV-2 target.<ref>{{cite web |url=http://www.gao.gov/htext/d09403t.html |title=Defense Acquisitions: Charting a Course for Improved Missile Defense Testing |work=[[Government Accountability Office]] |date=25 February 2009 |access-date=1 January 2010 |archive-date=7 January 2010 |archive-url=https://web.archive.org/web/20100107112907/http://www.gao.gov/htext/d09403t.html |url-status=dead}}</ref> While the target missile and interceptor launched and performed nominally, the Sea Based X-Band Radar did not perform as expected, and an investigation will explain the failure to intercept.<ref name=":0">{{cite web |url=https://www.mda.mil/news/10news0001.html |title=Missile Defense Test Conducted |work=Missile Defense Agency |date=31 January 2010 |access-date= 18 January 2019}}</ref>
+|-
+|FTG-06a
+|{{dts|format=dmy|2010|Dec|15}}
+|{{failure}}
+|This test was similar to FTG-06, over a distance of 4,200 miles.<ref>{{cite web |url=http://www.lompocrecord.com/news/local/military/vandenberg/article_0d0c3b92-04fb-11e0-a862-001cc4c03286.html |title=Missile Defense Test Conducted |work=Lompoc Record |date=10 December 2010 |access-date= 15 December 2010}}</ref> While the Sea Based X-Band radar and all sensors performed as planned, the test was unable to achieve the planned intercept of a ballistic missile target.<ref name=":1">{{cite web |url=https://www.mda.mil/news/10news0019.html |title=Draft Environmental Assessment for Maintenance and Repair of the Sea-Based X-Band Radar Vessel Available for Public Comment |work=[[Missile Defense Agency]] |date=13 December 2010 |access-date= 15 December 2010}}</ref>
+|-
+|FTG-07
+|{{dts|format=dmy|2013|Jul|5}}
+|{{failure}}<ref>{{cite press release |url=http://www.defense.gov/releases/release.aspx?releaseid=16140 |archive-url=https://web.archive.org/web/20130712184618/http://www.defense.gov/releases/release.aspx?releaseid=16140 |url-status=dead |archive-date=12 July 2013 |title=Missile Defense Test Conducted |publisher=[[U.S. Department of Defense]] |date=5 July 2013}}</ref><ref>{{cite press release |url=https://www.mda.mil/news/13news0006.html |title=Missile Defense Test Conducted |date=5 July 2013 |access-date= 18 January 2019}}</ref>
+|This intercept test used an improved CE-I EKV.<ref name=Senate_stmt>{{cite web |url=https://www.mda.mil/global/documents/pdf/ps_syring_050913_SASC.PDF |title=Unclassified Statement of Vice Admiral James D. Syring Director, Missile Defense Agency |publisher=United States Senate via MDA.mil |pages=5–6 |access-date= 7 July 2013}}</ref>
+|-
+|FTG-06b
+|{{dts|format=dmy|2014|Jun|22}}
+|{{success}}<ref>{{cite news |url=https://www.reuters.com/article/us-usa-military-boeing-idUSKBN0EX11Y20140623 |title=U.S. missile defense system destroys target in key test |publisher=[[Reuters]] |date=22 June 2014 |access-date= 18 January 2019}}</ref>
+|This test is designed to demonstrate an intercept and meet the unmet objectives of FTG-06a.<ref name=DOTE_FY2012>{{cite web |url=http://www.dote.osd.mil/pub/reports/FY2012/pdf/bmds/2012gmd.pdf |title=Ground-Based Midcourse Defense (GMD) |publisher=U.S. Office of the Director, Operational Test & Evaluation |page=288 |date=2012 |access-date= 7 July 2013 |archive-date= 4 March 2016 |archive-url= https://web.archive.org/web/20160304091204/http://www.dote.osd.mil/pub/reports/FY2012/pdf/bmds/2012gmd.pdf |url-status= dead}}</ref><ref name=Senate_stmt/>
+|-
+|FTG-15
+|{{dts|format=dmy|2017|May|30}}
+|{{success}}<ref>{{cite web |url=https://abcnews.go.com/US/pentagon-conduct-intercontinental-ballistic-missile-intercept-test-heels/story?id=47724129 |title=US successfully intercepts ICBM in historic test |date=30 May 2017 |website=ABC News}}</ref>
+|The test involved the new CE-II Block-I version of the EKV, which executed a direct collision with the ICBM target.<ref>{{cite web |url=https://mostlymissiledefense.com/2017/02/02/could-ftg-15-delays-prevent-the-deployment-of-44-gbis-by-the-end-of-2017-february-2-2017 |title=Could FTG-15 Delays Prevent the Deployment of 44 GBIs by the End of 2017? |date=2 February 2017}}</ref><ref>{{cite news |url=https://www.washingtonpost.com/news/checkpoint/wp/2017/05/30/with-eyes-on-north-korea-u-s-successfully-destroys-mock-icbm-over-pacific/ |title=With eyes on North Korea, U.S. successfully destroys mock ICBM over Pacific |access-date= 30 May 2017}}</ref><ref>{{cite web |url=https://www.defensenews.com/space/2017/05/30/missile-takedown-historic-icbm-intercept-test-sends-strong-message-to-north-korea/ |title=Missile takedown: Historic ICBM intercept test sends strong message to North Korea |first=Jen |last=Judson |date=8 August 2017 |website=Defense News}}</ref>
+|-
+|FTG-11
+|25 Mar 2019
+|{{success}}<ref>{{cite news |url=https://www.washingtonpost.com/world/national-security/pentagon-missile-defense-test-succeeds-in-shootdown/2019/03/25/ca7db760-4f4c-11e9-bdb7-44f948cc0605_story.html |archive-url= https://web.archive.org/web/20190326024303/https://www.washingtonpost.com/world/national-security/pentagon-missile-defense-test-succeeds-in-shootdown/2019/03/25/ca7db760-4f4c-11e9-bdb7-44f948cc0605_story.html |url-status= dead |archive-date= 26 March 2019 |title=Pentagon: missile defense test succeeds in shootdown |date=25 March 2019 |access-date= 25 March 2019 |agency=[[Associated Press]] |first=Robert |last=Burns |via=[[The Washington Post]]}}</ref>
+|This test used two interceptors,<ref name= FTG-11,salvoTest>{{cite web |url=https://www.army.mil/article/219788/national_guard_soldiers_at_forefront_of_most_significant_test_in_missile_defense_history |first1=Zachary |last1=Sheely |date=5 April 2019 |title=National Guard Soldiers at forefront of most significant test in missile defense history |access-date= 22 April 2019 |website=army.mil |publisher=United States Army}}</ref> one to crash into a dummy target representing an incoming ICBM and another to use sensors to detect another ICBM or other countermeasures.<ref>{{cite news |url=https://www.reuters.com/article/us-usa-pentagon-missiledefense-idUSKCN1R62SE |title=U.S. military says it conducts successful missile defense test |date=25 March 2019 |work=[[Reuters]] |access-date= 25 March 2019 |last=Zargham |first=Mohammad |editor1-last= Reese |editor1-first= Chris}}</ref><ref>{{cite web |url=https://www.straitstimes.com/world/united-states/trickiest-us-missile-defence-test-is-finally-ready-to-launch |title=Trickiest U.S. Missile Defense Test Is Finally Ready to Launch |last=Capaccio |first=Anthony |date=24 March 2019 |work=Bloomberg |access-date= 25 March 2019}}</ref>
+|-
+|FTG-12
+|11 Dec 2023
+|{{success}}<ref name="mda-20231211">{{cite web |url=https://www.mda.mil/news/23news0006.html |title=Homeland Missile Defense System Conducts Successful Intercept Of Target |date=11 December 2023 |access-date=12 December 2023 |work=Missile Defense Agency}}</ref>
+|This test used a CE-II EKV and was the first test of a three-stage GBI operating in a two-stage mode—releasing its kill vehicle earlier by not igniting the GBI's third stage.<ref name="mda-20231211"/> It was launched from [[Vandenberg Space Force Base]] and successfully intercepted an [[IRBM]] deployed from a [[C-17 Globemaster III|C-17 aircraft]] over the Pacific Ocean.<ref name="2023-12-12_DN">[https://www.defensenews.com/land/2023/12/11/homeland-defense-interceptor-defeats-ballistic-missile-in-test/ Homeland defense interceptor defeats ballistic missile in test], Jen Judson, [[Defense News]], 2023-12-12</ref>
+|}
+
+===Non-intercept tests===
+{| class="wikitable sortable"
+! Name
+! date
+! Result
+! class="unsortable" |Description<ref name="CDI IFT" /><ref name="CDI BV">{{cite web |url=http://www.cdi.org/news/missile-defense/gmd-booster.pdf |title=Missile Defense BV Test Flights |work=Center for Defense Information |date=5 May 2005 |archive-url=https://web.archive.org/web/20120414164522/http://www.cdi.org/news/missile-defense/gmd-booster.pdf |archive-date= 14 April 2012}}</ref><ref>{{cite web |last1=Parsch |first1=Andreas |title=Boeing Ground-Based Interceptor (GBI) |url=http://www.designation-systems.net/dusrm/app4/gbi.html |website=Directory of U.S. Military Rockets and Missiles |access-date= 25 June 2014 |archive-url= https://web.archive.org/web/20060904060255/http://www.designation-systems.net/dusrm/app4/gbi.html |archive-date= 4 September 2006 |url-status= dead}}</ref>
+|-
+|IFT-1A
+|{{dts|format=dmy|1997|Jun|24}}
+|{{success}}
+|This test allowed the program to assess the Boeing EKV seeker's ability to collect target phenomenological data, and evaluate target modeling and discrimination algorithms for a cluster of 10 objects.
+|-
+|IFT-2
+|{{dts|format=dmy|1998|Jan|16}}
+|{{success}}
+|This test allowed the program to assess the Raytheon EKV seeker's ability to collect target phenomenological data, and evaluate target modeling and discrimination algorithms for a cluster of 10 objects. As a result, Raytheon was selected over Boeing and was awarded the EKV contract.
+|-
+|BV-1
+|{{dts|format=dmy|2001|Apr|28}}
+|{{success}}
+|This was a ground test to certify the procedures that lead to an actual flight test, including all ground and safety checks as well as launch and safety steps. The missile was not launched.
+|-
+|BV-2
+|{{dts|format=dmy|2001|Aug|31}}
+|{{success}}
+|This was a flight test of three-stage Boeing Booster Vehicle with a mass-simulated kill vehicle payload. An anomaly occurred in the first-stage vehicle roll control, but the second- and third-stage motors performed normally.
+|-
+|BV-3
+|{{dts|format=dmy|2001|Dec|13}}
+|{{failure}}
+|This flight test resulted in failure when the Boeing Booster Vehicle steered off course 30 seconds after launch and was then ordered to self-destruct off the coast of California.
+|-
+|BV-6
+|{{dts|format=dmy|2003|Aug|16}}
+|{{success}}
+|This was a flight test of the three-stage Orbital Sciences Booster Vehicle with a mass-simulated kill vehicle payload. The launch from Vandenberg Air Force Base proceeded normally over the Pacific Ocean.
+|-
+|BV-5
+|{{dts|format=dmy|2004|Jan|9}}
+|{{failure}}
+|This flight test of the Lockheed Martin Booster Vehicle with a mass-simulated kill vehicle payload resulted in failure due to an apparent power drop that prevented the mock EKV from separating from the booster. The flight was delayed by the third-stage rocket motor's circuit boards.
+|-
+|IFT-13B
+|{{dts|format=dmy|2004|Jan|26}}
+|{{success}}
+|This was a system-level test of the Orbital Sciences booster carrying a simulated EKV from [[Kwajalein Atoll]] against a simulated target from [[Vandenberg Air Force Base|Vandenberg AFB]] in California.
+|-
+|Medium-range air-launch target
+|{{dts|format=dmy|2005|Apr|8}}
+|{{success}}
+|This test featured a C-17 dropping a medium-range target from its rear, {{convert|800|mi|km}} northwest of the [[Pacific Missile Range Facility]] in Hawaii.
+|-
+|CMCM-1A/FT 04-2A
+|{{dts|format=dmy|2005|Aug|4}}
+|{{success}}
+|This test was the first of two medium-range target vehicles.
+|-
+|CMCM-1B/FT 04-2B
+|{{dts|format=dmy|2005|Aug|18}}
+|{{success}}
+|This test was the second of two medium-range target vehicles.<ref>{{cite web |url=http://www.businesswire.com/portal/site/google/?ndmViewId=news_view&newsId=20050823005496&newsLang=en |title=Orbital Successfully Launches Second Target Rocket for U.S. Missile Defense Agency's CMCM-1 Program; Two Launches in Two Weeks Conducted at Hawaii's Pacific Missile Site |work=Business Wire |date=23 August 2005}}</ref>
+|-
+|FT 04-5/FTG 04-5
+|{{dts|format=dmy|2005|Sep|26}}
+|{{success}}
+|This test was an apparent variant of IFT-19 and featured an air-launched long-range target tracked by [[Cobra Dane]] radar.
+|-
+|FT-1
+|{{dts|format=dmy|2005|Dec|13}}
+|{{success}}
+|Originally designed as IFT-13A, this test featured an interceptor missile from the Ronald Reagan test site in the Marshall Islands to hit a target from Kodiak, Alaska. The operationally configured warhead and its booster left the ground successfully.
+|-
+|FTX-01/FT 04-1
+|{{dts|format=dmy|2006|Feb|23}}
+|{{success}}
+|Originally designed as IFT-16, then changed to a radar characterization flight test as IFT-16A, then FT 04-1, then FTX-01. This test incorporated radar and targets testing.
+|-
+|CMCM-2B/FTC-02B
+|{{dts|format=dmy|2006|Apr|13}}
+|{{success}}
+|This test was a radar certification flight and featured a missile system powered by a two-stage [[SR-19 (rocket)|SR-19]] rocket flown from the Kauai Test Facility in the [[Pacific Missile Range Facility]]. The payload included complex countermeasures, a mock reentry vehicle, and on-board sensor package.
+|-
+|CMCM-2A/FTC-02A
+|{{dts|format=dmy|2006|Apr|28}}
+|{{success}}
+|This test repeated FTC-02B to test its radars in the Pacific Missile Range Facility in Hawaii against a target missile that carried countermeasures, a mock warhead, and an on-board sensor package.
+|-
+|FTX-02
+|{{dts|format=dmy|2007|Mar|27}}
+|{{partial success}}
+|This test of the [[Sea-Based X-Band Radar]] revealed "anomalous behavior", and demonstrated a need for software modifications to improve performance.
+|-
+|FTX-03
+|{{dts|format=dmy|2008|Jul|18}}
+|{{success}}
+|This test demonstrated the integration of missile defense sensors to support an interceptor engagement. This revealed the success of the Sea-Based X-Band Radar to be used in future missions.<ref>{{cite web |url=http://www.sfgate.com/cgi-bin/article.cgi?f=/n/a/2008/07/18/state/n190106D92.DTL |archive-url=https://web.archive.org/web/20090228124954/http://www.sfgate.com/cgi-bin/article.cgi?f=/n/a/2008/07/18/state/n190106D92.DTL |url-status=dead |archive-date=28 February 2009 |title=U.S. missile defense sensor test called successful |agency=[[Associated Press]] |date=18 July 2008}}</ref>
+|-
+|BVT-01
+|{{dts|format=dmy|2010|Jun|6}}
+|{{success}}
+|A two-stage Ground-Based Interceptor successfully launched from Vandenberg Air Force Base, and after separating from the second-stage booster, the exoatmospheric kill vehicle executed a variety of maneuvers to collect data to further prove its performance in space. All components performed as designed.<ref>{{cite web |url=https://www.mda.mil/news/10news0006.html |title=Modified Ground-Based Interceptor Completes Successful Flight Test |work=[[Missile Defense Agency]] |date=6 June 2010 |access-date= 15 December 2010}}</ref>
+|-
+|GM CTV-01
+|{{dts|format=dmy|2013|Jan|26}}
+|{{success}}
+|The three-stage booster deployed the Exoatmospheric Kill Vehicle to a point in space and executed a variety of pre-planned maneuvers to collect performance data. Initial indications are that all components performed as designed.<ref name=DOTE_FY2012/><ref>{{cite web |url=https://www.mda.mil/news/13news0001.html |title=Ground-Based Interceptor Completes Successful Flight Test |work=Missile Defense Agency |date=26 January 2013 |access-date= 18 January 2019}}</ref>
+|-
+|GM CTV-02
+|{{dts|format=dmy|2016|Jan|28}}
+|{{failure}}
+| A long-range ground-based interceptor was launched from Vandenberg Air Force Base to evaluate performance of alternate divert thrusters for the system's Exoatmospheric Kill Vehicle. The test had planned for the interceptor to fly within a narrow "miss distance" of its target to test the new thrusters' effectiveness.  The U.S. military initially stated the test had been a success.<ref>{{cite web |url=https://www.mda.mil/news/16news0002.html |title=Ground-based Midcourse Defense System Conducts Successful Flight Test |work=Missile Defense Agency |date=28 January 2016 |access-date= 28 January 2016}}</ref>
+
+But the closest the interceptor came to the target was a distance 20 times greater than what was expected. One of the four thrusters stopped working during the maneuvers, and the interceptor peeled away from its intended course, according to the Pentagon scientists. One of them said the thruster remained inoperable through the final, "homing phase" of the test, when the kill vehicle was supposed to make a close fly-by of the target.<ref name=LA_Times_test_found_problem>{{cite news |title=A test of America's homeland missile defense system found a problem. Why did the Pentagon call it a success? |url=http://www.latimes.com/projects/la-na-missile-defense/#nt=oft09a-5gp1 |newspaper=[[Los Angeles Times]] |date=6 July 2016}}</ref> MDA acknowledged that a problem surfaced during 28 January exercise: "There was an observation unrelated to the new thruster hardware that has been investigated and successfully root-caused," the agency said in a written response to questions. "Any necessary corrective actions will be taken for the next flight test."<ref name=LA_Times_test_found_problem/>
+|}
+
+===Canceled tests===
+Throughout the program's history, multiple test flights have been canceled, including BV-4, IFT-11, −12, −13, −13A, −15, FTC-03, and, most recently, FTG-04.<ref>{{cite web |url=http://www.cdi.org/friendlyversion/printversion.cfm?documentID=4318 |title=GMD Test Cancelled by MDA |work=Center for Defense Information |date=16 June 2008 |url-status=dead |archive-url= https://web.archive.org/web/20081210055907/http://www.cdi.org/friendlyversion/printversion.cfm?documentID=4318 |archive-date= 10 December 2008}}</ref><ref>{{cite web |url=http://www.cdi.org/program/issue/document.cfm?DocumentID=4318&IssueID=79&StartRow=1&ListRows=10&appendURL=&Orderby=DateLastUpdated&ProgramID=6&issueID=79 |title=GMD Test Cancelled by MDA |date=16 June 2008 |first=Victoria |last=Samson |access-date= 15 July 2009 |url-status= dead |archive-url= https://web.archive.org/web/20090828052840/http://www.cdi.org/program/issue/document.cfm?DocumentID=4318&IssueID=79&StartRow=1&ListRows=10&appendURL=&Orderby=DateLastUpdated&ProgramID=6&issueID=79 |archive-date= 28 August 2009}}</ref>
+
+== Estimated effectiveness ==
+The system has a "single shot probability of kill" of its interceptors calculated at 56%,<ref name="economist,0" /> with the claimed total probability of intercepting a single target, if four interceptors are launched, at 97%.<ref name="economist,0" /> Each interceptor costs approximately $75&nbsp;million.<ref name="economist,0" />
+
+The claim of "97% kill probability" has been dismissed by some experts as a flawed application of basic statistical methods. Said James M. Acton, co-director of the Nuclear Policy Program at the Carnegie Endowment for International Peace, "It assumes that the failure modes of the interceptors are independent of one another. But, in practice, if one interceptor fails because of a design flaw, say, it's much more likely that others will do so too for the same reason."<ref>{{cite news |url=https://www.washingtonpost.com/news/fact-checker/wp/2017/10/13/trumps-claim-that-u-s-interceptors-can-knock-out-icmbs-97-percent-of-the-time/ |title=Fact Check: Trump's claim that a U.S. interceptor can knock out ICBMs '97 percent of the time' |newspaper=Washington Post}}</ref>
+
+==See also==
+* {{lwc|Terminal High Altitude Area Defense}} (THAAD), mobile land-based missile defense system
+* {{lwc|Medium Extended Air Defense System}}, mobile land-based air and missile defense system
+* {{lwc|Aegis Ballistic Missile Defense System}}, sea-based missile defense system
+* {{lwc|A-135 anti-ballistic missile system}}
+* {{lwc|A-235 anti-ballistic missile system}}
+* {{lwc|S-300VM missile system}}
+* {{lwc|S-400 missile system}}
+* {{lwc|S-500 missile system}}
+* {{lwc|HQ-19}}
+* {{lwc|DF-21#SC-19|SC-19}}
+* {{lwc|Arrow (Israeli missile)|Arrow}}
+** {{lwc|Arrow 3}}
+* [[Comparison of anti-ballistic missile systems]]
+
+==References==
+{{Reflist}}
+
+==External links==
+{{commons category|Ground-Based Midcourse Defense}}
+* [http://www.boeing.com/defense-space/space/gmd/index.html Ground-based Midcourse Defense (GMD) System page on Boeing site]
+* [https://mda.mil/system/gmd.html GMD page on Missile Defense Agency site] {{Webarchive|url=https://web.archive.org/web/20220806115905/https://www.mda.mil/system/gmd.html |date=6 August 2022}}
+* [http://missilethreat.csis.org/ground-based-midcourse-defense-gmd/ Missile Threat – GMD on CSIS.org]
+* [http://www.designation-systems.net/dusrm/app4/gbi.html Boeing Ground-Based Interceptor on Designation Systems site]
+* [http://www.globalsecurity.org/space/systems/bmds.htm Ballistic Missile Defense System page on Global Security site]
+
+{{United States Missile Defense}}
+
+[[Category:Missile Defense Agency]]
+[[Category:Anti-ballistic missiles of the United States]]
+[[Category:Boeing]]
+[[Category:Raytheon Company products]]
+[[Category:Lockheed Martin]]
+[[Category:Missile defense]]

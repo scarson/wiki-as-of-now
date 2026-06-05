@@ -1,0 +1,865 @@
+{{Short description|Chinese medium-range narrowbody airliner}}
+{{Use dmy dates|date=June 2023}}
+{{Infobox aircraft
+| name = Comac C919
+| logo = Logo Comac C919.png
+| logo_size = 100px
+| image = <!--Main image changes are preferably discussed in the talk page first-->B-919A@PEK (20221226151722).jpg
+| image_caption = C919-100 STD of China Eastern, the type's largest operator
+| aircraft_type = [[Narrow-body]] [[jet airliner]]
+| national_origin = [[China]]
+| manufacturer = [[Comac]]
+| designer = [[Wu Guanghui]]
+| status = In service
+| primary_user = [[China Eastern Airlines]]
+| more_users = {{Unbulleted list|[[Air China]]|[[China Southern Airlines]]}}
+| number_built = 44 (including 8 prototypes)
+| produced = 2015–present
+| introduction = 28 May 2023 with China Eastern Airlines<ref name="1st-comm-fl" />
+| initiated = {{start date and age|2008|df=yes}}
+| in_service = 2023&ndash;present
+| first_flight = {{start date and age|df=y|2017|05|05}}<ref name="FG170505" />
+}}
+
+The '''Comac C919''' is a [[Narrow-body aircraft|narrow-body airliner]] developed by Chinese [[State ownership|state owned]] aircraft manufacturer [[Comac]].
+The development program was launched in 2008 as a competitor to the [[Airbus A320 family|Airbus A320]] and [[Boeing 737]]. Production began in December 2011, with the first [[prototype]] being rolled out on 2&nbsp;November 2015; the [[maiden flight]] took place on 5&nbsp;May 2017. On 29&nbsp;September 2022 the C919 received its [[Civil Aviation Administration of China|CAAC]] type certificate.<!--AW29Sept2022--> The first production airframe was delivered to [[China Eastern Airlines]] on 9&nbsp;December 2022<!--Reuters9dec2022--> and was put into commercial passenger service on 28&nbsp;May 2023.<!--1st-comm-fl-->
+
+The aircraft, primarily constructed with [[aluminium alloy]]s, is powered by [[CFM International LEAP]] turbofan engines and carries 158 (8J + 150Y) to 168 (168Y) passengers in a normal operating configuration up to 5,555&nbsp;km (3,000&nbsp;nmi; {{Cvt|3000|nmi|mi|disp=output only}}). In 2023, COMAC announced that it would develop both a shortened and a stretched version of the passenger jet – similar to the sub-variants offered for the competing [[Boeing 737 MAX]] and [[Airbus A320neo family]].
+
+== Naming ==
+In the model number, the ''C'' stands for "Comac" and "China".<ref>{{Cite news |last1=Jie |first1=Liu |last2=Zhongxi |first2=Qi |last3=Tao |first3=Hu |date=5 May 2017 |title=China Focus: China's homegrown jumbo passenger jet takes to the sky |work=Xinhua |url=http://www.xinhuanet.com//english/2017-05/05/c_136260494.htm |url-status=live |access-date=7 May 2017 |archive-url=https://web.archive.org/web/20170505172310/http://news.xinhuanet.com/english/2017-05/05/c_136260494.htm |archive-date=5 May 2017}}</ref> The ''C'' also forms an "ABC" parallel situation with [[Airbus]] and [[Boeing]].<ref>{{Cite web |date=8 March 2009 |title=China-made C919 to compete with Airbus, Boeing |url=https://archive.shine.cn/nation/Chinamade-C919-to-compete-with-Airbus-Boeing/shdaily.shtml |access-date=10 June 2017 |website=Shanghai Daily}}</ref> The following 9 refers to longevity as per Chinese culture and the following 19 refers to the seat capacity of 190.
+
+== Development ==
+[[File:COMAC C919 (4339942885) extracted.jpg|thumb|Model of the C919 from 2010.]]
+
+The 2008 program launch initially targeted a [[maiden flight]] in 2014.<ref name="ATW170505" /> Comac applied for a [[type certificate]] for the aircraft from the Civil Aviation Authority of China on 28 October 2010.<ref>{{Cite news |date=16 November 2010 |title=Zhuhai10: COMAC releases C919 specifications |first1=Ghim-Lay|last1=Yeo|work=Flight Global |url=https://www.flightglobal.com/news/articles/zhuhai10-comac-releases-c919-specifications-349741/ |url-status=live |access-date=5 May 2017 |archive-url=https://web.archive.org/web/20161204025338/https://www.flightglobal.com/news/articles/zhuhai10-comac-releases-c919-specifications-349741/ |archive-date=4 December 2016}}</ref> At that time the company intended to manufacture up to 2,300 aircraft of the type.<ref name="teal2010" /> In June 2011, COMAC and Irish low-cost airline [[Ryanair]] signed an agreement to co-operate on the development of the C919.<ref>{{Cite press release |title=Ryanair and COMAC Sign C919 MOU in Paris |date=12 December 2013 |publisher=Ryanair |url=http://aviator.aero/press_releases/5062 |access-date=5 May 2017 |url-status=live |archive-url=https://web.archive.org/web/20181212091056/https://aviator.aero/press_releases/5062 |archive-date=12 December 2018}}</ref> In 2012 [[Airbus]]' chief strategist [[Marwan Lahoud]] assumed that the aircraft would offer competition to Airbus by 2020.<ref>{{Cite news |date=14 February 2012 |title=Airbus to Seek Alliances as Rivals Try to Sell Big Planes |publisher=Bloomberg |url=http://www.chinaaviationdaily.com/newsview.jsp?id=17884 |url-status=live |access-date=3 May 2017 |archive-url=https://web.archive.org/web/20180929215426/http://www.chinaaviationdaily.com/newsview.jsp?id=17884 |archive-date=29 September 2018}}</ref>
+
+=== Preliminary design ===
+On 24 November 2011, Comac announced the completion of the joint definition phase, marking the end of the preliminary design phase for the C919, with estimated completion of the detailed design phase in 2012.<ref>{{Cite news |date=25 November 2011 |title=C919 project at "crucial point" in detailed design |publisher=Flight Global |url=https://www.flightglobal.com/news/articles/c919-project-at-crucial-point-in-detailed-design-365300/ |url-status=live |access-date=19 April 2017 |archive-url=https://web.archive.org/web/20170420045930/https://www.flightglobal.com/news/articles/c919-project-at-crucial-point-in-detailed-design-365300/ |archive-date=20 April 2017}}</ref> Production of the first C919 prototype began on 9 December 2011.<ref>{{Cite web |date=16 December 2011 |title=COMAC begins pilot production of C919 jet |url=http://english.peopledaily.com.cn/90778/7679422.html |url-status=live |archive-url=https://web.archive.org/web/20130923071935/http://english.peopledaily.com.cn/90778/7679422.html |archive-date=23 September 2013 |access-date=22 December 2011 |website=People's Daily Online}}</ref> The C919's aerodynamics were designed with the help of the [[Tianhe-2]] supercomputer.<ref>{{Cite news |date=23 June 2014 |title=China's Tianhe-2 retains supercomputer crown |publisher=Xinhua |url=http://news.xinhuanet.com/english/china/2014-06/23/c_133430889.htm |url-status=dead |archive-url=https://web.archive.org/web/20140629223521/http://news.xinhuanet.com/english/china/2014-06/23/c_133430889.htm |archive-date=29 June 2014}}</ref> The annual production was targeted at 150 planes by 2020.<ref>{{Cite web |last=Agence France-Presse |date=19 November 2012 |title=China's COMAC Collects 50 More Orders for Home-grown C919 Airplane |url=http://www.industryweek.com/competitiveness/chinas-comac-collects-50-more-orders-home-grown-c919-airplane/ |url-status=live |archive-url=https://web.archive.org/web/20130208110027/http://www.industryweek.com/competitiveness/chinas-comac-collects-50-more-orders-home-grown-c919-airplane |archive-date=8 February 2013 |access-date=12 February 2013 |website=Industry Week}}</ref> Canada's [[Bombardier Aerospace]] started collaborating in March 2012 on [[supply chain]] services, [[electrical systems]], [[human interface]], [[cockpit]], [[flight training]], [[flight-test]] support, sales, and marketing.<ref>{{Cite news |last=Mavis Toh |date=4 December 2013 |title=Comac and Bombardier discuss next phase of collaboration |work=Flight Global |url=https://www.flightglobal.com/news/articles/comac-and-bombardier-discuss-next-phase-of-collabora-393764/ |url-status=live |access-date=7 May 2017 |archive-url=https://web.archive.org/web/20170820115402/https://www.flightglobal.com/news/articles/comac-and-bombardier-discuss-next-phase-of-collabora-393764/ |archive-date=20 August 2017}}</ref>
+
+=== Prototyping ===
+Its announced development budget was {{CNY|58 billion|link=yes}} ({{US$|9.5 billion|link=yes}}) but its actual cost was estimated at well over {{CNY|125 billion}} ({{US$|20 billion}}).<ref>{{Cite news |last=Perrett |first=Bradley |date=16 December 2013 |title=C919 May Be Largely Limited To Chinese Market |work=Aviation Week & Space Technology |url=http://aviationweek.com/awin/c919-may-be-largely-limited-chinese-market |url-status=live |access-date=19 April 2017 |archive-url=https://web.archive.org/web/20170420144525/http://aviationweek.com/awin/c919-may-be-largely-limited-chinese-market |archive-date=20 April 2017}}</ref> The first prototype was expected to complete final assembly in 2014 and perform its first flight in 2015;<ref>{{Cite web |date=18 February 2014 |title=China's C919 large airplane schedule to take first flight in 2015 |url=http://english.peopledaily.com.cn/98649/8539562.html |url-status=live |archive-url=https://web.archive.org/web/20140302184331/http://english.peopledaily.com.cn/98649/8539562.html |archive-date=2 March 2014 |access-date=24 March 2014 |website=People's Daily Online}}</ref> however, delivery was delayed again until 2018 due to technical difficulties and supply issues.<ref>{{Cite news |last=Ren |first=Daniel |date=22 May 2014 |title=China's first large airliner delayed by technology problems |work=South China Morning Post |url=https://www.scmp.com/business/china-business/article/1517501/chinas-first-large-airliner-delayed-technology-problems |url-status=live |access-date=26 May 2014 |archive-url=https://web.archive.org/web/20140525025424/http://www.scmp.com/business/china-business/article/1517501/chinas-first-large-airliner-delayed-technology-problems |archive-date=25 May 2014}}</ref> At the November 2014 Zhuhai Airshow, it was announced that the first flight would be delayed to 2017.<ref>{{Cite web |date=11 November 2014 |title=China Planemaker Gets New Orders in Fight With Airbus, Boeing |url=https://www.bloomberg.com/news/2014-11-11/china-planemaker-gets-new-orders-in-fight-with-airbus-boeing.html |url-status=live |archive-url=https://web.archive.org/web/20141111173857/http://www.bloomberg.com/news/2014-11-11/china-planemaker-gets-new-orders-in-fight-with-airbus-boeing.html |archive-date=11 November 2014 |access-date=6 March 2017 |website=Bloomberg}}</ref> On 2 November 2015, Comac rolled out its first C919 aircraft.<ref>{{Cite news |date=1 November 2015 |title=China's Comac rolls out C919 jet, ground tests to start soon |publisher=Reuters |url=https://www.reuters.com/article/coma-china-airplane-idUSL3N12X1IC20151102 |url-status=live |access-date=2 November 2015 |archive-url=https://web.archive.org/web/20151105142347/http://www.reuters.com/article/2015/11/02/coma-china-airplane-idUSL3N12X1IC20151102 |archive-date=5 November 2015}}</ref><ref>{{Cite news |date=2 November 2015 |title=China's Airbus: Country to roll out first indigenous passenger jet in Shanghai after 7-year wait |work=South China Morning Post |url=https://www.scmp.com/business/companies/article/1874867/china-roll-out-its-first-indigenous-jet-today|author-first1=Sijia|author-last1=Jiang|access-date=2 November 2015}}</ref><ref>{{Cite news |last=Jiang |first=Steven |date=2 November 2015 |title=China takes on Boeing, Airbus with homegrown passenger jet |work=CNN |url=https://edition.cnn.com/travel/article/china-new-c919-passenger-jet/index.html |url-status=live |access-date=2 November 2015 |archive-url=https://web.archive.org/web/20151102184807/http://edition.cnn.com/2015/11/02/asia/china-new-c919-passenger-jet/index.html |archive-date=2 November 2015}}</ref>
+
+In May 2018, the development of a [[carbon composite|composite]] wing completed in 2012 was revealed years after abandoning it for a metallic one, as static and damage tolerance tests were completed, verifying the structural design and strength before full-size composite [[wingbox]] tests.<ref>{{Cite news |last=Mavis Toh |date=25 June 2018 |title=Comac completes static tests for composite wing project |work=Flightglobal |url=https://www.flightglobal.com/news/articles/comac-completes-static-tests-for-composite-wing-proj-449686/ |url-status=live |access-date=25 June 2018 |archive-url=https://web.archive.org/web/20180625185515/https://www.flightglobal.com/news/articles/comac-completes-static-tests-for-composite-wing-proj-449686/ |archive-date=25 June 2018}}</ref>
+On 12 July, the static test aircraft simulated a 2.5g manoeuvre with a 150% [[ultimate load]], bending the wings at the tips by nearly three metres for three seconds.<ref name="Flight13jul2018" />
+
+==== Espionage and reverse-engineering allegations ====
+{{See also|Chinese espionage in the United States#Aerospace}}
+According to a report from cybersecurity firm [[Crowdstrike]] and a [[US Justice Department]] indictment, from 2010 to 2015 the Chinese cyberthreat actor Turbine Panda, linked to the [[Ministry of State Security (China)|Ministry of State Security]]'s [[Jiangsu]] Bureau, penetrated a number of the C919's foreign components manufacturers including [[Ametek]], [[Capstone Turbine]], [[GE Aviation]], [[Honeywell]], [[Safran]], and others and stole [[intellectual property]] and industrial process data with the aim of transitioning component manufacturing to Chinese companies.{{ r | ZD_1 | SA | US_DOJ-I | DR-1 }} The report stated that the operations involved both cyber intrusion and theft as well as [[Human intelligence (intelligence gathering)|human intelligence]] operations, in most cases using a piece of code custom written for this industrial espionage operation.<ref name="ZD_1">{{Cite web |last=Cimpanu |first=Catalin |title=Building China's Comac C919 airplane involved a lot of hacking, report says |url=https://www.zdnet.com/article/building-chinas-comac-c919-airplane-involved-a-lot-of-hacking-report-says/ |url-status=live |archive-url=https://web.archive.org/web/20191115164639/https://www.zdnet.com/article/building-chinas-comac-c919-airplane-involved-a-lot-of-hacking-report-says/ |archive-date=15 November 2019 |access-date=12 January 2020 |website=[[ZDNet]] }}</ref><ref name="SA">{{Cite web |last=Paganini |first=Pierluigi |date=18 October 2019 |title=China-linked cyberspies Turbine PANDA targeted aerospace firms for years |url=https://securityaffairs.co/wordpress/92649/apt/turbine-panda-aerospace-espionage.html |url-status=live |archive-url=https://web.archive.org/web/20200112025726/https://securityaffairs.co/wordpress/92649/apt/turbine-panda-aerospace-espionage.html |archive-date=12 January 2020 |access-date=12 January 2020 |website=securityaffairs.co |publisher=Security Affairs}}</ref><ref name="US_DOJ-I">{{Cite web |date=25 October 2018 |title=Indictment |url=https://www.justice.gov/opa/press-release/file/1106491/download |url-status=live |archive-url=https://web.archive.org/web/20181101015347/https://www.justice.gov/opa/press-release/file/1106491/download |archive-date=1 November 2018}}</ref><ref name="DR-1">{{Cite news |last=Vijayan |first=Jai |date=14 October 2019 |title=Cyber Theft, Humint Helped China Cut Corners on Passenger Jet – Beijing likely saved a lot of time and billions of dollars by copying components for its C919 plane from others, a new report from CrowdStrike says. |work=DarkReading |publisher=[[InformationWeek]] |url=https://www.darkreading.com/attacks-breaches/cyber-theft-humint-helped-china-cut-corners-on-passenger-jet/d/d-id/1336082 |quote=The human intelligence efforts included one by a now-indicted MSS intelligence officer to recruit an insider at LEAP-X manufacturer General Electric. The same officer also recruited a China-born US Army reservist who was an expert at assessing turbine engine schematics. So far, at least four individuals have been arrested in connection with China's campaign targeting aerospace companies.}}</ref>
+As of 2019, four people have been arrested in the US as a result of investigations into this economic espionage and theft of trade secrets.{{ r | DR-1}}
+
+In November 2022, a federal jury in Cincinnati convicted Yanjun Xu, 42, on counts of conspiracy to commit economic espionage, conspiracy to commit trade secret theft, attempted economic espionage and attempted trade secret theft. The US court found that Xu played a key role in a plot to steal trade secrets from western aerospace firms, for the purpose of helping the C919 commercial airliner program. He was sentenced to 20 years in prison.<ref>{{Cite web |date=17 November 2022 |title=Chinese Spy Gets 20 Years for Aviation Espionage Plot |url=https://www.infosecurity-magazine.com/news/chinese-spy-20-years-aviation/}}</ref>
+
+It has been also put forward that Comac [[reverse-engineered]] some Western aircraft designs such as A320 and 737 although the extent and credibility of such claims are disputed.<ref>https://www.welt.de/wirtschaft/plus6884c4b816df407a69a5b325/Comac-929-Nach-der-A320-Kopie-bauen-die-Chinesen-nun-einen-Jet-mit-Signalwirkung.html</ref><ref>https://www.flightglobal.com/engines/2020/02/trump-administration-flip-flops-on-c919-de-engining-idea/</ref><ref>https://airguide.info/did-china-dismantle-an-airbus-a320-to-build-the-c919-what-the-evidence-shows-and-doesnt/</ref><ref>https://www.aerosociety.com/news/can-china-break-into-the-airliner-duopoly/</ref><ref>https://www.rynek-lotniczy.pl/wiadomosci/airbus-studzi-nastroje-chin-c919-to-kopiujwklej-a320-23693.html</ref>
+
+Junjie "Jeff" Zhang was stopped by customs from boarding a flight in Dallas to China in 2019 with devices containing confidential and proprietary documents, graphs and blueprints belonging to the aviation company where Zhang worked. The company based in Wichita was seeking at the time to do business with COMAC on the C919 airplane.<ref>{{Cite web |date=1 April 2026 |title=Man lied about trying to take Wichita company’s trade secrets to China, feds say|url=https://www.kansas.com/news/local/crime/article315268024.html}}</ref>
+
+=== Flight testing ===
+[[File:Comac C919 first vr test at Shanghai Pudong.jpg|thumb|The first prototype ground tested]][[File:COMAC B-001A May 2017.jpg|thumb|The C919 during its maiden flight on 5 May 2017]]
+
+High-speed taxi tests by the first C919 prototype were completed in April 2017<ref>{{Cite news |last=Katie Cantle |date=25 April 2017 |title=COMAC C919 completes high-speed taxi tests; cleared for first flight |work=Air Transport World |publisher=Aviation Week |url=http://atwonline.com/manufacturers/comac-c919-completes-high-speed-taxi-tests-cleared-first-flight |url-status=live |access-date=25 April 2017 |archive-url=https://web.archive.org/web/20170425203421/http://atwonline.com/manufacturers/comac-c919-completes-high-speed-taxi-tests-cleared-first-flight |archive-date=25 April 2017}}</ref> and the first flight took place on 5 May 2017.<ref>{{Cite news |date=5 May 2017 |title=China's first big passenger plane takes off for maiden flight |work=BBC News |url=https://www.bbc.co.uk/news/world-asia-china-39814146 |url-status=live |access-date=5 May 2017 |archive-url=https://web.archive.org/web/20170505072849/http://www.bbc.co.uk/news/world-asia-china-39814146 |archive-date=5 May 2017}}</ref><ref name="AirlinerWorldOct2019" /> At the time, Comac had a planned test programme of 4,200 flight hours and introduction to service in 2020.<ref name="FG170505" /> It was estimated that this could be delayed into 2021.<ref>{{Cite news |last=Bradley Perrett |date=18 May 2017 |title=Source: COMAC C919 targets first delivery for 2020 |work=Air Transport World |publisher=Aviation Week Network |url=http://atwonline.com/manufacturers/source-comac-c919-targets-first-delivery-2020 |url-status=live |access-date=18 May 2017 |archive-url=https://web.archive.org/web/20170518161113/http://atwonline.com/manufacturers/source-comac-c919-targets-first-delivery-2020 |archive-date=18 May 2017}}</ref>
+The [[European Aviation Safety Agency]] was meant to validate the Chinese type certificate.<ref>{{Cite news |date=9 June 2017 |title=Civil Aviation Programs To Watch |work=Aviation Week & Space Technology |url=http://aviationweek.com/paris-air-show-2017/civil-aviation-programs-watch#slide-6-field_images-1639711}}</ref>
+The 4,200 hours of testing planned were higher than the 3,000 hours typically required for the Airbus or Boeing narrowbodies, but lower than the 5,000 hours needed for the [[ARJ21]](now the [[Comac C909]]).<ref name="Flight26oct2018" />
+
+Comac had its second prototype ready on 28 July 2017, aiming to fly it within the year for engine, APU, fuel system and extreme weather tests.<!--<ref name="Flight31Jul2017" />-->
+The flight-test plan included six aircraft.<ref name="Flight31Jul2017" />
+On 28 September, it made its second flight at {{cvt|10000|ft|m}}, which lasted 2 hours 46 minutes, although it was supposed to last one more hour.<ref>{{Cite news |last=Greg Waldron |date=28 September 2017 |title=Comac C919 completes two-hour second flight |work=Flightglobal |url=https://www.flightglobal.com/news/articles/comac-c919-completes-two-hour-second-flight-441593/ |url-status=live |access-date=28 September 2017 |archive-url=https://web.archive.org/web/20170928083552/https://www.flightglobal.com/news/articles/comac-c919-completes-two-hour-second-flight-441593/ |archive-date=28 September 2017}}</ref>
+The five-month delay between first and second flights, while the second prototype was being ground-tested, was extraordinary: in 2013 the [[Airbus A350]] flew again after five days and in 2015 the troubled [[Mitsubishi MRJ]] flew again after eight days.<ref>{{Cite news |last=Bradley Perrett |date=19 September 2017 |title=Second Comac C919 Flight Imminent, Five Months After First Flight |work=Aviation Week |url=http://aviationweek.com/commercial-aviation/second-comac-c919-flight-imminent-five-months-after-first-flight |url-status=live |access-date=23 September 2017 |archive-url=https://web.archive.org/web/20170923195154/http://aviationweek.com/commercial-aviation/second-comac-c919-flight-imminent-five-months-after-first-flight |archive-date=23 September 2017}}</ref>
+
+On 3 November, it made its third flight in 3h 45min, reaching {{cvt|3000|m|ft}}.<ref>{{Cite news |last=Mavis Toh |date=3 November 2017 |title=C919 takes third flight; engines start up on FTA 2 |work=Flightglobal |url=https://www.flightglobal.com/news/articles/c919-takes-third-flight-engines-start-up-on-fta-2-442848/ |url-status=live |access-date=3 November 2017 |archive-url=https://web.archive.org/web/20171103150911/https://www.flightglobal.com/news/articles/c919-takes-third-flight-engines-start-up-on-fta-2-442848/ |archive-date=3 November 2017}}</ref>
+It was transferred on 10 November from Shanghai to [[Xi'an]] to continue its flight test program, a 2h 24min, {{cvt|1,300|km|nmi mi}} flight reaching {{cvt|7,800|m}} and {{cvt|0.74|Mach|altitude_ft=25,600|km/h knots|0}}.<ref>{{Cite news |last=Mavis Toh |date=10 November 2017 |title=Comac transfers C919 to Xi'an for flight tests |work=Flightglobal |url=https://www.flightglobal.com/news/articles/comac-transfers-c919-to-xian-for-flight-tests-443092/ |url-status=live |access-date=10 November 2017 |archive-url=https://web.archive.org/web/20171110105150/https://www.flightglobal.com/news/articles/comac-transfers-c919-to-xian-for-flight-tests-443092/ |archive-date=10 November 2017}}</ref>
+
+[[File:COMAC C919 - Commercial Aircraft Corporation Of China AN4748979.jpg|thumb|The second prototype first flight on 17 December 2017]]
+
+The second prototype made its first flight on 17 December 2017. The flight test program allocated the first three prototypes for aircraft performance and engine and power systems testing, the fourth prototype for [[avionics]] and electrical system, and the fifth and sixth prototypes for passenger facilities, including the cabin and information system.{{Citation needed|date=October 2020}}
+
+The delay between first and subsequent flights underlined the program immaturity by maiden flight: flying early at low speed and altitude is possible but faster and higher is limited by [[aeroelastic flutter]] needing ground vibration testing and aircraft instrumentation which were not ready in May.<ref name="Leeham3Jan2018" />
+Due to flight testing problems, the 2020 introduction previously scheduled was delayed to 2021, for China Eastern Airlines.<ref>{{Cite news |last=Brenda Goh |date=5 February 2018 |title=China's COMAC says first delivery of C919 jet planned for 2021 |work=[[Reuters]] |url=https://www.reuters.com/article/us-singapore-airshow-comac/chinas-comac-says-first-delivery-of-c919-jet-planned-for-2021-idUSKBN1FQ09T |url-status=live |access-date=6 February 2018 |archive-url=https://web.archive.org/web/20180206043441/https://www.reuters.com/article/us-singapore-airshow-comac/chinas-comac-says-first-delivery-of-c919-jet-planned-for-2021-idUSKBN1FQ09T |archive-date=6 February 2018}}</ref>
+In February 2018, the first prototype was flying more than once a week.<ref>{{Cite news |last=Bradley Perrett |date=6 February 2018 |title=Comac Aiming At 2021 For C919 First Delivery |work=Aviation Week Network |url=http://aviationweek.com/singapore-airshow-2018/comac-aiming-2021-c919-first-delivery |url-status=live |access-date=11 February 2018 |archive-url=https://web.archive.org/web/20180211133616/http://aviationweek.com/singapore-airshow-2018/comac-aiming-2021-c919-first-delivery |archive-date=11 February 2018}}</ref>
+
+In June 2018, [[Aviation Week]] reported flight-test aircraft grounding for modifications, extending the schedule by three months but maintaining a 2020 certification target.<!--<ref>--> The two prototypes needed their [[Flap (aeronautics)|flaps]] and [[tailplane]]s modified, due to [[delamination]] of the [[carbon-fiber reinforced plastic]] [[Elevator (aeronautics)|elevators]].<ref name="AvWeek15jun2018">{{Cite news |last=Bradley Perrett |date=15 June 2018 |title=Comac Suspends C919 Flight Testing For Modifications |work=Aviation Week Network |url=http://aviationweek.com/awincommercial/comac-suspends-c919-flight-testing-modifications |url-status=live |access-date=22 June 2018 |archive-url=https://web.archive.org/web/20180620134656/http://aviationweek.com/awincommercial/comac-suspends-c919-flight-testing-modifications |archive-date=20 June 2018}}</ref>
+The third test aircraft was also being modified and maximum-rate [[Cabin pressurization|pressurization]] was tested.<!--<ref>--> As three other planes were available in 2019, Comac maintained first deliveries for 2021.<ref name="AirlinerWatch18jun2018">{{Cite news |date=18 June 2018 |title=COMAC suspends the flight tests for C919 |work=AirlinerWatch |url=https://airlinerwatch.com/comac-suspends-the-flight-tests-for-c919/ |url-status=live |access-date=22 June 2018 |archive-url=https://web.archive.org/web/20180809025356/https://airlinerwatch.com/comac-suspends-the-flight-tests-for-c919/ |archive-date=9 August 2018}}</ref>
+
+Comac denied any grounding and highlighted that modifications were part of the flight test process, stating the two first aircraft were flying stability tests and checking systems.<!--<ref>--> The first was calibrated and had its counterweight and [[trailing cone]] systems modified while the second had its functions and systems checked.<!--<ref name=Flight22jun2018>--> The third was in final assembly with its wing and fuselage joined, cables and systems were being installed for a first flight target by the end of the year.<ref name="Flight22jun2018">{{Cite news |last=Mavis Toh |date=22 June 2018 |title=Comac stresses progress as C919 prototypes fly |work=Flightglobal |url=https://www.flightglobal.com/news/articles/comac-stresses-progress-as-c919-prototypes-fly-449658/ |url-status=live |access-date=22 June 2018 |archive-url=https://web.archive.org/web/20190414235119/https://www.flightglobal.com/news/articles/comac-stresses-progress-as-c919-prototypes-fly-449658/ |archive-date=14 April 2019}}</ref>
+On 12 July, the second prototype flew from [[Shanghai Pudong International Airport|Shanghai-Pudong]] to [[Dongying Airport]] in 1h 46min to allow for various meteorological conditions testing.<ref name="Flight13jul2018" /> In September, Comac expected to conduct 1,500 test flights for over 2,000 flying hours before the first delivery and planned to fly the third prototype before the end of 2018.<ref name="AvWeek26sep2018" />
+
+In October 2018, the flight-deck design was re-evaluated to comply with US [[Federal Aviation Regulations#Part 25|FAR Part 25]].1302, which is not required by [[Civil Aviation Administration of China|CAAC]] but would be needed for [[FAA]] certification in order to sell the aircraft outside China. Developing a Chinese engine to replace the CFM Leap-1C would take at least another 15 years.<ref>{{Cite news |last=Jennifer Meszaros |date=17 October 2018 |title=Comac C919 Stumbles on FAA Flight Deck Standards |work=AIN online |url=https://www.ainonline.com/aviation-news/air-transport/2018-10-17/comac-c919-stumbles-faa-flight-deck-standards |url-status=live |access-date=18 October 2018 |archive-url=https://web.archive.org/web/20181210202732/https://www.ainonline.com/aviation-news/air-transport/2018-10-17/comac-c919-stumbles-faa-flight-deck-standards |archive-date=10 December 2018}}</ref>
+At that time the two prototypes had flown less than 150 h, averaging less than 5 h per month each.<!--<ref>--> To achieve certification in December 2020 and first delivery in 2021, the planned 4,200 h of flight tests would need 33 hours a month each if the last four prototypes are evenly spaced before year-end-2019.<!--<ref name=AvWeek20nov2018>--> Newest airliner designs like the [[Airbus A350]] needed a 2,600 hour test program, and the [[Mitsubishi MRJ]] was expected to need 3,000 h.<ref name="AvWeek20nov2018">{{Cite news |last=Bradley Perrett |date=20 November 2018 |title=Comac C919 Testing Needs To Accelerate |work=Aviation Week & Space Technology |url=http://aviationweek.com/commercial-aviation/comac-c919-testing-needs-accelerate |url-status=live |access-date=20 November 2018 |archive-url=https://web.archive.org/web/20190109135438/http://aviationweek.com/commercial-aviation/comac-c919-testing-needs-accelerate |archive-date=9 January 2019}}</ref>
+
+On 15 October 2018, ten Chinese nationals, including intelligence officials, were indicted by the US for allegedly working with COMAC to steal the secrets of thirteen foreign aerospace companies that were partnered with COMAC to build the C919.<ref>{{Cite web |last=Ferry |first=Jeff |title=How China Stole an Entire Airplane |url=https://www.industryweek.com/the-economy/article/21118569/how-china-stole-an-entire-airplane |url-status=live |archive-url=https://web.archive.org/web/20191217034247/https://www.industryweek.com/the-economy/article/21118569/how-china-stole-an-entire-airplane |archive-date=17 December 2019 |access-date=12 January 2020 |website=www.industryweek.com |date=16 December 2019 |publisher=Industry Week}}</ref>
+
+By the end of 2018, the first prototype was to enter flutter flight tests after having completed ground tests.<ref>{{Cite news |last=Greg Waldron |date=18 December 2018 |title=Comac gears up for C919 flutter tests |work=Flightglobal |url=https://www.flightglobal.com/news/articles/comac-gears-up-for-c919-flutter-tests-454501/ |url-status=live |access-date=18 December 2018 |archive-url=https://web.archive.org/web/20181218193310/https://www.flightglobal.com/news/articles/comac-gears-up-for-c919-flutter-tests-454501/ |archive-date=18 December 2018}}</ref>
+The third prototype made its maiden flight on 28 December for 1h 38 min.<ref>{{Cite news |last=Greg Waldron |date=28 December 2018 |title=Third C919 prototype operates first flight |work=Flightglobal |url=https://www.flightglobal.com/news/articles/pictures-third-c919-prototype-operates-first-fligh-454698/ |url-status=live |access-date=28 December 2018 |archive-url=https://web.archive.org/web/20181229132306/https://www.flightglobal.com/news/articles/pictures-third-c919-prototype-operates-first-fligh-454698/ |archive-date=29 December 2018}}</ref>
+
+A fourth prototype conducted its maiden flight on 1 August 2019 from [[Shanghai Pudong International Airport]].<ref>{{Cite news |last=Chua |first=Alfred |date=1 August 2019 |title=Fourth C919 prototype completes test flight |work=Flightglobal |url=https://www.flightglobal.com/news/articles/picture-fourth-c919-prototype-completes-test-flight-460048/ |url-status=live |access-date=1 August 2019 |archive-url=https://web.archive.org/web/20190801083215/https://www.flightglobal.com/news/articles/picture-fourth-c919-prototype-completes-test-flight-460048/ |archive-date=1 August 2019}}</ref><ref name="AirlinerWorldOct2019" /> A fifth prototype conducted its first flight on 24 October 2019, also from Shanghai airport; the fifth prototype was expected to test for extreme weather conditions, the environmental control system, drainage systems and electrical supplies.<ref>{{Cite news |last=Chua |first=Alfred |date=24 October 2019 |title=Fifth C919 prototype completes test flight |work=Flightglobal |url=https://www.flightglobal.com/news/articles/picture-fifth-c919-prototype-completes-test-flight-461756/ |url-status=live |access-date=30 October 2019 |archive-url=https://web.archive.org/web/20191030180048/https://www.flightglobal.com/news/articles/picture-fifth-c919-prototype-completes-test-flight-461756/ |archive-date=30 October 2019}}</ref> Comac rescheduled its certification target from 2020 to 2021, with the first delivery the following year.<ref>{{Cite news |last=Bradley Perrett |date=26 August 2019 |title=Comac C919 Delivery May Be Three Years Away |work=Aviation Week & Space Technology |url=https://aviationweek.com/commercial-aviation/comac-c919-delivery-may-be-three-years-away}}</ref><ref name="AirlinerWorldOct2019" />
+
+The sixth and final prototype, intended for the flight certification program, completed its maiden flight on 27 December 2019. Reports at the time indicated that the C919 was expected to commence commercial service with China Eastern Airlines in either 2021 or 2022.<ref>{{Cite news |last=Greg Waldron |date=27 December 2019 |title=C919 test fleet complete with flight of sixth prototype |work=Flight Global |url=https://www.flightglobal.com/c919-test-fleet-complete-with-flight-of-sixth-prototype/135944.article |url-status=live |access-date=27 December 2019 |archive-url=https://web.archive.org/web/20191227132023/https://www.flightglobal.com/c919-test-fleet-complete-with-flight-of-sixth-prototype/135944.article |archive-date=27 December 2019}}</ref>[[File:2020年11月1日 C919国产大飞机全球首次动态展示.webm|thumb|Air display at [[Nanchang]] in 2020 (0:50–1:50)]]
+On 27 November 2020, the C919 received its [[Type certificate#Prototype|type inspection authorization]] from the [[Civil Aviation Administration of China|CAAC]], meaning that "the aircraft design has been finalised and verified, and that no major changes can be made to its structure."<ref>{{Cite news |last=Alfred Chua |date=27 November 2020 |title=Comac C919 enters final flight test stage |work=Flight Global |url=https://www.flightglobal.com/air-transport/comac-c919-enters-final-flight-test-stage/141352.article}}</ref>
+
+After completing cold-weather testing in China's [[Inner Mongolia]], the C919 was slated to conduct flight tests in natural [[icing conditions]] from [[London International Airport]] in [[Ontario, Canada]] during March 2021. However, these tests may have been delayed due to the COVID-19 pandemic.<ref>{{Cite news |last=Alfred Chua |date=8 February 2021 |title=C919 heads to Canada for cold-weather icing tests |work=Flightglobal |url=https://www.flightglobal.com/aerospace/c919-heads-to-canada-for-cold-weather-icing-tests/142318.article}}</ref>{{Update inline|date=September 2022}}
+
+=== Entry into service ===
+The C919 completed its first pre-delivery flight test at Shanghai Pudong International Airport. Comac reported that the aircraft (B-001J, MSN107) successfully completed a 3-hour test session on 14 May 2022.<ref>{{Cite web |date=14 May 2022 |title=Chinese rival to B737 and A320 jets completes Shanghai flight test |url=https://www.scmp.com/business/article/3177781/chinas-rival-boeing-737-and-airbus-a320-completes-its-first-pre-delivery |access-date=14 May 2022 |website=South China Morning Post |language=en}}</ref> The aircraft, bearing the livery of China Eastern Airlines, was set to be delivered in 2022.<ref>{{Cite web |date=14 May 2022 |title=First C919 jet to be delivered completes successful maiden test flight |url=https://english.news.cn/20220514/95fcfd93cfdb42f8b064774b92edcc43/c.html |agency=[[Xinhua]]}}</ref> In May 2022, the heavily modified jet was listed for a price of 653 million [[Renmimbi|yuan]] (US${{To USD|653|CHN|round=yes}} million), almost matching the Airbus A320neo and the Boeing 737 MAX competitors, and twice the US$50 million price initially anticipated, albeit with composite wings.<ref>{{Cite news |last1=Rong |first1=Huang |last2=Yi |first2=Ding |date=12 May 2022 |title=China-Developed C919 Jet to Cost Twice the Expected Price, Filing Shows |work=[[Cai Xin Global]] |url=https://www.straitstimes.com/asia/east-asia/china-developed-c919-jet-expected-price-doubles-to-match-boeing-and-airbus |via=[[The Straits Times]]}}</ref>
+
+The airline flew a number of route-proving flights throughout 2022 to reinforce its viability on important segments. Many of the flights were flown between different Chinese cities. Around the same time, the first production aircraft, bound for China Eastern Airlines, started performing flight tests to ensure its preparation for commercial service. COMAC reported after the first flight that all pre-set tasks were accomplished successfully.<ref>{{Cite web |title=China's COMAC C919 Performing Route Proving Flights Across China |url=https://www.smartaviation-apac.com/2022/07/chinas-comac-c919-performing-route-proving-flights/ |access-date=13 July 2022 |website=Smart Aviation Asia-Pacific}}</ref> Plans foresaw that one C919 was to be delivered to China Eastern Airlines in 2022,{{Update inline|date=May 2023}} while the remaining four aircraft in the first batch of orders would be delivered in 2023.<ref>{{Cite news |date=1 September 2022 |title=China Eastern sees smaller-than-expected C919 delivery this year |language=en |work=Reuters |url=https://www.reuters.com/business/aerospace-defense/china-eastern-sees-smaller-than-expected-c919-delivery-this-year-2022-09-01/ |access-date=11 October 2022}}</ref>
+
+The aircraft received its [[Type certificate|airworthiness certification]] from the [[Civil Aviation Administration of China]] on 29 September 2022<ref>{{Cite web |date=29 September 2022 |title=China certifies COMAC C919, five years after first flight |url=https://aviationweek.com/air-transport/safety-ops-regulation/china-certifies-comac-c919-five-years-after-first-flight |website=Aviation Week}}</ref> and the first operational airframe intended for commercial service was delivered to launch customer China Eastern Airlines on 9 December 2022 in Shanghai.<ref name="Reuters9dec2022" />[[File:B-919A at Shanghai Hongqiao by CNS-20230528.png|thumb|The first C919 commercial flight departed from [[Shanghai Hongqiao International Airport|Shanghai Hongqiao Airport]] on 28 May 2023]][[File:C919 Victoria Harbour Air Show.jpg|thumb|C919 flight demonstration over Victoria Harbour, Hong Kong]]The C919 aircraft delivered to China Eastern Airlines continued flying short test flights for most of January 2023, with a break from 20 to 28 January for the Lunar New Year celebrations.{{citation needed|date=June 2025}} In February 2023, China Eastern Airlines' C919 flight-test verification program was delayed due to a malfunction in the jet's CFM International LEAP-1C engine's thrust reverser.{{citation needed|date=June 2025}} On 7 May 2023, test flights resumed after a three-month break that had grounded the entire fleet of C919s; the airline continued to plan for passenger revenue-service to commence in spring 2023.{{citation needed|date=June 2025}}
+
+On 28 May 2023, COMAC C919 commercial service began with China Eastern Airlines flight MU9191 departing from [[Shanghai Hongqiao International Airport|Shanghai Hongqiao Airport]] and arriving at [[Beijing Capital International Airport|Beijing Capital Airport]].<ref name="1st-comm-fl" />
+
+On 29 May 2023, the C919 began routine flights MU9197 and MU9198 connecting Shanghai Hongqiao Airport and [[Chengdu Tianfu International Airport|Chengdu Tianfu Airport]] on a daily basis.<ref>{{Cite web |date=2023-05-28 |title=首架C919大型客机常态化运行，未来将投放更多航线 |url=https://news.sina.com.cn/o/2023-05-28/doc-imyvihhc6073729.shtml |access-date=2023-06-23 |website=news.sina.com.cn}}</ref><ref>{{Cite web |title=C919开启常态化商业飞行 国产飞机将撬动万亿新蓝海 |url=https://www.ncsti.gov.cn/kjdt/ztbd/zggdzzy/202306/t20230620_124460.html |access-date=2023-06-23 |website=www.ncsti.gov.cn}}</ref>
+
+China Eastern Airlines inducted a second C919 aircraft, registered as B-919C, with a formal reception taking place on 14 July 2023 at the flight test complex building of Zhuqiao base.<ref>{{Cite web |last=Svenson |first=Adam |date=2023-07-17 |title=COMAC Successfully Delivers Second C919 Aircraft to China Eastern Airlines |url=https://airspacenews.net/comac-successfully-delivers-second-c919-aircraft-to-china-eastern-airlines/ |access-date=2023-07-24 |website=AIR SPACE News |language=en-US}}</ref>
+
+In July 2023, it was announced that [[Suparna Airlines]], a Chinese airline owned by HNA, had signed a framework agreement with [[Shanghai Pudong Development Bank|SPDB]] Financial Leasing valued at US$3.6 billion for leasing 30 COMAC C919 aircraft.<ref>{{Cite web |last=Grey |first=Charles |date=2023-07-22 |title=Suparna Airlines Acquires 30 COMAC C919 Jets |url=https://airspacenews.net/suparna-airlines-acquires-30-comac-c919-jets/ |access-date=2023-07-24 |website=AIR SPACE News |language=en-US}}</ref>
+
+On 20 September 2023, Brunei's [[GallopAir]] said the C919 aircraft will undergo certification processes by Brunei's Department of Civil Aviation prior to delivery, which is forecasted to begin in the third quarter of 2024. Once certified, GallopAir would be the first operator of C919 outside of China and the first in Southeast Asia.<ref>{{Cite news |date=2023-09-20 |title=Brunei's Gallop Air places $2 bln order for China-made C919, ARJ21 jets |newspaper=Reuters |url=https://www.reuters.com/business/aerospace-defense/bruneis-gallop-air-places-2-bln-order-china-made-c919-arj21-jets-2023-09-22/}}</ref>
+
+From 12 to 17 December 2023, the C919 and [[Comac ARJ21|ARJ21]] conducted static displays at [[Hong Kong International Airport]] for the first time outside the Chinese mainland, and the C919 conducted a flight demonstration over [[Victoria Harbour]] on the 16th.<ref>{{Cite web |date=2023-12-13 |title=China-made C919, ARJ21 passenger jets on display in Hong Kong |url=https://apnews.com/article/china-c919-comac-arj21-hong-aircraft-029e93f7536a19b70e191a90fa041da4 |access-date=2024-03-06 |website=AP News |language=en}}</ref><ref>{{Cite web |title="C919 Aircraft Flight Demonstration in Hong Kong" Photo Competition |url=http://www.hongkongairport.com/en/C919photos.page |access-date=2024-03-06 |website=Hong Kong International Airport |language=en}}</ref>[[File:(SGP-Singapore) China Eastern Airlines Comac C919-100ER B-919A @ Singapore Airshow 2024-02-25 (2).jpg|thumb|right|Comac C919 on static display at the Singapore Airshow.]]
+[[File:B-919X@PEK (20240829112235).jpg|thumb|[[Air China]] took delivery of its first C919 on 29 August 2024.]]
+The C919 aircraft made its debut outside China, staging a fly-by at the pre-show of the 2024 [[Singapore Airshow]].<ref>{{cite web |title=China's first homegrown airliner makes international debut in Singapore |work=Reuters |date=19 February 2024 |url=https://www.reuters.com/business/aerospace-defense/chinas-first-homegrown-airliner-makes-international-debut-singapore-2024-02-18/ |access-date=21 February 2024 |last1=Barrington |first1=Lisa }}</ref> Also at the airshow, Comac announced an order from [[Tibet Airlines]] for 40 C919s. The high-altitude variant ordered will have a shortened fuselage and strengthened landing gear for short-field performance.<ref name="aerotime-tibet" />
+
+In May 2024, about one year after the commencement of passenger revenue service, B-919A, the first delivered Comac C919 airframe, was subjected to "A-inspection" tests, a series of "deep level" safety inspections lasting four days; the parts tested included the aircraft's engines, landing gear, and cabin equipment. The inspections were conducted by China Eastern Airlines Technology, a subsidiary of the group that also owns China Eastern Airlines. The aircraft passed the battery of inspections.<ref>{{cite news |last1=Mullens |first1=Andrew |title=China's C919 passenger jet marks first anniversary of commercial flights: 13 key moments from year 1 |publisher=South China Morning Post |date=27 May 2024 |url=https://www.scmp.com/economy/china-economy/article/3264272/chinas-c919-passenger-jet-marks-first-anniversary-commercial-flights-13-key-moments-year-1?module=flexi_unit-focus&pgtype=homepage}}</ref>
+
+The type's first commercial flight outside of mainland China occurred on 1 June 2024. A C919 operated by [[China Eastern Airlines]] was chartered to fly a group of students from Hong Kong to Shanghai for an exchange program.<ref>{{cite news |last1=Peters |first1=Luke |title=C919 to operate first international commercial flight |date=29 May 2024 |url=https://www.aerotime.aero/articles/china-eastern-c919-first-commercial-international-flight}}</ref><ref>{{cite web |last=Standard |first=The |title=Chinese homegrown C919 makes first commercial flight in Hong Kong |website=The Standard |language=en |url=https://www.thestandard.com.hk/breaking-news/section/4/216982/Chinese-homegrown-C919-makes-first-commercial-flight-in-Hong-Kong |access-date=2024-06-02}}</ref>
+
+=== Shrinking the C919: C919-600 ===
+In September 2023, Comac Chairman He Dongfeng revealed, however, that shortened and extended variants of the C919 would also be built, covering a range from 130 to 240 seats.{{citation needed|date=December 2024}}
+
+On 17 December 2023, COMAC signed a deal with [[Tibet Airlines]] to jointly develop the high-altitude version of the jet in order to serve passengers in the Tibetan-Himalayan plateau.<ref>{{cite web |date=18 December 2023 |title=C919: China to develop high-altitude version of narrowbody passenger jet seeking to reduce reliance on Boeing, Airbus |url=https://www.scmp.com/economy/china-economy/article/3245475/c919-china-develop-high-altitude-version-narrowbody-passenger-jet-seeking-reduce-reliance-boeing?module=hp_section_china&pgtype=homepage |accessdate=18 December 2023 |work=scmp.com}}</ref> The shortened version of the C919 is anticipated to serve routes with high-altitude landing sites, with a typical seating range of 140 to 160 passengers.<ref name=":4" /> It is designed to be capable of operating at all the high-plateau airports in China including the highest commercial airport in the world<ref name=":4" /> — [[Daocheng Yading Airport]] (ZUDC/DCY) at 14,472 feet, which is only served by specially up-rated and modified [[Airbus A319|Airbus A319-115]] and [[A319-133]] at this time.
+
+In August 2025, it is reported that the outer wingbox of the first C919-600 (MSN 00032), the shortened fuselage version, has been granted by CAAC Shanghai certification center of its airworthiness certificate. It is also the first structural component of the upcoming C919-600 to receive the approval.<ref name=":11">{{Cite web |title=中航西飞C919-600飞机00032架外翼盒段大部件率先适航挂签-中国航空航天化工网 |url=https://www.china-hanghua.com/news/news_info/1000003433.html |access-date=2025-08-13 |website=www.china-hanghua.com}}</ref>
+
+On 8 January 2026, it is reported that the first C919-600 prototype was rolled out of the production line in Shanghai Pudong.
+
+On 21 January 2026, the first C919-600 prototype with test registration "''B-002U''" has been spotted by photographers at COMAC's production site at [[Shanghai Pudong International Airport]].<ref name=":17">{{Cite web |title=Comac's Shortened C919-600 Variant Breaks Cover {{!}} Aviation Week Network |url=https://aviationweek.com/air-transport/aircraft-propulsion/comacs-shortened-c919-600-variant-breaks-cover |access-date=2026-01-21 |website=aviationweek.com}}</ref>
+
+=== Stretching the C919: C919-800 ===
+In September 2023, Comac Chairman He Dongfeng revealed that shortened and extended variants of the C919 would also be built, covering a range from 130 to 240 seats.{{citation needed|date=December 2024}} The type is expected to enter service by 2030.<ref name=":12">{{Cite web |title=Comac Wants Stretched C919 In Service By 2030, C929 By 2035 {{!}} Aviation Week Network |url=https://aviationweek.com/air-transport/aircraft-propulsion/comac-wants-stretched-c919-service-2030-c929-2035 |access-date=2025-08-14 |website=aviationweek.com}}</ref>
+
+== International certification ==
+
+Comac has been working with the [[European Union Aviation Safety Agency]] (EASA) toward certification of the C919 aircraft since a Bilateral Aviation Safety Agreement came into effect in 2020. The company had initially hoped to obtain EASA certification by the end of 2025. However, according to an interview with EASA executive director Florian Guillermet in spring 2025, while the agency had been working with Comac for four years up till then, only two of those years had been productive. Guillermet expressed confidence that Comac would ultimately secure approval but estimated that certification would likely come between 2028 and 2031, a timeline of three to six years from 2025.<ref name=":8">{{Cite web |last=Dubois |first=Thierry |date=April 28, 2025 |title=Comac C919 To Get European Approval In 3-6 Years, EASA Chief Says |url=https://aviationweek.com/air-transport/aircraft-propulsion/comac-c919-get-european-approval-3-6-years-easa-chief-says |access-date=2025-05-02 |website=Aviation Week}}</ref><ref name=":9">{{Cite news |last1=Barrington |first1=Lisa |last2=Hepher |first2=Tim |last3=Yu |first3=Sophie |date=April 29, 2025 |title=European approval for China's C919 plane needs 3-6 years, regulator says |url=https://www.reuters.com/business/aerospace-defense/european-approval-chinas-c919-plane-needs-3-6-years-regulator-says-2025-04-29/ |archive-url=https://web.archive.org/web/20250429222150/https://www.reuters.com/business/aerospace-defense/european-approval-chinas-c919-plane-needs-3-6-years-regulator-says-2025-04-29/ |archive-date=2025-04-29 |access-date=2025-05-01 |work=Reuters |language=en-US}}</ref>
+
+Certification by EASA is seen as critical to the international success of the C919,<ref>{{Cite podcast |url=https://podcasts.apple.com/us/podcast/what-you-need-to-know-about-boeing-tariffs-and/id1735858856?i=1000705713369 |title=What you need to know about Boeing, tariffs and Chinese aviation |website=The Air Show |last=Ostrower |first=Jon |date=2025-05-01 |access-date=2025-05-01 |time=15:58 |quote=The head of EASA, the European Union Aviation Safety Agency, definitively ruled out that the long discussed Chinese aspiration to win European certification of the 919 would come in 2025, said that's not happening, but what they did say was that EASA would end up approving the C919 in three to six years. Look, that's huge. That starts the clock with some degree of certainty of Western validation of the C919.}}</ref> as most countries require commercial aircraft to be approved by major regulators such as EASA or the U.S. [[Federal Aviation Administration]] (FAA). In April 2025 Comac is not currently pursuing FAA certification.<ref>{{Cite web |title=European approval for China's C919 plane needs 3-6 years, regulator says |author= |work=Reuters |date=28 April 2025 |access-date=28 January 2026 |url= https://www.reuters.com/business/aerospace-defense/european-approval-chinas-c919-plane-needs-3-6-years-regulator-says-2025-04-29/ |quote=Guillermet said COMAC was not pursuing FAA approval, Usine Nouvelle reported. }}</ref> Non-Chinese leasing companies and airlines have indicated they would require EASA or FAA validation before considering the aircraft for their fleets.<ref name=":9" /> Guillermet noted in 2025 that while the certification process for Western-built aircraft typically takes one to two years following first flight, or about six months for validation under a bilateral aviation safety agreement (where one authority recognizes another's certification), such timelines generally apply to manufacturers with long-established relationships with EASA. He explained that EASA must assess the overall design and integration of the C919 before granting a type certificate and that validation tests and flight evaluations of the aircraft's design and certain components had yet to be completed in this case.<ref name=":8" />
+
+In January 2026, 9 years after the first flight of the aircraft, it was reported that two test pilots from the [[European Union Aviation Safety Agency]] (EASA) had arrived in Shanghai and conducted verification flights. Senior foreign pilots were reportedly working in China accompanying the EASA pilots to demonstrate the reliability of the C919-100.<ref>{{Cite web |date=2026-01-15 |title=Exclusive {{!}} European test pilots put China's C919 airliner through paces in Shanghai |url=https://www.scmp.com/economy/china-economy/article/3339945/chinas-c919-airliner-put-through-paces-test-pilots-european-aviation-regulator |access-date=2026-01-21 |website=South China Morning Post |language=en}}</ref>
+
+==Variants==
+
+=== C919-100 ===
+The C919-100 is the baseline variant of the C919 family, the series has two variants: C919-100 STD and C919-100 ER.
+
+==== C919-100 STD ====
+[[File:20250731 COMAC C919-100STD of China Southern Airlines (B-919J) taking-off from CGO 02.jpg|thumb|C919-100 STD of [[China Southern Airlines]]]]
+The baseline variant of the C919-100 series is designated "C919-100 STD", STD for standard. Equipped with two CFM International [[CFM International LEAP|LEAP-1C28]] engines, each rated at {{Convert|129.98|kN|lk=on|abbr=~}} of maximum takeoff (MTO) thrust and {{Convert|127.93|kN|abbr=on}} of maximum continuous thrust (MCT).<ref name=":5">{{Cite web |title=EASA.E.110 - LEAP-1A & LEAP-1C series engines {{!}} EASA |url=https://www.easa.europa.eu/en/document-library/type-certificates/engine-cs-e/easae110-leap-1a-leap-1c-series-engines |access-date=2024-12-23 |website=www.easa.europa.eu |language=en}}</ref><ref name=":2">{{Cite web |title=Technical Information_Commercial Aircraft Corporation of China, Ltd. |url=http://english.comac.cc/Galleries/Technical/ |access-date=2024-12-22 |website=english.comac.cc}}</ref>
+
+It is the most popular variant of the C919-100 series, with over 300 confirmed orders from [[China Eastern Airlines]], [[China Southern Airlines]] and [[HNA Aviation]].
+
+==== C919-100 ER ====
+[[File:B-919Y@PEK (20241105161141).jpg|thumb|C919-100 ER of [[Air China]], the type's sole operator]]
+The extended range variant of the C919-100 series is designated "[[#Specifications|C919-100 ER]]". Equipped with two CFM International [[CFM International LEAP|LEAP-1C30]] engines, each rated at {{Convert|137.14|kN|abbr=on}} of MTO thrust and {{Convert|133.22|kN|abbr=on}} of MCT.<ref name=":5" /> Together with other improvements to enable a higher maximum takeoff weight (MTOW) and higher maximum taxi weight (MTW), therefore extends the payload envelope and its range capability.<ref name=":2" />
+
+Noticeably the extended range capability is enabled by higher MTOW and potential structural strengthening, no auxiliary fuel tanks are fitted, therefore it remains the same fuel capacity as the standard (STD) version.<ref name=":2" />
+
+[[Air China]] is the only confirmed C919-100 ER operator at the moment, with over a hundred orders in the order book.<ref name=":10">{{Cite web |title=Air China Orders 100 Extended-Range Comac C919s {{!}} Aviation Week Network |url=https://aviationweek.com/air-transport/aircraft-propulsion/air-china-orders-100-extended-range-comac-c919s |access-date=2024-12-24 |website=aviationweek.com}}</ref>
+
+=== C919-600 ===
+Jointly developed with [[Tibet Airlines]], the C919-600 is the shortened fuselage variant of the C919 family which rolled out in January 2026.<ref name=":17" />
+
+Compared to the standard C919-100, the -600 removed 6 frames from the body fuselage and reduced weight for better performance.
+
+The shortened version of the C919 is anticipated to serve routes with high-altitude landing sites, with a typical seating range of 140 to 160 passengers.<ref name=":4">{{Cite web |title=中国商飞公司门户网站-西藏航空、河南航投与中国商飞签署C919和ARJ21飞机订单 |url=http://www.comac.cc/xwzx/gsxw/202402/20/t20240220_7378921.shtml |access-date=2024-12-22 |website=www.comac.cc}}</ref> It is designed to be capable of operating at all the high-plateau airports in China including the highest commercial airport in the world<ref name=":4" /> — [[Daocheng Yading Airport]] (ZUDC/DCY) at {{Convert|14472|ft|m}}, which is only served by specially up-rated and modified [[Airbus A319|Airbus A319-115]] and [[A319-133]] at this time.
+
+=== C919-800 ===
+Jointly developed with [[China Eastern Airlines]], the C919-800 is the extended fuselage variant of the C919 family which is under development and expect to enter service by 2030.<ref name=":12" />
+
+At its maximum, the extended fuselage variant would fit nearly 50 more passengers than the current variant, which can seat 156&ndash;192 people.<ref>{{cite web |author-last1=Nulimaimaiti |author-first1=Mia |date=11 September 2023 |title=China's C919 jet to come in different sizes, and AI will help optimise design |url=https://www.scmp.com/economy/china-economy/article/3234152/chinas-c919-passenger-jet-come-different-sizes-and-ai-will-help-optimise-design |work=South China Morning Post}}</ref>
+
+== Design ==
+=== Configuration and performance ===
+The dimensions of the C919 are quite similar{{citation needed|date=October 2025}} to those of the [[Airbus A320]]; its [[fuselage]] is {{convert|3.96|m}} wide and {{convert|4.166|m}} high with a {{convert|12.915|m2}} cross-section. This may allow for a common [[unit load device]] to be used for both aircraft. It has a {{convert|33.6|m}} [[wingspan]] ({{convert|35.4|m}} with [[winglets]]).<ref name="AW090908" /> The aircraft's intended [[Payload (air and space craft)|payload capacity]] will be 20.4 tonnes. The design calls for [[Cruise (flight)|cruise]] at {{cvt|0.785|Mach|altitude_ft=39000|knots km/h|0}} with an operating [[Ceiling (aeronautics)|ceiling]] of 12,200 metres (39,800 feet). There will be two variants: the standard version with a {{cvt|4075|km|nmi mi}} range, and a {{cvt|5555|km|nmi mi}} extended-range version.<ref name="AW090908" />
+The C919 is a conservative design, deemed by analysts to be similar to the 30 year-old A320<ref name="Leeham3Jan2018" /> and less efficient than the A320neo and 737 MAX.<ref>{{Cite news |last=Venckunas |first=Valius |date=10 November 2020 |title=COMAC C919: how to break Airbus-Boeing duopoly – AeroTime |url=https://www.aerotime.aero/articles/26365-comac-c919-how-to-break-airbus-boeing-duopoly}}</ref>
+
+=== Construction ===
+The center wing box, outer wing box, wing panels, flaps, and ailerons are built in [[Xi'an]], China; the center fuselage sections are built in [[Hongdu]], China.<ref>{{Cite news |date=24 March 2017 |title=COMAC C919 – program supplier guide |work=Airframer Limited |publisher=Stansted News |url=http://www.airframer.com/aircraft_detail.html?model=C919 |url-status=live |access-date=19 August 2011 |archive-url=https://web.archive.org/web/20170607145825/http://www.airframer.com/aircraft_detail.html?model=C919 |archive-date=7 June 2017}}</ref> [[Aluminium-lithium alloy]]s account for 8.8% of the structure and [[Fibre-reinforced plastic|composite materials]] for 12%.<ref>{{Cite press release |title=COMAC Rolls Out First C919 in Shanghai |date=2 November 2015 |publisher=Comac |url=http://english.comac.cc/news/mc/201511/02/t20151102_3033164.shtml |access-date=5 May 2017 |url-status=live |archive-url=https://web.archive.org/web/20160517164114/http://english.comac.cc/news/mc/201511/02/t20151102_3033164.shtml |archive-date=17 May 2016}}</ref> The air frame will be made largely of aluminium alloy. Aircraft design and assembly is performed in [[Shanghai]].<ref>{{Cite web |title=Comac Plans to Fly Three More C919s This Year |url=https://trends.aeroexpo.online/project-75449.html |access-date=31 May 2023 |publisher=VirtualExpo}}</ref>
+
+=== Wings ===
+[[File:Winglet on China Eastern B-919A.jpg|thumb|Winglet on China Eastern B-919A|237x237px]]
+The wing is of a [[Supercritical airfoil|supercritical]] design, increasing aerodynamic efficiency by 20% and reducing drag by 8% compared to a non-supercritical wing.<ref>{{Cite news |last=An Xinzhu |date=6 April 2017 |title=Jumbo Jet Collaborative Innovation |work=[[China Today]] |url=http://www.chinatoday.com.cn/english/report/2017-04/06/content_738656.htm |url-status=live |access-date=5 May 2017 |archive-url=https://web.archive.org/web/20171002120343/http://www.chinatoday.com.cn/english/report/2017-04/06/content_738656.htm |archive-date=2 October 2017}}</ref> The center wing box was originally intended to use carbon fibre composites.<ref name="teal2010" /> It was changed later to an aluminium design to reduce design complications.<ref>{{Cite web |last=Mavis Toh |date=4 July 2014 |title=Xi'an Aircraft rolls out first C919 center wing box |url=https://www.flightglobal.com/news/articles/xian-aircraft-rolls-out-first-c919-centre-wing-box-401073/ |url-status=live |archive-url=https://web.archive.org/web/20160216110641/https://www.flightglobal.com/news/articles/xian-aircraft-rolls-out-first-c919-centre-wing-box-401073/ |archive-date=16 February 2016 |access-date=12 February 2016 |website=Flight Global}}</ref>
+
+=== Systems ===
+[[File:ILA Berlin 2012 PD 154a.JPG|thumb|The [[Environmental control system|air conditioning]] made by [[Liebherr]]<!-- as written in the picture-->]]
+
+The engine's [[nacelle]], [[thrust reverser]] and exhaust system is provided by [[Nexcelle]], with such features as an advanced inlet configuration, the extensive use of composites and acoustic treatment and an electrically operated thrust reverser.<ref>{{Cite news |date=5 February 2010 |title=High Tech Nacelle for C919 Said To Be World First |work=Aviation Daily |publisher=Aviation Week |url=http://aviationweek.com/awin/high-tech-nacelle-c919-said-be-world-s-first |url-status=live |url-access=subscription |access-date=20 April 2017 |archive-url=https://web.archive.org/web/20170421093223/http://aviationweek.com/awin/high-tech-nacelle-c919-said-be-world-s-first |archive-date=21 April 2017}}</ref> The main supplier of tyres is [[Michelin]] with its Air X radial tyres,<ref>{{Cite press release |title=Michelin to supply tyres for China's first commercial airliner |date=12 April 2011 |publisher=Michelin |url=https://www.airmichelin.com/generalcontent10737418561.php |url-status=dead |archive-url=https://web.archive.org/web/20170421002059/https://www.airmichelin.com/generalcontent10737418561.php |archive-date=21 April 2017}}</ref>, but since 2025 tyres from [[Sinochem|Sinochem's]] subsidiary Guilin Lanyu Aviation Tyres may also be used.<ref>{{Cite web |last=Stephen |date=2025-05-05 |title=China’s aviation body certifies Guilin Lanyu tyres for C919 |url=https://www.tyrepress.com/2025/05/chinas-aviation-body-certifies-guilin-lanyu-tyres-for-c919/ |access-date=2026-05-17 |website=Tyrepress |language=en-GB}}</ref>
+Its [[integrated modular avionics]] architecture is based on [[Ethernet]].<ref name="Leeham3Jan2018" />
+The [[landing gear]] is made in China by Liebherr LAMC Aviation, a joint venture of Germany's [[Liebherr]] and [[Avic|AVIC]]'s Landing Gear Advanced Manufacturing Corp.<ref name="AvWeek26sep2018" />
+
+While the [[airframe]] is entirely made by [[Avic|AVIC]], some systems are sourced from a wide variety of international suppliers, similar to Airbus and Boeing. Most such components are sourced from [[joint-venture]]s with foreign companies located within China: with [[UTC Aerospace Systems|UTAS]] for the electric power, fire protection and lighting; with [[Collins Aerospace]] for the [[Aircraft cabin|cabin]] systems and [[avionics]], with [[Thales Group|Thales]] for the [[In-flight entertainment|IFE]], with [[Honeywell]] for the [[Aircraft flight control system|flight control]]s, [[Auxiliary power unit|APU]], wheels and brakes; with [[Moog Inc.|Moog]] for the [[High-lift device|high lift]] system; with [[Parker Hannifin|Parker]] for the [[hydraulics]], [[actuators]] and fuel systems, with Liebherr for the landing gear and [[Environmental control system|air management]].
+
+Very few components, such as the [[CFM International LEAP]] engine and Nexcelle nacelle, are entirely foreign imported.<ref>{{Cite news |last1=Perrett |first1=Bradley |last2=Bruno |first2=Michael |date=18 October 2018 |title=Technology For Access To China? Maybe Not |work=Aviation Week & Space Technology |url=http://aviationweek.com/new-civil-aircraft/technology-access-china-maybe-not}}</ref> In 2024, a report stated that Comac was working on a plan to become more self-sufficient in terms of suppliers, with a long-term goal of replacing all US-export-controlled components, because American export restrictions were affecting the ability of Comac to boost jet output.<ref>{{Cite web |title=Bloomberg - Comac Steals the Limelight in Singapore With First Peek of C919 Jet |url=https://www.bloomberg.com/news/features/2024-02-25/comac-steals-the-limelight-in-singapore-with-first-peek-inside-c919-jet |url-access=registration |access-date=2024-03-26 |website=www.bloomberg.com |date=25 February 2024 }}</ref> In May 2026, Zhang Yanzhong, a senior academician at the Chinese Academy of Engineering (CAE) and a former chief scientist of the Aviation Industry Corporation of China, said in a paper that a globalised, open supply chain was “no longer suitable” for the needs of the C919 (among other aviation projects), particularly with regard to systems like the auxiliary power unit or the  flight controls; he called for a Chinese "national programme" to prevent problems occurring in China’s large aircraft supply chain.<ref>{{Cite web |date=2026-05-11 |title=Here’s how China plans to sanction-proof its C919 passenger jet |url=https://www.scmp.com/news/china/science/article/3353117/chinese-aviation-expert-lays-out-plan-sanction-proof-domestic-passenger-planes |access-date=2026-05-17 |website=South China Morning Post |language=en}}</ref>
+
+=== Engines ===
+
+==== CFM International LEAP-1C ====
+[[File:LEAP-1C (tight crop).png|thumb|LEAP-1C engine on the C919]]
+
+[[Pratt & Whitney]] and [[CFM International]] each offered an engine for the aircraft in 2009, the [[PW1000G]] and the [[CFM International LEAP|LEAP-1C]], respectively;<ref>{{Cite news |date=5 October 2009 |title=Pratt offers geared turbofan for China's C919 airliner |work=Flight Global |url=https://www.flightglobal.com/news/articles/pratt-offers-geared-turbofan-for-chinas-c919-airlin-333081/ |url-status=live |access-date=20 April 2017 |archive-url=https://web.archive.org/web/20170421003335/https://www.flightglobal.com/news/articles/pratt-offers-geared-turbofan-for-chinas-c919-airlin-333081/ |archive-date=21 April 2017}}</ref> the LEAP-1C was selected.<ref>{{Cite news |last=David Kaminski-Morrow |date=21 December 2009 |title=CFM to build LEAP-X engine in China after C919 deal |work=Flight Global |url=https://www.flightglobal.com/news/articles/cfm-to-build-leap-x-engine-in-china-after-c919-deal-336431/ |url-status=live |access-date=20 April 2017 |archive-url=https://web.archive.org/web/20170421000225/https://www.flightglobal.com/news/articles/cfm-to-build-leap-x-engine-in-china-after-c919-deal-336431/ |archive-date=21 April 2017}}</ref>
+
+The LEAP-1C family consists of two variants with different thrust ratings, LEAP-1C28 for the C919-100 STD and LEAP-1C30 for the C919-100 ER with higher MTOW. LEAP-1C30 has a slightly higher max take off thrust and max continuous thrust compared to the LEAP-1C28.<ref name=":5" />
+
+In February 2020, Reuters reported that the [[Executive Office of the President of the United States|US government]] was considering blocking [[General Electric|GE]] from selling the LEAP-1C engine to Comac, citing concerns that its [[Allegations of intellectual property theft by China|technology could be stolen]] and put into the CJ-1000A engine being developed by the Aero Engine Corporation of China, the competition the C919 could present for [[Boeing]], and military use of technology.<ref>{{Cite news |last1=Freifeld |first1=Karen |last2=Alper |first2=Alexandra |date=16 February 2020 |title=U.S. weighs blocking GE engine sales for China's new airplane: sources |work=[[Reuters]] |url=https://www.reuters.com/article/us-usa-china-aircraft-idUSKBN2090SG}}</ref> Then-President [[Donald Trump]] tweeted opposition to blocking sales.<ref>{{Cite news |last1=Mason |first1=Jeff |last2=Brice |first2=Makini |date=18 February 2020 |title=Trump blasts proposed U.S. restrictions on sale of jet parts to China |language=en |work=[[Reuters]] |url=https://www.reuters.com/article/us-usa-trade-china-idUSKBN20C1ZV |access-date=2 July 2020}}</ref> The US eventually granted GE a license to sell the engines in April 2020.<ref>{{Cite news |last1=Qiu |first1=Stella |last2=Freifeld |first2=Karen |date=7 April 2020 |title=Exclusive: U.S. grants GE license to sell engines for China's new airplane |language=en |work=[[Reuters]] |url=https://www.reuters.com/article/us-usa-china-aircraft-exclusive-idUSKBN21P20U |access-date=2 July 2020}}</ref>
+
+The LEAP-1C shares a type certificate with the LEAP-1A.<ref>{{Cite web |title=EASA.E.110 - LEAP-1A & LEAP-1C series engines {{!}} EASA |url=https://www.easa.europa.eu/en/document-library/type-certificates/engine-cs-e/easae110-leap-1a-leap-1c-series-engines |access-date=2025-05-02 |website=www.easa.europa.eu |language=en}}</ref> The main difference between the two is the thrust reverser is integral to the engine on the -1C it is part of the aircraft system on the -1A.
+
+In May 2025, the United States suspended the sale of LEAP-1C engines to China.<ref>{{cite web | url=https://www.reuters.com/sustainability/boards-policy-regulation/us-suspends-sales-some-us-technologies-chinas-airplane-maker-comac-new-york-2025-05-29/ | title=US suspends engine sales to Chinese planemaker COMAC, New York Times reports | work=Reuters | date=29 May 2025 }}</ref> The engine sale suspension was lifted in July 2025.<ref>{{cite web |title=US lifts license suspensions on GE jet engines for China's COMAC |url=https://www.reuters.com/business/aerospace-defense/us-lifts-license-suspensions-ge-jet-engines-chinas-comac-2025-07-03/ |publisher=Reuters |date=July 3, 2025 |access-date=November 29, 2025}}</ref>
+
+==== AECC CJ-1000A ====
+{{Main|ACAE CJ-1000A}}
+
+The [[Aero Engine Corporation of China]] was tasked with developing an indigenous engine for the aircraft in 2009.<ref>{{Cite news |date=4 November 2011 |title=C919 set to fly with imported engines initially |work=[[Shanghai Daily]] |url=http://www.shanghaidaily.com/Business/transport/C919-set-to-fly-with-imported-engines-initially/shdaily.shtml |url-status=live |access-date=20 April 2017 |archive-url=https://web.archive.org/web/20170420235830/http://www.shanghaidaily.com/Business/transport/C919-set-to-fly-with-imported-engines-initially/shdaily.shtml |archive-date=20 April 2017}}</ref> Assembly of the first [[ACAE CJ-1000A|CJ-1000A]] engine was completed in 18 months in December 2017. The planned entry into service was 2021.<ref>{{Cite news |last=Stephen Trimble |date=29 December 2017 |title=China completes assembly of first high-bypass turbofan engine |work=Flightglobal |url=https://www.flightglobal.com/news/articles/china-completes-assembly-of-first-high-bypass-turbof-444526/ |url-status=live |access-date=19 May 2018 |archive-url=https://web.archive.org/web/20180202025949/https://www.flightglobal.com/news/articles/china-completes-assembly-of-first-high-bypass-turbof-444526/ |archive-date=2 February 2018}}</ref> The engine first ran in May 2018 to 6,600 rpm core speed.<ref>{{Cite news |last=Mavis Toh |date=18 May 2018 |title=C919's local engine alternative powered up |work=Flight Global |url=https://www.flightglobal.com/news/articles/c919s-local-engine-alternative-powered-up-448721/ |url-status=live |access-date=18 May 2018 |archive-url=https://web.archive.org/web/20190502091510/https://www.flightglobal.com/news/articles/c919s-local-engine-alternative-powered-up-448721/ |archive-date=2 May 2019}}</ref>
+
+In March 2023, reports emerged that the flight test campaign for the CJ-1000A engine had started on a [[Xi'an Y-20]] test aircraft.<ref>{{Cite news |last=Ostrower |first=Jon |date=24 March 2023 |title=As congress debates TikTok, China flies its own commercial jet engine |work=The Air Current |url=https://theaircurrent.com/engine-development/aecc-c919-cj1000a-tik-tok/}}</ref> According to experts and top executives from the Aero Engine Corporation of China (AECC), at the beginning of March 2025 the development of the CJ-1000 was "progressing well" in trials, with the engine being able to power a C919 aircraft on verification flights "soon".<ref>{{Cite web |date=2024-02-11 |title=How monumental is China's challenge to build its own jet engine for the C919? |url=https://www.scmp.com/economy/china-economy/article/3251482/how-monumental-chinas-challenge-build-its-own-jet-engine-c919-it-seeks-aviation-self-reliance |access-date=2024-06-15 |website=South China Morning Post |language=en|author-first1=Amanda|author-last1=Lee}}</ref><ref>{{Cite web |date=2025-03-29 |title=Home-grown CJ-1000 engine to soon be tested on China's C919 passenger jet |url=https://www.scmp.com/economy/china-economy/article/3304271/development-chinese-engine-make-c919-truly-home-grown-progressing-well |access-date=2025-04-21 |website=South China Morning Post |language=en|author-first1=Frank|author-last1=Chen}}</ref>
+
+According to a January 2026 comment from analyst Mayur Patel from aviation data consultancy OAG Aviation, Chinese certification and initial deliveries of the CJ-1000A engine are likely to begin in 2027 or 2028 while mass production is expected from around 2030.<ref>{{cite web | title=Why China is racing to develop its own commercial jet engine | work=The Straits Times | date=4 January 2026 | url=https://www.straitstimes.com/asia/east-asia/sovereignty-in-the-skies-why-china-is-racing-to-develop-its-own-commercial-jet-engine }}</ref> According to the [[South China Morning Post|South China Morning Post,]] aviation expert Brian Yang Bo said in March 2026 that he thought the CJ-1000A would be installed in a first C919 jet for daily use between 2028 and 2029, particularly as a Chinese five-year plan from early 2026 had called for increased aircraft production, development and the roll-out of a domestically developed engine.<ref>{{Cite web |date=2026-03-12 |title=China’s 5-year jet goals target C919 output, a new engine and less reliance |url=https://www.scmp.com/economy/china-economy/article/3346236/chinas-five-year-jet-goals-target-c919-output-new-engine-and-reduced-reliance |access-date=2026-05-16 |website=South China Morning Post |language=en}}</ref>
+
+=== Cabin ===
+
+==== Seats ====
+The cabin has a 3-3 seat layout, which is typical among this class of aircraft like the [[Airbus A320]] or [[Boeing 737]]. The middle seat in each 3-seat row is designed to be 1.5&nbsp;cm wider than the window and aisle seat to provide better comfort for the passenger sitting in the middle.<ref>{{Cite web |title=C919 reveals potential of China's civil aviation market, says expert |url=https://www.shine.cn/news/nation/2306113916/ |access-date=2024-12-24 |website=SHINE |language=en}}</ref>
+
+Currently{{when|date=September 2025}} seats in both business class and economy class are solely supplied by Chinese seat maker Jiatai aircraft equipment Co., Ltd of [[Aviation Industry Corporation of China|AVIC]] cabin systems (ACS). '''Jiatai JT220B''' in business and '''Jiatai JT220E''' in economy.<ref name=":6">{{Cite web |title=Exhibitor Details |url=https://www.aircraftinteriorsexpo.com/en-gb/exhibitor-directory/exhibitor-details.org-2e25803b-5e4a-4e05-9543-b0e2c571524d.html#/ |access-date=2024-12-23 |website=www.aircraftinteriorsexpo.com |language=en-GB}}</ref> They both provide a wide range of different configuration choices for the customer, for example adjustable headrest, mobile device holder or USB socket.<ref name=":6" />
+
+== Supplier summary ==
+{| class="wikitable sortable"
+!Category
+!System
+!Supplier
+!Country
+!Remark
+!Source
+|-
+| rowspan="7" |Airframe
+|Body
+|[[Aviation Industry Corporation of China|'''AVIC''']]
+|{{CHN}}
+|
+|
+|-
+|High lift system
+|{{Abbr|JV|Joint venture}}: '''[[Moog Inc.]]'''-[[Aviation Industry Corporation of China|AVIC Qing’an Group]]
+|{{USA}}{{CHN}}
+|
+|<ref>{{Cite web |last=Inc |first=Moog |title=Moog Announces Contract for High Lift System on COMAC C919 Commercial Transport |url=https://www.moog.com/news/corporate-press-releases/2012/moog-announces-contract-for-high-lift-system-on-comac-c919-commercial-transport.html |access-date=2026-01-22 |website=www.moog.com |language=en}}</ref>
+|-
+|[[Landing gear|Main landing gear]]
+|'''Liebherr LAMC Aviation''' 
+({{Abbr|JV|Joint venture}}: [[Liebherr]]-AVIC)
+|{{GER}}{{CHN}}
+|
+|<ref name="Liebherr on board the C919">{{Cite web |title=Liebherr on board the C919 |url=https://www.liebherr.com/en-int/aerospace-and-transportation-systems/aerospace/products-and-solutions/case-studies/c919/c919-5369549 |access-date=2024-12-24 |website=www.liebherr.com |language=en}}</ref>
+|-
+|Nose wheel
+| rowspan="2" |[[Honeywell Aerospace|'''Honeywell Aerospace''']]
+| rowspan="2" |{{USA}}
+|
+| rowspan="2" |<ref name=":7">{{Cite web |title=Comac |url=https://aerospace.honeywell.com/us/en/products-and-services/aircraft/comac |access-date=2024-12-24 |website=aerospace.honeywell.com |language=en-US}}</ref>
+|-
+|Brakes
+|''“Carbenix”''
+|-
+| rowspan="2" |Tyres
+|'''[[Michelin]]'''
+|{{FRA}}
+|''“Air X”''
+|<ref>{{Cite web |title=Michelin to supply tyres for China's first commercial airliner {{!}} Airframer |url=https://www.airframer.com/news_story.html?release=12316 |access-date=2026-01-21 |website=www.airframer.com}}</ref>
+|-
+|[[Sinochem|'''Sinochem Guilin Lanyu Aviation Tyre''']]
+|{{CHN}}
+|Optional
+|<ref>{{Cite web |last=Stephen |date=2025-05-05 |title=China's aviation body certifies Guilin Lanyu tyres for C919 |url=https://www.tyrepress.com/2025/05/chinas-aviation-body-certifies-guilin-lanyu-tyres-for-c919/ |access-date=2025-09-12 |website=Tyrepress |language=en-GB}}</ref>
+|-
+| rowspan="16" |Avionics
+|[[Weather radar]]
+|'''ALRAC''' 
+({{Abbr|JV|Joint venture}}: [[Collins Aerospace]]-[[Aviation Industry Corporation of China|AVIC Leihua ETRI]])
+|{{USA}}{{CHN}}
+|
+|<ref>{{Cite web |title=Collins Aerospace and AVIC LETRI receive FAA TSO certification for COMAC C919 weather radar antenna |url=https://www.collinsaerospace.com/news/news/2022/11/collins-avic-letri-faa-tso-comac-c919-weather-radar-antenna |access-date=2024-12-24 |website=www.collinsaerospace.com |language=en}}</ref>
+|-
+|Communication and navigation avionics
+|'''RCCAC''' 
+({{Abbr|JV|Joint venture}}: [[Collins Aerospace]]-CETCA)
+|{{USA}}{{CHN}}
+|
+|<ref>{{Cite web |title=COMAC's C919 takes first flight with Rockwell Collins avionics |url=https://www.airframer.com/news_story.html?release=40477 |access-date=2024-12-24 |website=www.airframer.com}}</ref>
+|-
+|[[Air data module|Air data system]] (ADS)
+| rowspan="2" |[[Honeywell Aerospace|'''Honeywell Aerospace''']]
+| rowspan="2" |{{USA}}
+|
+| rowspan="2" |<ref name=":7" />
+|-
+|[[Inertial navigation system|Inertial reference system]] (IRS)
+|''“LASEREF IV”''
+|-
+|[[Aircraft flight control system|Flight control system]] (FCS)
+|'''Hongfei Flight Control'''
+({{Abbr|JV|Joint venture}}: [[Honeywell Aerospace]]-[[Aviation Industry Corporation of China|AVIC Xi’an Automatic Control Technology]])
+|{{USA}}{{CHN}}
+|[[Fly-by-wire]] (FBW)
+|<ref>{{Cite web |title=产品介绍 – Honfei CN |url=https://www.honfei.cn/cn/products |access-date=2025-09-10 |language=zh-CN}}</ref>
+|-
+|[[In-flight entertainment|In-flight entertainment system]] (IFE)
+|{{Abbr|JV|Joint venture}}: [[Thales Group|'''Thales''']]-CETCA
+|{{FRA}}{{CHN}}
+|''“TopSeries”''
+Optional
+|<ref>{{Cite web |last=onboard |date=2012-07-09 |title=Thales and China Electronics Technology Avionics Sign Joint Venture Agreement for the new C919 aircraft |url=https://onboard.thalesgroup.com/thales-and-china-electronics-technology-avionics-sign-joint-venture-agreement-for-the-new-c919-aircraft/ |access-date=2024-12-24 |website=Thales Aerospace Blog |language=fr}}</ref>
+|-
+|Air management system
+|'''[[Liebherr]]'''
+|{{GER}}
+|
+|<ref name="Liebherr on board the C919"/>
+|-
+|Display units (DU)
+| rowspan="7" |'''AVIAGE Systems''' 
+({{Abbr|JV|Joint venture}}: [[GE Aerospace]]-AVIC)
+| rowspan="7" |{{USA}}{{CHN}}
+|
+| rowspan="2" |<ref name=":18">{{Cite web |title=C919解决方案 {{!}} AVIAGE SYSTEMS - 昂际航电官网 |url=https://www.aviagesystems.com/product/c919 |access-date=2026-01-21 |website=www.aviagesystems.com}}</ref>
+|-
+|Control panels
+|
+|-
+|[[Flight management system]] (FMS)
+|''“TrueCourse™”''
+|<ref name=":3">{{Cite web |title=GE Aviation Provides Advanced Systems on the C919 First Flight {{!}} GE Aerospace News |url=https://www.geaerospace.com/news/press-releases/systems/ge-aviation-provides-advanced-systems-c919-first-flight |access-date=2024-12-24 |website=www.geaerospace.com |language=en}}</ref>
+|-
+|Onboard maintenance system (OMS)
+|
+|<ref name=":18" />
+|-
+|[[Flight recorder]]
+|
+| rowspan="3" |<ref name=":3" />
+|-
+|[[Integrated standby instrument system]] (ISIS)
+|
+|-
+|Remote interface unit
+|
+|-
+|[[Head-up display|Head-up display unit]] (HUD)
+|[[Aviation Industry Corporation of China|'''AVIC Optronics''']]
+|{{CHN}}
+|Optional
+|<ref>{{Cite web |title=中国C919客机首飞成功！驾驶室装有运20同款HUD |url=https://slide.mil.news.sina.com.cn/slide_8_193_50646.html#p=1}}</ref>
+|-
+|[[Enhanced flight vision system|Enhanced vision system]] (EVS)
+|[[Elbit Systems of America|'''Elbit Systems of America''']]
+|{{ISR}}
+{{USA}}
+|''“Kollsman EVS-SP™”''
+Optional
+|<ref>{{Cite web |title=Elbit America's Enhanced Vision System selected for the COMAC C919 |url=https://www.elbitamerica.com/news/elbit-systems-of-americas-enhanced-vision-system-selected-for-the-comac-c919 |access-date=2026-01-22 |website=www.elbitamerica.com |language=en-us}}</ref>
+|-
+| rowspan="8" |Power systems
+|[[Turbofan|Engine]]
+|[[CFM International|'''CFM International''']] 
+({{Abbr|JV|Joint venture}}:[[GE Aerospace]]-[[Safran]])
+|{{USA}}{{FRA}}
+|''“[[CFM International LEAP|LEAP-1C]]''”
+|<ref name="Reuters">{{Cite news |date=2025-05-29 |title=US suspends engine sales to Chinese planemaker COMAC, New York Times reports |url=https://www.reuters.com/sustainability/boards-policy-regulation/us-suspends-sales-some-us-technologies-chinas-airplane-maker-comac-new-york-2025-05-29/ |access-date=2025-07-09 |work=Reuters |language=en}}</ref>
+|-
+|[[Nacelle]]
+| rowspan="2" |'''[[Nexcelle]]'''
+({{Abbr|JV|Joint venture}}: [[Safran|Safran Nacelles]]-[[ST Engineering|ST Engineering MRAS]])
+| rowspan="2" |{{FRA}}{{USA}}{{SGP}}
+|''“PANACHE”''
+|
+|-
+|[[Thrust reversal|Thrust reverser]]
+|''“O-Duct”''
+|
+|-
+|[[Auxiliary power unit]] (APU)
+|[[Honeywell Aerospace|'''Honeywell Aerospace''']]
+|{{USA}}
+|''“HGT750[C]”''
+|<ref name=":7" />
+|-
+|[[Electric power system|Electrical power system]]
+|{{Abbr|JV|Joint venture}}: [[Hamilton Sundstrand|'''RTX Hamilton Sundstrand''']]-[[Aviation Industry Corporation of China|AVIC EM]]
+|{{USA}}{{CHN}}
+|
+|<ref>{{Cite web |title=Hamilton Sundstrand, AVIC EM Setting Up Comac C919 Power Facility In China {{!}} Aviation Week Network |url=https://aviationweek.com/hamilton-sundstrand-avic-em-setting-comac-c919-power-facility-china |access-date=2026-01-22 |website=aviationweek.com}}</ref>
+|-
+|[[Aircraft fuel system|Fuel system]]
+| rowspan="3" |{{Abbr|JV|Joint venture}}: [[Parker Hannifin|'''Parker Aerospace''']]-AVIC
+| rowspan="3" |{{USA}}{{CHN}}
+|
+| rowspan="3" |<ref>{{Cite web |title=Parker Aerospace, COMAC, and AVIC Systems Hold Contract Signing Ceremony for Fuel, Inerting, and Hydraulic Systems on New C919 Aircraft |url=https://investors.parker.com/news-events/press-releases/detail/305/parker-aerospace-comac-and-avic-systems-hold-contract}}</ref>
+|-
+|[[Inerting system]]
+|
+|-
+|[[Hydraulics|Hydraulic system]]
+|
+|-
+| rowspan="4" |Cabin
+|Cabin seating
+|[[Aviation Industry Corporation of China|'''AVIC Cabin Systems Jiatai Aircraft Equipment''']]
+|{{CHN}}
+|''JT220B/JT220E”''
+{{GBR}} Designed by factorydesign
+|<ref>{{Cite web |title="MADE IN CHINA" BRINGS A NEW FLYING EXPERIENCE - Company News - 湖北航宇嘉泰飞机设备有限公司 |url=https://www.acsjt.com/c/2022-09-30/597735.shtml?PC=PC |access-date=2026-01-22 |website=www.acsjt.com}}</ref>
+<ref>{{Cite web |title=Jiatai 220B - Factory Design - Aviation and Product Design Consultancy |url=https://www.factorydesign.co.uk/pf/jiatai-220b/ |access-date=2026-01-22 |website=www.factorydesign.co.uk}}</ref>
+|-
+|Oven module
+| rowspan="3" |'''Beijing Andawell Technology'''
+| rowspan="3" |{{CHN}}
+| rowspan="3" |''“Yuxiang”'' series
+Optional
+| rowspan="3" |<ref>{{Cite web |title=新闻动态-安达维尔 |url=https://www.andawell.com/hplusj/view.php?aid=47080 |access-date=2026-01-22 |website=www.andawell.com}}</ref>
+|-
+|Coffee machine module
+|-
+|Water heater module
+|}
+
+== Market ==
+
+In 2012 the C919 order book stood at 380 units worth US$26 billion,<ref>{{Cite web |last=Yu Dawei and Liang Dongmei |date=18 December 2012 |title=Comac C919 Airliner Project Flying in the Dark |url=http://www.chinaaviationdaily.com/news/23/23020.html |url-status=live |archive-url=https://web.archive.org/web/20180929221734/http://www.chinaaviationdaily.com/news/23/23020.html |archive-date=29 September 2018 |access-date=5 May 2017 |website=[[Caixin]] Online |publisher=China Aviation Daily}}</ref> and averaging ${{#expr:26000/380round1}} million per unit. [[FlightGlobal]]'s Ascend market values in 2013 were $49.2 million for the [[Airbus A320neo]], {{#expr:(100.2-49.2)/100.2*100round0}}% less than its $100.2 million [[list price]] and $51.4 million for the [[Boeing 737 MAX]]-8, {{#expr:(100.5-51.4)/100.5*100round0}}% less than its $100.5 million list price.<ref>{{Cite web |last=Vincent Lamigeon |date=13 June 2013 |title=Le vrai prix des avions d'Airbus et de Boeing |url=http://www.challenges.fr/salon-du-bourget-2013/20130612.CHA0743/le-vrai-prix-des-avions-d-airbus-et-de-boeing.html |url-status=dead |archive-url=https://web.archive.org/web/20150409070546/http://www.challenges.fr/salon-du-bourget-2013/20130612.CHA0743/le-vrai-prix-des-avions-d-airbus-et-de-boeing.html |archive-date=9 April 2015 |publisher=Challenges.fr |language=fr}}</ref>
+
+The Chinese airlines that have placed orders for the C919 already have either the [[Boeing 737]] or [[Airbus A320]] in their fleets.<ref>{{Cite web |date=19 May 2012 |title=COMAC C919, against Airbus and Boeing duopoly |url=http://airlineberg.com/2012/05/19/airlineberg-analysis-comac-c919-against-airbus-and-boeing-duopoly/ |url-status=dead |archive-url=https://web.archive.org/web/20121112105352/http://airlineberg.com/2012/05/19/airlineberg-analysis-comac-c919-against-airbus-and-boeing-duopoly/ |archive-date=12 November 2012 |website=Airlineberg}}</ref> In 2013, Chinese state-owned newspaper ''[[Global Times]]'' complained that an ''[[Aviation Week]]'' editorial about the bleak prospects for the aircraft "maliciously disparaged the future outlook for the C919".<ref>{{Cite web |last=Joe Anselmo |date=18 July 2013 |title=China Newspaper Slams Aviation Week For 'Oppressive Scheme |url=http://aviationweek.com/blog/china-newspaper-slams-aviation-week-oppressive-scheme |url-status=live |archive-url=https://web.archive.org/web/20161025134927/http://aviationweek.com/blog/china-newspaper-slams-aviation-week-oppressive-scheme |archive-date=25 October 2016 |access-date=5 May 2017 |website=Aviation Week}}</ref>
+
+COMAC aims to take a fifth of the global [[narrowbody]] market and a third of the Chinese market by 2035.<ref name="ATW170505" /> It expects 2,000 sales until 2037.<ref>{{Cite news |date=5 May 2017 |title=What C919 means to China jet industry and domestic airlines |work=EJ Insight |url=http://www.ejinsight.com/20170505-what-c919-means-to-china-jet-industry-and-domestic-airlines/ |url-status=live |access-date=6 May 2017 |archive-url=https://web.archive.org/web/20170505120353/http://www.ejinsight.com/20170505-what-c919-means-to-china-jet-industry-and-domestic-airlines/ |archive-date=5 May 2017}}</ref> The ''[[Financial Times]]'' commented that China considers the success of the plane a source of national pride.<ref>{{Cite news |date=29 April 2017 |title=China's challenger to Airbus and Boeing set for skies at last |work=Financial Times |url=https://www.ft.com/content/71d7fed8-2bf2-11e7-9ec8-168383da43b7 |url-status=live |url-access=subscription |access-date=6 May 2017 |archive-url=https://web.archive.org/web/20170501141134/https://www.ft.com/content/71d7fed8-2bf2-11e7-9ec8-168383da43b7 |archive-date=1 May 2017}}.</ref>
+
+The newspaper also claimed in 2017 that the C919 was outdated by 10–15 years compared to the Airbus A320neo and Boeing 737 MAX 8, and would probably cost more to operate.<ref>{{Cite news |last=Ben Bland |date=17 May 2017 |title=Chinese aviation finally takes off with help from the west |work=Financial Times |url=https://www.ft.com/content/b7f26c06-349d-11e7-99bd-13beb0903fa3 |url-status=live |url-access=subscription |access-date=27 June 2017 |archive-url=https://web.archive.org/web/20170710131040/https://www.ft.com/content/b7f26c06-349d-11e7-99bd-13beb0903fa3 |archive-date=10 July 2017}}</ref>
+Its range of {{cvt|2,200–3,000|nmi}} fell short of the {{cvt|3,400 and 3,550|nmi}} of the A320neo and the 737 MAX 8; the C919 [[payload-range]] and economics were similar to the current single-aisles, but would not be able to compete with the Neo and Max.<!--<ref name="Flight26oct2018" />-->
+
+In 2018, [[FlightGlobal]] forecast a total of 1,209 deliveries: 687 standard and 522 stretched variants, 85% of these in China.<ref name="Flight26oct2018" /> As of December 2024, all 16 operational C919 had carried more than one million revenue passengers.<ref>{{Cite web |title=COMAC to Significantly Increase Production of C919 in 2025 – International Federation of Airworthiness. |url=https://ifairworthy.com/comac-to-significantly-increase-production-of-c919-in-2025/ |access-date=2025-02-16 |language=en-GB}}</ref>
+
+The 125% duty imposed by China in April 2025 on American imports to China, in retaliation for US President Trump's tariff hikes,  significantly raised the cost of [[Boeing 737 MAX|Boeing jets]] being sold to Chinese airlines. Due to this financial burden, analysts believed that Chinese airlines might begin to lean stronger towards domestic alternatives like [[Comac|COMAC]], or towards [[Airbus A320neo family|Airbus]] planes.<ref>{{Cite web |date=2025-04-15 |title=China orders carriers to suspend Boeing jet deliveries amid trade war, Bloomberg News reports |url=https://www.reuters.com/business/aerospace-defense/china-orders-halts-boeing-jet-deliveries-bloomberg-news-reports-2025-04-15/ |access-date=2025-04-15 |website=Reuters}}</ref> In May 2025, [[Ryanair]] CEO [[Michael O'Leary (businessman)|Michael O'Leary]] said his airline might consider acquiring COMAC planes in lieu of their planned 737 MAX orders if the tariffs led to an increase in the price of Boeing planes.<ref>{{cite news |title=Ryanair could stop buying Boeing if Trump tariffs bite, CEO warns |url=https://www.politico.eu/article/ryanair-could-stop-buying-boeing-if-trump-tariffs-bite-ceo-warns/ |access-date=1 May 2025 |work=POLITICO |date=1 May 2025}}</ref> In response, US lawmaker [[Raja Krishnamoorthi]] of the [[United States House Select Committee on Strategic Competition between the United States and the Chinese Communist Party|House Select Committee on the CCP]] asked O'Leary to retract his statements due to security concerns.<ref>{{Cite news |last1=Shepardson |first1=David |last2=Lampert |first2=Allison |date=2025-05-01 |title=US lawmaker warns Ryanair against buying Chinese-made planes |url=https://www.reuters.com/sustainability/boards-policy-regulation/us-lawmaker-warns-ryanair-against-buying-chinese-made-planes-2025-04-30/ |access-date=2025-09-21 |work=Reuters |language=en}}</ref><ref>{{Cite web |date=29 April 2025 |title=Letter to Ryanair regarding COMAC |url=https://democrats-selectcommitteeontheccp.house.gov/sites/evo-subsites/democrats-selectcommitteeontheccp.house.gov/files/evo-media-document/4.29.25_letter-to-ryanair-re-comac.pdf}}</ref>
+
+== Operators ==
+{|class="wikitable sortable"
+|-
+!Airline
+!Country
+!Photo
+!Deliveries
+!Model
+!class="unsortable"|Refs
+|-
+|[[Air China]]
+|rowspan=3|{{CHN}}
+| [[File:B-919X@PEK_(20240911132942).jpg|125x125px]]
+|{{yes|11}}
+|C919-100 ER<ref name=":10" />
+|<ref name=":1" />
+|-
+|[[China Eastern Airlines]]
+| [[File:B-919G@TYN_(20241104110418).jpg|125px]]
+|{{yes|15}}
+|C919-100 STD{{Citation needed|date=December 2024}}
+|<ref name="eighth" />
+|-
+|[[China Southern Airlines]]
+|[[File:20250731 COMAC C919-100STD of China Southern Airlines (B-919J) taking-off from CGO 03.jpg|125x125px]]
+|{{yes|10}}
+|C919-100 STD{{Citation needed|date=December 2024}}
+|<ref name=":1" />
+|}
+
+=== Orders and deliveries ===
+
+==== Production capacity ====
+In January 2023, COMAC said it wanted to expand its production capacity to 150 airliners per year within five years.<ref name="Reuters12Jan2023" /> For comparison: Airbus built an average of 424&nbsp;planes of the [[Airbus A320neo family|A320neo family]] per year in the nine years to February 2025.<ref>{{Cite web |date=2024-04-03 |title=Orders and Deliveries {{!}} Airbus |url=https://www.airbus.com/en/products-services/commercial-aircraft/orders-and-deliveries |access-date=2025-04-09 |website=www.airbus.com |language=en}}</ref>  In January 2025, the aircraft manufacturer stated that it hoped to deliver 30&nbsp;planes in 2025 as it scales up its production, while in 2025 expanding general production capacity to a volume of up to 50&nbsp;units per year.<ref>{{Cite web |date=2025-01-19 |title=Chinese aircraft firm Comac hopes to double production of C919s this year |url=https://www.scmp.com/economy/china-economy/article/3295370/chinese-aircraft-firm-comac-hopes-double-production-c919-passenger-planes-year |access-date=2025-02-16 |website=South China Morning Post |language=en}}</ref> However, due to [[United States sanctions against China|US sanctions]] preventing the delivery of the Western-manufactured LEAP engines, COMAC delivered only five aircraft in the first half of 2025 and a total of 16 for the whole year.<ref name="Reuters" /><ref>{{Cite web |last=Zwerger |first=Patrick |date=2025-05-30 |title=Bekommt der "China-Airbus" C919 Probleme? USA blockieren Triebwerkslieferung |url=https://www.flugrevue.de/zivil/bekommt-der-china-airbus-c919-probleme-usa-blockieren-triebwerkslieferung/ |access-date=2025-07-09 |website=www.flugrevue.de |language=de}}</ref>
+
+==== Deliveries ====
+The first C919 airframe intended for commercial service was delivered to launch customer China Eastern Airlines on 9 December 2022.<ref name="Reuters9dec2022" /> The second, third, fourth, and fifth airframes were delivered to China Eastern on 14 July 2023, 9 December 2023, 29 December 2023, and 2 March 2024 respectively, thereby completing China Eastern's initial order. A sixth aircraft was delivered to China Eastern Airlines on 28 May 2024.<ref>{{Cite news |title=China's C919: seat occupancy rate tops 80 per cent, up to 8 more home-grown passenger jets to be delivered in 2023 |url=https://www.scmp.com/economy/china-economy/article/3228851/chinas-c919-seat-occupancy-rate-tops-80-cent-8-more-home-grown-passenger-jets-be-delivered-2023 |url-access=subscription |access-date=14 November 2023 |date=25 July 2023 |author-first1=Beata |author-last1=Mo |work=[[South China Morning Post]]}}</ref><ref name="DeliveryNo3" /><ref>{{Cite web |date=2 January 2024 |title=China Eastern Airlines received 4th C919 jet from Chinese planemaker COMAC |url=https://www.zawya.com/en/world/china-and-asia-pacific/china-eastern-airlines-received-4th-c919-jet-from-chinese-planemaker-comac-kvde7wnu}}</ref><ref name="DeliveryNo5" /><ref name="DeliveryNo6" />{{Excessive citations inline|date=March 2025}} The seventh and eighth aircraft for China Eastern Airlines were delivered to the company on 29&nbsp;July 2024 and 30 September 2024 respectively.<ref>{{Cite web |title=China Eastern Airlines gets 7th C919 aircraft -Xinhua |url=https://english.news.cn/20240729/0e1cb23c20ba47c68e55c5b01616e033/c.html |access-date=2024-08-21 |website=english.news.cn}}</ref><ref name="eighth" /> [[Air China]] and [[China Southern Airlines]] both received their first C919 aircraft on 28 August 2024.<ref name=":1" /><ref>{{cite web|url= https://aviationweek.com/air-transport/airlines-lessors/air-china-launch-c919-two-domestic-routes |title= Air China To Launch C919 On Two Domestic Routes |website= Aviation Week |date=10 September 2024 |first=David |last=Casey}}</ref>
+
+COMAC delivered 15 airframes to the three major Chinese state-owned carriers in 2025.<ref name="AviationWeek-31032026" /> In addition, one airframe with registration number "B-658M" was delivered to COMAC's dedicated charter operator Comac Express around March 2025.{{cn|date=April 2026}}
+
+{| class="wikitable"
+|+ Deliveries (as of May 2026)<ref>{{Cite web |title=COMAC C919 production list |url=http://rzjets.net/aircraft/?typeid=358 |access-date=20 November 2022 |website=rzjets.net}}</ref><ref name="DeliveryNo7" /><ref name="eighth" />{{Better source needed|reason=All sources cited for this table are outdated|date=February 2026}}
+! Airline
+! 2022
+! 2023
+! 2024
+! 2025
+!2026
+|-
+| [[Air China]]
+| 0
+| 0
+| 3
+| 6
+|2
+|-
+| [[China Eastern Airlines]]
+| 1
+| 2
+| 7
+| 4
+|2
+|-
+| [[China Southern Airlines]]
+| 0
+| 0
+| 3
+| 5
+|2
+|-
+| Comac Express{{citation needed|date=June 2025}}
+| 0
+| 0
+| 0
+| 1
+|0
+|-
+! Annual Total
+! 1
+! 2
+! 13
+! 16<ref name="AviationWeek-31032026" />
+!6
+|-
+! Total
+! colspan="5" | 38 
+|}
+
+==== Orders ====
+At the November 2010 [[Zhuhai Airshow]], Comac announced orders for 55 C919 aircraft from 6 airlines, with an additional 45 options. The purchasing airlines or lessors included [[China Eastern Airlines]], [[Air China]], [[Hainan Airlines]], [[China Southern Airlines]], [[China Development Bank|CDB Leasing Company]] and [[Bank of Communications|Bank of Communications Financial Leasing]].<ref>{{Cite news |last=Bradley Perret |date=16 November 2010 |title=Hainan, Gecas To Be Among First Customers For C919 |work=Aviation Week |url=http://aviationweek.com/awin/hainan-gecas-be-among-first-customers-c919-0 |url-access=subscription}} [http://www.whatsonsanya.com/sanya-travel-1397.html Alt URL] {{Webarchive|url=https://web.archive.org/web/20170421003859/http://www.whatsonsanya.com/sanya-travel-1397.html |date=21 April 2017}}</ref> On 19 October 2011, Chinese [[ICBC Leasing]] ordered 45 C919s and agreed to be the launch customer.<ref>{{Cite press release |title=ICBC Financial Leasing Co., Ltd. signs the agreement of 45 C919 orders with COMAC |date=19 October 2011 |url=http://english.comac.cc/news/latest/201111/01/t20111101_465967.shtml |access-date=20 April 2017 |url-status=live |archive-url=https://web.archive.org/web/20160305174055/http://english.comac.cc/news/latest/201111/01/t20111101_465967.shtml |archive-date=5 March 2016}}</ref> On 11 November 2014, Comac announced at the 2014 Zhuhai Airshow that [[China Merchants Bank]]'s aircraft leasing division made a firm commitment for 30 C919s, and that total orders were now up to 450 aircraft.<ref>{{Cite news |last=Katie Cantle |date=12 November 2014 |title=COMAC wins more orders for C919, ARJ21 |work=Air Transport World |publisher=Aviation Week |url=http://atwonline.com/airframes/comac-wins-more-orders-c919-arj21 |url-status=live |url-access=subscription |access-date=20 April 2017 |archive-url=https://web.archive.org/web/20170421010225/http://atwonline.com/airframes/comac-wins-more-orders-c919-arj21 |archive-date=21 April 2017}}</ref>
+
+At the June 2015 [[Paris Air Show]], Ping An Leasing signed a [[letter of intent]] (LOI) for 50 C919s, becoming one of Comac's largest customers, and [[Puren Group]] signed a letter of intent for seven C919s and seven ARJ21s, intended for the start-up Puren Airlines.<ref>{{Cite news |date=15 June 2015 |title=Comac wins commitments for 64 jets |work=Flight Global |url=http://www.flightglobal.com/news/articles/paris-comac-wins-commitments-for-64-jets-413571/ |url-status=live |access-date=14 August 2015 |archive-url=https://web.archive.org/web/20150617222718/http://www.flightglobal.com/news/articles/paris-comac-wins-commitments-for-64-jets-413571/ |archive-date=17 June 2015}}</ref> In November 2016 COMAC received an order for 20 C919s including 5 firm from [[Shanghai Pudong Development Bank]] Financial Leasing and for 36 C919s from [[CITIC Group]] Financial Leasing including 18 firm.<ref>{{Cite news |last=Toh |first=Mavis |date=1 November 2016 |title=Comac wins lessors' orders for 23 C919s |work=Flight Global |url=https://www.flightglobal.com/news/articles/airshow-china-comac-wins-lessors-orders-for-23-c91-430930/ |url-status=live |access-date=20 April 2017 |archive-url=https://web.archive.org/web/20170421003338/https://www.flightglobal.com/news/articles/airshow-china-comac-wins-lessors-orders-for-23-c91-430930/ |archive-date=21 April 2017}}</ref> While no down payments for the order were needed before C919's maiden flight, 500,000 yuan ($76,000) nevertheless were deposited subsequently for each of the firm order.<ref>{{Cite news |last=Brenda Goh |date=19 September 2017 |title=China's COMAC says signs 130 orders for C919 passenger jet |work=reuters |url=https://www.reuters.com/article/us-china-aviation-comac/chinas-comac-says-signs-130-orders-for-c919-passenger-jet-idUSKCN1BU17V |url-status=live |archive-url=https://web.archive.org/web/20170923193806/https://www.reuters.com/article/us-china-aviation-comac/chinas-comac-says-signs-130-orders-for-c919-passenger-jet-idUSKCN1BU17V |archive-date=23 September 2017}}</ref> The 5 December 2017 [[ICBC Leasing]] order for 55 brought the order book to 785.<ref>{{Cite news |date=5 December 2017 |title=China's ICBC Financial Leasing orders 55 C919 planes |work=Reuters |url=https://www.reuters.com/article/china-aviation-comac/chinas-icbc-financial-leasing-orders-55-c919-planes-idINB9N1MU01H |url-status=live |archive-url=https://web.archive.org/web/20171207014437/https://www.reuters.com/article/china-aviation-comac/chinas-icbc-financial-leasing-orders-55-c919-planes-idINB9N1MU01H |archive-date=7 December 2017}}</ref>
+
+In February 2018, the total order book for the C919 stood at 815, prior to the order for 200 from [[HNA Group]] in June 2018 which also included an order for 100 [[Comac ARJ21|ARJ21s]].<ref>{{Cite news |date=2 June 2018 |title=China's HNA, COMAC sign deal for 200 C919, 100 ARJ21 jets Reuters |work=Reuters |url=https://www.reuters.com/article/us-hna-comac/chinas-hna-comac-sign-deal-for-200-c919-100-arj21-jets-idUSKCN1IY0G3 |url-status=live |access-date=4 June 2018 |archive-url=https://web.archive.org/web/20180602210226/https://www.reuters.com/article/us-hna-comac/chinas-hna-comac-sign-deal-for-200-c919-100-arj21-jets-idUSKCN1IY0G3 |archive-date=2 June 2018}}</ref> By August 2018, [[FlightGlobal]] counted 305 orders plus 45 options and 658 LOIs: {{#expr:305+45+658}} commitments.<ref name="Flight26oct2018" />
+
+In January 2023, COMAC reported having received more than 1,200 orders.<ref name="Reuters12Jan2023" /> In September 2023, it was reported, however, that C919 orders had reached 1,061.<ref name=":0" />
+
+On 20 September 2023, [[Brunei GallopAir]] placed an order worth {{USD| 2 billion}} for 15 units of C919 and 15 units of ARJ21 jets. Once completed, this would make Brunei GallopAir the first non-Chinese & Southeast Asian operator of C919.<ref>{{Cite news |date=20 September 2023 |title=Brunei's Gallop Air places US$2bil order for China-made C919, ARJ21 jets |url=https://www.thestar.com.my/aseanplus/aseanplus-news/2023/09/22/brunei039s-gallop-air-places-us2bil-order-for-china-made-c919-arj21-jets}}</ref> In a stock exchange filing on 26 April 2024, [[Air China]] said that it had ordered 100 C919 aircraft, which would be delivered between 2024 and 2031, thereby adding another high-profile customer for the narrowbody programme.<ref name=":0" />
+
+On 21 November 2024, Chairman of [[Hong Kong Airlines]], Yan Bo was reported to have told Hong Kong-based media that the airline is in plans of acquiring Comac's C919 aircraft following 12 months of sustained fleet growth and the resumption of long-haul flights especially to [[North America]].<ref>{{Cite web |date=21 November 2024 |title=Hong Kong Airlines mulls C919s, returning to North America |url=https://www.ch-aviation.com/news/147350-hong-kong-airlines-mulls-c919s-returning-to-north-america |access-date=26 November 2024 |website=ch-aviation.com}}</ref>
+
+{| class="wikitable sortable"
+|-
+|+ Orderbook
+|-
+! Customer
+! Orders
+! Options
+|-
+| [[Agricultural Bank of China|ABC]] Financial Leasing || 65<ref>{{Cite web |last=Mrinmoyee |date=2017-09-18 |title=China's COMAC wins 130 new orders for C919 aircraft |url=https://www.airport-technology.com/news/newschinas-comac-wins-130-new-orders-for-c919-aircraft-5930200/ |access-date=2025-11-27 |website=Airport Technology |language=en-US}}</ref>|| 10
+|- style="background-color: AliceBlue"
+| [[Air China]] || 105<ref>{{Cite web |last=Chua|first=Alfred|date=2024-04-26|title=Air China signs for 100 C919s |url=https://www.flightglobal.com/airlines/air-china-signs-for-100-c919s/158037.article |access-date=2024-04-29 |website=Flight Global |language=en}}</ref>|| 15
+|-
+| [[Aviation Industry Corporation of China|AVIC]] Financial Leasing || 15<ref name=":14">{{Cite web |last=Waldron |first=Greg |title=Comac wins commitments for 130 C919s |url=https://www.flightglobal.com/programmes/comac-wins-commitments-for-130-c919s/125425.article |access-date=2025-11-27 |website=Flight Global |language=en}}</ref>|| 15
+|-
+| [[Bank of Communications]] Financial Leasing || 80<ref>{{Cite web |last=admin |date=2011-11-23 |title=China Bank of Communications orders 30 Comac C919s |url=https://www.airport-technology.com/news/newschina-bank-of-communications-orders-30-comac-c919s/ |access-date=2025-11-27 |website=Airport Technology |language=en-US}}</ref><ref name=":15">{{Cite web |title=Chinese leasing companies place orders for 300 C919 long haul aircraft |url=https://www.ans.kz/en/news/article/17635#:~:text=COMAC%20specifically%20noted%20that%20the%20deal%20with,help%20promote%20the%20aircraft%20on%20the%20international |access-date=2025-11-27 |website=www.ans.kz}}</ref>|| —
+|-
+| [[BOC Aviation]] ||  20<ref>{{Cite web |last= |date=14 February 2012 |title=BOC Aviation says to buy 20 Chinese C919 aircraft |url=https://www.reuters.com/article/markets/boc-aviation-says-to-buy-20-chinese-c919-aircraft-idUSL4E8DE242/ |website=Reuters}}</ref>|| —
+|- 
+| [[China Construction Bank|CCB]] Financial Leasing ||  50<ref name=":15" />|| —
+|-
+| [[China Development Bank|CDB]] Financial Leasing ||  50<ref name=":15" />|| —
+|-
+|CMB Financial Leasing
+|50<ref name=":15" />
+|
+|-
+| [[China Everbright Limited|China Aircraft Leasing Co.]] ||  20<ref>{{Cite web |title=China Aircraft Leasing places order for 20 COMAC C919s {{!}} Aviation Week Network |url=https://aviationweek.com/air-transport/aircraft-propulsion/china-aircraft-leasing-places-order-20-comac-c919s |access-date=2025-11-27 |website=aviationweek.com}}</ref> || —
+|- style="background-color: AliceBlue"
+| [[China Eastern Airlines]] ||  105<ref>{{cite news |title=China Eastern Airlines to buy 100 C919 planes, aircraft's largest ever order |url=https://www.reuters.com/business/aerospace-defense/china-eastern-airlines-buy-100-c919-planes-aircrafts-largest-ever-order-2023-09-28/|website=Reuters |date=28 September 2023 |access-date=September 28, 2023 |last1=Yu |first1=Sophie |last2=Goh |first2=Brenda |last3=Goh |first3=Brenda}}</ref> || 15<ref>{{Cite web |last=Vinholes |first=Thiago |date=2022-11-21 |title=First series-production C919 emerges in China Eastern Airlines livery |url=https://www.airdatanews.com/first-series-production-c919-emerges-in-china-eastern-airlines-livery/ |access-date=2023-09-29 |website=Air Data News |language=en-US}}</ref><ref>{{Cite web |date=11 May 2022 |title=東航砸重金買28架國產飛機 C919客機身價曝光 |url=https://www.chinatimes.com/realtimenews/20220511005223-260409?chdtv |access-date=7 January 2023 |publisher=chinatimes}}</ref>
+|-
+| [[China Huarong Asset Management|China Huarong]] Financial Leasing ||  30<ref>{{Cite web |last=Toh |first=Mavis |title=China Huarong Financial Leasing signs for 30 C919s, 20 ARJ21s |url=https://www.flightglobal.com/programmes/china-huarong-financial-leasing-signs-for-30-c919s-20-arj21s/127197.article |access-date=2025-11-27 |website=Flight Global |language=en}}</ref>|| —
+|- style="background-color: AliceBlue"
+| [[China Southern Airlines]] ||  100<ref>{{Cite news |title=China Southern Airlines orders 100 C919s |url=https://www.ch-aviation.com/news/139732-china-southern-airlines-orders-100-c919s |archive-url=https://web.archive.org/web/20250613005144/https://www.ch-aviation.com/news/139732-china-southern-airlines-orders-100-c919s |archive-date=2025-06-13 |access-date=2025-11-27 |work=ch-aviation |language=en-US}}</ref>|| 15
+|-
+| [[China CITIC Bank|Citic]] Financial Leasing ||  18<ref name=":16">{{Cite web |last=杨洋1 |title=China's homemade C919 secures 570 orders, says report |url=https://global.chinadaily.com.cn/a/201705/04/WS59bb99f8a310d4d9ab7eb7e3.html |access-date=2025-11-27 |website=global.chinadaily.com.cn}}</ref>|| 18
+|- style="background-color: AliceBlue"
+| [[GallopAir]] ||  15<ref>{{Cite web |title=Comac Sells 30 Airliners To China-Backed Startup In Brunei {{!}} Aviation Week Network |url=https://aviationweek.com/air-transport/aircraft-propulsion/comac-sells-30-airliners-china-backed-startup-brunei |access-date=2025-11-27 |website=aviationweek.com}}</ref>|| —
+|- style="background-color: AliceBlue"
+| [[Hainan Airlines]] ||  60<ref>{{cite web | url=https://www.reuters.com/business/aerospace-defense/zhuhai-air-show-opens-with-orders-comac-glimpse-future-spaceplane-2024-11-12/ | title=Zhuhai air show opens with orders for COMAC and a glimpse of a future spaceplane | work=Reuters | date=12 November 2024 | last1=Yu | first1=Sophie | last2=Kirton | first2=David }}</ref> || —
+|- style="background-color: AliceBlue"
+| [[Hebei Airlines]] ||  20<ref>{{Cite web |title=COMAC wins 50 new orders for C919 {{!}} Aviation Week Network |url=https://aviationweek.com/air-transport/aircraft-propulsion/comac-wins-50-new-orders-c919 |access-date=2025-11-27 |website=aviationweek.com}}</ref>|| —
+|-
+| Huabao Financial Leasing||  15<ref name=":14" />|| 15
+|-
+| [[Industrial and Commercial Bank of China|ICBC]] Financial Leasing ||  100<ref name=":15" />|| —
+|-
+|Jiangsu Financial Leasing
+|20<ref name=":15" />
+|
+|- style="background-color: AliceBlue"
+| [[Lao Airlines]] ||  2{{cn|date=December 2025}}|| —
+|-
+| Nuclear Construction Financial Leasing||  20<ref name=":14" />|| 20
+|-
+| [[Ping An Bank|Ping An]] Financial Leasing ||  50<ref name=":16" />|| —
+|- style="background-color: AliceBlue"
+| [[Sichuan Airlines]] ||  20<ref>{{Cite web |last=Leeuwen |first=Marcel van |title=Sichuan Airlines orders 20 COMAC C919s |url=https://aviationnews.eu/news/2011/10/sichuan-airlines-orders-20-comac-c919s/ |access-date=2025-11-27 |language=en-US}}</ref>|| —
+|- style="background-color: AliceBlue"
+| [[Suparna Airlines]] ||  30<ref>{{Cite web |title=Suparna Airlines To Fly the COMAC C919 |url=https://airwaysmag.com/legacy-posts/suparna-airlines-comac-c919 |access-date=2025-11-27 |website=airwaysmag.com}}</ref>|| —
+|-
+| [[Shanghai Pudong Development Bank|SPDB]] Financial Leasing ||  30<ref name=":15" />|| 15
+|- style="background-color: AliceBlue"
+| [[Tibet Airlines]] ||  40<ref name="aerotime-tibet" /> || —
+|-
+! Total !! 1150 !! 138
+|}
+
+==== Cancelled orders ====
+{| class="wikitable sortable"
+|+Orders
+|-
+! Customer
+! Firm<br />orders
+! Options<br />{{abbr|LOI|Letter Of Intent}}/{{abbr|MOU|Memorandum Of Understanding}}
+! All
+! data-sort-type="date" | Date
+|-
+| [[Joy Air]]
+| ||20 (MOU)
+|20
+| 27 April 2025
+|-
+| [[City Airways]]{{efn|City Airways orders looks doubtful as it was shut down in early 2016 by the Thai government<ref>{{Cite news |last=Mavis Toh |date=12 June 2017 |title=Long march ahead for China airliner exports |work=Flight Global |url=https://www.flightglobal.com/news/articles/analysis-long-march-ahead-for-china-airliner-export-437252/ |url-status=live |url-access=registration |access-date=12 June 2017 |archive-url=https://web.archive.org/web/20170612105319/https://www.flightglobal.com/news/articles/analysis-long-march-ahead-for-china-airliner-export-437252/ |archive-date=12 June 2017}}</ref>}}<ref name=":13">{{Cite web |last=Toh |first=Mavis |date=16 September 2015 |title=Thailand's City Airways signs for 10 C919s, 10 ARJ21s |url=https://www.flightglobal.com/news/articles/thailands-city-airways-signs-for-10-c919s-10-arj21-416780/ |url-status=live |archive-url=https://web.archive.org/web/20170202133300/https://www.flightglobal.com/news/articles/thailands-city-airways-signs-for-10-c919s-10-arj21-416780/ |archive-date=2 February 2017 |access-date=20 April 2017 |website=Flight Global}}</ref>
+| || 10 (MOU) || 10
+| 16 September 2015
+|}
+
+==== Potential buyers ====
+{| class="wikitable sortable"
+|+Orders
+|-
+! Customer
+! Firm<br />orders
+! Options<br />{{abbr|LOI|Letter Of Intent}}/{{abbr|MOU|Memorandum Of Understanding}}
+! All
+! data-sort-type="date" | Date
+|-
+| [[Total Linhas Aéreas]]<ref>{{Cite web |date=28 September 2024 |title=Companhia aérea brasileira se interessa em compra de aviões da chinesa COMAC |url=https://www.aeroflap.com.br/en/companhia-aerea-brasileira-se-interessa-em-compra-de-avioes-da-chinesa-comac/?fbclid=IwY2xjawFkG2dleHRuA2FlbQIxMQABHcrHLH_4xFY-mE8lSPr3mrjUS-EXjE1QeH39IlOPrPc5NpGT6Ev0BITCEA_aem_eo4TT2DLsvN_XdlMDFdT-Q}}</ref>
+|
+|
+|
+|
+|-
+|[[Garuda Indonesia]]<ref>{{Cite web |last=Novrian |first=Aditya |title=Garuda Indonesia Kaji Pembelian Pesawat C919 dari China - Radar Malang |url=https://radarmalang.jawapos.com/ekonomi-bisnis/815485906/garuda-indonesia-kaji-pembelian-pesawat-c919-dari-china |access-date=2025-06-04 |website=Garuda Indonesia Kaji Pembelian Pesawat C919 dari China - Radar Malang |language=id}}</ref>
+|
+|15–20
+|15–20
+|Sometime between December 2024 and January 2025
+|-
+| [[AirAsia]]<ref name="malairsia">{{cite web |last1=Hughes |first1=David |title=Malaysian Airlines Eye New COMAC C919 Planes |work=Aviation A2Z |date=31 July 2025 |url=https://aviationa2z.com/index.php/2025/07/31/malaysian-airlines-eyes-comac-c919/}}</ref>
+|
+|
+|
+|
+|-
+| [[AirBorneo]]<ref name="malairsia" />
+|
+|
+|
+|
+|-
+|Air Karachi<ref>{{Cite web |last=Garcia |first=Marisa |date=2025-07-28 |title=Air Karachi weighs COMAC C919 jet option |url=https://aerospaceglobalnews.com/news/air-karachi-comac-c919-fleet-plans/ |access-date=2025-09-15 |website=AGN |language=en-en}}</ref>
+|
+|
+|
+|
+|-
+|[[Ryanair]]<ref>{{Cite web |last=Smith |first=Gordon |date=2025-03-28 |title=Airbus, Boeing, or Beijing? Ryanair CEO Will Buy China's C919 'If It's Cheap Enough' |url=https://skift.com/2025/03/28/ryanair-ceo-will-buy-chinas-c919-if-its-cheap-enough/ |access-date=2025-09-21 |website=Skift |language=en-US}}</ref>
+|
+|
+|
+|
+|-
+|[[Equatorial Congo Airlines]]<ref name=":19">{{Cite web |title=Comac Targets Africa With Its C919 {{!}} Aviation Week Network |url=https://aviationweek.com/air-transport/aircraft-propulsion/comac-targets-africa-its-c919 |access-date=2026-04-30 |website=aviationweek.com}}</ref>
+|
+|
+|
+|
+|-
+|[[Kenya Airways]]<ref name=":19" />
+|
+|
+|
+|
+|}
+
+== Specifications ==
+{| style="text-align: center;" class="wikitable"
+! rowspan="2" |Variant
+! rowspan="2" |C919-600
+! colspan="2" |C919-100
+! rowspan="2" |C919-800
+|-
+! C919-100 STD
+! C919-100 ER
+|-
+! Cockpit crew
+| colspan="4" |2 pilots
+|-
+! Seats
+|140 to 160 (1-class {{abbr|HD|high density}})
+| colspan="2" | 158 ((8J + 150Y)) to 192 (1-class {{abbr|HD|high density}})<ref>{{cite web | url=http://english.comac.cc/news/latest/202301/11/t20230111_7355061.shtml | title=World's first C919 aircraft delivered to China Eastern Airlines__Commercial Aircraft Corporation of China, Ltd}}</ref>
+|200 to 240 (1-class {{abbr|HD|high density}})
+|-
+! Cargo capacity
+|{{Abbr|TBA|To be announced}}
+| colspan="2" | {{cvt|45.2|m3}}
+|{{Abbr|TBA|To be announced}}
+|-
+! Length
+|{{Abbr|TBA|To be announced}}
+| colspan="2" | {{cvt|38.9|m|ftin}}
+|{{Abbr|TBA|To be announced}}
+|-
+! [[Wingspan]]
+| colspan="4" |{{cvt|35.8|m|ftin}}
+|-
+! Wing area
+|{{Abbr|TBA|To be announced}}
+| colspan="2" | {{cvt|129.15|m2}}
+|{{Abbr|TBA|To be announced}}
+|-
+! Height
+|{{Abbr|TBA|To be announced}}
+| colspan="2" | {{cvt|11.95|m|ftin}}
+|{{Abbr|TBA|To be announced}}
+|-
+! Fuselage height
+| colspan="4" |{{cvt|4.166|m|ftin}}
+|-
+! Fuselage width
+| colspan="4" |{{cvt|3.96|m|ftin}}
+|-
+! Maximum payload
+|{{Abbr|TBA|To be announced}}
+| colspan="2" | {{cvt|18900|kg}}
+|{{Abbr|TBA|To be announced}}
+|-
+! [[Operating empty weight|OEW]]
+|{{Abbr|TBA|To be announced}}
+| colspan="2" | {{cvt|45700|kg}}
+|{{Abbr|TBA|To be announced}}
+|-
+! [[Maximum takeoff weight|MTOW]]
+|{{Abbr|TBA|To be announced}}
+| {{cvt|75100|kg}}
+|78,900&nbsp;kg (173,900&nbsp;lb)
+|{{Abbr|TBA|To be announced}}
+|-
+! Fuel capacity
+|{{Abbr|TBA|To be announced}}
+| colspan="2" | {{cvt|24917|L|impgal USgal}}
+|{{Abbr|TBA|To be announced}}
+|-
+! Engines (×2)
+|[[CFM LEAP|CFMI LEAP-1C]]
+|[[CFM LEAP|CFMI LEAP-1C28]]
+|[[CFM LEAP|CFMI LEAP-1C30]]
+|{{Abbr|TBA|To be announced}}
+|-
+! Fan diameter
+| colspan="4" |{{cvt|78|in|cm|0}}
+|-
+! Max. takeoff [[thrust]]
+|{{Abbr|TBA|To be announced}}
+| {{cvt|29220|lbf|kN|order=flip}}<ref name=":5" />
+|137.1&nbsp;kN (30,821&nbsp;lbf)<ref name=":5" />
+|{{Abbr|TBA|To be announced}}
+|-
+!Max. cont. thrust
+|{{Abbr|TBA|To be announced}}
+|127.93&nbsp;kN (28,760 Ibf)<ref name=":5" />
+|133.22&nbsp;kN (29,949 Ibf)<ref name=":5" />
+|{{Abbr|TBA|To be announced}}
+|-
+! Cruise
+| colspan="4" |{{cvt|.785|Mach|37000|kn km/h mph|0}}
+|-
+! Range ({{abbr|STD PL|standard payload}})
+|{{Abbr|TBA|To be announced}}
+| {{cvt|4139|km|nmi mi}}
+|5,576&nbsp;km (3,011 nmi; 3,465&nbsp;mi)
+|{{Abbr|TBA|To be announced}}
+|-
+! Ceiling
+| colspan="4" |{{cvt|39800|ft|m|order=flip}}<ref>{{Cite news |last=Perrett |first=Bradley |date=11 February 2020 |title=COMAC C919 Testing Exceeds Cruise Speed, Reaches Ceiling |work=Aviation Week |url=https://aviationweek.com/aerospace/comac-c919-testing-exceeds-cruise-speed-reaches-ceiling |access-date=8 June 2023}}</ref>
+|-
+! Takeoff ([[Maximum takeoff weight|MTOW]], [[International Standard Atmosphere|ISA]])
+|{{Abbr|TBA|To be announced}}
+| {{cvt|2052|m}}
+|2,125&nbsp;m (6,972&nbsp;ft)
+|{{Abbr|TBA|To be announced}}
+|}
+
+== See also ==
+{{Portal|China|Aviation}}
+{{aircontent|
+|related=
+* [[Comac C909]]
+* [[Comac C929]]
+* [[Comac C939]]
+* [[Comac C949]]
+|similar aircraft=
+* [[Airbus A220]]
+* [[Airbus A320neo family]]
+* [[Boeing 737 MAX]]
+* [[Embraer 195]]
+* [[Yakovlev MC-21]]
+|lists=
+* [[List of jet airliners]]
+* [[List of airliners]]
+* [[List of Chinese aircraft]]
+|see also=
+}}
+
+== Notes ==
+{{notelist}}
+
+== References ==
+<references>
+<ref name="FG170505">{{Cite news |last=Greg Waldron |date=5 May 2017 |title=Comac C919 lands after uneventful maiden sortie |work=Flight Global |url=https://www.flightglobal.com/news/articles/comac-c919-lands-after-uneventful-maiden-sortie-436913/ |url-status=live |access-date=5 May 2017 |archive-url=https://web.archive.org/web/20170905144030/https://www.flightglobal.com/news/articles/comac-c919-lands-after-uneventful-maiden-sortie-436913/ |archive-date=5 September 2017}}</ref>
+<ref name="1st-comm-fl">{{Cite web |date=28 May 2023 |title=China's C919 Takes Maiden Commercial Flight-and First Bite From Boeing |url=https://www.wsj.com/articles/chinas-c919-takes-maiden-commercial-flightand-first-bite-from-boeing-9cce6934 |first1=Rachel|last1=Liang|access-date=28 May 2023 |website=The Wall Street Journal |language=en}}</ref>
+<ref name="DeliveryNo3">{{Cite web |date=9 December 2023 |title=The third C919 delivered in Shanghai |url=https://global.chinadaily.com.cn/a/202312/09/WS657429e5a31040ac301a700c.html |access-date=9 December 2023 |publisher=chinadaily.com.cn}}</ref>
+<ref name="DeliveryNo5">{{Cite web |date=2 March 2024 |title=China Eastern Airlines receives new, homegrown jetliner |url=https://global.chinadaily.com.cn/a/202403/02/WS65e2ef55a31082fc043ba2fb_1.html |access-date=2 March 2024 |publisher=China Daily}}</ref>
+<ref name="DeliveryNo6">{{Cite web |date=28 May 2024 |title=China Eastern gets sixth C919 airliner |url=https://global.chinadaily.com.cn/a/202405/28/WS6655f62da31082fc043c9a41.html |access-date=28 May 2024 |publisher=China Daily}}</ref>
+<ref name="DeliveryNo7">{{Cite web |date=29 July 2024 |title=China Eastern gets 7th C919 aircraft |url=https://english.news.cn/20240729/0e1cb23c20ba47c68e55c5b01616e033/c.html |access-date=29 July 2024 |publisher=Xinhua News}}</ref>
+<ref name="teal2010">{{Cite report |url=http://www.tealgroup.com/index.php/teal-group-products/browse-purchase-online/briefing-series/world-military-civil-aircraft |title=Comac C919 Program Briefing |last=Richard Aboulafia |date=2010 |pages=78–81 |archive-url=https://web.archive.org/web/20130621085850/http://dspace.mit.edu/bitstream/handle/1721.1/70829/793201357.pdf |archive-date=2013-06-21 |url-access=subscription |work=World Military & Civil Aircraft Briefing}}</ref>
+<ref name="Flight13jul2018">{{Cite news |last=Greg Waldron |date=13 July 2018 |title=PICTURES: C919 undergoes ultimate wing load test |work=Flightglobal |url=https://www.flightglobal.com/news/articles/pictures-c919-undergoes-ultimate-wing-load-test-450166/ |url-status=live |access-date=24 July 2018 |archive-url=https://web.archive.org/web/20180713205031/https://www.flightglobal.com/news/articles/pictures-c919-undergoes-ultimate-wing-load-test-450166/ |archive-date=13 July 2018}}</ref>
+<ref name="Flight26oct2018">{{Cite news |last=Firdaus Hashim |date=26 October 2018 |title=Comac marches forward with ARJ21 and C919 |work=Flightglobal |url=https://www.flightglobal.com/news/articles/analysis-comac-marches-forward-with-arj21-and-c919-452053/ |url-status=live |access-date=28 October 2018 |archive-url=https://web.archive.org/web/20181028112303/https://www.flightglobal.com/news/articles/analysis-comac-marches-forward-with-arj21-and-c919-452053/ |archive-date=28 October 2018}}</ref>
+<ref name="Flight31Jul2017">{{Cite news |last=Mavis Toh |date=31 July 2017 |title=Comac achieves power-on for second C919 prototype |work=Flightglobal |url=https://www.flightglobal.com/news/articles/comac-achieves-power-on-for-second-c919-prototype-439800/ |url-status=live |access-date=31 July 2017 |archive-url=https://web.archive.org/web/20170731201858/https://www.flightglobal.com/news/articles/comac-achieves-power-on-for-second-c919-prototype-439800/ |archive-date=31 July 2017}}</ref>
+<ref name="Leeham3Jan2018">{{Cite news |last=Bjorn Fehrm |date=3 January 2018 |title=United Aircraft's and COMAC's eventful year |work=Leeham |url=https://leehamnews.com/2018/01/03/united-aircraft-comac-goes-flying/ |url-status=live |access-date=3 January 2018 |archive-url=https://web.archive.org/web/20190302195006/https://leehamnews.com/2018/01/03/united-aircraft-comac-goes-flying/ |archive-date=2 March 2019}}</ref>
+<ref name="AvWeek26sep2018">{{Cite news |last=Bradley Perrett |date=26 September 2018 |title=Third Comac C919 Flight Test Aircraft To Fly This Year |work=Aviation Week Network |url=http://aviationweek.com/commercial-aviation/third-comac-c919-flight-test-aircraft-fly-year |url-status=live |access-date=7 October 2018 |archive-url=https://web.archive.org/web/20181010073121/http://aviationweek.com/commercial-aviation/third-comac-c919-flight-test-aircraft-fly-year |archive-date=10 October 2018}}</ref>
+<ref name="AirlinerWorldOct2019">{{Cite journal |title=Latest C919 Prototype Completes Maiden Flight |journal=Airliner World |volume=October 2019 |page=17}}</ref>
+<ref name="aerotime-tibet">{{cite news |last1=Peters |first1=Luke |title=Tibet Airlines has ordered COMAC C919s and ARJ21s |publisher=Aerotime |date=20 February 2024 |url=https://www.aerotime.aero/articles/tibet-airlines-comac-c919-order}}</ref>
+<ref name="AW090908">{{Cite news |last=Bradley Perrett |date=8 September 2009 |title=Comac Begins Building C919 Structure |work=Aviation Week |url=http://aviationweek.com/awin/comac-begins-building-c919-narrowbody-structure |url-status=live |url-access=subscription |access-date=20 April 2017 |archive-url=https://web.archive.org/web/20170421011317/http://aviationweek.com/awin/comac-begins-building-c919-narrowbody-structure |archive-date=21 April 2017}}</ref>
+<ref name="ATW170505">{{Cite news |last=Katie Cantle |date=5 May 2017 |title=COMAC launches C919 inaugural flight |work=Air Transport World |publisher=Aviation Week |url=http://atwonline.com/airframes/comac-launches-c919-inaugural-flight |url-status=live |access-date=5 May 2017 |archive-url=https://web.archive.org/web/20170615181452/http://atwonline.com/airframes/comac-launches-c919-inaugural-flight |archive-date=15 June 2017}}</ref>
+<ref name="Reuters9dec2022">{{Cite news |date=9 December 2022 |title=China Eastern takes delivery of the world's first made-in-China C919 jet |work=Reuters |url=https://www.reuters.com/business/aerospace-defense/china-eastern-takes-delivery-worlds-first-made-in-china-c919-jet-2022-12-09/}}</ref>
+<ref name="eighth">{{Cite web |title=China Eastern's C919 fleet expands to eight planes |url=https://english.shanghai.gov.cn/en-Latest-WhatsNew/20241001/e2a1875991724a99a4ea4830712acd5a.html |access-date=2024-10-03 |website=english.Ahanghai.gov.cn}}</ref>
+<ref name=":1">{{Cite web |title=国航、南航今同时接收首架中国国产C919 各订100架 |url=https://www.zaobao.com.sg/realtime/china/story20240828-4563212 |access-date=2024-08-28 |website=Lianhe Zaobao |language=zh-Hans}}</ref>
+<ref name="Reuters12Jan2023">{{Cite news |date=12 January 2023 |title=China expects annual production capacity of C919 planes to reach 150 in 5 years |work=Reuters |url=https://www.reuters.com/business/aerospace-defense/chinas-comac-expects-reach-annual-production-150-c919-planes-next-5-years-govt-2023-01-12/}}</ref>
+<ref name=":0">{{cite web | url=http://www.chinatoday.com.cn/ctenglish/2018/zdtj/202309/t20230911_800341782.html | title=Chinese aircraft maker receives over 1,000 C919 jet orders}}</ref>
+
+<ref name="AviationWeek-31032026">{{cite news |last1 = Chen |first1 = Chuanren | url = https://aviationweek.com/air-transport/aircraft-propulsion/chinas-airlines-expect-33-comac-c919-deliveries-2026 | title = China’s Airlines Expect 33 Comac C919 Deliveries In 2026 | work = aviationweek.com | date = 31 March 2026 | access-date = 31 March 2026}}</ref>
+</references>
+
+== External links ==
+{{Commons category|Comac C919}}
+* {{official website}}
+
+{{Comac aircraft}}
+{{AVIC Aero Products}}
+
+[[Category:Comac aircraft]]
+[[Category:2010s Chinese airliners]]
+[[Category:Twinjets]]
+[[Category:Low-wing aircraft]]
+[[Category:Aircraft first flown in 2017]]
+[[Category:Aircraft with retractable tricycle landing gear]]
