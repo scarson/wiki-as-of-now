@@ -11,10 +11,15 @@
  */
 export const MARKER_STRENGTH: Record<string, number> = {
   "is expected to": 2,
+  "expected to": 2,
+  "expected by": 2,
   "is scheduled to": 2,
+  "scheduled to": 2,
+  "scheduled for": 2,
   "is slated to": 2,
   "is due to": 2,
   "plans to": 2,
+  "planned to": 2,
   "aims to": 1,
   "anticipated": 1,
   "to be completed by": 2,
