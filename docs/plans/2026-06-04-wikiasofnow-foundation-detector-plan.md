@@ -73,7 +73,7 @@ notes and commit messages.
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Foundation | ✅ Shipped · ✅ MERGED to `dev` (PR [#3](https://github.com/scarson/wiki-as-of-now/pull/3), merge `380c6f7`) | `3846c90`…`f4290d3` | all 5 tasks + 3-round batch review + WITHOUT ROWID hardening; 13 tests, tsc+lint clean |
-| 2 — Deterministic detector + fixtures | ✅ Built · 🔀 PR open → `dev` (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | `fec5bd3`…`e25126a` (+ pnpm pin `bd6ca3a`) | all 7 tasks + 3-round batch review; LLM-free (G10) confirmed COMPLIANT; gold-set precision 1.0 (gate ≥0.9); 33 tests, tsc+lint clean |
+| 2 — Deterministic detector + fixtures | ✅ Built · 🔀 PR [#5](https://github.com/scarson/wiki-as-of-now/pull/5) open → `dev` (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | `fec5bd3`…`b3e0d89` (+ pnpm pin `bd6ca3a`) | all 7 tasks + 3-round batch review; LLM-free (G10) confirmed COMPLIANT; gold-set precision 1.0 (gate ≥0.9); 33 tests, tsc+lint clean. Merge classification: **Review — domain** |
 
 ### Task completion log
 - **Task 1.1** (scaffold + Vitest): ✅ DONE — impl `3846c90`, code-review follow-up `e26a1be`. Spec review ✅, code-quality review ✅. Gates: `pnpm test` green, `pnpm exec tsc --noEmit` clean, `pnpm lint` exit 0.
