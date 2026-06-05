@@ -295,9 +295,8 @@
   {
     "fixture": "fehmarn_belt_fixed_link.wikitext",
     "sentenceSubstring": "originally expected to be completed by 2018",
-    "stale": true,
-    "expectedYear": 2018,
-    "note": "Infrastructure: 'The Fehmarn Belt bridge was originally expected to be completed by 2018.' — completion target now past."
+    "stale": false,
+    "note": "Negative (resolved-nearby, CROSS-SENTENCE — a real false positive): 'The Fehmarn Belt bridge was originally expected to be completed by 2018. However, in late 2010 ... an immersed tunnel would instead present fewer construction risks ...'. The bridge plan was scrapped and resolved in the very NEXT sentence, so this is not a live stale claim — but the detector flags it (marker + inline year) because Rule 3's resolution check is within-sentence only and the resolution here is cross-sentence. Relabeled true->false during the recall work (the recall rubric correctly classes 'was originally expected ... but [scrapped]' as not-stale); documents the cross-sentence-resolution FP class (DET-2 family)."
   },
   {
     "fixture": "gordie_howe_international_bridge.wikitext",
