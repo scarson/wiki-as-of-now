@@ -14,7 +14,7 @@
 A sentence is **genuinely stale** if and only if ALL of the following hold:
 
 1. **Forward-tense / expectation claim.** The sentence makes a claim about a future state of affairs — using words like "is expected to", "is scheduled to", "will", "plans to", "anticipated", "is slated to" — not merely describing what happened in the past.
-2. **Target time is now past.** The event or milestone the claim predicts was supposed to happen by a specific time that is **earlier than asOfYear = 2026**. (For claims without an explicit time, see §3 "Exclusions — relative/cross-sentence dates" below.)
+2. **Target time is now past.** The event or milestone the claim predicts was supposed to happen by a specific time that is **earlier than asOfYear = 2026**. (For claims without an explicit past target year, see §2 — these are typically `reachable=false`.)
 3. **A Wikipedia editor would plausibly want to review or update it.** The claim is still presented as an open expectation; the article does not itself resolve it; and it describes something a living Wikipedia article would reasonably track.
 
 All three conditions are necessary. A sentence satisfying only one or two is NOT genuinely stale.
@@ -30,7 +30,9 @@ Not all genuinely stale claims are reachable by the detector. The detector requi
 | Term | Definition |
 |------|-----------|
 | **Reachable** | The stale claim's sentence contains an explicit 4-digit year (e.g. "2020") that is now past. The detector *could* catch it (whether it actually does is what recall measures). |
-| **Not reachable** | The staleness depends on a relative date ("next year", "by end of decade"), a cross-sentence date (a year stated only in a prior sentence), or no date at all. The detector structurally cannot catch these — they are an accepted recall gap (DET-2), not a bug. |
+| **Not reachable** | The staleness depends on a relative date ("next year", "by end of decade"), a cross-sentence date (a year stated only in a prior sentence), or no date at all. The detector structurally cannot catch these — they are an accepted recall gap, not a bug. |
+
+**Reachable is decided purely by the presence of an inline 4-digit past year — NOTHING ELSE.** A sentence that HAS an inline past year is `reachable=true` even if the detector happens to suppress it (e.g. a leading-dateline frame, or a `By <year>` deadline — "the bridge will be finished by 2020"). Such a claim is reachable-but-missed; the plan's Task 1.2 schema calls that a `suppression-collateral` miss (see §4). Do NOT mark a sentence `reachable=false` just because you suspect the detector suppresses it — `reachable` is about the year being present, not about whether the detector flags it (that would reintroduce circularity, C2).
 
 **Every label carries both a `stale: true/false` flag and a `reachable: true/false` flag.**
 
@@ -74,9 +76,7 @@ A sentence that contains a forward-tense claim but whose **only past year belong
 
 This is an *irreducible* detector limitation — there is no deterministic way to distinguish an incidental background year from a claim's target year without semantic understanding. Labeling these as stale would inflate the detector's apparent false-negative rate by counting FPs it *should* generate as missed TPs. See `docs/pitfalls/implementation-pitfalls.md` §DET-3.
 
----
-
-## 4. Exclusion D: Pure background facts
+### Exclusion D: Pure background facts
 
 Founding dates, built/completed dates, launch dates, and similar historical facts stated without a forward claim are never stale. "Built in 1910" is a permanent historical fact, not a prediction. "The bridge opened in 2022" reports a completed event.
 
@@ -84,21 +84,26 @@ Founding dates, built/completed dates, launch dates, and similar historical fact
 
 ---
 
-## 5. The DET-2 / DET-3 distinction for recall measurement (expected miss vs. bug)
+## 4. Classifying a stale claim — the `shapeClass` taxonomy
 
-When the detector fails to flag a genuinely stale claim, the miss falls into one of three categories:
+Every `stale=true` entry gets a `shapeClass` (the plan's Task 1.2 schema field) describing the claim's SHAPE — judged from the prose, independent of the detector. `shapeClass` is NOT keyed to `reachable`: a reachable claim (has a year) can still be missed. The categories, and which recall denominator + follow-up they map to:
 
-| Category | Description | Classification |
-|----------|-------------|----------------|
-| **DET-2 accepted gap** | No inline 4-digit past year in the sentence (relative date, cross-sentence date, or no date). Or the sentence is suppressed by the `By <year>` deadline rule. | Expected miss — reachable=false. NOT a bug. |
-| **DET-3 incidental year** | Not stale per §3 Exclusion C (background year only). The detector correctly not-flagging it is a true negative. | Correct non-label. NOT a miss. |
-| **Bug** | The sentence IS genuinely stale AND reachable (has an inline past year), AND contains a detector marker, AND is NOT suppressed by any of the known suppression rules — but the detector still misses it. | Potential bug — escalate for investigation. |
+| `shapeClass` | When it applies | reachable | Miss expected? |
+|--------------|-----------------|-----------|----------------|
+| `simple` | Has an inline past year AND a forward marker already in the lexicon (`is expected to`, `plans to`, `will`, …) | true | No — the detector SHOULD catch it; a missed `simple` is a **potential bug, escalate** |
+| `marker-gap` | Has an inline past year but its forward phrase is NOT in the lexicon ("set to", "on track to", "slated for", …) | true | Yes — fixable by Phase 2 (lexicon expansion) |
+| `suppression-collateral` | Has an inline past year + an in-lexicon marker, but a suppression rule drops it (leading dateline, `By <year>` deadline, DET-2) | true | Yes — deferred (touching suppression risks precision); NOT a bug |
+| `inline-year-absent` | Genuinely stale but no 4-digit year in the sentence (relies on a relative/cross-sentence date) | false | Yes — needs the semantic lever; NOT a bug |
+| `relative-date` | Uses a relative anchor ("next year", "within five years", "by the end of the decade") instead of a 4-digit year | false | Yes — needs the semantic lever; NOT a bug |
+| `other` | Fits none of the above (note why) | either | — |
 
-The recall analysis will classify all misses into these categories. The operationally important number is how many bugs exist; DET-2 gaps are expected.
+(DET-3 incidental-year sentences are `stale=false` — they never enter this table; the detector flagging one is a precision FP, and the detector correctly NOT flagging one is a true negative. See §3 Exclusion C.)
+
+The recall analysis ranks the misses by `shapeClass`. The only category that signals a **bug** is a missed `simple` claim; every other missed category is an expected, documented gap.
 
 ---
 
-## 6. Worked examples from the corpus
+## 5. Worked examples from the corpus
 
 All examples use verbatim wikitext sentence text (stripped of citation markup for readability). Each entry cites the fixture file and line where the sentence appears.
 
@@ -216,7 +221,7 @@ This illustrates both **Exclusion A** (historical narration of an event in the p
 
 ---
 
-## 7. Labeler protocol (C2 — preventing circularity)
+## 6. Labeler protocol (C2 — preventing circularity)
 
 Follow this sequence for every sentence you evaluate. Deviating from the order reintroduces circularity.
 
@@ -224,7 +229,7 @@ Follow this sequence for every sentence you evaluate. Deviating from the order r
 Open the fixture file and read the article as a whole before labeling anything. Understand the subject, the project's timeline, and what claims are being made. Do not open the detector output or run any tool at this stage.
 
 **Step 2: Label independently.**
-For each candidate sentence, apply the definition in §1 and the exclusions in §§3–4. Assign `stale: true/false` and `reachable: true/false` based only on the prose. Record a one-line reason.
+For each candidate sentence, apply the definition in §1 and the exclusions in §3. Assign `stale: true/false` and `reachable: true/false` based only on the prose. Record a one-line reason.
 
 - If `stale=true`: note the marker, the target year, and confirm no exclusion applies.
 - If `stale=false`: note which exclusion applies (A, B, C, or D) or why the claim is not forward-tense.
@@ -237,16 +242,16 @@ Commit your labels to a file before proceeding. This is the anti-circularity che
 **Step 4: Run the detector.**
 Run the detector on the fixture and compare its output against your labels. The comparison produces:
 - True positives (TP): detector flagged, you labeled stale.
-- False negatives (FN): detector did NOT flag, you labeled stale and reachable=true. Investigate each — is it DET-2 (accepted gap), DET-3 miscount (background year), or a potential bug?
+- False negatives (FN): detector did NOT flag, you labeled stale and reachable=true. Investigate each — assign its `shapeClass` (§4): marker-gap or suppression-collateral (expected gaps) — or, if it is a `simple` claim that was still missed, a potential bug to escalate.
 - False positives (FP): detector flagged, you labeled not-stale. These are precision failures, already characterized; record but do not re-label to match.
 - True negatives (TN): detector did NOT flag, you labeled not-stale. These are correct non-labels.
 
 **Step 5: Classify each FN.**
-Every false negative (missed stale claim) should be classified against the DET-2 / DET-3 / Bug taxonomy in §5. Only FNs that reach "potential bug" require escalation; DET-2 accepted gaps are expected.
+Every false negative (missed stale claim) should be classified against the `shapeClass` taxonomy in §4. Only FNs that reach "potential bug" require escalation; DET-2 accepted gaps are expected.
 
 ---
 
-## 8. Quick-reference checklist for a single sentence
+## 7. Quick-reference checklist for a single sentence
 
 Before labeling a sentence stale, confirm ALL of the following:
 
@@ -260,7 +265,7 @@ If any check fails, label the sentence not-stale and note the exclusion.
 
 ---
 
-## 9. Cross-references
+## 8. Cross-references
 
 - `docs/pitfalls/implementation-pitfalls.md` §DET-1: Historical dateline narration — the dominant false-positive class; full suppression rule detail.
 - `docs/pitfalls/implementation-pitfalls.md` §DET-2: Named, accepted recall gaps (inline-year requirement, earliest-year/dateline interaction, `By <year>` deadline ambiguity).
