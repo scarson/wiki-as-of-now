@@ -122,6 +122,18 @@ describe("governedYears — noun-modifier", () => {
       "the benefits of the act will likely not be felt before the 2024 election, but the act is a great strategy.";
     expect(governedYears(text, "will", [2024])).toContain(2024);
   });
+  it("KEEPS a leading deadline-frame year with the marker AFTER it (By the 2024 election, ... will pass)", () => {
+    // 'by|before|until the <year> <event>' points the claim AT that year (a deadline target),
+    // so the year is kept regardless of marker position — unlike a background 'during|in the <year>' frame.
+    expect(governedYears("By the 2024 election, the bill will pass", "will", [2024])).toContain(2024);
+    expect(governedYears("Until the 2023 review concludes, the program will continue", "will", [2023])).toContain(2023);
+  });
+  it("still DROPS a leading BACKGROUND-frame year (During the 2025 shutdown, ... expected to)", () => {
+    // during/in/after frame background context, not a deadline the claim targets → dropped.
+    expect(
+      governedYears("During the 2025 government shutdown, services are expected to resume", "expected to", [2025])
+    ).toEqual([]);
+  });
   it("KEEPS a bare temporal-frame year before a proper-noun subject, marker after (by 2023 SpaceX will fly)", () => {
     // A 'prep <year>' frame (NO determiner) is a temporal window, not a label, even when a
     // proper-noun SUBJECT follows the year and the marker comes after it.

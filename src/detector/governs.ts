@@ -153,6 +153,15 @@ const BARE_FRAME_PREP_BEFORE = new RegExp(`\\b(?:${TEMPORAL_PREP})\\s+$`, "i");
 const DETERMINED_PREP_BEFORE = new RegExp(`\\b(?:${TEMPORAL_PREP})\\s+the\\s+$`, "i");
 
 /**
+ * A deadline preposition before a determiner-led year ("by the 2024 election", "until
+ * the 2023 review"): by/before/until point the claim AT that year (a deadline target),
+ * unlike background framing (during/in/after the <year>). So a deadline-framed year is
+ * the marker's target regardless of marker position ("the bill will pass by the 2024
+ * election" keeps 2024 even though the marker trails the year).
+ */
+const DEADLINE_DETERMINED_PREP_BEFORE = /\b(?:by|before|until)\s+the\s+$/i;
+
+/**
  * True when `occ` is an attributive label on a noun ("the 2021 update of the IRDS",
  * "2024 Update", "Science's 2020 survey") rather than a temporal target. A determiner
  * or possessive immediately before the year, or a capitalized noun immediately after,
@@ -176,5 +185,8 @@ function isNounModifier(sentence: string, markerIndex: number, occ: YearOccurren
   // precedes the year; with the marker after, it is an aside label (DROP).
   const markerBeforeYear = markerIndex >= 0 && markerIndex < occ.start;
   if (markerBeforeYear && DETERMINED_PREP_BEFORE.test(before)) return false;
+  // A deadline frame (by/before/until the <year> <event>) targets that year regardless
+  // of marker position; only background frames (during/in/after the <year>) are dropped.
+  if (DEADLINE_DETERMINED_PREP_BEFORE.test(before)) return false;
   return true;
 }
