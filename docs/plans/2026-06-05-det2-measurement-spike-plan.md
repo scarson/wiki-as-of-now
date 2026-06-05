@@ -64,11 +64,11 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** ✅ Built — spike complete, **recommendation: NO-GO on cut 2** (recall prize 2/136 fixtures; deterministic guard precision 0.125). See methodology §9.
+**Overall:** ✅ Built — spike complete, **recommendation: NO-GO on cut 2** (recall prize 2/136 fixtures; deterministic guard precision 0.125). PR [#8](https://github.com/scarson/wiki-as-of-now/pull/8) → `dev`. See methodology §9.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Measure DET-2 + decide | ✅ Built (`84441fd`…`<1.2>`) | `84441fd`+ | 47 candidates: 2 genuine-target / 41 narration / 4 other; guard 2 TP / 14 FP (precision 0.125). **NO-GO** — methodology §9 |
+| 1 — Measure DET-2 + decide | ✅ Built (`84441fd`…`ad1c32e`) | `84441fd`…`ad1c32e` | 47 candidates: 2 genuine / 41 narration / 4 other; guard 2 TP / 14 FP (precision 0.125). **NO-GO**. PR [#8](https://github.com/scarson/wiki-as-of-now/pull/8) → `dev`; methodology §9 |
 
 ---
 
