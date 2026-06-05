@@ -1,0 +1,386 @@
+{{short description|Cancelled lunar orbital space station}}
+{{redirect|Gateway (space station)|the Frederick Pohl fictional space station|Gateway (novel)|other uses|Gateway (disambiguation)|and|Gateway Station (disambiguation)}}
+{{distinguish|Exploration Gateway Platform}}
+{{use American English|date=March 2017}}
+{{use dmy dates|date=July 2019}}
+{{infobox space station
+ | apogee                = {{cvt|70000|km}}
+ | apsis                 = selene
+ | carrier_rocket        = [[Falcon Heavy]]<br />[[Space Launch System|SLS Block 1B]]
+ | configuration_image   = Gateway Lunar Space Station Configuration (jsc2024e041788 (1)).jpg
+ | configuration_caption = Configuration as of 2024
+ | COSPAR_ID             = 
+ | crew                  = 4 maximum (planned)
+ | diameter              = 
+ | distance              =
+ | height                = {{cvt|43|m|ft}} (total){{r |nasa1}}
+ | in_orbit              = 15 years (planned){{r |Lee_2023}}
+ | inclination           = Polar [[near-rectilinear halo orbit]] (NRHO)
+ | insignia              = NASA Artemis Gateway logo.png
+ | insignia_size         = 150px
+ | launch                = 
+ | launch_pad            = 
+ | length                = {{cvt|20|m|ft}} (total)<ref name="nasa1" />
+ | mass                  = {{cvt|63000|kg|lb}}<ref name="nasa1" />
+ | occupied              = 
+ | orbits                = 
+ | perigee               = {{cvt|3000|km}}<ref name='NRHO 2019' />
+ | period                = ≈7 days
+ | pressure              =
+ | SATCAT                = 
+ | sign                  =
+ | station               = Gateway
+ | station_image         = Lunar Gateway rendering 2.webp
+ | station_image_caption = Artist's rendering of the assembled Lunar Gateway, 2025 design
+ | status                = Cancelled
+ | volume                = ≥{{cvt|125|m3}} (planned)<ref name=nsf-20180911 />
+ | width                 = {{cvt|19|m|ft}} (total)<ref name="nasa1" />
+}}
+The '''Lunar Gateway''' was a planned [[space station]] that would have been assembled in orbit around the [[Moon]] as part of the [[Artemis program]]. Derived from earlier concepts such as the [[Exploration Gateway Platform]], it was developed from 2017 until 2026, when the leading space agency [[NASA]] shifted focus to developing a [[Moonbase|lunar surface base]]. The elements of Gateway are expected to be repurposed for other projects.
+
+The project was developed with international partners including the [[European Space Agency]] (ESA),<ref name="esa1" /> the [[JAXA|Japan Aerospace Exploration Agency]] (JAXA),<ref name="nasa-20221117" /> the [[Canadian Space Agency]] (CSA),<ref name="csa-20240627" /> and the [[Mohammed bin Rashid Space Centre|Mohammed Bin Rashid Space Centre]] (MBRSC) of the United Arab Emirates.<ref name="thales1" /> 
+
+One of the technical drivers for Gateway was the limited propulsion capability of [[Orion (spacecraft)|Orion]]'s [[European Service Module]] used for the Artemis missions, which could not independently depart from [[low lunar orbit]]. A [[near-rectilinear halo orbit]] was selected, which reduced propulsion requirements.<ref>{{Cite web |last=Berger |first=Eric |date=2026-03-06 |title=NASA has shuffled its Artemis rockets. But what of the lunar landers? |url=https://arstechnica.com/space/2026/03/nasa-has-shuffled-its-artemis-rockets-but-what-of-the-lunar-landers/ |access-date=2026-03-28 |website=Ars Technica |language=en}}</ref> Gateway was intended to serve as a staging point where Orion could rendezvous with [[Human Landing System]] lunar landers, transfer crews, and support lunar surface missions. It was also planned to support communications, scientific research, and habitation for both crewed and robotic missions. Before its cancellation, it was expected to be the first space station beyond [[low Earth orbit]] and a potential staging point for future [[Human mission to Mars|human missions to Mars]].<ref name="nasa2" />
+
+Development plans called for two initial modules, the [[Power and Propulsion Element]] (PPE) and the [[Habitation and Logistics Outpost]] (HALO). Mid-way through the effort a plan emerged to launch them together on a commercial rocket. Subsequent elements were to be launched on [[Space Launch System]] (SLS) missions as co-manifested payloads with Orion and transferred to lunar orbit.
+
+== Overview ==
+The Gateway was expected to serve a central role in the Artemis program beginning in the latter half of the 2020s: providing docking ports and communications relays for [[Orion (spacecraft)|Orion]] and lunar landers like [[Starship HLS]], staging for surface missions to the [[Lunar south pole|lunar south polar region]], and as a platform for crewed transfer. It would have also been used to evaluate concepts needed for long-duration deep-space missions.<ref name="nasa1" /><ref name="nasa2" />
+
+Scientific research which would have been studied on Gateway were expected to include [[planetary science]], [[astrophysics]], [[Earth observation]], [[Astrobiology|space biology]], [[heliophysics]], and studies of [[Health|human health]] and performance in deep-space environments.{{Citation needed|date=January 2026}}
+
+Construction of the station's initial elements, including the [[Power and Propulsion Element]] (PPE) and the [[Habitation and Logistics Outpost]] (HALO), began in the early 2020s.<ref name="nasa-20260108" /> The PPE and HALO were planned to launch together on a [[Falcon Heavy]] before Gateway's cancellation,<ref name="sfn-20210209" /> and the first crewed visits were expected to be part of [[Artemis IV]], which was scheduled to launch no earlier than September 2028.
+
+== Name ==
+The station was initially announced as the '''Deep Space Gateway (DSG)''' in 2017. NASA's FY 2019 budget request renamed the station as '''Lunar Orbital Platform-Gateway (LOP-G)'''.<ref name="nsf-20180911" />
+
+In November 2019, NASA officially designated the station as '''Gateway'''. The station's logo was inspired by the American landmark [[Gateway Arch]] in St. Louis.<ref name="collectspace1" />
+
+== History ==
+=== Background ===
+The [[Apollo Command and Service Module]] was the first crewed lunar orbiting spacecraft performing dockings and crew transfers with another spacecraft, the [[Apollo Lunar Module]]. [[Lunar base]]s, like the first [[Tranquility Base]] as well as concepts for lunar bases have been the main focus of human presence at the Moon.
+
+=== Studies ===
+An earlier NASA proposal for a [[cislunar]] station had been made public in 2012 and was dubbed the [[Deep Space Habitat]]. That proposal led to funding in 2015 under the NextSTEP program to study the requirements of deep space habitats.<ref>{{cite news |last1=Messier |first1=Doug |date=August 11, 2016 |title=A Closer Look at NextSTEP-2 Deep Space Habitat Concepts |url=http://www.parabolicarc.com/2016/08/11/deep-space-habitat-concepts |url-status=dead |archive-url=https://web.archive.org/web/20180916065822/http://www.parabolicarc.com/2016/08/11/deep-space-habitat-concepts/ |archive-date=16 September 2018 |access-date=19 September 2018 |publisher=Parabolic Arc}}</ref> In February 2018, it was announced that the NextSTEP studies and other ISS partner studies would help to guide the capabilities required of the Gateway's habitation modules.<ref name="nasa-20180502" /> The solar electric [[Power and Propulsion Element]] (PPE) of the Gateway was originally a part of the now-canceled [[Asteroid Redirect Mission]].<ref name="Space.com4" /><ref name="SN-20171103" />
+
+On 7 November 2017, NASA asked the global science community to submit concepts for scientific studies that could take advantage of the Deep Space Gateway's location in cislunar space.<ref name="nasa-20180824" /> The Deep Space Gateway Concept Science Workshop was held in Denver, Colorado, from 27 February to 1 March 2018. This three-day conference was a workshop where 196 presentations were given for possible scientific studies that could be advanced through the use of the Gateway.<ref>{{cite web |title=Deep Space 2018 Program |url=https://www.hou.usra.edu/meetings/deepspace2018/program.pdf |access-date=27 January 2023 |website=Lunar and Planetary Institute |publisher=Universities Space Research Association}}</ref>
+
+In 2018, NASA initiated the Revolutionary Aerospace Systems Concepts Academic Linkage (RASC-AL) competition for universities to develop concepts and capabilities for the Gateway. The competitors were asked to employ original engineering and analysis in one of four areas: "Gateway Uncrewed Utilization and Operations", "Gateway-Based Human Lunar Surface Access", "Gateway Logistics as a Science Platform", and "Design of a Gateway-Based Cislunar Tug". Teams of undergraduate and graduate students were asked to submit a response by 17 January 2019 addressing one of these four themes. NASA selected 20 teams to continue developing proposed concepts. Fourteen of the teams presented their projects in person in June 2019 at the RASC-AL Forum in Cocoa Beach, Florida, receiving a US$6,000 stipend to participate in the Forum.<ref name="Jackson20180911">{{cite web |last1=Jackson |first1=Shanessa |date=11 September 2018 |title=Competition Seeks University Concepts for Gateway and Deep Space Exploration Capabilities |url=https://www.nasa.gov/feature/competition-seeks-university-concepts-for-gateway-and-deep-space-exploration-capabilities |url-status=live |archive-url=https://web.archive.org/web/20190617064456/https://www.nasa.gov/feature/competition-seeks-university-concepts-for-gateway-and-deep-space-exploration-capabilities/ |archive-date=17 June 2019 |access-date=19 September 2018 |website=nasa.gov |publisher=NASA}} {{PD-notice}}</ref> The "Lunar Exploration and Access to Polar Regions", from the [[University of Puerto Rico at Mayagüez]], was the winning concept.<ref>{{cite web |date=21 June 2019 |title=Students Blaze New Trails in NASA Space Exploration Design Competition |url=https://www.nasa.gov/feature/students-blaze-new-trails-in-nasa-space-exploration-design-competition |access-date=5 July 2019 |publisher=NASA}} {{PD-notice}}</ref>
+
+On 2 May 2018, NASA stated the International Space Exploration Coordination Group (ISECG), a non-binding coordination forum comprising 14 (at the time) worldwide space agencies,<ref>{{Cite web |title=International Space Exploration Coordination Group – NASA |url=https://www.nasa.gov/humans-in-space/international-space-exploration-coordination-group/ |access-date=2026-01-19 |language=en-US}}</ref> identified the Gateway as a critical component in expanding human presence to the [[Moon]], [[Mars]], and deeper into the [[Solar System]].<ref>{{Cite web |title=A statement from NASA regarding partnerships and development of the Lunar Orbital Platform-Gateway |url=https://www.nasa.gov/wp-content/uploads/2018/02/gateway_domestic_and_international_benefits-memo.pdf?emrc=0ea4b5 |access-date=2026-01-19 |language=en-US}}</ref>
+
+In 2019 [[NASA]] established a Lunar Gateway Program Office at [[Johnson Space Center]].<ref name="roundup1314">{{Cite web|url=https://roundupreads.jsc.nasa.gov/roundup/1314|title=Roundup Presents: The Directors Series (MA) |publisher=NASA/JSC |author=Noah J. Michelsohn |date=2019-12-09}}</ref> 
+
+=== International participants ===
+[[File:ISS-Derived Deep Space Habitat with CPS.jpg|thumb|2012 concept for the [[Deep Space Habitat]], consisting of a [[Cryogenic fuel|cryogenic propulsion stage]], an [[International Space Station|ISS]]-derived habitat module, and a [[Multi-Purpose Logistics Module|MPLM]]]]
+On 27 September 2017, an informal joint statement on cooperation between NASA and Russia's [[Roscosmos]] was announced.<ref name="Space.com1" /> However, in October 2020, [[Dmitry Rogozin]], director general of Roscosmos, said that the program was too "U.S.-centric" for Roscosmos to participate.<ref name="SN-20201012" /> In January 2021, Roscosmos announced that it would not participate in the program.<ref>{{cite web |date=25 January 2021 |script-title=ru:"Роскосмос" подтвердил выход из лунного проекта Gateway |trans-title=Roscosmos confirms withdrawal from Gateway lunar project |url=https://www.interfax.ru/russia/746690 |access-date=25 January 2021 |language=ru |agency=Interfax}}</ref>
+
+Prior to cancellation, the [[Canadian Space Agency]] (CSA), the [[European Space Agency]] (ESA), [[JAXA|Japan Aerospace Exploration Agency]] (JAXA) and [[Mohammed Bin Rashid Space Centre]] (MBRSC) were planning to participate in the Gateway project, contributing a robotic arm, refueling and communications hardware, habitation and research capacity, and an airlock module. These international elements were planned to launch after the initial NASA PPE and HALO elements were placed in [[lunar orbit]], with some co-manifested with Artemis missions.<ref name="sfn-20200506" />
+
+=== Power and propulsion ===
+[[File:Gateway - PPE and HALO 001.jpg|thumb|[[Power and Propulsion Element]] with HALO]]
+{{Main|Power and Propulsion Element}}
+
+On 1 November 2017, NASA commissioned five studies lasting four months into affordable ways to develop the Power and Propulsion Element (PPE), leveraging private companies' plans. These studies had a combined budget of US$2.4 million. The companies performing the PPE studies were [[Boeing]], [[Lockheed Martin]], [[Orbital ATK]], [[Sierra Nevada Corporation|Sierra Nevada]], and [[Space Systems]]/Loral.<ref name="NASA_PPE_studies">{{cite web |last1=Russell |first1=Jimi |date=November 2017 |title=NASA Selects Studies for Gateway Power and Propulsion Element |url=https://www.nasa.gov/press-release/nasa-selects-studies-for-gateway-power-and-propulsion-element |url-status=live |archive-url=https://web.archive.org/web/20180112203046/https://www.nasa.gov/press-release/nasa-selects-studies-for-gateway-power-and-propulsion-element/ |archive-date=12 January 2018 |access-date=2 November 2017 |website=nasa.gov |publisher=NASA}} {{PD-notice}}</ref><ref name="SN-20171103" /> These awards are in addition to the ongoing set of [[Next Space Technologies for Exploration Partnerships|NextSTEP-2]] awards made in 2016 to study development and make ground prototypes of habitat modules that could be used on the Gateway as well as other commercial applications,<ref name="NASA_March_2017">{{cite web |last1=Gatens |first1=Robyn |last2=Crusan |first2=Jason |title=Cislunar Habitation and Environmental Control and Life Support System |url=https://www.nasa.gov/sites/default/files/atoms/files/20170329-nacheoc-crusan-gatens-hab-eclss-v5b.pdf |access-date=March 31, 2017 |website=nasa.gov |publisher=NASA}} {{PD-notice}}</ref> so Gateway was likely to incorporate components developed under NextSTEP as well.<ref name="SN-20171103" /><ref name="nasa-20160809" /> The PPE would have used four 6&nbsp;kW BHT-6000 [[Busek]] [[Hall-effect thruster]]s<ref name="SN-20190523" /><ref name="Cassady_2018" /><ref name="Maxar and Busek">{{Cite press release |title=Maxar and Busek Thruster System for NASA Lunar Gateway Passes Critical Milestone |url=https://www.prnewswire.com/news-releases/maxar-and-busek-thruster-system-for-nasa-lunar-gateway-passes-critical-milestone-301250199.html |language=en |access-date=2021-04-28 |website=PR Newswire}}</ref> and three 12&nbsp;kW [[NASA]]/[[Aerojet Rocketdyne]] [[Advanced Electric Propulsion System]] (AEPS) Hall-effect thrusters for a total engine output fractionally under 50&nbsp;kW.<ref>{{Cite web |date=15 November 2019 |title=Advanced Electric Propulsion System passes full-power test milestone |url=https://newatlas.com/space/advanced-electric-propulsion-system-aeps-full-power-test/ |website=New Atlas}}</ref> In 2019, the contract to manufacture the PPE was awarded to [[Maxar Technologies]].<ref name="Maxar">{{cite press release |title=NASA Awards Artemis Contract for Lunar Gateway Power, Propulsion |date=23 May 2019 |publisher=NASA |url=https://www.nasa.gov/press-release/nasa-awards-artemis-contract-for-lunar-gateway-power-propulsion |access-date=11 December 2019 |url-status=live |archive-url=https://web.archive.org/web/20190920171731/https://www.nasa.gov/press-release/nasa-awards-artemis-contract-for-lunar-gateway-power-propulsion/ |archive-date=20 September 2019}} {{PD-notice}}</ref> After a one-year demonstration period, NASA intended to "exercise a contract option to take over control of the spacecraft".<ref name="nsf-20180911" /> Its expected service time was about 15 years.<ref name="Crusan Dec2018">Jason Crusan. [https://www.nasa.gov/sites/default/files/atoms/files/20181206-crusan-gateway-reduced-v4.pdf Gateway Update] {{Webarchive|url=https://web.archive.org/web/20200803144944/https://www.nasa.gov/sites/default/files/atoms/files/20181206-crusan-gateway-reduced-v4.pdf|date=3 August 2020}} NASA Advisory Council, Human Exploration and Operations Committee, 7 December 2018 {{PD-notice}}</ref> In late 2023, it was reported that flight qualification testing was occurring on the thrusters for the Power and Propulsion Element.<ref>{{Cite web |title=True Blue: High-Power Propulsion for Gateway |url=https://www.nasa.gov/image-article/true-blue-high-power-propulsion-for-gateway/ |access-date=2024-03-31 |publisher=NASA |language=en-US}}</ref>
+
+=== Cancellation ===
+On May 2, 2025, the second Trump administration released its fiscal year 2026 budget proposal, which proposed canceling the Lunar Gateway program, citing escalating costs, commercial alternatives, and shifting priorities, while allowing for the repurposing of existing components.<ref name="nasa-20250502" /> On July 4, 2025, President [[Donald Trump]] signed the [[One Big Beautiful Bill Act]] into law, allocating $2.6 billion for the program and requiring at least $750 million annually from FY 2026 through FY 2028.<ref>{{Cite web |date=July 4, 2025 |title=One Big Beautiful Bill Act |url=https://www.congress.gov/bill/119th-congress/house-bill/1/text/pl |website=Public Law 119–21 |publisher=119th United States Congress |at=139 Stat. 134 (SEC. 40005, appropriations for Gateway)}}</ref>
+
+In early 2026, reports indicated that references to the station had been removed from congressional funding legislation.<ref name="arstech6" /><ref name="arstech7" /> On February 26, 2026, reporting suggested that NASA Administrator [[Jared Isaacman]] was considering restructuring the program toward a lunar surface base effort in Houston.<ref name="arstech8" />
+
+In March 2026, NASA announced it would pause the station as designed and would instead focus on a [[Moonbase|lunar surface base]] between 2029 and 2036, repurposing Gateway hardware and partner contributions where possible.<ref name="nasa-20260324" /><ref name="arstech9" /> Carlos Garcia-Galan, NASA's deputy program manager for the Lunar Gateway, was reassigned to lead the surface base effort but stated that a lunar orbiting outpost "has value in our overall exploration goals" and that NASA may consider it later, but that the agency is now focused on the surface.<ref name="arstech9" />
+
+At the same news conference, NASA announced that the PPE would be repurposed as part of [[Space Reactor-1 Freedom|Space Reactor-1 ''Freedom'']], a proposed spacecraft intended to be the first nuclear fission-powered interplanetary mission and to demonstrate nuclear electric propulsion in deep space.<ref>{{Cite news |last=Chang |first=Kenneth |date=2026-03-24 |title=With Moon Base and Nuclear Mars Mission, NASA Wants You to ‘Start Believing Again’ |url=https://www.nytimes.com/2026/03/24/science/nasa-moon-base-mars-spacecraft.html |access-date=2026-03-27 |work=The New York Times |language=en-US |issn=0362-4331}}</ref>
+
+ESA is expected to announce in June 2026 its decision regarding the disposition of components under construction and those already completed.<ref name="n015">{{cite web | last=Gatti | first=Emma | title=ESA to decide by June on Europe's Gateway contributions | website=SpaceNews | date=2026-03-27 | url=https://spacenews.com/esa-to-decide-by-june-on-europes-gateway-contributions/ | access-date=2026-04-01}}</ref>
+
+== Orbit and operations ==
+The Gateway was to be deployed in a [[near-rectilinear halo orbit]] (NRHO) around the Moon.<ref name="Parrish_2020" /> The [[orbital eccentricity|eccentricity]] of the chosen NRHO takes the station within {{cvt|1500|km|mi}} of the [[lunar north pole]] surface at closest approach, and as far away as {{cvt|70000|km|mi}} over the [[lunar south pole]], with a [[orbital period|period]] of about 7 days.<ref name="NRHO 2019">[https://phys.org/news/2019-07-angelic-halo-orbit-chosen-humankind.html Angelic halo orbit chosen for humankind's first lunar outpost.] {{Webarchive|url=https://web.archive.org/web/20190811175615/https://phys.org/news/2019-07-angelic-halo-orbit-chosen-humankind.html|date=11 August 2019}} European Space Agency, Published by ''PhysOrg'', 19 July 2019</ref><ref>{{Cite web |last=Szondy |first=David |date=2019-07-19 |title=Halo orbit selected for Gateway space station |url=https://newatlas.com/orbit-halo-gateway/60657/ |access-date=2024-05-08 |website=New Atlas |language=en-US}}</ref><ref name="SN-20190916}} One of the advantages of an NRHO is the minimal amount of communications blackout with the [[Earth]].
+
+Traveling to and from cislunar space (lunar orbit) is intended to develop the knowledge and experience necessary to venture beyond the Moon and into deep space. The proposed NRHO would have allowed lunar expeditions from the Gateway to reach a low [[polar orbit]] with a [[delta-v|Δ''v'']] of 730&nbsp;m/s and a half a day of transit time. [[Orbital station-keeping]] would have required less than 10&nbsp;m/s of Δ''v'' per year, and the [[orbital inclination]] could have been shifted with a relatively small Δ''v'' expenditure, allowing access to most of the lunar surface. Spacecraft launched from Earth would have performed a powered flyby of the Moon {{nowrap|(Δ''v'' ≈ 180&nbsp;m/s)}} followed by a {{nowrap|Δ''v'' ≈ 240&nbsp;m/s}} NRHO insertion burn to dock with the Gateway as it approached the [[Apsis|apoapsis]] point of its orbit. The total travel time would be 5 days; the return to Earth would have been similar in terms of trip duration and Δ''v'' requirement if the spacecraft had spent 11 days at the Gateway. The crewed mission duration of 21 days and {{nowrap|Δ''v'' ≈ 840&nbsp;m/s}} is limited by the capabilities of the Orion life support and propulsion systems.<ref>{{cite web |last1=Whitley |first1=Ryan |last2=Martinez |first2=Roland |date=21 October 2015 |title=Options for Staging Orbits in Cis-Lunar Space |url=https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20150019648.pdf |url-status=live |archive-url=https://web.archive.org/web/20190730111818/https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20150019648.pdf |archive-date=30 July 2019 |access-date=19 September 2018 |website=nasa.gov |publisher=NASA}} {{PD-notice}}</ref>
+
+Gateway was to be the first [[modular space station]] to be both human-rated, and autonomously operating most of the time in its early years, as well as being the first deep-space station, far from [[low Earth orbit]]. This would have been enabled by more sophisticated executive control software than on any prior space station, which would have monitored and controlled all systems. The high-level architecture was to be provided by the Robotics and Intelligence for Human Spaceflight lab at NASA and implemented at NASA facilities. The Gateway could have conceivably also supported [[in-situ resource utilization]] (ISRU) development and testing from lunar and [[Asteroid mining|asteroid]] sources,<ref>[https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20180002054.pdf NASA.gov] {{Webarchive |url=https://web.archive.org/web/20180731035911/https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20180002054.pdf|date=31 July 2018}} Research Possibilities Beyond Deep Space Gateway] David Smitherman, Debra Needham, Ruthan Lewis, NASA, February 28, 2018 {{PD-notice}}</ref> and would have offered the opportunity for a gradual buildup of capabilities for more complex missions over time.<ref name="Free_2017" />
+
+{{multiple image
+| align             = center
+| direction         = horizontal
+| header            = Animation of Lunar Gateway's proposed orbit
+| image1            = Animation of Lunar Gateway around Earth.gif
+| caption1          = Around the Earth
+| image2            = Animation of Lunar Gateway around Earth - Frame rotating with Moon - Front.gif
+| caption2          = Viewed from the Earth
+| image3            = Animation of Lunar Gateway around Earth - Frame rotating with Moon - Side.gif
+| caption3          = Side view – Earth is left direction.
+| footer            = {{legend2|magenta|Lunar Gateway}}{{·}}{{legend2| RoyalBlue |[[Earth]]}}{{·}}{{legend2| Lime|[[Moon]]}}
+}}
+{{clear}}
+
+== Modules ==
+[[File:GATEWAY (Moon Space Station).jpg|thumb|An illustration of the initial configuration of Gateway with the Power and Propulsion Element (PPE) and Habitation and Logistics Outpost (HALO) in orbit around the Moon]]
+<div style="white-space: nowrap"><!-- Only modules which have been approved (listed in the "Planned modules" section) can be represented here -->
+{{tree chart/start|style=font-size:80%;line-height:100%;line-width:100%;padding:15px;border:2px dotted #AAA;
+}} <!--background:#eee;  padding:0.5em;-->
+{{tree chart| | |SA|~|PPE|~|SA| | |
+| PPE             = [[Power and Propulsion Element|'''PPE'''<br />{{Nowrap|propulsion module}}]]
+| SA              = [[Roll Out Solar Array#Applications|{{Nowrap|Solar Array}}]]
+| boxstyle_PPE    = border: 2px solid #fee067; background:#ffffff;
+| boxstyle_SA     = border: 2px solid #fee067; background:#ffffff;
+}}
+{{tree chart| | | | | | | |:| ||  | | }}
+{{tree chart| | | | | | | |:| ||  | | }}
+{{tree chart| | | | |Canadarm3|:|HLCS| | |
+| Canadarm3          = '''Canadarm3'''<br />{{Nowrap|robotic arm}}
+| boxstyle_Canadarm3 = border: 2px solid #fee067; background:#ffffff;
+| HLCS          = [[European System Providing Refueling, Infrastructure and Telecommunications|'''ESPRIT Lunar Link'''<br />{{Nowrap|telecommunications}}]]
+| boxstyle_HLCS = border: 2px solid #fee067; background:#ffffff;
+}}
+{{tree chart| | | | | | |:|:|:| | | | }}
+{{tree chart| | |HLSD|-|HALO|-|ERM|-|CD| |
+| HLSD            = [[Artemis program#Human Landing System (HLS)|HLS spacecraft<br />{{Nowrap|docking port}}]]
+| HALO            = [[Habitation and Logistics Outpost|'''HALO'''<br />{{Nowrap|logistics and habitat}}]]
+| ERM          = [[European System Providing Refueling, Infrastructure and Telecommunications|''' ESPRIT Lunar View'''<br />{{Nowrap|observation port<br />and cargo storage}}]]
+| CD              = [[Gateway Logistics Services|Cargo spacecraft<br />{{Nowrap|docking port}}]]
+| boxstyle_HLSD   = border: 2px solid #a3ff66; background:#ffffff;
+| boxstyle_HALO   = border: 2px solid #6699ff; background:#ffffff;
+| boxstyle_ERM = border: 2px solid #6699ff; background:#ffffff;
+| boxstyle_CD     = border: 2px solid #a3ff66; background:#ffffff;
+}}
+{{tree chart| | | | | | | |!| | |FS| |
+| FS  = {{Nowrap|Fuel storage}}
+| boxstyle_FS     = border: 2px solid #fee067; background:#ffffff;
+}}
+{{tree chart| | | | | | | |!| | | | | }}
+{{tree chart| | |UDP|-|I-HAB|-|Airlock| | | | |
+| I-HAB           = [[International Habitation Module|'''I-HAB'''<br />{{Nowrap|logistics and habitat}}]]
+| UDP             = Utility {{Nowrap|docking port}}
+| Airlock             = [[Crew and Science Airlock Module|'''Crew and Science<br />Airlock Module''']]
+| boxstyle_I-HAB  = border: 2px solid #6699ff; background:#ffffff;
+| boxstyle_UDP    = border: 2px solid #a3ff66; background:#ffffff;
+| boxstyle_Airlock    = border: 2px solid #6699ff; background:#ffffff;
+}}
+{{tree chart| | | | | | |:|!|:| | }}
+{{tree chart| | | | |RAD|!|RAD| | | |
+| RAD              = [[External Active Thermal Control System|Heat radiator]]
+| boxstyle_RAD     = border: 2px solid #fee067; background:#ffffff;
+}}
+{{tree chart| | | | | | | |!| | | | | }}
+{{tree chart| | | | | | |OD| | |
+| OD              = [[Orion (spacecraft)|Orion spacecraft<br />{{Nowrap|docking port}}]]
+| boxstyle_OD     = border: 2px solid #a3ff66; background:#ffffff;
+}}
+{{tree chart/end|nocat=1}}</div>
+
+* {{Anchor|PPE|Power and Propulsion Element}} The [[Power and Propulsion Element]] (PPE) was a solar electric propulsion module derived from technology developed at the [[Jet Propulsion Laboratory]] for the canceled [[Asteroid Redirect Mission]].<ref name="nasa-20160920" /><ref name="SN-20170614" /><ref>{{cite web |title=Asteroid Redirect Robotic Mission |url=https://www.jpl.nasa.gov/missions/asteroid-redirect-robotic-mission-arrm/ |url-status=live |archive-url=https://web.archive.org/web/20190530113407/https://www.jpl.nasa.gov/missions/asteroid-redirect-robotic-mission-arrm/ |archive-date=30 May 2019 |access-date=30 May 2019 |website=jpl.nasa.gov |publisher=NASA}} {{PD-notice}}</ref> It was intended to provide [[Solar energy|solar electric power]] and [[ion thruster]] propulsion,<ref name="SN-20190523" /><ref name="Cassady_2018" /><ref name="Maxar and Busek" /> enabling station-keeping and acting as a [[space tug]] for visiting craft.<ref name="Maxar" /> In 2019, [[Maxar Technologies]] was selected to build the PPE, based on its 1300-series satellite bus. The module was planned to launch with HALO on a [[Falcon Heavy]]. They were to be assembled together on Earth and reach lunar orbit after nine to ten months.<ref name="nasa2" /><ref name="nasa-20210209" /><ref name="gao-20240731" />
+* {{Anchor|HALO|Habitation and Logistics Outpost}} The [[Habitation and Logistics Outpost]] (HALO) was a pressurized module providing living and working space supporting a crew of four for at least 30 days, along with command and control functions, and docking ports for visiting spacecraft.<ref name="MHM_requirements_justification">{{cite web |title=Justification for other than full and open competition (JOFOC) for the Minimal Habitation Module (MHM) |url=https://www.fbo.gov/index.php?tab=documents&tabmode=form&subtab=core&tabid=d4e9e11d78e9dd0b8bd05395b3d82c7f |url-status=live |archive-url=https://web.archive.org/web/20190903173343/https://www.fbo.gov/index.php?tab=documents&tabmode=form&subtab=core&tabid=d4e9e11d78e9dd0b8bd05395b3d82c7f |archive-date=3 September 2019 |access-date=23 July 2019 |publisher=Federal Business Opportunities |ref=Solicitation 80JSC019GTWYHAB}} {{PD-notice}}</ref> In 2020, [[Northrop Grumman]] was selected to build the HALO, based on its [[Cygnus (spacecraft)|Cygnus]] cargo spacecraft.<ref name="SN-20190723" /><ref name="nsf-20200807" /><ref name="sfn-20200610" /> It was to launch together with the PPE.<ref name="nasa2" /><ref name="nasa-20210209" /><ref name="gao-20240731" />
+* {{Anchor|ESPRIT}} The [[European System Providing Refueling, Infrastructure and Telecommunications]] (ESPRIT) was a service module to developed by the ESA and built by [[Thales Alenia Space]].<ref name="bbc1" /><ref name="thales3" /> It would have provided communications, fuel storage, and additional infrastructure.<ref name="nsf-20180911" /> ESPRIT consists of two elements: ''Lunar Link'', a communications package planned to launch attached to HALO,<ref name="esa2" /> and ''Lunar View'', a refueling and logistics element planned to launch on an [[Space Launch System|SLS rocket]] as a co-manifested payload with the [[Artemis V]] crewed [[Orion (spacecraft)|Orion spacecraft]].<ref name="esa3" /><ref name="SN-20230313" />
+* {{anchor|I-HAB|International Habitation Module|IHAB}} [[Lunar I-Hab|I-HAB]] was an additional pressurized habitation module developed by ESA in collaboration with JAXA.<ref name="TSR2" /><ref name="bbc1" /><ref name="thales3" /> It was intended to expand crew living and working space and was planned to launch on an SLS rocket as a co-manifested payload with the [[Artemis IV]] crewed Orion spacecraft.<ref name="esa4" /><ref name="SN-20230313" /><ref name="esa5" /> Like all other future modules, it would have been joined together in space using the [[International Docking System Standard]].<ref name="Inverse 2017">{{Cite web |last=Patel |first=Neel V. |date=2017-04-04 |title=NASA Unveils Deep Space Gateway and Transport Architectures |url=https://www.inverse.com/article/29948-nasa-deep-space-gateway-transport-architectures-mars-travel |access-date=2024-05-08 |website=Inverse |language=en}}</ref>
+* {{anchor|Canadarm3|Canadarm 3}} Canadarm3 was a robotic manipulator system developed by the CSA, consisting of a large arm and a smaller dexterous arm. It was designed for autonomous and remotely operated use to support maintenance, assembly, and visiting vehicle operations.<ref name="csa-20200626a" /><ref name="csa-20200626b" /><ref name="ctv1" /><ref name="SN-20201208" />
+* {{anchor|Crew and Science Airlock Module}} The [[Crew and Science Airlock Module]] was intended to support [[Extravehicular activity|extravehicular activities]] and the deployment of external payloads. It was being developed by the MBRSC and was planned to launch on an SLS rocket as a co-manifested payload with the [[Artemis VI]] crewed Orion spacecraft.<ref name="SN-20240107" />
+
+== Criticism ==
+NASA officials promoted the Gateway as a "reusable command module" that could direct activities on the lunar surface.<ref name="SN-20181225" /> However, Gateway has received some negative reactions.
+
+===Former NASA-affiliated people=== 
+[[Michael D. Griffin]], a former NASA administrator, said that the Gateway could be useful only after there are facilities on the Moon producing propellant that could be transported to the Gateway. Griffin thinks that after that is achieved, the Gateway would then serve as a fuel depot.<ref name="SN-20181225" /> In a written testimony to Congress, Griffin stated that the current architecture requiring staging operations at a Gateway based in a lunar polar [[near-rectilinear halo orbit]] (NRHO) with a 6.5-day period was disadvantageous in that immediate return to the Gateway from the lunar surface is possible only on 6.5-day centers and that no early human lunar mission should knowingly accept the risk of stranding a crew, whether on the surface or in lunar orbit, for days at a time.<ref name="Griffin_2024" />
+
+Former NASA Associate Administrator [[Doug Cooke]] wrote in an article on ''[[The Hill (newspaper)|The Hill]]'' stating, "NASA can significantly increase speed, simplicity, cost and probability of mission success by deferring Gateway, leveraging SLS, and reducing critical mission operations". He also wrote, "NASA should launch the lander elements (ascent and descent/transfer) on an SLS Block 1B. If an independent transfer element is required, it can be launched on a commercial launcher".<ref name="thehill1" />
+
+[[George Abbey (NASA)|George Abbey]], a former director of NASA's [[Johnson Space Center]], said, "The Gateway is, in essence, building a space station to orbit a natural space station, namely the Moon. [...] If we are going to return to the Moon, we should go directly there, not build a space station to orbit it".<ref name="houston1" />
+
+Former NASA astronaut [[Terry W. Virts]], who was a pilot of [[STS-130]] aboard {{OV|105}} and commander of the [[ISS]] on [[Expedition 43]], wrote in an op-ed on ''[[Ars Technica]]'' that the Gateway would "shackle human exploration, not enable it". He also said, "If we don't have the goal [of Gateway], we are putting the proverbial chicken before the egg by developing '[[Project Gemini|Gemini]]' before we know what '[[Apollo program|Apollo]]' will look like. Regardless of a future destination, as someone who lived on the ISS for 200 days, I cannot envision a new technology that would be developed or validated by building another modular space station. Without a specific goal, we're unlikely to ever identify one". Virts further criticized NASA for abandoning its planned goal of separating crew from cargo, which was put in place following the [[Space Shuttle Columbia disaster|Space Shuttle ''Columbia'' disaster]] in 2003.<ref name="arstech2" />
+
+[[Apollo 11]] astronaut [[Buzz Aldrin]] stated that he is "quite opposed to the Gateway" and that "using the Gateway as a staging area for robotic or human missions to the lunar surface is absurd". Aldrin also questioned the benefit of the idea of sending "a crew to an intermediate point in space, pick up a lander there and go down". Conversely, Aldrin expressed support for [[Robert Zubrin]]'s Moon Direct concept which involves lunar landers traveling from Earth orbit to the lunar surface and back.<ref name="SN-20181116" />
+
+Tom Young, a former director of NASA's [[Goddard Space Flight Center]], stated at a hearing at the House Science committee that NASA's portfolio of human spaceflight programs may now be overloaded. "The plate is really full today... I personally think that the leadership is going to have to, number one, prioritize, but number two is probably to eliminate some of the things that are currently being done that will interrupt having any opportunity of 2024, or I would say even 2028". He said Artemis could be useful in preparations for later missions to Mars but he did not really see a required role for the Gateway in the lunar program.<ref name="SN-20191114" />
+
+===Other people===
+Clive Neal, a [[University of Notre Dame]] geologist and advocate for the lunar exploration program, called the Gateway "a waste of money" and stated that NASA is "not fulfilling space policy by building an orbital space station around the Moon".<ref name="arstech1" />
+
+[[Mars Society]] founder [[Robert Zubrin]] called the Gateway "NASA's worst plan yet" in an article in the ''[[National Review]]''. He said, "We do not need a lunar-orbiting station to go to the [[Moon]]. We do not need such a station to go to [[Mars]]. We do not need it to go to [[Near-Earth object|near-Earth asteroids]]. We do not need it to go anywhere. Nor can we accomplish anything in such a station that we cannot do in the Earth-orbiting [[International Space Station]], except to expose human subjects to irradiation – a form of medical research for which a number of [[Doctors' Trial|Nazi doctors were hanged]]". Zubrin also stated, "If the goal is to build a Moon base, it should be built on the surface of the Moon. That is where the science is, that is where the shielding material is, and that is where the resources to make propellant and other useful things are to be found".<ref name="natreview1" />
+
+Retired aerospace engineer Gerald Black wrote in an article on ''[[The Space Review]]'' stating that the Gateway is "useless for supporting human return to the lunar surface and a lunar base". He added that it was not planned to be used as a rocket fuel depot and that stopping at the Gateway on the way to or from the Moon would serve no useful purpose and cost propellant.<ref name="TSR1" />
+
+Astrophysicist [[Ethan Siegel]] wrote an article in ''Forbes'' titled "NASA's Idea For A Space Station In Lunar Orbit Takes Humanity Nowhere". Siegel stated that "Orbiting the Moon represents barely incremental progress; the only scientific 'advantages' to being in lunar orbit as opposed to [[low Earth orbit]] are twofold: 1. You're outside of the [[Van Allen radiation belt|Van Allen belts]]. 2. You're closer to the lunar surface", reducing the time delay. His final opinion was that the Gateway is "a great way to spend a great deal of money, advancing science and humanity in no appreciable way".<ref name="forbes1" />
+
+[[Eric Berger (journalist)|Eric Berger]], senior space editor at ''Ars Technica'', stated in an article that the "Gateway introduces costs and complexity into the Artemis Program at a time when NASA is already contending with a superfluity of both" and that "NASA would gain several benefits from canceling Gateway" including a reduction in energy, or delta-v, needed to carry out lunar missions and a simplified lunar landing. Berger also stated that requiring both Orion and Starship to dock with and undock from the Gateway is needlessly complex. In addition, Berger also called for cancelling the [[Exploration Upper Stage]] and replacing it with United Launch Alliance's Centaur V upper stage to further simplify the Artemis Program.<ref name="arstech3" />
+
+Mark Whittington, a contributor to ''The Hill'' newspaper and an author of several space exploration studies, stated in an article that the "lunar orbit project doesn't help us get back to the Moon". Whittington also pointed out that a lunar orbiting space station was not used during the Apollo program and that a "reusable lunar lander could be refueled from a depot on the lunar surface and left in a parking orbit between missions without the need for a big, complex space station".<ref name="thehill2" />
+
+=== Response from NASA ===
+On 10 December 2018, NASA Administrator [[Jim Bridenstine]] said at a presentation "There are people who say we need to get there, and we need to get there tomorrow", speaking of a crewed mission to the Moon, countering with "What we're doing here at NASA is following Space Policy Directive 1", speaking of the Gateway and following up with "I would argue that we got there in 1969. That race is over, and we won. The time now is to build a sustainable, reusable architecture. [...] The next time we go to the Moon, we're going to have American boots on the Moon with the American flag on their shoulders, and they're going to be standing side-by-side with our international partners who have never been to the Moon before".<ref name="SN-20181225" />
+
+Dan Hartman, the program manager for Gateway, on 30 March 2020, told ''Ars Technica'' that the benefits of using Gateway are extending the mission duration, buying down risk, providing research capability and the capability to re-use ascent modules.
+
+{{blockquote|When you go single, I'll say direct mission to the Moon, you're limited on the supplies, either with the Lander or with Orion. With the Gateway, with just with one logistics module, we think we can extend to about twice the mission duration, so 30 days to 60 days. Obviously, the more crew time you have in lunar orbit helps us with research in the human aspects of living in deep space. The more duration we have, certainly that'll help us buy down significant risk with the extreme environments that we're going to be subjecting our crews to. Because we've got to go figure out how to operate in deep space. Obviously we'll demonstrate new hardware and offer that sustainable flexible path for our [[Lunar Lander (spacecraft)|Lunar Lander]] system. With the Gateway, the thinking is we'll be able to reuse the ascent modules potentially multiple times. And again, if we can get mission duration beyond the 30 days, it's going to offer us some additional environmental capabilities. We think it's a tremendous risk buy down asset, not only to explore the Moon sustainably, but to prove out some things that we need to do to get to Mars.<ref name="arstech4" />}}
+
+=== GAO 2024 Report ===
+On 31 July 2024, the [[Government Accountability Office|United States Government Accountability Office]] found that the Gateway ran into numerous technical problems which have yet to be addressed by NASA. One problem was related to the PPE's ability to keep the Gateway integrated stack in the right orbit and pointing in the right direction when large, heavier vehicles are docked with the Gateway. The report found that although the Gateway was meeting the performance requirements for stack controllability that NASA set for it, those requirements do not account for the mass of some visiting vehicles that plan to dock with the Gateway. The mass of the lunar lander Starship is approximately 18 times greater than the value NASA used to develop the PPE's controllability parameters. Another major problem was that the co-manifested vehicle mass or CMV of the PPE and HALO are both exceeding their mass allocations. The report stated that if NASA cannot reduce the mass, it could affect the Gateway's ability to reach the correct lunar orbit. The report also stated that late design changes to reduce their mass could result in cost growth or schedule delay. Another risk was found related to several defects on a network chip—which affects multiple Gateway components, including the HALO's flight computer and power distribution system, which could have led Gateway's flight computers to unexpectedly restart, resulting in losing control of Gateway. The proposed 15-year lifespan was also considered to be too short to properly support a crewed mission to Mars.<ref name="arstech5" /><ref name="gao-20240731" />
+
+== See also ==
+{{Portal|Spaceflight}}
+* {{Annotated link|CAPSTONE (spacecraft)}}
+* {{Annotated link|Commercial Resupply Services}}
+* {{Annotated link|Exploration Gateway Platform}}
+* {{Annotated link|Moonbase}}
+* {{Annotated link|Lunar cycler}}
+* {{Annotated link|Orbital Piloted Assembly and Experiment Complex}}
+* {{Annotated link|Project Prometheus}}
+* {{Annotated link|Mars Base Camp}}
+* {{Annotated link|Mars Piloted Orbital Station}}
+* {{Annotated link|Starship HLS}}
+* {{Annotated link|International Lunar Research Station}}
+
+== References ==
+{{Reflist|refs=
+
+<ref name="arstech1">{{cite news |last=Berger |first=Eric |author-link=Eric Berger (journalist) |date=2022-06-20 |title=We got a leaked look at NASA's future Moon missions—and likely delays |url=https://arstechnica.com/science/2022/06/we-got-a-leaked-look-at-nasas-future-moon-missions-and-likely-delays/ |access-date=2020-06-27 |website=Ars Technica}}</ref>
+
+<ref name="arstech2">{{cite web |author1=T. Virts |date=28 September 2017 |title=Op-ed: The Deep Space Gateway would shackle human exploration, not enable it |url=https://arstechnica.com/science/2017/09/op-ed-the-deep-space-gateway-would-shackle-human-exploration-not-enable-it/ |url-status=live |archive-url=https://web.archive.org/web/20180521104209/https://arstechnica.com/science/2017/09/op-ed-the-deep-space-gateway-would-shackle-human-exploration-not-enable-it/ |archive-date=2018-05-21 |access-date=2018-05-20 |website=Ars Technica}}</ref>
+
+<ref name="arstech3">{{cite news |last=Berger |first=Eric |author-link=Eric Berger (journalist) |date=2024-10-01 |title=The politically incorrect guide to saving NASA's floundering Artemis Program |url=https://arstechnica.com/space/2024/10/heres-how-to-revive-nasas-artemis-moon-program-with-three-simple-tricks/ |access-date=2025-07-31 |website=Ars Technica}}</ref>
+
+<ref name="arstech4">{{cite news |last=Berger |first=Eric |author-link=Eric Berger (journalist) |date=2020-03-30 |title=NASA officials outline plans for building a lunar Gateway in the mid-2020s |url=https://arstechnica.com/science/2020/03/nasa-officials-outline-plans-for-building-a-lunar-gateway-in-the-mid-2020s/ |url-status=live |archive-url=https://web.archive.org/web/20200513134610/https://arstechnica.com/science/2020/03/nasa-officials-outline-plans-for-building-a-lunar-gateway-in-the-mid-2020s/ |archive-date=2020-05-13 |access-date=2020-04-25 |website=Ars Technica}}</ref>
+
+<ref name="arstech5">{{cite news |last=Berger |first=Eric |author-link=Eric Berger (journalist) |date=2024-08-01 |title=NASA's Lunar Gateway has a big visiting vehicles problem |url=https://arstechnica.com/space/2024/08/nasas-lunar-gateway-has-a-big-visiting-vehicles-problem/ |access-date=2025-01-05 |website=Ars Technica}}</ref>
+
+<ref name="arstech6">{{cite news |last=Berger |first=Eric |author-link=Eric Berger (journalist) |date=2026-03-04 |title=The US Senate empowers NASA to fully engage in lunar space race |url=https://arstechnica.com/space/2026/03/the-us-senate-empowers-nasa-to-fully-engage-in-lunar-space-race/ |access-date=2026-03-09 |website=Ars Technica}}</ref>
+
+<ref name="arstech7">{{cite news |last=Berger |first=Eric |author-link=Eric Berger (journalist) |date=2026-03-06 |title=NASA has shuffled its Artemis rockets. But what of the lunar landers? |url=https://arstechnica.com/space/2026/03/nasa-has-shuffled-its-artemis-rockets-but-what-of-the-lunar-landers/ |access-date=2026-03-09 |website=Ars Technica}}</ref>
+
+<ref name="arstech8">{{cite news |last=Berger |first=Eric |author-link=Eric Berger (journalist) |date=2026-02-27 |title=NASA shakes up its Artemis program to speed up lunar return |url=https://arstechnica.com/staff/2026/02/nasa-shakes-up-its-artemis-program-to-speed-up-lunar-return/ |access-date=2026-02-28 |website=Ars Technica}}</ref>
+
+<ref name="arstech9">{{cite news |last=Berger |first=Eric |author-link=Eric Berger (journalist) |date=2026-03-25 |title=NASA kills lunar space station to focus on ambitious Moon base |url=https://arstechnica.com/space/2026/03/nasa-kills-lunar-space-station-to-focus-on-ambitious-moon-base/ |access-date=2026-03-25 |website=Ars Technica}}</ref>
+
+<ref name="bbc1">{{cite news |author1=J. Amos |date=2020-10-14 |title=Europe steps up contributions to Artemis Moon plan |url=https://www.bbc.com/news/science-environment-54537906 |url-status=live |archive-url=https://web.archive.org/web/20201014104207/https://www.bbc.com/news/science-environment-54537906 |archive-date=2020-10-14 |access-date=2020-10-15 |newspaper=BBC News}}</ref>
+
+<ref name="Cassady_2018">{{cite web |author1=R. J. Cassady |author2=S. Wiley |author3=J. Jackson |year=2018 |title=Status of Advanced Electric Propulsion Systems for Exploration Missions |url=https://www.researchgate.net/profile/R_Cassady/publication/328997773_Status_of_Advanced_Electric_Propulsion_Systems_for_Exploration_Missions/links/5beee33692851c6b27c37074/Status-of-Advanced-Electric-Propulsion-Systems-for-Exploration-Missions.pdf |url-status=live |archive-url=https://web.archive.org/web/20190613101313/https://www.researchgate.net/profile/R_Cassady/publication/328997773_Status_of_Advanced_Electric_Propulsion_Systems_for_Exploration_Missions/links/5beee33692851c6b27c37074/Status-of-Advanced-Electric-Propulsion-Systems-for-Exploration-Missions.pdf |archive-date=2019-06-13 |work=Aerojet Rocketdyne}}</ref>
+
+<ref name="collectspace1">{{Cite web |date=2018-09-18 |title=NASA reveals new Gateway logo for Artemis lunar orbit way station |url=http://www.collectspace.com/news/news-091819a-nasa-lunar-gateway-logo.html |access-date=2026-01-19}}</ref>
+
+<ref name="csa-20200626a">{{cite web |date=2020-06-26 |title=About Canadarm3 |url=https://www.asc-csa.gc.ca/eng/canadarm3/about.asp |access-date=2023-09-19 |website=www.asc-csa.gc.ca |publisher=[[Canadian Space Agency]]}}</ref>
+
+<ref name="csa-20200626b">{{cite web |date=2020-06-26 |title=Building the next Canadarm |url=https://www.canada.ca/en/space-agency/news/2020/06/building-the-next-canadarm.html |access-date=2026-03-25 |website=www.canada.ca |publisher=[[Canadian Space Agency]]}}</ref>
+
+<ref name="csa-20240627">{{cite web |date=2024-06-27 |title=Canada begins detailed design, construction and testing of Canadarm3 for Gateway |url=https://www.canada.ca/en/space-agency/news/2024/06/canada-begins-detailed-design-construction-and-testing-of-canadarm3-for-gateway.html |access-date=2026-01-19 |website=www.canada.ca |publisher=[[Canadian Space Agency]]}}</ref>
+
+<ref name="ctv1">{{cite news |date=2020-12-08 |title=Canadian Space Agency awards Canadarm3 contract worth $22.8 million to MDA |url=https://www.ctvnews.ca/sci-tech/article/canadian-space-agency-awards-canadarm3-contract-worth-228m-to-mda/ |access-date=2026-03-25 |newspaper=CTV News}}</ref>
+
+<ref name="esa1">{{cite web |title=Gateway |url=https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/Gateway |access-date=2026-01-19 |website=www.esa.int |publisher=[[European Space Agency]]}}</ref>
+
+<ref name="esa2">{{cite web |title=Gateway: Lunar Link |url=https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Gateway_Lunar_Link |access-date=2024-06-26 |website=www.esa.int |publisher=[[European Space Agency]]}}</ref>
+
+<ref name="esa3">{{cite web |title=Gateway: Lunar View |url=https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Gateway_Lunar_View |access-date=2024-06-26 |website=www.esa.int |publisher=[[European Space Agency]]}}</ref>
+
+<ref name="esa4">{{cite web |title=Gateway: Lunar I-Hab |url=https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Gateway_Lunar_I-Hab |access-date=2024-06-26 |website=www.esa.int |publisher=[[European Space Agency]]}}</ref>
+
+<ref name="esa5">{{cite web |title=Artemis IV |url=https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Orion/Artemis_IV |access-date=2023-08-26 |website=www.esa.int |publisher=[[European Space Agency]]}}</ref>
+
+<ref name="forbes1">{{cite web |author1=E. Siegel |date=2017-05-18 |title=NASA's Idea For A Space Station In Lunar Orbit Takes Humanity Nowhere |url=https://www.forbes.com/sites/startswithabang/2017/05/18/nasas-idea-for-a-space-station-in-lunar-orbit-takes-humanity-nowhere/#221e7593d145 |url-status=live |archive-url=https://web.archive.org/web/20190216153303/https://www.forbes.com/sites/startswithabang/2017/05/18/nasas-idea-for-a-space-station-in-lunar-orbit-takes-humanity-nowhere/#221e7593d145 |archive-date=2019-02-16 |access-date=2019-02-15 |work=Forbes}}</ref>
+
+<ref name="Free_2017">{{cite web |author1=J. Free |date=2017-03-28 |title=Human Exploration and Operations Mission Directorate – Architecture Status |url=https://www.nasa.gov/sites/default/files/atoms/files/march_2017_nac_charts_architecturejmf_rev_3_tagged.pdf |url-status=live |archive-url=https://web.archive.org/web/20200102091140/https://www.nasa.gov/sites/default/files/atoms/files/march_2017_nac_charts_architecturejmf_rev_3_tagged.pdf |archive-date=2020-01-02 |website=www.nasa.gov |publisher=[[NASA]]}} {{PD-notice}}</ref>
+
+<ref name="gao-20240731">{{cite web |date=2024-07-31 |title=Artemis Programs: NASA Should Document and Communicate Plans to Address Gateway's Mass Risk |url=https://www.gao.gov/assets/gao-24-106878.pdf |access-date=2025-01-05 |website=www.gao.gov |publisher=[[Government Accountability Office]]}}</ref>
+
+<ref name="Griffin_2024">{{cite web |author1=M. D. Griffin |date=2024-01-17 |title=Returning to the Moon: Keeping Artemis on Track |url=https://republicans-science.house.gov/_cache/files/2/d/2dc97bb6-040b-4d15-ae69-6b8de637174d/448A0B95841995613C9A9B19135C104C.2024-01-17-griffin---testimony.pdf/ |access-date=2024-01-19 |website=House Committee on Science Space & Tech – Republicans}}</ref>
+
+<ref name="houston1">{{cite news |author1=G. Abbey |date=2019-07-13 |title=The Moon is "a God-given space station orbiting Earth" [Opinion] |url=https://www.houstonchronicle.com/opinion/outlook/article/The-moon-is-a-God-given-space-station-orbiting-14092345.php |url-status=live |archive-url=https://web.archive.org/web/20190920155132/https://www.houstonchronicle.com/opinion/outlook/article/The-moon-is-a-God-given-space-station-orbiting-14092345.php |archive-date=2019-09-20 |access-date=2019-09-21 |newspaper=Houston Chronicle}}</ref>
+
+<ref name="Lee_2023">{{cite journal |author1=R. G. Lee |author2=E. S. Worthy |author3=E. M. Willis |display-authors=etal |year=2023 |title=Development of a comprehensive physics-based model for study of NASA gateway lunar dust contamination |url=https://ntrs.nasa.gov/api/citations/20210026411/downloads/Lunar%20Dust%20Model%20Abstract%20IAC%2073%202022%20FINAL%20-%2012.15.21_ScanCopy.pdf |journal=Acta Astronautica |volume=210 |pages=616–626 |bibcode=2023AcAau.210..616L |doi=10.1016/j.actaastro.2023.05.025}}</ref>
+
+<ref name="nasa1">{{cite web |title=Gateway: Frequently Asked Questions |url=https://www.nasa.gov/gateway-frequently-asked-questions/ |access-date=2026-01-19 |website=www.nasa.gov |publisher=[[NASA]]}}</ref>
+
+<ref name="nasa2">{{cite web |date=2023-06-12 |title=Gateway Space Station |url=https://www.nasa.gov/reference/gateway-about/ |access-date=2026-01-19 |website=www.nasa.gov |publisher=[[NASA]]}}</ref>
+
+
+<ref name="nasa-20160809">{{cite web |author1=E. Mahoney |date=2016-08-08 |title=NextSTEP Partners Develop Ground Prototypes to Expand our Knowledge of Deep Space Habitats |url=https://www.nasa.gov/feature/nextstep-partnerships-develop-ground-prototypes |url-status=live |archive-url=https://web.archive.org/web/20170410051227/https://www.nasa.gov/feature/nextstep-partnerships-develop-ground-prototypes/ |archive-date=2017-04-10 |access-date=2017-11-06 |website=www.nasa.gov |publisher=[[NASA]]}} {{PD-notice}}</ref>
+
+<ref name="nasa-20160920">{{cite web |author1=T. Greicius |date=2016-09-20 |title=JPL Seeks Robotic Spacecraft Development for Asteroid Redirect Mission |url=https://www.jpl.nasa.gov/news/jpl-seeks-robotic-spacecraft-development-for-asteroid-redirect-mission/ |url-status=live |archive-url=https://web.archive.org/web/20190617075954/https://www.nasa.gov/feature/jpl/jpl-seeks-robotic-spacecraft-development-for-asteroid-redirect-mission/ |archive-date=2019-06-17 |access-date=2019-05-30 |website=jpl.nasa.gov |publisher=[[NASA]] / [[Jet Propulsion Laboratory|JPL]]}} {{PD-notice}}</ref>
+
+<ref name="nasa-20180502">{{cite web |author1=C. Warner |date=2018-05-02 |title=NASA's Lunar Outpost will Extend Human Presence in Deep Space |url=https://www.nasa.gov/feature/nasa-s-lunar-outpost-will-extend-human-presence-in-deep-space |url-status=live |archive-url=https://web.archive.org/web/20180825033038/https://www.nasa.gov/feature/nasa-s-lunar-outpost-will-extend-human-presence-in-deep-space/ |archive-date=2018-08-25 |access-date=2018-09-19 |website=www.nasa.gov |publisher=[[NASA]]}} {{PD-notice}}</ref>
+
+<ref name="nasa-20180824">{{cite web |author1=E. Mahoney |date=2018-08-24 |title=NASA Seeks Ideas for Scientific Activities Near the Moon |url=https://www.nasa.gov/feature/nasa-seeks-ideas-for-scientific-activities-near-the-moon |url-status=live |archive-url=https://web.archive.org/web/20190609230044/https://www.nasa.gov/feature/nasa-seeks-ideas-for-scientific-activities-near-the-moon/ |archive-date=2019-06-09 |access-date=2018-09-19 |website=www.nasa.gov |publisher=[[NASA]]}} {{PD-notice}}</ref>
+
+<ref name="nasa-20210209">{{cite press release |title=NASA Awards Contract to Launch Initial Elements for Lunar Outpost |date=2021-02-09 |publisher=[[NASA]] |url=https://www.nasa.gov/press-release/nasa-awards-contract-to-launch-initial-elements-for-lunar-outpost |access-date=2021-02-10 |website=www.nasa.gov |author1=M. Witt |author2=P. Bielling |author3=I. Reyna |author4=R. Kraft}}</ref>
+
+<ref name="nasa-20221117">{{cite press release |title=NASA, Japan Announce Gateway Contributions, Space Station Extension |date=2022-11-17 |publisher=[[NASA]] |url=https://www.nasa.gov/news-release/nasa-japan-announce-gateway-contributions-space-station-extension/ |access-date=2026-01-19 |website=www.nasa.gov |author1=M. Etkind |author2=J. McGuinness}}</ref>
+
+<ref name="nasa-20250502">{{cite press release |title=President Trump's FY26 Budget Revitalizes Human Space Exploration |date=2025-05-02 |publisher=[[NASA]] |url=https://www.nasa.gov/news-release/president-trumps-fy26-budget-revitalizes-human-space-exploration/ |access-date=2025-05-03 |website=www.nasa.gov |author1=J. M. Dooren |author2=B. Stevens}}</ref>
+
+<ref name="nasa-20260108">{{cite web |author1=B. R. Zamora |date=2026-01-08 |title=NASA Starts Up Gateway's Power System for First Time |url=https://www.nasa.gov/centers-and-facilities/glenn/nasa-starts-up-gateways-power-system-for-first-time/ |access-date=2026-01-19 |website=www.nasa.gov |publisher=[[NASA]]}}</ref>
+
+<ref name="nasa-20260324">{{cite press release |title=NASA Unveils Initiatives to Achieve America's National Space Policy |date=2026-03-24 |publisher=[[NASA]] |url=https://www.nasa.gov/news-release/nasa-unveils-initiatives-to-achieve-americas-national-space-policy/ |access-date=2026-03-25 |website=www.nasa.gov |author1=L. E. Low}}</ref>
+
+<ref name="natreview1">{{cite web |author1=R. Zubrin |date=2017-05-16 |title=NASA's Worst Plan Yet |url=https://www.nationalreview.com/2017/05/nasa-lunar-orbit-space-station-terrible-idea/ |url-status=live |archive-url=https://web.archive.org/web/20180302014801/https://www.nationalreview.com/2017/05/nasa-lunar-orbit-space-station-terrible-idea/ |archive-date=2018-03-02 |access-date=2018-05-20 |website=National Review}}</ref>
+
+<ref name="nsf-20180911">{{cite web |author1=P. Sloss |date=2018-09-11 |title=NASA updates Lunar Gateway Plans |url=https://www.nasaspaceflight.com/2018/09/nasa-lunar-gateway-plans/ |access-date=2026-01-19 |website=NASASpaceflight.com}}</ref>
+
+<ref name="nsf-20200807">{{cite web |author1=C. Gebhardt |date=2020-08-07 |title=Northrop Grumman outlines HALO plans for Gateway's central module |url=https://www.nasaspaceflight.com/2020/08/northrop-halo-plans-gateway/ |url-status=live |archive-url=https://web.archive.org/web/20200810151335/https://www.nasaspaceflight.com/2020/08/northrop-halo-plans-gateway/ |archive-date=2020-08-10 |access-date=2020-08-13 |website=NASASpaceflight.com}}</ref>
+
+<ref name="Parrish_2020">{{cite conference |author1=N. L. Parrish |author2=M. J. Bolliger |author3=E. Kayser |display-authors=etal |date=2020-01-05 |title=Near Rectilinear Halo Orbit Determination with Simulated DSN Observations |url=https://ntrs.nasa.gov/api/citations/20200011550/downloads/20200011550.pdf |conference=30th AIAA/AAS Spaceflight Mechanics Meeting |location=Orlando, Florida |doi=10.2514/6.2020-1700 |isbn=978-1-62410-595-1 |id=AIAA 2020-1700 |quote=The current nominal orbit for the Gateway is a 9:2 synodic resonant southern L2 NRHO}}</ref>
+
+<ref name="sfn-20200506">{{cite news |last=Clark |first=Stephen |date=2020-05-06 |title=NASA plans to launch first two Gateway elements on same rocket |url=https://spaceflightnow.com/2020/05/06/nasa-plans-to-launch-first-two-gateway-elements-on-same-rocket/ |access-date=2023-01-25 |website=Spaceflight Now}}</ref>
+
+<ref name="sfn-20200610">{{cite news |last=Clark |first=Stephen |date=2020-06-09 |title=NASA signs Gateway habitat design contract with Northrop Grumman |url=https://spaceflightnow.com/2020/06/09/nasa-signs-gateway-habitat-design-contract-with-northrop-grumman/ |url-status=live |archive-url=https://web.archive.org/web/20200610222822/https://spaceflightnow.com/2020/06/09/nasa-signs-gateway-habitat-design-contract-with-northrop-grumman/ |archive-date=2020-06-10 |access-date=2020-06-11 |website=Spaceflight Now}}</ref>
+
+<ref name="sfn-20210209">{{cite news |last=Clark |first=Stephen |date=2021-02-09 |title=SpaceX wins contract to launch first pieces of NASA's Gateway lunar outpost |url=https://spaceflightnow.com/2021/02/09/spacex-wins-contract-to-launch-first-two-elements-of-nasas-gateway-lunar-outpost/ |access-date=2026-01-19 |website=Spaceflight Now}}</ref>
+
+<ref name="SN-20170614">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2017-06-14 |title=NASA closing out Asteroid Redirect Mission |url=https://spacenews.com/nasa-closing-out-asteroid-redirect-mission/ |url-access=subscription |access-date=2019-05-30 |website=SpaceNews}}</ref>
+
+<ref name="SN-20171103">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2017-11-03 |title=NASA issues study contracts for Deep Space Gateway element |url=https://spacenews.com/nasa-issues-study-contracts-for-deep-space-gateway-element/ |url-access=subscription |access-date=2019-12-11 |website=SpaceNews}}</ref>
+
+<ref name="SN-20181116">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2018-11-16 |title=Advisory group skeptical of NASA lunar exploration plans |url=https://spacenews.com/advisory-group-skeptical-of-nasa-lunar-exploration-plans/ |url-access=subscription |access-date=2018-12-20 |website=SpaceNews}}</ref>
+
+<ref name="SN-20181225">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2018-12-25 |title=Is the Gateway the right way to the moon? |url=https://spacenews.com/is-the-gateway-the-right-way-to-the-moon/ |url-access=subscription |access-date=2024-05-08 |website=SpaceNews}}</ref>
+
+<ref name="SN-20190523">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2019-05-23 |title=NASA selects Maxar to build first Gateway element |url=https://spacenews.com/nasa-selects-maxar-to-build-first-gateway-element |url-access=subscription |access-date=2019-05-24 |website=SpaceNews}}</ref>
+
+<ref name="SN-20190723">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2019-07-23 |title=NASA to sole source Gateway habitation module to Northrop Grumman |url=https://spacenews.com/nasa-to-sole-source-gateway-habitation-module-to-northrop-grumman/ |url-access=subscription |access-date=2019-12-11 |website=SpaceNews}}</ref>
+
+<ref name="SN-20191114">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2019-11-14 |title=House committee raises doubts about Artemis |url=https://spacenews.com/house-committee-raises-doubts-about-artemis/ |url-access=subscription |access-date=2025-06-06 |website=SpaceNews}}</ref>
+
+<ref name="SN-20201012">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2020-10-12 |title=Russia skeptical about participating in lunar Gateway |url=https://spacenews.com/russia-skeptical-about-participating-in-lunar-gateway/ |url-access=subscription |access-date=2021-01-25 |website=SpaceNews}}</ref>
+
+<ref name="SN-20201208">{{cite news |date=2020-12-08 |title=MDA Announces Contract for Canadarm3 on NASA-led Gateway |url=https://spacenews.com/mda-announces-contract-for-canadarm3-on-nasa-led-gateway/ |access-date=2020-12-17 |website=SpaceNews}}</ref>
+
+<ref name="SN-20230313">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2023-03-13 |title=NASA planning to spend up to $1 billion on space station deorbit module |url=https://spacenews.com/nasa-planning-to-spend-up-to-1-billion-on-space-station-deorbit-module/ |url-access=subscription |access-date=2023-03-14 |website=SpaceNews}}</ref>
+
+<ref name="SN-20240107">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2024-01-07 |title=UAE to build airlock for lunar Gateway |url=https://spacenews.com/uae-to-build-airlock-for-lunar-gateway/ |url-access=subscription |access-date=2024-01-08 |website=SpaceNews}}</ref>
+
+<ref name="Space.com1">{{cite news |author1=H. Weitering |date=2017-09-27 |title=NASA and Russia Partner Up for Crewed Deep-Space Missions |url=https://www.space.com/38287-nasa-russia-deep-space-gateway-partnership.html |url-status=live |archive-url=https://web.archive.org/web/20190910194351/https://www.space.com/38287-nasa-russia-deep-space-gateway-partnership.html |archive-date=2019-09-10 |access-date=2017-11-05 |website=Space.com}}</ref>
+
+<ref name="Space.com4">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2017-07-29 |title=NASA Seeks Information on Developing Deep Space Gateway Module |url=https://www.space.com/37619-nasa-deep-space-gateway-module-outreach.html |access-date=2024-05-08 |website=Space.com}}</ref>
+
+<ref name="thales1">{{cite web |date=2025-02-04 |title=Thales Alenia Space signs a contract with Mohammed Bin Rashid Space Centre to develop the Emirates Airlock Module, a critical element of Lunar Gateway |url=https://www.thalesaleniaspace.com/en/press-releases/thales-alenia-space-signs-contract-mohammed-bin-rashid-space-centre-develop-emirates |access-date=2026-01-19 |website=Thales Alenia Space}}</ref>
+
+<ref name="thales3">{{cite web |date=2020-10-14 |title=Thales Alenia Space on its way to reach the Moon |url=https://www.thalesgroup.com/en/worldwide/space/press-release/thales-alenia-space-its-way-reach-moon |access-date=2020-10-15 |website=Thales Group}}</ref>
+
+<ref name="thehill1">{{cite news |author1=D. Cooke |date=2019-09-13 |title=Getting back to the moon requires speed and simplicity |url=https://thehill.com/opinion/technology/461299-getting-back-to-the-moon-requires-speed-and-simplicity |url-status=live |archive-url=https://web.archive.org/web/20190920121323/https://thehill.com/opinion/technology/461299-getting-back-to-the-moon-requires-speed-and-simplicity |archive-date=2019-09-20 |access-date=2019-09-21 |newspaper=The Hill}}</ref>
+
+<ref name="thehill2">{{cite news |author1=M. Whittington |date=2018-06-16 |title=NASA's unnecessary US$504 million lunar orbit project doesn't help us get back to the Moon |url=https://thehill.com/opinion/technology/392611-nasas-unnecessary-504-million-lunar-orbit-project-doesnt-help-us-get-back |url-status=live |archive-url=https://web.archive.org/web/20191114223317/https://thehill.com/opinion/technology/392611-nasas-unnecessary-504-million-lunar-orbit-project-doesnt-help-us-get-back |archive-date=2019-11-14 |access-date=2018-12-20 |newspaper=The Hill}}</ref>
+
+<ref name="TSR1">{{cite web |author1=G. Black |date=2018-05-14 |title=The Lunar Orbital Platform – Gateway: an unneeded and costly diversion |url=https://thespacereview.com/article/3494/1 |url-status=live |archive-url=https://web.archive.org/web/20180521104510/http://thespacereview.com/article/3494/1 |archive-date=2018-05-21 |access-date=2026-03-19 |website=The Space Review}}</ref>
+
+<ref name="TSR2">{{cite news |last=Foust |first=Jeff |author-link=Jeff Foust |date=2019-12-02 |title=Funding Europe's space ambitions |url=https://www.thespacereview.com/article/3843/1 |url-status=live |archive-url=https://web.archive.org/web/20191210155035/https://room.eu.com/news/hera-mission-is-approved-as-esa-receives-biggest-ever-budget |archive-date=2019-12-10 |access-date=2026-03-20 |website=The Space Review}}</ref>
+}}
+
+== External links ==
+* [https://www.nasa.gov/feature/deep-space-gateway-to-open-opportunities-for-distant-destinations Deep Space Gateway to Open Opportunities for Distant Destinations] – NASA Moon to Mars
+* [http://www.russianspaceweb.com/imp.html First human outpost near the Moon] – RussianSpaceWeb page about the Gateway
+* [http://www.russianspaceweb.com/imp-2017.html History of the Gateway planning]
+
+{{NASA space program}}
+{{Maxar Technologies|state=autocollapse}}
+{{Space stations}}
+{{Moon spacecraft}}
+{{Artemis program}}
+
+[[Category:Lunar Gateway| ]]
+[[Category:2020s in spaceflight]]
+[[Category:Artemis program]]
+[[Category:Crewed spacecraft]]
+[[Category:Joint ventures]]
+[[Category:Cancelled missions to the Moon]]
+[[Category:NASA programs]]
+[[Category:NASA space stations]]
+[[Category:Spacecraft using halo orbits]]
+[[Category:Cancelled space stations]]

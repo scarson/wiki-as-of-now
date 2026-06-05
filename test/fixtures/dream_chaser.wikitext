@@ -1,0 +1,1032 @@
+{{short description|US reusable automated cargo lifting-body spaceplane}}
+{{About|the spaceplane|other uses|Dream Chasers (disambiguation){{!}}Dream Chasers}}
+{{Use mdy dates|date=July 2016}}
+{{Infobox spacecraft class
+| name = Dream Chaser
+| image = Sierra Space Dream Chaser Spaceplane Documentation Photographs (GRC-2024-C-00116).jpg
+| image_size = 
+| image_alt = Sierra Space Dream Chaser at NASA’s Neil Armstrong Test Facility in 2024
+| image_caption = Dream Chaser [[Dream Chaser Tenacity|''Tenacity'']] at NASA’s Neil Armstrong Test Facility in 2024
+| manufacturer = [[Sierra Space]]
+| designer = 
+| country = United States
+| operator = [[NASA]]
+| applications = [[International Space Station]] (ISS) resupply
+<!--Specifications-->
+| spacecraft_type = Robotic cargo vehicle version, also<br />
+Crewed orbital spaceplane version
+| spacecraft_bus = 
+| constellation = 
+| design_life = 
+| launch_vehicle = [[Vulcan Centaur]]
+| launch_mass = 
+| dry_mass = 
+| payload_capacity = {{convert|5000|kg|lb|abbr=on}} pressurized,
+{{convert|500|kg|lb|abbr=on}} unpressurized
+| crew_capacity = {{ubl | 0 (cargo) | 3–7 (crew)}}
+| dimensions = 
+| volume = 
+| power = 
+| batteries = 
+| equipment = 
+| orbits = [[Low Earth orbit|LEO]]
+<!--Production-->
+| status = Active
+| built = 3
+| orders = 
+| launched = 0 (4 atmospheric tests)
+| operational = 1
+| retired = 
+| failed = 
+| lost = 
+| first = 
+| last = 
+| lastretired = <!--Related spacecraft-->
+| derivedfrom = [[HL-20 Personnel Launch System]]
+| derivatives = 
+| subsatellites = 
+| subsatellite_of = 
+| flown_with = <!--insignia-->
+| insignia = 
+| insignia_size = 
+| insignia_alt = 
+| insignia_caption = <!--image at bottom of infobox-->
+| bottom_image = 
+| bottom_image_size = 
+| bottom_image_alt = 
+| bottom_image_caption = 
+| previous = 
+| next = 
+}}
+[[File:Dream Chaser pre-drop tests.7.jpg|thumb|Dream Chaser flight test vehicle in 2013]]
+
+'''Dream Chaser''' is an American [[Reusable spacecraft|reusable]] [[lifting-body]] [[spaceplane]] developed by [[Sierra Space]]. Conceived as a [[human spaceflight|crewed]] vehicle, it is being developed in a cargo configuration known as the '''Dream Chaser Cargo System''' for missions to the [[International Space Station]] (ISS) under NASA's [[Commercial Resupply Services]] program.<ref>{{Cite web |date=January 14, 2016 |title=NASA Awards International Space Station Cargo Transport Contracts |url=https://www.nasa.gov/news-release/nasa-awards-international-space-station-cargo-transport-contracts/ |access-date=2025-08-05 |website=NASA |language=en-US}}</ref>
+
+Development of Dream Chaser began in 2004 as a project of [[SpaceDev]], which was acquired by [[Sierra Nevada Corporation]] (SNC) in 2008.<ref name="AWST-19910715-26" /> In 2021, the program was transferred to Sierra Space, a subsidiary spun off from SNC as an independent company.
+
+Dream Chaser is designed for [[VTHL|vertical takeoff and horizontal landing]], launching atop a [[Vulcan Centaur]] rocket and landing on conventional runways.<ref name="Vulcan-Selection" /><ref name="subNAS" /> It is capable of carrying both pressurized and unpressurized cargo. A proposed variant for the [[European Space Agency]] would launch aboard an [[Ariane 6]] rocket. The first flight of Dream Chaser was originally scheduled for the second flight of Vulcan Centaur but was not ready in time. As of April 2026, the spacecraft's propulsion system and software had not yet been certified by NASA,<ref>{{Cite web |last=Berger |first=Eric |author-link=Eric Berger (journalist) |date=2025-08-04 |title=Is the Dream Chaser space plane ever going to launch into orbit? |url=https://arstechnica.com/space/2025/08/is-the-dream-chaser-space-plane-ever-going-to-launch-into-orbit/ |access-date=2025-08-05 |website=[[Ars Technica]] |language=en}}</ref> and the spacecraft's [[SSC Demo-1|initial mission]] in late 2026 will no longer dock at the ISS as originally planned.<ref name="09252025JonesNASA">{{cite web |last1=Jones |first1=Sandra |last2=Russell |first2=Jimi |title=NASA, Sierra Space Modify Commercial Resupply Services Contract - NASA |url=https://www.nasa.gov/missions/station/nasa-sierra-space-modify-commercial-resupply-services-contract/ |website=NASA |access-date=25 September 2025 |date=25 September 2025}}</ref>
+
+The Dream Chaser’s design is derived from NASA's [[HL-20 Personnel Launch System]], a lifting-body concept studied in the 1980s and 1990s.
+
+==Spacecraft==
+[[File:Dream Chaser pre-drop tests.5.jpg|thumb|Dream Chaser engineering test article, being driven along the runway by a pickup truck after an atmospheric test]]
+The Dream Chaser [[spaceplane]] is designed to be launched on the top of a typical rocket and land like an airplane on a runway. The design has heritage going back decades. Currently, the Dream Chaser will [[Cargo spacecraft|resupply]] the ISS with cargo. Per the company's website, a crew version is planned for a later date.
+
+[[Sierra Space]] was contracted under [[Commercial Resupply Services|CRS-2]] to perform resupply missions to the [[International Space Station|ISS]], but in a September 2025 contract change Sierra Space only needs to perform a free flight demonstration, with NASA optionally booking resupply missions.<ref>{{Cite web |work= Sierra Nevada Corporation (SNC) |title=NASA Selects Sierra Nevada Corporation's Dream Chaser Spacecraft for Commercial Resupply Services 2 Contract |url=https://www.sncorp.com/news-archive/nasa-selects-sierra-nevada-corporation-s-dream-chaser-spacecraft-for-commercial-resupply-services-2-contract/ |access-date=2024-01-28 |language=en}}</ref><ref>{{Cite web |date=2025-09-25 |title=NASA, Sierra Space Modify Commercial Resupply Services Contract - NASA |url=https://www.nasa.gov/missions/station/nasa-sierra-space-modify-commercial-resupply-services-contract/ |access-date=2025-09-27 |language=en-US}}</ref>
+
+=== Propulsion ===
+On-orbit propulsion of the Dream Chaser was originally proposed to be provided by twin [[hybrid rocket engine]]s capable of repeated starts and throttling. At the time, the SSC's predecessor, the SNC was also developing a [[RocketMotorTwo|similar hybrid rocket]] for Virgin Galactic's [[SpaceShipTwo]].<ref name="at20120906hybrid" />  In May 2014, SNC involvement in the SpaceShipTwo program ended.<ref>{{cite news |url= http://www.parabolicarc.com/2014/05/24/virgin-galactic-hails-rocketmotortwo-milestone/ |title= Virgin Galactic Hails RocketMotorTwo Milestone |author= Doug Messier |date= May 24, 2014 |publisher= ParabolicArc}}</ref>
+
+After the acquisition of Orbitec LLC in July 2014, Sierra Nevada Corporation announced a major change to the propulsion system. The hybrid rocket engine design was dropped in favor of a cluster of Orbitec's Vortex engines. The new unit would be a pressure-fed three-mode engine. At low- and mid-power regimes it uses monopropellant fuel{{snd}} hydrogen peroxide{{snd}} and in high-power demand, the engine adds injection of RP-1 fuel. This increased thrust will be useful to shorten the de-orbit burn duration of the Dream Chaser.<ref name="at20140819liquid" />
+
+=== Thermal protection system ===
+Its [[thermal protection system]] (TPS) is made up of silica-based tiles (for most of the belly and upper portion of the heat shield), and a new composite material called Toughened Unipiece Fibrous Reusable Oxidation Resistant Ceramic (TUFROC) to cover the nose and leading edges.<ref name="Tile-shop-2015">{{cite web |title=Tile Shop Prepping Heat Shields for Future Flights |url=https://blogs.nasa.gov/commercialcrew/2015/06/26/tile-shop-prepping-heat-shields-for-future-flights/ |website=blogs.nasa.gov |year=2015 |access-date=10 November 2018}}</ref><ref name="nasa2018">{{cite web |url=https://technology.nasa.gov/patent/TOP2-187 |title=Toughened Uni-piece Fibrous Reinforced Oxidation-Resistant Composite (TUFROC) |publisher=NASA |access-date=April 1, 2023|archive-url=https://web.archive.org/web/20230402024620/https://technology.nasa.gov/patent/TOP2-187|archive-date=April 2, 2023|url-status=dead}}</ref>
+
+===Shooting Star module===
+In 2019, it was announced that an expendable Shooting Star cargo module would be part of the Dream Chaser cargo system for CRS-2 flights.<ref name="spacecomshootingstar">{{cite web |last1=Thompson |first1=Amy |title=Sierra Nevada Unveils 'Shooting Star' Cargo Module for Dream Chaser Space Plane |url=https://www.space.com/dream-chaser-shooting-star-cargo-module.html |website=Space.com |date=November 21, 2019 |access-date=20 July 2020}}</ref><ref name="wrsshootingstar">{{cite web |last1=Jelen |first1=Bill |title=Sierra Nevada Corporation Shows Off "Shooting Star" Cargo Module at KSC |url=https://wereportspace.com/2019/11/19/sierra-nevada-corporation-shows-off-shooting-star-cargo-module-at-ksc/ |website=We Report Space |access-date=20 July 2020}}</ref><ref name="sncannounceshootingstar">{{cite web |title=SNC'S "SHOOTING STAR" ARRIVES AT NASA'S KENNEDY SPACE CENTER |url=https://www.sncorp.com/press-releases/snc-shooting-star-arrives-nasa-kennedy-space-center/ |website=SNC |publisher=Sierra Nevada Corporation |access-date=20 July 2020}}</ref> The module is a {{convert|15|ft|m|adj=mid|-long}} attachment to Dream Chaser that will allow the spacecraft to carry an additional {{convert|10,000|lb|kg}} of pressurized and unpressurized cargo to ISS. The module supports disposal of unwanted cargo by burning up upon re-entry.
+
+In addition to carrying cargo, the Shooting Star module includes solar panels that supply up to 6&nbsp;kW of electrical power. It also supplies active and passive thermal management; provides Dream Chaser translation and rotation capability via six mounted thrusters; and supports berthing or docking (in different configurations) to the ISS. Access from ISS to Dream Chaser will involve crew passing through Shooting Star (which supports a shirt-sleeve environment) and through a hatch that separates Shooting Star from Dream Chaser. Sierra Nevada says the module is capable of additional types of missions in LEO or to cis-lunar destinations; they have developed a free-flying variant with additional capabilities.<ref name="shootingstarbrochure">{{cite web |title=SNC Shooting Star Transport Vehicle |url=https://www.sncorp.com/media/2922/snc_shootingstartransportvehicle_brochure_2020.pdf |website=SNC |publisher=Sierra Nevada Corporation |access-date=20 July 2020}}</ref>
+
+In July 2020, Sierra Nevada announced a contract with the [[Defense Innovation Unit]] (DIU) to use its Shooting Star expendable cargo vehicle as a possible commercial solution for a high-powered uncrewed orbital outpost.<ref name="americaspaceshootingstarcontract">{{cite web |last1=Ben |first1=Evans |title=SNC Shooting Star Wins Contract for Unmanned Orbital Outpost |url=https://www.americaspace.com/2020/07/17/snc-shooting-star-wins-contract-for-unmanned-orbital-outpost/ |website=AmericaSpace |date=July 17, 2020 |access-date=20 July 2020}}</ref>
+
+=== Technology partners ===
+In 2010, the following organizations were named as technology partners for the original passenger Dream Chaser:<ref name="aw20100219" />
+* [[Aerojet]] – [[reaction control system]] technology
+* [[AdamWorks]] – [[Composite material|composites]]
+* [[Charles Stark Draper Laboratory]] – [[guidance, navigation, and control]]
+* [[Lockheed Martin]] – airframe construction and [[Human-rating certification|human rating]] of the spaceplane<ref name="Flightglobal_LMC" /><ref name="FloridaTodayLMC" />
+* [[MDA Space Missions|MDA]] – [[systems engineering]]
+* [[University of Colorado at Boulder|University of Colorado]] – [[Human-rating certification|human-rating]]
+
+==History==
+[[File:X-20 Dyna Soar prototype.jpg|alt=Men stand next to a sleek, black spaceplane. |thumb|Prototype of the X-20 Dyna Soar - a spacecraft the Dream Chaser spaceplane is based on]]
+
+The Dream Chaser design is derived from [[NASA]]'s [[HL-20 Personnel Launch System]] [[spaceplane]] concept,<ref name=AWST-19910715-26>{{cite web |last=De Chiara |first=Giuseppe |date=2012-11-19 |title=From HL-20 to Dream Chaser The Long story of a little spaceplane |url=http://archive.aviationweek.com/issue/19910715#!&pid=26 |publisher=NASASpaceflight.com |page=26 |language=en |quote=...Once that the HL-20 program was ceased it seems that such small spaceplane should be quickly forgotten except for a bunch of space enthusiast all over the world. The HL-20 story was no to end since in mid 2004 Jim Benson announced that the HL-20 development would be continued by his SpaceDev as Dream Chaser spacecraft. The SpaceDev was acquired by Sierra Nevada Corporation at the very end of 2008...}}</ref><ref>{{cite web |date=November 14, 2017 |title=Dream Chaser: Sierra Nevada's Design for Spaceflight |url=https://www.space.com/19552-dream-chaser.html |access-date=2 May 2021 |website=space.com}}</ref> which in turn is descended from a series of test vehicles, including the [[X-20 Dyna-Soar]], [[Northrop M2-F2]], [[Northrop M2-F3]], [[Northrop HL-10]], [[Martin Marietta X-24|Martin X-24A and X-24B]],<ref name="AWST-19910715">{{cite web |last=H. Phillips |first=Edward |date=1991-07-15 |title=Langley Refines Design, Begins Human Factors Tests of Personnel Launch System |url=http://archive.aviationweek.com/issue/19910715#!&pid=52 |publisher=Aviation Week & Space Technology |page=52 |language=en |quote=...The HL-20's baseline design has evolved from manned lifting bodies flown for the Defense Dept, during the 1960s and owes much of its overall layout to the Martin X-24A...}}</ref><ref>{{cite web |last=Wallace |first=Lance E. |date=1996 |title=Flights of Discovery: 50 Years at the NASA Dryden Flight Research Center |url=https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19970004281.pdf |archive-url=https://web.archive.org/web/20150217034833/https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19970004281.pdf |archive-date=2015-02-17 |publisher=NASA |page=72 |language=en |quote=...The lifting-body program came to an official end in 1975. Yet like a Phoenix rising from the ashes, the concept has appeared several times since then in proposed NASA spacecraft. When the Langley Research Center revealed its HL-20 design for an emergency crew return vehicle or small mini-Shuttle in 1990, the shape was remarkably similar to the HL-10 and X-24A designs...}}</ref><ref name="AWST-19900924">{{cite web |last=R. Asker |first=James |date=1990-09-24 |title=NASA Design for Manned Spacecraft. Draws on Soviet Subscale Spaceplane |url=http://archive.aviationweek.com/issue/19900924#!&pid=28 |publisher=Aviation Week & Space Technology |page=28 |language=en |quote=...A mock-up of the proposed "space taxi," called the HL-20 Personnel Launch System, closely resembles a Soviet subscale spaceplane flown on four orbital missions in the 1980s...However, Piland, chief of the space systems division at the Langley Research Center, was quick to point out the Soviet test vehicle seems to have evolved from U. S. lifting-body configurations flown from 1966 to 1975—such as Northrop's HL-10, M2-F2 and M2-F3 and Martin's X-24A and X-24B...}}</ref> and [[Martin X-23 PRIME]].<ref name="WF-1997">{{cite book |last=R. Dale |first=Reed |url=https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19980169231.pdf |title=Wingless Flight The Lifting Body Story |date=1997 |publisher=NASA |isbn=9780160493904 |page=180 |language=en |quote=...The NASA lifting-body program has been well documented in about 100 technical reports on the program's 222 flights and 20,000 hours of wind-tunnel tests. Many of these publications are unclassified. The Soviet Union purchased copies of these reports from NASA Headquarters in Washington, D.C., then designed its own lifting body. In 1982, the Soviets flight-tested an unpiloted, 10-foot-long, subscale version of their lifting body, the BOR-4, including a maneuvering re-entry over the Indian Ocean from space orbit. The flight test of the BOR-4 closely resembled that of our PRIME (X-23) vehicle in 1966... |archive-url=https://web.archive.org/web/20141218030338/https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19980169231.pdf |archive-date=2014-12-18}}</ref>
+
+The name "Dream Chaser" had been previously used for two separate space vehicle concepts. The first was planned to be an orbital vehicle based on the [[HL-20 Personnel Launch System|HL-20]], with the second suborbital vehicle proposed by the [[Benson Space Company]] for the purposes of space tourism.<ref name="at20120906" />
+
+The Dream Chaser was publicly announced on September 20, 2004.<ref>{{cite web|last1=Mewhinney|first1=Michael|title=NASA, SPACEDEV TO COLLABORATE ON FUTURE SPACE TRANSPORTATION|url=http://www.nasa.gov/centers/ames/news/releases/2004/04_89AR.html|website=NASA Ames Research Center|access-date=2016-01-15|archive-date=August 3, 2009|archive-url=https://web.archive.org/web/20090803071509/http://www.nasa.gov/centers/ames/news/releases/2004/04_89AR.html|url-status=dead}}</ref> In April 2007, [[SpaceDev]] announced that it had partnered with the [[United Launch Alliance]] to pursue the possibility of using the Atlas V booster rocket as the Dream Chaser's launch vehicle.<ref name="AutoIQ-9" /> In June 2007, SpaceDev signed a Space Act agreement with NASA.<ref name="AutoIQ-10" />
+
+On October 21, 2008, SpaceDev with Dream Chaser was acquired by the [[Sierra Nevada Corporation]] for US$38 million.<ref name="SpaceDev Aquired by SNC" />
+
+===CCDev phase 1===
+On February 1, 2010, [[Sierra Nevada Corporation]] was awarded $20 million in seed money under NASA's [[Commercial Crew Development]] (CCDev) {{nowrap|phase 1}} program for the development of the Dream Chaser.<ref name="AutoIQ-12" /><ref name="AutoIQ-13" /> SNC completed the four planned milestones on time, including [[hybrid rocket]] test fires and the preliminary structure design.<ref name="AutoIQ-19" /> Further initial Dream Chaser tests included the [[drop test]] of a 15% scaled version at the NASA [[Dryden Flight Research Center]].<ref name="Dryden test" />
+
+===CCDev phase 2===
+Sierra Nevada proposed Dream Chaser for the CCDev phase&nbsp;2 solicitation by NASA in October 2010, with an estimated project cost of less than $1 billion.<ref name="AutoIQ-2" /><ref name="AutoIQ-15" /> On 18 April 2011, NASA awarded $80 million to Sierra Nevada Corporation for Dream Chaser.<ref name="ft20110418" /> Since then, nearly a dozen further milestones have been completed under that Space Act Agreement. Some of these milestones included testing of an improved [[fin|airfoil fin shape]], integrated [[flight simulator|flight software]] and hardware, [[tricycle landing gear|landing gear]], a full-scale captive carry flight test, and a Systems Requirement Review (SRR).<ref name="PDR" /><ref name="AutoIQ-20" />
+
+By February 2012, Sierra Nevada Corporation stated that it had completed the assembly and delivery of the primary structure of the first Dream Chaser flight test vehicle. With this, SNC completed all 11 of its CCDev milestones that were scheduled up to that point. SNC stated in a press release that it was "on time and on budget."<ref name="AutoIQ-24" />
+
+On May 29, 2012, the Dream Chaser Engineering Test Article (ETA) was lifted by an [[Sikorsky S-64 Skycrane#Erickson|Erickson Skycrane]] helicopter in a captive carry test to better determine its aerodynamic properties.<ref name="AutoIQ-26" /><ref name="nsw20130514" /> In May 2013, the ETA was shipped to the [[Dryden Flight Research Center]] in California for a series of ground tests and aerodynamic [[flight test]]s.<ref name="nsf20130512" />  A second captive carry flight test was completed on August 22, 2013.<ref name="2nd Captive Carry Test" />
+
+On June 12, 2012, SNC announced the commemoration of its fifth year as a [[Langley Research Center|NASA Langley]] partner in the design and development of Dream Chaser.<ref name="FiveYearLangely" /> The NASA/SNC team had worked on [[aerodynamics|aerodynamic]] and [[aerodynamic heating|aerothermal]] analysis of Dream Chaser, as well as [[guidance, navigation, and control]] systems. Together with [[United Launch Alliance|ULA]], the NASA/SNC team performed [[buffet (turbulence)|buffet tests]] on the Dream Chaser and Atlas V stack.<ref name="FiveYearLangely" />
+
+On July 11, 2012, SNC announced that it successfully completed testing of the nose [[landing gear]] for Dream Chaser.<ref name="NoseGear" /> This milestone evaluated the [[impact (mechanics)|impact]] to the landing gear during simulated [[approach and landing tests]] as well as the impact of future [[orbital spaceflight|orbital flights]]. The main landing gear was tested in a similar way in February 2012. The nose gear landing test was the last milestone to be completed before the free flight approach and landing tests scheduled for later in 2012.<ref name="NoseGear" /> In August 2012, SNC completed CCiCap Milestone 1, or the 'Program Implementation Plan Review'. This included creating a plan for implementing design, development, testing, and evaluation activities through the duration of CCiCap funding.<ref name="MilestoneOverview" /> By October 2012 the "Integrated System Baseline Review", or CCiCap Milestone 2, had been completed.  This review demonstrated the maturity of the Dream Chaser Space System as well as the integration and support of the [[Atlas V|Atlas V launch vehicle]], mission systems, and ground systems.<ref name="MilestoneOverview" />
+
+===CCiCap===
+On August 3, 2012, NASA announced the award of $212.5 million to Sierra Nevada Corporation to continue work on the Dream Chaser under the [[Commercial Crew Integrated Capability]] (CCiCap) Program.<ref name="AutoIQ-17" /> On January 30, 2013, SNC announced a new partnership with [[Lockheed Martin]].  Under the agreement, SNC will pay Lockheed Martin $10 million to build the second airframe at its [[Michoud]] facility in [[New Orleans, Louisiana]]. This second airframe is slated to be the first orbital test vehicle, with orbital flight testing planned to begin within the next two years.<ref name="Flightglobal_LMC" />
+
+In January 2013, Sierra Nevada announced that the second captive carry and first [[Gliding flight|unpowered]] [[drop test]] of Dream Chaser would take place at [[Edwards Air Force Base]], California in March 2013.  The spaceplane release would occur at {{convert|12000|ft|m|sp=us}}<!-- International convention for altitude is feet, not meters --> altitude and would be followed by an [[Uncrewed aerial vehicle|autonomous robotic]] [[landing]].<ref name="Flightglobal_LMC" /><ref name="FloridaTodayLMC" />
+
+On March 13, 2013, NASA announced that former [[Space Shuttle]] [[commander]] [[Lee Archambault]] was leaving the agency in order to join SNC.  Archambault, a former combat pilot and 15-year NASA veteran who flew on ''[[Space Shuttle Atlantis|Atlantis]]'' and ''[[Space Shuttle Discovery|Discovery]]'', will work on the Dream Chaser program as a systems engineer and test pilot.<ref name="NASA_Archambault" /><ref name="PA_Archambault" />
+
+On October 26, 2013, the first free-flight occurred. The test vehicle was released from the helicopter and flew the correct flightpath to touchdown less than a minute later. Just prior to landing, the left main landing gear failed to deploy resulting in a crash landing.<ref name="Landing gear failure 2013" /> The vehicle skidded off the runway in a cloud of dust, but was found upright with the crew compartment intact and all systems inside still in working order.<ref name="Press Conference 2013-10-29" /><ref name="Video of free-flight" />
+
+In January 2014, SNC announced it had signed a launch contract to fly the first orbital test vehicle on a robotically controlled [[orbital spaceflight|orbital]] [[flight test|test flight]] in November 2016.<ref name="bbc20140124">{{cite news |url=https://www.bbc.co.uk/news/science-environment-25878042 |title=Dream Chaser mini-shuttle given 2016 launch date |work=[[BBC News]] |date=January 24, 2014}}</ref>
+
+[[File:Dream-chaser-model.jpg|thumb|Dream Chaser model being tested at NASA Langley, aboard an [[Atlas V]] mock-up]]
+In early 2014, Sierra Nevada completed its wind tunnel testing as part of its CCiCAP Milestone 8. The wind tunnel testing involved analyzing the flight dynamics characteristics that the vehicle will experience during orbital ascent and re-entry.  Wind tunnel testing was also completed for the Dream Chaser Atlas V integrated launch system. These tests were completed at NASA Ames Research Center at Moffett Field, California, CALSPAN Transonic Wind Tunnel in New York, and at NASA Langley Research Center Unitary Plan Wind Tunnel in Hampton, Virginia.<ref name="nsf20140519">{{cite news |title=Dream Chaser passes Wind Tunnel tests for CCiCap Milestone |url=http://www.nasaspaceflight.com/2014/05/dream-chaser-wind-tunnel-tests-ccicap-milestone/ |access-date=2015-01-02 |website=NASASpaceflight.com |date=May 19, 2014}}</ref>
+
+On August 1, 2014, the first completed piece of the orbital Flight Test Article (FTA) composite airframe was unveiled at a Lockheed Martin facility.<ref>{{cite web |url=http://www.space.com/26752-dream-chaser-space-plane-airframe.html |title=First Piece of Private Dream Chaser Space Plane Unveiled |publisher=Space.com |date=August 6, 2014}}</ref>
+
+===CCtCap===
+On September 16, 2014, NASA did not select the Dream Chaser for CCtCap, the next phase of the Commercial Crew Program. This occurred despite previous [[Commercial Crew Development]] awards in every phase since 2009,<ref>{{cite web|last1=Schierholz|first1=Stephanie|last2=Martin|first2=Stephanie|title=NASA Chooses American Companies to Transport U.S. Astronauts to International Space Station|url=http://www.nasa.gov/press/2014/september/nasa-chooses-american-companies-to-transport-us-astronauts-to-international/index.html|website=www.nasa.gov|access-date=September 17, 2014|date=September 16, 2014|archive-date=September 19, 2014|archive-url=https://web.archive.org/web/20140919015835/http://www.nasa.gov/press/2014/september/nasa-chooses-american-companies-to-transport-us-astronauts-to-international/index.html|url-status=dead}}</ref> due to lack of maturity.<ref>Norris, Guy. "[http://aviationweek.com/space/why-nasa-rejected-sierra-nevadas-commercial-crew-vehicle Why NASA Rejected Sierra Nevada's Commercial Crew Vehicle]" ''[[Aviation Week & Space Technology]]'', October 11, 2014. Accessed: 2014-10-13. [https://web.archive.org/web/20141013135535/http://aviationweek.com/space/why-nasa-rejected-sierra-nevadas-commercial-crew-vehicle Archived] on October 13, 2014</ref>
+
+On September 26, Sierra Nevada filed a protest to the [[Federal government of the United States|US]] [[Government Accountability Office]] (GAO).<ref name="dp20141003">{{cite news |last1=Keeney|first1=Laura |title=So Sierra Nevada protested NASA space-taxi contract, but what's next? |url=http://www.denverpost.com/business/ci_26659843/so-sierra-nevada-protested-nasa-space-taxi-contract |access-date=October 5, 2014 |work=Denver Post |date=October 3, 2014}}</ref> On October 22, 2014, a Federal Judge ruled the contract awards to Boeing and SpaceX valid, allowing NASA to proceed.<ref>{{cite web|last1=Browne|first1=Clayton |title=NASA Wins; Boeing and Space X Shuttle Contracts Ruled Valid |url=http://www.valuewalk.com/2014/10/nasa-wins-boeing-space-x-shuttle-contracts-ruled-valid/ |website=ValueWalk |access-date=2016-01-15 |date=2014-10-22}}</ref>
+
+On September 29, 2014, Sierra Nevada introduced the "Dream Chaser Global Project" which would provide customized access to low Earth orbit to global customers.<ref>{{cite web|url=http://spaceref.com/news/viewpr.html?pid=44072|archive-url=https://archive.today/20140930211003/http://spaceref.com/news/viewpr.html?pid=44072|url-status=dead|archive-date=September 30, 2014|title=Sierra Nevada Corporation Introduces Dream Chaser Global Project Spaceflight Program Sept. 30|date=December 29, 2014|publisher=SpaceRef|access-date=2014-09-29}}</ref>
+
+Despite not being selected to continue forward under NASA's Commercial Crew transportation Capability (CCtCap) phase of the effort to send crews to orbit via private companies, SNC completed the milestones assigned under earlier phases of the CCP.<ref>{{cite web|url=http://www.spaceflightinsider.com/missions/commercial/despite-protest-status-sierra-nevada-completes-milestone-15/|title=Sierra Nevada completes Dream Chaser's milestone 15a for prior phase of Commercial Crew|date=December 3, 2014|publisher=Spaceflight Insider|access-date=December 3, 2014|archive-date=December 8, 2014|archive-url=https://web.archive.org/web/20141208130204/http://www.spaceflightinsider.com/missions/commercial/despite-protest-status-sierra-nevada-completes-milestone-15/|url-status=dead}}</ref> On December 2, 2014, SNC announced that it completed NASA's CCiCap Milestone 5a related to propulsion risk reduction for the Dream Chaser space system.<ref>{{cite web |url=https://blogs.nasa.gov/commercialcrew/2014/12/02/snc-tests-dream-chaser-propulsion-system/|title=SNC Tests Dream Chaser Propulsion System|date=December 2, 2014|publisher=NASA Blog blogs.nasa.gov|access-date=December 2, 2014}}</ref>
+
+By late December, details had emerged that "a high-ranking agency official"—"[[William H. Gerstenmaier|William Gerstenmaier]], the agency's top human exploration official and the one who made the final decision"—"opted to rank Boeing's proposal higher than a previous panel of agency procurement experts." More specifically, Sierra Nevada asserted in their filings with the GAO that Gerstenmaier may have "overstepped his authority by unilaterally changing the scoring criteria."<ref name="pa20141223">{{cite news |last1=Messier |first1=Doug |title=Sierra Nevada Alleges Boeing Benefitted From Commercial Crew Criteria Changes |url=http://www.parabolicarc.com/2014/12/23/sierra-nevada-alleges-boeing-benefitted-commercial-crew-criteria/ |access-date=December 25, 2014 |work=Parabolic Arc |date=December 23, 2014 |archive-date=December 25, 2014 |archive-url=https://web.archive.org/web/20141225044734/http://www.parabolicarc.com/2014/12/23/sierra-nevada-alleges-boeing-benefitted-commercial-crew-criteria/ |url-status=dead }}</ref>
+
+On January 5, 2015, the GAO denied Sierra Nevada's CCtCap challenge, stating that NASA made the proper decision when it decided to award Boeing $4.2 billion and SpaceX $2.6 billion to develop their vehicles. Ralph White, the GAO's managing associate counsel, announced that NASA "recognized Boeing's higher price but also considered Boeing's proposal to be the strongest of all three proposals in terms of technical approach, management approach and past performance, and to offer the crew transportation system with most utility and highest value to the government."<ref name=b237/> Furthermore, the agency found "several favorable features" in SNC's proposal "but ultimately concluded that SpaceX's lower price made it a better value."<ref name=b237>{{cite news|last1=Davenport|first1=Christian|title=GAO denies Sierra Nevada's legal challenge to NASA space contract|url=https://www.washingtonpost.com/business/economy/gao-denies-sierra-nevada-protest-of-nasa-contract/2015/01/05/68e70970-94f7-11e4-8005-1924ede3e54a_story.html|newspaper=Washington Post|access-date=January 5, 2015|archive-url=https://web.archive.org/web/20150513100710if_/http://www.washingtonpost.com/business/economy/gao-denies-sierra-nevada-protest-of-nasa-contract/2015/01/05/68e70970-94f7-11e4-8005-1924ede3e54a_story.html|archive-date=2015-05-13}}</ref>
+
+===CRS-2 selection===
+{{further|Commercial Resupply Services}}
+In December 2014, Sierra Nevada proposed Dream Chaser for CRS-2 consideration.<ref>{{cite news |url=https://www.washingtonpost.com/business/economy/loser-left-behind-in-the-contracting-race-to-restore-america-to-space/2015/02/13/d65800d4-a264-11e4-b146-577832eafcb4_story.html | title = Grounded: Left behind in the contracting race to restore Americans to space | author = Christian Davenport | date = February 13, 2015 | newspaper = The Washington Post}}</ref> In January 2016, NASA announced that Dream Chaser had been awarded one of the CRS-2 contracts and committed to purchasing a minimum of six resupply missions to the ISS.<ref name="NASA News">{{cite news |url=https://www.nasa.gov/press-release/nasa-awards-international-space-station-cargo-transport-contracts |title=NASA Awards International Space Station Cargo Transport Contracts |work=NASA News |date=January 12, 2016 |access-date=January 15, 2016}}</ref> The cargo spacecraft will fly alongside spacecraft from the existing CRS-1 contract holders [[SpaceX]] and [[Northrop Grumman Innovation Systems]].<ref>{{cite news |url= http://spacenews.com/weather-sat-tops-u-s-civil-space-procurement-agenda-for-2015/ |title= Weather Sat, CRS-2 Top U.S. Civil Space Procurement Agenda for 2015 |date= January 24, 2015 |author= Dan Leone |publisher= SpaceNews.com}}</ref>
+
+In October 2015, the thermal protection system was installed on the Engineering Test Article (ETA) for the next phase of atmospheric flight testing. The orbital cabin assembly of the Flight Test Article (FTA) was also completed by contractor Lockheed Martin.<ref name="SpaceDaily-2015-10-09">{{cite news |url= http://www.spacedaily.com/reports/Dream_Chaser_Program_Preparing_for_Second_Free_Flight_Test_and_First_Orbital_Test_999.html |title= Dream Chaser preps for 2nd free-flight test and first orbital test |date= October 9, 2015 |publisher= Space Daily}}</ref>
+
+In 2015, the ETA had reportedly been given the name '''Eagle''',<ref name="nsf20130512" /> while the FTA was originally named '''Ascalon''' before being changed to '''Ascension'''.<ref name="nasaspaceflight20151006">{{cite web|url=http://www.nasaspaceflight.com/2015/10/dream-chaser-fighting-her-place-space/ |title=Dream Chaser still fighting for her place in space |first=Chris|last=Bergin|website=NASASpaceflight.com |date=October 6, 2015|access-date=7 April 2021}}</ref>
+
+On November 11, 2017, the Dream Chaser ETA was released from an altitude of 3,700 m and successfully landed at Edwards AFB.<ref>{{Cite news| last = Kenneth Chang| title = Dream Chaser Space Plane Aces Glide Test - The New York Times| access-date = 2017-11-15| date = 2017-11-11| url = https://www.nytimes.com/2017/11/13/science/dream-chaser-test-flight.html?emc=edit_th_20171115&nl=todaysheadlines&nlid=50059978| newspaper = The New York Times}}</ref><ref>{{cite web|url=https://www.nasaspaceflight.com/2017/11/dream-chaser-test-prepares-orbital-flights/|title=Dream Chaser through critical landing test, prepares for orbital flights|date=November 24, 2017|website=NASASpaceflight.com|access-date=January 28, 2019}}</ref>
+
+In March 2019, completion of NASA's Integrated Review Milestone 5 (IR5) confirmed that development was still on schedule.<ref>{{cite news |last=Sampson |first=Ben |url=https://www.aerospacetestinginternational.com/news/space/dream-chaser-spacecraft-passes-testing-milestone.html |title=Dream Chaser spacecraft passes testing milestone |work=Aerospace Testing International |date=March 27, 2019 |access-date=August 14, 2019}}</ref><ref>{{cite press release |url=https://www.sncorp.com/press-releases/snc-dream-chaser-nasa-milestone-5/ |title=Dream Chaser® Spacecraft Passes Another NASA Milestone |work=[[Sierra Nevada Corporation]] |date=March 21, 2019 |access-date=August 14, 2019}}</ref> In August 2019, SNC announced the first ISS flight of the Dream Chaser, known as [[SNC Demo-1]], was planned for 2021.<ref name="Vulcan-Selection" /> However, on November 17, 2020, SNC announced it would be delayed until early 2022.<ref>{{cite web |url=https://spacenews.com/first-dream-chaser-mission-slips-to-2022/ |title=First Dream Chaser mission slips to 2022 |first=Jeff|last=Foust|website=spacenews.com |date=18 November 2020 |access-date=7 April 2021}}</ref> 
+
+In April 2021 SNC spun off its Dream Chaser division, creating the fully independent [[Sierra Space Corporation]], which assumed responsibility for the further development of the Dream Chaser space vehicle system. 
+
+In May 2022, it was announced by the deputy manager of ISS, Dana Weigel, that the mission was scheduled for February 2023.<ref name="sheetz-20220517">{{cite tweet |number=1526605448601817089 |author=Michael Sheetz |user=thesheetztweetz |title=Weigel: The second Vulcan flight, carrying the first @SierraSpaceCo cargo Dream Chaser to the ISS, is currently scheduled for February 2023. "We'll be ready when they're ready." |date=17 May 2022}}</ref> 
+
+In May 2024, it was announced that Dream Chaser ''Tenacity'' completed initial flight testing and was headed next to Kennedy Space Center to prepare for launch.<ref>{{Cite web |last=Gamillo |first=Elizabeth |date=2024-05-09 |title=Dream Chaser spaceplane completes tests at NASA's Neil Armstrong facility |url=https://www.astronomy.com/space-exploration/dream-chaser-spaceplane-completes-tests-at-nasas-neil-armstrong-facility/ |access-date=2024-05-10 |website=Astronomy Magazine |language=en-US}}</ref> It arrived later that month for launch preparation.<ref>{{Cite web |date=2024-05-20 |title=NASA, Sierra Space Deliver Dream Chaser to Florida for Launch Preparation - NASA |url=https://www.nasa.gov/centers-and-facilities/kennedy/nasa-sierra-space-deliver-dream-chaser-to-florida-for-launch-preparation/ |access-date=2024-05-20 |language=en-US}}</ref> The Vulcan Centaur to be used for the launch arrived to KSC in late June 2024. However, the ''Orlando Sentinel'' reports, June 26, "Dream Chaser dropped from next Vulcan launch as ULA targets national security certification". The mission was subsequently delayed to no earlier than May 2025, and had still not been scheduled for a specific date as of September 2025.<ref name="nasa-20241015" />
+
+In September 2025, NASA announced that Dream Chaser's demonstration flight, [[SSC Demo-1]], will no longer visit the ISS and was delayed to late 2026.<ref name="09252025JonesNASA">{{cite web |last1=Jones |first1=Sandra |last2=Russell |first2=Jimi |title=NASA, Sierra Space Modify Commercial Resupply Services Contract - NASA |url=https://www.nasa.gov/missions/station/nasa-sierra-space-modify-commercial-resupply-services-contract/ |website=NASA |access-date=25 September 2025 |date=25 September 2025}}</ref> The spacecraft is also no longer contracted to complete seven resupply missions to the ISS.<ref>{{cite news |last1=Berger |first1=Eric |title=Sierra’s Dream Chaser is starting to resemble a nightmare |url=https://arstechnica.com/space/2025/09/sierras-dream-chaser-is-starting-to-resemble-a-nightmare/ |access-date=26 September 2025 |work=Ars Technica |date=25 September 2025 |language=en}}</ref>
+
+== Variants ==
+
+===Crewed version===
+[[File:Dream Chaser Atlas V Integrated Launch Configuration.tif|thumb|upright|Artist's conception of the Dream Chaser Space System in the launch configuration of the [[Atlas V]] ]]
+
+The originally planned Dream Chaser Space System is a [[human-rated]] version designed to carry from three to seven people and cargo to orbital destinations such as the International Space Station.<ref name="vid" /> It was to have a built-in [[launch escape system]]<ref name="at20120906hybrid" /> and could fly autonomously if needed.<ref name="Mark" /> Although it could use any suitable launch vehicle, it was planned to be launched on a [[Atlas V#Human-rating certification|human-rated Atlas V]] N12 rocket.<ref name="Mark" /><ref name="AutoIQ-6" /> The vehicle will be able to [[atmospheric reentry|return from space]] by [[gliding flight|gliding]] (typically experiencing less than 1.5 [[g-force|g]] on re-entry) and landing on any airport [[runway]] that handles commercial air traffic.<ref name="David" /><ref name="aw20100219" /> Its [[reaction control system]] thrusters burned ethanol-based fuel,<ref name="Mark" /><ref name="David" /> which is not an explosively volatile material, nor toxic like [[Hydrazine#Rocket fuel|hydrazine]], allowing the Dream Chaser to be handled immediately after landing, unlike the [[Space Shuttle]].<ref name="Mark" />
+
+{{As of|2020|post=,}} the Sierra Nevada Corporation said it still planned to produce a crewed version of the spacecraft within the next 5 years. The company said it "never stopped working" on the crewed version and fully intended to launch it after the cargo version,<ref>{{cite web |title=DREAM CHASER ON TRACK FOR 2021 CARGO MISSION, CREW WITHIN 5 YEARS |url=https://spacepolicyonline.com/news/dream-chaser-on-track-for-2021-cargo-mission-crew-within-5-years/ |access-date=11 July 2020 |website=spacepolicy.com}}</ref> and is still committed to the crewed version {{as of|2021|lc=y|post=.}}<ref>{{cite web |date=April 14, 2021 |title=Sierra Nevada Corporation to spin off space division |url=https://spacenews.com/sierra-nevada-corporation-to-spin-off-space-division/ |access-date=22 April 2021 |website=spacenews.com}}</ref> 
+
+In November 2021, Sierra Space Corporation reported that it received a $1.4 billion investment in Series A funding, which it would use to develop a crewed version of Dream Chaser and fly astronauts by 2025, although this ultimately did not occur.<ref>{{cite web |title=With a huge infusion of cash, Sierra Space hopes to get its Dream Chaser spaceplane and space station off the ground |url=https://www.washingtonpost.com/technology/2021/11/19/sierra-space-investment-dream-chaser-orbital-reef/ |access-date=21 November 2021 |website=washingtonpost.cim}}</ref> On October 25, 2021, [[Blue Origin]] and [[Sierra Space]], released their plan for a commercial space station.<ref>{{Cite news |last=Davenport |first=Justin |date=2021-10-27 |title=Blue Origin, Sierra Space, and Boeing announce Orbital Reef |url=https://www.nasaspaceflight.com/2021/10/announce-orbital-reef/ |access-date=2021-11-30 |website=NASASpaceflight.com |language=en}}</ref> The station, called [[Orbital Reef]], is intended as a "mixed-use business park".<ref>{{Cite news |last=Chappell |first=Bill |date=2021-10-25 |title=Blue Origin says it will build an orbiting mixed-use business park in space |url=https://www.npr.org/2021/10/25/1049077333/blue-origin-space-station-business-park-space-orbital-reef-bezos |access-date=2021-11-30 |work=NPR |language=en}}</ref> Sierra Space Corporation's Dream Chaser was chosen as one of the commercial spacecraft to transport commercial crew to and from the space station, along with [[Boeing]]'s [[Boeing Starliner|Starliner]].<ref>{{cite web |last=Grush |first=Loren |date=2021-10-25 |title=Blue Origin reveals plans for future commercial space station called Orbital Reef |url=https://www.theverge.com/2021/10/25/22744526/blue-origin-space-station-orbital-reef-announcement |access-date=2021-11-29 |website=The Verge |language=en}}</ref>
+
+===CRS-2 cargo version===
+[[File:Dream Chaser Docked to ISS.jpg|thumb|Artist's conception of the crewed Dream Chaser docked to [[International Space Station]]]]
+
+The cargo version of the SSC Dream Chaser is called the Dream Chaser Cargo System (DCCS) and after development is completed, will fly resupply flights to the [[ISS]] under NASA's [[Cargo Transfer Bag Equivalent|Commercial Resupply Services-2]] program. Featuring an expendable cargo module mounting [[solar panels]], the spacecraft will be capable of returning {{convert|1750|kg|abbr=on}} to Earth while undergoing maximum re-entry forces of 1.5G.<ref name="DCCS">{{cite web |date=2015-03-18 |title=Sierra Nevada Hopes Dream Chaser Finds "Sweet Spot" of ISS Cargo Competition |url=http://spacenews.com/sierra-nevada-hopes-dream-chaser-finds-sweet-spot-of-iss-cargo-competition |access-date=February 20, 2016 |publisher=SpaceNews}}</ref><ref name="SpaceNews-2015-03-13">{{cite news |author=Jeff Foust |date=March 13, 2015 |title=Lockheed Martin Pitches Reusable Tug for Space Station Resupply |url=http://spacenews.com/lockheed-martin-pitches-reusable-tug-for-space-station-resupply/ |publisher=Space News}}</ref>
+
+To meet CRS-2 guidelines, the cargo Dream Chaser will have folding wings and fit within a 5 m diameter [[payload fairing]], in contrast to the Crewed Dream Chaser, which is intended to launch without a fairing. The ability to fit into a payload fairing allows the cargo version to launch on any sufficiently capable vehicle, such as the (retired) [[Ariane 5]] as well as the (soon to be retired) [[Atlas V]]. An expendable cargo module will launch attached to the back of the spacecraft, expanding the cargo uplift capacity and supporting the disposal of up to {{convert|3250|kg|abbr=on}} of trash. Total uplift is planned for {{convert|5000|kg|abbr=on}} pressurized and {{convert|500|kg|abbr=on}} unpressurized, with a downlift of {{convert|1750|kg|abbr=on}} contained within the spaceplane.<ref name="SpaceNews-2015-03-17">{{cite news |author=Jeff Foust |date=March 17, 2015 |title=Sierra Nevada Hopes Dream Chaser Finds "Sweet Spot" of ISS Cargo Competition |url=http://spacenews.com/sierra-nevada-hopes-dream-chaser-finds-sweet-spot-of-iss-cargo-competition/ |publisher=Space News}}</ref> The expendable cargo module is called "Shooting Star".<ref name="sn20200114">{{cite web |last=Foust |first=Jeff |date=14 January 2020 |title=Sierra Nevada explores other uses of Dream Chaser |url=https://spacenews.com/sierra-nevada-explores-other-uses-of-dream-chaser/ |access-date=11 July 2020 |website=spacenews.com}}</ref>
+
+On August 14, 2019, it was announced that all six Dream Chaser CRS-2 flights would be carried into orbit by ULA's [[Vulcan (rocket)|Vulcan]] launch vehicle, with the first Dream Chaser flight being the second Vulcan flight in late 2021.<ref name="Vulcan-Selection" /><ref>{{cite web |date=August 14, 2019 |title=SNC Selects ULA for Dream Chaser® Spacecraft Launches: NASA Missions to Begin in 2021 |url=https://www.ulalaunch.com/about/news/2019/08/14/snc-selects-ula-for-dream-chaser-spacecraft-launches |access-date=August 14, 2019 |publisher=[[United Launch Alliance]]}}</ref> However, on February 9, 2022, Ken Shields, Sierra Space's Director of Commercial Market Development, announced that the first flight would be pushed to January 2023.<ref name="spaceexplored1">{{cite web |date=2022-02-09 |title=Interview with Sierra Space: Dream Chaser launch set for January 2023, Orbital Reef space station, manufacturing in space, & more |url=https://spaceexplored.com/2022/02/09/interview-with-sierra-space/ |access-date=2022-02-23 |website=Space Explored |language=en-US}}</ref> The launch has been further delayed; {{as of|2024|10|lc=y|post=,}} it is scheduled for no earlier than May 2025<ref name="nasa-20241015">{{cite web |last=Garcia |first=Mark |url=https://blogs.nasa.gov/spacestation/2024/10/15/crew-8-awaits-splashdown-expedition-72-stays-focused-on-science/ |title=Crew-8 Awaits Splashdown; Expedition 72 Stays Focused on Science |work=[[NASA]] |date=October 15, 2024 |access-date=October 16, 2024 |quote=The first flight of Sierra Space's Dream Chaser to the International Space Station is now scheduled for no earlier than May 2025 [...] will carry cargo to the orbiting laboratory and stay on board for approximately 45 days on its first mission.}}</ref>, and as of February 2026, the mission is targeted to launch in late 2026<ref>{{Citation |title=SSC Demo-1 |date=2026-02-16 |work=Wikipedia |url=https://en.wikipedia.org/w/index.php?title=SSC_Demo-1&oldid=1338677720 |access-date=2026-02-23 |language=en}}</ref>.
+
+===National Security version===
+On November 19, 2021, Sierra Space announced that it is considering a third Dream Chaser version specialized for National Security missions, though it declined to comment on what the differences compared with other versions would be.<ref>{{cite web |date=2021-11-19 |title=Sierra Space raises $1.4 billion |url=https://spacenews.com/sierra-space-raises-1-4-billion/ |access-date=2022-01-05 |website=SpaceNews |language=en-US}}</ref>
+
+==Dream Chaser Global Project==
+In December 2013, the [[German Aerospace Center]] (DLR) announced a funded study to investigate ways in which Europe might take advantage of the Dream Chaser crewed spaceplane technology. Named the [[DC4EU]] (Dream Chaser for European Utilization), the project will study using it for sending crews and cargo to the ISS and on missions not involving the ISS, particularly in orbits of substantially greater altitude than the ISS can reach.<ref name=pa20131216/>
+
+In January 2014, the [[European Space Agency]] (ESA) agreed to be a partner on the DC4EU project, and will also investigate whether the Dream Chaser can use ESA avionics and docking mechanisms.  ESA will also study launching options for the "Europeanized" Dream Chaser, particularly whether it can be launched from the [[Guiana Space Centre]], within the [[Ariane 5]]'s large aerodynamic cargo fairing – or, like the Atlas V, without it. In order to fit within the fairing, the Dream Chaser's wing length will have to be reduced slightly, which is thought to be easier than going through a full aerodynamic test program to evaluate and prove it along with the Ariane for flight without the fairing.<ref name="ESA signs agreement 2014"/> The Ariane 5 launch vehicle was designed from its inception to be crew rated, in order to launch the [[Hermes (spacecraft)|Hermes Spaceplane]], an ESA crewed vehicle which was proposed in the 1980s and 1990s, but was cancelled.
+
+In late January 2014, it was announced that the Dream Chaser orbital test vehicle was under contract to be launched on an initial [[orbital spaceflight|orbital]] [[flight test|test flight]], using an [[Atlas V]] rocket, from [[Kennedy Space Center]] in November 2016.  This was a [[private spaceflight|privately arranged]] commercial agreement, and was funded directly by Sierra Nevada and was not a part of any existing NASA contract.<ref name=bbc20140124/>
+
+In September 2014, SNC announced that it would, with global partners, use the Dream Chaser as the baseline spacecraft for orbital access for a variety of programs, specializing the craft as needed.<ref name="SNC-2014-09-29">{{cite web |url= http://www.sncorp.com/AboutUs/NewsDetails/635 |title= Sierra Nevada Corporation to Introduce Dream Chaser® Global Project Spaceflight Program Sept. 30 |date= September 29, 2014 |publisher= SNC}}</ref>
+
+On November 5, 2014, SNC's Space Systems team publicly presented the challenges and opportunities related to landing the Dream Chaser spacecraft at public-use airports.<ref>{{cite web|url=http://www.myfoxwausau.com/story/27296203/sierra-nevada-corporation-to-present-progress-on-evaluating-dream-chaser-landing-at-public-use-airports|title=Sierra Nevada Corporation to Present Progress on Evaluating Dream Chaser Landing at Public Use Airports|date=November 5, 2014|publisher=WFXS FOX55 WAUSAU|access-date=November 1, 2014|url-status=usurped|archive-url=https://web.archive.org/web/20141107200914/http://www.myfoxwausau.com/story/27296203/sierra-nevada-corporation-to-present-progress-on-evaluating-dream-chaser-landing-at-public-use-airports|archive-date=November 7, 2014|df=mdy-all}}</ref> Dream Chaser uses standard landing aids and non-toxic propellants that require no special handling.<ref>{{cite web |url=http://commons.erau.edu/cgi/viewcontent.cgi?article=1007&context=stm|title=Challenges and Opportunities Related to Landing the Dream Chaser® Commercial Reusable Space Vehicle at a Public-Use Airport|date=November 5, 2014|publisher=ERAU Scholarly Commons|access-date=November 1, 2014}}</ref>
+
+===Dream Chaser for European Utilization===
+On February 3, 2015, the Sierra Nevada Corporation's (SNC) Space Systems and [[OHB System]] AG (OHB) in Germany announced the completion of the initial Dream Chaser for European Utilization (DC4EU) study.<ref>Completion of the initial DC4EU study (March 2, 2015). "http://www.sncorp.com/AboutUs/NewsDetails/749"</ref> The study found that Dream Chaser is suitable for a broad range of space applications and could be used to advance European interests in space.<ref name="deselding2015"/> The cooperation was renewed in April 2015 for an additional two years.<ref name="deselding2015">{{cite news |last=de Selding |first=Peter B. |url=http://spacenews.com/dlr-renews-cooperation-with-snc-on-dream-chaser/ |title=DLR Renews Cooperation with SNC on Dream Chaser |work=Space News |date=2015-04-17 |access-date=2015-04-21}}</ref> {{update after|2018}}
+
+===United Nations===
+The [[United Nations Office for Outer Space Affairs]] (UNOOSA) selected the cargo Dream Chaser for its first space launch. This launch is intended to last for at least two weeks in [[Micro-g environment|freeflight]] to provide space access to [[Member states of the United Nations|United Nations member states]] that have no space programs of their own, and carry up to 35 payloads.<ref name="UNOOSA">{{cite press release |author1=Pesce, Ottavia|author2=Schwandt, Kimberly |url=https://www.sncorp.com/press-releases/unoosa-snc-call-for-interest-dream-chaser-landing-site/ |title=UNOOSA and Sierra Nevada Corporation announce Call for Interest to provide landing site for Dream Chaser spacecraft mission carrying experiments from UN Member States |work=[[Sierra Nevada Corporation]] |date=2019-10-22 |access-date=2020-02-26}}</ref> The [[United States]] will pay for the mission and provide all support facilities.<ref name="Observer-2016-10-03">{{cite news |url= http://observer.com/2016/10/dream-chaser-the-spacecraft-that-will-transform-humanitys-access-to-space/ |title= Dream Chaser: The Spacecraft That Will Transform Humanity's Access to Space |author=Seemangal, Robin |date=2016-10-03 |publisher= The Observer (New York)}}</ref>
+
+==List of vehicles==
+{| class="wikitable" style="font-size:90%;"
+| style="text-align:left" | {{Legend inline|#ff9e3d|outline=silver|Test vehicle}} {{Legend inline|#3d9eff|outline=silver|Spaceflight vehicle}}
+|}
+{| class="wikitable sortable" style="font-size:small"
+! Type
+! style="width:6em" | Serial
+! style="width:6em" | Name
+! Status
+! Flights
+! Time in flight
+! class="unsortable" | Notes
+|-
+| style="background:#ff9e3d;" | Prototype
+| {{Visible anchor|ETA}}
+|''Eagle''
+| {{Draw|Retired}}
+| 4
+| data-sort-value="4" | ~5 minutes
+| Engineering Test Article (ETA) used for captive carry and atmospheric drop tests
+|-
+| style="background:#ff9e3d;" | Prototype
+| {{Visible anchor|FTA}}
+| ''Ascension''
+| {{Yes|Active}}
+| 0
+| {{Color|grey|None}}
+| Flight Test Article (FTA) to be used for atmospheric tests
+|-
+| style="background:#3d9eff;" | Cargo
+| {{Visible anchor|DC101}}<ref>{{cite tweet|number=1527764765178597376|user=SierraSpaceCo|title=@DutchSpace DC-101|date=May 20, 2022}}</ref>
+| [[Dream Chaser Tenacity|''Tenacity'']]
+| {{yes|Active}}<ref>{{cite web |title=Sierra Space completes first Dream Chaser |url=https://spacenews.com/sierra-space-completes-first-dream-chaser/ |website=spacenews.com |date=November 6, 2023 |access-date=6 November 2023}}</ref>
+| 0
+| {{Color|grey|None}}
+| Spacecraft to be flown on [[SSC Demo-1]] mission.
+|-
+| style="background:#3d9eff;" | Cargo
+| {{Visible anchor|DC102}}
+| ''Reverence''
+| {{Included|Under construction}}
+| 0
+| {{Color|grey|None}}
+| Construction on hold {{As of|2024|11|lc=y}}; company estimates 18 months of work remain.<ref>{{Cite web |last=David |first=Leonard |date=2024-11-08 |title=Sierra Space expands spaceplane fleet with in-house mission control |url=https://spacenews.com/sierra-space-expands-spaceplane-fleet-with-in-house-mission-control/ |access-date=2024-11-09 |website=SpaceNews |language=en-US}}</ref><ref name="nasa-oig-18016">{{cite report|url=https://oig.nasa.gov/docs/IG-18-016.pdf|title=Audit of Commercial Resupply Services to the International Space Center|author=OIG Staff|work=NASA Office of Inspector General|publisher=NASA|volume=IG-18-016|pages=27–28|quote=In August 2017, ISS Program officials said Sierra was considering building a second Dream Chaser to be completed by 2021, but no decision had been made as of October 2017. In the event of a failure, Sierra officials told us in June 2017 that a second spacecraft could be built from spare parts without additional costs to NASA.|date=26 April 2018|access-date=11 December 2023}} {{PD-notice}}</ref>
+|}
+
+=== Mockups ===
+{| class="wikitable"
+|+
+!Name
+!Location
+!Status
+!Notes
+|-
+|''Dream Chaser''<ref>{{Cite web |title=Dream Chaser® {{!}} Wings Over the Rockies Air & Space Museum |url=https://wingsmuseum.org/exhibits/dream-chaser/ |access-date=2024-12-27 |website=Wings Over The Rockies |language=en-US}}</ref>
+|[[Wings Over the Rockies Air and Space Museum]]
+|On Display
+|Replica of a crewed Dream Chaser spaceplane. Originally constructed in 1990 as an HL-20 mockup prior to the program's cancellation.
+|-
+|''Tenacity''<ref>{{Cite web |title=Gateway: The Deep Space Launch Complex |url=https://www.kennedyspacecenter.com/explore-attractions/nasa-now/featured-attraction/gateway |access-date=2024-12-27 |website=www.kennedyspacecenter.com |date=October 15, 2024 }}</ref>
+|[[Kennedy Space Center Visitor Complex]]
+|On Display
+|Replica of ''Tenacity'' mated to Shooting Star module. Located in Gateway section of the complex.
+|}
+
+==Missions==
+A demonstration and six missions are currently planned to be launched from [[Cape Canaveral Air Force Station Space Launch Complex 41|Cape Canaveral SLC-41]] on [[Vulcan (rocket)|Vulcan Centaur]], and one more flight has been ordered to fly for the United Nations on board an [[Arianespace]] vehicle.{{Citation needed|date=June 2022}}
+
+''List includes only completed or manifested missions. NET means 'no earlier than'. Launch and landing dates and times are listed in UTC.'' 
+{{sticky header}}
+{| class="wikitable sticky-header"
+! Mission
+! Spacecraft
+! Launch
+! Landing
+! Launch vehicle
+! Remarks
+! Outcome
+|-
+! Captive Test 1
+| ETA ''Eagle''
+| May 29, 2012
+| May 29, 2012
+| [[Sikorsky S-64 Skycrane#Erickson|Erickson Skycrane]]{{efn|A helicopter used for lifting the vehicle|name=helicopter}}
+| 1st atmospheric test
+| {{Success}}
+|-
+! Captive Test 2
+| ETA ''Eagle''
+| August 22, 2013
+| August 22, 2013
+| Erickson Skycrane{{efn|name=helicopter}}
+| 2nd atmospheric test
+| {{Success}}
+|-
+! Drop Test 1
+| ETA ''Eagle''
+| October 26, 2013
+| October 26, 2013
+| Erickson Skycrane{{efn|name=helicopter}}
+| 1st free flight test
+| {{Partial success}}
+|-
+! Drop Test 2
+| ETA ''Eagle''
+| November 11, 2017
+| November 11, 2017
+| [[Boeing CH-47 Chinook#Civilian models|Boeing-Vertol 234]]{{efn|name=helicopter}}
+| 2nd free flight test
+| {{Success}}
+|-
+! [[SSC Demo-1]]
+| DC101 [[Dream Chaser Tenacity|''Tenacity'']]
+| NET Late 2026
+| NET Late 2026
+| [[Vulcan Centaur]]
+| First orbital flight, originally an approximately 45-day ISS resupply mission, now will not visit the ISS. 
+| {{Planned}}
+|-
+! CRS SSC-1
+| DC101 [[Dream Chaser Tenacity|''Tenacity'']]
+| TBA
+| TBA
+| Vulcan Centaur
+| 1st contracted CRS mission for NASA
+| {{N/A|Cancelled}}
+|-
+! CRS SSC-2
+| DC101 [[Dream Chaser Tenacity|''Tenacity'']]
+| TBA
+| TBA
+| Vulcan Centaur
+| 2nd contracted CRS mission for NASA
+| {{N/A|Cancelled}}
+|-
+! CRS SSC-3
+| DC101 [[Dream Chaser Tenacity|''Tenacity'']]
+| TBA
+| TBA
+| Vulcan Centaur
+| 3rd contracted CRS mission for NASA
+| {{N/A|Cancelled}}
+|-
+! CRS SSC-4
+| DC102 [[Dream Chaser Reverence|''Reverence'']]<ref>{{cite web|author=Sawyer Rosenstein |date= 8 February 2024 |title= Dream Chaser undergoes NASA testing ahead of first flight |website=NASASpaceflight.com |url=https://www.nasaspaceflight.com/2024/02/dream-chaser-nasa-glenn/}}</ref>
+| TBA
+| TBA
+| Vulcan Centaur
+| 4th contracted CRS mission for NASA
+| {{N/A|Cancelled}}
+|-
+! CRS SSC-5
+| {{Color|grey|TBA}}
+| TBA
+| TBA
+| Vulcan Centaur
+| 5th contracted CRS mission for NASA
+| {{N/A|Cancelled}}
+|-
+! CRS SSC-6
+| {{Color|grey|TBA}}
+| TBA
+| TBA
+| Vulcan Centaur
+| 6th contracted CRS mission for NASA
+| {{N/A|Cancelled}}
+|-
+! DC UNOOSA-1
+| {{Color|grey|TBA}}
+| TBA
+| TBA
+| [[Arianespace]] vehicle
+| To carry 35 payloads for the United Nations Office for Outer Space Affairs.<ref name="UNOOSA"/>
+| {{Planned}}
+|}
+{{Notelist}}
+
+== See also ==
+{{portal|Spaceflight}}
+'''[[Spaceplane]]s'''
+* {{annotated link|RLV Technology Demonstration Programme}}
+* {{annotated link|Boeing X-37}}
+* {{annotated link|Space Rider}}
+* {{annotated link|NASA X-38}}
+* [[Boeing X-20 Dyna-Soar]]
+* {{annotated link|Mikoyan-Gurevich MiG-105}}
+* {{annotated link|Hermes (spacecraft)}}
+* [[Kliper|RSC Energia Kliper]]
+
+'''Other ISS cargo vehicles''':
+* [[Comparison of space station cargo vehicles]]
+* [[Commercial Resupply Services]]
+* [[Automated Transfer Vehicle]]
+* [[Cygnus (spacecraft)]]
+* [[SpaceX Dragon 1]]
+* [[SpaceX Dragon 2]]
+* [[H-II Transfer Vehicle]]
+* [[Progress (spacecraft)]]
+* [[Soyuz GVK]]
+'''Other ISS crew vehicles''':
+* [[Commercial Crew Development]]
+* [[Boeing Starliner]]
+* [[SpaceX Crew Dragon]]
+* [[Orel (spacecraft)]]
+* [[Soyuz (spacecraft)]]
+
+== References ==
+{{reflist|colwidth=30em
+|refs =
+<ref name="subNAS">
+{{cite press release
+ |title=Dream Chaser Model Drops in at NASA Dryden
+ |publisher=NASA
+ |date=December 17, 2010
+ |url=http://www.nasa.gov/centers/dryden/Features/dream_chaser_model_drop.html
+ |access-date=August 29, 2012
+ |archive-url=https://web.archive.org/web/20140106204356/http://www.nasa.gov/centers/dryden/Features/dream_chaser_model_drop.html
+ |archive-date=January 6, 2014
+ |url-status=live
+ |location=Dryden Flight Research Center
+ |df=mdy
+}}
+</ref>
+
+<ref name="AutoIQ-2">
+{{cite news
+ |last        = Chang
+ |first       = Kenneth
+ |title       = Businesses Take Flight, With Help From NASA
+ |newspaper   = New York Times
+ |page        = D1
+ |date        = February 1, 2011
+ |url         = https://www.nytimes.com/2011/02/01/science/space/01private.html?_r=4&ref=science&pagewanted=all
+ |access-date  = August 29, 2012
+ |archive-url  = https://archive.today/20140809075955/http://www.nytimes.com/2011/02/01/science/space/01private.html?_r=5&ref=science&pagewanted=all&
+ |archive-date = August 9, 2014
+ |url-status     = live
+ |df          = mdy-all
+}}
+</ref>
+
+<ref name="Mark">
+{{cite web
+ | last           = Sirangelo
+ | first          = Mark
+ | title          = NewSpace 2011: Sierra Nevada Corporation
+ |date=August 2011
+ | publisher      = Spacevidcast
+ | url            = https://www.youtube.com/watch?v=D7sWtEAddkM
+ | access-date     = August 16, 2011
+}}
+{{cite web
+| last           = Sirangelo
+| first          = Mark
+| title = Flight Plans and Crews for Commercial Dream Chaser's First Flights: One-on-One Interview With SNC VP Mark Sirangelo (Part 3)
+| date = August 24, 2014
+| publisher = AmericaSpace
+| url = http://www.americaspace.com/?p=66192
+}}
+</ref>
+
+<ref name="David">
+{{cite web
+ | title          = The Space Show : Mark Sirangelo interview
+ | date           = January 4, 2012
+ | publisher      = David Livingston
+ | url            = http://www.thespaceshow.com/detail.asp?q=1682
+ | access-date     = January 7, 2012
+}}
+</ref>
+
+<ref name="vid">
+{{cite web
+| title        = NASA Deputy Administrator Lori Garver touts Colorado's role
+| publisher    = Youtube.com
+| date         = February 5, 2011
+| url          = https://www.youtube.com/watch?v=RjsGFG8ko1Q
+| access-date   = August 29, 2012
+}}
+</ref><ref name="AutoIQ-6">
+{{cite journal
+ |title=Moving Forward: Commercial Crew Development Building the Next Era in Spaceflight
+ |journal=Rendezvous: Where Today Meets Tomorrow
+ |date=Summer 2010
+ |volume=4
+ |issue=2
+ |pages=10–15
+ |url=http://www.nasa.gov/pdf/475795main_rendezvous_v4n3.pdf
+ |access-date=January 6, 2014
+ |archive-url=https://web.archive.org/web/20130510175120/http://www.nasa.gov/pdf/475795main_rendezvous_v4n3.pdf
+ |archive-date=May 10, 2013
+ |url-status=live
+ |df=mdy
+}}
+</ref>
+
+<ref name="aw20100219">
+{{cite news
+ |title     = Sierra Nevada Building On NASA Design
+ |publisher = Aviation Week
+ |author    = Frank Morring, Jr
+ |date      = February 19, 2010
+ |url       = http://www.aviationweek.com/aw/generic/story_generic.jsp?channel=awst&id=news/awst/2010/02/22/AW_02_22_2010_p53-204735.xml&headline=Sierra%20Nevada%20Building%20On%20NASA%20Design
+}} {{dead link|date=November 2017 |bot=InternetArchiveBot |fix-attempted=yes}}
+</ref>
+
+<ref name="AutoIQ-9">
+{{cite press release
+ |title=SpaceDev and United Launch Alliance to Explore Launching the Dream Chaser(TM) Space Vehicle on an Atlas V Launch Vehicle
+ |url=http://www.marketwired.com/press-release/spacedev-united-launch-alliance-explore-launching-dream-chaser-space-vehicle-on-atlas-717659.htm
+ |date=April 10, 2007
+ |publisher=SpaceDev
+ |agency=Market Wire
+ |location=Poway, California
+ |access-date=January 6, 2014
+ |archive-url=https://web.archive.org/web/20140107050017/http://www.marketwired.com/press-release/spacedev-united-launch-alliance-explore-launching-dream-chaser-space-vehicle-on-atlas-717659.htm
+ |archive-date=January 7, 2014
+ |url-status=live
+ |df=mdy
+}}
+</ref>
+
+<ref name="AutoIQ-10">{{cite web
+| title = NASA Signs Commercial Space Transportation Agreements
+| date = June 18, 2007
+| publisher = NASA
+| url = http://www.nasa.gov/home/hqnews/2007/jun/HQ_07138_COTS_3_Unfunded_SAAs.html
+| access-date = August 16, 2011
+| archive-date = June 21, 2007
+| archive-url = https://web.archive.org/web/20070621133852/http://www.nasa.gov/home/hqnews/2007/jun/HQ_07138_COTS_3_Unfunded_SAAs.html
+| url-status = dead
+}}</ref>
+
+<ref name="AutoIQ-12">
+{{cite web
+ |title       = SNC receives largest award of NASA's CCDev Competitive Contract
+ |date        = February 1, 2010
+ |publisher   = SNC
+ |url         = http://www.sncorp.com/news/press/pr10/snc_ccdev_spacenews.shtml
+ |url-status     = dead
+ |archive-url  = https://web.archive.org/web/20100207081838/http://sncorp.com/news/press/pr10/snc_ccdev_spacenews.shtml
+ |archive-date = February 7, 2010
+ |df          = mdy-all
+}}
+</ref>
+
+<ref name="AutoIQ-13">{{cite web
+| title = Text of Space Act Agreement
+| url = http://www.nasa.gov/centers/johnson/pdf/444145main_NNJ10TA03S_sierra_saa.pdf
+| access-date = June 28, 2010
+| archive-date = April 28, 2023
+| archive-url = https://web.archive.org/web/20230428020413/https://www.nasa.gov/centers/johnson/pdf/444145main_NNJ10TA03S_sierra_saa.pdf
+| url-status = dead
+}}</ref>
+<ref name=at20120906hybrid>
+{{cite news
+ |last=Klingler
+ |first=Dave
+ |title=50 years to orbit: Dream Chaser's crazy Cold War backstory: The reusable mini-spaceplane is back from the dead—again—and prepping for space
+ |newspaper=Ars Technica
+ |date=September 6, 2012
+ |url=https://arstechnica.com/science/2012/09/the-long-complicated-voyage-of-the-dream-chaser-may-yet-end-in-space/3/
+ |access-date=September 7, 2012
+ |page=3
+ |publisher=Conde Nast
+ |location=Boston
+ |archive-url=https://web.archive.org/web/20131104030628/http://arstechnica.com/science/2012/09/the-long-complicated-voyage-of-the-dream-chaser-may-yet-end-in-space/3/
+ |archive-date=November 4, 2013
+ |url-status=live
+ |df=mdy
+}}
+</ref>
+<ref name=at20120906>
+{{cite news
+ |last=Klingler
+ |first=Dave
+ |title=50 years to orbit: Dream Chaser's crazy Cold War backstory: The reusable mini-spaceplane is back from the dead—again—and prepping for space
+ |newspaper=ars Technical
+ |date=September 6, 2012
+ |url=https://arstechnica.com/science/2012/09/the-long-complicated-voyage-of-the-dream-chaser-may-yet-end-in-space/2/
+ |access-date=September 7, 2012
+ |page=2
+ |publisher=Conde Nast
+ |location=Boston
+ |archive-url=https://web.archive.org/web/20140104200356/http://arstechnica.com/science/2012/09/the-long-complicated-voyage-of-the-dream-chaser-may-yet-end-in-space/2/
+ |archive-date=January 4, 2014
+ |url-status=live
+ |df=mdy
+}}
+</ref>
+
+<ref name="AutoIQ-15">
+{{cite press release
+ |title       = Sierra Nevada Space Systems Adds Key Former Nasa Leaders to Its Dream Chaser Orbital Space Vehicle Team
+ |date        = July 5, 2011
+ |url         = http://www.sncorp.com/press_more_info.php?id=450
+ |location    = Louisville, Colorado
+ |access-date  = January 6, 2014
+ |archive-url  = https://web.archive.org/web/20140106220837/http://www.sncorp.com/press_more_info.php?id=450
+ |archive-date = January 6, 2014
+ |url-status     = dead
+ |df          = mdy
+}}
+</ref>
+
+<ref name = "MilestoneOverview">{{cite web
+| title = Sierra Nevada Completes Dream Chaser Safety Review
+| date = May 10, 2013
+| url = http://www.parabolicarc.com/2013/05/10/sierra-nevada-completes-dream-chaser-safety-review/#more-48595
+| access-date = May 15, 2013
+| archive-date = June 10, 2013
+| archive-url = https://web.archive.org/web/20130610044030/http://www.parabolicarc.com/2013/05/10/sierra-nevada-completes-dream-chaser-safety-review/#more-48595
+| url-status = dead
+}}</ref>
+<ref name="ft20110418">
+Dean, James. [http://space.flatoday.net/2011/04/nasa-awards-270-million-for-commercial.html "NASA awards $270 million for commercial crew efforts"] {{webarchive |url=https://web.archive.org/web/20110419234227/http://space.flatoday.net/2011/04/nasa-awards-270-million-for-commercial.html |date=April 19, 2011}}. space.com, April 18, 2011.
+</ref>
+<ref name="AutoIQ-17">
+[https://archive.today/20130104234510/http://spacenews.com/civil/120803-boeing-spacex-sierra-ccicap.html "Boeing, SpaceX and Sierra Nevada Win CCiCAP Awards"]. spacenews.com, August 3, 2012.
+</ref>
+
+<!--ref name="AutoIQ-18">
+{{cite web
+| title = Space Act Agreement between NASA and SNC
+| work = CCDev2
+| publisher = NASA
+| access-date=July 25, 2012
+| url = http://procurement.ksc.nasa.gov/documents/NNK11MS01S_SAA-%20SNC_Redacted.pdf
+| archive-url = https://web.archive.org/web/20110627052003/http://procurement.ksc.nasa.gov/documents/NNK11MS01S_SAA-%20SNC_Redacted.pdf
+| url-status = dead
+| archive-date = June 27, 2011
+}}
+</ref-->
+
+<!--ref name="FAA Forecast">
+{{cite web
+| title = 2012 Commercial Space Transportation Forcasts
+| publisher = FAA Commercial Space Transportation
+| url = http://www.faa.gov/about/office_org/headquarters_offices/ast/media/NGSO-GSO_Draft_for_printing.pdf
+| access-date=July 25, 2012
+}}
+</ref-->
+<ref name="AutoIQ-19">{{cite web
+| title = Commercial Crew: Sierra Nevada
+| publisher = NASA
+| url = http://www.nasa.gov/offices/c3po/partners/sierranevada/index.html
+| access-date = July 25, 2012
+| archive-date = July 23, 2012
+| archive-url = https://web.archive.org/web/20120723090600/http://www.nasa.gov/offices/c3po/partners/sierranevada/index.html
+| url-status = dead
+}}</ref>
+
+<ref name="Dryden test">{{cite web
+| title = Dream Chaser Model Drops in at NASA Dryden
+| publisher = NASA
+| url = http://www.nasa.gov/centers/dryden/Features/dream_chaser_model_drop.html
+| date = 2017-01-31
+| access-date = February 6, 2011
+| archive-date = June 12, 2012
+| archive-url = https://web.archive.org/web/20120612081206/http://www.nasa.gov/centers/dryden/Features/dream_chaser_model_drop.html
+| url-status = dead
+}}</ref>
+<ref name="PDR">
+{{cite news
+ |title       = Sierra nevada corporation's dream chaser space system passes preliminary design review
+ |newspaper   = SNC Release
+ |date        = June 6, 2012
+ |url         = http://www.sncspace.com/press_more_info.php?id=335
+ |url-status     = dead
+ |archive-url  = https://web.archive.org/web/20120813175033/http://sncspace.com/press_more_info.php?id=335
+ |archive-date = August 13, 2012
+ |df          = mdy-all
+}}
+</ref>
+<ref name="AutoIQ-20">
+{{cite news
+ |title       = Sierra nevada corporation begins flight test program of the dream chaser orbital crew vehicle
+ |newspaper   = SNC Release
+ |date        = May 30, 2012
+ |url         = http://www.sncspace.com/press_more_info.php?id=334
+ |url-status     = dead
+ |archive-url  = https://web.archive.org/web/20120813175006/http://sncspace.com/press_more_info.php?id=334
+ |archive-date = August 13, 2012
+ |df          = mdy-all
+}}
+</ref>
+<ref name="AutoIQ-24">
+{{cite press release
+ |title       = Sierra Nevada Corporation's Space Systems Delivers the Dream Chaser® First Flight Test Vehicle Structure, Completing a Major Milestone for NASA's Commercial Crew Program
+ |url         = http://www.sncorp.com/press_more_info.php?id=476
+ |url-status     = dead
+ |archive-url  = https://web.archive.org/web/20130408054321/http://sncorp.com/press_more_info.php?id=476
+ |archive-date = April 8, 2013
+ |df          = mdy-all
+}}
+</ref>
+<ref name="AutoIQ-26">{{cite web
+| title = Sierra Nevada's Dream Chaser spacecraft tested at Broomfield airport
+| publisher = dailycamera.com
+| date = May 29, 2012
+| url = http://www.dailycamera.com/broomfield-news/ci_20733780/spacecraft-tested-tuesday-at-broomfield-airport
+| access-date = May 29, 2012
+| archive-url = https://web.archive.org/web/20120531105157/http://www.dailycamera.com/broomfield-news/ci_20733780/spacecraft-tested-tuesday-at-broomfield-airport
+| archive-date = May 31, 2012
+| url-status = dead
+}}</ref>
+<ref name="FiveYearLangely">
+{{cite web
+ |title       = SNC and NASA Langley announce Five Years of Partnership
+ |url         = http://sncspace.com/press_more_info.php?id=336
+ |url-status     = dead
+ |archive-url  = https://web.archive.org/web/20120731172429/http://sncspace.com/press_more_info.php?id=336
+ |archive-date = July 31, 2012
+ |df          = mdy-all
+}}
+</ref>
+<ref name="NoseGear">
+{{cite web
+ |title       = Sierra Nevada Corporation Announces Successful Completion of Dream Chaser Cew Vehicle Nose Gear Landing Test
+ |publisher   = SNC
+ |url         = http://sncspace.com/press_more_info.php?id=337
+ |access-date  = August 15, 2012
+ |url-status     = dead
+ |archive-url  = https://web.archive.org/web/20120807000048/http://sncspace.com/press_more_info.php?id=337
+ |archive-date = August 7, 2012
+ |df          = mdy-all
+}}
+</ref>
+<ref name="Flightglobal_LMC">
+{{cite news
+ |last=Rosenberg
+ |first=Zach
+ |title=Lockheed to build second Dream Chaser airframe for Sierra Nevada
+ |date=January 30, 2013
+ |newspaper=Flightglobal
+ |url=https://www.flightglobal.com/news/articles/lockheed-to-build-second-dream-chaser-airframe-for-sierra-nevada-381679/
+ |access-date=March 25, 2013
+ |archive-url=https://web.archive.org/web/20140107193306/https://www.flightglobal.com/news/articles/lockheed-to-build-second-dream-chaser-airframe-for-sierra-nevada-381679/
+ |archive-date=January 7, 2014
+ |url-status=live
+ |location=Sutton, Surrey, UK
+ |df=mdy
+}}
+</ref>
+<ref name="FloridaTodayLMC">
+{{cite news
+ |last        = Dean
+ |first       = James
+ |title       = Sierra Nevada's Dream Chaser will get Lockheed Martin's help
+ |date        = January 30, 2013
+ |url         = http://www.floridatoday.com/article/20130131/NEWS01/301310028/Sierra-Nevada-s-Dream-Chaser-will-get-Lockheed-Martin-s-help
+ |access-date  = February 11, 2013
+ |newspaper   = Florida Today
+ |archive-url  = https://web.archive.org/web/20130217040618/http://www.floridatoday.com/article/20130131/NEWS01/301310028/Sierra-Nevada-s-Dream-Chaser-will-get-Lockheed-Martin-s-help?nclick_check=1
+ |archive-date = February 17, 2013
+ |url-status     = live
+ |location    = Melbourne, Florida
+ |df          = mdy
+}}
+</ref>
+<ref name="NASA_Archambault">
+{{cite news
+| title = NASA Astronaut Lee Archambault Leaving Agency
+| date = March 13, 2013
+| url = http://www.nasa.gov/centers/johnson/news/releases/2013/J13-007.html
+| last = Bolden
+| first = Jay
+| publisher = NASA
+| access-date=March 25, 2013
+}}
+</ref>
+<ref name="PA_Archambault">{{cite web
+| title = NASA Astronaut Lee Archambault Joins Sierra Nevada as Test Pilot
+| date = March 13, 2013
+| url = http://www.parabolicarc.com/2013/03/13/nasa-astronaut-lee-archambault-joins-sierra-nevada-as-test-pilot/
+| access-date = March 25, 2013
+| archive-date = March 17, 2013
+| archive-url = https://web.archive.org/web/20130317070858/http://www.parabolicarc.com/2013/03/13/nasa-astronaut-lee-archambault-joins-sierra-nevada-as-test-pilot/
+| url-status = dead
+}}</ref>
+<ref name="SpaceDev Aquired by SNC">
+{{cite news
+ |last=Fikes
+ |first=Bradley J.
+ |title=SpaceDev agrees to be acquired
+ |url=http://www.utsandiego.com/news/2008/oct/21/spacedev-agrees-to-be-acquired/
+ |access-date=January 6, 2014
+ |newspaper=U-T San Diego
+ |date=October 21, 2008
+ |archive-url=https://web.archive.org/web/20140107001430/http://www.utsandiego.com/news/2008/oct/21/spacedev-agrees-to-be-acquired/
+ |archive-date=January 7, 2014
+ |url-status=live
+ |df=mdy
+}}
+</ref>
+<ref name=pa20131216>
+{{cite news
+ |last=Messier
+ |first=Doug
+ |title=German Space Agency Funds Study on Uses of Sierra Nevada's Dream Chaser
+ |url=http://www.parabolicarc.com/2013/12/16/german-space-agency-funds-study-sierra-nevadas-dream-chaser/
+ |access-date=December 16, 2013
+ |newspaper=Parabolic Arc
+ |date=December 16, 2013
+ |archive-url=https://web.archive.org/web/20131216215718/http://www.parabolicarc.com/2013/12/16/german-space-agency-funds-study-sierra-nevadas-dream-chaser/
+ |archive-date=December 16, 2013
+ |url-status=live
+ |location=Mojave, California
+ |df=mdy
+}}
+</ref>
+<ref name=at20140819liquid>{{cite news
+ |last         = Messier
+ |first        = Doug
+ |title        = SNC Abandons Own Hybrid Motors on Dream Chaser
+ |url          = http://www.parabolicarc.com/2014/08/19/snc-abandons-hybrid-motors-dream-chaser/
+ |access-date  = March 26, 2016
+ |newspaper    = Parabolic Arc
+ |date         = August 19, 2014
+ |archive-date = March 16, 2016
+ |archive-url  = https://web.archive.org/web/20160316164838/http://www.parabolicarc.com/2014/08/19/snc-abandons-hybrid-motors-dream-chaser/
+ |url-status   = dead
+}}</ref>
+<ref name=nsw20130514>
+{{cite news
+ | last         = Lindsey
+ | first        = Clark
+ | title        = More about SNC preparations for drop tests of Dream Chaser prototype
+ | url          = http://www.newspacewatch.com/articles/more-about-snc-preparations-for-drop-tests-of-dream-chaser-prototype.html
+ | access-date   = May 14, 2013
+ | newspaper    = NewSpace Watch
+ | date         = May 14, 2013
+ | url-access   = subscription
+}}
+</ref>
+<ref name="2nd Captive Carry Test">
+{{cite news
+ |last=Wall
+ |first=Mike
+ |title=Dream Chaser space plane dangles from helicopter for second flight test
+ |url=http://www.nbcnews.com/science/dream-chaser-space-plane-dangles-helicopter-second-flight-test-8C11009955
+ |access-date=January 6, 2014
+ |newspaper=NBC News
+ |date=August 26, 2013
+ |archive-url=https://web.archive.org/web/20140108215738/http://www.nbcnews.com/science/dream-chaser-space-plane-dangles-helicopter-second-flight-test-8C11009955
+ |archive-date=January 8, 2014
+ |url-status=live
+ |location=New York
+ |df=mdy
+}}
+</ref>
+<ref name=nsf20130512>
+{{cite news
+ |last=Bergin
+ |first=Chris
+ |title=Dream Chaser ETA heads to Dryden for drop tests
+ |url=http://www.nasaspaceflight.com/2013/05/dream-chaser-dryden-drop-tests/
+ |access-date=May 14, 2013
+ |website=NASASpaceflight.com
+ |date=May 12, 2013
+ |archive-url=https://web.archive.org/web/20131216184907/http://www.nasaspaceflight.com/2013/05/dream-chaser-dryden-drop-tests/
+ |archive-date=December 16, 2013
+ |url-status=live
+ |df=mdy
+}}
+</ref>
+<ref name="Landing gear failure 2013">
+{{cite news
+ |last=Bergin
+ |first=Chris
+ |title=Dream Chaser suffers landing gear failure after first flight
+ |url=http://www.nasaspaceflight.com/2013/10/dream-chaser-landing-failure-first-flight/
+ |access-date=January 6, 2014
+ |website=NASASpaceflight.com
+ |date=October 26, 2013
+ |archive-url=https://web.archive.org/web/20140228163343/http://www.nasaspaceflight.com/2013/10/dream-chaser-landing-failure-first-flight/
+ |archive-date=February 28, 2014
+ |url-status=live
+ |df=mdy
+}}
+</ref>
+<ref name="Press Conference 2013-10-29">
+{{cite news
+ |last=Harwood
+ |first=William
+ |title=Sierra Nevada investigates Dream Chaser landing mishap
+ |url=http://www.cbsnews.com/network/news/space/home/spacenews/files/65a2e37d7bc29d16991991624a6b36ef-634.html
+ |access-date=January 6, 2014
+ |newspaper=CBS News
+ |date=October 29, 2013
+ |archive-url=https://web.archive.org/web/20140106180942/http://www.cbsnews.com/network/news/space/home/spacenews/files/65a2e37d7bc29d16991991624a6b36ef-634.html
+ |archive-date=January 6, 2014
+ |location=New York
+ |url-status=live
+ |df=mdy
+}}
+</ref>
+
+<ref name="Video of free-flight">
+{{cite news
+ |last=David
+ |first=Leonard
+ |title=Private Dream Chaser Space Plane Skids Off Runway After Milestone Test Flight (Video)
+ |url=http://www.space.com/23370-private-dream-chaser-space-plane-skidded-off-runway-after-milestone-test-flight.html
+ |access-date=January 6, 2014
+ |newspaper=Space.com
+ |date=October 29, 2013
+ |archive-url=https://web.archive.org/web/20140130192104/http://m.space.com/23370-private-dream-chaser-space-plane-skidded-off-runway-after-milestone-test-flight.html
+ |archive-date=January 30, 2014
+ |location=New York
+ |url-status=live
+ |df=mdy
+}}
+</ref>
+<ref name="ESA signs agreement 2014">
+{{cite news
+ |last=Clark
+ |first=Stephen
+ |title=Europe eyes cooperation on Dream Chaser space plane
+ |url=http://www.spaceflightnow.com/news/n1401/08dreamchaser/#.Us47O2RDv9E
+ |access-date=January 9, 2014
+ |newspaper=Spaceflight Now
+ |date=January 8, 2014
+ |archive-url=https://web.archive.org/web/20140109145644/http://www.spaceflightnow.com/news/n1401/08dreamchaser/
+ |archive-date=January 9, 2014
+ |url-status=live
+ |df=mdy
+}}
+</ref>
+
+<ref name="Vulcan-Selection">
+{{cite press release
+ |url=https://www.sncorp.com/press-releases/snc-ula-dream-chaser-launch-announcement/
+ |title=SNC Selects ULA for Dream Chaser® Spacecraft Launches
+ |work=[[Sierra Nevada Corporation]]
+ |date=August 14, 2019
+ |access-date=August 14, 2019
+}}
+</ref>
+
+<!-- Unused citation
+<ref name="AutoIQ-27">
+{{cite web
+| title = NewSpace Conf – Thurs. Mornng Session 2
+| date = July 26, 2012
+| publisher = Hobby Space
+| url = http://hobbyspace.com/nucleus/index.php?itemid=39716
+| access-date=July 26, 2012
+}}
+</ref>
+
+<ref name="AutoIQ-7">
+{{cite web
+| title = Dream Chaser
+| publisher = Astonautix
+| url = http://www.astronautix.com/craft/drehaser.htm
+| archive-url = https://web.archive.org/web/20070224005725/http://www.astronautix.com/craft/drehaser.htm
+| url-status = dead
+| archive-date = February 24, 2007
+| access-date=February 14, 2010
+}}
+</ref>
+
+<ref name="AutoIQ-11">
+{{cite web
+| title = Sierra Nevada Corporation Acquires Space Dev Inc
+| date = December 16, 2008
+| publisher = SNC
+| url = http://www.sncorp.com/news/press/snc_2008_spacedev.shtml
+| access-date = October 28, 2009
+| archive-url = https://web.archive.org/web/20111010175619/http://www.sncorp.com/news/press/snc_2008_spacedev.shtml
+| archive-date = October 10, 2011
+| url-status = dead
+| df = mdy-all
+}}
+</ref>
+
+<ref>
+{{cite web
+|last1=Schierholz
+|first1=Stephanie
+|last2=Martin
+|first2=Stephanie
+|title=NASA Chooses American Companies to Transport U.S. Astronauts to International Space Station
+|url=http://www.nasa.gov/press/2014/september/nasa-chooses-american-companies-to-transport-us-astronauts-to-international/index.html
+|website=www.nasa.gov
+|access-date=September 17, 2014
+|date=September 16, 2014
+}}
+</ref>
+
+-->
+}}
+
+== External links ==
+{{Commons category|Dream Chaser}}
+* [https://www.sierraspace.com/ Sierra Space web site]
+* [https://www.sierraspace.com/dream-chaser-spaceplane/ Sierra Space Dream Chaser page]
+* [https://web.archive.org/web/19980116151219/http://spacedev.com/ SpaceDev web site]
+* [http://www.ulalaunch.com/ United Launch Alliance web site]
+* [https://www.youtube.com/watch?v=i7yPVaNdGBw CG rendering of Dream Chaser servicing ISS]
+* [https://www.youtube.com/watch?v=5PmQ211u1hs Video animation&nbsp;– SpaceDev International Lunar Observatory Human Servicing Mission concept]
+
+{{Space Planes}}
+{{Dream Chaser}}
+{{Crewed spacecraft}}
+{{Cargo spacecraft}}
+
+{{DEFAULTSORT:Dream Chaser (Spacecraft)}}
+[[Category:Proposed spaceplanes]]
+[[Category:Private spacecraft]]
+[[Category:Aircraft first flown in 2013]]
+[[Category:Lifting bodies]]
+[[Category:Sierra Nevada Corporation aircraft]]
+[[Category:American spacecraft]]
+[[Category:Reusable spacecraft]]
+[[Category:Proposed crewed spacecraft]]
+[[Category:Dream Chaser| ]]

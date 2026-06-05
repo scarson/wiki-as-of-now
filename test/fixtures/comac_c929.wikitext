@@ -1,0 +1,230 @@
+{{Short description|Chinese widebody passenger aircraft}}
+{{Infobox aircraft
+| name = Comac C929
+| image = [[File:C929 model at 2026 Singapore Airshow 1.jpg|300px]]
+| caption = Model of a C929 at the [[Singapore Airshow#2026|2026 Singapore Airshow]]
+| aircraft_type = [[Wide-body]] [[jet airliner]]
+| national_origin = [[China]]
+| manufacturer = [[Comac]]
+| status = In design<ref>{{cite web |url=https://www.shine.cn/news/metro/2112039052/ |title=Wings of China-Russia aircraft prototype start production, summit told |work= [[Shanghai Daily|SHINE News]] |date= 2021-12-03}}</ref>
+}}
+
+The '''Comac C929''' is a long-range 250-to-320-seat [[wide-body]] twinjet [[airliner]] being developed by [[China|China's]] state-owned aircraft manufacturer [[Comac]] as a competitor to the [[Airbus A330neo]] and [[Boeing 787 Dreamliner]].
+
+The program was previously developed by CRAIC (China-Russia Commercial Aircraft International Corporation), a joint venture between Comac and the Russian [[United Aircraft Corporation]] (UAC), as the '''CRAIC CR929'''. In 2023, following tensions between the partners and uncertainties associated with the [[International sanctions during the Russian invasion of Ukraine#Russian aircraft manufacturing industry|international sanctions on Russia]], Comac continued the program independently of UAC.
+
+== Development ==
+<!-- 2011–2012 -->
+In June 2011, it was reported that Comac was studying the 290-seat C929 and 390-seat [[Comac C939|C939]] [[wide-body aircraft]].<ref>{{cite news |url= https://english.chosun.com/site/data/html_dir/2011/06/30/2011063001142.html |title= China's Comac Joins Commercial Passenger Plane Industry |date= June 30, 2011 |work= [[The Chosun Ilbo]]}}</ref>
+In June 2012, Russia and China entered talks to set up a joint venture between UAC and Comac to develop a successor to the [[Il-96]]. Development was expected to take at least seven years and at a cost of $7–12 billion, with a production target of several hundred aircraft. Russia would contribute its knowledge and China would provide the resources.<ref>{{cite news |url= https://www.flightglobal.com/news/articles/russia-and-china-discuss-il-96-successor-372569/ |title= Russia and China discuss Il-96 successor |date= 1 June 2012 |work= Air Transport Intelligence |publisher= Flightglobal |author= Tom Zaitsev}}</ref>
+
+<!-- 2014–2016 -->
+In May 2014, a memorandum on cooperation was reached and a feasibility study completed in autumn 2014. UAC estimated that wide-body demand worldwide through 2033 amounts to 8,000 aircraft, including 1,000 in China. Preliminary design began in February 2015.<ref name=AvWeek11feb2015>{{cite news |url= https://aviationweek.com/commercial-aviation/russo-chinese-widebody-concept-design-underway |title= Russo–Chinese Widebody Concept Design Underway |date= Feb 11, 2015 |author= Maxim Pyadushkin and Bradley Perrett |work= Aviation Week & Space Technology}}</ref> In June 2016, an agreement was signed to set up a 50–50 joint venture.<ref>{{cite news |url= https://www.chinaaviationdaily.com/news/53/53311.html |title= Russia, China Sign JV Agreement to Create Wide-Body Aircraft |date= Jun 26, 2016 |work= [[China Aviation Daily]]}}</ref>
+In November 2016, at [[Zhuhai Airshow]], Comac and UAC approached [[Honeywell]] and [[United Technologies]] as potential suppliers.{{cn|date=May 2021}}
+A mock-up was exhibited at the show.<ref name=161103PR>{{cite press release |url= http://english.comac.cc/news/mc/201611/17/t20161117_4523566.shtml |title= COMAC Debuts Chinese–Russian Wide-Body C929 Model at Zhuhai Airshow |date= 3 Nov 2016 |author= China Aviation Daily |publisher= COMAC}}</ref>
+
+=== CRAIC joint venture ===
+The China–Russia Commercial Aircraft International Corporation Limited (CRAIC) 50–50 [[joint venture]] was launched on May 22, 2017 in [[Shanghai]], targeting a 2025–2028 [[maiden flight]] and first delivery.<!--<ref name=Reuters22may2017 />-->
+
+[[File:Paris Air Show 2017 COMAC C929 cabin cropped.png|thumb|Seating : 1–2–1 in First, 2–2–2 in Business and 3–3–3 in Economy]]
+
+China saw the joint venture involving joint financial [[investment]]s, rather than as an [[intellectual property]] sale, as Russia wanted with the [[research and development]] center in Moscow and the [[aircraft manufacturing]] in Shanghai.<ref>{{cite news |url= https://aviationweek.com/commercial-aviation/opinion-why-sino-russian-widebody-project-not-another-airbus |title= Opinion: Why Sino-Russian Widebody Project Is Not Another Airbus |date= Jul 17, 2017 |author= Richard Aboulafia |work= Aviation Week & Space Technology}}</ref>
+The main design center was in Russia, although Shanghai was to have its own design office, with half of the work each.<ref>{{cite news |url= https://www.chinadaily.com.cn/business/2017-09/23/content_32369893.htm |title= C929 fuselage will be made in China |author= Zhu Wenqian |newspaper= [[China Daily]] |date= 23 Sep 2017}}</ref>
+
+In September 2017, it was named CR 929 (CR standing for China–Russia).<!--<ref name=Flight29sep2017>--> It was to be powered by a western engine at first before an indigenous power plant developed by Russia's [[United Engine Corporation]] and China's [[Aero Engine Corporation of China|AECC]], was to be certified in 2027.<ref name=Flight29sep2017>{{cite news |url= https://www.flightglobal.com/news/articles/uac-and-comac-christen-widebody-family-as-cr-929-441648/ |title= UAC and Comac christen widebody family as CR 929 |date= 29 Sep 2017 |author= Greg Waldron |work= Flightglobal}}</ref>
+
+=== Preliminary design ===
+A request for proposal for the propulsion system, including the engine and nacelle, was issued on 21 December 2017, to be answered by 30 May 2018.<ref>{{cite news |url= https://www.flightglobal.com/news/articles/engine-rfp-issued-for-chinese-russian-cr929-444461/ |title= Engine RFP issued for Chinese–Russian CR929 |date= 26 Dec 2017 |author= Mavis Toh |work= Flightglobal}}</ref>
+On May 15 at a Shanghai conference on [[aeroengine]]s, the design grew to a {{cvt|63.25|m}} length, {{cvt|45|cm}} shorter than the A330-900 but still with nine-abreast economy seating, requiring {{cvt|78,000|lbf|kN|0}} of thrust from each engine.<!--<ref name=AvWeek23May2018>-->
+GE produces the {{cvt|76,100|lbf|kN}} [[GEnx]]-1B76, and Rolls-Royce the {{cvt|78,129|lbf|kN}} [[Trent 1000]] TEN.<ref name=AvWeek23May2018>{{cite news |url= https://aviationweek.com/commercial-aviation/comac-cr929-now-larger-airbus-a330 |title= Comac CR929 Now Larger Than Airbus A330 |date= May 23, 2018 |author= Bradley Perrett and Maxim Pyadushkin |work= Aviation Week & Space Technology}}</ref>
+CRAIC received seven proposals by the 30 May deadline.<ref>{{cite news |url= https://www.flightglobal.com/news/articles/sino-russian-widebody-gets-seven-proposals-for-engin-449057/ |title= Sino-Russian widebody gets seven proposals for engine |date= 31 May 2018 |author= Mavis Toh |work= Flightglobal}}</ref>
+The responding engine manufacturers appeared to be Chinese [[Aero Engine Corporation of China|AECC]], General Electric, Rolls-Royce and Russian [[United Engine Corporation|UEC]], the three others were for related systems.<ref name=AvWeek10aug2018>{{cite news |url= https://aviationweek.com/commercial-aviation/chinese-european-russian-contenders-cr929-landing-gear |title= Chinese, European, Russian Contenders For CR929 Landing Gear |date= Aug 10, 2018 |author1=Bradley Perrett |author2=Maxim Pyadushkin |work= Aviation Week & Space Technology}}</ref>
+
+[[File:CR929 mockup Paris 2017.png|thumb|upright=1.4|2017 mockup]]
+
+The general layout and principal geometry was approved on 6 June 2018: the [[wing]] span and shape, [[fuselage]] length, nose and tail dimensions, [[Empennage|fins]] sizing and form, location of engines, [[landing gear]] and doors.<!--<ref name=UAC6jun2018>-->
+Within the same Gate 3, which should be completed by mid-2019, are experimental [[aerodynamics]] research, [[structural material]]s selection and technical analysis of supplied systems and equipment.<ref name=UAC6jun2018>{{cite press release |url= https://www.uacrussia.ru/en/press-center/news/pao-oak-i-somas-soglasovali-obshchiy-vid-samoleta-cr929 |date= 8 June 2018 |title= PJSC UAC and COMAC Approved the General Layout of CR929 Aircraft |publisher= UAC}}</ref>
+
+On 31 July 2018 a [[request for proposals]] for the undercarriage was issued, with expected a responses from Europe, China or Russia by the end of November 2018.<ref>{{cite news |url= https://www.flightglobal.com/news/articles/cr929-programme-seeks-landing-gear-supplier-450865/ |title= CR929 programme seeks landing-gear supplier |date= 2 Aug 2018 |author= David Kaminski Morrow |work= Flightglobal}}</ref> The US–China trade war did not prevent bidding from [[UTC Aerospace Systems]], which did not seek the contract and Canadian [[Héroux-Devtek]] has not received the RFP.<ref name=AvWeek10aug2018 /> [[Leonardo-Finmeccanica]] was negotiating to set up a [[joint venture]] with Comac and the Chinese [[Kangde group]] before the end of October 2018, to produce the fuselage central section in [[Zhangjiagang]] for $10 billion until 2040.<ref>{{cite news |url= https://www.ilsole24ore.com/art/finanza-e-mercati/2018-10-09/leonardo-corsa-il-maxi-piano-cinese-comac--110343.shtml |title= Leonardo in corsa per il maxi-piano cinese di Comac |author= Gianni Dragoni |date= 9 Oct 2018 |work= [[Il Sole 24 Ore]] |language= it}}</ref><!--via https://theaircurrent.com/dispatches/leonardo-to-launch-cr929-composite-fuselage-venture-for-comac/-->
+Leonardo confirmed the joint venture on 26 October.<ref>{{cite press release |url= http://www.leonardocompany.com/documents/63265270/82037903/ComLDO_Comac_CR929_26102018_ENG.pdf |title= Leonardo and Kangde Investment Group of China agree guiding principles to partner on the new COMAC CR929 long range airliner |date= 26 October 2018 |publisher= Leonardo}}</ref>
+
+In November 2018, a mockup of the forward cabin was unveiled at the [[Zhuhai Airshow]] China.<ref name=AIN6nov2018 />
+
+=== Prototyping ===
+By December 2018, Comac produced the first composite forward fuselage prototype, a {{cvt|15 by 6|m}} structure, towards joint definition in the second half of 2019.<ref>{{cite news |url= https://www.flightglobal.com/news/articles/picture-china-produces-cr929-composite-forward-fuse-454674/ |title= China produces CR929 composite forward fuselage |date= 27 Dec 2018 |author= Mavis Toh |work= Flightglobal}}</ref>
+By early 2019, Concept design was targeted for the end of 2019/early 2020, before the definition phase.<ref name=Flight25feb2019 />
+Definition freeze was then aimed for the first half of 2022, first flight for 2025 and certification for 2027.<ref name=Flight25feb2019 />
+By spring 2019, progress was slowed by multinational cooperation challenges and engine selection was expected for September or October.<ref>{{cite news |url= https://aviationweek.com/commercial-aviation/coordination-challenge-slows-craic-cr929-engine-choice |title= Coordination Challenge Slows Craic CR929 Engine Choice |date= Apr 30, 2019 |author= Bradley Perrett |work= Aviation Week Network}}</ref>
+High-speed [[wind tunnel]] testing was completed by December 2019 at the Moscow [[Central Aerohydrodynamic Institute]], using a 1:39 [[scale model]] of the fuselage and wing.<ref>{{cite news |url= https://www.flightglobal.com/news/high-speed-cr929-model-tested-in-windtunnel/135766.article |title= High-speed CR929 model tested in windtunnel |author= David Kaminski-Morrow |date= 12 December 2019|work= Flightglobal}}</ref>
+
+=== Tensions between Comac and UAC ===
+By July 2020, Irkut's chief disclosed that the first deliveries were expected to be delayed to 2028–2029, citing "difficulties" for the partners in working together.<ref name=Flight13july2020>{{cite news |url= https://www.flightglobal.com/aerospace/cr929-faces-delays-amid-beijing-moscow-differences/139257.article |title= CR929 faces delays amid Beijing, Moscow differences |author= Alfred Chua |date= 13 July 2020 |work= Flightglobal}}</ref>
+
+By June 2021, China and Russia appeared to have put differences aside in relation to future market share, and confirmed plans to start building a prototype in 2021 with maiden flight in 2023.{{cn|date=June 2024}} The [[COVID-19 pandemic]] impacted the development pace, however construction of the first prototype began by September 2021.{{cn|date=June 2024}}{{needs update|date=June 2025}}
+
+In 2022, following the [[Russian invasion of Ukraine]], multiple sanctions brought further uncertainty to the venture.<ref>{{cite web | url=https://www.flightglobal.com/aerospace/sino-russian-cr929-to-be-another-casualty-of-ukraine-invasion/148135.article | title=Sino-Russian CR929 to be another casualty of Ukraine invasion }}</ref> As of September 2022, the Russians remained optimistic that testing flights could begin as early as 2030.<ref>{{cite web | url=https://aviationweek.com/air-transport/aircraft-propulsion/first-flight-cr929-slips-2030-seven-years-behind-schedule | title=First Flight Of CR929 Slips To 2030, Seven Years Behind Schedule |date=15 September 2022}}</ref>
+
+In June 2023, news emerged that Comac intended to continue the program on its own, independently of UAC.<ref>{{cite news |last1=Ostrower |first1=Jon |title=Paris Day 2: China & Russia Split |url=https://theaircurrent.com/feed/dispatches/paris-day-2-china-russia-split/ |work=The Air Current |date=20 June 2023}}</ref> In August 2023, UAC CEO Yury Slyusar confirmed Russia's withdrawal but expressed hope that UAC could remain involved as a supplier to the program.<ref>{{cite news |last1=Flottau |first1=Jens |title=Russia's Exit From CR929 JV Underlines Sanctions Impact |work=Aviation Week Network |url=https://aviationweek.com/aerospace/manufacturing-supply-chain/russias-exit-cr929-jv-underlines-sanctions-impact |date=22 August 2023}}</ref>
+
+=== Relaunch as Comac C929 ===
+In November 2023, noting that the program was entering the detailed design stage, Comac confirmed the C929 name and the fact that the aircraft was "now being independently developed by China".<ref>{{cite news |last1=Chua |first1=Alfred |title=Comac confirms 'C929' moniker as widebody enters 'detailed design' stage |url=https://www.flightglobal.com/air-transport/comac-confirms-c929-moniker-as-widebody-enters-detailed-design-stage/155675.article |work=Flight Global |date=6 November 2023}}</ref>
+
+In March 2024, Comac announced that the manufacturer aimed to deliver the first fuselage section by September 2027. They said the aircraft was to have 280-400 seats and a range of about 12,000&nbsp;km.<ref>{{cite news |last1=Barrington|first1=Lisa |title=China's COMAC wide-body C929 jet in 'detailed design stage', official says| work=Reuters|url=https://www.reuters.com/business/aerospace-defense/chinas-comac-wide-body-c929-jet-detailed-design-stage-official-says-2024-03-26/|date=26 March 2024}}</ref>
+
+{{As of|2025|7}}, American aviation journalists believe that a prototype aircraft will not be ready until 2029 at the earliest.<ref>{{Cite podcast |url=https://podcasts.apple.com/us/podcast/what-you-need-to-know-about-boeing-tariffs-and/id1735858856?i=1000705713369 |title=What you need to know about Boeing, tariffs and Chinese aviation |website=The Air Show |last=Ostrower |first=Jon |date=2025-05-01 |access-date=2025-05-01 |time=13:03 |quote=We probably won't see it come off the drawing board until probably until the end of the decade at the earliest.}}</ref>
+
+== Design ==
+
+=== Seating ===
+Three variants are planned: the -500 will carry 250 passengers in three classes with a range of {{cvt|14,000|km|nmi|-1}}, the -600 will have 280 seats and a range of {{cvt|12,000|km|nmi|-1}} and the -700 will carry 320 over {{cvt|10,000|km|nmi|0}}.<ref name=Flight29sep2017 />
+A two class layout of the -600 would seat 291 with 243 economy seats and {{#expr:291-243}} six-abreast [[Business class|business]] seats, which can be split in eight four-abreast [[First class (aviation)|first class]] seats and 30 business for a seating of {{#expr:243+30+8}} in three classes.<!--<ref name=AIN6nov2018>-->
+With a nine-abreast all-economy, the -600 would accommodate 405 to 440 with a seat pitch of {{cvt|32 and 30|in|cm}}, respectively.<ref name=AIN6nov2018 />
+
+=== Cockpit ===
+The two-crew [[Cockpit|flight deck]] looks like the [[Comac C919]] with a five-screen [[EFIS]] and [[sidestick]] controls.<ref name=Flight9nov2018>{{cite news |url= https://www.flightglobal.com/news/articles/pictures-mock-up-reveals-cr929-cockpit-and-cabin-i-453510/ |title= Mock-up reveals CR929 cockpit and cabin ideas |date= 9 Nov 2018 |work= Flightglobal}}</ref>
+Composite materials and titanium should account for half of the structural weight.<ref name=AIN6nov2018>{{cite news |url= https://www.ainonline.com/aviation-news/air-transport/2018-11-06/cr929-mockup-unveiled-airshow-china-2018 |title= CR929 Mockup Unveiled at Airshow China 2018 |author= Vladimir Karnozov |date= November 6, 2018 |work= AIN online}}</ref>
+
+=== Engine ===
+====The starting point====
+In the 2010s, it was generally thought that a competitive widebody would initially need Western or Russian powerplants and onboard systems.<ref name=AvWeek11feb2015 />
+The aircraft would need a {{cvt|77,000|-|88,000|lbf|kN}} thrust turbofan.<ref name=AIN11June2015 />
+Before the advent of US sanctions on Chinese technology companies, the engine was likely to be supplied by [[Rolls-Royce Holdings|Rolls-Royce]] or [[General Electric]], who already had products in this class.<ref>{{cite news |url= https://www.ainonline.com/aviation-news/air-transport/2017-09-20/russia-and-china-partner-engine-new-widebody |title= Russia and China to Partner on Engine for New Widebody |author=  Gregory Polek |date= September 20, 2017 |work= AIN}}</ref>
+CRAIC expected a [[Thrust-specific fuel consumption|TSFC]] better by at least 10% in 2019.<ref name="Flight25feb2019">{{cite news|author=Mavis Toh|date=25 Feb 2019|title=CR929 boss details progress, timeline|work=Flightglobal|url=https://www.flightglobal.com/news/articles/interview-cr929-boss-details-progress-timeline-456061/}}</ref>
+
+====A potential Russian engine====
+At the November 2014 [[Zhuhai Airshow]], a high-thrust joint [[turbofan]] was discussed between Chinese [[Avic]] Commercial Aircraft Engines and the Russian [[United Engine Corporation]] (UEC), with parameters defined in early 2015 for an introduction between 2025 and 2030.<ref name=AvWeek11feb2015 />
+In September 2017, a [[memorandum of understanding]] was signed between [[Rostec]]'s UEC and [[Aero Engine Corporation of China]]: initially joint research and customer requirements were to be analysed and defined, then engine design and operating parameters were to be determined; testing was to be carried out in 2022 and certification in 2027.<ref>{{cite news |url= https://www.flightglobal.com/news/articles/russian-chinese-tie-up-to-develop-new-long-haul-jet-441311/ |title= Russian-Chinese tie-up to develop new long-haul jet engine |date= 20 Sep 2017 |author= David Kaminski-Morrow |work= Flightglobal}}</ref>
+
+The plan was to develop a more powerful version of the [[Aviadvigatel PD-14]] engine, developed for the [[Irkut MC-21|Yakovlev MC-21 airliner]], after its certification in 2017, with a 50% scaled up core.<ref name=AIN11June2015>{{cite news |url= https://www.ainonline.com/aviation-news/aerospace/2015-06-11/russia-and-china-push-next-gen-widebody |title= Russia and China Push for Next-Gen Widebody |author= Vladimir Karnozov |date= June 11, 2015 |work= Aviation International News}}</ref>
+In May 2016 the development of a {{cvt|35|tf|lbf}} Russian engine [[Aviadvigatel PD-35]] began for the twinjet airliner; it was then expected to enter service in 2025 (since delayed to 2029).<ref>{{cite news |url= http://tass.com/economy/883522 |title= Moscow starts developing heavy engine for joint Chinese-Russian airliner |date= June 20, 2016 |work= [[Russian News Agency TASS|TASS]]}}</ref>
+A derivative of the [[Kuznetsov NK-32]] PD-30 powering the [[Tupolev Tu-160]] supersonic bomber was also proposed in August 2015.<ref>{{cite news |url= https://www.ruaviation.com/news/2015/8/17/3422/ |title= Dmitry Rogozin: an engine for a new transport aircraft may be derived from NK-32 |work= [[Russian Aviation]] |date= August 17, 2015}}</ref>
+
+====A Chinese alternative====
+Chinese companies also carried out work independently on the AECC [[ACAE CJ-1000A#CJ-2000 (AEF3500)|CJ-2000]] engine.<ref name=AvWeek1jun2018>{{cite news |url= https://aviationweek.com/propulsion/china-moving-ahead-widebody-engine |title= China Moving Ahead With Widebody Engine |date= Jun 1, 2018 |author= Bradley Perrett |work= Aviation Week & Space Technology}}</ref> Technically,  the C929 could also use AI-38 engines co-developed by China and Ukrainian [[Ivchenko-Progress]] from the 225&nbsp;kN [[Progress D-18T]] of the [[An-124]]/[[An-225]],<ref>{{cite news |url= http://www.bestchinanews.com/Military/7093.html |title= An identical 225 large engine will be assembled or tested in China |date= 2017-06-03 |work= BestChinaNews |access-date= 2017-11-16 |archive-date= 2017-11-16 |archive-url= https://web.archive.org/web/20171116194144/http://www.bestchinanews.com/Military/7093.html |url-status= dead }}</ref> although the [[memorandum of understanding]] between Russian UEC and Chinese [[Aero Engine Corporation of China|AECC]] made this possibility seem unlikely.<ref>{{cite web |url= http://www.sohu.com/a/199202083_476335 |title= 中国CR929客机"大心脏"确定, 乌克兰的大涵道已经无望 |language= Chinese |work= [[Sohu]] |date= 2017-10-20 |access-date= 2017-11-11 |archive-url= https://web.archive.org/web/20200127131828/http://www.sohu.com/a/199202083_476335 |archive-date= 2020-01-27 |url-status= dead }}</ref>
+
+Since the Aviadvigatel PD-35 was in 2022 postponed until at least 2029,<ref>{{Cite web |date=2022-12-05 |title=Russia: PD-35 engine postponed until at least 2029 |url=https://aviation.direct/en/Russia-PD-35-engine-postponed-until-at-least-2029 |access-date=2025-04-04 |website=Aviation.Direct |language=en}}</ref> and the AECC [[ACAE CJ-1000A|CJ-1000A]], on which the CJ-2000 is to be based, was nearing service-readiness in 2025,<ref>{{Cite web |date=2025-03-29 |title=Home-grown CJ-1000 engine to soon be tested on China's C919 passenger jet |url=https://www.scmp.com/economy/china-economy/article/3304271/development-chinese-engine-make-c919-truly-home-grown-progressing-well |access-date=2025-04-04 |website=South China Morning Post |language=en}}</ref> the final engine choice for the C929 remains open.
+
+== Supplier summary ==
+{| class="wikitable sortable"
+!Category
+!Supplier
+!Country
+!Ref
+|-
+|Airframe
+|[[Aviation Industry Corporation of China]]
+|China
+|
+|-
+|Avionics
+|AVIAGE Systems<br>({{Abbr|JV|Joint venture}}: [[GE Aerospace]] & AVIC)
+|United States & China
+|<ref>{{Cite web |last=快科技官方 |date=2026-02-03 |title=国产宽体客机C929大脑确定：昂际航电拿下核心航电系统 |url=https://tech.sina.cn/2026-02-03/detail-inhkpvfh0465091.d.html |access-date=2026-02-04 |website=手机新浪网 |language=zh-CN}}</ref>
+|}
+
+== Orders ==
+In November 2024, Comac announced that [[Air China]] would be the launch customer for the C929, though it did not state how many aircraft the airline would order nor the expected delivery date.<ref>{{cite news |last1=Chua |first1=Alfred |title=Air China signs as Comac C929 launch customer |url=https://www.flightglobal.com/air-transport/air-china-signs-as-comac-c929-launch-customer/160698.article |work=Flight Global |date=12 November 2024 |language=en}}</ref>
+
+== Specifications ==
+{| class="wikitable" style="text-align:center;"
+|-
+|+Specifications<ref>{{cite web |url= http://www.penton.com/digitaleditions/AW/AWST_151012.pdf |title= Treading Carefully |at= Full-scale development of a Chinese and Russian 787-10 competitor looks imminent |date= 12 Oct 2015 |author= Bradley Perrett |work= Aviation Week & Space Technology}}</ref>
+|-
+! Variants
+! C929-600
+<!--
+|-
+! Cockpit crew
+|
+-->
+|-
+! rowspan=3| Capacity
+| 258–280 (3-class seating)
+|-
+| 261–291 (2-class seating)
+|-
+| 405–440 (1-class seating)<ref name=AIN6nov2018 />
+|-
+! Length
+| {{cvt|63.755|m}}<ref name=AvWeek9nov2018>{{cite news |url= https://aviationweek.com/commercial-aviation/cr929-schedule-may-be-optimistic-uac-says |title= CR929 Schedule May Be Optimistic, UAC Says |date= Nov 9, 2018 |author= Bradley Perrett |work= Aviation Week & Space Technology}}</ref>
+|-
+! Wingspan
+| {{cvt|63.86|m}}<ref name=AvWeek9nov2018 />
+|-
+! Height
+| 17.9&nbsp;m (58.7&nbsp;ft)
+|-
+! rowspan=2 |Fuselage
+| 5.92&nbsp;m (19.4&nbsp;ft) (width)
+|-
+| 6.07&nbsp;m (19.9&nbsp;ft) (height)
+|-
+! Cabin max width
+| 5.61&nbsp;m (18.4&nbsp;ft)
+|-
+! [[MTOW]]
+| {{cvt|245|t|lb}}<ref name=AvWeek9nov2018 />
+<!--
+|-
+! [[OEW]]
+|
+-->
+|-
+! Payload
+| {{cvt|48.83|-|50.4|t|lb}}
+|-
+! Fuel capacity
+| {{cvt|103.7|t|lb}}
+|-
+! Turbofans (x2)
+| TBA
+|-
+! Thrust
+| {{cvt|78,000|lbf|kN|0}}<ref name=AvWeek23May2018 />
+|-
+! Cruise
+| {{cvt|0.85|Mach|35000|knots km/h mph|0}}
+|-
+! Range
+| {{cvt|6480|nmi|km mi}}
+<!--
+|-
+! Runway
+|
+-->
+|}
+
+== See also ==
+{{Portal|China|Aviation}}
+{{aircontent
+|see also= <!-- other related articles that have not already linked: -->
+* [[Comac C919]]
+* [[Ilyushin Il-96]]
+|related= <!-- designs that were developed into or from this aircraft: -->
+|similar aircraft= <!-- aircraft that are of similar Role, Era, and Capability this design: -->
+* [[Airbus A330neo]]
+* [[Airbus A350]]
+* [[Boeing 787 Dreamliner]]
+|lists= <!-- relevant lists that this aircraft appears in: -->
+* [[List of jet airliners]]
+* [[List of civil aircraft]]
+<!-- See [[WP:Air/PC]] for more explanation of these fields. -->}}
+
+== References ==
+{{reflist}}
+
+== External links ==
+* {{Official website|https://english.comac.cc/products/WideBody/}}
+* [http://www.comacamerica.com/c929/ COMAC America] {{Webarchive|url=https://web.archive.org/web/20191201085045/http://www.comacamerica.com/c929/ |date=2019-12-01 }}
+* {{cite news |url= https://www.ainonline.com/aviation-news/air-transport/2019-04-20/uac-denies-media-reports-cr929-sales-dispute-comac |title= UAC Denies Media Reports on CR929 Sales Dispute with COMAC |author= Vladimir Karnozov |date= April 20, 2019 |work= AIN online}}
+
+{{Comac aircraft}}
+{{AVIC Aero Products}}
+
+[[Category:Comac aircraft]]
+[[Category:United Aircraft Corporation]]
+[[Category:Proposed aircraft of China]]
+[[Category:Low-wing aircraft]]
+[[Category:Twinjets]]
+[[Category:Wide-body aircraft]]
+[[Category:Aircraft with retractable tricycle landing gear]]

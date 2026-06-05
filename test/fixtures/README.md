@@ -23,6 +23,20 @@ not just hand-picked sentences.
 - **Ground vehicles:** M10 Booker, Armored Multi-Purpose Vehicle, Joint Light Tactical Vehicle, XM30 (Optionally Manned Fighting Vehicle), Next Generation Combat Vehicle (Robotic Combat Vehicle), Expeditionary Fighting Vehicle, Amphibious Combat Vehicle, Ground Combat Vehicle.
 - **Experimental / programs:** Future Combat Systems, Future Vertical Lift, MV-75 (V-280 Valor), Future Attack Reconnaissance Aircraft, Next Generation Squad Weapon, Integrated Visual Augmentation System, AGM-183 ARRW, Precision Strike Missile, M7 rifle (XM7/NGSW), Long-Range Hypersonic Weapon (Dark Eagle).
 
+### Second wave — new domains / prose styles (100 fixtures total)
+
+Added to stress the detector against prose that uses temporal claims differently
+from US defence-equipment articles ("scheduled to open/launch in YYYY",
+"expected to enter service", "due to be completed by") — and to exercise markers
+the military set underused (`is scheduled to`, `to be completed by`, `is due to`):
+
+- **Space / launch:** Artemis program, Europa Clipper, Mars Sample Return, Lunar Gateway, VIPER, Psyche, Dream Chaser, SpaceX Starship, New Glenn, Vulcan Centaur, Ariane 6, Space Launch System, Gaganyaan, Chandrayaan-3, Tiangong, Roman Space Telescope, Rosalind Franklin rover, Square Kilometre Array.
+- **Rail & transit:** California High-Speed Rail, High Speed 2, Crossrail, Grand Paris Express, Brenner Base Tunnel, Honolulu Skyline, Second Avenue Subway, Brightline West, Stuttgart 21, Sydney Metro, Gateway Program, Suburban Rail Loop.
+- **Infrastructure / dams / bridges:** Fehmarn Belt fixed link, Gordie Howe International Bridge, Grand Ethiopian Renaissance Dam.
+- **Nuclear / energy:** Hinkley Point C, Vogtle, Flamanville, ITER, Olkiluoto, Sizewell C, NuScale.
+- **Civil aviation:** Boeing 777X, Comac C919, Comac C929, Boeing NMA.
+- **Naval:** Type 26 frigate, Type 31 frigate, Queen Elizabeth-class carrier, Columbia-class submarine, Constellation-class frigate, INS Vikrant.
+
 Filenames are the lowercased article slug + `.wikitext`. A handful of requested
-titles were redirects (resolved to the target shown above) or did not exist and
-were dropped.
+titles were redirects (resolved to the target shown) or did not exist and were
+dropped.

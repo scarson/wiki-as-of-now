@@ -290,5 +290,96 @@
     "sentenceSubstring": "South Korea plans to upgrade 600 vehicles",
     "stale": false,
     "note": "Negative (mid-sentence attribution, Rule 4): 'According to the magazine published by the DAPA in October 2024, South Korea plans to upgrade 600 vehicles to A1 standard.'."
+  },
+
+  {
+    "fixture": "fehmarn_belt_fixed_link.wikitext",
+    "sentenceSubstring": "originally expected to be completed by 2018",
+    "stale": true,
+    "expectedYear": 2018,
+    "note": "Infrastructure: 'The Fehmarn Belt bridge was originally expected to be completed by 2018.' — completion target now past."
+  },
+  {
+    "fixture": "gordie_howe_international_bridge.wikitext",
+    "sentenceSubstring": "to be completed by the end of 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Infrastructure: 'The bridge was to be completed by the end of 2024.' — completion target now past."
+  },
+  {
+    "fixture": "honolulu_rail_transit.wikitext",
+    "sentenceSubstring": "is expected to be completed in August 2025",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Transit: utility relocations 'expected to be completed in August 2025' — now past."
+  },
+  {
+    "fixture": "gateway_program_northeast_corridor.wikitext",
+    "sentenceSubstring": "was expected to be completed in October 2025",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Transit: 'The Tonnelle Avenue overpass was expected to be completed in October 2025 ...' — now past."
+  },
+  {
+    "fixture": "brightline_west.wikitext",
+    "sentenceSubstring": "to be completed by the end of 2013",
+    "stale": true,
+    "expectedYear": 2013,
+    "note": "Rail: 'the earliest environmental work was to be completed by the end of 2013.' — now past."
+  },
+  {
+    "fixture": "gaganyaan.wikitext",
+    "sentenceSubstring": "scheduled to be launched no earlier than 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Space: crewed spacecraft 'scheduled to be launched no earlier than 2024' — now past."
+  },
+  {
+    "fixture": "hinkley_point_c.wikitext",
+    "sentenceSubstring": "announced plans to expand its nuclear power stations",
+    "stale": false,
+    "note": "Negative (leading bare-year dateline): 'In 1981, the UK government announced plans to expand its nuclear power stations ...'."
+  },
+  {
+    "fixture": "hinkley_point_c.wikitext",
+    "sentenceSubstring": "EDF announced plans to sell",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 25 April 2016, EDF announced plans to sell €4bn of new shares ...'."
+  },
+  {
+    "fixture": "type_26_frigate.wikitext",
+    "sentenceSubstring": "the Norwegian government confirmed plans to acquire at least five Type 26 frigates",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 31 August 2025, the Norwegian government confirmed plans to acquire at least five Type 26 frigates ...'."
+  },
+  {
+    "fixture": "boeing_777x.wikitext",
+    "sentenceSubstring": "China Airlines announced plans to order ten 777-9s",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On December 19, 2024, China Airlines announced plans to order ten 777-9s ...'."
+  },
+  {
+    "fixture": "columbia-class_submarine.wikitext",
+    "sentenceSubstring": "the lead vessel of the class will be named USS District of Columbia",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 3 June 2022, the Navy announced that the lead vessel of the class will be named USS District of Columbia ...'."
+  },
+  {
+    "fixture": "iter.wikitext",
+    "sentenceSubstring": "the first plasma production in the project will not take place",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 3 July 2024, ITER director-general Pietro Barabaschi announced the first plasma production in the project will not take place ...'."
+  },
+  {
+    "fixture": "comac_c919.wikitext",
+    "sentenceSubstring": "the C919 aircraft will undergo certification processes",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 20 September 2023, Brunei's GallopAir said the C919 aircraft will undergo certification processes ...'."
+  },
+  {
+    "fixture": "high_speed_2.wikitext",
+    "sentenceSubstring": "the Scottish Government announced plans to build a 46 mi high-speed rail link",
+    "stale": false,
+    "note": "Negative (leading month-dateline): 'In November 2012 the Scottish Government announced plans to build a 46 mi high-speed rail link ...'."
   }
 ]
