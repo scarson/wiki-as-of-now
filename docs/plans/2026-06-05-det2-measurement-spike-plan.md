@@ -64,11 +64,11 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started.
+**Overall:** In progress (Phase 1 claimed).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Measure DET-2 + decide | ⬜ Not started | — | curate candidate set → score guard → go/no-go report |
+| 1 — Measure DET-2 + decide | 🚧 In progress (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | — | curate candidate set → score guard → go/no-go report |
 
 ---
 
@@ -90,7 +90,7 @@ notes and commit messages.
 
 ## Phase 1 — Measure the DET-2 opportunity and decide
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-05 (UTC), branch `claude/wikiasofnow-detector-phase2-ZP1uQ`. Subagent-driven.
 
 ### Task 1.1 — Curate `test/gold/det2-candidates.json` + structural test
 
