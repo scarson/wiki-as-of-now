@@ -69,7 +69,7 @@ notes and commit messages.
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Curate DET-3 FP set | ✅ Shipped (`3d7661e`) | `3d7661e` | 23 DET-3 FPs; all 5 sub-shapes ≥2 (noun-mod 9, paren 6, cross-clause 3, named-entity 3, range 2) → all discriminators build; reviewed HONEST |
-| 2 — Build governs filter (gated) | ✅ Shipped (Task 2.5 pending SHA from push) | Tasks 2.1–2.5 committed | All 5 discriminators shipped; all 5 sub-shapes hard-gated to `expect([])` in det3-fp.test.ts; 23/23 curated FPs dropped; precision 0.9697 (32 TP / 1 FP); recall 1.0 |
+| 2 — Build governs filter (gated) | ✅ Shipped (`39039e6`…`a822d4b`) | Tasks 2.1–2.5 | All 5 discriminators; all 5 sub-shapes hard-gated `expect([])`; 23/23 curated FPs dropped; precision 0.9697 (32 TP / 1 FP); recall 1.0 + 1 un-masked genuine claim. Batch review pending |
 | 3 — Document + finalize | ⬜ Not started | — | methodology/pitfalls/spec/plan; report any recall give-back |
 
 ### Deviations
@@ -174,7 +174,7 @@ git commit -m "test(detector): curate DET-3 false-positive set (Task 1.1)"
 
 ## Phase 2 — Build the `governs.ts` year-eligibility filter (gated, discriminator-by-discriminator)
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-05 (UTC), branch `claude/wikiasofnow-detector-phase2-ZP1uQ`. All five discriminators build (Task 1.1 distribution). Subagent-driven, sequential (single shared file).
+**Execution Status:** ✅ SHIPPED — Tasks 2.1–2.5 at `39039e6`…`a822d4b` on 2026-06-05. All five discriminators built (cross-clause, noun-modifier, named-entity, parenthetical, range), each per-task reviewed; all 5 DET-3 sub-shapes hard-gated to `expect([])` (23/23 curated FPs dropped). **Precision held 0.9697, reachable recall 1.0** (+1 un-masked genuine claim, high_speed_2 2025). Batch review (≥3 rounds) in `docs/plans/governs-review/`.
 
 All Phase 2 tasks modify `src/detector/governs.ts` (and its test), so they are **strictly sequential** — never parallelize them (they edit the same file). Each task is precision-gated and recall-gated.
 
