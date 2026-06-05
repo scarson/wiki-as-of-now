@@ -34,4 +34,17 @@ describe("suppression", () => {
       suppressionScore("In 2015, the program was expected to deliver new radars in 2020.", 2020)
     ).toBe(0);
   });
+  it("suppresses early/late qualifier datelines but not an arbitrary word before the year", () => {
+    // "In early 2007" is a real dateline (qualifier) — suppress.
+    expect(suppressionScore("In early 2007, the Navy plans to deploy a system.", 2007)).toBeGreaterThan(0);
+    // "In the 2008 budget" is a budget-year reference, NOT a dateline — the forward claim
+    // ("plans to procure") must survive. The month slot must not match the filler word "the".
+    expect(suppressionScore("In the 2008 budget, the Navy plans to procure 14 ships.", 2008)).toBe(0);
+  });
+  it("only treats later/subsequently/ultimately as resolution when a resolution verb follows", () => {
+    // Resolution narration — the claim was resolved nearby; suppress.
+    expect(suppressionScore("The merger, later completed, was expected to close in 2018.", 2018)).toBeGreaterThan(0);
+    // Plain temporal "later" before a forward event is NOT resolution — must not suppress.
+    expect(suppressionScore("The system will be deployed later in 2017.", 2017)).toBe(0);
+  });
 });

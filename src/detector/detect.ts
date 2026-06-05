@@ -48,6 +48,11 @@ export function detectStaleClaims(
       if (pastYears.length === 0) continue;
 
       // Step 3: choose the strongest marker (first on ties) and the earliest past year.
+      // NB: picking the EARLIEST past year means a sentence that opens with a
+      // dateline AND carries a later forward target (e.g. "In 2015, ... expected
+      // to deliver in 2020.") is anchored to the dateline year and suppressed by
+      // suppress.ts Rule 1 — a deliberate precision-over-recall choice, not a bug
+      // (see suppress.ts Rule 1 and docs/pitfalls DET-1 for the accepted recall gap).
       let chosenMarker = markers[0];
       for (let i = 1; i < markers.length; i++) {
         if ((MARKER_STRENGTH[markers[i]] ?? 0) > (MARKER_STRENGTH[chosenMarker] ?? 0)) {
