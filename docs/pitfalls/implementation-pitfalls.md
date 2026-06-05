@@ -27,7 +27,7 @@ This document serves three audiences. Start here, then go directly to the sectio
 | § | Section | You're working on... | Entries | Checklist |
 |---|---------|---------------------|---------|-----------|
 | 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 | §1.C |
-| 2 | [EXAMPLE-DOMAIN-2](#2-example-domain-2) | TODO — describe what this section covers | PREFIX-1 – PREFIX-N | §2.C |
+| 2 | [Detector (deterministic stale-claim detection)](#section-2-detector-deterministic-stale-claim-detection) | `src/detector/*` — markers, suppression, scoring, orchestration, fixtures | DET-1 – DET-2 | §2.C |
 | — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-2 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
@@ -61,11 +61,51 @@ This document serves three audiences. Start here, then go directly to the sectio
 
 ---
 
-# Section 2: EXAMPLE-DOMAIN-2
+# Section 2: Detector (deterministic stale-claim detection)
 
-<!-- TODO: rename, or delete this section if not needed. Duplicate the Section 1 template for each additional domain. -->
+> **Reader context:** I'm building or reviewing `src/detector/*` — the pure, LLM-free stale-claim detector (parse → markers → suppress → score → detect) or its fixture/gold-set tests.
+>
+> The detector flags sentences that make a future-tense/expectation claim anchored to a year now in the past. Its hard invariant is that it is **deterministic and LLM-free** (the "detection is deterministic and explainable" guardrail — `docs/policy/wikipedia-genai-compliance.md`): zero model calls, zero network, zero clock reads anywhere in `src/detector/`. Its design bias is **precision over recall** — a false "stale" flag wastes an editor's attention, so the queue must stay trustworthy. These pitfalls are about keeping precision high without smuggling in nondeterminism.
 
-TODO.
+---
+
+### DET-1: Historical Dateline Narration Is the Dominant False-Positive Class
+
+**The Flaw:** A naive "expectation marker + a past year" detector flags huge numbers of false positives on real articles, because the most common shape of "marker + past year" in Wikipedia prose is **historical narration of a past announcement/statement**, not an unresolved forward claim. Empirically (Phase 2 fixtures), the *majority* of raw flags were sentences like "In March 2013, the administration announced plans to add 14 interceptors", "In 2008, Rear Admiral X said these changes will make…", "In 2021, … with no plans to continue". These are reporting what happened/was said at a past date — the year is the **dateline of the statement**, not a forward target.
+
+**Why It Matters:** Without suppressing this class, precision on real procurement articles is poor (well below the 0.9 gate) and the easy-win queue fills with noise — exactly the failure the compliance doc's "when the detector is wrong" section warns spends editor attention for nothing.
+
+**The Fix:** Suppress a sentence when it **opens with a temporal frame** (`In|By|During|As of` + an optional *real month name or early/late/mid qualifier* + a 4-digit year) **AND that frame year equals the claim's anchor year** (`suppress.ts` Rule 1, `DATELINE_REGEX`). The year-match is what makes it precise — a leading dateline whose year is the claim year is narration; a sentence whose forward target differs from the dateline is treated separately. Two sub-traps caught in review:
+- The optional pre-year slot MUST be constrained to month names + `early|late|mid`, **not** any word (`[A-Za-z]+`). An unconstrained slot matches the filler "the", so "In **the** 2008 budget, the Navy plans to procure…" is wrongly read as a dateline and the real forward claim is lost.
+- The year alternatives MUST stay grouped: `(1[89]\d\d|20[0-2]\d)`. An un-grouped `…|20[0-2]\d` lets the bare-year branch match any 20xx year anywhere in the sentence and over-suppress.
+
+**The Lesson:** For a temporal-claim detector, the lexicon (markers) is the easy 20%; the false-positive suppression is the load-bearing 80%. Build the gold set from **real article output** (run the detector, read what it actually flags) rather than idealized sentences, or you will not discover that dateline narration dominates until production. Tune precision by *improving suppression*, never by deleting gold-set negatives (see testing-pitfalls "Precision gate is a regression gate").
+
+---
+
+### DET-2: Precision-Over-Recall Means Named, Accepted Recall Gaps — Document Them
+
+**The Flaw:** The deterministic detector deliberately trades recall for precision, but the specific recall gaps are non-obvious and easy to mistake for bugs (or to "fix" in a way that tanks precision). If they aren't written down, a future agent either rediscovers them by debugging or removes the suppression that creates them and reintroduces the DET-1 false positives.
+
+**Why It Matters:** Each gap is a real stale claim the detector silently misses. That is acceptable per the design (a missed claim costs nothing; a false flag costs editor trust), but only if it is a *named, deliberate* choice — otherwise it reads as a defect and invites a "fix" that breaks precision.
+
+**The Fix:** Know and preserve these accepted gaps (all verified in Phase 2 review; all are recall losses, never precision losses):
+- **Inline-year requirement.** A claim with no 4-digit year *in the same sentence* is never flagged (e.g. SBX-1's "the first such vessel is scheduled to be based in Adak Island" — famously stale, but no inline year). The detector cannot resolve cross-sentence/relative dates deterministically.
+- **Earliest-past-year selection + dateline (`detect.ts` Step 3 × `suppress.ts` Rule 1).** `detect.ts` anchors each candidate to the *earliest* past year. For "In 2015, … was expected to deliver in 2020." the chosen year is the dateline (2015), so Rule 1 suppresses the whole sentence and the 2020 forward target is missed. Switching to "prefer the later target year" would re-flag a large set of genuinely-ambiguous historical-announcement sentences (the gold negatives), *lowering* precision — so the earliest-year choice is the precision-favoring one. Do not "fix" it without re-running the precision gate.
+- **`By <year>` deadline ambiguity.** "By 2025, the fleet will reach full strength." (a forward deadline, stale once past) is suppressed by the same dateline rule that correctly suppresses "By May 2022, the Navy shifted its plans…". Distinguishing them needs verb-tense analysis; precision-over-recall keeps `By` in the frame and accepts the deadline-recall loss.
+- **Mid-sentence attribution residual FP.** The dateline rule only fires on a *leading* frame. "A report … on a January 2012 wargame reportedly stated that … the Navy plans to use…" is a mid-sentence attribution that still flags (a residual false positive). Suppressing it needs a separate mid-sentence-attribution rule (future precision work), so it is a known, accepted residual.
+
+**The Lesson:** When a design bias (precision over recall) creates deliberate blind spots, enumerate them next to the code and in the plan's Discoveries. A recall gap that is written down is a design decision; the same gap undocumented is a latent bug report waiting to waste a future session.
+
+---
+
+### Review Checklist
+
+- [ ] **No model/network/clock/async in `src/detector/`** — grep the dir AND its import graph for `Date`, `now`, `fetch`, `random`, `async`, `await`, `Promise`, `import .*research`; matches must be doc-comment-only (DET-1 invariant; testing-pitfalls §8 has the determinism check)
+- [ ] **Dateline suppression uses the grouped year regex AND a constrained month/qualifier slot** — not `[A-Za-z]+` (which matches "the"); year alternatives grouped (DET-1)
+- [ ] **Suppression rules require their disambiguating context** — Rule 3 needs a resolution verb after `later/subsequently/ultimately`, not the bare adverb (DET-1)
+- [ ] **Gold set built from real detector output, not idealized sentences** — run the detector on the fixtures and label what it actually flags (DET-1)
+- [ ] **Accepted recall gaps are documented in the plan + here, not silently present** — inline-year requirement, earliest-year/dateline interaction, `By`-deadline, mid-sentence attribution (DET-2)
 
 ---
 
@@ -110,7 +150,8 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 <!-- - Added PREFIX-N (<title>) — <what and why> -->
 <!-- - Updated PREFIX-M — <what changed> -->
 
-TODO — add entries as this document evolves.
+## 2026-06-05 — Phase 2 (deterministic detector) shipped
+- Added Section 2 (Detector) with DET-1 (historical dateline narration is the dominant false-positive class; suppress via leading-frame + year-match, with a constrained month slot and grouped year regex) and DET-2 (named, accepted precision-over-recall recall gaps: inline-year requirement, earliest-year/dateline interaction, `By`-deadline, mid-sentence attribution). Both surfaced building the Phase 2 precision gate and were confirmed by the 3-round batch review (`docs/plans/phase2-review/`).
 
 ---
 
@@ -123,6 +164,8 @@ TODO — add entries as this document evolves.
 | ORCH-1 | Analysis Dispatches Must Persist Findings | HIGH | VALIDATED | Orchestration |
 | ORCH-2 | Subagents Sharing the Working Tree Must Not Move HEAD | HIGH | VALIDATED | Orchestration |
 | DB-1 | `NOT NULL` Is a No-Op on an `INTEGER PRIMARY KEY` (Rowid Alias) | MEDIUM | VALIDATED | Data Layer |
+| DET-1 | Historical Dateline Narration Is the Dominant False-Positive Class | HIGH | VALIDATED | Detector |
+| DET-2 | Precision-Over-Recall Means Named, Accepted Recall Gaps | MEDIUM | VALIDATED | Detector |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
 
