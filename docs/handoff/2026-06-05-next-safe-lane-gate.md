@@ -8,6 +8,8 @@ You are picking up work on **WikiAsOfNow**, a deterministic stale-claim finder f
 
 ## Your task
 
+> **Fuller context:** this prompt was produced at the end of the detector-work session; for the complete session arc, the build-state survey this draws from, and the closed/deferred items, read `docs/handoff/2026-06-05-session-handoff.md`.
+
 Build the **safe-lane gate (compliance guardrail G11)** — the deterministic, LLM-free mechanism that keeps the tool in its intended "high-volume, low-complexity, well-sourced temporal fixes" lane, and above all enforces the **fail-closed floor: any biography-of-living-persons (BLP) article is excluded from the easy-win queue by default.** This is a hard compliance floor that **does not exist in code yet** and MUST land before any research/"easy win" path is ever surfaced to a user. It is deterministic and fixture-testable — the same engineering muscle as the detector.
 
 ## MUST READ before any work

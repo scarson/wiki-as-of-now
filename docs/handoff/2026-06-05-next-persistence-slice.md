@@ -8,6 +8,8 @@ You are picking up work on **WikiAsOfNow**, a deterministic stale-claim finder f
 
 ## Your task
 
+> **Fuller context:** this prompt was produced at the end of the detector-work session; for the complete session arc, the build-state survey this draws from, and the closed/deferred items (so you don't re-investigate them), read `docs/handoff/2026-06-05-session-handoff.md`.
+
 Build the **single-article persistence + read vertical slice**: make the already-built, mature deterministic detector's output actually reachable end-to-end. Today `detectStaleClaims(...)` is a pure function whose `StaleCandidate[]` is never persisted, exposed, or rendered — the hard part is done and disconnected. You will: fetch one Wikipedia article by title → parse + detect → **persist** to D1 → expose via two API routes → render in a real (minimal) UI. **No LLM, no auth, no safe-lane needed for this slice.** This is the design spec's own next step (§26.2 build-order step 2 "article lookup + storage" + step 4 "rendering"; §24 Phase 1).
 
 ## MUST READ before any work (in this order)
