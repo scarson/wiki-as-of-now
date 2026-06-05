@@ -1,52 +1,130 @@
-import Image from "next/image";
+// ABOUTME: Home page — look up a Wikipedia article by title and view its detected stale claims.
+// ABOUTME: Client component: POSTs to /api/articles/lookup and renders the persisted candidates.
+"use client";
+
+import { useState } from "react";
+
+interface Candidate {
+  id: number;
+  sectionHeading: string;
+  sentenceText: string;
+  year: number;
+  marker: string;
+  score: number;
+  explanation: string;
+}
+
+interface LookupResult {
+  pageId: number;
+  title: string;
+  revisionId: number;
+  candidateCount: number;
+  candidates: Candidate[];
+}
 
 export default function Home() {
-	return (
-		<div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-			<main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-				<Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={180} height={38} priority />
-				<ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-					<li className="mb-2 tracking-[-.01em]">
-						Get started by editing{" "}
-						<code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-							src/app/page.tsx
-						</code>
-						.
-					</li>
-					<li className="tracking-[-.01em]">Save and see your changes instantly.</li>
-				</ol>
+  const [title, setTitle] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
+  const [result, setResult] = useState<LookupResult | null>(null);
+  const [error, setError] = useState<string>("");
 
-				<div className="flex gap-4 items-center flex-col sm:flex-row">
-					<a
-						className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-						href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Read our docs
-					</a>
-				</div>
-			</main>
-			<footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-				<a
-					className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-					href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image aria-hidden src="/file.svg" alt="File icon" width={16} height={16} />
-					Learn
-				</a>
-				<a
-					className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-					href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
-					Go to nextjs.org →
-				</a>
-			</footer>
-		</div>
-	);
+  async function lookup(e: React.FormEvent) {
+    e.preventDefault();
+    const trimmed = title.trim();
+    if (trimmed.length === 0) return;
+
+    setStatus("loading");
+    setError("");
+    setResult(null);
+    try {
+      const res = await fetch("/api/articles/lookup", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ title: trimmed }),
+      });
+      const body = (await res.json()) as { error?: string } & Partial<LookupResult>;
+      if (!res.ok) {
+        setError(typeof body.error === "string" ? body.error : `Request failed (${res.status})`);
+        setStatus("error");
+        return;
+      }
+      setResult(body as LookupResult);
+      setStatus("done");
+    } catch {
+      setError("Could not reach the server. Please try again.");
+      setStatus("error");
+    }
+  }
+
+  return (
+    <main className="mx-auto max-w-3xl px-6 py-12">
+      <header className="mb-8">
+        <h1 className="text-3xl font-bold tracking-tight">WikiAsOfNow</h1>
+        <p className="mt-2 text-sm opacity-70">
+          Enter a Wikipedia article title to find time-bound claims that may now be stale. Detection is
+          fully deterministic — no AI writes or judges anything here.
+        </p>
+      </header>
+
+      <form onSubmit={lookup} className="flex gap-2">
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="e.g. Artemis program"
+          aria-label="Wikipedia article title"
+          className="flex-1 rounded-md border border-black/15 dark:border-white/20 bg-transparent px-3 py-2 text-sm outline-none focus:border-black/40 dark:focus:border-white/50"
+        />
+        <button
+          type="submit"
+          disabled={status === "loading" || title.trim().length === 0}
+          className="rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background disabled:opacity-50"
+        >
+          {status === "loading" ? "Looking up…" : "Look up"}
+        </button>
+      </form>
+
+      {status === "error" && (
+        <p role="alert" className="mt-6 rounded-md border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm">
+          {error}
+        </p>
+      )}
+
+      {status === "done" && result && (
+        <section className="mt-8">
+          <h2 className="text-lg font-semibold">
+            {result.title}{" "}
+            <span className="font-normal opacity-60">
+              — {result.candidateCount} candidate{result.candidateCount === 1 ? "" : "s"}
+            </span>
+          </h2>
+          <p className="mt-1 text-xs opacity-50">
+            page {result.pageId} · revision {result.revisionId}
+          </p>
+
+          {result.candidates.length === 0 ? (
+            <p className="mt-6 text-sm opacity-70">No stale candidates found in this article.</p>
+          ) : (
+            <ul className="mt-6 space-y-4">
+              {result.candidates.map((c) => (
+                <li key={c.id} className="rounded-lg border border-black/10 dark:border-white/15 p-4">
+                  <p className="text-sm leading-relaxed">{c.sentenceText}</p>
+                  <p className="mt-2 text-sm opacity-75">{c.explanation}</p>
+                  <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                    <span className="rounded-full bg-black/[.06] dark:bg-white/[.10] px-2 py-1">year {c.year}</span>
+                    <span className="rounded-full bg-black/[.06] dark:bg-white/[.10] px-2 py-1">marker “{c.marker}”</span>
+                    {c.sectionHeading && (
+                      <span className="rounded-full bg-black/[.06] dark:bg-white/[.10] px-2 py-1">
+                        § {c.sectionHeading}
+                      </span>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+    </main>
+  );
 }
