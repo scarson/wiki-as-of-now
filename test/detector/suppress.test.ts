@@ -70,4 +70,11 @@ describe("suppression", () => {
     // not a dateline. ("signed" appears only AFTER the year, so the verb-then-date shape fails.)
     expect(suppressionScore("The radar will be delivered in 2019, years after the contract was signed.", 2019)).toBe(0);
   });
+  it("covers more speech verbs in attribution and schedule-change verbs in resolution", () => {
+    // Rule 4: 'claimed/predicted' are reporting verbs (policy/biomedical prose).
+    expect(suppressionScore("Avalere claimed in July 2022 that revenue would be lost and the program will end.", 2022)).toBeGreaterThan(0);
+    expect(suppressionScore("Analysts predicted in 2020 that the vaccine will be approved.", 2020)).toBeGreaterThan(0);
+    // Rule 3: 'later moved/pushed' signals the schedule was revised (resolved nearby).
+    expect(suppressionScore("It anticipated starting experiments in 2020, but later moved that to 2023.", 2020)).toBeGreaterThan(0);
+  });
 });

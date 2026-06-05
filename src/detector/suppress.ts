@@ -41,7 +41,7 @@ const DATELINE_REGEX = new RegExp(
  * and must NOT suppress, so the verb is required.
  */
 const RESOLUTION_REGEX =
-  /\b(?:later|subsequently|ultimately)\s+(?:was\s+|were\s+|been\s+)?(?:completed|cancell?ed|abandoned|withdrawn|terminated|scrapped|halted|shelved|delivered|finished|resolved|retired|decommissioned|dropped|suspended|postponed|delayed)\b/i;
+  /\b(?:later|subsequently|ultimately)\s+(?:was\s+|were\s+|been\s+)?(?:completed|cancell?ed|abandoned|withdrawn|terminated|scrapped|halted|shelved|delivered|finished|resolved|retired|decommissioned|dropped|suspended|postponed|delayed|moved|pushed|slipped|revised|rescheduled|deferred)\b/i;
 
 /**
  * Past-tense speech/announcement/acquisition-event verbs. When one of these is
@@ -55,7 +55,8 @@ const RESOLUTION_REGEX =
  */
 const REPORTING_VERB =
   "announced|reported|stated|said|revealed|disclosed|noted|explained|pledged|confirmed|" +
-  "unveiled|released|awarded|ordered|signed|allocated|published|selected|approved|adopted";
+  "unveiled|released|awarded|ordered|signed|allocated|published|selected|approved|adopted|" +
+  "claimed|predicted|estimated|warned|suggested|indicated|wrote|forecast|projected";
 
 /**
  * Veto-strength penalty applied when a suppression rule fires.
