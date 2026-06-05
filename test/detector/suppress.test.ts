@@ -58,4 +58,16 @@ describe("suppression", () => {
     expect(suppressionScore("Testing of the vehicle is expected to begin in 2020.", 2020)).toBe(0);
     expect(suppressionScore("The Army plans to buy 133 vehicles starting in 2014.", 2014)).toBe(0);
   });
+  it("suppresses mid-sentence attribution: a reporting/event verb dated to the claim year", () => {
+    // The claim is reported content dated to a past event — the article narrates what was
+    // announced/reported AT that time, it does not assert the forward claim directly.
+    expect(suppressionScore("The Indian Army first announced plans to acquire 145 M777s for $400 million in January 2010.", 2010)).toBeGreaterThan(0);
+    expect(suppressionScore("Reuters reported on 1 June 2022 that the administration plans to sell four drones.", 2022)).toBeGreaterThan(0);
+    expect(suppressionScore("The US Army released a draft solicitation on June 22, 2018 for proposals.", 2018)).toBeGreaterThan(0);
+  });
+  it("does not treat a directly-asserted forward target as attribution", () => {
+    // No reporting/event verb precedes the target year — the forward "in 2019" is the claim,
+    // not a dateline. ("signed" appears only AFTER the year, so the verb-then-date shape fails.)
+    expect(suppressionScore("The radar will be delivered in 2019, years after the contract was signed.", 2019)).toBe(0);
+  });
 });

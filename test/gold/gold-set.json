@@ -254,5 +254,41 @@
     "sentenceSubstring": "the Marine Corps awarded Northrop Grumman a $375 million contract",
     "stale": false,
     "note": "Negative (historical month-dateline narration): 'In September 2016, the Marine Corps awarded Northrop Grumman a $375 million contract...'."
+  },
+  {
+    "fixture": "m777_howitzer.wikitext",
+    "sentenceSubstring": "first announced plans to acquire 145 M777s",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'The Indian Army first announced plans to acquire 145 M777s ... in January 2010.'. Reporting verb 'announced' dated to the claim year (2010); attribution, not a live assertion."
+  },
+  {
+    "fixture": "general_atomics_mq-1c_gray_eagle.wikitext",
+    "sentenceSubstring": "the Biden administration plans to sell four Gray Eagle drones",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'Reuters reported on 1 June 2022 that the Biden administration plans to sell four Gray Eagle drones...'."
+  },
+  {
+    "fixture": "future_attack_reconnaissance_aircraft.wikitext",
+    "sentenceSubstring": "released a draft solicitation on June 22, 2018",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'The US Army released a draft solicitation on June 22, 2018 for ... proposals ...'."
+  },
+  {
+    "fixture": "aerovironment_switchblade.wikitext",
+    "sentenceSubstring": "ordered more than 100 Switchblade 600s",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'The U.S. Army ordered more than 100 Switchblade 600s in October 2023 ...'. Past acquisition event dated to the claim year."
+  },
+  {
+    "fixture": "expeditionary_fighting_vehicle.wikitext",
+    "sentenceSubstring": "awarded a cost-plus contract to General Dynamics",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): '... the Marine Corps awarded a cost-plus contract to General Dynamics in July 2001 ...'."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "South Korea plans to upgrade 600 vehicles",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'According to the magazine published by the DAPA in October 2024, South Korea plans to upgrade 600 vehicles to A1 standard.'."
   }
 ]

@@ -44,6 +44,20 @@ const RESOLUTION_REGEX =
   /\b(?:later|subsequently|ultimately)\s+(?:was\s+|were\s+|been\s+)?(?:completed|cancell?ed|abandoned|withdrawn|terminated|scrapped|halted|shelved|delivered|finished|resolved|retired|decommissioned|dropped|suspended|postponed|delayed)\b/i;
 
 /**
+ * Past-tense speech/announcement/acquisition-event verbs. When one of these is
+ * followed (within the same clause) by an "on/in <date>" of the claim's year,
+ * the sentence is narrating a past event and attributing the forward claim to
+ * it ("X announced plans to ... in January 2010", "Reuters reported on 1 June
+ * 2022 that ... plans to ..."). The list is deliberately limited to event /
+ * reporting verbs — NOT forward-action verbs (deliver, field, build, launch,
+ * test), which are usually the claim itself — so a directly-asserted forward
+ * target ("will be delivered in 2019") is never mistaken for a dateline.
+ */
+const REPORTING_VERB =
+  "announced|reported|stated|said|revealed|disclosed|noted|explained|pledged|confirmed|" +
+  "unveiled|released|awarded|ordered|signed|allocated|published|selected|approved|adopted";
+
+/**
  * Veto-strength penalty applied when a suppression rule fires.
  *
  * Magnitude is calibrated to out-weigh `temporalRisk` in score.ts's
@@ -112,6 +126,23 @@ export function suppressionScore(sentence: string, year: number): number {
   // A bare temporal "later"/"ultimately" ("deployed later in 2017") is a
   // forward statement and must NOT suppress.
   if (RESOLUTION_REGEX.test(sentence)) {
+    rulesHit++;
+  }
+
+  // Rule 4 — mid-sentence attribution (the residual FP class the leading
+  // dateline rule can't reach). Fires when a past reporting/event verb is
+  // followed, within the same clause (no sentence break) and a bounded gap, by
+  // an "on/in <date>" whose year is the claim's anchor `year`. That dates the
+  // claim to a past announcement/report/award rather than asserting it now
+  // (e.g. "X announced plans to acquire ... in January 2010", "Reuters reported
+  // on 1 June 2022 that ... plans to ..."). Tying the date to the claim year and
+  // requiring the verb to PRECEDE the date keeps it precise — a directly-asserted
+  // forward target ("will be delivered in 2019") has no reporting verb before it.
+  const attributionRegex = new RegExp(
+    `\\b(?:${REPORTING_VERB})\\b[^.]{0,80}?\\b(?:on|in)\\s+(?:${DATELINE_DATE_TOKEN}){0,3}${year}\\b`,
+    "i"
+  );
+  if (attributionRegex.test(sentence)) {
     rulesHit++;
   }
 
