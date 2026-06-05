@@ -58,12 +58,12 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Both phases built. Phase 1 (measure) shipped; Phase 2 (safe wins) built, PR pending.
+**Overall:** Both phases built; PR [#6](https://github.com/scarson/wiki-as-of-now/pull/6) open → `dev`.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Recall ground truth + baseline | ✅ Built 2026-06-05 (`84184bd`…`<review>`) | `84184bd`…`4ab4d36` | measurement: reachable recall **0.636**, absolute **0.583**, zero `simple` missed; rubric + recall set + harness + miss-hunt; reviewed sound |
-| 2 — Precision-safe recall wins (lexicon) | ✅ Built 2026-06-05 (`667b44e`…`62ebd1e`) | `667b44e`…`62ebd1e` | reachable recall 0.636→**1.0**, absolute 0.583→**0.917**, precision held 0.97; 5 markers added, `intended to` dropped; 0.90 floor. PR pending |
+| 2 — Precision-safe recall wins (lexicon) | ✅ Built 2026-06-05 (`667b44e`…`62ebd1e`) | `667b44e`…`914d172` | reachable recall 0.636→**1.0**, absolute 0.583→**0.917**, precision held 0.97; 5 markers added, `intended to` dropped; 0.90 floor. PR [#6](https://github.com/scarson/wiki-as-of-now/pull/6) → `dev` |
 
 ---
 
@@ -207,7 +207,7 @@ Update banners + the top-of-plan table; record baseline numbers in Discoveries.
 
 ## Phase 2 — Precision-safe recall wins (marker lexicon)
 
-**Execution Status:** ✅ BUILT 2026-06-05 — branch `claude/wikiasofnow-recall`, commits `667b44e`…`497a0b6`. Lexicon expanded by 5 precision-gated markers (`expected to`, `expected by`, `scheduled to`, `scheduled for`, `planned to`; `intended to` dropped for FP density). **Reachable recall 0.636→1.0, absolute 0.583→0.917, precision held 0.97.** Durable 0.90 reachable-recall floor added. bare `expected to`/`scheduled for` are non-load-bearing broader-recall markers flagged for a future precision-tightening pass (methodology §7.4). Final review + PR next.
+**Execution Status:** ✅ BUILT 2026-06-05 — branch `claude/wikiasofnow-recall`, commits `667b44e`…`497a0b6`. Lexicon expanded by 5 precision-gated markers (`expected to`, `expected by`, `scheduled to`, `scheduled for`, `planned to`; `intended to` dropped for FP density). **Reachable recall 0.636→1.0, absolute 0.583→0.917, precision held 0.97.** Durable 0.90 reachable-recall floor added. bare `expected to`/`scheduled for` are non-load-bearing broader-recall markers flagged for a future precision-tightening pass (methodology §7.4). Final review done (`docs/plans/recall-review/round-2-phase2-final.md`: SOUND/HONEST/gate-green). PR [#6](https://github.com/scarson/wiki-as-of-now/pull/6) open → `dev`.
 
 > Depends on Phase 1 (the recall set, harness, baseline, and the `marker-gap` ranking from the miss-hunt). The ONLY detector change in scope is expanding `MARKER_STRENGTH`. No suppression changes, no year-gate changes, no relative-date handling (deferred — see Task 2.3).
 
