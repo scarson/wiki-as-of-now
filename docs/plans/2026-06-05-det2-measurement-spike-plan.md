@@ -82,6 +82,10 @@ notes and commit messages.
 - **`test/detector/det3-fp.test.ts`** + **`test/gold/det3-fp-set.json`** — the cut-1 analog to MIRROR for the JSON shape, the per-fixture parse cache, and the structural test (incl. the substring-occurs check and the min-count guard).
 - **`docs/pitfalls/testing-pitfalls.md`** §1 (pristine output) + §9 (gold honesty) and **`docs/pitfalls/implementation-pitfalls.md`** DET-1/DET-2.
 
+## Execution strategy (recommendation)
+
+**Subagent-driven** (`superpowers:subagent-driven-development`): Task 1.1 is judgment-heavy hand-labeling (genuine-target vs narration) that benefits from a fresh subagent + an independent honesty review — the same shape as cut 1's Task 1.1, which this mirrors. Task 1.2 (scoring + report) is small and sequential after 1.1. Two tasks, one shared gold file produced then consumed — not a parallel-agents candidate.
+
 ---
 
 ## Phase 1 — Measure the DET-2 opportunity and decide
