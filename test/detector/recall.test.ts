@@ -121,9 +121,7 @@ describe("detector recall harness — structural validation", () => {
   });
 
   it("recall set sentenceSubstrings all appear in their fixture's parsed sentence text", () => {
-    const cache = buildCandidateCache(recallSet);
     for (const entry of recallSet) {
-      // Pull all parsed sentences directly (we need parsed sentences, not just candidates)
       const wikitext = readFileSync(`test/fixtures/${entry.fixture}`, "utf8");
       const parsed = parseArticle({
         title: entry.fixture,
@@ -141,8 +139,6 @@ describe("detector recall harness — structural validation", () => {
         `sentenceSubstring not found in parsed sentences of fixture "${entry.fixture}": "${entry.sentenceSubstring}"`
       ).toBe(true);
     }
-    // Silence unused warning — cache is used by the reporting test
-    void cache;
   });
 
   it("recall set composition: ≥6 reachable:true and ≥1 reachable:false entries", () => {
@@ -274,8 +270,13 @@ describe("detector recall harness — reporting", () => {
       surprises,
     });
 
-    // This test passes unconditionally — no hard recall floor.
-    // Task 2.2 sets the floor once the post-lexicon-expansion baseline is known.
-    expect(true).toBe(true);
+    // No hard recall FLOOR yet (Task 2.2 sets that once the post-lexicon baseline
+    // is known). But the metrics must be valid rates in [0,1] — a meaningful
+    // invariant that still passes for any healthy run.
+    for (const rate of [reachableRecall, absoluteRecall, precisionOnSample]) {
+      expect(Number.isFinite(rate)).toBe(true);
+      expect(rate).toBeGreaterThanOrEqual(0);
+      expect(rate).toBeLessThanOrEqual(1);
+    }
   });
 });
