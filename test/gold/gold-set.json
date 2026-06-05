@@ -421,5 +421,58 @@
     "sentenceSubstring": "former prime minister Boris Johnson said it will be",
     "stale": false,
     "note": "Negative (leading full-date dateline): 'On 2 March 2023, former prime minister Boris Johnson said it will be \"very difficult\" for him to vote for the Windsor Framework.'."
+  },
+
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "TSMC plans to start volume production",
+    "stale": true,
+    "expectedYear": 2023,
+    "note": "Semiconductor roadmap: 'TSMC plans to start volume production of the \"3 nm\" process node in 2023.' — milestone now past."
+  },
+  {
+    "fixture": "pci_express.wikitext",
+    "sentenceSubstring": "The specification is expected to be finalized in 2025",
+    "stale": true,
+    "expectedYear": 2025,
+    "note": "Standards roadmap: PCIe spec 'expected to be finalized in 2025' — target now past."
+  },
+  {
+    "fixture": "project_kuiper.wikitext",
+    "sentenceSubstring": "is expected to open in June 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Corporate buildout: logistics center 'expected to open in June 2024' — now past."
+  },
+  {
+    "fixture": "rivian.wikitext",
+    "sentenceSubstring": "Construction is planned to begin in summer 2022",
+    "stale": true,
+    "expectedYear": 2022,
+    "note": "Corporate buildout: 'Construction is planned to begin in summer 2022 ...' — start date now past."
+  },
+  {
+    "fixture": "rivian.wikitext",
+    "sentenceSubstring": "Rivian unveiled the R2 SUV",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On March 7, 2024, Rivian unveiled the R2 SUV ... that w[ill] ...'."
+  },
+  {
+    "fixture": "google_pixel.wikitext",
+    "sentenceSubstring": "Google announced it will not further develop the product line",
+    "stale": false,
+    "note": "Negative (leading month-dateline): 'In June 2019, Google announced it will not further develop the product line, and cancelled two models ...'."
+  },
+  {
+    "fixture": "steam_deck.wikitext",
+    "sentenceSubstring": "the Steam Deck will be made officially available",
+    "stale": false,
+    "note": "Negative (leading month-dateline): 'In October 2024, Valve announced that ... the Steam Deck will be made officially available ...'."
+  },
+  {
+    "fixture": "tesla_semi.wikitext",
+    "sentenceSubstring": "Tesla announced plans to establish a charging network for the Semi",
+    "stale": false,
+    "note": "Negative (leading qualifier dateline): 'In late 2023, Tesla announced plans to establish a charging network for the Semi ...'."
   }
 ]

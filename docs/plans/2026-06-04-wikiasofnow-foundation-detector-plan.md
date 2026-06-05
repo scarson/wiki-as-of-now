@@ -73,7 +73,7 @@ notes and commit messages.
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Foundation | ✅ Shipped · ✅ MERGED to `dev` (PR [#3](https://github.com/scarson/wiki-as-of-now/pull/3), merge `380c6f7`) | `3846c90`…`f4290d3` | all 5 tasks + 3-round batch review + WITHOUT ROWID hardening; 13 tests, tsc+lint clean |
-| 2 — Deterministic detector + fixtures | ✅ Built · 🔀 PR [#5](https://github.com/scarson/wiki-as-of-now/pull/5) open → `dev` (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | `fec5bd3`…`b3e0d89` (+ pnpm pin `bd6ca3a`) | all 7 tasks + 3-round batch review; LLM-free (G10) confirmed COMPLIANT; gold-set precision 1.0 over 65 labeled entries across a 120-fixture corpus; 59 tests (branch coverage 89%, functions 100%), tsc+lint clean. Merge classification: **Review — domain** |
+| 2 — Deterministic detector + fixtures | ✅ Built · 🔀 PR [#5](https://github.com/scarson/wiki-as-of-now/pull/5) open → `dev` (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | `fec5bd3`…`b3e0d89` (+ pnpm pin `bd6ca3a`) | all 7 tasks + 3-round batch review; LLM-free (G10) confirmed COMPLIANT; gold-set precision 1.0 over 73 labeled entries across a 136-fixture corpus; 59 tests (branch coverage 89%, functions 100%), tsc+lint clean. Merge classification: **Review — domain** |
 
 ### Task completion log
 - **Task 1.1** (scaffold + Vitest): ✅ DONE — impl `3846c90`, code-review follow-up `e26a1be`. Spec review ✅, code-quality review ✅. Gates: `pnpm test` green, `pnpm exec tsc --noEmit` clean, `pnpm lint` exit 0.
@@ -369,7 +369,7 @@ Review the batch from multiple perspectives. Minimum 3 review rounds (correctnes
 
 ## Phase 2 — Deterministic detector + fixtures
 
-**Execution Status:** ✅ BUILT 2026-06-05 — branch `claude/wikiasofnow-detector-phase2-ZP1uQ` (off `origin/dev` `8edcd9c`), PR open → `dev`. All 7 tasks (2.1–2.7) done via the subagent-driven flow (implementer → spec/code review → controller triage/fix → gates → commit), strict TDD. 3-round batch review complete (`docs/plans/phase2-review/`): correctness (3 over-suppression fixes applied + accepted recall gaps documented), compliance (**COMPLIANT** — detector provably LLM-free/network-free/clock-free/async-free, G10), gold-set honesty (precision gate **HONEST**, not gamed). Gold-set precision **1.0** over 65 labeled entries across a 120-fixture corpus; 59 tests (branch coverage 89%, functions 100%), `tsc --noEmit` clean, `lint` clean. Corpus expansion + On-dateline rule in `856a0c4`…`7f43119` (pnpm pin `bd6ca3a`).
+**Execution Status:** ✅ BUILT 2026-06-05 — branch `claude/wikiasofnow-detector-phase2-ZP1uQ` (off `origin/dev` `8edcd9c`), PR open → `dev`. All 7 tasks (2.1–2.7) done via the subagent-driven flow (implementer → spec/code review → controller triage/fix → gates → commit), strict TDD. 3-round batch review complete (`docs/plans/phase2-review/`): correctness (3 over-suppression fixes applied + accepted recall gaps documented), compliance (**COMPLIANT** — detector provably LLM-free/network-free/clock-free/async-free, G10), gold-set honesty (precision gate **HONEST**, not gamed). Gold-set precision **1.0** over 73 labeled entries across a 136-fixture corpus; 59 tests (branch coverage 89%, functions 100%), `tsc --noEmit` clean, `lint` clean. Corpus expansion + On-dateline rule in `856a0c4`…`7f43119` (pnpm pin `bd6ca3a`).
 
 > Compliance touchpoint: this entire phase is LLM-free (the "detection is deterministic and explainable" guardrail). No model calls anywhere in `src/detector/`.
 

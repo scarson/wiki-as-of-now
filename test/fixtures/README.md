@@ -46,8 +46,16 @@ to test whether the cataloged patterns hold or a new structural one appears
 - **Clinical / biomedical (drug development):** Lecanemab, Donanemab, Aducanumab, exa-cel (Casgevy), Lenacapavir, Tirzepatide, HIV vaccine development, M72/AS01E (TB vaccine), Neuralink, RSV vaccine.
 - **Legislation / policy:** EU AI Act, Digital Markets Act, Online Safety Act 2023, CHIPS and Science Act, European Chips Act, Windsor Framework, Euro 7, Kigali Amendment, Right to repair, Inflation Reduction Act.
 
-(The giant articles in these waves — e.g. R21/Matrix-M, Sustainable Aviation Fuel,
-Building Safety Act — were analysed but not committed, to keep the corpus bounded.)
+### Fourth wave — corporate / software roadmaps (136 fixtures total)
+
+The saturation-confirmation wave (it found no new structural pattern — see the
+methodology doc §5). Representative subset: 3 nm process, PCI Express, Project
+Kuiper, Rivian, Google Pixel, Steam Deck, Tesla Semi, Wi-Fi 7, 6G, DDR5, Matter,
+Thread, Blackwell, Optimus, HTTP/3, Apple Vision Pro.
+
+(The giant articles across waves — e.g. R21/Matrix-M, Sustainable Aviation Fuel,
+Building Safety Act, Starlink, PlayStation 5, Apple silicon, Android version
+history — were analysed but not committed, to keep the corpus bounded.)
 
 Filenames are the lowercased article slug + `.wikitext`. A handful of requested
 titles were redirects (resolved to the target shown) or did not exist and were

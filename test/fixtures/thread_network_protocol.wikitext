@@ -1,0 +1,159 @@
+{{Missing information|technical specification and licensing|talksection=Lacking consequential context|date=April 2025}}
+{{Short description|Network protocol}}
+{{EngvarB |date=July 2024}}
+{{Use mdy dates |date=July 2024}}
+
+{{Infobox protocol
+| name        = Thread 
+| image       = Thread Group wordmark.svg {{!}} class=skin-invert
+| caption     = 
+| standard    = <!--international standard such as IEEE-->
+| developer   = Thread Group
+| introdate   = {{Start date|2014|07|15}}<ref>{{Cite press release |title=Introducing Thread: A New Wireless Networking Protocol for the Home > Thread Group |url=https://threadgroup.org/news-events/press-releases/ID/20/Introducing-Thread-A-New-Wireless-Networking-Protocol-for-the-Home |publisher=Thread Group |access-date=20 May 2026 |date=July 15, 2014}}</ref>
+| industry    = [[Home automation]]
+| connector   = <!--connector(s) usable with protocol-->
+| range       = <!--{{cvt|X|km}}-->
+| newer       = <!--superseded by which protocol-->
+| website     = {{official url}}
+}}
+
+'''Thread''' is an [[IPv6]]-based, low-power [[mesh networking]] technology for [[Internet of things]] (IoT) products.<ref>{{cite web|title=What is Thread - Overview|url=https://www.threadgroup.org/What-is-Thread/Overview|website=Thread Group|accessdate=25 October 2015}}</ref> Often used as a transport for the [[home automation]] connectivity standard [[Matter (standard)|Matter]] (the combination being known as ''Matter over Thread''), the protocol has seen increased use for connecting [[low-power electronics|low-power]] and battery-operated [[smart-home]] devices.<ref>{{Cite web |last=Tuohy |first=Jennifer Pattison |date=2022-07-29 |title=What is Thread and how will it help your smart home? |url=https://www.theverge.com/23165855/thread-smart-home-protocol-matter-apple-google-interview |access-date=2024-04-22 |website=The Verge |language=en}}</ref>
+
+== Organization ==
+In July 2014, the Thread Group alliance was formed as an industry group to develop, maintain and drive adoption of Thread as an industry networking standard for IoT applications.<ref name="reuters">{{cite news |url = https://www.reuters.com/article/us-google-nest-idUSKBN0FK0JX20140715 |title = Google's Nest launches network technology for connected home|last=Noel Randewich|date=15 July 2014 | work = [[Reuters]] | accessdate=18 July 2014}}</ref> Thread Group provides certification for components and products to ensure adherence to the spec. Initial members were [[ARM Holdings]], [[Big Ass Solutions]], [[NXP Semiconductors]]/[[Freescale]], [[Google]]-subsidiary [[Nest Labs]], [[OSRAM]], [[Samsung]], [[Silicon Labs]], [[Somfy]], [[Tyco International]], [[Qualcomm]], and the [[Yale (company)|Yale]] lock company. In August 2018, [[Apple Inc|Apple]] joined the group,<ref>{{Cite news|url=https://9to5mac.com/2018/08/06/apple-the-thread-group/|title=Apple joins 'The Thread Group,' opening up the possibility of more advanced HomeKit tech|date=2018-08-06|work=9to5Mac|access-date=2018-08-23|language=en-US}}</ref> and released its first Thread product, the [[HomePod Mini]], in late 2020.<ref>{{Cite press release|url=https://www.apple.com/ca/newsroom/2020/10/apple-introduces-homepod-mini-a-powerful-smart-speaker-with-amazing-sound/|title=Apple introduces HomePod mini: A powerful smart speaker with amazing sound|date=13 October 2020|website=Apple|language=en-US}}</ref>
+
+The Thread protocol specification is available at no cost. It requires agreement and continued adherence to an [[end-user license agreement]] (EULA), which states "Membership in Thread Group is necessary to implement, practice, and ship Thread technology and Thread Group specifications."<ref>{{Cite web|url=https://www.threadgroup.org/ThreadSpec|title=The Thread group - Thread 1.1 Specifications|access-date=2021-06-26|website=Thread Group|language=en-US}}</ref>
+
+== Characteristics ==
+Thread uses IPv6 over Low-Power Wireless Personal Area Networks ([[6LoWPAN]]), which, in turn, uses LR-WPAN as defined by the [[IEEE 802.15.4]] wireless protocol with mesh communication (in the [[2.4 GHz]] spectrum), as do [[Zigbee]] and other systems.  However, Thread is [[IP address|IP-addressable]], with [[Cloud (computing)|cloud]] access and [[AES encryption]]. A [[BSD licenses|BSD-licensed]] open-source implementation of Thread called ''OpenThread'' is available from and managed by Google.<ref>{{cite web |title=OpenThread |year=2024 |url=https://openthread.io/ |access-date=2024-07-13 }}</ref>
+
+The OpenThread [[network simulator]], a part of the OpenThread implementation, simulates Thread networks using OpenThread [[POSIX]] instances.<ref>{{Citation |title=openthread/ot-ns |date=2024-04-18 |url=https://github.com/openthread/ot-ns |access-date=2024-04-22 |publisher=OpenThread}}</ref> The simulator utilises [[discrete-event simulation]] and allows for visualisation of communications through a web interface.{{relevance inline|date=July 2024}}<ref>{{Cite web |title=Simulate Thread Networks using OTNS |url=https://openthread.io/codelabs/openthread-network-simulator |access-date=2024-04-22 |website=OpenThread |language=en}}</ref>
+
+== Use cases ==
+In 2019, the Connected Home over IP (CHIP) project, subsequently renamed to ''Matter'', led by the Zigbee Alliance, now the [[Connectivity Standards Alliance]] (CSA), Google, Amazon, and Apple, announced a broad collaboration to create a [[royalty-free]] standard and [[open-source]] code base to promote interoperability in home connectivity, leveraging Thread, Wi-Fi, and [[Bluetooth Low Energy]].<ref>{{Cite web |date=18 December 2019 |title=Amazon, Apple, Google, and Zigbee join forces for an open smart home standard |url=https://techcrunch.com/2019/12/18/amazon-apple-google-and-zigbee-join-forces-for-an-open-smart-home-standard/ |access-date=2019-12-18 |website=TechCrunch |language=en-US}}</ref><ref>{{Cite web |title=Project Connected Home over IP |url=https://www.connectedhomeip.com/ |url-status=dead |archive-url=https://web.archive.org/web/20200606155944/https://www.connectedhomeip.com/ |archive-date=2020-06-06 |access-date=2019-12-18 |website=Project Connected Home over IP |language=en-US}}</ref>
+
+== Border routers ==
+A Thread border router is a device that provides bidirectional Internet Protocol connectivity between a Thread network and another physical network, such as Wi-Fi or Ethernet. It enables communication between Thread devices and other local networks or the Internet. A Thread network is a low-power mesh network using the IEEE 802.15.4 protocol in the 2.4{{nbsp}}GHz [[ISM radio band]], and a border router translates between such a network another physical network, allows for service discovery across network boundaries, and enables external commissioning of Thread devices. Without a border router, Thread devices would be isolated from other networks and the Internet.<ref>{{Cite web |title=Thread Border Router - Bidirectional IPv6 Connectivity and DNS-Based Service Discovery |url=https://openthread.io/codelabs/openthread-border-router |access-date=2023-08-01 |website=OpenThread |language=en}}</ref>
+
+{| class="wikitable"
+|+Devices that function as Thread border routers
+!Company
+!Device name
+!Release year
+!Availability
+|-
+| rowspan="6" |[[Amazon (company)|Amazon]]<ref>{{Cite web |title=Understand Smart Home Thread Support {{!}} Alexa Skills Kit |url=https://developer.amazon.com/en-US/docs/alexa/smarthome/thread-support.html |access-date=2025-07-24 |website=Amazon Alexa |language=en}}</ref>
+|[[Amazon Echo|Echo]]
+|2020
+|4th generation and newer
+|-
+|Echo Hub
+|2024
+|All models
+|-
+|Echo Plus
+|2018
+|2nd generation
+|-
+|[[Echo Show]]
+|2024
+2024
+
+2021
+
+2023
+|Echo Show 21
+Echo Show 15 (2nd generation)
+
+Echo Show 10 (3rd generation)
+
+Echo Show 8 (3rd generation)
+|-
+|Echo Studio
+|2019
+|All models
+|-
+|[[Eero (wireless networking brand)|eero]] routers
+|2017
+|All eero Pro routers and eero Beacon
+All third-generation routers with [[Wi-Fi 6]] and newer
+|-
+| rowspan="3" |[[Apple Inc.|Apple]]<ref>{{Cite web |title= If you see a 'Thread Border Router Required' or 'Needs Thread Network' alert on your iPhone or iPad |url= https://support.apple.com/en-us/102078 |access-date=2025-09-28 |website=Apple Support |language=en}}</ref>
+|[[Apple TV 4K]]
+|2021
+|2nd generation
+3rd generation with Ethernet
+|-
+|[[HomePod Mini]]
+|2020 
+|All models
+|-
+|[[HomePod]]
+|2023
+|2nd generation
+|-
+| rowspan="4" |[[Google]]<ref>{{Cite web |title=Making your home more helpful with Matter and Thread |url=https://store.google.com/intl/en/ideas/articles/matter-thread-for-your-smart-home/ |access-date=2025-07-24 |website=Google Store |language=en-us}}</ref>
+|[[Google Nest (smart speakers)|Nest Hub]]
+|2021
+|2nd generation
+|-
+|Nest Hub Max
+|2019
+|All models
+|-
+|[[Nest Wifi]]
+|2019
+|All models
+|-
+|[[Google TV Streamer]] 4K
+|2024
+|All models
+|-
+| rowspan="1" |[[MikroTik]]<ref>{{Cite web|url=https://mikrotik.com/product/hap_be3_media|title=hAP be³ Media &#124; MikroTik|website=mikrotik.com}}</ref>
+|hAP be³ Media
+|2026
+|All models
+|-
+| rowspan="3" |[[Samsung SmartThings]]<ref>{{Cite web |date=2023-01-19 |title=SmartThings x Matter Integration |url=https://support.smartthings.com/hc/en-us/articles/11219700390804-SmartThings-x-Matter-Integration |access-date=2025-07-24 |website=SmartThings Support |language=en-US}}</ref>
+|SmartThings Hub
+|2018
+|Version 3
+|-
+|SmartThings Station
+|2023
+|All models
+|-
+|Aeotec Smart Home Hub
+|2021
+|All models
+|}
+
+==See also==
+* [[Home automation]]
+* [[Wi-Fi Direct]]
+* [[Wi-Fi EasyMesh]]
+* [[DASH7]]
+* [[KNX]]
+* [[LonWorks]]
+* [[BACnet]]
+
+==References==
+{{reflist}}
+
+==External links==
+* {{Official website}}
+* [https://openthread.io OpenThread]
+* {{Github|openthread/openthread|OpenThread}}
+
+{{subject bar |auto=y |d=y |portal=Internet}}
+
+{{Wireless Sensor Network}}
+{{Automation protocols}}
+
+[[Category:Home automation]]
+[[Category:Building automation]]
+[[Category:Personal area networks]]
+[[Category:Mesh networking]]
+[[Category:IEEE 802]]
+[[Category:IPv6]]
+[[Category:Internet properties established in 2014]]
