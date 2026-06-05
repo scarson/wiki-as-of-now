@@ -1,6 +1,7 @@
 // ABOUTME: Stale-claim detection orchestrator — iterates parsed article sections and sentences.
 // ABOUTME: Deterministic and LLM-free; asOfYear is always injected, never read from the clock.
 import { findExpectationMarkers, extractYears, MARKER_STRENGTH } from "./markers";
+import { governedYears } from "./governs";
 import { scoreClaim } from "./score";
 import type { ParsedArticle, StaleCandidate } from "../domain/types";
 
@@ -47,7 +48,7 @@ export function detectStaleClaims(
       const pastYears = extractYears(text).filter(y => y < asOfYear);
       if (pastYears.length === 0) continue;
 
-      // Step 3: choose the strongest marker (first on ties) and the earliest past year.
+      // Step 3: choose the strongest marker (first on ties) and the earliest GOVERNED past year.
       // NB: picking the EARLIEST past year means a sentence that opens with a
       // dateline AND carries a later forward target (e.g. "In 2015, ... expected
       // to deliver in 2020.") is anchored to the dateline year and suppressed by
@@ -59,7 +60,12 @@ export function detectStaleClaims(
           chosenMarker = markers[i];
         }
       }
-      const chosenYear = Math.min(...pastYears);
+      // governedYears drops incidental years (DET-3) but keeps a leading dateline
+      // year for Rule 1 (governs.ts §2.2). No governed past year ⇒ the marker
+      // targets nothing past ⇒ skip the sentence.
+      const anchorable = governedYears(text, chosenMarker, pastYears);
+      if (anchorable.length === 0) continue;
+      const chosenYear = Math.min(...anchorable);
 
       // Step 4: score; drop if the scorer suppressed the candidate (total === 0).
       const scored = scoreClaim({ sentence: text, year: chosenYear, marker: chosenMarker, asOfYear });

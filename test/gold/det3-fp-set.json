@@ -1,0 +1,186 @@
+[
+  {
+    "fixture": "gateway_program_northeast_corridor.wikitext",
+    "sentenceSubstring": "will replace the existing Portal Bridge, built in 1910",
+    "anchorYear": 1910,
+    "subShape": "cross-clause-aside",
+    "stale": false,
+    "note": "Marker 'will' (will replace). 1910 is the existing bridge's construction date in a comma-bracketed participial aside ('built in 1910'); 'will replace' governs no year. The canonical DET-3 example (design §1)."
+  },
+  {
+    "fixture": "type_26_frigate.wikitext",
+    "sentenceSubstring": "will be named \"HMS Belfast (1938)\"",
+    "anchorYear": 1938,
+    "subShape": "parenthetical",
+    "stale": false,
+    "note": "Marker 'will' (will be named). 1938 sits inside parentheses as part of a museum-ship name 'HMS Belfast (1938)'; 'will be named' governs no past year."
+  },
+  {
+    "fixture": "high_speed_2.wikitext",
+    "sentenceSubstring": "existed on the Curzon Street site between 1838 and 1966",
+    "anchorYear": 1966,
+    "subShape": "range",
+    "stale": false,
+    "note": "Marker 'will' (will be retained). 1966 is the endpoint of a 'between 1838 and 1966' range describing a past station's existence, in a clause before the ';'; the marker's subject (the surviving building) is different. Classified range because the anchor sits inside an explicit range construct (also cross-clause)."
+  },
+  {
+    "fixture": "europa_clipper.wikitext",
+    "sentenceSubstring": "orbited Jupiter from 1995 to 2003",
+    "anchorYear": 1995,
+    "subShape": "range",
+    "stale": false,
+    "note": "Marker 'will' (Europa Clipper will investigate). 1995 is the start of a 'from 1995 to 2003' range describing the Galileo spacecraft's past orbit in a relative aside ('found by the Galileo spacecraft which orbited...'); it belongs to a different subject's past, not Clipper's future."
+  },
+  {
+    "fixture": "panzerhaubitze_2000.wikitext",
+    "sentenceSubstring": "The MLU variant is the PzH 2000 A5",
+    "anchorYear": 2000,
+    "subShape": "named-entity",
+    "stale": false,
+    "note": "Marker 'is expected to' (expected to be ready by 2028). The only past year is 2000, which is part of the product name 'PzH 2000'; the marker's actual target (2028) is future and gated out. 2000 is a pure named-entity number."
+  },
+  {
+    "fixture": "second_avenue_subway.wikitext",
+    "sentenceSubstring": "As part of the 2004 Final Environmental Impact Study",
+    "anchorYear": 2004,
+    "subShape": "noun-modifier",
+    "stale": false,
+    "note": "Marker 'planned to' (planned to have a frequency of 14 trains per hour). 2004 is an attributive label on a document name ('the 2004 Final Environmental Impact Study'); the marker governs a frequency, not a year."
+  },
+  {
+    "fixture": "iter.wikitext",
+    "sentenceSubstring": "of €9.6 billion from the 2009 estimate",
+    "anchorYear": 2009,
+    "subShape": "noun-modifier",
+    "stale": false,
+    "note": "Marker 'is expected to' (expected to be over €22 billion). 2009 is a label on 'estimate' ('the 2009 estimate'); the expectation is about a cost figure, not a date. Earliest of several label years (2009, 2010, 2016)."
+  },
+  {
+    "fixture": "columbia-class_submarine.wikitext",
+    "sentenceSubstring": "will be an estimated $6.2 billion (fiscal 2010 dollars)",
+    "anchorYear": 2010,
+    "subShape": "parenthetical",
+    "stale": false,
+    "note": "Marker 'will' (will be an estimated $6.2 billion). 2010 sits in a parenthetical price-base note '(fiscal 2010 dollars)'; the marker governs a cost, not a year."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "A 2010 report by the Pentagon's director of operational test",
+    "anchorYear": 2010,
+    "subShape": "noun-modifier",
+    "stale": false,
+    "note": "Marker 'expected to' (was expected to be survivable). 2010 is a label on 'report' ('A 2010 report'); the expectation is a quoted survivability assessment with no target year."
+  },
+  {
+    "fixture": "vogtle_electric_generating_plant.wikitext",
+    "sentenceSubstring": "stemming from Japan's 2011 Fukushima nuclear disaster",
+    "anchorYear": 2011,
+    "subShape": "noun-modifier",
+    "stale": false,
+    "note": "Marker 'plans to' (plans to build and operate the two new reactors). 2011 is a label on the event name '2011 Fukushima nuclear disaster', deep in a 'citing ... stemming from' aside; the plans-to has no target year in the sentence."
+  },
+  {
+    "fixture": "hinkley_point_c.wikitext",
+    "sentenceSubstring": "£92.50/MWh (in 2012 prices)",
+    "anchorYear": 2012,
+    "subShape": "parenthetical",
+    "stale": false,
+    "note": "Marker 'will' (will be adjusted). 2012 sits in a parenthetical price-base note '(in 2012 prices)'; the marker has no target year (the later 2025 figure is also an in-parens price label, so this is a pure FP, not a mixed case)."
+  },
+  {
+    "fixture": "tesla_semi.wikitext",
+    "sentenceSubstring": "In 2017, Tesla projected that the price of production versions",
+    "anchorYear": 2017,
+    "subShape": "cross-clause-aside",
+    "stale": false,
+    "note": "Marker 'expected to' (was expected to have a range of 997 km) lives in the first sentence; 2017 is the dateline of a separate following sentence ('In 2017, Tesla projected...'), across a sentence-boundary clause break. The marker's claim has no year and is not stale."
+  },
+  {
+    "fixture": "spacex_starship.wikitext",
+    "sentenceSubstring": "The National Academies of Science's 2020 survey recommended",
+    "anchorYear": 2020,
+    "subShape": "noun-modifier",
+    "stale": false,
+    "note": "Marker 'will' (the observatory will search for signs of life). 2020 is a label on 'survey' ('2020 survey') in the clause before the ';'; the marker's subject and clause are separate. Classified noun-modifier (also cross-clause)."
+  },
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "the 2021 update of the International Roadmap for Devices and Systems",
+    "anchorYear": 2021,
+    "subShape": "noun-modifier",
+    "stale": false,
+    "note": "Marker 'is expected to' (expected to have a contacted gate pitch of 48 nanometers). 2021 is a document-version label ('the 2021 update of the IRDS'); the expectation is about a spec, not a date. The design §1 worked example for noun-modifier."
+  },
+  {
+    "fixture": "high_speed_2.wikitext",
+    "sentenceSubstring": "the 2021 Chesham and Amersham by-election",
+    "anchorYear": 2021,
+    "subShape": "noun-modifier",
+    "stale": false,
+    "note": "Marker 'planned to' (the railway line that was planned to go through the constituency). 2021 is a label on an election name ('the 2021 Chesham and Amersham by-election'); the marker governs a routing, not a year."
+  },
+  {
+    "fixture": "optimus_robot.wikitext",
+    "sentenceSubstring": "the presentation made during the 2021 AI Day event",
+    "anchorYear": 2021,
+    "subShape": "noun-modifier",
+    "stale": false,
+    "note": "Marker 'will' (Optimus will be 'controlled by...' and have a carrying capacity of 45 lbs). 2021 is a label on an event name ('the 2021 AI Day event') in a leading 'According to the presentation made during...' aside; the marker governs no year."
+  },
+  {
+    "fixture": "brightline_west.wikitext",
+    "sentenceSubstring": "(estimated at $12 billion as of April 2024",
+    "anchorYear": 2024,
+    "subShape": "parenthetical",
+    "stale": false,
+    "note": "Marker 'is expected to' (expected to be privately financed). 2024 sits in a parenthetical cost-estimate note '(estimated at $12 billion as of April 2024)'; the marker governs financing, not a date."
+  },
+  {
+    "fixture": "type_31_frigate.wikitext",
+    "sentenceSubstring": "At the MSPO 2024 defense expo",
+    "anchorYear": 2024,
+    "subShape": "named-entity",
+    "stale": false,
+    "note": "Marker 'will' (the frigates will be fitted with NSM missiles). 2024 is part of the expo name 'MSPO 2024'; the marker governs no year."
+  },
+  {
+    "fixture": "blackwell_microarchitecture.wikitext",
+    "sentenceSubstring": "During the company's CES 2025 keynote",
+    "anchorYear": 2025,
+    "subShape": "named-entity",
+    "stale": false,
+    "note": "Marker 'will' (the foundation models will include models from...). 2025 is part of the conference name 'CES 2025'; the marker governs no year. The design §1 worked example for named-entity."
+  },
+  {
+    "fixture": "gateway_program_northeast_corridor.wikitext",
+    "sentenceSubstring": "Though tunneling had still not begun by mid-2025",
+    "anchorYear": 2025,
+    "subShape": "cross-clause-aside",
+    "stale": false,
+    "note": "Marker 'scheduled to' (work was scheduled to begin in mid-2026). 2025 sits in a leading subordinate clause describing current status ('Though tunneling had still not begun by mid-2025'), separated by commas from the marker; the marker's real target (mid-2026) is future and gated out. Not the protected sentence-initial In/By/During/As of/On dateline form (design §2.2)."
+  },
+  {
+    "fixture": "high_speed_2.wikitext",
+    "sentenceSubstring": "is expected to cost between £87.7 billion and £102.7 billion (in 2025 prices)",
+    "anchorYear": 2025,
+    "subShape": "parenthetical",
+    "stale": false,
+    "note": "Marker 'is expected to' (expected to cost ...). 2025 sits in a parenthetical price-base note '(in 2025 prices)'; the marker governs a cost, not a date. (The leading 'As of May 2026' frame year equals asOfYear, so it is not a past year.)"
+  },
+  {
+    "fixture": "high_speed_2.wikitext",
+    "sentenceSubstring": "announced that HS2 was expected to cost between £87.7 billion and £102.7 billion",
+    "anchorYear": 2025,
+    "subShape": "parenthetical",
+    "stale": false,
+    "note": "Marker 'expected to' (was expected to cost ...). 2025 sits in a parenthetical price-base note '(in 2025 prices)'; the marker governs a cost, not a date. (The leading 'In May 2026, ... announced' frame year is 2026, not the anchor 2025, so neither the dateline nor the attribution rule fires.)"
+  },
+  {
+    "fixture": "nancy_grace_roman_space_telescope.wikitext",
+    "sentenceSubstring": "During the 2025 federal government shutdown",
+    "anchorYear": 2025,
+    "subShape": "noun-modifier",
+    "stale": false,
+    "note": "Marker 'expected to' (not expected to impact missions). 2025 is a label on an event ('the 2025 federal government shutdown') in a leading aside; the marker governs no year. ('During the 2025...' is not the protected dateline form because 'the' breaks the date-token run.)"
+  }
+]
