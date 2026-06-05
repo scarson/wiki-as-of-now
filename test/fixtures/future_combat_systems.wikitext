@@ -1,0 +1,117 @@
+{{Short description|Modernization program of United States Army}}
+{{Use American English|date=May 2026}}
+[[File:Future combat Systemss logo.jpg|thumb|right|300px|Future Combat Systems logo]]
+'''Future Combat Systems''' ('''FCS''') was the [[United States Army]]'s principal modernization program from 2003 to early 2009.<ref name="at_20080121">{{cite news| title = A Complement to FCS| url = http://www.armytimes.com/community/opinion/army_backtalk_modernization_080121/ | date = 2008-01-21 | author = Colonel John Buckley | publisher = Army Times}}</ref> Formally launched in 2003, FCS was envisioned to create new brigades equipped with new manned and unmanned vehicles linked by an unprecedented fast and flexible battlefield network. The U.S. Army claimed it was their "most ambitious and far-reaching modernization" program since World War II.<ref>{{cite news|title=DEFENSE SECRETARY GATES OBSERVES ARMY FUTURE COMBAT SYSTEMS PROGRESS|url=https://www.highbeam.com/doc/1P3-1478644341.html|archive-url=https://web.archive.org/web/20170525180514/https://www.highbeam.com/doc/1P3-1478644341.html|url-status=dead|archive-date=25 May 2017|access-date=12 May 2017|work=US Fed News Service|date=9 May 2008}}</ref> Between 1995 and 2009, $32 billion was expended on programs such as this, "with little to show for it".<ref>[https://www.washingtonpost.com/news/checkpoint/wp/2018/07/12/army-to-unveil-details-about-new-futures-command-in-biggest-reorganization-in-45-years/ Dan Lamothe ''Washington Post'' (2018-07-12) Army to unveil details about new Futures Command in biggest reorganization in 45 years]</ref>
+
+One of the programs that came out of the $32 billion expenditure was the concept of tracking friendly ("blue") forces on the field via a GPS-enabled computer system known as [[Blue Force Tracking]] (BFT). The concept of BFT was implemented by the US Army through the [[Force XXI Battle Command Brigade and Below]] (FBCB2) platform. The FBCB2 system in particular and the BFT system in general have won numerous awards and accolades, including: recognition in 2001 as one of the five best-managed software programs in the entire U.S. Government,<ref>Crosstalk, the Journal of Defense Software Engineering, January 2002</ref> the 2003 Institute for Defense and Government Advancement's award for most innovative U.S. Government program,<ref>Factiva, 1-23-2004</ref> the 2003 Federal Computer Week Monticello Award (given in recognition of an information system that has a direct, meaningful impact on human lives), and the Battlespace Information 2005 "Best Program in Support of Coalition Operations".<ref>{{cite web|url=http://mae.pennnet.com/display_article/230216/32/ARTCL/none/none/1/In-brief/|title=Northrop Grumman system wins coalition award|date=1 June 2005}}{{Dead link|date=October 2023 |bot=InternetArchiveBot |fix-attempted=yes }}</ref>
+The proof-of-concept success of FBCB2, its extensive testing during Operation [[Foal Eagle]] (FE 99, FE 00), its certification at the [[Fort Irwin National Training Center]], and its proven field usage in live combat operations spanning over a decade in Iraq and Afghanistan have led to BFT adoption by many users including the [[United States Marine Corps]], the [[United States Air Force]], the [[United States Navy]] ground-based expeditionary forces (e.g., [[United States Naval Special Warfare Command]] (NSWC) and [[Navy Expeditionary Combat Command]] (NECC) units), the [[United Kingdom]], and German Soldier System IdZ-ES+.
+
+In April and May 2009, Pentagon and army officials announced that the FCS vehicle-development effort would be canceled. The rest of the FCS effort would be swept into a new, pan-army program called the [[BCT Modernization|Army Brigade Combat Team Modernization Program]].<ref>{{cite web | url=https://www.military.com/dodbuzz/2009/06/23/its-official-fcs-cancelled | title=It's Official: FCS Cancelled | date=28 November 2017 }}</ref>
+
+==Development history==
+[[File:FCS-timeline-large.jpg|thumb|right|FCS timeline (click to view)]]
+
+The early joint DARPA–Army Future Combat Systems program to replace the [[M1 Abrams]] [[main battle tank]] and [[Bradley Fighting Vehicle]]s envisioned robotic vehicles weighing under six tons each and controlled remotely by manned command and control vehicles.<ref name="DARPA initial eight">{{cite news|title=DARPA Picks Eight Teams For Unmanned Ground Combat Vehicle Prototypes|url=https://www.highbeam.com/doc/1G1-70392893.html|archive-url=https://web.archive.org/web/20181118143251/https://www.highbeam.com/doc/1G1-70392893.html|url-status=dead|archive-date=18 November 2018|access-date=14 May 2017|work=Defense Daily|date=9 February 2001}}</ref>
+
+In February 2001 [[DARPA]] awarded $5.5 million to eight teams to develop unmanned ground combat vehicles (UGCV). Teams led by [[General Dynamics Land Systems]], [[Carnegie Mellon University]], and [[Omnitech Robotics]] were awarded nearly $1 million each to develop UGCVs prototypes. Five other teams were to develop UGCVs payloads.<ref name="DARPA initial eight"/>
+
+In May 2003 the DoD commenced the development and demonstration phase in a $14.92 billion contract.<ref name="PHII">{{cite news|title=PENTAGON TO FUND NEXT PHASE OF FUTURE COMBAT SYSTEMS|url=https://www.highbeam.com/doc/1P2-332799.html|archive-url=https://web.archive.org/web/20181118154123/https://www.highbeam.com/doc/1P2-332799.html|url-status=dead|archive-date=18 November 2018|access-date=14 May 2017|work=Advanced Materials & Composites News|date=8 March 2002}}</ref>
+
+[[File:Future Combat Systems Manned Ground Vehicles.png|thumb|right|[[FCS Manned Ground Vehicles]] family and common chassis]]
+As planned, FCS included the network; unattended ground sensors (UGS); unmanned aerial vehicles (UAVs); unmanned ground vehicles; and the eight [[FCS Manned Ground Vehicles|manned ground vehicles]].
+
+The [[Boeing]] Company and [[Science Applications International Corporation]] (SAIC) worked together as the lead systems integrators, coordinating more than 550 contractors and subcontractors in 41 states.<ref name="wp_20071207" />
+
+A [[spiral model]] was planned for FCS development and upgrades. As of 2004, FCS was in the System Development and Demonstration (SDD) phase, which included four two-year spirals. Spiral 1 was to begin fielding in Fiscal Year 2008 and consist of prototypes for use and evaluation. Following successful evaluation, production and fielding of Spiral 2 would have commenced in 2010. The evaluation was conducted by the Army Evaluation Task Force (AETF), previously known as Evaluation Brigade Combat Team (EBCT), stationed in [[Fort Bliss]]. As of December 2007, AETF consisted of 1,000 soldiers from the [[1st Armored Division (United States)|1st Armored Division]].<ref name="wp_20071207">{{cite news |title=The Army's $200 Billion Makeover |url=https://www.washingtonpost.com/wp-dyn/content/story/2007/12/06/ST2007120602927.html |date=2007-12-07 |author=Alec Klein |newspaper=Washington Post}}</ref>
+
+In August 2005, the program met 100% of the criteria in its most important milestone, System of Systems Functional Review.<ref>{{cite web |url=http://www.boeing.com/defense-space/ic/fcs/bia/news/2005/q3/nr_050815m.html |title=Future Combat Systems (FCS) Successfully Completes Major Program Milestone |url-status=dead |archive-url=https://web.archive.org/web/20060104083335/http://www.boeing.com/defense-space/ic/fcs/bia/news/2005/q3/nr_050815m.html |archive-date=2006-01-04 }} Boeing, August 15, 2005.</ref> On October 5, 2005, Pentagon team recommended "further delaying the Army's Future Combat Systems program" in light of the costs of the [[Iraq War]], [[Hurricane Katrina]], and expected declines in future budgets.<ref>{{cite web |url=http://wireservice.wired.com/wired/story.asp?section=Breaking&storyId=1103567&tw=wn_wire_story |title=Wired News |access-date=2005-10-20 |url-status=dead |archive-url=https://web.archive.org/web/20051223155351/http://wireservice.wired.com/wired/story.asp?section=Breaking&storyId=1103567&tw=wn_wire_story |archive-date=2005-12-23 }} Wired News, October 17, 2005.</ref>
+
+The Pentagon announced plans in January 2006 to cut $236 million over five years from the $25 billion FCS 2007–2011 budget. The entire program was expected to cost $340 billion.<ref>[http://www.seattlepi.com/business/256896_boeingftc25.html "Pentagon takes minimal cut out of Boeing program"]. ''Seattle Post Intelligencer'', January 25, 2006.</ref> As of late December 2006, funding was scaled back for critical elements of the overall FCS battlespace, and the most advanced elements were deferred.
+
+Decreases in the Army’s funding and the high cost of developing the intelligent munition system caused the DoD to delete the project from the FCS contract, and the [[XM1100 Scorpion]] was established as a stand-alone program in January 2007.<ref name=":0">{{Cite report|url=https://apps.dtic.mil/dtic/tr/fulltext/u2/a582405.pdf|archive-url=https://web.archive.org/web/20200325115822/https://apps.dtic.mil/dtic/tr/fulltext/u2/a582405.pdf|url-status=live|archive-date=March 25, 2020|title=Lessons from the Army's Future Combat Systems Program|last1=Pernin|first1=Christopher|last2=Axelband|first2=Elliot|date=2012|publisher=RAND Corporation|last3=Drezner|first3=Jeffrey|last4=Dille|first4=Brian|last5=Gordon IV|first5=John|last6=Held|first6=Bruce|last7=McMahon|first7=Scott|last8=Perry|first8=Walter|last9=Rizzi|first9=Christopher|last11=Wilson|first10=Akhil|first11=Peter|last12=Sollinger|last10=Shah|via=Defense Technical Information Center|first12=Sollinger}}</ref><ref name=":1">{{cite report|url=https://apps.dtic.mil/dtic/tr/fulltext/u2/a540208.pdf|archive-url=https://web.archive.org/web/20200623084255/https://apps.dtic.mil/dtic/tr/fulltext/u2/a540208.pdf|url-status=live|archive-date=June 23, 2020|title=Defense Acquisitions: Assessments of Selected Weapon Programs|date=January 2004|publisher=United States Government Accountability Office|id=GAO-11-233SP|via=Defense Technical Information Center}}</ref>
+
+The Class II and Class III UAVs were canceled in May 2007.<ref name="Kate Brannen cancel">{{cite web|title=Pentagon ratifies Army modernization decisions|url=http://www.armytimes.com/news/2011/02/army-decisions-on-modernization-cuts-020411w/|publisher=Gannett Government Media Corporation|accessdate=5 February 2011|author=Kate Brannen|date=4 February 2011}}</ref>
+
+In June 2007, the Government Accountability Office (GAO) criticized the "close working relationship" between the Army and the lead system integrators. The GAO recommended the Office of the Secretary of Defense reassert its oversight authority and prepare an alternative should FCS be canceled.<ref name="reassert">{{cite news |last1=Malenic |first1=Marina |title=Vol. 19, No. 23 |url=https://www.jstor.org/stable/24824516 |access-date=17 February 2022 |work=Inside the Army |issue=23 |publisher=Inside Washington Publishers |date=11 June 2007 |volume=19 |page=2|jstor=24824516 }}</ref> The Department of Defense agreed with the latter suggestion, to which the Army responded by calling the GAO report "rooted in the past, not the present".<ref name="rooted">{{cite news |last1=Malenic |first1=Marina |title='It Is Rooted in the Past, Not the Present': Army Faults GAO Study Critical of Future Combat Systems Acquisition |url=https://www.jstor.org/stable/24824646 |access-date=17 February 2022 |work=Inside the Army |issue=15 |publisher=Inside Washington Publishers |date=16 April 2007 |volume=19 |pages=1, 8|jstor=24824646 }}</ref>
+
+In 2008, the program had completed about one-third of its development, which was planned to run through 2030. Technical field tests began in 2008. The first combat brigade equipped with FCS had been expected to deploy around 2015, followed by full production to equip up to 15 brigades by 2030,<ref>[https://www.washingtonpost.com/wp-dyn/content/article/2007/12/06/AR2007120602177.html "Timeline: Army Modernization and Future Combat Systems"], ''Washington Post'', December 6, 2007</ref> but the program had not met the initial plan of field testing an actual FCS-equipped combat unit by 2008.<ref>Department of Defense authorization for appropriations for fiscal year 2004: hearings before the Committee on Armed Services, United States Senate, One Hundred Eighth Congress, first session, on S. 1050, to authorize appropriations for fiscal year 2004 for military activities of the Department of Defense, for military construction, and for defense activities of the Department of Energy, to prescribe personnel strengths for such fiscal year for the armed forces, and for other purposes [https://archive.org/stream/departmentofdefe042004unit/departmentofdefe042004unit_djvu.txt]</ref>
+
+On April 6, 2009, President [[Barack Obama]]'s Secretary of Defense, [[Robert Gates]] announced plans to cut FCS spending as part of a shift toward spending more on counter-terrorism and less to prepare for conventional warfare against large states like China and Russia.<ref>[https://www.nytimes.com/2009/04/07/us/politics/07defense.html?_r=1&hp "Military Budget Reflects a Shift in U.S. Strategy"]. ''New York Times'', April 7, 2009. Retrieved on April 7, 2009.</ref> This included, but was not limited to, canceling the series of Manned Ground Vehicles.<ref>{{cite news |first=Gina |last=Cavallaro |title=Panel to discuss new ground combat vehicle |url=http://www.armytimes.com/news/2009/06/army_ground_combat_vehicle_061109w/ |work=Army Times |date=June 11, 2009 |access-date=June 14, 2009}}</ref>
+
+In May 2009, the proposed DoD budget for fiscal year 2010 had minimal funding for Manned Ground Vehicles research.<ref>McLeary, Paul. [http://www.aviationweek.com/aw/generic/story.jsp?id=news/GROUND050809.xml&headline=U.S.%20Army%20Ground%20Vehicles%20Up%20and%20Down&channel=defense "U.S. Army Ground Vehicles Up and Down"]{{Dead link|date=December 2019 |bot=InternetArchiveBot |fix-attempted=yes }}. ''Aviation Week'', 8 May 2009.</ref> The Army planned to restart from the beginning on manned ground vehicles.<ref>Military Deputy for Budget Office of the Assistant Secretary of the Army (Financial Mgt and Comptroller) Lt. Gen. Edgar Stanton and Acting Director, Army Budget Office William Campbell May 07, 2009, [https://web.archive.org/web/20090513175728/http://www.defenselink.mil/transcripts/transcript.aspx?transcriptid=4419 News Transcript], U.S. Department of Defense, Office of the Assistant Secretary of Defense (Public Affairs).</ref> The service was to restructure FCS so more Army units will be supported.<ref name="defensenews">Osborn, Kris. [http://www.defensenews.com/story.php?i=4094484 "FCS Is Dead; Programs Live On"]{{dead link|date=August 2021|bot=medic}}{{cbignore|bot=medic}}. ''Defense News''. 18 May 2009.</ref><ref>Chavanne, Bettina H. and Michael Bruno. [http://www.aviationweek.com/aw/generic/story_channel.jsp?channel=defense&id=news/FCS051909.xml "U.S. Army Continues to Face Pressure on FCS"] {{Webarchive|url=https://web.archive.org/web/20231204070801/https://aviationweek.com/aw/generic/story_channel.jsp?channel=defense&id=news/FCS051909.xml |date=2023-12-04 }}. ''Aviation Week'', 19 May 2009.</ref>
+
+Boeing passed a preliminary design review of all 14 subsystems in May 2009.<ref>{{cite news |last1=Censor |first1=Marjorie |title=Boeing Says FCS Program Successful in Preliminary Design Review |url=https://www.jstor.org/stable/24828006 |access-date=11 February 2024 |work=Inside the Army |volume=21|issue=20 |date=25 May 2009 |pages=9|jstor=24828006 }}</ref>
+
+[[File:Future Combat System Background and Issues for Congress.pdf|thumb|Future Combat Systems Background and Issues for Congress report following cancelation]]
+The DoD released a memorandum on 23 June 2009 that canceled the Future Combat Systems program and replaced it with separate programs under the Army [[BCT Modernization|Brigade Combat Team Modernization]] umbrella to meet the Army's plans.<ref>[https://web.archive.org/web/20090629042622/http://www.defenselink.mil/releases/release.aspx?releaseid=12763 "Future Combat System (FCS) Prograto Army Brigade Combat Team Modernization"], US DoD, 23 June 2009.</ref>
+
+==Subsystems==
+
+===Active Subsystems===
+The following subsystems were swept into the [[BCT Modernization|Brigade Combat Team Modernization Program]]:
+* [[FCS Network]]
+* [[Future Force Warrior]]
+* Vehicles
+:*Future Combat Systems Manned Ground Vehicles (canceled along with FCS superseded with the [[Ground Combat Vehicle]] program)
+::* XM1201 reconnaissance and surveillance vehicle (RSV)
+::* XM1202 mounted combat system (MCS)
+::* [[XM1203 non-line-of-sight cannon]] (NLOS-C)
+::* XM1204 non-line-of-sight mortar (NLOS-M)
+::* XM1205 recovery and maintenance vehicle (FRMV)
+::* XM1206 infantry carrier vehicle (ICV)
+::* XM1207 medical vehicle – evacuation (MV-E)
+::* XM1208 medical vehicle – treatment (MV-T)
+::* XM1209 command and control vehicle (C2V)
+
+:* [[Multifunctional utility/logistics and equipment vehicle]] (swept into BCT modernization and subsequently canceled)
+
+::* [[XM1219 armed robotic vehicle|XM1219 ARV]]
+::* XM1218 countermine
+::* XM1217 transport
+
+:* [[XM1216 small unmanned ground vehicle]] (SUGV) (swept into BCT Modernization)
+:* [[XM156 Class I UAV|XM156 Class I Unmanned Aerial Vehicle]] (swept into BCT Modernization and subsequently canceled)
+
+:*Class II UAVs for Companies (canceled early on)
+:*Class III UAVs for Battalions (canceled early on)
+:* [[XM157 Class IV UAV|XM157 Class IV Unmanned Aerial Vehicle]] (swept into BCT Modernization and subsequently canceled)
+
+* Devices
+
+:* XM1100: [[Intelligent Munitions System]]
+:* [[XM501 Non-Line-of-Sight Launch System]] (swept into BCT Modernization and subsequently canceled)
+:* AN/PSW-2 Common System Controller (CC)
+:* [[Unattended Ground Sensors]] (UGS) (swept into BCT Modernization and subsequently canceled)
+
+===Operating system===
+{{main|FCS Network}}
+FCS was networked via an advanced architecture, called System of Systems Common Operating Environment (SOSCOE)<ref>[http://www.boeing.com/ids/soscoe/index.html SOSCOE, boeing.com] {{webarchive|url=https://web.archive.org/web/20081021043344/http://www.boeing.com/ids/soscoe/index.html |date=2008-10-21 }}</ref> that would enable enhanced joint connectivity and [[situational awareness]] (see [[Network-centric warfare]]). SOSCOE targets [[Linux|x86-Linux]], [[VxWorks]], and [[LynxOS]]. The FCS (BCT) network consists of five layers that when combined would provide seamless delivery of data: The Standards, Transport, Services, Applications, and Sensors and Platforms Layers. The FCS (BCT) network possesses the adaptability and management functionality required to maintain pertinent services, while the FCS (BCT) fights on a rapidly shifting battlespace giving them the advantage to take initiative.  FCS would network existing systems, systems already under development, and systems to be developed.
+[[File:XM1203 Non Line of Sight-Cannon (NLOS-C).jpg|thumb|right|XM1203 NLOS-C prototype in 2009]]
+
+==See also==
+* [[Future Combat Systems Manned Ground Vehicles]]
+* [[Future Force Unit of Action]]
+* [[List of U.S. military vehicles by model number]]
+* [[United States Army Simulation and Training Technology Center]]
+* [[ASM Program]] (Cancelled due to the end of the Cold War)
+
+==References==
+{{Reflist}}
+
+==External links==
+{{commons category|Future Combat Systems}}
+* [http://www.army.mil/fcs/ The Army's page on FCS, and the F2C2 software trainer/game] {{Webarchive|url=https://web.archive.org/web/20050420045821/http://www.army.mil/fcs/ |date=2005-04-20 }}
+* [https://web.archive.org/web/20080510084607/http://www.tacticalwarfightergear.com/tacticalgear/catalog/Army_Technology.php Tactical Warfighter Project Horizon Update (wrong link, November 21, 2011)]
+* [https://www.globalsecurity.org/military/systems/ground/fcs.htm GlobalSecurity.org FCS Project Overview]
+* {{usurped|1=[https://web.archive.org/web/20070811223149/http://www.defensetech.org/archives/cat_fcs_watch.html Defense Tech FCS Watch (404 file not found, on November 21, 2011)]}}
+
+{{Boeing}}
+{{FCS Subsystems}}
+{{US Army navbox}}
+
+[[Category:Proposed weapons of the United States]]
+[[Category:2003 establishments in the United States]]
+[[Category:2009 disestablishments in the United States]]
+[[Category:United States Army projects]]
+[[Category:BCT Modernization]]
+[[Category:Future warfare]]

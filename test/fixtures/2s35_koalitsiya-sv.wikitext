@@ -1,0 +1,105 @@
+{{Short description|Russian 152 mm self-propelled artillery}}
+{{More citations needed|date=April 2019}}
+{{Infobox weapon
+| is_artillery       = yes
+| is_vehicle         = yes
+| name               = 2S35 Koalitsiya-SV
+| image              = 9may2015Moscow-35 (cropped).jpg
+| image_size         = 300px
+| caption            = [[Russian Ground Forces|Russian Army]] 2S35 Koalitsiya-SV during the [[2015 Moscow Victory Day Parade]]
+| type               = [[Self-propelled gun]]
+| origin             = Russia
+| used_by            = [[Russian Ground Forces]]
+| service            = 2023–present
+| wars               = [[Russo-Ukrainian War]]<ref>{{Cite web |date=2023-12-22 |title=Russia deploys its new 152mm self-propelled gun to Ukraine |url=https://defence-blog.com/russia-deploys-its-new-152mm-self-propelled-gun-to-ukraine/ |access-date=2023-12-22 |archive-url=https://web.archive.org/web/20231222202934/https://defence-blog.com/russia-deploys-its-new-152mm-self-propelled-gun-to-ukraine/ |archive-date=22 December 2023 }}</ref>
+| designer           = [[Burevestnik Central Scientific Research Institute]]
+| manufacturer       = 
+| number             = 12+ (serial production ongoing)
+| unit_cost          = 
+| length             = 
+| width              = 
+| height             = 
+| weight             = 48<ref name=tvzvezda201505050755>{{cite news |url= http://tvzvezda.ru/news/forces/content/201505050755-zwqu.htm |work= [[Zvezda (TV channel)]] |script-title=ru:Огонь за горизонт: новейшая САУ "Коалиция-СВ" ставит рекорды по дальности стрельбы |language= ru |date= 5 May 2015 |access-date= 16 May 2015 |archive-url= https://web.archive.org/web/20150518064445/http://tvzvezda.ru/news/forces/content/201505050755-zwqu.htm |archive-date= 18 May 2015 |url-status= live }}</ref> up to 55<ref name=janes50896>{{cite news |url= http://www.janes.com/article/50896/new-russian-heavy-armour-breaks-cover |title= New Russian heavy armour breaks cover |first= Nicholas |last= de Larrinaga |work= IHS [[Jane's Defence Weekly]] |date= 22 April 2015 |access-date= 16 May 2015 |archive-url= https://web.archive.org/web/20160421031549/http://www.janes.com/article/50896/new-russian-heavy-armour-breaks-cover |archive-date= 21 April 2016 |url-status= live }}</ref><ref name=aif>{{cite web |url= http://www.aif.ru/dontknows/infographics/chto_predstavlyaet_soboy_sau_2s35_koaliciya-sv_infografika |website= Aif.ru |script-title=ru:Что представляет собой САУ 2С35 "Коалиция-СВ"? Инфографика |language= ru |first= Елена |last= Слободян |date= 9 May 2015 |access-date= 16 May 2015 |archive-url= https://web.archive.org/web/20150518074131/http://www.aif.ru/dontknows/infographics/chto_predstavlyaet_soboy_sau_2s35_koaliciya-sv_infografika |archive-date= 18 May 2015 |url-status= live }}</ref> tons
+| armour             = 
+| primary_armament   = 152.4&nbsp;mm or 155&nbsp;mm gun<ref name="mtc">{{Cite web|url=http://www.military-today.com/artillery/koalitsija_sv.htm|title=2S35 Koalitsiya-SV 152 mm Self-propelled howitzer|access-date=2 April 2019|archive-url=https://web.archive.org/web/20190402131303if_/http://www.military-today.com/artillery/koalitsija_sv.htm|archive-date=2 April 2019|url-status=usurped|quote=It has unmanned turret and is armed with a 152 mm gun. (...) For export customers the 2S35 Koalitsiya-SV can be fitted with a 155 mm gun which is compatible with standard NATO ammunition.}}</ref>
+| secondary_armament = [[12.7×108mm|12.7 × 108 mm]] remote controlled [[Kord machine gun]]<br>
+2 bundles of 902B Tucha smoke grenade launchers<ref name="janes2S35_2">{{Cite web |url=http://www.janes.com/article/51469/russia-s-armour-revolution |title=Russia's armour revolution |access-date=16 May 2015 |archive-url=https://web.archive.org/web/20150517063353/http://www.janes.com/article/51469/russia-s-armour-revolution |archive-date=17 May 2015 |url-status=dead |df=dmy-all }}</ref>
+| max_range          = 80 km (rocket-assisted round)
+| rate               = 16 rounds/min
+| engine             = Diesel
+| engine_power       = 1,000 hp
+| suspension         = 
+| transmission       = 
+| speed              = 
+| vehicle_range      = 
+| production_date    = 2015–present
+}}
+
+The '''2S35 Koalitsiya-SV''' ({{langx|ru|2С35 «Коалиция-СВ»|translation="Coalition-SV"}}) is a Russian [[self-propelled gun]] first seen in public (initially with its turret covered) in 2015 during rehearsals for the [[2015 Moscow Victory Day Parade|Moscow Victory Day Parade]]. The 2S35 is expected to supplement and eventually replace the [[2S19 Msta]] in the [[Russian Ground Forces]].<ref name=janes50896/>
+
+==Development==
+The 2S35 was originally designed as a variant of the [[2S19 Msta]], consisting of a 2S19 chassis with modified turret, fitted with an over-and-under dual autoloaded 152&nbsp;mm howitzer. Development of this variant was abandoned in 2010.<ref name=janes50896/>
+
+While the dual-gun design was unsuccessful and abandoned after about ten years, the name assigned to that dual-barrel system, Coalition (because it was combining two guns with two full barrels in one unit) was retained. Serial production and original delivery was set for 2016.<ref>{{cite web|url=https://tass.ru/armiya-i-opk/2092825|title=Разработчик: серийные поставки "Коалиции-СВ" начнутся в 2016 году|website=ТАСС|access-date=2 April 2019|archive-url=https://web.archive.org/web/20190402144856/https://tass.ru/armiya-i-opk/2092825|archive-date=2 April 2019|url-status=live}}</ref>
+
+In February 2018, twelve 2S35 were undergoing state trials. The defense ministry expected these to be complete by 2020 followed by a decision on serial production.<ref name="IHS">{{cite news |url=http://www.janes.com/article/78007/russia-s-koalitsiya-sv-sphs-undergoing-state-trials?from_rss=1 |title=Russia's Koalitsiya-SV SPHs undergoing state trials |first=Igor |last=Bozinovski |publisher=[[Jane's Information Group]] |date=February 19, 2018 |access-date=21 February 2018 |archive-url=https://web.archive.org/web/20180222045115/http://www.janes.com/article/78007/russia-s-koalitsiya-sv-sphs-undergoing-state-trials?from_rss=1 |archive-date=22 February 2018 |url-status=live }}</ref>
+
+In August 2021 the defense ministry reported it had signed a contract for serial production with UralTransMash, a subsidiary of [[UralVagonZavod]].<ref>{{Cite news|url=https://tass.com/defense/1329659 |website= [[tass.com]] |title = Russia's top brass inks deal on delivery of latest artillery guns to troops |date= 2021-08-24 |access-date= 2023-05-20}}</ref>
+
+In April 2023 the head of the Missile Forces and Artillery of the Armed Forces announced that the 2S35 was still undergoing state trials and that it had not yet been part of the [[Russian invasion of Ukraine]].<ref>{{cite news|url= https://www.globalsecurity.org/military/world/russia/coalition-sv.htm |website= [[GlobalSecurity.org]] |title= 2S35 Koalitsiya-SV Self-Propelled Howitzer |first= John |last=Pike |date=2023-05-01 |access-date= 2023-05-20}}</ref> State tests were completed on October 20, 2023, which allowed its mass production to be launched.<ref>{{Cite web |title=ЦАМТО / / Ростех завершил госиспытания самоходного артиллерийского орудия "Коалиция-СВ" |url=https://armstrade.org/includes/periodics/news/2023/1020/101075937/detail.shtml |access-date=2023-10-23 |website=armstrade.org}}</ref>
+
+At the end of 2023, first 2S35s were delivered to the army.<ref>{{Cite web |title=Российские войска получили новейшие САУ "Коалиция-СВ" |url=https://tass.ru/armiya-i-opk/19677215 |access-date=2024-01-06 |website=[[TASS]]}}</ref> According to [[Sergey Chemezov]], the first batch of SPGs that was delivered in late December was from the experimental batch.<ref>{{Cite web |date=2023-12-27 |title=Чемезов: Новейшая гаубица "Коалиция" вскоре появится в зоне СВО |url=https://rg.ru/2023/12/27/chemezov-novejshaia-gaubica-koaliciia-vskore-poiavitsia-v-zone-svo.html |access-date=2024-01-22 |website=Российская газета |language=ru}}</ref> Serial production is ongoing.<ref>{{Cite web |date=2024-01-05 |title=Ростех: Российская армия получила на вооружение новейшие САУ "Коалиция-СВ" |url=https://rg.ru/2024/01/05/rosteh-rossijskaia-armiia-poluchila-na-vooruzhenie-novejshie-sau-koaliciia-sv.html |access-date=2024-01-22 |website=Российская газета |language=ru}}</ref>
+
+==Design==
+The 2S35 has increased automation that reduced the number of crew members, to perhaps just two or three people<ref name=globalsecurity>{{cite web |url= http://www.globalsecurity.org/military/world/russia/coalition-sv.htm |website= Globalsecurity.org |title= 2S35 Koalitsiya-SV Self-Propelled Howitzer |access-date= 16 May 2015 |archive-url= https://web.archive.org/web/20150518094502/http://www.globalsecurity.org/military/world/russia/coalition-sv.htm |archive-date= 18 May 2015 |url-status= live }}</ref> located in an armored capsule<ref name=tvzvezda201505050755/><ref name=aif/> below the two front hull hatches.
+
+===Armament===
+Initial reports describe the main armament as a 2A88<ref>{{Cite web |url=http://www.armyrecognition.com/russia_russian_army_vehicles_system_artillery_uk/2s35_koalitsiya-sv_152mm_tracked_self-propelled_howitzer_technical_data_sheet_specifications_intelligence_pictures_video.html |title=2S35 Koalitsiya-SV 152mm self-propelled tracked howitzer |access-date=16 May 2015 |archive-url=https://web.archive.org/web/20150502025044/http://www.armyrecognition.com/russia_russian_army_vehicles_system_artillery_uk/2s35_koalitsiya-sv_152mm_tracked_self-propelled_howitzer_technical_data_sheet_specifications_intelligence_pictures_video.html |archive-date=2 May 2015 |url-status=dead |df=dmy-all }}</ref> 152&nbsp;mm gun with a range of up to 70<ref>{{Cite web |title=2S35 Koalitsiya-SV Self-Propelled Howitzer |url=https://www.globalsecurity.org/military/world/russia/coalition-sv.htm |access-date=2025-10-10 |website=www.globalsecurity.org}}</ref><ref>{{Cite web |title=2S35 Koalitsiya-SV 152mm Self-Propelled Howitzer, Russia |url=https://www.army-technology.com/projects/2s35-koalitsiya-sv-152mm-self-propelled-howitzer/ |access-date=2025-10-10 |website=Army Technology |language=en-US}}</ref><ref name="globalsecurity" /><ref>{{Cite web |title=Armata: The Russian Super Tank Platform the U.S. Army Fears (If They Get Built) - 19FortyFive |url=https://www.19fortyfive.com/2021/06/armata-the-russian-super-tank-platform-the-u-s-army-fears-if-they-get-built/ |archive-url=https://web.archive.org/web/20220605071952/https://www.19fortyfive.com/2021/06/armata-the-russian-super-tank-platform-the-u-s-army-fears-if-they-get-built/ |archive-date=2022-06-05 |access-date=2025-10-10 |website=www.19fortyfive.com |language=en-US}}</ref> to 80<ref>{{cite web|url=https://www.militarynews.ru/story.asp?rid=1&nid=499014&lang=RU|title=Новый артиллерийский комплекс "Коалиция-СВ" обрушит на противника "шквал" на дальности около 80 км -|website=Militarynews.ru|access-date=2 April 2019|archive-url=https://web.archive.org/web/20190402144856/https://www.militarynews.ru/story.asp?rid=1&nid=499014&lang=RU|archive-date=2 April 2019|url-status=live}}</ref><ref>{{Cite web |title=2S35 Koalitsiya-SV Russian 152mm Self-Propelled Howitzer (SPH) |url=https://odin.tradoc.army.mil/WEG/Asset/2S35_Koalitsiya-SV_Russian_152mm_Self-Propelled_Howitzer_(SPH) |access-date=2025-10-10 |website=odin.tradoc.army.mil}}</ref> kilometers using precision-guided rounds and up to 40&nbsp;km with standard rounds that are currently used on [[Msta-S]].<ref name="janes2S35_2"/><ref name=globalsecurity/> The claimed average rate of fire is around 16 rounds per minute<ref>{{cite web|url=https://rg.ru/2015/05/18/sau-site-anons.html|title=Скорострельность САУ "Коалиция" увеличили в полтора раза|website=Российская газета|date=18 May 2015 |access-date=2 April 2019|archive-url=https://web.archive.org/web/20190402153705/https://rg.ru/2015/05/18/sau-site-anons.html|archive-date=2 April 2019|url-status=live}}</ref> (15+)<ref>{{cite web|url=http://bastion-karpenko.ru/koalicia/|title=152-мм самоходная артиллерийская установка С2С35 "Коалиция-СВ"|website=Bastion-karpenko.ru|access-date=2 April 2019|archive-url=https://web.archive.org/web/20150528050245/http://bastion-karpenko.ru/koalicia/|archive-date=28 May 2015|url-status=live}}</ref> 2S35's rate of fire was improved due to the new pneumatic loader.<ref name="janes2S35_2" /> Estimated ammunition load is around 60-70 rounds<ref name="mtc"/> and using a special loader vehicle the recharge time for full ammunition load is 15 minutes.<ref>{{cite web|url=https://tvzvezda.ru/news/forces/content/201505050755-zwqu.htm|title=Огонь за горизонт: новейшая САУ "Коалиция-СВ" ставит рекорды по дальности стрельбы|first=Редакция|last=tvzvezda.ru|website=Телеканал «Звезда»|date=5 May 2015|access-date=2 April 2019|archive-url=https://web.archive.org/web/20190402152136/https://tvzvezda.ru/news/forces/content/201505050755-zwqu.htm|archive-date=2 April 2019|url-status=live}}</ref><ref>{{Cite web |url=http://www.vestnik-rm.ru/news-4-7227.htm |title=Новейшая отечественная самоходка "Коалиция СВ" обзавелась надежным "другом" |access-date=5 February 2016 |archive-url=https://web.archive.org/web/20160205220055/http://www.vestnik-rm.ru/news-4-7227.htm |archive-date=5 February 2016 |url-status=dead |df=dmy-all }}</ref><ref name="rg07">{{cite web|url=https://rg.ru/2015/05/07/koalitsiya-site-anons.html|title=САУ "Коалиция-СВ" установила рекорд дальности стрельбы|website=Российская газета|date=7 May 2015 |access-date=2 April 2019|archive-url=https://web.archive.org/web/20190402162713/https://rg.ru/2015/05/07/koalitsiya-site-anons.html|archive-date=2 April 2019|url-status=live}}</ref> The 2S35 will feature a modular ammunition charge system, which allows changing the amount of propellant used in firing of each individual shell.<ref name="janes2S35_2" /> As of 2016 a new precision guided munition was being developed, ensuring accuracy at long distances with deployable rudders and GLONASS navigation.<ref>{{Cite news |date=2016-04-24 |title=Для гаубицы "Коалиция-СВ" создали снаряд со спутниковым наведением |url=https://rg.ru/2016/04/24/dlia-gaubicy-koaliciia-sv-sozdali-snariad-so-sputnikovym-navedeniem.html |archive-url=https://web.archive.org/web/20160919231244/https://rg.ru/2016/04/24/dlia-gaubicy-koaliciia-sv-sozdali-snariad-so-sputnikovym-navedeniem.html |archive-date=2016-09-19 |access-date=2025-10-10 |work=Российская газета}}</ref>
+
+The secondary armament equipped on 2S35 is a [[12.7×108mm]] [[Kord machine gun|ZiD Kord]] [[remote weapon station]].<ref name="janes2S35_2" />
+
+===Unified command-and-control===
+The 2S35 is not a classic self-propelled gun, but rather a highly automated system. The 2S35 has a unified command-and-control system with which all actions are displayed. The system can automatically select the appropriate shell type for a task and the amount of charge required.<ref name="janes2S35_2" /><ref name="rg07" />
+
+The turret is fully digital and can be controlled remotely through the unified command-and-control system. In the future, the turret may be placed on the chassis of the [[T-14 Armata]].<ref>{{Cite web|url=https://www.youtube.com/watch?v=VH9yXTSMZ8c|archive-url=https://web.archive.org/web/20151228161856/https://www.youtube.com/watch?v=VH9yXTSMZ8c|url-status=dead|title="Коалиция": богиня войны. Военная приемка - Zvezda|archive-date=28 December 2015|website=www.youtube.com}}</ref>
+
+===Mobility===
+The 2S35 was initially reported as being based on the [[Armata Universal Combat Platform]],<ref name=globalsecurity/> which in the case of the T-14 Armata and [[T-15 Armata|T-15]] has seven road wheels. However, the 2S35s on display during the 2015 Moscow Victory Day Parade and its rehearsals were not built on the Armata platform but rather on a six-wheeled platform that appeared to be a [[T-90]] derived chassis. Later production variants are expected to be based on the unified Armata chassis.<ref name=janes50896/><ref>{{cite web |url= http://vitalykuzmin.net/?q=node/601 |website= Vitalykuzmin.net |first= Vitaly V. |last= Kuzmin |title= Victory Day Parade rehearsal 22.04.2015 in Alabino - Part 2 |date= 27 April 2015 |access-date= 28 April 2015 |archive-url= https://web.archive.org/web/20150429154606/http://vitalykuzmin.net/?q=node%2F601 |archive-date= 29 April 2015 |url-status= live }}</ref>
+
+== Combat Use ==
+According to Fedor Gromov, one of Russian military bloggers, in the summer of 2022 immediately after the [[Battle of Lysychansk]] he saw Koalitsiya SPGs being used in combat in that area. He also spoke to the crew of the howitzer. According to him, a total of 2 batteries of 3 howitzers each were used at that time, with units acting as "fire crews", costantly moved from place to place, and never staying anywhere for more than a couple of days.<ref>{{Cite web |date=2024-01-31 |title=Лучшая в мире САУ «Коалиция-СВ» добирается до линии фронта уже два десятилетия. |url=https://svpressa.ru/war21/article/403368/ |access-date=2025-10-10 |website=svpressa.ru |language=ru}}</ref><ref>{{Cite web |title=I'll add a little more about the "Coalition-SV" |url=https://sso.passport.yandex.ru/showcaptcha?cc=1&form-fb-hint=2.188&mt=70FCAB326B4259943B539A0D61D88CA48E3F4CDE63971C28D9B0F17CFE6D75B32FF45AAE66A940DC54FDF6A1D55BD9A0AE1529FF4BA1D75D8DF0E7E2356B5E4012B25ABC4FFF05F34C12ED82196585F848A02C5EC30ED20285F52E39118AC000F703F3B364289522BC98B14676E3AFA208E8851C1C02D7AC61AF91A898F18E2EE4DEE3D9BB65ADB1FB21B4FA0C9ED286F5CAA3171446F59DFDDB028FE51706197FF54986EEDEB960E185FFA34503B9E237C36DAD3D18EBE9858FECF8A64EC413DC99D8E0317915ED05453D5C8AA84AE02905653F547F13FE51030E3E071A2ED2CB985A327EF222BA4F8EB3E3&retpath=aHR0cHM6Ly9zc28ucGFzc3BvcnQueWFuZGV4LnJ1L3B1c2g_dXVpZD02NWY4YWEyNS1mMTRkLTQ2MGEtODZjNC0wODdlNTk0MTgwZjImcmV0cGF0aD1odHRwcyUzQSUyRiUyRmR6ZW4ucnUlMkZiJTJGWk5ZNWRyazNzbmhDWEFOTSUzRmlzX2F1dG9sb2dpbl95YSUzRHRydWU%2C_7ed33086200d001bbf804ca1f4dab746&t=2%252F1760106860%252F72f50c1c05370357e1affb10b37e5788&u=7438307512826115659&s=620e733c348a33a9bdea93bc90ad7023 |access-date=2025-10-10 |website=sso.passport.yandex.ru |language=en}}</ref>
+
+==Image gallery==
+<gallery mode="packed">
+File:Alabino220415part2-67 (cropped).jpg|Close-up of the front
+File:4mayrehearsal 27.jpg|Close-up of the rear
+File:4mayrehearsal 26 (cropped).jpg|Side view
+</gallery>
+
+==See also==
+* {{lwc|2S19 Msta-S}} 
+* {{lwc|2S3 Akatsiya}} 
+* {{lwc|AS-90}}
+* {{lwc|K9 Thunder}} 
+* {{lwc|M1299 howitzer}} 
+* {{lwc|Panzerhaubitze 2000}}
+* {{lwc|PLZ-05}}
+* {{lwc|XM2001 Crusader}}
+* {{lwc|AHS Krab}}
+
+==References==
+{{Reflist}}
+
+{{Commons category}}
+
+{{PostWWIISovietAFVS}}{{Soviet and Russian artillery after WW2}}
+{{Use dmy dates|date=June 2017}}
+
+{{DEFAULTSORT:2S35 Koalitsiya-SV}}
+[[Category:Howitzers of Russia]]
+[[Category:Self-propelled artillery of Russia]]
+[[Category:152 mm artillery]]
+[[Category:Tracked self-propelled howitzers]]
+[[Category:Uraltransmash products]]
+[[Category:Military vehicles introduced in the 2010s]]
+[[Category:Post–Cold War weapons of Russia]]

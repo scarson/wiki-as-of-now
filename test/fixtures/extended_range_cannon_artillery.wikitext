@@ -1,0 +1,95 @@
+{{Short description|American 155 mm self-propelled artillery}}
+{{use American English|date=September 2023}}
+{{use dmy dates|date=September 2023}}
+{{Infobox weapon
+| name               = M1299
+| image              = Extended Range Cannon Artillery (ERCA) during a test March 30 at U.S. Army Yuma Proving Ground.jpg
+| caption            = An Extended Range Cannon Artillery (ERCA) during a test in March 2021, at the U.S. Army [[Yuma Proving Ground]]
+| origin             = United States
+| type               = [[Self-propelled howitzer]]
+| design_date        = 2019-2024
+| manufacturer       = [[BAE Systems]]
+| wars               = 
+| is_vehicle         = yes
+| is_ranged          = yes
+| is_artillery       = yes
+| length             = 
+| width              = 
+| height             = 
+| number             = 
+| weight             = <!-- Ranged weapon specifications -->
+| cartridge          = 
+| caliber            = <!-- 155&nbsp;mm (6.1 in) [[Caliber#Caliber as measurement of length|caliber]] -->
+| barrels            = 
+| action             = 
+| rate               = 3 rpm (10 with autoloader)
+| velocity           = 
+| range              = {{cvt|70|km}} (rocket-assisted round) <br>
+{{cvt|110|km}} (XM1155 round)
+| max_range          = 
+| feed               = 
+| sights             = <!-- Artillery specifications -->
+| breech             = 
+| recoil             = 
+| carriage           = 
+| elevation          = 
+| traverse           = 360°
+<!-- Vehicle specifications -->| suspension         = torsion bar
+| speed              = 
+| vehicle_range      = 
+| primary_armament   = [[155 mm]] L/58 XM907 gun
+| secondary_armament = 
+| armour             = 
+| engine             = [[Cummins]] diesel
+| crew               = 4 (driver, loader, gunner, commander)
+| engine_power       = {{convert|600| hp|abbr=on}}
+| pw_ratio           = 
+}}
+
+The '''M1299''' '''Howitzer''' was an American prototype [[155 mm]] [[self-propelled howitzer]] developed by [[BAE Systems]] beginning in 2019 under the '''Extended Range Cannon Artillery''' (ERCA) program. It was based on the [[M109 howitzer#M109A7|M109A7 howitzer]] and was primarily designed for the purpose of improving the M109's effective range. The program was canceled in 2024.
+
+== History ==
+The Extended Range Cannon Artillery program was designed to produce a self-propelled howitzer system with an improved range and rate of fire compared to the existing M109A7 Howitzer, in response to developments of Russian and Chinese artillery systems, which had become capable of outranging American systems.<ref>{{cite web |last=Pickrell |first=Ryan |date=9 October 2018 |title=Army Futures Command Chief: Russia and China Are Eating Our Long-Range Lunch |url=https://taskandpurpose.com/military-tech/army-long-range-weapons-russia-china/ |url-status=live |archive-url=https://web.archive.org/web/20230929000745/https://taskandpurpose.com/news/army-long-range-weapons-russia-china/ |archive-date=29 September 2023 |website=Task and Purpose}}</ref>
+
+During tests conducted in 2018, the [[M777 howitzer]] was able to double its range through the use of higher energy propellant and [[rocket-assisted projectile]]s, hitting targets over {{convert|37| mile|abbr=on}} away. Using the same principles, the Extended Range Cannon Artillery was developed.<ref>{{Cite web |last=Judson |first=Jen |date=6 June 2020 |title=US Army takes 40-mile shots from extended-range cannon in demo |url=https://www.defensenews.com/land/2020/03/06/army-takes-40-mile-shots-from-extended-range-cannon-in-demo/ |url-status=live |archive-url=https://archive.today/20200405165212/https://www.defensenews.com/land/2020/03/06/army-takes-40-mile-shots-from-extended-range-cannon-in-demo/ |archive-date=5 April 2020 |website=Defense News}}</ref> BAE Systems was given a $45 million contract in 2019 to incorporate the ERCA's cannon into an M109 chassis,<ref>{{Cite web |last=Keller |first=Jared |date=10 March 2020 |title=Watch the Army's new supergun hit a target from 40 miles away |url=https://www.businessinsider.com/watch-army-extended-range-cannon-artillery-hit-40-miles-away-2020-3?r=US&IR=T |url-status=live |archive-url=https://web.archive.org/web/20230501084416/https://www.businessinsider.com/watch-army-extended-range-cannon-artillery-hit-40-miles-away-2020-3?r=US&IR=T |archive-date=1 May 2023 |website=Business Insider}}</ref> which was unveiled at that year's Association for the United States Army.<ref>{{Cite web |date=16 October 2019 |title= Video: Check out BAE's giant ERCA cannon |url=https://www.defensenews.com/video/2019/10/16/check-out-baes-giant-erca-cannon/ |website=Defense News}}</ref>
+
+Increased range and accuracy was accomplished by having a longer barrel, at 58 calibers long, and by using the XM1113 rocket-assisted artillery shell. In 2020, the ERCA successfully hit a target {{convert|43| mi|km|abbr=on}} away, which is over twice the range typically achieved by an M777 using the same round.<ref>{{cite web |last=Wozniak |first=Jakub |date=24 December 2020 |title=New Army Extended Range Cannon Hits Target 43 Miles Away |url=https://www.overtdefense.com/2020/12/24/new-army-extended-range-cannon-hits-target-43-miles-away/ |url-status=live |archive-url=https://web.archive.org/web/20230429155314/https://www.overtdefense.com/2020/12/24/new-army-extended-range-cannon-hits-target-43-miles-away/ |archive-date=29 April 2023 |website=Overt Defense}}</ref><ref>{{cite news |last=Evans |first=Michael |date=24 December 2020 |title=US army supergun breaks record with direct hit on target 70&nbsp;km away |url=https://www.thetimes.com/world/us-world/article/us-army-supergun-breaks-record-with-direct-hit-on-target-70km-away-80vwdd586 |url-access=subscription |website=[[The Times]]}}</ref><ref>{{cite web |last=Osborn |first=Kris |date=23 July 2020 |title=The U.S. Army's New Artillery Can Kill from 40 Miles Away |url=https://nationalinterest.org/blog/buzz/us-armys-new-artillery-can-kill-40-miles-away-165390 |url-status=live |archive-url=https://web.archive.org/web/20230930202927/https://nationalinterest.org/blog/buzz/us-armys-new-artillery-can-kill-40-miles-away-165390 |archive-date=30 September 2023 |website=National Interest}}</ref><ref>{{cite web |last=Osborn |first=Kris |date=2021-10-03 |title=The Army Wants Artillery Rounds That Can Change Direction Mid-Flight |url=https://nationalinterest.org/blog/reboot/army-wants-artillery-rounds-can-change-direction-mid-flight-194626 |url-status=live |archive-url=https://web.archive.org/web/20230927125556/https://nationalinterest.org/blog/reboot/army-wants-artillery-rounds-can-change-direction-mid-flight-194626 |archive-date=27 September 2023 |access-date=2023-07-26 |website=National Interest}}</ref>
+
+According to the [[United States Army]], the howitzer was to be completed in 2021 and undergo operational assessment in 2023.<ref>{{cite web |last=Vandiver |first=John |date=23 December 2020 |title=New Army cannon hits target 43 miles away in test |url=https://www.stripes.com/news/us/new-army-cannon-hits-target-43-miles-away-in-test-1.656176 |url-status=live |archive-url=https://web.archive.org/web/20231020214140/https://www.stripes.com/theaters/us/new-army-cannon-hits-target-43-miles-away-in-test-1.656176 |archive-date=20 October 2023 |website=Stars & Stripes}}</ref> Due to issues with excessive wear on its barrel, the project was canceled in 2024.<ref>{{Cite web |last=Judson |first=Jen |date=2024-03-11 |title=US Army scraps Extended Range Cannon Artillery prototype effort |url=https://www.defensenews.com/land/2024/03/11/us-army-scraps-extended-range-cannon-artillery-prototype-effort/ |access-date=2024-03-12 |website=Defense News |language=en}}</ref><ref>{{Cite magazine |first=Sébastien |last=Roblin |date=2024-03-21 |title=The Army's Long-Range Howitzer Has Met Its Achilles Heel |url=https://www.popularmechanics.com/military/weapons/a60232049/army-long-range-howitzer/ |access-date=2024-03-21 |website=Popular Mechanics |language=en-US}}</ref>
+
+On 18 December 2025, Hanwha Aerospace announced a partnership with DEVCOM-AC (Army Combat Capabilities Development Command's Armaments Center) that both parties will exchange technical data and expertise under a Cooperative Research and Development Agreement (CRADA). The U.S. Army's 58 caliber gun tube from ERCA will be integrated to the [[K9 Thunder#K9A1|K9A1 Thunder]] for further tests and researches.<ref>{{Cite web |title=Army exhumes ERCA-era cannon with new Hanwha agreement {{!}} InsideDefense.com |url=https://insidedefense.com/insider/army-exhumes-erca-era-cannon-new-hanwha-agreement |access-date=2025-12-19 |website=insidedefense.com}}</ref>
+
+== Design ==
+
+=== Gun system ===
+[[File:XM1113 in flight.jpg|thumb|A XM1113 extended range artillery round, shown here at a range demonstration, uses a rocket-assist motor]]
+The M1299 was armed with a new 155&nbsp;mm L/58 caliber long, 9.1&nbsp;m gun tube, XM907 gun, designed by [[Benét Laboratories]] to fire the XM1113 rocket-assisted round. This would give a range of over {{Convert|70|km|mi|abbr=on}} – much greater than the {{convert|38|km|abbr=on}} of the M109A7 Paladin. An autoloader was planned to allow rates of fire of up to 10 rounds per minute.<ref name=":0">{{Cite web |last=Freedberg Jr |first=Sydney J. |date=2020-03-06 |title=New Army Cannon Doubles Range; Ramjet Ammo May Be Next |url=https://breakingdefense.com/2020/03/new-army-cannon-doubles-range/ |url-status=live |archive-url=https://web.archive.org/web/20221226024357/https://breakingdefense.com/2020/03/new-army-cannon-doubles-range/ |archive-date=2022-12-26 |access-date=2020-03-25 |website=Breaking Defense |language=en-US}}</ref> Originally, the autoloader was planned to carry 31 rounds and be in service by 2024. As designed, it was too large for the vehicle, so it was reduced to a 23-round capacity for better weight, center of gravity, and "onboard kills".<ref>{{Cite web|last=Roque|first=Ashley|date=23 April 2021|title=US Army opting for 23-round autoloader for ERCA|url=https://www.janes.com/defence-news/news-detail/us-army-opting-for-23-round-autoloader-for-erca|access-date=27 April 2021|website=[[Jane's Information Group]]|archive-url= https://web.archive.org/web/20210428022321/https://www.janes.com/defence-news/news-detail/us-army-opting-for-23-round-autoloader-for-erca|archive-date=28 April 2021|url-status=live}}</ref><ref>{{Cite web |last=Freedberg Jr |first=Sydney J. |date=16 April 2021 |title=ERCA: Army Contracts To Help New Cannon ‘Fire Faster’ |url=https://breakingdefense.com/2021/04/erca-army-contracts-to-help-new-cannon-fire-faster/ |url-status=live |archive-url=https://web.archive.org/web/20231005155001/https://breakingdefense.com/2021/04/erca-army-contracts-to-help-new-cannon-fire-faster/ |archive-date=5 October 2023 |website=Breaking Defense}}</ref>
+
+In December 2022, the XM907E2 cannon fired an XM1155 sub-caliber projectile out to {{cvt|110|km}}. The shell was intended to hit long-range targets that previously would require the use of more expensive missiles.<ref>{{Cite web |last=Skove |first=Sam |date=29 March 2023 |title=New Artillery Round Shoots Farther Than Some Missiles, Can Hit Moving Targets |url=https://www.defenseone.com/business/2023/03/new-artillery-round-shoots-farther-some-missiles-can-hit-moving-targets/384601/ |url-status=live |archive-url=https://web.archive.org/web/20231010012055/https://www.defenseone.com/business/2023/03/new-artillery-round-shoots-farther-some-missiles-can-hit-moving-targets/384601/ |archive-date=10 October 2023 |website=Defense One}}</ref><ref>{{Cite web |last=Szondy |first=David |date=29 March 2023 |title=BAE Systems successfully tests artillery shell with double the range |url=https://newatlas.com/military/bae-systems-successfully-tests-artillery-shell-range/ |url-status=live |archive-url=https://web.archive.org/web/20230608063521/https://newatlas.com/military/bae-systems-successfully-tests-artillery-shell-range/ |archive-date=8 June 2023 |website=New Atlas}}</ref>
+
+== See also ==
+*[[XM2001 Crusader]], a U.S. Army self-propelled howitzer canceled in 2002
+*[[XM1203 non-line-of-sight cannon]], a U.S. Army self-propelled howitzer of the [[Future Combat Systems Manned Ground Vehicles]] program canceled in 2009
+*[[Panzerhaubitze 2000]], the self-propelled howitzer of the German army
+*[[K9 Thunder]], the self-propelled howitzer of the Korean Armed Forces
+*[[Next Generation Combat Vehicle]], an on-going U.S. Army combat vehicle acquisition program
+*[[AHS Krab]], Polish self-propelled howitzer
+*[[T-155 Fırtına]] self-propelled howitzer, Turkish variant of K9 Thunder
+*[[AS-90]] self-propelled howitzer designed in UK
+*[[2S35 Koalitsiya-SV]] self-propelled howitzer designed in Russia
+*[[PLZ-05]] self-propelled howitzer designed in China
+*[[SSPH Primus]] self-propelled howitzer designed in Singapore
+*[[Type 99 155 mm self-propelled howitzer]] self-propelled howitzer designed in Japan
+
+== References ==
+{{Reflist}}
+
+== External links ==
+{{Commons}}
+
+[[Category:155&nbsp;mm artillery]]
+[[Category:Self-propelled howitzers of the United States]]
+[[Category:Tracked self-propelled howitzers]]
+[[Category:BAE Systems land vehicles]]
+[[Category:Post–Cold War armored fighting vehicles of the United States]]
+[[Category:Abandoned military projects of the United States]]

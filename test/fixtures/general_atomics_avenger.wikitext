@@ -1,0 +1,299 @@
+{{short description|Unmanned combat aircraft demonstrator built by General Atomics}}
+{{Use dmy dates|date=April 2017}}
+<!-- This article is a part of [[Wikipedia:WikiProject Aircraft]]. Please see [[Wikipedia:WikiProject Aircraft/page content]] for recommended layout. -->
+{{Infobox aircraft
+ |name                = MQ-20 Avenger <br/>(Predator C)
+ |logo                = 
+ |logo_size           = 
+ |image               = File:A Predator C Avenger unmanned aircraft system and inert ordnance sit on display on a tarmac at Palmdale, Calif., Aug. 8, 2012 120808-N-WL435-054.jpg
+ |alt                 = 
+ |caption             = Predator-C Avenger
+ |long_caption        = 
+ |other_names         = 
+ |aircraft_type       = [[Unmanned combat aerial vehicle]]
+ |aim                 = 
+ |outcome             = 
+ |related             = 
+ |national_origin     = 
+ |manufacturer        = [[General Atomics Aeronautical Systems]]
+ |design_group        = 
+ |designer            = 
+ |builder             = 
+ |issuer              = 
+ |status              = Operationally ready<ref>{{cite magazine |last=McDuffee |first=Allen |date=24 February 2014 |title=New Jet-Powered Drone Can Kill 1,800 Miles From Home Base |url=https://www.wired.com/2014/02/avenger/ |url-status=live |archive-url=https://web.archive.org/web/20140405084743/http://www.wired.com/2014/02/avenger/ |archive-date=5 April 2014 |magazine=Wired}}</ref>
+ |owners              = 
+ |primary_user        = [[United States Air Force]]
+ |more_users          = 
+ |service             = 
+ |major_applications  = 
+ |proposals           = 
+ |prototypes          = 
+ |number_built        = 9<ref name="auto">{{cite web |last=Insinna |first=Valerie |date=17 August 2017 |title=General Atomics targets first big international Avenger drone sale |url=https://www.defensenews.com/air/2017/08/17/general-atomics-targets-first-big-international-avenger-drone-sale/ |url-status=live |archive-url=https://archive.today/20240110002503/https://www.defensenews.com/air/2017/08/17/general-atomics-targets-first-big-international-avenger-drone-sale/ |archive-date=10 January 2024 |website=Defense News}}</ref>
+ |construction_number = 
+ |civil_registration  = 
+ |military_serial     = 
+ |radio_code          = 
+ |requirement         = 
+ |aircraft_carried    = 
+ |flights             = 
+ |total_hours         = 
+ |total_distance      = 
+ |construction_date   = 
+ |introduction        = 
+ |retired             = 
+ |first_flight        = 4 April 2009
+ |initiated           = 
+ |in_service          = 
+ |last_flight         = 
+ |expected            = 
+ |developed_from      = [[General Atomics MQ-9 Reaper]]
+ |variants            = 
+ |developed_into      = 
+ |preservation        = 
+ |fate                = 
+ |predecessors        = 
+ |successors          = 
+ |concluded           = 
+}}
+
+The '''General Atomics MQ-20 Avenger''' (formerly '''Predator C''') is a developmental [[unmanned combat aerial vehicle]] built by [[General Atomics Aeronautical Systems]] for the [[United States Armed Forces|U.S. military]].
+
+==Design and development==
+Unlike the previous [[MQ-1 Predator]] and [[MQ-9 Reaper]] (Predator B) drones, the Avenger is powered by a [[turbofan engine]], and its design includes [[Stealth aircraft|stealth]] features such as internal weapons storage and an S-shaped exhaust for reduced [[infrared signature|infrared]] and [[Radar cross-section|radar]] signatures.<ref>{{cite web |date=15 Apr 2009 |url=http://www.aviationweek.com/aw/generic/story_channel.jsp?channel=defense&id=news/AVENGE041509.xml |title=New Predator C Hints At Stealth, Weaponry |work=Aviation Week |url-status=dead |archive-url=https://web.archive.org/web/20120322020548/http://www.aviationweek.com/aw/generic/story_channel.jsp?channel=defense&id=news%2FAVENGE041509.xml |archive-date=22 March 2012 |access-date=25 December 2019 }}</ref>  Its first flight occurred on 4 April 2009.<ref name="aviationweek41709">{{cite web |url=http://www.aviationweek.com/aw/generic/story_generic.jsp?channel=defense&id=news/AVENGER041709.xml&headline=Predator%20C%20Avenger%20Makes%20First%20Flights |title=Predator C Avenger Makes First Flights |last=Fulghum |first=David A. |author2=Sweetman, Bill |date=17 April 2009 |work=[[Aviation Week]] |access-date=18 April 2009|archive-url=https://web.archive.org/web/20110812041116/http://www.aviationweek.com/aw/generic/story_generic.jsp?channel=defense&id=news%2FAVENGER041709.xml&headline=Predator%20C%20Avenger%20Makes%20First%20Flights |archive-date=12 August 2011 |url-status=dead|df=dmy-all}}</ref><ref>{{cite magazine |title=Avenger UAV Revealed |magazine=Air Force Magazine |date=June 2009 |volume=92 |number=6 |page=14}}</ref>
+
+The Avenger will support the same weapons as the MQ-9, and carry the Lynx [[synthetic aperture radar]] and a version of the [[F-35 Lightning II]]'s electro-optical targeting system (EOTS), called the Advanced Low-observable Embedded Reconnaissance Targeting (ALERT) system.<ref>{{Cite web |date=23 September 2009 |title=Stealthy F-35 Sensor To Fly On Avenger UAV |url=https://www.military.com/defensetech/2009/09/23/stealthy-f-35-sensor-to-fly-on-avenger-uav |url-status=live |archive-url=https://archive.today/20240110002934/https://www.military.com/defensetech/2009/09/23/stealthy-f-35-sensor-to-fly-on-avenger-uav |archive-date=10 January 2024 |access-date=10 January 2024 |website=military.com}}</ref><ref>{{cite web |date=20 April 2009 |title=GA-ASI Successfully Executes First Flight of Predator C Avenger |url=http://www.ga-asi.com/news_events/index.php?read=1&id=186 |url-status=dead |archive-url=https://web.archive.org/web/20090422175802/http://www.ga-asi.com/news_events/index.php?read=1&id=186 |archive-date=22 April 2009 |access-date=22 April 2009 |website=General Atomics}}</ref> The Avenger will use the same ground support infrastructure as the MQ-1 and MQ-9, including the [[UAV ground control station|ground control station]] and existing communications networks.<ref name=aviationweek41709/>
+
+The Avenger can also carry and deploy other unmanned systems to achieve stand-off survivability and achieve a penetrating capability at the same time.<ref name="TWZ A2LE">{{cite web|url=https://www.twz.com/news-features/mq-20-avenger-tests-previously-unseen-air-launched-effects-drone|title=MQ-20 Avenger Tests Previously Unseen Air-Launched Effects Drone|website=The Warzone|date=30 January 2024}}</ref>
+
+==Operational history==
+
+===Flight testing===
+The first flight of the first prototype Avenger occurred on 4 April 2009 at the company's [[Grey Butte Field Airport]] Flight Operations Facility in [[Palmdale, California]].  The aircraft took off and landed without any discrepancies and was ready to fly again once refueled.  Following flights were performed successfully on 13 and 14 April.<ref>{{Cite web |date=20 April 2009 |title=GA-ASI Successfully Executes First Flight of Predator C Avenger |url=https://www.ga-asi.com/ga-asi-successfully-executes-first-flight-of-predator-c-avenger |url-status=live |archive-url=https://web.archive.org/web/20230303220646/https://www.ga-asi.com/ga-asi-successfully-executes-first-flight-of-predator-c-avenger |archive-date=3 March 2023 |access-date=10 January 2024 |website=General Atomics Aeronautical Systems}}</ref><ref>{{cite web |date=20 April 2009 |title=Jet-Powered Predator C Avenger Successfully Executes First Flight |url=http://www.deagel.com/news/Jet-Powered-Predator-C-Avenger-Successfully-Executes-First-Flight_n000005946.aspx |url-status=dead |archive-url=https://web.archive.org/web/20141213023359/http://www.deagel.com/news/Jet-Powered-Predator-C-Avenger-Successfully-Executes-First-Flight_n000005946.aspx |archive-date=13 December 2014 |website=Deagel.com}}</ref> The second prototype Avenger performed its first flight on 12 January 2012, meeting all performance objectives and refining the first prototype design to an operational capability.  The Tail 2 prototype featured a four-foot longer fuselage to accommodate larger payloads and more fuel.  This larger Avenger can carry a larger payload of up to {{convert|3500|lb}} of weapons internally and on its wing hard points.{{fact|date=April 2025}}
+
+On 15 February 2012, the Air Force cancelled its MQ-X program, which was supposed to find an aircraft to replace the MQ-9 Reaper.<ref>{{cite web |last=Reed |first=John |date=15 February 2012 |title=USAF says adios to MQ-X |url=http://www.dodbuzz.com/2012/02/15/usaf-says-adios-to-mq-x/ |url-status=dead |archive-url=https://web.archive.org/web/20120217235016/http://www.dodbuzz.com/2012/02/15/usaf-says-adios-to-mq-x/ |archive-date=17 February 2012 |website=DoDBuzz.com}}</ref> The Sea Avenger variant was part of the Navy's cancelled [[Unmanned Carrier-Launched Airborne Surveillance and Strike]] (UCLASS) program.<ref>{{cite magazine |last=Axe |first=David |date=27 March 2013 |title=One of These Bots Will Be the Navy's Next Killer Drone |url=https://www.wired.com/dangerroom/2013/03/navy-next-killer-drone/?pid=1826&viewall=true |url-status=live |archive-url=https://web.archive.org/web/20180901145420/https://www.wired.com/2013/03/navy-next-killer-drone/?pid=1826&viewall=true |archive-date=1 September 2018 |magazine=Wired}}</ref>
+
+On 15 November 2012, the Avenger flew for three hours while being controlled by the General Atomics Advanced Cockpit Ground Control Station (GCS).  The Advanced Cockpit GCS has a wrap-around visual display and multi-dimensional moving map to increase situational awareness and reduce pilot workload.  The Advanced Cockpit GCS has flown an MQ-1 Predator and is planning to fly an MQ-9 Reaper as part of an Air Force initiative to enable interoperability with all USAF Remote Piloted Aircraft (RPA).<ref>{{Cite web |date=24 April 2013 |title=Advanced Cockpit Ground Control Station Flies Predator C Avenger |url=https://www.ga-asi.com/advanced-cockpit-ground-control-station-flies-predator-c-avenger |url-status=live |archive-url=https://web.archive.org/web/20230303220700/https://www.ga-asi.com/advanced-cockpit-ground-control-station-flies-predator-c-avenger |archive-date=3 March 2023 |website=General Atomics Aeronautical Systems}}</ref>
+
+In July 2013, a third Avenger was scheduled to begin flight testing. Assembly of the fourth Avenger was expected to be finished by spring 2014.<ref>{{cite news |author=Michael C. Sirak |date=26 June 2013 |title=Ready to Go |url=https://www.airandspaceforces.com/ready-to-go/ |url-status=live |archive-url=https://web.archive.org/web/20221130171636/https://www.airandspaceforces.com/ready-to-go/ |archive-date=30 November 2022 |work=Air & Space Forces Magazine}}</ref>
+
+On 27 October 2016, General Atomics flew an extended-range Avenger featuring wings extended by {{convert|3.2|m|ft|abbr=on}} to {{convert|23.2|m|ft|abbr=on}}.  The extended wings add about {{convert|1000|kg|lb|abbr=on}} of fuel totaling {{convert|4600|kg|lb|abbr=on}}, extending endurance from 15 hours to 20 hours but reducing internal payload to {{convert|3000|lb|kg|abbr=on}}.  Since its first flight in 2009, the Avenger has completed more than 13,000 flight hours, reaching 11,000 hours in July 2016 and accumulating most of those hours within the past three years.<ref>{{cite web |last=Giangreco |first=Leigh |date=11 November 2016 |title=General Atomics flies extended-range Avenger |url=https://www.flightglobal.com/news/articles/general-atomics-flies-extended-range-avenger-431398/ |url-status=dead |archive-url=https://web.archive.org/web/20220119095839/https://www.flightglobal.com/civil-uavs/general-atomics-flies-extended-range-avenger/122269.article |archive-date=19 January 2022 |website=FlightGlobal}}</ref>
+
+===Weapons testing===
+On 28 November 2023, an Avenger test deployed the [[Advanced Air-Launched Effects]] (A2LE) small uncrewed aerial system ([[Unmanned Aerial Vehicle|sUAS]]) from its internal weapons bay over [[Dugway Proving Ground]], [[Utah]].<ref name="TWZ A2LE" />
+
+===Potential deployments===
+In December 2011, it was reported that the Air Force had ordered an Avenger and that it would be deployed to Afghanistan.  "This aircraft will be used as a test asset and will provide a significantly increased weapons and sensors payload capacity on an aircraft that will be able to fly to targets much more rapidly than the MQ-9 [Reaper] UAS," the USAF said in an announcement. "Since it has an internal weapons bay and four hardpoints on each wing it will also allow greater flexibility and will accommodate a large selection of next generation sensor and weapons payloads."<ref name=":0">{{cite web |last=Rosenberg |first=Zach |date=12 December 2011 |title=US Air Force orders General Atomics Avenger |url=http://www.flightglobal.com/news/articles/us-air-force-orders-general-atomics-avenger-365902/ |website=FlightGlobal}}</ref><ref name=":1">{{cite magazine |last=Axe |first=David |date=13 December 2011 |title=New Armed Stealth Drone Heads to Afghanistan (And Maybe Iran, Too) |url=https://www.wired.com/dangerroom/2011/12/stealth-drone-afghanistan/ |url-status=live |archive-url=https://web.archive.org/web/20140412190036/http://www.wired.com/2011/12/stealth-drone-afghanistan/ |archive-date=12 April 2014 |magazine=Wired}}</ref>
+
+The aircraft ordered was the original Tail 1 prototype version. This announcement sparked rumors that the aircraft would be deployed to monitor neighboring Iran and Pakistan.  These allegations were made because the Avenger is stealthy, while the battlespace over Afghanistan is free of radar guided missiles, as well as any other anti-aircraft weapons.  The announcement also came two weeks after the [[Iran-US RQ-170 incident]].  The Air Force responded by clarifying that the purchase was initiated in July of that year, well before the incident.<ref name=":0" /><ref name=":1" />
+
+However, the Air Force later clarified that the Avenger was being purchased only as a test asset, and that it was not being sent to Afghanistan.  Discrepancies in the solicitation are believed to have caused the misinterpretation.<ref>{{cite web |date=22 December 2011 |title=USAF's New Drone Not Going to Afghanistan |url=http://defensetech.org/2011/12/22/predator-c-not-going-to-afghanistan/ |url-status=usurped |archive-url=https://web.archive.org/web/20111223190057/http://defensetech.org/2011/12/22/predator-c-not-going-to-afghanistan/ |archive-date=23 December 2011 |website=Defensetech.org}}</ref> After testing, the Air Force decided that the Avenger version they evaluated offered only modest improvements over the MQ-9 in terms of speed, payload, and reduced signature, and didn't meet survivability and reliability requirements to survive in contested environments needed to warrant buying a new aircraft of the type.<ref>{{cite web |date=13 November 2014 |title=The U.S. Air Force Was Not Fond of the Next-Gen Predator Drone |url=https://medium.com/war-is-boring/the-u-s-air-force-was-not-fond-of-the-next-gen-predator-drone-77cb9a3d10b8 |url-status=live |archive-url=https://web.archive.org/web/20141129051649/https://medium.com/war-is-boring/the-u-s-air-force-was-not-fond-of-the-next-gen-predator-drone-77cb9a3d10b8 |archive-date=29 November 2014 |website=Medium}}</ref>
+
+With the [[2021 Taliban offensive|Taliban takeover]] of Afghanistan in 2021, the US has lost access to airbases inside the country that are necessary for striking targets in neighboring Pakistan. Due to the longer distances from potential targets, General Atomics has pitched the Avenger to the [[Central Intelligence Agency]] as a better drone for the mission.  The jet-powered Avenger can fly {{convert|1800|mi|km|abbr=on}} from its operating base and stay airborne for 18 hours.<ref>{{cite magazine |last=McDuffee |first=Allen |date=21 February 2014 |title=New Jet-Powered Drone Can Kill 1,800 Miles From Home Base |url=https://www.wired.com/dangerroom/2014/02/avenger/ |url-status=live |archive-url=https://web.archive.org/web/20140405084743/http://www.wired.com/2014/02/avenger/ |archive-date=5 April 2014 |magazine=Wired}}</ref>
+
+===Export===
+
+====Canada====
+[[General Atomics]] has offered the Predator C Avenger to Canada as a contender for its Joint Unmanned Surveillance and Target Acquisition System (JUSTAS) armed [[Unmanned aerial vehicle|UAV]] project. In 2016, the JUSTAS project was prioritized by the [[Royal Canadian Air Force]] (RCAF) and [[Liberal Party of Canada|Liberal government]]. The RCAF has requested that the drones be armed, therefore making the General Atomics Avenger the only suitable contender, as the [[Northrop Grumman RQ-4 Global Hawk]] is unarmed.<ref>{{cite news |author=Parry |first=Tom |date=7 March 2016 |title=Canada's top soldier wants armed drones for the military |url=https://www.cbc.ca/news/politics/vance-canada-armed-drones-1.3480278 |url-status=live |archive-url=https://web.archive.org/web/20160308084509/http://www.cbc.ca/news/politics/vance-canada-armed-drones-1.3480278 |archive-date=8 March 2016 |work=CBC News}}</ref>
+
+Following a formal Invitation to Qualify issued by the Government of Canada, only General Atomics and [[L3 Technologies|L3 Technologies MAS]] were selected as being qualified suppliers allowed to submit a bid. Canada will begin to refine the preliminary requirements with General Atomics and L3 Technologies until a formal request for proposals and contract is awarded.<ref name=":4">{{cite web |date=16 April 2019 |title=Remotely ploted aircraft systems program (JUSTAS) |url=https://www.tpsgc-pwgsc.gc.ca/app-acq/amd-dp/air/snac-nfps/sdat-rpac-eng.html |url-status=live |archive-url=https://web.archive.org/web/20231106154304/https://www.tpsgc-pwgsc.gc.ca/app-acq/amd-dp/air/snac-nfps/sdat-rpac-eng.html |archive-date=6 November 2023 |access-date=29 October 2019}}</ref> On 11 February 2022, the formal RFP was released to qualified suppliers with an expected contract awarded in 2024.<ref name=":4" /> On 19 December 2023 the Government of Canada announced the acquisition of 11 [[General Atomics MQ-9 Reaper|MQ-9B]] drones from General Atomics in $2.5 billion CAD deal.<ref>{{Cite web |last=Coyne |first=Todd |date=2023-12-19 |title=Canadian military to spend $2.5 billion on armed drones |url=https://bc.ctvnews.ca/canadian-military-to-spend-2-5-billion-on-armed-drones-1.6693907 |archive-url=https://web.archive.org/web/20231219183441/https://bc.ctvnews.ca/canadian-military-to-spend-2-5-billion-on-armed-drones-1.6693907 |url-status=dead |archive-date=19 December 2023 |access-date=2024-09-02 |website=CTV News |language=en}}</ref>
+
+====India====
+On 22 September 2015, the [[United States|U.S.]] stated they backed [[India|India's]] membership in the [[Missile Technology Control Regime]], which would enable them to buy [[Unmanned combat aerial vehicle|armed drones]].  Two days later, the [[Indian Air Force]] sent a letter to General Atomics saying it wanted to purchase the Avenger.<ref>{{cite web |last1=Bipindra |first1=N C |last2=Lasseter |first2=Tom |date=9 November 2015 |title=India Seeks Armed Drones From U.S. in Challenge to Pakistan |url=https://www.bloomberg.com/news/articles/2015-11-10/india-seeks-armed-u-s-predator-drones-in-challenge-to-Pakistan |url-status=dead |archive-url=https://web.archive.org/web/20151110035148/http://www.bloomberg.com/news/articles/2015-11-10/india-seeks-armed-u-s-predator-drones-in-challenge-to-pakistan |archive-date=10 November 2015 |website=Bloomberg.com}}</ref>
+
+As of 17 August 2017, [[General Atomics Aeronautical Systems]] (GA-ASI) is in the early stages of negotiating the potential sale of as many as 100 Predator C Avenger remotely piloted aircraft to an unidentified international customer. The renewed international interest is believed to be led by [[India]], which has requested access to the capability as a potential follow-on to the planned acquisition of as many as 20 GA-ASI MQ-9 UAVs, 10 each for its [[Indian Army|Army]] and [[Indian Navy|Navy]]<ref name="auto1">{{Cite web |last=Siddiqui |first=Huma |date=1 January 2019 |title=Modi government to fast-track acquisition of lethal Predator drones for Indian Navy and Indian Army |url=https://www.financialexpress.com/defence/modi-government-to-fast-track-acquisition-of-lethal-predator-drones-for-indian-navy-and-indian-army/1430508/ |url-status=live |archive-url=https://web.archive.org/web/20230419012006/https://www.financialexpress.com/business/defence-modi-government-to-fast-track-acquisition-of-lethal-predator-drones-for-indian-navy-and-indian-army-1430508/ |archive-date=19 April 2023 |access-date=22 January 2019 |work=Financial Express}}</ref> and wants to acquire 100 Avenger drones for its [[Indian Air Force|Air Force]] at the cost of $8 billion.<ref>{{Cite news |last= |first= |date=22 September 2017 |title=India-US ties: Govt eyes $8-bn defence deal for 100 Avenger Predator drones |url=http://www.business-standard.com/article/economy-policy/india-us-ties-govt-eyes-8-bn-defence-deal-for-100-avenger-predator-drones-117092200288_1.html |url-status=live |archive-url=https://web.archive.org/web/20170922093948/http://www.business-standard.com/article/economy-policy/india-us-ties-govt-eyes-8-bn-defence-deal-for-100-avenger-predator-drones-117092200288_1.html |archive-date=22 September 2017 |access-date=22 September 2017 |work=Business Standard India}}</ref><ref name="auto1"/>
+
+==Variants==
+;MQ-20: US military designation for the Avenger<ref>{{Cite web |title=MQ-20 |url=https://www.afrl.af.mil/News/Photos/igphoto/2002752106/ |url-status=live |archive-url=https://web.archive.org/web/20230603073810/https://www.afrl.af.mil/News/Photos/igphoto/2002752106/ |archive-date=3 June 2023 |website=U.S. Air Force Research Laboratory}}</ref>
+
+===Sea Avenger===
+On 3 May 2010, GA-ASI introduced Sea Avenger, a carrier-based derivative of the Predator C Avenger UAS, intended to fulfill the U.S. Navy's need for an [[Unmanned Carrier-Launched Airborne Surveillance and Strike]] (UCLASS). The Sea Avenger included a retractable electro-optical/infrared sensor, internal weapons bay, and folding wings. The aircraft's structure was designed with the flexibility to accommodate carrier suitable landing gear, [[tailhook]], drag devices, and other provisions for carrier operations.<ref>{{cite web |title=GA-ASI Introduces Sea Avenger UAS for UCLASS Carrier Operations |url=https://www.ga-asi.com/ga-asi-introduces-sea-avenger-uas-for-uclass-carrier-operations |url-status=live |archive-url=https://web.archive.org/web/20230303220656/https://www.ga-asi.com/ga-asi-introduces-sea-avenger-uas-for-uclass-carrier-operations |archive-date=3 March 2023 |access-date=4 May 2010 |publisher=[[General Atomics Aeronautical Systems]]}}</ref>
+
+In April 2014, General Atomics displayed images of the Sea Avenger at the Navy League Sea Air and Space exposition.  As requirements for the UCLASS program were altered from a high-end strike aircraft to an [[ISTAR#ISR (Intelligence, surveillance and reconnaissance)|ISR]] machine operating in permissive environments, the Sea Avenger was modified accordingly.  It appeared to have four external hardpoints and a small weapons bay, a wing-mounted buddy-refueling store to perform as an aerial tanker, and a larger airframe with a larger engine.<ref name=":2">{{cite web |last=Majumdar |first=Dave |date=10 April 2014 |title=General Atomics Shows Off Company's UCLASS Option |url=http://news.usni.org/2014/04/10/general-atomics-shows-companys-uclass-option |url-status=live |archive-url=https://web.archive.org/web/20230927160433/https://news.usni.org/2014/04/10/general-atomics-shows-companys-uclass-option |archive-date=27 September 2023 |website=U.S. Naval Institute}}</ref>
+
+If Navy requirements favored a UAV optimized for permissive ISR over broadband stealth, the Sea Avenger would better meet them, as it was originally pitched as having a reduced signature to be "stealthier" than other aircraft.  Sea Avenger stealth capabilities seemed to be limited to higher frequencies like C, X, and Ku bands, instead of broadband stealth effective against [[low-frequency radar]] bands like VHF and UHF.<ref name=":2" />
+
+In October 2017, General Atomics released images of its submission for the Navy's [[MQ-25 Stingray]], an unmanned aerial tanker that formed out of the UCLASS effort. The aircraft is an Avenger-based wing-body-tail design with a standard D-704 buddy tank refueling system that has an electro-optical ball like the Predator and Reaper, landing gear that pulls into the fuselage, and a system for maneuvering around the flight deck using gestures from the flight crew. Though specifics are not known, the basic requirements will have the Stingray deliver about {{convert|15000|lb|kg|abbr=on}} of fuel {{convert|500|nmi|mi km}} from the aircraft carrier to increase the [[F/A-18 Super Hornet]]'s [[combat radius]] from {{convert|450|to|700|nmi|mi km|abbr=on}}.<ref>{{cite web |last=LaGrone |first=Sam |date=10 October 2017 |title=Navy Releases Final MQ-25 Stingray RFP; General Atomics Bid Revealed |url=https://news.usni.org/2017/10/10/navy-releases-final-mq-25-stingray-rfp-general-atomics-bid-revealed |url-status=live |archive-url=https://web.archive.org/web/20230605093811/https://news.usni.org/2017/10/10/navy-releases-final-mq-25-stingray-rfp-general-atomics-bid-revealed |archive-date=5 June 2023 |website=U.S. Naval Institute}}</ref>
+
+GA-ASI's design is larger than the Sea Avenger and is powered by the [[Pratt & Whitney Canada PW800|Pratt & Whitney PW815 high-bypass turbofan]], the same engine used on the [[Gulfstream G600]]. Generating {{cvt|16000|lb|abbr=on}} of thrust, it is four times more powerful than the Predator C's PW545B turbofan,<ref>{{cite web |last=Trimble |first=Stephen |date=13 February 2018 |title=Boeing unit joins General Atomics' bid for MQ-25 |url=https://www.flightglobal.com/news/articles/boeing-unit-joins-general-atomics-bid-for-mq-25-445878/ |url-status=dead |archive-url=https://web.archive.org/web/20220702041450/https://www.flightglobal.com/civil-uavs/boeing-unit-joins-general-atomics-bid-for-mq-25/127088.article |archive-date=2 July 2022 |work=FlightGlobal}}</ref> and the most powerful engine used by any Stingray competitor.<ref>{{cite web |last=Trimble |first=Stephen |date=10 April 2018 |title=Lockheed's MQ-25 reuses USN fighter engines, landing gear |url=https://www.flightglobal.com/news/articles/lockheeds-mq-25-reuses-usn-fighter-engines-landing-447457/ |url-status=dead |archive-url=https://web.archive.org/web/20220516150739/https://www.flightglobal.com/civil-uavs/lockheeds-mq-25-reuses-usn-fighter-engines-landing-gear-/127660.article |archive-date=16 May 2022 |work=FlightGlobal}}</ref> In addition to structural reinforcements and additional systems for carrier operations, the aircraft is fitted with the same landing gear and arresting hook as the Super Hornet and has space available for future growth to perform ISR and strike missions; it would be able to fuel four to six aircraft.<ref>{{cite web |date=11 April 2018 |title=General Atomics Showcasing its MQ-25 Unmanned Tanker |url=https://www.armyrecognition.com/archives/archives-naval-defense/naval-defense-2018/sas-2018-general-atomics-showcasing-its-mq-25-unmanned-tanker |url-status=live |archive-url=https://web.archive.org/web/20221105054044/http://www.navyrecognition.com/index.php/news/naval-exhibitions/2018/sea-air-space-2018/6129-sas-2018-general-atomics-showcasing-its-mq-25-unmanned-tanker.html |archive-date=5 November 2022 |work=Navy Recognition}}</ref>
+
+The MQ-25 contract was awarded to Boeing in August 2018.<ref>{{cite web |last=LaGrone |first=Sam |date=30 August 2018 |title=Navy Picks Boeing to Build MQ-25A Stingray Carrier-Based Drone |url=https://news.usni.org/2018/08/30/navy-picks-boeing-build-mq-25a-stingray-carrier-based-drone |url-status=live |archive-url=https://web.archive.org/web/20230604204332/https://news.usni.org/2018/08/30/navy-picks-boeing-build-mq-25a-stingray-carrier-based-drone |archive-date=4 June 2023 |access-date=30 August 2018 |website=U.S. Naval Institute}}</ref>
+
+===Avenger ER===
+On 27 October 2016, [[General Atomics Aeronautical Systems]], Inc. (GA-ASI) conducted the maiden flight of the Avenger ER. GA-ASI extended the wingspan of the Avenger ER by {{cvt|3.2|m|abbr=on}} to {{cvt|23.2|m|abbr=on}}, and enlarged its fuel capacity by {{cvt|1000|kg|abbr=on}} to {{cvt|4600|kg|abbr=on}} compared to previous specifications. The aircraft carries up to {{cvt|1360|kg|abbr=on}} in its internal payload bay, {{cvt|227|kg|abbr=on}} less than previously described.<ref name=":3">{{cite web |last=Giangreco |first=Leigh |date=11 November 2016 |title=General Atomics flies extended-range Avenger |url=https://www.flightglobal.com/news/articles/general-atomics-flies-extended-range-avenger-431398/ |url-status=dead |archive-url=https://web.archive.org/web/20220119095839/https://www.flightglobal.com/civil-uavs/general-atomics-flies-extended-range-avenger/122269.article |archive-date=19 January 2022 |work=FlightGlobal}}</ref>
+
+The modifications extend its endurance from the original 15 hours to 20 hours. The Avenger ER uses a modified fuselage design (completed in 2012) extended by four feet (to {{cvt|13.4|m|abbr=on}}) to accommodate larger payloads and more fuel. Earlier in 2016, the U.S. Federal Aviation Administration granted GA-ASI an experimental certificate that allows it to fly the Avenger in the National Airspace System.<ref name=":3" />
+
+From 24 to 25 January 2018, an Avenger ER set a new endurance record of 23.4 continuous hours, exceeding the 20 hour flight test goal and reflecting a 10-hour improvement over the baseline Predator C Avenger. The Avenger ER also has an increased maximum gross takeoff weight (MGTOW) of {{cvt|19500|lb|abbr=on}} using a co-cured composite center wing and heavyweight landing gear as well as a dual redundant, light weight brake control capability using a lightweight hybrid linear anti-lock brake system.<ref>{{Cite web |date=5 April 2018 |title=Avenger ER Sets New Endurance Record Flying 23.4 Consecutive Hours |url=https://www.ga-asi.com/avenger-er-sets-new-endurance-record-flying-23-4-consecutive-hours |url-status=live |archive-url=https://web.archive.org/web/20231001181813/https://www.ga-asi.com/avenger-er-sets-new-endurance-record-flying-23-4-consecutive-hours |archive-date=1 October 2023 |website=General Atomics Aeronautical Systems}}</ref>
+
+==Operators==
+;{{USA}}
+* [[United States Air Force]] - one aircraft<ref name="auto"/>
+* Unidentified U.S. government customer – up to seven aircraft<ref name="auto"/>
+
+==Specifications==
+{{Aircraft specs
+|ref=<ref>{{cite web |url=http://www.ga-asi.com/products/aircraft/pdf/Predator_C.pdf |title=Avenger |archive-url=https://web.archive.org/web/20120111155336/http://www.ga-asi.com/products/aircraft/pdf/Predator_C.pdf |archive-date=11 January 2012}}</ref>
+|prime units?=imp
+
+|crew= 2 (ground control)
+|capacity=
+|length m=13
+|length ft=44
+|length in=
+|length note=
+|span m=20
+|span ft=66
+|span in=
+|span note=[[Swept wing|sweep angle]] 17°
+|height m=
+|height ft=
+|height in=
+|height note=
+|wing area sqm=
+|wing area sqft=
+|wing area note=
+|aspect ratio=
+|airfoil=
+|empty weight kg=
+|empty weight lb=
+|empty weight note=
+|gross weight kg=
+|gross weight lb=
+|gross weight note=
+|max takeoff weight kg=8,255
+|max takeoff weight lb=18,200
+|max takeoff weight note=
+|fuel capacity={{convert|7900|lb|kg}}
+|more general=
+
+|eng1 number=1
+|eng1 name=[[Pratt & Whitney Canada PW500|Pratt & Whitney Canada PW545B]]
+|eng1 type=[[turbofan]]
+|eng1 kn=
+|eng1 lbf=3991<ref>{{cite web |url=http://www.pwc.ca/en/engines/pw545b |title=P&WC: PW545B |access-date=6 February 2015 |url-status=dead |archive-url=https://web.archive.org/web/20150227205912/http://www.pwc.ca/en/engines/pw545b |archive-date=27 February 2015 }}</ref>
+|eng1 note=
+|thrust original=
+|more power=
+
+|max speed kmh=740
+|max speed mph=460
+|max speed kts=400
+|max speed note=
+|max speed mach=
+|cruise speed kmh=648
+|cruise speed mph=402
+|cruise speed kts=350
+|cruise speed note=
+|stall speed kmh=
+|stall speed mph=
+|stall speed kts=
+|stall speed note=
+|never exceed speed kmh=
+|never exceed speed mph=
+|never exceed speed kts=
+|never exceed speed note=
+|minimum control speed kmh=
+|minimum control speed mph=
+|minimum control speed kts=
+|minimum control speed note=
+|range km=
+|range miles=
+|range nmi=
+|range note=
+|combat range km=
+|combat range miles=
+|combat range nmi=
+|combat range note=
+|ferry range km=
+|ferry range miles=
+|ferry range nmi=
+|ferry range note=
+|endurance=18 hours
+|ceiling m=15,240
+|ceiling ft=50,000
+|ceiling note=
+|g limits=
+|roll rate=
+|glide ratio=
+|climb rate ms=
+|climb rate ftmin=
+|climb rate note=
+|time to altitude=
+|lift to drag=
+|wing loading kg/m2=
+|wing loading lb/sqft=
+|wing loading note=
+|fuel consumption kg/km=
+|fuel consumption lb/mi=
+|thrust/weight=
+
+|more performance=
+
+|armament=Internal weapons bay with {{convert|3500|lb|kg}} capacity.  6 external [[hardpoints]].  {{convert|6500|lb|kg}} payload total.
+*'''Missiles'''
+**[[AGM-114 Hellfire]]
+*'''Bombs'''
+**[[Small Diameter Bomb|GBU-39 SDB]] – {{convert|250|lb|kg|abbr=on}} bombs
+**[[GBU-12 Paveway II]], [[JDAM#Variants|GBU-38 JDAM]] – {{convert|500|lb|kg|abbr=on}} bombs
+**[[GBU-16 Paveway II]], [[JDAM#Variants|GBU-32 JDAM]] – {{convert|1000|lb|kg|abbr=on}} bombs
+**[[JDAM#Variants|GBU-31 JDAM]] – {{convert|2000|lb|kg|abbr=on}} bombs
+*'''Other'''
+** Legion [[Infrared Search and Track|IRST]] Pod<ref name="TWZ 16Jan21">{{cite news |last1=Trevithick |first1=Joseph |title=General Atomics' Stealthy Avenger Drone Flies With Infrared Search And Track Pod |url=https://www.twz.com/38768/stealthy-avenger-drone-flies-with-infrared-search-and-track-pod |access-date=22 April 2024 |publisher=The Warzone |date=16 January 2021}}</ref>
+|rockets= 
+|missiles= 
+|hardpoints= 
+|hardpoint capacity=
+|hardpoint rockets=
+|hardpoint missiles=
+|hardpoint bombs=
+|hardpoint other=
+|avionics=* Lynx [[synthetic aperture radar]]
+* [[Active electronically scanned array|AESA]] wide-area surveillance sensor
+}}
+
+==See also==
+{{aircontent
+|see also=<!-- other related articles that have not already linked: -->
+|related=<!-- designs which were developed into or from this aircraft: -->
+* [[General Atomics MQ-1 Predator]]
+* [[General Atomics MQ-1C Gray Eagle]]
+* [[General Atomics MQ-9 Reaper]]
+|similar aircraft=<!-- aircraft that are of similar role, era, and capability as this design: -->
+* [[Guizhou WZ-7 Soaring Dragon]]
+* [[Chengdu WZ-10]]
+* [[EADS Barracuda]]
+* [[Kratos XQ-58 Valkyrie]]
+* [[Scaled Composites 401]]
+* [[Sukhoi S-70 Okhotnik-B|S-70 Okhotnik]]
+* [[DRDO Ghatak]]
+* [[Shahed Saegheh]]
+* [[Boeing MQ-28 Ghost Bat]]
+|lists=<!-- relevant lists that this aircraft appears in: -->
+* [[List of unmanned aerial vehicles]]
+<!-- See [[WP:Air/PC]] for more explanation of these fields. -->
+}}
+
+==References==
+{{Reflist}}
+
+==External links==
+* [https://web.archive.org/web/20120322021036/http://www.aviationweek.com/aw/generic/story.jsp?id=news%2FAVENGER041709.xml&headline=Predator%20C%20Avenger%20Makes%20First%20Flights&channel=defense Predator C Avenger Makes First Flights]
+* [https://web.archive.org/web/20120307001740/http://unmannedwarfare.webs.com/apps/photos/photo?photoid=97623828 Photo: Avenger UAV]
+* [https://web.archive.org/web/20150111142219/http://www.ga-asi.com/products/aircraft/predator_c.php Avenger UAV], ''GA-ASI.com''
+* [https://web.archive.org/web/20100105033950/http://www.defense-update.com/products/p/predator_c_avenger_180409.html Avenger – A Stealthy Predator C Combat UAV from General Atomics]
+
+{{General Atomics aircraft}}
+{{US unmanned aircraft}}
+{{Stealth aircraft}}
+
+[[Category:Stealth aircraft]]
+[[Category:General Atomics aircraft|Avenger]]
+[[Category:2000s United States military reconnaissance aircraft]]
+[[Category:Single-engined jet aircraft]]
+[[Category:Mid-wing aircraft]]
+[[Category:V-tail aircraft]]
+[[Category:Signals intelligence]]
+[[Category:War on terror]]
+[[Category:Unmanned military aircraft of the United States|General Atomics Avenger]]
+[[Category:Synthetic aperture radar]]
+[[Category:Unmanned stealth aircraft]]

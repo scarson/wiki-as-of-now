@@ -1,0 +1,286 @@
+{{Short description|American/Italian wheeled design program}}
+{{Redirect|Amphibious combat vehicle|the category of military vehicles|Amphibious vehicle#Tracked}}
+{{distinguish|text=the Advanced Amphibious Assault Vehicle, now known as the [[Expeditionary Fighting Vehicle]]}}
+{{Infobox weapon
+| name               = Amphibious Combat Vehicle (ACV)
+| image              = MOUT Training during ITX - 210406-M-LO635-1081.jpg
+| image_size         = 300px
+| caption            = An Amphibious Combat Vehicle assigned to the US [[3rd Assault Amphibian Battalion]] in 2021
+| origin             = [[United States]], [[Italy]]
+| type               = [[amphibious vehicle|Amphibious]] [[Armoured personnel carrier|assault]] [[Combat vehicle|vehicle]]
+<!-- Type selection -->
+| is_vehicle         = yes
+<!-- Service history -->
+| service            = 
+| used_by            = [[United States Marine Corps]]
+| wars               = <!-- Production history -->
+| designer           = Based on [[Iveco SuperAV]]
+| design_date        = 
+| manufacturer       = [[Iveco]] and [[BAE Systems]]
+| developed_from     = [[Iveco SuperAV]]
+| production_date    = Since 2018
+| unit_cost          = {{Tree list}}
+*ACV-P: USD $5.275 million (November 2023)<ref name="McNeil">{{Cite web |last=McNeil |first=Harry |date=2023-12-11 |title=US Marine Corps boosts amphibious power with $211m order |url=https://www.naval-technology.com/news/us-marine-corps-boosts-amphibious-power-with-211m-order/ |access-date=2024-04-29 |website=Naval Technology |language=en-US}}</ref>
+*ACV-C: USD $7.44 million (March 2023)<ref name="baesystems.com">{{Cite web |date=6 March 2023 |title=BAE Systems receives $256 million full-rate production contract from U.S. Marine Corps for additional Amphibious Combat Vehicles |url=https://www.baesystems.com/en/article/bae-systems-receives-256-million-full-rate-production-contract-from-us-marine-corps-for-additional-amphibious-combat-vehicles |access-date=2024-01-31 |website=www.baesystems.com}}</ref>
+{{Tree list/end}}
+| number             = 
+| variants           = ACV-P ([[Armoured personnel carrier|APC]]), <br>ACV-C ([[Command and control|C2]]), <br>ACV-R ([[Armoured recovery vehicle|ARV]]), <br>ACV-30 ([[Infantry fighting vehicle|IFV]])
+| spec_label         = ACV-P <!-- General specifications -->
+| weight             = {{convert|32|t|lbs|abbr=on}}
+| length             = {{convert|361|in|m|abbr=on}}
+| part_length        = 
+| width              = {{convert|124|in|m|abbr=on}}
+| height             = {{convert|114|in|m|abbr=on}} (hull)
+| height in water    = 
+| diameter           = 
+| crew               = 3<ref name=":DOTE ACV"/>
+| passengers         = 13<ref name=":DOTE ACV">[https://www.dote.osd.mil/Portals/97/pub/reports/FY2020/navy/2020acv.pdf?ver=AYnmVr-2qiW6qtmSDJ9FRA%3D%3D Amphibious Combat Vehicle (ACV) Family of Vehicles], Director Operational Test and Evaluation, retrieved 1 October 2024</ref>
+<!-- Vehicle/missile specifications -->
+| armour             = 
+| primary_armament   = [[M2 Browning]] or [[Mk 19 grenade launcher]] with [[Remote controlled weapon station]] (RCWS)<ref>{{Cite web |last=Maj Justin Davis |date=February 2021 |title=Go All In The Marine Corps guide to maximizing the ACV |url=https://www.mca-marines.org/wp-content/uploads/53-Go-All-In.pdf |url-status=live |archive-url=https://web.archive.org/web/20250322164028/https://www.mca-marines.org/wp-content/uploads/53-Go-All-In.pdf |archive-date=22 March 2025 |access-date=22 March 2025}}</ref>
+| engine             = Iveco Cursor 16
+| engine type        = 
+| engine_power       = {{convert|700|hp|kW|abbr=on}} <br>{{convert|3000|Nm|ftlb|abbr=on}}
+| transmission       = Allison 4800SP <br>(automatic, 7 forward, 2 reverse)
+| payload_capacity   = {{convert|3.3|t|lb|abbr=on}}
+| pw_ratio           = {{convert|21.56|hp/t|kW/t|abbr=on}}
+| suspension         = 
+| fuel_capacity      = 
+| vehicle_range      = {{Tree list}}
+*{{convert|325|mi|km|abbr=on}} (land only) 
+*{{convert|12|nmi|mi|abbr=on}} (water) + {{convert|250|mi|km|abbr=on}} (land)
+{{Tree list/end}}
+| speed              = {{convert|65|mph|km/h|abbr=on}} (paved road) <br>{{convert|6|knots|km/h|abbr=on}} (water)
+| guidance           = 
+| steering           = 
+}}
+
+The '''Amphibious Combat Vehicle''' ('''ACV''') is a program initiated by [[Marine Corps Systems Command]] to procure an [[amphibious vehicle|amphibious assault vehicle]] for the [[United States Marine Corps]] to supplement and ultimately replace the aging [[Assault Amphibious Vehicle]] (AAV). The program replaces the [[Expeditionary Fighting Vehicle]] (EFV) program canceled in 2011. Originally a plan to develop a high-water-speed vehicle, the program has expanded into a multi-phased approach to procure and develop several types of amphibious-capable vehicles to address near and long-term requirements.
+
+The competition for the project ended in 2018 with the birth of an [[eight-wheel drive]] [[armored fighting vehicle]], based on the [[Italy|Italian]] [[Iveco SuperAV]]. Production by [[BAE Systems]] and [[Iveco]] started in 2020 with 36 units, and 80 vehicles per year from 2021, for five years.<ref name=":3">[https://news.usni.org/2018/06/19/marines-pick-bae-to-build-amphibious-combat-vehicle-total-contract-worth-up-to-1-2b "Marines Pick BAE to Build Amphibious Combat Vehicle; Contract Worth Up to $1.2B"]. ''USNI News'', 19 June 2018.</ref><ref name="armyrecognition.com">[https://www.armyrecognition.com/defense_news_october_2020_global_security_army_industry/iveco_delivers_first_acv_amphibious_combat_vehicles_to_u.s_marine_corps.html "BAE Systems delivers first ACV Amphibious Combat Vehicles to U.S. Marine Corps"]. ''Army Recognition'', 21 October 2020.</ref><ref name=":4">[https://www.militarytimes.com/news/marine-corps-times/2020/11/10/marine-corps-receives-first-amphibious-combat-vehicle/ "Marine Corps receives first amphibious combat vehicle"]. ''[[Marine Corps Times]]'', 10 November 2020.</ref><ref name=":5">[https://www.armyrecognition.com/defense_news_november_2020_global_security_army_industry/new_amphibious_combat_vehicle_acv_officially_introduced_to_us_marine_corps.html "New Amphibious Combat Vehicle ACV officially introduced to US Marine Corps"]. ''Army Recognition'', 8 November 2020.</ref><ref>[https://www.defensenews.com/land/2020/12/10/marine-corps-amphibious-combat-vehicle-reaches-full-rate-production/ "Marine Corps’ amphibious combat vehicle reaches full-rate production"]. ''[[Defense News]]'', 12 December 2020.</ref>
+
+==Design requirements==
+[[File:Amphibious Combat Vehicle 190228-M-YL753-265.jpg|thumb|upright=1.25|Marines from the Amphibious Combat Vehicle new equipment training team complete an operator course in the vehicle.]]
+
+===Original requirements===
+The ACV should have countermeasures able to contend with a full range of direct fire, indirect fire and land mine threats. Visible and thermal [[signature]] reduction technologies will be used. Modular protection can be applied as necessary.<ref name=RFI_solicitation>{{cite web |url=https://www.fbo.gov/index?s=opportunity&mode=form&id=c3e9e125991dd56a889b9d4d67df0cc0&tab=core&_cview=0 |title=A--Amphibious Combat Vehicle|author=Marine Corps Systems Command |date=17 February 2011 |access-date=4 September 2011 |archive-url= http://webarchive.loc.gov/all/20110227041007/http%3A//www%2Efbo%2Egov/index?s%3Dopportunity%26mode%3Dform%26id%3Dc3e9e125991dd56a889b9d4d67df0cc0%26tab%3Dcore%26_cview%3D0 |archive-date= February 27, 2011 |url-status= live}}</ref>
+
+The vehicle must have the capability to transition from water to ground operations without tactical pause. It must be able to maneuver with the [[M1 Abrams|M1A1 Abrams]] in a mechanized task force. It must have the capability to destroy combat vehicles similar to itself. Weapons must have sufficient range to engage targets from a [[standoff distance]]. Weapons will apply precision fire from a stabilized system. It must provide [[direct fire|direct]] [[fire support]] for dismounted [[infantry]] in an attack.<ref name=RFI_solicitation/>
+
+The Marine Corps identified speed on water as a top requirement, even at the cost of troop carrying capacity.<ref name=":6">[http://www.dodbuzz.com/2013/05/14/marine-corps-insists-on-high-speed-acv/ Marine Corps Insists on High Speed ACV] - DoDBuzz.com, May 14, 2013</ref> The ACV must be able to self-deploy from an [[amphibious assault ship]] at least 12 miles from shore with 17 Marines aboard. It has to be able to travel 8 knots or faster through seas with waves up to three feet.<ref>{{Cite web |title=Marine Corps Amphibious Combat Vehicle (ACV): Background and Issues for Congress |url=https://www.congress.gov/crs-product/R42723 |access-date=2025-03-22 |website=www.congress.gov}}</ref>
+
+Initially, the objective of the USMC was to order 1,122 vehicles. As of March 2023, the objective is to procure 632 vehicles.<ref>[https://news.usni.org/2023/03/15/report-to-congress-on-marines-amphibious-combat-vehicle-2#:~:text=The%20current%20planned%20acquisition%20objective,AAVs%20in%20Assault%20Amphibian%20Battalions. ''Report to Congress on Marines’ Amphibious Combat Vehicle''], news.usni.org, 15 March 2023</ref>
+
+===Revised requirements===
+Given the budget environment and the technological challenges involved, the ACV program was split into two separate phases. The first phase is for immediate upgrade to existing equipment types while testing and trying out new concepts. The second phase is to develop then field a single, ''ultimate'' vehicle using new technology and the lessons learned operating the improved vehicles to replace the equipment from the first phase.
+
+====Phase 1====
+[[File:Amphibious Combat Vehicle 180828-M-VM836-800.jpg|thumb|upright=1.25|A U.S. Marine Corps Amphibious Combat Vehicle (right) and an Amphibious Assault Vehicle (left) outside the II Marine Expeditionary Force Headquarters Building at Camp Lejeune, N.C., Aug. 2018.]]
+
+The first phase, will consist of several hundred, commercial off-the-shelf wheeled armored vehicles, each costing $3–$4.5 million. It will rely on connectors to get it from ship-to-shore, like the [[Landing Craft Air Cushion]] (LCAC) and [[Joint High Speed Vessel]]. Relying on connectors to bring the vehicle to a beach allows the sea base to be located 100 miles from enemy threats. The less ambitious Phase 1 ACV will be fielded in the interim, while research and development will begin to refine the features of the Phase 2 ACV.<ref>{{usurped|1=[https://web.archive.org/web/20140406003135/http://defensetech.org/2014/04/04/marine-corps-scraps-tracks-for-amphibious-combat-vehicle/ Marine Corps Scraps Tracks for Amphibious Combat Vehicle]}} - Defensetech.org, 4 April 2014</ref>
+
+Phase 1.1, the first increment of Phase 1 of procurement, will buy wheeled personnel carriers. Phase 1.2, the second increment of Phase 1, will include mission-role variants like command-and-control, logistics and weapons variants. These iterations may reintroduce tracks or stay wheeled.<ref>{{cite web |first=Dan |last=Parsons |date=26 June 2014 |title=Marines Favor Wheeled Ship-to-Shore Vehicles |url=https://www.nationaldefensemagazine.org/articles/2014/6/26/marines-favor-wheeled-shiptoshore-vehicles |website=Nationaldefensemagazine.org |access-date=22 March 2026}}</ref> ACV 1.1 vehicles will be an operational and commercially available design that is "good enough" to operate. Its water performance will be comparable to the AAV and will have survivability attributes of a [[MRAP|Mine-Resistant Ambush Protected]] (MRAP) vehicle, including high-ground clearance and a [[V-hull|V-shaped hull]], with the ability to drive with a wheel blown off. For the second lot buy (1.2), engineering and design changes will be made to meet roughly half of desired amphibious vehicle fleet size requirements.
+
+The ACV 1.1 is to carry 10–13 Marines, have a swim capability similar to the AAV and have equal or greater mobility to the M1 Abrams tank. Although tracks are traditionally considered better for all-terrain mobility, the Marines believe wheeled vehicle technology has advanced enough to enhance survivability and mobility in a 35-ton-class platform. The [[Marine Personnel Carrier]] technology demonstrator used "in-line" drive technology that enabled all four wheels on each side to pull together much like the way a track does. This demonstrated ability when combined with a higher ground clearance and central tire inflation system, substantially closes the maneuverability gap for wheeled vehicles and results in equal or better maneuverability than the M1A1 and better performance over the AAV, both of which are tracked. {{citation needed|date=January 2021}}
+
+[[File:ACV firing.webm|thumb|upright=1.40|ACV firing its M2 .50-caliber machine gun [[Remote Weapon Station]] (RWS)]]
+Improved technology used to inform requirements to build ACV 1.2 vehicles will later be applied to delivered 1.1 versions to upgrade them to 1.2 standard.<ref>[http://www.mcafdn.org/gazette/2014/09/amphibious-combat-vehicle The Amphibious Combat Vehicle] - MCafdn.org, 10 September 2014</ref><ref>{{cite web |first=Kris |last=Osborn |date=25 September 2014 |title=Corps Eyes New Amphibious Assault Vehicles |url=http://defensetech.org/2014/09/25/corps-eyes-new-amphibious-assault-vehicles/ |url-status=usurped |archive-url=https://web.archive.org/web/20140927023610/http://defensetech.org/2014/09/25/corps-eyes-new-amphibious-assault-vehicles/ |archive-date=27 September 2014 |website=defensetech.org}}</ref> Each ACV 1.1 vehicle will have a 3-man crew and two vehicles will carry a reinforced rifle squad. Armament will consist of an [[Browning M2|M2 .50-caliber machine gun]] in a [[remote weapons station]], with the potential to install a stabilized dual-mount M2/[[Mark 19 grenade launcher]] turret. Potential water speeds are for a {{convert|12|nmi|mi km|abbr=on}} ship-to-shore capability, at {{cvt|8|knot|km/h}}.<ref>{{cite web |first=Sarah |last=Sicard |date=17 November 2014 |title=High Water-Speed Still a Priority for Marine Corps' Amphibious Assault Vehicle |url=https://www.nationaldefensemagazine.org/articles/2014/11/17/high-waterspeed-still-a-priority-for-marine-corps-amphibious-assault-vehicle |website=nationaldefensemagazine.org |access-date=22 March 2026}}</ref>
+
+====Phase 2====
+The second phase is the original high-water-speed effort to develop a vehicle capable of self-deployment from ships, and travel at speeds of {{cvt|13–15|knot|km/h}} on water, each costing $12–$14 million. This last phase of ACV procurement would be purchasing a high-water-speed vehicle, but only if technologies make it achievable without sacrificing armor and weapons.<ref>[http://www.nationaldefensemagazine.org/blog/lists/posts/post.aspx?ID=1559 Future Marine Corps Missions Depend on New Ship-To-Shore Connectors] {{Webarchive|url=https://web.archive.org/web/20160130165833/http://www.nationaldefensemagazine.org/blog/lists/posts/post.aspx?ID=1559 |date=2016-01-30 }} - Nationaldefensemagazine.org, 16 July 2014</ref>
+
+== History ==
+{{Summarize section|date=January 2015}}
+
+===Request for Information===
+A [[request for information|Request For Information]] (RFI) was issued to industry in February 2011. The document outlined expected requirements and asked industry for informal design proposals and program methodology feedback. Responses were due by 22 April 2011.<ref name=RFI_solicitation/> An industry day was held on 6 April 2011.
+
+In August 2012, [[General Dynamics]] was awarded an ACV Hull Survivability Demonstrator contract for the design, fabrication and test support of a full-scale hull to demonstrate crew-protection technologies. In November 2012, they conducted simulated mine-blast tests on their ACV ballistic hull design, successfully meeting mine-blast survivability requirements. Work concluded by May 2013 and will be used to refine requirements for effective protection against under-vehicle threats.<ref>[https://www.prnewswire.com/news-releases/general-dynamics-amphibious-combat-vehicle-hull-design-meets-marine-corps-survivability-requirement-177255731.html General Dynamics Amphibious Combat Vehicle Hull Design Meets Marine Corps' Survivability Requirement] - Prnewswire.com, 5 November 2012.</ref>
+
+In April 2013, [[DARPA|Defense Advanced Research Projects Agency]] (DARPA) awarded a $1 million prize to a team in the [[Adaptive Vehicle Make#Fast Adaptable Next-Generation Ground Vehicle|Fast Adaptable Next-Generation Ground Vehicle]] (FANG) contest. The team beat out 1,000 other competitors to submit their design for a drivetrain for the ACV. The FANG initiative was to demonstrate a way to procure working systems better than the current defense acquisition process, which frequently leads to delays and cost overruns. The Marines are in charge of the ACV program, so there was no guarantee that the DARPA-crowdsourced mobility drivetrain would result in a vehicle bought by the Corps.<ref>[https://www.wired.com/dangerroom/2013/04/darpa-fang-winner/ This Is the Million-Dollar Design for Darpa’s Crowdsourced Swimming Tank] - Wired.com, April 22, 2013</ref>
+
+At a roundtable discussion in June 2013, Marine Corps General [[James F. Amos|Jim Amos]] told the media that the program was still being pursued and that a [[request for proposals|Request For Proposals]] (RFP) would be issued in early 2014. The Corps has secured and saved a "moderate amount" of money for early development. With the previous EFV cancelled from cost overruns, the Marines are being cautious to identify trade-offs between requirements and cost for the platform. Amos noted that they were working with contractors to see which type of vehicle would meet requirements without proving too costly.<ref>[http://www.aviationweek.com/Article.aspx?id=/article-xml/awx_06_26_2013_p0-591775.xml RFP For Marine Corps ACV Expected In 2014] - Aviationweek.com, 26 June 2013</ref>
+
+In January 2013, the ACV team was created and tasked to evaluate the feasibility of building an affordable, survivable amphibious high water speed vehicle. The team includes representatives from over six Department of Defense commands. Their initial requirements and engineering analysis evaluated 198 requirements for the platform.<ref name="marcorsyscom.marines.mil">[http://www.marcorsyscom.marines.mil/News/PressReleaseArticleDisplay/tabid/8007/Article/146253/acv-team-seeks-marines-insight-into-vehicle-requirements.aspx ACV team seeks Marines’ insight into vehicle requirements] {{webarchive |url=https://web.archive.org/web/20131029201021/http://www.marcorsyscom.marines.mil/News/PressReleaseArticleDisplay/tabid/8007/Article/146253/acv-team-seeks-marines-insight-into-vehicle-requirements.aspx |date=October 29, 2013 }} - MarCorSysCom.Marines.mil, 15 July 2013</ref>
+
+From July 9–11, 2013, 25 Marines gathered at [[Marine Corps Base Quantico]], Virginia for a Warfighter Requirements Workshop to review the team's capabilities analysis and determine the value of various capabilities. 30 requirements with cost and weight implications were considered "tradable," including armament and armor protection. Safety and design-specific capabilities, like fitting on an amphibious ship, were considered non-tradable. The point of the workshop was to get input from fleet Marines about what capabilities they wanted to prioritize with current financial pressures. Over the next month, the team ordered the preferences and applied actual cost and weight data to determine feasibility recommendations for Marine Corps leaders by the fall.<ref name="marcorsyscom.marines.mil"/>
+
+===Single vehicle===
+In March 2015, the Marines revealed that the separate ACV 1.1 and 1.2 increments may be merged into a single vehicle. Given that the winner of phase 1.1 will likely be awarded the 1.2 contract, industry is already planning to make their submissions meet the later requirements early. The main differences between the phases is the 1.2's greater self-deploying capability and more seating capacity. Merging the two phases to meet higher requirements earlier could speed up the acquisition timeline and drive down price, since the quantities for both would be bought in bulk.<ref>[http://news.usni.org/2015/03/11/marines-may-merge-acv-increments-as-industry-chases-higher-requirements Marines May Merge ACV Increments as Industry Chases Higher Requirements] - News.USNI.org, 11 March 2015</ref> The Marines released the final RFP for ACV 1.1 in March 2015.<ref>[http://news.usni.org/2015/04/01/marine-corps-releases-amphibious-combat-vehicle-rfp Marine Corps Releases Amphibious Combat Vehicle RFP] - News.USNI.org, 1 April 2015</ref>
+
+In July 2015, [[Lockheed Martin]] revealed it had ended its association with Finnish company [[Patria (company)|Patria]] on their previous collaborative [[Patria AMV#Lockheed Patria Havoc AMV (United States)|Havoc]] offering for the program.<ref>[https://armyrecognition.com/july_2015_global_defense_security_news_uk/lockheed_martin_ends_collaboration_with_patria_on_havoc_will_present_its_own_design_for_acv.html Lockheed Martin Ends Collaboration with Patria on Havoc & Will Present its Own Design for ACV] - Armyrecognition.com, 11 July 2015</ref> Lockheed unveiled their new ACV offering in September 2015.<ref>[https://armyrecognition.com/september_2015_global_defense_security_news_uk/lockheed_martin_introduces_new_acv_candidate_at_modern_day_marine_show_42309151.html Lockheed Martin Introduces New ACV Candidate at Modern Day Marine Show] - Armyrecognition.com, 23 September 2015</ref>
+
+In October 2017 deputy Marine commandant Lt. Gen. [[Brian Beaudreault]] stated "We have to find a solution to getting Marines to shore, from over the horizon, at something greater than seven knots (8 mph)," the swimming speed of the existing Amphibious Assault Vehicle (AAV) and its Amphibious Combat Vehicle (ACV) replacement. Continuing, he said "we must find a high-water-speed vehicle on the surface. We must."<ref>{{Cite web|url=https://breakingdefense.com/2017/10/marines-need-speed-from-ship-to-shore/|title = Marines Need Speed from Ship to Shore|date = 26 October 2017}}</ref>
+
+The Deputy Commandant's statements seemly contradict the phased approach to having a non-self deploying vehicle in the ACV 1.1 and then a fully amphibious vehicle in ACV 1.2. The question remains if the Marines are still interested in procuring a high speed connector vehicle after merging ACV 1.1 and 1.2.
+
+In May 2018 a former Marine officer, Jeff Groom, published an article concerning the ACV. Both BAE System's and SAIC's ACV 1.1 test vehicles could self-deploy and swim from a ship, in contradiction to General Dunford's testimony in March 2015. However, there is apparently no longer a need for speed on water as both test vehicles move through the water at 7 knots using traditional water propellers, the same speed as the legacy 1970s AAV. The article questioned the acquisition decision of a vehicle that swims at the same speed as the vehicle it replaces, carries fewer troops and is more expensive.<ref>{{Cite web|url=https://www.theamericanconservative.com/articles/amphibious-vehicles-are-the-militarys-latest-tax-dollar-sinkhole/|title = Amphibious Vehicles Are the Military's Latest Tax Dollar Sinkhole| date=24 May 2018 }}</ref>
+
+===Engineering and Manufacturing Development (EMD) phase===
+On 24 November 2015, the Marines selected the [[BAE Systems]] and [[Iveco]] with [[Iveco SuperAV]] vehicle and the [[Science Applications International Corporation|SAIC]] [[Terrex]] vehicle to move on to the Engineering and Manufacturing Development (EMD) phase of the ACV 1.1 program, beating out the vehicles from Lockheed Martin, [[General Dynamics]] and Advanced Defense Vehicle Systems. The Marine Corps valued swim operations, land operations, carrying capability and force protection equally in the selection process, but the two winners were chosen for emphasis focused on amphibious swim capability since the ACV is "fundamentally an amphibious vehicle". Each company was awarded a contract to build 16 vehicles by late 2016, 13 initially and three more when funding becomes available, with testing beginning in early 2017 and lasting one year. A winner is planned to be selected in 2018 to build 204 vehicles, with the first entering service in 2020 and all delivered by 2023.<ref>[https://www.defensenews.com/story/breaking-news/2015/11/24/bae-saic-named-finalists-marines-acv-competition/76312760/ BAE, SAIC Named as Finalists in Marines ACV Competition] - Defensenews.com, 24 November 2015</ref><ref>[http://news.usni.org/2015/11/24/marine-corps-awards-amphibious-combat-vechicle-1-1-contracts-to-bae-systems-and-saic Marine Corps Awards Amphibious Combat Vehicle 1.1 Contracts to BAE Systems and SAIC] - News.USNI.org, 24 November 2015</ref>
+
+===Selection and contract===
+{{Listen
+|image    = [[File:Video Camera Icon.png|50px]]
+|help     = no
+|filename = Amphibious Combat Vehicle demonstration.ogv
+|title    = ACV demonstration at Amphibious Vehicle Test Branch facility, Marine Corps Base Camp Pendleton, ca. 2019
+|filename2= Amphibious Combat Vehicle open ocean testing.ogv
+|title2   = ACV open ocean testing with Marine Corps operators off the coast of Marine Corps Base Camp Pendleton, ca. 2020
+|pos      = right
+}}
+
+In June 2018, the BAE design was selected, with an initial order of 30 ACVs.<ref>{{cite web|url=https://www.defenseone.com/business/2018/06/marines-buy-new-amphibious-combat-vehicle-bae-systems/149141 |title=Marines to Buy New Amphibious Combat Vehicle from BAE Systems |author=<!--Not stated--> |date=19 June 2018 |website=defenseone.com |publisher= |access-date= }}</ref> In June 2019, BAE Systems and Iveco were awarded a contract to develop Command and 30mm gun armed variants.<ref>{{Cite web|url=https://ukdefencejournal.org.uk/us-marine-corps-awards-bae-contract-for-acv-family-of-vehicles/?no_cache=1|title = US Marine Corps awards BAE contract for ACV family of vehicles|date = 27 June 2019}}</ref>
+
+In October 2020, Iveco announced that the first fleet of 18 ACVs had been delivered to a platoon of Marines after five years of testing development.<ref name="armyrecognition.com"/>
+
+In December 2020, the Marine Corps and BAE Systems announced the commencement of full-rate production, with an initial batch of 36, expected to grow to 72 in early 2021, with an option for 80 vehicles per year thereafter.<ref>{{Cite web|url=https://www.defensenews.com/land/2020/12/10/marine-corps-amphibious-combat-vehicle-reaches-full-rate-production/|title = US Marine Corps' amphibious combat vehicle reaches full-rate production|date = 14 December 2020}}</ref> The subcontract for the ACV's remote turret went to [[Kongsberg Defence Systems]] with the [[Protector (RWS)|Protector RT20]].<ref>[https://www.kongsberg.com/no/kda/products/defence-and-security/remote-weapon-systems/protector-rt20/ "PROTECTOR RT20"]. kongsberg.com</ref>
+
+A January 2021 report from the Department of Defense's Director of Operational Test & Evaluation (DOT&E) pointed to several problems with the ACV, including cramped quarters, difficult egress and frequent breakdown.<ref>{{Cite web|date=January 2021|title=Amphibious Combat Vehicle Family of Vehicles|url=https://www.dote.osd.mil/Portals/97/pub/reports/FY2020/navy/2020acv.pdf|access-date=January 26, 2021|website=Director, Operational Test and Evaluation}}</ref>
+
+In August 2022, the U.S. Marine Corps awarded BAE Systems an $88 million contract to build multiple ACV-30 Production Representative Test Vehicles (PRTVs).<ref>{{Cite web|date=August 15, 2022|title=BAE Systems receives $88 million contract for ACV-30 test vehicles|url=https://www.baesystems.com/en/article/bae-systems-receives-88-million-contract-for-acv-30-test-vehicles|access-date=August 31, 2022|website=BAE systems}}</ref>
+
+== Variants ==
+The ACV Family of Vehicles is made of what was initially, the ACV 1.1 and ACV 1.2. 
+* ACV 1.1: it was designed with the requirement for a swim capability of at least 3 nautical miles from its ship to the shore.<ref name=":7">{{Cite web |last=Parsons |first=Dan |date=2018-04-27 |title=Testing Complete, Marines To Choose Amphibious Combat Vehicle In June |url=https://www.defensedaily.com/testing-complete-marines-choose-amphibious-combat-vehicle-june/navy-usmc/ |access-date=2024-04-29 |website=Defense Daily |language=en-US}}</ref>
+* ACV 1.2: The requirement for its capability is set to be increased to 12 miles from the ship to the shore, and additional improvements are expected to be made. Communication and recovery variants are also expected.<ref name=":7" />
+
+Both generations were merged to make a common basis for various variants in January 2019.<ref name=":33">{{Cite web |date=December 2022 |title=Selected Acquisition Report (SAR) |url=https://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/Selected_Acquisition_Reports/FY_2022_SARS/ACV%20FoV_SAR_DEC_2022_final.pdf |access-date=October 19, 2024 |website=www.esd.whs.mil}}</ref>
+
+=== Variants in production and in service ===
+
+==== ACV-C ====
+[[File:Amphibious Combat Vehicle Command (ACV-C).jpg|thumb|right|ACV-C]]
+
+The Amphibious Combat Vehicle – Command and Control (ACV-C) is a variant of the ACV designed to serve as a mobile command post. It shares the same hull, powertrain, drivetrain, and survivability suite as the ACV-P (Personnel variant) but is equipped with seven radios, additional antennas, and an expanded battery pack to support silent watch operations. The vehicle enables secure voice and data communications, supports operational planning, intelligence processing, fire support coordination, and logistics management.<ref>{{Cite web |last=U.S. Navy |date=2022 |title=Amphibious Combat Vehicle – Command and Control variant (ACV-C) |url=https://www.dote.osd.mil/Portals/97/pub/reports/FY2022/navy/2022acv-c.pdf?ver=ZktVYKG6t7TmUPlHgemvLA%3D%3D |url-status=live |archive-url=https://web.archive.org/web/20250312144659/https://www.dote.osd.mil/Portals/97/pub/reports/FY2022/navy/2022acv-c.pdf?ver=ZktVYKG6t7TmUPlHgemvLA%3D%3D |archive-date=12 March 2025 |access-date=22 March 2025}}</ref>
+
+The first production vehicle of this variant was delivered in January 2024.<ref name=":4" /> It has an AAO (approved acquisition objective) of 33 vehicles.<ref name=":8">{{Cite web |title=FAVS 2023: US Marines to deploy ACV amphibious vehicles in 2024 |url=https://www.janes.com/defence-news/news-detail/favs-2023-us-marines-to-deploy-acv-amphibious-vehicles-in-2024 |access-date=2024-04-29 |website=Janes.com |date=17 November 2023 |language=en}}</ref>
+
+==== ACV-P ====
+The ACV-P is the personnel carrier variant of the ACV. It carries a crew of three and can transport a squad of thirteen Marines, along with two days' worth of combat equipment and supplies.<ref name=":6" /> The ACV-P is equipped with the [[M153|M153 Protector Remote Weapon Station]] (RWS), which can be fitted with either the [[M2 .50 Caliber Machine Gun|M2 .50 Caliber machine gun]], ready to fire with 400 rounds, or a [[Mk 19 grenade launcher|Mk-19]] grenade launcher, ready to fire with 96 rounds.<ref>{{Cite web |last=Maj Justin Davis |date=February 2021 |title=Go All In The Marine Corps guide to maximizing the ACV |url=https://www.mca-marines.org/wp-content/uploads/53-Go-All-In.pdf |url-status=live |archive-url=https://web.archive.org/web/20250322164028/https://www.mca-marines.org/wp-content/uploads/53-Go-All-In.pdf |archive-date=22 March 2025 |access-date=22 March 2025}}</ref><ref>{{Cite web |date=2017-01-31 |title=Weapon system moves Reserve gunners to the safety of the backseat |url=https://www.army.mil/article/181552/weapon_system_moves_reserve_gunners_to_the_safety_of_the_backseat |access-date=2025-03-22 |website=www.army.mil |language=en}}</ref> The M153 is a stabilized mount that contains a sensor suite and fire control software. It allows on-the-move target acquisition and first-burst target engagement. Capable of target engagement under day and night conditions, the M153's sensor suite includes a daytime video camera, thermal camera and laser rangefinder.<ref>{{Cite web |title=PEO Soldier |url=https://www.peosoldier.army.mil/Equipment/Equipment-Portfolio/Project-Manager-Soldier-Lethality-Portfolio/M153-A1-A2-CROWS/ |access-date=2025-01-23 |website=www.peosoldier.army.mil}}{{source-attribution}}</ref> The ACV-P has an AAO (approved acquisition objective) of 390 vehicles, it reached its IOC in 2020.<ref name=":8" />
+
+<gallery mode="packed" widths="500" heights="160">
+File:ACV at Twentynine Palms.jpg|ACV-P
+File:Amphibious Combat Vehicles (ACV) at Twentynine Palms.jpg|ACV-Ps armed with [[Mk 19 grenade launcher|Mk-19s]] and an [[M2 Browning#M2A1|M2A1 Browning]]
+File:Amphibious Combat Vehicle (ACV) interior.jpg|Interior of the ACV-P
+</gallery>
+
+=== Variants in development ===
+
+==== ACV-30 ====
+[[File:ACV-30.jpg|thumb|ACV-30]]
+
+The ACV-30 is the [[Infantry fighting vehicle|Infantry Fighting]] variant of the ACV vehicle. It mounts a stabilized, medium-calibre weapon system to provide lethality and protection the Marines need while leaving ample room for troop capacity and payload.<ref name=":3" /> 175 of those vehicles are planned, with an Initial Operational Capability set for 2026.<ref name=":8" />
+
+This variant weight {{convert|35|t|lb|abbr=on}}, and has a payload of {{convert|3.30|t|lb|abbr=on}}. It is equipped with a [[Protector RWS#Overview|Kongsberg RT-20]] remote turret using the [[Mk44 Bushmaster II]] (XM813) chain gun, with a calibre of [[30x173mm|30×173mm]], and an [[M240 machine gun|M240]] 7.62mm [[coaxial machine gun]].<ref>{{Cite web |last=Department of the Navy |date=June 2025 |title=Department of Defense Fiscal Year (FY) 2026 Budget Estimates Procurement, Marine Corps |url=https://www.secnav.navy.mil/fmc/fmb/Documents/26pres/PMC_Book.pdf}}</ref> The ACV-30 can carry up to eight embarked marines, in addition to a three-person crew (driver, gunner, and vehicle commander). It also holds two days of supplies (food, water, and ammunition), up to 300 rounds for its autocannon, and up to 800 rounds for its machine gun.<ref>{{Cite web |last=Director, Operational Test & Evaluation (DOT&E) |title=Amphibious Combat Vehicle (ACV) Family of Vehicles (FoV) |url=https://www.dote.osd.mil/Portals/97/pub/reports/FY2025/navy/2025acv-fov.pdf?ver=bqoyeUD4Bx_G5vxNRNzgMQ%3d%3d |url-status=live |archive-url=https://web.archive.org/web/20260320213511/https://www.dote.osd.mil/Portals/97/pub/reports/FY2025/navy/2025acv-fov.pdf?ver=bqoyeUD4Bx_G5vxNRNzgMQ%3D%3D |archive-date=20 March 2026 |access-date=20 March 2026 |website=DOT&E}}</ref>
+
+In August 2022, the USMC awarded BAE System with a contract to manufacture multiple production-ready test vehicles (PRTV) for US$88 million.<ref name=":12">{{Cite web |title=Amphibious Combat Vehicle (ACV) 1.1, United States of America |url=https://www.army-technology.com/projects/amphibious-combat-vehicle-acv-1-1/ |access-date=2024-01-31 |website=Army Technology |language=en-US}}</ref>
+
+==== ACV-R ====
+[[File:Amphibious Combat Vehicle - Recovery (ACV-R).jpg|thumb|right|ACV-R]]
+
+The ACV-R is the recovery variant of the ACV This variant provides field maintenance, recovery, and repair capabilities to the assault amphibian (AA) companies and battalion in support of the Marine division.<ref name=":33"/>
+
+The contract for the design and development of this variant was signed in March 2022 for US$34.9 million.<ref name=":12"/> In April 2024, received a contract to build and deliver production representative test vehicles (PRTV) of the ACV-R for US$79 million.
+
+=== Experimental variants ===
+
+==== ACV C4/UAS ====
+[[File:BAE C4UAS Prototype.jpg|thumb|right|ACV C4/UAS]]
+
+This variant is developed by [[Lockheed Martin]] [[Skunk Works]]. It is equipped with LM Stalker and Indago small UAS. This variant was also tested with a land drone, the IAI/ELTA Rex MkII unmanned infantry combat support system.<ref name=":5" /><ref name=":2">{{Cite web |date=16 February 2023 |title=BAE Systems successfully tests Lockheed Martin Skunk Works®' small unmanned aerial systems on ACV C4/UAS |url=https://www.baesystems.com/en/article/bae-systems-successfully-tests-lockheed-martin-skunk-works-small-unmanned-aerial-systems-on-acv-c4-uas |access-date=2024-01-31 |website=www.baesystems.com}}</ref>
+
+It aims at evaluating solutions for the Advanced Reconnaissance Program with a Government Off The Shelf (GOTS) solution.<ref name=":2" /> It focuses especially on the technological demonstration of the manned-unmanned teaming (MUM-T) capability.
+
+=== Planned variants ===
+
+==== ACV 2.0 ====
+For this generation, it is planned as being a "true ship-to-shore connector", with a higher range at sea, and an increased speed. Some other variants are planned, and optionally manned ones are expected.<ref name=":7" />
+
+== Orders ==
+
+=== Prototypes ===
+; {{flag|United States}} (16 ACV 1.1)
+: In May 2015, BAE Systems signed a contract to deliver 16 ACV 1.1 prototypes under an engineering, manufacturing and development (EMD) contract for US$103.7 million.<ref>{{Cite web |date=24 Nov 2015 |title=BAE Systems Team Awarded Development Contract for U.S. Marine Corps ACV 1.1 Program |url=https://www.baesystems.com/en/article/bae-systems-team-awarded-development-contract-for-u-s--marine-corps-acv-1-1-program |access-date=2024-01-31 |website=www.baesystems.com}}</ref>
+
+=== LRIP (Low Rate Initial Production) ===
+; {{flag|United States}} (116 ACV-P ordered)
+: Low Rate initial production<ref name=":33"/>
+:* Lot 1, June 2018, 30 ACV-P ordered for a value of US$198 million,<ref>{{Cite web |last=Cox |first=Matthew |date=2018-06-19 |title=BAE Systems Will Make Marines' New Wheeled Amphibious Combat Vehicle |url=https://www.military.com/dodbuzz/2018/06/19/bae-systems-will-make-marines-new-wheeled-amphibious-combat-vehicle.html |access-date=2024-01-31 |website=Military.com |language=en}}</ref> with an option to deliver up to 204 vehicles for US$1.2 billion<ref>{{Cite web |title=Amphibious Combat Vehicle (ACV) 1.1, United States of America |url=https://www.army-technology.com/projects/amphibious-combat-vehicle-acv-1-1/ |access-date=2024-04-29 |website=Army Technology |language=en-US}}</ref>
+:* Lot 2, December 2018, 30 ACV-P ordered<ref name=":33"/>
+:* Lot 3, approved in July 2019<ref name=":33"/>
+:** Lot 3a, October 2019, 30 ACV-P ordered<ref name=":33"/>
+:** Lot 3b, February 2019, 26 vehicles ordered<ref>{{cite web | url=https://gbp.com.sg/stories/u-s-marine-corps-adds-to-acv-order-with-bae-systems-iveco-defence-vehicles/ | title=U.S Marine Corps Adds to ACV Order with BAE Systems, Iveco Defence Vehicles }}</ref>
+
+=== FRP (Full Rate Production) ===
+; {{flag|United States}} (206 ACV-P ordered + 29 ACV-C)
+: The Full Rate Production was approved on 8 December 2020<ref name=":33"/>
+:* Lot 1 approved in December 2020<ref name=":33" />
+:** Lot 1a awarded in December 2020, 36 ACV-P ordered for US$184 million with Continuing Resolution funds<ref name=":12"/><ref>{{Cite web |last=McDougall |first=Shaun |date=2021-02-11 |title=BAE Systems Awarded Contract for 36 Amphibious Combat Vehicles |url=https://dsm.forecastinternational.com/2021/02/11/bae-systems-awarded-contract-for-36-amphibious-combat-vehicles/ |access-date=2024-01-31 |website=Defense Security Monitor |language=en-US}}</ref><ref name=":42">{{Cite web |date=24 January 2022 |title=BAE Systems receives 169 million production contract from US Marine Corps for additional Amphibious Combat Vehicles |url=https://www.baesystems.com/en-ja/article/bae-systems-receives-169-million-production-contract-from-us-marine-corps-for-additional-amphibious-combat-vehicles |access-date=2024-01-31 |website= baesystems.com}}</ref>
+:** Lot 1b awarded in February 2021, 36 ACV-P ordered for US$183.8 million<ref name=":42" />
+:* Lot 2
+:** Lot 2a awarded in December 2021, 33 ACV-P ordered for $169 million with Continuing Resolution funds<ref>{{Cite web |title=US Marine Corps Orders More Wheeled Assault Vehicles |url=https://defence-blog.com/u-s-marine-corps-orders-more-wheeled-assault-vehicles/ |website=defence-blog.com}}</ref><ref name=":42" /><ref name=":33" /> Lot 2b awarded in March 2022, 36 ACV-P ordered for US$173.6 million<ref>{{Cite web |first=Richard R. |last=Burgess |date=2022-03-28 |title=Marine Corps Orders 36 More Amphibious Combat Vehicles |url=https://seapowermagazine.org/marine-corps-orders-36-more-amphibious-combat-vehicles/ |access-date=2024-01-31 |website=Seapower |language=en-US}}</ref>
+:** Lo4 2c awarded in May 2022, 14 ACV-C ordered<ref name=":33" />
+:* Lot 3
+:** Lot 3a awarded in November 2022 with Continuing Resolution funds 30 ACV-P ordered
+:* Lot 4
+:** March 2023, 40 vehicles ordered for US$256.8 million<ref name="baesystems.com">{{Cite web |date=6 March 2023 |title=BAE Systems receives $256 million full-rate production contract from U.S. Marine Corps for additional Amphibious Combat Vehicles |url=https://www.baesystems.com/en/article/bae-systems-receives-256-million-full-rate-production-contract-from-us-marine-corps-for-additional-amphibious-combat-vehicles |access-date=2024-01-31 |website=www.baesystems.com}}</ref>
+:*** 25 ACV-P for $145.3 million
+:*** 15 ACV-C for 111.5 million
+:** November 2023, 40 vehicles ordered for US$211 million<ref name="McNeil">{{Cite web |last=McNeil |first=Harry |date=2023-12-11 |title=US Marine Corps boosts amphibious power with $211m order |url=https://www.naval-technology.com/news/us-marine-corps-boosts-amphibious-power-with-211m-order/ |access-date=2024-04-29 |website=Naval Technology |language=en-US}}</ref>
+:*** 40 ACV-P for US$211 million
+
+=== Orders of turrets ===
+;{{flag|United States}} (175 Protector RT20)
+: Contract announced in November 2024 for 175 remote controlled turrets for a value of USD $329 million for the ACV-30 variant.<ref>{{Cite web |title=Kongsberg secures award to build gun turrets for full-rate production ACV-30s {{!}} InsideDefense.com |url=https://insidedefense.com/insider/kongsberg-secures-award-build-gun-turrets-full-rate-production-acv-30s |access-date=2024-11-07 |website=insidedefense.com}}</ref>
+: The contract is to arm the ACV-30 of the Lot 5 and Lot 6.<ref>{{Cite web |title=Contracts for November 4, 2024 |url=https://www.defense.gov/News/Contracts/Contract/Article/3955652// |archive-url=https://web.archive.org/web/20241127051104/https://www.defense.gov/News/Contracts/Contract/Article/3955652/ |url-status=dead |archive-date=November 27, 2024 |access-date=2024-11-07 |website=U.S. Department of Defense |language=en-US}}</ref>
+
+==See also==
+
+===Comparable vehicles===
+{{Div col|colwidth=25em}}
+* [[Stryker]]/[[LAV (armoured vehicle)|LAV AFV]]/[[ASLAV]]/{{lwc|LAV III}}
+* {{lwc|TATA Kestrel}}
+* {{lwc|K808 White Tiger}}
+* {{lwc|Freccia IFV}}
+* {{lwc|BTR-90}}
+* {{lwc|VPK-7829 Bumerang}}
+* {{lwc|Boxer (armoured fighting vehicle)|Boxer AFV}}
+* {{lwc|CM-32 armoured vehicle}}
+* {{lwc|Type 08|ZBL-08}}
+* {{lwc|Type 96 armored personnel carrier}}
+* {{lwc|Patria AMV}}
+* {{lwc|BTR-4}}
+* {{lwc|Saur 1|Saur 2}}
+* {{lwc|VBCI}}
+* {{lwc|KTO Rosomak}}
+* {{lwc|FNSS Pars}}
+* {{lwc|Mowag Piranha}}
+* {{lwc|Terrex ICV}}
+* {{lwc|Type 05 amphibious fighting vehicle}}
+{{Div col end}}
+
+== References ==
+{{Marine Corps}}
+{{Reflist}}
+
+== Further reading ==
+* {{cite web |last= Feickert |first= Andrew |title= Marine Corps Amphibious Combat Vehicle (ACV) and Marine Personnel Carrier (MPC): Background and Issues for Congress |publisher= [[Congressional Research Service]] |date= 2 January 2013 |url= https://www.fas.org/sgp/crs/weapons/R42723.pdf |access-date= 7 January 2013 |id= R42723}}
+* [https://www.marinecorpstimes.com/news/your-marine-corps/2015/03/11/marine-3-star-defends-next-gen-amphibious-vehicle/ Marine 3-star defends next-gen amphibious vehicle] on Marine Times
+
+==External links==
+{{commons category|Amphibious Combat Vehicle}}
+
+{{Modern IFV and APC}}
+
+[[Category:United States Marine Corps projects]]
+[[Category:Post–Cold War armored fighting vehicles of the United States]]
+[[Category:Military vehicles of the United States]]
+[[Category:Wheeled armoured fighting vehicles]]
+[[Category:Eight-wheeled vehicles]]
+[[Category:Wheeled armoured personnel carriers]]
+[[Category:Armored personnel carriers of the United States]]
+[[Category:Amphibious armoured personnel carriers]]
+[[Category:Amphibious armoured fighting vehicles]]
+[[Category:BAE Systems land vehicles]]
+[[Category:Iveco vehicles]]
