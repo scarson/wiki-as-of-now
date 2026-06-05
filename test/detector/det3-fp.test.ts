@@ -142,58 +142,40 @@ describe("DET-3 FP set — structural validation", () => {
   });
 });
 
-/**
- * The curated entries of a sub-shape that the detector STILL flags, AND whose
- * flagging candidate actually anchors on the curated `anchorYear`. The
- * anchorYear cross-check (Task 1.1 reviewer NIT) stops a wrong anchorYear from
- * passing silently: a sub-shape can only be reported "still flagged" when the
- * detector flags that sentence on the very year the curation claims is incidental.
- */
-function flaggedOnAnchorYear(subShape: SubShape): Det3FpEntry[] {
-  return fpSet.filter(entry => {
-    if (entry.subShape !== subShape) return false;
-    const matching = candidateCache
-      .get(entry.fixture)!
-      .filter(cand => cand.sentenceText.includes(entry.sentenceSubstring));
-    return matching.some(c => c.year === entry.anchorYear);
-  });
-}
-
-describe("DET-3 FP gate — cross-clause + noun-modifier + named-entity hardened, rest baseline-reporting", () => {
-  // The cross-clause discriminator (Task 2.2) lands first, so its sub-shape is a
-  // HARD gate: the detector must flag NONE of the curated cross-clause asides.
+describe("DET-3 FP gate — all five sub-shapes hardened (Task 2.5 completes Phase 2)", () => {
+  // The cross-clause discriminator (Task 2.2): the detector must flag NONE of the
+  // curated cross-clause asides.
   it("flags none of the cross-clause-aside FPs", () => {
     expect(flaggedFpEntries("cross-clause-aside")).toEqual([]);
   });
 
-  // The noun-modifier discriminator (Task 2.3) is the second HARD gate: the detector
-  // must flag NONE of the curated "the <year> <noun>" / possessive-led label FPs.
+  // The noun-modifier discriminator (Task 2.3): the detector must flag NONE of the
+  // curated "the <year> <noun>" / possessive-led label FPs.
   it("flags none of the noun-modifier FPs", () => {
     expect(flaggedFpEntries("noun-modifier")).toEqual([]);
   });
 
-  // The named-entity discriminator (Task 2.4) is the third HARD gate: the detector
-  // must flag NONE of the curated "<ProperNoun> <year>" entity-name FPs.
+  // The named-entity discriminator (Task 2.4): the detector must flag NONE of the
+  // curated "<ProperNoun> <year>" entity-name FPs.
   it("flags none of the named-entity FPs", () => {
     expect(flaggedFpEntries("named-entity")).toEqual([]);
   });
 
-  // The remaining sub-shapes still baseline-report (their discriminators land in
-  // Task 2.5). Passes unconditionally for now; each line below becomes a hard
-  // `expect(flaggedFpEntries("<shape>")).toEqual([])` as its discriminator lands.
-  it("logs the per-sub-shape flagged baseline for the not-yet-hardened sub-shapes", () => {
-    const stillBaselined: SubShape[] = [
-      "parenthetical",
-      "range",
-    ];
+  // The parenthetical discriminator (Task 2.5): the detector must flag NONE of the
+  // curated "(year)" / "(in year prices)" / "(as of date year)" parenthetical FPs.
+  it("flags none of the parenthetical FPs", () => {
+    expect(flaggedFpEntries("parenthetical")).toEqual([]);
+  });
 
-    const baseline: Record<string, number> = {};
-    const onAnchor: Record<string, number> = {};
-    for (const s of stillBaselined) {
-      baseline[s] = flaggedFpEntries(s).length;
-      onAnchor[s] = flaggedOnAnchorYear(s).length;
-    }
+  // The range discriminator (Task 2.5): the detector must flag NONE of the curated
+  // "from year to year" / "between year and year" range FPs.
+  it("flags none of the range FPs", () => {
+    expect(flaggedFpEntries("range")).toEqual([]);
+  });
 
+  // --- Single labeled informational log (testing-pitfalls §1 output discipline) ---
+  // Reports the curated distribution; passes unconditionally.
+  it("logs curated sub-shape distribution (informational)", () => {
     const curatedPerSubShape: Record<SubShape, number> = {
       "cross-clause-aside": 0,
       "noun-modifier": 0,
@@ -202,27 +184,9 @@ describe("DET-3 FP gate — cross-clause + noun-modifier + named-entity hardened
       range: 0,
     };
     for (const entry of fpSet) curatedPerSubShape[entry.subShape]++;
-
-    // --- Single labeled output block (testing-pitfalls §1 output discipline) ---
-    console.log("=== DET-3 FP BASELINE (not-yet-hardened sub-shapes) ===", {
+    console.log("=== DET-3 FP GATE — all sub-shapes hardened (Phase 2 complete) ===", {
       curatedPerSubShape,
-      flaggedPerSubShape: baseline,
-      flaggedOnAnchorYear: onAnchor,
-      crossClauseHardened: flaggedFpEntries("cross-clause-aside").length === 0,
+      totalCurated: fpSet.length,
     });
-
-    // Sanity for the not-yet-hardened sub-shapes: every curated entry is still a
-    // live FP today AND the detector flags it ON the curated anchorYear — so a
-    // wrong anchorYear cannot pass silently before this becomes an expect([]) gate.
-    for (const s of stillBaselined) {
-      expect(
-        baseline[s],
-        `sub-shape "${s}": flagged-today ${baseline[s]} != curated ${curatedPerSubShape[s]} — a curated FP is no longer flagged; re-verify before this becomes a Phase 2 expect([]) gate`
-      ).toBe(curatedPerSubShape[s]);
-      expect(
-        onAnchor[s],
-        `sub-shape "${s}": flagged-on-anchorYear ${onAnchor[s]} != curated ${curatedPerSubShape[s]} — a curated entry's anchorYear does not match the detector's chosen year; the anchorYear is wrong`
-      ).toBe(curatedPerSubShape[s]);
-    }
   });
 });

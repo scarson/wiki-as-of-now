@@ -54,9 +54,9 @@ function isIncidental(sentence: string, markerIndex: number, occ: YearOccurrence
   return (
     isCrossClauseAside(sentence, markerIndex, occ) ||
     isNounModifier(sentence, markerIndex, occ) ||
-    isNamedEntity(sentence, markerIndex, occ)
+    isNamedEntity(sentence, markerIndex, occ) ||
+    isParentheticalOrRange(sentence, occ)
   );
-  // Further discriminators are OR-ed in by later tasks.
 }
 
 /**
@@ -241,4 +241,56 @@ function isNamedEntity(sentence: string, markerIndex: number, occ: YearOccurrenc
   const beforeToken = localBefore.slice(0, m.index);
   if (BARE_FRAME_PREP_BEFORE.test(beforeToken + " ")) return false;
   return true;
+}
+
+/**
+ * True when `occ` is inside balanced parentheses, OR part of a
+ * `<year>[–-]<year>` / "from `<year>` to `<year>`" / "between `<year>` and
+ * `<year>`" range (design §2 row 4). A range is only excluded as an incidental
+ * anchor — never recovered as a target (design §5).
+ *
+ * Exception: a SENTENCE-INITIAL "From X to Y, ..." construct is the marker's
+ * own temporal window (e.g. "From 2015 to 2022, units will be manufactured")
+ * and MUST NOT be dropped — design §5 / README "excluded as not-incidental".
+ */
+function isParentheticalOrRange(sentence: string, occ: YearOccurrence): boolean {
+  // --- Parenthetical check ---
+  // Count unmatched open parens before the year; if there are more opens than
+  // closes, and a closing paren appears after the year (within the sentence),
+  // the year is inside balanced parentheses.
+  const before = sentence.slice(0, occ.start);
+  const opens = (before.match(/\(/g) || []).length;
+  const closes = (before.match(/\)/g) || []).length;
+  const inParens =
+    opens > closes && /^[^)]*\)/.test(sentence.slice(occ.end));
+  if (inParens) return true;
+
+  // --- Range check ---
+  // Adjacent hyphen/en-dash range: <year>[–-]<year>
+  const around = sentence.slice(Math.max(0, occ.start - 10), occ.end + 10);
+  if (/\d{4}\s*[–\-]\s*\d{4}/.test(around)) return true;
+
+  // Multi-word range patterns: scan the full sentence so the end year can see
+  // the opening keyword even when it sits > 10 characters before the year.
+  // Each pattern object carries sentenceInitialSafe: a sentence-initial match
+  // of that pattern is the marker's own temporal window and is kept eligible.
+  const rangePatterns: { re: RegExp; sentenceInitialSafe: boolean }[] = [
+    // "from <year> to <year>": sentence-initial form is the marker's window (KEEP).
+    { re: /\bfrom\s+\d{4}\s+to\s+\d{4}\b/gi, sentenceInitialSafe: true },
+    // "between <year> and <year>": always an incidental historical span (DROP).
+    { re: /\bbetween\s+\d{4}\s+and\s+\d{4}\b/gi, sentenceInitialSafe: false },
+  ];
+  for (const { re, sentenceInitialSafe } of rangePatterns) {
+    re.lastIndex = 0;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(sentence)) !== null) {
+      // Is this occurrence's start position inside this match span?
+      if (occ.start < m.index || occ.start >= m.index + m[0].length) continue;
+      // Sentence-initial "From X to Y" is the marker's forward window — KEEP.
+      if (sentenceInitialSafe && m.index === 0) continue;
+      return true;
+    }
+  }
+
+  return false;
 }

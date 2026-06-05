@@ -210,3 +210,52 @@ describe("governedYears — real mixed cases (target governed across an incident
     expect(governedYears(text, "expected to", [2019, 2025, 2019, 2010])).toContain(2025);
   });
 });
+
+describe("governedYears — parenthetical / range", () => {
+  it("DROPS a parenthetical year '(2003)'", () => {
+    expect(governedYears("the game (2003) will get a sequel", "will", [2003])).toEqual([]);
+  });
+  it("DROPS a year inside an en-dash range '2024–2030'", () => {
+    expect(governedYears("planned to run 2024–2030 across phases", "planned to", [2024, 2030])).toEqual([]);
+  });
+  it("DROPS a year in a hyphen range '2024-2030'", () => {
+    expect(governedYears("projects from 2020-2025 are covered", "will", [2020, 2025])).toEqual([]);
+  });
+  it("DROPS a 'from <year> to <year>' range year (start)", () => {
+    expect(governedYears("orbited Jupiter from 1995 to 2003 before it was decommissioned will", "will", [1995, 2003])).toEqual([]);
+  });
+  it("DROPS a parenthetical price-base note '(fiscal 2010 dollars)'", () => {
+    expect(governedYears("will be an estimated $6.2 billion (fiscal 2010 dollars)", "will", [2010])).toEqual([]);
+  });
+  it("DROPS a parenthetical '(in 2012 prices)'", () => {
+    expect(governedYears("the price will be adjusted to £92.50/MWh (in 2012 prices)", "will", [2012])).toEqual([]);
+  });
+  it("KEEPS a plain target year (not in parens, not in a range)", () => {
+    expect(governedYears("planned to launch in 2024", "planned to", [2024])).toEqual([2024]);
+  });
+  it("KEEPS a year that is in parens but outside balanced parens before it (no open paren before)", () => {
+    // "the program (now delayed) is expected to finish in 2024" — 2024 is NOT in parens
+    expect(
+      governedYears("the program (now delayed) is expected to finish in 2024", "is expected to", [2024])
+    ).toContain(2024);
+  });
+  it("DROPS a year that is the endpoint of a 'between <year> and <year>' range", () => {
+    // high_speed_2 real FP: station 'existed ... between 1838 and 1966; ... will be retained'
+    // 1838 is below the year-regex threshold (19xx/20xx); 1966 is the only visible past year
+    // and is the endpoint of an explicit 'between...and' range belonging to a different subject.
+    expect(
+      governedYears(
+        "A station existed on the site between 1838 and 1966; the building will be retained.",
+        "will",
+        [1966]
+      )
+    ).toEqual([]);
+  });
+  it("KEEPS a sentence-initial 'From <year> to <year>' range (marker's temporal window)", () => {
+    // k9_thunder real case: 'From 2015 to 2022, 24 units will be manufactured'
+    // design §5 and README 'excluded as not-incidental' — the range IS the marker's window.
+    expect(
+      governedYears("From 2015 to 2022, 24 units will be manufactured in South Korea.", "will", [2015, 2022])
+    ).toContain(2015);
+  });
+});
