@@ -82,7 +82,13 @@ notes and commit messages.
 - **`src/detector/suppress.ts`** — `DATELINE_REGEX` (Rule 1) is the behavior `governs.ts` §2.2 defers to; read it so the leading-dateline predicate stays consistent.
 - **`test/detector/precision.test.ts`** + **`test/gold/gold-set.json`** — the 73-entry precision gate (≥0.9, currently ~0.97). MUST stay green.
 - **`test/detector/recall.test.ts`** + **`test/gold/recall-set.json`** — the recall harness + 0.90 reachable-recall floor. MUST stay green.
-- **`docs/pitfalls/implementation-pitfalls.md`** DET-2/DET-3 and **`docs/pitfalls/testing-pitfalls.md`** — read before coding/testing.
+- **`docs/pitfalls/implementation-pitfalls.md`** DET-2/DET-3 and **`docs/pitfalls/testing-pitfalls.md`** (esp. §1 pristine output, §9 gold honesty / composition guard / generalize-not-overfit) — read before coding/testing.
+
+## Execution strategy (recommendation)
+
+**Subagent-driven** (`superpowers:subagent-driven-development`), fresh subagent per task with review between tasks. Rationale: the tasks are sequential (Phase 2 all edits `governs.ts`) but each is a self-contained, gated unit that benefits from an independent review against the precision/recall contract — exactly the quality-gate shape subagent-driven handles best. The cross-clause task (2.2) is the precision-critical one and warrants focused per-task review. This is NOT a parallel-agents candidate (single shared file, ordered dependencies).
+
+**Push after every task's commit** (`git push -u origin <branch>`). This work runs in an ephemeral container that is re-cloned on resume — an unpushed commit (and any hand-labeled gold) is lost on reclaim. Pushing per task is the durability boundary.
 
 ---
 
@@ -109,10 +115,10 @@ BEFORE starting work:
   Write a deleted-before-commit script (`npx tsx` in-repo, NOT bare node — the project's ESM imports are extensionless) that runs the CURRENT detector over every `test/fixtures/*.wikitext` and prints each flagged candidate's `sentenceText`, `year` (anchor), and fixture. For each, judge by reading the sentence: is the anchor `year` the marker's actual target, or incidental? Collect the incidental ones.
 
 - [ ] **Step 2: Hand-verify + label each FP, classify its sub-shape.**
-  For every confirmed incidental-anchor FP, record an entry. Sub-shape ∈ {`cross-clause-aside`, `noun-modifier`, `named-entity`, `parenthetical`, `range`}. Entry shape:
+  For every confirmed incidental-anchor FP, record an entry. Sub-shape ∈ {`cross-clause-aside`, `noun-modifier`, `named-entity`, `parenthetical`, `range`}. Entry shape (ILLUSTRATIVE format only — every real entry comes from the Step 1 corpus scan, with a `fixture` that actually exists in `test/fixtures/`; do NOT hardcode this example):
 ```json
 {
-  "fixture": "portal_bridge.wikitext",
+  "fixture": "<actual fixture from the scan>.wikitext",
   "sentenceSubstring": "will replace the Portal Bridge, built in 1910",
   "anchorYear": 1910,
   "subShape": "cross-clause-aside",
@@ -120,13 +126,18 @@ BEFORE starting work:
   "note": "1910 is the bridge's construction date in a participial aside; the marker 'will' governs no year"
 }
 ```
-  Honesty rules (testing-pitfalls §9): label from the sentence, not to make a number look good; a sentence is a DET-3 FP only if the anchor year is genuinely not the marker's target. If a sentence has BOTH an incidental earliest year AND a real later target (the "mixed case"), it is NOT an FP for this set (the detector *should* flag it, just at the target) — note these separately in the README but do not add them as `stale:false`.
+  Honesty rules (testing-pitfalls §9): label from the sentence, not to make a number look good; a sentence is a DET-3 FP only if the anchor year is genuinely not the marker's target. If a sentence has BOTH an incidental earliest year AND a real later target (the "mixed case"), it is NOT an FP for this set (the detector *should* flag it, just at the target) — note these separately in the README (fixture + both years), do NOT add them as `stale:false`, and carry each real mixed case forward as a `governedYears(...)` KEEP test in the relevant Phase 2 task so the discriminators are proven not to suppress the real target. If the corpus has zero mixed cases, say so in the README (the synthetic mixed-case KEEP test in Task 2.2 still applies).
 
 - [ ] **Step 3: Write the README** (`det3-fp-set-README.md`): how the set was built (scan + hand-verify), the sub-shape counts (the distribution that drives Phase 2 scope), the mixed-case observations, and the honesty protocol followed. State the count per sub-shape explicitly — Phase 2 builds a discriminator only for sub-shapes with ≥2 instances (YAGNI); record which sub-shapes clear that bar.
 
-- [ ] **Step 4: Write the reporting test** `det3-fp.test.ts`:
-  - A **structural test**: every entry has all fields; `stale === false`; `subShape` is one of the allowed values; `anchorYear` is a number; `sentenceSubstring` is non-empty AND occurs in the named fixture's parsed sentence text (mirror `recall.test.ts`'s substring check).
-  - A **reporting test** (passes unconditionally for now): runs the current detector per fixture and logs, in a SINGLE labeled `console.log`, how many FP-set entries are currently flagged (baseline — expected: all of them) and the per-sub-shape breakdown. Phase 2 turns these into hard assertions.
+- [ ] **Step 4: Write the test** `det3-fp.test.ts`. Structure it so Phase 2 can harden one sub-shape at a time. Provide a shared helper:
+```ts
+// flaggedFpEntries(subShape) → the curated entries of that sub-shape that the
+// detector currently flags (by sentenceText.includes(sentenceSubstring), per-fixture cached).
+```
+  - A **structural test**: every entry has all fields; `stale === false`; `subShape` ∈ {cross-clause-aside, noun-modifier, named-entity, parenthetical, range}; `anchorYear` is a number; `sentenceSubstring` is non-empty AND occurs in the named fixture's parsed sentence text (mirror `recall.test.ts`'s substring check).
+  - A **min-count composition guard** (testing-pitfalls §9 — a gate over a set that can be silently emptied is no gate): assert `entries.length >= <the curated count from Step 2>` (hardcode the actual number) so a future edit cannot pass the FP gate by deleting entries. State the number in the README too.
+  - A **reporting block** (passes unconditionally for now): in a SINGLE labeled `console.log`, log `flaggedFpEntries(s).length` for each sub-shape `s` (baseline — expected: all entries flagged, since these are the *current* detector's FPs). Phase 2 Tasks 2.2–2.5 each replace their sub-shape's reporting line with a hard assertion `expect(flaggedFpEntries("<sub-shape>")).toEqual([])`.
 
 ```
 BEFORE marking this task complete:
@@ -153,22 +164,45 @@ All Phase 2 tasks modify `src/detector/governs.ts` (and its test), so they are *
 
 ```
 PITFALL WARNING for every Phase 2 task (docs/pitfalls/implementation-pitfalls.md DET-2/DET-3):
-- The lever may only REMOVE anchorable years. If a change makes the detector flag a
-  sentence it did NOT flag before, that is a bug — investigate, do not accept it.
-- A discriminator that drops a REAL target year (precision-gate or recall-floor red)
-  is over-aggressive: tighten the predicate, do NOT weaken the gate. See the assertion-rigor note below.
+- The filter only REMOVES years, but that can SHIFT the anchor to a later year — and
+  suppress.ts Rules 1/3/4 are all year-dependent (Rule 1 matches the dateline year, Rule 4
+  matches the reporting-date year). So dropping an incidental year can make a sentence that
+  was SUPPRESSED at the old anchor flag at the NEW anchor. The §2.2 leading-dateline guard
+  neutralizes this for Rule 1; Rules 3/4 are not guarded, so you MUST corpus-flag-diff every
+  task: run the detector over all fixtures before and after, and inspect any sentence that is
+  NEWLY flagged (flagged after, not before). A newly-flagged sentence is acceptable ONLY if it
+  is a genuine stale claim the old anchor wrongly hid; if it is a new false positive, the
+  discriminator dropped a year that was load-bearing for a suppression rule — tighten it.
+- A discriminator that drops a REAL target year (precision-gate or recall-floor red, or a gold
+  POSITIVE no longer flagged) is over-aggressive: tighten the predicate, do NOT weaken the gate.
+  See the assertion-rigor note below.
 - The cross-clause predicate (Task 2.2) MUST NOT fire on "expected to be completed in 2024"
   (no clause boundary between marker and year) — design §2.1. Both directions are locked tests.
 ```
 
 ```
-ASSERTION RIGOR (every Phase 2 task): the precision gate (≥0.9), the recall floor
-(≥0.90), and the DET-3 FP assertions are the contract. If a gate goes red, the fix
-is a more precise discriminator, NEVER a weakened assertion or a deleted gold entry.
-A tiny recall give-back (down to the 0.90 floor) is permitted ONLY if it buys a large
-precision gain AND is reported in the commit subject (e.g. "recall 1.0→0.909, gives
-back <fixture> <shape>") — never silent. If you cannot keep precision ≥0.97 without
-dropping a real target, STOP and raise to the dispatching agent.
+ASSERTION RIGOR (every Phase 2 task): the precision gate (precision.test.ts, ≥0.9),
+the recall floor (recall.test.ts, ≥0.90), and the DET-3 FP assertions are the contract.
+If a gate goes red, the fix is a more precise discriminator, NEVER a weakened assertion
+or a deleted gold entry (testing-pitfalls §9).
+
+CRITICAL — the precision gate is a RATIO and does NOT by itself protect labeled
+positives. The lever filters years, so it could make a labeled gold POSITIVE in
+test/gold/gold-set.json stop being flagged (a dropped real target) while the ratio
+≥0.9 still passes. So every Phase 2 task MUST additionally verify, with a throwaway
+`npx tsx` check (deleted, not committed), that the set of flagged gold POSITIVES is
+UNCHANGED from before the task — run the detector over the gold-set positives before
+and after and diff the flagged sentences. ANY gold positive that stops being flagged
+is a dropped real target: tighten the discriminator, do NOT accept it.
+
+A tiny recall give-back (down to the 0.90 floor, i.e. at most one reachable recall-SET
+entry) is permitted ONLY if it buys a large precision gain, is a genuinely ambiguous
+sentence, AND is reported in the commit subject (e.g. "recall 1.0→0.909, gives back
+<fixture> <shape>") — never silent. A gold-POSITIVE drop is NOT covered by this
+allowance — those must stay flagged. If you cannot keep BOTH (a) precision.test.ts
+green with its current value (33 TP / 1 FP ≈ 0.97, i.e. no new gold FP) AND (b) every
+gold positive still flagged, without dropping a real target, STOP and raise to the
+dispatching agent.
 ```
 
 ### Task 2.1 — Scaffold `governs.ts` (identity filter) and wire into `detect.ts`
@@ -245,12 +279,23 @@ export function yearOccurrences(sentence: string): YearOccurrence[] {
  * suppress.ts Rule 1; design §2.2) so this stays a DET-3-only precision change.
  */
 export function governedYears(sentence: string, marker: string, pastYears: number[]): number[] {
-  const markerIndex = sentence.toLowerCase().indexOf(marker.toLowerCase());
+  const markerIndex = markerPosition(sentence, marker);
   const past = new Set(pastYears);
   const eligible = yearOccurrences(sentence).filter(
     occ => past.has(occ.value) && !isIncidental(sentence, markerIndex, occ)
   );
   return [...new Set(eligible.map(o => o.value))];
+}
+
+/**
+ * Word-boundary character offset of `marker` in `sentence` (case-insensitive),
+ * or -1. Word-boundary-matched to stay consistent with findExpectationMarkers —
+ * a plain indexOf would match "will" inside "willing" and misplace the marker.
+ */
+function markerPosition(sentence: string, marker: string): number {
+  const escaped = marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const m = new RegExp(`\\b${escaped}\\b`, "i").exec(sentence);
+  return m ? m.index : -1;
 }
 
 /** Composes the role discriminators. Built up across Phase 2; identity for now. */
@@ -270,20 +315,19 @@ to also import the filter:
 import { findExpectationMarkers, extractYears, MARKER_STRENGTH } from "./markers";
 import { governedYears } from "./governs";
 ```
-Replace:
+Replace the existing first comment line of Step 3 — `// Step 3: choose the strongest marker (first on ties) and the earliest past year.` — with `// Step 3: choose the strongest marker (first on ties) and the earliest GOVERNED past year.` Leave the existing `NB:` dateline-interaction comment block UNCHANGED — it stays accurate because governs.ts keeps the leading-dateline year eligible (§2.2), so the "In 2015, … in 2020" sentence still anchors to 2015 and Rule 1 still suppresses it. Then replace:
 ```ts
       const chosenYear = Math.min(...pastYears);
 ```
 with:
 ```ts
-      // Anchor to a year the marker actually governs, not the earliest by position.
-      // Drops incidental years (DET-3); keeps a leading dateline year for Rule 1
-      // (governs.ts §2.2). No governed year ⇒ the marker targets nothing past ⇒ skip.
+      // governedYears drops incidental years (DET-3) but keeps a leading dateline
+      // year for Rule 1 (governs.ts §2.2). No governed past year ⇒ the marker
+      // targets nothing past ⇒ skip the sentence.
       const anchorable = governedYears(text, chosenMarker, pastYears);
       if (anchorable.length === 0) continue;
       const chosenYear = Math.min(...anchorable);
 ```
-(Update the Step-3 doc comment above it if needed; keep the existing dateline-interaction comment — it is still accurate.)
 
 - [ ] **Step 6: Run the FULL suite — identity filter must not change ANY behavior.**
   Run: `pnpm test`. Expected: ALL green (precision ≥0.97 unchanged, recall floor 1.0 unchanged, det3-fp reporting baseline unchanged). Then `pnpm exec tsc --noEmit` (clean) and `pnpm lint` (clean).
@@ -334,12 +378,29 @@ describe("governedYears — cross-clause aside (§2.1) + dateline guard (§2.2)"
       governedYears("In 2015, X is expected to deliver in 2020", "is expected to", [2015, 2020])
     ).toEqual([2015, 2020]);
   });
+  it("locates the marker by word boundary, not substring (no 'will' inside 'willing')", () => {
+    // The real marker 'will' governs 2024 (no boundary between); the earlier 'willing'
+    // must not be mistaken for the marker and shift markerIndex into the wrong clause.
+    expect(
+      governedYears("Though willing to wait, it will be completed in 2024", "will", [2024])
+    ).toEqual([2024]);
+  });
 });
 ```
 
 - [ ] **Step 2: Run to verify the DROP/mixed tests fail** (KEEP tests already pass under identity) — `pnpm vitest run test/detector/governs.test.ts`.
 
-- [ ] **Step 3: Implement the dateline guard + cross-clause predicate** in `governs.ts`. Replace the identity `isIncidental` with:
+- [ ] **Step 3a: Export the dateline frame from `suppress.ts` for reuse (no logic change).** The §2.2 guarantee ("a leading-dateline year stays eligible, deferred to Rule 1") only holds if `governs.ts` detects the leading dateline EXACTLY as Rule 1 does. So reuse Rule 1's regex rather than duplicating it. In `src/detector/suppress.ts`, add `export` to the existing const (and nothing else):
+```ts
+export const DATELINE_REGEX = new RegExp(
+```
+This is a deliberate, behavior-preserving deviation from the spec's "no change to suppress.ts" (the spec meant no *logic* change). Confirm `suppress.test.ts` and the precision gate stay green after the export. Record this one-word deviation in the plan's Deviations subsection.
+
+- [ ] **Step 3b: Implement the dateline guard + cross-clause predicate** in `governs.ts`. First add the import at the TOP of the file (with the other top-level imports — NOT mid-file):
+```ts
+import { DATELINE_REGEX } from "./suppress";
+```
+Then replace the identity `isIncidental` with:
 ```ts
 function isIncidental(sentence: string, markerIndex: number, occ: YearOccurrence): boolean {
   if (isLeadingDatelineYear(sentence, occ)) return false; // §2.2 — defer to suppress Rule 1
@@ -347,21 +408,29 @@ function isIncidental(sentence: string, markerIndex: number, occ: YearOccurrence
   // Further discriminators are OR-ed in by later tasks.
 }
 
-/** A sentence-initial temporal frame ending in the captured dateline year (mirrors suppress.ts Rule 1 intent). */
-const LEADING_DATELINE = /^(?:In|By|During|As of|On)\s+(?:\S+\s+){0,3}?(19\d\d|20\d\d)\b/i;
-
+/**
+ * True when `occ` IS the leading sentence-initial dateline year that suppress.ts
+ * Rule 1 handles. Reuses Rule 1's DATELINE_REGEX so the two never diverge (§2.2).
+ */
 function isLeadingDatelineYear(sentence: string, occ: YearOccurrence): boolean {
-  const m = LEADING_DATELINE.exec(sentence);
+  const m = DATELINE_REGEX.exec(sentence);
   if (!m) return false;
-  const yearStart = m[0].lastIndexOf(m[1]); // m.index is 0 (anchored)
+  // DATELINE_REGEX is anchored (^) and captures the frame year in group 1.
+  const yearStart = m.index + m[0].lastIndexOf(m[1]);
   return occ.start === yearStart;
 }
 
-/** Past-participle verbs that head an aside ("…, built in 1910"). Year is the aside's, not the marker's. */
+/**
+ * Past-participle verbs that head an aside ("…, built in 1910"): the year belongs
+ * to the aside, not the marker. SEED list only — extend it to exactly the
+ * participles the Task 1.1 curated `cross-clause-aside` entries exhibit, one at a
+ * time, re-running the precision gate after each addition (a broad speculative
+ * list widens the precision surface for no curated benefit — design §6, YAGNI).
+ */
 const ASIDE_PARTICIPLE =
-  /\b(?:built|opened|founded|established|completed|launched|commissioned|introduced|acquired|formed|created|designed|developed|constructed|finished|delivered|retired|decommissioned|enacted|passed|adopted|published|released|signed|won|awarded|unveiled|installed|deployed|tested|approved|manufactured|produced)\s+(?:in\s+)?$/i;
+  /\b(?:built|constructed|opened|founded|established|completed)\s+(?:in\s+)?$/i;
 
-/** Clause boundaries that separate an aside from the marker's clause. */
+/** Clause boundaries that separate an aside from the marker's clause (§2.1). */
 const CLAUSE_BOUNDARY = /[,;—]|\b(?:which|who|that|where)\b/i;
 
 function isCrossClauseAside(sentence: string, markerIndex: number, occ: YearOccurrence): boolean {
@@ -373,11 +442,11 @@ function isCrossClauseAside(sentence: string, markerIndex: number, occ: YearOccu
   return ASIDE_PARTICIPLE.test(localBefore); // the year is governed by an aside participle
 }
 ```
-NOTE (empirical refinement): the `ASIDE_PARTICIPLE` verb list and the 40-char window are starting values. Extend the list ONLY for participles the Task 1.1 curated cross-clause entries actually exhibit; do not speculatively add verbs (each added verb widens the precision surface). Verify every change against the precision gate.
+NOTE (testing-pitfalls §9, generalize-not-overfit): the seed `ASIDE_PARTICIPLE` list is intentionally minimal. Before adding a verb, confirm a curated cross-clause entry needs it AND that it is NOT a common forward-target verb that could appear as a marker complement (e.g. `delivered`, `tested`, `deployed`, `completed` all appear in "expected to be `<verb>` in `<year>`"). The `CLAUSE_BOUNDARY` test is what makes `completed` safe in the seed list (a target "expected to be completed in 2024" has no boundary between marker and year) — preserve that invariant for any verb you add, and add a governs.test.ts KEEP case proving the verb's target form survives.
 
 - [ ] **Step 4: Run governs tests** → PASS (all six). Re-run any that fail and tighten the predicate; do NOT loosen the KEEP assertions.
 
-- [ ] **Step 5: Turn the cross-clause baseline into a hard gate** in `det3-fp.test.ts`: assert the detector flags NONE of the `subShape === "cross-clause-aside"` entries. (Replace that sub-shape's reporting line with an assertion.)
+- [ ] **Step 5: Turn the cross-clause baseline into a hard gate** in `det3-fp.test.ts`: replace the cross-clause reporting line with `expect(flaggedFpEntries("cross-clause-aside")).toEqual([])`.
 
 - [ ] **Step 6: Run the full gates.** `pnpm test` → precision ≥0.97 (no real positive dropped), recall floor green (report any give-back per the assertion-rigor note), det3-fp cross-clause entries now unflagged. `pnpm exec tsc --noEmit` clean; `pnpm lint` clean.
 
@@ -531,12 +600,12 @@ If round 3 still finds substantive issues, keep going until clean.
 ### Task 3.1 — Update methodology, pitfalls, spec status, and plan
 
 **Files:**
-- Modify: `docs/design/detector-precision-methodology.md` (§3 / §7 — DET-3 now addressed by the governs lever; record the before/after FP count from the curated set and any recall give-back)
+- Modify: `docs/design/detector-precision-methodology.md` — DET-3 now addressed by the governs lever: record the curated-set before/after FP count + the precision effect in §3 (the DET-3 paragraph) and §4 (precision accounting); record any recall give-back in §7 (the recall section) only if the reachable recall actually changed
 - Modify: `docs/pitfalls/implementation-pitfalls.md` (DET-3 — mark the cross-clause + noun-modifier shapes handled by `governs.ts`; state what residual remains, e.g. uncurated rare shapes)
 - Modify: `docs/design/2026-06-05-marker-governs-year-design.md` (Status → shipped; note which conditional discriminators were built vs deferred)
 - Modify: this plan (banners → shipped; Deviations/Discoveries)
 
-- [ ] **Step 1:** Methodology: in §3 (DET-3 paragraph) and the §7 recall accounting, record that the marker-governs-year lever (cut 1) now drops incidental anchors; give the curated-set before/after (e.g. "N DET-3 FPs → 0 flagged") and the post-change precision/recall numbers. Do NOT duplicate the design doc — link to it (`docs/design/2026-06-05-marker-governs-year-design.md`) for the mechanism.
+- [ ] **Step 1:** Methodology: in §3 (DET-3 paragraph) and §4 (precision accounting), record that the marker-governs-year lever (cut 1) now drops incidental anchors; give the curated-set before/after (e.g. "N DET-3 FPs → 0 flagged") and the post-change precision number. If the reachable recall changed (a give-back), record that in §7. Do NOT duplicate the design doc — link to it (`docs/design/2026-06-05-marker-governs-year-design.md`) for the mechanism.
 - [ ] **Step 2:** Pitfalls DET-3: add that cross-clause asides and noun-modifier years are now handled deterministically by `governs.ts` (year-eligibility filter), with the residual (any rare sub-shape left uncurated, and the deferred DET-2 recovery) named and pointed at the design doc §5.
 - [ ] **Step 3:** Flip the design spec Status to shipped + list built/deferred discriminators. Flip the plan banners to ✅ with SHAs; fill Deviations (any skipped conditional task) and Discoveries.
 - [ ] **Step 4:** Run `pnpm test` (green), `pnpm exec tsc --noEmit`, `pnpm lint` — docs-only, but confirm nothing broke.
