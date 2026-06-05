@@ -28,10 +28,17 @@
     "note": "Future-tense milestone tied to a now-past target year (2019). Genuine stale candidate."
   },
   {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "will request FY 2022 funding",
+    "stale": true,
+    "expectedYear": 2022,
+    "note": "Forward funding request tied to a now-past fiscal year (2022); no leading dateline. Genuine stale candidate (scores higher than the CPS-2025 entry, so it belongs in gold)."
+  },
+  {
     "fixture": "sbx-1.wikitext",
     "sentenceSubstring": "smaller radars in the Pacific will",
     "stale": false,
-    "note": "Negative (historical dateline narration + quotation): 'In July 2011, a ... spokesman explained that ... will \"pick up the slack\"'. The year is the dateline of a 2011 statement, not a forward target. Suppressed by the dateline rule."
+    "note": "Negative (historical dateline narration): 'In July 2011, a ... spokesman explained that ... will \"pick up the slack\"'. The year is the dateline of a 2011 statement, not a forward target; suppressed by the dateline rule (Rule 1). NB the quotation rule (Rule 2) does NOT fire here — the marker 'will' sits OUTSIDE the quoted span 'pick up the slack'."
   },
   {
     "fixture": "ground-based_midcourse_defense.wikitext",
@@ -55,7 +62,7 @@
     "fixture": "littoral_combat_ship.wikitext",
     "sentenceSubstring": "revealed plans to reduce the procurement rate in 2016",
     "stale": false,
-    "note": "Negative (historical month-dateline narration): 'In August 2013, the USN revealed plans to reduce the procurement rate in 2016.'. Frame year 2013 == earliest past year; suppressed."
+    "note": "Negative (historical month-dateline narration): 'In August 2013, the USN revealed plans to reduce the procurement rate in 2016.'. Suppression depends on detect.ts choosing the EARLIEST past year (2013 == the dateline frame year); if year-selection ever changed to prefer the later target (2016), Rule 1 would no longer fire and this TN would flip to a false positive. The composition guard + this note keep that dependency visible (see DET-1)."
   },
   {
     "fixture": "littoral_combat_ship.wikitext",
