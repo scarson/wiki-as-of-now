@@ -18,33 +18,6 @@
     "note": "Forward expectation ('is expected to') with a now-past target year (2020); no leading dateline, not resolved nearby. In-lexicon marker + inline past year, so the detector catches it (rubric Example 1)."
   },
   {
-    "fixture": "robotic_combat_vehicle.wikitext",
-    "sentenceSubstring": "the program was scheduled to deliver 2,897 AMPVs",
-    "stale": true,
-    "reachable": false,
-    "expectedYear": null,
-    "shapeClass": "inline-year-absent",
-    "note": "Forward scheduling claim ('was scheduled to deliver') for an AMPV delivery the article never resolves; no 4-digit year in the sentence (the 2014 selection year is in the prior sentence). An open expectation an editor would track."
-  },
-  {
-    "fixture": "m777_howitzer.wikitext",
-    "sentenceSubstring": "An additional 19 guns will be bought directly from American production lines",
-    "stale": true,
-    "reachable": false,
-    "expectedYear": null,
-    "shapeClass": "inline-year-absent",
-    "note": "Future-tense procurement commitment ('will be bought') with no inline year and no resolution nearby; an open expectation an editor would want to verify."
-  },
-  {
-    "fixture": "fehmarn_belt_fixed_link.wikitext",
-    "sentenceSubstring": "Germany plans to pay a further",
-    "stale": true,
-    "reachable": false,
-    "expectedYear": null,
-    "shapeClass": "inline-year-absent",
-    "note": "Forward funding commitment ('plans to pay a further EUR 800 million') with no inline year; not resolved nearby. In-lexicon marker but no past year, so the year gate keeps the detector from reaching it."
-  },
-  {
     "fixture": "gordie_howe_international_bridge.wikitext",
     "sentenceSubstring": "The bridge was to be completed by the end of 2024",
     "stale": true,

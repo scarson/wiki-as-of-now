@@ -59,11 +59,11 @@ exhaustive denominator and a check on not-over-labeling.
 
 ## Composition
 
-- 15 entries total, all `stale: true`.
+- 12 entries total, all `stale: true`.
 - **11 `reachable: true`** (≥ 6 required) — the tuning denominator.
-- **4 `reachable: false`** (≥ 3 required) — `sbx-1` Adak homeport, the AMPV
-  delivery schedule, the m777 "additional 19 guns", and Germany's Fehmarn funding
-  commitment. These carry a real share of the design-limit (absolute) denominator.
+- **1 `reachable: false`** — `sbx-1`'s Adak homeport ("is scheduled to be based in Adak Island"; the article confirms it lapsed — "never deployed to Adak"). This is the single genuine not-reachable stale claim in the 12-fixture sample (see the finding below); it carries the design-limit (absolute) denominator. The composition guard was relaxed from ≥3 to **≥1 not-reachable** (decision recorded in the plan's Deviations) because genuine not-reachable stale claims proved scarce.
+
+**Finding — genuine not-reachable stale claims are rare (≈1 in 12 fixtures).** A stale claim with NO inline year is genuinely stale only when the article gives evidence the forward thing lapsed (the `sbx-1` Adak standard: "never deployed to Adak"). Undated forward commitments WITHOUT such evidence (e.g. m777 "an additional 19 guns will be bought", the AMPV "was scheduled to deliver 2,897", Germany's Fehmarn funding — which is tied to a *future* 2031 completion) fail §1 condition 2 ("target time is now past") and are NOT stale; they were dropped after the label review. The practical implication is reassuring for the deterministic design: **most genuinely-stale claims DO carry an inline year**, so the inline-year requirement (DET-2) costs less absolute recall than feared — the dominant recall gap is `marker-gap` (lexicon), which Phase 2 addresses.
 
 ## Measured baseline (asOfYear = 2026, detector v1.0.0)
 
@@ -73,46 +73,42 @@ Computed by checking, for each entry, whether any detector candidate's
 | Metric | Value |
 |--------|-------|
 | Stale claims caught (reachable) | 7 / 11 |
-| Stale claims caught (all) | 7 / 15 |
+| Stale claims caught (all) | 7 / 12 |
 | **Reachable recall** | **0.636** |
-| **Absolute recall** | **0.467** |
+| **Absolute recall** | **0.583** |
 
-### shapeClass counts (all 15 entries)
+### shapeClass counts (all 12 entries)
 
 | shapeClass | count |
 |------------|-------|
 | `simple` | 7 |
 | `marker-gap` | 4 |
-| `inline-year-absent` | 4 |
+| `inline-year-absent` | 1 |
 
-### Misses by shapeClass (the 8 false negatives)
+### Misses by shapeClass (the 5 false negatives)
 
 | shapeClass | misses | nature |
 |------------|--------|--------|
 | `marker-gap` | 4 | reachable; forward phrase outside the lexicon — fixable by lexicon expansion (`was scheduled to`, `is expected by`, `planned to`) |
-| `inline-year-absent` | 4 | not reachable; relies on a no-year forward commitment — needs the semantic lever, not a bug |
+| `inline-year-absent` | 1 | not reachable; relies on a no-year forward claim the article confirms lapsed (`sbx-1` Adak) — needs the semantic lever, not a bug |
 | `simple` | 0 | none missed — no potential detector bug surfaced by this set |
 
 All 7 `simple` claims were caught and **zero `simple` claims were missed**, so this
 sample surfaces no detector bug. Every false negative is an expected, documented
 gap: the 4 `marker-gap` misses are candidates for Phase 2 lexicon expansion, and
-the 4 `inline-year-absent` misses are structurally unreachable.
+the 1 `inline-year-absent` miss is structurally unreachable.
 
-## Entries to flag for the reviewer (judgment calls)
+## Label-review judgment calls (resolved)
 
 - **`gordie_howe_international_bridge` — "The bridge was to be completed by the end
-  of 2024."** Labeled `stale` / `simple`. The article revises the completion date
-  several sentences later (fall 2025, then early 2026), but not in an adjacent
-  sentence, so rubric Exclusion B (resolved-nearby) does not fire on a strict
-  immediate-adjacency reading. The past-tense "was to be completed" framing makes
-  this borderline historical-narration-of-a-revised-plan; a reviewer may judge it
-  not-stale.
+  of 2024."** KEPT as `stale` / `simple`. The completion date is revised later in
+  the article (fall 2025) but not in an adjacent sentence, so rubric Exclusion B
+  (resolved-nearby, immediate-adjacency only) does not fire. Consistent with the
+  precision gold set, which labels the same sentence `stale: true`.
 - **The three no-year forward commitments** (`robotic_combat_vehicle` AMPV
-  "scheduled to deliver 2,897", `m777_howitzer` "additional 19 guns will be
-  bought", `fehmarn_belt_fixed_link` "Germany plans to pay a further") were
-  labeled `stale` / `inline-year-absent` by analogy to the rubric-adjudicated
-  `sbx-1` Adak example (Example 4): each is an unresolved forward commitment with
-  no inline year that an editor would plausibly want to verify. They have no
-  explicit past deadline, so a stricter reading of §1 condition 2 ("target time is
-  now past") could exclude them. They are the bulk of the not-reachable
-  denominator; a reviewer should confirm the labeling threshold.
+  "scheduled to deliver 2,897", `m777_howitzer` "additional 19 guns", and
+  `fehmarn_belt_fixed_link` "Germany plans to pay a further") were **dropped** after
+  the label review: none has a now-past target or article-confirmed lapse, so under
+  a strict reading of §1 condition 2 they are not genuinely stale (the Fehmarn
+  funding is tied to a *future* 2031 completion). Only `sbx-1` Adak remains as a
+  genuine not-reachable entry — see the finding above.
