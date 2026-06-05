@@ -51,7 +51,7 @@ function markerPosition(sentence: string, marker: string): number {
 /** Composes the role discriminators. Built up across Phase 2. */
 function isIncidental(sentence: string, markerIndex: number, occ: YearOccurrence): boolean {
   if (isLeadingDatelineYear(sentence, occ)) return false; // §2.2 — defer to suppress Rule 1
-  return isCrossClauseAside(sentence, markerIndex, occ);
+  return isCrossClauseAside(sentence, markerIndex, occ) || isNounModifier(sentence, markerIndex, occ);
   // Further discriminators are OR-ed in by later tasks.
 }
 
@@ -123,4 +123,58 @@ function isCrossClauseAside(sentence: string, markerIndex: number, occ: YearOccu
   }
 
   return false;
+}
+
+/** A determiner immediately before the year ("the 2021 update", "its 2024 plan"). */
+const DETERMINER_BEFORE = /\b(?:the|a|an|its|their|this|that|each|every|same|our|his|her)\s+$/i;
+
+/** A possessive immediately before the year ("Science's 2020 survey"). */
+const POSSESSIVE_BEFORE = /['’]s\s+$/i;
+
+/** Temporal prepositions that can frame a year as a target/window rather than label it. */
+const TEMPORAL_PREP = "in|by|for|on|until|through|during|before|after|since|around";
+
+/**
+ * A bare temporal frame "<prep> <year>" with NO determiner ("by 2023 …", "after 2020 …",
+ * "in 2024 …"): the year is a temporal window/target, so a proper-noun SUBJECT that
+ * follows it ("by 2023 SpaceX will fly", "After 2020 the Army planned") is NOT a label.
+ * KEPT regardless of marker position (README excluded-as-not-incidental frame years).
+ */
+const BARE_FRAME_PREP_BEFORE = new RegExp(`\\b(?:${TEMPORAL_PREP})\\s+$`, "i");
+
+/**
+ * A temporal preposition before a DETERMINER-led year ("in the 2022 …", "before the
+ * 2024 …"): ambiguous between the marker's forward complement and an aside label. It is
+ * the marker's complement (KEEP) only when the marker sits before the year in its clause
+ * ("expected to give … a boost in the 2022 midterm elections"); the same "<prep> the
+ * <year> <noun>" with the marker AFTER the year is a leading/embedded aside label and is
+ * dropped ("During the 2025 … shutdown, … expected to …"; README over-drop cases).
+ */
+const DETERMINED_PREP_BEFORE = new RegExp(`\\b(?:${TEMPORAL_PREP})\\s+the\\s+$`, "i");
+
+/**
+ * True when `occ` is an attributive label on a noun ("the 2021 update of the IRDS",
+ * "2024 Update", "Science's 2020 survey") rather than a temporal target. A determiner
+ * or possessive immediately before the year, or a capitalized noun immediately after,
+ * marks the label. Two temporal-frame escapes keep a real target year from being mislabeled:
+ * a bare "<prep> <year>" frame (no determiner) is always a temporal window (KEEP), and a
+ * "<prep> the <year> <noun>" frame is the marker's complement (KEEP) only when the marker
+ * precedes the year — otherwise it is an aside label and IS dropped (design §2 row 2).
+ */
+function isNounModifier(sentence: string, markerIndex: number, occ: YearOccurrence): boolean {
+  const after = sentence.slice(occ.end, occ.end + 24);
+  if (!/^\s+[A-Za-z]/.test(after)) return false; // a word must follow the year
+  const before = sentence.slice(Math.max(0, occ.start - 24), occ.start);
+  const determinerBefore = DETERMINER_BEFORE.test(before);
+  const possessiveBefore = POSSESSIVE_BEFORE.test(before);
+  const capNounAfter = /^\s+[A-Z][a-z]+/.test(after); // "2024 Update"
+  if (!(determinerBefore || possessiveBefore || capNounAfter)) return false;
+
+  // Bare "<prep> <year>" (no determiner) is a temporal frame, never a label.
+  if (!determinerBefore && BARE_FRAME_PREP_BEFORE.test(before)) return false;
+  // "<prep> the <year> <noun>" is the marker's complement (KEEP) only if the marker
+  // precedes the year; with the marker after, it is an aside label (DROP).
+  const markerBeforeYear = markerIndex >= 0 && markerIndex < occ.start;
+  if (markerBeforeYear && DETERMINED_PREP_BEFORE.test(before)) return false;
+  return true;
 }

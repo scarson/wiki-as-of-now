@@ -59,6 +59,84 @@ describe("governedYears — cross-clause aside (§2.1) + dateline guard (§2.2)"
   });
 });
 
+describe("governedYears — noun-modifier", () => {
+  it("DROPS 'the <year> <noun>' label", () => {
+    expect(governedYears("the 2021 update of the IRDS will ship", "will", [2021])).toEqual([]);
+  });
+  it("DROPS '<year> <Noun>' attributive label", () => {
+    expect(governedYears("the 2024 Update is expected to add features", "is expected to", [2024])).toEqual([]);
+  });
+  it("DROPS a 'prep the <year> <noun>' label in a leading aside before the marker (during the <year> event)", () => {
+    // optimus_robot real FP: "during the 2021 AI Day event, Optimus will be ..." — the
+    // year labels the event in a leading aside; 'will' is after the year past a comma boundary.
+    const text = "According to the presentation made during the 2021 AI Day event, Optimus will be controlled by AI.";
+    expect(governedYears(text, "will", [2021])).toEqual([]);
+  });
+  it("DROPS a 'During the <year> <noun>' leading-aside label (marker after, boundary between)", () => {
+    // nancy_grace real FP: "During the 2025 federal government shutdown, ... not expected to impact missions".
+    const text =
+      "During the 2025 federal government shutdown, the center began closing buildings, which is not expected to impact missions.";
+    expect(governedYears(text, "expected to", [2025])).toEqual([]);
+  });
+  it("DROPS a 'prep the <year> <noun> of …' document-version label before the marker", () => {
+    // 3_nm_process real FP: "contained in the 2021 update of the IRDS ... is expected to have ...".
+    const text =
+      "According to the projections contained in the 2021 update of the IRDS, a node is expected to have a 48 nm pitch.";
+    expect(governedYears(text, "is expected to", [2021])).toEqual([]);
+  });
+  it("DROPS a 'prep the <year> <ProperNoun> by-election' label before the marker", () => {
+    // high_speed_2 real FP: "a cited factor in the 2021 Chesham and Amersham by-election ... that was planned to ...".
+    const text =
+      "Issues were a cited factor in the 2021 Chesham and Amersham by-election, resulting in the line that was planned to go through.";
+    expect(governedYears(text, "planned to", [2021])).toEqual([]);
+  });
+  it("DROPS a possessive-led '<year> <noun>' label before the marker (Science's 2020 survey)", () => {
+    // spacex_starship real FP: "Science's 2020 survey recommended ...; the observatory will search ...".
+    const text =
+      "The National Academies of Science's 2020 survey recommended the observatory; the observatory will search for life.";
+    expect(governedYears(text, "will", [2020])).toEqual([]);
+  });
+  it("KEEPS a target year after a forward preposition", () => {
+    expect(governedYears("production is expected to begin in 2024", "is expected to", [2024])).toEqual([2024]);
+  });
+  it("KEEPS a forward target preposition that leads a determiner+noun (in 2024 production)", () => {
+    // "in 2024 production" — 'in' makes 2024 a temporal target even though a noun follows.
+    expect(governedYears("output is expected to ramp in 2024 production lines", "is expected to", [2024])).toEqual([
+      2024,
+    ]);
+  });
+  it("KEEPS a forward target preposition that leads a determiner-led noun (in 2024 the program)", () => {
+    expect(governedYears("is expected to launch in 2024 the program will be live", "is expected to", [2024])).toEqual([
+      2024,
+    ]);
+  });
+  it("KEEPS a temporal-horizon year (prep + determiner + noun): 'a boost in the 2022 midterm elections'", () => {
+    // README over-drop KEEP: 2022 is the WHEN of the expectation, not a version label.
+    const text =
+      "the new reality was expected to give the president and his party a boost in the 2022 midterm elections.";
+    expect(governedYears(text, "expected to", [2022])).toContain(2022);
+  });
+  it("KEEPS a temporal-horizon year (prep + determiner + noun): 'not be felt before the 2024 election'", () => {
+    // README over-drop KEEP: 2024 is the election year (temporal target), not a label.
+    const text =
+      "the benefits of the act will likely not be felt before the 2024 election, but the act is a great strategy.";
+    expect(governedYears(text, "will", [2024])).toContain(2024);
+  });
+  it("KEEPS a bare temporal-frame year before a proper-noun subject, marker after (by 2023 SpaceX will fly)", () => {
+    // A 'prep <year>' frame (NO determiner) is a temporal window, not a label, even when a
+    // proper-noun SUBJECT follows the year and the marker comes after it.
+    expect(governedYears("It was announced that by 2023 SpaceX will fly the rocket", "will", [2023])).toEqual([2023]);
+  });
+  it("KEEPS a bare temporal-frame year before a proper-noun subject (after 2022 Boeing will deliver)", () => {
+    expect(governedYears("Officials said that after 2022 Boeing will deliver the jets", "will", [2022])).toEqual([2022]);
+  });
+  it("KEEPS a bare temporal-frame year before a proper-noun subject (in 2024 NASA will launch)", () => {
+    expect(governedYears("The agency confirmed that in 2024 NASA will launch the telescope", "will", [2024])).toEqual([
+      2024,
+    ]);
+  });
+});
+
 describe("governedYears — real mixed cases (target governed across an incidental, det3 README)", () => {
   // These three real fixture sentences carry an incidental earliest year AND a real
   // later target the marker governs. The cross-clause discriminator (and the later
