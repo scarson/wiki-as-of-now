@@ -1,0 +1,425 @@
+[
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "Samsung presented plans to manufacture \"3 nm\" GAAFET",
+    "datelineYear": 2019,
+    "targetYear": 2021,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline dates a past 'presented plans' event (Samsung presented plans to manufacture at the 3 nm node in 2021). No REPORTING_VERB in the dateline span ('presented' is not in the list) — FP-risk class."
+  },
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "Intel presented brand new process technology roadmap",
+    "datelineYear": 2021,
+    "targetYear": 2023,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline dates Intel's roadmap presentation; the forward 'scheduled to enter product manufacturing phase in H2 2023' is what was presented then. 'presented' not in REPORTING_VERB — FP-risk class."
+  },
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "Samsung adjusted earlier plans and announced",
+    "datelineYear": 2021,
+    "targetYear": 2022,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates Samsung's October 2021 announcement (announced). Governed target 2022 (first-half 2022 production start); second later year 2023 also present ('second generation expected in 2023')."
+  },
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "the company shared details of its N3E process technology scheduled for volume production in 2023",
+    "datelineYear": 2022,
+    "targetYear": 2023,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline dates the June 2022 TSMC Symposium reveal ('shared details'); the 'scheduled for volume production in 2023' is what was shared then. 'shared' not in REPORTING_VERB — FP-risk class."
+  },
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "MediaTek and TSMC announced that MediaTek had developed their first 3 nm chip",
+    "datelineYear": 2023,
+    "targetYear": 2024,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the September 2023 announcement (announced); 'volume production was expected to commence in 2024' is what was announced then."
+  },
+  {
+    "fixture": "amphibious_combat_vehicle.wikitext",
+    "sentenceSubstring": "the Marine Corps and BAE Systems announced the commencement of full-rate production",
+    "datelineYear": 2020,
+    "targetYear": 2021,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the December 2020 announcement (announced); 'expected to grow to 72 in early 2021' is what was announced then."
+  },
+  {
+    "fixture": "boeing_777x.wikitext",
+    "sentenceSubstring": "ordered 21 777-9 airliners with deliveries expected from 2021, but they will now not join Cathay's fleet before 2027",
+    "datelineYear": 2013,
+    "targetYear": 2021,
+    "label": "other",
+    "hasReportingVerb": true,
+    "note": "Resolved nearby — the same sentence states the outcome ('but they will now not join Cathay's fleet before 2027'), so the 2021 delivery expectation is explicitly corrected in the article's own voice. Excluded from prize/cost per spec §4."
+  },
+  {
+    "fixture": "boeing_mq-25_stingray.wikitext",
+    "sentenceSubstring": "the U.S. Navy announced Boeing as the winner of the competition and awarded an $805 million development contract",
+    "datelineYear": 2018,
+    "targetYear": 2024,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the August 2018 contract award (announced/awarded); 'four MQ-25A aircraft to be completed by August 2024' is the awarded contract term."
+  },
+  {
+    "fixture": "boeing_mq-25_stingray.wikitext",
+    "sentenceSubstring": "the U.S. Navy planned to establish Unmanned Carrier Launched Multi-Role Squadron 10",
+    "datelineYear": 2020,
+    "targetYear": 2021,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline dates a past Navy plan ('planned to establish ... in October 2021'). 'planned' is not in REPORTING_VERB — FP-risk class (narration with no reporting verb)."
+  },
+  {
+    "fixture": "brightline_west.wikitext",
+    "sentenceSubstring": "construction was planned to begin in the last quarter of 2012, with completion in the last quarter of 2016",
+    "datelineYear": 2011,
+    "targetYear": 2012,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline dates an October 2011 construction plan-snapshot ('was planned to begin ... 2012, completion 2016'). Governed target 2012; later year 2016 also present. 'planned' not in REPORTING_VERB — FP-risk class."
+  },
+  {
+    "fixture": "brightline_west.wikitext",
+    "sentenceSubstring": "the federal loan remained unapproved and construction was not expected to start until mid-2014",
+    "datelineYear": 2013,
+    "targetYear": 2014,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline narrates the February 2013 project state ('the federal loan remained unapproved and construction was not expected to start until mid-2014'); a negated forward statement describing the situation then, not a live expectation. 'expected' not a reporting verb."
+  },
+  {
+    "fixture": "brightline_west.wikitext",
+    "sentenceSubstring": "XpressWest and the newly formed China Railway International USA",
+    "datelineYear": 2015,
+    "targetYear": 2016,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the September 2015 joint-venture announcement (announced); 'construction planned to begin in September 2016' is what was announced then."
+  },
+  {
+    "fixture": "columbia-class_submarine.wikitext",
+    "sentenceSubstring": "the procurement of the first submarine was scheduled for 2021",
+    "datelineYear": 2016,
+    "targetYear": 2021,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline narrates the late-2016 program state ('some 3,000 Electric Boat employees were involved ... and the procurement ... was scheduled for 2021'); a dated plan-snapshot. 'scheduled' not a reporting verb — FP-risk class. Borderline vs genuine; called narration because the leading date frames the described 2016 state."
+  },
+  {
+    "fixture": "comac_c919.wikitext",
+    "sentenceSubstring": "Brunei's GallopAir said the C919 aircraft will undergo certification processes",
+    "datelineYear": 2023,
+    "targetYear": 2024,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates GallopAir's September 2023 statement (said); 'forecasted to begin in the third quarter of 2024' is what was said then."
+  },
+  {
+    "fixture": "comac_c929.wikitext",
+    "sentenceSubstring": "confirmed plans to start building a prototype in 2021 with maiden flight in 2023",
+    "datelineYear": 2021,
+    "targetYear": 2023,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the June 2021 confirmation (confirmed); 'maiden flight in 2023' is the confirmed plan."
+  },
+  {
+    "fixture": "comac_c929.wikitext",
+    "sentenceSubstring": "it was then expected to enter service in 2025 (since delayed to 2029)",
+    "datelineYear": 2016,
+    "targetYear": 2025,
+    "label": "other",
+    "hasReportingVerb": false,
+    "note": "Resolved nearby — the parenthetical '(since delayed to 2029)' explicitly corrects the 2025 service date in the article's own voice. Excluded from prize/cost per spec §4."
+  },
+  {
+    "fixture": "dream_chaser.wikitext",
+    "sentenceSubstring": "it was announced by the deputy manager of ISS, Dana Weigel, that the mission was scheduled for February 2023",
+    "datelineYear": 2022,
+    "targetYear": 2023,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the May 2022 announcement ('it was announced by the deputy manager of ISS'); 'the mission was scheduled for February 2023' is what was announced then."
+  },
+  {
+    "fixture": "future_attack_reconnaissance_aircraft.wikitext",
+    "sentenceSubstring": "the designs from Bell and Sikorsky were selected to proceed to Phase 2",
+    "datelineYear": 2020,
+    "targetYear": 2023,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the March 2020 selection event (selected); 'expected to end with a government flight test evaluation in fall 2023' is the down-select consequence. (2028 successor selection is future context.)"
+  },
+  {
+    "fixture": "future_vertical_lift.wikitext",
+    "sentenceSubstring": "defense executives bidding for the program stated that the Army plans to downselect to two companies in 2014",
+    "datelineYear": 2013,
+    "targetYear": 2014,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the October 2013 statement (stated); 'Army plans to downselect ... in 2014' is what was stated then. Later year 2017 ('flight tests in 2017') also present; governed target 2014."
+  },
+  {
+    "fixture": "gordie_howe_international_bridge.wikitext",
+    "sentenceSubstring": "the bridge was tentatively scheduled for completion in 2016, according to the Michigan Department of Transportation",
+    "datelineYear": 2011,
+    "targetYear": 2016,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline narrates the 2011 schedule-snapshot ('was tentatively scheduled for completion in 2016, according to the Michigan DOT'); a dated, attributed plan. 'scheduled' not a reporting verb — FP-risk class."
+  },
+  {
+    "fixture": "hinkley_point_c.wikitext",
+    "sentenceSubstring": "the government announced that it had agreed a contract for difference",
+    "datelineYear": 2013,
+    "targetYear": 2023,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the October 2013 government announcement (announced); 'the plant expected to be completed in 2023' is part of what was announced then."
+  },
+  {
+    "fixture": "hinkley_point_c.wikitext",
+    "sentenceSubstring": "EDF said that they were on track to start generating electricity by 2025",
+    "datelineYear": 2018,
+    "targetYear": 2019,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates EDF's January 2018 statement (said); 'planned to start constructing above-ground structures ... by June 2019' is what was said. Governed target 2019; later year 2025 also present ('generating electricity by 2025')."
+  },
+  {
+    "fixture": "hinkley_point_c.wikitext",
+    "sentenceSubstring": "EDF announced plans to sell €4bn of new shares",
+    "datelineYear": 2016,
+    "targetYear": 2017,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the April 2016 EDF announcement (announced); the '2017' is a scrip-dividend option year within the announced financing plan, not a forward delivery target."
+  },
+  {
+    "fixture": "hinkley_point_c.wikitext",
+    "sentenceSubstring": "The Economist reported that the British loan guarantees require the EPR reactor Flamanville 3 to be operational by 2020",
+    "datelineYear": 2016,
+    "targetYear": 2020,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the December 2016 report (reported); 'Flamanville 3 to be operational by 2020' is what was reported. Later years 2017 (regulator ruling) and 2018 also present; governed target 2020."
+  },
+  {
+    "fixture": "honolulu_rail_transit.wikitext",
+    "sentenceSubstring": "Roger Morton, director of Honolulu's Department of Transportation Services, stated that a required three months of field testing",
+    "datelineYear": 2021,
+    "targetYear": 2022,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates Morton's November 2021 statement (stated); 'field testing and certification ... was scheduled to begin in January 2022' is what was stated then."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "Polish Ministry of Defense warned Bumar to fix the issue by 2014",
+    "datelineYear": 2008,
+    "targetYear": 2014,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the 2008 warning (warned); 'fix the issue by 2014, otherwise it will look for foreign partner' is what was warned then."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "the Ministry of Defense announced that Finland will acquire 48 used K9s",
+    "datelineYear": 2017,
+    "targetYear": 2018,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the February 2017 announcement (announced); 'Finland will acquire 48 used K9s ... starting in 2018' is what was announced. Later year 2019 ('training commencing in 2019') also present; governed target 2018."
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "Hanwha Defense Australia signed a formal contract of producing 30 AS9s",
+    "datelineYear": 2021,
+    "targetYear": 2022,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the December 2021 contract signing (signed); 'the facility ... will begin its construction in Q2 2022' is a contracted term."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "the USN revealed plans to reduce the procurement rate in 2016",
+    "datelineYear": 2013,
+    "targetYear": 2016,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the August 2013 USN disclosure (revealed); 'reduce the procurement rate in 2016' is what was revealed then."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "Naval News reported that, in a report to Congress, the Navy planned to inactivate Fort Worth",
+    "datelineYear": 2021,
+    "targetYear": 2022,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the June 2021 Naval News report (reported); 'the Navy planned to inactivate ... in Fiscal Year 2022' is what was reported then."
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "the Navy shifted its plans to decommission nine LCS warships in Fiscal Year 2023",
+    "datelineYear": 2022,
+    "targetYear": 2023,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline dates the May 2022 plan-shift ('shifted its plans to decommission ... in Fiscal Year 2023'). 'shifted' is not in REPORTING_VERB — FP-risk class (narration with no reporting verb)."
+  },
+  {
+    "fixture": "m109_howitzer.wikitext",
+    "sentenceSubstring": "the DAPPC allocated 16 billion KRW for research and development for 2008 to 2010",
+    "datelineYear": 2007,
+    "targetYear": 2008,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the May 2007 budget allocation (allocated); 'for 2008 to 2010, with plans to produce 520 vehicles between 2011 and 2020' is the allocation detail. Governed target 2008; later year 2010 also present."
+  },
+  {
+    "fixture": "m1156_precision_guidance_kit.wikitext",
+    "sentenceSubstring": "the LR-PGK is expected to undergo its Critical Design Review in Q4 2025",
+    "datelineYear": 2024,
+    "targetYear": 2025,
+    "label": "genuine-target",
+    "hasReportingVerb": false,
+    "note": "Classic 'As of <date>, X is expected to ... in <pastYear>' snapshot in the article's own voice; the March 2024 dateline is context, the Q4 2025 CDR is a live forward expectation now past. No reporting verb — guard would re-anchor (TP). (Later qualification dates Q1 2027 / Q3 2028 are future context, not the governed target.)"
+  },
+  {
+    "fixture": "mars_sample_return.wikitext",
+    "sentenceSubstring": "the MSR mission was anticipated to be launched from Earth in 2003 and 2005",
+    "datelineYear": 1999,
+    "targetYear": 2003,
+    "label": "other",
+    "hasReportingVerb": false,
+    "note": "Genuinely ambiguous / superseded historical snapshot. 'As of late 1999, the MSR mission was anticipated to be launched ... in 2003 and 2005' — past-tense expectation of a long-since-redesigned 1990s plan; reads as a historical record of a defunct expectation rather than a live stale claim. Called 'other' per spec §4 (when torn, use other). targetYear 2003 (2005 also)."
+  },
+  {
+    "fixture": "nuscale_power.wikitext",
+    "sentenceSubstring": "NuScale announced an effort to demonstrate NuScale reactors in the western United States",
+    "datelineYear": 2013,
+    "targetYear": 2024,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the July 2013 NuScale announcement (announced); 'plans to build the first NuScale-based power plant there by 2024' is what was announced then."
+  },
+  {
+    "fixture": "olkiluoto_nuclear_power_plant.wikitext",
+    "sentenceSubstring": "TVO announced that regular electricity generation is expected to start in July 2020",
+    "datelineYear": 2019,
+    "targetYear": 2020,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Spec §4's canonical narration example. Dateline dates the July 2019 TVO announcement (announced); 'regular electricity generation is expected to start in July 2020' is what was announced then."
+  },
+  {
+    "fixture": "rivian.wikitext",
+    "sentenceSubstring": "Rivian planned to begin shipments of the R1T in June 2021",
+    "datelineYear": 2020,
+    "targetYear": 2021,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Spec §4's canonical FP-risk narration example. Dateline dates a late-2020 plan ('planned to begin shipments ... in June 2021'). 'planned' is not in REPORTING_VERB — narration with no reporting verb (the FP class)."
+  },
+  {
+    "fixture": "rivian.wikitext",
+    "sentenceSubstring": "Rivian announced plans to open a new Georgia manufacturing facility",
+    "datelineYear": 2023,
+    "targetYear": 2024,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the October 2023 Rivian announcement (announced); 'open a new Georgia manufacturing facility ... in early 2024' is what was announced then."
+  },
+  {
+    "fixture": "rivian.wikitext",
+    "sentenceSubstring": "Amazon expected to have as many as 10,000 electric vans in operation by 2022",
+    "datelineYear": 2019,
+    "targetYear": 2022,
+    "label": "genuine-target",
+    "hasReportingVerb": false,
+    "note": "'As of 2019, Amazon expected to have ... 10,000 electric vans in operation by 2022' — an as-of-2019 snapshot of a live forward expectation in the article's own voice, target year 2022 now past. No reporting verb — guard would re-anchor (TP). (The '2030' full-delivery date is future context, not the governed target.)"
+  },
+  {
+    "fixture": "rivian.wikitext",
+    "sentenceSubstring": "Rivian announced ambitious plans to develop a network of public charging stations",
+    "datelineYear": 2021,
+    "targetYear": 2023,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the March 2021 Rivian announcement (announced); 'develop a network of public charging stations ... by the end of 2023' is what was announced then."
+  },
+  {
+    "fixture": "rosalind_franklin_rover.wikitext",
+    "sentenceSubstring": "the spacecraft was scheduled to launch in 2018 with a Mars landing in early 2019",
+    "datelineYear": 2013,
+    "targetYear": 2018,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline narrates the March 2013 schedule-snapshot ('was scheduled to launch in 2018 with a Mars landing in early 2019'); a dated plan, since heavily revised. 'scheduled' not a reporting verb — FP-risk class. Governed target 2018; later year 2019 also present."
+  },
+  {
+    "fixture": "sizewell_c_nuclear_power_station.wikitext",
+    "sentenceSubstring": "the UK government published an energy white paper setting out its plans",
+    "datelineYear": 2020,
+    "targetYear": 2024,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the December 2020 white-paper publication (published); 'starting investment on \"at least one\" new power station before the end of the current parliament in 2024' is what was published then."
+  },
+  {
+    "fixture": "stuttgart_21.wikitext",
+    "sentenceSubstring": "operations had been expected to start in December 2025, delayed from the initial estimation of 2019",
+    "datelineYear": 2019,
+    "targetYear": 2025,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline narrates the 2019 expectation-state in pluperfect ('In 2019, operations had been expected to start in December 2025, delayed from the initial estimation of 2019 (made in 2010)'); a dated, since-revised estimate, not a live claim. 'expected' not a reporting verb."
+  },
+  {
+    "fixture": "tiangong_space_station.wikitext",
+    "sentenceSubstring": "the space station's core module was planned to be launched earlier, in 2018",
+    "datelineYear": 2013,
+    "targetYear": 2018,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline narrates the 2013 plan-snapshot ('was planned to be launched earlier, in 2018, followed by ... 2020 ... 2022'); a dated, since-superseded plan. 'planned' not a reporting verb — FP-risk class. Governed target 2018; later years 2020, 2022 also present."
+  },
+  {
+    "fixture": "tiangong_space_station.wikitext",
+    "sentenceSubstring": "it was reported China National Space Administration planned to complete the construction of the space station in 2022",
+    "datelineYear": 2021,
+    "targetYear": 2022,
+    "label": "narration",
+    "hasReportingVerb": true,
+    "note": "Dateline dates the 2021 report (reported); 'planned to complete the construction ... in 2022' is what was reported then."
+  },
+  {
+    "fixture": "type_31_frigate.wikitext",
+    "sentenceSubstring": "the Public Accounts Committee was informed by the Permanent Secretary for Defence that the first ship will be launched by 2023",
+    "datelineYear": 2020,
+    "targetYear": 2023,
+    "label": "narration",
+    "hasReportingVerb": false,
+    "note": "Dateline dates the January 2020 briefing event ('the Public Accounts Committee was informed ... that the first ship will be launched by 2023'). 'informed' is not in REPORTING_VERB — FP-risk class. (The in-service date '2027' is future context.)"
+  },
+  {
+    "fixture": "type_31_frigate.wikitext",
+    "sentenceSubstring": "all ships were planned to be service by February 2030, though by mid-2024, that plan may have slipped",
+    "datelineYear": 2021,
+    "targetYear": 2024,
+    "label": "other",
+    "hasReportingVerb": false,
+    "note": "The marker's real forward target is February 2030 (future, ≥2026), not a stale claim. The governed laterTarget 2024 is incidental — it appears only in 'by mid-2024, that plan may have slipped', a commentary date, not a forward delivery expectation. Excluded per spec §4 (target actually future; the later governed year is not the real target)."
+  }
+]
