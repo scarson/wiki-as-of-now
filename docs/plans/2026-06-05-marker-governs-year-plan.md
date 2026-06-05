@@ -64,13 +64,13 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** All phases built; PR pending → `dev`. Phase 1 (curated FP set) + Phase 2 (5 discriminators, 23/23 FPs dropped, precision 0.9697 / recall 1.0) + Phase 3 (docs) done; batch review clean.
+**Overall:** All phases built; PR [#7](https://github.com/scarson/wiki-as-of-now/pull/7) open → `dev`. Phase 1 (curated FP set) + Phase 2 (5 discriminators, 23/23 FPs dropped, precision 0.9697 / recall 1.0) + Phase 3 (docs) done; batch review clean.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Curate DET-3 FP set | ✅ Shipped (`3d7661e`) | `3d7661e` | 23 DET-3 FPs; all 5 sub-shapes ≥2 (noun-mod 9, paren 6, cross-clause 3, named-entity 3, range 2) → all discriminators build; reviewed HONEST |
 | 2 — Build governs filter (gated) | ✅ Shipped (`39039e6`…`a822d4b`) | Tasks 2.1–2.5 | All 5 discriminators; all 5 sub-shapes hard-gated `expect([])`; 23/23 curated FPs dropped; precision 0.9697 (32 TP / 1 FP); recall 1.0 + 1 un-masked genuine claim. Batch review pending |
-| 3 — Document + finalize | ✅ Built | (Task 3.1) | methodology §3/§4 + pitfalls DET-3 record the lever closes DET-3; spec status → shipped; no recall give-back (recall held 1.0) |
+| 3 — Document + finalize | ✅ Built (`417bbd1`) | `417bbd1` | docs record the lever closes DET-3; spec → shipped; no recall give-back. PR [#7](https://github.com/scarson/wiki-as-of-now/pull/7) → `dev` |
 
 ### Deviations
 
