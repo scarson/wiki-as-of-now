@@ -69,6 +69,7 @@ notes and commit messages.
 
 ## Discoveries
 
+- **2026-06-05 (operational) — session resume flipped Node 20/21/22 → Node 24, requiring a `better-sqlite3` rebuild.** The `.nvmrc` pins Node 24; the resumed session finally had it, but the native `better_sqlite3.node` was compiled earlier against Node 22 → 11 DB tests failed with "Module did not self-register" (ABI mismatch). Fixed with `pnpm rebuild better-sqlite3`. Not committed (binary). Future sessions: after a resume, if DB tests fail to load the native module, rebuild it.
 - **2026-06-05 (Task 1.1) — precision-gold mislabel surfaced + fixed: cross-sentence resolution FP.** The recall labeling rubric correctly classed `fehmarn_belt_fixed_link` "The Fehmarn Belt bridge was originally expected to be completed by 2018." as NOT stale — the very next sentence ("However, in late 2010 … an immersed tunnel would instead…") scraps/resolves the plan. But that sentence was a `stale:true` POSITIVE in `test/gold/gold-set.json`. The detector flags it (marker + inline year) because Rule 3's resolution check is within-sentence only; this resolution is cross-sentence. Relabeled `true→false` in the precision gold (now a documented FP of the **cross-sentence-resolution** class, DET-2 family); precision gate stays green (≥0.9, ~0.97). Verified the sibling infra positives (`gordie_howe`, `robotic_combat_vehicle`) are genuinely stale and correctly labeled. The Task 1.2 recall labeling MUST apply the rubric consistently (do not label fehmarn-style resolved/scrapped plans as stale).
 
 ---
