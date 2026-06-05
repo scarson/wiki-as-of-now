@@ -27,7 +27,7 @@ This document serves three audiences. Start here, then go directly to the sectio
 | § | Section | You're working on... | Entries | Checklist |
 |---|---------|---------------------|---------|-----------|
 | 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 | §1.C |
-| 2 | [Detector (deterministic stale-claim detection)](#section-2-detector-deterministic-stale-claim-detection) | `src/detector/*` — markers, suppression, scoring, orchestration, fixtures | DET-1 – DET-2 | §2.C |
+| 2 | [Detector (deterministic stale-claim detection)](#section-2-detector-deterministic-stale-claim-detection) | `src/detector/*` — markers, suppression, scoring, orchestration, fixtures | DET-1 – DET-3 | §2.C |
 | — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-2 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
@@ -94,9 +94,29 @@ This document serves three audiences. Start here, then go directly to the sectio
 - **Inline-year requirement.** A claim with no 4-digit year *in the same sentence* is never flagged (e.g. SBX-1's "the first such vessel is scheduled to be based in Adak Island" — famously stale, but no inline year). The detector cannot resolve cross-sentence/relative dates deterministically.
 - **Earliest-past-year selection + dateline (`detect.ts` Step 3 × `suppress.ts` Rule 1).** `detect.ts` anchors each candidate to the *earliest* past year. For "In 2015, … was expected to deliver in 2020." the chosen year is the dateline (2015), so Rule 1 suppresses the whole sentence and the 2020 forward target is missed. Switching to "prefer the later target year" would re-flag a large set of genuinely-ambiguous historical-announcement sentences (the gold negatives), *lowering* precision — so the earliest-year choice is the precision-favoring one. Do not "fix" it without re-running the precision gate.
 - **`By <year>` deadline ambiguity.** "By 2025, the fleet will reach full strength." (a forward deadline, stale once past) is suppressed by the same dateline rule that correctly suppresses "By May 2022, the Navy shifted its plans…". Distinguishing them needs verb-tense analysis; precision-over-recall keeps `By` in the frame and accepts the deadline-recall loss.
-- **Mid-sentence attribution residual FP (the main remaining FP class).** The dateline rule only fires on a *leading* frame, so historical narration where the date/subject is mid-sentence still flags: "The Indian Army first announced plans to acquire 145 M777s … **in January 2010**.", "Reuters **reported on 1 June 2022** that the Biden administration plans to sell…", "The US Army released a draft solicitation **on June 22, 2018** …". Across the 46-article corpus these "X [verb] on/in &lt;date&gt; … plans to/will …" attributions are the dominant residual false positive. Suppressing them needs a separate mid-sentence-attribution rule (match a reporting/announcing verb + a date phrase anywhere, not just sentence-initial) — deferred as future precision work because it risks suppressing genuine claims, so it is a known, accepted residual. The gold set leaves these unlabeled rather than mislabel them.
+- **Mid-sentence attribution (now handled by Rule 4 for the clear cases).** Historical narration where a reporting/event verb is dated *mid*-sentence ("The Indian Army first announced plans to acquire 145 M777s … **in January 2010**.", "Reuters **reported on 1 June 2022** that … plans to sell…", "**released** a draft solicitation **on June 22, 2018** …") is suppressed by `suppress.ts` Rule 4: a past reporting/event verb (`announced|reported|stated|…|awarded|ordered|signed|published|…`) followed, within the same clause, by an `on/in <date>` whose year is the claim's anchor year. **Keep the verb list to event/reporting verbs only** — never forward-action verbs (deliver, field, build, complete, launch), which are often the claim itself ("will be **completed in 2024**"), and require the verb to *precede* the date, so a directly-asserted forward target is never read as a dateline. The remaining residuals — date-*then*-verb ("**in February 2025** it announced…"), `by <year>` deadlines, and non-reporting verbs — are the rising-risk long tail, left unlabeled in the gold set rather than mislabeled.
 
 **The Lesson:** When a design bias (precision over recall) creates deliberate blind spots, enumerate them next to the code and in the plan's Discoveries. A recall gap that is written down is a design decision; the same gap undocumented is a latent bug report waiting to waste a future session.
+
+---
+
+### DET-3: Incidental Historical Years Are an Irreducible False-Positive Class
+
+**The Flaw:** The detector flags `marker + earliest past year`. But a sentence can contain a future-tense marker whose claim has **no target year at all**, alongside an *incidental* past year that belongs to background context — a founding/built/launch date, a year range, or a parenthetical. The year-gate and dateline rules don't catch these because the year is real and past; it just isn't the claim's anchor. Surfaced across the 100-fixture corpus (the new-domain wave especially):
+- "The Portal Bridge Replacement **will replace** the existing Portal Bridge, **built in 1910**, with the Portal North Bridge…" → flagged at year 1910, score 117.
+- "A station of the same name existed on the Curzon Street site **between 1838 and 1966**; the surviving … building **will be retained**…" → 1966.
+- "HMS Belfast (C35), a museum ship, **will be named** 'HMS Belfast **(1938)**'…" → 1938.
+- "The Trace Gas Orbiter (TGO), **launched in 2016**, **will operate** as the data-relay satellite…" → 2016.
+
+**Why It Matters:** These produce *high* scores (old year ⇒ large `temporalRisk`), so they look like the most confident flags while being clearly wrong — corrosive to queue trust. They are a meaningful slice of the residual end-to-end false positives.
+
+**The Fix:** There is **no clean deterministic fix** — and the obvious ones are traps:
+- Suppressing the year when it sits in a `from X to Y` / `between X and Y` range **over-suppresses a genuine positive** ("**From 2015 to 2022**, 24 units **will be manufactured**" is a real stale production plan — a gold positive). Range ≠ historical.
+- Adding `built|launched|completed|opened` to the Rule-4 verb list **breaks forward claims** ("will be **completed in 2024**") because those verbs are tense-ambiguous (`was built` vs `will be built`) and regex can't reliably read the auxiliary.
+
+So this is an **accepted irreducible residual** of the "marker + any past year" model: distinguishing an incidental background year from a claim's target year needs semantic understanding the deterministic detector doesn't have. Leave these unlabeled in the gold set (never mislabel to inflate precision). The real mitigations live downstream in the contract — the human-verification gate and "show your work" — not in more regex. Revisit only if a future detector gains a notion of which year a marker *governs*.
+
+**The Lesson:** A deterministic heuristic has a precision floor it cannot cross without semantics. Name that floor honestly rather than bolting on rules that trade a visible FP for an invisible recall loss on real positives.
 
 ---
 
@@ -107,6 +127,8 @@ This document serves three audiences. Start here, then go directly to the sectio
 - [ ] **Suppression rules require their disambiguating context** — Rule 3 needs a resolution verb after `later/subsequently/ultimately`, not the bare adverb (DET-1)
 - [ ] **Gold set built from real detector output, not idealized sentences** — run the detector on the fixtures and label what it actually flags (DET-1)
 - [ ] **Accepted recall gaps are documented in the plan + here, not silently present** — inline-year requirement, earliest-year/dateline interaction, `By`-deadline, mid-sentence attribution (DET-2)
+- [ ] **Mid-sentence attribution (Rule 4) uses event/reporting verbs ONLY, verb-before-date** — never forward-action verbs (deliver/build/complete/launch), or "will be completed in 2024" gets wrongly suppressed (DET-2)
+- [ ] **Incidental historical years are NOT "fixed" with a range/verb rule** — those traps over-suppress real positives ("From 2015 to 2022 … will be manufactured") or break forward claims; leave the FP unlabeled, don't game precision (DET-3)
 
 ---
 
@@ -154,6 +176,7 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 ## 2026-06-05 — Phase 2 (deterministic detector) shipped
 - Added Section 2 (Detector) with DET-1 (historical dateline narration is the dominant false-positive class; suppress via leading-frame + year-match, with a constrained month slot and grouped year regex) and DET-2 (named, accepted precision-over-recall recall gaps: inline-year requirement, earliest-year/dateline interaction, `By`-deadline, mid-sentence attribution). Both surfaced building the Phase 2 precision gate and were confirmed by the 3-round batch review (`docs/plans/phase2-review/`).
 - **Corpus expansion (50-fixture gold set):** updated DET-1 — the leading-dateline frame must include `On` and absorb full dates ("On 30 August 2018, …"), the dominant FP at corpus scale; updated DET-2 — mid-sentence attribution ("X reported on &lt;date&gt; that … plans to …") is the main remaining residual FP, left unlabeled in the gold set. See `docs/plans/phase2-review/round-4-corpus.md`.
+- **100-fixture corpus + new domains:** implemented `suppress.ts` Rule 4 (mid-sentence attribution — reporting/event verb + `on/in <date>` of the claim year), updating DET-2. Added 50 new-domain fixtures (space, rail/transit, infrastructure, nuclear, civil aviation, naval); gold set → 59 entries, precision 1.0. The new domains surfaced **DET-3** (incidental historical years — "will replace the bridge, built in 1910" flags at 1910), documented as an irreducible deterministic FP floor with no safe regex fix.
 
 ---
 
@@ -168,6 +191,7 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 | DB-1 | `NOT NULL` Is a No-Op on an `INTEGER PRIMARY KEY` (Rowid Alias) | MEDIUM | VALIDATED | Data Layer |
 | DET-1 | Historical Dateline Narration Is the Dominant False-Positive Class | HIGH | VALIDATED | Detector |
 | DET-2 | Precision-Over-Recall Means Named, Accepted Recall Gaps | MEDIUM | VALIDATED | Detector |
+| DET-3 | Incidental Historical Years Are an Irreducible False-Positive Class | MEDIUM | VALIDATED | Detector |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
 
