@@ -83,7 +83,61 @@ The unit that matters is **new *structural* patterns per wave**, not fixtures ad
 3. **Characterize recall.** Build a small set of known-stale sentences the detector *should* catch and measure misses — we have never done this; precision-only tuning hides it.
 4. **Downstream mitigations carry the irreducible residuals.** DET-3-style FPs are ultimately caught by the human-verification gate and "show your work," not by the detector — the contract already assumes the detector is imperfect and bounds the blast radius.
 
-## 7. Things considered and ruled out (so they aren't retried)
+## 7. Recall — baseline measurement and category survey
+
+### 7.1 The honest recall numbers (12-fixture exhaustive sample)
+
+Recall was measured for the first time during Phase 1 Task 1.3. The methodology: 12 fixtures were read exhaustively, every genuinely-stale sentence labeled **before** running the detector (rubric at `docs/design/recall-labeling-rubric.md`), then detector output was compared against the label set. The sample is register-balanced — 3 military, 3 engineering, 3 biomedical/policy, 3 corporate/software — and every sentence in all 12 fixtures was read; nothing was sampled. The gold is in `test/gold/recall-set.json`; the gate is `test/detector/recall.test.ts`. The companion narrative is in `test/gold/recall-set-README.md`.
+
+| Metric | Value |
+|--------|-------|
+| Stale claims caught (reachable) | 7 / 11 |
+| Stale claims caught (all) | 7 / 12 |
+| **Reachable recall** | **0.636** |
+| **Absolute recall** | **0.583** |
+
+**Zero `simple` claims were missed** — no potential detector bug surfaced. Every false negative is a documented, expected gap. The 1 not-reachable stale claim (no inline year, article-confirmed lapse) is structurally outside the detector's reach; most genuinely-stale claims DO carry an inline year, so the inline-year requirement (DET-2) costs less absolute recall than feared. The dominant recall gap is `marker-gap` (4 of 5 misses) — forward phrases outside the lexicon — which Phase 2 lexicon expansion directly addresses.
+
+### 7.2 Broader category survey (136-fixture biased scan)
+
+**This section is a biased category survey, not a recall number.** The 12-fixture exhaustive sample (§7.1) is the honest recall number. This scan searched the full 136-fixture corpus for out-of-lexicon forward phrases co-occurring with a past inline year; it does not count every stale sentence (many hits will be resolved/historical/suppressed), it cannot count misses it was not designed to look for, and its counts are therefore not a recall percentage. Its purpose is to **rank which out-of-lexicon forward phrases are most common** so Phase 2 lexicon expansion can prioritize.
+
+Methodology: for every fixture, `parseArticle` was run; each parsed sentence was checked for (a) an out-of-lexicon candidate forward phrase, (b) a past 4-digit year (< 2026), (c) no lexicon marker (so the sentence would be missed by the current detector), and (d) no leading historical dateline. Corpus: 136 `.wikitext` fixtures, `asOfYear = 2026`.
+
+#### Ranked marker-gap table (out-of-lexicon forward phrases with a past year)
+
+Sorted by corpus occurrence count, descending. These are the Phase-2 lexicon-candidate priority list.
+
+| Forward phrase | Corpus count | Representative verbatim examples |
+|---|---|---|
+| `expected to` (bare — "was/now expected to") | 45 | `an_tps-80`: "was expected to reach initial operating capability in August 2016." — `bell_v-280_valor`: "JMR-TD contracts were expected to be awarded in September 2013, with flights scheduled for 2017." |
+| `planned to` | 38 | `3_nm_process`: "American manufacturer Intel planned to start '3 nm' production in 2023." — `amphibious_combat_vehicle`: "A winner is planned to be selected in 2018 to build 204 vehicles, with the first entering service in 2020 and all delivered by 2023." |
+| `scheduled for` | 20 | `artemis_program`: "Orion's first launch on SLS, originally scheduled for 2016, was delayed repeatedly and ultimately flew on November 16, 2022, as Artemis I." |
+| `intended to` | 15 | `agm-183_arrw`: "in 2025, the Air Force announced that it intended to revive the shelved AGM-183A hypersonic program and move it into the procurement phase." — `integrated_visual_augmentation_system`: "Initially intended to be fielded in 2021, ergonomic and reliability issues have pushed this date back to 2025." |
+| `was scheduled to` | 13 | `brightline_west`: "Heavy construction was scheduled to begin in early 2025, with the Nevada DOT saying work could start in April 2025." — `3_nm_process`: "N3P was scheduled to enter volume production in the second half of 2024, and N3X would follow in 2025." |
+| `set to` | 6 | `comac_c919`: "The aircraft, bearing the livery of China Eastern Airlines, was set to be delivered in 2022." — `grand_ethiopian_renaissance_dam`: "The reservoir was set to hold 64 billion m³ of water." |
+| `slated for` | 5 | `grand_ethiopian_renaissance_dam`: "It was slated for completion in July 2017." — `boeing_777x`: "it is slated for avionics systems, APU, flight test." |
+| `to be delivered` | 5 | `comac_c919`: "Plans foresaw that one C919 was to be delivered to China Eastern Airlines in 2022." — `boeing_777x`: "Boeing expects the first aircraft to be delivered in 2027." |
+| `to be launched` | 5 | `boeing_new_midsize_airplane`: "If the NMA were to be launched in early 2019, its design would be completed in 2020." |
+| `targeting` | 4 | `california_high-speed_rail`: "targeting construction start of the Merced-Bakersfield section by 2012." — `iter`: "A new schedule was issued in July 2024, targeting first plasma in the mid-2030s." |
+| `to be fielded` | 3 | `integrated_visual_augmentation_system`: "Initially intended to be fielded in 2021." |
+| `due in` | 3 | `boeing_777x`: "The first -9 roll-out is due in late 2018." |
+| `aiming to` | 3 | `viper_rover`: "NASA was aiming to land the rover in September 2025 until the mission was canceled on 17 July 2024." |
+| `on track to` | 2 | `psyche_spacecraft`: "the spacecraft was in good health and on track to complete its mission on the planned timeline." |
+| `intends to` | 1 | `boeing_777x`: "it intends to boost production of current-generation 777 freighters in 2020." |
+| `is expected by` | 1 | `long_range_discrimination_radar`: "Testing for Full Operational Capability is expected by 2023." |
+| `poised to` | 1 | `iter`: "Switzerland … is poised to rejoin in 2026 following subsequent negotiations." |
+| `due to be`, `on course to` | 0 | not observed in this corpus |
+
+**Phase 2 priority read:** the top five phrases — `expected to` (bare, 45), `planned to` (38), `scheduled for` (20), `intended to` (15), `was scheduled to` (13) — together account for the large majority of reachable marker-gap misses. The lexicon already contains `is expected to`, `is scheduled to`, and `is slated to`; the gap is in the bare/past-tense variants (`was expected to`, `planned to`, `was scheduled to`) and the noun-phrase form (`scheduled for`). Extending the lexicon to these five phrases would cover the dominant gap; the remaining phrases have counts of 6 or fewer.
+
+### 7.3 Inline-year-absent / relative-date class (deferred)
+
+The corpus scan found only **2 examples** of the inline-year-absent/relative-date shape (a forward marker with no past year but a relative-date anchor): `ground_combat_vehicle` — "The Army planned to spend … on the GCV over the next five years" — and `k9_thunder` — "The platform will consist of the RCH 155 … by the end of the decade." Both carry no inline past year and cannot be reached by the current inline-year gate. The 12-fixture exhaustive sample found 1 such entry (`sbx-1` Adak). Counts are small and consistent between the two methodologies.
+
+This class requires the semantic lever (§6 roadmap item 1 — marker-governs-year) or external temporal reasoning; it is deferred. No lexicon change addresses it.
+
+## 8. Things considered and ruled out (so they aren't retried)
 
 - Year-in-range suppression for DET-3 — over-suppresses real positives.
 - Forward-action verbs in Rule 4 — breaks "will be completed in 2024".
