@@ -28,7 +28,7 @@ const DATELINE_DATE_TOKEN =
  * would let the bare year branch match any 20xx year anywhere in the sentence
  * and over-suppress valid claims.
  */
-const DATELINE_REGEX = new RegExp(
+export const DATELINE_REGEX = new RegExp(
   `^(?:In|By|During|As of|On)\\s+(?:${DATELINE_DATE_TOKEN}){0,3}(19\\d\\d|20\\d\\d)\\b`,
   "i"
 );

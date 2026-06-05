@@ -142,19 +142,47 @@ describe("DET-3 FP set — structural validation", () => {
   });
 });
 
-describe("DET-3 FP set — baseline reporting", () => {
-  // Passes unconditionally for now: these are the CURRENT detector's false
-  // positives, so every curated entry is expected to be flagged today. Phase 2
-  // replaces each sub-shape's line below with a hard
+/**
+ * The curated entries of a sub-shape that the detector STILL flags, AND whose
+ * flagging candidate actually anchors on the curated `anchorYear`. The
+ * anchorYear cross-check (Task 1.1 reviewer NIT) stops a wrong anchorYear from
+ * passing silently: a sub-shape can only be reported "still flagged" when the
+ * detector flags that sentence on the very year the curation claims is incidental.
+ */
+function flaggedOnAnchorYear(subShape: SubShape): Det3FpEntry[] {
+  return fpSet.filter(entry => {
+    if (entry.subShape !== subShape) return false;
+    const matching = candidateCache
+      .get(entry.fixture)!
+      .filter(cand => cand.sentenceText.includes(entry.sentenceSubstring));
+    return matching.some(c => c.year === entry.anchorYear);
+  });
+}
+
+describe("DET-3 FP gate — cross-clause hardened, rest baseline-reporting", () => {
+  // The cross-clause discriminator (Task 2.2) lands first, so its sub-shape is a
+  // HARD gate: the detector must flag NONE of the curated cross-clause asides.
+  it("flags none of the cross-clause-aside FPs", () => {
+    expect(flaggedFpEntries("cross-clause-aside")).toEqual([]);
+  });
+
+  // The remaining sub-shapes still baseline-report (their discriminators land in
+  // Tasks 2.3–2.5). Passes unconditionally for now; each line below becomes a hard
   // `expect(flaggedFpEntries("<shape>")).toEqual([])` as its discriminator lands.
-  it("logs the per-sub-shape flagged baseline (all flagged today)", () => {
-    const baseline: Record<SubShape, number> = {
-      "cross-clause-aside": flaggedFpEntries("cross-clause-aside").length,
-      "noun-modifier": flaggedFpEntries("noun-modifier").length,
-      "named-entity": flaggedFpEntries("named-entity").length,
-      parenthetical: flaggedFpEntries("parenthetical").length,
-      range: flaggedFpEntries("range").length,
-    };
+  it("logs the per-sub-shape flagged baseline for the not-yet-hardened sub-shapes", () => {
+    const stillBaselined: SubShape[] = [
+      "noun-modifier",
+      "named-entity",
+      "parenthetical",
+      "range",
+    ];
+
+    const baseline: Record<string, number> = {};
+    const onAnchor: Record<string, number> = {};
+    for (const s of stillBaselined) {
+      baseline[s] = flaggedFpEntries(s).length;
+      onAnchor[s] = flaggedOnAnchorYear(s).length;
+    }
 
     const curatedPerSubShape: Record<SubShape, number> = {
       "cross-clause-aside": 0,
@@ -166,21 +194,24 @@ describe("DET-3 FP set — baseline reporting", () => {
     for (const entry of fpSet) curatedPerSubShape[entry.subShape]++;
 
     // --- Single labeled output block (testing-pitfalls §1 output discipline) ---
-    console.log("=== DET-3 FP BASELINE (flagged today) ===", {
+    console.log("=== DET-3 FP BASELINE (not-yet-hardened sub-shapes) ===", {
       curatedPerSubShape,
       flaggedPerSubShape: baseline,
-      totalCurated: fpSet.length,
-      totalFlaggedToday: SUB_SHAPES.reduce(
-        (sum, s) => sum + baseline[s],
-        0
-      ),
+      flaggedOnAnchorYear: onAnchor,
+      crossClauseHardened: flaggedFpEntries("cross-clause-aside").length === 0,
     });
 
-    // Sanity: every curated entry is a live FP today (flagged == curated, per sub-shape).
-    for (const s of SUB_SHAPES) {
+    // Sanity for the not-yet-hardened sub-shapes: every curated entry is still a
+    // live FP today AND the detector flags it ON the curated anchorYear — so a
+    // wrong anchorYear cannot pass silently before this becomes an expect([]) gate.
+    for (const s of stillBaselined) {
       expect(
         baseline[s],
         `sub-shape "${s}": flagged-today ${baseline[s]} != curated ${curatedPerSubShape[s]} — a curated FP is no longer flagged; re-verify before this becomes a Phase 2 expect([]) gate`
+      ).toBe(curatedPerSubShape[s]);
+      expect(
+        onAnchor[s],
+        `sub-shape "${s}": flagged-on-anchorYear ${onAnchor[s]} != curated ${curatedPerSubShape[s]} — a curated entry's anchorYear does not match the detector's chosen year; the anchorYear is wrong`
       ).toBe(curatedPerSubShape[s]);
     }
   });

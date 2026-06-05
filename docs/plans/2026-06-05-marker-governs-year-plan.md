@@ -69,8 +69,14 @@ notes and commit messages.
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Curate DET-3 FP set | ✅ Shipped (`3d7661e`) | `3d7661e` | 23 DET-3 FPs; all 5 sub-shapes ≥2 (noun-mod 9, paren 6, cross-clause 3, named-entity 3, range 2) → all discriminators build; reviewed HONEST |
-| 2 — Build governs filter (gated) | 🚧 In progress (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | — | discriminator-by-discriminator; each gated on precision+recall |
+| 2 — Build governs filter (gated) | 🚧 In progress (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | — | Task 2.1 (`39039e6`), Task 2.2 cross-clause shipped; remaining discriminators 2.3–2.5 |
 | 3 — Document + finalize | ⬜ Not started | — | methodology/pitfalls/spec/plan; report any recall give-back |
+
+### Deviations
+
+- **Task 2.2 — `DATELINE_REGEX` exported (one word).** Added `export` to the existing `const DATELINE_REGEX` in `src/detector/suppress.ts` so `governs.ts`'s leading-dateline guard reuses Rule 1's exact frame (§2.2) instead of duplicating it. Behavior-preserving; the spec's "no change to suppress.ts" meant no *logic* change. `suppress.test.ts` + precision gate stayed green.
+- **Task 2.2 — cross-clause predicate broadened beyond the plan's seed "participle + clause boundary".** Two of the three curated `cross-clause-aside` FPs are not clean `<participle> in <year>` asides: tesla_semi's `2017` is a **non-leading dateline** ("… expected … 997 km. In 2017, Tesla projected …" — the parser merged two sentences; the period is the clause boundary, no comma between marker and year), and gateway's mid-`2025` is in a **leading subordinate clause** ("Though tunneling had still not begun by mid-2025, … scheduled to …"). The plan's seed predicate (comma/`;`/`—`/relative-pronoun boundary + aside participle) only caught the Portal-Bridge `1910` case. Added two precise, generalizable sub-mechanisms to `isCrossClauseAside`: `NONLEADING_DATELINE` (`. In/By/During/On/As of <year>` with the marker in the earlier clause) and `LEADING_SUBORDINATE` (`^Though|Although|While|Whilst|Whereas` with the year before the first comma and the marker after). Also added `updated` to `ASIDE_PARTICIPLE` (required by the plan's own synthetic mixed-case KEEP test "the IRDS, updated in 2019, …"; CLAUSE_BOUNDARY-guarded so the forward form "expected to be updated in 2027" survives — locked by a new KEEP test). All three sub-mechanisms validated against every KEEP case + the precision gate; no gold positive dropped, precision held at 0.9706, zero newly-flagged corpus sentences. The discriminator also generalized to one additional correct DET-3 drop (high_speed_2 `2008`, "—which was completed in 2008—", a `stale:false`-class incidental, not a labeled positive).
+- **Task 2.2 — det3-fp structural test strengthened (Task 1.1 reviewer NIT).** Added `flaggedOnAnchorYear(subShape)` cross-verification so each not-yet-hardened sub-shape asserts the detector flags its sentence ON the curated `anchorYear` (a wrong anchorYear can no longer pass silently).
 
 ---
 
