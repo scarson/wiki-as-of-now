@@ -1,0 +1,166 @@
+{{Short description|Antiretroviral medication}}
+{{Use dmy dates|date=June 2025}}
+{{cs1 config|name-list-style=vanc|display-authors=6}}
+{{Infobox drug
+| image = Lenacapavir.svg
+| image_class = skin-invert-image
+| alt = 
+| caption = Molecular structure of lenacapavir
+| image2 = Lenacapavir 3D.png
+| image_class2 = bg-transparent
+| pronounce = {{IPAc-en|ˌ|l|ɛ|n|ə|ˈ|k|æ|p|ə|v|ɪər}}<br />{{respell|LEN|ə|KAP|ə|veer}}
+| tradename = Sunlenca, Yeztugo, others
+| Drugs.com = {{drugs.com|monograph|lenacapavir}}
+| MedlinePlus = a623005
+| DailyMedID = Lenacapavir
+| pregnancy_AU = B1
+| pregnancy_AU_comment = <ref name="Sunlenca APMDS">{{cite web | title=Sunlenca | website=Therapeutic Goods Administration | date=6 April 2023 | url=https://www.tga.gov.au/resources/auspmd/sunlenca | access-date=7 April 2023 | archive-date=8 April 2023 | archive-url=https://web.archive.org/web/20230408034856/https://www.tga.gov.au/resources/auspmd/sunlenca | url-status=live }}</ref>
+| pregnancy_category = 
+| routes_of_administration = [[Oral administration|By mouth]], [[Subcutaneous injection|subcutaneous]]
+| caption2 = 3D representation of a lenacapavir molecule
+| class = [[HIV capsid inhibition|Capsid inhibitors]]
+| ATC_prefix = J05
+| ATC_suffix = AX31
+
+<!-- Legal status -->| legal_AU = S4
+| legal_AU_comment = <ref name="Sunlenca APMDS" /><ref>{{cite web | title=Sunlenca lenacapavir (as sodium) 300 mg film coated tablet blister pack (392350) | website=Therapeutic Goods Administration | date=28 March 2023 | url=https://www.tga.gov.au/resources/artg/392350 | access-date=7 April 2023 | archive-date=8 April 2023 | archive-url=https://web.archive.org/web/20230408034855/https://www.tga.gov.au/resources/artg/392350 | url-status=live }}</ref><ref>{{cite web | title=Sunlenca lenacapavir (as sodium) 463.5 mg/1.5 mL solution for injection vial (386895) | website=Therapeutic Goods Administration | date=28 March 2023 | url=https://www.tga.gov.au/resources/artg/386895 | access-date=7 April 2023 | archive-date=8 April 2023 | archive-url=https://web.archive.org/web/20230408034858/https://www.tga.gov.au/resources/artg/386895 | url-status=live }}</ref><ref>{{cite web|url=https://www.tga.gov.au/resources/auspar/auspar-sunlenca |title=AusPAR: Sunlenca}}</ref>
+| legal_BR = <!-- OTC, A1, A2, A3, B1, B2, C1, C2, C3, C4, C5, D1, D2, E, F -->
+| legal_BR_comment = 
+| legal_CA = Rx-only
+| legal_CA_comment = <ref name="Sunlenca PI Oral">{{cite web | title=Sunlenca Oral Product information | website=[[Health Canada]] | date=25 April 2012 | url=https://health-products.canada.ca/dpd-bdpp/info.do?lang=en&code=102149 | access-date=23 December 2022 | archive-date=15 January 2023 | archive-url=https://web.archive.org/web/20230115194229/https://health-products.canada.ca/dpd-bdpp/info.do?lang=en&code=102149 | url-status=live }}</ref><ref name="Sunlenca PI Subcutaneous">{{cite web | title=Sunlenca Subcutaneous Product information | website=[[Health Canada]] | date=25 April 2012 | url=https://health-products.canada.ca/dpd-bdpp/info.do?lang=en&code=102150 | access-date=23 December 2022 | archive-date=15 January 2023 | archive-url=https://web.archive.org/web/20230115164647/https://health-products.canada.ca/dpd-bdpp/info.do?lang=en&code=102150 | url-status=live }}</ref><ref>{{cite web | title=Summary Basis of Decision - Sunlenca | website=[[Health Canada]] | date=10 March 2023 | url=https://hpr-rps.hres.ca/reg-content/summary-basis-decision-detailTwo.php?linkID=SBD00627&lang=en | access-date=24 April 2023 | archive-date=25 April 2023 | archive-url=https://web.archive.org/web/20230425001504/https://hpr-rps.hres.ca/reg-content/summary-basis-decision-detailTwo.php?linkID=SBD00627&lang=en | url-status=live }}</ref><ref>{{cite web | title=Details for: Sunlenca | website=[[Health Canada]] | date=15 March 2023 | url=https://dhpp.hpfb-dgpsa.ca/dhpp/resource/102149 | access-date=3 March 2024 | archive-date=3 March 2024 | archive-url=https://web.archive.org/web/20240303062559/https://dhpp.hpfb-dgpsa.ca/dhpp/resource/102149 | url-status=live }}</ref>
+| legal_DE = <!-- Anlage I, II, III or Unscheduled -->
+| legal_DE_comment = 
+| legal_NZ = <!-- Class A, B, C -->
+| legal_NZ_comment = 
+| legal_UK = <!-- GSL, P, POM, CD, CD Lic, CD POM, CD No Reg POM, CD (Benz) POM, CD (Anab) POM or CD Inv POM / Class A, B, C -->
+| legal_UK_comment = 
+| legal_US = Rx-only
+| legal_US_comment = <ref name="Sunlenca FDA label">{{cite web | title=Sunlenca- lenacapavir sodium tablet, film coated Sunlenca- lenacapavir sodium kit | website=DailyMed | date=21 December 2022 | url=https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e5652804-29c4-40d7-aeb2-0142ed2a7b5b | access-date=21 January 2023 | archive-date=21 January 2023 | archive-url=https://web.archive.org/web/20230121044750/https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e5652804-29c4-40d7-aeb2-0142ed2a7b5b | url-status=live }}</ref><ref name="Yeztugo FDA label" />
+| legal_EU = Rx-only
+| legal_EU_comment = <ref name="Sunlenca EPAR">{{cite web | title=Sunlenca EPAR | website=[[European Medicines Agency]] (EMA) | date=22 June 2022 | url=https://www.ema.europa.eu/en/medicines/human/EPAR/sunlenca | access-date=25 August 2022 | archive-date=26 August 2022 | archive-url=https://web.archive.org/web/20220826024847/https://www.ema.europa.eu/en/medicines/human/EPAR/sunlenca | url-status=live }} Text was copied from this source which is copyright European Medicines Agency. Reproduction is authorized provided the source is acknowledged.</ref><ref name="Yeytuo EPAR" /><ref name="Yeytuo PI" />
+| legal_UN = <!-- N I, II, III, IV / P I, II, III, IV -->
+| legal_UN_comment = 
+| legal_status = <!-- Pharmacokinetic data -->
+| bioavailability = 
+| protein_bound = 
+| metabolism = 
+| metabolites = 
+| onset = 
+| elimination_half-life = 
+| duration_of_action = 
+| excretion = <!-- Identifiers -->
+| CAS_number = 2189684-44-2
+| CAS_supplemental = 
+| PubChem = 
+| IUPHAR_ligand = 
+| DrugBank = DB15673
+| ChemSpiderID = 81367881
+| UNII = A9A0O6FB4H
+| KEGG = D12161
+| KEGG2 = D12162
+| ChEBI = 
+| ChEMBL = 4594438
+| NIAID_ChemDB = 
+| PDB_ligand = QNG
+| synonyms = GS-CA2, GS-6207
+
+<!-- Chemical and physical data -->| IUPAC_name = ''N''-[(1''S''<nowiki>)-1-{3-[4-chloro-3-(methanesulfonamido)-1-(2,2,2-trifluoroethyl)-1</nowiki>''H''-indazol-7-yl]-6-[3-(methanesulfonyl)-3-methylbut-1-yn-1-yl]pyridin-2-yl}-2-(3,5-difluorophenyl)ethyl]-2-[(3b''S'',4a''R'')-5,5-difluoro-3-(trifluoromethyl)-3b,4,4a,5-tetrahydro-1''H''-cyclopropa[3,4]cyclopenta[1,2-''c'']pyrazol-1-yl]acetamide
+| C = 39
+| H = 32
+| Cl = 1
+| F = 10
+| N = 7
+| O = 5
+| S = 2
+| SMILES = CC(C#CC1=NC([C@@H](NC(CN2N=C(C3=C2C(F)([C@@H]4C[C@H]34)F)C(F)(F)F)=O)CC5=CC(F)=CC(F)=C5)=C(C6=CC=C(C7=C6N(CC(F)(F)F)N=C7NS(C)(=O)=O)Cl)C=C1)(S(C)(=O)=O)C
+| StdInChI = 1S/C39H32ClF10N7O5S2/c1-36(2,63(3,59)60)10-9-21-5-6-22(23-7-8-26(40)30-32(23)57(17-37(43,44)45)54-35(30)55-64(4,61)62)31(51-21)27(13-18-11-19(41)14-20(42)12-18)52-28(58)16-56-34-29(33(53-56)39(48,49)50)24-15-25(24)38(34,46)47/h5-8,11-12,14,24-25,27H,13,15-17H2,1-4H3,(H,52,58)(H,54,55)/t24-,25+,27-/m0/s1
+| StdInChI_comment = 
+| StdInChIKey = BRYXUCLEHAUSDY-WEWMWRJBSA-N
+| density = 
+| density_notes = 
+| melting_point = 
+| melting_high = 
+| melting_notes = 
+| boiling_point = 
+| boiling_notes = 
+| solubility = 
+| sol_units = 
+| specific_rotation = 
+}}
+
+'''Lenacapavir''', sold under the brand names '''Sunlenca''' among others, is an [[antiretroviral medication]] used to treat and prevent [[HIV/AIDS]].<ref name="Sunlenca FDA label" /><ref name="Sunlenca EPAR" /> It is taken [[Oral administration|by mouth]] or by [[subcutaneous injection]].<ref name="Sunlenca FDA label" /><ref name="Sunlenca EPAR" /> Lenacapavir is a [[HIV capsid inhibition|human immunodeficiency virus type 1 (HIV-1) capsid inhibitor]].<ref name="Sunlenca FDA label" /><ref name="Yeztugo FDA label" />
+
+The most common side effects include reactions at the injection site and nausea.<ref name="Sunlenca EPAR" /><ref name="FDA PR 20221222">{{cite press release | title=FDA Approves New HIV Drug for Adults with Limited Treatment Options | publisher=U.S. [[Food and Drug Administration]] (FDA) | date=22 December 2022 | url=https://www.fda.gov/news-events/press-announcements/fda-approves-new-hiv-drug-adults-limited-treatment-options | access-date=23 December 2022 | archive-date=15 January 2023 | archive-url=https://web.archive.org/web/20230115164646/https://www.fda.gov/news-events/press-announcements/fda-approves-new-hiv-drug-adults-limited-treatment-options | url-status=dead }} {{PD-notice}}</ref>
+
+Lenacapavir was approved for medical treatment in the European Union in August 2022,<ref name="Sunlenca EPAR" /><ref>{{cite press release | title=Gilead Announces First Global Regulatory Approval of Sunlenca (Lenacapavir), the Only Twice-Yearly HIV Treatment Option | website=Gilead Sciences | date=22 August 2022 | url=https://www.gilead.com/news-and-press/press-room/press-releases/2022/8/gilead-announces-first-global-regulatory-approval-of-sunlenca-lenacapavir-the-only-twiceyearly-hiv-treatment-option | access-date=23 December 2022 | archive-date=15 January 2023 | archive-url=https://web.archive.org/web/20230115164646/https://www.gilead.com/news-and-press/press-room/press-releases/2022/8/gilead-announces-first-global-regulatory-approval-of-sunlenca-lenacapavir-the-only-twiceyearly-hiv-treatment-option | url-status=live }}</ref> in Canada in November 2022,<ref name="Sunlenca PI Oral" /><ref name="Sunlenca PI Subcutaneous" /> and in the United States in December 2022.<ref name="Drug Approval Package: Sunlenca" /><ref name="Paik_2022">{{cite journal | vauthors = Paik J | title = Lenacapavir: First Approval | journal = Drugs | volume = 82 | issue = 14 | pages = 1499–1504 | date = September 2022 | pmid = 36272024 | pmc = 10267266 | doi = 10.1007/s40265-022-01786-0 }}</ref> It is the first of a class of drugs called [[HIV capsid inhibition|capsid inhibitors]] to be approved by the US [[Food and Drug Administration]] for treating HIV/AIDS.<ref name="FDA PR 20221222" /><ref name="New Drug Therapy Approvals 2022" /> 
+
+In 2025, lenacapavir received approval in the US and in Europe for HIV prevention ([[Pre-exposure prophylaxis for HIV prevention|PrEP]]).<ref name="Yeztugo FDA label" /><ref name="APNews20250618">{{Cite web |date=18 June 2025 |title=FDA approves the world's only twice-a-year shot to prevent HIV |url=https://apnews.com/article/hiv-prevention-shot-lenacapavir-gilead-80fb37e2c5ac9b452488d7b86a10d568 |access-date=18 June 2025 |website=AP News }}</ref><ref name="NYTimes20250618">{{Cite news | vauthors = Mandavilli A |date=18 June 2025 |title=Regulators Approve Lenacapavir for H.I.V. Prevention |url=https://www.nytimes.com/2025/06/18/health/hiv-fda-lenacapavir.html |access-date=18 June 2025 |work=[[The New York Times]] }}</ref><ref name="Gilead PR 20250618" /> It is given as a [[subcutaneous injection]] every six months.<ref name="APNews20250618" />
+
+== Medical uses ==
+Lenacapavir, as Sunlenca, in combination with other antiretrovirals, is [[indicated]] for the treatment of HIV/AIDS.<ref name="Sunlenca FDA label" /> It is used in heavily treatment-experienced adults with [[multiple drug resistance]] in whom existing antiretroviral therapy is ineffective due to resistance, intolerance or safety considerations.<ref name="Sunlenca FDA label" /><ref name="FDA PR 20221222" />
+
+Lenacapavir (as Yeztugo or Yeytuo), is indicated for [[pre-exposure prophylaxis for HIV prevention]] to reduce the risk of sexually acquired HIV-1 in adults and adolescents weighing more than {{convert|35|kg|lb}} who are at risk for HIV-1 acquisition.<ref name="Yeztugo FDA label">{{cite web | title=Yeztugo- lenacapavir sodium tablet, film coated; Yeztugo- lenacapavir sodium kit | website=DailyMed | date=18 June 2025 | url=https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1c241af1-ce62-4b0a-9eb7-f6b626174f01 | access-date=6 July 2025}}</ref><ref name="Yeytuo EPAR" />
+
+== Mechanism of action ==
+Lenacapavir works by binding directly to the interface between [[HIV-1]] viral [[capsid]] protein ([[P24 capsid protein|p24]]) subunits in capsid [[hexamer]]s,<ref>{{Cite journal |last=Lang |first=Stuart |date=2025-06-18 |title=Understanding the HIV-CA protein and the ligands that bind at the N-terminal domain (NTD) - C-terminal domain (CTD) interface |journal=RSC Medicinal Chemistry |language=en |volume=16 |issue=6 |pages=2373–2387 |doi=10.1039/D5MD00111K |issn=2632-8682 |pmc=12018806 |pmid=40291137}}</ref> interfering with essential steps of [[viral replication]], including capsid-mediated nuclear uptake of HIV-1 proviral DNA (it over-stabilizes the capsid, preventing it from properly releasing its contents),<ref>{{cite journal | vauthors = Faysal KM, Walsh JC, Renner N, Márquez CL, Shah VB, Tuckwell AJ, Christie MP, Parker MW, Turville SG, Towers GJ, James LC, Jacques DA, Böcking T | title = Pharmacologic hyperstabilisation of the HIV-1 capsid lattice induces capsid failure | journal = eLife | volume = 13 | date = February 2024 | article-number = e83605 | pmid = 38347802 | pmc = 10863983 | doi = 10.7554/eLife.83605 | doi-access = free }}</ref> virus assembly and release, production of capsid protein subunits, and capsid core formation.<ref name="Sunlenca FDA label" /><ref name="FDA PR 20221222" /> The US [[Food and Drug Administration]] considers it to be a [[first-in-class medication]].<ref name="New Drug Therapy Approvals 2022">{{cite web | title=Advancing Health Through Innovation: New Drug Therapy Approvals 2022 | website=U.S. [[Food and Drug Administration]] | date=10 January 2023 | url=https://www.fda.gov/drugs/new-drugs-fda-cders-new-molecular-entities-and-new-therapeutic-biological-products/new-drug-therapy-approvals-2022 | access-date=22 January 2023 | archive-date=21 January 2023 | archive-url=https://web.archive.org/web/20230121035714/https://www.fda.gov/drugs/new-drugs-fda-cders-new-molecular-entities-and-new-therapeutic-biological-products/new-drug-therapy-approvals-2022 | url-status=dead }} {{PD-notice}}</ref><ref>{{cite report | title=New Drug Therapy Approvals 2022 | website=U.S. [[Food and Drug Administration]] (FDA) | date=January 2024 | url=https://www.fda.gov/media/164429/download | format=PDF | access-date=14 January 2024 | archive-url=https://web.archive.org/web/20240114065648/https://www.fda.gov/media/164429/download | archive-date=14 January 2024 | url-status=live }} {{PD-notice}}</ref>
+
+Because lenacapavir is the first medication that targets the p24 capsid, mutations that confer resistance to other antiretrovirals have no effect on lenacapavir. However, mutations of the capsid can still confer resistance, especially when the drug is used without an [[optimized background therapy]].<ref>{{cite journal | vauthors = Margot NA, Jogiraju V, Pennetzdorfer N, Naik V, VanderVeen LA, Ling J, Singh R, Dvory-Sobol H, Ogbuagu O, Segal-Maurer S, Molina JM, Rhee MS, Callebaut C | title = Resistance Analyses in Heavily Treatment-Experienced People With HIV Treated With the Novel HIV Capsid Inhibitor Lenacapavir After 2 Years | journal = The Journal of Infectious Diseases | volume = 231 | issue = 5 | pages = 1239–1245 | date = June 2025 | pmid = 39873394 | doi = 10.1093/infdis/jiaf050 }}</ref>
+
+== History ==
+Lenacapavir was [[drug development|developed]] by [[Gilead Sciences]].<ref>{{cite journal | vauthors = Link JO, Rhee MS, Tse WC, Zheng J, Somoza JR, Rowe W, Begley R, Chiu A, Mulato A, Hansen D, Singer E, Tsai LK, Bam RA, Chou CH, Canales E, Brizgys G, Zhang JR, Li J, Graupe M, Morganelli P, Liu Q, Wu Q, Halcomb RL, Saito RD, Schroeder SD, Lazerwith SE, Bondy S, Jin D, Hung M, Novikov N, Liu X, Villaseñor AG, Cannizzaro CE, Hu EY, Anderson RL, Appleby TC, Lu B, Mwangi J, Liclican A, Niedziela-Majka A, Papalia GA, Wong MH, Leavitt SA, Xu Y, Koditek D, Stepan GJ, Yu H, Pagratis N, Clancy S, Ahmadyar S, Cai TZ, Sellers S, Wolckenhauer SA, Ling J, Callebaut C, Margot N, Ram RR, Liu YP, Hyland R, Sinclair GI, Ruane PJ, Crofoot GE, McDonald CK, Brainard DM, Lad L, Swaminathan S, Sundquist WI, Sakowicz R, Chester AE, Lee WE, Daar ES, Yant SR, Cihlar T | title = Clinical targeting of HIV capsid protein with a long-acting small molecule | journal = Nature | volume = 584 | issue = 7822 | pages = 614–618 | date = August 2020 | pmid = 32612233 | doi = 10.1038/s41586-020-2443-1 | s2cid = 220293679 | bibcode = 2020Natur.584..614L | pmc = 8188729 }}</ref>
+
+The safety and efficacy of lenacapavir were established through a multi-center clinical trial with 72 participants whose HIV infections were resistant to multiple classes of HIV medications.<ref name="FDA PR 20221222" /> These participants had to have high levels of virus in their blood despite being on antiretroviral drugs.<ref name="FDA PR 20221222" /> Participants were enrolled into one of two study groups.<ref name="FDA PR 20221222" /> One group was randomized to receive either lenacapavir or placebo in a double-blind fashion, and the other group received open-label lenacapavir.<ref name="FDA PR 20221222" /> The primary measure of efficacy was the proportion of participants in the randomized study group who achieved a certain level of reduction in virus during the initial 14 days compared to baseline.<ref name="FDA PR 20221222" />
+
+The US [[Food and Drug Administration]] granted the application for lenacapavir [[priority review]], [[Fast track (FDA)|fast track]], and [[breakthrough therapy]] designations.<ref name="FDA PR 20221222" /> Lenacapavir was approved for medical use in the United States in December 2022.<ref name="Drug Approval Package: Sunlenca">{{cite web | title=Drug Approval Package: Sunlenca | website=U.S. [[Food and Drug Administration]] (FDA) | date=6 February 2023 | url=https://www.accessdata.fda.gov/drugsatfda_docs/nda/2023/215973,215974Orig1s000TOC.cfm | access-date=30 September 2025}}</ref>
+
+In 2024, lenacapavir was named the "2024 Breakthrough of the Year", citing its "astonishing 100% efficacy" in one large efficacy trial in women to prevent HIV and "99.9% efficacy in gender diverse people who have sex with men," while highlighting that research providing a "new understanding of the structure and function of HIV's [[capsid protein]]" led to the drug's "off-the-charts success".<ref>{{Cite journal |title=Science's 2024 Breakthrough of the Year: Opening the door to a new era of HIV prevention |journal=Science |date=December 2024 |doi=10.1126/science.adv2100|pmid=39666802 |volume=386 |issue=6727 |pages=1208–1209 | vauthors = Cohen J }}</ref>
+
+== Society and culture ==
+=== Legal status ===
+In June 2022, the [[Committee for Medicinal Products for Human Use]] (CHMP) of the [[European Medicines Agency]] adopted a positive opinion, recommending the granting of a marketing authorization for the medicinal product Sunlenca, intended for the treatment of adults with multidrug‑resistant human immunodeficiency virus type 1 (HIV‑1) infection.<ref name="Sunlenca: Pending EC decision" /> The applicant for this medicinal product is Gilead Sciences Ireland UC.<ref name="Sunlenca: Pending EC decision">{{cite web | title=Sunlenca: Pending EC decision | website=[[European Medicines Agency]] (EMA) | date=23 June 2022 | url=https://www.ema.europa.eu/en/medicines/human/summaries-opinion/sunlenca | access-date=26 June 2022 | archive-date=26 June 2022 | archive-url=https://web.archive.org/web/20220626031517/https://www.ema.europa.eu/en/medicines/human/summaries-opinion/sunlenca | url-status=live }} Text was copied from this source which is copyright European Medicines Agency. Reproduction is authorized provided the source is acknowledged.</ref> 
+
+Lenacapavir was authorized for medical use in the European Union in August 2022,<ref name="Sunlenca EPAR" /><ref>{{cite web | title=Sunlenca Product information | website=Union Register of medicinal products | url=https://ec.europa.eu/health/documents/community-register/html/h1671.htm | access-date=3 March 2023 | archive-date=3 March 2023 | archive-url=https://web.archive.org/web/20230303202158/https://ec.europa.eu/health/documents/community-register/html/h1671.htm | url-status=live }}</ref> in Canada in November 2022,<ref name="Sunlenca PI Oral" /><ref name="Sunlenca PI Subcutaneous" /> and in the United States in December 2022.<ref name="FDA PR 20221222" /><ref>{{cite press release | title=Sunlenca (lenacapavir) Receives FDA Approval as a First-in-Class, Twice-Yearly Treatment Option for People Living With Multi-Drug Resistant HIV | website=Gilead Sciences | date=22 December 2022 | url=https://www.gilead.com/news-and-press/press-room/press-releases/2022/12/sunlenca-lenacapavir-receives-fda-approval-as-a-firstinclass-twiceyearly-treatment-option-for-people-living-with-multidrug-resistant-hiv | access-date=23 December 2022 | archive-date=23 December 2022 | archive-url=https://web.archive.org/web/20221223070110/https://www.gilead.com/news-and-press/press-room/press-releases/2022/12/sunlenca-lenacapavir-receives-fda-approval-as-a-firstinclass-twiceyearly-treatment-option-for-people-living-with-multidrug-resistant-hiv | url-status=live }}</ref>
+
+In February 2025, the US [[Food and Drug Administration]] (FDA) accepted Gilead Sciences's drug application for twice-yearly lenacapavir under priority review.<ref>{{Cite web |date=18 February 2025 |title=U.S. FDA Accepts Gilead's New Drug Applications for Twice-Yearly Lenacapavir for HIV Prevention Under Priority Review |url=https://www.biospace.com/press-releases/u-s-fda-accepts-gileads-new-drug-applications-for-twice-yearly-lenacapavir-for-hiv-prevention-under-priority-review |access-date=21 February 2025 |website=BioSpace }}</ref> The FDA approved lenacapavir (as Yeztugo) for HIV prevention in June 2025.<ref name="NYTimes20250618" /><ref name="Gilead PR 20250618">{{cite press release | title=Yeztugo (Lenacapavir) Is Now the First and Only FDA-Approved HIV Prevention Option Offering 6 Months of Protection | publisher=Gilead Sciences | via=Business Wire | date=18 June 2025 | url=https://www.businesswire.com/news/home/20250520465880/en/Yeztugo-Lenacapavir-Is-Now-the-First-and-Only-FDA-Approved-HIV-Prevention-Option-Offering-6-Months-of-Protection | access-date=20 June 2025}}</ref>
+
+In July 2025, Europe's CHMP adopted a positive opinion recommending the granting of a marketing authorization for lenacapavir for the prophylaxis against sexually acquired human immunodeficiency virus type 1 (HIV-1) infection.<ref name="Yeytuo EPAR">{{cite web | title=Yeytuo EPAR | website=[[European Medicines Agency]] (EMA) | date=25 July 2025 | url=https://www.ema.europa.eu/en/medicines/human/EPAR/yeytuo | access-date=27 July 2025}} Text was copied from this source which is copyright European Medicines Agency. Reproduction is authorized provided the source is acknowledged.</ref><ref>{{cite press release | title=New injection for easier prevention of HIV infection in the EU and worldwide | website=[[European Medicines Agency]] (EMA) | date=25 July 2025 | url=https://www.ema.europa.eu/en/news/new-injection-easier-prevention-hiv-infection-eu-worldwide | access-date=27 July 2025}} Text was copied from this source which is copyright European Medicines Agency. Reproduction is authorized provided the source is acknowledged.</ref> It was authorized for medical use in the European Union in September 2025.<ref name="Yeytuo EPAR" /><ref name="Yeytuo PI">{{cite web | title=Yeytuo PI | website=Union Register of medicinal products | date=25 August 2025 | url=https://ec.europa.eu/health/documents/community-register/html/h1976.htm | access-date=30 September 2025}}</ref> In Europe it is marketed as YeTuo.
+
+=== Economics ===
+{{As of|2024}} the medication, produced by Gilead Sciences, costs {{US$|42,250}} for the first year. A study presented in July 2024<ref>{{cite web | title=AIDS 2024, the 25th International AIDS Conference| publisher=International AIDS Society (IAS) | url=https://www.iasociety.org/conferences/aids2024 | access-date=23 July 2024}}</ref> found that [[mass production]] of a [[generic version]] would allow a profit margin of 30% on an annual price of $40 if used by 10 million people. The authors said that lowering world HIV levels significantly would probably require 60 million people to take the drug [[Preventive healthcare|preventatively]].<ref>{{cite news| vauthors = Lay K | title=HIV 'vaccine' could be made for just $40 a year for every patient |newspaper=[[The Guardian]] | date=23 July 2024 | url=https://www.theguardian.com/global-development/article/2024/jul/23/hiv-aids-prevention-vaccine-lenacapavir-sunlenca-pharmaceuticals-gilead-generic-licensing}}</ref>
+
+Gilead Sciences set the list price for Yeztugo at $28,218 in 2025.<ref name="NYTimes20250618" />
+
+In September 2025, partnerships led by the [[Clinton Foundation|Clinton Health Access Initiative]], [[Unitaid]], and the [[Gates Foundation]] secured agreements with [[India|Indian]] manufacturers to provide lenacapavir for HIV prevention at US$40 per patient annually in 120 low- and middle-income countries.<ref name=":0">{{Cite news |date=2025-09-24 |title=Philanthropies Strike a Promising Deal to Turn Back H.I.V. |url=https://www.nytimes.com/2025/09/24/health/hiv-treatment-shots-lenacapavir.html |access-date=2025-09-24 |work=The New York Times }}</ref> The first doses of the drug arrived in Zambia and Eswatini later in 2025 with US and Gilead support,<ref>{{Cite web |date=2025-11-18 |title=Eswatini is the first African country to get twice-yearly HIV prevention shot |url=https://apnews.com/article/africa-hiv-drug-lenacapavir-eswatini-8f2ecc312d32d1d760e9baa425f013e4 |access-date=2025-11-19 |website=AP News |language=en}}</ref> though some advocacy groups criticized the Trump administration for trying to take credit after it "decimated" U.S. global AIDS programs.<ref>{{Cite web |date=2025-11-18 |title=Trump Takes Credit for Lenacapavir Deal after His Administration Decimated U.S. International AIDS Prevention Programs |url=https://www.citizen.org/news/trump-takes-credit-for-lenacapavir-deal-after-his-administration-decimated-u-s-international-aids-prevention-programs/ |access-date=2025-11-19 |website=Public Citizen |language=en}}</ref>
+
+== Research ==
+Studies have been conducted for the use of lenacapavir in treatment-naive individuals.<ref>{{cite journal | vauthors = Gupta S |title=Lenacapavir administered every 26 weeks or daily in combination with oral daily antiretroviral therapy for initial treatment of HIV: a randomised, open-label, active-controlled, phase 2 trial |journal=The Lancet HIV |date=January 2023 |volume=10 |issue=1 |pages=15–23 |doi=10.1016/S2352-3018(22)00291-0 |pmid=36566079 |url=https://www.thelancet.com/journals/lanhiv/article/PIIS2352-3018(22)00291-0/abstract |access-date=10 March 2024|url-access=subscription }}</ref> For virally suppressed individuals switching treatment, early studies have tested lenacapavir injections in combination with infusions of the broadly neutralizing antibodies [[teropavimab]] and [[zinlirvimab]]<ref>{{cite web | vauthors = Highleyman L |title=Lenacapavir plus broadly neutralising antibodies may offer twice-yearly treatment option |url=https://www.aidsmap.com/news/feb-2023/lenacapavir-plus-broadly-neutralising-antibodies-may-offer-twice-yearly-treatment |website=Aidsmap |access-date=10 March 2024 |date=28 February 2023}}</ref> as well as lenacapavir with [[islatravir]].<ref>{{cite web | vauthors = Highleyman L |title=Islatravir plus lenacapavir could be the first once-weekly oral HIV treatment |url=https://www.aidsmap.com/news/mar-2024/islatravir-plus-lenacapavir-could-be-first-once-weekly-oral-hiv-treatment |website=Aidsmap |access-date=10 March 2024 |date=6 March 2024}}</ref>
+
+A [[Phase III clinical trials|phase III clinical trial]] study examined efficacy for [[pre-exposure prophylaxis for HIV prevention|pre-exposure HIV prevention]] (PrEP).<ref>{{cite journal | vauthors = Bekker LG, Das M, Abdool Karim Q, Ahmed K, Batting J, Brumskine W, Gill K, Harkoo I, Jaggernath M, Kigozi G, Kiwanuka N, Kotze P, Lebina L, Louw CE, Malahleha M, Manentsa M, Mansoor LE, Moodley D, Naicker V, Naidoo L, Naidoo M, Nair G, Ndlovu N, Palanee-Phillips T, Panchia R, Pillay S, Potloane D, Selepe P, Singh N, Singh Y, Spooner E, Ward AM, Zwane Z, Ebrahimi R, Zhao Y, Kintu A, Deaton C, Carter CC, Baeten JM, Matovu Kiweewa F | title = Twice-Yearly Lenacapavir or Daily F/TAF for HIV Prevention in Cisgender Women | journal = The New England Journal of Medicine | volume = 391 | issue = 13 | pages = 1179–1192 | date = October 2024 | pmid = 39046157 | doi = 10.1056/NEJMoa2407001 }}</ref><ref>{{Cite web |title=Lenacapavir Shows 100% Efficacy and Zero Infections in HIV Prevention |url=https://www.precisionvaccinations.com/2024/07/24/lenacapavir-shows-100-efficacy-and-zero-infections-hiv-prevention |access-date=25 July 2024 |website=www.precisionvaccinations.com }}</ref><ref>{{Cite web |title=Full Efficacy and Safety Results for Gilead Investigational Twice-Yearly Lenacapavir for HIV Prevention Presented at AIDS 2024 |url=https://www.gilead.com/news-and-press/press-room/press-releases/2024/7/full-efficacy-and-safety-results-for-gilead-investigational-twice-yearly-lenacapavir-for-hiv-prevention-presented-at-aids-2024 |access-date=25 July 2024 |website=www.gilead.com }}</ref><ref>{{Cite web | vauthors = Bekker LG |date=3 July 2024 |title=HIV breakthrough: drug trial shows injection twice a year is 100% effective against infection |url=http://theconversation.com/hiv-breakthrough-drug-trial-shows-injection-twice-a-year-is-100-effective-against-infection-233295 |access-date=25 July 2024 |website=The Conversation }}</ref> It found an incidence rate ratio of 0.00 (as no cases occurred in the lenacapavir group) with a 95% confidence interval of 0.00–0.04 with p<.001. Injection site reactions led to discontinuation by 0.2% of lenacapavir patients.
+
+Another lenacapavir phase III study, examined the incidence compared to the background rate for men.<ref>{{cite journal | vauthors = Kelley CF, Acevedo-Quiñones M, Agwu AL, Avihingsanon A, Benson P, Blumenthal J, Brinson C, Brites C, Cahn P, Cantos VD, Clark J, Clement M, Creticos C, Crofoot G, Diaz RS, Doblecki-Lewis S, Gallardo-Cartagena JA, Gaur A, Grinsztejn B, Hassler S, Hinojosa JC, Hodge T, Kaplan R, Lacerda M, LaMarca A, Losso MH, Valdez Madruga J, Mayer KH, Mills A, Mounzer K, Ndlovu N, Novak RM, Perez Rios A, Phanuphak N, Ramgopal M, Ruane PJ, Sánchez J, Santos B, Schine P, Schreibman T, Spencer LY, Van Gerwen OT, Vasconcelos R, Vasquez JG, Zwane Z, Cox S, Deaton C, Ebrahimi R, Wong P, Singh R, Brown LB, Carter CC, Das M, Baeten JM, Ogbuagu O | title = Twice-Yearly Lenacapavir for HIV Prevention in Men and Gender-Diverse Persons | journal = The New England Journal of Medicine | date = November 2024 | volume = 392 | issue = 13 | pages = 1261–1276 | pmid = 39602624 | doi = 10.1056/NEJMoa2411858 }}</ref> It found an incidence rate ratio of 0.04 with a 95% confidence interval of 0.01 to 0.18, at p<.001. Injection site reactions led to discontinuation by 1.2% of patients.
+
+Lenacapavir has been found to be effective as HIV pre-exposure prophylaxis (PrEP) in heterosexual [[cisgender]] women in Africa.<ref>{{cite journal | vauthors = Bekker LG, Das M, Abdool Karim Q, Ahmed K, Batting J, Brumskine W, Gill K, Harkoo I, Jaggernath M, Kigozi G, Kiwanuka N, Kotze P, Lebina L, Louw CE, Malahleha M, Manentsa M, Mansoor LE, Moodley D, Naicker V, Naidoo L, Naidoo M, Nair G, Ndlovu N, Palanee-Phillips T, Panchia R, Pillay S, Potloane D, Selepe P, Singh N, Singh Y, Spooner E, Ward AM, Zwane Z, Ebrahimi R, Zhao Y, Kintu A, Deaton C, Carter CC, Baeten JM, Matovu Kiweewa F | title = Twice-Yearly Lenacapavir or Daily F/TAF for HIV Prevention in Cisgender Women | journal = The New England Journal of Medicine | date = July 2024 | volume = 391 | issue = 13 | pages = 1179–1192 | pmid = 39046157 | doi = 10.1056/NEJMoa2407001 }}</ref>
+
+== References ==
+{{reflist}}
+
+== External links ==
+* {{cite web | title=Lenacapavir Oral | website=MedlinePlus Drug Information | url=https://medlineplus.gov/druginfo/meds/a623006.html }}
+* {{cite web | title=Lenacapavir | website=Clinical Info | publisher=National Institutes of Health | url=https://clinicalinfo.hiv.gov/en/drugs/lenacapavir | access-date=26 August 2022 | archive-date=15 January 2023 | archive-url=https://web.archive.org/web/20230115164648/https://clinicalinfo.hiv.gov/en/drugs/lenacapavir | url-status=dead }}
+
+{{HIVpharm}}
+{{Portal bar | Medicine | Viruses }}
+{{Authority control}}
+
+[[Category:Amides]]
+[[Category:Antiretroviral drugs]]
+[[Category:Chlorobenzene derivatives]]
+[[Category:Cyclopropanes]]
+[[Category:Fluoroarenes]]
+[[Category:Gilead Sciences]]
+[[Category:Indazoles]]
+[[Category:Methanesulfonamide derivatives]]
+[[Category:Orphan drugs]]
+[[Category:Pyridines]]
+[[Category:Trifluoroethyl compounds]]
+[[Category:Trifluoromethyl compounds]]

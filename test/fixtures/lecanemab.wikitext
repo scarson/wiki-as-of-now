@@ -1,0 +1,175 @@
+{{Short description|Monoclonal antibody against amyloid beta}}
+{{Use dmy dates|date=November 2025}}
+{{cs1 config|name-list-style=vanc|display-authors=6}}
+{{Infobox drug
+| type = mab
+| image =
+| width             = 
+| alt               = 
+| caption           = 
+
+<!-- Monoclonal antibody data -->
+| mab_type = mab
+| source = zu
+| target = [[Amyloid beta]]
+
+<!-- Clinical data -->
+| pronounce         = 
+| tradename         = Leqembi
+| Drugs.com         = {{drugs.com|monograph|lecanemab}}
+| MedlinePlus       = a623004
+| DailyMedID        = Lecanemab
+| pregnancy_AU      = <!-- A / B1 / B2 / B3 / C / D / X -->
+| pregnancy_AU_comment = 
+| pregnancy_category = 
+| routes_of_administration = [[Intravenous]], [[Subcutaneous administration|subcutaneous]]
+| class             = 
+| ATC_prefix        = N06
+| ATC_suffix        = DX04
+| ATC_supplemental  = 
+| biosimilars       = 
+
+<!-- Legal status -->
+| legal_AU          = 
+| legal_AU_comment  = 
+| legal_BR          = <!-- OTC, A1, A2, A3, B1, B2, C1, C2, C3, C4, C5, D1, D2, E, F -->
+| legal_BR_comment  = 
+| legal_CA          = Rx-only
+| legal_CA_comment  = /{{nbsp}}Schedule D<ref>{{cite web | title=Leqembi Product information | website=[[Health Canada]] | date=24 October 2025 | url=https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=106527 | access-date=8 November 2025}}</ref>
+| legal_DE          = <!-- Anlage I, II, III or Unscheduled -->
+| legal_DE_comment  = 
+| legal_NZ          = <!-- Class A, B, C -->
+| legal_NZ_comment  = 
+| legal_UK          = <!-- GSL, P, POM, CD, CD Lic, CD POM, CD No Reg POM, CD (Benz) POM, CD (Anab) POM or CD Inv POM / Class A, B, C -->
+| legal_UK_comment  = 
+| legal_US          = Rx-only
+| legal_US_comment  = <ref name="Leqembi FDA label" />
+| legal_EU          = Rx-only
+| legal_EU_comment  = <ref name="Leqembi EPAR" /><ref name="Leqembi PI" />
+| legal_UN          = <!-- N I, II, III, IV / P I, II, III, IV -->
+| legal_UN_comment  = 
+| legal_status      = Rx-only<ref>{{cite press release | title=Update on Regulatory Review of Lecanemab for Early Alzheimer's Disease in Australia | website=Biogen | date=16 October 2024 | url=https://investors.biogen.com/news-releases/news-release-details/update-regulatory-review-lecanemab-early-alzheimers-disease-0 | access-date=14 November 2024}}</ref>
+
+<!-- Pharmacokinetic data -->
+| bioavailability   = 
+| protein_bound     = 
+| metabolism        = 
+| metabolites       = 
+| onset             = 
+| elimination_half-life = 
+| duration_of_action = 
+| excretion         = 
+
+<!-- Identifiers -->
+| CAS_number = 1260393-98-3
+| CAS_supplemental  = 
+| PubChem =  
+| IUPHAR_ligand     = 
+| DrugBank =  DB14580
+| ChemSpiderID = none
+| UNII = 12PYH0FTU9
+| KEGG = D11678 
+| ChEBI             = 
+| ChEMBL            = 
+| NIAID_ChemDB      = 
+| PDB_ligand        = 
+| synonyms = BAN2401, lecanemab-irmb
+
+<!-- Chemical and physical data -->
+| C = 6544 | H = 10088 | N = 1744 | O = 2032 | S = 46
+}}
+
+'''Lecanemab''', sold under the brand name '''Leqembi''', is a [[monoclonal antibody]] medication used for the treatment of mild [[Alzheimer's disease]].<ref name="Leqembi FDA label">{{cite web |date=11 January 2023 |title=Leqembi – lecanemab injection, solution |url=https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9d1ff786-e577-410a-a273-c4d7d0e4e975 |url-status=live |archive-url=https://web.archive.org/web/20230115032033/https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9d1ff786-e577-410a-a273-c4d7d0e4e975 |archive-date=15 January 2023 |access-date=21 January 2023 |website=DailyMed}}</ref><ref name="FDA PR 20230106" /> Lecanemab is an [[amyloid beta]]-directed antibody.<ref name="Leqembi FDA label" /> It is given via [[intravenous infusion]] or [[subcutaneous injection]].<ref name="Leqembi FDA label" /> In clinical trials, it demonstrated small or no clinically significant efficacy in Alzheimer's disease.<ref name="Network2026"/><ref name="Cochrane2026"/><ref>{{Cite journal |vauthors = Kwon D |date=August 2024 |title=Debate rages over Alzheimer's drug lecanemab as UK limits approval |journal=Nature |doi=10.1038/d41586-024-02720-y|pmid=39179772 }}</ref> The most common side effects of lecanemab include headache, infusion-related reactions, and [[amyloid-related imaging abnormalities]], a side effect known to occur with the class of antibodies targeting amyloid.<ref name="FDA PR 20230706" /> Lecanemab was jointly developed by [[Eisai (company)|Eisai]], [[Biogen]], and Bioarctic.<ref>{{cite web | vauthors = Lannfelt P | title = Utveckling av sjukdomsmodifierande behandlingar mot Alzheimers sjukdom | publisher = Bioarctic | url = https://www.bioarctic.com/sv/vara-verksamhetsomraden/var-teknologi/alzheimers-sjukdom/ | access-date = 21 April 2025 | archive-date = 26 November 2024 | archive-url = https://web.archive.org/web/20241126012520/https://www.bioarctic.com/sv/vara-verksamhetsomraden/var-teknologi/alzheimers-sjukdom/ }}</ref>
+
+== Medical uses ==
+Lecanemab is [[indicated]] for the treatment of Alzheimer's disease in people who have mild cognitive impairment or mild dementia, but not in people who already have moderate or severe dementia.<ref name="Leqembi FDA label" /><ref name="FDA PR 20230106" /><ref name="FDA PR 20230706" />
+
+=== Efficacy ===
+A 2026 [[meta-analysis]] suggests that lecanemab has no effect in the treatment of Alzheimer's disease.<ref name="Network2026">{{cite journal | vauthors = Huang S, Guo Y | date = 2026 | title = Network meta-analysis of the efficacy of nine drugs for cognitive function in patients with Alzheimer's disease | journal = Journal of Alzheimer's Disease Reports | volume = 10 | article-number = 25424823261422205 | doi = 10.1177/25424823261422205 | pmc = 13039041 | pmid = 41929952 }}</ref> A 2026 [[Cochrane review]] found no effect or at best small effect.<ref name="Cochrane2026">{{cite journal | vauthors = Nonino F, Minozzi S, Sambati L, Del Giovane C, Baldin E, Bassi MC, De Santis C, Gonzalez-Lorenzo M, Vignatelli L, Filippini G, Richard E | date = April 2026 | title = Amyloid-beta-targeting monoclonal antibodies for people with mild cognitive impairment or mild dementia due to Alzheimer's disease | journal = The Cochrane Database of Systematic Reviews | volume = 4 | issue = 4 | article-number = CD016297 | doi = 10.1002/14651858.CD016297 | doi-access = free | pmc = 13082890 | pmid = 41985900 }}</ref>
+
+== Adverse effects ==
+Lecanemab may cause harmful adverse effects.<ref>{{cite journal | vauthors = Qi L, Zheng F, Tu M, Abdullah R, Zhao Y, Su X, Zhou D, Peng G | date = March 2026 | title = Safety profiles of lecanemab: A systematic review and meta-analysis of randomized controlled trials and real-world evidence | journal = The Journal of Prevention of Alzheimer's Disease | volume = 13 | issue = 3 | article-number = 100473 | doi = 10.1016/j.tjpad.2025.100473 | pmc = 12988368 | pmid = 41478817 }}</ref><ref>{{cite journal | vauthors = Higgins M, Wasef V, Kwakowsky A | date = January 2026 | title = FDA-Approved Passive Immunization Treatments Against Aβ in Alzheimer's Disease: Where Are We Now? | journal = International Journal of Molecular Sciences | volume = 27 | issue = 2 | page = 883 | doi = 10.3390/ijms27020883 | doi-access = free | pmc = 12841311 | pmid = 41596530 }}</ref> Lecanemab may cause [[amyloid-related imaging abnormalities]] (ARIA). ARIA is often [[asymptomatic]], but serious and life-threatening events rarely may occur. ARIA most commonly presents as temporary swelling of the brain that usually resolves over time and may be accompanied by small spots of bleeding in or on the surface of the brain, though some people may have symptoms such as headache, confusion, dizziness, vision changes, nausea and seizure.<ref name="FDA PR 20230106" /><ref name="FDA PR 20230706" /> 
+
+Compared to placebo, all doses of the drug caused accelerated brain shrinkage.<ref>{{cite journal | vauthors = Liu KY, Villain N, Ayton S, Ackley SF, Planche V, Howard R, Thambisetty M | title = Key questions for the evaluation of anti-amyloid immunotherapies for Alzheimer's disease | journal = Brain Communications | volume = 5 | issue = 3 | article-number = fcad175 | date = 2 May 2023 | pmid = 37389302 | pmc = 10306158 | doi = 10.1093/braincomms/fcad175 }}</ref> However, one study indicates the brain volume reductions are consistent with amyloid plaque removal.<ref>{{cite journal | vauthors = Belder CR, Boche D, Nicoll JA, Jaunmuktane Z, Zetterberg H, Schott JM, Barkhof F, Fox NC | title = Brain volume change following anti-amyloid β immunotherapy for Alzheimer's disease: amyloid-removal-related pseudo-atrophy | journal = The Lancet. Neurology | volume = 23 | issue = 10 | pages = 1025–1034 | date = October 2024 | pmid = 39304242 | doi = 10.1016/S1474-4422(24)00335-1 }}</ref>
+
+== Pharmacology ==
+=== Mechanism of action ===
+{{Main|Biochemistry of Alzheimer's disease#Amyloid hypothesis}}
+Lecanemab is a [[humanized monoclonal antibody]] consisting of a humanized version<ref name="Lannfelt_2014">{{cite journal |vauthors=Lannfelt L, Möller C, Basun H, Osswald G, Sehlin D, Satlin A, Logovinsky V, Gellerfors P |date=2014 |title=Perspectives on future Alzheimer therapies: amyloid-β protofibrils – a new target for immunotherapy with BAN2401 in Alzheimer's disease |journal=Alzheimer's Research & Therapy |volume=6 |issue=2 |page=16 |doi=10.1186/alzrt246 |pmc=4054967 |pmid=25031633 |doi-access=free}}</ref> of a mouse antibody, mAb158, that recognizes [[fibril|protofibrils]] and prevents [[amyloid beta]] deposition in [[animal model]]s of Alzheimer's disease.<ref name="Söllvander_2018">{{cite journal | vauthors = Söllvander S, Nikitidou E, Gallasch L, Zyśk M, Söderberg L, Sehlin D, Lannfelt L, Erlandsson A | date = March 2018 | title = The Aβ protofibril selective antibody mAb158 prevents accumulation of Aβ in astrocytes and rescues neurons from Aβ-induced cell death | journal = Journal of Neuroinflammation | volume = 15 | issue = 1 | page = 98 | doi = 10.1186/s12974-018-1134-4 | doi-access = free | pmc = 5875007 | pmid = 29592816 }}</ref>
+
+== History ==
+In July 2022, the US [[Food and Drug Administration]] (FDA) accepted an application for [[Accelerated approval (FDA)|accelerated approval]] for lecanemab.<ref name="Biogen-Sep22" />
+
+In September 2022, [[Biogen]] announced<ref name="Biogen-Sep22">{{cite press release |url=https://investors.biogen.com/news-releases/news-release-details/lecanemab-confirmatory-phase-3-clarity-ad-study-met-primary |title=Lecanemab Confirmatory Phase 3 Clarity Ad Study Met Primary Endpoint, Showing Highly Statistically Significant Reduction of Clinical Decline in Large Global Clinical Study of 1,795 Participants With Early Alzheimer's Disease |publisher=Biogen |access-date=28 September 2022 |date=27 September 2022 |archive-date=27 September 2022 |archive-url=https://web.archive.org/web/20220927233155/https://investors.biogen.com/news-releases/news-release-details/lecanemab-confirmatory-phase-3-clarity-ad-study-met-primary |url-status=live }}</ref><ref>{{cite news |vauthors=Robbins R, Belluck P |url=https://www.nytimes.com/2022/09/27/business/alzheimers-drug-biogen-lecanemab.html |title=Alzheimer's Drug Slows Cognitive Decline in Key Study |work=[[The New York Times]] |date=27 September 2022 |access-date=28 September 2022 |archive-date=28 September 2022 |archive-url=https://web.archive.org/web/20220928021026/https://www.nytimes.com/2022/09/27/business/alzheimers-drug-biogen-lecanemab.html |url-status=live }}</ref> positive results from an ongoing [[phase III clinical trial]].<ref>{{cite web |url=https://clinicaltrials.gov/ct2/show/NCT03887455 |title=A Study to Confirm Safety and Efficacy of Lecanemab in Participants With Early Alzheimer's Disease (Clarity AD) |date=11 July 2022 |publisher=ClinicalTrials.gov |access-date=28 September 2022 |archive-date=28 September 2022 |archive-url=https://web.archive.org/web/20220928145815/https://clinicaltrials.gov/ct2/show/NCT03887455 |url-status=live }}</ref><ref>{{cite web | vauthors = Sample I |url=https://www.theguardian.com/society/2022/nov/22/treatment-for-alzheimers-lecanemab-dementia-research |title='This looks like the real deal': Are we inching closer to a treatment for Alzheimer's? |website=[[The Guardian]] |date=22 November 2022 | archive-date=10 January 2023 |archive-url= https://web.archive.org/web/20230110050040/https://www.theguardian.com/society/2022/nov/22/treatment-for-alzheimers-lecanemab-dementia-research |url-status=live }}</ref>
+
+In November 2022, it was announced that the drug was a success in clinical trials and exceeded its goal in reaching primary endpoints.<ref>{{cite news | vauthors=Gallagher J |url=https://www.bbc.com/news/health-63749586 |title=Alzheimer's drug lecanemab hailed as momentous breakthrough | publisher=BBC News Online | date=30 November 2022 |access-date=30 November 2022 |archive-date=2 December 2022 |archive-url=https://web.archive.org/web/20221202053951/https://www.bbc.com/news/health-63749586 |url-status=live }}</ref>
+[[File:Amyloid-plaque formation-big.jpg|thumb|upright=2|Enzymes act on amyloid precursor protein (APP) and cut it into fragments of protein, including beta-amyloid, which forms part of amyloid plaques in Alzheimer's disease.]]
+The efficacy of lecanemab was evaluated in a double-blind, placebo-controlled, parallel-group, dose-finding study of 856 participants with Alzheimer's disease.<ref name="FDA PR 20230106" /> Treatment was initiated in participants whose disease was in the stage of mild [[Cognitive deficit|cognitive impairment]] or mild [[dementia]] and who had confirmed presence of amyloid beta pathology.<ref name="FDA PR 20230106" /> Participants receiving the treatment showed significant dose- and time-dependent reduction of amyloid beta plaque: Those receiving the approved dose of lecanemab, 10&nbsp;milligrams/kilogram every two weeks, had a statistically significant reduction in brain amyloid plaque from baseline to week 79 compared with those receiving a placebo, who had no reduction of amyloid beta plaque.<ref name="FDA PR 20230106" />
+
+The FDA approved lecanemab in January 2023 via the accelerated approval pathway for the treatment of Alzheimer's disease.<ref name="FDA PR 20230106" /> The FDA granted the application for lecanemab [[Fast track (FDA)|fast track]], [[priority review]], and [[breakthrough therapy]] designations.<ref name="FDA PR 20230106" /> The approval of Leqembi was granted to [[Eisai (company)|Eisai R&D Management Co., Ltd]].<ref name="FDA PR 20230106" /> In July 2023, the FDA converted lecanemab to traditional approval.<ref name="FDA PR 20230706" />
+
+The efficacy of lecanemab was evaluated using results from Study 301 (CLARITY AD), a phase III randomized, controlled clinical trial.<ref name="FDA PR 20230706" /> Study 301 was a multicenter, randomized, double-blind, placebo-controlled, parallel-group study that enrolled 1,795 participants with Alzheimer's disease.<ref name="FDA PR 20230706" /> Treatment was initiated in participants with mild cognitive impairment or mild dementia stage of disease and confirmed presence of amyloid beta pathology.<ref name="FDA PR 20230706" /> Participants were randomized in a 1:1 ratio to receive placebo or lecanemab at a dose of 10 milligrams (mg)/kilograms (kg), once every two weeks.<ref name="FDA PR 20230706" /> Lecanemab demonstrated a reduction of decline from baseline to 18 months on the primary endpoint, the [[Clinical Dementia Rating]] Scale Sum of Boxes score, compared to placebo.<ref name="FDA PR 20230706" /> Statistically significant differences between treatment groups were also demonstrated on all secondary endpoints, which included the [[Alzheimer's Disease Assessment Scale-Cognitive Subscale|Alzheimer's Disease Assessment Scale Cognitive Subscale]] 14, and the [[Alzheimer's Disease Cooperative Study]]–Activities of Daily Living Scale for Mild Cognitive Impairment.<ref name="FDA PR 20230706" />
+
+In August 2025, the FDA approved a [[Subcutaneous administration|subcutaneous]] auto-injector form called "Leqembi Iqlik" for maintenance dosing after an initial series of infusions over 18 months.<ref>{{cite press release |title=FDA Approves Leqembi Iqlik (lecanemab-irmb) Subcutaneous Injection for Maintenance Dosing for the Treatment of Early Alzheimer's Disease |url=https://investors.biogen.com/news-releases/news-release-details/fda-approves-leqembir-iqliktm-lecanemab-irmb-subcutaneous |publisher=Biogen |date=29 August 2025}}</ref>
+
+== Society and culture ==
+=== Legal status ===
+Lecanemab was granted [[accelerated approval]] for medical use in the United States in January 2023,<ref>{{cite web | title=Drug Approval Package: Leqembi | website=U.S. [[Food and Drug Administration]] (FDA) | date=6 February 2023 | url=https://www.accessdata.fda.gov/drugsatfda_docs/nda/2023/761269Orig1s000TOC.cfm | access-date=29 October 2025}}</ref> and traditional approval in July 2023.<ref name="FDA PR 20230106">{{cite press release | title=FDA Grants Accelerated Approval for Alzheimer's Disease Treatment | publisher=U.S. [[Food and Drug Administration]] (FDA) | date=6 January 2023 | url=https://www.fda.gov/news-events/press-announcements/fda-grants-accelerated-approval-alzheimers-disease-treatment | access-date=7 January 2023 | archive-date=7 January 2023 | archive-url=https://web.archive.org/web/20230107000220/https://www.fda.gov/news-events/press-announcements/fda-grants-accelerated-approval-alzheimers-disease-treatment }} {{PD-notice}}</ref><ref>{{Cite web |url=https://www.accessdata.fda.gov/drugsatfda_docs/summary_review/2023/761269Orig1s000SumR.pdf |title=Lecanemab Summary Review | work = Center for Drug Evaluation and Research (CDER) | publisher = U.S. [[Food and Drug Administration]] (FDA) |access-date=7 January 2023 |archive-date=7 January 2023 |archive-url=https://web.archive.org/web/20230107005316/https://www.accessdata.fda.gov/drugsatfda_docs/summary_review/2023/761269Orig1s000SumR.pdf | url-status = live }}</ref> Lecanemab was approved for medical use in South Korea in May 2024,<ref>{{cite press release | title=Leqembi launched in South Korea | publisher=BioArctic | via=PR Newswire | date=27 November 2024 | url=https://www.prnewswire.com/news-releases/leqembi-launched-in-south-korea-302317977.html | access-date=6 December 2024}}</ref> Mexico in December 2024,,<ref>{{cite press release | title=Leqembi approved in Mexico | publisher=BioArctic | via=PR Newswire | date=4 December 2024 | url=https://www.prnewswire.com/news-releases/leqembi-approved-in-mexico-302323328.html | access-date=6 December 2024}}</ref> the EU in April 2025, and Canada in October 2025.<ref name="cbc">{{cite news|title=Health Canada approves lecanemab, a drug that slows progression of Alzheimer's disease|work=CBC News|agency=The Canadian Press|vauthors=Ireland N |date=28 October 2025|url=https://www.cbc.ca/news/health/alzheimer-lecanemab-9.6956567 | access-date=28 October 2025}}</ref><ref>{{cite web | vauthors = Rana U | date = 29 October 2025 | title = 'This is a big deal': Health Canada approves 1st drug to slow Alzheimer's disease | website = Global News | url = https://globalnews.ca/news/11500367/health-canada-approves-alzheimers-treatment/ | access-date = 22 December 2025 }}</ref>
+
+==== Australia ====
+In October 2024, the Australian [[Therapeutic Goods Administration]] (TGA) decided not to register lecanemab.<ref>{{cite press release | title=TGA's decision to not register lecanemab (Leqembi) | website=[[Therapeutic Goods Administration]] (TGA) | date=15 October 2024 | url=https://www.tga.gov.au/news/news/tgas-decision-not-register-lecanemab-leqembi | access-date=14 November 2024}}</ref> In December 2024, Eisai requested reconsideration of the decision, and the TGA confirmed its decision to not register lecanemab in March 2025.<ref>{{cite press release | title=Eisai will request reconsideration of initial decision for lecanemab in Australia | publisher=BioArctic | via=PR Newswire | date=16 October 2024 | url=https://www.prnewswire.com/news-releases/eisai-will-request-reconsideration-of-initial-decision-for-lecanemab-in-australia-302278664.html | access-date=6 December 2024}}</ref><ref>{{cite press release | title=TGA confirms decision to not register lecanemab (Leqembi) | website=[[Therapeutic Goods Administration]] (TGA) | date=3 March 2025 | url=https://www.tga.gov.au/news/news/tga-confirms-decision-not-register-lecanemab-leqembi | access-date=6 April 2025}}</ref>
+
+====Canada====
+In October 2025, lecanemab was authorized in Canada.<ref name=cbc/> Due to its high cost (about US$26,000 per year), lecanemab was not included for coverage in the public health system.<ref name=cbc/> It was added to the prescription drug list in December 2025.<ref>{{cite web | title=Notice: Multiple additions to the Prescription Drug List (PDL) | website=[[Health Canada]] | date=18 December 2025 | url=https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/prescription-drug-list/notices-changes/multiple-additions-2025-12-18.html | access-date=21 December 2025}}</ref>
+
+==== European Union ====
+In July 2024, the [[Committee for Medicinal Products for Human Use]] (CHMP) of the [[European Medicines Agency]] recommended the refusal of the marketing authorization for lecanemab. The manufacturer requested re-examination.<ref name="Leqembi EPAR">{{cite web |date=5 August 2024 |title=Leqembi |url=https://www.ema.europa.eu/en/medicines/human/EPAR/leqembi |access-date=22 August 2024 |website=[[European Medicines Agency]] (EMA) |archive-date=27 July 2024 |archive-url=https://web.archive.org/web/20240727045812/https://www.ema.europa.eu/en/medicines/human/EPAR/leqembi |url-status=live }}</ref>
+
+In November 2024, after re-examining its initial opinion, the CHMP recommended granting a marketing authorization to lecanemab (Leqembi) for treating mild cognitive impairment (memory and thinking problems) or mild dementia due to Alzheimer's disease (early Alzheimer's disease) in people who have only one or no copy of ApoE4, a certain form of the gene for the protein apolipoprotein&nbsp;E.<ref name="Leqembi EPAR" /><ref>{{cite web | title=Leqembi recommended for treatment of early Alzheimer's disease | website=[[European Medicines Agency]] (EMA) | date=14 November 2024 | url=https://www.ema.europa.eu/en/news/leqembi-recommended-treatment-early-alzheimers-disease | access-date=14 November 2024}} Text was copied from this source which is copyright European Medicines Agency. Reproduction is authorized provided the source is acknowledged.</ref> Lecanemab was authorized for medical use in the European Union in April 2025.<ref name="Leqembi EPAR" /><ref name="Leqembi PI">{{cite web | title=Leqembi | website=Union Register of medicinal products | date=15 April 2025 | url=https://ec.europa.eu/health/documents/community-register/html/h1891.htm | access-date=24 May 2025}}</ref>
+
+==== United Kingdom ====
+In August 2024, the [[Medicines and Healthcare products Regulatory Agency]] (MHRA) granted marketing authorization for England, Scotland, and Wales. It may not be used in people with two copies of the [[ApoE4]] allele. Statistically, these people develop Alzheimer's disease more frequently and earlier, but also have a particularly high incidence of ARIA when treated with lecanemab. According to the MHRA, the risk outweighs the benefit for these people and genetic testing is recommended before starting treatment.<ref name=":1">{{cite web | vauthors = Walsh F | date = 22 August 2024 | title = Lecanemab: First drug to slow Alzheimer's too costly for NHS | website = www.bbc.com | url = https://www.bbc.com/news/articles/c75nry66y52o | access-date = 23 August 2024 | archive-date = 23 August 2024 | archive-url = https://web.archive.org/web/20240823144003/https://www.bbc.com/news/articles/c75nry66y52o | url-status = live }}</ref><ref name=":2">{{Cite web |date=22 August 2024 |title=Lecanemab licensed for adult patients in the early stages of Alzheimer's disease |url=https://www.gov.uk/government/news/lecanemab-licensed-for-adult-patients-in-the-early-stages-of-alzheimers-disease |access-date=23 August 2024 |website=[[Medicines and Healthcare products Regulatory Agency]] |archive-date=23 August 2024 |archive-url=https://web.archive.org/web/20240823144006/https://www.gov.uk/government/news/lecanemab-licensed-for-adult-patients-in-the-early-stages-of-alzheimers-disease |url-status=live }}</ref><ref name=":3">{{cite web | vauthors = Taylor E | date = 22 August 2024 | title = New Alzheimer's treatment, lecanemab, makes the headlines: what's next? | website = [[Alzheimer's Research UK]] | url = https://www.alzheimersresearchuk.org/news/new-alzheimers-treatment-lecanemab-makes-the-headlines-whats-next/ | access-date = 23 August 2024 | archive-date = 23 August 2024 | archive-url = https://web.archive.org/web/20240823144003/https://www.alzheimersresearchuk.org/news/new-alzheimers-treatment-lecanemab-makes-the-headlines-whats-next/ | url-status = live }}</ref>
+
+The English branch of the [[National Health Service]] (NHS) announced it would not cover the costs of treatment, as according to draft guidance from the [[National Institute for Health and Care Excellence]] (NICE), the small benefit does not justify the cost of treatment.<ref name=":1" /><ref name=":2" /><ref name=":3" />
+
+Drugs in Northern Ireland are regulated by the [[European Medicines Agency]] after [[Brexit]] in accordance with the [[Northern Ireland Protocol]].<ref name=":3" />
+
+==== United States ====
+In January 2023, the FDA granted accelerated approval for lecanemab.<ref name="FDA PR 20230106" /><ref>{{cite news |date=6 January 2023 |title=Alzheimer's drug lecanemab receives accelerated approval amid safety concerns |publisher=[[CNN]] |url=https://www.cnn.com/2023/01/06/health/lecanemab-fda-approval/index.html |url-status=live |access-date=11 January 2023 |archive-url=https://web.archive.org/web/20230106200542/https://www.cnn.com/2023/01/06/health/lecanemab-fda-approval/index.html |archive-date=6 January 2023 |vauthors=Howard J, Goodman B}}</ref> In July 2023, the FDA converted lecanemab to traditional approval.<ref name="FDA PR 20230706">{{cite press release | title=FDA Converts Novel Alzheimer's Disease Treatment to Traditional Approval | website=U.S. [[Food and Drug Administration]] (FDA) | date=6 July 2023 | url=https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval | access-date=6 July 2023 | archive-date=6 July 2023 | archive-url=https://web.archive.org/web/20230706210946/https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval }} {{PD-notice}}</ref>
+
+=== Reception ===
+In October 2023, lecanemab was designated as a "Do Not Use" drug by [[Public Citizen]]'s Health Research Group.<ref name=":0">{{Cite news |date=1 October 2023 |title="Lecanemab for Alzheimer's Disease: Do Not Use" |volume=29 |work=Worst Pills, Best Pills News |publisher=[[Public Citizen]] |issue=10}}</ref> It had urged the FDA not to approve it, arguing that there were serious safety concerns and very small treatment benefits.<ref name=":0" />
+
+=== Economics ===
+{{also|Aducanumab#Economics and cost}}<!-- closely related, with overlapping factors and analysis -->
+
+Lecanemab pricing is {{US$|26,500}} per year,<ref>{{cite press release | title=Eisai's Approach To U.S. Pricing For Leqembi (Lecanemab), a Treatment For Early Alzheimer's Disease, Sets Forth Our Concept Of "Societal Value Of Medicine" In Relation To "Price Of Medicine" | publisher=Eisai | via=PR Newswire | date=6 January 2023 | url=https://www.prnewswire.com/news-releases/eisais-approach-to-us-pricing-for-leqembi-lecanemab-a-treatment-for-early-alzheimers-disease-sets-forth-our-concept-of-societal-value-of-medicine-in-relation-to-price-of-medicine-301715694.html | access-date=7 January 2023 | archive-date=7 January 2023 | archive-url=https://web.archive.org/web/20230107003039/https://www.prnewswire.com/news-releases/eisais-approach-to-us-pricing-for-leqembi-lecanemab-a-treatment-for-early-alzheimers-disease-sets-forth-our-concept-of-societal-value-of-medicine-in-relation-to-price-of-medicine-301715694.html | url-status=live }}</ref> with a company-estimated "per-patient societal value" of $37,600.<ref name="Bell_2023" /> However, cost-effectiveness analysis by the [[Institute for Clinical and Economic Review]] (ICER) concluded that a broad range of $8,900 to $21,500 would be appropriate.<ref name="Institute for Clinical and Economic Review_2023" /> According to an estimate by the manufacturer, Eisai, about 85% of eligible people with early-stage Alzheimer's in the United States are covered by [[Medicare (United States)|Medicare]].<ref name="Bell_2023">{{cite news | vauthors = Bell J |date=6 February 2023 |title=Eisai gives first glimpse into Alzheimer's drug launch |work=BiopharmaDive |url=https://www.biopharmadive.com/news/eisai-alzheimers-leqembi-launch-earnings/642067/ |access-date=11 February 2023 |archive-date=12 February 2023 |archive-url=https://web.archive.org/web/20230212021851/https://www.biopharmadive.com/news/eisai-alzheimers-leqembi-launch-earnings/642067/ |url-status=live }}</ref>
+
+After reviewing the clinical evidence and considering the treatments' other potential benefits, disadvantages, and contextual considerations noted above, the California Technology Assessment Forum unanimously concluded that lecanemab represents "low" long-term value of money.<ref name="Institute for Clinical and Economic Review_2023" /> At lecanemab's net price, approximately 5% of the 1.4&nbsp;million people in the US eligible for Alzheimer's disease treatment that targets beta-amyloid could be treated within five years without crossing the ICER potential budget impact threshold of $777 million per year.<ref name="Institute for Clinical and Economic Review_2023" /> As a result, ICER issued an access and affordability alert for lecanemab in the management of Alzheimer's disease. This alert indicates that the health care costs of the treatment might stress the health system in the short term, resulting in the displacement of other services and a rapid increase in insurance costs.<ref name="Institute for Clinical and Economic Review_2023">{{cite press release | title=ICER Publishes Final Evidence Report on Lecanemab for Alzheimer's Disease | publisher=Institute for Clinical and Economic Review | date=17 April 2023 | url=https://icer.org/news-insights/press-releases/icer-publishes-final-evidence-report-on-lecanemab-for-alzheimers-disease/ | access-date=7 May 2023 | archive-date=7 May 2023 | archive-url=https://web.archive.org/web/20230507225116/https://icer.org/news-insights/press-releases/icer-publishes-final-evidence-report-on-lecanemab-for-alzheimers-disease/ | url-status=live }}</ref>
+
+=== Names ===
+Lecanemab is the [[international nonproprietary name]].<ref name=WHORecList84>{{cite journal | title = International nonproprietary names for pharmaceutical substances (INN): recommended INN: list 84 | journal = WHO Drug Information | volume = 34 | issue = 3 | year = 2020 | hdl = 10665/340680 | hdl-access = free }}</ref>
+
+== Research ==
+Lecanemab was jointly developed by the companies [[Eisai (company)|Eisai]], [[Biogen]], [[BioArctic]] and is in [[clinical trial]]s for the treatment of [[Alzheimer's disease]].<ref>{{ClinicalTrialsGov|NCT01767311|Study to Evaluate Safety, Tolerability, and Efficacy of BAN2401 in Subjects With Early Alzheimer's Disease}}</ref>
+
+It has shown statistically significant but minor effectiveness, with studies suggesting a modest decrease in [[cognitive decline]] in Alzheimer's participants compared with a [[control group]] given a [[placebo]] instead.<ref>{{cite web |vauthors=Devlin H |date=28 September 2022 |work=[[The Guardian]] |title=Success of experimental Alzheimer's drug hailed as 'historic moment' |url=https://www.theguardian.com/society/2022/sep/28/alzheimers-disease-progression-slowed-by-new-drug-lecanemab |archive-url=https://web.archive.org/web/20220928185834/https://www.theguardian.com/society/2022/sep/28/alzheimers-disease-progression-slowed-by-new-drug-lecanemab |archive-date=28 September 2022 |url-status=live}}</ref>
+
+According to a phase III clinical trial (n = 1795), lecanemab has been associated with both ARIA-E ([[cerebral edema]]) and ARIA-H (microhaemorrhages, or small [[haemorrhages]], and [[hemosiderosis]]) sub-types.<ref name="van Dyck Swanson Aisen Bateman 2023 pp. 9–21">{{cite journal |vauthors=van Dyck CH, Swanson CJ, Aisen P, Bateman RJ, Chen C, Gee M, Kanekiyo M, Li D, Reyderman L, Cohen S, Froelich L, Katayama S, Sabbagh M, Vellas B, Watson D, Dhadda S, Irizarry M, Kramer LD, Iwatsubo T |date=January 2023 |title=Lecanemab in Early Alzheimer's Disease |journal=The New England Journal of Medicine |publisher=Massachusetts Medical Society |volume=388 |issue=1 |pages=9–21 |doi=10.1056/nejmoa2212948 |pmid=36449413 |s2cid=254094094 |doi-access=free}}</ref> Mild to moderate infusion-related reactions may also occur.<ref name="van Dyck Swanson Aisen Bateman 2023 pp. 9–21" />
+
+== References ==
+{{Reflist}}
+
+== Further reading ==
+{{refbegin}}
+* {{cite journal | vauthors = Tolar M, Abushakra S, Hey JA, Porsteinsson A, Sabbagh M | date = August 2020 | title = Aducanumab, gantenerumab, BAN2401, and ALZ-801-the first wave of amyloid-targeting drugs for Alzheimer's disease with potential for near term approval | journal = Alzheimer's Research & Therapy | volume = 12 | issue = 1 | page = 95 | doi = 10.1186/s13195-020-00663-w | doi-access = free | pmc = 7424995 | pmid = 32787971 | title-link = doi }}
+* {{cite journal | vauthors = Villain N, Planche V, Levy R | title = High-clearance anti-amyloid immunotherapies in Alzheimer's disease. Part 1: Meta-analysis and review of efficacy and safety data, and medico-economical aspects | journal = Revue Neurologique | volume = 178 | issue = 10 | pages = 1011–1030 | date = December 2022 | pmid = 36184326 | doi = 10.1016/j.neurol.2022.06.012 | title-link = doi | doi-access = free }}
+{{refend}}
+
+{{Anti-dementia drugs}}
+{{Monoclonals for bone, musculoskeletal, circulatory, and neurologic systems}}
+{{Portal bar | Medicine}}
+{{Authority control}}
+
+[[Category:Anti-amyloid monoclonal antibodies]]
+[[Category:Orphan drugs]]

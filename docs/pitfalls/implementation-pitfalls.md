@@ -108,6 +108,8 @@ This document serves three audiences. Start here, then go directly to the sectio
 - "HMS Belfast (C35), a museum ship, **will be named** 'HMS Belfast **(1938)**'…" → 1938.
 - "The Trace Gas Orbiter (TGO), **launched in 2016**, **will operate** as the data-relay satellite…" → 2016.
 
+Two register-specific variants seen in the policy/biomedical wave (same root — the flagged year is not the claim's stale target): **years inside named standards** ("the EPC will need … **SAP 2005**", "dwellings built to **Part L 2010** will be completed…") and **regulatory effective-dates** ("**From July 2022** new buildings **will need** provision…", "**will apply** … in 2023") — a standing legal requirement that reads as stale but is in force. Neither is safely suppressible (a leading `From` frame collides with the "From 2015 to 2022 … will be manufactured" positive). See `docs/design/detector-precision-methodology.md` §5.
+
 **Why It Matters:** These produce *high* scores (old year ⇒ large `temporalRisk`), so they look like the most confident flags while being clearly wrong — corrosive to queue trust. They are a meaningful slice of the residual end-to-end false positives.
 
 **The Fix:** There is **no clean deterministic fix** — and the obvious ones are traps:

@@ -37,6 +37,18 @@ the military set underused (`is scheduled to`, `to be completed by`, `is due to`
 - **Civil aviation:** Boeing 777X, Comac C919, Comac C929, Boeing NMA.
 - **Naval:** Type 26 frigate, Type 31 frigate, Queen Elizabeth-class carrier, Columbia-class submarine, Constellation-class frigate, INS Vikrant.
 
+### Third wave — saturation probe in distant registers (120 fixtures total)
+
+A representative subset of two registers deliberately far from engineering prose,
+to test whether the cataloged patterns hold or a new structural one appears
+(see `docs/design/detector-precision-methodology.md` §5):
+
+- **Clinical / biomedical (drug development):** Lecanemab, Donanemab, Aducanumab, exa-cel (Casgevy), Lenacapavir, Tirzepatide, HIV vaccine development, M72/AS01E (TB vaccine), Neuralink, RSV vaccine.
+- **Legislation / policy:** EU AI Act, Digital Markets Act, Online Safety Act 2023, CHIPS and Science Act, European Chips Act, Windsor Framework, Euro 7, Kigali Amendment, Right to repair, Inflation Reduction Act.
+
+(The giant articles in these waves — e.g. R21/Matrix-M, Sustainable Aviation Fuel,
+Building Safety Act — were analysed but not committed, to keep the corpus bounded.)
+
 Filenames are the lowercased article slug + `.wikitext`. A handful of requested
 titles were redirects (resolved to the target shown) or did not exist and were
 dropped.

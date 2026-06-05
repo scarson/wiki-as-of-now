@@ -1,0 +1,405 @@
+{{Short description|International agreement (2016) to reduce the use of hydrofluorocarbons}}
+{{Use mdy dates|date=October 2024}}
+{{Infobox treaty
+| name = Kigali Amendment
+| image = File:Kigali Amendment to the Montreal Protocol ratification map.svg
+| caption = <span style="background-color: #00FF00; color: transparent;">_</span> Ratified, accepted or approved
+| type = Environmental protection agreement
+| date_signed = {{Start date|2016|10|15}}<ref>{{cite web|url=https://www.state.gov/key-topics-office-of-environmental-quality-and-transboundary-issues/the-montreal-protocol-on-substances-that-deplete-the-ozone-layer/|title=The Montreal Protocol on Substances That Deplete the Ozone Layer|date=December 9, 2022|website=[[United States Department of State]]|access-date=December 9, 2022|url-status=live|archive-url=https://web.archive.org/web/20221209074334/https://www.state.gov/key-topics-office-of-environmental-quality-and-transboundary-issues/the-montreal-protocol-on-substances-that-deplete-the-ozone-layer/|archive-date=December 9, 2022|quote=On October 15, 2016, Parties to the Montreal Protocol adopted the Kigali Amendment...}}</ref>
+| location_signed = [[Kigali, Rwanda]]
+| date_effective = {{Start date|2019|1|1}}
+| context = [[Montreal Protocol]] (1985)
+| long_name = Kigali Amendment to the Montreal Protocol
+| parties = 172<ref name="UNTC"/>
+}}
+
+The '''Kigali Amendment''' to the [[Montreal Protocol]] is an international agreement to gradually reduce the consumption and production of [[hydrofluorocarbon]]s (HFCs). It is a legally binding agreement designed to create rights and obligations in international law.<ref name="UNEP">{{cite web |date=February 2017 |title=Briefing Note on Ratification of the Kigali Amendment |url=http://conf.montreal-protocol.org/meeting/oewg/oewg-39/presession/briefingnotesfr/ratification_kigali_E.pdf |url-status=live |archive-url=https://web.archive.org/web/20221002023340/https://conf.montreal-protocol.org/meeting/oewg/oewg-39/presession/briefingnotesfr/ratification_kigali_E.pdf |archive-date=October 2, 2022 |access-date=April 12, 2019 |website=[[United Nations Environment Programme]] Ozone Secretariat |quote=The Amendment is not legally binding on a party until it enters into force for that party.}}</ref>
+
+The Montreal Protocol was originally created to preserve and restore the [[ozone layer]]; participating countries agreed to phase out [[chlorofluorocarbon]]s (CFCs), gases that had been causing [[ozone depletion]]. HFCs do not contain [[chlorine]], so they do not cause ozone depletion, and therefore have been replacing CFCs under the Protocol.<ref>{{Cite web |date=November 15, 2019 |title=Thirty years on, what is the Montreal Protocol doing to protect the ozone? |url=http://www.unep.org/news-and-stories/story/thirty-years-what-montreal-protocol-doing-protect-ozone |access-date=March 8, 2021 |website=[[United Nations Environment Programme]] |language=en}}</ref> However, HFCs are powerful [[greenhouse gas]]es that contribute to [[climate change]],<ref>{{Cite web |date=January 10, 2021 |title=The Montreal Protocol evolves to fight climate change |url=https://www.unido.org/our-focus-safeguarding-environment-implementation-multilateral-environmental-agreements-montreal-protocol/montreal-protocol-evolves-fight-climate-change |access-date=January 10, 2021 |website=[[United Nations Industrial Development Organization]] |archive-date=January 14, 2021 |archive-url=https://web.archive.org/web/20210114030633/https://www.unido.org/our-focus-safeguarding-environment-implementation-multilateral-environmental-agreements-montreal-protocol/montreal-protocol-evolves-fight-climate-change |url-status=dead }}</ref> so this amendment adds HFCs to the list of chemicals that participating countries promise to phase down.<ref>{{Cite web |last=Dillon |first=Jeremy |date=September 20, 2022 |title=Kigali climate treaty clears Senate hurdle |url=https://www.eenews.net/articles/kigali-climate-treaty-clears-senate-hurdle/ |access-date=September 20, 2022 |website=[[Environment and Energy Publishing|E&E News]]}}</ref>
+
+{{As of|2025|March|27}}, 171 states<ref name="UNTC">{{cite web |title=Amendment to the Montreal Protocol on Substances that Deplete the Ozone Layer |url=https://treaties.un.org/Pages/ViewDetails.aspx?src=IND&mtdsg_no=XXVII-2-f&chapter=27 |access-date=September 17, 2025 |website=United Nations Treaty Collective}}</ref> and the [[European Union]]<ref>{{Cite web |date=July 14, 2020 |title=Kigali Amendment hits milestone 100th ratification, boosting climate action |url=http://www.unep.org/news-and-stories/press-release/kigali-amendment-hits-milestone-100th-ratification-boosting-climate |url-status=live |archive-url=https://web.archive.org/web/20221103062228/http://www.unep.org/news-and-stories/press-release/kigali-amendment-hits-milestone-100th-ratification-boosting-climate |archive-date=November 3, 2022 |access-date=September 20, 2022 |website=[[United Nations Environment Programme]]}}</ref> have ratified the Kigali Amendment.
+[[File:HFC-134a mm.png|thumb|The concentration of HFCs in the atmosphere at weather stations around the world.]]
+
+== Background ==
+Many industrial products, including [[refrigerant]]s<ref>{{Cite news |last=Chime |first=Vivian |date=September 16, 2022 |title=FG unveils 'cooling action plan' to reduce emissions from refrigerants |url=https://www.thecable.ng/fg-unveils-cooling-action-plan-to-reduce-emissions-from-refrigerants |access-date=September 20, 2022 |newspaper=[[TheCable]]}}</ref> and other cooling services, use HFCs.<ref>{{Cite web |last=Sandefur |first=Jason |date=July 17, 2020 |title=UN Agency Urges Quick Shift to Environmentally Friendly Cooling |url=https://www.courthousenews.com/un-agency-urges-quick-shift-to-environmentally-friendly-cooling/ |access-date=September 20, 2022 |website=[[Courthouse News Service]]}}</ref>
+
+Originally, [[chlorofluorocarbon]]s (CFCs) were used in these applications, but the deleterious effect of these gases on the [[ozone layer]] was revealed in 1974 by [[Paul J. Crutzen]], [[Mario Molina]], and [[F. Sherwood Rowland]].<ref>{{Cite web |last=Roan |first=Shari |date=March 12, 2012 |title=F. Sherwood Rowland dies at 84; UC Irvine professor won Nobel Prize |url=https://www.latimes.com/health/la-xpm-2012-mar-12-la-me-sherwood-rowland-20120312-story.html |access-date=September 20, 2022 |website=[[Los Angeles Times]] |language=en-US |archive-date=July 19, 2022 |archive-url=https://web.archive.org/web/20220719145353/https://www.latimes.com/health/la-xpm-2012-mar-12-la-me-sherwood-rowland-20120312-story.html |url-status=dead }}</ref> The Montreal Protocol was signed in 1987 by the 20 major CFC producers and came into effect in 1989; since 1987, all 197 [[member states of the United Nations]], among others, have ratified the Protocol. HFCs have since largely replaced CFCs.<ref>{{Cite web |last=McGrath |first=Matt |date=October 15, 2016 |title=Climate change: 'Monumental' deal to cut HFCs, fastest growing greenhouse gases |url=https://www.bbc.com/news/science-environment-37665529 |access-date=September 20, 2022 |website=[[BBC News]]}}</ref>
+[[File:R134a container.png|thumb|296x296px|An HFC refrigerant.]]
+Although HFCs are harmless to the ozone layer, they are potent [[greenhouse gas]]es.<ref>{{Cite web |last=Benshoff |first=Laura |date=September 20, 2022 |title=The U.S. ratifies treaty to phase down HFCs, gases trapping 1,000x more heat than CO2 |url=https://www.boisestatepublicradio.org/2022-09-20/the-u-s-ratifies-treaty-to-phase-down-hfcs-gases-trapping-1-000x-more-heat-than-co2 |access-date=September 22, 2022 |website=[[Boise State Public Radio]]}}</ref> While their lifespan in the atmosphere is short (10 to 20 years) relative to [[carbon dioxide]] ({{CO2}}), HFCs filter infrared radiation much more powerfully. HFCs are therefore thousands of times more heat-trapping than {{CO2}},<ref>{{Cite web |last=Denning |first=Scott |author-link=Scott Denning |date=September 22, 2022 |title=US Senate ratifies treaty to phase down climate-warming HFCs from refrigerators and air conditioners – but what will replace them this time? |url=http://theconversation.com/us-senate-ratifies-treaty-to-phase-down-climate-warming-hfcs-from-refrigerators-and-air-conditioners-but-what-will-replace-them-this-time-191172 |access-date=September 22, 2022 |website=[[The Conversation (website)|The Conversation]]}}</ref> with a 100 year [[global warming potential]] (GWP) between 12 on the low end and 14,800 on the high end.<ref>{{Cite web |last=Cariaso |first=Bella |date=September 17, 2022 |title=PH begins 3rd stage to phase out ODS |url=https://www.manilatimes.net/2022/09/17/business/green-industries/ph-begins-3rd-stage-to-phase-out-ods/1858750 |access-date=September 22, 2022 |website=[[The Manila Times]]}}</ref> For comparison, the GWP of carbon dioxide is 1. Eliminating emissions of these gases could significantly lower the effects of [[global warming]] by avoiding more than 80 billion metric tons of {{CO2}} equivalent emissions by 2050, and avoid a full 0.5 degree Celsius of [[Climate change#Global temperature rise|warming above preindustrial levels]] by the end of the century.<ref>{{cite journal | vauthors = Velders GJ, Fahey DW, Daniel JS, McFarland M, Andersen SO | title = The large contribution of projected HFC emissions to future climate forcing | journal = Proceedings of the National Academy of Sciences of the United States of America | volume = 106 | issue = 27 | pages = 10949–54 | date = July 2009 | pmid = 19549868 | pmc = 2700150 | doi = 10.1073/pnas.0902817106 | bibcode = 2009PNAS..10610949V | doi-access = free }}</ref>
+
+== Details of the amendment ==
+Article 5 of the Montreal Protocol created separate standards for developing countries and non-developing.<ref>Montreal Protocol, Article 5</ref> Whether a country was categorized as developing or non-developing depended on individual economic conditions at the time of the agreement or pending special request.<ref>{{Cite web|title=Handbook for the Montreal Protocol on Substances that Deplete the Ozone Layer|url=https://ozone.unep.org/sites/default/files/Handbooks/MP-Handbook-2020-English.pdf|page=735}}</ref> Because the Protocol was created in the 1980s and countries economic situations have changed, the Kigali Amendment created three updated groups for compliance with the additional terms.<ref>Section 5.8, Article 1. "[https://ozone.unep.org/sites/default/files/Handbooks/MP-Handbook-2020-English.pdf Handbook for the Montreal Protocol on Substances that Deplete the Ozone Layer"] (PDF). p.920-922</ref>
+
+The first group, comprising non-Article 5 (developed) countries, is committed to reducing HFC consumption to 15% of their baseline by 2036. This baseline is calculated as the average HFC consumption between 2011–2013, plus a 'buffer' of 15% of the party's HCFC baseline to account for the ongoing transition from ozone-depleting substances.<ref>{{Cite web |last=Say |first=Jeremiah |date=2026-05-11 |title=Kigali Amendment to the Montreal Protocol — The Definitive Reference - Green Calculus |url=https://greencalculus.com/standards/kigali-amendment-montreal-protocol/ |url-status=live |access-date=2026-05-11 |website=GreenCalculus Engineering |language=en-US}}</ref> A second group, including China and Brazil (Article 5 Group 1), will reduce consumption to 20% of their baseline by 2045. Their baseline includes a larger 65% HCFC component, reflecting a later transition timeline.[GC] Finally, a third group of high-ambient-temperature countries, including India and Saudi Arabia, must reach the 20% reduction target by 2047. A second group, which includes China, India and Brazil, is committed to reducing its consumption by 80% by 2045. Finally, this deadline is extended to 2047 for the rest of the countries, including India and a number of countries in the Middle East,<ref>"The decision and its annex state that Bahrain, India, Iran, Iraq, Kuwait, Oman, Pakistan, Qatar, Saudi Arabia, and the UAE will use a baseline averaging their calculated levels of HFC consumption for the years 2024, 2025, and 2026, plus 65% of their baseline consumption of HCFCs."  [https://enb.iisd.org/download/pdf/enb19131e.pdf Earth Negotiations Bulletin] (PDF). p10.</ref> which are large consumers of air conditioning.
+
+In addition, parties that experience monthly average temperatures over {{convert|35|C|F}} for at least two months per year, over a period of 10 consecutive years, may request a waiver.<ref name="Decision XXVIII/2"> {{Cite web|title=Decision XXVIII/2: Decision related to the amendment phasing down hydrofluorocarbons|url=https://ozone.unep.org/treaties/montreal-protocol/meetings/twenty-eighth-meeting-parties/decisions/decision-xxviii2-decision-related-amendment-phasing-down-hydrofluorocarbons|at=Appendix II: List of countries operating under the high-ambient-temperature exemption}}</ref>{{Efn|These countries are: Algeria, Bahrain, Benin, Burkina Faso, Central African Republic, Chad, Côte d'Ivoire, Djibouti, Egypt, Eritrea, Gambia, Ghana, Guinea, Guinea-Bissau, Iran (Islamic Republic of), Iraq, Jordan, Kuwait, Libya, Mali, Mauritania, Niger, Nigeria, Oman, Pakistan, Qatar, Saudi Arabia, Senegal, Sudan, Syrian Arab Republic, Togo, Tunisia, Turkmenistan, United Arab Emirates.|name=Decision XXVIII/2}} Although Denmark approved the amendment, Greenland is excluded.
+
+== Parties ==
+{| class="wikitable sortable"
+! Country !! Date !! Type of [[Vienna Convention on the Law of Treaties#Content and effects|agreement]]
+|-
+| {{flag|Albania}} || 18 January 2019 || Ratification<ref name="UNTC" />
+|-
+| {{flag|Andorra}} || 23 January 2019 || Acceptance
+|-
+| {{flag|Angola}} || 16 November 2020 || Ratification
+|-
+| {{flag|Argentina}} || 22 November 2019 || Ratification
+|-
+| {{flag|Armenia}} || 2 May 2019 || Acceptance
+|-
+| {{flag|Australia}} || 27 October 2017 || Acceptance
+|-
+| {{flag|Austria}} || 27 September 2018 || Ratification
+|-
+|{{flag|Azerbaijan}}
+|24 November 2025
+|Ratification
+|-
+| {{flag|Bahamas}} || 30 May 2023 || Ratification
+|-
+| {{flag|Bahrain}} || 1 July 2024 || Ratification
+|-
+| {{flag|Bangladesh}} || 8 June 2020 || Ratification
+|-
+| {{flag|Barbados}} || 19 April 2018 || Ratification
+|-
+| {{flag|Belarus}} || 3 November 2022 || Ratification
+|-
+| {{flag|Belgium}} || 4 June 2018 || Ratification
+|-
+| {{flag|Belize}} || 3 October 2023 || Approval
+|-
+| {{flag|Benin}} || 19 March 2018 || Ratification
+|-
+| {{flag|Bhutan}} || 27 September 2019 || Ratification
+|-
+| {{flag|Bolivia}} || 9 October 2020 || Ratification
+|-
+| {{flag|Bosnia and Herzegovina}} || 26 May 2021 || Ratification
+|-
+| {{flag|Botswana}} || 19 September 2020 || Acceptance
+|-
+| {{flag|Brazil}} || 19 October 2022 || Acceptance
+|-
+| {{flag|Bulgaria}} || 1 May 2018 || Ratification
+|-
+| {{flag|Burkina Faso}} || 26 July 2018 || Ratification
+|-
+| {{flag|Burundi}} || 26 March 2021 || Ratification
+|-
+| {{flag|Cambodia}} || 8 April 2021 || Acceptance
+|-
+| {{flag|Cameroon}} || 24 August 2021 || Ratification
+|-
+| {{flag|Canada}} || 3 November 2017 || Ratification
+|-
+|{{flag|Central African Republic}}
+|15 October 2025
+|Approval
+|-
+| {{flag|Cape Verde}} || 28 October 2020 || Ratification
+|-
+| {{flag|Chad}} || 26 March 2019 || Ratification
+|-
+| {{flag|Chile}} || 19 September 2017 || Ratification
+|-
+| {{flag|China}}{{refn|group=nb|Extended to include [[Macau]] but excluding [[Hong Kong]].}} || 17 June 2021 || Acceptance
+|-
+| {{flag|Colombia}} || 25 February 2021 || Ratification
+|-
+| {{flag|Comoros}} || 16 November 2017 || Ratification
+|-
+| {{flag|Congo}} || 16 June 2022 || Ratification
+|-
+| {{flag|Cook Islands}} || 22 August 2019 || Acceptance
+|-
+| {{flag|Costa Rica}} || 23 May 2018 || Ratification
+|-
+| {{flag|Croatia}} || 6 December 2018 || Ratification
+|-
+| {{flag|Cuba}} || 20 June 2019 || Ratification
+|-
+| {{flag|Cyprus}} || 22 July 2019 || Ratification
+|-
+| {{flag|Czech Republic}} || 27 September 2018 || Acceptance
+|-
+| {{flag|Denmark}}{{refn|group=nb|Excluding [[Greenland]].}} || 6 December 2018 || Approval
+|-
+| {{flag|Djibouti}} || 8 March 2024 || Ratification
+|-
+| {{flag|Dominican Republic}} || 14 April 2021 || Acceptance
+|-
+| {{flag|Ecuador}} || 22 January 2018 || Ratification
+|-
+| {{flag|Egypt}} || 22 August 2023 || Ratification
+|-
+| {{flag|El Salvador}} || 13 September 2021 || Acceptance
+|-
+| {{flag|Eritrea}} || 7 February 2023 || Ratification
+|-
+| {{flag|Estonia}} || 27 September 2018 || Ratification
+|-
+| {{flag|Eswatini}} || 24 November 2020 || Acceptance
+|-
+| {{flag|Ethiopia}} || 5 July 2019 || Ratification
+|-
+| {{flag|European Union}} || 27 September 2018 || Approval
+|-
+| {{flag|Fiji}} || 16 June 2020 || Ratification
+|-
+| {{flag|Finland}} || 14 November 2017 || Acceptance
+|-
+| {{flag|France}} || 29 March 2018 || Approval
+|-
+| {{flag|Gabon}} || 28 February 2018 || Acceptance
+|-
+| {{flag|Gambia}} || 5 May 2021 || Ratification
+|-
+| {{flag|Georgia}} || 11 July 2023 || Acceptance
+|-
+| {{flag|Germany}} || 14 November 2017 || Acceptance
+|-
+| {{flag|Ghana}} || 2 August 2019 || Ratification
+|-
+| {{flag|Greece}} || 5 October 2018 || Ratification
+|-
+| {{flag|Grenada}} || 29 May 2018 || Ratification
+|-
+| {{flag|Guatemala}} || 11 January 2024 || Ratification
+|-
+| {{flag|Guinea}} || 5 December 2019 || Ratification
+|-
+| {{flag|Guinea-Bissau}} || 22 October 2018 || Ratification
+|-
+| {{flag|Holy See}} || 17 June 2020 || Ratification
+|-
+| {{flag|Honduras}} || 28 January 2019 || Ratification
+|-
+| {{flag|Hungary}} || 14 September 2018 || Approval
+|-
+| {{flag|Iceland}} || 25 January 2021 || Acceptance
+|-
+| {{flag|India}} || 27 September 2021 || Ratification
+|-
+| {{flag|Indonesia}} || 14 December 2022 || Ratification
+|-
+| {{flag|Ireland}} || 12 March 2018 || Ratification
+|-
+| {{flag|Italy}} || 25 May 2022 || Ratification
+|-
+| {{flag|Ivory Coast}} || 29 November 2017 || Acceptance
+|-
+| {{flag|Japan}} || 18 December 2018 || Acceptance
+|-
+| {{flag|Jordan}} || 16 October 2019 || Ratification
+|-
+| {{flag|Kenya}} || 22 September 2023 || Acceptance
+|-
+| {{flag|Kiribati}} || 26 October 2018 || Ratification
+|-
+| {{flag|Kuwait}} || 4 November 2024 || Approval
+|-
+| {{flag|Kyrgyzstan}} || 8 September 2020 || Ratification
+|-
+| {{flag|Laos}} || 16 November 2017 || Acceptance
+|-
+| {{flag|Latvia}} || 17 August 2018 || Ratification
+|-
+| {{flag|Lebanon}} || 5 February 2020 || Ratification
+|-
+| {{flag|Lesotho}} || 7 October 2019 || Ratification
+|-
+| {{flag|Liberia}} || 12 July 2020 || Ratification
+|-
+| {{flag|Liechtenstein}} || 16 September 2020 || Ratification
+|-
+| {{flag|Lithuania}} || 24 July 2018 || Ratification
+|-
+| {{flag|Luxembourg}} || 16 November 2017 || Ratification
+|-
+| {{flag|Malawi}} || 21 November 2017 || Ratification
+|-
+| {{flag|Malaysia}} || 21 October 2020 || Ratification
+|-
+| {{flag|Maldives}} || 13 November 2017 || Ratification
+|-
+| {{flag|Mali}} || 31 March 2017 || Acceptance
+|-
+|{{flag|Malta}}
+|19 December 2025
+|Acceptance
+|-
+| {{flag|Marshall Islands}} || 15 May 2017 || Ratification
+|-
+|{{flag|Mauritania}}
+|11 November 2025
+|Ratification
+|-
+| {{flag|Mauritius}} || 1 October 2019 || Ratification
+|-
+| {{flag|Mexico}} || 25 September 2018 || Acceptance
+|-
+| {{flag|Micronesia}} || 12 May 2017 || Ratification
+|-
+| {{flag|Moldova}} || 22 September 2023 || Acceptance
+|-
+| {{flag|Mongolia}} || 27 July 2022 || Ratification
+|-
+| {{flag|Montenegro}} || 23 April 2019 || Ratification
+|-
+| {{flag|Morocco}} || 22 April 2022 || Ratification
+|-
+| {{flag|Mozambique}} || 16 January 2020 || Ratification
+|-
+| {{flag|Namibia}} || 16 May 2019 || Acceptance
+|-|-
+| {{flag|Nauru}} || 3 November 2022 || Ratification
+|-
+| {{flag|Nepal}} || 6 August 2025 || Ratification
+|-
+| {{flag|Netherlands}}{{refn|group=nb|Excluding the [[Dutch Caribbean]].}} || 8 February 2018 || Acceptance
+|-
+| {{flag|New Zealand}}{{refn|group=nb|Excluding [[Tokelau]].}} || 3 October 2019 || Ratification
+|-
+| {{flag|Nicaragua}} || 30 September 2020 || Ratification
+|-
+| {{flag|Niger}} || 29 August 2018 || Ratification
+|-
+| {{flag|Nigeria}} || 20 December 2018 || Ratification
+|-
+| {{flag|Niue}} || 24 April 2018 || Ratification
+|-
+| {{flag|North Korea}} || 21 September 2017 || Ratification
+|-
+| {{flag|North Macedonia}} || 12 March 2020 || Ratification
+|-
+| {{flag|Norway}} || 6 September 2017 || Ratification
+|-
+| {{flag|Oman}} || 8 November 2024 || Ratification
+|-
+|{{flag|Pakistan}}
+|22 October 2025
+|Ratification
+|-
+| {{flag|Palau}} || 29 August 2017 || Ratification
+|-
+| {{flag|Panama}} || 28 September 2018 || Ratification
+|-
+| {{flag|Papua New Guinea}} || 12 November 2024 || Ratification
+|-
+| {{flag|Paraguay}} || 1 November 2018 || Acceptance
+|-
+| {{flag|Peru}} || 7 August 2019 || Ratification
+|-
+| {{flag|Philippines}} || 3 November 2022 || Ratification
+|-
+| {{flag|Poland}} || 7 January 2019 || Ratification
+|-
+| {{flag|Portugal}} || 17 July 2018 || Approval
+|-
+| {{flag|Romania}} || 1 July 2020 || Acceptance
+|-
+| {{flag|Russia}} || 3 October 2020 || Acceptance
+|-
+| {{flag|Rwanda}} || 23 May 2017 || Ratification
+|-
+| {{flag|Samoa}} || 23 March 2018 || Ratification
+|-
+| {{flag|San Marino}} || 20 October 2020 || Acceptance
+|-
+| {{flag|São Tomé and Príncipe}} || 4 October 2019 || Ratification
+|-
+| {{flag|Saudi Arabia}} || 10 September 2025 || Acceptance
+|-
+| {{flag|Senegal}} || 31 August 2018 || Ratification
+|-
+| {{flag|Serbia}} || 8 October 2021 || Ratification
+|-
+| {{flag|Seychelles}} || 20 August 2019 || Acceptance
+|-
+| {{flag|Sierra Leone}} || 15 June 2020 || Ratification
+|-
+| {{flag|Singapore}} || 1 June 2022 || Ratification
+|-
+| {{flag|Slovakia}} || 16 November 2017 || Ratification
+|-
+| {{flag|Slovenia}} || 7 December 2018 || Ratification
+|-
+| {{flag|Solomon Islands}} || 23 May 2022 || Ratification
+|-
+| {{flag|Somalia}} || 27 November 2019 || Ratification
+|-
+| {{flag|South Africa}} || 1 August 2019 || Ratification
+|-
+| {{flag|South Korea}} || 19 January 2023 || Ratification
+|-
+| {{flag|Spain}} || 20 January 2022 || Ratification
+|-
+| {{flag|Sri Lanka}} || 28 September 2018 || Ratification
+|-
+| {{flag|Saint Kitts and Nevis}} || 29 August 2025 || Acceptance
+|-
+| {{flag|Saint Lucia}} || 2 November 2021 || Ratification
+|-
+| {{flag|Saint Vincent and the Grenadines}} || 7 November 2022 || Ratification
+|-
+| {{flag|Sweden}} || 17 November 2017 || Ratification
+|-
+| {{flag|Switzerland}} || 7 November 2018 || Ratification
+|-
+| {{flag|Syria}} || 5 April 2021 || Ratification
+|-
+| {{flag|Tajikistan}} || 29 June 2022 || Ratification
+|-
+| {{flag|Tanzania}} || 25 March 2022 || Ratification
+|-
+| {{flag|Thailand}} || 3 April 2024 || Ratification
+|-
+| {{flag|Togo}} || 8 March 2018 || Acceptance
+|-
+| {{flag|Tonga}} || 17 September 2018 || Ratification
+|-
+| {{flag|Trinidad and Tobago}} || 17 November 2017 || Ratification
+|-
+| {{flag|Tunisia}} || 27 August 2021 || Ratification
+|-
+| {{flag|Turkey}} || 10 November 2021 || Ratification
+|-
+| {{flag|Turkmenistan}} || 31 August 2020 || Ratification
+|-
+| {{flag|Tuvalu}} || 21 September 2017 || Ratification
+|-
+| {{flag|Uganda}} || 21 June 2018 || Ratification
+|-
+| {{flag|United Arab Emirates}} || 19 April 2024 || Acceptance
+|-
+| {{flag|United Kingdom}}{{refn|group=nb|Extended to include [[Gibraltar]] and the [[Isle of Man]].}}|| 14 November 2017 || Ratification
+|-
+| {{flag|United States}} || 31 October 2022 || Ratification
+|-
+| {{flag|Uruguay}} || 12 September 2018 || Ratification
+|-
+| {{flag|Vanuatu}} || 20 April 2018 || Ratification
+|-
+| {{flag|Venezuela}} || 5 December 2022 || Ratification
+|-
+| {{flag|Vietnam}} || 27 September 2019 || Approval
+|-
+| {{flag|Zambia}} || 15 March 2021 || Ratification
+|-
+| {{flag|Zimbabwe}} || 18 October 2022 || Acceptance
+|}
+'''Notes'''
+{{reflist|group=nb}}
+
+== Notes ==
+{{Notelist}}
+
+== References ==
+{{Reflist}}
+
+[[Category:Environmental treaties]]
+[[Category:Treaties concluded in 2016]]
+[[Category:2016 in the environment]]
+[[Category:Kigali]]

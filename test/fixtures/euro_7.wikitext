@@ -1,0 +1,1804 @@
+{{Short description|Vehicle emission standards}}
+{{Use British English|date=January 2023}}
+{{Use dmy dates|date=January 2023}}
+[[File:EURO Standards Diesel.png|thumb|right|Simplified chart showing the progression of European emission standards for ''diesel'' cars]]
+[[File:EURO Standards Gasoline.png|thumb|right|Simplified chart showing the progression of European emission standards for ''petrol'' cars. Until Euro 5, there were no PM limits.]]
+
+The '''European emission standards''' are [[vehicle emission standards]] that regulate pollution from the use of new land surface vehicles sold in the [[European Union]] and [[European Economic Area]] member states and the [[United Kingdom]], and ships in European [[territorial waters]].<ref>{{Cite web|title=What are the Euro Emissions Standards?|url=https://www.stratstone.com/blog/european-car-emissions-standards/|access-date=4 October 2021|website=Stratstone|language=en}}</ref><ref>{{Cite web |date=28 April 2022 |title=Euro 6 Guide to Emission Standards (2022 Update) {{!}} Motorway (2022) |url=https://unbate.ngontinh24.com/article/euro-6-guide-to-emission-standards-2022-update-motorway |access-date=25 July 2022 |website=Unbate}}</ref> These standards target air pollution from [[exhaust gas]]es, [[brake dust]], and tyre [[rubber pollution]], and are defined through a series of [[European Union directive]]s that progressively introduced stricter limits to reduce environmental impact.
+
+Euro 7, agreed in 2024 and due to come into force in 2026,<ref>{{Cite web |last=Lampinen |first=Megan |date=2024-08-02 |title=Lowering the limit: Euro 7 brake emissions update |url=https://www.automotiveworld.com/articles/lowering-the-limit-euro-7-brake-emissions-update/ |access-date=2024-08-03 |website=Automotive World |language=en-GB}}</ref><ref>{{Cite web|url=https://www.autoweek.com/news/a61625290/euro-7-tire-brake-particle-emissions/|title=Should Tire And Brake Emissions Be Regulated?|date=17 July 2024 }}</ref> includes [[non-exhaust emissions]] such as [[Particulate pollution|particulates]] from tyres and brakes.<ref>{{Cite web |last=DELLI |first=Karima |title=Parliamentary question {{!}} Euro 7 – non-exhaust particulate emissions {{!}} E-002194/2021 {{!}} European Parliament |url=https://www.europarl.europa.eu/doceo/document/E-9-2021-002194_EN.html |access-date=28 July 2022 |publisher=European Parliament |language=en}}</ref><ref>{{Cite web |title=Parliamentary question {{!}} Answer for question E-002194/21 {{!}} E-002194/2021(ASW) {{!}} European Parliament |url=https://www.europarl.europa.eu/doceo/document/E-9-2021-002194-ASW_EN.html |access-date=28 July 2022 |publisher=European Parliament |language=en}}</ref><ref>{{cite news |url=https://www.fleetnews.co.uk/news/eu-backs-softer-euro-7-rules-for-cars-and-vans |title=EU strikes provisional deal over Euro 7 emissions limits |first=Matt |last=de Prez |work=Fleet News |location=UK |date=19 December 2023 |access-date=2023-12-22}}</ref><ref name=":2">{{Cite web|url=https://www.consilium.europa.eu/en/press/press-releases/2024/04/12/euro-7-council-adopts-new-rules-on-emission-limits-for-cars-vans-and-trucks/|title=Euro 7: Council adopts new rules on emission limits for cars, vans and trucks - Consilium}}</ref> Until 2030 fossil fueled vehicles are allowed to have dirtier brakes than electric vehicles.<ref name=":0">{{Cite web|url=https://theicct.org/publication/euro-7-emission-standard-ldv-hdv-eu-mar24/|title=Euro 7: The new emission standard for light- and heavy-duty vehicles in the European Union}}</ref>{{Rp|page=5}}
+
+== Background ==
+{{More citations needed|section|date=March 2024}}
+[[File:Nitrogen Oxides (NOx) (SVS5154).jpg|thumb|[[Near-surface geophysics|Near surface]] concentration of {{NOx|link=yes}} in September 2023]]
+
+In the European Union, emissions of nitrogen oxides ({{NOx|link=yes}}), [[hydrocarbon|total hydrocarbon]] (THC), [[non-methane hydrocarbons]] (NMHC), [[carbon monoxide]] (CO) and [[Atmospheric particulate matter|particulate matter]] (PM) are regulated for most [[vehicle type]]s, including cars, trucks (lorries), locomotives, tractors and similar machinery, [[barge]]s, but excluding seagoing ships and aeroplanes.<ref>{{Cite web |last=European Parliament |date=November 2023 |title=Euro 7 motor vehicle emission standards |url=https://www.europarl.europa.eu/RegData/etudes/ATAG/2023/754573/EPRS_ATA(2023)754573_EN.pdf}}</ref><ref>{{Cite web |title=EU: Heavy-duty: Emissions {{!}} Transport Policy |url=https://www.transportpolicy.net/standard/eu-heavy-duty-emissions/ |access-date=2024-03-10 |website=TransportPolicy.net}}</ref> For each vehicle type, different standards apply. Compliance is determined by running the engine at a standardised [[emission test cycle|test cycle]].<ref>{{Cite web |title=NEDC: How do lab tests for cars work? |url=https://www.caremissionstestingfacts.eu/nedc-how-do-lab-tests-work/ |access-date=2024-03-10 |website=Car Emissions Testing Facts |language=en-US}}</ref> Non-compliant vehicles cannot be sold in the EU, but new standards do not apply to vehicles already on the roads.<ref>{{Cite web |title=What are the Euro 7 emissions standards? |url=https://www.autoexpress.co.uk/tips-advice/106870/what-are-euro-7-emissions-standards |access-date=2024-03-10 |website=Auto Express |language=en}}</ref> No use of specific technologies is mandated to meet the standards, though available technology is considered when setting the standards. New models introduced must meet current or planned standards, but minor lifecycle model revisions may continue to be offered with pre-compliant engines.
+
+Along with emissions standards, the European Union has also mandated a number of computer [[on-board diagnostics]] for the purposes of increasing safety for drivers. These standards are used in relation to the emissions standards.<ref>{{Cite journal |last=OECD |date=2009 |title=Effects of environmental policy on the type of innovation: the case of automotive emission-control technologies |url=https://www.oecd.org/content/dam/oecd/en/publications/reports/2010/01/oecd-journal-economic-studies-volume-2009_g1gh991c/eco_studies-v2009-1-en.pdf? |journal=OECD Journal: Economic Studies |volume=2009 |pages=57–59}}</ref>
+
+During the early 2000s, [[Australia]] began [[Harmonisation of law|harmonising]] [[Australian Design Rule]] certification for new motor vehicle emissions with Euro categories. Euro III was introduced on 1 January 2006 and is progressively being introduced to align with European introduction dates.
+
+Euro 7 was formally approved by EU countries in April 2024.<ref name=":2" />
+
+==Toxic emission: stages and legal framework {{anchor|Euro1|Euro2|Euro3|Euro4|Euro5|Euro6|Euro7}}==
+{{Update section|date=March 2024|reason=Euro 7 per https://theicct.org/wp-content/uploads/2024/03/ID-116-%E2%80%93-Euro-7-standard_final_v2.pdf}}
+
+The stages are typically referred to as Euro 1, Euro 2, Euro 3, Euro 4, Euro 5, Euro 6 and Euro 7 for Light Duty Vehicle standards.
+
+The legal framework consists in a series of directives, each amendments to the 1970 Directive 70/220/EEC.{{r|Europa 3}} The following is a summary list of the standards, when they come into force, what they apply to, and which EU directives provide the definition of the standard.
+* '''Euro 1''' (1992):
+** For passenger cars—91/441/EEC.{{r|Eur-lex 2}}
+** Also for passenger cars and light lorries—93/59/EEC.
+* '''Euro 2''' (1996) for passenger cars—94/12/EC (& 96/69/EC)
+** For motorcycle—2002/51/EC (row A){{r|Eur-lex 3}}—2006/120/EC
+* '''Euro 3''' (2000) for any vehicle—98/69/EC{{r|Eur-lex 4}}
+** For motorcycle—2002/51/EC (row B){{r|Eur-lex 3}}—2006/120/EC
+* '''Euro 4''' (2005) for any vehicle—98/69/EC (& 2002/80/EC)
+* '''Euro 5''' (2009) for light passenger and commercial vehicles—715/2007/EC{{r|Eur-lex 5}}
+* '''Euro 6''' (2014) for light passenger and commercial vehicles—459/2012/EC{{r|Eur-lex 9}} and 2016/646/EU{{r|Eur-lex 10}}
+* '''Euro 7''' (2026) for light- and heavy-duty vehicles—2024/1257/EU{{r|Eur-lex 11}}
+
+These limits supersede the original directive on emission limits 70/220/EEC.
+
+The classifications for [[vehicle category]] are defined by:{{r|Europa 6}}
+* Commission [[Vehicle category#EU classification|Directive 2001/116/EC]] of 20 December 2001, adapting to technical progress Council Directive 70/156/EEC on the approximation of the laws of the Member States relating to the type-approval of motor vehicles and their trailers{{r|Eur-lex 6}}{{r|Eur-lex 7}}
+* Directive 2002/24/EC of the European Parliament and of the Council of 18 March 2002 relating to the type-approval of two or three-wheeled motor vehicles and repealing Council Directive 92/61/EEC
+
+===Emission standards for passenger cars===
+Emission standards for [[passenger cars]] and [[Light commercial vehicle|light commercial vehicles]] are summarized in the following tables. Since the Euro 2 stage, [[EU regulations]] introduce different emission limits for diesel and petrol vehicles. Diesels have more stringent CO standards but are allowed higher {{NOx}} emissions. Petrol-powered vehicles are exempted from particulate matter (PM) standards through to the Euro 4 stage, but vehicles with [[Direct fuel injection|direct injection]] engines are subject to a limit of 0.0045&nbsp;g/km for Euro 5 and Euro 6. A particulate number standard (P) or (PN) has been introduced in 2011 with Euro 5b for diesel engines and, in 2014, with Euro 6 for petrol engines.<ref>{{cite press release |url=http://www.psa-peugeot-citroen.com/sites/default/files/content_files/les-moteurs-diesel-elimination-des-particules.pdf |title=Élimination des particules |first1=Pierre |last1=Macaudière |first2=Nils |last2=Matthess |page=6 |publisher=PSA Peugeot Citroen |date=January 2013 |access-date=23 September 2015 |url-status=dead |archive-url=https://web.archive.org/web/20170119023416/http://www.psa-peugeot-citroen.com/sites/default/files/content_files/les-moteurs-diesel-elimination-des-particules.pdf |archive-date=19 January 2017}}</ref><ref name=DN-Standards>{{cite web |url=https://www.dieselnet.com/standards/eu/ld.php |title=Emission Standards » European Union » Cars and Light Trucks |publisher=DieselNet |date=January 2015 |access-date=23 September 2015}}</ref><ref name=eurlex715>{{cite web |url=http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2007:171:0001:0016:EN:PDF |title=Regulation (EC) No 715/2007 |publisher=The European Parliament and the Council of the European Union |pages=5–9 |date=20 June 2007 |access-date=29 October 2015}}</ref>
+
+From a technical perspective, European emissions standards do not reflect everyday usage of the vehicle as manufacturers are allowed to lighten the vehicle by removing the back seats, improve aerodynamics by taping over grilles and door handles, or reduce the load on the generator by switching off the headlights, the passenger compartment fan, or simply disconnecting the [[alternator]] which charges the battery.<ref name=nytimes_23sep2015>{{cite news|title=Volkswagen Test Rigging Follows a Long Auto Industry Pattern|url=https://www.nytimes.com/2015/09/24/business/international/volkswagen-test-rigging-follows-a-long-auto-industry-pattern.html|access-date=17 November 2015|work=The New York Times|date=23 September 2015}}</ref>
+
+{| class="wikitable"
+|+European emission standards for [[automobile|passenger cars]] (Category M),{{efn|Before Euro 5, passenger vehicles > 2,500&nbsp;kg were type approved as [[light commercial vehicle]]s N<sub>1</sub> Class I}} g/km
+|- style="background:#ececec;" id="cars" class="data"
+! Tier
+! Date (type approval)
+! Date (first registration)
+! [[carbon monoxide|CO]]
+! [[hydrocarbon|THC]]
+! [[non-methane volatile organic compound|NMHC]]
+! [[nitrogen oxide|{{NOx}}]]
+! [[hydrocarbon|HC]]+[[nitrogen oxide|{{NOx}}]]
+! [[particulates|PM]]
+! [[particle number|PN [#/km]]]
+! Brake PM<sub>10</sub>{{efn|group=truckbus|Brake particle emissions (PM<sub>10</sub>). Only regulated for M1, N1 vehicles and only as PM - not PN. After 2035 the limit drops to 0.003. HDV will still not be subject to brake particle emissions regulation even after 2035.}}
+|-
+! style="background:#EEEE40;" colspan="11" | Diesel
+|-
+| Euro 1{{efn|name=COP|Values in parentheses are conformity of production (COP) limits}}
+| July 1992
+| January 1993
+| 2.72 (3.16)
+| –
+| –
+| –
+| 0.97 (1.13)
+| 0.14 (0.18)
+| –
+| –
+|-
+| Euro 2
+| January 1996
+| January 1997
+| 1.0
+| –
+| –
+| –
+| 0.7
+| 0.08
+| –
+| –
+|-
+| Euro 3
+| January 2000
+| January 2001
+| 0.66
+| –
+| –
+| 0.500
+| 0.56
+| 0.05
+| –
+| –
+|-
+| Euro 4
+| January 2005
+| January 2006
+| 0.50
+| –
+| –
+| 0.250
+| 0.30
+| 0.025
+| –
+| –
+|-
+| Euro 5a
+| September 2009
+| January 2011
+| 0.50
+| –
+| –
+| 0.180
+| 0.230
+| 0.005
+| –
+| –
+|-
+| Euro 5b
+| September 2011
+| January 2013
+| 0.50
+| –
+| –
+| 0.180
+| 0.230
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6b
+| September 2014
+| September 2015
+| 0.50
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6c
+| –
+| September 2018
+| 0.50
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6d-Temp
+| September 2017
+| September 2019
+| 0.50
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6d
+| January 2020
+| January 2021
+| 0.50
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6e
+| September 2023
+| September 2024
+| 0.50
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6e-bis
+| January 2025
+| January 2026
+| 0.50
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+|Euro 7
+| November 2026
+| November 2027
+| 0.50
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}{{efn|name=euro7|Particles before Euro 7 were counted if they were above 23&nbsp;nm, whereas Euro 7 changes this measurement to 10&nbsp;nm.}}
+| 0.007
+|-
+! style="background:#EEEE40;" colspan="11" | Petrol
+|-
+| Euro 1{{efn|name=COP}}
+| July 1992
+| January 1993
+| 2.72 (3.16)
+| –
+| –
+| –
+| 0.97 (1.13)
+| –
+| –
+| –
+|-
+| Euro 2
+| January 1996
+| January 1997
+| 2.2
+| –
+| –
+| –
+| 0.5
+| –
+| –
+| –
+|-
+| Euro 3
+| January 2000
+| January 2001
+| 2.3
+| 0.20
+| –
+| 0.150
+| –
+| –
+| –
+| –
+|-
+| Euro 4
+| January 2005
+| January 2006
+| 1.0
+| 0.10
+| –
+| 0.080
+| –
+| –
+| –
+| –
+|-
+| Euro 5a
+| September 2009
+| January 2011
+| 1.0
+| 0.10
+| 0.068
+| 0.060
+| –
+| 0.005{{efn|name=directinjection|Applies only to vehicles with direct injection engines}}
+| –
+| –
+|-
+| Euro 5b
+| September 2011
+| January 2013
+| 1.0
+| 0.10
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|name=directinjection}}
+| –
+| –
+|-
+| Euro 6b
+| September 2014
+| September 2015
+| 1.0
+| 0.10
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|name=directinjection}}
+| {{val|6|e=11}}{{efn|{{val|6|e=12}}/km within first three years from Euro 6b effective dates}}
+| –
+|-
+| Euro 6c
+| –
+| September 2018
+| 1.0
+| 0.10
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|name=directinjection}}
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6d-Temp
+| September 2017
+| September 2019
+| 1.0
+| 0.10
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|name=directinjection}}
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6d
+| January 2020
+| January 2021
+| 1.0
+| 0.10
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|name=directinjection}}
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6e
+| September 2023
+| September 2024
+| 1.0
+| 0.10
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|name=directinjection}}
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6e-bis
+| January 2025
+| January 2026
+| 1.0
+| 0.10
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|name=directinjection}}
+| {{val|6|e=11}}
+| –
+|-
+|Euro 7
+| November 2026
+| November 2027
+| 1.0
+| 0.10
+| 0.068
+| 0.060
+| –
+| 0.0045
+| {{val|6|e=11}}{{efn|name=euro7}}
+| 0.007
+|-
+! style="background:#EEEE40;" colspan="11" | Electric
+|-
+|Euro 7
+| November 2026
+| November 2027
+| –
+| –
+| –
+| –
+| –
+| –
+| –
+| 0.003
+|-
+| class="tNote" colspan="11" | {{notelist}}
+|}
+
+===Emission standards for motorcycles (two- and three-wheelers) - Category L===
+The Euro emissions regulations for two- and three-wheelers (motorcycles) were first introduced in 1999&nbsp;— some seven years after the cars were first regulated. In further difference to passenger cars (where three-way catalytic converters were de facto required from Euro I), it was first with the introduction of the Euro III emissions standard in 2006 that motorcycles were de facto required to use three-way catalytic converters. With the introduction of Euro V, standard two-stroke engine motorcycles are challenged by the strict HC and PM emissions limits. It is expected that technologies such as direct injection, combined with petrol particulate filters, could be needed for these [[motorcycle engine]] types to meet the Euro V demands.<ref>{{cite news|url=https://www.infineuminsight.com/en-gb/articles/small-engines/euro-5-motorcycles/|title=Euro 5 motorcycles, Euro 5 emissions legislation could mean the disappearance of two-stroke engines |language=en  |newspaper= Infineum International Limited |date=14 August 2018 |access-date=26 September 2021}}</ref><ref>{{cite news|url=https://www.aecc.eu/legislation/motorcycles-and-mopeds/|title=History of motorcycle emmissions standards |newspaper= AECC (the Association for Emissions Control by Catalyst) |date=14 August 2018 }}</ref><ref>{{cite news|url=https://circabc.europa.eu/sd/a/6d2b9e86-543f-42be-84f7-dd0a32969d01/report_measures_motorcycle_emissions_en.pdf|title=Study on possible new measures concerning motorcycle emissions |language=en |pages=44–45 |newspaper= The Laboratory of Applied Thermodynamics Department of Mechanical Engineering Aristotle University of Thessaloniki |date=1 September 2009 |access-date=20 October 2021}}</ref>
+
+{|class="wikitable"
+|+ European emission standards for two- and three-wheelers (Category L), g/km
+|-
+! Tier
+! Date
+! CO
+! {{NOx}}
+! HC
+! PM
+! NMHC
+|-
+| Euro I
+| 1999
+| 13.0
+| 0.3
+| 3.0
+|
+|
+|-
+| Euro II
+| 2003
+| 5.5
+| 0.3
+| 1.0
+|
+|
+|-
+|Euro III
+|2006
+|2.0
+|0.15
+|0.3
+|
+|
+|-
+|Euro IV
+|2016
+|1.14
+|0.09
+|0.17
+|
+|
+|-
+|Euro V
+|2020
+|1.00
+|0.06
+|0.10
+|0.0045
+|0.068
+|-
+|Euro V+
+|2024
+|1.00
+|0.06
+|0.10
+|0.0045
+|0.068
+|}
+
+===Emission standards for light commercial vehicles===
+{{anchor |Category 1}}
+{| class="wikitable"
+|+European emission standards for [[light commercial vehicle]]s ≤ 1,305&nbsp;kg reference mass (Category N<sub>1</sub> Class I), g/km
+|- style="background:#ececec;" id="cars" class="data"
+! Tier
+! Date (type approval)
+! Date (first registration)
+! CO
+! THC
+! NMHC
+! {{NOx}}
+! HC+{{NOx}}
+! PM
+! PN [#/km]
+! Brake PM<sub>10</sub>
+|-
+! style="background:#EEEE40;" colspan="11" | Diesel
+|-
+| Euro 1
+| October 1993
+| October 1994
+| 2.72
+| –
+| –
+| –
+| 0.97
+| 0.14
+| –
+| –
+|-
+| Euro 2
+| January 1997
+| October 1997
+| 1.0
+| –
+| –
+| –
+| 0.7
+| 0.08
+| –
+| –
+|-
+| Euro 3
+| January 2000
+| January 2001
+| 0.64
+| –
+| –
+| 0.50
+| 0.56
+| 0.05
+| –
+| –
+|-
+| Euro 4
+| January 2005
+| January 2006
+| 0.50
+| –
+| –
+| 0.25
+| 0.30
+| 0.025
+| –
+| –
+|-
+| Euro 5a
+| September 2009
+| January 2011
+| 0.500
+| –
+| –
+| 0.180
+| 0.230
+| 0.005
+| –
+| –
+|-
+| Euro 5b
+| September 2011
+| January 2013
+| 0.500
+| –
+| –
+| 0.180
+| 0.230
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6b
+| September 2014
+| September 2015
+| 0.500
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6c
+| –
+| September 2018
+| 0.500
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6d-Temp
+| September 2017
+| September 2019
+| 0.500
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6d
+| January 2020
+| January 2021
+| 0.500
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6e
+| September 2023
+| September 2024
+| 0.500
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| –
+|-
+| Euro 7
+| November 2026
+| November 2027
+| 0.500
+| –
+| –
+| 0.080
+| 0.170
+| 0.0045
+| {{val|6|e=11}}
+| 0.007
+|-
+! style="background:#EEEE40;" colspan="11" | Petrol
+|-
+| Euro 1
+| October 1993
+| October 1994
+| 2.72
+| –
+| –
+| –
+| 0.97
+| –
+| –
+| –
+|-
+| Euro 2
+| January 1997
+| October 1997
+| 2.2
+| –
+| –
+| –
+| 0.5
+| –
+| –
+| –
+|-
+| Euro 3
+| January 2000
+| January 2001
+| 2.3
+| 0.20
+| –
+| 0.15
+| –
+| –
+| –
+| –
+|-
+| Euro 4
+| January 2005
+| January 2006
+| 1.0
+| 0.10
+| –
+| 0.08
+| –
+| –
+| –
+| –
+|-
+| Euro 5a
+| September 2009
+| January 2011
+| 1.000
+| 0.100
+| 0.068
+| 0.060
+| –
+| 0.005{{efn|group=lcv1|name=di|Applies only to vehicles with direct injection engines}}
+| –
+| –
+|-
+| Euro 5b
+| September 2011
+| January 2013
+| 1.000
+| 0.100
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|group=lcv1|name=di}}
+| –
+| –
+|-
+| Euro 6b
+| September 2014
+| September 2015
+| 1.000
+| 0.100
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|group=lcv1|name=di}}
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6c
+| –
+| September 2018
+| 1.000
+| 0.100
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|group=lcv1|name=di}}
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6d-Temp
+| September 2017
+| September 2019
+| 1.000
+| 0.100
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|group=lcv1|name=di}}
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6d
+| January 2020
+| January 2021
+| 1.000
+| 0.100
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|group=lcv1|name=di}}
+| {{val|6|e=11}}
+| –
+|-
+| Euro 6e
+| September 2023
+| September 2024
+| 1.000
+| 0.100
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|group=lcv1|name=di}}
+| {{val|6|e=11}}
+| –
+|-
+| Euro 7
+| November 2026
+| November 2027
+| 1.000
+| 0.100
+| 0.068
+| 0.060
+| –
+| 0.0045{{efn|group=lcv1|name=di}}
+| {{val|6|e=11}}
+| 0.007
+|-
+! style="background:#EEEE40;" colspan="11" | Electric
+|-
+|Euro 7
+| November 2026
+| November 2027
+| –
+| –
+| –
+| –
+| –
+| –
+| –
+| 0.003
+|-
+| class="tNote" colspan="11" | {{notelist|group=lcv1}}
+|}
+
+{{anchor |Category 2}}
+{| class="wikitable"
+|+European emission standards for [[light commercial vehicle]]s 1,305–1,760&nbsp;kg reference mass (Category N<sub>1</sub> Class II), g/km
+|- style="background:#ececec;" id="cars" class="data"
+! Tier
+! Date (type approval)
+! Date (first registration)
+! CO
+! THC
+! NMHC
+! {{NOx}}
+! HC+{{NOx}}
+! PM
+! PN [#/km]
+|-
+! style="background:#EEEE40;" colspan="10" | Diesel
+|-
+| Euro 1
+| October 1993
+| October 1994
+| 5.17
+| –
+| –
+| –
+| 1.4
+| 0.19
+| –
+|-
+| Euro 2
+| January 1998
+| October 1998
+| 1.25
+| –
+| –
+| –
+| 1.0
+| 0.12
+| –
+|-
+| Euro 3
+| January 2001
+| January 2002
+| 0.80
+| –
+| –
+| 0.65
+| 0.72
+| 0.07
+| –
+|-
+| Euro 4
+| January 2006
+| January 2007
+| 0.63
+| –
+| –
+| 0.33
+| 0.39
+| 0.04
+| –
+|-
+| Euro 5a
+| September 2010
+| January 2012
+| 0.630
+| –
+| –
+| 0.235
+| 0.295
+| 0.005
+| –
+|-
+| Euro 5b
+| September 2011
+| January 2013
+| 0.630
+| –
+| –
+| 0.235
+| 0.295
+| 0.0045
+| {{val|6|e=11}}
+|-
+| Euro 6b
+| September 2015
+| September 2016
+| 0.630
+| –
+| –
+| 0.105
+| 0.195
+| 0.0045
+| {{val|6|e=11}}
+|-
+| Euro 6c
+| –
+| September 2019
+| 0.630
+| –
+| –
+| 0.105
+| 0.195
+| 0.0045
+| {{val|6|e=11}}
+|-
+| Euro 6d-Temp
+| September 2018
+| September 2020
+| 0.630
+| –
+| –
+| 0.105
+| 0.195
+| 0.0045
+| {{val|6|e=11}}
+|-
+| Euro 6d
+| January 2021
+| January 2022
+| 0.630
+| –
+| –
+| 0.105
+| 0.195
+| 0.0045
+| {{val|6|e=11}}
+|-
+| Euro 6e
+| September 2023
+| September 2024
+| 0.630
+| –
+| –
+| 0.105
+| 0.195
+| 0.0045
+| {{val|6|e=11}}
+|-
+! style="background:#EEEE40;" colspan="10" |Petrol
+|-
+| Euro 1
+| October 1993
+| October 1994
+| 5.17
+| –
+| –
+| –
+| 1.4
+| –
+| –
+|-
+| Euro 2
+| January 1998
+| October 1998
+| 4.0
+| –
+| –
+| –
+| 0.6
+| –
+| –
+|-
+| Euro 3
+| January 2001
+| January 2002
+| 4.17
+| 0.25
+| –
+| 0.18
+| –
+| –
+| –
+|-
+| Euro 4
+| January 2006
+| January 2007
+| 1.81
+| 0.130
+| –
+| 0.10
+| –
+| –
+| –
+|-
+| Euro 5a
+| September 2010
+| January 2012
+| 1.810
+| 0.130
+| 0.090
+| 0.075
+| –
+| 0.005{{efn|group=lcv2|name=di|Applies only to vehicles with direct injection engines}}
+| –
+|-
+| Euro 5b
+| September 2011
+| January 2013
+| 1.810
+| 0.130
+| 0.090
+| 0.075
+| –
+| 0.0045{{efn|group=lcv2|name=di}}
+| –
+|-
+| Euro 6b
+| September 2015
+| September 2016
+| 1.810
+| 0.130
+| 0.090
+| 0.075
+| –
+| 0.0045{{efn|group=lcv2|name=di}}
+| {{val|6|e=11}}
+|-
+| Euro 6c
+| –
+| September 2019
+| 1.810
+| 0.130
+| 0.090
+| 0.075
+| –
+| 0.0045{{efn|group=lcv2|name=di}}
+| {{val|6|e=11}}
+|-
+| Euro 6d-Temp
+| September 2018
+| September 2020
+| 1.810
+| 0.130
+| 0.090
+| 0.075
+| –
+| 0.0045{{efn|group=lcv2|name=di}}
+| {{val|6|e=11}}
+|-
+| Euro 6d
+| January 2021
+| January 2022
+| 1.810
+| 0.130
+| 0.090
+| 0.075
+| –
+| 0.0045{{efn|group=lcv2|name=di}}
+| {{val|6|e=11}}
+|-
+| Euro 6e
+| September 2023
+| September 2024
+| 1.810
+| 0.130
+| 0.090
+| 0.075
+| –
+| 0.0045{{efn|group=lcv2|name=di}}
+| {{val|6|e=11}}
+|-
+| class="tNote" colspan="10" | {{notelist|group=lcv2}}
+|}
+
+{{anchor |Category 3}}
+{| class="wikitable"
+|+European emission standards for [[light commercial vehicle]]s > 1,760&nbsp;kg reference mass [[Large Goods Vehicle|max 3,500&nbsp;kg]]. (Category N<sub>1</sub> Class III & N<sub>2</sub>), g/km
+|- style="background:#ececec;" id="cars" class="data"
+! Tier
+! Date (type approval)
+! Date (first registration)
+! CO
+! THC
+! NMHC
+! {{NOx}}
+! HC+{{NOx}}
+! PM
+! PN [#/km]
+|-
+! style="background:#EEEE40;" colspan="10" | Diesel
+|-
+| Euro 1
+| October 1993
+| October 1994
+| 6.9
+| –
+| –
+| –
+| 1.7
+| 0.25
+| –
+|-
+| Euro 2
+| January 1998
+| October 1999
+| 1.5
+| –
+| –
+| –
+| 1.2
+| 0.17
+| –
+|-
+| Euro 3
+| January 2001
+| January 2002
+| 0.95
+| –
+| –
+| 0.78
+| 0.86
+| 0.10
+| –
+|-
+| Euro 4
+| January 2006
+| January 2007
+| 0.74
+| –
+| –
+| 0.39
+| 0.46
+| 0.06
+| –
+|-
+| Euro 5a
+| September 2010
+| January 2012
+| 0.740
+| –
+| –
+| 0.280
+| 0.350
+| 0.005
+| –
+|-
+| Euro 5b
+| September 2011
+| January 2013
+| 0.740
+| –
+| –
+| 0.280
+| 0.350
+| 0.0045
+| {{val|6|e=11}}
+|-
+| Euro 6b
+| September 2015
+| September 2016
+| 0.740
+| –
+| –
+| 0.125
+| 0.215
+| 0.0045
+| {{val|6|e=11}}
+|-
+| Euro 6c
+| –
+| September 2019
+| 0.740
+| –
+| –
+| 0.125
+| 0.215
+| 0.0045
+| {{val|6|e=11}}
+|-
+| Euro 6d-Temp
+| September 2018
+| September 2020
+| 0.740
+| –
+| –
+| 0.125
+| 0.215
+| 0.0045
+| {{val|6|e=11}}
+|-
+| Euro 6d
+| January 2021
+| January 2022
+| 0.740
+| –
+| –
+| 0.125
+| 0.215
+| 0.0045
+| {{val|6|e=11}}
+|-
+| Euro 6e
+| September 2023
+| September 2024
+| 0.740
+| –
+| –
+| 0.125
+| 0.215
+| 0.0045
+| {{val|6|e=11}}
+|-
+! style="background:#EEEE40;" colspan="10" | Petrol
+|-
+| Euro 1
+| October 1993
+| October 1994
+| 6.9
+| –
+| –
+| –
+| 1.7
+| –
+| –
+|-
+| Euro 2
+| January 1998
+| October 1999
+| 5.0
+| –
+| –
+| –
+| 0.7
+| –
+| –
+|-
+| Euro 3
+| January 2001
+| January 2002
+| 5.22
+| 0.29
+| –
+| 0.21
+| –
+| –
+| –
+|-
+| Euro 4
+| January 2006
+| January 2007
+| 2.27
+| 0.16
+| –
+| 0.11
+| –
+| –
+| –
+|-
+| Euro 5a
+| September 2010
+| January 2012
+| 2.270
+| 0.160
+| 0.108
+| 0.082
+| –
+| 0.005{{efn|group=lcv3|name=di|Applies only to vehicles with direct injection engines}}
+| –
+|-
+| Euro 5b
+| September 2011
+| January 2013
+| 2.270
+| 0.160
+| 0.108
+| 0.082
+| –
+| 0.0045{{efn|group=lcv3|name=di}}
+| –
+|-
+| Euro 6b
+| September 2015
+| September 2016
+| 2.270
+| 0.160
+| 0.108
+| 0.082
+| –
+| 0.0045{{efn|group=lcv3|name=di}}
+| {{val|6|e=11}}
+|-
+| Euro 6c
+| –
+| September 2019
+| 2.270
+| 0.160
+| 0.108
+| 0.082
+| –
+| 0.0045{{efn|group=lcv3|name=di}}
+| {{val|6|e=11}}
+|-
+| Euro 6d-Temp
+| September 2018
+| September 2020
+| 2.270
+| 0.160
+| 0.108
+| 0.082
+| –
+| 0.0045{{efn|group=lcv3|name=di}}
+| {{val|6|e=11}}
+|-
+| Euro 6d
+| January 2021
+| January 2021
+| 2.270
+| 0.160
+| 0.108
+| 0.082
+| –
+| 0.0045{{efn|group=lcv3|name=di}}
+| {{val|6|e=11}}
+|-
+| Euro 6e
+| September 2023
+| September 2024
+| 2.270
+| 0.160
+| 0.108
+| 0.082
+| –
+| 0.0045{{efn|group=lcv3|name=di}}
+| {{val|6|e=11}}
+|-
+| class="tNote" colspan="10" | {{notelist|group=lcv3}}
+|}
+
+==={{anchor|Euro I|Euro II|Euro III|Euro IV|Euro V|Euro VI}} Emission standards for trucks and buses===
+[[File:Iveco Trakker 410 EEV 8x8.jpg|thumb|An [[Iveco Trakker]] equipped with an engine with EEV-standard]]
+{{Unreferenced section|date=July 2022}}
+
+The emission standards for trucks (lorries) and buses are defined by engine energy output in g/[[kilowatt hour|kWh]]; this is unlike the emission standards for passenger cars and light commercial vehicles, which are defined by vehicle driving distance in g/km&nbsp;— a general comparison to passenger cars is therefore not possible, as the kWh/km factor depends, among others, on the specific vehicle.
+
+The official category name is heavy-duty diesel engines, which generally includes lorries and buses.
+
+The following table contains a summary of the emission standards and their implementation dates. Dates in the tables refer to new type approvals; the dates for all new registrations are in most cases one year later.
+
+{| class="wikitable"
+|+European emission standards for heavy-duty diesel engines, g/kWh
+! Tier
+! Date
+! [[Emission test cycle|Test cycle]]
+! CO
+! HC{{efn|group=truckbus|In EURO VI, HC has been replaced by the measurement of “THC” – Total HydroCarbons. HC and THC are not necessarily completely comparable values.}}
+! {{NOx}}
+! NH<sub>3</sub>{{efn|group=truckbus|EURO VI limits NH<sub>3</sub> measured in ppm pr. kWh, whereas EURO VII limits NH<sub>3</sub> measured in mg pr. kWh.<br>The EURO VII limit values for NH<sub>3</sub> listed in this table have been recalculated from mg to g.<br>A limited 2023 study has shown that certain EURO VI, Step D buses are able to meet the EURO VII NH<sub>3</sub> limits.<ref>{{cite web|url=https://theicct.org/wp-content/uploads/2023/02/euro-vi-d-buses-feb23.pdf |title=Emissions performance of Euro VI-D buses and recommendations for Euro 7 standards|author= International Council on Clean Transportation| access-date=17 February 2023|page=7}}</ref>}}
+! PM
+! PN{{efn|group=truckbus|In Euro VII, “PN” includes smaller particles sizes. The cut off value is lowered from PN23 to PN10. This means that PN in EURO VII includes particulates down to 10 nm as opposed to only down to 23 nm in Euro VI. }} [#/kWh]
+! N<sub>2</sub>O
+! CH<sub>4</sub>
+! HCHO
+! Smoke [m<sup>−1</sup>]
+! Brake PM<sub>10</sub>{{efn|group=truckbus|Brake particle emissions (PM<sub>10</sub>). Only regulated for M1, N1 vehicles and only as PM - not PN. After 2035 HDV will still not be subject to brake particle emissions regulation.}}
+|-
+| rowspan="2" | Euro I
+| 1992, < 85&nbsp;kW
+| rowspan="4" |
+ECE R49
+| 4.5
+| 1.1
+| 8.0
+|
+| 0.612
+|
+|
+|
+|
+|
+|
+|-
+| 1992, > 85&nbsp;kW
+| 4.5
+| 1.1
+| 8.0
+|
+| 0.36
+|
+|
+|
+|
+|
+|-
+| rowspan="2" | Euro II
+| October 1995
+| 4.0
+| 1.1
+| 7.0
+|
+| 0.25
+|
+|
+|
+|
+|
+|
+|-
+| October 1997
+| 4.0
+| 1.1
+| 7.0
+|
+| 0.15
+|
+|
+|
+|
+|
+|
+|-
+| rowspan="2" | Euro III
+| October 1999 EEVs{{efn|[[enhanced environmentally friendly vehicle]]}} only
+| rowspan="4" |
+ESC & ELR
+| 1.5
+| 0.25
+| 2.0
+|
+| 0.02
+|
+|
+|
+|
+| 0.15
+|
+|-
+| October 2000
+| 2.1
+| 0.66
+| 5.0
+|
+| 0.10 <br />0.13{{efn|group=truckbus|for engines of less than 0.75 litres swept volume per cylinder and a rated power speed of more than 3,000 per minute.}}
+|
+|
+|
+|
+| 0.8
+|
+|-
+| Euro IV
+| October 2005
+| 1.5
+| 0.46
+| 3.5
+|
+| 0.02
+|
+|
+|
+|
+| 0.5
+|
+|-
+| Euro V
+| October 2008
+| 1.5
+| 0.46
+| 2.0
+|
+| 0.02
+|
+|
+|
+|
+| 0.5
+|
+|-
+| rowspan="2" | Euro VI
+| rowspan="2" | 31 December 2012<ref>{{cite web|url=http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:167:0001:0168:EN:PDF |title=Commission Regulation (EU) No 582/2011 (Euro VI), date is for type approvals, annex I, Euro VI Emission Limits|access-date=30 December 2018|page=167/163}}</ref>
+| WHSC
+| 1.5
+| 0.13
+| 0.4
+| 10 (ppm)
+| 0.01
+| {{val|8|e=11}}
+|
+|
+|
+|
+|
+|-
+| WHTC
+| 4.0
+| 0.16
+| 0.46
+| 10 (ppm)
+| 0.01
+| {{val|6|e=11}}
+|
+|
+|
+|
+|
+|-
+| class="tNote" colspan="14" | {{notelist|group=truckbus}}
+|}
+
+===Emission standards for large goods vehicles===
+{{Unreferenced section|date=July 2022}}
+{|class="wikitable"
+|+ Euro norm emissions for category N<sub>3</sub>, [[New European Driving Cycle|EDC]], (2000 and up), g/kWh
+! Standard
+! Date
+! CO
+! {{NOx}}
+! HC
+! PM
+|-
+| Euro 0
+| 1988–92
+| 12.3
+| 15.8
+| 2.6
+| NA
+|-
+| Euro I
+| 1992–95
+| 4.9
+| 9.0
+| 1.23
+| 0.40
+|-
+| Euro II
+| 1995–99
+| 4.0
+| 7.0
+| 1.1
+| 0.15
+|-
+| Euro III
+| 1999–2005
+| 2.1
+| 5.0
+| 0.66
+| 0.1
+|-
+| Euro IV
+| 2005–08
+| 1.5
+| 3.5
+| 0.46
+| 0.02
+|-
+| Euro V
+| 2008–12
+| 1.5
+| 2.0
+| 0.46
+| 0.02
+|-
+| Euro VI
+| 2012–19
+| 1.0
+| 1.2
+| 0.36
+| 0.01
+|}
+
+{|class="wikitable"
+|+ Euro norm emissions for (older) ECE R49 cycle, g/kWh
+! Standard
+! Date
+! CO
+! {{NOx}}
+! HC
+! PM
+|-
+| Euro 0
+| 1988–92
+| 11.2
+| 14.4
+| 2.4
+| NA
+|-
+| Euro I
+| 1992–95
+| 4.5
+| 8.0
+| 1.1
+| 0.36
+|-
+| Euro II
+| 1995–99
+| 4.0
+| 7.0
+| 1.1
+| 0.15
+|}
+
+===Emission standards for non-road mobile machinery===
+The term ''[[non-road mobile machinery]]'' (NRMM) is a term used in the European emission standards to control emissions of engines that are not used primarily on public roadways. This definition includes [[off-roading|off-road]] vehicles as well as [[railway vehicle]]s.
+
+European standards for non-road diesel engines harmonise with the [[United States emission standards|US EPA standards]], and comprise gradually stringent tiers known as Stage I–V standards. The Stage I/II was part of the 1997 directive (Directive 97/68/EC). It was implemented in two stages, with Stage I implemented in 1999 and Stage II implemented between 2001 and 2004. In 2004, the European Parliament adopted Stage III/IV standards. The Stage III standards were further divided into Stage III A and III B, and were phased in between 2006 and 2013. Stage IV standards are enforced from 2014. Stage V standards are phased in from 2018 with full enforcement from 2021.
+
+As of 1 January 2015, EU Member States have to ensure that ships in the Baltic, the North Sea and the [[English Channel]] are using fuels with a sulphur content of no more than 0.10%. Higher sulphur contents are still possible, but only if the appropriate exhaust cleaning systems are in place.<ref>{{cite web |url=http://ec.europa.eu/environment/air/transport/ships.htm |title=Transport & Environment – Emissions from Maritime Transport |publisher=European Commission |date=16 February 2015 |access-date=28 February 2015}}</ref>
+
+== Emission test cycle ==
+{{update section|date=September 2020}}
+
+Just as important as the regulations are the tests needed to ensure adherence to regulations. These are laid out in standardised [[emission test cycle]]s used to measure emissions performance against the regulatory thresholds applicable to the tested vehicle.
+
+=== Light duty vehicles ===
+Since the Euro 3 regulations in 2000, performance has been measured using the [[New European Driving Cycle]] test (NEDC; also known as MVEG-B), with a "[[Cold start (automotive)|cold start]]" procedure that eliminates the use of a 40-second engine warm-up period found in the ECE+EUDC test cycle (also known as MVEG-A).<ref name=DN-Standards /><ref name="DN-Cycles">{{cite web | url=https://www.dieselnet.com/standards/cycles/ece_eudc.php | title=Emission Test Cycles: ECE 15 + EUDC / NEDC | publisher=DieselNet | date=July 2013 | access-date=28 September 2015}}</ref> Since 2017 the NEDC was replaced by the Worldwide harmonized Light vehicles Test Procedure (WLTP).<ref>{{Cite web |last=Kroher |first=Thomas |date=2024-03-05 |title=WLTP statt NEFZ: So funktioniert das aktuelle Messverfahren |url=https://www.adac.de/rund-ums-fahrzeug/autokatalog/abgasnormen/wltp-messverfahren/ |access-date=2024-12-06 |website=ADAC, Allemeiner Deutscher Automobil Club}}</ref>
+=== Heavy duty vehicles ===
+The two groups of emissions standards for heavy duty vehicles each have different appropriate test requirements. Steady-state testing is used for diesel engines only, while transient testing applies to both diesel and petrol engines.<ref name="DN-EUHD">{{cite web | url=https://www.dieselnet.com/standards/eu/hd.php | title=Emission Standards » European Union » Heavy-Duty Truck and Bus Engines | publisher=DieselNet | date=September 2012 | access-date=28 September 2015}}</ref>
+
+=== "Cycle beating" controversy {{anchor|Cycle beating}} ===
+[[File:NOx Diesel emissions - real vs Euronorms.svg|thumb|Comparison between emission standards for nitrogen oxides (NOx) of diesel cars and measured emissions<ref>{{Cite web|url=https://www.eea.europa.eu/media/infographics/comparison-of-nox-emission-standards/view|title=Comparison of NOx emission standards for different Euro classes|date=27 January 2016 |publisher=European Environment Agency|language=en|access-date=7 March 2019}}</ref>]]
+
+For the emission standards to deliver actual emission reductions, it is crucial to use a test cycle that reflects real-world driving conditions. It was discovered<ref>{{cite web|url=http://www.transportenvironment.org/publications/dont-breathe-here-tackling-air-pollution-vehicles | title=Don't Breathe Here: Tackling air pollution from vehicles |website=Transport Environment| date=14 September 2015| access-date=13 October 2015}}</ref> that vehicle manufacturers would optimise emissions performance only for the test cycle, whilst emissions from typical driving conditions proved to be much higher than when tested. Some manufacturers were also found to use so-called ''[[defeat device]]s'' where the engine control system would recognise that the vehicle was being tested, and would automatically switch to a mode optimised for emissions performance. The use of a defeat device is expressly forbidden in EU law.<ref name=eurlex715/>
+
+An independent study in 2014 used portable emissions measurement systems to measure {{NOx}} emissions during real world driving from fifteen Euro 6 compliant diesel passenger cars. The results showed that {{NOx}} emissions were on average about seven times higher than the Euro 6 limit. However, some of the vehicles did show reduced emissions, suggesting that real world {{NOx}} emission control is possible.<ref>{{cite web |url=http://www.theicct.org/real-world-exhaust-emissions-modern-diesel-cars |title=Real-world exhaust emissions from modern diesel cars |website=International Council on Clean Transportation |date=11 October 2014 |access-date=23 September 2015}}</ref> In one particular instance, research in diesel car emissions by two German technology institutes found that zero "real" {{NOx}} reductions in public health risk had been achieved despite 13 years of stricter standards (2006 report).{{r|Transport Env 2}}
+
+In 2015, the [[Volkswagen emissions scandal]] involved revelations that Volkswagen AG had deliberately falsified emission reports by programming [[Engine control unit|engine management unit]] [[firmware]] to detect test conditions, and change emissions controls when under test. The cars thus passed the test, but in real world conditions, emitted up to forty times more {{NOx}} emissions than allowed by law.<ref>{{cite web |url=https://www.nytimes.com/2015/09/21/business/international/volkswagen-chief-apologizes-for-breach-of-trust-after-recall.html |title=Volkswagen to Stop Sales of Diesel Cars Involved in Recall |first1=Jack |last1=Ewing |first2=Coral |last2=Davenport |work=The New York Times |date=20 September 2015 |access-date=21 September 2015}}</ref> An independent report in September 2015 warned that this extended to "every major car manufacturer",<ref name="Kirk-22Sep" /> with [[BMW]], and [[Opel]] named alongside Volkswagen and its sister company [[Audi]] as "the worst culprits",<ref name="Kirk-22Sep" /> and that approximately 90% of diesel cars "breach emissions regulations".<ref name="Kirk-22Sep" /> Overlooking the direct responsibility of the companies involved, the authors blamed the violations on a number of factors, including "unrealistic test conditions, a lack of transparency and a number of loopholes in testing protocols".<ref name="Kirk-22Sep">{{cite web | url=https://www.telegraph.co.uk/news/uknews/road-and-rail-transport/11881954/Volkswagen-emissions-scandal-Which-other-cars-fail-to-meet-pollution-safety-limits.html |archive-url=https://ghostarchive.org/archive/20220112/https://www.telegraph.co.uk/news/uknews/road-and-rail-transport/11881954/Volkswagen-emissions-scandal-Which-other-cars-fail-to-meet-pollution-safety-limits.html |archive-date=12 January 2022 |url-access=subscription |url-status=live | title=Volkswagen emissions scandal: Which other cars fail to meet pollution safety limits? | work=The Daily Telegraph | date=22 September 2015 | access-date=23 September 2015 | first=Ashley |last=Kirk}}{{cbignore}}</ref>
+
+[[File:Test RDE (real driving emissions).jpg|thumb|Real Driving Emissions (RDE)]]
+
+In 2017, the European Union introduced testing in real-world conditions called Real Driving Emissions (RDE), using [[portable emissions measurement system]]s in addition to laboratory tests.<ref>{{cite web |url=http://www.real-driving-emissions.eu/ |title=Real Driving Emissions 2015 |website=Real Driving Emissions |year=2015 |access-date=29 October 2015}}</ref> The actual limits will use 110% (CF=2.1) "conformity factor" (the difference between the laboratory test and real-world conditions) in 2017, and 50% (CF=1.5) in 2021 for {{NOx}},<ref>{{cite press release |url=http://europa.eu/rapid/press-release_IP-15-5945_en.htm |title=European Commission welcomes Member States' agreement on robust testing of air pollution emissions by cars |publisher=European Commission |date=28 October 2015 |access-date=30 October 2015}}</ref> conformity factor for particles number P being left for further study. Environment organisations criticized the decision as insufficient,<ref>{{cite news |url=http://www.clientearth.org/news/latest-news/diesel-shocking-new-rules-would-allow-twice-the-pollution-3026 |title=Diesel: Shocking new rules would allow twice the pollution [3026] |first=Jon |last=Bennett |work=ClientEarth |date=28 October 2015 |access-date=30 October 2015 |archive-url=https://web.archive.org/web/20151222114725/http://www.clientearth.org/news/latest-news/diesel-shocking-new-rules-would-allow-twice-the-pollution-3026 |archive-date=22 December 2015 |url-status=dead }}</ref><ref>{{cite web|url=http://www.transportenvironment.org/press/governments-double-and-delay-air-pollution-limits-diesel-cars |title=Governments double and delay air pollution limits for diesel cars |work=transportenvironment.org |date=28 October 2015 |access-date=30 October 2015}}</ref> while ACEA mentions it will be extremely difficult for automobile manufacturers to reach such a limit in such short period of time.<ref>{{Cite web|url = http://www.acea.be/press-releases/article/auto-industry-reacts-to-new-real-driving-emissions-testing-standards|title = Auto industry reacts to new real driving emissions testing standards|date = 30 October 2015}}</ref> In 2015, an [[ADAC]] study (ordered by [[International Council on Clean Transportation|ICCT]]) of 32 Euro 6 cars showed that few complied with on-road emission limits, and LNT/[[NOx adsorber]] cars (with about half the market) had the highest emissions.<ref>{{cite web |url=http://www.theicct.org/nox-control-technologies-euro-6-diesel-passenger-cars |title=NOx control technologies for Euro 6 diesel passenger cars |first1=Liuhanzi |last1=Yang |first2=Vicente |last2=Franco |first3=Alex |last3=Campestrini |first4=John |last4=German |first5=Peter |last5=Mock |work=International Council on Clean Transportation |date=3 September 2015 |access-date=7 November 2015 |archive-date=9 September 2017 |archive-url=https://web.archive.org/web/20170909181612/http://www.theicct.org/nox-control-technologies-euro-6-diesel-passenger-cars |url-status=dead }}</ref> At the end of this study, ICCT was expecting a 100% conformity factor.<ref>{{Cite web|url = http://www.theicct.org/sites/default/files/publications/ICCT_NOx-control-tech_revised%2009152015.pdf|title = ICCT expected conformity factor|date = September 2015|page = 20 (PDF page 27)}}</ref>
+
+NEDC Euro 6b not to exceed limit of 80&nbsp;mg/km {{NOx}} will then continue to apply for the WLTC Euro 6c tests performed on a [[dynomometer]] while WLTC-RDE will be performed in the middle of the traffic with a PEMS attached at the rear of the car. RDE testing is then far more difficult than the dynomometer tests. RDE not to exceed limits have then been updated to take into account different test conditions such as PEMS weight (305–533&nbsp;kg in various ICCT testing<ref>{{Cite web|url = http://www.theicct.org/sites/default/files/publications/WVU_LDDV_in-use_ICCT_Report_Final_may2014.pdf|title = PEMS Weight|page = 11 (PDF page 27, table 3.2)}}</ref>), driving in the middle of the traffic, road gradient, etc.
+
+ADAC also performed {{NOx}} emission tests with a cycle representative of the real driving environment in the laboratory.<ref>{{Cite web|url = https://theicct.org/sites/default/files/publications/ICCT_NOx-control-tech_revised10132015.pdf|title = ADAC NOx Tests concerning 69 Euro 6 Diesel cars}}</ref><ref>{{Cite web|url = http://www.autobild.de/bilder/adac-ecotest-auch-viele-euro-6-diesel-zu-schmutzig-6938461.html#bild3|title = ADAC NOX tests on 69 Euro 6 Diesel cars shown in pictures by AutoBild|access-date = 22 December 2015|archive-date = 5 January 2016|archive-url = https://web.archive.org/web/20160105111033/http://www.autobild.de/bilder/adac-ecotest-auch-viele-euro-6-diesel-zu-schmutzig-6938461.html#bild3|url-status = dead}}</ref> Among the 69 cars tested:
+* 17 cars emit less than 80&nbsp;mg/km, i.e. do not emit more {{NOx}} on this more demanding cycle than on the NEDC cycle.
+* 22 additional cars fall below the 110% conformity factor. In total: 57% of cars have then a good chance to be compatible with WLTC-RDE.
+* 30 cars fall above the 110% conformity factor and have then to be improved to satisfy the WLTC-RDE test.
+
+Since 2012, ADAC performs regular pollutant emission tests<ref>{{cite web |url=http://www.ecotest.eu/html/EcoTest_Protocol_EN.pdf |title=English version of ADAC pollutant tests procedure |archive-url=https://web.archive.org/web/20160304185524/http://www.ecotest.eu/html/EcoTest_Protocol_EN.pdf |archive-date=4 March 2016 |url-status=dead}}</ref><ref>{{cite web |url=https://www.adac.de/_mmm/pdf/TO27473_118924.pdf |title=Original ADAC Emissions Tests procedure |language=de |archive-url=https://web.archive.org/web/20150428005236/http://www.adac.de/_mmm/pdf/TO27473_118924.pdf |archive-date=28 April 2015 |url-status=dead}}</ref> on a specific cycle in the laboratory duly representing a real driving environment and gives a global notation independent from the type of engine used (petrol, diesel, natural gas, LPG, hybrid, etc.). To get the maximum 50/50 note on this cycle, the car shall emit less than the minimum limit applicable to either petrol or diesel car, that is to say 100&nbsp;mg HC, 500&nbsp;mg CO, 60&nbsp;mg {{NOx}}, 3&nbsp;mg PM and {{val|6|e=10}} PN. Unlike ambient discourse dirty diesel versus clean petrol cars, the results are much more nuanced and subtle. Some Euro 6 diesel cars perform as well as the best hybrid petrol cars; some other recent Euro 6 petrol indirect injection cars perform as the worst Euro 5 diesel cars; finally some petrol hybrid cars are at the same level as the best Euro 5 diesel cars.<ref>{{Cite web|url = http://www.ecotest.eu/index.html|title = English version of ADAC Emissions tests concerning Euro 5 & Euro 6 cars}}</ref><ref>{{Cite web|url = https://www.adac.de/infotestrat/tests/eco-test/default.aspx|title = Original ADAC emissions tests concerning Euro 5 & Euro 6 cars|language = de}}</ref>
+
+Tests commissioned by [[Which?]] from the beginning of 2017 found that 47 out of 61 diesel car models exceed the Euro 6 limit for {{NOx}}, although they conform to official standards.<ref>{{cite news |url=https://news.sky.com/story/most-modern-diesels-still-too-dirty-study-shows-11474459 |title=Most modern diesels still too dirty, study shows |publisher=Sky News |location=UK |date=17 August 2018 |access-date=18 August 2018}}</ref>
+
+==Health impacts==
+After the postponement in publishing the Euro 7 proposal details by the European Commission, some [[Civil society|civil society groups]] (such as the [[European Respiratory Society]] and the [[European Public Health Alliance]]) said in mid-2022: "Every month that the implementation of Euro 7 is delayed due to the late publication of the proposal, 1 million more polluting cars will be placed on the EU's road and stay there for decades to come."<ref>{{Cite web |date=1 July 2022 |title='Publish the Euro 7 air quality standards without delay' |url=https://www.transportenvironment.org/discover/publish-the-euro-7-air-quality-standards-without-delay/ |access-date=31 July 2022 |website=Transport & Environment |language=en}}</ref>
+
+=={{CO2}} emissions==
+{{See also|Climate change in Europe#Transport}}
+
+Within the [[European Union]], transport is the biggest emitter of {{CO2|link=yes}},<ref>{{Cite web |title=EU-27: CO2 emissions shares by sector 2019 |url=https://www.statista.com/statistics/1240108/road-transportation-greenhouse-gas-emissions-eu/ |access-date=24 July 2022 |website=Statista |language=en}}</ref> with road transport contributing about 20%.<ref>{{Cite web |title=Road transport: Reducing CO₂ emissions from vehicles |url=https://ec.europa.eu/clima/eu-action/transport-emissions/road-transport-reducing-co2-emissions-vehicles_en |access-date=24 July 2022 |publisher=European Commission |language=en}}</ref>
+
+===Obligatory labelling===
+The purpose of ''Directive 1999/94/EC of the European Parliament and the Council of 13 December 1999 relating to the availability of consumer information on fuel economy and {{CO2}} emissions in respect of the marketing of new passenger cars''{{r|Eur-lex 8}} is to ensure that information relating to the [[Fuel economy in automobiles|fuel economy]] and {{CO2}} emissions of new passenger cars offered for sale or lease in the Community is made available to consumers in order to enable consumers to make an informed choice.
+
+In the United Kingdom, the initial approach was deemed ineffective. The way the information was presented was too complicated for consumers to understand. As a result, car manufacturers in the United Kingdom voluntarily agreed to put a more "consumer-friendly", colour-coded label displaying {{CO2}} emissions on all new cars beginning in September 2005, with a letter from A (<100 {{CO2}} g/km) to F (186+ {{CO2}} g/km). The goal of the new "green label" is to give consumers clear information about the environmental performance of different vehicles.{{r|WeatherVane}}
+
+Other EU member countries are also in the process of introducing consumer-friendly labels.
+
+{{anchor|Obligatory vehicle CO2 emission limits}}
+
+===Obligatory vehicle {{CO2}} emission limits===
+[[Directive (European Union)|European Union Directive No 443/2009]] set a mandatory average fleet {{CO2}} [[emissions target]] for new cars, after a voluntary commitment made in 1998 and 1999 by the auto industry had failed to reduce emissions by 2007. The regulation applies to new passenger cars registered in the [[European Union]] and [[European Economic Area|EEA]] member states for the first time. A carmaker who fails to comply has to pay an "excess emissions premium" for each vehicle registered according with the amount of g/km of exceeded.<ref name="443/2009">{{cite web| url=https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2009:140:0001:0015:EN:PDF | title=Regulation (EC) No 443/2009 of the European Parliament and of the Council |publisher=Official Journal of the European Union | date=23 April 2009 | access-date=22 June 2020}}</ref>
+
+[[File:Average fleet CO2 emissions Norway.png|thumb|275px|EU targets from 2015 to 2030 and historical trend of annual average new fleet {{CO2}} emissions in Norway (2011–2019).<br />Source: Norwegian Road Federation (OFV)]]
+
+The 2009 regulation set a 2015 target of 130&nbsp;g/km for the fleet average for new passenger cars. A similar set of regulations for [[light commercial vehicle]]s was set in 2011, with an emissions target of 175&nbsp;g/km for 2017. Both targets were met several years in advance.<!-- The average emissions level of a new car sold in 2017 was significantly below the 2015 target, at 118.5 grams of {{CO2}} per km--> A second set of regulations, passed in 2014, set a 2021 target of average {{CO2}} emissions of new cars to fall to 95&nbsp;g/km by 2021, and for light-commercial vehicles to 147&nbsp;g/km by 2020.<ref name=EUCO2Directives>{{cite web|url=https://ec.europa.eu/clima/policies/transport/vehicles/cars_en |title=Reducing CO<sub>2</sub> emissions from passenger cars – before 2020 |work=[[European Commission]] |access-date=23 June 2020}}</ref><ref name=EUCO2fleet>{{cite web |url=https://theicct.org/sites/default/files/publications/EU-LCV-CO2-2030_ICCTupdate_201901.pdf |author=International Council on Clean Transportation |author-link=International Council on Clean Transportation |title=CO2 standards for passenger cars and light-commercial vehicles in the European Union|date=January 2019|access-date=23 June 2020}}</ref>
+
+In April 2019, Regulation (EU) 2019/631 was adopted, which introduced {{CO2}} emission performance standards for new passenger cars and new light commercial vehicles for 2025 and 2030. The new Regulation went into force on 1 January 2020, and has replaced and repealed Regulation (EC) 443/2009 and (EU) No 510/2011.<ref name=EUCO2Directives/><ref name="2019/631">{{cite web| url=https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019R0631 | title=Regulation (EU) 2019/631 of the European Parliament and of the Council |publisher=Official Journal of the European Union | date= 17 April 2019 | access-date=23 June 2020}}</ref> The 2019 Regulation set new emission targets relative to a 2021 baseline, with a reduction of the average {{CO2}} emissions from new cars by 15% in 2025, and by 37.5% in 2030. For light-commercial vehicles the new targets are a 15% reduction for 2025 and a 31% reduction for 2030.<ref name=EUCO2fleet/><ref name=EUCO2Directive2019>{{cite web|url=https://ec.europa.eu/clima/policies/transport/vehicles/regulation_en |title=CO<sub>2</sub> emission performance standards for cars and vans (2020 onward) |work=[[European Commission]] |date=6 November 2017 |access-date=23 June 2020}}</ref>
+
+'''Specific emissions targets for passenger cars'''
+
+To account for different sizes of passenger cars, the specific emissions target for each passenger car is calculated by adjusting the general emissions target by a value proportional to the deviation of the car's mass from the average. This means that the emissions targets for heavier cars are higher than those for lighter cars. In Regulations (EC) 443/2009 and (EU) 2019/631 this relationship between the specific emissions target {{math|''E''}} and the general emissions target {{math|''E''<sub>0</sub>}} is expressed as {{math|''E'' {{=}} ''E''<sub>0</sub> + ''a'' × (''M''-''M''<sub>0</sub>)}} with the mass of the specific vehicle denoted by {{math|''M''}} and the average vehicle mass denoted by {{math|''M''<sub>0</sub>}} (approx. {{cvt|1400|kg|lbs}}). The Regulations determine the factor {{math|''a''}} as 0.0457 for 2012–2019 and as 0.0333 from 2020 onward.<ref name="443/2009" /><ref name="2019/631" />
+
+'''Pooling'''
+
+Two or more car manufacturers may form a pool which allows them to meet fleet targets as a group instead of having to meet them individually. The first pool was agreed among Tesla and Fiat Chrysler in 2019, reportedly costing Fiat Chrysler hundreds of millions of Euros.<ref>{{cite web |title=Fiat Chrysler to pay Tesla hundreds of millions of euros to pool fleet |url=https://www.reuters.com/article/us-fiat-chrysler-tesla-eu-idUSKCN1RJ03I |work=Reuters |access-date=12 January 2023 |date=7 April 2019}}</ref>
+
+'''ZLEV Credit System'''
+
+The 2019 Regulation also introduced an incentive mechanism or credit system from 2025 onwards for zero- and low-emission vehicles (ZLEVs). A ZLEV is defined as a passenger car or a commercial van with {{CO2}} emissions between 0 and 50&nbsp;g/km. The regulation set ZLEV sales targets of 15% for 2025 and 35% for 2030, and manufacturers have some flexibility in how they achieve those targets. Carmakers that outperform the ZLEV sales targets will be rewarded with higher {{CO2}} emission targets, but the target relaxation is capped at a maximum 5% to safeguard the integrity of the regulation.<ref name=EUCO2fleet/><ref name=EUCO2Directive2019/>
+
+=== Electrification ===
+{{Update section|date=April 2021}}
+
+Many EU member states have responded to this problem by exploring the possibility of including electric vehicle-related infrastructure into their existing road traffic system, with some even having begun implementation. The UK has begun its "plugged-in-places" scheme which sees funding go to several areas across the UK to create a network of charging points for electric vehicles.<ref>{{cite web |url=http://www.dft.gov.uk/topics/sustainable/olev/recharging-electric-vehicles/ |title=Recharging infrastructure |publisher=[[Department for Transport]] |access-date=22 December 2011 |archive-url=https://web.archive.org/web/20111222024540/http://www.dft.gov.uk/topics/sustainable/olev/recharging-electric-vehicles/ |archive-date=22 December 2011 |url-status=dead }}</ref>
+
+== Around the world ==
+* Since 1 January 2012, all new heavy vehicles in Brazil must comply with [[PROCONVE|Proconve P7]] (similar to Euro 5)<ref>{{Cite web|url=https://www.dgabc.com.br/Noticia/247910/industria-pronta-para-euro-5-em-2012|title=Indústria pronta para Euro 5 em 2012 – Diário do Grande ABC – Notícias e informações do Grande ABC: economia|website=Dgabc.com.br|date=26 March 2011 }}</ref>
+* Since September 2014, all new cars in Chile must comply with Euro 5.<ref>{{Cite web|url=https://www.latercera.com/noticia/euro-5-la-norma-de-emisiones-para-vehiculos-que-empieza-este-ano-y-que-posiciona-a-chile-como-lider-en-latinoamerica/|title=Euro 5: la norma de emisiones para vehículos que empieza este año y que posiciona a Chile como líder en Latinoamérica|first=Catalina Rojas|last=O|date=4 February 2013|website=La Tercera}}</ref>
+* Since 1 January 2015, all new light vehicles in Brazil must comply with Proconve L6 (similar to Euro 5).<ref>{{cite web |url=http://www.ibama.gov.br/phocadownload/veiculosautomotores/manual_proconve%20promot_portugues.pdf |title=Programa de Controle da Poluição do Ar por Veículos Automotores |trans-title=Air Pollution Control Program for Motor Vehicles |author=Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis |location=Brazil |date=29 November 2011 |access-date=22 July 2022}}</ref>
+* Since 1 January 2016, all new heavy vehicles in Argentina must comply with Euro 5.<ref>{{Cite web|url=https://www.16valvulas.com.ar/en-el-2016-entrara-en-vigor-la-norma-euro-v-para-camiones-y-transporte-de-pasajeros/|title=En el 2016 entrará en vigor la norma Euro V para camiones y transporte de pasajeros|first=Daniel|last=Panzera|date=1 September 2015|website=16 Valvulas}}</ref>
+* Since January 2016, all new light vehicles in Russia must comply with Euro 5.<ref name="ru5">{{Cite web|url=https://dieselnet.com/standards/ru/|title=Emission Standards: Russia and EAEU|website=dieselnet.com}}</ref>
+* Since 2016, all new vehicles in Turkey must comply with Euro 6.<ref>{{cite news |title=Left in the dust: Brazil might be the last major automotive market to adopt Euro VI standards |url=https://www.theicct.org/blog/staff/brazil-last-major-market-adopt-euro-vi |publisher=International Council on Clean Transportation |date=23 May 2018}}</ref><ref>{{cite web |title=THE AUTOMOTIVE SECTOR IN TURKEY A BASELINE ANALYSIS OF VEHICLE FLEET STRUCTURE, FUEL CONSUMPTION AND EMISSIONS |url=https://www.theicct.org/sites/default/files/publications/ICCT_Turkish-fleet-baseline_20160318.pdf |publisher=International Council on Clean Transportation|access-date=6 February 2019}}</ref>
+* Since 1 September 2017, all new petrol vehicles in Singapore must comply with Euro 6 with new diesel vehicles following suit from 1 January 2018.<ref>{{Cite web |title=Singapore Will Adopt the Euro VI Emission Standards for Petrol Vehicles from September 2017 |url=https://www.nea.gov.sg/media/news/news/singapore-will-adopt-the-euro-vi-emission-standards-for-petrol-vehicles-from-september-2017 |access-date=2023-02-08 |website=National Environment Agency |location=Singapore}}</ref><ref>{{Cite web |title=Singapore Will Usher In Euro VI Emission Standard For Diesel Vehicles From January 2018 |url=https://www.nea.gov.sg/media/news/news/singapore-will-usher-in-euro-vi-emission-standard-for-diesel-vehicles-from-january-2018 |access-date=2023-02-08 |website=National Environment Agency |location=Singapore}}</ref>
+* Since 1 January 2018, all new vehicles in the Philippines must comply with Euro 4.
+* Since 1 January 2018, all new vehicles in China must comply with China 5 (similar to Euro 5).<ref>{{cite news |url=https://theicct.org/wp-content/uploads/2021/06/ICCTupdate_Guangdong-China5V_20150508.pdf |title=Early adoption of China 5/V vehicle emission standards in Guangdong province |publisher=International Council on Clean Transportation |date=May 2015 |access-date=24 July 2022}}</ref>
+* Since 1 January 2018, all new light and heavy vehicles in Argentina must comply with Euro 5.<ref>{{Cite web|url=https://ar.motor1.com/news/476398/dpf-la-sigla-que-se-convirtio-en-un-dolor-de-cabeza-para-automotrices-y-usuarios-argentinos/|title=DPF: la sigla que se convirtió en un dolor de cabeza para automotrices y usuarios argentinos|website=Motor1.com}}</ref>
+* Since 2018, all new heavy vehicles in Russia must comply with Euro 5.<ref name="ru5" />
+* Since 1 April 2018, Euro 4, Tier 2, and EPA 2007 are mandated in Peru.<ref>{{Cite web |url=http://www.unep.org/news-and-stories/press-release/peru-adopts-euro-4-iv-vehicle-emissions-standards-improved-air |title=Peru adopts Euro 4 / IV vehicle emissions standards for improved air quality |website=UN Environment Programme |date=December 18, 2017 |access-date=2023-12-18}}</ref>
+* Since 8 October 2018, all new petrol cars in Indonesia must comply with Euro 4.<ref>{{cite web |url=https://www.mongabay.co.id/2020/11/26/standard-emisi-kendaraan-di-indonesia-sejauh-mana-penerapannya/|title=Standard Emisi Kendaraan di Indonesia, Sejauh Apa Penerapannya? |trans-title=Vehicle Emission Standards in Indonesia, How Far is It Implemented? |author=Mongabay |location=Indonesia|date=26 November 2020 |access-date=18 September 2022}}</ref>
+* Since 1 July 2019, all new heavy vehicles in Mexico must comply with EPA 07 and Euro 5.<ref name="t21">{{Cite web|url=http://t21.com.mx/terrestre/2021/11/26/semarnat-publica-dof-modificacion-nom-044|title=Semarnat publica en el DOF modificación a la NOM-044|website=t21.com.mx |date=26 November 2021 }}</ref>
+* Since 1 April 2020, all new 2, 3 or 4-wheelers in India must comply with [[Bharat stage emission standards|BS VI]] (similar to Euro 6)<ref>{{Cite web|url=https://www.thehindu.com/news/national/amid-lockdown-india-switches-to-bs-vi-emission-norms/article61955217.ece|title=Amid lockdown, India switches to BS-VI emission norms|date=1 April 2020|work=The Hindu}}</ref>
+* Since 1 January 2021, all new vehicles in [[ECOWAS]] must comply with Euro 4.<ref>{{Cite web|url=http://www.unep.org/news-and-stories/story/west-african-ministers-adopt-cleaner-fuels-and-vehicles-standards|title=West African Ministers adopt cleaner fuels and vehicles standards|date=27 February 2020|website=UNEP}}</ref>
+* Since 1 January 2021, all new vehicles in China must comply with China 6a (similar to Euro 6).<ref name="dieselnet">{{Cite web|url=https://dieselnet.com/standards/cn/ld.php|title=Emission Standards: China: Cars and Light Trucks|website=dieselnet.com}}</ref>
+* Since 1 January 2022, all new vehicles in Cambodia must comply with Euro 4.<ref name="cambodia">{{Cite web|url=https://www.ccacoalition.org/news/cambodia-drivers-seat-toward-euro-vi-standards|title=Cambodia In The Driver's Seat Toward Euro VI Standards &#124; Climate & Clean Air Coalition|website=Climate and Clean Air Coalition}}</ref>
+* Since 1 January 2022, all new cars in Vietnam must comply with Euro 5.<ref>{{Cite web|url=https://en.vietnamplus.vn/euro-5-emission-standards-to-be-rolled-out-for-new-cars-in-vietnam-early-2022/217944.vnp|title=Euro 5 emission standards to be rolled out for new cars in Vietnam early 2022 &#124; Vietnam+ (VietnamPlus)|date=10 December 2021|website=VietnamPlus}}</ref>
+* Since 1 January 2022, all new light vehicles in Brazil must comply with Proconve L7 (similar to Euro 6).<ref>{{Cite web|url=https://autoesporte.globo.com/mercado/noticia/2021/12/nova-lei-de-emissoes-vai-tirar-de-linha-6-carros-e-4-motores-ate-o-fim-do-ano-veja-lista.ghtml|title=Nova lei de emissões vai tirar de linha 6 carros e 4 motores até o fim do ano; veja lista|website=Autoesporte.globo.com|date=3 December 2021 }}</ref>
+* Since September 2022, all new light and medium vehicle models in Chile must comply with Euro 6b.<ref name="autocosmos">{{Cite web|url=https://noticias.autocosmos.cl/2020/10/02/chile-avanza-hacia-la-norma-de-emisiones-euro-6b|title=Chile avanza hacia la norma de emisiones Euro 6b|date=2 October 2020|website=Autocosmos}}</ref>
+* Since 12 April 2022, all new diesel vehicles in Indonesia must comply with Euro 4.<ref>{{cite web |url=https://www.cnnindonesia.com/teknologi/20220408153547-384-782283/mobil-diesel-di-indonesia-wajib-euro-4-mulai-12-april-2022|title=Mobil Diesel di Indonesia Wajib Euro 4 Mulai 12 April 2022 |trans-title=Diesel Cars in Indonesia Must Euro 4 Starting April 12, 2022 |location=Indonesia|date=8 April 2022 |access-date=18 September 2022}}</ref>
+* Since 1 January 2023, all new heavy vehicles in Brazil must comply with Proconve P8 (similar to Euro 6).<ref>{{Cite web|url=https://estradao.estadao.com.br/caminhoes/novos-limites-de-emissoes-vao-aquecer-venda-de-implementos-rodoviarios|title=Novos limites de emissões vão aquecer venda de implementos rodoviários|website=O Estado de S. Paulo|date=11 February 2022}}</ref>
+* Since 1 January 2023, all new vehicles in Colombia must comply with Euro 6b.<ref>{{Cite web |url=https://www.semana.com/economia/empresas/articulo/el-transporte-en-colombia-esta-listo-para-la-euro-vi/202240/|title=¿El transporte en Colombia está listo para la Euro VI? |trans-title=Is transportation in Colombia ready for Euro VI? |website=Semana.com Últimas Noticias de Colombia y el Mundo |location=Colombia |language=Spanish |date=17 March 2022 |access-date=2023-12-19}}</ref><ref>{{Cite web|url=https://www.minambiente.gov.co/documento-entidad/ley-1972-de-2019/|title=Ley 1972 de 2019 – por medio de la cual se establece la protección de los derechos a la salud y al medio ambiente sano estableciendo medidas tendientes a la reducción de emisiones contaminantes de fuentes móviles y se dictan otras disposiciones |trans-title=Law 1972 of 2019 – through which the protection of the rights to health and a healthy environment is established establishing measures to reduce polluting emissions from mobile sources and other provisions are issued |publisher=Ministry of Environment, Housing and Territorial Development |location=Colombia |language=Spanish |date=2019-07-18 |access-date=2023-12-19}}</ref>
+* Since 1 July 2023, all new vehicles in China must comply with China 6b (more strict than provisional so-called "Euro 7").<ref name="dieselnet" />
+* Since 1 January 2024, all new vehicles in Thailand must comply with Euro 5.<ref>{{Cite web|url=https://www.pattayamail.com/thailandnews/thailand-approves-delay-on-imposing-euro-5-emission-standard-on-new-vehicles-425033|title=Thailand approves delay on imposing Euro 5 emission standard on new vehicles|website=Pattaya Mail|date=22 February 2023}}</ref>
+* Since 1 January 2024, all new vehicles in Morocco must comply with Euro 6b.<ref>{{Cite web|url=https://www.challenge.ma/norme-antipollution-le-maroc-passe-officiellement-a-leuro-6-des-2022-223698/|title=Norme antipollution. Le Maroc passe officiellement au carburant Euro 6 dès 2022 &#124; Challenge.ma|website=challenge.ma|date=15 October 2021 }}</ref>
+* Since 1 October 2024, Euro 6b, Tier 3, and EPA 2010 are mandated in Peru for new vehicles.<ref>{{cite web |url=https://www.gob.pe/institucion/minam/normas-legales/2213166-029-2021-minam|title=Decreto supremo que modifica el Decreto supremo n° 010-2017-MINAM, que establece límites máximos permisibles de emisiones atmosféricas para vehículos automotores |trans-title=Maximum permissible limits of atmospheric emissions for motor vehicles |location=Peru |language=Spanish |id=2021-MINAM |year=2021 |access-date=2023-12-18}}</ref>
+* Since 1 January 2025, all new heavy vehicles in Mexico must comply with EPA 10 and Euro 6.<ref name="t21"/>
+* Since 1 January 2025, the new light vehicle fleets in Brazil must comply with the first stage of Proconve L8 (automaker average).<ref>{{cite web|url=http://conama.mma.gov.br/?option=com_sisconama&task=arquivo.download&id=765|title=Ministério do Meio Ambiente Conselho Nacional do Meio Ambiente Resolução N. 492, de 20 de Dezembro de 2018|website=Conselho Nacional do Meio Ambiente|location=Brazil|access-date=26 July 2022}}</ref>
+* Since 30 September 2025, all new light and medium vehicle models in Chile must comply with Euro 6c.<ref>{{Cite web|url=https://www.anac.cl/anac-aclara-que-norma-de-emisiones-euro-6c-comenzara-a-regir-desde-el-30-de-septiembre-de-2025/|title=ANAC aclara que norma de emisiones Euro 6c comenzará a regir desde el 30 de septiembre de 2025 – Anac}}</ref>
+* Since December 2025, all new vehicles sold in Australia must comply with Euro 6d.<ref>{{Cite web|url=https://www.drive.com.au/news/strict-vehicle-emissions-rules-announced-australia-euro-6d/|title=Strict new-car emissions standards coming to Australia from 2025, utes and 4WDs among hardest hit|date=December 22, 2023|website=Drive}}</ref>
+* From 1 January 2027, all new vehicles in Cambodia must comply with Euro 5.<ref name="cambodia"/>
+
+== Bans ==
+===Full-time car bans===
+* '''Euro 0 petrol or diesel''' – With exceptions, parts of: [[Neu-Ulm]] and 42 other towns of [[Germany]].<ref name="uba">{{Cite web|url=https://gis.uba.de/website/umweltzonen/index.php#uwz|title=Umweltzonen, Durchfahrtsbeschränkungen und Luftreinhaltepläne|website=gis.uba.de}}</ref>
+* '''Euro 1 petrol or diesel''' – [[Ghent]]<ref name="adac">{{Cite web|url=https://www.adac.de/verkehr/tanken-kraftstoff-antrieb/fahrverbote-umweltzonen/fahrverbote-ausland/|title=Fahrverbote und Umweltzonen im Ausland|date=9 August 2023|website=ADAC |location=Germany}}</ref> With exceptions, parts of: [[Antwerp]], [[Brussels]]
+* '''Euro 1 gas'''{{efn|name="cnglpg"|Gas here refers to [[natural gas]] or [[Liquefied petroleum gas|LPG]]}} – 76 towns of [[Piedmont]]<ref name="piedmont">{{Cite web|url=https://www.regione.piemonte.it/web/temi/ambiente-territorio/ambiente/aria/migliorare-qualita-dellaria-misure-strutturali-temporanee-per-circolazione-dei-veicoli|title=Migliorare la qualità dell'aria: le misure strutturali e temporanee per la circolazione dei veicoli|website=Regione Piemonte}}</ref>
+* '''Euro 2 diesel''' – Parts of: Neu-Ulm<ref name="uba"/>
+* '''Euro 2 petrol or diesel''' – 76 towns of Piedmont<ref name="piedmont"/>
+* '''Euro 2''' – [[Madrid]] (nonlocal)<ref name="madrid"/> With exceptions, parts of: [[Torrejón de Ardoz]] and [[Zaragoza]].<ref name="ardoz">{{Cite web|url=https://www.race.es/zonas-de-bajas-emisiones/mapa-zbe-torrejon-ardoz|title=Mapa ZBE Torrejón de Ardoz &#124; RACE}}</ref><ref name="ald">{{Cite web|url=https://noticias-renting.aldautomotive.es/todas-las-restricciones-de-las-zonas-de-bajas-emisiones-zbe-en-2024/|title=Todas las restricciones de las Zonas de Bajas Emisiones (ZBE) en 2024|date=15 December 2023}}</ref>
+* '''Euro 3 diesel''' – [[Amsterdam]], [[Arnhem]], [[The Hague]], [[Utrecht]], Madrid (nonlocal), and parts of 42 towns of Germany.<ref name="adac"/><ref name="madrid"/><ref name="uba"/> With exceptions, parts of: [[Grand Lyon]], [[Aix-Marseille-Provence Metropolis]], [[Rouen]], [[Strasbourg]], [[Toulouse]], Torrejón de Ardoz and Zaragoza.<ref name="tf1">{{Cite web|url=https://www.tf1info.fr/environnement-ecologie/zones-a-faibles-emissions-interdiction-des-vehicules-crit-air-3-4-ou-5-ville-par-ville-ce-qui-change-ou-non-en-2024-2280714.html|title=Zones à faibles émissions : interdiction des véhicules Crit'Air 3, 4 ou 5 ? Ville par ville, ce qui change en 2024|date=26 December 2023|website=TF1 INFO}}</ref><ref name="ardoz"/><ref name="ald"/> With exceptions and [[free public transport]], parts of: [[Montpellier Méditerranée Métropole]]<ref name="midi">{{Cite web|url=https://www.midilibre.fr/2024/01/05/derogations-amendes-avec-la-zfe-quest-ce-qui-change-pour-les-voitures-critair-4-a-montpellier-et-dans-la-metropole-11678478.php|title=Dérogations, amendes : avec la ZFE, qu'est-ce qui change pour les voitures Crit'Air 4 à Montpellier et dans la Métropole ?|website=midilibre.fr}}</ref><ref name="montpellier">{{Cite web|url=https://france3-regions.francetvinfo.fr/occitanie/herault/montpellier/zfe-a-montpellier-les-motos-autorisees-sans-vignette-crit-air-les-vehicules-circulant-moins-de-52-jours-par-an-n-ont-plus-aucune-interdiction-2911973.html|title=ZFE à Montpellier : les motos autorisées sans vignette Crit'Air, les véhicules circulant moins de 52 jours par an n'ont plus aucune interdiction|date=24 January 2024|website=France 3 Occitanie}}</ref><ref name="free">{{Cite web|url=https://www.francetvinfo.fr/economie/transports/video-a-montpellier-les-transports-rendus-gratuits-pour-tous-les-habitants_6299022.html|title=VIDEO. A Montpellier, les transports rendus gratuits pour tous les habitants|date=12 January 2024|website=Franceinfo}}</ref>
+* '''Euro 3 petrol or diesel''' – With exceptions, retrofit funding, and replacement-neutral scrappage, parts of: [[Glasgow]]<ref name="glasgow">{{Cite web|url=https://www.fleetnews.co.uk/news/environment/2023/06/01/older-vehicles-banned-from-glasgow-as-low-emission-zone-launches|title=Older vehicles banned from Glasgow as low emission zone launches|first=Gareth|last=Roberts|website=Fleet News|location=UK}}</ref><ref name="retrofit">{{Cite web |title=Low Emission Zone Retrofit Fund |url=https://energysavingtrust.org.uk/grants-and-loans/low-emission-zone-retrofit-fund/ |website=Energy Saving Trust |access-date=2026-04-06 |archive-url=https://web.archive.org/web/20201102130136/https://energysavingtrust.org.uk/grants-and-loans/low-emission-zone-retrofit-fund/ |archive-date=2020-11-02 |url-status=dead}}</ref><ref name="est">{{Cite web|url=https://energysavingtrust.org.uk/grants-and-loans/mobility-and-scrappage-fund/|title=Mobility and scrappage fund|website=Energy Saving Trust}}</ref>
+* '''Euro 3 petrol''' - Since 1 October 2024, in [[Milan]]'s inner [[Limited traffic zone|ZTL]] (Area C), all petrol-engine passenger cars are required to be Euro 4 or a higher class.<ref name="milan">{{Cite web|url=https://www.comune.milano.it/en/aree-tematiche/mobilita/area-c/area-c-calendario-divieti|title=Area C: prohibition calendar |publisher=City of Milan |date=2024-07-11 |archive-url=https://web.archive.org/web/20241003021717/https://www.comune.milano.it/en/aree-tematiche/mobilita/area-c/area-c-calendario-divieti |archive-date=2024-10-03 |url-status=dead}}</ref>
+* '''Euro 4 diesel''' – Ghent, [[Munich]], and [[Stuttgart]].<ref name="adac"/><ref name="germany">{{Cite web|url=https://www.adac.de/verkehr/tanken-kraftstoff-antrieb/fahrverbote-umweltzonen/dieselfahrverbot-faq/|title=Dieselfahrverbot|date=27 September 2023|website=ADAC|location=Germany}}</ref> With exceptions, parts of: Antwerp, Brussels, Madrid<ref name="topgear">{{Cite web|url=https://www.topgear.es/noticias/garaje/todas-ciudades-donde-no-podran-entrar-coches-etiqueta-b-enero-1312628|title=Todas las ciudades donde no podrán entrar los coches con etiqueta B en enero|first=Gustavo López|last=Sirvent|date=2 October 2023|website=Top Gear España}}</ref>
+* '''Euro 4 petrol''' - From 1 October 2027, in [[Milan]]'s inner [[Limited traffic zone|ZTL]] (Area C), all petrol-engine passenger cars are required to be Euro 5 or a higher class.<ref name="milan"/>
+* '''Euro 5 diesel''' – Darmstadt and parts of Stuttgart<ref name="germany"/> With exceptions, parts of: [[Aalborg]], [[Aarhus]], [[Copenhagen]], [[Frederiksberg]], and [[Odense]]<ref name="denmark">{{Cite web |title=Where are the low emission zones? |url=https://miljoezoner.dk/en/about-the-low-emission-zones/where-are-the-zones/ |website=Miljøzoner (Danish Environmental Protection Agency) |access-date=2026-04-06}}</ref> With exceptions, retrofit funding, and replacement-neutral scrappage, parts of: Glasgow<ref name="glasgow"/><ref name="retrofit"/><ref name="est"/>
+* '''Euro 5 petrol''' - From 1 October 2030, in [[Milan]]'s inner [[Limited traffic zone|ZTL]] (Area C), all petrol-engine passenger cars are required to be Euro 6 or a higher class.<ref name="milan"/>
+* '''Euro 6 diesel''' -From 1 October 2028, in Milan's inner ZTL (Area C), Euro 6a, 6b and 6c diesel cars will be banned.<ref>{{Cite web|url=https://www.comune.milano.it/en/argomenti/mobilita/area-c-calendario-dei-divieti|title=Area C Calendar of Prohibitions }}</ref>
+* '''Euro 6 non-gas{{efn|name="gas"|Gas here refers to [[natural gas]], [[Liquefied petroleum gas|LPG]], or [[HICEV]]. It is not guaranteed that bi-fuel vehicles will be running on gas.}} or non-electrified'''{{efn|name="mhev"|Electrified here includes [[mild hybrid]]s, even if many pollute more than some banned cars. Also, a [[PHEV]] with a depleted battery is worse than a [[full hybrid]] or [[series hybrid]] version.}} – With exceptions, center of: Madrid<ref name="autobild">{{Cite web|url=https://www.autobild.es/reportajes/guia-necesitas-conducir-madrid-2024-pegatina-dgt-tenga-coche-1352089|title=La guía que necesitas para conducir en Madrid 2024, según la pegatina de la DGT que tenga tu coche|first=Noelia|last=López|date=26 December 2023|website=Auto Bild España}}</ref><ref name="eco">{{Cite web|url=https://www.motorpasion.com/futuro-movimiento/ocu-pide-que-se-cambien-etiquetas-dgt-porque-no-toman-cuenta-emisiones-co2-para-entrar-zbe|title=La OCU vuelve a pedir un cambio en las etiquetas de la DGT, pero solo ven una parte del problema|first=Daniel|last=Murias|date=3 November 2023|website=Motorpasión}}</ref>
+* Since 2019, some German cities ban Euro 4 or 5 diesel cars.<ref>{{Cite web|url=https://www.fleeteurope.com/fr/connected-taxation-and-legislation/europe-germany/features/german-cities-can-ban-euro-5-diesels|title=German cities can ban Euro 5 diesels immediately|date=21 May 2018|website=Fleet Europe}}</ref>
+* Since 1 September 2022, Euro 3 diesel cars are banned in Rouen and Toulouse (with exceptions).<ref name="tf1"/>
+* Since 1 June 2023, Euro 3 (petrol or diesel) cars and Euro 5 diesel cars are banned (with exceptions, retrofit funding, and replacement-neutral scrappage) in parts of: Glasgow.<ref name="glasgow"/><ref name="retrofit"/><ref name="est"/>
+* Since September 2023, Euro 3 diesel cars are banned in parts of Aix-Marseille-Provence Metropolis (with exceptions).<ref name="tf1"/>
+* Since 1 October 2023, Euro 5 diesel cars are banned (with exceptions) in parts of: Aalborg, Aarhus, Copenhagen, Frederiksberg, and Odense.<ref name="denmark"/>
+* Since 1 January 2024, Euro 2 cars and Euro 3 diesel cars are banned (with exceptions) in parts of: Torrejón de Ardoz and Zaragoza<ref name="ardoz"/><ref name="ald"/> 
+* Since 1 January 2024, Euro 3 diesel cars are banned in Grand Lyon (with exceptions) and parts of Strasbourg.<ref name="tf1"/> With exceptions and free public transport, in parts of: Montpellier Méditerranée Métropole.<ref name="midi"/><ref name="montpellier"/><ref name="free"/>
+* Since 1 January 2024, Euro 6 non-gas{{efn|name="gas"}} or non-electrified{{efn|name="mhev"}} cars are banned (with exceptions) in the center of: Madrid<ref name="autobild"/><ref name="eco"/>
+* Since 30 May 2024, Euro 3 (petrol or diesel) cars and Euro 5 diesel cars are banned (with exceptions, retrofit funding, and replacement-neutral scrappage) in parts of: [[Dundee]].<ref name="retrofit"/><ref name="est"/>
+* Since 1 June 2024, Euro 3 (petrol or diesel) cars and Euro 5 diesel cars are banned (with exceptions, retrofit funding, and replacement-neutral scrappage) in parts of: [[Aberdeen]] and [[Edinburgh]].<ref name="retrofit"/><ref name="est"/>
+* Since 1 January 2025, Euro 1 cars will be banned in [[Nantes]].<ref name="nantes">{{Cite news|url=https://www.ouest-france.fr/pays-de-la-loire/nantes-44000/zone-a-faibles-emissions-le-choix-dune-restriction-minimaliste-a-nantes-69634c96-9bf1-11ee-8057-8c97a280e4e6|title=Zone à faibles émissions : le choix d'une restriction minimaliste à Nantes|first=Sylvain|last=Amiotte|date=16 December 2023|website=Ouest-France.fr}}</ref>
+* Since 1 January 2025, Euro 2 cars and Euro 3 diesel cars will be banned in Madrid (with exceptions).<ref name="madrid">{{Cite web|url=https://www.motorpasion.com/industria/mes-coches-etiqueta-no-podran-circular-madrid-estas-todas-excepciones|title=En un mes los coches sin etiqueta no podrán circular por Madrid. Estas son todas las excepciones|first=Alejandra|last=Otero|date=1 December 2023|website=Motorpasión}}</ref>
+* Since 1 January 2025, Euro 3 (petrol or diesel) cars and Euro 4 diesel cars will be banned in parts of Montpellier Méditerranée Métropole (with exceptions and free public transport) and Grand Paris.<ref name="montpellier"/><ref name="free"/><ref name="paris">{{Cite web|url=https://www.tf1info.fr/environnement-ecologie/zfe-nouveau-repit-avant-l-interdiction-des-crit-air-3-dans-le-grand-paris-en-2025-2263532.html|title=ZFE : nouveau répit avant l'interdiction des Crit'Air 3 dans le Grand Paris|date=13 July 2023|website=TF1 INFO}}</ref>
+* Since 1 April 2025, Euro 2 cars and Euro 3 diesel cars will be banned in [[Granada]] (nonlocal).<ref name="granada">{{Cite web|url=https://www.europapress.es/andalucia/andalucia-verde-01334/noticia-zona-bajas-emisiones-abarcara-todo-perimetro-granada-capital-limitado-circunvalacion-20240131135434.html|title=La zona de bajas emisiones abarcará todo el perímetro de Granada capital limitado por la circunvalación|date=31 January 2024|publisher=Europa Press}}</ref>
+* From 1 January 2028, Euro 4 (petrol or diesel) cars and Euro 6 diesel cars will be banned in parts of: Grand Lyon.<ref name="bfmtv">{{Cite web|url=https://www.bfmtv.com/lyon/replay-emissions/lyon-politiques/zfe-a-lyon-l-interdiction-des-vehicules-crit-air-2-reportee-au-1er-janvier-2028_VN-202312210769.html|title=ZFE à Lyon: l'interdiction des véhicules Crit'Air 2 reportée "au 1er janvier 2028"|date=21 December 2023 |via=BFM Lyon}}</ref>
+
+====Notes====
+{{notelist}}
+
+==See also==
+{{columns-list|colwidth=30em|
+* [[ACEA agreement]] (the voluntary agreement with auto manufacturers to limit {{CO2}} emissions)
+* [[AIR Index]] (a motor vehicle emissions ranking system)
+* [[Air quality and EU legislation]]
+* [[Biofuels Directive]]
+* [[Vehicle emission standard]]s
+* [[EN 590]]
+* [[Energy policy of the European Union]]
+* [[Common Transport Policy|European Common Transport Policy]]
+* [[European Federation for Transport and Environment]]
+* [[European Union Emission Trading Scheme]]
+* [[Life cycle assessment]]
+* [[Low-emission zone]]
+* [[Motor vehicle emissions]]
+* [[National Emission Ceiling]]
+* [[Phase-out of fossil fuel vehicles]]
+* [[Portable emissions measurement system]]
+* [[Non-exhaust emissions|Regulation on non-exhaust emissions]]
+* [[Type approval]]
+* [[Ultra-low-sulfur diesel]]
+* [[United States vehicle emission standards]]
+* [[World Forum for Harmonization of Vehicle Regulations]] (United Nations Economic Commission for Europe (UNECE))
+}}
+
+==References==
+{{Reflist|2|refs=
+
+<ref name="Eur-lex 2">{{cite web|url=http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:31991L0441:EN:NOT |title=91/441/EEC Council Directive 91/441/EEC of 26 June 1991 amending Directive 70/220/EEC on the approximation of the laws of the Member States relating to measures to be taken against air pollution by emissions from motor vehicles |date=26 June 1991 |publisher=Eur-lex.europa.eu |access-date=2 February 2011}}</ref>
+
+<ref name="Eur-lex 3">{{cite web|url=http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:32002L0051:EN:NOT |title=Directive 2002/51/EC of the European Parliament and of the Council of 19 July 2002 on the reduction of the level of pollutant emissions from two- and three-wheel motor vehicles and amending Directive 97/24/EC |date=19 July 2002 |publisher=Eur-lex.europa.eu |access-date=2 February 2011}}</ref>
+
+<ref name="Eur-lex 4">{{cite web|url=http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:31998L0069:EN:NOT |title=Directive 98/69/EC of the European Parliament and of the Council of 13 October 1998 relating to measures to be taken against air pollution by emissions from motor vehicles and amending Council Directive 70/220/EEC |date=13 October 1998 |publisher=Eur-lex.europa.eu |access-date=2 February 2011}}</ref>
+
+<ref name="Eur-lex 5">{{cite web|url=http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:32007R0715:EN:NOT |title=Regulation (EC) No 715/2007 of the European Parliament and of the Council of 20 June 2007 on type approval of motor vehicles with respect to emissions from light passenger and commercial vehicles (Euro 5 and Euro 6) and on access to vehicle repair and maintenance information |publisher=Eur-lex.europa.eu |access-date=2 February 2011}}</ref>
+
+<ref name="Eur-lex 6">{{cite web|url=https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=celex%3A32012R0459 |title=Council Directive 70/156/EEC of 6 February 1970 on the approximation of the laws of the Member States relating to the type-approval of motor vehicles and their trailers |publisher=Eur-lex.europa.eu |access-date=2 February 2011}}</ref>
+
+<ref name="Eur-lex 7">{{cite web|url=http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:32001L0116:EN:NOT |title=Commission Directive 2001/116/EC of 20 December 2001 adapting to technical progress Council Directive 70/156/EEC on the approximation of the laws of the Member States relating to the type-approval of motor vehicles and their trailers |date=20 December 2001 |publisher=Eur-lex.europa.eu |access-date=2 February 2011}}</ref>
+
+<ref name="Eur-lex 8">{{cite web|url=http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=CELEX:31999L0094:EN:NOT |title=Directive 1999/94/EC of the European Parliament and of the Council of 13 December 1999 relating to the availability of consumer information on fuel economy and CO<sub>2</sub> emissions in respect of the marketing of new passenger cars |date=13 December 1999 |publisher=Eur-lex.europa.eu |access-date=2 February 2011}}</ref>
+
+<ref name="Eur-lex 9">{{cite web|url=https://eur-lex.europa.eu/eli/reg/2012/459/oj |title=Commission Regulation (EU) No 459/2012 of 29 May 2012 amending Regulation (EC) No 715/2007 of the European Parliament and of the Council and Commission Regulation (EC) No 692/2008 as regards emissions from light passenger and commercial vehicles (Euro 6) |publisher=Eur-lex.europa.eu |access-date=1 June 2012}}</ref>
+
+<ref name="Eur-lex 10">{{cite web|url=https://eur-lex.europa.eu/eli/reg/2016/646/oj |title=Commission Regulation (EU) 2016/646 of 20 April 2016 amending Regulation (EC) No 692/2008 as regards emissions from light passenger and commercial vehicles (Euro 6) |publisher=Eur-lex.europa.eu |access-date=15 August 2019}}</ref>
+
+<ref name="Eur-lex 11">{{cite web|url=https://eur-lex.europa.eu/eli/reg/2024/1257/oj |title=Regulation (EU) 2024/1257 of the European Parliament and of the Council of 24 April 2024 on type-approval of motor vehicles and engines and of systems, components and separate technical units intended for such vehicles, with respect to their emissions and battery durability (Euro 7) |publisher=Eur-lex.europa.eu |access-date=2 January 2026}}</ref>
+
+<ref name="Europa 3">{{cite web|url=https://op.europa.eu/en/publication-detail/-/publication/74aff344-5915-4985-b56e-a38a647c828d/language-en |title=Council Directive 70/220/EEC of 20 March 1970 on the approximation of the laws of the Member States relating to measures to be taken against air pollution by gases from positive-ignition engines of motor vehicles |publisher=European Union |date=20 March 1970 |access-date=18 November 2025}}</ref>
+
+<ref name="Europa 6">{{cite web|url=http://europa.eu/legislation_summaries/internal_market/single_market_for_goods/motor_vehicles/motor_vehicles_technical_harmonisation/index_en.htm |title=EUROPA > Summaries of EU legislation > Internal market > Single Market for Goods > Motor vehicles > Technical harmonisation for motor vehicles |publisher=Europa (web portal) |date=29 October 2010 |access-date=2 February 2011}}</ref>
+
+<ref name="Transport Env 2">{{cite periodical |url=http://www.transportenvironment.org/docs/Bulletin/2006/2006-02_bulletin146_web.pdf |periodical=Transport Environment.org Transport & Environment, Bulletin |publisher=European Federation for Transport and Environment |title=WHO adds pressure for stricter Euro-5 standards |number=146 |date=March 2006 |access-date=2 February 2011 |archive-url=https://web.archive.org/web/20061006001315/http://www.transportenvironment.org/docs/Bulletin/2006/2006-02_bulletin146_web.pdf |archive-date=6 October 2006}}</ref>
+
+<ref name="WeatherVane">{{cite web|url=http://www.rff.org/news/features/pages/combating-global-warming-one-car-at-a-time.aspx |title=Resources for the Future, Resources Magazine, Weathervane, One Car At A Time |publisher=Rff.org |date=10 January 2006 |access-date=2 February 2011}}</ref>
+
+}}
+
+==External links==
+{{Wikisource|European Parliament resolution on Winning the Battle Against Global Climate Change}}
+* [https://web.archive.org/web/20121111033537/http://ec.europa.eu/environment/air/transport/road.htm European emission standards].
+* [[European Environment Agency]]
+** [https://web.archive.org/web/20170630075010/http://glossary.eea.europa.eu/ EEA Glossary]
+** [https://www.eea.europa.eu/en/topics/in-depth/transport-and-mobility EEA transport page].
+* Dieselnet: [https://dieselnet.com/standards/eu/ld.php EU emission standards]
+* [https://web.archive.org/web/20120227072508/http://www.transportenvironment.org/sites/default/files/docs/Bulletin/2006/2006-02_bulletin146_web.pdf T&E: No diesel NOX reduction in 13 years due to cycle beating]
+
+{{DEFAULTSORT:European Emission Standards}}
+[[Category:Carbon emissions in the European Union]]
+[[Category:Emission standards]]
+[[Category:European Union transport law]]

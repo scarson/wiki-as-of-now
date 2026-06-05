@@ -381,5 +381,45 @@
     "sentenceSubstring": "the Scottish Government announced plans to build a 46 mi high-speed rail link",
     "stale": false,
     "note": "Negative (leading month-dateline): 'In November 2012 the Scottish Government announced plans to build a 46 mi high-speed rail link ...'."
+  },
+
+  {
+    "fixture": "hiv_vaccine_development.wikitext",
+    "sentenceSubstring": "phase one trial is expected to conclude July 2023",
+    "stale": true,
+    "expectedYear": 2023,
+    "note": "Biomedical: 'The phase one trial is expected to conclude July 2023.' — clinical-trial completion target now past."
+  },
+  {
+    "fixture": "m72_as01e.wikitext",
+    "sentenceSubstring": "is scheduled to begin in 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Biomedical: TB-vaccine trial 'is scheduled to begin in 2024' — exercises the 'is scheduled to' marker; target now past."
+  },
+  {
+    "fixture": "aducanumab.wikitext",
+    "sentenceSubstring": "is expected to continue for existing commercial patients until November 2024",
+    "stale": true,
+    "expectedYear": 2024,
+    "note": "Biomedical: 'Availability is expected to continue ... until November 2024.' — expectation tied to a now-past date."
+  },
+  {
+    "fixture": "inflation_reduction_act.wikitext",
+    "sentenceSubstring": "claimed in July 2022 that",
+    "stale": false,
+    "note": "Negative (mid-sentence attribution, Rule 4): 'While the healthcare consulting firm Avalere claimed in July 2022 that $455 billion in revenue would be lost ...'. 'claimed' added to the reporting-verb list for policy/biomedical prose."
+  },
+  {
+    "fixture": "neuralink.wikitext",
+    "sentenceSubstring": "later moved that to 2023",
+    "stale": false,
+    "note": "Negative (resolution cue, Rule 3): 'It anticipated starting experiments with humans in 2020, but later moved that to 2023.' — the article resolves the 2020 date itself; 'moved' added to the resolution-verb list."
+  },
+  {
+    "fixture": "windsor_framework.wikitext",
+    "sentenceSubstring": "former prime minister Boris Johnson said it will be",
+    "stale": false,
+    "note": "Negative (leading full-date dateline): 'On 2 March 2023, former prime minister Boris Johnson said it will be \"very difficult\" for him to vote for the Windsor Framework.'."
   }
 ]

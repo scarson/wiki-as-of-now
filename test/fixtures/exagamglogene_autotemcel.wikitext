@@ -1,0 +1,157 @@
+{{Short description|Gene therapy}}
+{{Use American English|date=December 2023}}
+{{Use dmy dates|date=June 2025}}
+{{cs1 config|name-list-style=vanc|display-authors=6}}
+{{Infobox drug
+| image             = 
+| width             = 
+| alt               = 
+| caption           =
+
+<!-- Gene therapy data -->
+| gt_target_gene       = 
+| gt_vector            = 
+| gt_nucleic_acid_type = 
+| gt_editing_method    = 
+| gt_delivery_method   =
+
+<!-- Clinical data -->
+| pronounce         = 
+| tradename         = Casgevy
+| Drugs.com         = {{drugs.com|monograph|exagamglogene-autotemcel}}
+| MedlinePlus       = a624018
+| DailyMedID        = Exagamglogene autotemcel
+| pregnancy_AU      = <!-- A / B1 / B2 / B3 / C / D / X -->
+| pregnancy_AU_comment = 
+| pregnancy_category = 
+| routes_of_administration = [[Intravenous]]
+| class             = 
+| ATC_prefix        = B06
+| ATC_suffix        = AX05
+| ATC_supplemental  = 
+| biosimilars       =
+
+<!-- Legal status -->
+| legal_AU          = <!-- S2, S3, S4, S5, S6, S7, S8, S9 or Unscheduled -->
+| legal_AU_comment  = 
+| legal_BR          = <!-- OTC, A1, A2, A3, B1, B2, C1, C2, C3, C4, C5, D1, D2, E, F -->
+| legal_BR_comment  = 
+| legal_CA          = Rx-only
+| legal_CA_comment  = <ref>{{cite web | title=Summary Basis of Decision for Casgevy | website=Drug and Health Products Portal | date=8 February 2025 | url=https://dhpp.hpfb-dgpsa.ca/review-documents/resource/SBD1739203842068 | access-date=22 June 2025}}</ref><ref>{{cite web | title=Notice: Multiple additions to the Prescription Drug List (PDL) [2024-12-20] | website=[[Health Canada]] | date=20 December 2024 | url=https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/prescription-drug-list/notices-changes/multiple-additions-2024-12-20.html | access-date=21 December 2024}}</ref><ref>{{cite web | title=Casgevy product information | website=[[Health Canada]] | date=11 October 2024 | url=https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=104074 | access-date=27 December 2024}}</ref>
+| legal_DE          = <!-- Anlage I, II, III or Unscheduled -->
+| legal_DE_comment  = 
+| legal_NZ          = <!-- Class A, B, C -->
+| legal_NZ_comment  = 
+| legal_UK          = POM
+| legal_UK_comment  = <ref name="Casgevy SPC">{{cite web | title=Summary of Product Characteristics | url=https://mhraproducts4853.blob.core.windows.net/docs/70a9054b092d2565def369a673ac221b90ebe0fa | format=PDF | publisher=[[Medicines and Healthcare products Regulatory Agency]] (MHRA) | date=15 November 2023 | access-date=9 December 2023 | archive-date=8 December 2023 | archive-url=https://web.archive.org/web/20231208212339/https://mhraproducts4853.blob.core.windows.net/docs/70a9054b092d2565def369a673ac221b90ebe0fa | url-status=dead }}</ref><ref name="Casgevy SmPC">{{cite web | title=Casgevy 4–13 x 10Exp6 cells/mL dispersion for infusion | website=Electronic Medicines Compendium | date=24 November 2023 | url=https://www.medicines.org.uk/emc/product/15296/smpc | access-date=9 December 2023 | archive-date=9 December 2023 | archive-url=https://web.archive.org/web/20231209200747/https://www.medicines.org.uk/emc/product/15296/smpc | url-status=live }}</ref>
+| legal_US          = Rx-only
+| legal_US_comment  = <ref name="Casgevy FDA label">{{cite web | title=Casgevy- exagamglogene autotemcel injection, suspension | website=DailyMed | date=22 January 2024 | url=https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7c3e12ad-e2fe-4d3f-a630-ea7364d9e846 | access-date=3 March 2024}}</ref><ref name="FDA Casgevy">{{cite web | title=Casgevy | website=U.S. [[Food and Drug Administration]] (FDA) | date=8 December 2023 | url=https://www.fda.gov/vaccines-blood-biologics/casgevy | access-date=8 December 2023 | archive-date=19 December 2023 | archive-url=https://web.archive.org/web/20231219043210/https://www.fda.gov/vaccines-blood-biologics/casgevy | url-status=live }} {{PD-notice}}</ref>
+| legal_EU          = Rx-only
+| legal_EU_comment  = <ref name="Casgevy EPAR" /><ref name="Casgevy PI">{{cite web | title=Casgevy product information | website=Union Register of medicinal products | date=12 February 2024 | url=https://ec.europa.eu/health/documents/community-register/html/h1787.htm | access-date=19 February 2024}}</ref>
+| legal_UN          = <!-- N I, II, III, IV / P I, II, III, IV -->
+| legal_UN_comment  = 
+| legal_status      = <!-- For countries not listed above -->
+
+<!-- Pharmacokinetic data -->
+| bioavailability   = 
+| protein_bound     = 
+| metabolism        = 
+| metabolites       = 
+| onset             = 
+| elimination_half-life = 
+| duration_of_action = 
+| excretion         =
+
+<!-- Identifiers -->
+| CAS_number        = 
+| CAS_supplemental  = 
+| PubChem           = 
+| IUPHAR_ligand     = 
+| DrugBank          = DB15572
+| ChemSpiderID      = 
+| UNII              = S53L777GM8
+| KEGG              = D12749
+| ChEBI             = 
+| ChEMBL            = 
+| NIAID_ChemDB      = 
+| PDB_ligand        = 
+| synonyms          = CTX001, exa-cel
+
+<!-- Chemical and physical data -->
+| IUPAC_name        = 
+| chemical_formula_ref =
+| chemical_formula  = 
+| C= | H= | Ag= | Al= | As= | Au= | B= | Bi= | Br= | Ca= | Cl= | Co= | F= | Fe= | Gd= | I= 
+| K= | Li= | Mg= | Mn= | N= | Na= | O= | P= | Pt= | S= | Sb= | Se= | Sr= | Tc= | Zn= | charge= 
+| molecular_weight  = 
+| molecular_weight_comment = 
+| SMILES            = 
+| StdInChI          = 
+| StdInChI_comment  = 
+| StdInChIKey       = 
+| density           = 
+| density_notes     = 
+| melting_point     = 
+| melting_high      = 
+| melting_notes     = 
+| boiling_point     = 
+| boiling_notes     = 
+| solubility        = 
+| sol_units         = 
+| specific_rotation = 
+}}
+
+'''Exagamglogene autotemcel''', sold under the brand name '''Casgevy''', is a [[gene therapy]] used for the treatment of [[sickle cell disease]]<ref name="Casgevy SPC" /><ref name="Casgevy FDA label" /> and transfusion-dependent [[beta thalassemia]].<ref name="Casgevy SPC" /> It was developed by [[Vertex Pharmaceuticals]] and [[CRISPR Therapeutics]].<ref name="Stein 2023 q322">{{cite web | vauthors = Stein R | title=FDA advisers see no roadblocks for gene-editing treatment for sickle cell disease | website=NPR | date=31 October 2023 | url=https://www.npr.org/sections/health-shots/2023/10/31/1208041252/a-landmark-gene-editing-treatment-for-sickle-cell-disease-moves-closer-to-realit | access-date=4 December 2023 | archive-date=4 December 2023 | archive-url=https://web.archive.org/web/20231204214937/https://www.npr.org/sections/health-shots/2023/10/31/1208041252/a-landmark-gene-editing-treatment-for-sickle-cell-disease-moves-closer-to-realit | url-status=live }}</ref>
+
+The treatment was approved in the United Kingdom for the treatment of sickle cell disease and transfusion-dependent beta thalassemia in November 2023.<ref>{{cite press release | title=MHRA authorises world-first gene therapy that aims to cure sickle-cell disease and transfusion-dependent β-thalassemia | website=[[Medicines and Healthcare products Regulatory Agency]] (MHRA) | date=16 November 2023 | url=https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia | access-date=8 December 2023 | archive-date=25 November 2023 | archive-url=https://web.archive.org/web/20231125015409/https://www.gov.uk/government/news/mhra-authorises-world-first-gene-therapy-that-aims-to-cure-sickle-cell-disease-and-transfusion-dependent-thalassemia | url-status=live }}</ref><ref name="Sheridan">{{cite journal | vauthors = Sheridan C | title = The world's first CRISPR therapy is approved: who will receive it? | journal = Nature Biotechnology | date = November 2023 | volume = 42 | issue = 1 | pages = 3–4 | pmid = 37989785 | doi = 10.1038/d41587-023-00016-6 | url = https://www.nature.com/articles/d41587-023-00016-6 | access-date = 4 December 2023 | url-status = live | s2cid = 265350318 | archive-url = https://web.archive.org/web/20231204182913/https://www.nature.com/articles/d41587-023-00016-6 | archive-date = 4 December 2023 | url-access = subscription }}</ref><ref name="Vertex PR">{{cite press release | title=Vertex and CRISPR Therapeutics Announce Authorization of the First CRISPR/Cas9 Gene-Edited Therapy, Casgevy (exagamglogene autotemcel), by the United Kingdom MHRA for the Treatment of Sickle Cell Disease and Transfusion-Dependent Beta Thalassemia | publisher=Vertex Pharmaceuticals | via=Business Wire | date=16 November 2023 | url=https://www.businesswire.com/news/home/20231115290500/en/%C2%A0Vertex-and-CRISPR-Therapeutics-Announce-Authorization-of-the-First-CRISPRCas9-Gene-Edited-Therapy-CASGEVY%E2%84%A2-exagamglogene-autotemcel-by-the-United-Kingdom-MHRA-for-the-Treatment-of-Sickle-Cell-Disease-and-Transfusion-Dependent-Beta-Thalassemia | access-date=9 December 2023 | archive-date=22 November 2023 | archive-url=https://web.archive.org/web/20231122154102/https://www.businesswire.com/news/home/20231115290500/en/%C2%A0Vertex-and-CRISPR-Therapeutics-Announce-Authorization-of-the-First-CRISPRCas9-Gene-Edited-Therapy-CASGEVY%E2%84%A2-exagamglogene-autotemcel-by-the-United-Kingdom-MHRA-for-the-Treatment-of-Sickle-Cell-Disease-and-Transfusion-Dependent-Beta-Thalassemia | url-status=live }}</ref> It was approved by the Kingdom of Bahrain's [[National Health Regulatory Authority]] (NHRA) to treat [[sickle-cell anemia]] and [[beta thalassemia]] on 2 December 2023.<ref>{{Cite web|author=Bahrain News Agency|date=2023-12-02|title=CASGEVY receives Bahrain approval for treatment, marking it the second country in the world|url=https://www.bna.bh/en/CASGEVYreceivesBahrainapprovalfortreatmentmarkingitthesecondcountryintheworld.aspx?cms=q8FmFJgiscL2fwIzON1%2BDkp9fN81LKKv1fvWGRd1HDU%3D|access-date=2025-07-25|website=BNA|language=en|archive-date=21 February 2025|archive-url=https://web.archive.org/web/20250221223548/https://www.bna.bh/en/CASGEVYreceivesBahrainapprovalfortreatmentmarkingitthesecondcountryintheworld.aspx?cms=q8FmFJgiscL2fwIzON1+Dkp9fN81LKKv1fvWGRd1HDU=|url-status=dead}}</ref><ref>{{Cite web | author = Telegraph |date=2024-08-08 |title= Roll out of revolutionary gene-editing therapy is 'an historic moment |url=https://www.telegraph.co.uk/news/2024/08/08/revolutionary-gene-editing-therapy-casgevy-historic-moment/|access-date=2025-07-25 |website=Telegraph|language=en}}</ref> It was approved in the United States for the treatment of sickle cell disease in December 2023 and for the treatment of transfusion-dependent beta thalassemia in January 2024.<ref name="FDA PR 20231208" /><ref>{{cite press release | title=Vertex and CRISPR Therapeutics Announce US FDA Approval of Casgevy (exagamglogene autotemcel) for the Treatment of Sickle Cell Disease | publisher=Vertex Pharmaceuticals | via=Business Wire | date=8 December 2023 | url=https://www.businesswire.com/news/home/20231208951733/en/Vertex-and-CRISPR-Therapeutics-Announce-US-FDA-Approval-of-CASGEVY%E2%84%A2-exagamglogene-autotemcel-for-the-Treatment-of-Sickle-Cell-Disease | access-date=9 December 2023 | archive-date=9 December 2023 | archive-url=https://web.archive.org/web/20231209193910/https://www.businesswire.com/news/home/20231208951733/en/Vertex-and-CRISPR-Therapeutics-Announce-US-FDA-Approval-of-CASGEVY%E2%84%A2-exagamglogene-autotemcel-for-the-Treatment-of-Sickle-Cell-Disease | url-status=live }}</ref><ref>{{Cite web |last=Commissioner |first=Office of the |date=16 January 2024 |title=FDA Roundup: January 16, 2024 |url=https://www.fda.gov/news-events/press-announcements/fda-roundup-january-16-2024 |archive-url=https://web.archive.org/web/20240116233635/https://www.fda.gov/news-events/press-announcements/fda-roundup-january-16-2024 |url-status=dead |archive-date=16 January 2024 |access-date=19 January 2024 |website=FDA |language=en}}</ref>
+
+Exagamglogene autotemcel is the first cell-based gene therapy treatment utilizing [[CRISPR gene editing|CRISPR/Cas9 gene editing]] technology to be approved by the US [[Food and Drug Administration]] (FDA).<ref name="FDA PR 20231208">{{cite web | title=FDA Approves First Gene Therapies to Treat Patients with Sickle Cell Disease | website=U.S. [[Food and Drug Administration]] (FDA) | date=8 December 2023 | url=https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease | access-date=8 December 2023 | archive-date=8 December 2023 | archive-url=https://web.archive.org/web/20231208165916/https://www.fda.gov/news-events/press-announcements/fda-approves-first-gene-therapies-treat-patients-sickle-cell-disease | url-status=dead }} {{PD-notice}}</ref> The most common side effects include low levels of platelets and white blood cells, mouth sores, nausea, musculoskeletal pain, abdominal pain, vomiting, febrile neutropenia (fever and low white blood cell count), headache, and itching.<ref name="FDA PR 20231208" />
+
+== Medical uses ==
+In the UK, exagamglogene autotemcel is [[indicated]] for the treatment of transfusion-dependent beta thalassemia and sickle cell disease in patients aged 12 years and older who should be treated with [[hematopoietic stem cell transplantation]] but for whom a suitable stem cell donor is not available.<ref name="Casgevy SPC" />
+
+In the Kingdom of Bahrain, exagamglogene autotemcel is [[indicated]] for the treatment of transfusion-dependent beta thalassemia and sickle cell disease in patients aged 12 years and older. On 16 February 2025, the Kingdom  announced the successful completion of treatment with Casgevy for the world’s first sickle cell disease patient outside of the United States at the Royal Medical Services- Bahrain Oncology Center, located at [[King Hamad University Hospital]] (KHUH) <ref>{{Cite web|author=Bahrain News Agency|date=2025-02-16|title=HRH the Crown Prince and Prime Minister visits the world's first sickle cell disease patient outside of the United States to successfully complete treatment with Casgevy|url=https://www.bna.bh/en/National/HRHtheCrownPrinceandPrimeMinistervisitstheworldsfirstsicklecelldiseasepatientoutsideoftheUnitedStatestosuccessfullycompletetreatmentwithCasgevy.aspx?cms=q8FmFJgiscL2fwIzON1%2BDnRaZ7z0B389eO7Bz0ZsnYo%3D|access-date=2025-07-25|website=BNA|language=en|archive-date=3 August 2025|archive-url=https://web.archive.org/web/20250803111151/https://www.bna.bh/en/National/HRHtheCrownPrinceandPrimeMinistervisitstheworldsfirstsicklecelldiseasepatientoutsideoftheUnitedStatestosuccessfullycompletetreatmentwithCasgevy.aspx?cms=q8FmFJgiscL2fwIzON1%2BDnRaZ7z0B389eO7Bz0ZsnYo%3D|url-status=dead}}</ref><ref>{{Cite web | author = Xinhua News Agency |date=2025-02-17 |title= Bahrain conducts 1st CRISPR-based sickle cell treatment outside U.S.|url=https://english.news.cn/20250217/741e81f515784719a41bb6f7700185e0/c.html|access-date=2025-07-25 |website=Xinhua|language=en}}</ref>
+
+In the US, exagamglogene autotemcel is indicated for the treatment of sickle cell disease in people aged 12 years and older with recurrent [[Vaso-occlusive crisis|vaso-occlusive crises]],<ref name="FDA Casgevy" /> and for the treatment of people with transfusion-dependent beta-thalassemia.<ref name="FDA Casgevy" /><ref>{{cite press release | title=FDA Roundup: January 16, 2024 | website=U.S. [[Food and Drug Administration]] (FDA) | date=16 January 2024 | url=https://www.fda.gov/news-events/press-announcements/fda-roundup-january-16-2024 | access-date=17 January 2024 | archive-date=17 January 2024 | archive-url=https://web.archive.org/web/20240117084736/https://www.fda.gov/news-events/press-announcements/fda-roundup-january-16-2024 | url-status=dead }}</ref>
+
+The gene therapy is made from the recipient's own blood stem cells, which are modified, and are given back as a one-time, single-dose infusion as part of a hematopoietic (blood) stem cell transplant.<ref name="FDA PR 20231208" /> Prior to treatment, the recipient's own stem cells are collected, and then the recipient must undergo myeloablative conditioning (high-dose chemotherapy), a process that removes cells from the bone marrow so they can be replaced with the modified cells in exagamglogene autotemcel.<ref name="FDA PR 20231208" /> The modified blood stem cells are transplanted back into the recipient where they engraft (attach and multiply) within the bone marrow and increase the production of fetal hemoglobin (HbF), a type of hemoglobin that facilitates oxygen delivery.<ref name="FDA PR 20231208" />
+
+== Side effects ==
+The most common side effects observed in clinical studies included low levels of platelets and white blood cells, mouth sores, nausea, musculoskeletal pain, abdominal pain, vomiting, febrile neutropenia (fever and low white blood cell count), headache and itching.<ref name="FDA PR 20231208" />
+
+== History ==
+The safety and effectiveness of exagamglogene autotemcel were evaluated in an ongoing single-arm, multi-center trial in adult and adolescent participants with sickle cell disease.<ref name="FDA PR 20231208" /> Participants had a history of at least two protocol-defined severe vaso-occlusive crises during each of the two years prior to screening.<ref name="FDA PR 20231208" /> The primary efficacy outcome was freedom from severe vaso-occlusive crisis episodes for at least twelve consecutive months during the 24-month follow-up period.<ref name="FDA PR 20231208" /> A total of 44 participants were treated with exagamglogene autotemcel.<ref name="FDA PR 20231208" /> Of the 31 participants with sufficient follow-up time to be evaluable, 29 (93.5%) achieved this outcome.<ref name="FDA PR 20231208" /> All treated participants achieved successful engraftment with no participants experiencing graft failure or [[graft rejection]].<ref name="FDA PR 20231208" />
+
+The US [[Food and Drug Administration]] (FDA) granted the application for exagamglogene autotemcel [[priority review]], [[orphan drug]], [[FDA Fast Track Development Program|fast track]], and regenerative medicine advanced therapy designations.<ref name="FDA PR 20231208" /> The FDA granted approval of Casgevy to Vertex Pharmaceuticals.<ref name="FDA PR 20231208" />
+
+== Society and culture ==
+=== Legal status ===
+In December 2023, the [[Committee for Medicinal Products for Human Use]] (CHMP) of the [[European Medicines Agency]] (EMA) adopted a positive opinion, recommending the granting of a conditional marketing authorization for the medicinal product Casgevy, intended for the treatment of transfusion‑dependent β‑thalassemia and sickle cell disease.<ref name="Casgevy EPAR" /><ref>{{cite press release | title=First gene editing therapy to treat beta thalassemia and severe sickle cell disease | website=[[European Medicines Agency]] (EMA) | date=15 December 2023 | url=https://www.ema.europa.eu/en/news/first-gene-editing-therapy-treat-beta-thalassemia-and-severe-sickle-cell-disease | access-date=16 December 2023 | archive-date=16 December 2023 | archive-url=https://web.archive.org/web/20231216021859/https://www.ema.europa.eu/en/news/first-gene-editing-therapy-treat-beta-thalassemia-and-severe-sickle-cell-disease | url-status=live }}</ref> As Casgevy is an advanced therapy medicinal product, the CHMP positive opinion is based on an assessment by the Committee for Advanced Therapies.<ref name="Casgevy EPAR" /> The applicant for this medicinal product is Vertex Pharmaceuticals (Ireland) Limited.<ref name="Casgevy EPAR">{{cite web | title=Casgevy EPAR | website=[[European Medicines Agency]] (EMA) | date=14 December 2023 | url=https://www.ema.europa.eu/en/medicines/human/EPAR/casgevy | access-date=16 December 2023 | archive-date=19 December 2023 | archive-url=https://web.archive.org/web/20231219032405/https://www.ema.europa.eu/en/medicines/human/EPAR/casgevy | url-status=live }} Text was copied from this source which is copyright European Medicines Agency. Reproduction is authorized provided the source is acknowledged.</ref> Exagamglogene autotemcel was approved for medical use in the European Union in February 2024.<ref name="Casgevy EPAR" /><ref name="Casgevy PI" />
+
+=== Economics ===
+The therapy has a US list price of {{US$|2.2 million}}.<ref>{{Cite web |vauthors=Feuerstein A |date=8 December 2023 |title=In historic decision, FDA approves a CRISPR-based medicine for treatment of sickle cell disease |url=https://www.statnews.com/2023/12/08/fda-approves-casgevy-crispr-based-medicine-for-treatment-of-sickle-cell-disease/ |access-date=10 December 2023 |website=STAT |archive-date=9 December 2023 |archive-url=https://web.archive.org/web/20231209102125/https://www.statnews.com/2023/12/08/fda-approves-casgevy-crispr-based-medicine-for-treatment-of-sickle-cell-disease/ |url-status=live }}</ref> The cost effectiveness threshold of the therapy in the US is estimated to be between $1.35 million and $2.05 million<ref>{{cite web |title=ICER Publishes Final Evidence Report on Gene Therapies for Sickle Cell Disease |url=https://icer.org/news-insights/press-releases/icer-publishes-final-evidence-report-on-gene-therapies-for-sickle-cell-disease/ |url-status=live |archive-url=https://web.archive.org/web/20231204221956/https://icer.org/news-insights/press-releases/icer-publishes-final-evidence-report-on-gene-therapies-for-sickle-cell-disease/ |archive-date=4 December 2023 |access-date=4 December 2023 |website=[[Institute for Clinical and Economic Review]]}}</ref> depending on perspective (healthcare vs limited societal) and assuming the [[willingness to pay]] for 1 [[quality-adjusted life year]] (QALY) at $100,000–$150,000.<ref>{{Cite web |title=Value Assessment Framework |url=https://icer.org/our-approach/methods-process/value-assessment-framework/ |access-date=10 December 2023 |website=[[Institute for Clinical and Economic Review]] |archive-date=14 November 2023 |archive-url=https://web.archive.org/web/20231114183927/https://icer.org/our-approach/methods-process/value-assessment-framework/ |url-status=live }}</ref>
+
+The UK price is estimated to be {{GBP|1 million}}.<ref>{{Cite news |vauthors=Pinkstone J, Searles M |date=16 November 2023 |title=Life-changing blood disease treatment approved at £1m cost per patient |work=The Telegraph |url=https://www.telegraph.co.uk/news/2023/11/16/gene-therapy-blood-disorders-sickle-cell-approved-uk-mhra/ |access-date=10 December 2023 |archive-date=10 December 2023 |archive-url=https://web.archive.org/web/20231210220429/https://www.telegraph.co.uk/news/2023/11/16/gene-therapy-blood-disorders-sickle-cell-approved-uk-mhra/ |url-status=live }}</ref><ref>{{cite journal | vauthors = Wong C | title = UK first to approve CRISPR treatment for diseases: what you need to know | journal = Nature | volume = 623 | issue = 7988 | pages = 676–677 | date = November 2023 | pmid = 37974039 | doi = 10.1038/d41586-023-03590-6 | title-link = doi | doi-access = free | bibcode = 2023Natur.623..676W }}</ref>
+
+== References ==
+{{reflist}}
+
+== Further reading ==
+{{refbegin}}
+* {{cite journal | vauthors = Frangoul H, Locatelli F, Bhatia M, Mapara MY, Molinari L, Sharma A, Lobitz S, de Montalembert M, Rondelli D, Steinberg M, Walters MC | display-authors = 6 |title=Efficacy and Safety of a Single Dose of Exagamglogene Autotemcel for Severe Sickle Cell Disease |journal=Blood |date=November 2022 |volume=140 |issue=Supplement 1 |pages=29–31 |doi=10.1182/blood-2022-162353|s2cid=254352365 |doi-access=free }}
+* {{cite journal | vauthors = Locatelli F, Lang P, Li A, Corbacioglu S, de la Fuente J, Wall DA, Liem R, Meisel R, Mapara MY, Shah AJ, Cappellini MD, Kattamis A, Sheth S, Bobruff Y, Bower L, Zhang L, Sharma A, Song Y, Hobbs W, Frangoul H  | display-authors = 6  |title=Efficacy and Safety of a Single Dose of Exagamglogene Autotemcel for Transfusion-Dependent β-Thalassemia |journal=Blood |date=November 2022 |volume=140 |issue=Supplement 1 |pages=4899–4901 |doi=10.1182/blood-2022-166881|s2cid=256788715 |doi-access=free }}
+{{refend}}
+
+== External links ==
+* {{cite web | title=Exagamglogene Autotemcel (Code C169042) | website=NCI Thesaurus | url=https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C169042 }}
+
+{{Other hematological agents}}
+{{Portal bar | Medicine}}
+{{Authority control}}
+
+{{DEFAULTSORT:Exagamglogene Autotemcel}}
+[[Category:Approved gene therapies]]
+[[Category:CRISPR therapy]]
+[[Category:Drugs acting on the blood and blood forming organs]]
+[[Category:Orphan drugs]]
+[[Category:Sickle-cell disease]]

@@ -1,0 +1,320 @@
+{{Short description|Vaccine against respiratory syncytial virus}}
+{{Use dmy dates|date=June 2024}}
+{{cs1 config |name-list-style=vanc |display-authors=6}}
+
+A '''respiratory syncytial virus vaccine''', or '''RSV vaccine''', is an annual [[vaccine]] that protects against [[respiratory syncytial virus]].<ref name="Arexvy EPAR" /> RSV affects an estimated 64 million people and causes 160,000 deaths worldwide each year.<ref name="niaid-rsv">{{cite web |date=22 July 2022 |title=Respiratory Syncytial Virus (RSV) – NIH: National Institute of Allergy and Infectious Diseases |url=https://www.niaid.nih.gov/diseases-conditions/respiratory-syncytial-virus-rsv |url-status=live |archive-url=https://web.archive.org/web/20230424023336/https://www.niaid.nih.gov/diseases-conditions/respiratory-syncytial-virus-rsv |archive-date=24 April 2023 |access-date=24 April 2023 |website=[[National Institute of Allergy and Infectious Diseases]]}}</ref>
+
+The RSV vaccines Arexvy ([[GSK plc|GSK]]),<ref name="Arexvy FDA label" /> Abrysvo ([[Pfizer]]),<ref name="Abrysvo FDA label" /> and Mresvia ([[Moderna]])<ref name="Mresvia FDA label" /> are approved for medical use in the United States.<ref name="FDA Arexvy" /><ref name="FDA Abrysvo">{{cite web | title=Abrysvo | website=U.S. [[Food and Drug Administration]] (FDA) | date=1 June 2023 | url=https://www.fda.gov/vaccines-blood-biologics/abrysvo | archive-url=https://web.archive.org/web/20230602023847/https://www.fda.gov/vaccines-blood-biologics/abrysvo | url-status=dead | archive-date=2 June 2023 | access-date=2 June 2023}}</ref><ref>{{cite news |date=31 May 2023 |title=US FDA approves Pfizer's RSV vaccine |work=Reuters |url=https://www.reuters.com/business/healthcare-pharmaceuticals/us-fda-approves-pfizers-rsv-vaccine-2023-05-31/ |access-date=1 June 2023 |archive-date=22 August 2023 |archive-url=https://web.archive.org/web/20230822042904/https://www.reuters.com/business/healthcare-pharmaceuticals/us-fda-approves-pfizers-rsv-vaccine-2023-05-31/ |url-status=live }}</ref> Arexvy is approved for medical use in the United States,<ref name="Arexvy FDA label" /> in the European Union,<ref name="Arexvy EPAR" /><ref name="EU Arexvy Product Information" /> and in Canada for people aged 60 years of age and older.<ref>{{cite news | vauthors = La Grassa J |title=Health Canada approves 1st RSV vaccine for people 60 and older |url=https://www.cbc.ca/news/health/rsv-health-canada-vaccine-1.6928175 |access-date=9 September 2023 |work=CBC News |publisher=Canadian Broadcasting Corporation |date=4 August 2023 |archive-date=13 September 2023 |archive-url=https://web.archive.org/web/20230913131701/https://www.cbc.ca/news/health/rsv-health-canada-vaccine-1.6928175 |url-status=live }}</ref> Arexvy is approved in the US for people aged 50–59 years of age who are at increased risk.<ref name="FDA Arexvy" /><ref name="GSK PR 20240607">{{cite press release | title=US FDA approves expanded age indication for GSK's Arexvy, the first respiratory syncytial virus (RSV) vaccine for adults aged 50-59 at increased risk | website=GSK | date=7 June 2024 | url=https://us.gsk.com/en-us/media/press-releases/us-fda-approves-expanded-age-indication-for-gsk-s-arexvy-the-first-respiratory-syncytial-virus-rsv-vaccine-for-adults-aged-50-59-at-increased-risk/ | access-date=11 June 2024 | archive-date=10 June 2024 | archive-url=https://web.archive.org/web/20240610182233/https://us.gsk.com/en-us/media/press-releases/us-fda-approves-expanded-age-indication-for-gsk-s-arexvy-the-first-respiratory-syncytial-virus-rsv-vaccine-for-adults-aged-50-59-at-increased-risk/ | url-status=live }}</ref><ref>{{Cite web |url=https://www.fda.gov/media/179248/download |title=FDA approval letter |website=U.S. [[Food and Drug Administration]] (FDA) |access-date=11 June 2024 |archive-date=11 June 2024 |archive-url=https://web.archive.org/web/20240611133143/https://www.fda.gov/media/179248/download |url-status=dead }}</ref> In June 2024, the US [[Centers for Disease Control and Prevention]] (CDC) updated its recommendation for the use of respiratory syncytial virus vaccine in people aged 60 years of age and older.<ref name="CDC 20240626" /> The CDC recommends that people who have not received the respiratory syncytial virus vaccine and are aged 75 years of age and older receive the respiratory syncytial virus vaccine; and that people who have not received the respiratory syncytial virus vaccine and are aged 60–74 years of age who are at increased risk of severe respiratory syncytial virus, meaning they have certain chronic medical conditions, such as lung or heart disease, or they live in nursing homes, receive the respiratory syncytial virus vaccine.<ref name="CDC 20240626">{{cite web | title=CDC Updates RSV Vaccination Recommendation for Adults | website=U.S. [[Centers for Disease Control and Prevention]] (CDC) | date=26 June 2024 | url=https://www.cdc.gov/media/releases/2024/s-0626-vaccination-adults.html | access-date=27 June 2024 | archive-date=7 July 2024 | archive-url=https://web.archive.org/web/20240707063033/https://www.cdc.gov/media/releases/2024/s-0626-vaccination-adults.html | url-status=live }} {{PD-notice}}</ref><ref>{{cite news | vauthors = Mandavilli A | title=Federal Officials Revise Recommendations for R.S.V. Vaccine | website=[[The New York Times]] | date=26 June 2024 | url=https://www.nytimes.com/2024/06/26/health/rsv-vaccine-cdc.html | access-date=27 June 2024 | archive-date=27 June 2024 | archive-url=https://web.archive.org/web/20240627011838/https://www.nytimes.com/2024/06/26/health/rsv-vaccine-cdc.html | url-status=live }}</ref>
+
+A 2013 study led to the 2023 approval of RSV vaccines.<ref name="science2013" /><ref name="sa-202303" /> Work on RSV vaccines also supported the rapid development of [[COVID-19 vaccine]]s.<ref name="sa-202303" /><ref name="graham-202303">{{cite journal |vauthors=Graham BS |date=February 2023 |title=The Journey to RSV Vaccines — Heralding an Era of Structure-Based Design |journal=The New England Journal of Medicine |volume=388 |issue=7 |pages=579–581 |doi=10.1056/NEJMp2216358 |pmid=36791157 |s2cid=256900516}}</ref> It is on the [[WHO Model List of Essential Medicines|World Health Organization's List of Essential Medicines]].<ref name="WHO24th">{{cite book | vauthors = ((World Health Organization)) | title = The selection and use of essential medicines, 2025: WHO Model List of Essential Medicines, 24th list | year = 2025 | hdl = 10665/382243 | author-link = World Health Organization | publisher = World Health Organization | location = Geneva | hdl-access = free | doi = 10.2471/B09474 | doi-access = free | id = License: CC BY-NC-SA 3.0 IGO }}</ref>
+
+== Medical uses ==
+[[Respiratory syncytial virus]] vaccine is [[indicated]] for active immunization for the prevention of lower respiratory tract disease caused by respiratory syncytial virus in people 60 years of age and older.<ref name="Arexvy EPAR" /><ref name="Arexvy FDA label" /><ref name="Abrysvo FDA label" /><ref name="FDA PR 20240531" />
+
+Abrysvo is indicated for active immunization for the prevention of lower respiratory tract disease caused by RSV in people 60 years of age and older, high-risk individuals aged 18 through 59 and pregnant individuals at 32 through 36 weeks gestational age to prevent severe disease in their infants from birth through six months of age.<ref name="Abrysvo FDA label" /><ref name="FDA Abrysvo" /><ref name="Abrysvo SmPC" /><ref name="Abrysvo EPAR" /><ref name="FDA PR 20230821">{{cite web |date=21 August 2023 |title=FDA Approves First Vaccine for Pregnant Individuals to Prevent RSV in Infants |url=https://www.fda.gov/news-events/press-announcements/fda-approves-first-vaccine-pregnant-individuals-prevent-rsv-infants |url-status=dead |archive-url=https://web.archive.org/web/20230821215005/https://www.fda.gov/news-events/press-announcements/fda-approves-first-vaccine-pregnant-individuals-prevent-rsv-infants |archive-date=21 August 2023 |access-date=21 August 2023 |publisher=U.S. [[Food and Drug Administration]] (FDA)}} {{PD-notice}}</ref><ref name="mmwr">{{cite journal | vauthors = Fleming-Dutra KE |date=6 October 2023 |title=Use of the Pfizer Respiratory Syncytial Virus Vaccine During Pregnancy for the Prevention of Respiratory Syncytial Virus–Associated Lower Respiratory Tract Disease in Infants: Recommendations of the Advisory Committee on Immunization Practices — United States, 2023 |journal=MMWR. Morbidity and Mortality Weekly Report |volume=72 |issue=41 |pages=1115–1122 |doi=10.15585/mmwr.mm7241e1 |pmc=10578951 |pmid=37824423 |s2cid=263810212 |doi-access=free |title-link=doi}}</ref> Abrysvo is approved for use in pregnant women at 24 through 36 weeks and older adults in the European Union.<ref>{{cite news |date=24 August 2023 |title=EU approves Pfizer's RSV vaccine to protect infants and older adults |work=Reuters |url=https://www.reuters.com/business/healthcare-pharmaceuticals/eu-approves-pfizers-rsv-vaccine-protect-infants-older-adults-2023-08-24/ |access-date=25 August 2023 |archive-date=25 August 2023 |archive-url=https://web.archive.org/web/20230825094132/https://www.reuters.com/business/healthcare-pharmaceuticals/eu-approves-pfizers-rsv-vaccine-protect-infants-older-adults-2023-08-24/ |url-status=live }}</ref><ref>{{cite web|title=Abryvso product characteristics|url=https://www.ema.europa.eu/en/documents/product-information/abrysvo-epar-product-information_en.pdf|publisher=European Medicines Agency|date=2023|access-date=2 December 2023|archive-date=2 December 2023|archive-url=https://web.archive.org/web/20231202092142/https://www.ema.europa.eu/en/documents/product-information/abrysvo-epar-product-information_en.pdf|url-status=live}}</ref> and between 28 through 36 weeks and older adults in the United Kingdom.<ref name="Abrysvo SmPC" />
+
+Infant-specific issues include the immature infant immune system and the presence of [[Passive immunity|maternal antibodies]], which make infantile [[immunization]] difficult.<ref name="Jha_201610">{{cite book |title=SARS, MERS and other Viral Lung Infections |vauthors=Jha A, Jarvis H, Fraser C, Openshaw PJ |date=2016 |publisher=European Respiratory Society |isbn=978-1-84984-070-5 |veditors=Hui DS, Rossi GA, Johnston SL |series=ERS Society Monographs |chapter=Respiratory Syncytial Virus |pmid=28742304 |id=Bookshelf ID: NBK442240 |chapter-url=https://www.ncbi.nlm.nih.gov/books/NBK442240/ |archive-url=https://web.archive.org/web/20201228032145/https://www.ncbi.nlm.nih.gov/books/NBK442240/ |archive-date=28 December 2020 |url-status=live}}</ref>
+
+== History ==
+=== Development ===
+Attempts to develop an RSV vaccine began in the 1960s with an unsuccessful [[inactivated vaccine]] developed by exposing the RSV virus to [[formalin]] (formalin-inactivated RSV (FI-RSV)).<ref name="Acosta2015">{{cite journal |vauthors=Acosta PL, Caballero MT, Polack FP |title=Brief History and Characterization of Enhanced Respiratory Syncytial Virus Disease |journal=Clinical and Vaccine Immunology |date=December 2015 |volume=23 |issue=3 |pages=189–195 |doi=10.1128/CVI.00609-15 |pmid=26677198 |pmc=4783420}}</ref> This early vaccine induced [[vaccine-associated enhanced respiratory disease]] (VAERD), in which children who had not previously been exposed to RSV and were vaccinated would develop severe RSV disease if exposed to the virus itself, including [[fever]], [[wheezing]], and [[bronchopneumonia]].<ref name="Acosta2015" /> Some eighty percent of such children (vs. 5% of virus-exposed controls) were hospitalized, and two children died of lethal lung inflammation during the first natural RSV infection after vaccination of RSV-naive infants.<ref name="Acosta2015" /> This deadly vaccine failure slowed vaccine development for many years.<ref name="Acosta2015" />
+
+A 1998 paper reported that research had advanced greatly over the previous ten years.<ref name="Dudas 1998">{{cite journal | vauthors = Dudas RA, Karron RA |title=Respiratory syncytial virus vaccines |journal=Clinical Microbiology Reviews |date=July 1998 |volume=11 |issue=3 |pages=430–439 |pmid=9665976|pmc=88889 |doi=10.1128/CMR.11.3.430 }}</ref> A 2019 paper similarly claimed that research toward developing a vaccine had advanced greatly over the prior 10 years, with more than 30 candidates in some stage of development.<ref name="Mejias 2019">{{cite journal | vauthors = Mejias A, Rodriguez-Fernandez R, Peeples ME, Ramilo O |title=Respiratory Syncytial Virus Vaccines: Are We Making Progress? |journal=The Pediatric Infectious Disease Journal |date=October 2019 |volume=38 |issue=10 |pages=e266–e269 |doi=10.1097/INF.0000000000002404|pmid=31335571 |pmc=8404780 |doi-access=free | title-link = doi }}</ref> The same study predicted that a vaccine would be available within ten years.<ref name="Mejias 2019" /> Candidates included particle-based vaccines, [[attenuated vaccines]], [[mRNA vaccine]]s, [[protein subunit]] vaccines, and vector-based vaccines.<ref name="Mazur 2018">{{cite journal | vauthors = Mazur NI, Higgins D, Nunes MC, Melero JA, Langedijk AC, Horsley N, Buchholz UJ, Openshaw PJ, McLellan JS, Englund JA, Mejias A, Karron RA, Simões EA, Knezevic I, Ramilo O, Piedra PA, Chu HY, Falsey AR, Nair H, Kragten-Tabatabaie L, Greenough A, Baraldi E, Papadopoulos NG, Vekemans J, Polack FP, Powell M, Satav A, Walsh EE, Stein RT, Graham BS, Bont LJ |title=The respiratory syncytial virus vaccine landscape: lessons from the graveyard and promising candidates |journal=The Lancet Infectious Diseases |date=October 2018 |volume=18 |issue=10 |pages=e295–e311 |doi=10.1016/S1473-3099(18)30292-5|pmid=29914800 |s2cid=49300571 |hdl=10044/1/61037 |hdl-access=free }}</ref><ref>{{cite journal | vauthors = Powell K |date=December 2021|title=The race to make vaccines for a dangerous respiratory virus|journal=[[Nature (magazine)|Nature]]| volume=600| issue=7889| pages=379–380| doi=10.1038/d41586-021-03704-y| pmid=34893769|bibcode=2021Natur.600..379P|s2cid=245021172|doi-access=free | title-link = doi }}</ref>
+	
+A 2013 study detailed the crystal structure of the [[RSV fusion (F) protein]] and how its stability could be improved.<ref name="science2013">{{cite journal | vauthors = McLellan JS, Chen M, Joyce MG, Sastry M, Stewart-Jones GB, Yang Y, Zhang B, Chen L, Srivatsan S, Zheng A, Zhou T, Graepel KW, Kumar A, Moin S, Boyington JC, Chuang GY, Soto C, Baxa U, Bakker AQ, Spits H, Beaumont T, Zheng Z, Xia N, Ko SY, Todd JP, Rao S, Graham BS, Kwong PD |date=November 2013 |title=Structure-based design of a fusion glycoprotein vaccine for respiratory syncytial virus |journal=Science |volume=342 |issue=6158 |pages=592–598 |doi=10.1126/science.1243283 |pmc=4461862 |pmid=24179220 |bibcode=2013Sci...342..592M }}</ref> This provided the basis for finding the most effective F protein constructs, which are used in RSV vaccines.<ref name="sa-202303" /> To develop its vaccine, Pfizer engineered 400 different F protein constructs to identify the most immunogenic, and constructed a bivalent RSV prefusion F investigational vaccine.<ref name="science2023">{{cite journal | vauthors = Che Y, Gribenko AV, Song X, Handke LD, Efferen KS, Tompkins K, Kodali S, Nunez L, Prasad AK, Phelan LM, Ammirati M, Yu X, Lees JA, Chen W, Martinez L, Roopchand V, Han S, Qiu X, DeVincenzo JP, Jansen KU, Dormitzer PR, Swanson KA |date=April 2023 |title=Rational design of a highly immunogenic prefusion-stabilized F glycoprotein antigen for a respiratory syncytial virus vaccine |journal=Science Translational Medicine |volume=15 |issue=693 |article-number=eade6422 |doi=10.1126/scitranslmed.ade6422 |pmid=37023209 |s2cid=258007860 |doi-access=free | title-link = doi }}</ref>
+
+In February 2023, results of a phase III study of around 25,000 participants age 60+ were published. One dose of the Arexvy vaccine provided 94% efficacy against severe RSV pneumonia and 72% efficacy against RSV acute respiratory infection.<ref>{{cite journal |vauthors=Papi A, Ison MG, Langley JM, Lee DG, Leroux-Roels I, Martinon-Torres F, Schwarz TF, van Zyl-Smit RN, Campora L, Dezutter N, de Schrevel N, Fissette L, David MP, Van der Wielen M, Kostanyan L, Hulstrøm V |date=February 2023 |title=Respiratory Syncytial Virus Prefusion F Protein Vaccine in Older Adults |url=https://biblio.ugent.be/publication/01GWJBWW7HVDMHS20ZHQ89M4W8 |url-status=live |journal=The New England Journal of Medicine |volume=388 |issue=7 |pages=595–608 |doi=10.1056/NEJMoa2209604 |pmid=36791160 |s2cid=256900243 |archive-url=https://web.archive.org/web/20230330015006/https://biblio.ugent.be/publication/01GWJBWW7HVDMHS20ZHQ89M4W8 |archive-date=30 March 2023 |access-date=22 August 2023|doi-access=free | title-link = doi |hdl=1959.4/unsworks_84474 |hdl-access=free }}</ref> An advisory panel to the FDA recommended approval of the vaccine in February 2023.<ref name="gsk-supply-202303">{{cite web |date=9 March 2023 |title=GSK expects US launch of RSV vaccine with no supply issues |url=https://www.reuters.com/business/healthcare-pharmaceuticals/gsk-set-us-launch-rsv-vaccine-with-no-supply-issues-2023-03-09/ |url-status=live |archive-url=https://web.archive.org/web/20230412172231/https://www.reuters.com/business/healthcare-pharmaceuticals/gsk-set-us-launch-rsv-vaccine-with-no-supply-issues-2023-03-09/ |archive-date=12 April 2023 |access-date=12 April 2023 |website=Reuters |vauthors=Fick M}}</ref><ref name="nbc-202302">{{cite news |date=28 February 2023 |title=Paving the way for the world's first RSV vaccine, FDA advisers recommend shot from Pfizer |work=NBC News |url=https://www.nbcnews.com/health/health-news/fda-advisers-recommend-first-rsv-vaccine-rcna72535 |url-status=live |access-date=28 February 2023 |archive-url=https://web.archive.org/web/20230228220644/https://www.nbcnews.com/health/health-news/fda-advisers-recommend-first-rsv-vaccine-rcna72535 |archive-date=28 February 2023 |vauthors=Bendix A}}</ref>
+
+In April 2023, the [[Committee for Medicinal Products for Human Use]] of the [[European Medicines Agency]] (EMA) recommended to grant a marketing authorization for Arexvy for the prevention of RSV lower respiratory tract disease in people 60 years of age or older<ref name="Arexvy: Pending EC decision">{{cite web |date=26 April 2023 |title=Arexvy: Pending EC decision |url=https://www.ema.europa.eu/en/medicines/human/summaries-opinion/arexvy |url-status=live |archive-url=https://web.archive.org/web/20230427025107/https://www.ema.europa.eu/en/medicines/human/summaries-opinion/arexvy |archive-date=27 April 2023 |access-date=27 April 2023 |website=European Medicines Agency}} Text was copied from this source which is copyright European Medicines Agency. Reproduction is authorized provided the source is acknowledged.</ref><ref>{{cite press release |title=First vaccine to protect older adults from respiratory syncytial virus (RSV) infection |website=[[European Medicines Agency]] (EMA) |date=26 April 2023 |url=https://www.ema.europa.eu/en/news/first-vaccine-protect-older-adults-respiratory-syncytial-virus-rsv-infection |access-date=27 April 2023 |archive-date=27 April 2023 |archive-url=https://web.archive.org/web/20230427025104/https://www.ema.europa.eu/en/news/first-vaccine-protect-older-adults-respiratory-syncytial-virus-rsv-infection |url-status=live}}</ref> after review under the EMA's accelerated assessment program.<ref name="Arexvy: Pending EC decision" />
+
+In May 2023, Arexvy was approved for people aged 60 years of age and older, making it the first FDA-approved RSV vaccine.<ref name="FDA PR 20230504">{{cite press release |title=FDA Approves First Respiratory Syncytial Virus (RSV) Vaccine |publisher=U.S. [[Food and Drug Administration]] (FDA) |date=3 May 2023 |url=https://www.fda.gov/news-events/press-announcements/fda-approves-first-respiratory-syncytial-virus-rsv-vaccine |access-date=3 May 2023 |archive-date=4 May 2023 |archive-url=https://web.archive.org/web/20230504230027/https://www.fda.gov/news-events/press-announcements/fda-approves-first-respiratory-syncytial-virus-rsv-vaccine |url-status=dead}} {{PD-notice}}</ref><ref name="wapo050323">{{cite news |date=3 May 2023 |title=First vaccine targeting RSV wins FDA approval. More are coming. |newspaper=[[The Washington Post]] |url=https://www.washingtonpost.com/health/2023/05/03/rsv-vaccine-adults/ |url-status=live |access-date=3 May 2023 |archive-url=https://web.archive.org/web/20230822043342/https://www.washingtonpost.com/health/2023/05/03/rsv-vaccine-adults/ |archive-date=22 August 2023}}</ref>
+
+In May 2023, the FDA's expert panel unanimously recommended Abrysvo for approval in pregnant women.<ref>{{cite news |date=18 May 2023 |title=FDA advisers support approval of RSV vaccine to protect infants |newspaper=[[NPR]] |url=https://www.npr.org/sections/health-shots/2023/05/18/1176863956/fda-advisers-support-approval-of-rsv-vaccine-to-protect-infants |access-date=24 May 2023 |vauthors=Hensley S, Stein R}}</ref> The panel was split on the safety of the vaccine in respect of preterm births.<ref>{{cite news |date=18 May 2023 |title=Pfizer's Maternal RSV Vaccine First to Win FDA Panel Support |work=Bloomberg.com |url=https://www.bloomberg.com/news/articles/2023-05-18/pfizer-s-maternal-rsv-vaccine-first-to-win-fda-advisers-support |url-status=live |access-date=1 June 2023 |archive-url=https://web.archive.org/web/20230522025604/https://www.bloomberg.com/news/articles/2023-05-18/pfizer-s-maternal-rsv-vaccine-first-to-win-fda-advisers-support |archive-date=22 May 2023}}</ref>
+
+In June 2023, Arexvy was authorized for medical use in the European Union.<ref>{{cite press release |title=European Commission authorizes GSK's Arexvy, the first respiratory syncytial virus (RSV) vaccine for older adults |website=GSK |date=7 June 2023 |url=https://www.gsk.com/en-gb/media/press-releases/european-commission-authorises-gsk-s-arexvy-the-first-respiratory-syncytial-virus-rsv-vaccine-for-older-adults/ |access-date=12 June 2023 |archive-date=13 June 2023 |archive-url=https://web.archive.org/web/20230613024855/https://www.gsk.com/en-gb/media/press-releases/european-commission-authorises-gsk-s-arexvy-the-first-respiratory-syncytial-virus-rsv-vaccine-for-older-adults/ |url-status=live}}</ref>
+
+The [[mRNA vaccine]] Mresvia was approved for medical use in the United States in May 2024.<ref name="FDA Mresvia" /><ref name="Moderna PR 20240531" /><ref name="FDA PR 20240531" />
+
+In June 2024, the FDA approved Arexvy for use in people aged 50 to 59 years of age who are at an increased risk of RSV-caused lower respiratory tract disease.<ref name="GSK PR 20240607" /> The approval is based on data from a phase III study (NCT05590403),<ref name="NCT05590403">{{cite web | title=A Study on the Immune Response and Safety of a Vaccine Against Respiratory Syncytial Virus Given to Adults 50-59 Years of Age, Including Adults at Increased Risk of Respiratory Syncytial Virus Lower Respiratory Tract Disease, Compared to Older Adults 60 Years of Age and Above | website=ClinicalTrials.gov | url=https://www.clinicaltrials.gov/study/NCT05590403 | access-date=11 June 2024 | archive-date=4 March 2024 | archive-url=https://web.archive.org/web/20240304093754/https://www.clinicaltrials.gov/study/NCT05590403 | url-status=live }}</ref> which showed that immune responses were non-inferior in people aged 50–59 years of age at increased risk for RSV disease compared to people aged 60 years of age and older.<ref name=":0">{{Cite press release |date=25 October 2023 |title=New data for Arexvy, GSK's RSV vaccine, show potential to help protect adults aged 50 to 59 at increased risk for RSV disease |url=https://www.gsk.com/en-gb/media/press-releases/new-data-for-arexvy-show-potential-to-help-protect-adults-aged-50-to-59/ |access-date=11 June 2024 |website=GSK |archive-date=18 January 2024 |archive-url=https://web.archive.org/web/20240118094930/https://www.gsk.com/en-gb/media/press-releases/new-data-for-arexvy-show-potential-to-help-protect-adults-aged-50-to-59/ |url-status=live }}</ref><ref name="NCT05590403" />
+
+In October 2024, the FDA approved Abrysvo for the prevention of lower respiratory tract disease caused by respiratory syncytial virus (RSV) in individuals 18 through 59 years of age who are at increased risk for lower respiratory tract disease caused by RSV. Since 2023, Abrysvo has been approved for the prevention of lower respiratory tract disease caused by RSV in individuals 60 years of age and older and for use in pregnant individuals at 32 through 36 weeks gestational age for the prevention of lower respiratory tract disease and severe lower respiratory tract disease caused by RSV in infants from birth through six months of age.<ref name="FDA PR 20241025" /> Abrysvo is manufactured by Pfizer.<ref name="FDA PR 20241025">{{cite press release | title=FDA Roundup: October 25, 2024 | website=U.S. [[Food and Drug Administration]] (FDA) | date=25 October 2024 | url=https://www.fda.gov/news-events/press-announcements/fda-roundup-october-25-2024 | archive-url=https://web.archive.org/web/20241030214039/https://www.fda.gov/news-events/press-announcements/fda-roundup-october-25-2024 | url-status=dead | archive-date=30 October 2024 | access-date=27 October 2024}} {{PD-notice}}</ref>
+
+Mresvia was authorized for medical use in the European Union in August 2024.<ref name="Mresvia EPAR" /><ref name="Mresvia PI" />
+
+=== Clinical trials ===
+
+{{As of|2022|10}}, [[Phases of clinical research#Phase III|phase III trials]] by multiple companies are ongoing to test RSV vaccines for people aged 60 years of age and older. These include vaccines by [[GSK plc|GSK]], [[Pfizer]], [[Johnson & Johnson]], [[Moderna]], and [[Bavarian Nordic]].<ref name="cnn-202210">{{cite news | vauthors = Goodman B |date=31 October 2022 |title=By the next RSV season, the US may have its first vaccine |url=https://www.cnn.com/2022/10/31/health/rsv-vaccines-therapies/index.html |access-date=13 April 2023 |website=CNN |archive-date=14 April 2023 |archive-url=https://web.archive.org/web/20230414001216/https://www.cnn.com/2022/10/31/health/rsv-vaccines-therapies/index.html |url-status=live }}</ref><ref>{{cite news|title = For decades, fear and failure in the hunt for an RSV vaccine. Now, success.|newspaper = [[The Washington Post]]|url = https://www.washingtonpost.com/health/2022/10/10/rsv-vaccine/|access-date = 11 October 2022|date = 10 October 2022|archive-date = 10 October 2022|archive-url = https://web.archive.org/web/20221010213943/https://www.washingtonpost.com/health/2022/10/10/rsv-vaccine/|url-status = live}}</ref><ref>{{cite news |title = This UT Scientist Helped Spare Millions From COVID-19. Now He's Unmasking Other Killer Viruses |work = [[Texas Monthly]] |url = https://www.texasmonthly.com/news-politics/jason-mclellan-covid-vaccines-rsv/ |access-date = 13 October 2022 |date = 10 October 2022 |archive-date = 13 October 2022 |archive-url = https://web.archive.org/web/20221013143648/https://www.texasmonthly.com/news-politics/jason-mclellan-covid-vaccines-rsv/ |url-status = live }}</ref> {{As of|2023|04}}, other vaccines were in development, including vaccines for pregnant women to immunize their fetuses by passing maternal antibodies to them, and vaccines for children.<ref name="sa-202303">{{cite magazine | vauthors = Haelle T |title=RSV Vaccines Are Nearly Here after Decades of False Starts |url=https://www.scientificamerican.com/article/rsv-vaccines-are-nearly-here-after-decades-of-false-starts/ | date=20 March 2023 |access-date=13 April 2023 |magazine=[[Scientific American]] |archive-date=12 April 2023 |archive-url=https://web.archive.org/web/20230412004511/https://www.scientificamerican.com/article/rsv-vaccines-are-nearly-here-after-decades-of-false-starts/ |url-status=live }}</ref><ref name="cnn-202210" />
+
+==== GSK ====
+{{Infobox drug
+| drug_name          = Respiratory Syncytial Virus Vaccine, Adjuvanted
+| type               = Vaccine
+| image              = 
+| width              = 
+| alt                = 
+| caption            =
+
+<!-- Vaccine data -->
+| target             = [[Respiratory syncytial virus|RSVPreF3 antigen]]
+| vaccine_type       = protein subunit
+
+<!-- Clinical data -->
+| pronounce          = 
+| tradename          = Arexvy
+| Drugs.com          = {{ubl
+  | RSV Vaccine {{drugs.com|monograph|respiratory-syncytial-virus-vaccine}}
+  | RSV Vaccine MRNA {{drugs.com|monograph|respiratory-syncytial-virus-vaccine-mrna}}
+  | {{drugs.com|cons|respiratory-syncytial-virus-vaccine-adjuvanted}}
+  | {{drugs.com|mtm|respiratory-syncytial-virus-rsv-mrna-vaccine}}
+  }}
+| MedlinePlus        = 
+| DailyMedID         = Respiratory syncytial vaccine
+| pregnancy_AU       = B2
+| pregnancy_AU_comment = <ref name="Arexvy APMDS" />
+| pregnancy_category = 
+| routes_of_administration = [[Intramuscular]]
+| class              = 
+| ATC_prefix         = J07
+| ATC_suffix         = BX05
+| ATC_supplemental   =
+
+<!-- Legal status -->
+| legal_AU           = S4
+| legal_AU_comment   = <ref name="Arexvy APMDS">{{cite web | title=Arexvy APMDS | website=Therapeutic Goods Administration (TGA) | date=22 January 2024 | url=https://www.tga.gov.au/resources/auspmd/arexvy | access-date=7 March 2024 | archive-date=7 March 2024 | archive-url=https://web.archive.org/web/20240307055414/https://www.tga.gov.au/resources/auspmd/arexvy | url-status=live }}</ref><ref>{{cite web | title=Arexvy (GlaxoSmithKline Australia Pty Ltd) | website=Therapeutic Goods Administration (TGA) | date=16 April 2025 | url=https://www.tga.gov.au/resources/prescription-medicines-registrations/arexvy-glaxosmithkline-australia-pty-ltd-0 | access-date=3 May 2025}}</ref>
+| legal_BR           = <!-- OTC, A1, A2, A3, B1, B2, C1, C2, C3, C4, C5, D1, D2, E, F -->
+| legal_BR_comment   = 
+| legal_CA           = Rx-only
+| legal_CA_comment   = /{{nbsp}}Schedule D<ref>{{cite web | title=Summary Basis of Decision (SBD) for Arexvy | website=[[Health Canada]] | date=18 November 2023 | url=https://dhpp.hpfb-dgpsa.ca/review-documents/resource/SBD1701180125532 | access-date=11 December 2023 | archive-date=10 March 2024 | archive-url=https://web.archive.org/web/20240310060259/https://dhpp.hpfb-dgpsa.ca/review-documents/resource/SBD1701180125532 | url-status=live }}</ref>
+| legal_DE           = <!-- Anlage I, II, III or Unscheduled -->
+| legal_DE_comment   = 
+| legal_NZ           = <!-- Class A, B, C -->
+| legal_NZ_comment   = 
+| legal_UK           = POM
+| legal_UK_comment   = <ref name="Arexvy SmPC">{{cite web | title=Arexvy powder and suspension for suspension for injection | website=(emc) | date=8 February 2024 | url=https://www.medicines.org.uk/emc/product/14951 | access-date=7 July 2024 | archive-date=18 May 2024 | archive-url=https://web.archive.org/web/20240518031104/https://www.medicines.org.uk/emc/product/14951 | url-status=live }}</ref>
+| legal_US           = Rx-only
+| legal_US_comment   = <ref name="Arexvy FDA label">{{cite web | title=Arexvy- respiratory syncytial visus vaccine recombinant, adjuvanted kit | website=DailyMed | date=3 May 2023 | url=https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1e50f275-002e-413f-a840-66ee3cb3740c | access-date=2 June 2023 | archive-date=22 August 2023 | archive-url=https://web.archive.org/web/20230822042827/https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1e50f275-002e-413f-a840-66ee3cb3740c | url-status=live }}</ref><ref name="FDA Arexvy">{{cite web | title=Arexvy | website=U.S. [[Food and Drug Administration]] (FDA) | date=3 May 2023 | url=https://www.fda.gov/vaccines-blood-biologics/arexvy | access-date=6 May 2023 | archive-date=22 August 2023 | archive-url=https://web.archive.org/web/20230822042814/https://www.fda.gov/vaccines-blood-biologics/arexvy | url-status=dead }} {{PD-notice}}</ref>
+| legal_EU           = Rx-only
+| legal_EU_comment   = <ref name="Arexvy EPAR">{{cite web | title=Arexvy EPAR | website=[[European Medicines Agency]] (EMA) | date=16 June 2023 | url=https://www.ema.europa.eu/en/medicines/human/EPAR/arexvy | access-date=19 June 2023 | archive-date=22 August 2023 | archive-url=https://web.archive.org/web/20230822042817/https://www.ema.europa.eu/en/medicines/human/EPAR/arexvy | url-status=live }}</ref><ref name="EU Arexvy Product Information">{{cite web | title=Arexvy Product Information | website=Union Register of medicinal products | date=9 June 2023 | url=https://ec.europa.eu/health/documents/community-register/html/h1740.htm | access-date=12 June 2023 | archive-date=22 August 2023 | archive-url=https://web.archive.org/web/20230822042846/https://ec.europa.eu/health/documents/community-register/html/h1740.htm | url-status=live }}</ref>
+| legal_UN           = <!-- N I, II, III, IV / P I, II, III, IV -->
+| legal_UN_comment   = 
+| legal_status       = <!-- For countries not listed above -->
+
+<!-- Identifiers -->
+| CAS_number         = 
+| CAS_supplemental   = 
+| PubChem            = 
+| IUPHAR_ligand      = 
+| DrugBank           = 
+| ChemSpiderID       = 
+| UNII               = 
+| KEGG               = D12607
+| ChEBI              = 
+| ChEMBL             = 
+| NIAID_ChemDB       = 
+| PDB_ligand         = 
+| synonyms           = GSK3844766A,<ref>{{cite press release | title=GSK starts Phase III RSV candidate vaccine programme for older adults | website=GSK | date=16 February 2021 | url=https://www.gsk.com/en-gb/media/press-releases/gsk-starts-phase-iii-rsv-candidate-vaccine-programme-for-older-adults/ | access-date=6 May 2023 | archive-date=6 May 2023 | archive-url=https://web.archive.org/web/20230506055303/https://www.gsk.com/en-gb/media/press-releases/gsk-starts-phase-iii-rsv-candidate-vaccine-programme-for-older-adults/ | url-status=live }}</ref><ref>{{cite press release | title=GSK presents positive clinical data on maternal and older adults RSV candidate vaccines | website=GSK US | date=21 October 2020 | url=https://us.gsk.com/en-us/media/press-releases/gsk-presents-positive-clinical-data-on-maternal-and-older-adults-rsv-candidate-vaccines/ | access-date=6 May 2023 | archive-date=25 March 2023 | archive-url=https://web.archive.org/web/20230325060905/https://us.gsk.com/en-us/media/press-releases/gsk-presents-positive-clinical-data-on-maternal-and-older-adults-rsv-candidate-vaccines/ | url-status=live }}</ref> respiratory syncytial virus vaccine, adjuvanted<ref name="Arexvy FDA label" />
+}}
+
+In November 2020, [[GSK plc|GSK]]'s vaccine, GSK3888550A, entered phase III trials for pregnant women.<ref name="FIERCEBIO112420">{{cite news |title=Hoping for an endgame, GSK kick-starts phase 3 RSV vaccine trial in pregnant women |work=Fierce Biotech |url=https://www.fiercebiotech.com/biotech/hoping-for-a-end-game-gsk-kickstarts-phase-3-rsv-vaccine-trial-pregnant-women |access-date=3 June 2021 |date=24 November 2020 |archive-date=3 June 2021 |archive-url=https://web.archive.org/web/20210603195939/https://www.fiercebiotech.com/biotech/hoping-for-a-end-game-gsk-kickstarts-phase-3-rsv-vaccine-trial-pregnant-women |url-status=live }}</ref> The vaccine's antigen is a stabilized version of the RSV F protein, which was developed using structure-based vaccine design.<ref name=Science110113B>{{cite journal | vauthors = Cohen J |title=Structural biology triumph offers hope against a childhood killer |journal=[[Science (journal)|Science]] |date=November 2013 |volume=342 |issue=6158 |pages=546–547 |doi=10.1126/science.342.6158.546-a |pmid=24179197 |bibcode=2013Sci...342Q.546C }}</ref><ref name=Science080219>{{cite journal |vauthors = Crank MC, Ruckwardt TJ, Chen M, Morabito KM, Phung E, Costner PJ, Holman LA, Hickman SP, Berkowitz NM, Gordon IJ, Yamshchikov GV, Gaudinski MR, Kumar A, Chang LA, Moin SM, Hill JP, DiPiazza AT, Schwartz RM, Kueltzo L, Cooper JW, Chen P, Stein JA, Carlton K, Gall JG, Nason MC, Kwong PD, Chen GL, Mascola JR, McLellan JS, Ledgerwood JE, Graham BS |title=A proof of concept for structure-based vaccine design targeting RSV in humans |journal=[[Science (journal)|Science]] |date=August 2019 |volume=365 |issue=6452 |pages=505–509 |doi=10.1126/science.aav9033 |pmid=31371616 |bibcode=2019Sci...365..505C |doi-access=free | title-link = doi }}</ref> This trial was terminated in February 2022, on the advice of an external Data Monitoring Committee, because of an excess of premature births in the trial arm.<ref>{{cite journal | pmid=37164373 | date = May 2023 | vauthors = Boytchev H | title=Maternal RSV vaccine: Further analysis is urged on preterm births | journal=BMJ (Clinical Research Ed.) | volume=381 | page=1021 | doi=10.1136/bmj.p1021 | s2cid=258591002 | doi-access=free | title-link = doi }}</ref>
+
+The FDA analyzed data from an ongoing, randomized, placebo-controlled clinical study conducted in the US and internationally in individuals 60 years of age and older.<ref name="FDA PR 20230504" /> The main clinical study was designed to assess the safety and effectiveness of a single dose administered to individuals 60 years of age and older.<ref name="FDA PR 20230504" /> Participants agreed to remain in the study through three RSV seasons to assess the duration of effectiveness and the safety and effectiveness of repeat vaccination.<ref name="FDA PR 20230504" /> Data from the first RSV season of the study were available for the FDA's analysis.<ref name="FDA PR 20230504" /> In this study, approximately 12,500 participants received vaccine and 12,500 participants received a placebo.<ref name="FDA PR 20230504" /> The vaccine reduced the risk of developing RSV-associated lower respiratory tract disease by 82.6% and reduced the risk of developing severe RSV-associated lower respiratory tract disease by 94.1%.<ref name="FDA PR 20230504" /> The FDA granted the application [[priority review]] designation and granted approval of Arexvy to GlaxoSmithKline Biologicals.<ref name="FDA PR 20230504" />
+
+In October 2022, GSK started a phase III, observer-blind, randomized, placebo-controlled study to evaluate the safety of the vaccine in people 50–59 years of age compared to people 60 years of age and older.<ref name=":0" /><ref name="NCT05590403" /> The vaccine elicited an immune response in people aged 50 to 59 years of age at increased risk for RSV disease due to select underlying medical conditions that was non-inferior to that observed in people aged 60 years of age and older, meeting the trial's primary co-endpoint.<ref name=":0"/>
+
+==== Pfizer ====
+{{Infobox drug
+| drug_name         = 
+| type              = vaccine
+| image             = 
+| alt               = 
+| width             = 
+| caption           = 
+
+<!-- Vaccine data -->
+| target            = [[Respiratory syncytial virus|RSVPreF3 antigen]]
+| vaccine_type      = protein subunit
+
+<!-- Clinical data -->
+| pronounce         = 
+| tradename         = Abrysvo
+| Drugs.com         = {{ubl
+  | RSV Vaccine {{drugs.com|monograph|respiratory-syncytial-virus-vaccine}}
+  | RSV Vaccine MRNA {{drugs.com|monograph|respiratory-syncytial-virus-vaccine-mrna}}
+  | {{drugs.com|cons|respiratory-syncytial-virus-vaccine-adjuvanted}}
+  | {{drugs.com|mtm|respiratory-syncytial-virus-rsv-mrna-vaccine}}
+  }}
+| MedlinePlus       = 
+| DailyMedID        = Respiratory syncytial vaccine
+| pregnancy_AU      = A
+| pregnancy_AU_comment = <ref name="Abrysvo APMDS">{{cite web | title=Abrysvo APMDS | website=Therapeutic Goods Administration (TGA) | date=21 May 2024 | url=https://www.tga.gov.au/resources/auspmd/abrysvo | access-date=10 June 2024 | archive-date=10 June 2024 | archive-url=https://web.archive.org/web/20240610053236/https://www.tga.gov.au/resources/auspmd/abrysvo | url-status=live }}</ref>
+| pregnancy_category = 
+| routes_of_administration = [[Intramuscular]]
+| ATC_prefix         = J07
+| ATC_suffix         = BX05
+| ATC_supplemental   =
+
+<!-- Legal status -->
+| legal_AU          = S4
+| legal_AU_comment  = <ref name="Abrysvo APMDS" />
+| legal_BR          = <!-- OTC, A1, A2, A3, B1, B2, C1, C2, C3, C5, D1, D2, E, F1, F2, F3, F4 -->
+| legal_BR_comment  = 
+| legal_CA          = Rx-only
+| legal_CA_comment  = <ref>{{cite web | title=Regulatory Decision Summary for Abrysvo (Respiratory Syncytial Virus Stabilized Prefusion F Subunit Vaccine) | website=[[Health Canada]] | date=21 December 2023 | url=https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1705588381487 | access-date=2 April 2024 | archive-date=2 April 2024 | archive-url=https://web.archive.org/web/20240402043038/https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1705588381487 | url-status=live }}</ref><ref>{{cite web | title=Summary Basis of Decision for Abrysvo | website=[[Health Canada]] | date=10 May 2024 | url=https://dhpp.hpfb-dgpsa.ca/review-documents/resource/SBD1715623184650 | access-date=8 June 2024 | archive-date=8 June 2024 | archive-url=https://web.archive.org/web/20240608174655/https://dhpp.hpfb-dgpsa.ca/review-documents/resource/SBD1715623184650 | url-status=live }}</ref>
+| legal_DE          = <!-- Anlage I, II, III or Unscheduled -->
+| legal_DE_comment  = 
+| legal_NZ          = <!-- Class A, B, C -->
+| legal_NZ_comment  = 
+| legal_UK          = POM
+| legal_UK_comment  = <ref name="Abrysvo SmPC">{{cite web | title=Abrysvo powder and solvent for solution for injection | website=(emc) | date=29 May 2024 | url=https://www.medicines.org.uk/emc/product/15309 | access-date=2 June 2024 | archive-date=2 June 2024 | archive-url=https://web.archive.org/web/20240602044334/https://www.medicines.org.uk/emc/product/15309 | url-status=live }}</ref>
+| legal_US          = Rx-only
+| legal_US_comment  = <ref name="Abrysvo FDA label">{{cite web | title=Abrysvo- respiratory syncytial virus vaccine kit | website=DailyMed | date=12 July 2023 | url=https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=be18292e-b1a2-4815-a0ed-003efaa6bea3 | access-date=6 August 2023 | archive-date=7 August 2023 | archive-url=https://web.archive.org/web/20230807034443/https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=be18292e-b1a2-4815-a0ed-003efaa6bea3 | url-status=live }}</ref><ref name="FDA Abrysvo" />
+| legal_EU          = Rx-only
+| legal_EU_comment  = <ref name="Abrysvo EPAR">{{cite web | title=Abrysvo EPAR | website=[[European Medicines Agency]] (EMA) | date=26 September 2023 | url=https://www.ema.europa.eu/en/medicines/human/EPAR/abrysvo | access-date=6 October 2023 | archive-date=1 October 2023 | archive-url=https://web.archive.org/web/20231001024622/https://www.ema.europa.eu/en/medicines/human/EPAR/abrysvo | url-status=live }}</ref><ref name="Abrysvo PI">{{cite web | title=Abrysvo Product Information | website=Union Register of medicinal products | date=24 August 2023 | url=https://ec.europa.eu/health/documents/community-register/html/h1752.htm | access-date=2 October 2023 | archive-date=1 October 2023 | archive-url=https://web.archive.org/web/20231001045637/https://ec.europa.eu/health/documents/community-register/html/h1752.htm | url-status=live }}</ref>
+| legal_UN          = <!-- N I, II, III, IV / P I, II, III, IV -->
+| legal_UN_comment  = 
+| legal_status      = <!-- For countries not listed above -->
+
+<!-- Identifiers -->
+| CAS_number        = 
+| CAS_supplemental  = 
+| PubChem           = 
+| PubChemSubstance  = 
+| IUPHAR_ligand     = 
+| DrugBank          = 
+| ChemSpiderID      = 
+| UNII              = 
+| KEGG              = D12607
+| ChEBI             = 
+| ChEMBL            = 
+| NIAID_ChemDB      = 
+}}
+
+RSVpreF (Abrysvo) is a bivalent recombinant protein [[subunit vaccine]] which consists of equal amounts of stabilized prefusion F antigens from the two major RSV subgroups: RSV A and RSV B.<ref>{{cite web | url=https://www.fda.gov/media/168185/download | format=PDF | title=Vaccines and Related Biological Products Advisory Committee May 18, 2023 Meeting Briefing Document | date=18 May 2023 | vauthors=((U.S. Food and Drug Administration)) |publisher=U.S. [[Food and Drug Administration]] (FDA) | archive-url=https://web.archive.org/web/20230602023903/https://www.fda.gov/media/168185/download |archive-date=2 June 2023 | url-status=dead }} {{PD-notice}}</ref>
+
+In April 2023, Pfizer published their interim results of their phase III study of a RSV vaccine for adults age 60 and older in over 34,000 participants. One dose of the vaccine was 67% efficacious in preventing infections with at least two symptoms and it was 86% effective against more severe disease, in people with three related symptoms. The vaccine's protection was consistent across different subgroups, and was 62% effective in preventing acute respiratory illness caused by RSV infection.<ref>{{cite journal | vauthors = Walsh EE, Pérez Marc G, Zareba AM, Falsey AR, Jiang Q, Patton M, Polack FP, Llapur C, Doreski PA, Ilangovan K, Rämet M, Fukushima Y, Hussen N, Bont LJ, Cardona J, DeHaan E, Castillo Villa G, Ingilizova M, Eiras D, Mikati T, Shah RN, Schneider K, Cooper D, Koury K, Lino MM, Anderson AS, Jansen KU, Swanson KA, Gurtman A, Gruber WC, Schmoele-Thoma B |date=April 2023 |title=Efficacy and Safety of a Bivalent RSV Prefusion F Vaccine in Older Adults |journal=The New England Journal of Medicine |volume=388 |issue=16 |pages=1465–1477 |doi=10.1056/NEJMoa2213836 |pmid=37018468 |s2cid=257984112 }}</ref><ref name="biospace-20230406">{{cite web |title=Pfizer Publishes Phase III RSV Data Ahead of May Decision |url=https://www.biospace.com/article/pfizer-posts-new-phase-iii-rsv-data-ahead-of-may-decision-/ |access-date=13 April 2023 |website=BioSpace |date=6 April 2023 |archive-date=13 April 2023 |archive-url=https://web.archive.org/web/20230413054009/https://www.biospace.com/article/pfizer-posts-new-phase-iii-rsv-data-ahead-of-may-decision-/ |url-status=live }}</ref>
+
+In April 2023, Pfizer published interim results of their double blind phase III study in about 3,600 pregnant women, with another 3,600 women receiving a placebo. One dose of the vaccine provided 81% efficacy in preventing severe infection within three months after birth and 69% in six months after birth.<ref name="NEJMpregnant">{{cite journal |vauthors=Kampmann B, Madhi SA, Munjal I, Simões EA, Pahud BA, Llapur C, Baker J, Pérez Marc G, Radley D, Shittu E, Glanternik J, Snaggs H, Baber J, Zachariah P, Barnabas SL, Fausett M, Adam T, Perreras N, Van Houten MA, Kantele A, Huang LM, Bont LJ, Otsuki T, Vargas SL, Gullam J, Tapiero B, Stein RT, Polack FP, Zar HJ, Staerke NB, Duron Padilla M, Richmond PC, Koury K, Schneider K, Kalinina EV, Cooper D, Jansen KU, Anderson AS, Swanson KA, Gruber WC, Gurtman A |date=April 2023 |title=Bivalent Prefusion F Vaccine in Pregnancy to Prevent RSV Illness in Infants |journal=The New England Journal of Medicine |volume=388 |issue=16 |pages=1451–1464 |doi=10.1056/NEJMoa2216480 |pmid=37018474 |s2cid=257982982 |url=https://researchonline.lshtm.ac.uk/id/eprint/4669944/7/Kampmann-etal-2023-Bivalent-prefusion-f-vaccine-in.pdf |access-date=26 November 2023 |archive-date=10 March 2024 |archive-url=https://web.archive.org/web/20240310060258/https://researchonline.lshtm.ac.uk/id/eprint/4669944/7/Kampmann-etal-2023-Bivalent-prefusion-f-vaccine-in.pdf |url-status=live }}</ref> The most common side effects were pain at the injection site, headache, muscle pain and nausea.<ref name="FDA PR 20230821" />
+
+In a subgroup of pregnant individuals who were 32 through 36 weeks gestational age, of whom about 1,500 received Abrysvo and 1,500 received placebo, Abrysvo reduced the risk of lower respiratory tract disease by 34.7%, and reduced the risk of severe lower respiratory tract disease by 91.1% within 90 days after birth when compared to placebo. Within 180 days after birth, Abrysvo reduced the risk of lower respiratory tract disease by 57.3% and by 76.5% for severe lower respiratory tract disease, when compared to placebo. In a second study, about 100 pregnant individuals received Abrysvo and approximately 100 pregnant women received placebo.<ref name="FDA PR 20230821" />
+
+==== Moderna ====
+{{Infobox drug
+| drug_name         = 
+| type              = vaccine
+| image             = 
+| alt               = 
+| width             = 
+| caption           = 
+
+<!-- Vaccine data -->
+| target            = <!-- the antigen/bacteria/toxin/virus to protect against -->
+| vaccine_type      = <!-- killed/attenuated/live/toxoid/protein subunit/subunit/conjugate/recombinant/DNA -->
+
+<!-- Clinical data -->
+| pronounce         = 
+| tradename         = Mresvia
+| Drugs.com          = {{ubl
+  | RSV Vaccine {{drugs.com|monograph|respiratory-syncytial-virus-vaccine}}
+  | RSV Vaccine MRNA {{drugs.com|monograph|respiratory-syncytial-virus-vaccine-mrna}}
+  | {{drugs.com|cons|respiratory-syncytial-virus-vaccine-adjuvanted}}
+  | {{drugs.com|mtm|respiratory-syncytial-virus-rsv-mrna-vaccine}}
+  }}
+| MedlinePlus       = 
+| DailyMedID        = Respiratory syncytial vaccine
+| pregnancy_AU      = B2
+| pregnancy_AU_comment = <ref name="Arexvy APMDS" />
+| pregnancy_category = 
+| routes_of_administration = [[Intramuscular]]
+| class             = 
+| ATC_prefix        = J07
+| ATC_suffix        = BX05
+
+<!-- Legal status -->
+| legal_AU          = S4
+| legal_AU_comment  = <ref>{{cite web | title=Mresvia (Moderna Australia Pty Ltd) | website=Therapeutic Goods Administration (TGA) | date=16 April 2025 | url=https://www.tga.gov.au/resources/prescription-medicines-registrations/mresvia-moderna-australia-pty-ltd | access-date=3 May 2025}}</ref>
+| legal_BR          = <!-- OTC, A1, A2, A3, B1, B2, C1, C2, C3, C5, D1, D2, E, F1, F2, F3, F4 -->
+| legal_BR_comment  = 
+| legal_CA          = Rx-only
+| legal_CA_comment  = <ref>{{cite web | title=Mresvia product information | website=[[Health Canada]] | date=3 December 2024 | url=https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=104187 | access-date=27 December 2024}}</ref>
+| legal_DE          = <!-- Anlage I, II, III or Unscheduled -->
+| legal_DE_comment  = 
+| legal_NZ          = <!-- Class A, B, C -->
+| legal_NZ_comment  = 
+| legal_UK          = <!-- GSL, P, POM, CD, CD Lic, CD POM, CD No Reg POM, CD (Benz) POM, CD (Anab) POM or CD Inv POM / Class A, B, C -->
+| legal_UK_comment  = 
+| legal_US          = Rx-only
+| legal_US_comment  = <ref name="Mresvia FDA label">{{cite web | title=Mresvia- respiratory syncytial virus vaccine suspension | website=DailyMed | date=31 May 2024 | url=https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e5c837e7-41e8-496a-9c85-6b0453b35948 | access-date=16 June 2024 | archive-date=16 June 2024 | archive-url=https://web.archive.org/web/20240616021258/https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e5c837e7-41e8-496a-9c85-6b0453b35948 | url-status=live }}</ref><ref name="FDA Mresvia" />
+| legal_EU          = Rx-only
+| legal_EU_comment  = <ref name="Mresvia EPAR" /><ref name="Mresvia PI">{{cite web | title=Mresvia Product information | website=Union Register of medicinal products | date=23 August 2024 | url=https://ec.europa.eu/health/documents/community-register/html/h1849.htm | access-date=27 August 2024}}</ref>
+| legal_UN          = <!-- N I, II, III, IV / P I, II, III, IV -->
+| legal_UN_comment  = 
+| legal_status      = <!-- For countries not listed above -->
+
+<!-- Identifiers -->
+| CAS_number        = 
+| CAS_supplemental  = 
+| PubChem           = 
+| PubChemSubstance  = 
+| IUPHAR_ligand     = 
+| DrugBank          = 
+| ChemSpiderID      = 
+| UNII              = 
+| KEGG              = D12607
+| ChEBI             = 
+| ChEMBL            = 
+| NIAID_ChemDB      = 
+}}
+
+Mresvia is an [[mRNA vaccine]] that was studied in clinical trial NCT05127434.<ref name="Mresvia FDA label" /><ref>{{cite journal | title=A Study to Evaluate the Safety and Efficacy of mRNA-1345 Vaccine Targeting Respiratory Syncytial Virus (RSV) in Adults ≥60 Years of Age | website=ClinicalTrials.gov | date=30 May 2024 | url=https://classic.clinicaltrials.gov/ct2/show/NCT05127434 | access-date=16 June 2024 | archive-date=16 June 2024 | archive-url=https://web.archive.org/web/20240616021258/https://classic.clinicaltrials.gov/ct2/show/NCT05127434 | url-status=live }}</ref> It was approved for medical use in the United States in May 2024.<ref name="Mresvia FDA label" /><ref name="FDA Mresvia">{{cite web | title=Mresvia Respiratory Syncytial Virus Vaccine, mRNA (mRNA-1345) | website=U.S. [[Food and Drug Administration]] (FDA) | date=31 May 2024 | url=https://www.fda.gov/vaccines-blood-biologics/vaccines/mresvia | access-date=2 June 2024 | archive-date=2 June 2024 | archive-url=https://web.archive.org/web/20240602042031/https://www.fda.gov/vaccines-blood-biologics/vaccines/mresvia | url-status=dead }}</ref><ref name="Moderna PR 20240531">{{cite press release | title=Moderna Receives U.S. FDA Approval for RSV Vaccine Mresvia | publisher=Moderna | via=Accesswire | date=31 May 2024 | url=https://www.accesswire.com/870069/moderna-receives-us-fda-approval-for-rsv-vaccine-mresvia | access-date=31 May 2024 | archive-date=31 May 2024 | archive-url=https://web.archive.org/web/20240531150907/https://www.accesswire.com/870069/moderna-receives-us-fda-approval-for-rsv-vaccine-mresvia | url-status=live }}</ref><ref name="FDA PR 20240531">{{cite press release | title=FDA Roundup: May 31, 2024 | website=U.S. [[Food and Drug Administration]] (FDA) | date=31 May 2024 | url=https://www.fda.gov/news-events/press-announcements/fda-roundup-may-31-2024 | access-date=31 May 2024 | archive-date=31 May 2024 | archive-url=https://web.archive.org/web/20240531194102/https://www.fda.gov/news-events/press-announcements/fda-roundup-may-31-2024 | url-status=dead }} {{PD-notice}}</ref> It protects against lower respiratory tract disease caused by RSV in adults aged 60 years and older. It is also used in adults aged 18 to 59 years who are at increased risk for lower respiratory tract disease caused by RSV.<ref>{{Cite web |date=2024-06-28 |title=mResvia {{!}} European Medicines Agency (EMA) |url=https://www.ema.europa.eu/en/medicines/human/EPAR/mresvia |access-date=2025-12-11 |website=www.ema.europa.eu |language=en}}</ref>
+
+During studies, this vaccine is under the name of mRNA-1345 vaccine. It is a vaccine that uses messenger RNA technology. It is a lipid nanoparticle that contain mRNA which encodes the RSV F-protein stabilized in the prefusion conformation.
+
+===== Phase 2/3 trial =====
+The phase 2/3 trial of 2024 evaluated the humoral immunogenicity of the mRNA-1345 vaccine in adults older than 60 years old.<ref>{{cite journal | vauthors = Goswami J, Baqui AH, Doreski PA, Perez Marc G, Jimenez G, Ahmed S, Zaman K, Duncan CJ, Ujiie M, Rämet M, Pérez-Breva L, Lan L, Du J, Kapoor A, Mehta S, Tomassini JE, Huang W, Zhou H, Stoszek SK, Priddy F, Lin N, Le Cam N, Shaw CA, Slobod K, Wilson E, Miller JM, Das R | title = Humoral Immunogenicity of mRNA-1345 RSV Vaccine in Older Adults | journal = The Journal of Infectious Diseases | volume = 230 | issue = 5 | pages = e996–e1006 | date = November 2024 | pmid = 38889247 | pmc = 11566230 | doi = 10.1093/infdis/jiae316 }}</ref> A total of approximatively 35,000 participants were randomized, and an immunogenicity subset (mRNA-1345: n=1515; placebo: n=333) was analysed. 
+
+Results showed that at 29 days after vaccination, mRNA-1345 induced strong increases in neutralizing antibodies (nAbs) against both RSV-A and RSV-B, with 8.4-fold and 5.1-fold rises, respectively, compared with baseline. Seroresponse rates (≥4-fold increase) were 74.2% for RSV-A and 56.5% for RSV-B, greatly exceeding placebo responses. Binding antibodies (bAbs) to the preF antigen also increased, showing a 7.7-fold increase after vaccination. mRNA-1345 vaccine enhanced an antibody response across all demographic and risk groups. 
+
+Overall, mRNA-1345 vaccine produced robust and rapid humoral immune responses across diverse high-risk populations. So, it provides protection against RSV in older persons who are predisposed to severe disease. 
+
+Given natural infection with RSV does not confer lifelong protection, revaccination may be required after primary vaccination. The need and timing for revaccination with RSV vaccines is being evaluated in studies. 
+
+===== Revaccination trial =====
+This study<ref>{{cite journal | vauthors = Goswami J, Cardona JF, Caso J, Hsu DC, Simorellis AK, Wilson L, Dhar R, Wang X, Kapoor A, Collins A, Righi V, Lan L, Du J, Zhou H, Stoszek SK, Shaw CA, Reuter C, Wilson E, Das R | title = Safety, Tolerability, and Immunogenicity of Revaccination with mRNA-1345, an mRNA Vaccine Against RSV, Administered 12 Months Following a Primary Dose in Adults Aged ≥50 Years | journal = Clinical Infectious Diseases | date = September 2025 | pmid = 40988124 | doi = 10.1093/cid/ciaf515 | article-number = ciaf515 }}</ref> evaluated if revaccination with the mRNA-1345 vaccine after 12 months is safe and immunogenic in adults older than 50 years old.
+
+In this phase 3 trial, there were 543 participants and it included 525 patients that were included in the immunogenicity analyses. Those participants received 50 μg booster dose of mRNA-1345 12 months later.
+
+Revaccination was safe and well tolerated, with mostly mild, short-lasting local and systemic reactions and no vaccine-related serious adverse events. At Day 29, neutralizing antibody responses to RSV-A and RSV-B met noninferiority criteria compared with the primary dose, with geometric mean titer ratios of 1.08 and 0.91, respectively. Antibody levels increased substantially after revaccination and remained above baseline through 12 months. Seroresponse rates were 77.5% for RSV-A and 47.5% for RSV-B. Immunogenicity was consistent across demographic subgroups.
+
+Overall, mRNA-1345 revaccination was safe and well tolerated. The immunogenic response was comparable to the primary dose ad it was effective across all subgroups. 
+
+So, these findings support the potential use of annual revaccination for adults ≥50 years, especially those at higher risk for severe RSV.
+
+== Society and culture ==
+
+=== Legal status ===
+
+In June 2024, the [[Committee for Medicinal Products for Human Use]] of the [[European Medicines Agency]] adopted a positive opinion, recommending the granting of a marketing authorization for the medicinal product Mresvia, intended for the prevention of lower respiratory tract disease caused by respiratory syncytial virus.<ref name="Mresvia EPAR" /><ref>{{cite web | title=Meeting highlights from the Committee for Medicinal Products for Human Use (CHMP) 24-27 June 2024 | website=European Medicines Agency | date=28 June 2024 | url=https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-24-27-june-2024 | access-date=12 July 2024 | archive-date=12 July 2024 | archive-url=https://web.archive.org/web/20240712152232/https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-24-27-june-2024 | url-status=live }}</ref> The applicant for this medicinal product is Moderna Biotech Spain S.L.<ref name="Mresvia EPAR">{{cite web | title=Mresvia EPAR | website=European Medicines Agency | date=27 June 2024 | url=https://www.ema.europa.eu/en/medicines/human/EPAR/mresvia | access-date=29 June 2024 | archive-date=29 June 2024 | archive-url=https://web.archive.org/web/20240629062000/https://www.ema.europa.eu/en/medicines/human/EPAR/mresvia | url-status=live }} Text was copied from this source which is copyright European Medicines Agency. Reproduction is authorized provided the source is acknowledged.</ref> Mresvia was approved for medical use in the European Union in August 2024.<ref name="Mresvia EPAR" /><ref name="Mresvia PI" /><ref>{{cite press release | title=Moderna Receives European Commission Approval for RSV Vaccine Mresvia | website=Moderna | date=23 August 2024 | url=https://news.modernatx.com/news/news-details/2024/Moderna-Receives-European-Commission-Approval-for-RSV-Vaccine-mRESVIAR/default.aspx | access-date=27 August 2024}}</ref>
+
+==References==
+{{reflist}}
+
+== External links ==
+* {{cite web | title=RSV Vaccine Information Statement | date=15 October 2024 | publisher=U.S. [[Centers for Disease Control and Prevention]] (CDC) | url=https://www.cdc.gov/vaccines/hcp/vis/vis-statements/rsv.html }}
+* {{ClinicalTrialsGov|NCT04886596|Efficacy Study of GSK's Investigational Respiratory Syncytial Virus (RSV) Vaccine in Adults Aged 60 Years and Above}}
+* {{ClinicalTrialsGov|NCT04732871|Immunogenicity, Safety, Reactogenicity and Persistence of an Investigational Respiratory Syncytial Virus (RSV) Vaccine in Adults Aged 60 Years and Above}}
+* {{ClinicalTrialsGov|NCT04841577|A Study on the Immune Response and Safety Elicited by a Vaccine Against Respiratory Syncytial Virus (RSV) When Given Alone and Together With a Vaccine Against Influenza in Adults Aged 60 Years and Above}}
+* {{ClinicalTrialsGov|NCT05035212|Study to Evaluate the Efficacy, Immunogenicity, and Safety of RSVpreF in Adults. (RENOIR)}}
+* {{ClinicalTrialsGov|NCT04424316|A Trial to Evaluate the Efficacy and Safety of RSVpreF in Infants Born to Women Vaccinated During Pregnancy}}
+
+{{Vaccines}}
+{{GSK}}
+{{Portal bar | Medicine | Viruses}}
+{{Authority control}}
+
+[[Category:Clinical trials]]
+[[Category:Drugs developed by GSK plc]]
+[[Category:Drugs developed by Pfizer]]
+[[Category:Subunit vaccines]]
+[[Category:Vaccines]]
+[[Category:Respiratory syncytial virus|vaccine, Respiratory syncytial virus]]
+[[Category:World Health Organization essential medicines (vaccines)]]

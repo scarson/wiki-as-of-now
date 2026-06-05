@@ -49,7 +49,21 @@ Each residual was poked at and the obvious fix found to be a trap — captured h
 
 How we build: fetch raw wikitext (`action=raw`, descriptive UA), run the detector, read *what it actually flags*, label genuine positives and correctly-suppressed FP-class negatives, improve suppression for any **principled** new FP class, never delete a negative to pass the gate. Each domain wave so far found a new structural pattern: military equipment → leading + mid-sentence datelines; the new-domain wave (space/rail/infra/nuclear/aviation/naval) → the incidental-year class (DET-3).
 
-**Should we keep expanding "until we stop finding new patterns"?** Recommendation: **yes to more, but bounded and instrumented — not open-ended.** Reasoning:
+### Per-wave pattern tracking (the instrumentation)
+
+The unit that matters is **new *structural* patterns per wave**, not fixtures added. Tracked so far:
+
+| Wave | Domains | New *structural* patterns | New *instances* of known patterns | Fixable? |
+|---|---|---|---|---|
+| 1 | US military equipment | leading bare/`In`-month datelines; mid-sentence attribution | — | yes (Rules 1, 4) |
+| 2 | space, rail, infra, nuclear, aviation, naval | leading **`On` + full-date** datelines; **incidental historical year** (DET-3) | more dateline/attribution instances | dateline yes (Rule 1+On); incidental-year **no** |
+| 3 | clinical/biomedical, legislation/policy | **regulatory effective-date** ("From July 2022 … will need…", "will apply in 2023") | DET-3 (years in named standards "SAP 2005", ranges "2024–2034", election years); Rule-4 verb gaps ("**claimed** in July 2022 that"); Rule-3 verb gaps ("later **moved** that to 2023") | effective-date **no**; verb gaps **yes** (extended Rule 3/4 verb lists) |
+
+**Wave-3 true-precision sample (all 18 flags hand-judged):** ~5 genuine positives, ~13 FPs — but the FPs concentrate in two policy articles (Inflation Reduction Act, Building Safety Act) heavy with named-standard/range/opinion incidental years. Biomedical articles were *cleaner* (clinical-trial "expected to conclude / scheduled to begin in &lt;year&gt;" is a textbook positive). Notable register fact: biomedical/policy prose has **fewer leading `On <date>` datelines** than engineering prose (it cites differently), so the dateline rules fire less.
+
+**Saturation read after wave 3:** the rate of new *fixable structural* patterns is approaching zero. Wave 3's only new structural pattern (regulatory effective-date) is **unfixable** (a `From` frame collides with the "From 2015 to 2022 … will be manufactured" positive; "will apply in 2023" needs semantics); everything else fixable was a *verb-list extension* to an existing rule, i.e. an instance. One or two more distant registers (e.g. sports/event scheduling, corporate roadmaps) would confirm, but the evidence already points to **diminishing returns on corpus-driven precision** — the remaining gains are in the §6 roadmap (semantic marker-governs-year, true-precision sampling, recall), not more fixtures.
+
+**Should we keep expanding "until we stop finding new patterns"?** Recommendation: **a little more, bounded and instrumented — not open-ended.** Reasoning:
 
 - **Distinguish a new *structural* pattern from a new *instance*.** New domains now mostly produce new instances of cataloged patterns; genuinely new structural patterns are getting rarer. The marginal *structural* discovery rate is the real signal — track patterns-found-per-wave, not fixtures-added.
 - **"Until we stop finding patterns" has a fuzzy stopping rule.** The pattern space is long-tailed; a quiet wave doesn't prove saturation. Replace the vibe with an explicit rule, e.g. *stop adding domains when N (≈3) consecutive deliberately-distinct domains yield zero new structural patterns, only new instances.*

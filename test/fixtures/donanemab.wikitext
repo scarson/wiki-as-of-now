@@ -1,0 +1,137 @@
+{{Short description|Monoclonal antibody against amyloid beta}}
+{{Use American English|date=July 2023}}
+{{Use dmy dates|date=June 2025}}
+{{cs1 config|name-list-style=vanc|display-authors=6}}
+{{Infobox drug
+| type              = mab
+| image             = 
+| alt               = 
+| caption           = 
+
+<!-- Monoclonal antibody data -->
+| mab_type          = mab
+| source            = zu/o
+| target            = [[Amyloid beta]]
+
+<!-- Clinical data -->
+| pronounce         = 
+| tradename         = Kisunla
+| Drugs.com         = {{drugs.com|monograph|donanemab-azbt}}
+| MedlinePlus       = a624048
+| DailyMedID        = Donanemab
+| pregnancy_AU      = <!-- A / B1 / B2 / B3 / C / D / X -->
+| pregnancy_AU_comment = 
+| pregnancy_category = 
+| routes_of_administration = [[Intravenous infusion|Intravenous]]
+| class             = 
+| ATC_prefix        = N06
+| ATC_suffix        = DX05
+| ATC_supplemental  = 
+| biosimilars       = 
+
+<!-- Legal status -->
+| legal_AU          = <!-- S2, S3, S4, S5, S6, S7, S8, S9 or Unscheduled -->
+| legal_AU_comment  = 
+| legal_BR          = <!-- OTC, A1, A2, A3, B1, B2, C1, C2, C3, C4, C5, D1, D2, E, F -->
+| legal_BR_comment  = 
+| legal_CA          = <!-- OTC, Rx-only, Schedule I, II, III, IV, V, VI, VII, VIII -->
+| legal_CA_comment  = 
+| legal_DE          = <!-- Anlage I, II, III or Unscheduled -->
+| legal_DE_comment  = 
+| legal_NZ          = <!-- Class A, B, C -->
+| legal_NZ_comment  = 
+| legal_UK          = <!-- GSL, P, POM, CD, CD Lic, CD POM, CD No Reg POM, CD (Benz) POM, CD (Anab) POM or CD Inv POM / Class A, B, C -->
+| legal_UK_comment  = 
+| legal_US          = Rx-only
+| legal_US_comment  = <ref name="Kisunla FDA label" />
+| legal_EU          = Rx-only
+| legal_EU_comment  = <ref name="Kisunla EPAR" /><ref name="Kisunla PI" />
+| legal_UN          = <!-- N I, II, III, IV / P I, II, III, IV -->
+| legal_UN_comment  = 
+| legal_status      = <!-- For countries not listed above -->
+
+<!-- Identifiers -->
+| CAS_number        = 1931944-80-7
+| PubChem           = 
+| IUPHAR_ligand     = 
+| DrugBank          = DB16647
+| ChemSpiderID      = 
+| UNII              = 1ADB65P1KK
+| KEGG              = D11500
+| ChEBI             = 
+| ChEMBL            = 
+| NIAID_ChemDB      = 
+| PDB_ligand        = 
+| synonyms          = LY3002813, donanemab-azbt
+
+<!-- Chemical and physical data -->
+| C = 6452 | H = 10038 | N = 1708 | O = 2013 | S = 42
+}}
+
+'''Donanemab''', sold under the brand name '''Kisunla''', is a [[monoclonal antibody]] used for the treatment of [[Alzheimer's disease]].<ref name="Kisunla FDA label">{{cite web | title=Kisunla- donanemab-azbt injection, solution | website=DailyMed | date=2 July 2024 | url=https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=190352d4-ef62-4679-b4fa-e846e2766afa | access-date=15 August 2024 | archive-date=26 December 2024 | archive-url=https://web.archive.org/web/20241226161432/https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=190352d4-ef62-4679-b4fa-e846e2766afa | url-status=live }}</ref><ref name="FDA PR 20240702" /> Donanemab was developed by [[Eli Lilly and Company]].<ref name="Long 2019">{{cite journal | vauthors = Long JM, Holtzman DM | title = Alzheimer Disease: An Update on Pathobiology and Treatment Strategies | journal = Cell | volume = 179 | issue = 2 | pages = 312–339 | date = October 2019 | pmid = 31564456 | pmc = 6778042 | doi = 10.1016/j.cell.2019.09.001 }}</ref>
+
+It has no clinically significant effect in the treatment of Alzheimer's disease.<ref name="Network2026">{{cite journal | vauthors = Huang S, Guo Y | date = 2026 | title = Network meta-analysis of the efficacy of nine drugs for cognitive function in patients with Alzheimer's disease | journal = Journal of Alzheimer's Disease Reports | volume = 10 | article-number = 25424823261422205 | doi = 10.1177/25424823261422205 | pmc = 13039041 | pmid = 41929952 }}</ref><ref name="Cochrane2026">{{cite journal | vauthors = Nonino F, Minozzi S, Sambati L, Del Giovane C, Baldin E, Bassi MC, De Santis C, Gonzalez-Lorenzo M, Vignatelli L, Filippini G, Richard E | date = April 2026 | title = Amyloid-beta-targeting monoclonal antibodies for people with mild cognitive impairment or mild dementia due to Alzheimer's disease | journal = The Cochrane Database of Systematic Reviews | volume = 4 | issue = 4 | article-number = CD016297 | doi = 10.1002/14651858.CD016297 | doi-access = free | pmc = 13082890 | pmid = 41985900 }}</ref>
+
+The most common side effects include [[amyloid-related imaging abnormalities]], which are brain hemorrhages and brain swelling, which can cause strokes, seizures, falls and trouble thinking. Brain hemorrhage and swelling occurred in 36.8% of people taking donanemab and 14.9% of people taking [[placebo]].<ref name=":0">{{cite journal | vauthors = Lenzer J, Brownlee S | title = Donanemab: Conflicts of interest found in FDA committee that approved new Alzheimer's drug | journal = BMJ | volume = 386 | article-number = q2010 | date = September 2024 | pmid = 39322239 | doi = 10.1136/bmj.q2010 }}</ref> Headache and allergic reactions to the medication were other common side effects.<ref name="FDA PR 20240702" />
+
+Donanemab was approved for medical use in the United States in July 2024.<ref name="FDA PR 20240702">{{cite press release | title=FDA approves treatment for adults with Alzheimer's disease | website=U.S. [[Food and Drug Administration]] (FDA) | date=2 July 2024 | url=https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-adults-alzheimers-disease | access-date=2 July 2024 | archive-date=2 July 2024 | archive-url=https://web.archive.org/web/20240702222134/https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-adults-alzheimers-disease | url-status=live }} {{PD-notice}}</ref><ref name="Novel Drug Approvals for 2024">{{cite web | title=Novel Drug Approvals for 2024 | website=U.S. [[Food and Drug Administration]] (FDA) | date=1 October 2024 | url=https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024 | access-date=29 November 2024 | archive-date=30 April 2024 | archive-url=https://web.archive.org/web/20240430031024/https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2024 | url-status=live }}</ref><ref>{{cite report | title=New Drug Therapy Approvals 2024 | website=U.S. [[Food and Drug Administration]] (FDA) | date=January 2025 | url=https://www.fda.gov/media/184967/download | format=PDF | access-date=21 January 2025 | archive-url=https://web.archive.org/web/20250121045744/https://www.fda.gov/media/184967/download | archive-date=21 January 2025 | url-status=live }}</ref> Most of the members of the US [[Food and Drug Administration]] (FDA) advisory panel had financial conflicts of interest.<ref name=":0" /> Treatment is intended for people with mild cognitive impairment or mild dementia stage of disease, which is the same population the treatment was studied in the clinical trials.<ref>{{Cite web |date=12 July 2024 |title=FDA approves treatment for Alzheimer's disease - The Yucatan Times |work=The Yucatan Times |url=https://www.theyucatantimes.com/2024/07/fda-approves-treatment-for-alzheimers-disease/ |access-date=15 July 2024 |archive-date=15 July 2024 |archive-url=https://web.archive.org/web/20240715073211/https://www.theyucatantimes.com/2024/07/fda-approves-treatment-for-alzheimers-disease/ |url-status=live }}</ref> Several public interest groups spoke out in FDA hearings against approval of the drug.<ref>{{Cite web |date=26 July 2024 |title=Updated Public Participation Information: June 10, 2024: Meeting of the Peripheral and Central Nervous System Drugs Advisory Committee Meeting Announcement - 06/10/2024 |url=https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-public-participation-information-june-10-2024-meeting-peripheral-and-central-nervous-system |access-date=17 March 2025 |website=U.S. [[Food and Drug Administration]] (FDA) }}</ref>
+
+== Medical uses ==
+In the US, donanemab is [[indicated]] for the treatment of Alzheimer's disease for people with [[mild cognitive impairment]] or mild dementia stage of disease.<ref name="FDA PR 20240702" />
+
+In the EU, donanemab is indicated for the treatment of adults with a clinical diagnosis of mild cognitive impairment and mild dementia due to Alzheimer's disease (early symptomatic Alzheimer's disease) who are [[apolipoprotein E]] ε4 (ApoE ε4) heterozygotes or non-carriers with confirmed amyloid pathology.<ref name="Kisunla EPAR" /><ref name="Kisunla PI" />
+
+== Adverse effects ==
+The US [[Food and Drug Administration]] (FDA) label for donanemab contains a [[boxed warning]] about [[amyloid-related imaging abnormalities]].<ref name="Kisunla FDA label" />
+
+Side effects may include infusion-related reactions, with symptoms such as flu-like symptoms, nausea, vomiting and changes in blood pressure, and hypersensitivity reactions, including anaphylaxis (severe, life-threatening allergic reaction) and angioedema (swelling).<ref name="FDA PR 20240702" />
+
+Donanemab can cause serious side effects.<ref name="Kisunla FDA snapshot" /> The most common side effects of donanemab include ARIA, headache, and infusion-related reactions.<ref name="Kisunla FDA snapshot" />
+
+ARIA refers to temporary swelling in areas of the brain (ARIA-E), or small spots of bleeding in or on the surface of the brain (ARIA-H).<ref name="Kisunla FDA snapshot" /> The swelling in areas of the brain usually resolves over time, while the small spots of bleeding in or on the surface of the brain may not resolve.<ref name="Kisunla FDA snapshot" /> Most people who develop ARIA do not get symptoms; however, some people, especially those with swelling in the brain, may have symptoms such as headache, confusion, dizziness, vision changes, nausea, seizures, and difficulty walking.<ref name="Kisunla FDA snapshot" /> Some of these symptoms may be serious and life-threatening.<ref name="Kisunla FDA snapshot" /> ARIA can be fatal.<ref name="Kisunla FDA snapshot" /> While ARIA may occur any time during treatment with donanemab, it has most frequently been observed during the first 24 weeks of treatment.<ref name="Kisunla FDA snapshot" />
+
+Some people may also develop larger areas of bleeding in the brain while taking donanemab which may also be serious and life-threatening.<ref name="Kisunla FDA snapshot" /> Some people may be at a higher risk of developing bleeding in the brain if they are taking medicines to reduce blood clots from forming (antithrombotic medicines) while receiving donanemab.<ref name="Kisunla FDA snapshot" />
+
+Some people have a genetic risk factor (homozygous apolipoprotein E [ApoE] ε4 gene carriers) that may cause an increased risk for ARIA.<ref name="Kisunla FDA snapshot" /> 
+
+Allergic reactions associated with donanemab include swelling of the face, lips, mouth, or eyelids, difficulty breathing, and hives.<ref name="Kisunla FDA snapshot" /> Infusion-related reactions may also occur.<ref name="Kisunla FDA snapshot" /> Symptoms of infusion-related reactions include chills, irritation of skin, nausea, vomiting, sweating, headache, chest pain, and problems breathing.<ref name="Kisunla FDA snapshot">{{cite web | title=Drug Trials Snapshots: Kisunla | website=U.S. [[Food and Drug Administration]] (FDA) | date=2 July 2024 | url=https://www.fda.gov/drugs/drug-approvals-and-databases/drug-trials-snapshots-kisunla | access-date=4 October 2025}} {{PD-notice}}</ref>
+
+=== Cerebral edema ===
+In larger doses of donanemab, some people developed a form of [[cerebral edema]] (brain swelling) called "amyloid-related imaging abnormalities with edema or effusions" (ARIA-E); some of these people were [[asymptomatic]] while others displayed edema.<ref name="sims">{{cite journal | vauthors = Sims JR, Zimmer JA, Evans CD, Lu M, Ardayfio P, Sparks J, Wessels AM, Shcherbinin S, Wang H, Monkul Nery ES, Collins EC, Solomon P, Salloway S, Apostolova LG, Hansson O, Ritchie C, Brooks DA, Mintun M, Skovronsky DM | date = August 2023 | title = Donanemab in Early Symptomatic Alzheimer Disease: The TRAILBLAZER-ALZ 2 Randomized Clinical Trial | journal = JAMA | volume = 330 | issue = 6 | pages = 512–527 | doi = 10.1001/jama.2023.13239 | doi-access = free | pmc = 10352931 | pmid = 37459141 }}</ref>
+
+[[File:Amyloid-plaque formation-big.jpg|thumb|upright=1.8|Enzymes act on the APP (Amyloid precursor protein) and cut it into fragments of protein, one of which is called beta-amyloid and its crucial in the formation of senile plaques in Alzheimer. Image created in 2008.]]
+
+== History ==
+{{See also|Anti-amyloid antibodies}}
+In the United States and Japan, Eli Lilly ran the [[Phases of clinical research#Phase I|phase I study]] from May 2013 to August 2016.<ref name="ALZFORUM 2021">{{cite web | title = Donanemab Confirms: Clearing Plaques Slows Decline—By a Bit | work = AlzForum Foundation | date = 2021 | access-date = 23 April 2021 | url = https://www.alzforum.org/news/conference-coverage/donanemab-confirms-clearing-plaques-slows-decline-bit | archive-date = 23 April 2021 | archive-url = https://web.archive.org/web/20210423120938/https://www.alzforum.org/news/conference-coverage/donanemab-confirms-clearing-plaques-slows-decline-bit | url-status = live }}</ref> The study was conducted on people with mild Alzheimer's disease shown through a positive amyloid [[Positron emission tomography|PET scan]] that was conducted on each individual. 100 participants were injected [[Intravenous therapy|intravenously]] with donanemab up to four times monthly. Phase I was part of a multi-armed study that used one control group across the different trials. The positive result indicated that the participants had excess amyloid protein in the brain depicting an early sign of Alzheimer's disease. Each month, doses of 0.1&nbsp;mg/kg to 10&nbsp;mg/kg were injected into males and non-fertile females at an average age of 74.<ref name="Lowe 2021">{{cite journal | vauthors = Lowe SL, Willis BA, Hawdon A, Natanegara F, Chua L, Foster J, Shcherbinin S, Ardayfio P, Sims JR | title = Donanemab (LY3002813) dose-escalation study in Alzheimer's disease | journal = Alzheimer's & Dementia | volume = 7 | issue = 1 | article-number = e12112 | date = 2021 | pmid = 33614890 | pmc = 7882532 | doi = 10.1002/trc2.12112 }}</ref> A [[Phases of clinical research#Phase II|phase II trial]] was then performed for 72 weeks with 257 participants.<ref name="mintun">{{cite journal |vauthors=Mintun MA, Lo AC, Duggan Evans C, Wessels AM, Ardayfio PA, Andersen SW, Shcherbinin S, Sparks J, Sims JR, Brys M, Apostolova LG, Salloway SP, Skovronsky DM |title=Donanemab in Early Alzheimer's Disease |journal=The New England Journal of Medicine |volume=384 |issue=18 |pages=1691–1704 |date=May 2021 |pmid=33720637 |doi=10.1056/NEJMoa2100708 |doi-access=free }}</ref> In May 2023, the company reported its phase III study.<ref>{{Cite news |date=3 May 2023 |title=Eli Lilly Alzheimer's treatment donanemab slowed disease progression in clinical trial |work=CNBC |url=https://www.cnbc.com/2023/05/03/alzheimers-eli-lilly-treatment-donanemab-slowed-disease-progression.html |access-date=3 May 2023 |archive-date=3 May 2023 |archive-url=https://web.archive.org/web/20230503115645/https://www.cnbc.com/2023/05/03/alzheimers-eli-lilly-treatment-donanemab-slowed-disease-progression.html |url-status=live }}</ref>
+
+== Society and culture ==
+=== Legal status ===
+In July 2024, donanemab was approved for medical use in the United States.<ref name="FDA PR 20240702" /><ref>{{cite web | title=Notable Approvals | website=U.S. [[Food and Drug Administration]] (FDA) | date=2 July 2024 | url=https://www.fda.gov/drugs/news-events-human-drugs/notable-approvals-drugs | access-date=3 July 2024 | archive-date=13 June 2024 | archive-url=https://web.archive.org/web/20240613020116/https://www.fda.gov/drugs/news-events-human-drugs/notable-approvals-drugs | url-status=live }}</ref><ref>{{cite press release | title=Lilly's Kisunla (donanemab-azbt) Approved by the FDA for the Treatment of Early Symptomatic Alzheimer's Disease | publisher=Eli Lilly | via=PR Newswire | date=2 July 2024 | url=https://www.prnewswire.com/news-releases/lillys-kisunla-donanemab-azbt-approved-by-the-fda-for-the-treatment-of-early-symptomatic-alzheimers-disease-302188299.html | access-date=2 July 2024 | archive-date=2 July 2024 | archive-url=https://web.archive.org/web/20240702222336/https://www.prnewswire.com/news-releases/lillys-kisunla-donanemab-azbt-approved-by-the-fda-for-the-treatment-of-early-symptomatic-alzheimers-disease-302188299.html | url-status=live }}</ref> The US [[Food and Drug Administration]] (FDA) granted the application for donanemab [[FDA Fast Track|fast track]], [[priority review]], and [[breakthrough therapy]] designations.<ref name="FDA PR 20240702" />
+
+In October 2024, donanemab was approved for medical use in the United Kingdom by the [[Medicines and Healthcare products Regulatory Agency]].<ref>{{cite web | title=Donanemab licensed for early stages of Alzheimer's disease in adult patients who have one or no copies of apolipoprotein E4 gene | website=GOV.UK | date=23 October 2024 | url=https://www.gov.uk/government/news/donanemab-licensed-for-early-stages-of-alzheimers-disease-in-adult-patients-who-have-one-or-no-copies-of-apolipoprotein-e4-gene | access-date=4 October 2025}}</ref><ref>{{cite press release | last=Lilly | first=Eli | title=Lilly's Kisunla (donanemab-azbt) Receives Marketing Authorization in Great Britain for the Treatment of Mild Cognitive Impairment and Mild Dementia Due to Alzheimer's Disease in Adult Patients Who Are Apolipoprotein E Ε4 Heterozygotes or Non-Carriers | website=PR Newswire | date=23 October 2024 | url=https://www.prnewswire.com/news-releases/lillys-kisunla-donanemab-azbt-receives-marketing-authorization-in-great-britain-for-the-treatment-of-mild-cognitive-impairment-and-mild-dementia-due-to-alzheimers-disease-in-adult-patients-who-are-apolipoprotein-e-4-heterozy-302283873.html | access-date=4 October 2025}}</ref>
+
+In March 2025, the [[Committee for Medicinal Products for Human Use]] (CHMP) of the [[European Medicines Agency]] recommended the refusal of a marketing authorization for donanemab for the treatment of early Alzheimer's disease.<ref name="Kisunla EPAR">{{cite web | title=Kisunla EPAR | website=[[European Medicines Agency]] (EMA) | date=27 March 2025 | url=https://www.ema.europa.eu/en/medicines/human/EPAR/kisunla | access-date=28 March 2025}}</ref> In June 2025, the CHMP started a re-examination of its refusal.<ref>{{cite web | title=Meeting highlights from the Committee for Medicinal Products for Human Use (CHMP) 16-19 June 2025 | website=[[European Medicines Agency]] (EMA) | date=20 June 2025 | url=https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-16-19-june-2025 | access-date=30 June 2025}}</ref> Donanemab was authorized for medical use in the European Union in September 2025.<ref name="Kisunla EPAR" /><ref name="Kisunla PI">{{cite web | title=Kisunla PI | website=Union Register of medicinal products | date=25 September 2025 | url=https://ec.europa.eu/health/documents/community-register/html/h1926.htm | access-date=4 October 2025}}</ref>
+
+=== Economics ===
+The list price for donanemab is {{US$|32,000}} for a course of therapy lasting a year.<ref>{{cite news | vauthors = Belluck P | title=New Drug Approved for Early Alzheimer's | date=2 July 2024 | url=https://www.nytimes.com/2024/07/02/health/alzheimers-treatment-kisunla-donanemab.html | access-date=3 July 2024 | newspaper=[[The New York Times]] | archive-date=2 July 2024 | archive-url=https://web.archive.org/web/20240702185156/https://www.nytimes.com/2024/07/02/health/alzheimers-treatment-kisunla-donanemab.html | url-status=live }}</ref>
+
+=== Names ===
+Donanemab is the [[international nonproprietary name]].<ref>{{cite journal | year = 2019 | title = International nonproprietary names for pharmaceutical substances (INN): recommended INN: list 82 | journal = WHO Drug Information | volume = 33 | issue = 3 | hdl = 10665/330879 | hdl-access = free }}</ref>
+
+Donanemab is sold under the brand name Kisunla.<ref name="Kisunla EPAR" /><ref name="Kisunla PI" />
+
+== Research ==
+Improvements in amyloid imaging technology have linked the excess Aβ peptide outside the cell with the development of Alzheimer's disease.<ref name="Long 2019" /> The overproduction of the Aβ peptide creates a plaque in certain parts of the brain, disrupting neurotransmission.<ref name="pmid23217740">{{cite journal | vauthors = Demattos RB, Lu J, Tang Y, Racke MM, Delong CA, Tzaferis JA, Hole JT, Forster BM, McDonnell PC, Liu F, Kinley RD, Jordan WH, Hutton ML | date = December 2012 | title = A plaque-specific antibody clears existing β-amyloid plaques in Alzheimer's disease mice | journal = Neuron | volume = 76 | issue = 5 | pages = 908–920 | doi = 10.1016/j.neuron.2012.10.029 | doi-access = free | pmid = 23217740 | s2cid = 16620402 }}</ref> Donanemab attacks the soluble and insoluble plaque buildup, slowing the progression of the disease.<ref name="pmid32096039">{{cite book | vauthors = Gallardo G, Holtzman DM | date = 2019 | chapter = Amyloid-β and Tau at the Crossroads of Alzheimer's Disease | title = Tau Biology | volume = 1184 | pages = 187–203 | isbn = 978-981-329-357-1 | doi = 10.1007/978-981-32-9358-8_16 | pmid = 32096039 | series = Advances in Experimental Medicine and Biology | s2cid = 211476346 }}</ref>
+
+== References ==
+{{reflist}}
+
+{{Anti-dementia drugs}}
+{{Monoclonals for bone, musculoskeletal, circulatory, and neurologic systems}}
+{{Eli Lilly and Company}}
+{{Portal bar | Medicine}}
+{{Authority control}}
+
+[[Category:Anti-amyloid monoclonal antibodies]]
+[[Category:Drugs developed by Eli Lilly and Company]]
