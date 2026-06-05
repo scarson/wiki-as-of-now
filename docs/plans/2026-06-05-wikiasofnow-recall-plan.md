@@ -58,11 +58,11 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started. 0/2 phases shipped.
+**Overall:** In progress. 0/2 phases shipped (Phase 1 in progress).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Recall ground truth + baseline | ⬜ Not started | — | measurement only; no detector change |
+| 1 — Recall ground truth + baseline | 🚧 In progress (branch `claude/wikiasofnow-recall`) | — | measurement only; no detector change |
 | 2 — Precision-safe recall wins (lexicon) | ⬜ Not started | — | consumes Phase 1's recall set + harness; builds the floor gate here |
 
 ---
@@ -110,7 +110,7 @@ Every detector change (Phase 2 lexicon additions) MUST keep `test/detector/preci
 
 ## Phase 1 — Recall ground truth + baseline measurement
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-05 (UTC), branch `claude/wikiasofnow-recall`. Subagent-driven execution (implementer → spec review → quality review per task).
 
 > No detector code changes in this phase — measurement only. The detector is read-only; we add the labeling rubric, the independently-labeled recall set, the recall harness, and the targeted miss-hunt.
 
