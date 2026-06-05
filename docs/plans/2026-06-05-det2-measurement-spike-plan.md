@@ -64,11 +64,11 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** In progress (Phase 1 claimed).
+**Overall:** ✅ Built — spike complete, **recommendation: NO-GO on cut 2** (recall prize 2/136 fixtures; deterministic guard precision 0.125). See methodology §9.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Measure DET-2 + decide | 🚧 In progress (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | — | curate candidate set → score guard → go/no-go report |
+| 1 — Measure DET-2 + decide | ✅ Built (`84441fd`…`<1.2>`) | `84441fd`+ | 47 candidates: 2 genuine-target / 41 narration / 4 other; guard 2 TP / 14 FP (precision 0.125). **NO-GO** — methodology §9 |
 
 ---
 
@@ -90,7 +90,7 @@ notes and commit messages.
 
 ## Phase 1 — Measure the DET-2 opportunity and decide
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-05 (UTC), branch `claude/wikiasofnow-detector-phase2-ZP1uQ`. Subagent-driven.
+**Execution Status:** ✅ BUILT 2026-06-05 — Task 1.1 (`84441fd`) curated 47 candidates (reviewed HONEST); Task 1.2 wrote the go/no-go. **Recommendation: NO-GO on cut 2** (prize 2, deterministic guard precision 0.125); LLM-layer moot (prize too small to justify a contract amendment). Redirect: inline-year-absent recall class or cut-1 named-entity residual. Full result: methodology §9.
 
 ### Task 1.1 — Curate `test/gold/det2-candidates.json` + structural test
 
