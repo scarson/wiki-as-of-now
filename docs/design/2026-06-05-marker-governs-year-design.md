@@ -3,7 +3,7 @@
 
 # Marker-governs-year — deterministic year-eligibility lever (cut 1: DET-3 precision slice)
 
-**Status:** approved design, 2026-06-05. **Scope:** one focused cut of the roadmap item in `docs/design/detector-precision-methodology.md` §3/§6 ("teach the detector which year a marker governs"). This cut closes the **DET-3 incidental-year false-positive** class. The **DET-2 recall recovery** (re-flagging dateline-and-target sentences at the governed target) is a deliberately deferred follow-up — see §5 (Out of scope).
+**Status:** ✅ SHIPPED 2026-06-05 (commits `39039e6`…`a822d4b`, branch `claude/wikiasofnow-detector-phase2-ZP1uQ`). All five role discriminators built and gated (cross-clause aside, noun-modifier, named-entity, parenthetical, range); 23/23 curated DET-3 FPs dropped; precision held 0.9697, reachable recall 1.0. Batch review: `docs/plans/governs-review/round-phase2-final.md` (sound, no findings). **Scope:** one focused cut of the roadmap item in `docs/design/detector-precision-methodology.md` §3/§6 ("teach the detector which year a marker governs"). This cut closes the **DET-3 incidental-year false-positive** class. The **DET-2 recall recovery** (re-flagging dateline-and-target sentences at the governed target) is a deliberately deferred follow-up — see §5 (Out of scope).
 
 **Goal (one sentence):** stop the detector from anchoring a stale-claim candidate to a year the marker does not govern (an incidental year in a side-clause, a noun label, a named entity, a parenthetical, or a range), so those false positives disappear — while never dropping a real forward target.
 

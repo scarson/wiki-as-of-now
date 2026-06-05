@@ -64,13 +64,13 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Phase 2 complete (Task 2.5 shipped); Phase 3 (documentation) not started.
+**Overall:** All phases built; PR pending → `dev`. Phase 1 (curated FP set) + Phase 2 (5 discriminators, 23/23 FPs dropped, precision 0.9697 / recall 1.0) + Phase 3 (docs) done; batch review clean.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Curate DET-3 FP set | ✅ Shipped (`3d7661e`) | `3d7661e` | 23 DET-3 FPs; all 5 sub-shapes ≥2 (noun-mod 9, paren 6, cross-clause 3, named-entity 3, range 2) → all discriminators build; reviewed HONEST |
 | 2 — Build governs filter (gated) | ✅ Shipped (`39039e6`…`a822d4b`) | Tasks 2.1–2.5 | All 5 discriminators; all 5 sub-shapes hard-gated `expect([])`; 23/23 curated FPs dropped; precision 0.9697 (32 TP / 1 FP); recall 1.0 + 1 un-masked genuine claim. Batch review pending |
-| 3 — Document + finalize | ⬜ Not started | — | methodology/pitfalls/spec/plan; report any recall give-back |
+| 3 — Document + finalize | ✅ Built | (Task 3.1) | methodology §3/§4 + pitfalls DET-3 record the lever closes DET-3; spec status → shipped; no recall give-back (recall held 1.0) |
 
 ### Deviations
 
@@ -611,7 +611,7 @@ If round 3 still finds substantive issues, keep going until clean.
 
 ## Phase 3 — Document and finalize
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ BUILT 2026-06-05. methodology §3 (DET-3 residual now closed by the eligibility filter — the "no deterministic discriminator" claim re-framed) + §4 (precision accounting: ~31 incidental FPs removed, gold 0.9697 after the mislabel fix) + §3 common-root updated; pitfalls DET-3 "The Fix" rewritten (year-eligibility filter, not whole-sentence suppression) + Lesson; design spec status → shipped. No recall give-back (recall held 1.0). Residuals (named-entity over-KEEP, leading-deadline edge, one-marker-per-sentence) recorded in Discoveries + methodology.
 
 ### Task 3.1 — Update methodology, pitfalls, spec status, and plan
 
