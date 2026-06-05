@@ -58,11 +58,11 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** In progress. 0/2 phases shipped (Phase 1 in progress).
+**Overall:** In progress. 1/2 phases shipped (Phase 1 measurement shipped; Phase 2 next).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Recall ground truth + baseline | 🚧 In progress (branch `claude/wikiasofnow-recall`) | — | measurement only; no detector change |
+| 1 — Recall ground truth + baseline | ✅ Built 2026-06-05 (`84184bd`…`<review>`) | `84184bd`…`4ab4d36` | measurement: reachable recall **0.636**, absolute **0.583**, zero `simple` missed; rubric + recall set + harness + miss-hunt; reviewed sound |
 | 2 — Precision-safe recall wins (lexicon) | ⬜ Not started | — | consumes Phase 1's recall set + harness; builds the floor gate here |
 
 ---
@@ -124,7 +124,7 @@ Every detector change (Phase 2 lexicon additions) MUST keep `test/detector/preci
 
 ## Phase 1 — Recall ground truth + baseline measurement
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-05 (UTC), branch `claude/wikiasofnow-recall`. Subagent-driven execution (implementer → spec review → quality review per task).
+**Execution Status:** ✅ BUILT 2026-06-05 — branch `claude/wikiasofnow-recall`, commits `84184bd`…`4ab4d36`. All 4 tasks done (rubric, exhaustive recall set, harness, corpus miss-hunt), each per-task reviewed, plus a consolidated final review (`docs/plans/recall-review/round-1-phase1-final.md`: SOUND/HONEST, gate-green). **First recall baseline: reachable 0.636 (7/11), absolute 0.583 (7/12), zero `simple` missed (no detector bug).** marker-gap ranking (for Phase 2): expected-to(bare) 45, planned-to 38, scheduled-for 20, intended-to 15, was-scheduled-to 13.
 
 > No detector code changes in this phase — measurement only. The detector is read-only; we add the labeling rubric, the independently-labeled recall set, the recall harness, and the targeted miss-hunt.
 
@@ -263,7 +263,7 @@ Update banners + the top-of-plan table; open a PR → `dev`.
 ## Plan review record
 
 Ran `/plan-review-cycle` (6 rounds, ended clean: R1=8, R2=3, R3=3, R4=1, R5=2, R6=0). Findings fixed:
-- **R1 (8):** concrete recommended fixture list for the sample; removed the `_meta`-in-array (→ sibling README); strengthened the recall composition guard (≥6 reachable / ≥3 non-reachable); resolved the pristine-output tension for the metric `console.log`s (single labeled block, testing-pitfalls §1); specified the throwaway flag-diff mechanism for the precision-safety check; defined "new FP *class*" via the methodology doc + a DET-3 cross-ref; called out the 1.4↔2.3 shared-file sequencing; added the missed-label caveat to precision-on-sample.
+- **R1 (8):** concrete recommended fixture list for the sample; removed the `_meta`-in-array (→ sibling README); strengthened the recall composition guard (≥6 reachable / ≥3 non-reachable — the ≥3 was later relaxed to ≥1 during execution, see Deviations); resolved the pristine-output tension for the metric `console.log`s (single labeled block, testing-pitfalls §1); specified the throwaway flag-diff mechanism for the precision-safety check; defined "new FP *class*" via the methodology doc + a DET-3 cross-ref; called out the 1.4↔2.3 shared-file sequencing; added the missed-label caveat to precision-on-sample.
 - **R2 (3):** fixed the `missClass`/`reachable` contradiction (a reachable claim can still be missed via marker-gap/suppression-collateral) by reframing it as a detector-independent `shapeClass` enum; disambiguated "the Phase 2 plan" references (foundation-detector plan / methodology §6); clarified reachable recall stays < 1.0 after Phase 2 (suppression-collateral deferred).
 - **R3 (3):** aligned `shapeClass` terminology across the miss-hunt + review block; noted reachable recall is monotonic under lexicon-only additions (precision is the binding constraint); fixed the Phase-2 dependency wording (the gate is built in Phase 2).
 - **R4 (1):** mandate a typed `RecallEntry` interface (no `as any[]` — the `no-explicit-any` lint trap already hit on `precision.test.ts`).
