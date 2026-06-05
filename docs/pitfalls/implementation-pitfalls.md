@@ -26,7 +26,7 @@ This document serves three audiences. Start here, then go directly to the sectio
 
 | § | Section | You're working on... | Entries | Checklist |
 |---|---------|---------------------|---------|-----------|
-| 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 | §1.C |
+| 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 – DB-2 | §1.C |
 | 2 | [Detector (deterministic stale-claim detection)](#section-2-detector-deterministic-stale-claim-detection) | `src/detector/*` — markers, suppression, scoring, orchestration, fixtures | DET-1 – DET-3 | §2.C |
 | — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-2 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
@@ -54,10 +54,24 @@ This document serves three audiences. Start here, then go directly to the sectio
 
 ---
 
+### DB-2: The `SqlExecutor` Port Must Bind Params via `bind()`, Shaped by D1's Stricter Contract
+
+**The Flaw:** The `SqlExecutor` seam (`src/db/client.ts`) stands in for two engines with *different* calling conventions. better-sqlite3 accepts params inline (`stmt.run(...args)` / `stmt.all(...args)`), has no required bind step, and `all()` returns a bare array. Cloudflare D1 **requires** `stmt.bind(...params)` *before* `run()`/`all()` (which take no args), and `all()` returns a `{ results }` **envelope**, not an array. An async port that keeps better-sqlite3's convention (params passed to `run(...args)`, `all()` returning an array) works locally and silently mis-shapes the D1 adapter — green tests, broken prod.
+
+**Why It Matters:** Tests run on better-sqlite3 (testing-pitfalls §8); D1 only runs in deployed Workers. A seam shaped by the lenient local engine passes every test and then throws or mis-binds the moment it touches real D1 — exactly the divergence the local↔D1 parity discipline exists to prevent, but at the API-shape level rather than the FK level.
+
+**The Fix:** Shape the port by the **stricter** engine. The port is async and binds uniformly: `prepare(sql).bind(...params).run()` / `.all<T>()` (run/all take no args). The D1 adapter delegates to D1's `bind` and **unwraps `all().results`** to a plain array; the better-sqlite3 adapter captures params in `bind()` and applies them at `run`/`all`, returning resolved Promises. Do **not** surface `lastInsertRowid`/`changes` on the port unless a caller needs it — the two engines report it differently (better-sqlite3 `lastInsertRowid` vs D1 `meta.last_row_id`), so adding it later (shaped, again, by both) is cheaper than carrying a wrong abstraction. Likewise, the port has no transaction/batch primitive yet; a multi-statement replace (delete-then-insert) is sequential and idempotent-on-re-run rather than atomic — if atomicity becomes required, add D1 `batch()` behind the port, don't special-case better-sqlite3 transactions.
+
+**The Lesson:** When one interface abstracts two implementations, design it against the **least forgiving** contract, not the one your tests happen to run on. The lenient engine will pass anything; only the strict engine's requirements (D1's mandatory `bind`, its result envelope, its distinct metadata field names) tell you the true shape of the seam.
+
+---
+
 ### Review Checklist
 
 - [ ] **Natural-key tables are `WITHOUT ROWID` with `PRIMARY KEY NOT NULL`** — a plain `INTEGER PRIMARY KEY` silently auto-assigns a rowid on NULL insert; `NOT NULL`/`CHECK` don't stop it (DB-1)
 - [ ] **NULL-rejection is proven by a test, not assumed from the DDL** — insert a NULL key and assert it throws (DB-1)
+- [ ] **Data-layer calls bind via `prepare(sql).bind(...).run()/.all()`** — never pass params to `run`/`all`; that's better-sqlite3-only and breaks on D1 (DB-2)
+- [ ] **The D1 adapter unwraps `all().results` to a plain array** — callers must never see D1's `{ results }` envelope (DB-2)
 
 ---
 
@@ -177,6 +191,9 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 <!-- - Added PREFIX-N (<title>) — <what and why> -->
 <!-- - Updated PREFIX-M — <what changed> -->
 
+## 2026-06-05 — Persistence slice: D1 async seam resolved
+- Added DB-2 (the `SqlExecutor` port must bind via `bind()`, shaped by D1's stricter contract — mandatory bind, `{ results }` unwrap, divergent metadata field names). Discovered building the single-article persistence slice (`docs/design/2026-06-05-persistence-slice-design.md`), which made the sync `SqlExecutor` async with better-sqlite3 + D1 adapters. DB-1 (natural-key trap) unchanged and still VALIDATED.
+
 ## 2026-06-05 — Phase 2 (deterministic detector) shipped
 - Added Section 2 (Detector) with DET-1 (historical dateline narration is the dominant false-positive class; suppress via leading-frame + year-match, with a constrained month slot and grouped year regex) and DET-2 (named, accepted precision-over-recall recall gaps: inline-year requirement, earliest-year/dateline interaction, `By`-deadline, mid-sentence attribution). Both surfaced building the Phase 2 precision gate and were confirmed by the 3-round batch review (`docs/plans/phase2-review/`).
 - **Corpus expansion (50-fixture gold set):** updated DET-1 — the leading-dateline frame must include `On` and absorb full dates ("On 30 August 2018, …"), the dominant FP at corpus scale; updated DET-2 — mid-sentence attribution ("X reported on &lt;date&gt; that … plans to …") is the main remaining residual FP, left unlabeled in the gold set. See `docs/plans/phase2-review/round-4-corpus.md`.
@@ -193,6 +210,7 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 | ORCH-1 | Analysis Dispatches Must Persist Findings | HIGH | VALIDATED | Orchestration |
 | ORCH-2 | Subagents Sharing the Working Tree Must Not Move HEAD | HIGH | VALIDATED | Orchestration |
 | DB-1 | `NOT NULL` Is a No-Op on an `INTEGER PRIMARY KEY` (Rowid Alias) | MEDIUM | VALIDATED | Data Layer |
+| DB-2 | The `SqlExecutor` Port Must Bind Params via `bind()`, Shaped by D1's Stricter Contract | MEDIUM | VALIDATED | Data Layer |
 | DET-1 | Historical Dateline Narration Is the Dominant False-Positive Class | HIGH | VALIDATED | Detector |
 | DET-2 | Precision-Over-Recall Means Named, Accepted Recall Gaps | MEDIUM | VALIDATED | Detector |
 | DET-3 | Incidental Historical Years Are an Irreducible False-Positive Class | MEDIUM | VALIDATED | Detector |

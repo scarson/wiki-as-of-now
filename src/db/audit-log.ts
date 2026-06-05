@@ -33,12 +33,13 @@ interface RawAuditRow {
  */
 export function makeAuditLog(db: SqlExecutor) {
   return {
-    append(entry: AuditEntry): void {
+    async append(entry: AuditEntry): Promise<void> {
       const ts = new Date().toISOString();
       const payloadJson = JSON.stringify(entry.payload);
-      db.prepare(
-        "INSERT INTO audit_log (ts, actor, event_type, payload_json) VALUES (?, ?, ?, ?)"
-      ).run(ts, entry.actor, entry.eventType, payloadJson);
+      await db
+        .prepare("INSERT INTO audit_log (ts, actor, event_type, payload_json) VALUES (?, ?, ?, ?)")
+        .bind(ts, entry.actor, entry.eventType, payloadJson)
+        .run();
     },
 
     // Reads all audit rows in insertion order, parsing each payload from JSON.
@@ -46,10 +47,10 @@ export function makeAuditLog(db: SqlExecutor) {
     // DB edit); append() always writes valid JSON, so this cannot happen for rows
     // this module wrote. Before read() is used in a user-facing path (disclosure /
     // show-your-work), wrap per-row parsing so one bad row cannot abort the read.
-    read(): AuditRow[] {
-      const rows = db
+    async read(): Promise<AuditRow[]> {
+      const rows = await db
         .prepare("SELECT id, ts, actor, event_type, payload_json FROM audit_log ORDER BY id")
-        .all() as RawAuditRow[];
+        .all<RawAuditRow>();
       return rows.map(row => ({
         id: row.id,
         ts: row.ts,
