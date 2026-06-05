@@ -18,17 +18,18 @@ const DATELINE_DATE_TOKEN =
 
 /**
  * A sentence-initial temporal frame: In/By/During/As of/On + up to three
- * date-ish tokens + a 4-digit year (1900–2099). The year is captured in group 1.
- * "On" is included because "On <date>, X did Y" is overwhelmingly historical
- * narration (the dominant real false-positive class); genuine forward claims
- * begin with their subject, not a leading date.
+ * date-ish tokens + a 4-digit year (1900–2099, kept identical to the range
+ * `extractYears` recognizes so the frame year can match a claim's anchor year).
+ * The year is captured in group 1. "On" is included because "On <date>, X did
+ * Y" is overwhelmingly historical narration (the dominant real false-positive
+ * class); genuine forward claims begin with their subject, not a leading date.
  *
- * ⚠ The year alternatives MUST stay grouped — an un-grouped `...|20[0-2]\d`
+ * ⚠ The year alternatives MUST stay grouped — an un-grouped `...|20\d\d`
  * would let the bare year branch match any 20xx year anywhere in the sentence
  * and over-suppress valid claims.
  */
 const DATELINE_REGEX = new RegExp(
-  `^(?:In|By|During|As of|On)\\s+(?:${DATELINE_DATE_TOKEN}){0,3}(1[89]\\d\\d|20[0-2]\\d)\\b`,
+  `^(?:In|By|During|As of|On)\\s+(?:${DATELINE_DATE_TOKEN}){0,3}(19\\d\\d|20\\d\\d)\\b`,
   "i"
 );
 
