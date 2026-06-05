@@ -270,13 +270,39 @@ describe("detector recall harness — reporting", () => {
       surprises,
     });
 
-    // No hard recall FLOOR yet (Task 2.2 sets that once the post-lexicon baseline
-    // is known). But the metrics must be valid rates in [0,1] — a meaningful
-    // invariant that still passes for any healthy run.
+    // Sanity: metrics are valid rates in [0,1].
     for (const rate of [reachableRecall, absoluteRecall, precisionOnSample]) {
       expect(Number.isFinite(rate)).toBe(true);
       expect(rate).toBeGreaterThanOrEqual(0);
       expect(rate).toBeLessThanOrEqual(1);
     }
+  });
+
+  // --- Durable recall floor (Task 2.2) ---
+  //
+  // REGRESSION GATE, not a target. After the Phase 2 lexicon expansion the
+  // shipped reachable recall is 1.0 (11/11). The floor is set conservatively
+  // BELOW that (0.90) so it catches a real regression — a future suppression
+  // tweak or marker removal that drops 2+ reachable catches — while tolerating
+  // ±1 entry of legitimate re-labeling noise (10/11 = 0.909 still passes).
+  //
+  // We floor REACHABLE recall only, never absolute recall — absolute is bounded
+  // by the deferred inline-year design limit (C1), so it is reported, not gated.
+  //
+  // To re-baseline (only when the recall SET legitimately changes — entries
+  // added/removed): re-run, read the new reachable recall, set the floor a small
+  // margin below it, and say so in the commit subject (assertion-rigor rule).
+  // Do NOT lower the floor to make an unrelated failing change pass.
+  it("reachable recall stays at or above the regression floor (0.90)", () => {
+    const cache = buildCandidateCache(recallSet);
+    const reachable = recallSet.filter(e => e.reachable);
+    const flagged = reachable.filter(e =>
+      cache.get(e.fixture)!.some(c => c.sentenceText.includes(e.sentenceSubstring))
+    ).length;
+    const reachableRecall = flagged / reachable.length;
+    expect(
+      reachableRecall,
+      `reachable recall ${flagged}/${reachable.length} = ${reachableRecall.toFixed(3)} dropped below the 0.90 floor — a recall regression to investigate, not to re-baseline away`
+    ).toBeGreaterThanOrEqual(0.9);
   });
 });
