@@ -43,7 +43,7 @@ Each residual was poked at and the obvious fix found to be a trap — captured h
 
 - **Gold-subset precision: 1.0** — but this is a *regression gate* over labeled entries, not true precision. It cannot drop below ~1.0 by construction (we label what the detector gets right and the FP-classes it correctly suppresses), guarded only against gaming by the ≥3/≥3 composition check.
 - **True end-to-end precision: ~88–90%** (R4 reviewer estimate, ~3 clear FPs per ~30 non-gold flagged candidates), with residual FPs concentrated in DET-2/DET-3.
-- **Recall: uncharacterized.** We have systematically hunted *false positives*; we have **not** measured *missed* stale claims (false negatives). The aggressive suppression certainly drops some real claims (every DET-2 gap is a recall loss). This is a real blind spot in the current methodology.
+- **Recall: now measured (§7).** Originally uncharacterized; measured in the recall work over a 12-fixture exhaustive sample. **Reachable recall 1.0 (11/11) after the Phase 2 lexicon expansion** (0.636 before), **absolute recall 0.917 (11/12)** — bounded by the one deferred inline-year-absent miss. Zero `simple` claims missed → the deterministic design loses far less recall than feared (most genuinely-stale claims carry an inline year). A 0.90 reachable-recall floor now gates regressions. The remaining recall gap is the inline-year-absent / relative-date class (semantic lever, §6).
 
 ## 5. The corpus methodology, and when to stop (the open question)
 
@@ -136,6 +136,22 @@ Sorted by corpus occurrence count, descending. These are the Phase-2 lexicon-can
 The corpus scan found only **2 examples** of the inline-year-absent/relative-date shape (a forward marker with no past year but a relative-date anchor): `ground_combat_vehicle` — "The Army planned to spend … on the GCV over the next five years" — and `k9_thunder` — "The platform will consist of the RCH 155 … by the end of the decade." Both carry no inline past year and cannot be reached by the current inline-year gate. The 12-fixture exhaustive sample found 1 such entry (`sbx-1` Adak). Counts are small and consistent between the two methodologies.
 
 This class requires the semantic lever (§6 roadmap item 1 — marker-governs-year) or external temporal reasoning; it is deferred. No lexicon change addresses it.
+
+### 7.4 Phase 2 result — lexicon expansion (the safe recall win)
+
+Phase 2 added five forward markers to `MARKER_STRENGTH`, each gated one-at-a-time on the precision gate staying ≥0.9 AND no structurally-new corpus FP class: **`expected to` (bare), `expected by`, `scheduled to`, `scheduled for`, `planned to`** (all strength 2). Outcome:
+
+| Metric | Before (Phase 1) | After (Phase 2) |
+|--------|------------------|-----------------|
+| **Reachable recall** | 0.636 (7/11) | **1.000 (11/11)** |
+| **Absolute recall** | 0.583 (7/12) | **0.917 (11/12)** |
+| Precision gate | 0.97 | **0.97 (unchanged)** |
+
+All four `marker-gap` misses are now caught; the single remaining miss is the `inline-year-absent` (`sbx-1` Adak), structurally deferred (§7.3). A durable **reachable-recall floor of 0.90** now locks this in (`test/detector/recall.test.ts`) as a regression gate.
+
+**Corrections to the §7.2 prediction (measured, not predicted):** `intended to` (ranked #4 by raw count) was **DROPPED** — ~50% of its new corpus flags were FPs ("intended to replace … " coupling with incidental background years), and it added zero recall-set value; it is a generic purpose verb, not a scheduling marker. `expected by` (raw count 1) was **ADDED** despite its low corpus count because it is a recall-set target ("Full Operational Capability is expected by 2023"). Lesson: rank candidates by FP-gated value, not raw frequency.
+
+**The precision/recall tradeoff to revisit (precision-tightening candidates).** The recall *gate* (11/11) is carried entirely by the three load-bearing markers `scheduled to` / `expected by` / `planned to`. The other two — **bare `expected to` and `scheduled for`** — are NON-load-bearing: they add no recall-gate value, only broader-corpus recall. Bare `expected to` in particular adds ~44 corpus flags at ~15–20% FP density (independently reviewed) — all **cataloged** DET-2 (cross-sentence/earliest-year resolution) and DET-3 (incidental/named-event year) instances, no new class, so it passed the gate, but its density is at the upper edge of "modest." Because the design bias is precision-over-recall, **bare `expected to` (and to a lesser degree `scheduled for`) are the first markers to drop if a future pass prioritizes precision over broad-corpus recall.** They are kept now because two independent reviews confirmed no new FP class and the gate holds; the tradeoff is documented here so it is a deliberate, revisitable choice, not a hidden one.
 
 ## 8. Things considered and ruled out (so they aren't retried)
 

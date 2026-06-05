@@ -58,12 +58,12 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** In progress. 1/2 phases shipped (Phase 1 measurement shipped; Phase 2 next).
+**Overall:** Both phases built. Phase 1 (measure) shipped; Phase 2 (safe wins) built, PR pending.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Recall ground truth + baseline | ✅ Built 2026-06-05 (`84184bd`…`<review>`) | `84184bd`…`4ab4d36` | measurement: reachable recall **0.636**, absolute **0.583**, zero `simple` missed; rubric + recall set + harness + miss-hunt; reviewed sound |
-| 2 — Precision-safe recall wins (lexicon) | ⬜ Not started | — | consumes Phase 1's recall set + harness; builds the floor gate here |
+| 2 — Precision-safe recall wins (lexicon) | ✅ Built 2026-06-05 (`667b44e`…`<2.3>`) | `667b44e`…`497a0b6` | reachable recall 0.636→**1.0**, absolute 0.583→**0.917**, precision held 0.97; 5 markers added, `intended to` dropped; 0.90 floor. PR pending |
 
 ---
 
@@ -75,6 +75,7 @@ notes and commit messages.
 
 ## Discoveries
 
+- **2026-06-05 (Phase 2) — lexicon expansion recovered the full reachable-recall gap, precision-safe.** Reachable recall 0.636→**1.0** (all 4 `marker-gap` misses caught), absolute 0.583→**0.917**, **precision gate held at 0.97** (no gold negative newly flagged). 5 markers added; `intended to` DROPPED (~50% FP density — rank candidates by FP-gated value, not raw frequency). bare `expected to` kept but flagged: non-load-bearing, ~15-20% FP density (all cataloged DET-2/DET-3, no new class) — the first marker to drop if precision-tightening is later prioritized (methodology §7.4). Durable 0.90 reachable-recall floor (`recall.test.ts`).
 - **2026-06-05 (Task 1.2 baseline) — first-ever recall numbers; genuine not-reachable stale claims are rare.** Over a 12-fixture exhaustive sample: **reachable recall 0.636 (7/11)**, **absolute recall 0.583 (7/12)**, **zero `simple` claims missed → no detector bug**. The misses are 4 `marker-gap` (reachable; forward phrase outside the lexicon — Phase-2-fixable) + 1 `inline-year-absent` (`sbx-1` Adak). KEY FINDING: only 1 genuine not-reachable stale claim in 12 fixtures — most genuinely-stale claims DO carry an inline year, so the inline-year requirement (DET-2) costs less absolute recall than feared; the dominant addressable gap is `marker-gap`. See `test/gold/recall-set-README.md`.
 - **2026-06-05 (operational) — session resume flipped Node 20/21/22 → Node 24, requiring a `better-sqlite3` rebuild.** The `.nvmrc` pins Node 24; the resumed session finally had it, but the native `better_sqlite3.node` was compiled earlier against Node 22 → 11 DB tests failed with "Module did not self-register" (ABI mismatch). Fixed with `pnpm rebuild better-sqlite3`. Not committed (binary). Future sessions: after a resume, if DB tests fail to load the native module, rebuild it.
 - **2026-06-05 (Task 1.1) — precision-gold mislabel surfaced + fixed: cross-sentence resolution FP.** The recall labeling rubric correctly classed `fehmarn_belt_fixed_link` "The Fehmarn Belt bridge was originally expected to be completed by 2018." as NOT stale — the very next sentence ("However, in late 2010 … an immersed tunnel would instead…") scraps/resolves the plan. But that sentence was a `stale:true` POSITIVE in `test/gold/gold-set.json`. The detector flags it (marker + inline year) because Rule 3's resolution check is within-sentence only; this resolution is cross-sentence. Relabeled `true→false` in the precision gold (now a documented FP of the **cross-sentence-resolution** class, DET-2 family); precision gate stays green (≥0.9, ~0.97). Verified the sibling infra positives (`gordie_howe`, `robotic_combat_vehicle`) are genuinely stale and correctly labeled. The Task 1.2 recall labeling MUST apply the rubric consistently (do not label fehmarn-style resolved/scrapped plans as stale).
@@ -206,7 +207,7 @@ Update banners + the top-of-plan table; record baseline numbers in Discoveries.
 
 ## Phase 2 — Precision-safe recall wins (marker lexicon)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ BUILT 2026-06-05 — branch `claude/wikiasofnow-recall`, commits `667b44e`…`497a0b6`. Lexicon expanded by 5 precision-gated markers (`expected to`, `expected by`, `scheduled to`, `scheduled for`, `planned to`; `intended to` dropped for FP density). **Reachable recall 0.636→1.0, absolute 0.583→0.917, precision held 0.97.** Durable 0.90 reachable-recall floor added. bare `expected to`/`scheduled for` are non-load-bearing broader-recall markers flagged for a future precision-tightening pass (methodology §7.4). Final review + PR next.
 
 > Depends on Phase 1 (the recall set, harness, baseline, and the `marker-gap` ranking from the miss-hunt). The ONLY detector change in scope is expanding `MARKER_STRENGTH`. No suppression changes, no year-gate changes, no relative-date handling (deferred — see Task 2.3).
 
