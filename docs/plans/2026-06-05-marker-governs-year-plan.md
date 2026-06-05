@@ -64,12 +64,12 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** In progress (Phase 1 claimed).
+**Overall:** In progress. Phase 1 shipped; Phase 2 claimed.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Curate DET-3 FP set | 🚧 In progress (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | — | measurement-first; produces the gate's denominator |
-| 2 — Build governs filter (gated) | ⬜ Not started | — | discriminator-by-discriminator; each gated on precision+recall |
+| 1 — Curate DET-3 FP set | ✅ Shipped (`3d7661e`) | `3d7661e` | 23 DET-3 FPs; all 5 sub-shapes ≥2 (noun-mod 9, paren 6, cross-clause 3, named-entity 3, range 2) → all discriminators build; reviewed HONEST |
+| 2 — Build governs filter (gated) | 🚧 In progress (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | — | discriminator-by-discriminator; each gated on precision+recall |
 | 3 — Document + finalize | ⬜ Not started | — | methodology/pitfalls/spec/plan; report any recall give-back |
 
 ---
@@ -94,7 +94,7 @@ notes and commit messages.
 
 ## Phase 1 — Curate the DET-3 false-positive set (measurement first)
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-05 (UTC), branch `claude/wikiasofnow-detector-phase2-ZP1uQ`. Subagent-driven (implementer → spec review → quality review).
+**Execution Status:** ✅ SHIPPED at `3d7661e` on 2026-06-05. 23 DET-3 FPs curated; reviewed HONEST (all entries independently re-verified, 0 disputed). Distribution: noun-modifier 9, parenthetical 6, cross-clause-aside 3, named-entity 3, range 2 — all ≥2, so Phase 2 builds all five discriminators. 3 mixed cases + a noun-modifier over-drop risk ("the 2022 midterm elections") recorded as Task 2.3 KEEP targets.
 
 Why first: DET-3 FPs are currently *unlabeled* (the precision methodology left them out). We cannot prove the lever works or guard against regressions without them, and the curated set's sub-shape distribution decides which discriminators are worth building (design §3, YAGNI).
 
@@ -158,7 +158,7 @@ git commit -m "test(detector): curate DET-3 false-positive set (Task 1.1)"
 
 ## Phase 2 — Build the `governs.ts` year-eligibility filter (gated, discriminator-by-discriminator)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-05 (UTC), branch `claude/wikiasofnow-detector-phase2-ZP1uQ`. All five discriminators build (Task 1.1 distribution). Subagent-driven, sequential (single shared file).
 
 All Phase 2 tasks modify `src/detector/governs.ts` (and its test), so they are **strictly sequential** — never parallelize them (they edit the same file). Each task is precision-gated and recall-gated.
 
