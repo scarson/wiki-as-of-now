@@ -51,7 +51,11 @@ function markerPosition(sentence: string, marker: string): number {
 /** Composes the role discriminators. Built up across Phase 2. */
 function isIncidental(sentence: string, markerIndex: number, occ: YearOccurrence): boolean {
   if (isLeadingDatelineYear(sentence, occ)) return false; // §2.2 — defer to suppress Rule 1
-  return isCrossClauseAside(sentence, markerIndex, occ) || isNounModifier(sentence, markerIndex, occ);
+  return (
+    isCrossClauseAside(sentence, markerIndex, occ) ||
+    isNounModifier(sentence, markerIndex, occ) ||
+    isNamedEntity(sentence, markerIndex, occ)
+  );
   // Further discriminators are OR-ed in by later tasks.
 }
 
@@ -188,5 +192,53 @@ function isNounModifier(sentence: string, markerIndex: number, occ: YearOccurren
   // A deadline frame (by/before/until the <year> <event>) targets that year regardless
   // of marker position; only background frames (during/in/after the <year>) are dropped.
   if (DEADLINE_DETERMINED_PREP_BEFORE.test(before)) return false;
+  return true;
+}
+
+/**
+ * Month names — a month immediately before a year is a date ("March 2013"),
+ * not a named entity; months must not be treated as proper-noun labels.
+ */
+const MONTH_NAME =
+  /^(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)$/i;
+
+/**
+ * Temporal preposition words — when a capitalized token IS one of these, it is a
+ * sentence-initial frame ("After 2020, …"; "From 2015 to 2022, …") rather than
+ * a proper-noun entity label. "from" is excluded from TEMPORAL_PREP (used in
+ * bare-frame and deadline guards elsewhere) to avoid widening those predicates,
+ * but added here where the only check is "is this word itself a frame preposition."
+ */
+const TEMPORAL_PREP_WORD = new RegExp(`^(?:${TEMPORAL_PREP}|from)$`, "i");
+
+/**
+ * True when `occ` is part of a proper-noun name: a capitalized non-month token
+ * sits IMMEDIATELY before the year with only whitespace between ("CES 2025",
+ * "MSPO 2024", "PzH 2000"). Two over-drop guards keep real targets eligible:
+ * (1) a temporal preposition immediately before the token ("at CES 2025" is fine
+ *     to drop, but a bare-frame "in 2024" must not trigger via another token);
+ * (2) the token itself is a temporal preposition (sentence-initial capital —
+ *     "After 2020, the Army planned to buy …" must NOT be dropped);
+ * (3) the marker precedes the year in its own clause — the year is the marker's
+ *     complement target ("The Navy will request FY 2022 funding"), not a label
+ *     in an aside that precedes the marker.
+ */
+function isNamedEntity(sentence: string, markerIndex: number, occ: YearOccurrence): boolean {
+  // Extract the token immediately before the year (up to 24 chars back).
+  const localBefore = sentence.slice(Math.max(0, occ.start - 24), occ.start);
+  const m = /(\b[A-Z][A-Za-z0-9.&-]+)\s+$/.exec(localBefore);
+  if (!m) return false;
+  const token = m[1];
+  // A month name is a date component, not an entity.
+  if (MONTH_NAME.test(token)) return false;
+  // A temporal preposition as the immediate token is a frame, not an entity
+  // (handles sentence-initial capitalisation: "After 2020, …").
+  if (TEMPORAL_PREP_WORD.test(token)) return false;
+  // If the marker precedes the year, the year is in the marker's complement
+  // clause — the marker governs it, not a proper-noun label.
+  if (markerIndex >= 0 && markerIndex < occ.start) return false;
+  // If a temporal preposition precedes this token, the year is a temporal frame.
+  const beforeToken = localBefore.slice(0, m.index);
+  if (BARE_FRAME_PREP_BEFORE.test(beforeToken + " ")) return false;
   return true;
 }

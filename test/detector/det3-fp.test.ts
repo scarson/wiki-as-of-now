@@ -159,7 +159,7 @@ function flaggedOnAnchorYear(subShape: SubShape): Det3FpEntry[] {
   });
 }
 
-describe("DET-3 FP gate — cross-clause + noun-modifier hardened, rest baseline-reporting", () => {
+describe("DET-3 FP gate — cross-clause + noun-modifier + named-entity hardened, rest baseline-reporting", () => {
   // The cross-clause discriminator (Task 2.2) lands first, so its sub-shape is a
   // HARD gate: the detector must flag NONE of the curated cross-clause asides.
   it("flags none of the cross-clause-aside FPs", () => {
@@ -172,12 +172,17 @@ describe("DET-3 FP gate — cross-clause + noun-modifier hardened, rest baseline
     expect(flaggedFpEntries("noun-modifier")).toEqual([]);
   });
 
+  // The named-entity discriminator (Task 2.4) is the third HARD gate: the detector
+  // must flag NONE of the curated "<ProperNoun> <year>" entity-name FPs.
+  it("flags none of the named-entity FPs", () => {
+    expect(flaggedFpEntries("named-entity")).toEqual([]);
+  });
+
   // The remaining sub-shapes still baseline-report (their discriminators land in
-  // Tasks 2.4–2.5). Passes unconditionally for now; each line below becomes a hard
+  // Task 2.5). Passes unconditionally for now; each line below becomes a hard
   // `expect(flaggedFpEntries("<shape>")).toEqual([])` as its discriminator lands.
   it("logs the per-sub-shape flagged baseline for the not-yet-hardened sub-shapes", () => {
     const stillBaselined: SubShape[] = [
-      "named-entity",
       "parenthetical",
       "range",
     ];

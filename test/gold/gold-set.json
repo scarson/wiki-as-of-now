@@ -37,9 +37,8 @@
   {
     "fixture": "panzerhaubitze_2000.wikitext",
     "sentenceSubstring": "it is expected to be ready by",
-    "stale": true,
-    "expectedYear": 2000,
-    "note": "Strong stale: an MLU variant 'expected to be ready by 2000', ~26 years past asOfYear."
+    "stale": false,
+    "note": "The sentence reads 'expected to be ready by 2028'; 2028 is future (not stale). The only past year in the sentence is 2000, which is part of the product name 'PzH 2000' — a named-entity label, not a temporal target. The governs named-entity discriminator correctly drops 2000, leaving no anchorable past year, so the sentence is not flagged. Original label was based on the old detector anchoring to the product name incorrectly."
   },
   {
     "fixture": "m109_howitzer.wikitext",

@@ -149,6 +149,45 @@ describe("governedYears — noun-modifier", () => {
   });
 });
 
+describe("governedYears — named-entity", () => {
+  it("DROPS '<ProperNoun> <year>' where the proper noun is an acronym/product name (CES 2025)", () => {
+    expect(governedYears("announced at CES 2025 that it will ship", "will", [2025])).toEqual([]);
+  });
+  it("DROPS '<ProperNoun> <year>' where the proper noun is an all-caps abbreviation (MSPO 2024)", () => {
+    expect(governedYears("At the MSPO 2024 defense expo, the frigates will be fitted", "will", [2024])).toEqual([]);
+  });
+  it("DROPS '<ProperNoun> <year>' where the proper noun is a mixed-case code (PzH 2000)", () => {
+    // PzH 2000 — "PzH" is uppercase-leading mixed-case
+    expect(governedYears("The MLU variant is the PzH 2000 A5, expected to be ready by 2028", "expected to", [2000])).toEqual([]);
+  });
+  it("does NOT treat a month name as a named entity (March 2013 is a date)", () => {
+    expect(governedYears("delivery is expected to slip to March 2013", "is expected to", [2013])).toEqual([2013]);
+  });
+  it("KEEPS a forward target year after a forward preposition even if a proper noun is nearby (in 2024)", () => {
+    // "Boeing is expected to deliver in 2024" — 'in' makes 2024 a temporal target
+    expect(governedYears("Boeing is expected to deliver in 2024", "is expected to", [2024])).toEqual([2024]);
+  });
+  it("KEEPS a bare-frame year preceded by a preposition, no proper noun immediately before (by 2023 SpaceX)", () => {
+    // 'by 2023' — no proper noun immediately before the year, it's a temporal frame
+    expect(governedYears("by 2023 SpaceX will fly the rocket", "will", [2023])).toEqual([2023]);
+  });
+  it("KEEPS a sentence-initial temporal-preposition year even when capitalized ('After 2020, the Army planned')", () => {
+    // 'After' is a temporal preposition that happens to be sentence-initial (capital A);
+    // it is NOT a proper-noun entity label — 2020 is the marker's temporal target frame.
+    expect(governedYears("After 2020, the Army planned to buy another 2,618 vehicles.", "planned to", [2020])).toEqual([2020]);
+  });
+  it("KEEPS a year in the marker's complement clause even when an abbreviation precedes it ('FY 2022' with marker before year)", () => {
+    // 'FY 2022' in 'The Navy will request FY 2022 funding' — the marker 'will' precedes 2022
+    // in its own clause; the year is the marker's temporal target, not just a label.
+    expect(governedYears("The Navy will request FY 2022 funding to replace the AGS turrets.", "will", [2022])).toEqual([2022]);
+  });
+  it("KEEPS a sentence-initial 'From <year>' range start ('From 2015 to 2022, … will be manufactured')", () => {
+    // 'From' is a sentence-initial preposition, not a proper-noun entity name;
+    // 2015 is a range-start temporal frame, not a named-entity label.
+    expect(governedYears("From 2015 to 2022, 24 units will be manufactured in South Korea.", "will", [2015, 2022])).toContain(2015);
+  });
+});
+
 describe("governedYears — real mixed cases (target governed across an incidental, det3 README)", () => {
   // These three real fixture sentences carry an incidental earliest year AND a real
   // later target the marker governs. The cross-clause discriminator (and the later
