@@ -64,11 +64,11 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started.
+**Overall:** In progress (Phase 1 claimed).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Curate DET-3 FP set | ⬜ Not started | — | measurement-first; produces the gate's denominator |
+| 1 — Curate DET-3 FP set | 🚧 In progress (branch `claude/wikiasofnow-detector-phase2-ZP1uQ`) | — | measurement-first; produces the gate's denominator |
 | 2 — Build governs filter (gated) | ⬜ Not started | — | discriminator-by-discriminator; each gated on precision+recall |
 | 3 — Document + finalize | ⬜ Not started | — | methodology/pitfalls/spec/plan; report any recall give-back |
 
@@ -94,7 +94,7 @@ notes and commit messages.
 
 ## Phase 1 — Curate the DET-3 false-positive set (measurement first)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-05 (UTC), branch `claude/wikiasofnow-detector-phase2-ZP1uQ`. Subagent-driven (implementer → spec review → quality review).
 
 Why first: DET-3 FPs are currently *unlabeled* (the precision methodology left them out). We cannot prove the lever works or guard against regressions without them, and the curated set's sub-shape distribution decides which discriminators are worth building (design §3, YAGNI).
 
