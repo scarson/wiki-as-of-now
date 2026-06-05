@@ -3,27 +3,32 @@
 import { findExpectationMarkers } from "./markers";
 
 /**
- * Month names (full + common abbreviations) and the loose date qualifiers
- * early/late/mid that legitimately precede a year in a leading dateline frame
- * (e.g. "In March 2013", "In early 2007"). Constraining the dateline's optional
- * pre-year slot to THIS set — rather than any word — stops budget-/document-year
- * references like "In the 2008 budget, the Navy plans to..." from being read as
- * a historical dateline and over-suppressed.
+ * A single "date-ish" token that can legitimately sit between a leading frame
+ * word and the year: a day number (1–2 digits), a month name (full or common
+ * abbreviation), or a loose qualifier (early/late/mid), each optionally trailed
+ * by a `.`/`,` and required whitespace. Allowing a small, bounded run of these
+ * lets the dateline frame absorb full dates ("On 30 August 2018", "On April 6,
+ * 2009") and month datelines ("In March 2013", "In early 2007") — while NOT
+ * matching filler words, so "In the 2008 budget, the Navy plans to..." is left
+ * alone (the forward claim survives).
  */
-const DATELINE_MONTH_OR_QUALIFIER =
-  "(?:January|February|March|April|May|June|July|August|September|October|November|December|" +
-  "Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|early|late|mid)\\.?\\s+";
+const DATELINE_DATE_TOKEN =
+  "(?:\\d{1,2}|January|February|March|April|May|June|July|August|September|October|November|December|" +
+  "Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sept|Sep|Oct|Nov|Dec|early|late|mid)\\.?,?\\s+";
 
 /**
- * A sentence-initial temporal frame: In/By/During/As of + an optional month or
- * date qualifier + a 4-digit year (1900–2099). The year is captured in group 1.
+ * A sentence-initial temporal frame: In/By/During/As of/On + up to three
+ * date-ish tokens + a 4-digit year (1900–2099). The year is captured in group 1.
+ * "On" is included because "On <date>, X did Y" is overwhelmingly historical
+ * narration (the dominant real false-positive class); genuine forward claims
+ * begin with their subject, not a leading date.
  *
  * ⚠ The year alternatives MUST stay grouped — an un-grouped `...|20[0-2]\d`
  * would let the bare year branch match any 20xx year anywhere in the sentence
  * and over-suppress valid claims.
  */
 const DATELINE_REGEX = new RegExp(
-  `^(?:In|By|During|As of)\\s+(?:${DATELINE_MONTH_OR_QUALIFIER})?(1[89]\\d\\d|20[0-2]\\d)\\b`,
+  `^(?:In|By|During|As of|On)\\s+(?:${DATELINE_DATE_TOKEN}){0,3}(1[89]\\d\\d|20[0-2]\\d)\\b`,
   "i"
 );
 

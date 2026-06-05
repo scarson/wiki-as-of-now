@@ -47,4 +47,15 @@ describe("suppression", () => {
     // Plain temporal "later" before a forward event is NOT resolution — must not suppress.
     expect(suppressionScore("The system will be deployed later in 2017.", 2017)).toBe(0);
   });
+  it("suppresses leading 'On <full date>' historical datelines", () => {
+    // The dominant FP on real articles: a sentence that OPENS with a full date narrating
+    // a past event ("On <day> <month> <year>, X announced/awarded/stated ...").
+    expect(suppressionScore("On 30 August 2018, the U.S. Navy announced Boeing as the winner and awarded a contract.", 2018)).toBeGreaterThan(0);
+    expect(suppressionScore("On April 6, 2009, the Secretary of Defense announced plans to cut spending.", 2009)).toBeGreaterThan(0);
+    expect(suppressionScore("On 21 October 2013, executives stated that the Army plans to downselect in 2014.", 2013)).toBeGreaterThan(0);
+  });
+  it("does not suppress a forward claim that begins with its subject rather than a date", () => {
+    expect(suppressionScore("Testing of the vehicle is expected to begin in 2020.", 2020)).toBe(0);
+    expect(suppressionScore("The Army plans to buy 133 vehicles starting in 2014.", 2014)).toBe(0);
+  });
 });
