@@ -67,6 +67,8 @@ exhaustive denominator and a check on not-over-labeling.
 
 ## Measured baseline (asOfYear = 2026, detector v1.0.0)
 
+> **These are the Phase 1 (pre-lexicon-expansion) numbers.** Phase 2 added 5 markers and raised reachable recall to **1.0 (11/11)** and absolute to **0.917 (11/12)** with precision held at 0.97 — see `docs/design/detector-precision-methodology.md` §7.4 for the post-expansion result. The 0.90 reachable-recall floor in `recall.test.ts` now gates regressions.
+
 Computed by checking, for each entry, whether any detector candidate's
 `sentenceText` includes the entry's `sentenceSubstring`.
 

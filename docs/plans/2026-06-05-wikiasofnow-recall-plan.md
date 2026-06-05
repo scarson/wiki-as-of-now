@@ -63,7 +63,7 @@ notes and commit messages.
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Recall ground truth + baseline | ✅ Built 2026-06-05 (`84184bd`…`<review>`) | `84184bd`…`4ab4d36` | measurement: reachable recall **0.636**, absolute **0.583**, zero `simple` missed; rubric + recall set + harness + miss-hunt; reviewed sound |
-| 2 — Precision-safe recall wins (lexicon) | ✅ Built 2026-06-05 (`667b44e`…`<2.3>`) | `667b44e`…`497a0b6` | reachable recall 0.636→**1.0**, absolute 0.583→**0.917**, precision held 0.97; 5 markers added, `intended to` dropped; 0.90 floor. PR pending |
+| 2 — Precision-safe recall wins (lexicon) | ✅ Built 2026-06-05 (`667b44e`…`62ebd1e`) | `667b44e`…`62ebd1e` | reachable recall 0.636→**1.0**, absolute 0.583→**0.917**, precision held 0.97; 5 markers added, `intended to` dropped; 0.90 floor. PR pending |
 
 ---
 
@@ -88,7 +88,7 @@ notes and commit messages.
 - **`docs/pitfalls/implementation-pitfalls.md`** §2 (DET-1 dateline narration; DET-2 accepted recall gaps — inline-year requirement, earliest-year/dateline, `By`-deadline; DET-3 incidental years). These DET-2 gaps are *known* recall misses — the measurement must quantify them, not rediscover them.
 - **`docs/pitfalls/testing-pitfalls.md`** §9 (gold-set honesty: build from real output, real negatives, composition guard, no overfit). The recall set inherits these honesty rules — inverted (see "circularity" below).
 - **`docs/policy/wikipedia-genai-compliance.md`** — the detector stays deterministic/LLM-free (G10). This plan adds NO model calls.
-- **Code to keep green / extend:** `test/detector/precision.test.ts` + `test/gold/gold-set.json` (the 73-entry precision gate, threshold ≥ 0.9, composition guard ≥3/≥3 — MUST stay green); `src/detector/markers.ts` (`MARKER_STRENGTH` 9-entry lexicon, `findExpectationMarkers`, `extractYears` 1900–2099); `src/detector/detect.ts` (`detectStaleClaims(article, asOfYear)`); `src/detector/suppress.ts`.
+- **Code to keep green / extend:** `test/detector/precision.test.ts` + `test/gold/gold-set.json` (the 73-entry precision gate, threshold ≥ 0.9, composition guard ≥3/≥3 — MUST stay green); `src/detector/markers.ts` (`MARKER_STRENGTH` lexicon (9 entries at Phase 1; 14 after Phase 2), `findExpectationMarkers`, `extractYears` 1900–2099); `src/detector/detect.ts` (`detectStaleClaims(article, asOfYear)`); `src/detector/suppress.ts`.
 
 ---
 
