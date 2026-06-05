@@ -1,7 +1,8 @@
 // ABOUTME: Tests for the research-job queue consumer.
 // ABOUTME: Verifies idempotency (provider called once for duplicate messages) and audit logging.
 import { describe, it, expect, vi } from "vitest";
-import { handleResearchMessage } from "../../src/queue/research-jobs";
+import { handleResearchMessage, enqueueResearch } from "../../src/queue/research-jobs";
+import type { ResearchMessage } from "../../src/queue/research-jobs";
 import type { AuditEntry } from "../../src/db/audit-log";
 
 describe("research job consumer", () => {
@@ -34,5 +35,16 @@ describe("research job consumer", () => {
     );
     expect(store.has(9)).toBe(false); // nothing persisted, so the retry will re-run research
     expect(appended).toHaveLength(0); // no completion logged for failed work
+  });
+});
+
+describe("enqueueResearch", () => {
+  it("posts the message to the queue binding unchanged", async () => {
+    const sent: ResearchMessage[] = [];
+    const queue = { send: vi.fn(async (m: ResearchMessage) => { sent.push(m); }) };
+    const msg: ResearchMessage = { candidateId: 5, claim: { claimText: "x", sectionHeading: "S", year: 2017 } };
+    await enqueueResearch(queue, msg);
+    expect(queue.send).toHaveBeenCalledTimes(1);
+    expect(sent).toEqual([msg]);
   });
 });
