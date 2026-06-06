@@ -63,12 +63,12 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 1/5 phases shipped.
+**Overall:** 2/5 phases shipped. Next: Phase 3 (ingest atomic metadata call + frozen gold envelopes).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Foundation (types, denylists, wikitext scan) | ✅ Shipped | `8bede5a`,`b838890`,`2506e25` | 12 tests; suite 168 green |
-| 2 — The gate (evaluateEligibility) | ⬜ Not started | — | — |
+| 2 — The gate (evaluateEligibility) | ✅ Shipped | `a516493` | 8 tests; pure core complete |
 | 3 — Ingest atomic metadata call + frozen envelopes | ⬜ Not started | — | — |
 | 4 — Wiring (orchestrator, API, UI) | ⬜ Not started | — | — |
 | 5 — Gold-set integration test + composition guard | ⬜ Not started | — | — |
@@ -339,7 +339,7 @@ export function scanWikitextSignals(wikitext: string): string[] {
 
 ## Phase 2 — The gate (`evaluateEligibility`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `claude/safelane-gate-g11`) — Task 2.1 `a516493`. 8 tests; full suite green, tsc + lint clean. Reviewed: strict-`<` freshness boundary, canonical reason order vs spec table, advisory one-way confirmed.
 
 ### Task 2.1: The pure eligibility gate
 
