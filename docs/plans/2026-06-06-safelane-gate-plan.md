@@ -63,7 +63,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 4/5 phases shipped. Phase 5 (gold-set integration test) next.
+**Overall:** 5/5 phases shipped. Branch `claude/safelane-gate-g11-phases-3-5-9UDWy` (off `origin/dev`, 9 commits ahead / 0 behind, no conflicts). Full suite 191 green, tsc + lint clean + pristine. PR to `dev` (**Review — compliance**) pending Sam's go-ahead (see Discoveries: PR #13 already merged, so this lands as a NEW PR, not an extension).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
@@ -71,7 +71,7 @@ notes and commit messages.
 | 2 — The gate (evaluateEligibility) | ✅ Shipped | `a516493` | 8 tests; pure core complete |
 | 3 — Ingest atomic metadata call + frozen envelopes | ✅ Shipped | `49d549a`,`b1c0ccf` | 6 new ingest tests; 8 frozen gold envelopes; suite 180 green |
 | 4 — Wiring (orchestrator, API, UI) | ✅ Shipped | `27d84b0`,`e0cdc37` | 2 new lookup tests; audit + UI banner; suite 182 green |
-| 5 — Gold-set integration test + composition guard | 🚧 In progress | — | claimed 2026-06-06T02:27Z |
+| 5 — Gold-set integration test + composition guard | ✅ Shipped | `4b576f6` | 9 tests (8 per-entry + guard); guard-bites probe confirmed; suite 191 green |
 
 ### Discoveries
 
@@ -631,7 +631,7 @@ Follow the **Per-Task Protocol** (TDD N/A for the UI shell; rely on tsc/lint + t
 
 ## Phase 5 — Gold-set integration test + composition guard
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T02:27Z, branch `claude/safelane-gate-g11-phases-3-5-9UDWy`.
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `claude/safelane-gate-g11-phases-3-5-9UDWy`) — Task 5.1 `4b576f6`. 9 tests (8 per-entry verdict checks + 1 composition guard); the guard-bites probe (drop the `unknown` entry → guard fails on `toContain("unknown")`, then restored) was run and confirmed. Reviewed: envelopes are raw (mapped through the production parser, not pre-cleaned), guard fails when a shape is removed, residual fail-OPENs documented via the in-test NOTE → design §9 + compliance change log.
 
 ### Task 5.1: Eligibility gold-set test over frozen envelopes
 
@@ -656,9 +656,9 @@ Follow the **Per-Task Protocol**. Implements spec §8. **Depends on Phases 2 + 3
 
 ## Final integration
 
-- [ ] After Phase 5: run the FULL suite + `tsc` + `lint` once more; confirm pristine.
-- [ ] Rebase the branch onto the latest `origin/dev` (PR #11 persistence + PR #12 hook are already merged there); resolve any conflict in `lookup.ts`/`wikimedia.ts`/`page.tsx` by re-running the gate trio.
-- [ ] Open a PR to `dev` with a `## Merge classification` of **Review — architecture/compliance** (touches the G11 compliance floor, a new external-API metadata fetch, and the public lookup contract). Link the design spec + the 5-round review trail + the compliance change-log entry.
+- [x] After Phase 5: run the FULL suite + `tsc` + `lint` once more; confirm pristine. — 191 green, tsc + lint clean (2026-06-06).
+- [x] Rebase the branch onto the latest `origin/dev`. — Not needed: the branch was reset onto `origin/dev` at session start and `origin/dev` has not advanced since (HEAD `26783de`); 9 ahead / 0 behind, no conflicts in `lookup.ts`/`wikimedia.ts`/`page.tsx`.
+- [ ] Open a PR to `dev` with a `## Merge classification` of **Review — compliance** (touches the G11 compliance floor, a new external-API metadata fetch, and the public lookup contract). Link the design spec + the 5-round review trail + the compliance change-log entry. **Pending Sam's go-ahead** — PR #13 (Phases 1–2) is already merged, so this is a NEW PR rather than an extension of #13 (see Discoveries); not auto-opened.
 - [ ] Do NOT self-merge — this is a compliance-floor change for Sam's review.
 
 ---
