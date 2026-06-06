@@ -12,6 +12,7 @@ import {
 } from "../../src/db/research-packs";
 import { upsertArticle } from "../../src/db/articles";
 import { freshTestExecutor } from "../helpers/db";
+import { allowConsole } from "../setup/pristine";
 import type { EvidenceCard } from "../../src/research/provider";
 import type { DroppedProposal } from "../../src/research/verify-proposal";
 import { MIN_QUOTE_LEN, MAX_QUOTE_LEN } from "../../src/research/verbatim-check";
@@ -394,6 +395,115 @@ describe("getPack — read-time verbatim quote length validation", () => {
     if (rA.state === "found") expect(rA.pack.status).toBe("no_proposals");
     if (rB.state === "found") expect(rB.pack.status).toBe("proposals_present");
   });
+});
+
+// ---------------------------------------------------------------------------
+// Defensive read: valid JSON but NOT an array / malformed card shapes
+// ---------------------------------------------------------------------------
+
+describe("getPack — defensive read: valid JSON non-array and malformed card shapes", () => {
+  // Helper to insert a row directly (bypassing the module's own validation)
+  async function insertRawRow(
+    exec: ReturnType<typeof freshTestExecutor>,
+    overrides: {
+      claimKey?: string;
+      queriesJson?: string;
+      cardsJson?: string;
+      dispositionsJson?: string;
+    } = {}
+  ) {
+    const pk = overrides.claimKey ?? "raw-row-key";
+    await exec
+      .prepare(
+        "INSERT INTO research_packs " +
+          "(claim_key, source_revision_id, page_id, section_heading, sentence_text, year, " +
+          "provider_name, model_version, status, queries_json, cards_json, dispositions_json, evaluated_at) " +
+          "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+      )
+      .bind(
+        pk,
+        100,
+        1,
+        "History",
+        "The fleet reached full strength.",
+        2017,
+        "fake-provider",
+        "fake-provider/0",
+        "no_proposals",
+        overrides.queriesJson ?? "[]",
+        overrides.cardsJson ?? "[]",
+        overrides.dispositionsJson ?? "[]",
+        "2026-06-06T00:00:00.000Z"
+      )
+      .run();
+    return { claimKey: pk, sourceRevisionId: 100 };
+  }
+
+  it("returns pack_unreadable when cards_json is valid JSON but NOT an array (a string)", async () => {
+    allowConsole();
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+    const { claimKey, sourceRevisionId } = await insertRawRow(exec, {
+      claimKey: "string-cards-key",
+      // Valid JSON, not an array — JSON.parse succeeds; the Array.isArray check fires
+      cardsJson: '"a string, valid JSON, not an array"',
+    });
+    const result = await getPack(exec, claimKey, sourceRevisionId);
+    expect(result.state).toBe("pack_unreadable");
+  });
+
+  it("returns pack_unreadable when queries_json is valid JSON but NOT an array (an object)", async () => {
+    allowConsole();
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+    const { claimKey, sourceRevisionId } = await insertRawRow(exec, {
+      claimKey: "object-queries-key",
+      // Valid JSON, not an array — JSON.parse succeeds; the Array.isArray check fires
+      queriesJson: '{}',
+    });
+    const result = await getPack(exec, claimKey, sourceRevisionId);
+    expect(result.state).toBe("pack_unreadable");
+  });
+
+  it("returns pack_unreadable when a card object is missing verbatimQuote", async () => {
+    allowConsole();
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+    // A card that is an object with url + advisorySupport but NO verbatimQuote
+    const { claimKey, sourceRevisionId } = await insertRawRow(exec, {
+      claimKey: "missing-quote-card-key",
+      cardsJson: '[{"url":"https://x/","advisorySupport":true}]',
+      // status must be proposals_present to have non-empty cards pass earlier checks
+    });
+    // Insert with proposals_present status so it reaches the card validation
+    await exec
+      .prepare(
+        "UPDATE research_packs SET status = ?, cards_json = ? WHERE claim_key = ? AND source_revision_id = ?"
+      )
+      .bind("proposals_present", '[{"url":"https://x/","advisorySupport":true}]', claimKey, sourceRevisionId)
+      .run();
+    const result = await getPack(exec, claimKey, sourceRevisionId);
+    expect(result.state).toBe("pack_unreadable");
+  });
+
+  it("returns pack_unreadable when a card is not an object (a number)", async () => {
+    allowConsole();
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+    const { claimKey, sourceRevisionId } = await insertRawRow(exec, {
+      claimKey: "number-card-key",
+      cardsJson: '[123]',
+    });
+    await exec
+      .prepare(
+        "UPDATE research_packs SET status = ?, cards_json = ? WHERE claim_key = ? AND source_revision_id = ?"
+      )
+      .bind("proposals_present", '[123]', claimKey, sourceRevisionId)
+      .run();
+    const result = await getPack(exec, claimKey, sourceRevisionId);
+    expect(result.state).toBe("pack_unreadable");
+  });
+
 });
 
 // ---------------------------------------------------------------------------

@@ -417,6 +417,120 @@ describe("handleResearchMessage — unexpected error containment", () => {
 });
 
 // ---------------------------------------------------------------------------
+// null / non-object messages — isValidMessage null/primitive branch (line 73)
+// ---------------------------------------------------------------------------
+
+describe("handleResearchMessage — null / non-object message (isValidMessage branch)", () => {
+  it("null message -> handler RESOLVES (ack) + research.failed / malformed_message; researchClaim not called", async () => {
+    allowConsole();
+    const exec = freshTestExecutor();
+    const auditLog = makeAuditLog(exec);
+    const packStore = makeResearchPackStore(exec);
+    const researchClaim = vi.fn();
+
+    await expect(
+      handleResearchMessage(null as unknown as ResearchMessage, {
+        researchClaim,
+        packStore,
+        audit: auditLog,
+        now: FIXED_NOW,
+      })
+    ).resolves.toBeUndefined();
+
+    expect(researchClaim).not.toHaveBeenCalled();
+    const rows = await auditLog.read();
+    const failedRow = rows.find((r) => r.eventType === "research.failed");
+    expect(failedRow).toBeDefined();
+    expect((failedRow!.payload as Record<string, unknown>).reason).toBe("malformed_message");
+  });
+
+  it("string message -> handler RESOLVES (ack) + research.failed / malformed_message; researchClaim not called", async () => {
+    allowConsole();
+    const exec = freshTestExecutor();
+    const auditLog = makeAuditLog(exec);
+    const packStore = makeResearchPackStore(exec);
+    const researchClaim = vi.fn();
+
+    await expect(
+      handleResearchMessage("oops" as unknown as ResearchMessage, {
+        researchClaim,
+        packStore,
+        audit: auditLog,
+        now: FIXED_NOW,
+      })
+    ).resolves.toBeUndefined();
+
+    expect(researchClaim).not.toHaveBeenCalled();
+    const rows = await auditLog.read();
+    const failedRow = rows.find((r) => r.eventType === "research.failed");
+    expect(failedRow).toBeDefined();
+    expect((failedRow!.payload as Record<string, unknown>).reason).toBe("malformed_message");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// non-number pageId / sourceRevisionId — isValidMessage field-type branches (lines 76-77)
+// (Uses a 64-hex claimKey so the claimKey guard is satisfied, isolating the field guards)
+// ---------------------------------------------------------------------------
+
+describe("handleResearchMessage — non-number pageId / sourceRevisionId (isValidMessage type guards)", () => {
+  const VALID_CLAIM_KEY = "a".repeat(64);
+
+  it("non-number pageId (string) -> handler RESOLVES (ack) + research.failed / malformed_message; researchClaim not called", async () => {
+    allowConsole();
+    const exec = freshTestExecutor();
+    const auditLog = makeAuditLog(exec);
+    const packStore = makeResearchPackStore(exec);
+    const researchClaim = vi.fn();
+
+    const badMsg = {
+      claimKey: VALID_CLAIM_KEY,
+      pageId: "123",           // string instead of number
+      sourceRevisionId: SOURCE_REVISION_ID,
+      input: makeInput(),
+    } as unknown as ResearchMessage;
+
+    await expect(
+      handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW })
+    ).resolves.toBeUndefined();
+
+    expect(researchClaim).not.toHaveBeenCalled();
+    const rows = await auditLog.read();
+    const failedRow = rows.find((r) => r.eventType === "research.failed");
+    expect(failedRow).toBeDefined();
+    expect((failedRow!.payload as Record<string, unknown>).reason).toBe("malformed_message");
+    // The 64-hex claimKey must pass through to the audit (it is a genuine hex key)
+    expect((failedRow!.payload as Record<string, unknown>).claimKey).toBe(VALID_CLAIM_KEY);
+  });
+
+  it("null sourceRevisionId -> handler RESOLVES (ack) + research.failed / malformed_message; researchClaim not called", async () => {
+    allowConsole();
+    const exec = freshTestExecutor();
+    const auditLog = makeAuditLog(exec);
+    const packStore = makeResearchPackStore(exec);
+    const researchClaim = vi.fn();
+
+    const badMsg = {
+      claimKey: VALID_CLAIM_KEY,
+      pageId: PAGE_ID,
+      sourceRevisionId: null,  // null instead of number
+      input: makeInput(),
+    } as unknown as ResearchMessage;
+
+    await expect(
+      handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW })
+    ).resolves.toBeUndefined();
+
+    expect(researchClaim).not.toHaveBeenCalled();
+    const rows = await auditLog.read();
+    const failedRow = rows.find((r) => r.eventType === "research.failed");
+    expect(failedRow).toBeDefined();
+    expect((failedRow!.payload as Record<string, unknown>).reason).toBe("malformed_message");
+    expect((failedRow!.payload as Record<string, unknown>).claimKey).toBe(VALID_CLAIM_KEY);
+  });
+});
+
+// ---------------------------------------------------------------------------
 // has() sequential-skip on the FULL PK
 // ---------------------------------------------------------------------------
 

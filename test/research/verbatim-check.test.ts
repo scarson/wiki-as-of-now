@@ -70,4 +70,28 @@ describe("evaluateQuote", () => {
     expect(evaluateQuote(page("End of section one. Start of section two here."), "Start of section two here.")).toBe("matched");
   });
 
+  it("quote that itself spans a block boundary -> quote_not_found (quote-side cross-block rejection)", () => {
+    // A quote containing a literal \n is rejected regardless of what the page contains.
+    // This is the quote-side check: if normalizeForVerbatim(quote).includes("\n"), drop it.
+    expect(evaluateQuote(page("alpha beta gamma delta epsilon"), "alpha beta\ngamma delta")).toBe("quote_not_found");
+    // Same result when the quote is built from parts joined by \n — the \n survives normalization.
+    const quoteWithNewline = "alpha beta\ngamma delta";
+    expect(evaluateQuote(page("alpha beta gamma delta epsilon"), quoteWithNewline)).toBe("quote_not_found");
+  });
+
+  it("MAX_PAGE_CHARS (4_000_000) truncation: quote only beyond cap -> quote_not_found; quote near start -> matched", () => {
+    // Build a page where the unique quote appears ONLY beyond 4_000_000 characters.
+    // The cap slices the tail off before normalization, so the quote is invisible.
+    const filler = "x".repeat(4_000_001);
+    const pageWithTailQuote = page(filler + " UNIQUE_TAIL_QUOTE_PRESENT_HERE");
+    const start = performance.now();
+    expect(evaluateQuote(pageWithTailQuote, "UNIQUE_TAIL_QUOTE_PRESENT_HERE")).toBe("quote_not_found");
+    expect(performance.now() - start).toBeLessThan(1000);
+
+    // Positive (bipolar) control: the SAME quote near the START of a page > 4 MB is found
+    // because the quote falls within the first 4_000_000 characters.
+    const pageWithHeadQuote = page("UNIQUE_HEAD_QUOTE_PRESENT_HERE " + filler);
+    expect(evaluateQuote(pageWithHeadQuote, "UNIQUE_HEAD_QUOTE_PRESENT_HERE")).toBe("matched");
+  });
+
 });
