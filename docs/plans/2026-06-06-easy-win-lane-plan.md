@@ -73,6 +73,10 @@ notes and commit messages.
 | 4 — Easy-win lane query (two-stage, positive allowlist) | ✅ Shipped | `719c502`,`baceae3`,`9975f3b` | positive allowlist + per-page outcomes + isolation fix; adversarial review found no fail-OPEN; suite 224 green |
 | 5 — `POST /api/easy-win` endpoint | ✅ Shipped | `240b8c6` | thin POST glue over getEasyWinLane; suite 224 green |
 
+### Discoveries
+
+- **`currentArticleRevision` assumes the Stage-1 row still exists** (`src/ingest/easy-win-lane.ts` — `rows[0].revisionId`). Sound today: no code path deletes an `articles` row (row tombstoning is a named-deferred non-goal, design §1), and the lane runs sequentially within one invocation, so the row selected by Stage-1 is always present at the Stage-2 read. The final whole-implementation review flagged that *if* a concurrent article-delete path is ever added (e.g. when tombstoning lands), an empty `rows` would throw a `TypeError` that — not being a fetch error — propagates out and aborts the lane (fails closed, never wrong-surfaces, so not a compliance hole). **When tombstoning is implemented:** treat a missing row in `currentArticleRevision` as `article_gone` (+ `deleteVerdict`), and add a test. Not actionable until then (YAGNI — no deleter exists).
+
 ---
 
 ## Per-Task Protocol (MANDATORY — applies to EVERY task)
