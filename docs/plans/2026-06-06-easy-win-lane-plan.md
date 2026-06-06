@@ -61,13 +61,13 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 1/5 phases shipped (subagent-driven on `feat/easy-win-lane`).
+**Overall:** 2/5 phases shipped (subagent-driven on `feat/easy-win-lane`). Next: Phase 3 (persist verdict on lookup) → Phase 4 (lane query, compliance-critical) → Phase 5 (route).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Scan hardening (`scanWikitextSignals` linear-time) | ✅ Shipped | `5129686`,`b925dc2`,`6ac9fda` | linear-time regex + SAFE-1 pitfall; suite 194 green |
-| 2 — Data model (`eligibility_verdicts` + migration + DB module) | 🚧 In progress | — | claimed 2026-06-06T13:13Z |
-| 3 — Persist the verdict on lookup (article-row-last) | ⬜ Not started | — | depends on Phase 2 |
+| 2 — Data model (`eligibility_verdicts` + migration + DB module) | ✅ Shipped | `b9ce7c4`,`27c3e5c`,`a718e5b`,`2e85622` | table+ordered migrations+equivalence test; verdict module (upsert/delete/pre-filter); suite 210 green |
+| 3 — Persist the verdict on lookup (article-row-last) | ⬜ Not started | — | depends on Phase 2 (done) — ready to pick up |
 | 4 — Easy-win lane query (two-stage, positive allowlist) | ⬜ Not started | — | depends on Phases 2–3 |
 | 5 — `POST /api/easy-win` endpoint | ⬜ Not started | — | depends on Phase 4 |
 
@@ -160,7 +160,7 @@ for (const m of text.matchAll(/\{\{\s*([^{}|\n][^}|\n]{0,99}?)\s*(?:\||\}\})/g))
 
 ## Phase 2 — Data model (`eligibility_verdicts` + migration + DB module)
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T13:13Z, branch `feat/easy-win-lane`.
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `feat/easy-win-lane`) — Task 2.1 `b9ce7c4` + `27c3e5c` (table, migration 0002, ordered-migration `freshTestDb`, schema-equivalence test, DB-1 NULL-rejection test), Task 2.2 `a718e5b` + `2e85622` (`upsertVerdict`/`deleteVerdict`/`selectEasyWinPageIds` + 11 tests; reviewed: all 5 pre-filter exclusions genuine, ordering clarified as a contract assertion). Suite 210 green, tsc + lint clean.
 
 Implements design §2. Adds the table, the ordered-migration discipline (finding I), and the DB module.
 
