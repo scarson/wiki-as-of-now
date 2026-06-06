@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 2/5 phases shipped (subagent-driven on `feat/easy-win-lane`). Next: Phase 3 (persist verdict on lookup) → Phase 4 (lane query, compliance-critical) → Phase 5 (route).
+**Overall:** 3/5 phases shipped (subagent-driven on `feat/easy-win-lane`). Next: Phase 4 (lane query, compliance-critical) → Phase 5 (route).
 
 **PR:** #15 (DRAFT) → `dev` — https://github.com/scarson/wiki-as-of-now/pull/15. Opened mid-build at Sam's request; Phases 3–5 push to this same branch (the PR updates automatically). Mark ready + request merge only after Phase 5 + a final whole-implementation review; **do not self-merge** (Review — compliance).
 
@@ -69,7 +69,7 @@ notes and commit messages.
 |---|---|---|---|
 | 1 — Scan hardening (`scanWikitextSignals` linear-time) | ✅ Shipped | `5129686`,`b925dc2`,`6ac9fda` | linear-time regex + SAFE-1 pitfall; suite 194 green |
 | 2 — Data model (`eligibility_verdicts` + migration + DB module) | ✅ Shipped | `b9ce7c4`,`27c3e5c`,`a718e5b`,`2e85622` | table+ordered migrations+equivalence test; verdict module (upsert/delete/pre-filter); suite 210 green |
-| 3 — Persist the verdict on lookup (article-row-last) | ⬜ Not started | — | depends on Phase 2 (done) — ready to pick up |
+| 3 — Persist the verdict on lookup (article-row-last) | ✅ Shipped | `f1dcbe4` | shared-revision invariant + verdict upsert; suite 212 green |
 | 4 — Easy-win lane query (two-stage, positive allowlist) | ⬜ Not started | — | depends on Phases 2–3 |
 | 5 — `POST /api/easy-win` endpoint | ⬜ Not started | — | depends on Phase 4 |
 
@@ -290,7 +290,7 @@ export async function selectEasyWinPageIds(db: SqlExecutor, gateVersion: string)
 
 ## Phase 3 — Persist the verdict on lookup (article-row-last)
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T14:05Z on branch `feat/easy-win-lane`.
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `feat/easy-win-lane`) — Task 3.1 `f1dcbe4` (one shared `liveRev` threaded through article/candidates/verdict + audits + return; `upsertVerdict` after `insertCandidates`, parent-first FK order preserved; the formerly-false "never persisted" comment corrected; 2 new tests — verdict round-trip + shared-revision invariant). Suite 212 green, tsc + lint clean.
 
 Implements design §3. Adds the verdict upsert to `lookupAndPersist` and pins the write order so `articles.revision_id` never leads its candidates (CRITICAL-B ordering half).
 
