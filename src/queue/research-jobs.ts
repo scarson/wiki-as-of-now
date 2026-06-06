@@ -1,7 +1,7 @@
 // ABOUTME: Research-job queue consumer — idempotent handler that drives the research provider.
 // ABOUTME: Also exports a thin producer (enqueueResearch) for posting to a Cloudflare Queue binding.
 import type { AuditEntry } from "../db/audit-log";
-import type { ResearchInput, ResearchResult } from "../research/provider";
+import type { ResearchInput, ProviderResearch } from "../research/provider";
 
 /** A message posted to the research queue. */
 export interface ResearchMessage {
@@ -21,7 +21,7 @@ export interface ResearchResultStore {
 
 /** Injected dependencies for the research-job consumer. */
 export interface ResearchDeps {
-  provider: { research(input: ResearchInput): Promise<ResearchResult> };
+  provider: { research(input: ResearchInput): Promise<ProviderResearch> };
   audit: { append(entry: AuditEntry): void };
   store: ResearchResultStore;
 }

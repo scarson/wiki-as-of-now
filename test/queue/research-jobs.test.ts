@@ -7,17 +7,17 @@ import type { AuditEntry } from "../../src/db/audit-log";
 
 describe("research job consumer", () => {
   it("runs research once and logs completion", async () => {
-    const provider = { research: vi.fn().mockResolvedValue({ providerName: "stub", candidates: [] }) };
+    const provider = { research: vi.fn().mockResolvedValue({ providerName: "stub", modelVersion: "fake-provider/0", proposals: [], queries: [] }) };
     const appended: AuditEntry[] = [];
     const audit = { append: (e: AuditEntry) => { appended.push(e); } };
     const store = new Map<number, unknown>();
-    const msg = { candidateId: 7, claim: { claimText: "x", sectionHeading: "S", year: 2017 } };
+    const msg = { candidateId: 7, claim: { claimText: "x", sectionHeading: "S", year: 2017, sourceRevisionId: 1 } };
     await handleResearchMessage(msg, { provider, audit, store });
     await handleResearchMessage(msg, { provider, audit, store }); // re-delivery of the same message
     expect(provider.research).toHaveBeenCalledTimes(1); // idempotent
     expect(appended.filter(e => e.eventType === "research.completed").length).toBe(1);
     expect(store.has(7)).toBe(true); // result persisted under candidateId
-    expect(store.get(7)).toEqual({ providerName: "stub", candidates: [] });
+    expect(store.get(7)).toEqual({ providerName: "stub", modelVersion: "fake-provider/0", proposals: [], queries: [] });
     // Audit payload is identifiers-only — never the research result/content (compliance).
     const completion = appended.find(e => e.eventType === "research.completed");
     expect(completion?.actor).toBe("system");
@@ -29,7 +29,7 @@ describe("research job consumer", () => {
     const appended: AuditEntry[] = [];
     const audit = { append: (e: AuditEntry) => { appended.push(e); } };
     const store = new Map<number, unknown>();
-    const msg = { candidateId: 9, claim: { claimText: "x", sectionHeading: "S", year: 2017 } };
+    const msg = { candidateId: 9, claim: { claimText: "x", sectionHeading: "S", year: 2017, sourceRevisionId: 1 } };
     await expect(handleResearchMessage(msg, { provider, audit, store })).rejects.toThrow(
       "provider unavailable"
     );
@@ -42,7 +42,7 @@ describe("enqueueResearch", () => {
   it("posts the message to the queue binding unchanged", async () => {
     const sent: ResearchMessage[] = [];
     const queue = { send: vi.fn(async (m: ResearchMessage) => { sent.push(m); }) };
-    const msg: ResearchMessage = { candidateId: 5, claim: { claimText: "x", sectionHeading: "S", year: 2017 } };
+    const msg: ResearchMessage = { candidateId: 5, claim: { claimText: "x", sectionHeading: "S", year: 2017, sourceRevisionId: 1 } };
     await enqueueResearch(queue, msg);
     expect(queue.send).toHaveBeenCalledTimes(1);
     expect(sent).toEqual([msg]);

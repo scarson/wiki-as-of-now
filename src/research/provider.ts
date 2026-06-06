@@ -1,15 +1,25 @@
-// ABOUTME: Types defining the research provider contract for the research layer.
-// ABOUTME: ResearchProvider is the seam that keeps the LLM layer swappable and bounded.
+// ABOUTME: Types defining the research provider contract — provider PROPOSES, the pipeline VERIFIES.
+// ABOUTME: ResearchProvider is the swappable seam; the deterministic verify step lives outside it.
 
 /** Input to a research query — the claim to investigate. */
 export interface ResearchInput {
-  claimText: string;
+  claimText: string;        // the candidate's sentence_text
   sectionHeading: string;
   year: number;
+  surroundingText?: string; // optional; plumbed at detection time in a later slice
+  sourceRevisionId: number;
+}
+
+/** Unverified LLM output: a proposed source URL + the quote the model claims is on it. */
+export interface ProposedEvidence {
+  url: string;
+  proposedQuote: string;
+  advisorySupport: boolean;
 }
 
 /**
- * A single evidence candidate surfaced by a research provider.
+ * Post-verification artifact: the RAW quote, confirmed present on the page by the
+ * deterministic check.
  *
  * Per the bounded-LLM-role guardrail (the LLM's role is boxed to three jobs)
  * and the no-machine-written-text guardrail in
@@ -28,13 +38,23 @@ export interface EvidenceCard {
   advisorySupport: boolean;
 }
 
-/** The result returned by a research provider. */
-export interface ResearchResult {
+/** What a provider returns: proposals (unverified) + the neutral queries it used (G9) + model identity (G12). */
+export interface ProviderResearch {
   providerName: string;
-  candidates: EvidenceCard[];
+  modelVersion: string;     // full model identifier for G12 disclosure; fake → "fake-provider/0"
+  proposals: ProposedEvidence[];
+  queries: string[];
+}
+
+/** Thrown when the provider backend is unreachable (caught by the pipeline → status: provider_unavailable). */
+export class ProviderUnavailableError extends Error {
+  constructor(message = "research provider unavailable") {
+    super(message);
+    this.name = "ProviderUnavailableError";
+  }
 }
 
 /** Boundary interface for all research provider implementations. */
 export interface ResearchProvider {
-  research(input: ResearchInput): Promise<ResearchResult>;
+  research(input: ResearchInput): Promise<ProviderResearch>;
 }
