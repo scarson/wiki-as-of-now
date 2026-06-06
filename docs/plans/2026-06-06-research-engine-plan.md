@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 0/10 phases shipped. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
+**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 2/10 phases shipped (0, 1). Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
 
 > **Deviation (branch name):** executing on the harness-designated branch
 > `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
@@ -71,7 +71,7 @@ notes and commit messages.
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 0 — Tooling + test harness (deps, determinism traps, pristine, CI) | ✅ Shipped | `6e30a77`, `49a1395`, `0c5660a` | deps+harness+CI; CI runs on the PR (pull_request event) — feature-branch pushes don't trigger by design |
-| 1 — `normalize.ts` + NFC golden fixture | ⬜ Not started | — | shared contract; everything depends on it |
+| 1 — `normalize.ts` + NFC golden fixture | ✅ Shipped | `ed77d51`, `45f9d19` | normalize + workerd↔Node golden (14 cases, gen on workerd); fresh review round in progress |
 | 2 — `canonicalize-url.ts` (SSRF host classification) | ⬜ Not started | — | pure; shared by fetch guard + cap |
 | 3 — `verbatim-check.ts` | ⬜ Not started | — | highest-stakes; boil the lake |
 | 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | ⬜ Not started | — | blind-adversary corpora |
@@ -83,6 +83,8 @@ notes and commit messages.
 
 ### Deviations
 - Phase 8 determinism test: corrected spec §6 N4's "shuffled proposal order → order-stable" to **repeatability** (same input → deep-equal output). Shuffle-invariance is wrong because `slice(0, maxProposals)` truncation is order-dependent by design.
+- Branch name: executing on harness-designated `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the plan-original `feat/research-engine` — same base, different label; PR target still `dev`.
+- Phase 1.2: added `scripts/wrangler-nfc-worker.json` — a minimal `nodejs_compat` dev config so `wrangler unstable_dev` doesn't fail on the production `wrangler.jsonc`'s `.open-next/assets` reference (absent in dev). Added `allowImportingTsExtensions: true` to `tsconfig.json` so the Node-run `gen-nfc-golden.ts` can use explicit `.ts` import extensions; safe because tsc runs `--noEmit` and the build bundles via Next/esbuild (no tsc emit).
 
 ### Discoveries
 - Out-of-slice: `test/ingest/easy-win-lane.test.ts:114` audit assertion uses the denylist pattern that §6 of the spec condemns (N3). Upgrade to allowlist+sentinel when convenient; flagged, not fixed here.
@@ -238,7 +240,7 @@ jobs:
 
 ## Phase 1 — `normalize.ts` + NFC golden fixture
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `ed77d51` (normalize), `45f9d19` (workerd↔Node NFC golden: 14-case corpus, gen on workerd via `unstable_dev`, parity test green). Orchestrator verified: strip set = exactly the 6 zero-width chars (escapes), fold set includes U+0020 + full Zs + NEL/VT/FF/tab (escapes, `\n` preserved), order NFC→strip→fold→collapse-`\n`→trim, idempotent; golden has 10/14 input≠output (NFC composition + strip + fold genuinely exercised), corpus data escape-only. Fresh review round in progress.
 
 Implements spec §3 (shared normalization) + §6 N1 (workerd NFC golden fixture). The shared contract imported by the extractor (Phase 4) and the verbatim check (Phase 3) — drive it into existence by its OWN test first; it is internal logic, never faked.
 
