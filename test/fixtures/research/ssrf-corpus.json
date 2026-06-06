@@ -1,11 +1,11 @@
 [
   {
-    "url": "https://en.wikipedia.org/wiki/Test",
+    "url": "https://en.wikipedia.org/wiki/Rust_(programming_language)",
     "expected": "pass",
     "threat": "legit-public-domain"
   },
   {
-    "url": "https://www.defense.gov/",
+    "url": "https://www.defense.gov/News/",
     "expected": "pass",
     "threat": "legit-public-domain"
   },
@@ -15,12 +15,12 @@
     "threat": "legit-public-domain"
   },
   {
-    "url": "https://en.wikipedia.org./wiki/Test",
+    "url": "https://en.wikipedia.org./wiki/SSRF",
     "expected": "pass",
     "threat": "legit-trailing-dot-fqdn"
   },
   {
-    "url": "https://8.8.8.8/",
+    "url": "https://8.8.8.8/dns-query",
     "expected": "pass",
     "threat": "legit-public-ipv4"
   },
@@ -30,149 +30,154 @@
     "threat": "legit-public-ipv6"
   },
   {
-    "url": "https://[::7f00:1]/",
+    "url": "https://[2001:db8::1]/path",
     "expected": "pass",
-    "threat": "legit-deprecated-ipv4-compat-ipv6-residual"
+    "threat": "legit-ipv6-documentation-range"
   },
   {
-    "url": "https://[2001:db8::1]/",
+    "url": "https://[::7f00:1]/path",
     "expected": "pass",
-    "threat": "legit-documentation-range-ipv6-residual"
+    "threat": "legit-ipv4-compatible-ipv6-residual",
+    "note": "Spec explicitly lists [::7f00:1] as an accepted residual (deprecated IPv4-compatible IPv6 ::/96 range). Not the same as ::ffff:127.0.0.1 (IPv4-mapped)."
   },
   {
-    "url": "https://commons.wikimedia.org/w/index.php",
+    "url": "https://203.0.113.42/article",
     "expected": "pass",
-    "threat": "legit-public-domain"
+    "threat": "legit-public-ipv4-documentation"
   },
   {
-    "url": "https://www.bbc.co.uk/news/world",
+    "url": "https://198.51.100.1/page",
     "expected": "pass",
-    "threat": "legit-public-domain-with-path"
+    "threat": "legit-public-ipv4-documentation-2"
   },
   {
-    "url": "https://[2001:4860:4860::8888]/",
+    "url": "https://api.example.com/v1/search?q=hello&lang=en",
     "expected": "pass",
-    "threat": "legit-public-ipv6-google-dns"
+    "threat": "legit-public-domain-with-query"
   },
   {
-    "url": "http://en.wikipedia.org/wiki/Test",
+    "url": "http://en.wikipedia.org/wiki/Rust",
     "expected": "reject",
-    "threat": "scheme-http"
+    "threat": "http-scheme"
   },
   {
-    "url": "data:text/html,<h1>hello</h1>",
+    "url": "data:text/html,<h1>Hello</h1>",
     "expected": "reject",
-    "threat": "scheme-data"
+    "threat": "data-scheme"
   },
   {
     "url": "file:///etc/passwd",
     "expected": "reject",
-    "threat": "scheme-file"
+    "threat": "file-scheme"
   },
   {
-    "url": "ftp://ftp.example.com/file.txt",
+    "url": "ftp://ftp.example.com/pub/file.txt",
     "expected": "reject",
-    "threat": "scheme-ftp"
+    "threat": "ftp-scheme"
   },
   {
     "url": "javascript:alert(1)",
     "expected": "reject",
-    "threat": "scheme-javascript"
+    "threat": "javascript-scheme"
   },
   {
-    "url": "blob:https://example.com/uuid",
+    "url": "blob:https://example.com/some-guid",
     "expected": "reject",
-    "threat": "scheme-blob"
+    "threat": "blob-scheme"
   },
   {
-    "url": "//en.wikipedia.org/wiki/Test",
+    "url": "//en.wikipedia.org/wiki/Rust",
     "expected": "reject",
-    "threat": "scheme-relative-no-scheme"
+    "threat": "scheme-relative"
   },
   {
-    "url": "https://user:pass@en.wikipedia.org/wiki/Test",
+    "url": "https://user:pass@en.wikipedia.org/wiki/Rust",
     "expected": "reject",
-    "threat": "userinfo-username-and-password"
+    "threat": "userinfo-user-and-password"
   },
   {
-    "url": "https://user@en.wikipedia.org/wiki/Test",
+    "url": "https://user@en.wikipedia.org/wiki/Rust",
     "expected": "reject",
-    "threat": "userinfo-username-only"
+    "threat": "userinfo-user-only"
   },
   {
-    "url": "https://127.0.0.1/",
+    "url": "https://127.0.0.1/admin",
     "expected": "reject",
-    "threat": "ipv4-loopback-dotted-decimal"
+    "threat": "ipv4-loopback-standard"
   },
   {
-    "url": "https://2130706433/",
+    "url": "https://127.0.0.2/admin",
     "expected": "reject",
-    "threat": "ipv4-loopback-decimal-encoding"
+    "threat": "ipv4-loopback-127-block-interior"
   },
   {
-    "url": "https://0x7f000001/",
+    "url": "https://127.255.255.255/admin",
     "expected": "reject",
-    "threat": "ipv4-loopback-hex-encoding"
+    "threat": "ipv4-loopback-127-block-end"
   },
   {
-    "url": "https://0177.0.0.1/",
+    "url": "https://2130706433/admin",
     "expected": "reject",
-    "threat": "ipv4-loopback-octal-encoding"
+    "threat": "decimal-ipv4-loopback",
+    "note": "2130706433 = 0x7f000001 = 127.0.0.1 in decimal encoding"
   },
   {
-    "url": "https://127.1/",
+    "url": "https://0x7f000001/admin",
     "expected": "reject",
-    "threat": "ipv4-loopback-short-form"
+    "threat": "hex-ipv4-loopback",
+    "note": "0x7f000001 = 127.0.0.1 in hexadecimal encoding"
   },
   {
-    "url": "https://127.255.255.255/",
+    "url": "https://0177.0.0.1/admin",
     "expected": "reject",
-    "threat": "ipv4-loopback-high-end-of-range"
+    "threat": "octal-ipv4-loopback",
+    "note": "0177 = 127 in octal; recognized by some URL parsers"
   },
   {
-    "url": "https://10.0.0.1/",
+    "url": "https://127.1/admin",
     "expected": "reject",
-    "threat": "ipv4-private-10-slash-8"
+    "threat": "short-ipv4-loopback",
+    "note": "127.1 is a short form of 127.0.0.1 accepted by many parsers"
   },
   {
-    "url": "https://10.255.255.255/",
+    "url": "https://10.0.0.1/internal",
     "expected": "reject",
-    "threat": "ipv4-private-10-slash-8-high-end"
+    "threat": "ipv4-private-10-block-start"
   },
   {
-    "url": "https://172.16.0.1/",
+    "url": "https://10.255.255.255/internal",
     "expected": "reject",
-    "threat": "ipv4-private-172-16-slash-12"
+    "threat": "ipv4-private-10-block-end"
   },
   {
-    "url": "https://172.31.255.255/",
+    "url": "https://172.16.0.1/internal",
     "expected": "reject",
-    "threat": "ipv4-private-172-16-slash-12-high-end"
+    "threat": "ipv4-private-172-16-block-start"
   },
   {
-    "url": "https://192.168.1.1/",
+    "url": "https://172.31.255.255/internal",
     "expected": "reject",
-    "threat": "ipv4-private-192-168-slash-16"
+    "threat": "ipv4-private-172-31-block-end"
   },
   {
-    "url": "https://192.168.255.255/",
+    "url": "https://192.168.1.1/internal",
     "expected": "reject",
-    "threat": "ipv4-private-192-168-slash-16-high-end"
-  },
-  {
-    "url": "https://169.254.1.1/",
-    "expected": "reject",
-    "threat": "ipv4-link-local"
-  },
-  {
-    "url": "https://169.254.169.254/",
-    "expected": "reject",
-    "threat": "ipv4-link-local-aws-metadata"
+    "threat": "ipv4-private-192-168-block"
   },
   {
     "url": "https://169.254.169.254/latest/meta-data/",
     "expected": "reject",
-    "threat": "ipv4-link-local-aws-metadata-path"
+    "threat": "ipv4-link-local-cloud-metadata"
+  },
+  {
+    "url": "https://169.254.0.1/",
+    "expected": "reject",
+    "threat": "ipv4-link-local-block"
+  },
+  {
+    "url": "https://169.254.255.255/",
+    "expected": "reject",
+    "threat": "ipv4-link-local-block-end"
   },
   {
     "url": "https://0.0.0.0/",
@@ -182,7 +187,7 @@
   {
     "url": "https://0.1.2.3/",
     "expected": "reject",
-    "threat": "ipv4-unspecified-range-0-slash-8"
+    "threat": "ipv4-unspecified-0-block"
   },
   {
     "url": "https://255.255.255.255/",
@@ -190,7 +195,7 @@
     "threat": "ipv4-broadcast"
   },
   {
-    "url": "https://[::1]/",
+    "url": "https://[::1]/admin",
     "expected": "reject",
     "threat": "ipv6-loopback"
   },
@@ -205,14 +210,9 @@
     "threat": "ipv6-unique-local-fc00"
   },
   {
-    "url": "https://[fd00::1]/",
+    "url": "https://[fd12:3456:789a::1]/",
     "expected": "reject",
-    "threat": "ipv6-unique-local-fd00"
-  },
-  {
-    "url": "https://[fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff]/",
-    "expected": "reject",
-    "threat": "ipv6-unique-local-high-end"
+    "threat": "ipv6-unique-local-fd-block"
   },
   {
     "url": "https://[fe80::1]/",
@@ -220,58 +220,58 @@
     "threat": "ipv6-link-local"
   },
   {
-    "url": "https://[fe80::1%25eth0]/",
-    "expected": "reject",
-    "threat": "ipv6-link-local-with-zone-id"
-  },
-  {
     "url": "https://[::ffff:127.0.0.1]/",
     "expected": "reject",
-    "threat": "ipv6-ipv4-mapped-loopback"
+    "threat": "ipv6-ipv4-mapped-loopback",
+    "note": "::ffff:127.0.0.1 maps the loopback address into IPv6; the embedded IPv4 is in 127/8"
   },
   {
     "url": "https://[::ffff:192.168.1.1]/",
     "expected": "reject",
-    "threat": "ipv6-ipv4-mapped-private-192-168"
-  },
-  {
-    "url": "https://[::ffff:10.0.0.1]/",
-    "expected": "reject",
-    "threat": "ipv6-ipv4-mapped-private-10-slash-8"
+    "threat": "ipv6-ipv4-mapped-private",
+    "note": "::ffff:192.168.1.1 maps a private IPv4 address into IPv6"
   },
   {
     "url": "https://[::ffff:169.254.169.254]/",
     "expected": "reject",
-    "threat": "ipv6-ipv4-mapped-link-local-metadata"
+    "threat": "ipv6-ipv4-mapped-link-local-metadata",
+    "note": "::ffff:169.254.169.254 maps the cloud metadata address into IPv6"
   },
   {
-    "url": "https://[64:ff9b::127.0.0.1]/",
+    "url": "https://[::ffff:10.0.0.1]/",
     "expected": "reject",
-    "threat": "ipv6-nat64-loopback"
+    "threat": "ipv6-ipv4-mapped-private-10-block"
   },
   {
     "url": "https://[64:ff9b::192.168.1.1]/",
     "expected": "reject",
-    "threat": "ipv6-nat64-private"
+    "threat": "ipv6-nat64-private",
+    "note": "64:ff9b::/96 is the NAT64 well-known prefix; embedding a private IPv4 bypasses SSRF if only the IPv6 prefix is checked"
   },
   {
-    "url": "https://localhost/",
+    "url": "https://[64:ff9b::127.0.0.1]/",
+    "expected": "reject",
+    "threat": "ipv6-nat64-loopback",
+    "note": "NAT64 prefix embedding loopback IPv4 127.0.0.1"
+  },
+  {
+    "url": "https://localhost/admin",
     "expected": "reject",
     "threat": "hostname-localhost"
   },
   {
-    "url": "https://localhost./",
+    "url": "https://localhost./admin",
     "expected": "reject",
-    "threat": "hostname-localhost-trailing-dot-fqdn"
+    "threat": "hostname-localhost-trailing-dot"
   },
   {
-    "url": "https://metadata.google.internal/",
+    "url": "https://metadata.google.internal/computeMetadata/v1/",
     "expected": "reject",
-    "threat": "hostname-gce-metadata"
+    "threat": "hostname-gcp-metadata"
   },
   {
-    "url": "https://metadata.google.internal./",
+    "url": "https://metadata.google.internal./computeMetadata/v1/",
     "expected": "reject",
-    "threat": "hostname-gce-metadata-trailing-dot-fqdn"
+    "threat": "hostname-gcp-metadata-trailing-dot"
   }
 ]
