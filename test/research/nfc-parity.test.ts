@@ -1,3 +1,5 @@
+// ABOUTME: Workerd-vs-Node NFC parity gate — asserts Node normalizeForVerbatim matches the committed workerd golden.
+// ABOUTME: Prevents split-brain normalization that would silently corrupt claim_key (a primary-key component).
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { normalizeForVerbatim } from "../../src/research/normalize";
