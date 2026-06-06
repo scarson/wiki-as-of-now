@@ -158,6 +158,17 @@ function toReadResult(row: RawPackRow | null): ResearchPackRead {
 // ---------------------------------------------------------------------------
 
 /**
+ * True iff a row exists for (claimKey, sourceRevisionId). Cheap SELECT 1 — does not parse the pack.
+ */
+export async function packExists(db: SqlExecutor, claimKey: string, sourceRevisionId: number): Promise<boolean> {
+  const rows = await db
+    .prepare("SELECT 1 AS one FROM research_packs WHERE claim_key = ? AND source_revision_id = ?")
+    .bind(claimKey, sourceRevisionId)
+    .all<{ one: number }>();
+  return rows.length > 0;
+}
+
+/**
  * Write-once insert: stores a research pack only if no row with the same
  * (claim_key, source_revision_id) already exists. Silently ignores conflicts.
  *

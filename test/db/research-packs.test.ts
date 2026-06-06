@@ -4,6 +4,7 @@ import { describe, it, expect, vi } from "vitest";
 import {
   computeClaimKey,
   insertPackIfAbsent,
+  packExists,
   getPack,
   deletePack,
   getSurfaceablePack,
@@ -222,6 +223,41 @@ describe("insertPackIfAbsent", () => {
     const exec = freshTestExecutor();
     const pack = makePack({ pageId: 9999 });
     await expect(insertPackIfAbsent(exec, pack)).rejects.toThrow(/FOREIGN KEY/i);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// packExists
+// ---------------------------------------------------------------------------
+
+describe("packExists", () => {
+  it("returns true after inserting a pack for (claimKey, sourceRevisionId)", async () => {
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+    const pack = makePack({ claimKey: "exists-key", sourceRevisionId: 100 });
+    await insertPackIfAbsent(exec, pack);
+    expect(await packExists(exec, "exists-key", 100)).toBe(true);
+  });
+
+  it("returns false when no row exists for that (claimKey, sourceRevisionId)", async () => {
+    const exec = freshTestExecutor();
+    expect(await packExists(exec, "no-such-key", 100)).toBe(false);
+  });
+
+  it("returns false for the same claimKey but a different sourceRevisionId", async () => {
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+    const pack = makePack({ claimKey: "pk-test-key", sourceRevisionId: 100 });
+    await insertPackIfAbsent(exec, pack);
+    expect(await packExists(exec, "pk-test-key", 200)).toBe(false);
+  });
+
+  it("returns false for the same sourceRevisionId but a different claimKey", async () => {
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+    const pack = makePack({ claimKey: "exact-key", sourceRevisionId: 100 });
+    await insertPackIfAbsent(exec, pack);
+    expect(await packExists(exec, "other-key", 100)).toBe(false);
   });
 });
 
