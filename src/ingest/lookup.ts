@@ -4,6 +4,7 @@ import type { SqlExecutor } from "../db/client";
 import type { EligibilityDecision } from "../domain/types";
 import { upsertArticle, insertCandidates, getCandidatesByPageId, type PersistedCandidate } from "../db/articles";
 import { makeAuditLog } from "../db/audit-log";
+import { upsertVerdict } from "../db/eligibility-verdicts";
 import { parseArticle } from "../detector/parse";
 import { detectStaleClaims, DETECTOR_VERSION } from "../detector/detect";
 import { fetchArticle, toArticleMetadata, type FetchLike } from "./wikimedia";
@@ -58,23 +59,35 @@ export async function lookupAndPersist(
 
   // Safe-lane eligibility: deterministic, fail-closed verdict over the same-snapshot metadata.
   // The gate stays clock-free; `now` is supplied here (app clock, injectable in tests). The verdict
-  // is computed, returned, and audited — never persisted in v1 (re-evaluated at point-of-use; spec §6).
+  // is persisted as a cheap pre-filter / audit-history record, but it is NEVER the surfacing authority —
+  // the easy-win lane re-fetches and re-runs the gate at point-of-use before surfacing anything (spec §6).
   const decision = evaluateEligibility(toArticleMetadata(fetched), options.now ?? new Date(), GATE_VERSION);
+
+  // One shared revision id: article row, candidates, and verdict all describe this exact snapshot.
+  const liveRev = fetched.revisionId;
 
   await upsertArticle(db, {
     pageId: fetched.pageId,
     title: fetched.title,
-    revisionId: fetched.revisionId,
+    revisionId: liveRev,
     fetchedAt: new Date().toISOString(),
   });
-  await insertCandidates(db, fetched.pageId, fetched.revisionId, candidates);
+  await insertCandidates(db, fetched.pageId, liveRev, candidates);
+  await upsertVerdict(db, {
+    pageId: fetched.pageId,
+    revisionId: liveRev,
+    gateVersion: GATE_VERSION,
+    eligibility: decision.eligibility,
+    reasons: decision.reasons,
+    evaluatedAt: new Date().toISOString(),
+  });
 
   await makeAuditLog(db).append({
     actor: "system",
     eventType: "article.lookup",
     payload: {
       pageId: fetched.pageId,
-      revisionId: fetched.revisionId,
+      revisionId: liveRev,
       candidateCount: candidates.length,
       detectorVersion: DETECTOR_VERSION,
     },
@@ -86,7 +99,7 @@ export async function lookupAndPersist(
     eventType: "article.eligibility",
     payload: {
       pageId: fetched.pageId,
-      revisionId: fetched.revisionId,
+      revisionId: liveRev,
       namespace: fetched.namespace,
       blpProbe: fetched.blpProbe,
       eligibility: decision.eligibility,
@@ -103,7 +116,7 @@ export async function lookupAndPersist(
   return {
     pageId: fetched.pageId,
     title: fetched.title,
-    revisionId: fetched.revisionId,
+    revisionId: liveRev,
     candidateCount: persisted.length,
     candidates: persisted,
     eligibility: decision.eligibility,
