@@ -73,7 +73,7 @@ notes and commit messages.
 | 0 — Tooling + test harness (deps, determinism traps, pristine, CI) | ✅ Shipped | `6e30a77`, `49a1395`, `0c5660a` | deps+harness+CI; CI runs on the PR (pull_request event) — feature-branch pushes don't trigger by design |
 | 1 — `normalize.ts` + NFC golden fixture | ✅ Shipped | `ed77d51`, `45f9d19`, `96a46c5` | normalize + workerd↔Node golden (14 cases, gen on workerd); fresh review caught identity-only NFC test → strengthened (`96a46c5`) |
 | 2 — `canonicalize-url.ts` (SSRF host classification) | ✅ Shipped | `e375155`, `0644f05`, `045b046` | bipolar corpus (32 cases); trailing-dot bypass fixed; refactored to `ipaddr.js` (Sam's call) — −59 LOC hand-rolled math, NAT64 closed; full adversarial battery verified |
-| 3 — `verbatim-check.ts` | 🚧 In progress | — | highest-stakes; boil the lake (opus review) |
+| 3 — `verbatim-check.ts` | 🚧 In progress | `7b324263` (+ boundary fix pending) | opus review found `\n`-only cross-block guard gap → hardening normalize to vertical/horizontal split |
 | 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | ⬜ Not started | — | blind-adversary corpora |
 | 5 — `provider.ts` reshape + fake providers | ⬜ Not started | — | interface change to committed code |
 | 6 — `verify-proposal.ts` | ⬜ Not started | — | the standalone compliance seam |
@@ -89,6 +89,7 @@ notes and commit messages.
 
 ### Discoveries
 - Out-of-slice: `test/ingest/easy-win-lane.test.ts:114` audit assertion uses the denylist pattern that §6 of the spec condemns (N3). Upgrade to allowlist+sentinel when convenient; flagged, not fixed here.
+- Phase 3 opus review (cross-block-forgery hardening; Sam delegated the call): the verbatim cross-block guard was `\n`-only, but `normalizeForVerbatim` folded VT/FF to a *space* (bridging) and preserved CR/U+2028/U+2029 (also bridging). **Decisive reason it must live in `normalize.ts` not the extractor:** the content-type allowlist includes `text/plain`, for which NO HTML extractor runs — `normalize` is the only boundary layer both content types share. Fix: replace §3's fold-set with a **vertical/horizontal split** — vertical whitespace {LF, VT U+000B, FF U+000C, CR U+000D, NEL U+0085, LS U+2028, PS U+2029} → `\n` (block boundary); horizontal whitespace {tab + Unicode Zs} → one space; zero-width → strip. Closes the bridge both ways; `claim_key` path unaffected (separate identity-NFC, §4); recall cost negligible + in the safe false-drop direction. Requires spec §3 amendment + golden regeneration (added vertical-separator corpus cases) + verbatim boundary tests.
 - Phase 2 SSRF residuals (added to spec §9 + documented in `src/research/canonicalize-url.ts`): deprecated IPv4-compatible IPv6 `::/96` (e.g. `[::7f00:1]`) and the NAT64 well-known prefix `64:ff9b::/96` embed an IPv4 address but are NOT enumerated in the host classifier — modern stacks don't route IPv4-compatible addrs to the embedded v4, and NAT64 reachability is gateway-dependent. Same residual bucket as the spec's DNS-rebinding residual.
 
 ---
