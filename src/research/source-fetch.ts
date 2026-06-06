@@ -60,8 +60,12 @@ const DEFAULT_USER_AGENT =
 // Tags that are inline — they do NOT insert a block boundary.
 // Everything not in this set (including unknown/custom elements) is treated as
 // a block-level separator (more separators = safe false-drops; too few = dangerous false-accepts).
+// NOTE: <br> is deliberately NOT here — per design §2.9 it is a block separator
+// (a reader-visible line break). Treating it as inline would let a quote bridge a
+// <br> line break (cross-block forgery). Void <br> fires open+close → a \n that
+// normalize collapses to one boundary.
 const INLINE_TAGS = new Set([
-  "a", "abbr", "acronym", "b", "bdo", "bdi", "big", "br", "button", "cite",
+  "a", "abbr", "acronym", "b", "bdo", "bdi", "big", "button", "cite",
   "code", "data", "del", "dfn", "em", "i", "img", "input", "ins", "kbd",
   "label", "map", "mark", "object", "optgroup", "option", "output", "q",
   "rp", "rt", "ruby", "s", "samp", "select", "small", "span", "strong",

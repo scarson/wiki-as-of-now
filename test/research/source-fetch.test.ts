@@ -247,6 +247,37 @@ describe("fetchSourceText — HTML extraction (corpus-driven)", () => {
   );
 });
 
+// Regression: block separators in INLINE context must still insert a \n boundary.
+// The blind corpus's <br> case wrapped it between <div>s (the divs masked the boundary),
+// so it could not detect <br> being mis-classified as inline. These isolate the separator:
+// a quote bridging the two halves must be impossible because a \n sits between them.
+describe("fetchSourceText — block separators isolate (no surrounding block element)", () => {
+  it.each([
+    ["br", "First line.<br>Second line."],
+    ["hr", "First line.<hr>Second line."],
+  ])("a <%s> between inline text yields a \\n boundary (no bridge)", async (_tag, html) => {
+    const result = await fetchSourceText("https://example.com/", { fetchImpl: htmlFetch(html) });
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    const text = result.text as string;
+    expect(text).toContain("\n");
+    expect(text).toBe("First line.\nSecond line.");
+    // The forged bridge (no boundary) must NOT be present.
+    expect(text).not.toContain("First line.Second line.");
+  });
+
+  it("a quote-shaped string cannot bridge a <br> line break", async () => {
+    const result = await fetchSourceText("https://example.com/", {
+      fetchImpl: htmlFetch("The grant was approved.<br>The grant was later rescinded."),
+    });
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    const text = result.text as string;
+    expect(text).not.toContain("approved. The grant was later");
+    expect(text).not.toContain("approved.The grant was later");
+  });
+});
+
 // ---------------------------------------------------------------------------
 // Streaming size cap (decompressed bytes, NOT Content-Length)
 // ---------------------------------------------------------------------------
