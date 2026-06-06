@@ -61,11 +61,16 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started. 0/10 phases shipped. Branch `feat/research-engine` (off merged `dev` `11ca215`).
+**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 0/10 phases shipped. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
+
+> **Deviation (branch name):** executing on the harness-designated branch
+> `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
+> plan-original `feat/research-engine`. Same base (the PR #16 merge); only the branch
+> label differs. PR target remains `dev`.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 0 — Tooling + test harness (deps, determinism traps, pristine, CI) | ⬜ Not started | — | foundational; CI guards everything after |
+| 0 — Tooling + test harness (deps, determinism traps, pristine, CI) | ✅ Shipped | `6e30a77`, `49a1395`, `0c5660a` | deps+harness+CI; CI runs on the PR (pull_request event) — feature-branch pushes don't trigger by design |
 | 1 — `normalize.ts` + NFC golden fixture | ⬜ Not started | — | shared contract; everything depends on it |
 | 2 — `canonicalize-url.ts` (SSRF host classification) | ⬜ Not started | — | pure; shared by fetch guard + cap |
 | 3 — `verbatim-check.ts` | ⬜ Not started | — | highest-stakes; boil the lake |
@@ -109,7 +114,7 @@ Follow TDD: write the failing test → run it, confirm it fails for the RIGHT re
 
 ## Phase 0 — Tooling + test harness (deps, determinism traps, pristine enforcement, CI)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `6e30a77` (deps: htmlparser2 + fast-check), `49a1395` (determinism traps + pristine), `0c5660a` (CI). Gate trio green (225 tests, tsc + lint clean). Throwaway trap-smoke test confirmed `armDeterminismTraps` throws on ambient fetch/Date.now/Math.random and restores after (then deleted). CI workflow triggers on `pull_request` + pushes to `dev`/`main`, so it executes when the PR to `dev` opens (no feature-branch-push run by design) — verify green at PR time.
 
 Implements the spec's enforced test controls (§6 N4, suite-wide pristine) + CI (§6.1). Foundational: later phases depend on the test helpers; CI guards every subsequent push. No production `src/` logic here (TDD's failing-test-first applies from Phase 1 on; Phase 0 is config/harness, exempt per CLAUDE.md TDD scope).
 
