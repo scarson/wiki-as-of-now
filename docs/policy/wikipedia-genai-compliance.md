@@ -522,6 +522,23 @@ held to it, and we would rather ship less than break it.
 
 ## 10. Change log
 
+- **2026-06-06** — **Safe-lane gate (G11) v1 — known deterministic limits documented with human
+  sign-off.** The v1 safe-lane eligibility gate (deterministic, LLM-free, fail-closed; design in
+  [docs/design/2026-06-06-safelane-gate-design.md](../design/2026-06-06-safelane-gate-design.md), hardened
+  over a 5-round adversarial review in `docs/plans/safelane-design-review/`) enforces the BLP floor via an
+  authoritative category-membership probe + mainspace check + a freshness fail-closed, with advisory
+  wikitext dispute/BLP signals. A deterministic gate over public category data cannot be a perfect BLP
+  oracle, so **four narrow residual fail-OPEN cases are named and accepted as v1 limits** (human sign-off:
+  Sam): (i) category-table replication/job-queue lag *beyond* the freshness window; (ii) suppressed /
+  uncategorized / sub-categorized / unknown-redirected BLPs not carrying an enumerated BLP category; (iii)
+  current-revision category removal (vandalism/error) beyond the freshness window; (iv) BLP declared *only*
+  by the talk-page WikiProject banner (talk pages are not fetched in v1). **This does NOT weaken the
+  stay-in-the-safe-lane guardrail's text or intent** — the floor remains "BLP article excluded by default,"
+  human-only is the default under any uncertainty, and the residuals are mitigated by defense-in-depth (the
+  freshness fail-closed covers i/iii within the window; the mandatory human-verification gate means no edit
+  ships without a human opening the source). Naming these limits is the guardrail's own honesty
+  requirement; the entry records them per the amendment process. Rationale and the rejected alternatives
+  (e.g. enumerate-then-intersect; persisting the verdict as a durable flag) are in the review trail.
 - **2026-06-04 (v1.0)** — **Verbatim grounding pass.** Re-fetched every source page with
   the `url-to-markdown` skill (faithful transcription, not a lossy summarizer) and
   committed the transcriptions under `docs/policy/sources/` as the evidence trail. All
