@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 4/5 phases shipped (subagent-driven on `feat/easy-win-lane`). Next: Phase 5 (route).
+**Overall:** 5/5 phases shipped (subagent-driven on `feat/easy-win-lane`). Next: final whole-implementation review → mark PR #15 ready (Sam merges — compliance path).
 
 **PR:** #15 (DRAFT) → `dev` — https://github.com/scarson/wiki-as-of-now/pull/15. Opened mid-build at Sam's request; Phases 3–5 push to this same branch (the PR updates automatically). Mark ready + request merge only after Phase 5 + a final whole-implementation review; **do not self-merge** (Review — compliance).
 
@@ -71,7 +71,7 @@ notes and commit messages.
 | 2 — Data model (`eligibility_verdicts` + migration + DB module) | ✅ Shipped | `b9ce7c4`,`27c3e5c`,`a718e5b`,`2e85622` | table+ordered migrations+equivalence test; verdict module (upsert/delete/pre-filter); suite 210 green |
 | 3 — Persist the verdict on lookup (article-row-last) | ✅ Shipped | `f1dcbe4` | shared-revision invariant + verdict upsert; suite 212 green |
 | 4 — Easy-win lane query (two-stage, positive allowlist) | ✅ Shipped | `719c502`,`baceae3`,`9975f3b` | positive allowlist + per-page outcomes + isolation fix; adversarial review found no fail-OPEN; suite 224 green |
-| 5 — `POST /api/easy-win` endpoint | ⬜ Not started | — | depends on Phase 4 |
+| 5 — `POST /api/easy-win` endpoint | ✅ Shipped | `240b8c6` | thin POST glue over getEasyWinLane; suite 224 green |
 
 ---
 
@@ -482,7 +482,7 @@ type Revalidation = { outcome: "surfaced"; item: EasyWinItem } | { outcome: Excl
 
 ## Phase 5 — `POST /api/easy-win` endpoint
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `feat/easy-win-lane`) — Task 5.1 `240b8c6` (`src/app/api/easy-win/route.ts`: thin `POST` mirroring the lookup route — resolve D1, `getEasyWinLane(db, { now: new Date() })`, return `{ items, summary }`; single top-level try/catch → 500, no 503 branch since per-page failures are isolated inside the lane). No new tests (thin glue, route excluded from coverage like the lookup route). tsc + lint clean, suite 224 green.
 
 Implements design §6. Thin route; logic is covered by Phase 4 tests.
 
