@@ -63,15 +63,29 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 2/5 phases shipped. Next: Phase 3 (ingest atomic metadata call + frozen gold envelopes).
+**Overall:** 2/5 phases shipped. Phase 3 🚧 IN PROGRESS (claimed 2026-06-06T02:12Z, branch `claude/safelane-gate-g11-phases-3-5-9UDWy`).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Foundation (types, denylists, wikitext scan) | ✅ Shipped | `8bede5a`,`b838890`,`2506e25` | 12 tests; suite 168 green |
 | 2 — The gate (evaluateEligibility) | ✅ Shipped | `a516493` | 8 tests; pure core complete |
-| 3 — Ingest atomic metadata call + frozen envelopes | ⬜ Not started | — | — |
+| 3 — Ingest atomic metadata call + frozen envelopes | 🚧 In progress | — | claimed 2026-06-06T02:12Z |
 | 4 — Wiring (orchestrator, API, UI) | ⬜ Not started | — | — |
 | 5 — Gold-set integration test + composition guard | ⬜ Not started | — | — |
+
+### Discoveries
+
+- **PR #13 (Phases 1–2) was already merged into `origin/dev`** before this session
+  started (`origin/dev` HEAD = "Merge pull request #13"; `origin/dev..origin/claude/safelane-gate-g11`
+  is empty). The plan's "extend PR #13 / rebase onto origin/dev" Final-integration note
+  is therefore partly stale: a merged PR cannot be extended. Phases 3–5 are being built on
+  the fresh branch `claude/safelane-gate-g11-phases-3-5-9UDWy` (reset onto `origin/dev`, so
+  it already contains Phases 1–2). The completed work will land as a NEW PR to `dev`
+  (still **Review — compliance**, not self-merged), pending Sam's go-ahead to open it.
+- **Runtime is Node v22, not the `.nvmrc`-pinned 24** in this remote container (only
+  node20/21/22 exist under `/opt`; the session-start hook did not provision 24). Non-blocking:
+  the better-sqlite3 native module loads and the full suite is green on 22. Flagged so a
+  future session does not chase a phantom env problem.
 
 ---
 
@@ -440,7 +454,7 @@ export function evaluateEligibility(meta: ArticleMetadata, now: Date, _gateVersi
 
 ## Phase 3 — Ingest atomic metadata call + frozen gold envelopes
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T02:12Z, branch `claude/safelane-gate-g11-phases-3-5-9UDWy`.
 
 ### Task 3.1: Extend `fetchArticle` to one atomic metadata call
 
