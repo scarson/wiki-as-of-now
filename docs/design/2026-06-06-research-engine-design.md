@@ -38,6 +38,7 @@ Every module is small, single-purpose, with dependencies injected for unit-testi
 - **`src/research/pipeline.ts`** *(new)* — `researchClaim(input, { provider, fetchSource, now, maxProposals, perHostCap }): Promise<ResearchOutcome>`. Pure and **total** orchestrator (no DB, no crypto, no audit; never throws on provider/fetch output). (§5.)
 - **`src/db/research-packs.ts`** *(new)* + **`migrations/0003_research_packs.sql`** + identical block in `src/db/schema.sql` — persistence keyed `(claim_key, source_revision_id)`. (§4.)
 - **`src/queue/research-jobs.ts`** *(rewrite existing)* — `handleResearchMessage(msg, deps)` becomes total/contained: identity + persist (terminal-only) + codes-only audit. (§5.)
+- **`.github/workflows/ci.yml`** *(new)* + a `gen:nfc-golden` package script — minimal CI that enforces the gate trio + the NFC parity test on every PR/push, closing the honor-system gap (§6.1).
 
 **Data flow for one claim:**
 
@@ -101,6 +102,8 @@ Idempotent (`normalize(normalize(x)) === normalize(x)` — property-tested). Det
 
 **`verbatim-check.ts` — `evaluateQuote(pageText, quote)`:**
 1. Normalize the quote. Reject empty/whitespace-only → `quote_not_found`. Length in **code points** (`[...s].length`, not UTF-16 `.length`): below `MIN_QUOTE_LEN` (~8 code points, a blunt anti-triviality floor — the human-open gate is the real specificity backstop) → `quote_too_short`; above `MAX_QUOTE_LEN` (~300 code points, the G16 pointer-snippet bound) → `quote_too_long`.
+
+   **Implementation requirement:** `MIN_QUOTE_LEN` and `MAX_QUOTE_LEN` MUST each carry a code comment explaining *what the constant tunes and its implications*, written for a future agent with no access to this session's context. The comment must convey: `MIN_QUOTE_LEN` is a **blunt anti-triviality floor**, NOT a security property (the deterministic check + the human-open verification gate are the real backstops); raising it **false-drops legitimate short factual quotes** — notably date anchors like "3 May 2024" (10 code points), which are exactly the stale-claim anchors this product surfaces — while lowering it admits near-trivial common-phrase matches; so it is tuned *low* deliberately. `MAX_QUOTE_LEN` enforces the G16 pointer-not-prose bound (a quote longer than a pointer is a copyright/“basically draft text” smell) and is re-validated at the persistence read path. A future tuner must understand these are coverage-vs-noise knobs bounded by the human gate, not correctness thresholds.
 2. If the normalized quote contains `\n` (spans a block boundary) → `quote_not_found`.
 3. Otherwise: a `\n`-free needle cannot cross a block boundary, so **`normalizedPage.includes(normalizedQuote)`** already respects segments — **no `split` needed** (zero extra allocation; the Workers-memory and cross-block concerns both resolve). `matched` iff present.
 4. Pure, deterministic, **linear-time string ops only — no regex on untrusted page text** (the SAFE-1 threat class; this is a compliance property, not just perf). A hard page-size cap is applied before normalization.
@@ -212,6 +215,16 @@ Disciplines: **real logic under test, fakes only as seam *byte/proposal* sources
 
 **Honest integration boundaries:** the Queues ack/retry test is labeled *handler-discipline* (a later integration slice proves the real Queues mapping); `research_packs` tests are *D1-parity* tests.
 
+### 6.1 CI — make the gates enforced, not honor-system
+
+The repo currently has **no CI** (no `.github/workflows`), so every gate to date — the trio, and now the compliance-critical verbatim/normalization/SSRF tests — runs only when someone remembers locally. For a layer whose tests *are* the compliance backstop, a change could silently break them and merge green. This slice adds minimal CI:
+
+- **`.github/workflows/ci.yml`** runs on PRs + pushes: install (Node 24 per `.nvmrc`, `pnpm install`, then `pnpm rebuild better-sqlite3` so the native ABI matches the CI Node — this bit us locally), then **`pnpm test` + `pnpm exec tsc --noEmit` + `pnpm lint`**. Because the NFC parity test (N1) runs inside `pnpm test` by asserting Node-`normalize` against the committed `test/fixtures/nfc-golden-workerd.json`, CI enforces parity-against-the-golden automatically — no workerd runtime needed in CI itself.
+- **`gen:nfc-golden`** (the workerd-side regeneration via `wrangler unstable_dev`) stays a **documented, scripted manual step**, run when the normalization corpus or `normalize.ts` changes (and pre-deploy). The fixture is the contract; CI checks Node against it; regeneration refreshes it from real `workerd`. A future hardening can add a workerd-runtime CI job that re-runs `gen:nfc-golden` and diffs, but that's not required for v1.
+- Scope note: CI here is intentionally minimal (the existing gate trio + the suite). It is **not** a deploy pipeline; `opennextjs-cloudflare` deploy wiring stays out of scope.
+
+This closes the gap flagged during review: the controls in §6 become *enforced on every change*, not conventions.
+
 ---
 
 ## 7. Compliance mapping
@@ -252,7 +265,7 @@ Each section ran three rounds (self → Opus → self). What changed, and the lo
 - **Pack compaction / retention** — superseded/orphaned packs linger; prune affordance exists, automatic compaction deferred.
 - **eTLD+1 per-domain cap** — host-level for v1; revisit when `maxProposals` grows.
 - **Manual redirect following** — `redirect:"error"` for v1; manual ≤N hops gated on confirming `workerd` `Location` exposure.
-- **No CI exists in the repo** (no `.github/workflows`) — the NFC golden fixture + the gate trio are runnable locally; wiring them (and the `gen:nfc-golden` regeneration) into CI is a **separate project gap flagged to Sam**, not part of this slice.
+- **CI is now IN scope for this slice** (§6.1): `.github/workflows/ci.yml` runs the gate trio + the suite (incl. the NFC parity-against-golden test) on every PR/push. The `gen:nfc-golden` *regeneration* (workerd via `wrangler unstable_dev`) remains a documented manual/scripted step; a workerd-runtime CI job that re-diffs the golden is a later hardening. Deploy pipeline stays out of scope.
 - **Out-of-slice discovery:** the shipped `test/ingest/easy-win-lane.test.ts:114` audit assertion uses the **denylist** pattern §6 N3 condemns; it should be upgraded to allowlist+sentinel — recorded, not fixed here.
 - **Later slices:** real Gemini provider; snippet assembler + mechanical disclosure; worksheet UI + surfacing-rule enforcement + copy-native-wikitext; per-user quotas + auth; async batch queue + seed list.
 
@@ -272,3 +285,4 @@ Each section ran three rounds (self → Opus → self). What changed, and the lo
 | D8 | `ON CONFLICT DO NOTHING` (write-once), persist terminal-only | Research is metered spend; `provider_unavailable` must not permanently block retry |
 | D9 | Cap order truncate→canonicalize→count→fetch; malformed = counted disposition | The order is a G14/G15 security boundary |
 | D10 | NFC golden fixture; armed determinism traps; audit allowlist+sentinel; bipolar corpora; blind-adversary; `fast-check` | Make the compliance/determinism guarantees *enforced*, not conventional |
+| D11 | Minimal CI (`ci.yml`: trio + suite on PR/push) folded INTO this slice | The slice's tests are the compliance backstop; honor-system enforcement is unacceptable for them (Sam) |
