@@ -561,6 +561,26 @@ describe("fetchSourceText — charset decode", () => {
     expect(result.ok).toBe(false);
     if (!result.ok) expect(result.reason).toBe("decode_error");
   });
+
+  // C1: when the Content-Type header omits a charset, the page's own <meta> is the only
+  // declaration and must be honored (not assumed utf-8 and false-dropped as a "conflict").
+  it("honors <meta charset> when the header omits a charset (no false-drop)", async () => {
+    // é is byte 0xe9 in windows-1252/latin1; header has NO charset; meta declares windows-1252.
+    const html = `<html><head><meta charset="windows-1252"></head><body><p>caf\xe9 list</p></body></html>`;
+    const bytes = new Uint8Array(Buffer.from(html, "latin1"));
+    const { impl } = fakeFetch(200, { "content-type": "text/html" }, makeStream([bytes]));
+    const result = await fetchSourceText("https://example.com/", { fetchImpl: impl });
+    expect(result.ok).toBe(true);
+    if (result.ok) expect(result.text).toContain("café list");
+  });
+
+  it("defaults to utf-8 when both header and meta omit a charset", async () => {
+    const html = "<html><body><p>plain utf8 ✓ here</p></body></html>";
+    const { impl } = fakeFetch(200, { "content-type": "text/html" }, makeStream([enc.encode(html)]));
+    const result = await fetchSourceText("https://example.com/", { fetchImpl: impl });
+    expect(result.ok).toBe(true);
+    if (result.ok) expect(result.text).toContain("plain utf8 ✓ here");
+  });
 });
 
 // ---------------------------------------------------------------------------

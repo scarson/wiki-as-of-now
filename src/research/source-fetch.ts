@@ -353,7 +353,7 @@ export async function fetchSourceText(
     // Do not consume the body.
     return { ok: false, reason: "unsupported_content_type" };
   }
-  const headerCharset = charsetFromContentType(contentTypeHeader) ?? "utf-8";
+  const explicitHeaderCharset = charsetFromContentType(contentTypeHeader); // null when the header omits charset
 
   // -------------------------------------------------------------------------
   // Steps 5 + 6 — Streaming read with decompressed-byte cap + timeout abort
@@ -438,22 +438,35 @@ export async function fetchSourceText(
     offset += chunk.byteLength;
   }
 
-  // Decode with the header charset using fatal mode (malformed sequences → throw).
-  let decoded: string;
-  try {
-    const decoder = new TextDecoder(normalizeCharset(headerCharset), { fatal: true });
-    decoded = decoder.decode(raw);
-  } catch {
-    return { ok: false, reason: "decode_error" };
+  // Find a <meta charset> (HTML only) via an ASCII-safe pre-scan of the head region.
+  // latin1 maps every byte 1:1 and never throws, so it is safe purely for locating the tag
+  // (we do NOT use this probe as the decoded content — only to read the declaration).
+  let metaCharset: string | null = null;
+  if (mimeType === "text/html") {
+    const headProbe = new TextDecoder("latin1").decode(raw.subarray(0, 4096));
+    metaCharset = extractMetaCharset(headProbe);
   }
 
-  // For HTML: check for meta charset conflict AFTER decoding with the header charset.
-  // If the meta charset disagrees with the header charset → fail closed.
-  if (mimeType === "text/html") {
-    const metaCharset = extractMetaCharset(decoded);
-    if (metaCharset !== null && charsetsConflict(headerCharset, metaCharset)) {
+  // header-wins when the header explicitly declares a charset; an explicit meta that CONFLICTS
+  // with an explicit header is a charset-confusion signal → fail closed (decode_error). When the
+  // header is SILENT, honor the page's own <meta> declaration (it is the only declaration) rather
+  // than assuming utf-8 and false-dropping a legitimate meta-only legacy page; default to utf-8.
+  let finalCharset: string;
+  if (explicitHeaderCharset !== null) {
+    if (metaCharset !== null && charsetsConflict(explicitHeaderCharset, metaCharset)) {
       return { ok: false, reason: "decode_error" };
     }
+    finalCharset = explicitHeaderCharset;
+  } else {
+    finalCharset = metaCharset ?? "utf-8";
+  }
+
+  // Decode with the resolved charset in fatal mode (malformed sequences → throw → decode_error).
+  let decoded: string;
+  try {
+    decoded = new TextDecoder(normalizeCharset(finalCharset), { fatal: true }).decode(raw);
+  } catch {
+    return { ok: false, reason: "decode_error" };
   }
 
   // -------------------------------------------------------------------------
