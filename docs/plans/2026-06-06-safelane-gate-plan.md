@@ -92,7 +92,7 @@ Follow TDD: write the failing test → run it and confirm it fails for the expec
 
 **Assertion rigor:** if a test ever races/flakes, the fix is deterministic synchronization (inject `now`/`asOfYear`, freeze fixtures), NEVER weakening or deleting an assertion. The safe-lane gate is a fail-closed compliance floor — a weakened test on a fail-OPEN path is a compliance regression. STOP and escalate rather than ship a weaker test. Commit subjects touching assertions state what happened to them ("add"/"strengthen"/"preserve").
 
-**Determinism (G10):** the gate, scan, and canonicalizer MUST be pure — no `Date.now()`/`new Date()`/`fetch`/`random` inside `src/safelane/*`. "Now" is injected. Probe + freshness use values captured upstream in the ingest. Tests pass frozen inputs.
+**Determinism (G10):** the gate, scan, and canonicalizer MUST be pure — no **clock reads** (`Date.now()`, no-argument `new Date()`), no `fetch`, no `random` inside `src/safelane/*`. "Now" is an injected parameter. **`new Date(isoString)` to PARSE an injected timestamp is allowed** (it is a deterministic parse of a passed-in value, not a clock read) — the freshness check uses exactly this. The probe + revision timestamp are captured upstream in the ingest. Tests pass frozen inputs.
 
 **Do NOT:** add an LLM anywhere; modify the detector or gold detector sets; build the easy-win queue, auth, research, or persistence of the verdict (out of v1 scope per spec §1); fetch talk pages; add infobox-name matching to the wikitext scan (spec §4 — intentionally excluded).
 
@@ -107,10 +107,10 @@ Three small, independent, pure modules. Tasks 1.1/1.2/1.3 touch different files 
 ### Task 1.1: Domain types for the gate contract
 
 **Files:**
-- Modify: `src/domain/types.ts` (append; do not alter existing types)
-- Test: `test/domain/types.test.ts` (existing — extend if it asserts shape; otherwise types are compile-checked by consumers)
+- Modify: `src/domain/types.ts` (append the two interfaces below; do NOT alter existing types)
+- Test: none. Do NOT add runtime tests for pure interfaces and do NOT modify `test/domain/types.test.ts`. These types are validated by `tsc` and exercised by their consumers in Tasks 2.1/3.1/4.1.
 
-Follow the **Per-Task Protocol**. Implements spec §2 (contract).
+Follow the **Per-Task Protocol** (its TDD step is satisfied here by `tsc` — there is no runtime behavior to red/green). Implements spec §2 (contract).
 
 - [ ] **Step 1: Add the types** to `src/domain/types.ts`:
 
@@ -285,6 +285,11 @@ describe("scanWikitextSignals", () => {
       "dispute_template:POV",
     ]);
   });
+  it("is robust to malformed/unclosed markup on untrusted input (no catastrophic backtracking)", () => {
+    // bounded length classes keep this linear; must return promptly with no match
+    expect(scanWikitextSignals("{{" + "a".repeat(100000))).toEqual([]);
+    expect(scanWikitextSignals("[[Category:" + "b".repeat(100000))).toEqual([]);
+  });
 });
 ```
 
@@ -310,12 +315,13 @@ export function scanWikitextSignals(wikitext: string): string[] {
   const text = strip(wikitext);
   const codes = new Set<string>();
 
-  // (a) literal BLP-set category links: [[Category:<title>]]
-  for (const m of text.matchAll(/\[\[\s*category:([^\]|]+)(?:\|[^\]]*)?\]\]/gi)) {
+  // (a) literal BLP-set category links: [[Category:<title>]]. Length-capped + newline-excluded
+  // so untrusted wikitext (G15) can't trigger quadratic scanning on a long unclosed run.
+  for (const m of text.matchAll(/\[\[\s*category:([^\]|\n]{1,255})(?:\|[^\]\n]*)?\]\]/gi)) {
     if (BLP_SET.has(canonicalizeCategoryTitle("Category:" + m[1]))) codes.add("blp_wikitext");
   }
-  // (b) dispute templates: {{<name>...}}
-  for (const m of text.matchAll(/\{\{\s*([^}|]+?)\s*(?:\||\}\})/g)) {
+  // (b) dispute templates: {{<name>...}}. Same bounding — template names are short and single-line.
+  for (const m of text.matchAll(/\{\{\s*([^}|\n]{1,100}?)\s*(?:\||\}\})/g)) {
     const name = canonicalizeTemplateName(m[1]);
     if (DISPUTE_SET.has(name)) codes.add(`dispute_template:${name}`);
   }
@@ -415,7 +421,7 @@ export function evaluateEligibility(meta: ArticleMetadata, now: Date, _gateVersi
   if (meta.blpProbe === "present") floor.add("blp_category");
   if (now.getTime() - new Date(meta.revisionTimestamp).getTime() < FRESHNESS_WINDOW_MS) floor.add("recently_edited");
 
-  const advisory = scanWikitextSignals(meta.wikitext); // already sorted: blp_wikitext before dispute_template:* lexically? verify
+  const advisory = scanWikitextSignals(meta.wikitext); // sorted, deduped advisory codes
   // Canonical order: floor codes in FLOOR_ORDER, then blp_wikitext, then sorted dispute_template:*
   const ordered: string[] = FLOOR_ORDER.filter(c => floor.has(c));
   if (advisory.includes("blp_wikitext")) ordered.push("blp_wikitext");
@@ -444,7 +450,9 @@ export function evaluateEligibility(meta: ArticleMetadata, now: Date, _gateVersi
 
 Follow the **Per-Task Protocol**. Implements spec §5. Depends on Task 1.2 (BLP_CATEGORIES + canonicalizer).
 
-- [ ] **Step 1: Write the failing tests** (add to `test/ingest/wikimedia.test.ts`). The injected `fetchFn` stub already exists; extend the canned body to the combined shape and assert:
+**Context for a fresh reader:** `test/ingest/wikimedia.test.ts` already has a `stubFetch(body, opts?) => { fetchFn, calls }` helper (records each request's `url` + `headers`, returns the canned `body` from `res.json()`) and an `okBody()` helper for the OLD content-only shape. **`okMetaBody` below is a NEW helper** for the combined shape; add it alongside `okBody`. Reuse the existing `stubFetch`.
+
+- [ ] **Step 1: Write the failing tests** (add to `test/ingest/wikimedia.test.ts`):
 
 ```ts
 // new okBody adds ns, timestamp, and clcategories-filtered categories:
@@ -488,21 +496,24 @@ it("blpProbe=unknown when the response carries a clcategories warning (indetermi
 });
 ```
 
-(Existing tests for the old `{pageId,title,revisionId,wikitext}` shape stay; just ensure `FetchedArticle` is a superset so they still pass.)
+**⚠ Update — not "keep green" — two EXISTING assertions in `wikimedia.test.ts`.** The persistence-slice test "requests the Action API with the documented params" currently asserts `p.get("prop")` === `"revisions"` and `p.get("rvprop")` === `"content|ids"`. The combined call changes both, so **edit those two assertions** to `expect(p.get("prop")).toBe("revisions|categories|info")` and `expect(p.get("rvprop")).toBe("content|ids|timestamp")`. All other existing assertions/cases stay; `FetchedArticle` is a superset so the rest pass unchanged. (This is an additive-mapping change to a serialization-ish contract — DB-2 mindset: shape the mapping by the stricter consumer.)
 
-- [ ] **Step 2: Run** → FAIL (new fields/params absent).
+- [ ] **Step 2: Run** → FAIL (new fields/params absent; the two edited assertions now fail until implemented).
 - [ ] **Step 3: Implement** the extension in `src/ingest/wikimedia.ts`:
   - Extend `FetchedArticle` with `namespace: number; revisionTimestamp: string; blpProbe: "present"|"absent"|"unknown"; fetchedAt: string;`.
-  - In `buildUrl`, set `prop=revisions|categories|info`, `rvprop=content|ids|timestamp`, and `clcategories=<BLP_CATEGORIES mapped through canonicalizeCategoryTitle, prefixed "Category:", joined with "|">`.
-  - Capture `const fetchedAt = new Date().toISOString();` at response-parse time.
+  - In `buildUrl`, set `prop=revisions|categories|info`, `rvprop=content|ids|timestamp`, and `clcategories=<BLP_CATEGORIES mapped through canonicalizeCategoryTitle, each prefixed "Category:", joined with "|">`. Import `BLP_CATEGORIES`, `canonicalizeCategoryTitle` from `../safelane/denylists`.
+  - **Extract two reusable, exported helpers** (single parsing path — DRY; Task 4.1 and Task 5.1 both import them, no parallel copies):
+    - `mapResponseToMetadata(body: MwResponse, fetchedAt: string): FetchedArticle` — does ALL the response→fields parsing and returns the full `FetchedArticle` (incl. `fetchedAt`). `fetchArticle` runs its error guards on the response, then returns `mapResponseToMetadata(body, fetchedAt)`.
+    - `toArticleMetadata(f: FetchedArticle): ArticleMetadata` — the trivial rename bridge (`pageId`→`resolvedPageId`, `title`→`resolvedTitle`; carry `revisionId`, `revisionTimestamp`, `namespace`, `blpProbe`, `wikitext`, `fetchedAt`). This is the ONLY place the rename lives.
+  - Capture `const fetchedAt = new Date().toISOString();` at response-parse time (this `new Date()` is in the INGEST, allowed — the determinism rule applies only to `src/safelane/*`).
   - Parse `ns` (`page.ns`), `revisionTimestamp` (`revision.timestamp`).
-  - `blpProbe`: `"unknown"` if `body.warnings?.categories` exists OR the `categories` field is present-but-malformed; else `"present"` if `Array.isArray(page.categories) && page.categories.length > 0`, else `"absent"`.
+  - `blpProbe`: `"unknown"` if `body.warnings?.categories` exists OR the `categories` field is present-but-malformed (not an array of `{title}`); else `"present"` if `Array.isArray(page.categories) && page.categories.length > 0`, else `"absent"`.
   - Keep all existing typed errors (`ArticleNotFoundError`, `WikimediaUnavailableError`, `WikimediaResponseError`) and the missing-content guards. Update the `MwPage`/`MwResponse` interfaces with `ns?`, `timestamp?`, `categories?`, top-level `warnings?`.
 
-- [ ] **Step 4: Run** the full `wikimedia.test.ts` → PASS (old + new).
+- [ ] **Step 4: Run** the full `wikimedia.test.ts` → PASS (old, edited, and new).
 - [ ] **Step 5: Commit + push.** `git commit -m "feat(ingest): atomic combined metadata fetch (categories|info + clcategories BLP probe, timestamp, ns)"`
 
-> **Pitfall note (R4-1):** all metadata MUST come from the SAME response's `pages[0]`. Do NOT add a second fetch for categories.
+> **Pitfall note (R4-1):** all metadata MUST come from the SAME response's `pages[0]`. Do NOT add a second fetch for categories. The `clcategories` BLP set is small (≤50), so it never paginates.
 
 ### Task 3.2: Capture + commit frozen gold API envelopes
 
@@ -512,8 +523,8 @@ it("blpProbe=unknown when the response carries a clcategories warning (indetermi
 
 Follow the **Per-Task Protocol** (the "test" here is the gold data the Phase-5 test consumes; this task produces the data + a README note). Implements spec §8. Network is used ONCE at authoring time, then frozen.
 
-- [ ] **Step 1:** Write a throwaway `npx tsx` script that issues the SAME combined request `fetchArticle` builds, against live en.wikipedia (descriptive UA, maxlag), for: a hidden-`Living people` BLP (e.g. `Tim Berners-Lee`); a clearly-living person in a different BLP category if available; a non-BLP from the existing corpus (`Artemis program`); a non-mainspace title (e.g. `Wikipedia:Sandbox` or a `Category:` page). Save each raw `pages[0]`-bearing response JSON.
-- [ ] **Step 2:** Assemble `test/gold/eligibility-set.json` as an array of `{ name, rawResponse, expected: { eligibility, reasons } }`. Add **synthetic** entries (hand-authored envelopes, no network) for: an indeterminate-membership `unknown` case (a `warnings.categories` response); a recently-edited case (a real envelope but with `revisionTimestamp` set near a fixed gold `now` you also store as `goldNow`). Each entry's `expected` is computed by hand from spec §2 and will be re-derived by the test.
+- [ ] **Step 1:** Write a throwaway `npx tsx` script that issues the SAME combined request `fetchArticle` builds, against live en.wikipedia (descriptive UA, maxlag), for: a hidden-`Living people` BLP (e.g. `Tim Berners-Lee`); a clearly-living person in a different BLP category if available; a non-BLP from the existing corpus (`Artemis program`); a non-mainspace title (e.g. `Wikipedia:Sandbox` or a `Category:` page). Save **the full response body** (`{ query: { pages: [...] }, warnings?: ... }`) for each — NOT just `pages[0]` — because `mapResponseToMetadata` consumes the whole body.
+- [ ] **Step 2:** Assemble `test/gold/eligibility-set.json` as `{ goldNow: "<ISO>", entries: [{ name, rawResponse, expected: { eligibility, reasons } }] }`. Use a SINGLE top-level `goldNow` (pick a value ≥15 min AFTER every captured envelope's revision timestamp — e.g. one day after capture — so none of the real captures trip freshness). Add **synthetic** entries (hand-authored envelopes, no network) for: an indeterminate-membership `unknown` case (a response with a **valid** `pages[0]` — pageid, title, ns:0, a revision with `timestamp` + `slots.main.content` — PLUS a top-level `warnings.categories`, so the mapper reads content fine but sets `blpProbe:"unknown"`); and a **recently-edited** case (an envelope whose `revisions[0].timestamp` is within 15 min BEFORE `goldNow`, so freshness fires). Each entry's `expected` is computed by hand from spec §2 and will be re-derived by the test against `goldNow`.
 - [ ] **Step 3:** Add a short provenance note to `test/gold/README.md` (or create it) describing capture date, the request shape, and that envelopes are frozen (never re-fetched in tests).
 - [ ] **Step 4:** Delete the throwaway script; `git status` clean except the gold JSON + README.
 - [ ] **Step 5: Commit + push.** `git commit -m "test(safelane): frozen gold API envelopes for the eligibility gate"`
@@ -536,7 +547,14 @@ Follow the **Per-Task Protocol** (the "test" here is the gold data the Phase-5 t
 
 Follow the **Per-Task Protocol**. Implements spec §6. Depends on Phases 2 + 3.
 
-- [ ] **Step 1: Write failing tests** (add to `test/ingest/lookup.test.ts`). Update the existing `fixtureFetch` to return the combined envelope (add `ns:0`, `timestamp`, no BLP categories) so existing cases still pass, then add:
+**⚠ Two EXISTING-test updates required (not "keep green"):**
+1. The existing `fixtureFetch` must return the combined envelope — add `ns: 0`, `revisions[0].timestamp: "2020-01-01T00:00:00Z"` (a FIXED OLD date so freshness never fires), and NO `categories` (→ `blpProbe: "absent"`).
+2. The existing test **"writes exactly one identifiers-only audit row"** asserts `rows` has length 1. This task adds a SECOND audit event (`article.eligibility`), so that assertion now fails. **Change it** to assert exactly one `article.lookup` row (`rows.filter(r => r.eventType === "article.lookup")` has length 1) rather than total length 1.
+3. Every existing lookup test that calls `lookupAndPersist` MUST pass a fixed `now` (e.g. `now: new Date("2026-06-06T00:00:00Z")`) so the freshness check is deterministic — do NOT rely on the real wall-clock (testing-pitfalls §7).
+
+**Fixture cleanliness (verified):** the `artemis_program.wikitext` fixture contains NONE of the denylisted dispute templates and NO literal BLP category, so the `easy_win` test's `reasons === []` holds. If you swap the fixture, re-verify with `grep -iE "\{\{ *(POV|Disputed|Contradict|Current|BLP)" <fixture>` and `grep -iE "\[\[ *category: *living people" <fixture>` — or the assertion legitimately changes.
+
+- [ ] **Step 1: Write failing tests** (add to `test/ingest/lookup.test.ts`), after applying the existing-test updates above:
 
 ```ts
 it("returns easy_win for a non-BLP article and logs an article.eligibility audit row", async () => {
@@ -567,13 +585,14 @@ it("returns human_only(blp_category) for a BLP envelope", async () => {
 
 - [ ] **Step 2: Run** → FAIL.
 - [ ] **Step 3: Implement** in `src/ingest/lookup.ts`:
-  - Add `now?: Date` to `LookupOptions` (default `new Date()`).
-  - After `fetchArticle`, build `ArticleMetadata` from the `FetchedArticle` fields (rename `pageId`→`resolvedPageId`, `title`→`resolvedTitle`; carry `revisionId`, `revisionTimestamp`, `namespace`, `blpProbe`, `wikitext`, `fetchedAt`).
-  - `const decision = evaluateEligibility(meta, now, GATE_VERSION);`
+  - Add `now?: Date` to `LookupOptions` (default `new Date()` — app-layer clock, allowed; the gate stays clock-free). Import `toArticleMetadata` from `./wikimedia`, `evaluateEligibility`, `GATE_VERSION` from `../safelane/eligibility`.
+  - After `fetchArticle` returns `fetched: FetchedArticle`, build `const meta = toArticleMetadata(fetched);` (do NOT hand-rename inline — use the helper).
+  - `const decision = evaluateEligibility(meta, options.now ?? new Date(), GATE_VERSION);`
   - Extend `LookupResult` with `eligibility: EligibilityDecision["eligibility"]` and `reasons: string[]`.
-  - Audit: `await makeAuditLog(db).append({ actor: "system", eventType: "article.eligibility", payload: { pageId, revisionId, namespace, blpProbe: fetched.blpProbe, recentlyEdited: decision.reasons.includes("recently_edited"), reasons: decision.reasons, fetchedAt: fetched.fetchedAt, gateVersion: GATE_VERSION, probeFired: fetched.blpProbe === "present", wikitextFired: decision.reasons.some(r => r === "blp_wikitext" || r.startsWith("dispute_template:")) } });` (identifiers/codes only — R2-6/R4-7).
-  - Return `{ ...existing, eligibility: decision.eligibility, reasons: decision.reasons }`.
-  - Keep the existing `article.lookup` audit event; this adds a second `article.eligibility` event.
+  - Audit (identifiers/codes only — R2-6/R4-7), reading fields from `fetched`/`decision`:
+    `await makeAuditLog(db).append({ actor: "system", eventType: "article.eligibility", payload: { pageId: fetched.pageId, revisionId: fetched.revisionId, namespace: fetched.namespace, blpProbe: fetched.blpProbe, recentlyEdited: decision.reasons.includes("recently_edited"), reasons: decision.reasons, fetchedAt: fetched.fetchedAt, gateVersion: GATE_VERSION, probeFired: fetched.blpProbe === "present", wikitextFired: decision.reasons.some(r => r === "blp_wikitext" || r.startsWith("dispute_template:")) } });`
+  - Return `{ ...existing fields, eligibility: decision.eligibility, reasons: decision.reasons }`.
+  - Keep the existing `article.lookup` audit event; this ADDS a second `article.eligibility` event (hence the existing "exactly one row" test update above).
 
 - [ ] **Step 4: Run** the full `lookup.test.ts` → PASS (update the existing fixture fetch shape as noted).
 - [ ] **Step 5: Commit + push.** `git commit -m "feat(ingest): compute + return + audit safe-lane eligibility in the lookup path"`
@@ -588,7 +607,7 @@ it("returns human_only(blp_category) for a BLP envelope", async () => {
 Follow the **Per-Task Protocol** (TDD N/A for the UI shell; rely on tsc/lint + the 4.1 logic tests).
 
 - [ ] **Step 1:** Extend the `LookupResult` client interface in `page.tsx` with `eligibility: "easy_win" | "human_only"` and `reasons: string[]`.
-- [ ] **Step 2:** Render a banner above the candidate list: green "Eligible for the easy-win lane" when `easy_win`; amber "Human-only — excluded" + the human-readable reasons when `human_only`. Map reason codes to short labels (e.g. `blp_category` → "biography of a living person", `non_mainspace` → "not a main-namespace article", `recently_edited` → "edited very recently", `metadata_unavailable` → "metadata could not be confirmed", `blp_wikitext` → "living-person category in source", `dispute_template:*` → "dispute/maintenance tag: <x>").
+- [ ] **Step 2:** Render a banner above the candidate list: green "Eligible for the easy-win lane" when `easy_win`; amber "Human-only — excluded" + the human-readable reasons when `human_only`. Map ALL six reason codes the gate can emit (spec §2 table — do NOT invent new codes) to short labels: `blp_category` → "biography of a living person", `non_mainspace` → "not a main-namespace article", `recently_edited` → "edited very recently", `metadata_unavailable` → "metadata could not be confirmed", `blp_wikitext` → "living-person category in source", `dispute_template:<x>` → "dispute/maintenance tag: <x>". For an unrecognized code, fall back to showing the raw code (so a future added code never renders blank).
 - [ ] **Step 3:** `pnpm exec tsc --noEmit` + `pnpm lint` → clean. Confirm `route.ts` already returns the full result (no logic change needed; if it reshapes the payload, add the fields).
 - [ ] **Step 4: Commit + push.** `git commit -m "feat(ui): show safe-lane eligibility verdict + reasons on the lookup page"`
 
@@ -606,14 +625,14 @@ Follow the **Per-Task Protocol** (TDD N/A for the UI shell; rely on tsc/lint + t
 - Create: `test/safelane/eligibility-gold.test.ts`
 - Uses: `test/gold/eligibility-set.json` (Task 3.2) + the real ingest mapper (Task 3.1) + the gate (Task 2.1)
 
-Follow the **Per-Task Protocol**. Implements spec §8. Depends on Phases 2–4.
+Follow the **Per-Task Protocol**. Implements spec §8. **Depends on Phases 2 + 3 only** (the gate from 2.1, the `mapResponseToMetadata`/`toArticleMetadata` helpers from 3.1, and the gold envelopes from 3.2); it does NOT depend on Phase 4 (lookup/UI) and MAY run concurrently with Phase 4.
 
 - [ ] **Step 1: Write the test** `test/safelane/eligibility-gold.test.ts`:
-  - For each gold entry: feed `rawResponse` through the SAME parsing the ingest uses to produce `ArticleMetadata` (extract a shared mapper from `wikimedia.ts` if needed — see note), call `evaluateEligibility(meta, goldNow, GATE_VERSION)`, and assert it deep-equals the entry's `expected`.
+  - Load `test/gold/eligibility-set.json`; parse its `goldNow`. For each entry: `const meta = toArticleMetadata(mapResponseToMetadata(entry.rawResponse, "2026-06-06T00:00:00Z"))` (BOTH helpers exported from `wikimedia.ts` in Task 3.1 — import them; do NOT re-implement the parsing or the rename), then call `evaluateEligibility(meta, new Date(goldNow), GATE_VERSION)` and assert it deep-equals `entry.expected`.
   - **Composition guard:** assert the set contains ≥1 of each shape: `blpProbe:"present"`, definitive `"absent"`, `"unknown"`, `namespace !== 0`, and a recently-edited case; AND ≥3 `human_only` AND ≥3 `easy_win` expected verdicts. Fail loudly if any shape is missing (R2-10).
-  - Add an in-test NOTE: this gate measures the labeled gold set (a regression gate), not production precision; known residual fail-OPENs are documented in the spec §9 and the compliance change log.
-- [ ] **Step 2: Run** → it should pass against the committed envelopes (the gate + mapper already exist). If an `expected` was mis-derived by hand, re-derive it from spec §2 — do NOT change the gate to fit a wrong label without re-checking the spec (testing-pitfalls §9: never game the gate).
-- [ ] **Step 3:** If the ingest's response→metadata parsing isn't already a reusable function, refactor a small `mapResponseToMetadata(rawResponse, fetchedAt)` out of `fetchArticle` and have BOTH `fetchArticle` and this test use it (DRY; the test must exercise the real mapping, not a parallel copy).
+  - Add an in-test NOTE: this gate measures the labeled gold set (a regression gate), not production precision; known residual fail-OPENs are documented in spec §9 and the compliance change log.
+- [ ] **Step 2: Run** → it should pass against the committed envelopes (the gate + mapper already exist from Tasks 2.1/3.1). If an `expected` was mis-derived by hand, re-derive it from spec §2 — do NOT change the gate to fit a wrong label without re-checking the spec (testing-pitfalls §9: never game the gate).
+- [ ] **Step 3:** Verify the composition guard actually bites: temporarily delete one shape (e.g. the `unknown` entry) and confirm the guard FAILS, then restore it. (Do not commit the deletion.)
 - [ ] **Step 4:** Full gate trio green + pristine.
 - [ ] **Step 5: Commit + push.** `git commit -m "test(safelane): gold-set integration test + shape-coverage composition guard"`
 
@@ -638,4 +657,6 @@ Follow the **Per-Task Protocol**. Implements spec §8. Depends on Phases 2–4.
 
 **Type consistency:** `ArticleMetadata`/`EligibilityDecision` (1.1) used identically in 2.1, 4.1, 5.1; `FetchedArticle` superset (3.1) consumed by 4.1; `evaluateEligibility(meta, now, gateVersion)` signature consistent; `GATE_VERSION`/`FRESHNESS_WINDOW_MS` defined once in 2.1 and imported.
 
-**Cross-task conflicts:** `lookup.ts` touched only in 4.1; `wikimedia.ts` only in 3.1 (+ optional mapper refactor in 5.1 — sequenced after 3.1); `page.tsx` only in 4.2; `domain/types.ts` only in 1.1. No two parallel tasks edit the same file.
+**Cross-task conflicts:** `lookup.ts` touched only in 4.1; `wikimedia.ts` only in 3.1 (its exported `mapResponseToMetadata`/`toArticleMetadata` are consumed — not edited — by 4.1 and 5.1); `page.tsx` only in 4.2; `domain/types.ts` only in 1.1. No two parallel tasks edit the same file.
+
+**Type seam:** `FetchedArticle` (ingest output, `pageId`/`title`) → `ArticleMetadata` (gate input, `resolvedPageId`/`resolvedTitle`) via the single `toArticleMetadata` helper (3.1), used by both 4.1 and 5.1. `mapResponseToMetadata` is the single body→`FetchedArticle` parser, used by `fetchArticle` (4.x path) and the gold test (5.1).
