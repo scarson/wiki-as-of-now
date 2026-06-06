@@ -41,6 +41,7 @@ const okBody = (overrides: Record<string, unknown> = {}) => ({
           {
             revid: 1357951754,
             parentid: 1357945752,
+            timestamp: "2024-01-01T00:00:00Z",
             slots: { main: { contentmodel: "wikitext", content: "Lead.\n\n== History ==\nThe rover will launch in 2017." } },
           },
         ],
@@ -48,6 +49,17 @@ const okBody = (overrides: Record<string, unknown> = {}) => ({
       },
     ],
   },
+});
+
+// Combined-metadata envelope: adds ns, revision timestamp, and clcategories-filtered categories.
+const okMetaBody = (over: Record<string, unknown> = {}) => ({
+  query: { pages: [{
+    pageid: 30034, ns: 0, title: "Tim Berners-Lee",
+    revisions: [{ revid: 999, parentid: 1, timestamp: "2020-01-01T00:00:00Z",
+                  slots: { main: { content: "Lead. [[Category:Living people]]" } } }],
+    categories: [{ ns: 14, title: "Category:Living people" }], // clcategories match present
+    ...over,
+  }] },
 });
 
 describe("fetchArticle", () => {
@@ -60,8 +72,8 @@ describe("fetchArticle", () => {
     expect(url.origin + url.pathname).toBe("https://en.wikipedia.org/w/api.php");
     const p = url.searchParams;
     expect(p.get("action")).toBe("query");
-    expect(p.get("prop")).toBe("revisions");
-    expect(p.get("rvprop")).toBe("content|ids");
+    expect(p.get("prop")).toBe("revisions|categories|info");
+    expect(p.get("rvprop")).toBe("content|ids|timestamp");
     expect(p.get("rvslots")).toBe("main");
     expect(p.get("titles")).toBe("Artemis program");
     expect(p.get("format")).toBe("json");
@@ -78,8 +90,41 @@ describe("fetchArticle", () => {
       pageId: 60758751,
       title: "Artemis program",
       revisionId: 1357951754,
+      namespace: 0,
+      revisionTimestamp: "2024-01-01T00:00:00Z",
+      blpProbe: "absent",
       wikitext: "Lead.\n\n== History ==\nThe rover will launch in 2017.",
+      fetchedAt: expect.any(String),
     });
+  });
+
+  it("requests the combined metadata call with a canonical clcategories BLP probe", async () => {
+    const { fetchFn, calls } = stubFetch(okMetaBody());
+    await fetchArticle("Tim Berners-Lee", { fetchFn });
+    const p = new URL(calls[0].url).searchParams;
+    expect(p.get("prop")).toBe("revisions|categories|info");
+    expect(p.get("rvprop")).toBe("content|ids|timestamp");
+    expect(p.get("clcategories")).toContain("Category:Living people");
+  });
+
+  it("maps namespace, revisionTimestamp, blpProbe=present, and a fetchedAt", async () => {
+    const { fetchFn } = stubFetch(okMetaBody());
+    const a = await fetchArticle("Tim Berners-Lee", { fetchFn });
+    expect(a.namespace).toBe(0);
+    expect(a.revisionTimestamp).toBe("2020-01-01T00:00:00Z");
+    expect(a.blpProbe).toBe("present");
+    expect(typeof a.fetchedAt).toBe("string");
+  });
+
+  it("blpProbe=absent when the page has no clcategories matches", async () => {
+    const { fetchFn } = stubFetch(okMetaBody({ categories: undefined }));
+    expect((await fetchArticle("X", { fetchFn })).blpProbe).toBe("absent");
+  });
+
+  it("blpProbe=unknown when the response carries a clcategories warning (indeterminate)", async () => {
+    const body = { ...okMetaBody({ categories: undefined }), warnings: { categories: { "*": "too many values" } } };
+    const { fetchFn } = stubFetch(body);
+    expect((await fetchArticle("X", { fetchFn })).blpProbe).toBe("unknown");
   });
 
   it("allows overriding the User-Agent", async () => {

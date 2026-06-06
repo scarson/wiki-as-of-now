@@ -63,15 +63,29 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 2/5 phases shipped. Next: Phase 3 (ingest atomic metadata call + frozen gold envelopes).
+**Overall:** 5/5 phases shipped. Branch `claude/safelane-gate-g11-phases-3-5-9UDWy` (off `origin/dev`, 9 commits ahead / 0 behind, no conflicts). Full suite 191 green, tsc + lint clean + pristine. PR to `dev` (**Review — compliance**) pending Sam's go-ahead (see Discoveries: PR #13 already merged, so this lands as a NEW PR, not an extension).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Foundation (types, denylists, wikitext scan) | ✅ Shipped | `8bede5a`,`b838890`,`2506e25` | 12 tests; suite 168 green |
 | 2 — The gate (evaluateEligibility) | ✅ Shipped | `a516493` | 8 tests; pure core complete |
-| 3 — Ingest atomic metadata call + frozen envelopes | ⬜ Not started | — | — |
-| 4 — Wiring (orchestrator, API, UI) | ⬜ Not started | — | — |
-| 5 — Gold-set integration test + composition guard | ⬜ Not started | — | — |
+| 3 — Ingest atomic metadata call + frozen envelopes | ✅ Shipped | `49d549a`,`b1c0ccf` | 6 new ingest tests; 8 frozen gold envelopes; suite 180 green |
+| 4 — Wiring (orchestrator, API, UI) | ✅ Shipped | `27d84b0`,`e0cdc37` | 2 new lookup tests; audit + UI banner; suite 182 green |
+| 5 — Gold-set integration test + composition guard | ✅ Shipped | `4b576f6` | 9 tests (8 per-entry + guard); guard-bites probe confirmed; suite 191 green |
+
+### Discoveries
+
+- **PR #13 (Phases 1–2) was already merged into `origin/dev`** before this session
+  started (`origin/dev` HEAD = "Merge pull request #13"; `origin/dev..origin/claude/safelane-gate-g11`
+  is empty). The plan's "extend PR #13 / rebase onto origin/dev" Final-integration note
+  is therefore partly stale: a merged PR cannot be extended. Phases 3–5 are being built on
+  the fresh branch `claude/safelane-gate-g11-phases-3-5-9UDWy` (reset onto `origin/dev`, so
+  it already contains Phases 1–2). The completed work will land as a NEW PR to `dev`
+  (still **Review — compliance**, not self-merged), pending Sam's go-ahead to open it.
+- **Runtime is Node v22, not the `.nvmrc`-pinned 24** in this remote container (only
+  node20/21/22 exist under `/opt`; the session-start hook did not provision 24). Non-blocking:
+  the better-sqlite3 native module loads and the full suite is green on 22. Flagged so a
+  future session does not chase a phantom env problem.
 
 ---
 
@@ -440,7 +454,7 @@ export function evaluateEligibility(meta: ArticleMetadata, now: Date, _gateVersi
 
 ## Phase 3 — Ingest atomic metadata call + frozen gold envelopes
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `claude/safelane-gate-g11-phases-3-5-9UDWy`) — Task 3.1 `49d549a` (atomic combined fetch + `mapResponseToMetadata`/`toArticleMetadata`), Task 3.2 `b1c0ccf` (8 frozen gold envelopes). 6 new ingest tests; full suite 180 green, tsc + lint clean. Reviewed: request-shape match (3.1↔3.2), synthetic-envelope realism, mapper determinism, gold-set honesty (expected hand-derived, validated match=8/0). **Deviation:** the `okBody` fixture gained a revision `timestamp` and the exact-match mapping test asserts the full `FetchedArticle` superset (`fetchedAt` via `expect.any(String)`) — the contract change the plan already mandates via the prop/rvprop assertion edits, surfaced on the one exact-`toEqual` test the plan's "rest pass unchanged" note didn't anticipate.
 
 ### Task 3.1: Extend `fetchArticle` to one atomic metadata call
 
@@ -537,7 +551,7 @@ Follow the **Per-Task Protocol** (the "test" here is the gold data the Phase-5 t
 
 ## Phase 4 — Wiring (orchestrator, API, UI)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `claude/safelane-gate-g11-phases-3-5-9UDWy`) — Task 4.1 `27d84b0` (compute/return/audit eligibility), Task 4.2 `e0cdc37` (UI banner + reason labels; route unchanged). 2 new lookup tests; full suite 182 green, tsc + lint clean. Reviewed: audit payload is identifiers/codes only (no PII), `LookupResult` consistent end-to-end, UI labels cover every emittable code. **Reconciliation:** the audit payload includes `eligibility: decision.eligibility` (the Step-1 test asserts it; logging the verdict itself is the point of G13's audit) — the Step-3 payload list omitted it; it is a code, not PII, so it stays compliant.
 
 ### Task 4.1: Compute + return + audit eligibility in `lookupAndPersist`
 
@@ -617,7 +631,7 @@ Follow the **Per-Task Protocol** (TDD N/A for the UI shell; rely on tsc/lint + t
 
 ## Phase 5 — Gold-set integration test + composition guard
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `claude/safelane-gate-g11-phases-3-5-9UDWy`) — Task 5.1 `4b576f6`. 9 tests (8 per-entry verdict checks + 1 composition guard); the guard-bites probe (drop the `unknown` entry → guard fails on `toContain("unknown")`, then restored) was run and confirmed. Reviewed: envelopes are raw (mapped through the production parser, not pre-cleaned), guard fails when a shape is removed, residual fail-OPENs documented via the in-test NOTE → design §9 + compliance change log.
 
 ### Task 5.1: Eligibility gold-set test over frozen envelopes
 
@@ -642,9 +656,9 @@ Follow the **Per-Task Protocol**. Implements spec §8. **Depends on Phases 2 + 3
 
 ## Final integration
 
-- [ ] After Phase 5: run the FULL suite + `tsc` + `lint` once more; confirm pristine.
-- [ ] Rebase the branch onto the latest `origin/dev` (PR #11 persistence + PR #12 hook are already merged there); resolve any conflict in `lookup.ts`/`wikimedia.ts`/`page.tsx` by re-running the gate trio.
-- [ ] Open a PR to `dev` with a `## Merge classification` of **Review — architecture/compliance** (touches the G11 compliance floor, a new external-API metadata fetch, and the public lookup contract). Link the design spec + the 5-round review trail + the compliance change-log entry.
+- [x] After Phase 5: run the FULL suite + `tsc` + `lint` once more; confirm pristine. — 191 green, tsc + lint clean (2026-06-06).
+- [x] Rebase the branch onto the latest `origin/dev`. — Not needed: the branch was reset onto `origin/dev` at session start and `origin/dev` has not advanced since (HEAD `26783de`); 9 ahead / 0 behind, no conflicts in `lookup.ts`/`wikimedia.ts`/`page.tsx`.
+- [ ] Open a PR to `dev` with a `## Merge classification` of **Review — compliance** (touches the G11 compliance floor, a new external-API metadata fetch, and the public lookup contract). Link the design spec + the 5-round review trail + the compliance change-log entry. **Pending Sam's go-ahead** — PR #13 (Phases 1–2) is already merged, so this is a NEW PR rather than an extension of #13 (see Discoveries); not auto-opened.
 - [ ] Do NOT self-merge — this is a compliance-floor change for Sam's review.
 
 ---

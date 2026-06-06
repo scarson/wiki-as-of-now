@@ -20,6 +20,30 @@ interface LookupResult {
   revisionId: number;
   candidateCount: number;
   candidates: Candidate[];
+  eligibility: "easy_win" | "human_only";
+  reasons: string[];
+}
+
+/** Human-readable label for each safe-lane reason code the gate can emit (spec §2 table).
+ *  An unrecognized code falls back to its raw form so a future added code never renders blank. */
+function reasonLabel(code: string): string {
+  if (code.startsWith("dispute_template:")) {
+    return `dispute/maintenance tag: ${code.slice("dispute_template:".length)}`;
+  }
+  switch (code) {
+    case "blp_category":
+      return "biography of a living person";
+    case "non_mainspace":
+      return "not a main-namespace article";
+    case "recently_edited":
+      return "edited very recently";
+    case "metadata_unavailable":
+      return "metadata could not be confirmed";
+    case "blp_wikitext":
+      return "living-person category in source";
+    default:
+      return code;
+  }
 }
 
 export default function Home() {
@@ -101,6 +125,23 @@ export default function Home() {
           <p className="mt-1 text-xs opacity-50">
             page {result.pageId} · revision {result.revisionId}
           </p>
+
+          {result.eligibility === "easy_win" ? (
+            <p className="mt-4 rounded-md border border-green-600/40 bg-green-500/10 px-4 py-3 text-sm">
+              Eligible for the easy-win lane
+            </p>
+          ) : (
+            <div className="mt-4 rounded-md border border-amber-500/50 bg-amber-500/10 px-4 py-3 text-sm">
+              <p className="font-medium">Human-only — excluded from the easy-win lane</p>
+              {result.reasons.length > 0 && (
+                <ul className="mt-1 list-disc pl-5 opacity-80">
+                  {result.reasons.map((r) => (
+                    <li key={r}>{reasonLabel(r)}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
 
           {result.candidates.length === 0 ? (
             <p className="mt-6 text-sm opacity-70">No stale candidates found in this article.</p>

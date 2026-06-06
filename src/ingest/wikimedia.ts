@@ -1,12 +1,22 @@
-// ABOUTME: Fetches one Wikipedia article's wikitext + identifiers via the MediaWiki Action API.
+// ABOUTME: Fetches one Wikipedia article's metadata snapshot via one atomic MediaWiki Action-API call.
 // ABOUTME: Responsible access (descriptive UA, maxlag); treats the response as untrusted data, never instructions.
+import type { ArticleMetadata } from "../domain/types";
+import { BLP_CATEGORIES, canonicalizeCategoryTitle } from "../safelane/denylists";
 
-/** A single fetched article revision: identifiers + raw wikitext. */
+/**
+ * A single fetched article revision: identifiers, raw wikitext, and the safe-lane
+ * metadata (namespace, revision timestamp, BLP-category probe) — all derived from
+ * ONE resolved page of ONE response, so there is no two-snapshot skew.
+ */
 export interface FetchedArticle {
   pageId: number;
   title: string;
   revisionId: number;
+  revisionTimestamp: string;
+  namespace: number;
+  blpProbe: "present" | "absent" | "unknown";
   wikitext: string;
+  fetchedAt: string;
 }
 
 /**
@@ -59,6 +69,7 @@ export class WikimediaResponseError extends Error {
 /** Loosely-typed view of the Action API response we consume. */
 interface MwResponse {
   error?: { code?: string; info?: string };
+  warnings?: { categories?: unknown };
   query?: {
     pages?: MwPage[];
   };
@@ -66,17 +77,23 @@ interface MwResponse {
 interface MwPage {
   pageid?: number;
   title?: string;
+  ns?: number;
   missing?: boolean;
   invalid?: boolean;
-  revisions?: { revid?: number; slots?: { main?: { content?: string } } }[];
+  revisions?: { revid?: number; timestamp?: string; slots?: { main?: { content?: string } } }[];
+  categories?: unknown;
 }
+
+/** The canonical BLP-set sent to `clcategories` as the bounded, truncation-proof membership probe. */
+const BLP_PROBE_TITLES = BLP_CATEGORIES.map(c => `Category:${canonicalizeCategoryTitle(c)}`).join("|");
 
 function buildUrl(title: string): string {
   const params = new URLSearchParams({
     action: "query",
-    prop: "revisions",
-    rvprop: "content|ids",
+    prop: "revisions|categories|info",
+    rvprop: "content|ids|timestamp",
     rvslots: "main",
+    clcategories: BLP_PROBE_TITLES,
     titles: title,
     format: "json",
     formatversion: "2",
@@ -84,6 +101,58 @@ function buildUrl(title: string): string {
     redirects: "1",
   });
   return `${API_ENDPOINT}?${params.toString()}`;
+}
+
+/**
+ * Reads the BLP-membership probe from one response: `present` when the
+ * `clcategories`-filtered match list is non-empty, `absent` when the call
+ * succeeded and membership is definitively none, `unknown` (fail-closed) when a
+ * `clcategories` warning fired or the `categories` field is present but malformed.
+ */
+function deriveBlpProbe(body: MwResponse, page: MwPage): "present" | "absent" | "unknown" {
+  if (body.warnings?.categories !== undefined) return "unknown";
+  const cats = page.categories;
+  if (cats === undefined) return "absent";
+  if (!Array.isArray(cats)) return "unknown";
+  if (!cats.every(c => c != null && typeof (c as { title?: unknown }).title === "string")) return "unknown";
+  return cats.length > 0 ? "present" : "absent";
+}
+
+/**
+ * Parses one Action-API response body into a {@link FetchedArticle}. This is the
+ * single response→fields path: `fetchArticle` runs its typed-error guards first
+ * and then delegates here, and the gold-set test maps frozen raw envelopes through
+ * this same function so the probe/normalization paths are exercised, not bypassed.
+ * Assumes the body holds a valid resolved `pages[0]` (guaranteed by the guards for
+ * the live path; true by construction for the committed gold envelopes).
+ */
+export function mapResponseToMetadata(body: MwResponse, fetchedAt: string): FetchedArticle {
+  const page = (body.query?.pages?.[0] ?? {}) as MwPage;
+  const revision = page.revisions?.[0];
+  return {
+    pageId: page.pageid as number,
+    title: page.title as string,
+    revisionId: revision?.revid as number,
+    revisionTimestamp: revision?.timestamp as string,
+    namespace: page.ns as number,
+    blpProbe: deriveBlpProbe(body, page),
+    wikitext: revision?.slots?.main?.content as string,
+    fetchedAt,
+  };
+}
+
+/** The trivial rename bridge from ingest output to the gate's input shape. The ONLY place the rename lives. */
+export function toArticleMetadata(f: FetchedArticle): ArticleMetadata {
+  return {
+    resolvedPageId: f.pageId,
+    resolvedTitle: f.title,
+    revisionId: f.revisionId,
+    revisionTimestamp: f.revisionTimestamp,
+    namespace: f.namespace,
+    blpProbe: f.blpProbe,
+    wikitext: f.wikitext,
+    fetchedAt: f.fetchedAt,
+  };
 }
 
 /**
@@ -115,6 +184,9 @@ export async function fetchArticle(title: string, options: FetchArticleOptions =
     }
     throw new WikimediaResponseError(`Wikimedia returned a non-JSON body (HTTP ${res.status})`);
   }
+  // Captured at response-parse time (not by a downstream new Date()), so fetchedAt
+  // describes the same moment as the snapshot it timestamps (spec §5 / R4-6).
+  const fetchedAt = new Date().toISOString();
 
   if (body.error) {
     if (body.error.code === "maxlag") {
@@ -142,10 +214,5 @@ export async function fetchArticle(title: string, options: FetchArticleOptions =
     throw new WikimediaResponseError("Wikimedia response was missing page/revision fields");
   }
 
-  return {
-    pageId: page.pageid,
-    title: page.title,
-    revisionId: revision.revid,
-    wikitext: content,
-  };
+  return mapResponseToMetadata(body, fetchedAt);
 }
