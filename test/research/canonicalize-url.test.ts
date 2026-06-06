@@ -40,7 +40,15 @@ describe("canonicalizeUrl", () => {
     "https://localhost./",                 // trailing-dot denylist bypass — BLOCKER fix
     "https://metadata.google.internal./",  // trailing-dot metadata bypass
     "https://[::ffff:0:1]/",              // true IPv4-mapped 0.0.0.1 (in 0/8); parser spells mapped low addrs this way
+    "https://[64:ff9b::7f00:1]/",         // NAT64 well-known prefix (rfc6052) — now closed via ipaddr.js
   ])("rejects %s", (u) => {
     expect(canonicalizeUrl(u).ok).toBe(false);
+  });
+
+  // Documented residual: deprecated IPv4-compatible ::/96 prefix (e.g. ::7f00:1).
+  // ipaddr.js classifies these as "unicast" and does not route them to the embedded IPv4 —
+  // consistent with modern stack behaviour (RFC 4291 §2.5.5.1 deprecated). Accepted pass-through.
+  it("allows [::7f00:1] — accepted IPv4-compatible ::/96 residual", () => {
+    expect(canonicalizeUrl("https://[::7f00:1]/").ok).toBe(true);
   });
 });
