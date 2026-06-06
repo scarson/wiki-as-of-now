@@ -33,4 +33,18 @@ describe("scanWikitextSignals", () => {
     expect(scanWikitextSignals("{{" + "a".repeat(100000))).toEqual([]);
     expect(scanWikitextSignals("[[Category:" + "b".repeat(100000))).toEqual([]);
   });
+
+  it("is linear-time on pathological brace/bracket spam (no quadratic blowup)", () => {
+    const spam = "{{".repeat(1_000_000);            // 2 MB of "{"
+    const start = performance.now();
+    expect(scanWikitextSignals(spam)).toEqual([]);
+    expect(scanWikitextSignals("[[".repeat(1_000_000))).toEqual([]);
+    const elapsedMs = performance.now() - start;
+    expect(elapsedMs).toBeLessThan(1000);
+  });
+
+  it("still detects a real dispute template buried in a large body", () => {
+    const body = "lorem ipsum ".repeat(50_000) + "\n{{POV}}\n" + "dolor ".repeat(50_000);
+    expect(scanWikitextSignals(body)).toContain("dispute_template:POV");
+  });
 });
