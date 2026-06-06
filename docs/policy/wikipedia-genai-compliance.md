@@ -324,9 +324,16 @@ reassuring.
   page text.** Weak or unverifiable support is flagged. **The verbatim check guarantees
   only that the quote is really on the page; whether the quote actually *supports* the
   claim is a judgment the human makes by opening the source — the deterministic check is
-  not a support oracle, and the model's support assessment is advisory only.** (Tools
-  such as RefChecker illustrate the support-checking technique; the requirement is the
-  check, not any implementation.)
+  not a support oracle, and the model's support assessment is advisory only.** **Scope of
+  "appears verbatim": the check confirms the quote is present in the page's *served,
+  extracted* text (after stripping scripts/styles/markup/comments and applying a fixed
+  Unicode normalization) — not that it is *visually rendered* to a reader, which a parser
+  cannot determine (external CSS, scripted DOM). Hidden-text or exotic-rendering forgeries
+  are therefore caught not by the string check but by the human-open verification gate (the
+  editor opens the source to confirm support regardless). This bounds what the deterministic
+  backstop claims; it does not relax the requirement that the quote be genuinely on the
+  page.** (Tools such as RefChecker illustrate the support-checking technique; the
+  requirement is the check, not any implementation.)
   *(hallucination; text-source integrity; prompt injection)*
 - **The LLM's role is boxed to three jobs (G9):** (a) normalize the hanging question
   into *neutral* search queries, (b) relevance-triage real retrieved documents, (c)
@@ -522,6 +529,19 @@ held to it, and we would rather ship less than break it.
 
 ## 10. Change log
 
+- **2026-06-06** — **Verbatim-quote check scope clarified (G8) — byte-presence, not rendered
+  visibility (human sign-off: Sam).** The support-checking guardrail now states that the
+  deterministic verbatim check confirms a quote is present in the page's *served, extracted*
+  text (post strip + a fixed Unicode normalization), **not** that it is visually rendered to a
+  reader — a parser cannot model computed visibility. Hidden-text / exotic-rendering forgeries
+  are caught by the human-open verification gate, not the string check. **This is a
+  clarification, not a weakening:** it makes an inherent limitation explicit (the contract
+  already framed the quote as "a pointer the human must open the source to confirm"), and it is
+  paired with cheap defense-in-depth in the tool (stripping `script`/`style`/comments/attributes
+  and obvious hidden constructs). Surfaced during the research-engine verify-pipeline design
+  (deterministic source-fetch + verbatim check; design in
+  [docs/design/2026-06-06-research-engine-design.md](../design/2026-06-06-research-engine-design.md),
+  hardened over a per-section 3-round adversarial review). Recorded per the amendment process.
 - **2026-06-06** — **Safe-lane gate (G11) v1 — known deterministic limits documented with human
   sign-off.** The v1 safe-lane eligibility gate (deterministic, LLM-free, fail-closed; design in
   [docs/design/2026-06-06-safelane-gate-design.md](../design/2026-06-06-safelane-gate-design.md), hardened
