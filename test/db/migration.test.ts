@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import Database from "better-sqlite3";
-import { readFileSync } from "node:fs";
-import { readdirSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { freshTestDb } from "../helpers/db";
 
 describe("0001_init migration", () => {
@@ -104,6 +103,22 @@ describe("0002_eligibility_verdicts migration", () => {
         "evaluated_at",
       ])
     );
+  });
+
+  it("rejects a NULL PK component (WITHOUT ROWID composite natural key)", () => {
+    const db = freshTestDb();
+    // eligibility_verdicts is WITHOUT ROWID with a composite PK (page_id, revision_id, gate_version).
+    // All three PK columns are NOT NULL, so a NULL in any key column must be rejected.
+    db.prepare(
+      "INSERT INTO articles (page_id, title, revision_id, fetched_at) VALUES (?, ?, ?, ?)"
+    ).run(1, "Test Article", 100, "2026-06-06T00:00:00.000Z");
+    const insertNullRevision = () =>
+      db
+        .prepare(
+          "INSERT INTO eligibility_verdicts (page_id, revision_id, gate_version, eligibility, reasons_json, evaluated_at) VALUES (?, ?, ?, ?, ?, ?)"
+        )
+        .run(1, null, "v1", "easy_win", "[]", "2026-06-06T00:00:00.000Z");
+    expect(insertNullRevision).toThrow(/NOT NULL/i);
   });
 
   it("eligibility CHECK constraint rejects values outside easy_win|human_only", () => {
