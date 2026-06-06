@@ -261,6 +261,7 @@ Each section ran three rounds (self → Opus → self). What changed, and the lo
 ## 9. Deferred / named residuals (do NOT silently re-open)
 
 - **DNS-rebinding SSRF residual** (Worker has no resolve-then-pin) — host check covers IP-literals/metadata-hostnames only; full resolver defense = hosted-instance hardening.
+- **IPv4-compatible `::/96` + NAT64 `64:ff9b::/96` SSRF residual** (surfaced in Phase 2 implementation review) — the host classifier enumerates `::ffff:0:0/96` (IPv4-mapped) but NOT the deprecated IPv4-compatible `::/96` form (e.g. `[::7f00:1]`) or the NAT64 well-known prefix, both of which textually embed an IPv4 address. Accepted because modern stacks do not route IPv4-compatible addresses to the embedded v4 and NAT64 reachability is gateway-dependent (same residual category as DNS rebinding). Recorded in `src/research/canonicalize-url.ts`.
 - **`provider_unavailable` retries** until the queue dead-letters (transient); **double-spend** on concurrent redelivery accepted in v1 (placeholder row in the provider slice).
 - **Pack compaction / retention** — superseded/orphaned packs linger; prune affordance exists, automatic compaction deferred.
 - **eTLD+1 per-domain cap** — host-level for v1; revisit when `maxProposals` grows.

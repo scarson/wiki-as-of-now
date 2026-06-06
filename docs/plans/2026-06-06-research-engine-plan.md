@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 2/10 phases shipped (0, 1); Phase 2 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
+**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 3/10 phases shipped (0, 1, 2). Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
 
 > **Deviation (branch name):** executing on the harness-designated branch
 > `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
@@ -72,8 +72,8 @@ notes and commit messages.
 |---|---|---|---|
 | 0 — Tooling + test harness (deps, determinism traps, pristine, CI) | ✅ Shipped | `6e30a77`, `49a1395`, `0c5660a` | deps+harness+CI; CI runs on the PR (pull_request event) — feature-branch pushes don't trigger by design |
 | 1 — `normalize.ts` + NFC golden fixture | ✅ Shipped | `ed77d51`, `45f9d19`, `96a46c5` | normalize + workerd↔Node golden (14 cases, gen on workerd); fresh review caught identity-only NFC test → strengthened (`96a46c5`) |
-| 2 — `canonicalize-url.ts` (SSRF host classification) | 🚧 In progress | — | pure; shared by fetch guard + cap |
-| 3 — `verbatim-check.ts` | ⬜ Not started | — | highest-stakes; boil the lake |
+| 2 — `canonicalize-url.ts` (SSRF host classification) | ✅ Shipped | `e375155`, `0644f05` | bipolar corpus; fresh security review caught trailing-dot denylist bypass (fixed); orchestrator rejected a false `::ffff:N` finding |
+| 3 — `verbatim-check.ts` | ⬜ Not started | — | highest-stakes; boil the lake (opus review) |
 | 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | ⬜ Not started | — | blind-adversary corpora |
 | 5 — `provider.ts` reshape + fake providers | ⬜ Not started | — | interface change to committed code |
 | 6 — `verify-proposal.ts` | ⬜ Not started | — | the standalone compliance seam |
@@ -84,10 +84,12 @@ notes and commit messages.
 ### Deviations
 - Phase 8 determinism test: corrected spec §6 N4's "shuffled proposal order → order-stable" to **repeatability** (same input → deep-equal output). Shuffle-invariance is wrong because `slice(0, maxProposals)` truncation is order-dependent by design.
 - Branch name: executing on harness-designated `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the plan-original `feat/research-engine` — same base, different label; PR target still `dev`.
+- Phase 2 (post-ship, Sam's call): SSRF IP-classification core refactored to use the `ipaddr.js` library instead of hand-rolled CIDR/IPv6 math — shrinks the audited security surface and gives robust IPv6/IPv4-mapped handling. Architecture unchanged (parse-then-classify the hostname string; same DNS-rebinding residual). The 30-case bipolar corpus is the behavior-preserving regression gate. NAT64 `64:ff9b::/96` (`rfc6052`) is now CLOSED for free (ipaddr.js classifies it); IPv4-compatible `::/96` remains a documented residual. Adds the `ipaddr.js` dependency (deviation from the spec's named-deps list, approved by Sam).
 - Phase 1.2: added `scripts/wrangler-nfc-worker.json` — a minimal `nodejs_compat` dev config so `wrangler unstable_dev` doesn't fail on the production `wrangler.jsonc`'s `.open-next/assets` reference (absent in dev). Added `allowImportingTsExtensions: true` to `tsconfig.json` so the Node-run `gen-nfc-golden.ts` can use explicit `.ts` import extensions; safe because tsc runs `--noEmit` and the build bundles via Next/esbuild (no tsc emit).
 
 ### Discoveries
 - Out-of-slice: `test/ingest/easy-win-lane.test.ts:114` audit assertion uses the denylist pattern that §6 of the spec condemns (N3). Upgrade to allowlist+sentinel when convenient; flagged, not fixed here.
+- Phase 2 SSRF residuals (added to spec §9 + documented in `src/research/canonicalize-url.ts`): deprecated IPv4-compatible IPv6 `::/96` (e.g. `[::7f00:1]`) and the NAT64 well-known prefix `64:ff9b::/96` embed an IPv4 address but are NOT enumerated in the host classifier — modern stacks don't route IPv4-compatible addrs to the embedded v4, and NAT64 reachability is gateway-dependent. Same residual bucket as the spec's DNS-rebinding residual.
 
 ---
 
@@ -372,7 +374,7 @@ describe("NFC normalization is workerd↔Node parity-stable", () => {
 
 ## Phase 2 — `canonicalize-url.ts` (SSRF host classification)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `e375155` (impl + bipolar tests, 24 cases), `0644f05` (security fix). Review rounds: provenance (orchestrator) → adversarial bypass probe (orchestrator, found trailing-dot) → fresh security reviewer (confirmed trailing-dot BLOCKER, audited CIDR math correct, surfaced a *false* single-group `::ffff:N` finding) → consolidated fix + re-verify. **Trailing-dot FQDN bypass of `BLOCKED_HOSTNAMES` (e.g. `metadata.google.internal.`) closed** by stripping a single trailing dot before classification. **False finding rejected by mechanism inspection:** `::ffff:1` is NOT IPv4-mapped (`ffff` in group 6, not the mapped group 5); true mapped low addresses normalize to `::ffff:0:N` (two groups) and are already caught — verified empirically, test `[::ffff:0:1]→reject` locks it in. Public IPv4/IPv6 added to MUST-PASS (bipolar discipline in the IP branches). 30 unit cases, gate trio green. Named residuals (IPv4-compatible `::/96`, NAT64 `64:ff9b::/96`) documented in-module + spec §9.
 
 Implements spec §2 (SSRF guard, parse-then-canonicalize) — the pure, synchronous, **non-fetching** unit shared by the source-fetch guard and the pipeline's per-host cap.
 
