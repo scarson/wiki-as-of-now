@@ -63,15 +63,15 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 3/5 phases shipped. Phase 4 (wiring) next; Phase 5 (gold test) may run concurrently.
+**Overall:** 4/5 phases shipped. Phase 5 (gold-set integration test) next.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Foundation (types, denylists, wikitext scan) | ✅ Shipped | `8bede5a`,`b838890`,`2506e25` | 12 tests; suite 168 green |
 | 2 — The gate (evaluateEligibility) | ✅ Shipped | `a516493` | 8 tests; pure core complete |
 | 3 — Ingest atomic metadata call + frozen envelopes | ✅ Shipped | `49d549a`,`b1c0ccf` | 6 new ingest tests; 8 frozen gold envelopes; suite 180 green |
-| 4 — Wiring (orchestrator, API, UI) | 🚧 In progress | — | claimed 2026-06-06T02:20Z |
-| 5 — Gold-set integration test + composition guard | ⬜ Not started | — | — |
+| 4 — Wiring (orchestrator, API, UI) | ✅ Shipped | `27d84b0`,`e0cdc37` | 2 new lookup tests; audit + UI banner; suite 182 green |
+| 5 — Gold-set integration test + composition guard | 🚧 In progress | — | claimed 2026-06-06T02:27Z |
 
 ### Discoveries
 
@@ -551,7 +551,7 @@ Follow the **Per-Task Protocol** (the "test" here is the gold data the Phase-5 t
 
 ## Phase 4 — Wiring (orchestrator, API, UI)
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T02:20Z, branch `claude/safelane-gate-g11-phases-3-5-9UDWy`.
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `claude/safelane-gate-g11-phases-3-5-9UDWy`) — Task 4.1 `27d84b0` (compute/return/audit eligibility), Task 4.2 `e0cdc37` (UI banner + reason labels; route unchanged). 2 new lookup tests; full suite 182 green, tsc + lint clean. Reviewed: audit payload is identifiers/codes only (no PII), `LookupResult` consistent end-to-end, UI labels cover every emittable code. **Reconciliation:** the audit payload includes `eligibility: decision.eligibility` (the Step-1 test asserts it; logging the verdict itself is the point of G13's audit) — the Step-3 payload list omitted it; it is a code, not PII, so it stays compliant.
 
 ### Task 4.1: Compute + return + audit eligibility in `lookupAndPersist`
 
@@ -631,7 +631,7 @@ Follow the **Per-Task Protocol** (TDD N/A for the UI shell; rely on tsc/lint + t
 
 ## Phase 5 — Gold-set integration test + composition guard
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T02:27Z, branch `claude/safelane-gate-g11-phases-3-5-9UDWy`.
 
 ### Task 5.1: Eligibility gold-set test over frozen envelopes
 
