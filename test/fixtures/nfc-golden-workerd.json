@@ -1,0 +1,58 @@
+[
+  {
+    "input": "café",
+    "output": "café"
+  },
+  {
+    "input": "café",
+    "output": "café"
+  },
+  {
+    "input": "à̃",
+    "output": "à̃"
+  },
+  {
+    "input": "🦠 and 🦡",
+    "output": "🦠 and 🦡"
+  },
+  {
+    "input": "inter­national",
+    "output": "international"
+  },
+  {
+    "input": "zero​width",
+    "output": "zerowidth"
+  },
+  {
+    "input": "non‌joiner‍joiner",
+    "output": "nonjoinerjoiner"
+  },
+  {
+    "input": "word⁠joiner﻿bom",
+    "output": "wordjoinerbom"
+  },
+  {
+    "input": "a　  b",
+    "output": "a b"
+  },
+  {
+    "input": "x\t  y",
+    "output": "x y"
+  },
+  {
+    "input": "line1  \n  line2",
+    "output": "line1\nline2"
+  },
+  {
+    "input": "hello 😀 world",
+    "output": "hello 😀 world"
+  },
+  {
+    "input": "𠀀 ideograph",
+    "output": "𠀀 ideograph"
+  },
+  {
+    "input": "  Plain text.  ",
+    "output": "Plain text."
+  }
+]
