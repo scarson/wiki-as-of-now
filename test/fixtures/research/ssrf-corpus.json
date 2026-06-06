@@ -1,0 +1,277 @@
+[
+  {
+    "url": "https://en.wikipedia.org/wiki/Test",
+    "expected": "pass",
+    "threat": "legit-public-domain"
+  },
+  {
+    "url": "https://www.defense.gov/",
+    "expected": "pass",
+    "threat": "legit-public-domain"
+  },
+  {
+    "url": "https://example.co.uk/path?q=1",
+    "expected": "pass",
+    "threat": "legit-public-domain"
+  },
+  {
+    "url": "https://en.wikipedia.org./wiki/Test",
+    "expected": "pass",
+    "threat": "legit-trailing-dot-fqdn"
+  },
+  {
+    "url": "https://8.8.8.8/",
+    "expected": "pass",
+    "threat": "legit-public-ipv4"
+  },
+  {
+    "url": "https://[2606:4700::1111]/",
+    "expected": "pass",
+    "threat": "legit-public-ipv6"
+  },
+  {
+    "url": "https://[::7f00:1]/",
+    "expected": "pass",
+    "threat": "legit-deprecated-ipv4-compat-ipv6-residual"
+  },
+  {
+    "url": "https://[2001:db8::1]/",
+    "expected": "pass",
+    "threat": "legit-documentation-range-ipv6-residual"
+  },
+  {
+    "url": "https://commons.wikimedia.org/w/index.php",
+    "expected": "pass",
+    "threat": "legit-public-domain"
+  },
+  {
+    "url": "https://www.bbc.co.uk/news/world",
+    "expected": "pass",
+    "threat": "legit-public-domain-with-path"
+  },
+  {
+    "url": "https://[2001:4860:4860::8888]/",
+    "expected": "pass",
+    "threat": "legit-public-ipv6-google-dns"
+  },
+  {
+    "url": "http://en.wikipedia.org/wiki/Test",
+    "expected": "reject",
+    "threat": "scheme-http"
+  },
+  {
+    "url": "data:text/html,<h1>hello</h1>",
+    "expected": "reject",
+    "threat": "scheme-data"
+  },
+  {
+    "url": "file:///etc/passwd",
+    "expected": "reject",
+    "threat": "scheme-file"
+  },
+  {
+    "url": "ftp://ftp.example.com/file.txt",
+    "expected": "reject",
+    "threat": "scheme-ftp"
+  },
+  {
+    "url": "javascript:alert(1)",
+    "expected": "reject",
+    "threat": "scheme-javascript"
+  },
+  {
+    "url": "blob:https://example.com/uuid",
+    "expected": "reject",
+    "threat": "scheme-blob"
+  },
+  {
+    "url": "//en.wikipedia.org/wiki/Test",
+    "expected": "reject",
+    "threat": "scheme-relative-no-scheme"
+  },
+  {
+    "url": "https://user:pass@en.wikipedia.org/wiki/Test",
+    "expected": "reject",
+    "threat": "userinfo-username-and-password"
+  },
+  {
+    "url": "https://user@en.wikipedia.org/wiki/Test",
+    "expected": "reject",
+    "threat": "userinfo-username-only"
+  },
+  {
+    "url": "https://127.0.0.1/",
+    "expected": "reject",
+    "threat": "ipv4-loopback-dotted-decimal"
+  },
+  {
+    "url": "https://2130706433/",
+    "expected": "reject",
+    "threat": "ipv4-loopback-decimal-encoding"
+  },
+  {
+    "url": "https://0x7f000001/",
+    "expected": "reject",
+    "threat": "ipv4-loopback-hex-encoding"
+  },
+  {
+    "url": "https://0177.0.0.1/",
+    "expected": "reject",
+    "threat": "ipv4-loopback-octal-encoding"
+  },
+  {
+    "url": "https://127.1/",
+    "expected": "reject",
+    "threat": "ipv4-loopback-short-form"
+  },
+  {
+    "url": "https://127.255.255.255/",
+    "expected": "reject",
+    "threat": "ipv4-loopback-high-end-of-range"
+  },
+  {
+    "url": "https://10.0.0.1/",
+    "expected": "reject",
+    "threat": "ipv4-private-10-slash-8"
+  },
+  {
+    "url": "https://10.255.255.255/",
+    "expected": "reject",
+    "threat": "ipv4-private-10-slash-8-high-end"
+  },
+  {
+    "url": "https://172.16.0.1/",
+    "expected": "reject",
+    "threat": "ipv4-private-172-16-slash-12"
+  },
+  {
+    "url": "https://172.31.255.255/",
+    "expected": "reject",
+    "threat": "ipv4-private-172-16-slash-12-high-end"
+  },
+  {
+    "url": "https://192.168.1.1/",
+    "expected": "reject",
+    "threat": "ipv4-private-192-168-slash-16"
+  },
+  {
+    "url": "https://192.168.255.255/",
+    "expected": "reject",
+    "threat": "ipv4-private-192-168-slash-16-high-end"
+  },
+  {
+    "url": "https://169.254.1.1/",
+    "expected": "reject",
+    "threat": "ipv4-link-local"
+  },
+  {
+    "url": "https://169.254.169.254/",
+    "expected": "reject",
+    "threat": "ipv4-link-local-aws-metadata"
+  },
+  {
+    "url": "https://169.254.169.254/latest/meta-data/",
+    "expected": "reject",
+    "threat": "ipv4-link-local-aws-metadata-path"
+  },
+  {
+    "url": "https://0.0.0.0/",
+    "expected": "reject",
+    "threat": "ipv4-unspecified"
+  },
+  {
+    "url": "https://0.1.2.3/",
+    "expected": "reject",
+    "threat": "ipv4-unspecified-range-0-slash-8"
+  },
+  {
+    "url": "https://255.255.255.255/",
+    "expected": "reject",
+    "threat": "ipv4-broadcast"
+  },
+  {
+    "url": "https://[::1]/",
+    "expected": "reject",
+    "threat": "ipv6-loopback"
+  },
+  {
+    "url": "https://[::]/",
+    "expected": "reject",
+    "threat": "ipv6-unspecified"
+  },
+  {
+    "url": "https://[fc00::1]/",
+    "expected": "reject",
+    "threat": "ipv6-unique-local-fc00"
+  },
+  {
+    "url": "https://[fd00::1]/",
+    "expected": "reject",
+    "threat": "ipv6-unique-local-fd00"
+  },
+  {
+    "url": "https://[fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff]/",
+    "expected": "reject",
+    "threat": "ipv6-unique-local-high-end"
+  },
+  {
+    "url": "https://[fe80::1]/",
+    "expected": "reject",
+    "threat": "ipv6-link-local"
+  },
+  {
+    "url": "https://[fe80::1%25eth0]/",
+    "expected": "reject",
+    "threat": "ipv6-link-local-with-zone-id"
+  },
+  {
+    "url": "https://[::ffff:127.0.0.1]/",
+    "expected": "reject",
+    "threat": "ipv6-ipv4-mapped-loopback"
+  },
+  {
+    "url": "https://[::ffff:192.168.1.1]/",
+    "expected": "reject",
+    "threat": "ipv6-ipv4-mapped-private-192-168"
+  },
+  {
+    "url": "https://[::ffff:10.0.0.1]/",
+    "expected": "reject",
+    "threat": "ipv6-ipv4-mapped-private-10-slash-8"
+  },
+  {
+    "url": "https://[::ffff:169.254.169.254]/",
+    "expected": "reject",
+    "threat": "ipv6-ipv4-mapped-link-local-metadata"
+  },
+  {
+    "url": "https://[64:ff9b::127.0.0.1]/",
+    "expected": "reject",
+    "threat": "ipv6-nat64-loopback"
+  },
+  {
+    "url": "https://[64:ff9b::192.168.1.1]/",
+    "expected": "reject",
+    "threat": "ipv6-nat64-private"
+  },
+  {
+    "url": "https://localhost/",
+    "expected": "reject",
+    "threat": "hostname-localhost"
+  },
+  {
+    "url": "https://localhost./",
+    "expected": "reject",
+    "threat": "hostname-localhost-trailing-dot-fqdn"
+  },
+  {
+    "url": "https://metadata.google.internal/",
+    "expected": "reject",
+    "threat": "hostname-gce-metadata"
+  },
+  {
+    "url": "https://metadata.google.internal./",
+    "expected": "reject",
+    "threat": "hostname-gce-metadata-trailing-dot-fqdn"
+  }
+]

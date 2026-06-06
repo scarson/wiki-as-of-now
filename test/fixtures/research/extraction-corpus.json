@@ -1,0 +1,153 @@
+[
+  {
+    "html": "<p>Hello, world!</p>",
+    "mustContain": ["Hello, world!"],
+    "mustExclude": [],
+    "threat": "basic-visible-text"
+  },
+  {
+    "html": "<img src=\"/img.png\" alt=\"SHOULD_NOT_APPEAR_alt\" title=\"SHOULD_NOT_APPEAR_title\"><p>Visible caption</p>",
+    "mustContain": ["Visible caption"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_alt", "SHOULD_NOT_APPEAR_title"],
+    "threat": "attribute-alt-and-title-excluded"
+  },
+  {
+    "html": "<a href=\"SHOULD_NOT_APPEAR_href\" data-label=\"SHOULD_NOT_APPEAR_data\">Click here</a>",
+    "mustContain": ["Click here"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_href", "SHOULD_NOT_APPEAR_data"],
+    "threat": "attribute-href-and-data-excluded"
+  },
+  {
+    "html": "<input value=\"SHOULD_NOT_APPEAR_value\" placeholder=\"SHOULD_NOT_APPEAR_placeholder\"><p>Form label</p>",
+    "mustContain": ["Form label"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_value", "SHOULD_NOT_APPEAR_placeholder"],
+    "threat": "attribute-value-and-placeholder-excluded"
+  },
+  {
+    "html": "<!-- SHOULD_NOT_APPEAR_comment --><p>Real text</p>",
+    "mustContain": ["Real text"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_comment"],
+    "threat": "html-comment-excluded"
+  },
+  {
+    "html": "<script>var SHOULD_NOT_APPEAR_script = 'secret';</script><p>Body text</p>",
+    "mustContain": ["Body text"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_script", "secret"],
+    "threat": "script-content-excluded"
+  },
+  {
+    "html": "<style>.SHOULD_NOT_APPEAR_style { color: red; }</style><p>Styled text</p>",
+    "mustContain": ["Styled text"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_style"],
+    "threat": "style-content-excluded"
+  },
+  {
+    "html": "<html><head><title>SHOULD_NOT_APPEAR_head_title</title><meta name=\"description\" content=\"SHOULD_NOT_APPEAR_meta_content\"></head><body><p>Article body</p></body></html>",
+    "mustContain": ["Article body"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_head_title", "SHOULD_NOT_APPEAR_meta_content"],
+    "threat": "head-title-and-meta-content-excluded"
+  },
+  {
+    "html": "<p>Ampersand: &amp; less-than: &lt; apostrophe: &#39;</p>",
+    "mustContain": ["Ampersand: &", "less-than: <", "apostrophe: '"],
+    "mustExclude": ["&amp;", "&lt;", "&#39;"],
+    "threat": "html-entity-decoding"
+  },
+  {
+    "html": "<p>Visible sibling</p><p hidden>SHOULD_NOT_APPEAR_hidden_attr</p>",
+    "mustContain": ["Visible sibling"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_hidden_attr"],
+    "threat": "hidden-attribute-excluded"
+  },
+  {
+    "html": "<p>Visible content</p><div aria-hidden=\"true\">SHOULD_NOT_APPEAR_aria_hidden</div>",
+    "mustContain": ["Visible content"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_aria_hidden"],
+    "threat": "aria-hidden-true-excluded"
+  },
+  {
+    "html": "<p>Real paragraph</p><div style=\"display:none\">SHOULD_NOT_APPEAR_display_none</div>",
+    "mustContain": ["Real paragraph"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_display_none"],
+    "threat": "style-display-none-excluded"
+  },
+  {
+    "html": "<p>Shown text</p><span style=\"visibility:hidden\">SHOULD_NOT_APPEAR_visibility_hidden</span>",
+    "mustContain": ["Shown text"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_visibility_hidden"],
+    "threat": "style-visibility-hidden-excluded"
+  },
+  {
+    "html": "<p>First sentence.</p><p>Second sentence.</p>",
+    "mustContain": ["First sentence.", "Second sentence."],
+    "mustExclude": ["First sentence. Second sentence."],
+    "threat": "cross-block-p-elements-boundary",
+    "note": "The two paragraphs must be separated by a block boundary (newline), not a single space. The concatenation 'First sentence. Second sentence.' must not appear as a directly-joined string."
+  },
+  {
+    "html": "<div>Alpha text</div><div>Beta text</div>",
+    "mustContain": ["Alpha text", "Beta text"],
+    "mustExclude": ["Alpha textBeta text", "Alpha text Beta text"],
+    "threat": "cross-block-div-elements-boundary",
+    "note": "Block-level div elements must insert a boundary; the texts must not be directly concatenated with or without a space."
+  },
+  {
+    "html": "<p>Before break.<br>After break.</p>",
+    "mustContain": ["Before break.", "After break."],
+    "mustExclude": ["Before break.After break.", "Before break. After break."],
+    "threat": "cross-block-br-separator",
+    "note": "A <br> acts as a block separator. The texts on each side must appear separately but not be space-joined."
+  },
+  {
+    "html": "<p>Inline <span>child</span> text</p>",
+    "mustContain": ["Inline", "child", "text"],
+    "mustExclude": [],
+    "threat": "inline-span-no-boundary",
+    "note": "Inline <span> inside a <p> does not insert a block boundary; the surrounding text nodes all belong to the same block."
+  },
+  {
+    "html": "<ul><li>Item one</li><li>Item two</li></ul>",
+    "mustContain": ["Item one", "Item two"],
+    "mustExclude": ["Item oneItem two", "Item one Item two"],
+    "threat": "li-separator",
+    "note": "<li> acts as a block separator; consecutive list items must not be directly concatenated."
+  },
+  {
+    "html": "<table><tr><th>Header A</th><th>Header B</th></tr><tr><td>Cell 1</td><td>Cell 2</td></tr></table>",
+    "mustContain": ["Header A", "Header B", "Cell 1", "Cell 2"],
+    "mustExclude": ["Header AHeader B", "Cell 1Cell 2"],
+    "threat": "td-th-separator",
+    "note": "<td> and <th> act as block separators so cell texts must not run together."
+  },
+  {
+    "html": "<p>Above rule.</p><hr><p>Below rule.</p>",
+    "mustContain": ["Above rule.", "Below rule."],
+    "mustExclude": ["Above rule.Below rule.", "Above rule. Below rule."],
+    "threat": "hr-separator"
+  },
+  {
+    "html": "<p>Before custom.</p><x-widget>SHOULD_NOT_MATTER_or_separate</x-widget><p>After custom.</p>",
+    "mustContain": ["Before custom.", "After custom."],
+    "mustExclude": ["Before custom.After custom.", "Before custom. After custom."],
+    "threat": "unknown-custom-element-defaults-to-block-separator",
+    "note": "Unknown/custom elements default to block-separator behaviour per spec."
+  },
+  {
+    "html": "<p>Copyright &copy; 2024 &mdash; all rights reserved.</p>",
+    "mustContain": ["©", "—"],
+    "mustExclude": ["&copy;", "&mdash;"],
+    "threat": "named-html-entity-decoding"
+  },
+  {
+    "html": "<h1>Article Title</h1><p>Opening paragraph with <strong>bold</strong> and <em>italic</em> text.</p>",
+    "mustContain": ["Article Title", "Opening paragraph with", "bold", "italic", "text."],
+    "mustExclude": [],
+    "threat": "inline-formatting-preserved-text-nodes"
+  },
+  {
+    "html": "<script>SHOULD_NOT_APPEAR_inline_script_text</script><style>SHOULD_NOT_APPEAR_inline_style_text { display:block }</style><!-- SHOULD_NOT_APPEAR_combo_comment --><p>Only this text matters.</p>",
+    "mustContain": ["Only this text matters."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_inline_script_text", "SHOULD_NOT_APPEAR_inline_style_text", "SHOULD_NOT_APPEAR_combo_comment"],
+    "threat": "combined-script-style-comment-exclusion"
+  }
+]
