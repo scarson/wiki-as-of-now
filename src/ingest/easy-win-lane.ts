@@ -4,7 +4,7 @@ import type { SqlExecutor } from "../db/client";
 import { getCandidatesByPageId, type PersistedCandidate } from "../db/articles";
 import { selectEasyWinPageIds, upsertVerdict, deleteVerdict } from "../db/eligibility-verdicts";
 import { makeAuditLog } from "../db/audit-log";
-import { fetchArticle, toArticleMetadata, type FetchLike, ArticleNotFoundError, WikimediaUnavailableError } from "./wikimedia";
+import { fetchArticle, toArticleMetadata, type FetchLike, ArticleNotFoundError, WikimediaUnavailableError, WikimediaResponseError } from "./wikimedia";
 import { evaluateEligibility, GATE_VERSION } from "../safelane/eligibility";
 
 export const DEFAULT_MAX_PAGES = 25;            // G14 fan-out cap (named, tunable); pagination deferred
@@ -63,11 +63,14 @@ async function revalidate(db: SqlExecutor, pageId: number, storedRev: StoredArti
       await audit("human_only", ["article_gone"], storedRev.revisionId, "article_gone");
       return { outcome: "article_gone" };
     }
-    if (err instanceof WikimediaUnavailableError) {
-      await audit("human_only", ["fetch_unavailable"], storedRev.revisionId, "fetch_unavailable"); // transient — do NOT delete verdict
+    if (err instanceof WikimediaUnavailableError || err instanceof WikimediaResponseError) {
+      // A per-page fetch failure (service unavailable, or a malformed/API-error response): exclude this
+      // page for this read, keep the lane running for the others, and do NOT delete the verdict (the cause
+      // may be transient). Per-page isolation only covers fetch failures — see the rethrow below.
+      await audit("human_only", ["fetch_unavailable"], storedRev.revisionId, "fetch_unavailable");
       return { outcome: "fetch_unavailable" };
     }
-    throw err; // unexpected (e.g. WikimediaResponseError) — surface, do not silently swallow
+    throw err; // an unexpected (non-fetch) error — a real bug or systemic DB failure — surfaces, never silently swallowed
   }
 
   // Identity assertion (fail-closed): a rename/redirect rebound the title to a DIFFERENT page → never surface.

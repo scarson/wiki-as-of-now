@@ -388,6 +388,41 @@ describe("getEasyWinLane", () => {
     expect(result.summary.surfaced).toBe(1);
   });
 
+  it("isolates a malformed-response page (WikimediaResponseError) without aborting the lane; a healthy sibling still surfaces", async () => {
+    const exec = freshTestExecutor();
+    await seedEasyWin(exec); // PAGE_ID
+    const SIBLING_ID = PAGE_ID + 100;
+    const SIBLING_REV = REVISION_ID + 100;
+    await lookupAndPersist(exec, "Europa Clipper", {
+      fetchFn: singleFetch(envelope({ pageId: SIBLING_ID, title: "Europa Clipper", revisionId: SIBLING_REV })),
+      asOfYear: AS_OF,
+      now: NOW,
+    });
+
+    const fetchFn: FetchLike = async (input: string) => {
+      const title = new URL(input).searchParams.get("titles") ?? "";
+      if (title === "Artemis program") {
+        // A 200 body carrying an API error → WikimediaResponseError (neither a missing page nor 503/maxlag).
+        return { ok: true, status: 200, json: async () => ({ error: { code: "badvalue", info: "unrecognized value" } }) };
+      }
+      return {
+        ok: true,
+        status: 200,
+        json: async () => envelope({ pageId: SIBLING_ID, title: "Europa Clipper", revisionId: SIBLING_REV }),
+      };
+    };
+
+    const result = await getEasyWinLane(exec, { fetchFn, now: NOW });
+
+    // The malformed page is excluded as fetch_unavailable; the healthy sibling still surfaces (per-page isolation).
+    expect(result.summary.skipped).toContainEqual({ pageId: PAGE_ID, outcome: "fetch_unavailable" });
+    expect(result.items.map(i => i.pageId)).toEqual([SIBLING_ID]);
+    expect(result.summary.surfaced).toBe(1);
+
+    // Transient/unknown cause → the verdict is NOT deleted; Stage-1 still includes the page.
+    expect(await selectEasyWinPageIds(exec, GATE_VERSION)).toContain(PAGE_ID);
+  });
+
   it("exposes named, sane defaults for the fan-out cap and per-page timeout", () => {
     expect(DEFAULT_MAX_PAGES).toBe(25);
     expect(DEFAULT_FETCH_TIMEOUT_MS).toBe(10_000);
