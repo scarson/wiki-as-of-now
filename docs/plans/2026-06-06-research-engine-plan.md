@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 4/10 phases shipped (0, 1, 2, 3); Phase 4 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
+**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 5/10 phases shipped (0, 1, 2, 3, 4); Phase 5 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
 
 > **Deviation (branch name):** executing on the harness-designated branch
 > `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
@@ -74,8 +74,8 @@ notes and commit messages.
 | 1 — `normalize.ts` + NFC golden fixture | ✅ Shipped | `ed77d51`, `45f9d19`, `96a46c5` | normalize + workerd↔Node golden (14 cases, gen on workerd); fresh review caught identity-only NFC test → strengthened (`96a46c5`) |
 | 2 — `canonicalize-url.ts` (SSRF host classification) | ✅ Shipped | `e375155`, `0644f05`, `045b046` | bipolar corpus (32 cases); trailing-dot bypass fixed; refactored to `ipaddr.js` (Sam's call) — −59 LOC hand-rolled math, NAT64 closed; full adversarial battery verified |
 | 3 — `verbatim-check.ts` | ✅ Shipped | `7b324263`, `3b79589` | opus review found `\n`-only cross-block gap → normalize hardened to vertical/horizontal split (covers text/plain); forgery closed for LF/VT/FF/CR/NEL/LS/PS |
-| 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | 🚧 In progress | — | blind-adversary corpora (opus review) |
-| 5 — `provider.ts` reshape + fake providers | ⬜ Not started | — | interface change to committed code |
+| 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | ✅ Shipped | `e2d8822`(corpora), `9a63077`, `d21e47e`, `0955b95`, `1f4670c` | opus review caught 2 cross-block-forgery BLOCKERs (`<br>`, then form-widget/replaced tags in INLINE_TAGS) + charset false-drop; all fixed |
+| 5 — `provider.ts` reshape + fake providers | 🚧 In progress | — | interface change to committed code |
 | 6 — `verify-proposal.ts` | ⬜ Not started | — | the standalone compliance seam |
 | 7 — `research-packs.ts` + migration 0003 | ⬜ Not started | — | Phase-2 migration discipline |
 | 8 — `pipeline.ts` `researchClaim` | ⬜ Not started | — | cap ordering + partition |
@@ -548,7 +548,7 @@ export function evaluateQuote(pageText: UntrustedSourceText, quote: string): Quo
 
 ## Phase 4 — `source-fetch.ts` (SSRF + streaming cap + extraction)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `e2d8822` (blind-adversary corpora: 53 SSRF [11 pass/42 reject] + 28 extraction, all spec-derived; SSRF corpus cross-validated 53/53 against shipped `canonicalizeUrl`), `9a63077` (fetchSourceText impl + 128 tests — RESCUED uncommitted after a container restart killed the implementer; orchestrator fixed 2 test-file gate issues it died before resolving), `d21e47e` (`<br>` block-separator fix), `0955b95` (form-widget + replaced-element separator fix, opus B1), `1f4670c` (charset meta-only honor, opus C1). Review rounds: rescue+provenance+gate-fixes → orchestrator found `<br>` cross-block-forgery BLOCKER → **opus** found B1 (form-widget/replaced tags `<button>/<select>/<option>/<optgroup>/<textarea>/<output>/<label>/<img>/<input>/<object>/<map>` in INLINE_TAGS = same forgery class) + C1 (header-silent meta charset false-drop) and verified the rest clean (no attribute/comment leak, hidden-text nesting correct, streaming cap + abort hygiene zero unhandled rejections, reason-codes correct) → remediation. INLINE_TAGS now restricted to genuine text-level phrasing; isolating regression tests added (blind corpus had no form-widget coverage). 418 suite green. NIT N1 (blocked_scheme/blocked_host reason approximate for userinfo) accepted — no security impact. Named residual: DNS-rebinding/TOCTOU (in-module).
 
 Implements spec §2. **Blind-adversary corpora** (SSRF + HTML-extraction) per spec §6: before implementing, dispatch a subagent that has NOT seen `source-fetch.ts` to generate adversarial inputs from the spec §2 threat list (see Task 4.0). The injected `fetchImpl` MUST emit real multi-chunk `ReadableStream`s (incl. a compression bomb) so the streaming cap + abort run (§6 N6).
 
