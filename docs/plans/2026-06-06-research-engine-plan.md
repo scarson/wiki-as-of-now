@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 3/10 phases shipped (0, 1, 2); Phase 3 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
+**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 4/10 phases shipped (0, 1, 2, 3); Phase 4 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
 
 > **Deviation (branch name):** executing on the harness-designated branch
 > `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
@@ -73,8 +73,8 @@ notes and commit messages.
 | 0 — Tooling + test harness (deps, determinism traps, pristine, CI) | ✅ Shipped | `6e30a77`, `49a1395`, `0c5660a` | deps+harness+CI; CI runs on the PR (pull_request event) — feature-branch pushes don't trigger by design |
 | 1 — `normalize.ts` + NFC golden fixture | ✅ Shipped | `ed77d51`, `45f9d19`, `96a46c5` | normalize + workerd↔Node golden (14 cases, gen on workerd); fresh review caught identity-only NFC test → strengthened (`96a46c5`) |
 | 2 — `canonicalize-url.ts` (SSRF host classification) | ✅ Shipped | `e375155`, `0644f05`, `045b046` | bipolar corpus (32 cases); trailing-dot bypass fixed; refactored to `ipaddr.js` (Sam's call) — −59 LOC hand-rolled math, NAT64 closed; full adversarial battery verified |
-| 3 — `verbatim-check.ts` | 🚧 In progress | `7b324263` (+ boundary fix pending) | opus review found `\n`-only cross-block guard gap → hardening normalize to vertical/horizontal split |
-| 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | ⬜ Not started | — | blind-adversary corpora |
+| 3 — `verbatim-check.ts` | ✅ Shipped | `7b324263`, `3b79589` | opus review found `\n`-only cross-block gap → normalize hardened to vertical/horizontal split (covers text/plain); forgery closed for LF/VT/FF/CR/NEL/LS/PS |
+| 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | 🚧 In progress | — | blind-adversary corpora (opus review) |
 | 5 — `provider.ts` reshape + fake providers | ⬜ Not started | — | interface change to committed code |
 | 6 — `verify-proposal.ts` | ⬜ Not started | — | the standalone compliance seam |
 | 7 — `research-packs.ts` + migration 0003 | ⬜ Not started | — | Phase-2 migration discipline |
@@ -441,7 +441,7 @@ describe("canonicalizeUrl", () => {
 
 ## Phase 3 — `verbatim-check.ts` (highest-stakes; boil the lake)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `7b324263` (evaluateQuote + UntrustedSourceText brand stub + 8 tests), `3b79589` (cross-block-forgery hardening). Review rounds: provenance (orchestrator) → adversarial false-accept probe (orchestrator: NFKC-not-folded, case/negation/zero-width/astral all correct) → **opus** (found the `\n`-only cross-block guard could be bridged by VT/FF folding to space + CR/LS/PS preserved) → adversarial option assessment (orchestrator: the decisive reason the fix belongs in `normalize.ts` not the extractor is that `text/plain` has no extractor — normalize is the only shared boundary layer) → hardening implemented + verified (forgery closed for all 7 vertical separators; golden regenerated on workerd, 16 cases, Node≡workerd; 274 suite green). MIN/MAX_QUOTE_LEN carry the mandated tuning comments. ≥3 rounds incl. opus, last state clean.
 
 Implements spec §3 (`evaluateQuote`). The deterministic fabrication backstop (G8/G15). Uses the REAL `normalizeForVerbatim`. `MIN_QUOTE_LEN`/`MAX_QUOTE_LEN` MUST carry the explanatory comments mandated in spec §3.
 
