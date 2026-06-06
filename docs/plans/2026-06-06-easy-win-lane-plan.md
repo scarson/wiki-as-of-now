@@ -61,12 +61,12 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started.
+**Overall:** 1/5 phases shipped (subagent-driven on `feat/easy-win-lane`).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Scan hardening (`scanWikitextSignals` linear-time) | ⬜ Not started | — | independent; no lane deps |
-| 2 — Data model (`eligibility_verdicts` + migration + DB module) | ⬜ Not started | — | — |
+| 1 — Scan hardening (`scanWikitextSignals` linear-time) | ✅ Shipped | `5129686`,`b925dc2`,`6ac9fda` | linear-time regex + SAFE-1 pitfall; suite 194 green |
+| 2 — Data model (`eligibility_verdicts` + migration + DB module) | 🚧 In progress | — | claimed 2026-06-06T13:13Z |
 | 3 — Persist the verdict on lookup (article-row-last) | ⬜ Not started | — | depends on Phase 2 |
 | 4 — Easy-win lane query (two-stage, positive allowlist) | ⬜ Not started | — | depends on Phases 2–3 |
 | 5 — `POST /api/easy-win` endpoint | ⬜ Not started | — | depends on Phase 4 |
@@ -97,7 +97,7 @@ Follow TDD: failing test → confirm it fails for the right reason → minimal i
 
 ## Phase 1 — Scan hardening (`scanWikitextSignals` linear-time)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `feat/easy-win-lane`) — Task 1.1 `5129686` + `b925dc2` (linear-time regex via match-start bound; spec + code-quality reviewed, the one Important finding folded into `b925dc2`), Task 1.2 `6ac9fda` (SAFE-1 pitfall). Suite 194 green, tsc + lint clean.
 
 Independent of the lane (touches only `src/safelane/wikitext-signals.ts` + its test + a pitfall doc). Review finding F / R5-L2: the template-name regex over `{`-spam costs ~1s CPU at the 2 MB article limit because the per-match length cap bounds *match length*, not the *number of match-start positions*; the lane runs the scan on attacker-controllable wikitext at fan-out scale → Worker-CPU DoS (G15). Sam: fix at root in this slice.
 
@@ -160,7 +160,7 @@ for (const m of text.matchAll(/\{\{\s*([^{}|\n][^}|\n]{0,99}?)\s*(?:\||\}\})/g))
 
 ## Phase 2 — Data model (`eligibility_verdicts` + migration + DB module)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T13:13Z, branch `feat/easy-win-lane`.
 
 Implements design §2. Adds the table, the ordered-migration discipline (finding I), and the DB module.
 
