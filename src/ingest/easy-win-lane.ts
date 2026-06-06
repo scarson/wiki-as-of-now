@@ -1,0 +1,127 @@
+// ABOUTME: Easy-win lane — Stage-1 DB pre-filter then authoritative point-of-use re-fetch + re-run-gate.
+// ABOUTME: Positive allowlist (include iff identity + easy_win + revision match); persisted verdict is never the authority.
+import type { SqlExecutor } from "../db/client";
+import { getCandidatesByPageId, type PersistedCandidate } from "../db/articles";
+import { selectEasyWinPageIds, upsertVerdict, deleteVerdict } from "../db/eligibility-verdicts";
+import { makeAuditLog } from "../db/audit-log";
+import { fetchArticle, toArticleMetadata, type FetchLike, ArticleNotFoundError, WikimediaUnavailableError } from "./wikimedia";
+import { evaluateEligibility, GATE_VERSION } from "../safelane/eligibility";
+
+export const DEFAULT_MAX_PAGES = 25;            // G14 fan-out cap (named, tunable); pagination deferred
+export const DEFAULT_FETCH_TIMEOUT_MS = 10_000; // per-page re-fetch wall-clock bound; a hung fetch can't stall the lane
+
+/** Races a promise against a timeout. On timeout, resolves to the `timedOut` sentinel and attaches a
+ *  no-op catch to the original promise so a late rejection can't surface as an unhandled rejection
+ *  (pristine output). Does NOT abort the underlying fetch (FetchLike has no signal); it bounds how long
+ *  the lane WAITS, which is what protects the Worker wall-clock. */
+async function withTimeout<T>(p: Promise<T>, ms: number): Promise<T | { timedOut: true }> {
+  let timer: ReturnType<typeof setTimeout>;
+  const timeout = new Promise<{ timedOut: true }>(resolve => { timer = setTimeout(() => resolve({ timedOut: true }), ms); });
+  p.catch(() => {}); // swallow a post-timeout rejection
+  try { return await Promise.race([p, timeout]); } finally { clearTimeout(timer!); }
+}
+
+type Outcome = "surfaced" | "demoted" | "revision_drift" | "article_gone" | "fetch_unavailable";
+export interface EasyWinItem { pageId: number; title: string; revisionId: number; candidates: PersistedCandidate[]; }
+export interface EasyWinLaneResult {
+  items: EasyWinItem[];
+  summary: { considered: number; surfaced: number; deferred: number; skipped: { pageId: number; outcome: Exclude<Outcome, "surfaced"> }[] };
+}
+export interface EasyWinLaneOptions { fetchFn?: FetchLike; userAgent?: string; now?: Date; maxPages?: number; fetchTimeoutMs?: number; }
+
+interface StoredArticle { revisionId: number; title: string; }
+async function currentArticleRevision(db: SqlExecutor, pageId: number): Promise<StoredArticle> {
+  const rows = await db
+    .prepare("SELECT revision_id AS revisionId, title FROM articles WHERE page_id = ?")
+    .bind(pageId)
+    .all<{ revisionId: number; title: string }>();
+  return { revisionId: rows[0].revisionId, title: rows[0].title }; // page_id came from Stage-1, so the row exists
+}
+
+type Revalidation = { outcome: "surfaced"; item: EasyWinItem } | { outcome: Exclude<Outcome, "surfaced"> };
+
+async function revalidate(db: SqlExecutor, pageId: number, storedRev: StoredArticle, now: Date, options: EasyWinLaneOptions): Promise<Revalidation> {
+  const audit = (eligibility: "easy_win" | "human_only", reasons: string[], revisionId: number, outcome: Outcome) =>
+    makeAuditLog(db).append({ actor: "system", eventType: "article.eligibility.revalidated",
+      payload: { pageId, revisionId, eligibility, reasons, gateVersion: GATE_VERSION, outcome } });
+
+  let fetched;
+  try {
+    const raced = await withTimeout(
+      fetchArticle(storedRev.title, { fetchFn: options.fetchFn, userAgent: options.userAgent }),
+      options.fetchTimeoutMs ?? DEFAULT_FETCH_TIMEOUT_MS
+    );
+    if ("timedOut" in raced) {
+      // transient — no verdict mutation; log codes only. revisionId we know is the stored one.
+      await audit("human_only", ["fetch_unavailable"], storedRev.revisionId, "fetch_unavailable");
+      return { outcome: "fetch_unavailable" };
+    }
+    fetched = raced;
+  } catch (err) {
+    if (err instanceof ArticleNotFoundError) {
+      await deleteVerdict(db, pageId, storedRev.revisionId, GATE_VERSION); // R3-F8 self-heal: page gone, stop re-selecting
+      await audit("human_only", ["article_gone"], storedRev.revisionId, "article_gone");
+      return { outcome: "article_gone" };
+    }
+    if (err instanceof WikimediaUnavailableError) {
+      await audit("human_only", ["fetch_unavailable"], storedRev.revisionId, "fetch_unavailable"); // transient — do NOT delete verdict
+      return { outcome: "fetch_unavailable" };
+    }
+    throw err; // unexpected (e.g. WikimediaResponseError) — surface, do not silently swallow
+  }
+
+  // Identity assertion (fail-closed): a rename/redirect rebound the title to a DIFFERENT page → never surface.
+  if (fetched.pageId !== pageId) {
+    await audit("human_only", ["identity_mismatch"], fetched.revisionId, "demoted");
+    return { outcome: "demoted" };
+  }
+
+  const decision = evaluateEligibility(toArticleMetadata(fetched), now, GATE_VERSION);
+  // Refresh the persisted verdict to the re-run result (Stage-1 self-heals next read), THEN audit.
+  await upsertVerdict(db, { pageId, revisionId: fetched.revisionId, gateVersion: GATE_VERSION,
+    eligibility: decision.eligibility, reasons: decision.reasons, evaluatedAt: now.toISOString() });
+
+  const candidates = await getCandidatesByPageId(db, pageId);
+  const revisionMatches =
+    fetched.revisionId === storedRev.revisionId &&
+    candidates.every(c => c.sourceRevisionId === fetched.revisionId); // defense-in-depth: Phase-3 shared-liveRev makes these equal; assert, don't assume
+
+  // POSITIVE ALLOWLIST — the ONLY include path.
+  if (decision.eligibility === "easy_win" && fetched.pageId === pageId && revisionMatches) {
+    await audit(decision.eligibility, decision.reasons, fetched.revisionId, "surfaced");
+    return { outcome: "surfaced", item: { pageId, title: fetched.title, revisionId: fetched.revisionId, candidates } };
+  }
+
+  // Classify the exclusion.
+  if (decision.eligibility === "easy_win" && !revisionMatches) {
+    // revision drift: stored candidates don't describe the live revision. Do NOT mutate articles.revision_id
+    // (that's reprocessing, Phase-3). Delete the stale (page, stored_revision, gate) verdict so Stage-1
+    // stops re-selecting the drifted page until a fresh lookup re-records it (R3-F8 self-heal).
+    await deleteVerdict(db, pageId, storedRev.revisionId, GATE_VERSION);
+    await audit(decision.eligibility, decision.reasons, fetched.revisionId, "revision_drift");
+    return { outcome: "revision_drift" };
+  }
+  // human_only (incl. metadata_unavailable): the upsert above already overwrote the same-revision row to
+  // human_only, so Stage-1 self-heals without an explicit delete.
+  await audit(decision.eligibility, decision.reasons, fetched.revisionId, "demoted");
+  return { outcome: "demoted" };
+}
+
+export async function getEasyWinLane(db: SqlExecutor, options: EasyWinLaneOptions = {}): Promise<EasyWinLaneResult> {
+  const now = options.now ?? new Date();
+  const maxPages = options.maxPages ?? DEFAULT_MAX_PAGES;
+  const all = await selectEasyWinPageIds(db, GATE_VERSION);
+  const pageIds = all.slice(0, maxPages);
+  const deferred = all.length - pageIds.length;
+
+  const items: EasyWinItem[] = [];
+  const skipped: EasyWinLaneResult["summary"]["skipped"] = [];
+
+  for (const pageId of pageIds) {  // bounded, sequential (G14-polite); concurrency cap is a future tuning
+    const storedRev = await currentArticleRevision(db, pageId);
+    const result = await revalidate(db, pageId, storedRev, now, options);
+    if (result.outcome === "surfaced") items.push(result.item);
+    else skipped.push({ pageId, outcome: result.outcome });
+  }
+  return { items, summary: { considered: pageIds.length, surfaced: items.length, deferred, skipped } };
+}
