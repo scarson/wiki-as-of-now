@@ -63,14 +63,14 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 2/5 phases shipped. Phase 3 🚧 IN PROGRESS (claimed 2026-06-06T02:12Z, branch `claude/safelane-gate-g11-phases-3-5-9UDWy`).
+**Overall:** 3/5 phases shipped. Phase 4 (wiring) next; Phase 5 (gold test) may run concurrently.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Foundation (types, denylists, wikitext scan) | ✅ Shipped | `8bede5a`,`b838890`,`2506e25` | 12 tests; suite 168 green |
 | 2 — The gate (evaluateEligibility) | ✅ Shipped | `a516493` | 8 tests; pure core complete |
-| 3 — Ingest atomic metadata call + frozen envelopes | 🚧 In progress | — | claimed 2026-06-06T02:12Z |
-| 4 — Wiring (orchestrator, API, UI) | ⬜ Not started | — | — |
+| 3 — Ingest atomic metadata call + frozen envelopes | ✅ Shipped | `49d549a`,`b1c0ccf` | 6 new ingest tests; 8 frozen gold envelopes; suite 180 green |
+| 4 — Wiring (orchestrator, API, UI) | 🚧 In progress | — | claimed 2026-06-06T02:20Z |
 | 5 — Gold-set integration test + composition guard | ⬜ Not started | — | — |
 
 ### Discoveries
@@ -454,7 +454,7 @@ export function evaluateEligibility(meta: ArticleMetadata, now: Date, _gateVersi
 
 ## Phase 3 — Ingest atomic metadata call + frozen gold envelopes
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T02:12Z, branch `claude/safelane-gate-g11-phases-3-5-9UDWy`.
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `claude/safelane-gate-g11-phases-3-5-9UDWy`) — Task 3.1 `49d549a` (atomic combined fetch + `mapResponseToMetadata`/`toArticleMetadata`), Task 3.2 `b1c0ccf` (8 frozen gold envelopes). 6 new ingest tests; full suite 180 green, tsc + lint clean. Reviewed: request-shape match (3.1↔3.2), synthetic-envelope realism, mapper determinism, gold-set honesty (expected hand-derived, validated match=8/0). **Deviation:** the `okBody` fixture gained a revision `timestamp` and the exact-match mapping test asserts the full `FetchedArticle` superset (`fetchedAt` via `expect.any(String)`) — the contract change the plan already mandates via the prop/rvprop assertion edits, surfaced on the one exact-`toEqual` test the plan's "rest pass unchanged" note didn't anticipate.
 
 ### Task 3.1: Extend `fetchArticle` to one atomic metadata call
 
@@ -551,7 +551,7 @@ Follow the **Per-Task Protocol** (the "test" here is the gold data the Phase-5 t
 
 ## Phase 4 — Wiring (orchestrator, API, UI)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T02:20Z, branch `claude/safelane-gate-g11-phases-3-5-9UDWy`.
 
 ### Task 4.1: Compute + return + audit eligibility in `lookupAndPersist`
 
