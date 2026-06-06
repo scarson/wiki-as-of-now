@@ -44,4 +44,10 @@ export const NFC_CORPUS: string[] = [
   // plain ASCII: leading/trailing spaces trimmed, internal run collapsed
   "  Plain text.  ",
 
+  // vertical separator: LS (U+2028) between words -> \n block boundary on workerd
+  "alpha\u2028beta",
+
+  // vertical separator run: FF (U+000C) + VT (U+000B) between words -> single \n block boundary on workerd
+  "xy\u000C\u000Bz",
+
 ];

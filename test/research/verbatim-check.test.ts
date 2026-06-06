@@ -54,4 +54,20 @@ describe("evaluateQuote", () => {
     expect(performance.now() - start).toBeLessThan(1000);
     expect(evaluateQuote(page(""), "a confirmed factual quote here")).toBe("quote_not_found");
   });
+  it("does NOT match across non-newline vertical separators (cross-block-forgery defense)", () => {
+    // Each vertical separator normalizes to \n; a space-joined quote bridging the boundary won't match
+    // VT (U+000B)
+    expect(evaluateQuote(page("End of section one.\u000BStart of section two here."), "section one. Start of section")).toBe("quote_not_found");
+    // FF (U+000C)
+    expect(evaluateQuote(page("End of section one.\u000CStart of section two here."), "section one. Start of section")).toBe("quote_not_found");
+    // CR (U+000D)
+    expect(evaluateQuote(page("End of section one.\rStart of section two here."), "section one. Start of section")).toBe("quote_not_found");
+    // LS (U+2028)
+    expect(evaluateQuote(page("End of section one.\u2028Start of section two here."), "section one. Start of section")).toBe("quote_not_found");
+    // PS (U+2029)
+    expect(evaluateQuote(page("End of section one.\u2029Start of section two here."), "section one. Start of section")).toBe("quote_not_found");
+    // Positive control: a genuinely contiguous quote within one segment still matches
+    expect(evaluateQuote(page("End of section one. Start of section two here."), "Start of section two here.")).toBe("matched");
+  });
+
 });

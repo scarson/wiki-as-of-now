@@ -54,5 +54,13 @@
   {
     "input": "  Plain text.  ",
     "output": "Plain text."
+  },
+  {
+    "input": "alpha beta",
+    "output": "alpha\nbeta"
+  },
+  {
+    "input": "xy\f\u000bz",
+    "output": "xy\nz"
   }
 ]
