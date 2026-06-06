@@ -63,11 +63,11 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started.
+**Overall:** 1/5 phases shipped.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Foundation (types, denylists, wikitext scan) | ⬜ Not started | — | — |
+| 1 — Foundation (types, denylists, wikitext scan) | ✅ Shipped | `8bede5a`,`b838890`,`2506e25` | 12 tests; suite 168 green |
 | 2 — The gate (evaluateEligibility) | ⬜ Not started | — | — |
 | 3 — Ingest atomic metadata call + frozen envelopes | ⬜ Not started | — | — |
 | 4 — Wiring (orchestrator, API, UI) | ⬜ Not started | — | — |
@@ -100,7 +100,7 @@ Follow TDD: write the failing test → run it and confirm it fails for the expec
 
 ## Phase 1 — Foundation (types, denylists, wikitext scan)
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06 (branch `claude/safelane-gate-g11`)
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `claude/safelane-gate-g11`) — Task 1.1 `8bede5a` (types), 1.2 `b838890` (denylists + canonicalizer), 1.3 `2506e25` (wikitext scan). 12 new tests; full suite 168 green, tsc + lint clean.
 
 Three small, independent, pure modules. Tasks 1.1/1.2/1.3 touch different files and MAY run in parallel, but 1.3 depends on 1.2's exports (`BLP_CATEGORIES`, `DISPUTE_TEMPLATES`, canonicalizers), so sequence 1.2 before 1.3.
 
