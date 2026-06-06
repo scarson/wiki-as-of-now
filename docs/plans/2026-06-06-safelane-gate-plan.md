@@ -100,7 +100,7 @@ Follow TDD: write the failing test → run it and confirm it fails for the expec
 
 ## Phase 1 — Foundation (types, denylists, wikitext scan)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06 (branch `claude/safelane-gate-g11`)
 
 Three small, independent, pure modules. Tasks 1.1/1.2/1.3 touch different files and MAY run in parallel, but 1.3 depends on 1.2's exports (`BLP_CATEGORIES`, `DISPUTE_TEMPLATES`, canonicalizers), so sequence 1.2 before 1.3.
 
