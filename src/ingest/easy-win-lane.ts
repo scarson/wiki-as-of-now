@@ -80,14 +80,28 @@ async function revalidate(db: SqlExecutor, pageId: number, storedRev: StoredArti
   }
 
   const decision = evaluateEligibility(toArticleMetadata(fetched), now, GATE_VERSION);
-  // Refresh the persisted verdict to the re-run result (Stage-1 self-heals next read), THEN audit.
-  await upsertVerdict(db, { pageId, revisionId: fetched.revisionId, gateVersion: GATE_VERSION,
-    eligibility: decision.eligibility, reasons: decision.reasons, evaluatedAt: now.toISOString() });
 
   const candidates = await getCandidatesByPageId(db, pageId);
+  const drifted = fetched.revisionId !== storedRev.revisionId;
   const revisionMatches =
-    fetched.revisionId === storedRev.revisionId &&
+    !drifted &&
     candidates.every(c => c.sourceRevisionId === fetched.revisionId); // defense-in-depth: Phase-3 shared-liveRev makes these equal; assert, don't assume
+
+  // Reconcile the persisted verdict with what the live article now shows so Stage-1 self-heals next read
+  // (the verdict is a pre-filter, never the surfacing authority):
+  //  - same revision → overwrite the stored verdict with the re-run result. A fresh easy_win→human_only
+  //    demotion drops the page out of Stage-1; an unchanged easy_win stays selectable for the surfaced path.
+  //  - drift (the live revision moved past the stored one) → the stored-revision verdict and its candidates
+  //    are stale, so prune that verdict (R3-F8 self-heal) and record NONE at the live revision: no candidates
+  //    exist for it yet and the lane never reprocesses (that is Phase-3). This applies whether the re-run is
+  //    easy_win (revision_drift) or human_only (demoted); without it a page that drifts to a human_only
+  //    revision would be re-selected and re-fetched on every read, eating the maxPages cap.
+  if (drifted) {
+    await deleteVerdict(db, pageId, storedRev.revisionId, GATE_VERSION);
+  } else {
+    await upsertVerdict(db, { pageId, revisionId: fetched.revisionId, gateVersion: GATE_VERSION,
+      eligibility: decision.eligibility, reasons: decision.reasons, evaluatedAt: now.toISOString() });
+  }
 
   // POSITIVE ALLOWLIST — the ONLY include path.
   if (decision.eligibility === "easy_win" && fetched.pageId === pageId && revisionMatches) {
@@ -95,17 +109,14 @@ async function revalidate(db: SqlExecutor, pageId: number, storedRev: StoredArti
     return { outcome: "surfaced", item: { pageId, title: fetched.title, revisionId: fetched.revisionId, candidates } };
   }
 
-  // Classify the exclusion.
+  // Classify the exclusion (the reconcile above already self-healed the persisted verdict for every case).
   if (decision.eligibility === "easy_win" && !revisionMatches) {
-    // revision drift: stored candidates don't describe the live revision. Do NOT mutate articles.revision_id
-    // (that's reprocessing, Phase-3). Delete the stale (page, stored_revision, gate) verdict so Stage-1
-    // stops re-selecting the drifted page until a fresh lookup re-records it (R3-F8 self-heal).
-    await deleteVerdict(db, pageId, storedRev.revisionId, GATE_VERSION);
+    // easy_win at the live revision, but the stored candidates describe an older one — not surfaced
+    // (re-detection is Phase-3, not the lane's job); articles.revision_id is left untouched.
     await audit(decision.eligibility, decision.reasons, fetched.revisionId, "revision_drift");
     return { outcome: "revision_drift" };
   }
-  // human_only (incl. metadata_unavailable): the upsert above already overwrote the same-revision row to
-  // human_only, so Stage-1 self-heals without an explicit delete.
+  // human_only at the live revision (incl. metadata_unavailable), with or without drift.
   await audit(decision.eligibility, decision.reasons, fetched.revisionId, "demoted");
   return { outcome: "demoted" };
 }

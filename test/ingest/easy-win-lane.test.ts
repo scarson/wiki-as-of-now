@@ -384,6 +384,36 @@ describe("getEasyWinLane", () => {
     expect(result.summary.surfaced).toBe(1);
   });
 
+  it("EXCLUDES a page that drifted to a newer revision that is now human_only, pruning the stale verdict so Stage-1 self-heals", async () => {
+    const exec = freshTestExecutor();
+    await seedEasyWin(exec); // (PAGE_ID, REVISION_ID) recorded easy_win, with candidates
+
+    // The live article moved to a newer revision AND a BLP category appeared in it → human_only.
+    const driftedBlpBody = envelope({
+      pageId: PAGE_ID,
+      title: "Artemis program",
+      revisionId: REVISION_ID + 1,
+      categories: [{ ns: 14, title: "Category:Living people" }],
+    });
+
+    const result = await getEasyWinLane(exec, { fetchFn: singleFetch(driftedBlpBody), now: NOW });
+
+    // Excluded (never surfaced); human_only is the dominant exclusion fact → demoted.
+    expect(result.items).toHaveLength(0);
+    expect(result.summary.skipped).toEqual([{ pageId: PAGE_ID, outcome: "demoted" }]);
+
+    // The lane never reprocesses, so articles.revision_id is unchanged.
+    const article = await exec
+      .prepare("SELECT revision_id FROM articles WHERE page_id = ?")
+      .bind(PAGE_ID)
+      .all<{ revision_id: number }>();
+    expect(article[0].revision_id).toBe(REVISION_ID);
+
+    // R3-F8 self-heal: the stale (page, stored_revision, gate) verdict was pruned, so Stage-1 stops
+    // re-selecting (and re-fetching) the drifted page every read.
+    expect(await selectEasyWinPageIds(exec, GATE_VERSION)).not.toContain(PAGE_ID);
+  });
+
   it("isolates a malformed-response page (WikimediaResponseError) without aborting the lane; a healthy sibling still surfaces", async () => {
     const exec = freshTestExecutor();
     await seedEasyWin(exec); // PAGE_ID
