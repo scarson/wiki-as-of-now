@@ -137,7 +137,7 @@ describe("selectEasyWinPageIds", () => {
     // Article is now at revision 200, but the verdict was recorded for revision 100.
     await upsertArticle(exec, article(1, 200));
     await upsertVerdict(exec, verdict({ pageId: 1, revisionId: 100, gateVersion: "v1", eligibility: "easy_win" }));
-    await insertCandidates(exec, 1, 200, [candidate()]);
+    await insertCandidates(exec, 1, 200, [candidate()]); // inert: the revision_id JOIN mismatch (100 vs 200) excludes this page regardless of candidates
     const result = await selectEasyWinPageIds(exec, "v1");
     expect(result).toEqual([]);
   });
@@ -162,7 +162,13 @@ describe("selectEasyWinPageIds", () => {
 
   it("returns results in ascending page_id order", async () => {
     const exec = freshTestExecutor();
-    // Insert pages out of order to verify ORDER BY.
+    // Ascending page_id is the documented caller-visible contract.  It is enforced by
+    // the query's ORDER BY a.page_id ASC and inherently reinforced by the WITHOUT ROWID
+    // PK scan on the articles table (SQLite scans WITHOUT ROWID tables in PK order).
+    // Because of the WITHOUT ROWID scan, this test asserts the contract rather than
+    // isolating the ORDER BY clause — a test that could fail without ORDER BY is not
+    // achievable with this schema.  Inserting pages in a non-sorted order still gives
+    // a meaningful contract assertion.
     for (const pageId of [30, 10, 20]) {
       await upsertArticle(exec, article(pageId, 100));
       await upsertVerdict(exec, verdict({ pageId, revisionId: 100, gateVersion: "v1", eligibility: "easy_win" }));
