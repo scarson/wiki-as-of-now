@@ -290,7 +290,7 @@ export async function selectEasyWinPageIds(db: SqlExecutor, gateVersion: string)
 
 ## Phase 3 — Persist the verdict on lookup (article-row-last)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T14:05Z on branch `feat/easy-win-lane`.
 
 Implements design §3. Adds the verdict upsert to `lookupAndPersist` and pins the write order so `articles.revision_id` never leads its candidates (CRITICAL-B ordering half).
 
