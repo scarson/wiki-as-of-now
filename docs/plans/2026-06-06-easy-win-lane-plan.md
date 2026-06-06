@@ -63,6 +63,8 @@ notes and commit messages.
 
 **Overall:** 2/5 phases shipped (subagent-driven on `feat/easy-win-lane`). Next: Phase 3 (persist verdict on lookup) → Phase 4 (lane query, compliance-critical) → Phase 5 (route).
 
+**PR:** #15 (DRAFT) → `dev` — https://github.com/scarson/wiki-as-of-now/pull/15. Opened mid-build at Sam's request; Phases 3–5 push to this same branch (the PR updates automatically). Mark ready + request merge only after Phase 5 + a final whole-implementation review; **do not self-merge** (Review — compliance).
+
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Scan hardening (`scanWikitextSignals` linear-time) | ✅ Shipped | `5129686`,`b925dc2`,`6ac9fda` | linear-time regex + SAFE-1 pitfall; suite 194 green |
