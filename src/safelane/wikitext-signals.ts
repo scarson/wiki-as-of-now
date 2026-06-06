@@ -29,7 +29,7 @@ export function scanWikitextSignals(wikitext: string): string[] {
   }
   // (b) dispute templates: {{<name>...}}. First captured char must not be '{' or '}' — real
   // template names never start with those — so on "{{{{..." the engine rejects each start in O(1).
-  for (const m of text.matchAll(/\{\{\s*([^{}|\n][^}|\n]{0,99}?)\s*(?:\||\}\})/g)) {
+  for (const m of text.matchAll(/\{\{\s*([^{}|\n][^{}|\n]{0,99}?)\s*(?:\||\}\})/g)) {
     const name = canonicalizeTemplateName(m[1]);
     if (DISPUTE_SET.has(name)) codes.add(`dispute_template:${name}`);
   }

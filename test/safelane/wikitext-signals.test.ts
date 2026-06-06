@@ -35,12 +35,16 @@ describe("scanWikitextSignals", () => {
   });
 
   it("is linear-time on pathological brace/bracket spam (no quadratic blowup)", () => {
-    const spam = "{{".repeat(1_000_000);            // 2 MB of "{"
+    const spam = "{{".repeat(1_000_000);            // 2 MB of "{{" pairs
     const start = performance.now();
     expect(scanWikitextSignals(spam)).toEqual([]);
     expect(scanWikitextSignals("[[".repeat(1_000_000))).toEqual([]);
     const elapsedMs = performance.now() - start;
     expect(elapsedMs).toBeLessThan(1000);
+  });
+
+  it("tolerates whitespace after the Category: prefix", () => {
+    expect(scanWikitextSignals("[[Category:  Living people]]")).toContain("blp_wikitext");
   });
 
   it("still detects a real dispute template buried in a large body", () => {
