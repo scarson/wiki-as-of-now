@@ -103,7 +103,17 @@ this env), per Sam's choice. Correlated blind spots remain vs a true second prov
 3. **Candidates on demotion** → leave them (still valid detector output), just exclude from the lane.
 4. **GET vs POST** → finding E: POST.
 
-## One decision flagged for Sam
+## Post-review scope additions (Sam, after the synthesis)
+- **R3-F8 Stage-1 self-heal** pulled into v1: on `revision_drift`/`article_gone`, delete the stale
+  `(page, stored_revision, gate_version)` verdict so the page stops re-fetching every read and eating
+  the `maxPages` cap (the `demoted` case already self-heals via the same-revision upsert). `deleteVerdict`
+  added to the DB module.
+- **R3-F3 per-fetch timeout** pulled into v1: an explicit `Promise.race` timeout (default 10 s) bounds
+  how long the lane waits on a hung fetch (the ingest `FetchLike` has no abort signal).
+- **Finding F (scan ReDoS)** confirmed: root-cause regex hardening in `src/safelane/wikitext-signals.ts`
+  in-slice (Plan Phase 1), not just a boundary cap.
+
+## One decision flagged for Sam (resolved)
 - **Finding F (wikitext-scan CPU):** fold a *lane-boundary input cap* into this slice (cheap, in-scope
   because the lane is what makes it exploitable at fan-out), AND journal the regex hardening of the
   already-merged `scanWikitextSignals` as a separate pitfall+follow-up? Or journal-only and accept the

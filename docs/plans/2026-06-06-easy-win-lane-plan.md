@@ -217,6 +217,7 @@ Implements design §3 (write) + §4 Stage-1 (pre-filter). Read `docs/pitfalls/im
 
 - [ ] **Step 1: Write failing tests** (`freshTestExecutor`, `await` every call, `bind()` params):
   - upsert inserts a row; re-upsert on the same `(page_id, revision_id, gate_version)` updates in place (no duplicate);
+  - `deleteVerdict` removes exactly the targeted `(page_id, revision_id, gate_version)` row and leaves others intact; deleting a non-existent row is a no-op (no throw);
   - a NULL `gate_version` (or any PK component) insert rejects (DB-1);
   - the FK to `articles` fires (verdict for a non-existent `page_id` rejects);
   - `selectEasyWinPageIds(db, gateVersion)` returns only pages whose row matches `articles.revision_id` AND `gate_version` AND `eligibility='easy_win'` AND that have ≥1 `stale_candidates` row — and excludes `human_only`, stale-`revision_id`, stale-`gate_version`, and zero-candidate pages. **Seed via the real helpers** for FK-correct, realistic fixtures: `upsertArticle` (from `src/db/articles`) → `insertCandidates` → `upsertVerdict`, in that order (both child tables FK to `articles`). Construct each exclusion case explicitly (e.g. a `human_only` verdict; a verdict whose `revision_id` ≠ the article's current; a verdict at a different `gate_version`; an easy_win page with zero candidates).
@@ -246,6 +247,17 @@ export async function upsertVerdict(db: SqlExecutor, v: VerdictRecord): Promise<
         "eligibility = excluded.eligibility, reasons_json = excluded.reasons_json, evaluated_at = excluded.evaluated_at"
     )
     .bind(v.pageId, v.revisionId, v.gateVersion, v.eligibility, JSON.stringify(v.reasons), v.evaluatedAt)
+    .run();
+}
+
+/** Removes a single verdict row. Called by the lane to prune a stale `(page, old_revision)` verdict
+ *  on revision_drift/article_gone so Stage-1 stops re-selecting (and re-fetching) a page that can no
+ *  longer surface, until a fresh lookup re-records it (R3-F8 self-heal). The audit log is append-only;
+ *  the verdict table is mutable cache/history, so deleting here is allowed. */
+export async function deleteVerdict(db: SqlExecutor, pageId: number, revisionId: number, gateVersion: string): Promise<void> {
+  await db
+    .prepare("DELETE FROM eligibility_verdicts WHERE page_id = ? AND revision_id = ? AND gate_version = ?")
+    .bind(pageId, revisionId, gateVersion)
     .run();
 }
 
@@ -334,9 +346,10 @@ Implements design §4/§5/§7 — the core. Read the design §4–§7 and the re
   - **re-fetch BLP-present → excluded** (`demoted`); not in `items`; verdict refreshed to `human_only`. **MUST-NOT-WEAKEN.**
   - **re-fetch `blpProbe:"unknown"` → excluded** (`demoted`, reasons include `metadata_unavailable`). **MUST-NOT-WEAKEN.**
   - **page_id identity mismatch** (fetch returns a different `pageId`) → excluded; not surfaced. **MUST-NOT-WEAKEN.**
-  - **revision drift** (live `revisionId` ≠ stored) → excluded (`revision_drift`); `articles.revision_id` UNCHANGED afterward. **MUST-NOT-WEAKEN.**
-  - **`ArticleNotFoundError`** on re-fetch → excluded (`article_gone`); other pages still returned.
-  - **`WikimediaUnavailableError`** on one page → excluded (`fetch_unavailable`); other pages still returned.
+  - **revision drift** (live `revisionId` ≠ stored) → excluded (`revision_drift`); `articles.revision_id` UNCHANGED afterward; the stale `(page, stored_revision, gate)` verdict deleted so Stage-1 self-heals (assert `selectEasyWinPageIds` no longer returns it). **MUST-NOT-WEAKEN** (the exclusion).
+  - **`ArticleNotFoundError`** on re-fetch → excluded (`article_gone`); other pages still returned; **the stale `(page, stored_revision, gate)` verdict row is deleted** (R3-F8 self-heal — assert a subsequent `selectEasyWinPageIds` no longer returns the page).
+  - **`WikimediaUnavailableError`** on one page → excluded (`fetch_unavailable`); other pages still returned; the verdict row is **NOT** deleted (transient).
+  - **fetch timeout** → excluded (`fetch_unavailable`): pass a `fetchFn` that never resolves (or resolves after the bound) + a tiny `fetchTimeoutMs` (e.g. `5`), assert the page is skipped `fetch_unavailable` and the lane still returns promptly (no hang). Verify no unhandled-rejection warning in output (testing-pitfalls §1).
   - summary counts (`considered/surfaced/deferred/skipped[]`) are correct; empty-healthy vs all-skipped distinguishable.
 
 - [ ] **Step 2: Run** → FAIL (module missing).
@@ -347,12 +360,24 @@ Implements design §4/§5/§7 — the core. Read the design §4–§7 and the re
 // ABOUTME: Positive allowlist (include iff identity + easy_win + revision match); persisted verdict is never the authority.
 import type { SqlExecutor } from "../db/client";
 import { getCandidatesByPageId, type PersistedCandidate } from "./articles";
-import { selectEasyWinPageIds, upsertVerdict } from "../db/eligibility-verdicts";
+import { selectEasyWinPageIds, upsertVerdict, deleteVerdict } from "../db/eligibility-verdicts";
 import { makeAuditLog } from "../db/audit-log";
 import { fetchArticle, toArticleMetadata, type FetchLike, ArticleNotFoundError, WikimediaUnavailableError } from "./wikimedia";
 import { evaluateEligibility, GATE_VERSION } from "../safelane/eligibility";
 
-export const DEFAULT_MAX_PAGES = 25; // G14 fan-out cap (named, tunable); pagination deferred (design §1)
+export const DEFAULT_MAX_PAGES = 25;          // G14 fan-out cap (named, tunable); pagination deferred (design §1)
+export const DEFAULT_FETCH_TIMEOUT_MS = 10_000; // per-page re-fetch wall-clock bound (R3-F3); a hung fetch can't stall the lane
+
+/** Races a promise against a timeout. On timeout, resolves to the `timedOut` sentinel and attaches a
+ *  no-op catch to the original promise so a late rejection can't surface as an unhandled rejection
+ *  (testing-pitfalls §1 pristine output). Does NOT abort the underlying fetch (FetchLike has no signal);
+ *  it bounds how long the lane WAITS, which is what protects the Worker wall-clock. */
+async function withTimeout<T>(p: Promise<T>, ms: number): Promise<T | { timedOut: true }> {
+  let timer: ReturnType<typeof setTimeout>;
+  const timeout = new Promise<{ timedOut: true }>(resolve => { timer = setTimeout(() => resolve({ timedOut: true }), ms); });
+  p.catch(() => {}); // swallow a post-timeout rejection
+  try { return await Promise.race([p, timeout]); } finally { clearTimeout(timer!); }
+}
 
 type Outcome = "surfaced" | "demoted" | "revision_drift" | "article_gone" | "fetch_unavailable";
 export interface EasyWinItem { pageId: number; title: string; revisionId: number; candidates: PersistedCandidate[]; }
@@ -360,7 +385,7 @@ export interface EasyWinLaneResult {
   items: EasyWinItem[];
   summary: { considered: number; surfaced: number; deferred: number; skipped: { pageId: number; outcome: Exclude<Outcome, "surfaced"> }[] };
 }
-export interface EasyWinLaneOptions { fetchFn?: FetchLike; userAgent?: string; now?: Date; maxPages?: number; }
+export interface EasyWinLaneOptions { fetchFn?: FetchLike; userAgent?: string; now?: Date; maxPages?: number; fetchTimeoutMs?: number; }
 
 export async function getEasyWinLane(db: SqlExecutor, options: EasyWinLaneOptions = {}): Promise<EasyWinLaneResult> {
   const now = options.now ?? new Date();
@@ -397,10 +422,14 @@ type Revalidation = { outcome: "surfaced"; item: EasyWinItem } | { outcome: Excl
 ```
 
   Implement `revalidate(db, pageId, storedRev, now, options): Promise<Revalidation>`:
-  - Re-fetch by the **stored title** and treat identity as load-bearing: call
-    `fetchArticle(storedRev.title, { fetchFn: options.fetchFn, userAgent: options.userAgent })` inside a
-    try/catch; on `ArticleNotFoundError` → audit + `{ outcome: "article_gone" }`; on
-    `WikimediaUnavailableError` → audit + `{ outcome: "fetch_unavailable" }`.
+  - Re-fetch by the **stored title**, bounded by a timeout, treating identity as load-bearing. Call
+    `const fetched = await withTimeout(fetchArticle(storedRev.title, { fetchFn: options.fetchFn,
+    userAgent: options.userAgent }), options.fetchTimeoutMs ?? DEFAULT_FETCH_TIMEOUT_MS)` inside a
+    try/catch. If `fetched` is the `{ timedOut: true }` sentinel → audit + `{ outcome: "fetch_unavailable" }`.
+    On `ArticleNotFoundError` → **`deleteVerdict(db, pageId, storedRev.revisionId, GATE_VERSION)`**
+    (R3-F8 self-heal: the page is gone; stop Stage-1 re-selecting it) + audit + `{ outcome: "article_gone" }`.
+    On `WikimediaUnavailableError` → audit + `{ outcome: "fetch_unavailable" }` (transient — do NOT
+    delete the verdict; the page may be back next read).
   - **Identity assertion (fail-closed):** if `fetched.pageId !== pageId` → audit + `{ outcome: "demoted" }`
     (a rename/redirect rebound the title to a different page; never surface it).
   - `const decision = evaluateEligibility(toArticleMetadata(fetched), now, GATE_VERSION)`; then
@@ -427,8 +456,12 @@ type Revalidation = { outcome: "surfaced"; item: EasyWinItem } | { outcome: Excl
     (Load `const candidates = await getCandidatesByPageId(db, pageId);` before the check.)
   - else classify the exclusion: if the re-run verdict is `easy_win` but `revisionMatches` is false →
     `revision_drift` (stored candidates don't describe the live revision; do NOT update
-    `articles.revision_id` — that's reprocessing, Phase-3); otherwise (`human_only`, incl.
-    `metadata_unavailable`) → `demoted`.
+    `articles.revision_id` — that's reprocessing, Phase-3) AND
+    **`deleteVerdict(db, pageId, storedRev.revisionId, GATE_VERSION)`** so Stage-1 stops re-selecting
+    the stale-revision page until a fresh lookup re-records it (R3-F8 self-heal — without this the
+    drifted page re-fetches every read and eats the `maxPages` cap). Otherwise (`human_only`, incl.
+    `metadata_unavailable`) → `demoted` — here the verdict upsert above already overwrote the
+    same-revision row to `human_only`, so Stage-1 self-heals without an explicit delete.
   - The exact audit call: `await makeAuditLog(db).append({ actor: "system", eventType:
     "article.eligibility.revalidated", payload: { pageId, revisionId: fetched.revisionId, eligibility:
     decision.eligibility, reasons: decision.reasons, gateVersion: GATE_VERSION, outcome } });` where

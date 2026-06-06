@@ -34,9 +34,12 @@ two-stage lane query with the CRITICAL invariants below; a `POST` lane endpoint;
 - **No re-detection of changed articles** — revision drift → exclude (Phase-3 reprocessing later).
 - **No materialized queue table** — derived query.
 - **No trust of a cached verdict for surfacing** (the durable fail-OPEN R4-5 forbids).
-- **Deferred, named:** lane pagination; caching the freshness re-check; row tombstoning/cleanup of
-  gone pages; verdict/audit retention/compaction; D1 `batch()` transactional writes behind the port;
+- **Deferred, named:** lane pagination; caching the freshness re-check; **full** `articles`/
+  `stale_candidates` row tombstoning for gone pages (v1 prunes only the stale *verdict* row so Stage-1
+  self-heals); verdict/audit retention/compaction; D1 `batch()` transactional writes behind the port;
   auth-gating the public endpoint. No auth/quotas, no research/Gemini.
+- **In scope (pulled in post-review, Sam):** Stage-1 self-heal via verdict-prune on
+  `revision_drift`/`article_gone` (R3-F8); an explicit per-fetch timeout (R3-F3).
 
 ---
 
@@ -118,14 +121,20 @@ specific code. Per-page outcomes:
 - `demoted` — re-run verdict is `human_only` (incl. `blpProbe:"unknown"` → `metadata_unavailable`,
   the fail-closed path). Candidates are **left in place** (still valid detector output), just excluded.
 - `revision_drift` — live revision ≠ stored; excluded (re-detection is Phase-3). Does **not** mutate
-  `articles.revision_id` (avoids infinite churn; R3-F8).
-- `article_gone` — `ArticleNotFoundError` on re-fetch; excluded + logged (row cleanup deferred).
-- `fetch_unavailable` — `WikimediaUnavailableError`/timeout; excluded for this read (fail-closed for
-  that page), logged.
+  `articles.revision_id`, but **deletes the stale `(page, stored_revision, gate_version)` verdict** so
+  Stage-1 stops re-selecting (and re-fetching) the page until a fresh lookup re-records it — the R3-F8
+  self-heal that prevents a drifted page from eating the `maxPages` cap on every read.
+- `article_gone` — `ArticleNotFoundError` on re-fetch; excluded + logged + the stale verdict deleted
+  (same self-heal). Full `articles`/`stale_candidates` row tombstoning stays deferred.
+- `fetch_unavailable` — `WikimediaUnavailableError` **or a per-fetch timeout**; excluded for this read
+  (fail-closed for that page), logged; the verdict is **not** deleted (transient).
 
-**Per-page isolation:** one page's fetch failure never fails the lane; a per-fetch **timeout**
-bounds a hang. Writes per page are ordered **refresh-verdict → audit** and the audit row is keyed by
-`(page_id, live_revision_id, gate_version)` so a re-run is idempotent (CRITICAL-G).
+**Per-page isolation:** one page's fetch failure never fails the lane; an explicit per-fetch
+**timeout** (`Promise.race`, default 10 s — bounds how long the lane *waits*, since the ingest
+`FetchLike` has no abort signal) prevents a hung fetch from stalling the Worker. Writes per page are
+ordered **refresh-verdict → audit**; the audit row carries `(page_id, live_revision_id, gate_version)`
+so duplicate re-validation events are identifiable at read time (the append-only log is not deduped —
+multiple reads legitimately produce multiple rows).
 
 ---
 
