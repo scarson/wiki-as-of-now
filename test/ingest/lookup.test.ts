@@ -9,6 +9,7 @@ import { parseArticle } from "../../src/detector/parse";
 import { detectStaleClaims, DETECTOR_VERSION } from "../../src/detector/detect";
 import type { FetchLike } from "../../src/ingest/wikimedia";
 import { freshTestExecutor } from "../helpers/db";
+import { GATE_VERSION } from "../../src/safelane/eligibility";
 
 const PAGE_ID = 60758751;
 const REVISION_ID = 1357951754;
@@ -124,5 +125,29 @@ describe("lookupAndPersist", () => {
     const result = await lookupAndPersist(exec, "Tim Berners-Lee", { fetchFn: blpFetch, asOfYear: AS_OF, now: NOW });
     expect(result.eligibility).toBe("human_only");
     expect(result.reasons).toContain("blp_category");
+  });
+
+  it("persists the eligibility verdict bound to (page, revision, gate_version)", async () => {
+    const exec = freshTestExecutor();
+    const result = await lookupAndPersist(exec, "Artemis program", { fetchFn: fixtureFetch, asOfYear: AS_OF, now: NOW });
+    const rows = await exec.prepare(
+      "SELECT page_id, revision_id, gate_version, eligibility, reasons_json, evaluated_at FROM eligibility_verdicts"
+    ).all<{ page_id: number; revision_id: number; gate_version: string; eligibility: string; reasons_json: string; evaluated_at: string }>();
+    expect(rows).toHaveLength(1);
+    expect(rows[0]).toMatchObject({ page_id: PAGE_ID, revision_id: REVISION_ID, gate_version: GATE_VERSION, eligibility: result.eligibility });
+    expect(JSON.parse(rows[0].reasons_json)).toEqual(result.reasons);
+    // evaluated_at is a valid ISO timestamp
+    expect(Number.isNaN(Date.parse(rows[0].evaluated_at))).toBe(false);
+  });
+
+  it("writes article, candidates, and verdict all carrying one shared revision id", async () => {
+    const exec = freshTestExecutor();
+    await lookupAndPersist(exec, "Artemis program", { fetchFn: fixtureFetch, asOfYear: AS_OF, now: NOW });
+    const article = await exec.prepare("SELECT revision_id FROM articles WHERE page_id = ?").bind(PAGE_ID).all<{ revision_id: number }>();
+    expect(article[0].revision_id).toBe(REVISION_ID);
+    const cands = await exec.prepare("SELECT DISTINCT source_revision_id FROM stale_candidates WHERE page_id = ?").bind(PAGE_ID).all<{ source_revision_id: number }>();
+    expect(cands.every(c => c.source_revision_id === REVISION_ID)).toBe(true);
+    const verdict = await exec.prepare("SELECT revision_id FROM eligibility_verdicts WHERE page_id = ?").bind(PAGE_ID).all<{ revision_id: number }>();
+    expect(verdict[0].revision_id).toBe(REVISION_ID);
   });
 });

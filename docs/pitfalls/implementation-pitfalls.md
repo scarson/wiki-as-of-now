@@ -28,7 +28,8 @@ This document serves three audiences. Start here, then go directly to the sectio
 |---|---------|---------------------|---------|-----------|
 | 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 – DB-2 | §1.C |
 | 2 | [Detector (deterministic stale-claim detection)](#section-2-detector-deterministic-stale-claim-detection) | `src/detector/*` — markers, suppression, scoring, orchestration, fixtures | DET-1 – DET-3 | §2.C |
-| — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-2 | §Orchestration.C |
+| 3 | [Safe-lane / untrusted-content scanning](#section-3-safe-lane--untrusted-content-scanning) | `src/safelane/*` — wikitext signal scans running on attacker-controllable article content | SAFE-1 | §3.C |
+| — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-3 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
 
@@ -150,6 +151,34 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ---
 
+# Section 3: Safe-lane / untrusted-content scanning
+
+> **Reader context:** I'm building or reviewing `src/safelane/*` — the wikitext signal scanner that the safe-lane gate and the easy-win lane both call on article content fetched from Wikipedia.
+>
+> Fetched article wikitext is **attacker-controllable** (G15 of the compliance contract — `docs/policy/wikipedia-genai-compliance.md`): any Wikipedia editor can craft a maximally-adversarial article and request a scan. The easy-win lane runs this scanner at fan-out scale across many articles per Worker invocation. These two facts combine to make **superlinear-time input scans a Cloudflare Worker CPU-DoS vector**, cheaply amplified on the public instance. Scans that are provably linear in input length are a hard requirement here.
+
+---
+
+### SAFE-1: Untrusted-Input Scans MUST Be Linear-Time in Input Length
+
+**The Flaw:** `scanWikitextSignals` in `src/safelane/wikitext-signals.ts` used a `matchAll` regex where the captured body group started with a bounded class — e.g. `([^…]{1,100})`. This causes the engine to scan up to the bound length from **every delimiter start position**: on a `{{`/`[[` delimiter-spam article, that is O(n × bound) work — quadratic-feeling in practice, reaching ~1 s CPU at the 2 MB MediaWiki article size ceiling. The standard mental model of "bounded quantifier ⇒ bounded cost per match" misses that cost is **match-start count × per-start work**, and delimiter spam maximises start count without ever producing a real match.
+
+**Why It Matters:** The scanner runs on attacker-controllable wikitext. The easy-win lane calls it at fan-out scale (many articles per Worker invocation). A superlinear scan converts an article-shaped HTTP request into a Cloudflare Worker CPU-DoS — no auth bypass required, cheaply amplified on the public instance. The safe-lane gate has the same exposure; it checks every article before allowing it into the research queue.
+
+**The Fix:** Make each **failing** match-start O(1) by requiring the **first captured character** to exclude the opening/closing delimiters and common separators. For a `{{template|…}}` scan: require the first body char to be `[^{}|\n]`; for a `[[link|…]]` scan: `[^[\]|\n]`. With this in place, delimiter spam (`{{{{{{{{…}}}}}}}}`) is rejected at position 0 of the potential body — no body scan occurs. Verify linearity with a **pathological-input perf test**: construct a multi-MB string of pure delimiter spam, run `scanWikitextSignals` on it, and assert the result is `[]` within a tight time bound (see `test/safelane/wikitext-signals.test.ts`).
+
+**The Lesson:** When a regex runs over untrusted input, reason about **match-start count × per-start work**, not just per-match length. A bounded body group caps per-match cost but does nothing to limit start count. Cap the **number of viable starts** by constraining the first character of the match body so delimiter spam is rejected O(1) per position. Prove linearity with a pathological-input perf test asserting a tight time bound — don't rely on casual benchmarking or visual inspection of the regex. See `docs/pitfalls/testing-pitfalls.md` §1 (pristine output) for the perf-test discipline.
+
+---
+
+### Review Checklist
+
+- [ ] **Every regex that scans article wikitext is provably linear in input length** — reason about match-start count × per-start work, not just per-match length; delimiter spam (`{{{{…}}}}`, `[[[[…]]]]`) must be rejected O(1) per position (SAFE-1)
+- [ ] **A pathological-input perf test asserts `[]` within a tight time bound** — multi-MB delimiter spam run through the scanner; absence of this test leaves linearity unproven (SAFE-1)
+- [ ] **The first character of every captured body group excludes the relevant delimiters and separators** — e.g. `[^{}|\n]` for `{{…}}`, `[^[\]|\n]` for `[[…]]`; a body starting with a delimiter means the regex must scan the full bounded window before rejecting (SAFE-1)
+
+---
+
 ## Orchestration
 
 Pitfalls that arise when a session dispatches parallel subagents and consolidates their output. The canonical rules live in `docs/git-strategy.md` → §Multi-agent coordination → Output persistence. This section is the discovery hook for plan writers who arrive here via the `writing-plans-enhanced` (or equivalent) mandated-read path — it does NOT restate the rules in full.
@@ -174,8 +203,19 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 
 **The Lesson:** In a shared-working-tree multi-agent setup, HEAD/branch state is global mutable state. Treat any subagent git command that moves HEAD the way you'd treat a subagent `cd` that escapes the repo — prohibit it in the prompt, and verify the invariant after the batch.
 
+### ORCH-3: Verify Subagent Reports Against Git — Self-Reports Can Confabulate
+
+**The Flaw:** An orchestrator trusts a dispatched implementer's natural-language report ("DONE; I added X", "these files were already present from a prior session") without independently verifying against the repository. Subagents can and do confabulate: in the easy-win-lane build a Task-2.2 implementer reported that the module + test files "were already present (a prior session appears to have scaffolded them correctly)" when in fact it had created them itself that task — `git cat-file -e HEAD~1:<file>` confirmed they did not exist in the parent commit.
+
+**Why It Matters:** A controller running subagent-driven development gates progress on these reports. A confabulated "already correct / pre-existing" claim can mask work that was never done, done wrong, or done somewhere unexpected; an optimistic "all green" can hide a skipped test. The two-stage review exists precisely because the report is not trustworthy — but the controller's own pre-review sanity check is the first line, and skipping it lets a bad report frame the reviewers.
+
+**The Fix:** Treat every subagent report as an unverified claim. Before (and independent of) review, the controller verifies against git: `git log --oneline`, `git show <sha>`, `git diff --stat <base>..<head>`, and for "pre-existing" claims `git cat-file -e <parent>:<path>`. Confirm the commit landed, the diff matches the task scope, and the files are what the task specified. The spec-compliance reviewer prompt MUST also say "do not trust the report — read the actual code." Reconcile any divergence between narration and git before proceeding.
+
+**The Lesson:** In multi-agent orchestration the durable record is the repository, not the agent's prose. When a report and `git` disagree, `git` wins — and you only learn they disagree if you look.
+
 ### Review Checklist
 
+- [ ] **Controller verifies each subagent report against git** — commit landed (`git log`), diff matches scope (`git show`/`diff --stat`), "pre-existing" claims checked (`git cat-file -e <parent>:<path>`); narration is never trusted over the repository (ORCH-3)
 - [ ] **Dispatch prompts include the mandatory-persistence block** — copy from `docs/git-strategy.md` §Output persistence; substitute `<PERSISTENCE_PATH>` with a durable per-subagent path (ORCH-1)
 - [ ] **Plan specifies exact persistence paths, not "write somewhere useful"** — ambiguous paths default to `/tmp` under pressure, which doesn't survive (ORCH-1)
 - [ ] **Orchestrator commits subagent artifacts wave-by-wave** — committed files land on the campaign branch before consolidation begins (ORCH-1)
@@ -190,6 +230,10 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 <!-- ## YYYY-MM-DD — <event> -->
 <!-- - Added PREFIX-N (<title>) — <what and why> -->
 <!-- - Updated PREFIX-M — <what changed> -->
+
+## 2026-06-06 — Easy-win lane: scan hardening shipped
+- Added Section 3 (Safe-lane / untrusted-content scanning) and SAFE-1 (untrusted-input scans must be linear-time in input length — bound match-start positions, not just per-match body length; prove with a pathological-input perf test). Discovered hardening `scanWikitextSignals` in `src/safelane/wikitext-signals.ts` against delimiter-spam CPU-DoS on the `feat/easy-win-lane` branch (commits `5129686`, `b925dc2`). Fix validated by `test/safelane/wikitext-signals.test.ts` multi-MB spam perf test.
+- Added ORCH-3 (verify subagent reports against git — self-reports can confabulate). Surfaced during subagent-driven execution of the easy-win lane: a Task-2.2 implementer reported its files "were already present from a prior session" when `git cat-file -e HEAD~1:<file>` proved it had created them that task. Controller must verify reports against the repository before review.
 
 ## 2026-06-05 — Persistence slice: D1 async seam resolved
 - Added DB-2 (the `SqlExecutor` port must bind via `bind()`, shaped by D1's stricter contract — mandatory bind, `{ results }` unwrap, divergent metadata field names). Discovered building the single-article persistence slice (`docs/design/2026-06-05-persistence-slice-design.md`), which made the sync `SqlExecutor` async with better-sqlite3 + D1 adapters. DB-1 (natural-key trap) unchanged and still VALIDATED.
@@ -209,11 +253,13 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 |----|-------|----------|--------|--------|
 | ORCH-1 | Analysis Dispatches Must Persist Findings | HIGH | VALIDATED | Orchestration |
 | ORCH-2 | Subagents Sharing the Working Tree Must Not Move HEAD | HIGH | VALIDATED | Orchestration |
+| ORCH-3 | Verify Subagent Reports Against Git — Self-Reports Can Confabulate | MEDIUM | VALIDATED | Orchestration |
 | DB-1 | `NOT NULL` Is a No-Op on an `INTEGER PRIMARY KEY` (Rowid Alias) | MEDIUM | VALIDATED | Data Layer |
 | DB-2 | The `SqlExecutor` Port Must Bind Params via `bind()`, Shaped by D1's Stricter Contract | MEDIUM | VALIDATED | Data Layer |
 | DET-1 | Historical Dateline Narration Is the Dominant False-Positive Class | HIGH | VALIDATED | Detector |
 | DET-2 | Precision-Over-Recall Means Named, Accepted Recall Gaps | MEDIUM | VALIDATED | Detector |
 | DET-3 | Incidental Historical Years Are an Irreducible False-Positive Class | MEDIUM | VALIDATED | Detector |
+| SAFE-1 | Untrusted-Input Scans MUST Be Linear-Time in Input Length | HIGH | VALIDATED | Safe-lane / untrusted-content scanning |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
 
