@@ -197,16 +197,23 @@ describe("handleResearchMessage — audit allowlist + sentinel (G13)", () => {
     const rows = await auditLog.read();
     expect(rows.length).toBeGreaterThan(0);
 
-    // ALLOWLIST: every research.completed payload must only have these keys
-    const allowedKeys = new Set(["claimKey", "providerName", "modelVersion", "status", "cardCount", "overCapCount", "dispositionTally"]);
+    // ALLOWLIST per event type: EVERY audit payload this consumer writes must only have these keys
+    // (so a future edit that adds a content-bearing field to ANY event type is caught).
+    const allowedKeysByEvent: Record<string, Set<string>> = {
+      "research.completed": new Set(["claimKey", "providerName", "modelVersion", "status", "cardCount", "overCapCount", "dispositionTally"]),
+      "research.failed": new Set(["claimKey", "reason"]),
+      "research.unavailable": new Set(["claimKey", "status"]),
+    };
     for (const row of rows) {
+      const allowed = allowedKeysByEvent[row.eventType];
+      expect(allowed, `Unexpected audit eventType: "${row.eventType}"`).toBeDefined();
+      if (!allowed) continue;
+      const payload = row.payload as Record<string, unknown>;
+      for (const key of Object.keys(payload)) {
+        expect(allowed.has(key), `Unexpected audit key "${key}" on ${row.eventType}`).toBe(true);
+      }
       if (row.eventType === "research.completed") {
-        const payload = row.payload as Record<string, unknown>;
-        const payloadKeys = Object.keys(payload);
-        for (const key of payloadKeys) {
-          expect(allowedKeys.has(key), `Unexpected audit key: "${key}"`).toBe(true);
-        }
-        // Value type assertions
+        // Value type assertions (codes/ids/counts only)
         expect(typeof payload.claimKey).toBe("string");
         expect(typeof payload.providerName).toBe("string");
         expect(typeof payload.modelVersion).toBe("string");
@@ -215,7 +222,7 @@ describe("handleResearchMessage — audit allowlist + sentinel (G13)", () => {
         expect(typeof payload.overCapCount).toBe("number");
         expect(typeof payload.dispositionTally).toBe("object");
         expect(payload.dispositionTally !== null).toBe(true);
-        // dispositionTally values must be numbers
+        // dispositionTally keys are reason codes, values are counts (numbers)
         for (const [, v] of Object.entries(payload.dispositionTally as Record<string, unknown>)) {
           expect(typeof v).toBe("number");
         }
@@ -382,6 +389,29 @@ describe("handleResearchMessage — unexpected error containment", () => {
     const rows = await auditLog.read();
     const failedRow = rows.find(r => r.eventType === "research.failed");
     expect(failedRow).toBeDefined();
+    expect((failedRow!.payload as Record<string, unknown>).reason).toBe("malformed_message");
+  });
+
+  it("malformed message does NOT echo a content-bearing claimKey into the audit (G13)", async () => {
+    allowConsole();
+    const exec = freshTestExecutor();
+    const auditLog = makeAuditLog(exec);
+    const packStore = makeResearchPackStore(exec);
+    const researchClaim = vi.fn();
+
+    // A crafted/corrupted message smuggling PII/content in claimKey, missing input → fails validation.
+    const sentinel = `SENTINEL_LEAK_${Math.random().toString(36).slice(2).toUpperCase()}`;
+    const badMsg = { claimKey: `${sentinel} John Doe SSN 123-45-6789`, pageId: PAGE_ID, sourceRevisionId: SOURCE_REVISION_ID } as unknown as ResearchMessage;
+    await expect(handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW }))
+      .resolves.toBeUndefined();
+
+    expect(researchClaim).not.toHaveBeenCalled();
+    const rows = await auditLog.read();
+    // The raw (non-64-hex) claimKey must be replaced with a placeholder — the sentinel must NOT leak.
+    expect(JSON.stringify(rows.map(r => r.payload))).not.toContain(sentinel);
+    const failedRow = rows.find(r => r.eventType === "research.failed");
+    expect(failedRow).toBeDefined();
+    expect((failedRow!.payload as Record<string, unknown>).claimKey).toBe("malformed");
     expect((failedRow!.payload as Record<string, unknown>).reason).toBe("malformed_message");
   });
 });

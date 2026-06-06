@@ -100,10 +100,15 @@ export async function handleResearchMessage(
 ): Promise<void> {
   // Step 1: Validate the message shape.
   if (!isValidMessage(msg)) {
+    // Codes-only audit (G13): NEVER echo a raw, unvalidated claimKey — a malformed or crafted message
+    // could smuggle content/PII into the append-only audit log. Only pass through a claimKey that is a
+    // genuine computeClaimKey output (64-char lowercase hex); otherwise use a fixed placeholder.
+    const rawKey = (msg as Record<string, unknown> | null)?.claimKey;
+    const claimKey = typeof rawKey === "string" && /^[0-9a-f]{64}$/.test(rawKey) ? rawKey : "malformed";
     await deps.audit.append({
       actor: "system",
       eventType: "research.failed",
-      payload: { claimKey: (msg as Record<string, unknown>)?.claimKey ?? "unknown", reason: "malformed_message" },
+      payload: { claimKey, reason: "malformed_message" },
     });
     return; // ACK — do not retry permanently-bad input
   }
