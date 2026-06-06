@@ -308,6 +308,41 @@ describe("researchClaim pipeline", () => {
       // At least one entry (cards or dispositions) must be non-empty
       expect(outcome.cards.length + outcome.dispositions.length).toBeGreaterThan(0);
     });
+
+    // Degenerate caller config must NOT reach proposals_present-with-empty-arrays.
+    it("maxProposals:0 with raw proposals → no_proposals (not proposals_present), overCapCount records the remainder, zero fetches", async () => {
+      const provider = floodProvider(3);
+      const { stub, getCalls } = makeStub();
+      const outcome = await researchClaim(CLAIM, { provider, fetchSource: stub, now: NOW, maxProposals: 0 });
+      expect(outcome.status).toBe("no_proposals");
+      if (outcome.status !== "no_proposals") return;
+      expect(outcome.cards).toEqual([]);
+      expect(outcome.dispositions).toEqual([]);
+      expect(outcome.overCapCount).toBe(3);
+      expect(getCalls()).toBe(0);
+    });
+
+    it("negative maxProposals is clamped to 0 → no_proposals, sane overCapCount (never negative/NaN)", async () => {
+      const provider = floodProvider(3);
+      const { stub, getCalls } = makeStub();
+      const outcome = await researchClaim(CLAIM, { provider, fetchSource: stub, now: NOW, maxProposals: -1 });
+      expect(outcome.status).toBe("no_proposals");
+      if (outcome.status !== "no_proposals") return;
+      expect(outcome.overCapCount).toBe(3); // max(0, 3-0), not max(0, 3-(-1))=4
+      expect(getCalls()).toBe(0);
+    });
+
+    it("non-finite maxProposals (NaN) falls back to the default cap", async () => {
+      // floodProvider is single-host, so set perHostCap high to make maxProposals the binding cap.
+      const provider = floodProvider(50);
+      const { stub, getCalls } = makeStub();
+      const outcome = await researchClaim(CLAIM, { provider, fetchSource: stub, now: NOW, maxProposals: NaN, perHostCap: 50 });
+      expect(outcome.status).toBe("proposals_present"); // behaves as DEFAULT_MAX_PROPOSALS (5)
+      if (outcome.status !== "proposals_present") return;
+      expect(outcome.cards.length + outcome.dispositions.length).toBe(DEFAULT_MAX_PROPOSALS);
+      expect(getCalls()).toBe(DEFAULT_MAX_PROPOSALS);
+      expect(outcome.overCapCount).toBe(50 - DEFAULT_MAX_PROPOSALS);
+    });
   });
 
   // -------------------------------------------------------------------------

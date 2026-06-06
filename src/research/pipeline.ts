@@ -51,15 +51,18 @@ export interface ResearchClaimDeps {
  * 3. Cap the count to DEFAULT_MAX_QUERIES (keep the first N survivors).
  */
 function applyQueryBound(queries: string[], claimText: string): string[] {
-  const claimNorm = claimText.trim();
+  // Collapse all whitespace runs to a single space so an internal-whitespace restatement
+  // ("The  claim") still matches the claim. Used ONLY for the echo comparison; the kept
+  // query retains its original form.
+  const collapseWs = (s: string): string => s.trim().replace(/\s+/g, " ");
+  const claimNorm = collapseWs(claimText);
   const filtered = queries.filter((q) => {
-    const trimmed = q.trim();
-    if ([...trimmed].length > DEFAULT_MAX_QUERY_LEN) return false;
+    if ([...q.trim()].length > DEFAULT_MAX_QUERY_LEN) return false;
     // Drop a query that RESTATES the full claim sentence — a query must be a neutral retrieval
     // term, not the claim restated. `includes` catches the exact-equal case AND "claim + extra
     // words"; keyword fragments of the claim are allowed (they do not contain the full sentence).
     // The length guard prevents an empty claimText (every string includes "") dropping everything.
-    if (claimNorm.length > 0 && trimmed.includes(claimNorm)) return false;
+    if (claimNorm.length > 0 && collapseWs(q).includes(claimNorm)) return false;
     return true;
   });
   return filtered.slice(0, DEFAULT_MAX_QUERIES);
@@ -82,14 +85,15 @@ function applyQueryBound(queries: string[], claimText: string): string[] {
  * The partition invariant: cards.length + dispositions.length === truncated.length.
  */
 export async function researchClaim(input: ResearchInput, deps: ResearchClaimDeps): Promise<ResearchOutcome> {
-  const {
-    provider,
-    fetchSource,
-    maxProposals = DEFAULT_MAX_PROPOSALS,
-    perHostCap = DEFAULT_PER_HOST_CAP,
-  } = deps;
+  const { provider, fetchSource } = deps;
   // `now` is present for spec fidelity and Phase-9 pre-binding; the pure pipeline does not read it.
-  // Destructuring it would trigger an unused-var lint error, so we access it via deps above.
+  // Clamp the caps to non-negative integers (a degenerate caller config — 0, negative, NaN, Infinity —
+  // must never produce nonsensical truncation or overCapCount, nor reach the impossible
+  // `proposals_present`-with-empty-arrays state). Non-finite falls back to the default.
+  const clampCap = (v: number | undefined, dflt: number): number =>
+    v === undefined || !Number.isFinite(v) ? dflt : Math.max(0, Math.floor(v));
+  const maxProposals = clampCap(deps.maxProposals, DEFAULT_MAX_PROPOSALS);
+  const perHostCap = clampCap(deps.perHostCap, DEFAULT_PER_HOST_CAP);
 
   // -------------------------------------------------------------------------
   // Call the provider — only ProviderUnavailableError is caught; others propagate
@@ -112,9 +116,17 @@ export async function researchClaim(input: ResearchInput, deps: ResearchClaimDep
   const boundQueries = applyQueryBound(queries, input.claimText);
 
   // -------------------------------------------------------------------------
-  // Short-circuit: no proposals
+  // (1) HARD ceiling — truncate the raw array FIRST, before any per-item processing
   // -------------------------------------------------------------------------
-  if (raw.length === 0) {
+  const truncated = raw.slice(0, maxProposals);
+  const overCapCount = Math.max(0, raw.length - maxProposals);
+
+  // -------------------------------------------------------------------------
+  // Short-circuit: nothing to process (provider returned no proposals, OR maxProposals clamped
+  // the working set to empty). Keyed on the POST-truncation set so the `proposals_present`
+  // impossible-state (both arrays empty) is unreachable; overCapCount still records the remainder.
+  // -------------------------------------------------------------------------
+  if (truncated.length === 0) {
     return {
       status: "no_proposals",
       providerName,
@@ -122,15 +134,9 @@ export async function researchClaim(input: ResearchInput, deps: ResearchClaimDep
       queries: boundQueries,
       cards: [],
       dispositions: [],
-      overCapCount: 0,
+      overCapCount,
     };
   }
-
-  // -------------------------------------------------------------------------
-  // (1) HARD ceiling — truncate the raw array FIRST, before any per-item processing
-  // -------------------------------------------------------------------------
-  const truncated = raw.slice(0, maxProposals);
-  const overCapCount = Math.max(0, raw.length - maxProposals);
 
   // -------------------------------------------------------------------------
   // (2–4) Per-proposal processing in cap order
