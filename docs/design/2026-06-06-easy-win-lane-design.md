@@ -74,11 +74,14 @@ Drop the "byte-identical to 0001" claim.
 ## 3. Write path — persist the verdict during lookup
 
 `lookupAndPersist` already computes `decision`. Changes:
-- **Write the `articles` row LAST** among the page's writes (CRITICAL-B): the article's
-  `revision_id` must never lead the `stale_candidates` it summarizes, so an interrupted lookup can't
-  leave `articles.revision_id` ahead of `source_revision_id`. Order: candidates → verdict → audit →
-  **article upsert last**. (Today's order happens to work; pin it so it can't silently drift.)
-- Upsert `eligibility_verdicts` with `(pageId, revisionId, GATE_VERSION, decision.eligibility,
+- **One shared revision id per lookup (CRITICAL-B).** Capture `liveRev = fetched.revisionId` once and
+  use it for the article row (`revision_id`), every candidate (`source_revision_id`), AND the verdict
+  (`revision_id`). The invariant is *not* a write-ordering trick — it is that all three rows describe
+  the **same** revision, so `articles.revision_id` can never lead the `stale_candidates` it summarizes.
+  (An earlier draft said "write the article row LAST"; that is unworkable because both `stale_candidates`
+  and `eligibility_verdicts` FK to `articles(page_id)`, so the parent MUST be written first. The
+  shared-revision-id invariant is the correct, FK-compatible expression — `upsertArticle` stays first.)
+- Upsert `eligibility_verdicts` with `(pageId, liveRev, GATE_VERSION, decision.eligibility,
   decision.reasons, evaluatedAt)`. The existing `article.lookup` / `article.eligibility` audit events
   are unchanged. No change to the returned `LookupResult`.
 
@@ -96,9 +99,13 @@ G14) — a named constant (small default); pages beyond the cap are reported as 
 dropped.
 
 **Stage 2 — authoritative re-validation (per page, network, bounded concurrency).** For each
-pre-filtered page, fetch **by `page_id`** (not title — a rename/redirect rebinds a title to a
-different page; CRITICAL-B/R3-F1) → `toArticleMetadata` → `evaluateEligibility(meta, now,
-GATE_VERSION)`. Decide by a **positive allowlist** (CRITICAL-A):
+pre-filtered page, re-fetch by the stored title with a **mandatory identity assertion**
+(`fetched.pageId === pageId`) → `toArticleMetadata` → `evaluateEligibility(meta, now, GATE_VERSION)`.
+The identity assertion is the fail-closed guard against a title rename/redirect rebinding to a
+*different* page (R3-F1): on mismatch the page is excluded, never surfaced. (`fetchArticle` is
+title-addressed; a page-id-addressed fetch is a possible future hardening, but title + identity
+assertion is already fail-closed and avoids expanding the ingest contract in this slice.) Decide by a
+**positive allowlist** (CRITICAL-A):
 
 > **Include the page iff ALL hold:** `fetched.pageId === candidatePageId` (identity) **AND**
 > `evaluateEligibility(...).eligibility === "easy_win"` (never "not-known-bad") **AND**
@@ -217,8 +224,10 @@ be linear; the gate runs it on attacker-controllable content at fan-out scale).
   that satisfies §6's persistence binding AND avoids the durable cache fail-OPEN §6 forbids.
 - **Positive allowlist** (review CRITICAL-A): the floor must be expressed as include-iff-`easy_win`,
   because `unknown` is a *successful* fetch — an inverse test fail-OPENs on `metadata_unavailable`.
-- **Revision/identity invariant** (review CRITICAL-B): fetch by `page_id`; require
-  `source_revision_id === live === articles.revision_id`; write the article row last.
+- **Revision/identity invariant** (review CRITICAL-B): re-fetch by stored title + a mandatory
+  `fetched.pageId === pageId` identity assertion (fail-closed on rename rebind); require
+  `source_revision_id === live === articles.revision_id`; enforce one shared revision id per lookup
+  (parent-first under the FK — the "article row last" draft was corrected).
 - **Bounded fan-out** (review HIGH-D): `maxPages` cap + concurrency bound or the lane violates G14 as
   the corpus grows; the public endpoint is a deliberate amplifier (auth deferred).
 - **POST** (review HIGH-E): side effects make a cacheable `GET` a fail-OPEN one layer up.

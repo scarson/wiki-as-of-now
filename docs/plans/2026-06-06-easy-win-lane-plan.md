@@ -4,7 +4,7 @@
 
 **Goal:** Build the compliance-safe consumer of the merged G11 safe-lane gate — surface the stale candidates of articles that are *currently* `easy_win`-eligible, with point-of-use re-validation that can never let a biography of a living person (BLP) reach the lane.
 
-**Architecture:** Persist the gate verdict (`eligibility_verdicts`, keyed `(page_id, revision_id, gate_version)`) as a cheap **pre-filter + audit/history record — never the surfacing authority**. The lane is a two-stage derived query: a DB pre-filter (current revision + current `GATE_VERSION` + `easy_win` + has-candidates, capped) then an authoritative per-page **re-fetch-by-page_id + re-run-gate** with a **positive allowlist** (include iff identity matches AND verdict is `easy_win` AND `source_revision_id === live === articles.revision_id`). Exposed via `POST /api/easy-win`. Plus a root-cause ReDoS hardening of `scanWikitextSignals` (the lane runs it on attacker-controllable wikitext at fan-out scale).
+**Architecture:** Persist the gate verdict (`eligibility_verdicts`, keyed `(page_id, revision_id, gate_version)`) as a cheap **pre-filter + audit/history record — never the surfacing authority**. The lane is a two-stage derived query: a DB pre-filter (current revision + current `GATE_VERSION` + `easy_win` + has-candidates, capped) then an authoritative per-page **re-fetch + re-run-gate** with a **positive allowlist** (include iff the re-fetched page's `pageId` matches the stored one AND the re-run verdict is `easy_win` AND `source_revision_id === live === articles.revision_id`). The re-fetch is by the stored title with a **mandatory identity assertion** (`fetched.pageId === pageId`), which is fail-closed against a title rename/redirect rebinding to a different page (mismatch → excluded, never surfaced). Exposed via `POST /api/easy-win`. Plus a root-cause ReDoS hardening of `scanWikitextSignals` (the lane runs it on attacker-controllable wikitext at fan-out scale).
 
 **Tech Stack:** TypeScript (ES2024, strict), Next.js 16 / OpenNext (Cloudflare Workers + D1), better-sqlite3 (local/test) behind the async `SqlExecutor` port, vitest, Node 24 / pnpm 11.5.1.
 
@@ -127,7 +127,7 @@ it("still detects a real dispute template buried in a large body", () => {
 ```
 
 - [ ] **Step 2: Run** `pnpm exec vitest run test/safelane/wikitext-signals.test.ts` → the perf test FAILS (exceeds the bound on the current regex). Confirm it fails on the *timing* assertion, not a crash.
-- [ ] **Step 3: Implement the fix** in `src/safelane/wikitext-signals.ts`. The root cause is that `matchAll` with the lazy `{1,100}?` / `{1,255}` body retries from a huge number of `{{`/`[[` start positions on spam. Keep semantics identical for real input; bound the work. Recommended approach — require a non-spam first character inside the delimiter and keep the bounded body, so a run of pure `{`/`[` can't create overlapping match-starts. Concretely, tighten the two patterns so the captured token cannot itself begin with another opening delimiter:
+- [ ] **Step 3: Implement the fix** in `src/safelane/wikitext-signals.ts`. Root cause: on `{`-spam, `\{\{` matches at *every* `{` position, and at each such start the engine then scans up to ~100 chars through the lazy `{1,100}?` body before failing — O(n) starts × O(100) work each. The fix makes each *failing* start O(1): require the first captured character to NOT be another opening delimiter, so on `{{{{…` the byte right after `\{\{\s*` is `{`, which the negated first-char class rejects **immediately** (no body scan). Real tokens (template names, category titles) never start with `{`/`[`/`}`/`]`/`|`, so detection is unchanged. Tighten the two patterns:
 
 ```ts
 // (a) category links: first captured char must not be '[' (so "[[[[…" can't stack match-starts)
@@ -172,7 +172,7 @@ Implements design §2. Adds the table, the ordered-migration discipline (finding
 - Modify: `test/helpers/db.ts` (apply migrations in order)
 - Test: `test/db/migration.test.ts` (extend) + a new equivalence assertion
 
-- [ ] **Step 1: Write failing tests.** In `test/db/migration.test.ts`, add: the `eligibility_verdicts` table exists with the expected columns + composite PK; AND a schema-equivalence test — a DB built by applying `migrations/0001*.sql` then `migrations/0002*.sql` has the same `sqlite_master` table/column shape as one built by applying `src/db/schema.sql` alone. (Build both via raw `better-sqlite3`, compare `SELECT name,sql FROM sqlite_master WHERE type='table' ORDER BY name`.)
+- [ ] **Step 1: Write failing tests.** In `test/db/migration.test.ts`, add: the `eligibility_verdicts` table exists with the expected columns + composite PK; AND a schema-equivalence test — a DB built by applying `migrations/0001*.sql` then `migrations/0002*.sql` has the same `sqlite_master` shape as one built by applying `src/db/schema.sql` alone. (Build both via raw `better-sqlite3`; compare `SELECT name, sql FROM sqlite_master WHERE type='table' ORDER BY name`.) **SQLite stores the `sql` column as the verbatim `CREATE TABLE` text**, so the equivalence holds only if the `CREATE TABLE eligibility_verdicts (…)` text in `migrations/0002_eligibility_verdicts.sql` is **byte-identical** to the block appended to `src/db/schema.sql` (same column order, whitespace, and the trailing `) WITHOUT ROWID;`). Keep them identical (copy-paste); the test is what enforces it going forward.
 - [ ] **Step 2: Run** → FAIL (migration + table absent).
 - [ ] **Step 3: Implement.** Create `migrations/0002_eligibility_verdicts.sql`:
 
@@ -219,7 +219,7 @@ Implements design §3 (write) + §4 Stage-1 (pre-filter). Read `docs/pitfalls/im
   - upsert inserts a row; re-upsert on the same `(page_id, revision_id, gate_version)` updates in place (no duplicate);
   - a NULL `gate_version` (or any PK component) insert rejects (DB-1);
   - the FK to `articles` fires (verdict for a non-existent `page_id` rejects);
-  - `selectEasyWinPageIds(db, gateVersion)` returns only pages whose row matches `articles.revision_id` AND `gate_version` AND `eligibility='easy_win'` AND that have ≥1 `stale_candidates` row — and excludes `human_only`, stale-`revision_id`, stale-`gate_version`, and zero-candidate pages. (Seed `articles`, `stale_candidates`, and verdicts to cover each exclusion.)
+  - `selectEasyWinPageIds(db, gateVersion)` returns only pages whose row matches `articles.revision_id` AND `gate_version` AND `eligibility='easy_win'` AND that have ≥1 `stale_candidates` row — and excludes `human_only`, stale-`revision_id`, stale-`gate_version`, and zero-candidate pages. **Seed via the real helpers** for FK-correct, realistic fixtures: `upsertArticle` (from `src/db/articles`) → `insertCandidates` → `upsertVerdict`, in that order (both child tables FK to `articles`). Construct each exclusion case explicitly (e.g. a `human_only` verdict; a verdict whose `revision_id` ≠ the article's current; a verdict at a different `gate_version`; an easy_win page with zero candidates).
 - [ ] **Step 2: Run** → FAIL (module missing).
 - [ ] **Step 3: Implement** `src/db/eligibility-verdicts.ts`:
 
@@ -306,12 +306,10 @@ it("persists the eligibility verdict bound to (page, revision, gate_version)", a
 - [ ] **Step 2: Run** → FAIL (no verdict written).
 - [ ] **Step 3: Implement** in `src/ingest/lookup.ts`:
   - Import `upsertVerdict` from `../db/eligibility-verdicts`.
-  - Reorder the writes so the `articles` upsert is **last**: `insertCandidates` → `upsertVerdict` → the two `makeAuditLog().append(...)` calls → `upsertArticle` LAST. Add a one-line comment: `// articles row written last: its revision_id must never lead the stale_candidates it summarizes (design §3 / CRITICAL-B).`
-  - `upsertVerdict(db, { pageId: fetched.pageId, revisionId: fetched.revisionId, gateVersion: GATE_VERSION, eligibility: decision.eligibility, reasons: decision.reasons, evaluatedAt: new Date().toISOString() })`.
-
-  > **FK ordering caveat:** `eligibility_verdicts.page_id` and `stale_candidates.page_id` both FK to `articles(page_id)`. With the article row written LAST, those inserts would violate the FK. Resolve by keeping `upsertArticle` first for FK satisfaction BUT capturing the *revision* invariant differently: write `articles` first with the row, but ensure no code path advances `articles.revision_id` ahead of the candidates' `source_revision_id` (they are the same `fetched.revisionId` here, so they always agree within one lookup). **Therefore:** keep `upsertArticle` FIRST (FK requires it); the CRITICAL-B invariant is satisfied because candidates + verdict + article all use the *same* `fetched.revisionId` in one call — add an assertion/comment documenting that they MUST share one revision id, and leave a test (below) that the three agree. Do NOT split the revision across writes.
-
-  - Add `const liveRev = fetched.revisionId;` and use it for `upsertArticle`, `insertCandidates` (as `sourceRevisionId`), and `upsertVerdict` so the shared-revision invariant is syntactically obvious.
+  - Capture one shared revision id and use it for ALL three writes: `const liveRev = fetched.revisionId;`. Pass `liveRev` to `upsertArticle` (as `revisionId`), `insertCandidates` (as `sourceRevisionId`), and `upsertVerdict` (as `revisionId`). This is the CRITICAL-B invariant in its workable form: **within one lookup, the article row, its candidates, and its verdict all describe the SAME revision**, so `articles.revision_id` can never lead the `stale_candidates.source_revision_id` it summarizes.
+  - **Write order:** `upsertArticle` MUST stay **FIRST** — both `stale_candidates.page_id` and `eligibility_verdicts.page_id` FK to `articles(page_id)`, so the parent row must exist before its children insert (the design v2 §3 wording "article row LAST" is unworkable under the FK and is corrected to "one shared revision id, parent-first"; see the design-§3 fix committed alongside this task). Keep the existing order: `upsertArticle(liveRev)` → `insertCandidates(liveRev)` → `upsertVerdict(liveRev)` → the two audit appends.
+  - `upsertVerdict(db, { pageId: fetched.pageId, revisionId: liveRev, gateVersion: GATE_VERSION, eligibility: decision.eligibility, reasons: decision.reasons, evaluatedAt: new Date().toISOString() })`.
+  - Add a test asserting article/candidates/verdict all carry `liveRev` (the shared-revision invariant): `articles.revision_id`, every `stale_candidates.source_revision_id`, and the `eligibility_verdicts.revision_id` are all `REVISION_ID`.
 - [ ] **Step 4: Run** the full `lookup.test.ts` → PASS (existing + new).
 - [ ] **Step 5: Commit + push.** `git commit -m "feat(ingest): persist the eligibility verdict on lookup; pin one-revision-per-lookup invariant"`
 
@@ -384,24 +382,57 @@ export async function getEasyWinLane(db: SqlExecutor, options: EasyWinLaneOption
 }
 ```
 
-  Implement `revalidate(...)`:
-  - `fetchArticle` **by the stored title but assert identity** — call `fetchArticle(storedRev.title, { fetchFn, userAgent })`; on `ArticleNotFoundError` → audit + return `{ outcome: "article_gone" }`; on `WikimediaUnavailableError` → audit + `{ outcome: "fetch_unavailable" }`.
-  - If `fetched.pageId !== pageId` → audit + `{ outcome: "demoted" }` (identity mismatch is treated as non-eligible; never surface). 
-  - `const decision = evaluateEligibility(toArticleMetadata(fetched), now, GATE_VERSION)`; `await upsertVerdict(...)` with the re-run result (Stage-1 self-heals next read); audit `article.eligibility.revalidated` (codes only; idempotent on `(pageId, fetched.revisionId, GATE_VERSION)`).
+  Define the helper + the `revalidate` return type:
+
+```ts
+interface StoredArticle { revisionId: number; title: string; }
+async function currentArticleRevision(db: SqlExecutor, pageId: number): Promise<StoredArticle> {
+  const rows = await db
+    .prepare("SELECT revision_id AS revisionId, title FROM articles WHERE page_id = ?")
+    .bind(pageId)
+    .all<{ revisionId: number; title: string }>();
+  return { revisionId: rows[0].revisionId, title: rows[0].title }; // page_id came from Stage-1, so the row exists
+}
+type Revalidation = { outcome: "surfaced"; item: EasyWinItem } | { outcome: Exclude<Outcome, "surfaced"> };
+```
+
+  Implement `revalidate(db, pageId, storedRev, now, options): Promise<Revalidation>`:
+  - Re-fetch by the **stored title** and treat identity as load-bearing: call
+    `fetchArticle(storedRev.title, { fetchFn: options.fetchFn, userAgent: options.userAgent })` inside a
+    try/catch; on `ArticleNotFoundError` → audit + `{ outcome: "article_gone" }`; on
+    `WikimediaUnavailableError` → audit + `{ outcome: "fetch_unavailable" }`.
+  - **Identity assertion (fail-closed):** if `fetched.pageId !== pageId` → audit + `{ outcome: "demoted" }`
+    (a rename/redirect rebound the title to a different page; never surface it).
+  - `const decision = evaluateEligibility(toArticleMetadata(fetched), now, GATE_VERSION)`; then
+    `await upsertVerdict(db, { pageId, revisionId: fetched.revisionId, gateVersion: GATE_VERSION,
+    eligibility: decision.eligibility, reasons: decision.reasons, evaluatedAt: now.toISOString() })`
+    (Stage-1 self-heals next read), **then** append the audit event. Pin this order (verdict upsert →
+    audit append); the two are separate non-transactional writes, so a crash between them at worst drops
+    one re-validation's audit row (re-done on the next lane read) — acceptable, and it never leaves a
+    surfaced page unaudited because the audit precedes nothing that surfaces.
+  - Audit `article.eligibility.revalidated` with **codes/identifiers only** — `pageId`,
+    `revisionId: fetched.revisionId`, `eligibility: decision.eligibility`, `reasons: decision.reasons`,
+    `gateVersion: GATE_VERSION`, `outcome`. The payload **carries** `(pageId, revisionId, gateVersion)` so
+    duplicate re-validation events are identifiable at read time; the append-only log is NOT deduped
+    (multiple lane reads legitimately produce multiple revalidation rows — that is correct history).
   - **Positive allowlist — the ONLY include path:**
     ```ts
-    if (decision.eligibility === "easy_win" &&
-        fetched.pageId === pageId &&
-        fetched.revisionId === storedRev.revisionId) {
-      const candidates = await getCandidatesByPageId(db, pageId);
-      // guard: candidates must describe the live revision
-      if (candidates.every(c => c.sourceRevisionId === fetched.revisionId)) {
-        return { outcome: "surfaced", item: { pageId, title: fetched.title, revisionId: fetched.revisionId, candidates } };
-      }
+    const revisionMatches =
+      fetched.revisionId === storedRev.revisionId &&
+      candidates.every(c => c.sourceRevisionId === fetched.revisionId); // 2nd clause is defense-in-depth: Phase-3's shared-liveRev invariant makes articles.revision_id === source_revision_id, but assert it rather than assume
+    if (decision.eligibility === "easy_win" && fetched.pageId === pageId && revisionMatches) {
+      return { outcome: "surfaced", item: { pageId, title: fetched.title, revisionId: fetched.revisionId, candidates } };
     }
     ```
-  - else classify: if `fetched.revisionId !== storedRev.revisionId` → `revision_drift` (do NOT update `articles.revision_id`); otherwise `demoted`.
-  - Helper `currentArticleRevision(db, pageId)` selects `revision_id` + `title` from `articles`.
+    (Load `const candidates = await getCandidatesByPageId(db, pageId);` before the check.)
+  - else classify the exclusion: if the re-run verdict is `easy_win` but `revisionMatches` is false →
+    `revision_drift` (stored candidates don't describe the live revision; do NOT update
+    `articles.revision_id` — that's reprocessing, Phase-3); otherwise (`human_only`, incl.
+    `metadata_unavailable`) → `demoted`.
+  - The exact audit call: `await makeAuditLog(db).append({ actor: "system", eventType:
+    "article.eligibility.revalidated", payload: { pageId, revisionId: fetched.revisionId, eligibility:
+    decision.eligibility, reasons: decision.reasons, gateVersion: GATE_VERSION, outcome } });` where
+    `outcome` is the classified value.
 
   > **Do NOT** add caching, retries, or re-detection. **Do NOT** mutate `articles.revision_id` on drift. **Do NOT** invert the allowlist into "exclude on bad reasons" — the include test is positive equality (CRITICAL-A).
 
@@ -426,7 +457,7 @@ Implements design §6. Thin route; logic is covered by Phase 4 tests.
 - Create: `src/app/api/easy-win/route.ts`
 - Test: none new (route is excluded from coverage like the lookup route; rely on tsc/lint + Phase-4 logic tests).
 
-- [ ] **Step 1: Implement** `src/app/api/easy-win/route.ts` mirroring `src/app/api/articles/lookup/route.ts`: `export const dynamic = "force-dynamic"`; `POST` resolves the D1 binding (`d1Executor(getCloudflareContext().env.DB)`), calls `getEasyWinLane(db, { now: new Date() })`, returns `json({ items, summary }, 200)`. Map `WikimediaUnavailableError` → 503 only if it escapes (per-page failures are already swallowed into the summary, so a top-level catch returns `{ error: "Easy-win lane failed" }, 500`). It is a `POST` (side-effecting: fetches + audit/verdict writes) — design §6 / CRITICAL-E.
+- [ ] **Step 1: Implement** `src/app/api/easy-win/route.ts` mirroring `src/app/api/articles/lookup/route.ts`: `export const dynamic = "force-dynamic"`; `POST` resolves the D1 binding (`d1Executor(getCloudflareContext().env.DB)`), calls `const result = await getEasyWinLane(db, { now: new Date() })`, returns `json(result, 200)` (the full `{ items, summary }`). It is a `POST` (side-effecting: fetches + audit/verdict writes) — design §6 / CRITICAL-E. Error handling is a single top-level `try/catch` → `json({ error: "Easy-win lane failed" }, 500)`; there is **no** 503 branch because `getEasyWinLane` already catches per-page `WikimediaUnavailableError`/`ArticleNotFoundError` into the `summary.skipped` set and never rethrows them.
 - [ ] **Step 2: Verify** `pnpm exec tsc --noEmit` + `pnpm lint` clean. Confirm the route returns the full `EasyWinLaneResult`.
 - [ ] **Step 3: Commit + push.** `git commit -m "feat(api): POST /api/easy-win — surface the re-validated easy-win lane"`
 
@@ -446,7 +477,7 @@ Implements design §6. Thin route; logic is covered by Phase 4 tests.
 
 **Spec coverage:** design §2 → Task 2.1/2.2; §3 → Task 3.1; §4 Stage-1 → 2.2, Stage-2 → 4.1; §5 → 4.1 (positive allowlist + re-fetch); §6 → 5.1; §7 audit → 4.1; §8 scan hardening → 1.1/1.2; §9 testing → distributed; §10 compliance → honored per task; §1 non-goals → "Do NOT" boundaries. No uncovered section.
 
-**Open issue flagged for the executor (resolve in Task 3.1):** the design says "write the `articles` row LAST," but `eligibility_verdicts` and `stale_candidates` both FK to `articles(page_id)`, so the article row must exist FIRST for the inserts to satisfy the FK. Task 3.1 resolves this by keeping `upsertArticle` first and instead enforcing the *real* invariant — article, candidates, and verdict all use one shared `fetched.revisionId` per lookup (so revision can never lead its candidates), with a test that the three agree. The plan-review-cycle should confirm this resolution is sound and update design §3's wording if needed.
+**Resolved during plan review (Round 1):** the design draft said "write the `articles` row LAST," which is unworkable because `eligibility_verdicts` and `stale_candidates` both FK to `articles(page_id)` (parent must exist first). Task 3.1 + design §3 are corrected to the FK-compatible invariant — `upsertArticle` stays FIRST, and article/candidates/verdict all carry one shared `liveRev = fetched.revisionId` per lookup (revision can never lead its candidates), with a test that the three agree. Also resolved: the lane re-fetches by stored title + a mandatory `fetched.pageId === pageId` identity assertion (fail-closed on rename rebind) rather than a nonexistent fetch-by-page_id (design §4 corrected to match).
 
 **Placeholder scan:** every code step shows code; commands concrete; no TBD.
 
