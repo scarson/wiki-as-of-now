@@ -333,7 +333,7 @@ it("persists the eligibility verdict bound to (page, revision, gate_version)", a
 
 ## Phase 4 — Easy-win lane query (two-stage, positive allowlist)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T14:12Z on branch `feat/easy-win-lane`.
 
 Implements design §4/§5/§7 — the core. Read the design §4–§7 and the review synthesis CRITICAL-A/B + HIGH-C/D/G before starting.
 
