@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 6/10 phases shipped (0–5); Phase 6 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
+**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 7/10 phases shipped (0–6); Phase 7 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
 
 > **Deviation (branch name):** executing on the harness-designated branch
 > `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
@@ -76,7 +76,8 @@ notes and commit messages.
 | 3 — `verbatim-check.ts` | ✅ Shipped | `7b324263`, `3b79589` | opus review found `\n`-only cross-block gap → normalize hardened to vertical/horizontal split (covers text/plain); forgery closed for LF/VT/FF/CR/NEL/LS/PS |
 | 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | ✅ Shipped | `e2d8822`(corpora), `9a63077`, `d21e47e`, `0955b95`, `1f4670c` | opus review caught 2 cross-block-forgery BLOCKERs (`<br>`, then form-widget/replaced tags in INLINE_TAGS) + charset false-drop; all fixed |
 | 5 — `provider.ts` reshape + fake providers | ✅ Shipped | `03f1242` | ProposedEvidence/EvidenceCard/ProviderResearch/ProviderUnavailableError; adversarial fakes for Phase 8; research-jobs types-only touch; old ResearchResult gone |
-| 6 — `verify-proposal.ts` | 🚧 In progress | — | standalone compliance seam (stub fetch + real evaluateQuote) |
+| 6 — `verify-proposal.ts` | ✅ Shipped | `d3ef01f` | fetch+verify seam; card stores RAW quote (asserted via nbsp page); all 10 fetch reasons → typed drops |
+| 7 — `research-packs.ts` + migration 0003 | 🚧 In progress | — | Phase-2 migration discipline |
 | 6 — `verify-proposal.ts` | ⬜ Not started | — | the standalone compliance seam |
 | 7 — `research-packs.ts` + migration 0003 | ⬜ Not started | — | Phase-2 migration discipline |
 | 8 — `pipeline.ts` `researchClaim` | ⬜ Not started | — | cap ordering + partition |
@@ -596,7 +597,7 @@ Implements spec §1 (the provider/verify split). **Interface change to committed
 
 ## Phase 6 — `verify-proposal.ts` (the standalone compliance seam)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `d3ef01f`. `verifyProposal(proposal, { fetchSource })` → fetch fails → `DroppedProposal { url, reason }`; fetched → real `evaluateQuote` → `matched` → `EvidenceCard` with the **RAW** proposed quote (asserted: page uses U+00A0 where the quote uses ASCII space; card stores the raw ASCII form, `not.toContain` nbsp — the §3 determinism rule), else `DroppedProposal { url, reason: quote_* }`. `DroppedProposal` defined here (Phase 8 imports it). 14 tests incl. `it.each` over all 10 fetch-failure reasons; determinism traps armed; 440 suite green. Review: orchestrator provenance + spec-§5 compliance + criteria (raw-quote storage, every reason→drop, isolated from pipeline) — small seam, not opus-tier.
 
 Implements spec §5 (`verifyProposal`). The guardrail that must be testable in isolation: stub `fetchSource` + the REAL `evaluateQuote`.
 
