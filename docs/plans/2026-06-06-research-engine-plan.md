@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 9/10 phases shipped (0–8); Phase 9 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
+**Overall:** ✅ All 10/10 phases shipped (0–9). 509 tests green, tsc + lint clean + pristine; workerd NFC golden current (re-ran, zero diff). Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`). Pending: PR to `dev` (Review — compliance; no self-merge).
 
 > **Deviation (branch name):** executing on the harness-designated branch
 > `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
@@ -79,7 +79,7 @@ notes and commit messages.
 | 6 — `verify-proposal.ts` | ✅ Shipped | `d3ef01f` | fetch+verify seam; card stores RAW quote (asserted via nbsp page); all 10 fetch reasons → typed drops |
 | 7 — `research-packs.ts` + migration 0003 | ✅ Shipped | `919acd0`(migration), `adc66ef`(module) | byte-identical DDL (equivalence green); write-once insert; defensive `pack_unreadable` read + read-time G16 cap; revision-match surfacing; DB-1/DB-2 |
 | 8 — `pipeline.ts` `researchClaim` | ✅ Shipped | `bb67672`, `db0a152`, `d870f57` | opus verified cap-ordering airtight (no fan-out bypass); fixed G9 dead-code + degenerate-config impossible-state |
-| 9 — `research-jobs.ts` rewrite (consumer) | 🚧 In progress | — | total/contained; audit allowlist+sentinel (opus review) |
+| 9 — `research-jobs.ts` rewrite (consumer) | ✅ Shipped | `56d01da`, `24334d2` | total/contained; codes-only audit (allowlist+sentinel, all 3 event types); opus caught + fixed a G13 raw-claimKey leak on malformed messages |
 | 6 — `verify-proposal.ts` | ⬜ Not started | — | the standalone compliance seam |
 | 7 — `research-packs.ts` + migration 0003 | ⬜ Not started | — | Phase-2 migration discipline |
 | 8 — `pipeline.ts` `researchClaim` | ⬜ Not started | — | cap ordering + partition |
@@ -686,7 +686,7 @@ Implements spec §5 — the pure, total orchestrator. The cap **order** is a sec
 
 ## Phase 9 — `research-jobs.ts` rewrite (the total/contained consumer)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `56d01da` (rewrite + 35 tests), `24334d2` (opus G13 leak fix). `handleResearchMessage` total/contained (return=ack, throw=retry): validate→malformed=`research.failed`+ack; `has()` skip on FULL PK (different revision re-researches); terminal→persist pack (`insertIfAbsent`)+`research.completed` codes-only audit; `provider_unavailable`→`research.unavailable` audit-only+retry (no pack); unexpected→`research.failed` (no raw error text)+retry. `ResearchAuditPayload` codes-only; `makeResearchPackStore` real adapter (+`packExists` added to research-packs). Producer `enqueueResearch` computes claimKey. Review: orchestrator verified allowlist+sentinel is genuine (not the easy-win-lane denylist anti-pattern) → **opus** verified the disposition-reason enum chain leak-free + all codes-only paths, and found a G13 leak (malformed branch echoed the raw `claimKey` → could smuggle content/PII into the append-only log) + allowlist not covering `research.failed`/`research.unavailable` → fixed (64-hex-validate claimKey else `"malformed"`; allowlist extended to all 3 event types; malformed-claimKey sentinel test added). 509 suite green. ≥3 rounds incl opus, last state clean.
 
 Implements spec §5 (`handleResearchMessage`). **Rewrite** of the existing module. Audit is codes-only with the **allowlist + sentinel** assertion (§6 N3) — NOT a denylist. Persist terminal-only; `provider_unavailable` audit-only + retry-signal.
 
@@ -722,8 +722,8 @@ assertions can't pass reliably, STOP and raise. Do not ship a weaker test.
 
 ## Final integration
 
-- [ ] Full suite + `tsc` + `lint` green + pristine; CI green on the branch.
-- [ ] `pnpm gen:nfc-golden` re-run if `normalize.ts` or the NFC corpus changed since Phase 1; fixture committed.
+- [x] Full suite + `tsc` + `lint` green + pristine (509 tests). CI runs on the PR's `pull_request` event (verify green there).
+- [x] `pnpm gen:nfc-golden` re-run after the Phase-3 normalize change (vertical/horizontal split) + 2 vertical corpus cases added; fixture regenerated on workerd and committed. Re-ran at final integration → zero diff (current).
 - [ ] Rebase onto latest `origin/dev` if it moved; resolve any conflict in `provider.ts` / `research-jobs.ts` / `schema.sql` / `test/helpers/db.ts` by re-running the gate trio.
 - [ ] Open a PR to `dev`. `## Merge classification`: **Review — compliance** (this is the BLP-safety backstop's research consumer; the verbatim check + audit codes-only + SSRF guard are load-bearing). Link the spec + this plan + the compliance-contract G8 clarification. Do NOT self-merge.
 
