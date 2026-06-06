@@ -252,9 +252,12 @@ describe("fetchSourceText — HTML extraction (corpus-driven)", () => {
 // so it could not detect <br> being mis-classified as inline. These isolate the separator:
 // a quote bridging the two halves must be impossible because a \n sits between them.
 describe("fetchSourceText — block separators isolate (no surrounding block element)", () => {
+  // Void / replaced elements between two inline text runs must insert a boundary.
   it.each([
     ["br", "First line.<br>Second line."],
     ["hr", "First line.<hr>Second line."],
+    ["img", "First line.<img src=x>Second line."],
+    ["input", "First line.<input value=x>Second line."],
   ])("a <%s> between inline text yields a \\n boundary (no bridge)", async (_tag, html) => {
     const result = await fetchSourceText("https://example.com/", { fetchImpl: htmlFetch(html) });
     expect(result.ok).toBe(true);
@@ -264,6 +267,39 @@ describe("fetchSourceText — block separators isolate (no surrounding block ele
     expect(text).toBe("First line.\nSecond line.");
     // The forged bridge (no boundary) must NOT be present.
     expect(text).not.toContain("First line.Second line.");
+  });
+
+  // Reader-distinct widget containers: two adjacent ones must not bridge their text.
+  it.each([
+    ["button", "<button>First line.</button><button>Second line.</button>"],
+    ["select/option", "<select><option>First line.</option><option>Second line.</option></select>"],
+    ["textarea", "<textarea>First line.</textarea><textarea>Second line.</textarea>"],
+    ["output", "<output>First line.</output><output>Second line.</output>"],
+    ["object", "<object>First line.</object><object>Second line.</object>"],
+    ["label", "<label>First line.</label><label>Second line.</label>"],
+  ])("adjacent <%s> widgets do not bridge their text", async (_tag, html) => {
+    const result = await fetchSourceText("https://example.com/", { fetchImpl: htmlFetch(html) });
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    const text = result.text as string;
+    expect(text).toContain("First line.");
+    expect(text).toContain("Second line.");
+    expect(text).not.toContain("First line.Second line.");
+    expect(text).not.toContain("First line. Second line.");
+  });
+
+  // Genuinely-inline phrasing elements MUST still bridge (a guard against over-separating).
+  it.each([
+    ["span", "Contiguous <span>inline</span> text here."],
+    ["a", "Contiguous <a href=x>inline</a> text here."],
+    ["em", "Contiguous <em>inline</em> text here."],
+  ])("a <%s> does NOT insert a boundary (stays contiguous)", async (_tag, html) => {
+    const result = await fetchSourceText("https://example.com/", { fetchImpl: htmlFetch(html) });
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    const text = result.text as string;
+    expect(text).not.toContain("\n");
+    expect(text).toBe("Contiguous inline text here.");
   });
 
   it("a quote-shaped string cannot bridge a <br> line break", async () => {

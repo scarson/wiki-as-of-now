@@ -57,19 +57,19 @@ const DEFAULT_USER_AGENT =
 // HTML tags — inline vs block (for separator insertion)
 // ---------------------------------------------------------------------------
 
-// Tags that are inline — they do NOT insert a block boundary.
+// Tags that are TEXT-LEVEL inline runs — they do NOT insert a block boundary.
 // Everything not in this set (including unknown/custom elements) is treated as
 // a block-level separator (more separators = safe false-drops; too few = dangerous false-accepts).
-// NOTE: <br> is deliberately NOT here — per design §2.9 it is a block separator
-// (a reader-visible line break). Treating it as inline would let a quote bridge a
-// <br> line break (cross-block forgery). Void <br> fires open+close → a \n that
-// normalize collapses to one boundary.
+// This set is deliberately RESTRICTED to genuine text-level/phrasing elements. Reader-distinct
+// widgets and replaced elements are NOT here — treating them as inline would let a quote bridge a
+// reader-visible boundary (cross-block forgery, same class as <br>): a <br> line break; form widgets
+// (<button>/<select>/<option>/<optgroup>/<textarea>/<output>/<label>); replaced/embedded elements
+// (<img>/<input>/<object>/<map>). Each of those falls through to separator-insertion instead.
 const INLINE_TAGS = new Set([
-  "a", "abbr", "acronym", "b", "bdo", "bdi", "big", "button", "cite",
-  "code", "data", "del", "dfn", "em", "i", "img", "input", "ins", "kbd",
-  "label", "map", "mark", "object", "optgroup", "option", "output", "q",
-  "rp", "rt", "ruby", "s", "samp", "select", "small", "span", "strong",
-  "sub", "sup", "textarea", "time", "tt", "u", "var",
+  "a", "abbr", "acronym", "b", "bdo", "bdi", "big", "cite",
+  "code", "data", "del", "dfn", "em", "i", "ins", "kbd",
+  "mark", "q", "rp", "rt", "ruby", "s", "samp", "small", "span", "strong",
+  "sub", "sup", "time", "tt", "u", "var",
 ]);
 
 // Subtrees whose text content must be completely suppressed (not just skipped).
