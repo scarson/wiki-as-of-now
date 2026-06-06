@@ -1,6 +1,12 @@
 // ABOUTME: Parse-then-canonicalize SSRF host-classification guard — shared by the source-fetch guard
 // ABOUTME: and per-host fan-out cap so both count the same canonical host. Pure, synchronous, non-fetching.
 
+// Named residuals (accepted; consistent with the spec's DNS-rebinding residual): deprecated
+// IPv4-compatible IPv6 (::/96, e.g. [::7f00:1]) and the NAT64 well-known prefix (64:ff9b::/96)
+// embed an IPv4 address but are NOT enumerated here — modern stacks do not route IPv4-compatible
+// addresses to the embedded v4, and NAT64 reachability is gateway-dependent. A DNS name that
+// resolves to a blocked IP is likewise out of scope (string-level guard, no resolve-then-pin).
+
 // Dotted-decimal IPv4 pattern — matches ONLY the normalized form produced by the WHATWG URL parser.
 // The parser normalizes all decimal/hex/octal/short forms to dotted-decimal before we ever see .hostname.
 // Character-class only — linear time, no catastrophic backtracking (SAFE-1).
@@ -13,6 +19,9 @@ const IPV6_BRACKETED = /^\[(.+)\]$/;
 // IPv4-mapped IPv6 in hex-group form: ::ffff:hhhh:hhhh (normalized form from WHATWG).
 // Also handles mixed notation ::ffff:d.d.d.d (passed through unchanged by the parser in some cases).
 // Linear character-class pattern (SAFE-1).
+// NOTE: true IPv4-mapped addresses always present as ::ffff:GGGG:GGGG (two groups) after WHATWG
+// normalization — e.g. mapped 0.0.0.1 normalizes to ::ffff:0:1 — so the two-group match is complete.
+// A single-group ::ffff:N (e.g. ::ffff:1 = 0:0:0:0:0:0:ffff:1) is NOT IPv4-mapped and is correctly not matched here.
 const IPV4_MAPPED_HEX = /^::ffff:([0-9a-f]{1,4}):([0-9a-f]{1,4})$/i;
 const IPV4_MAPPED_DOTTED = /^::ffff:(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/i;
 
@@ -128,7 +137,11 @@ export function canonicalizeUrl(raw: string): CanonicalizeResult {
   if (url.username !== "" || url.password !== "") return { ok: false };
 
   // Step 4 — host classification.
-  const hostname = url.hostname; // already lowercased + normalized by the WHATWG parser
+  const parsedHost = url.hostname; // already lowercased + normalized by the WHATWG parser
+  // Strip a single trailing dot (FQDN root): "localhost." must classify as "localhost",
+  // else the trailing-dot form bypasses the exact-match hostname denylist. (IPv4 literals
+  // already have any trailing dot stripped by the parser; IPv6 hostnames are bracketed.)
+  const hostname = parsedHost.length > 1 && parsedHost.endsWith(".") ? parsedHost.slice(0, -1) : parsedHost;
 
   // IPv6 literal: .hostname is bracketed [...]
   const ipv6Match = IPV6_BRACKETED.exec(hostname);

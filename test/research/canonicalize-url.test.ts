@@ -17,6 +17,9 @@ describe("canonicalizeUrl", () => {
     "https://en.wikipedia.org/wiki/Artemis_program",
     "https://www.defense.gov/News/Releases/",
     "https://example.co.uk/report?id=5",
+    "https://8.8.8.8/",                   // public IPv4 — guard must not over-block
+    "https://[2001:db8::1]/",              // public IPv6 — guard must not over-block
+    "https://en.wikipedia.org./",          // trailing-dot public FQDN — valid after strip
   ])("allows legitimate public https URL %s", (u) => {
     expect(canonicalizeUrl(u).ok).toBe(true);
   });
@@ -34,6 +37,9 @@ describe("canonicalizeUrl", () => {
     "https://[::ffff:169.254.169.254]/",   // IPv4-mapped IPv6
     "https://10.0.0.5/", "https://192.168.1.1/", "https://172.16.0.1/",
     "not a url",
+    "https://localhost./",                 // trailing-dot denylist bypass — BLOCKER fix
+    "https://metadata.google.internal./",  // trailing-dot metadata bypass
+    "https://[::ffff:0:1]/",              // true IPv4-mapped 0.0.0.1 (in 0/8); parser spells mapped low addrs this way
   ])("rejects %s", (u) => {
     expect(canonicalizeUrl(u).ok).toBe(false);
   });
