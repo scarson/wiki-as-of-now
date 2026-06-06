@@ -45,3 +45,25 @@ export interface StaleCandidate {
   sectionIndex: number;
   sentenceIndex: number;
 }
+
+/**
+ * Authoritative single-snapshot metadata the safe-lane gate consumes. Every field
+ * derives from one resolved page of one Action-API response (no two-snapshot skew),
+ * so the wikitext scan and the category probe describe the same revision.
+ */
+export interface ArticleMetadata {
+  resolvedPageId: number;
+  resolvedTitle: string;
+  revisionId: number;
+  revisionTimestamp: string; // ISO 8601, from the same response
+  namespace: number; // 0 = mainspace
+  blpProbe: "present" | "absent" | "unknown"; // clcategories BLP-set result; "unknown" = indeterminate response
+  wikitext: string; // same-snapshot revision content (for the advisory scan)
+  fetchedAt: string; // ISO 8601, captured at response-parse time
+}
+
+/** Safe-lane eligibility verdict plus machine reason codes (never free text). */
+export interface EligibilityDecision {
+  eligibility: "easy_win" | "human_only";
+  reasons: string[]; // canonical-ordered codes
+}
