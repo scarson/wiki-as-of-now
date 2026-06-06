@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 5/10 phases shipped (0, 1, 2, 3, 4); Phase 5 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
+**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 6/10 phases shipped (0–5); Phase 6 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
 
 > **Deviation (branch name):** executing on the harness-designated branch
 > `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
@@ -75,7 +75,8 @@ notes and commit messages.
 | 2 — `canonicalize-url.ts` (SSRF host classification) | ✅ Shipped | `e375155`, `0644f05`, `045b046` | bipolar corpus (32 cases); trailing-dot bypass fixed; refactored to `ipaddr.js` (Sam's call) — −59 LOC hand-rolled math, NAT64 closed; full adversarial battery verified |
 | 3 — `verbatim-check.ts` | ✅ Shipped | `7b324263`, `3b79589` | opus review found `\n`-only cross-block gap → normalize hardened to vertical/horizontal split (covers text/plain); forgery closed for LF/VT/FF/CR/NEL/LS/PS |
 | 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | ✅ Shipped | `e2d8822`(corpora), `9a63077`, `d21e47e`, `0955b95`, `1f4670c` | opus review caught 2 cross-block-forgery BLOCKERs (`<br>`, then form-widget/replaced tags in INLINE_TAGS) + charset false-drop; all fixed |
-| 5 — `provider.ts` reshape + fake providers | 🚧 In progress | — | interface change to committed code |
+| 5 — `provider.ts` reshape + fake providers | ✅ Shipped | `03f1242` | ProposedEvidence/EvidenceCard/ProviderResearch/ProviderUnavailableError; adversarial fakes for Phase 8; research-jobs types-only touch; old ResearchResult gone |
+| 6 — `verify-proposal.ts` | 🚧 In progress | — | standalone compliance seam (stub fetch + real evaluateQuote) |
 | 6 — `verify-proposal.ts` | ⬜ Not started | — | the standalone compliance seam |
 | 7 — `research-packs.ts` + migration 0003 | ⬜ Not started | — | Phase-2 migration discipline |
 | 8 — `pipeline.ts` `researchClaim` | ⬜ Not started | — | cap ordering + partition |
@@ -574,7 +575,7 @@ Implements spec §2. **Blind-adversary corpora** (SSRF + HTML-extraction) per sp
 
 ## Phase 5 — `provider.ts` reshape + fake providers
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `03f1242`. New contract per spec §1: `ResearchInput` (+`surroundingText?`/`sourceRevisionId`), `ProposedEvidence` (unverified), `EvidenceCard` (verified), `ProviderResearch` (`{providerName, modelVersion, proposals, queries}`), `ProviderUnavailableError`; stub returns empty proposals/queries + `modelVersion "fake-provider/0"`. `test/research/fake-providers.ts` provides the adversarial fakes Phase 8 needs (flood/sameHost/subdomainFanout/malformedUrl/unavailable, deterministic). `research-jobs.ts` touched types-only (logic unchanged; full rewrite is Phase 9); old `ResearchResult` fully removed (grep-clean). 426 suite green. Review: orchestrator provenance + spec-§1 compliance + criteria (split matches spec, fakes emit the Phase-8 shapes, surroundingText optional, no stale refs) — low-stakes type reshape, not opus-tier.
 
 Implements spec §1 (the provider/verify split). **Interface change to committed, tested code** — update `stub-provider.ts` and any callers/tests so tsc + the suite stay green.
 
