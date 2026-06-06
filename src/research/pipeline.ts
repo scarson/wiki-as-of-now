@@ -53,13 +53,13 @@ export interface ResearchClaimDeps {
 function applyQueryBound(queries: string[], claimText: string): string[] {
   const claimNorm = claimText.trim();
   const filtered = queries.filter((q) => {
-    const codePoints = [...q].length;
-    if (codePoints > DEFAULT_MAX_QUERY_LEN) return false;
-    // Drop queries that contain or equal the full claim sentence (neutral retrieval, not restatement)
-    if (q.trim() === claimNorm || q.trim().includes(claimNorm) || claimNorm.includes(q.trim()) && q.trim() === claimNorm) {
-      // Strictly: the query must not equal the normalized claimText
-      if (q.trim() === claimNorm) return false;
-    }
+    const trimmed = q.trim();
+    if ([...trimmed].length > DEFAULT_MAX_QUERY_LEN) return false;
+    // Drop a query that RESTATES the full claim sentence — a query must be a neutral retrieval
+    // term, not the claim restated. `includes` catches the exact-equal case AND "claim + extra
+    // words"; keyword fragments of the claim are allowed (they do not contain the full sentence).
+    // The length guard prevents an empty claimText (every string includes "") dropping everything.
+    if (claimNorm.length > 0 && trimmed.includes(claimNorm)) return false;
     return true;
   });
   return filtered.slice(0, DEFAULT_MAX_QUERIES);

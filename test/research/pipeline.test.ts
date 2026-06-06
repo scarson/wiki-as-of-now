@@ -343,6 +343,19 @@ describe("researchClaim pipeline", () => {
     }
   });
 
+  it("G9 bound drops a query that RESTATES the claim with extra words, but keeps keyword fragments", async () => {
+    const claimText = CLAIM.claimText; // "The population of France was 67 million in 2020."
+    const restatement = `tell me: ${claimText} please`; // contains the full claim → must drop
+    const keywordFragment = "France population 2020"; // a fragment, NOT the full sentence → must keep
+    const provider = fakeProvider([], { queries: [restatement, keywordFragment] });
+    const { stub } = makeStub();
+    const outcome = await researchClaim(CLAIM, { provider, fetchSource: stub, now: NOW });
+    expect(outcome.status).toBe("no_proposals");
+    if (outcome.status !== "no_proposals") return;
+    expect(outcome.queries).not.toContain(restatement);
+    expect(outcome.queries).toContain(keywordFragment);
+  });
+
   // -------------------------------------------------------------------------
   // Test 8: totality — never throws on adversarial provider/fetch output
   // -------------------------------------------------------------------------
