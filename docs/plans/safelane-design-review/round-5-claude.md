@@ -3,6 +3,8 @@
 
 # Safe-lane gate (G11) — adversarial design review, Round 5 (Claude, final)
 
+(Throughout, **BLP** = *biography of a living person* — the Wikipedia policy class the hard floor excludes.)
+
 Five rounds converged. Round 4 (Opus) landed two CRITICAL fail-OPENs rounds 1–3 missed (two-snapshot
 skew R4-1; wikitext-scan false-OPENs R4-2) and a decisive correction to my own Round-3 persistence
 flip (R4-5). This round makes the final decisions, **reverses two of my earlier picks**, and pins the

@@ -3,8 +3,8 @@
 
 # Safe-lane gate (G11) — adversarial design review, Round 1 (Claude)
 
-Reviewer lens: **a fail-closed BLP floor whose worst outcome is a silent fail-OPEN** (a BLP
-article wrongly marked `easy_win`). Every finding is rated by that lens.
+Reviewer lens: **a fail-closed BLP (biography of a living person) floor whose worst outcome is a
+silent fail-OPEN** (a BLP article wrongly marked `easy_win`). Every finding is rated by that lens.
 
 ## F1 — [CRITICAL, fail-OPEN] Category-name normalization is unspecified — the most likely way the floor silently breaks
 The gate matches `categories ∩ BLP-set`. But the MediaWiki API (`prop=categories`,

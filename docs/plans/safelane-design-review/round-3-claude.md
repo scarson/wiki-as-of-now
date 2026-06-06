@@ -3,6 +3,8 @@
 
 # Safe-lane gate (G11) — adversarial design review, Round 3 (Claude)
 
+(Throughout, **BLP** = *biography of a living person* — Wikipedia's policy class the hard floor excludes.)
+
 Round 2 (Opus) was strong and shifted the frame correctly: the floor is a
 *membership-under-eventual-consistency* problem, not a string-match. I accept R2-1 and R2-2 as the
 two load-bearing reframes. Below I (a) **strengthen** R2-1 with live evidence, (b) **refine** R2-2's

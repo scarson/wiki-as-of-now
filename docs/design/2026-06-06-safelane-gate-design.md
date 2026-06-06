@@ -1,4 +1,4 @@
-<!-- ABOUTME: Design for the safe-lane eligibility gate (G11) — deterministic, fail-closed BLP/article exclusion. -->
+<!-- ABOUTME: Design for the safe-lane eligibility gate (G11) — deterministic, fail-closed exclusion of biographies of living persons (BLP) + other non-eligible articles. -->
 <!-- ABOUTME: Floor = atomic category probe + namespace + freshness; advisory wikitext signals; four signed-off residuals. -->
 
 # Design — Safe-lane eligibility gate (G11)

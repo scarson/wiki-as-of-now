@@ -525,7 +525,7 @@ held to it, and we would rather ship less than break it.
 - **2026-06-06** — **Safe-lane gate (G11) v1 — known deterministic limits documented with human
   sign-off.** The v1 safe-lane eligibility gate (deterministic, LLM-free, fail-closed; design in
   [docs/design/2026-06-06-safelane-gate-design.md](../design/2026-06-06-safelane-gate-design.md), hardened
-  over a 5-round adversarial review in `docs/plans/safelane-design-review/`) enforces the BLP floor via an
+  over a 5-round adversarial review in `docs/plans/safelane-design-review/`) enforces the biography-of-living-persons (BLP) floor via an
   authoritative category-membership probe + mainspace check + a freshness fail-closed, with advisory
   wikitext dispute/BLP signals. A deterministic gate over public category data cannot be a perfect BLP
   oracle, so **four narrow residual fail-OPEN cases are named and accepted as v1 limits** (human sign-off:
