@@ -1,6 +1,6 @@
 // ABOUTME: Tests for the easy-win lane (src/ingest/easy-win-lane.ts): Stage-1 pre-filter + Stage-2 re-fetch/re-run-gate.
 // ABOUTME: Exercises the positive allowlist and every per-page outcome; fail-OPEN guards assert exclusion strictly.
-import { describe, it, expect, vi, afterEach } from "vitest";
+import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { lookupAndPersist } from "../../src/ingest/lookup";
 import { getEasyWinLane, DEFAULT_MAX_PAGES, DEFAULT_FETCH_TIMEOUT_MS } from "../../src/ingest/easy-win-lane";
@@ -83,12 +83,8 @@ async function laneAuditRows(exec: SqlExecutor) {
   return rows.filter(r => r.eventType === "article.eligibility.revalidated");
 }
 
-afterEach(() => {
-  vi.useRealTimers();
-});
-
 describe("getEasyWinLane", () => {
-  it("surfaces a page whose re-fetch is still easy-win at the same revision (scenario 1)", async () => {
+  it("surfaces a page whose re-fetch is still easy-win at the same revision", async () => {
     const exec = freshTestExecutor();
     await seedEasyWin(exec);
 
@@ -118,7 +114,7 @@ describe("getEasyWinLane", () => {
     expect(JSON.stringify(audits[0].payload)).not.toMatch(/Artemis|will|expected|scheduled/);
   });
 
-  it("EXCLUDES a page whose re-fetch is now BLP-present, refreshing the verdict to human_only (scenario 2)", async () => {
+  it("EXCLUDES a page whose re-fetch is now BLP-present, refreshing the verdict to human_only", async () => {
     const exec = freshTestExecutor();
     await seedEasyWin(exec);
 
@@ -153,7 +149,7 @@ describe("getEasyWinLane", () => {
     expect(audits[0].payload).toMatchObject({ pageId: PAGE_ID, outcome: "demoted", eligibility: "human_only" });
   });
 
-  it("EXCLUDES a page whose re-fetch BLP probe is unknown (metadata_unavailable) (scenario 3)", async () => {
+  it("EXCLUDES a page whose re-fetch BLP probe is unknown (metadata_unavailable)", async () => {
     const exec = freshTestExecutor();
     await seedEasyWin(exec);
 
@@ -177,7 +173,7 @@ describe("getEasyWinLane", () => {
     expect((audits[0].payload as { reasons: string[] }).reasons).toContain("metadata_unavailable");
   });
 
-  it("EXCLUDES a page whose re-fetch resolves to a DIFFERENT pageid (identity mismatch) (scenario 4)", async () => {
+  it("EXCLUDES a page whose re-fetch resolves to a DIFFERENT pageid (identity mismatch)", async () => {
     const exec = freshTestExecutor();
     await seedEasyWin(exec);
 
@@ -200,7 +196,7 @@ describe("getEasyWinLane", () => {
     expect((audits[0].payload as { reasons: string[] }).reasons).toContain("identity_mismatch");
   });
 
-  it("EXCLUDES a page whose re-fetch is a newer revision (revision drift), prunes the stale verdict, leaves articles.revision_id unchanged (scenario 5)", async () => {
+  it("EXCLUDES a page whose re-fetch is a newer revision (revision drift), prunes the stale verdict, leaves articles.revision_id unchanged", async () => {
     const exec = freshTestExecutor();
     await seedEasyWin(exec);
 
@@ -230,7 +226,7 @@ describe("getEasyWinLane", () => {
     expect(audits[0].payload).toMatchObject({ pageId: PAGE_ID, outcome: "revision_drift", eligibility: "easy_win" });
   });
 
-  it("EXCLUDES a gone page (ArticleNotFoundError), deletes its verdict, and still surfaces a healthy sibling (scenario 6)", async () => {
+  it("EXCLUDES a gone page (ArticleNotFoundError), deletes its verdict, and still surfaces a healthy sibling", async () => {
     const exec = freshTestExecutor();
     // Seed the primary easy-win page.
     await seedEasyWin(exec);
@@ -263,7 +259,7 @@ describe("getEasyWinLane", () => {
     expect(remaining).toContain(SIBLING_ID);
   });
 
-  it("EXCLUDES a transiently-unavailable page (WikimediaUnavailableError) WITHOUT deleting its verdict; other pages still returned (scenario 7)", async () => {
+  it("EXCLUDES a transiently-unavailable page (WikimediaUnavailableError) WITHOUT deleting its verdict; other pages still returned", async () => {
     const exec = freshTestExecutor();
     await seedEasyWin(exec);
     const SIBLING_ID = PAGE_ID + 100;
@@ -302,7 +298,7 @@ describe("getEasyWinLane", () => {
     expect(verdicts).toHaveLength(1);
   });
 
-  it("treats a hung re-fetch as fetch_unavailable, returns promptly, and produces no unhandled rejection (scenario 8)", async () => {
+  it("treats a hung re-fetch as fetch_unavailable, returns promptly, and produces no unhandled rejection", async () => {
     const exec = freshTestExecutor();
     await seedEasyWin(exec);
 
@@ -332,7 +328,7 @@ describe("getEasyWinLane", () => {
     }
   });
 
-  it("reports summary counts; empty-healthy (no eligible pages) is distinguishable from all-skipped (scenario 9)", async () => {
+  it("reports summary counts; empty-healthy (no eligible pages) is distinguishable from all-skipped", async () => {
     // Empty-healthy: no pages seeded → nothing eligible.
     const emptyExec = freshTestExecutor();
     const emptyResult = await getEasyWinLane(emptyExec, { fetchFn: seedFetch, now: NOW });
@@ -357,7 +353,7 @@ describe("getEasyWinLane", () => {
     expect(emptyResult.summary.considered).not.toBe(skippedResult.summary.considered);
   });
 
-  it("caps fan-out at maxPages, defers the rest, and re-fetches only maxPages pages (scenario 10)", async () => {
+  it("caps fan-out at maxPages, defers the rest, and re-fetches only maxPages pages", async () => {
     const exec = freshTestExecutor();
     // Seed two eligible pages.
     await seedEasyWin(exec); // PAGE_ID
