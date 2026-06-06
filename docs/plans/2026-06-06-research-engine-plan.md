@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 8/10 phases shipped (0–7); Phase 8 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
+**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 9/10 phases shipped (0–8); Phase 9 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
 
 > **Deviation (branch name):** executing on the harness-designated branch
 > `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
@@ -78,7 +78,8 @@ notes and commit messages.
 | 5 — `provider.ts` reshape + fake providers | ✅ Shipped | `03f1242` | ProposedEvidence/EvidenceCard/ProviderResearch/ProviderUnavailableError; adversarial fakes for Phase 8; research-jobs types-only touch; old ResearchResult gone |
 | 6 — `verify-proposal.ts` | ✅ Shipped | `d3ef01f` | fetch+verify seam; card stores RAW quote (asserted via nbsp page); all 10 fetch reasons → typed drops |
 | 7 — `research-packs.ts` + migration 0003 | ✅ Shipped | `919acd0`(migration), `adc66ef`(module) | byte-identical DDL (equivalence green); write-once insert; defensive `pack_unreadable` read + read-time G16 cap; revision-match surfacing; DB-1/DB-2 |
-| 8 — `pipeline.ts` `researchClaim` | 🚧 In progress | — | cap ordering security boundary + partition (opus review) |
+| 8 — `pipeline.ts` `researchClaim` | ✅ Shipped | `bb67672`, `db0a152`, `d870f57` | opus verified cap-ordering airtight (no fan-out bypass); fixed G9 dead-code + degenerate-config impossible-state |
+| 9 — `research-jobs.ts` rewrite (consumer) | 🚧 In progress | — | total/contained; audit allowlist+sentinel (opus review) |
 | 6 — `verify-proposal.ts` | ⬜ Not started | — | the standalone compliance seam |
 | 7 — `research-packs.ts` + migration 0003 | ⬜ Not started | — | Phase-2 migration discipline |
 | 8 — `pipeline.ts` `researchClaim` | ⬜ Not started | — | cap ordering + partition |
@@ -656,7 +657,7 @@ Implements spec §4. Phase-2 migration discipline (byte-identical `CREATE TABLE`
 
 ## Phase 8 — `pipeline.ts` `researchClaim` (cap ordering + partition)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `bb67672` (impl + 17 tests), `db0a152` (G9 dead-code fix), `d870f57` (opus config-edge fixes). Cap ordering EXACTLY truncate-raw-first → canonicalizeUrl → per-host count → verifyProposal; malformed = counted disposition (never fetched); partition `cards+dispositions===truncated`; discriminated-union `ResearchOutcome`; G9 query bound; repeatability (not shuffle-invariance, per the recorded deviation). Review: orchestrator caught G9 dead-code (echo filter only dropped exact-equal — `includes` checks were dead; now drops any query restating the full claim, keeps fragments) → **opus** verified the security boundary AIRTIGHT (probed: floodProvider→exactly maxProposals fetches; per-host no bypass via case/port/trailing-dot spellings; malformed counted; discriminant sound; deterministic) and found 2 config-edge CONCERNs (maxProposals:0 reached the impossible `proposals_present`-empty-arrays state; negative/NaN → garbage overCapCount) + a G9 internal-whitespace NIT → all fixed (clamp caps to non-negative ints, non-finite→default; short-circuit on `truncated.length===0`; collapse internal whitespace in the echo check). 21 pipeline tests, 495 suite green. ≥3 rounds incl opus, last state clean.
 
 Implements spec §5 — the pure, total orchestrator. The cap **order** is a security boundary (§5 / D9). Tests assert orchestration invariants, NOT stub rigging (§6 N6/N7).
 
