@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 3/5 phases shipped (subagent-driven on `feat/easy-win-lane`). Next: Phase 4 (lane query, compliance-critical) → Phase 5 (route).
+**Overall:** 4/5 phases shipped (subagent-driven on `feat/easy-win-lane`). Next: Phase 5 (route).
 
 **PR:** #15 (DRAFT) → `dev` — https://github.com/scarson/wiki-as-of-now/pull/15. Opened mid-build at Sam's request; Phases 3–5 push to this same branch (the PR updates automatically). Mark ready + request merge only after Phase 5 + a final whole-implementation review; **do not self-merge** (Review — compliance).
 
@@ -70,7 +70,7 @@ notes and commit messages.
 | 1 — Scan hardening (`scanWikitextSignals` linear-time) | ✅ Shipped | `5129686`,`b925dc2`,`6ac9fda` | linear-time regex + SAFE-1 pitfall; suite 194 green |
 | 2 — Data model (`eligibility_verdicts` + migration + DB module) | ✅ Shipped | `b9ce7c4`,`27c3e5c`,`a718e5b`,`2e85622` | table+ordered migrations+equivalence test; verdict module (upsert/delete/pre-filter); suite 210 green |
 | 3 — Persist the verdict on lookup (article-row-last) | ✅ Shipped | `f1dcbe4` | shared-revision invariant + verdict upsert; suite 212 green |
-| 4 — Easy-win lane query (two-stage, positive allowlist) | ⬜ Not started | — | depends on Phases 2–3 |
+| 4 — Easy-win lane query (two-stage, positive allowlist) | ✅ Shipped | `719c502`,`baceae3`,`9975f3b` | positive allowlist + per-page outcomes + isolation fix; adversarial review found no fail-OPEN; suite 224 green |
 | 5 — `POST /api/easy-win` endpoint | ⬜ Not started | — | depends on Phase 4 |
 
 ---
@@ -333,7 +333,7 @@ it("persists the eligibility verdict bound to (page, revision, gate_version)", a
 
 ## Phase 4 — Easy-win lane query (two-stage, positive allowlist)
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-06T14:12Z on branch `feat/easy-win-lane`.
+**Execution Status:** ✅ SHIPPED on 2026-06-06 (branch `feat/easy-win-lane`) — Task 4.1 `719c502` (`getEasyWinLane`: Stage-1 pre-filter → per-page re-fetch + re-run-gate, positive allowlist, per-page outcomes + codes-only audit, `maxPages` cap, `Promise.race` timeout). Adversarial opus review (no fail-OPEN found; compliance floor sound) surfaced one per-page-isolation BLOCK → fixed `baceae3` (a `WikimediaResponseError` on one page now excludes that page as `fetch_unavailable` instead of aborting the lane; genuinely unexpected non-fetch errors still surface) + test cleanup `9975f3b`. Suite 224 green, tsc + lint clean.
 
 Implements design §4/§5/§7 — the core. Read the design §4–§7 and the review synthesis CRITICAL-A/B + HIGH-C/D/G before starting.
 
