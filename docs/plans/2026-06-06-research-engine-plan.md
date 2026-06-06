@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 3/10 phases shipped (0, 1, 2). Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
+**Overall:** 🚧 In progress (claimed 2026-06-06T18:05:00Z). 3/10 phases shipped (0, 1, 2); Phase 3 in progress. Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`).
 
 > **Deviation (branch name):** executing on the harness-designated branch
 > `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
@@ -72,8 +72,8 @@ notes and commit messages.
 |---|---|---|---|
 | 0 — Tooling + test harness (deps, determinism traps, pristine, CI) | ✅ Shipped | `6e30a77`, `49a1395`, `0c5660a` | deps+harness+CI; CI runs on the PR (pull_request event) — feature-branch pushes don't trigger by design |
 | 1 — `normalize.ts` + NFC golden fixture | ✅ Shipped | `ed77d51`, `45f9d19`, `96a46c5` | normalize + workerd↔Node golden (14 cases, gen on workerd); fresh review caught identity-only NFC test → strengthened (`96a46c5`) |
-| 2 — `canonicalize-url.ts` (SSRF host classification) | ✅ Shipped | `e375155`, `0644f05` | bipolar corpus; fresh security review caught trailing-dot denylist bypass (fixed); orchestrator rejected a false `::ffff:N` finding |
-| 3 — `verbatim-check.ts` | ⬜ Not started | — | highest-stakes; boil the lake (opus review) |
+| 2 — `canonicalize-url.ts` (SSRF host classification) | ✅ Shipped | `e375155`, `0644f05`, `045b046` | bipolar corpus (32 cases); trailing-dot bypass fixed; refactored to `ipaddr.js` (Sam's call) — −59 LOC hand-rolled math, NAT64 closed; full adversarial battery verified |
+| 3 — `verbatim-check.ts` | 🚧 In progress | — | highest-stakes; boil the lake (opus review) |
 | 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | ⬜ Not started | — | blind-adversary corpora |
 | 5 — `provider.ts` reshape + fake providers | ⬜ Not started | — | interface change to committed code |
 | 6 — `verify-proposal.ts` | ⬜ Not started | — | the standalone compliance seam |
@@ -374,7 +374,7 @@ describe("NFC normalization is workerd↔Node parity-stable", () => {
 
 ## Phase 2 — `canonicalize-url.ts` (SSRF host classification)
 
-**Execution Status:** ✅ SHIPPED 2026-06-06 — `e375155` (impl + bipolar tests, 24 cases), `0644f05` (security fix). Review rounds: provenance (orchestrator) → adversarial bypass probe (orchestrator, found trailing-dot) → fresh security reviewer (confirmed trailing-dot BLOCKER, audited CIDR math correct, surfaced a *false* single-group `::ffff:N` finding) → consolidated fix + re-verify. **Trailing-dot FQDN bypass of `BLOCKED_HOSTNAMES` (e.g. `metadata.google.internal.`) closed** by stripping a single trailing dot before classification. **False finding rejected by mechanism inspection:** `::ffff:1` is NOT IPv4-mapped (`ffff` in group 6, not the mapped group 5); true mapped low addresses normalize to `::ffff:0:N` (two groups) and are already caught — verified empirically, test `[::ffff:0:1]→reject` locks it in. Public IPv4/IPv6 added to MUST-PASS (bipolar discipline in the IP branches). 30 unit cases, gate trio green. Named residuals (IPv4-compatible `::/96`, NAT64 `64:ff9b::/96`) documented in-module + spec §9.
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `e375155` (impl + bipolar tests, 24 cases), `0644f05` (security fix). Review rounds: provenance (orchestrator) → adversarial bypass probe (orchestrator, found trailing-dot) → fresh security reviewer (confirmed trailing-dot BLOCKER, audited CIDR math correct, surfaced a *false* single-group `::ffff:N` finding) → consolidated fix + re-verify. **Trailing-dot FQDN bypass of `BLOCKED_HOSTNAMES` (e.g. `metadata.google.internal.`) closed** by stripping a single trailing dot before classification. **False finding rejected by mechanism inspection:** `::ffff:1` is NOT IPv4-mapped (`ffff` in group 6, not the mapped group 5); true mapped low addresses normalize to `::ffff:0:N` (two groups) and are already caught — verified empirically, test `[::ffff:0:1]→reject` locks it in. Public IPv4/IPv6 added to MUST-PASS (bipolar discipline in the IP branches). 30 unit cases, gate trio green. Named residuals (IPv4-compatible `::/96`, NAT64 `64:ff9b::/96`) documented in-module + spec §9. **Post-ship refactor (`045b046`, Sam's call):** IP classification now via `ipaddr.js` (`^2.4.0`) — deleted all hand-rolled CIDR/IPv6 math (−59 LOC); `.range()` checks against the spec's enumerated block sets; NAT64 (`rfc6052`) CLOSED (now rejected), IPv4-compatible `::/96` remains the sole residual. Orchestrator re-ran the full 39-case adversarial battery (30 reject + 9 pass) — all correct; 264 suite green.
 
 Implements spec §2 (SSRF guard, parse-then-canonicalize) — the pure, synchronous, **non-fetching** unit shared by the source-fetch guard and the pipeline's per-host cap.
 
