@@ -1,6 +1,5 @@
-// ABOUTME: Database client — async SqlExecutor port with better-sqlite3 (local/test) and D1 (prod) adapters.
-// ABOUTME: One async contract runs the same SQL on both engines; the adapters absorb their API differences.
-import Database from "better-sqlite3";
+// ABOUTME: Portable async SqlExecutor interface and Cloudflare D1 adapter.
+// ABOUTME: No Node-only imports — safe to bundle for Cloudflare Workers.
 
 /**
  * Prepared-statement surface shared by every data-layer caller. Parameters are
@@ -24,28 +23,6 @@ export interface SqlStatement {
  */
 export interface SqlExecutor {
   prepare(sql: string): SqlStatement;
-}
-
-/**
- * Wraps a better-sqlite3 Database in the async SqlExecutor port. The engine is
- * synchronous, so `run`/`all` resolve immediately; binding is captured per
- * statement instance (each `bind` returns a fresh statement carrying its params)
- * to mirror D1's immutable-bind contract and avoid shared mutable state.
- */
-export function betterSqliteExecutor(db: Database.Database): SqlExecutor {
-  return {
-    prepare(sql: string): SqlStatement {
-      const stmt = db.prepare(sql);
-      const withParams = (params: unknown[]): SqlStatement => ({
-        bind: (...next: unknown[]) => withParams(next),
-        run: async () => {
-          stmt.run(...params);
-        },
-        all: async <T>() => stmt.all(...params) as T[],
-      });
-      return withParams([]);
-    },
-  };
 }
 
 /** Minimal structural view of D1's prepared statement (duck-typed, no workers-types import). */
@@ -78,17 +55,3 @@ export function d1Executor(db: D1DatabaseLike): SqlExecutor {
   };
 }
 
-/**
- * Opens a better-sqlite3 in-memory or file-based database for local/test use and
- * returns it as a SqlExecutor.
- *
- * Enables foreign-key enforcement so local/test behavior matches Cloudflare D1,
- * which enforces foreign keys by default. better-sqlite3 leaves them off unless
- * this pragma is set, which would otherwise let referential-integrity violations
- * pass silently in tests.
- */
-export function openLocalDb(path: string = ":memory:"): SqlExecutor {
-  const db = new Database(path);
-  db.pragma("foreign_keys = ON");
-  return betterSqliteExecutor(db);
-}

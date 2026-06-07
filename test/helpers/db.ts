@@ -2,7 +2,8 @@
 // ABOUTME: Enables foreign-key enforcement so local tests match Cloudflare D1's default.
 import Database from "better-sqlite3";
 import { readFileSync, readdirSync } from "node:fs";
-import { betterSqliteExecutor, type SqlExecutor } from "../../src/db/client";
+import { betterSqliteExecutor } from "../../src/db/local-db";
+import type { SqlExecutor } from "../../src/db/client";
 
 /**
  * Opens a fresh in-memory SQLite database with all migrations applied in sorted

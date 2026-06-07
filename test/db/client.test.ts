@@ -2,7 +2,8 @@
 // ABOUTME: Verifies better-sqlite3 round-trips, FK enforcement, and D1 delegation/unwrapping.
 import { describe, it, expect } from "vitest";
 import Database from "better-sqlite3";
-import { betterSqliteExecutor, d1Executor, openLocalDb } from "../../src/db/client";
+import { betterSqliteExecutor, openLocalDb } from "../../src/db/local-db";
+import { d1Executor } from "../../src/db/client";
 import { freshTestDb } from "../helpers/db";
 
 describe("betterSqliteExecutor", () => {

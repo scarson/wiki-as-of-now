@@ -2,7 +2,7 @@
 // ABOUTME: Verifies append, read-back in insertion order, and absence of mutation methods.
 import { describe, it, expect } from "vitest";
 import { makeAuditLog } from "../../src/db/audit-log";
-import { betterSqliteExecutor } from "../../src/db/client";
+import { betterSqliteExecutor } from "../../src/db/local-db";
 import { freshTestDb } from "../helpers/db";
 
 const newLog = () => makeAuditLog(betterSqliteExecutor(freshTestDb()));
