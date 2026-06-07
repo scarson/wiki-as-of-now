@@ -135,6 +135,27 @@ describe("processBatch — incremental ack", () => {
     expect(msgs[0].ack).toHaveBeenCalledTimes(1);
     expect(msgs[0].retry).not.toHaveBeenCalled();
   });
+
+  it("msg[0].ack() is invoked BEFORE handle is called for msg[1] (incremental, not post-loop)", async () => {
+    allowConsole();
+    const bodies = [validBody(), validBody(), validBody()];
+    const msgs = bodies.map(makeMsg);
+    const batch = makeBatch(msgs);
+    const deps = {} as ResearchConsumerDeps;
+
+    const handle = vi.fn().mockImplementation(async (msg: ResearchMessage) => {
+      if (msg === bodies[1]) throw new Error("LateThrow");
+    });
+
+    await processBatch(batch, deps, handle);
+
+    // Ordering proof: msg[0].ack must have fired before handle was called the second time
+    // (for msg[1]). A post-loop/deferred dispatch implementation would fail this because
+    // all acks/retries would be dispatched AFTER all handler invocations complete.
+    const ackOrder = msgs[0].ack.mock.invocationCallOrder[0];
+    const handleMsg1Order = handle.mock.invocationCallOrder[1];
+    expect(ackOrder).toBeLessThan(handleMsg1Order);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -142,7 +163,7 @@ describe("processBatch — incremental ack", () => {
 // ---------------------------------------------------------------------------
 
 describe("processBatch — malformed body → ack (real consumer)", () => {
-  it("a malformed message body (missing input) causes the real handleResearchMessage to resolve → processBatch acks it", async () => {
+  it("a malformed message body (missing required fields: sourceRevisionId and input) causes the real handleResearchMessage to resolve → processBatch acks it", async () => {
     allowConsole();
     const exec = freshTestExecutor();
     const auditLog = makeAuditLog(exec);
@@ -154,7 +175,7 @@ describe("processBatch — malformed body → ack (real consumer)", () => {
       now: new Date("2026-06-07T00:00:00.000Z"),
     };
 
-    // Malformed body: missing 'input' field — real consumer will audit+return (resolve)
+    // Malformed body: missing required fields (sourceRevisionId and input) — real consumer will audit+return (resolve)
     const malformedBody = { claimKey: "x", pageId: 1 };
     const msg = makeMsg(malformedBody);
     const batch = makeBatch([msg]);
