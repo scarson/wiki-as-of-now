@@ -1,9 +1,11 @@
 // ABOUTME: Tests for the research-job queue consumer and producer (src/queue/research-jobs.ts).
-// ABOUTME: Covers idempotency, terminal persistence, audit allowlist+sentinel (G13), retry signaling, malformed messages.
+// ABOUTME: Covers idempotency, terminal atomic persistence, audit allowlist+sentinel (G13), retry signaling, malformed messages, and batch-producer chunking / SEED_BATCH_LIMIT.
 import { describe, it, expect, vi } from "vitest";
 import {
   handleResearchMessage,
   enqueueResearch,
+  enqueueResearchBatch,
+  SEED_BATCH_LIMIT,
   makeResearchPackStore,
   type ResearchMessage,
   type ResearchConsumerDeps,
@@ -16,6 +18,7 @@ import { allowConsole } from "../setup/pristine";
 import type { ResearchOutcome } from "../../src/research/pipeline";
 import type { EvidenceCard } from "../../src/research/provider";
 import type { DroppedProposal } from "../../src/research/verify-proposal";
+import type { SqlExecutor, SqlStatement } from "../../src/db/client";
 
 // ---------------------------------------------------------------------------
 // Shared fixtures
@@ -634,6 +637,415 @@ describe("handleResearchMessage — concurrent double-write", () => {
 
     // researchClaim called exactly once (second was skipped by has() check)
     expect(researchClaim).toHaveBeenCalledTimes(1);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// PackStore.commitTerminal — atomic pack+audit
+// ---------------------------------------------------------------------------
+
+describe("PackStore.commitTerminal", () => {
+  it("happy path: persists both the pack and exactly one audit row using the real executor", async () => {
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, {
+      pageId: PAGE_ID,
+      title: "Test Article",
+      revisionId: SOURCE_REVISION_ID,
+      fetchedAt: FIXED_NOW.toISOString(),
+    });
+
+    const input = makeInput();
+    const claimKey = await computeClaimKey(PAGE_ID, input.sectionHeading, input.claimText, input.year);
+
+    const pack = {
+      claimKey,
+      sourceRevisionId: SOURCE_REVISION_ID,
+      pageId: PAGE_ID,
+      sectionHeading: input.sectionHeading,
+      sentenceText: input.claimText,
+      year: input.year,
+      providerName: "fake-provider",
+      modelVersion: "fake-provider/1.0",
+      status: "no_proposals" as const,
+      queries: ["q1"],
+      cards: [],
+      dispositions: [],
+      evaluatedAt: FIXED_NOW.toISOString(),
+    };
+
+    const auditEntry = {
+      actor: "system",
+      eventType: "research.completed",
+      payload: { claimKey, providerName: "fake-provider", modelVersion: "fake-provider/1.0", status: "no_proposals", cardCount: 0, overCapCount: 0, dispositionTally: {} },
+    };
+
+    const store = makeResearchPackStore(exec);
+    await store.commitTerminal(pack, auditEntry);
+
+    // Pack must be persisted
+    const packResult = await getPack(exec, claimKey, SOURCE_REVISION_ID);
+    expect(packResult.state).toBe("found");
+    if (packResult.state === "found") {
+      expect(packResult.pack.claimKey).toBe(claimKey);
+    }
+
+    // Exactly one audit row
+    const rows = await makeAuditLog(exec).read();
+    expect(rows).toHaveLength(1);
+    expect(rows[0].actor).toBe("system");
+    expect(rows[0].eventType).toBe("research.completed");
+  });
+
+  it("atomic both-or-neither: FK violation on pack insert rolls back the audit row too (real executor, no mock)", async () => {
+    // The pack references a page_id with NO parent articles row — the FK constraint
+    // fires inside the batch, rolling back both the pack insert AND the audit insert.
+    const exec = freshTestExecutor();
+
+    const orphanPageId = 9999; // no articles row exists for this page_id
+    const claimKey = "orphan-claim-key-for-atomicity-test";
+
+    const pack = {
+      claimKey,
+      sourceRevisionId: SOURCE_REVISION_ID,
+      pageId: orphanPageId, // orphan — FK will fail inside the batch
+      sectionHeading: "History",
+      sentenceText: "Some claim text.",
+      year: 2025,
+      providerName: "fake-provider",
+      modelVersion: "fake-provider/1.0",
+      status: "no_proposals" as const,
+      queries: [],
+      cards: [],
+      dispositions: [],
+      evaluatedAt: FIXED_NOW.toISOString(),
+    };
+
+    const auditEntry = {
+      actor: "system",
+      eventType: "research.completed",
+      payload: { claimKey, cardCount: 0, overCapCount: 0 },
+    };
+
+    const store = makeResearchPackStore(exec);
+
+    // commitTerminal must reject (FK error)
+    await expect(store.commitTerminal(pack, auditEntry)).rejects.toThrow(/FOREIGN KEY/i);
+
+    // Pack must NOT be persisted (rolled back)
+    expect(await packExists(exec, claimKey, SOURCE_REVISION_ID)).toBe(false);
+
+    // Audit row must NOT be persisted (rolled back with the pack — both-or-neither)
+    const rows = await makeAuditLog(exec).read();
+    expect(rows).toHaveLength(0);
+  });
+
+  it("composition proof: commitTerminal issues exactly one batch([packStmt, auditStmt]) — not two independent .run() calls", async () => {
+    // Wrap a real executor in a thin spy that counts batch calls and statement count.
+    const realExec = freshTestExecutor();
+    await upsertArticle(realExec, {
+      pageId: PAGE_ID,
+      title: "Test Article",
+      revisionId: SOURCE_REVISION_ID,
+      fetchedAt: FIXED_NOW.toISOString(),
+    });
+
+    let batchCallCount = 0;
+    let batchStatementCount = 0;
+    let prepareRunCount = 0;
+
+    // Spy executor: intercepts batch + tracks prepare().run() calls.
+    // The WeakMap maps each spy-wrapped SqlStatement back to the real statement
+    // produced by realExec, so batch() can delegate to realExec.batch with the
+    // originals that realExec's internal WeakMap recognises.
+    const underlying = new WeakMap<SqlStatement, SqlStatement>();
+    const spyExec: SqlExecutor = {
+      prepare(sql: string): SqlStatement {
+        const real = realExec.prepare(sql);
+        // Wrap the real statement to count direct .run() calls (not via batch).
+        const wrap = (inner: SqlStatement, innerReal: SqlStatement): SqlStatement => {
+          const wrapped: SqlStatement = {
+            bind: (...params: unknown[]) => {
+              const boundReal = innerReal.bind(...params);
+              return wrap(inner.bind(...params), boundReal);
+            },
+            run: async () => {
+              prepareRunCount++;
+              return inner.run();
+            },
+            all: <T>() => inner.all<T>(),
+          };
+          underlying.set(wrapped, innerReal);
+          return wrapped;
+        };
+        return wrap(real, real);
+      },
+      batch: async (statements: SqlStatement[]): Promise<void> => {
+        batchCallCount++;
+        batchStatementCount = statements.length;
+        // Unwrap each spy-statement to the real statement that realExec produced,
+        // so realExec.batch can find them in its own internal WeakMap.
+        const realStmts = statements.map((s) => {
+          const r = underlying.get(s);
+          if (!r) throw new Error("spy: statement not produced by this executor");
+          return r;
+        });
+        return realExec.batch(realStmts);
+      },
+    };
+
+    const input = makeInput();
+    const claimKey = await computeClaimKey(PAGE_ID, input.sectionHeading, input.claimText, input.year);
+
+    const pack = {
+      claimKey,
+      sourceRevisionId: SOURCE_REVISION_ID,
+      pageId: PAGE_ID,
+      sectionHeading: input.sectionHeading,
+      sentenceText: input.claimText,
+      year: input.year,
+      providerName: "fake-provider",
+      modelVersion: "fake-provider/1.0",
+      status: "no_proposals" as const,
+      queries: [],
+      cards: [],
+      dispositions: [],
+      evaluatedAt: FIXED_NOW.toISOString(),
+    };
+
+    const auditEntry = {
+      actor: "system",
+      eventType: "research.completed",
+      payload: { claimKey, cardCount: 0 },
+    };
+
+    const store = makeResearchPackStore(spyExec);
+    await store.commitTerminal(pack, auditEntry);
+
+    // batch must be called exactly once with exactly 2 statements
+    expect(batchCallCount).toBe(1);
+    expect(batchStatementCount).toBe(2);
+
+    // commitTerminal must NOT have issued independent .run() calls for the terminal path
+    expect(prepareRunCount).toBe(0);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// handleResearchMessage — terminal path uses commitTerminal atomically
+// ---------------------------------------------------------------------------
+
+describe("handleResearchMessage — terminal path uses commitTerminal (G13 atomic close)", () => {
+  it("orphan FK on pageId: terminal commit rejects AND neither pack nor research.completed audit persists (atomic end-to-end through consumer)", async () => {
+    // No articles row for orphanPageId — FK fires inside the atomic batch.
+    // Assert: handler rejects (retry signal) AND pack is absent AND no research.completed audit row.
+    const exec = freshTestExecutor();
+    const ORPHAN_PAGE_ID = 9999; // no articles row
+
+    // Build a valid claimKey from computeClaimKey so it passes message validation.
+    const input = makeInput();
+    const claimKey = await computeClaimKey(ORPHAN_PAGE_ID, input.sectionHeading, input.claimText, input.year);
+    const msg: ResearchMessage = { claimKey, pageId: ORPHAN_PAGE_ID, sourceRevisionId: SOURCE_REVISION_ID, input };
+
+    const researchClaim = vi.fn().mockResolvedValue(makeNoProposalsOutcome());
+    const packStore = makeResearchPackStore(exec);
+    const auditLog = makeAuditLog(exec);
+
+    // Handler MUST reject (retry signal) — FK failure inside commitTerminal propagates out.
+    await expect(
+      handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW })
+    ).rejects.toThrow();
+
+    // Pack must NOT exist (rolled back).
+    expect(await packExists(exec, claimKey, SOURCE_REVISION_ID)).toBe(false);
+
+    // No research.completed audit row (rolled back with pack — both-or-neither).
+    const rows = await auditLog.read();
+    const completedRows = rows.filter(r => r.eventType === "research.completed");
+    expect(completedRows).toHaveLength(0);
+  });
+
+  it("commitTerminal-path proof: on a successful terminal handle, deps.audit.append is NOT called for research.completed; pack and audit row both exist in DB", async () => {
+    // Wraps the real auditLog in a spy to verify that the terminal research.completed
+    // audit goes through packStore.commitTerminal (one atomic op), NOT a separate deps.audit.append.
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, { pageId: PAGE_ID, title: "Test Article", revisionId: SOURCE_REVISION_ID, fetchedAt: FIXED_NOW.toISOString() });
+
+    const input = makeInput();
+    const claimKey = await computeClaimKey(PAGE_ID, input.sectionHeading, input.claimText, input.year);
+    const msg: ResearchMessage = { claimKey, pageId: PAGE_ID, sourceRevisionId: SOURCE_REVISION_ID, input };
+
+    const outcome = makeNoProposalsOutcome();
+    const researchClaim = vi.fn().mockResolvedValue(outcome);
+    const packStore = makeResearchPackStore(exec);
+    const realAuditLog = makeAuditLog(exec);
+
+    // Spy wrapping the real audit log: delegates to the real log but records calls.
+    const appendSpy = vi.fn(async (entry: Parameters<typeof realAuditLog.append>[0]) => {
+      return realAuditLog.append(entry);
+    });
+    const spyAudit = { append: appendSpy };
+
+    await handleResearchMessage(msg, { researchClaim, packStore, audit: spyAudit, now: FIXED_NOW });
+
+    // deps.audit.append must NOT have been called for research.completed (it goes via commitTerminal).
+    const completedCalls = appendSpy.mock.calls.filter(([e]) => e.eventType === "research.completed");
+    expect(completedCalls).toHaveLength(0);
+
+    // Pack must be in DB (written via commitTerminal).
+    expect(await packExists(exec, claimKey, SOURCE_REVISION_ID)).toBe(true);
+
+    // Exactly one research.completed audit row must be in DB (written via commitTerminal).
+    const rows = await realAuditLog.read();
+    const completedRows = rows.filter(r => r.eventType === "research.completed");
+    expect(completedRows).toHaveLength(1);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Producer: enqueueResearchBatch
+// ---------------------------------------------------------------------------
+
+/** Build a minimal ResearchMessage with the given claimKey (pre-computed, not derived). */
+function makeBatchMsg(claimKey: string, overrides: Partial<ResearchMessage> = {}): ResearchMessage {
+  return {
+    claimKey,
+    pageId: PAGE_ID,
+    sourceRevisionId: SOURCE_REVISION_ID,
+    input: {
+      claimText: "The fleet will reach full strength by 2025.",
+      sectionHeading: "History",
+      year: 2025,
+      sourceRevisionId: SOURCE_REVISION_ID,
+    },
+    ...overrides,
+  };
+}
+
+describe("enqueueResearchBatch", () => {
+  it("(a) sends pre-built messages unchanged — claimKey is NOT recomputed", async () => {
+    // The producer for seed fan-out receives messages with already-computed claimKeys.
+    // It must pass them through as-is, never recomputing from the input fields.
+    const recognizable = "a".repeat(64);
+    const msg = makeBatchMsg(recognizable);
+    const sendBatch = vi.fn().mockResolvedValue(undefined);
+    const queue = { sendBatch };
+
+    await enqueueResearchBatch(queue, [msg]);
+
+    expect(sendBatch).toHaveBeenCalledTimes(1);
+    const [chunk] = sendBatch.mock.calls[0] as [{ body: ResearchMessage }[]];
+    expect(chunk).toHaveLength(1);
+    // Message is wrapped as { body: msg }
+    expect(chunk[0].body).toEqual(msg);
+    // claimKey comes through unchanged
+    expect(chunk[0].body.claimKey).toBe(recognizable);
+  });
+
+  it("(b) chunks 250 messages into sendBatch calls of <=100 each: [100, 100, 50]", async () => {
+    const safeClaimKey = (i: number) => i.toString(16).padStart(64, "0");
+    const safeMsgs = Array.from({ length: 250 }, (_, i) => makeBatchMsg(safeClaimKey(i)));
+
+    const sendBatch = vi.fn().mockResolvedValue(undefined);
+    const queue = { sendBatch };
+
+    await enqueueResearchBatch(queue, safeMsgs);
+
+    expect(sendBatch).toHaveBeenCalledTimes(3);
+    const sizes = sendBatch.mock.calls.map((call) => (call[0] as unknown[]).length);
+    expect(sizes).toEqual([100, 100, 50]);
+    // Every chunk must be <=100
+    for (const size of sizes) {
+      expect(size).toBeLessThanOrEqual(100);
+    }
+  });
+
+  it("(c) oversized single message is skipped + codes-only warned + batch resolves without throw", async () => {
+    allowConsole();
+    const normalClaimKey = "c".repeat(64);
+    const oversizedClaimKey = "d".repeat(64);
+
+    const normalMsg = makeBatchMsg(normalClaimKey);
+    // A message that exceeds 128 KB when JSON-stringified
+    const oversizedMsg = makeBatchMsg(oversizedClaimKey, {
+      input: {
+        claimText: "x".repeat(200_000),
+        sectionHeading: "History",
+        year: 2025,
+        sourceRevisionId: SOURCE_REVISION_ID,
+      },
+    });
+
+    const sendBatch = vi.fn().mockResolvedValue(undefined);
+    const queue = { sendBatch };
+    const warnSpy = vi.spyOn(console, "warn");
+
+    await expect(enqueueResearchBatch(queue, [normalMsg, oversizedMsg])).resolves.toBeUndefined();
+
+    // Normal message must be sent
+    expect(sendBatch).toHaveBeenCalledTimes(1);
+    const [chunk] = sendBatch.mock.calls[0] as [{ body: ResearchMessage }[]];
+    const sentKeys = chunk.map((m) => m.body.claimKey);
+    expect(sentKeys).toContain(normalClaimKey);
+    // Oversized message must NOT be sent
+    expect(sentKeys).not.toContain(oversizedClaimKey);
+
+    // A console.warn must have fired for the oversized message
+    expect(warnSpy).toHaveBeenCalled();
+
+    // The warn must NOT contain the giant claimText (codes-only)
+    const warnArgs = warnSpy.mock.calls.map((c) => JSON.stringify(c));
+    for (const arg of warnArgs) {
+      expect(arg).not.toContain("x".repeat(100)); // no fragment of the oversized text
+    }
+  });
+
+  it("(d) SEED_BATCH_LIMIT is defined and <=100", () => {
+    expect(typeof SEED_BATCH_LIMIT).toBe("number");
+    expect(SEED_BATCH_LIMIT).toBeLessThanOrEqual(100);
+  });
+
+  it("(e) empty input: sendBatch not called, resolves", async () => {
+    const sendBatch = vi.fn().mockResolvedValue(undefined);
+    const queue = { sendBatch };
+
+    await expect(enqueueResearchBatch(queue, [])).resolves.toBeUndefined();
+    expect(sendBatch).not.toHaveBeenCalled();
+  });
+
+  it("(f) byte-driven split: 3 messages each ~90 KB produces 2 sendBatch calls ([2, 1]), not count-driven", async () => {
+    // Each message has a ~90 KB claimText. JSON.stringify of each is ~90 KB — well under the
+    // 128 KB single-message skip threshold, so none is skipped. Two fit in a 256 KB chunk
+    // (2 × 90 KB = 180 KB < 256 KB), but adding a third would exceed the limit, forcing a
+    // second chunk. Count (3) is far under the 100-message cap, so the split is byte-driven.
+    const key1 = "1".repeat(64);
+    const key2 = "2".repeat(64);
+    const key3 = "3".repeat(64);
+
+    const bigText = "x".repeat(90_000);
+    const msg1 = makeBatchMsg(key1, { input: { claimText: bigText, sectionHeading: "History", year: 2025, sourceRevisionId: SOURCE_REVISION_ID } });
+    const msg2 = makeBatchMsg(key2, { input: { claimText: bigText, sectionHeading: "History", year: 2025, sourceRevisionId: SOURCE_REVISION_ID } });
+    const msg3 = makeBatchMsg(key3, { input: { claimText: bigText, sectionHeading: "History", year: 2025, sourceRevisionId: SOURCE_REVISION_ID } });
+
+    const sendBatch = vi.fn().mockResolvedValue(undefined);
+    const queue = { sendBatch };
+
+    await enqueueResearchBatch(queue, [msg1, msg2, msg3]);
+
+    // Byte-driven split: 2 chunks even though only 3 messages (far under count cap of 100)
+    expect(sendBatch).toHaveBeenCalledTimes(2);
+
+    const chunk1 = sendBatch.mock.calls[0][0] as { body: ResearchMessage }[];
+    const chunk2 = sendBatch.mock.calls[1][0] as { body: ResearchMessage }[];
+
+    // First chunk: 2 messages; second chunk: 1 message
+    expect(chunk1).toHaveLength(2);
+    expect(chunk2).toHaveLength(1);
+
+    // All 3 messages were sent (none skipped — all are under the 128 KB per-message limit)
+    const allSent = [...chunk1, ...chunk2].map((m) => m.body.claimKey);
+    expect(allSent).toContain(key1);
+    expect(allSent).toContain(key2);
+    expect(allSent).toContain(key3);
   });
 });
 

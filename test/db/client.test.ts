@@ -2,7 +2,8 @@
 // ABOUTME: Verifies better-sqlite3 round-trips, FK enforcement, and D1 delegation/unwrapping.
 import { describe, it, expect } from "vitest";
 import Database from "better-sqlite3";
-import { betterSqliteExecutor, d1Executor, openLocalDb } from "../../src/db/client";
+import { betterSqliteExecutor, openLocalDb } from "../../src/db/local-db";
+import { d1Executor } from "../../src/db/client";
 import { freshTestDb } from "../helpers/db";
 
 describe("betterSqliteExecutor", () => {
@@ -29,6 +30,32 @@ describe("betterSqliteExecutor", () => {
       .bind(999, "S", "t", 2017, "plans to", 1.0, "e", "1.0.0", 1)
       .run();
     await expect(orphan).rejects.toThrow(/FOREIGN KEY/i);
+  });
+
+  it("batch: commits all statements atomically on success", async () => {
+    const exec = betterSqliteExecutor(freshTestDb());
+    const insertSql = "INSERT INTO articles (page_id, title, revision_id, fetched_at) VALUES (?, ?, ?, ?)";
+    const stmtA = exec.prepare(insertSql).bind(10, "Article A", 100, "2026-06-05T00:00:00.000Z");
+    const stmtB = exec.prepare(insertSql).bind(20, "Article B", 200, "2026-06-05T00:00:00.000Z");
+    await exec.batch([stmtA, stmtB]);
+    const rows = await exec
+      .prepare("SELECT page_id FROM articles ORDER BY page_id")
+      .all<{ page_id: number }>();
+    expect(rows).toEqual([{ page_id: 10 }, { page_id: 20 }]);
+  });
+
+  it("batch: rolls back all statements when one fails (both-or-neither)", async () => {
+    const exec = betterSqliteExecutor(freshTestDb());
+    const insertSql = "INSERT INTO articles (page_id, title, revision_id, fetched_at) VALUES (?, ?, ?, ?)";
+    // stmtA is a valid insert; stmtB is a duplicate PK → constraint error mid-transaction.
+    const stmtA = exec.prepare(insertSql).bind(1, "Article", 100, "2026-06-05T00:00:00.000Z");
+    const stmtB = exec.prepare(insertSql).bind(1, "Duplicate", 101, "2026-06-05T00:00:00.000Z");
+    await expect(exec.batch([stmtA, stmtB])).rejects.toThrow();
+    // The first insert must have been rolled back — neither row survives.
+    const rows = await exec
+      .prepare("SELECT page_id FROM articles WHERE page_id = 1")
+      .all<{ page_id: number }>();
+    expect(rows).toHaveLength(0);
   });
 });
 
@@ -59,7 +86,10 @@ describe("d1Executor", () => {
         return { results: [{ n: 1 } as T] };
       },
     });
-    const fakeD1 = { prepare: (sql: string) => makeStmt(sql) };
+    const fakeD1 = {
+      prepare: (sql: string) => makeStmt(sql),
+      batch: async (_stmts: unknown[]) => [],
+    };
 
     const exec = d1Executor(fakeD1);
     await exec.prepare("INSERT INTO t VALUES (?)").bind("x").run();
@@ -70,6 +100,53 @@ describe("d1Executor", () => {
       { sql: "INSERT INTO t VALUES (?)", params: ["x"], method: "run" },
       { sql: "SELECT n FROM t", params: [], method: "all" },
     ]);
+  });
+
+  it("batch: delegates to D1 native batch with the underlying bound statements", async () => {
+    // Track which underlying D1 statement objects were passed to batch().
+    let batchCallCount = 0;
+    let batchedStatements: unknown[] = [];
+
+    // Track the native D1 statement objects produced by bind() calls so we can
+    // assert that the adapter passes these exact objects to batch(), not the
+    // port-layer SqlStatement wrappers (s1/s2).
+    const boundNatives: unknown[] = [];
+    const makeStmt = (sql: string, params: unknown[] = []) => {
+      const native = {
+        bind: (...p: unknown[]) => makeStmt(sql, p),
+        run: async () => ({ success: true }),
+        all: async <T,>(): Promise<{ results: T[] }> => ({ results: [] }),
+      };
+      // Only track objects that result from a bind() call (params non-empty);
+      // those are what the executor stores in its WeakMap and passes to batch().
+      if (params.length > 0) boundNatives.push(native);
+      return native;
+    };
+
+    const fakeD1 = {
+      prepare: (sql: string) => makeStmt(sql),
+      batch: async (stmts: unknown[]) => {
+        batchCallCount++;
+        batchedStatements = stmts;
+        return [];
+      },
+    };
+
+    const exec = d1Executor(fakeD1);
+    const s1 = exec.prepare("INSERT INTO t VALUES (?)").bind("a");
+    const s2 = exec.prepare("INSERT INTO t VALUES (?)").bind("b");
+    await exec.batch([s1, s2]);
+
+    // D1 batch must have been called exactly once (not run() called per statement).
+    expect(batchCallCount).toBe(1);
+    // The adapter must have passed exactly 2 underlying D1 statements.
+    expect(batchedStatements).toHaveLength(2);
+    // The adapter must pass the UNDERLYING D1 statements, not the port wrappers (WeakMap unwrap).
+    expect(batchedStatements[0]).not.toBe(s1);
+    expect(batchedStatements[1]).not.toBe(s2);
+    // Positive identity: the batched objects are the exact native statements from bind().
+    expect(batchedStatements[0]).toBe(boundNatives[0]);
+    expect(batchedStatements[1]).toBe(boundNatives[1]);
   });
 });
 

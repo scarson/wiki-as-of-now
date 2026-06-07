@@ -1,10 +1,11 @@
 // ABOUTME: Research-job queue consumer — total/contained handler that drives the research provider.
-// ABOUTME: Also exports a thin producer (enqueueResearch) for posting to a Cloudflare Queue binding.
+// ABOUTME: Also exports queue producers (enqueueResearch, enqueueResearchBatch) and the atomic pack+audit pack store.
 import type { AuditEntry } from "../db/audit-log";
+import { appendStatement } from "../db/audit-log";
 import type { ResearchInput } from "../research/provider";
 import type { ResearchOutcome } from "../research/pipeline";
 import type { ResearchPack } from "../db/research-packs";
-import { computeClaimKey, packExists, insertPackIfAbsent } from "../db/research-packs";
+import { computeClaimKey, packExists, insertPackIfAbsent, insertPackStatement } from "../db/research-packs";
 import type { SqlExecutor } from "../db/client";
 
 // ---------------------------------------------------------------------------
@@ -23,6 +24,8 @@ export interface ResearchMessage {
 export interface PackStore {
   has(claimKey: string, sourceRevisionId: number): Promise<boolean>;
   insertIfAbsent(pack: ResearchPack): Promise<void>;
+  /** Persists the pack and its completion audit entry atomically (both-or-neither). */
+  commitTerminal(pack: ResearchPack, audit: AuditEntry): Promise<void>;
 }
 
 /** Codes-only audit payload (G13). NEVER quotes/queries/URLs/claim text — ids, enums, counts only. */
@@ -51,7 +54,7 @@ export interface ResearchConsumerDeps {
 // ---------------------------------------------------------------------------
 
 /**
- * Real PackStore adapter backed by packExists + insertPackIfAbsent.
+ * Real PackStore adapter backed by packExists + insertPackIfAbsent + batch.
  * Tests can use makeResearchPackStore(freshTestExecutor()) for the real-store cases.
  */
 export function makeResearchPackStore(db: SqlExecutor): PackStore {
@@ -61,6 +64,9 @@ export function makeResearchPackStore(db: SqlExecutor): PackStore {
     },
     insertIfAbsent(pack: ResearchPack): Promise<void> {
       return insertPackIfAbsent(db, pack);
+    },
+    commitTerminal(pack: ResearchPack, audit: AuditEntry): Promise<void> {
+      return db.batch([insertPackStatement(db, pack), appendStatement(db, audit)]);
     },
   };
 }
@@ -90,7 +96,8 @@ function isValidMessage(msg: unknown): msg is ResearchMessage {
  * 1. Validate the message shape — permanently-bad input is ACKed (not retried).
  * 2. Idempotency skip on full PK (claimKey, sourceRevisionId) — ACKed silently.
  * 3. Call researchClaim:
- *    - terminal (no_proposals | proposals_present): persist pack, audit codes-only, ACK.
+ *    - terminal (no_proposals | proposals_present): persists pack + completion audit atomically
+ *      (both-or-neither via packStore.commitTerminal), ACK.
  *    - provider_unavailable: audit codes-only, THROW (retry).
  *    - unexpected error: audit codes-only (no raw error text), RETHROW (retry).
  */
@@ -104,7 +111,7 @@ export async function handleResearchMessage(
     // could smuggle content/PII into the append-only audit log. Only pass through a claimKey that is a
     // genuine computeClaimKey output (64-char lowercase hex); otherwise use a fixed placeholder.
     const rawKey = (msg as Record<string, unknown> | null)?.claimKey;
-    const claimKey = typeof rawKey === "string" && /^[0-9a-f]{64}$/.test(rawKey) ? rawKey : "malformed";
+    const claimKey = typeof rawKey === "string" && HEX64_PATTERN.test(rawKey) ? rawKey : "malformed";
     await deps.audit.append({
       actor: "system",
       eventType: "research.failed",
@@ -140,7 +147,7 @@ export async function handleResearchMessage(
     throw new Error("provider_unavailable: retry"); // retry — nothing persisted blocks re-attempt
   }
 
-  // Terminal outcome (no_proposals | proposals_present): persist + audit.
+  // Terminal outcome (no_proposals | proposals_present): persist pack and completion audit atomically.
   const pack: ResearchPack = {
     claimKey: msg.claimKey,
     sourceRevisionId: msg.sourceRevisionId,
@@ -156,7 +163,6 @@ export async function handleResearchMessage(
     dispositions: outcome.dispositions,
     evaluatedAt: deps.now.toISOString(),
   };
-  await deps.packStore.insertIfAbsent(pack);
 
   // Build the dispositionTally: reason-code → count (codes only, G13).
   const dispositionTally: Record<string, number> = {};
@@ -174,7 +180,7 @@ export async function handleResearchMessage(
     dispositionTally,
   };
 
-  await deps.audit.append({
+  await deps.packStore.commitTerminal(pack, {
     actor: "system",
     eventType: "research.completed",
     payload: auditPayload,
@@ -197,4 +203,85 @@ export async function enqueueResearch(
   const { pageId, sourceRevisionId, input } = params;
   const claimKey = await computeClaimKey(pageId, input.sectionHeading, input.claimText, input.year);
   await queue.send({ claimKey, pageId, sourceRevisionId, input });
+}
+
+// ---------------------------------------------------------------------------
+// Producer: enqueueResearchBatch
+// ---------------------------------------------------------------------------
+
+/** Maximum messages per Cloudflare Queue sendBatch call. */
+const MAX_BATCH_COUNT = 100;
+
+/** Maximum byte size per sendBatch call (256 KB). */
+const MAX_BATCH_BYTES = 256 * 1024;
+
+/** Threshold above which a single message is skipped rather than included in any batch. */
+const MAX_MESSAGE_BYTES = 128 * 1024;
+
+/**
+ * Upper bound on the seed fan-out — the number of ResearchMessages a seeder
+ * may produce in one invocation. Must never exceed MAX_BATCH_COUNT so an entire
+ * seed fan-out fits in a single sendBatch call without seed-level chunking.
+ */
+export const SEED_BATCH_LIMIT = 50;
+
+// Invariant enforced at module load: a future bump that violates the queue cap fails loudly.
+if (SEED_BATCH_LIMIT > MAX_BATCH_COUNT) {
+  throw new Error("SEED_BATCH_LIMIT must be <= MAX_BATCH_COUNT");
+}
+
+/** 64-char lowercase hex pattern — matches real computeClaimKey output. */
+const HEX64_PATTERN = /^[0-9a-f]{64}$/;
+
+/**
+ * Batch producer for seed fan-out — sends pre-built ResearchMessages to a Cloudflare Queue
+ * via sendBatch, chunked to <=100 messages AND <=256 KB per chunk.
+ *
+ * claimKey is already computed by the seed; it is passed through unchanged and never
+ * recomputed from the input fields.
+ *
+ * A single message whose JSON size exceeds ~128 KB is skipped and logged (codes-only)
+ * rather than failing the entire batch. This ensures one pathological message never
+ * blocks the rest of the seed fan-out.
+ */
+export async function enqueueResearchBatch(
+  queue: { sendBatch(msgs: { body: ResearchMessage }[]): Promise<void> },
+  msgs: ResearchMessage[],
+): Promise<void> {
+  const chunks: { body: ResearchMessage }[][] = [];
+  let current: { body: ResearchMessage }[] = [];
+  let currentBytes = 0;
+
+  for (const msg of msgs) {
+    const size = JSON.stringify(msg).length;
+
+    if (size > MAX_MESSAGE_BYTES) {
+      // Codes-only warn (G13): sanitize claimKey to 64-hex-or-"unknown"; never log message body/claimText.
+      const rawKey = msg.claimKey;
+      const safeKey = typeof rawKey === "string" && HEX64_PATTERN.test(rawKey) ? rawKey : "unknown";
+      console.warn("research.batch.message_skipped", { claimKey: safeKey, reason: "oversized_message_skipped" });
+      continue;
+    }
+
+    // Start a new chunk BEFORE adding when the current would exceed either limit.
+    if (
+      current.length > 0 &&
+      (current.length >= MAX_BATCH_COUNT || currentBytes + size > MAX_BATCH_BYTES)
+    ) {
+      chunks.push(current);
+      current = [];
+      currentBytes = 0;
+    }
+
+    current.push({ body: msg });
+    currentBytes += size;
+  }
+
+  if (current.length > 0) {
+    chunks.push(current);
+  }
+
+  for (const chunk of chunks) {
+    await queue.sendBatch(chunk);
+  }
 }

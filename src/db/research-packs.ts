@@ -3,7 +3,7 @@
 import type { EvidenceCard } from "../research/provider";
 import type { DroppedProposal } from "../research/verify-proposal";
 import { MIN_QUOTE_LEN, MAX_QUOTE_LEN } from "../research/verbatim-check";
-import type { SqlExecutor } from "./client";
+import type { SqlExecutor, SqlStatement } from "./client";
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -169,17 +169,13 @@ export async function packExists(db: SqlExecutor, claimKey: string, sourceRevisi
 }
 
 /**
- * Write-once insert: stores a research pack only if no row with the same
- * (claim_key, source_revision_id) already exists. Silently ignores conflicts.
- *
- * This intentionally diverges from the verdict upsert pattern: a pack represents
- * metered LLM spend. Re-delivering the same claim/revision must never overwrite
- * an existing result — idempotent re-delivery is the safe default, and any
- * reconciliation (e.g. if the model version changes) requires an explicit delete
- * followed by a fresh insert.
+ * Returns a bound SqlStatement for the write-once pack insert without executing it.
+ * Callers can pass this to `db.batch([...])` for atomic multi-statement commits.
+ * The statement uses ON CONFLICT(claim_key, source_revision_id) DO NOTHING so
+ * running it on an existing row is always a silent no-op.
  */
-export async function insertPackIfAbsent(db: SqlExecutor, pack: ResearchPack): Promise<void> {
-  await db
+export function insertPackStatement(db: SqlExecutor, pack: ResearchPack): SqlStatement {
+  return db
     .prepare(
       "INSERT INTO research_packs " +
       "(claim_key, source_revision_id, page_id, section_heading, sentence_text, year, " +
@@ -201,8 +197,21 @@ export async function insertPackIfAbsent(db: SqlExecutor, pack: ResearchPack): P
       JSON.stringify(pack.cards),
       JSON.stringify(pack.dispositions),
       pack.evaluatedAt,
-    )
-    .run();
+    );
+}
+
+/**
+ * Write-once insert: stores a research pack only if no row with the same
+ * (claim_key, source_revision_id) already exists. Silently ignores conflicts.
+ *
+ * This intentionally diverges from the verdict upsert pattern: a pack represents
+ * metered LLM spend. Re-delivering the same claim/revision must never overwrite
+ * an existing result — idempotent re-delivery is the safe default, and any
+ * reconciliation (e.g. if the model version changes) requires an explicit delete
+ * followed by a fresh insert.
+ */
+export async function insertPackIfAbsent(db: SqlExecutor, pack: ResearchPack): Promise<void> {
+  await insertPackStatement(db, pack).run();
 }
 
 /**

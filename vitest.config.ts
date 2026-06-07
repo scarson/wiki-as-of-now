@@ -6,6 +6,8 @@ export default defineConfig({
   test: {
     environment: "node",
     setupFiles: ["./test/setup/pristine.ts"],
+    // test/workers/** runs in the separate workerd pool (vitest.workers.config.mts), not the Node pool.
+    exclude: ["**/node_modules/**", "**/dist/**", "test/workers/**"],
     coverage: {
       provider: "v8",
       // Cover application/library source only — exclude the Next.js UI shell,

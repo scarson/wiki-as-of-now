@@ -8,10 +8,12 @@
 		"build": "next build",
 		"start": "next start",
 		"test": "vitest run",
+		"test:workers": "vitest run -c vitest.workers.config.mts",
 		"test:watch": "vitest",
 		"test:coverage": "vitest run --coverage",
 		"lint": "eslint .",
 		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+		"deploy:research": "wrangler deploy -c workers/research/wrangler.jsonc",
 		"upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
@@ -29,6 +31,7 @@
 		"wtf_wikipedia": "^10.4.2"
 	},
 	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.16.13",
 		"@eslint/eslintrc": "^3",
 		"@tailwindcss/postcss": "^4",
 		"@types/better-sqlite3": "^7.6.13",
