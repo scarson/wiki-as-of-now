@@ -14,7 +14,7 @@ import {
 import { processBatch } from "../../src/queue/process-batch";
 import { researchClaim, DEFAULT_MAX_PROPOSALS, DEFAULT_PER_HOST_CAP } from "../../src/research/pipeline";
 import { StubResearchProvider } from "../../src/research/stub-provider";
-import { fetchSourceText } from "../../src/research/source-fetch";
+import { fetchSourceText, type FetchImpl } from "../../src/research/source-fetch";
 import { GATE_VERSION } from "../../src/safelane/eligibility";
 import type { ResearchInput } from "../../src/research/provider";
 
@@ -33,6 +33,7 @@ interface ResearchWorkerEnv {
 
 function makeDeps(env: ResearchWorkerEnv): ResearchConsumerDeps {
   const db = d1Executor(env.DB);
+  const now = new Date();
   return {
     researchClaim: (input: ResearchInput) => researchClaim(input, {
       // WARNING: StubResearchProvider yields terminal no_proposals packs which are PK-poison.
@@ -42,14 +43,14 @@ function makeDeps(env: ResearchWorkerEnv): ResearchConsumerDeps {
       provider: new StubResearchProvider(),
       // The Workers runtime always provides a non-null body for non-opaque fetch responses;
       // the cast aligns the global fetch signature with FetchImpl's stricter non-null body contract.
-      fetchSource: (url: string) => fetchSourceText(url, { fetchImpl: fetch as Parameters<typeof fetchSourceText>[1]["fetchImpl"], now: new Date() }),
-      now: new Date(),
+      fetchSource: (url: string) => fetchSourceText(url, { fetchImpl: fetch as FetchImpl, now }),
+      now,
       maxProposals: DEFAULT_MAX_PROPOSALS,
       perHostCap: DEFAULT_PER_HOST_CAP,
     }),
     packStore: makeResearchPackStore(db),
     audit: makeAuditLog(db),
-    now: new Date(),
+    now,
   };
 }
 
