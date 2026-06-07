@@ -54,4 +54,3 @@ export function d1Executor(db: D1DatabaseLike): SqlExecutor {
     prepare: (sql: string) => wrap(db.prepare(sql)),
   };
 }
-

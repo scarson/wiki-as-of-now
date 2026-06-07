@@ -33,16 +33,15 @@ const eslintConfig = [
 	{
 		// Worker-bundled code must not import better-sqlite3 or local-db.
 		// workerd has no native module support; those are test/local-only.
-		// Intentionally excludes src/db/local-db.ts itself and test/** — those
-		// legitimately depend on better-sqlite3.
+		// Covers all db data-layer modules; the Node-only local-db adapter and
+		// test/** are excluded and legitimately depend on better-sqlite3.
 		files: [
 			"src/research/**",
 			"src/queue/**",
-			"src/db/client.ts",
-			"src/db/research-packs.ts",
-			"src/db/audit-log.ts",
+			"src/db/**/*.ts",
 			"workers/**",
 		],
+		ignores: ["src/db/local-db.ts"],
 		rules: {
 			"no-restricted-imports": [
 				"error",
