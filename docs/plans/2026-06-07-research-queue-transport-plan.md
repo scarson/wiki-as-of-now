@@ -61,19 +61,19 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 0/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
+**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 1/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — `client.ts` split + lint guard | 🚧 In progress | — | foundation; refactor-only, no behavior change |
-| 2 — `SqlExecutor.batch()` + atomic pack+audit | ⬜ Not started | — | touches merged G13/compliance code (opus review) |
+| 1 — `client.ts` split + lint guard | ✅ Shipped | `6cedbee`, `7299ca8`, `f873bb9` | refactor-neutral; 537 tests green; guard fires |
+| 2 — `SqlExecutor.batch()` + atomic pack+audit | 🚧 In progress | — | touches merged G13/compliance code (opus review) |
 | 3 — `process-batch.ts` | ⬜ Not started | — | sequential ack/retry transport core |
 | 4 — `seed.ts` + `enqueueResearchBatch` | ⬜ Not started | — | dedup identity == has() (opus review) |
 | 5 — `workers/research/` worker + wrangler + deploy | ⬜ Not started | — | dedicated bg worker; NO triggers.crons (dormant) |
 | 6 — workers-pool test project + integration + CI | ⬜ Not started | — | real Miniflare D1+Queues; both pools in CI |
 
 ### Deviations
-- (none yet)
+- **Phase 1 Task 1.2 (lint guard scope broadened).** The plan enumerated the guard's `files` as the specific worker-reachable set (`src/db/client.ts`, `src/db/research-packs.ts`, `src/db/audit-log.ts`, …). Code-quality review flagged that this omits the other production data-layer modules (`src/db/articles.ts`, `src/db/eligibility-verdicts.ts`), which a future transitive import could drag into the worker bundle uncaught. Broadened to `src/db/**/*.ts` with `ignores: ["src/db/local-db.ts"]` (commit `f873bb9`). Zero-risk (verified no current `src/db` module imports `better-sqlite3`/`local-db`); strictly improves bundle hygiene; within the plan's intent. The Phase-5 `wrangler deploy --dry-run` bundle grep remains the authoritative backstop.
 
 ### Discoveries
 - (none yet)
@@ -105,7 +105,7 @@ Follow TDD: failing test → run it, confirm it fails for the RIGHT reason → m
 
 ## Phase 1 — `client.ts` split + lint guard
 
-**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z, branch `claude/research-queue-transport-impl-L8Klm`)
+**Execution Status:** ✅ SHIPPED (2026-06-07; SHAs `6cedbee` split, `7299ca8` guard, `f873bb9` guard-broaden+nit). Refactor behavior-neutral (537 tests green); guard proven to fire on a worker-reachable `local-db` import. 3 review rounds (self-verify + spec-compliance APPROVE + code-quality → 2 findings fixed).
 
 Implements spec §6. Refactor-only (no behavior change): move the Node-only `better-sqlite3` code out of `src/db/client.ts` so the workerd bundle (Phase 5) never references the native module. The gate trio MUST stay green throughout (this is the regression gate — there are no new tests, just moved code + updated imports). TDD's failing-test-first does not apply to a pure move; the existing suite is the safety net.
 
@@ -148,7 +148,7 @@ The research worker bundle (`workers/research/**` + everything it imports under 
 
 ## Phase 2 — `SqlExecutor.batch()` + atomic pack+audit (opus review)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07, branch `claude/research-queue-transport-impl-L8Klm`)
 
 Implements spec §2 (and §10 D1). Adds an atomic multi-statement primitive to the port and makes the **merged** `handleResearchMessage` commit the research pack and its `research.completed` audit row **together or not at all** — closing the G13 pack-without-audit hole that the queue's automatic retries would otherwise make recurring. This phase edits merged slice-A compliance code; it gets an **opus** review round.
 
