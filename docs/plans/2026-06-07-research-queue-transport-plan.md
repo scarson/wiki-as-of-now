@@ -61,13 +61,13 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 1/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
+**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 2/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — `client.ts` split + lint guard | ✅ Shipped | `6cedbee`, `7299ca8`, `f873bb9` | refactor-neutral; 537 tests green; guard fires |
-| 2 — `SqlExecutor.batch()` + atomic pack+audit | 🚧 In progress | — | touches merged G13/compliance code (opus review) |
-| 3 — `process-batch.ts` | ⬜ Not started | — | sequential ack/retry transport core |
+| 2 — `SqlExecutor.batch()` + atomic pack+audit | ✅ Shipped | `ee26d6c`, `976ef9f`, `1d650f3`, `3e58b06` | G13 hole closed atomically; OPUS review APPROVE; 551 tests |
+| 3 — `process-batch.ts` | 🚧 In progress | — | sequential ack/retry transport core |
 | 4 — `seed.ts` + `enqueueResearchBatch` | ⬜ Not started | — | dedup identity == has() (opus review) |
 | 5 — `workers/research/` worker + wrangler + deploy | ⬜ Not started | — | dedicated bg worker; NO triggers.crons (dormant) |
 | 6 — workers-pool test project + integration + CI | ⬜ Not started | — | real Miniflare D1+Queues; both pools in CI |
@@ -148,7 +148,7 @@ The research worker bundle (`workers/research/**` + everything it imports under 
 
 ## Phase 2 — `SqlExecutor.batch()` + atomic pack+audit (opus review)
 
-**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07, branch `claude/research-queue-transport-impl-L8Klm`)
+**Execution Status:** ✅ SHIPPED (2026-06-07; SHAs `ee26d6c` batch(), `976ef9f` builders+commitTerminal, `1d650f3` consumer atomic close, `3e58b06` review-fixes). G13 pack-without-audit hole closed: terminal commit is `db.batch([insertPackStatement, appendStatement])` — both-or-neither proven on better-sqlite3 (real `db.transaction` + sync runners) AND composed for D1 (`db.batch` over WeakMap-recovered native statements; identity-asserted). End-to-end atomicity proven through the real consumer (orphan-FK reject → nothing persisted). Codes-only audit allowlist+sentinel preserved; non-terminal paths untouched. 551 tests green. 3 review rounds: self-verify + **OPUS APPROVE** (D1 unwrap path scrutinized) + code-quality (3 test-strengthening findings fixed, incl. the D1 identity assertion both reviewers flagged).
 
 Implements spec §2 (and §10 D1). Adds an atomic multi-statement primitive to the port and makes the **merged** `handleResearchMessage` commit the research pack and its `research.completed` audit row **together or not at all** — closing the G13 pack-without-audit hole that the queue's automatic retries would otherwise make recurring. This phase edits merged slice-A compliance code; it gets an **opus** review round.
 
@@ -210,7 +210,7 @@ Implements spec §2 (and §10 D1). Adds an atomic multi-statement primitive to t
 
 ## Phase 3 — `process-batch.ts` (transport core)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07, branch `claude/research-queue-transport-impl-L8Klm`)
 
 Implements spec §3 (`processBatch`). The per-message ack/retry mapping with isolation. Pure transport logic, Node-pool unit-tested with a faithful `MessageBatch` fake.
 
