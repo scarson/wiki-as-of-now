@@ -829,6 +829,77 @@ describe("PackStore.commitTerminal", () => {
 });
 
 // ---------------------------------------------------------------------------
+// handleResearchMessage — terminal path uses commitTerminal atomically
+// ---------------------------------------------------------------------------
+
+describe("handleResearchMessage — terminal path uses commitTerminal (G13 atomic close)", () => {
+  it("orphan FK on pageId: terminal commit rejects AND neither pack nor research.completed audit persists (atomic end-to-end through consumer)", async () => {
+    // No articles row for orphanPageId — FK fires inside the atomic batch.
+    // Assert: handler rejects (retry signal) AND pack is absent AND no research.completed audit row.
+    const exec = freshTestExecutor();
+    const ORPHAN_PAGE_ID = 9999; // no articles row
+
+    // Build a valid claimKey from computeClaimKey so it passes message validation.
+    const input = makeInput();
+    const claimKey = await computeClaimKey(ORPHAN_PAGE_ID, input.sectionHeading, input.claimText, input.year);
+    const msg: ResearchMessage = { claimKey, pageId: ORPHAN_PAGE_ID, sourceRevisionId: SOURCE_REVISION_ID, input };
+
+    const researchClaim = vi.fn().mockResolvedValue(makeNoProposalsOutcome());
+    const packStore = makeResearchPackStore(exec);
+    const auditLog = makeAuditLog(exec);
+
+    // Handler MUST reject (retry signal) — FK failure inside commitTerminal propagates out.
+    await expect(
+      handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW })
+    ).rejects.toThrow();
+
+    // Pack must NOT exist (rolled back).
+    expect(await packExists(exec, claimKey, SOURCE_REVISION_ID)).toBe(false);
+
+    // No research.completed audit row (rolled back with pack — both-or-neither).
+    const rows = await auditLog.read();
+    const completedRows = rows.filter(r => r.eventType === "research.completed");
+    expect(completedRows).toHaveLength(0);
+  });
+
+  it("commitTerminal-path proof: on a successful terminal handle, deps.audit.append is NOT called for research.completed; pack and audit row both exist in DB", async () => {
+    // Wraps the real auditLog in a spy to verify that the terminal research.completed
+    // audit goes through packStore.commitTerminal (one atomic op), NOT a separate deps.audit.append.
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, { pageId: PAGE_ID, title: "Test Article", revisionId: SOURCE_REVISION_ID, fetchedAt: FIXED_NOW.toISOString() });
+
+    const input = makeInput();
+    const claimKey = await computeClaimKey(PAGE_ID, input.sectionHeading, input.claimText, input.year);
+    const msg: ResearchMessage = { claimKey, pageId: PAGE_ID, sourceRevisionId: SOURCE_REVISION_ID, input };
+
+    const outcome = makeNoProposalsOutcome();
+    const researchClaim = vi.fn().mockResolvedValue(outcome);
+    const packStore = makeResearchPackStore(exec);
+    const realAuditLog = makeAuditLog(exec);
+
+    // Spy wrapping the real audit log: delegates to the real log but records calls.
+    const appendSpy = vi.fn(async (entry: Parameters<typeof realAuditLog.append>[0]) => {
+      return realAuditLog.append(entry);
+    });
+    const spyAudit = { append: appendSpy };
+
+    await handleResearchMessage(msg, { researchClaim, packStore, audit: spyAudit, now: FIXED_NOW });
+
+    // deps.audit.append must NOT have been called for research.completed (it goes via commitTerminal).
+    const completedCalls = appendSpy.mock.calls.filter(([e]) => e.eventType === "research.completed");
+    expect(completedCalls).toHaveLength(0);
+
+    // Pack must be in DB (written via commitTerminal).
+    expect(await packExists(exec, claimKey, SOURCE_REVISION_ID)).toBe(true);
+
+    // Exactly one research.completed audit row must be in DB (written via commitTerminal).
+    const rows = await realAuditLog.read();
+    const completedRows = rows.filter(r => r.eventType === "research.completed");
+    expect(completedRows).toHaveLength(1);
+  });
+});
+
+// ---------------------------------------------------------------------------
 // Producer: enqueueResearch
 // ---------------------------------------------------------------------------
 

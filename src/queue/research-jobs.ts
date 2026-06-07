@@ -96,7 +96,8 @@ function isValidMessage(msg: unknown): msg is ResearchMessage {
  * 1. Validate the message shape — permanently-bad input is ACKed (not retried).
  * 2. Idempotency skip on full PK (claimKey, sourceRevisionId) — ACKed silently.
  * 3. Call researchClaim:
- *    - terminal (no_proposals | proposals_present): persist pack, audit codes-only, ACK.
+ *    - terminal (no_proposals | proposals_present): persists pack + completion audit atomically
+ *      (both-or-neither via packStore.commitTerminal), ACK.
  *    - provider_unavailable: audit codes-only, THROW (retry).
  *    - unexpected error: audit codes-only (no raw error text), RETHROW (retry).
  */
@@ -146,7 +147,7 @@ export async function handleResearchMessage(
     throw new Error("provider_unavailable: retry"); // retry — nothing persisted blocks re-attempt
   }
 
-  // Terminal outcome (no_proposals | proposals_present): persist + audit.
+  // Terminal outcome (no_proposals | proposals_present): persist pack and completion audit atomically.
   const pack: ResearchPack = {
     claimKey: msg.claimKey,
     sourceRevisionId: msg.sourceRevisionId,
@@ -162,7 +163,6 @@ export async function handleResearchMessage(
     dispositions: outcome.dispositions,
     evaluatedAt: deps.now.toISOString(),
   };
-  await deps.packStore.insertIfAbsent(pack);
 
   // Build the dispositionTally: reason-code → count (codes only, G13).
   const dispositionTally: Record<string, number> = {};
@@ -180,7 +180,7 @@ export async function handleResearchMessage(
     dispositionTally,
   };
 
-  await deps.audit.append({
+  await deps.packStore.commitTerminal(pack, {
     actor: "system",
     eventType: "research.completed",
     payload: auditPayload,
