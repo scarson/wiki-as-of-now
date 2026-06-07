@@ -174,3 +174,94 @@ describe("0002_eligibility_verdicts migration", () => {
     expect(tablesA).toEqual(tablesB);
   });
 });
+
+describe("0003_research_packs migration", () => {
+  it("creates the research_packs table", () => {
+    const db = freshTestDb();
+    const tables = db
+      .prepare<[], { name: string }>(
+        "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name"
+      )
+      .all()
+      .map((r) => r.name);
+    expect(tables).toContain("research_packs");
+  });
+
+  it("research_packs has all expected columns", () => {
+    const db = freshTestDb();
+    const cols = db
+      .prepare<[], { name: string }>("PRAGMA table_info(research_packs)")
+      .all()
+      .map((r) => r.name);
+    expect(cols).toEqual(
+      expect.arrayContaining([
+        "claim_key",
+        "source_revision_id",
+        "page_id",
+        "section_heading",
+        "sentence_text",
+        "year",
+        "provider_name",
+        "model_version",
+        "status",
+        "queries_json",
+        "cards_json",
+        "dispositions_json",
+        "evaluated_at",
+      ])
+    );
+  });
+
+  it("rejects a NULL claim_key (WITHOUT ROWID composite PK — DB-1)", () => {
+    const db = freshTestDb();
+    // Insert a valid articles row for the FK, then try inserting a NULL PK component.
+    db.prepare(
+      "INSERT INTO articles (page_id, title, revision_id, fetched_at) VALUES (?, ?, ?, ?)"
+    ).run(1, "Test Article", 100, "2026-06-06T00:00:00.000Z");
+    const insertNull = () =>
+      db
+        .prepare(
+          "INSERT INTO research_packs (claim_key, source_revision_id, page_id, section_heading, sentence_text, year, provider_name, model_version, status, queries_json, cards_json, dispositions_json, evaluated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        )
+        .run(
+          null, 100, 1, "History", "The fleet will reach full strength.", 2017,
+          "fake-provider", "fake-provider/0", "no_proposals", "[]", "[]", "[]",
+          "2026-06-06T00:00:00.000Z"
+        );
+    expect(insertNull).toThrow(/NOT NULL/i);
+  });
+
+  it("status CHECK rejects values outside no_proposals|proposals_present", () => {
+    const db = freshTestDb();
+    db.prepare(
+      "INSERT INTO articles (page_id, title, revision_id, fetched_at) VALUES (?, ?, ?, ?)"
+    ).run(1, "Test Article", 100, "2026-06-06T00:00:00.000Z");
+    const insert = () =>
+      db
+        .prepare(
+          "INSERT INTO research_packs (claim_key, source_revision_id, page_id, section_heading, sentence_text, year, provider_name, model_version, status, queries_json, cards_json, dispositions_json, evaluated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        )
+        .run(
+          "abc123", 100, 1, "History", "The fleet will reach full strength.", 2017,
+          "fake-provider", "fake-provider/0", "invalid_status", "[]", "[]", "[]",
+          "2026-06-06T00:00:00.000Z"
+        );
+    expect(insert).toThrow(/CHECK/i);
+  });
+
+  it("enforces the research_packs -> articles(page_id) foreign key", () => {
+    const db = freshTestDb();
+    // page_id 999 has no matching articles row.
+    const insert = () =>
+      db
+        .prepare(
+          "INSERT INTO research_packs (claim_key, source_revision_id, page_id, section_heading, sentence_text, year, provider_name, model_version, status, queries_json, cards_json, dispositions_json, evaluated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        )
+        .run(
+          "abc123", 100, 999, "History", "The fleet will reach full strength.", 2017,
+          "fake-provider", "fake-provider/0", "no_proposals", "[]", "[]", "[]",
+          "2026-06-06T00:00:00.000Z"
+        );
+    expect(insert).toThrow(/FOREIGN KEY/i);
+  });
+});

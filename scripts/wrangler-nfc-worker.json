@@ -1,0 +1,6 @@
+{
+  "name": "nfc-worker-dev",
+  "main": "scripts/nfc-worker.ts",
+  "compatibility_date": "2026-06-04",
+  "compatibility_flags": ["nodejs_compat"]
+}

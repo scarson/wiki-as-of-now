@@ -61,16 +61,25 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started. 0/10 phases shipped. Branch `feat/research-engine` (off merged `dev` `11ca215`).
+**Overall:** ✅ All 10/10 phases shipped (0–9). 509 tests green, tsc + lint clean + pristine; workerd NFC golden current (re-ran, zero diff). Branch `claude/research-engine-impl-yG6Os` (off merged `dev` `bd9995c`). Pending: PR to `dev` (Review — compliance; no self-merge).
+
+> **Deviation (branch name):** executing on the harness-designated branch
+> `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the
+> plan-original `feat/research-engine`. Same base (the PR #16 merge); only the branch
+> label differs. PR target remains `dev`.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 0 — Tooling + test harness (deps, determinism traps, pristine, CI) | ⬜ Not started | — | foundational; CI guards everything after |
-| 1 — `normalize.ts` + NFC golden fixture | ⬜ Not started | — | shared contract; everything depends on it |
-| 2 — `canonicalize-url.ts` (SSRF host classification) | ⬜ Not started | — | pure; shared by fetch guard + cap |
-| 3 — `verbatim-check.ts` | ⬜ Not started | — | highest-stakes; boil the lake |
-| 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | ⬜ Not started | — | blind-adversary corpora |
-| 5 — `provider.ts` reshape + fake providers | ⬜ Not started | — | interface change to committed code |
+| 0 — Tooling + test harness (deps, determinism traps, pristine, CI) | ✅ Shipped | `6e30a77`, `49a1395`, `0c5660a` | deps+harness+CI; CI runs on the PR (pull_request event) — feature-branch pushes don't trigger by design |
+| 1 — `normalize.ts` + NFC golden fixture | ✅ Shipped | `ed77d51`, `45f9d19`, `96a46c5` | normalize + workerd↔Node golden (14 cases, gen on workerd); fresh review caught identity-only NFC test → strengthened (`96a46c5`) |
+| 2 — `canonicalize-url.ts` (SSRF host classification) | ✅ Shipped | `e375155`, `0644f05`, `045b046` | bipolar corpus (32 cases); trailing-dot bypass fixed; refactored to `ipaddr.js` (Sam's call) — −59 LOC hand-rolled math, NAT64 closed; full adversarial battery verified |
+| 3 — `verbatim-check.ts` | ✅ Shipped | `7b324263`, `3b79589` | opus review found `\n`-only cross-block gap → normalize hardened to vertical/horizontal split (covers text/plain); forgery closed for LF/VT/FF/CR/NEL/LS/PS |
+| 4 — `source-fetch.ts` (SSRF + stream cap + extraction) | ✅ Shipped | `e2d8822`(corpora), `9a63077`, `d21e47e`, `0955b95`, `1f4670c` | opus review caught 2 cross-block-forgery BLOCKERs (`<br>`, then form-widget/replaced tags in INLINE_TAGS) + charset false-drop; all fixed |
+| 5 — `provider.ts` reshape + fake providers | ✅ Shipped | `03f1242` | ProposedEvidence/EvidenceCard/ProviderResearch/ProviderUnavailableError; adversarial fakes for Phase 8; research-jobs types-only touch; old ResearchResult gone |
+| 6 — `verify-proposal.ts` | ✅ Shipped | `d3ef01f` | fetch+verify seam; card stores RAW quote (asserted via nbsp page); all 10 fetch reasons → typed drops |
+| 7 — `research-packs.ts` + migration 0003 | ✅ Shipped | `919acd0`(migration), `adc66ef`(module) | byte-identical DDL (equivalence green); write-once insert; defensive `pack_unreadable` read + read-time G16 cap; revision-match surfacing; DB-1/DB-2 |
+| 8 — `pipeline.ts` `researchClaim` | ✅ Shipped | `bb67672`, `db0a152`, `d870f57` | opus verified cap-ordering airtight (no fan-out bypass); fixed G9 dead-code + degenerate-config impossible-state |
+| 9 — `research-jobs.ts` rewrite (consumer) | ✅ Shipped | `56d01da`, `24334d2` | total/contained; codes-only audit (allowlist+sentinel, all 3 event types); opus caught + fixed a G13 raw-claimKey leak on malformed messages |
 | 6 — `verify-proposal.ts` | ⬜ Not started | — | the standalone compliance seam |
 | 7 — `research-packs.ts` + migration 0003 | ⬜ Not started | — | Phase-2 migration discipline |
 | 8 — `pipeline.ts` `researchClaim` | ⬜ Not started | — | cap ordering + partition |
@@ -78,9 +87,14 @@ notes and commit messages.
 
 ### Deviations
 - Phase 8 determinism test: corrected spec §6 N4's "shuffled proposal order → order-stable" to **repeatability** (same input → deep-equal output). Shuffle-invariance is wrong because `slice(0, maxProposals)` truncation is order-dependent by design.
+- Branch name: executing on harness-designated `claude/research-engine-impl-yG6Os` (reset onto `origin/dev` `bd9995c`), not the plan-original `feat/research-engine` — same base, different label; PR target still `dev`.
+- Phase 2 (post-ship, Sam's call): SSRF IP-classification core refactored to use the `ipaddr.js` library instead of hand-rolled CIDR/IPv6 math — shrinks the audited security surface and gives robust IPv6/IPv4-mapped handling. Architecture unchanged (parse-then-classify the hostname string; same DNS-rebinding residual). The 30-case bipolar corpus is the behavior-preserving regression gate. NAT64 `64:ff9b::/96` (`rfc6052`) is now CLOSED for free (ipaddr.js classifies it); IPv4-compatible `::/96` remains a documented residual. Adds the `ipaddr.js` dependency (deviation from the spec's named-deps list, approved by Sam).
+- Phase 1.2: added `scripts/wrangler-nfc-worker.json` — a minimal `nodejs_compat` dev config so `wrangler unstable_dev` doesn't fail on the production `wrangler.jsonc`'s `.open-next/assets` reference (absent in dev). Added `allowImportingTsExtensions: true` to `tsconfig.json` so the Node-run `gen-nfc-golden.ts` can use explicit `.ts` import extensions; safe because tsc runs `--noEmit` and the build bundles via Next/esbuild (no tsc emit).
 
 ### Discoveries
 - Out-of-slice: `test/ingest/easy-win-lane.test.ts:114` audit assertion uses the denylist pattern that §6 of the spec condemns (N3). Upgrade to allowlist+sentinel when convenient; flagged, not fixed here.
+- Phase 3 opus review (cross-block-forgery hardening; Sam delegated the call): the verbatim cross-block guard was `\n`-only, but `normalizeForVerbatim` folded VT/FF to a *space* (bridging) and preserved CR/U+2028/U+2029 (also bridging). **Decisive reason it must live in `normalize.ts` not the extractor:** the content-type allowlist includes `text/plain`, for which NO HTML extractor runs — `normalize` is the only boundary layer both content types share. Fix: replace §3's fold-set with a **vertical/horizontal split** — vertical whitespace {LF, VT U+000B, FF U+000C, CR U+000D, NEL U+0085, LS U+2028, PS U+2029} → `\n` (block boundary); horizontal whitespace {tab + Unicode Zs} → one space; zero-width → strip. Closes the bridge both ways; `claim_key` path unaffected (separate identity-NFC, §4); recall cost negligible + in the safe false-drop direction. Requires spec §3 amendment + golden regeneration (added vertical-separator corpus cases) + verbatim boundary tests.
+- Phase 2 SSRF residuals (added to spec §9 + documented in `src/research/canonicalize-url.ts`): deprecated IPv4-compatible IPv6 `::/96` (e.g. `[::7f00:1]`) and the NAT64 well-known prefix `64:ff9b::/96` embed an IPv4 address but are NOT enumerated in the host classifier — modern stacks don't route IPv4-compatible addrs to the embedded v4, and NAT64 reachability is gateway-dependent. Same residual bucket as the spec's DNS-rebinding residual.
 
 ---
 
@@ -109,7 +123,7 @@ Follow TDD: write the failing test → run it, confirm it fails for the RIGHT re
 
 ## Phase 0 — Tooling + test harness (deps, determinism traps, pristine enforcement, CI)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `6e30a77` (deps: htmlparser2 + fast-check), `49a1395` (determinism traps + pristine), `0c5660a` (CI). Gate trio green (225 tests, tsc + lint clean). Throwaway trap-smoke test confirmed `armDeterminismTraps` throws on ambient fetch/Date.now/Math.random and restores after (then deleted). CI workflow triggers on `pull_request` + pushes to `dev`/`main`, so it executes when the PR to `dev` opens (no feature-branch-push run by design) — verify green at PR time.
 
 Implements the spec's enforced test controls (§6 N4, suite-wide pristine) + CI (§6.1). Foundational: later phases depend on the test helpers; CI guards every subsequent push. No production `src/` logic here (TDD's failing-test-first applies from Phase 1 on; Phase 0 is config/harness, exempt per CLAUDE.md TDD scope).
 
@@ -233,7 +247,7 @@ jobs:
 
 ## Phase 1 — `normalize.ts` + NFC golden fixture
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `ed77d51` (normalize), `45f9d19` (workerd↔Node NFC golden: 14-case corpus, gen on workerd via `unstable_dev`, parity test green). Orchestrator verified: strip set = exactly the 6 zero-width chars (escapes), fold set includes U+0020 + full Zs + NEL/VT/FF/tab (escapes, `\n` preserved), order NFC→strip→fold→collapse-`\n`→trim, idempotent; golden has 10/14 input≠output (NFC composition + strip + fold genuinely exercised), corpus data escape-only. Review rounds: spec-compliance (orchestrator) → provenance/integrity (orchestrator) → fresh reviewer → remediation. Fresh reviewer caught a BLOCKER (the unit NFC case used a precomposed `é`, testing identity not composition) + missing non-ASCII fold coverage + literal invisibles + missing ABOUTME; all remediated in `96a46c5` (real `é`→`é` composition, VT/FF/NEL + Zs fold cases, NFC-not-NFKC guard, escape-only string literals). Production `normalize.ts` was correct throughout. ≥3 rounds, last round clean.
 
 Implements spec §3 (shared normalization) + §6 N1 (workerd NFC golden fixture). The shared contract imported by the extractor (Phase 4) and the verbatim check (Phase 3) — drive it into existence by its OWN test first; it is internal logic, never faked.
 
@@ -365,7 +379,7 @@ describe("NFC normalization is workerd↔Node parity-stable", () => {
 
 ## Phase 2 — `canonicalize-url.ts` (SSRF host classification)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `e375155` (impl + bipolar tests, 24 cases), `0644f05` (security fix). Review rounds: provenance (orchestrator) → adversarial bypass probe (orchestrator, found trailing-dot) → fresh security reviewer (confirmed trailing-dot BLOCKER, audited CIDR math correct, surfaced a *false* single-group `::ffff:N` finding) → consolidated fix + re-verify. **Trailing-dot FQDN bypass of `BLOCKED_HOSTNAMES` (e.g. `metadata.google.internal.`) closed** by stripping a single trailing dot before classification. **False finding rejected by mechanism inspection:** `::ffff:1` is NOT IPv4-mapped (`ffff` in group 6, not the mapped group 5); true mapped low addresses normalize to `::ffff:0:N` (two groups) and are already caught — verified empirically, test `[::ffff:0:1]→reject` locks it in. Public IPv4/IPv6 added to MUST-PASS (bipolar discipline in the IP branches). 30 unit cases, gate trio green. Named residuals (IPv4-compatible `::/96`, NAT64 `64:ff9b::/96`) documented in-module + spec §9. **Post-ship refactor (`045b046`, Sam's call):** IP classification now via `ipaddr.js` (`^2.4.0`) — deleted all hand-rolled CIDR/IPv6 math (−59 LOC); `.range()` checks against the spec's enumerated block sets; NAT64 (`rfc6052`) CLOSED (now rejected), IPv4-compatible `::/96` remains the sole residual. Orchestrator re-ran the full 39-case adversarial battery (30 reject + 9 pass) — all correct; 264 suite green.
 
 Implements spec §2 (SSRF guard, parse-then-canonicalize) — the pure, synchronous, **non-fetching** unit shared by the source-fetch guard and the pipeline's per-host cap.
 
@@ -431,7 +445,7 @@ describe("canonicalizeUrl", () => {
 
 ## Phase 3 — `verbatim-check.ts` (highest-stakes; boil the lake)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `7b324263` (evaluateQuote + UntrustedSourceText brand stub + 8 tests), `3b79589` (cross-block-forgery hardening). Review rounds: provenance (orchestrator) → adversarial false-accept probe (orchestrator: NFKC-not-folded, case/negation/zero-width/astral all correct) → **opus** (found the `\n`-only cross-block guard could be bridged by VT/FF folding to space + CR/LS/PS preserved) → adversarial option assessment (orchestrator: the decisive reason the fix belongs in `normalize.ts` not the extractor is that `text/plain` has no extractor — normalize is the only shared boundary layer) → hardening implemented + verified (forgery closed for all 7 vertical separators; golden regenerated on workerd, 16 cases, Node≡workerd; 274 suite green). MIN/MAX_QUOTE_LEN carry the mandated tuning comments. ≥3 rounds incl. opus, last state clean.
 
 Implements spec §3 (`evaluateQuote`). The deterministic fabrication backstop (G8/G15). Uses the REAL `normalizeForVerbatim`. `MIN_QUOTE_LEN`/`MAX_QUOTE_LEN` MUST carry the explanatory comments mandated in spec §3.
 
@@ -538,7 +552,7 @@ export function evaluateQuote(pageText: UntrustedSourceText, quote: string): Quo
 
 ## Phase 4 — `source-fetch.ts` (SSRF + streaming cap + extraction)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `e2d8822` (blind-adversary corpora: 53 SSRF [11 pass/42 reject] + 28 extraction, all spec-derived; SSRF corpus cross-validated 53/53 against shipped `canonicalizeUrl`), `9a63077` (fetchSourceText impl + 128 tests — RESCUED uncommitted after a container restart killed the implementer; orchestrator fixed 2 test-file gate issues it died before resolving), `d21e47e` (`<br>` block-separator fix), `0955b95` (form-widget + replaced-element separator fix, opus B1), `1f4670c` (charset meta-only honor, opus C1). Review rounds: rescue+provenance+gate-fixes → orchestrator found `<br>` cross-block-forgery BLOCKER → **opus** found B1 (form-widget/replaced tags `<button>/<select>/<option>/<optgroup>/<textarea>/<output>/<label>/<img>/<input>/<object>/<map>` in INLINE_TAGS = same forgery class) + C1 (header-silent meta charset false-drop) and verified the rest clean (no attribute/comment leak, hidden-text nesting correct, streaming cap + abort hygiene zero unhandled rejections, reason-codes correct) → remediation. INLINE_TAGS now restricted to genuine text-level phrasing; isolating regression tests added (blind corpus had no form-widget coverage). 418 suite green. NIT N1 (blocked_scheme/blocked_host reason approximate for userinfo) accepted — no security impact. Named residual: DNS-rebinding/TOCTOU (in-module).
 
 Implements spec §2. **Blind-adversary corpora** (SSRF + HTML-extraction) per spec §6: before implementing, dispatch a subagent that has NOT seen `source-fetch.ts` to generate adversarial inputs from the spec §2 threat list (see Task 4.0). The injected `fetchImpl` MUST emit real multi-chunk `ReadableStream`s (incl. a compression bomb) so the streaming cap + abort run (§6 N6).
 
@@ -564,7 +578,7 @@ Implements spec §2. **Blind-adversary corpora** (SSRF + HTML-extraction) per sp
 
 ## Phase 5 — `provider.ts` reshape + fake providers
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `03f1242`. New contract per spec §1: `ResearchInput` (+`surroundingText?`/`sourceRevisionId`), `ProposedEvidence` (unverified), `EvidenceCard` (verified), `ProviderResearch` (`{providerName, modelVersion, proposals, queries}`), `ProviderUnavailableError`; stub returns empty proposals/queries + `modelVersion "fake-provider/0"`. `test/research/fake-providers.ts` provides the adversarial fakes Phase 8 needs (flood/sameHost/subdomainFanout/malformedUrl/unavailable, deterministic). `research-jobs.ts` touched types-only (logic unchanged; full rewrite is Phase 9); old `ResearchResult` fully removed (grep-clean). 426 suite green. Review: orchestrator provenance + spec-§1 compliance + criteria (split matches spec, fakes emit the Phase-8 shapes, surroundingText optional, no stale refs) — low-stakes type reshape, not opus-tier.
 
 Implements spec §1 (the provider/verify split). **Interface change to committed, tested code** — update `stub-provider.ts` and any callers/tests so tsc + the suite stay green.
 
@@ -585,7 +599,7 @@ Implements spec §1 (the provider/verify split). **Interface change to committed
 
 ## Phase 6 — `verify-proposal.ts` (the standalone compliance seam)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `d3ef01f`. `verifyProposal(proposal, { fetchSource })` → fetch fails → `DroppedProposal { url, reason }`; fetched → real `evaluateQuote` → `matched` → `EvidenceCard` with the **RAW** proposed quote (asserted: page uses U+00A0 where the quote uses ASCII space; card stores the raw ASCII form, `not.toContain` nbsp — the §3 determinism rule), else `DroppedProposal { url, reason: quote_* }`. `DroppedProposal` defined here (Phase 8 imports it). 14 tests incl. `it.each` over all 10 fetch-failure reasons; determinism traps armed; 440 suite green. Review: orchestrator provenance + spec-§5 compliance + criteria (raw-quote storage, every reason→drop, isolated from pipeline) — small seam, not opus-tier.
 
 Implements spec §5 (`verifyProposal`). The guardrail that must be testable in isolation: stub `fetchSource` + the REAL `evaluateQuote`.
 
@@ -610,7 +624,7 @@ Implements spec §5 (`verifyProposal`). The guardrail that must be testable in i
 
 ## Phase 7 — `research-packs.ts` + migration 0003
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `919acd0` (migration 0003 + byte-identical `schema.sql` block + migration tests: table/columns/NULL-PK-reject/CHECK/FK), `adc66ef` (`research-packs.ts` + 29 tests). `computeClaimKey` (byte-length-prefixed NFC SHA-256, cross-runtime crypto.subtle). `insertPackIfAbsent` write-once (`ON CONFLICT DO NOTHING`, bind-all per DB-2) — re-insert no-op proven (original preserved). `getPack`/`getSurfaceablePack` defensive (per-field JSON.parse → `pack_unreadable`, never throws) + read-time G16 cap + status-enum validation; `getSurfaceablePack` revision-matches (older-revision pack → not_found). `deletePack` targeted. schema-equivalence green (byte-identical), 474 suite green. Honest deviation: the status-CHECK-corruption test was dropped because SQLite enforces CHECK on UPDATE too (can't corrupt status post-insert via the executor without testing mocked behavior); the parseRow status guard remains as code-level defense-in-depth. DB layer — orchestrator review (DB-1/DB-2, write-once, defensive read, surfacing), not opus-tier.
 
 Implements spec §4. Phase-2 migration discipline (byte-identical `CREATE TABLE` in `migrations/0003` and `schema.sql`; schema-equivalence test; ordered `freshTestDb`). DB-1 (`WITHOUT ROWID` NULL-rejection), DB-2 (`bind()`).
 
@@ -643,7 +657,7 @@ Implements spec §4. Phase-2 migration discipline (byte-identical `CREATE TABLE`
 
 ## Phase 8 — `pipeline.ts` `researchClaim` (cap ordering + partition)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `bb67672` (impl + 17 tests), `db0a152` (G9 dead-code fix), `d870f57` (opus config-edge fixes). Cap ordering EXACTLY truncate-raw-first → canonicalizeUrl → per-host count → verifyProposal; malformed = counted disposition (never fetched); partition `cards+dispositions===truncated`; discriminated-union `ResearchOutcome`; G9 query bound; repeatability (not shuffle-invariance, per the recorded deviation). Review: orchestrator caught G9 dead-code (echo filter only dropped exact-equal — `includes` checks were dead; now drops any query restating the full claim, keeps fragments) → **opus** verified the security boundary AIRTIGHT (probed: floodProvider→exactly maxProposals fetches; per-host no bypass via case/port/trailing-dot spellings; malformed counted; discriminant sound; deterministic) and found 2 config-edge CONCERNs (maxProposals:0 reached the impossible `proposals_present`-empty-arrays state; negative/NaN → garbage overCapCount) + a G9 internal-whitespace NIT → all fixed (clamp caps to non-negative ints, non-finite→default; short-circuit on `truncated.length===0`; collapse internal whitespace in the echo check). 21 pipeline tests, 495 suite green. ≥3 rounds incl opus, last state clean.
 
 Implements spec §5 — the pure, total orchestrator. The cap **order** is a security boundary (§5 / D9). Tests assert orchestration invariants, NOT stub rigging (§6 N6/N7).
 
@@ -672,7 +686,7 @@ Implements spec §5 — the pure, total orchestrator. The cap **order** is a sec
 
 ## Phase 9 — `research-jobs.ts` rewrite (the total/contained consumer)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-06-06 — `56d01da` (rewrite + 35 tests), `24334d2` (opus G13 leak fix). `handleResearchMessage` total/contained (return=ack, throw=retry): validate→malformed=`research.failed`+ack; `has()` skip on FULL PK (different revision re-researches); terminal→persist pack (`insertIfAbsent`)+`research.completed` codes-only audit; `provider_unavailable`→`research.unavailable` audit-only+retry (no pack); unexpected→`research.failed` (no raw error text)+retry. `ResearchAuditPayload` codes-only; `makeResearchPackStore` real adapter (+`packExists` added to research-packs). Producer `enqueueResearch` computes claimKey. Review: orchestrator verified allowlist+sentinel is genuine (not the easy-win-lane denylist anti-pattern) → **opus** verified the disposition-reason enum chain leak-free + all codes-only paths, and found a G13 leak (malformed branch echoed the raw `claimKey` → could smuggle content/PII into the append-only log) + allowlist not covering `research.failed`/`research.unavailable` → fixed (64-hex-validate claimKey else `"malformed"`; allowlist extended to all 3 event types; malformed-claimKey sentinel test added). 509 suite green. ≥3 rounds incl opus, last state clean.
 
 Implements spec §5 (`handleResearchMessage`). **Rewrite** of the existing module. Audit is codes-only with the **allowlist + sentinel** assertion (§6 N3) — NOT a denylist. Persist terminal-only; `provider_unavailable` audit-only + retry-signal.
 
@@ -708,8 +722,8 @@ assertions can't pass reliably, STOP and raise. Do not ship a weaker test.
 
 ## Final integration
 
-- [ ] Full suite + `tsc` + `lint` green + pristine; CI green on the branch.
-- [ ] `pnpm gen:nfc-golden` re-run if `normalize.ts` or the NFC corpus changed since Phase 1; fixture committed.
+- [x] Full suite + `tsc` + `lint` green + pristine (509 tests). CI runs on the PR's `pull_request` event (verify green there).
+- [x] `pnpm gen:nfc-golden` re-run after the Phase-3 normalize change (vertical/horizontal split) + 2 vertical corpus cases added; fixture regenerated on workerd and committed. Re-ran at final integration → zero diff (current).
 - [ ] Rebase onto latest `origin/dev` if it moved; resolve any conflict in `provider.ts` / `research-jobs.ts` / `schema.sql` / `test/helpers/db.ts` by re-running the gate trio.
 - [ ] Open a PR to `dev`. `## Merge classification`: **Review — compliance** (this is the BLP-safety backstop's research consumer; the verbatim check + audit codes-only + SSRF guard are load-bearing). Link the spec + this plan + the compliance-contract G8 clarification. Do NOT self-merge.
 

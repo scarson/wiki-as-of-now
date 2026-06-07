@@ -1,0 +1,178 @@
+[
+  {
+    "html": "<p>Visible paragraph text.</p>",
+    "mustContain": ["Visible paragraph text."],
+    "mustExclude": [],
+    "threat": "basic-visible-text"
+  },
+  {
+    "html": "<div><span>Hello</span> <span>world</span></div>",
+    "mustContain": ["Hello", "world"],
+    "mustExclude": [],
+    "threat": "inline-spans-visible"
+  },
+  {
+    "html": "<p>Alt attribute text.</p><img alt=\"SHOULD_NOT_APPEAR_alt\" src=\"image.png\">",
+    "mustContain": ["Alt attribute text."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_alt"],
+    "threat": "alt-attribute-excluded"
+  },
+  {
+    "html": "<p>Title attribute text.</p><abbr title=\"SHOULD_NOT_APPEAR_title\">abbr</abbr>",
+    "mustContain": ["Title attribute text.", "abbr"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_title"],
+    "threat": "title-attribute-excluded"
+  },
+  {
+    "html": "<p>Link text here.</p><a href=\"https://SHOULD_NOT_APPEAR_href.example.com\">click</a>",
+    "mustContain": ["Link text here.", "click"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_href"],
+    "threat": "href-attribute-excluded"
+  },
+  {
+    "html": "<p>Data attribute test.</p><div data-secret=\"SHOULD_NOT_APPEAR_data\">Content</div>",
+    "mustContain": ["Data attribute test.", "Content"],
+    "mustExclude": ["SHOULD_NOT_APPEAR_data"],
+    "threat": "data-attribute-excluded"
+  },
+  {
+    "html": "<p>Meta content test.</p><meta name=\"description\" content=\"SHOULD_NOT_APPEAR_meta\">",
+    "mustContain": ["Meta content test."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_meta"],
+    "threat": "meta-content-attribute-excluded"
+  },
+  {
+    "html": "<p>Comment test.</p><!-- SHOULD_NOT_APPEAR_comment -->",
+    "mustContain": ["Comment test."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_comment"],
+    "threat": "html-comment-excluded"
+  },
+  {
+    "html": "<p>Script test.</p><script>var SHOULD_NOT_APPEAR_script = 'secret';</script>",
+    "mustContain": ["Script test."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_script"],
+    "threat": "script-content-excluded"
+  },
+  {
+    "html": "<p>Style test.</p><style>.SHOULD_NOT_APPEAR_style { color: red; }</style>",
+    "mustContain": ["Style test."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_style"],
+    "threat": "style-content-excluded"
+  },
+  {
+    "html": "<head><title>SHOULD_NOT_APPEAR_head_title</title><meta name=\"author\" content=\"SHOULD_NOT_APPEAR_head_meta\"></head><body><p>Body text visible.</p></body>",
+    "mustContain": ["Body text visible."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_head_title", "SHOULD_NOT_APPEAR_head_meta"],
+    "threat": "head-contents-excluded"
+  },
+  {
+    "html": "<p>Ampersand: &amp; Less-than: &lt; Apostrophe: &#39;</p>",
+    "mustContain": ["Ampersand: &", "Less-than: <", "Apostrophe: '"],
+    "mustExclude": ["&amp;", "&lt;", "&#39;"],
+    "threat": "html-entity-decoding"
+  },
+  {
+    "html": "<p>Quote: &quot; Non-breaking: &nbsp; Euro: &euro;</p>",
+    "mustContain": ["Quote: \""],
+    "mustExclude": ["&quot;", "&nbsp;", "&euro;"],
+    "threat": "html-entity-decoding-extended",
+    "note": "Numeric entities and named entities must be decoded; the raw entity strings must not appear in output"
+  },
+  {
+    "html": "<p>First sentence.</p><p>Second sentence.</p>",
+    "mustContain": ["First sentence.", "Second sentence."],
+    "mustExclude": ["First sentence. Second sentence."],
+    "threat": "cross-block-boundary-p-tags",
+    "note": "Two <p> elements are block boundaries; the extractor must insert a separator so the two texts are never directly joined by a single space"
+  },
+  {
+    "html": "<p>Line one.</p><p>Line two.</p><p>Line three.</p>",
+    "mustContain": ["Line one.", "Line two.", "Line three."],
+    "mustExclude": ["Line one. Line two.", "Line two. Line three."],
+    "threat": "cross-block-boundary-multiple-paragraphs"
+  },
+  {
+    "html": "<div>Before break.</div><br><div>After break.</div>",
+    "mustContain": ["Before break.", "After break."],
+    "mustExclude": ["Before break. After break."],
+    "threat": "cross-block-boundary-br",
+    "note": "<br> acts as a separator; texts around it must not be joined by a single space"
+  },
+  {
+    "html": "<p>Inline <span>span text</span> inline.</p>",
+    "mustContain": ["Inline", "span text", "inline."],
+    "mustExclude": [],
+    "threat": "inline-span-no-block-boundary",
+    "note": "A <span> is inline so it does NOT introduce a block boundary; its text flows with surrounding text"
+  },
+  {
+    "html": "<ul><li>Item one</li><li>Item two</li></ul>",
+    "mustContain": ["Item one", "Item two"],
+    "mustExclude": ["Item oneItem two", "Item one Item two"],
+    "threat": "cross-block-boundary-list-items",
+    "note": "<li> acts as a separator; list items must not be concatenated without a boundary"
+  },
+  {
+    "html": "<table><tr><td>Cell A</td><td>Cell B</td></tr></table>",
+    "mustContain": ["Cell A", "Cell B"],
+    "mustExclude": ["Cell ACell B", "Cell A Cell B"],
+    "threat": "cross-block-boundary-table-cells",
+    "note": "<td> acts as a separator"
+  },
+  {
+    "html": "<table><tr><th>Header A</th><th>Header B</th></tr><tr><td>Val A</td><td>Val B</td></tr></table>",
+    "mustContain": ["Header A", "Header B", "Val A", "Val B"],
+    "mustExclude": ["Header AHeader B", "Val AVal B"],
+    "threat": "cross-block-boundary-table-th-and-td"
+  },
+  {
+    "html": "<p>Visible text.</p><p hidden>SHOULD_NOT_APPEAR_hidden</p>",
+    "mustContain": ["Visible text."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_hidden"],
+    "threat": "hidden-attribute-excluded"
+  },
+  {
+    "html": "<p>Visible text.</p><p aria-hidden=\"true\">SHOULD_NOT_APPEAR_aria_hidden</p>",
+    "mustContain": ["Visible text."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_aria_hidden"],
+    "threat": "aria-hidden-excluded"
+  },
+  {
+    "html": "<p>Visible text.</p><p style=\"display:none\">SHOULD_NOT_APPEAR_display_none</p>",
+    "mustContain": ["Visible text."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_display_none"],
+    "threat": "style-display-none-excluded"
+  },
+  {
+    "html": "<p>Visible text.</p><p style=\"visibility:hidden\">SHOULD_NOT_APPEAR_visibility_hidden</p>",
+    "mustContain": ["Visible text."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_visibility_hidden"],
+    "threat": "style-visibility-hidden-excluded"
+  },
+  {
+    "html": "<div><my-custom-element>Before custom.</my-custom-element><p>After custom.</p></div>",
+    "mustContain": ["Before custom.", "After custom."],
+    "mustExclude": ["Before custom. After custom."],
+    "threat": "unknown-custom-element-separator",
+    "note": "Unknown/custom elements default to block-separator behavior; texts must not be joined by a single space"
+  },
+  {
+    "html": "<p>Value input: <input type=\"text\" value=\"SHOULD_NOT_APPEAR_value\"> end.</p>",
+    "mustContain": ["Value input:", "end."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_value"],
+    "threat": "value-attribute-excluded"
+  },
+  {
+    "html": "<p>Script before body.</p><script type=\"text/javascript\">document.title = 'SHOULD_NOT_APPEAR_inline_script';</script><p>Script after body.</p>",
+    "mustContain": ["Script before body.", "Script after body."],
+    "mustExclude": ["SHOULD_NOT_APPEAR_inline_script"],
+    "threat": "inline-script-excluded"
+  },
+  {
+    "html": "<p>Normal &lt;b&gt;bold&lt;/b&gt; text.</p>",
+    "mustContain": ["Normal <b>bold</b> text."],
+    "mustExclude": ["&lt;b&gt;"],
+    "threat": "entity-encoded-html-tags-decoded",
+    "note": "Entity-encoded angle brackets in text nodes decode to literal < and > — they are text content, not markup"
+  }
+]

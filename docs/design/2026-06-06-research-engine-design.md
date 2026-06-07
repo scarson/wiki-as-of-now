@@ -95,7 +95,7 @@ The single highest-stakes function: the deterministic backstop guaranteeing the 
 **`normalize.ts` — `normalizeForVerbatim(raw)`** (owned here; imported by both the extractor and the check). Fixed order:
 1. Unicode **NFC** (canonical — *not* NFKC; NFKC's compatibility folding would collapse distinct glyphs and widen the false-accept surface).
 2. **Strip** zero-width / soft-hyphen: U+00AD, U+200B, U+200C, U+200D, U+2060, U+FEFF. The strip set contains **only characters that render zero-width** (audited; zero combining marks) — so stripping is *reader-visible-equivalent*. Visible-space characters go in the fold set, never the strip set (a visible-space char in the strip set would be a join-forgery — locked + tested).
-3. **Fold** every visible whitespace (Unicode `Zs` + NEL U+0085 + VT/FF, e.g. U+00A0, U+2000–200A, U+202F, U+205F, U+3000, U+1680, tab) to a single ASCII space, **preserving `\n`** (the block separators).
+3. **Two-way whitespace split:** vertical whitespace / line+paragraph separators (LF, VT U+000B, FF U+000C, CR U+000D, NEL U+0085, LS U+2028, PS U+2029) collapse to a single `\n` block boundary; horizontal whitespace (Unicode `Zs` + tab, e.g. U+00A0, U+2000–200A, U+202F, U+205F, U+3000, U+1680) collapses to a single ASCII space; zero-width is stripped. This makes the cross-block-forgery guard robust for both text/html and text/plain (the latter has no HTML extractor, so normalize is the only boundary layer), closing a gap found in opus review where VT/FF/NEL/CR/LS/PS could otherwise let a quote bridge two reader-distinct lines.
 4. Trim. **Case-sensitive; no punctuation stripping** (so "not awarded" can never normalize to match "awarded").
 
 Idempotent (`normalize(normalize(x)) === normalize(x)` — property-tested). Deterministic across runtimes only if NFC agrees Node-vs-workerd — enforced by the golden fixture (§6 N1).
@@ -261,6 +261,7 @@ Each section ran three rounds (self → Opus → self). What changed, and the lo
 ## 9. Deferred / named residuals (do NOT silently re-open)
 
 - **DNS-rebinding SSRF residual** (Worker has no resolve-then-pin) — host check covers IP-literals/metadata-hostnames only; full resolver defense = hosted-instance hardening.
+- **IPv4-compatible `::/96` + NAT64 `64:ff9b::/96` SSRF residual** (surfaced in Phase 2 implementation review) — the host classifier enumerates `::ffff:0:0/96` (IPv4-mapped) but NOT the deprecated IPv4-compatible `::/96` form (e.g. `[::7f00:1]`) or the NAT64 well-known prefix, both of which textually embed an IPv4 address. Accepted because modern stacks do not route IPv4-compatible addresses to the embedded v4 and NAT64 reachability is gateway-dependent (same residual category as DNS rebinding). Recorded in `src/research/canonicalize-url.ts`.
 - **`provider_unavailable` retries** until the queue dead-letters (transient); **double-spend** on concurrent redelivery accepted in v1 (placeholder row in the provider slice).
 - **Pack compaction / retention** — superseded/orphaned packs linger; prune affordance exists, automatic compaction deferred.
 - **eTLD+1 per-domain cap** — host-level for v1; revisit when `maxProposals` grows.

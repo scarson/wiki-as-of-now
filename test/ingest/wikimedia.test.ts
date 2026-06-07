@@ -166,4 +166,69 @@ describe("fetchArticle", () => {
     await expect(fetchArticle("   ", { fetchFn })).rejects.toThrow(/title/i);
     expect(calls).toHaveLength(0);
   });
+
+  // Gap 1 — line 183: 503 + unreadable body → WikimediaUnavailableError (mentioning "unreadable body")
+  it("throws WikimediaUnavailableError on 503 with an unreadable (non-JSON) body", async () => {
+    const { fetchFn } = stubFetch(null, { ok: false, status: 503, throwJson: true });
+    const err = await fetchArticle("Artemis program", { fetchFn }).catch(e => e);
+    expect(err).toBeInstanceOf(WikimediaUnavailableError);
+    expect(err.message).toMatch(/unreadable body/i);
+  });
+
+  // Gap 1 — line 200: !res.ok + 503 but body parsed as JSON without an error/maxlag key
+  it("throws WikimediaUnavailableError on 503 whose JSON body carries no error key", async () => {
+    // Body parses fine but res.ok is false and status is 503; body.error is absent so the
+    // maxlag branch is skipped and the !res.ok / 503 branch (line 200) fires.
+    const { fetchFn } = stubFetch({ query: { pages: [] } }, { ok: false, status: 503 });
+    const err = await fetchArticle("Artemis program", { fetchFn }).catch(e => e);
+    expect(err).toBeInstanceOf(WikimediaUnavailableError);
+  });
+
+  // Gap 1 — line 205: body.query.pages is empty / absent → WikimediaResponseError ("no pages")
+  it("throws WikimediaResponseError when query.pages is an empty array", async () => {
+    // Distinct from the page.missing / page.invalid case: no page object at all.
+    const { fetchFn } = stubFetch({ query: { pages: [] } });
+    const err = await fetchArticle("Artemis program", { fetchFn }).catch(e => e);
+    expect(err).toBeInstanceOf(WikimediaResponseError);
+    expect(err.message).toMatch(/no pages/i);
+  });
+
+  it("throws WikimediaResponseError when query.pages is absent", async () => {
+    const { fetchFn } = stubFetch({ query: {} });
+    const err = await fetchArticle("Artemis program", { fetchFn }).catch(e => e);
+    expect(err).toBeInstanceOf(WikimediaResponseError);
+    expect(err.message).toMatch(/no pages/i);
+  });
+
+  // Gap 1 — line 200 else path: !res.ok with a non-503 status (e.g. 429 rate-limit) whose JSON
+  // body carries no error key → WikimediaResponseError mentioning the HTTP status code.
+  it("throws WikimediaResponseError on a non-503 non-ok response (e.g. 429) with no error body", async () => {
+    // body.error is absent, res.ok=false, res.status=429 → the else-branch of the 503 guard fires
+    const { fetchFn } = stubFetch({ query: { pages: [] } }, { ok: false, status: 429 });
+    const err = await fetchArticle("Artemis program", { fetchFn }).catch(e => e);
+    expect(err).toBeInstanceOf(WikimediaResponseError);
+    expect(err.message).toMatch(/429/);
+  });
+
+  // Additional coverage — maxlag error with no `info` field: `body.error.info ?? ""` branch.
+  it("throws WikimediaUnavailableError on maxlag with no info field (info ?? '' branch)", async () => {
+    const { fetchFn } = stubFetch(
+      { error: { code: "maxlag", lag: 7 } }, // no `info` key
+      { ok: false, status: 503 }
+    );
+    const err = await fetchArticle("Artemis program", { fetchFn }).catch(e => e);
+    expect(err).toBeInstanceOf(WikimediaUnavailableError);
+    expect(err.message).toMatch(/maxlag/i);
+  });
+
+  // Additional coverage — API error with no `code` field: `body.error.code ?? "unknown"` branch.
+  it("throws WikimediaResponseError on an API error with no code field (code ?? 'unknown' branch)", async () => {
+    const { fetchFn } = stubFetch(
+      { error: { info: "something went wrong" } }, // no `code` key
+      { ok: false, status: 500 }
+    );
+    const err = await fetchArticle("Artemis program", { fetchFn }).catch(e => e);
+    expect(err).toBeInstanceOf(WikimediaResponseError);
+    expect(err.message).toMatch(/unknown/);
+  });
 });

@@ -67,4 +67,25 @@ describe("detectStaleClaims", () => {
     const wikitext = `== S ==\nThe radar remains stationed at the site. It was delivered.`;
     expect(detectStaleClaims(parseArticle({ title: "T", revisionId: 1, wikitext }), 2026)).toEqual([]);
   });
+
+  // Gap 2 — line 60: a later marker (higher strength) causes chosenMarker to be reassigned.
+  // "aims to" appears before "to be completed by" in the lexicon (both present in the sentence),
+  // so markers[0]="aims to" (strength 1) and markers[1]="to be completed by" (strength 2).
+  // Line 60 fires: chosenMarker is reassigned to the stronger later marker.
+  it("reassigns to a later marker when it has higher strength than the first found (line 60 branch)", () => {
+    // "aims to" (strength 1) is lexicon-index 10; "to be completed by" (strength 2) is lexicon-index 12.
+    // Both appear in the sentence, so markers = ["aims to", "to be completed by"] — the later one wins.
+    const wikitext = `== S ==\nThe project aims to improve quality and is to be completed by 2019.`;
+    const out = detectStaleClaims(parseArticle({ title: "T", revisionId: 1, wikitext }), 2026);
+    expect(out).toHaveLength(1);
+    expect(out[0].marker).toBe("to be completed by"); // the stronger later marker is chosen
+    expect(out[0].year).toBe(2019);
+  });
 });
+
+// detect.ts line 59 — UNREACHABLE/SKIPPED branches: (MARKER_STRENGTH[markers[i]] ?? 0)
+// The two `?? 0` fallbacks fire only when a marker key is absent from MARKER_STRENGTH.
+// findExpectationMarkers() exclusively returns keys from MARKER_STRENGTH, so both ?? 0
+// operands are always defined. The fallback is defensive TypeScript — faking an out-of-lexicon
+// marker just to hit the ?? branch would test mocked behavior, not real detection logic.
+// Coverage gap accepted; the defensive guard is correct and should remain.

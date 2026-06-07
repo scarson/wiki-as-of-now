@@ -5,6 +5,7 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     environment: "node",
+    setupFiles: ["./test/setup/pristine.ts"],
     coverage: {
       provider: "v8",
       // Cover application/library source only — exclude the Next.js UI shell,
