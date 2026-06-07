@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 4/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
+**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 5/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
@@ -69,16 +69,15 @@ notes and commit messages.
 | 2 — `SqlExecutor.batch()` + atomic pack+audit | ✅ Shipped | `ee26d6c`, `976ef9f`, `1d650f3`, `3e58b06` | G13 hole closed atomically; OPUS review APPROVE; 551 tests |
 | 3 — `process-batch.ts` | ✅ Shipped | `ad3e158`, `5a5dc8b` | sequential ack/retry+isolation+codes-only warn; 559 tests; 2 reviewers APPROVE |
 | 4 — `seed.ts` + `enqueueResearchBatch` | ✅ Shipped | `f7ab10a`, `d64e397`, `ffff6fe` | dedup == has() (OPUS APPROVE); NFC/NFD collapse; ≤100+≤256KB chunking; 574 tests |
-| 5 — `workers/research/` worker + wrangler + deploy | 🚧 In progress | — | dedicated bg worker; NO triggers.crons (dormant) |
-| 5 — `workers/research/` worker + wrangler + deploy | ⬜ Not started | — | dedicated bg worker; NO triggers.crons (dormant) |
-| 6 — workers-pool test project + integration + CI | ⬜ Not started | — | real Miniflare D1+Queues; both pools in CI |
+| 5 — `workers/research/` worker + wrangler + deploy | ✅ Shipped | `7e80fba`, `4ea0837` | dormant cron; bundle better-sqlite3-free, no nodejs_compat (dry-run proven); 2 reviewers APPROVE |
+| 6 — workers-pool test project + integration + CI | 🚧 In progress | — | real Miniflare D1+Queues; both pools in CI |
 
 ### Deviations
 - **Phase 4 Task 4.1 (`OVERSELECT_FACTOR` comment rephrased to comply with CLAUDE.md).** The plan instructed the comment to mark the constant "a v1 placeholder valid only because the cron is off … deferred to the Gemini slice." Code-quality review flagged that wording as roadmap/temporal, which CLAUDE.md (overriding) forbids in comments. Rephrased (commit `ffff6fe`) to state the same load-bearing meaning as an evergreen invariant: the fixed multiplier is sufficient only while no scheduled job continuously drains/re-seeds the queue; a continuation-cursor seeder would be required to lift that, with inline-oriented spec ref. Meaning preserved; roadmap phrasing removed.
 - **Phase 1 Task 1.2 (lint guard scope broadened).** The plan enumerated the guard's `files` as the specific worker-reachable set (`src/db/client.ts`, `src/db/research-packs.ts`, `src/db/audit-log.ts`, …). Code-quality review flagged that this omits the other production data-layer modules (`src/db/articles.ts`, `src/db/eligibility-verdicts.ts`), which a future transitive import could drag into the worker bundle uncaught. Broadened to `src/db/**/*.ts` with `ignores: ["src/db/local-db.ts"]` (commit `f873bb9`). Zero-risk (verified no current `src/db` module imports `better-sqlite3`/`local-db`); strictly improves bundle hygiene; within the plan's intent. The Phase-5 `wrangler deploy --dry-run` bundle grep remains the authoritative backstop.
 
 ### Discoveries
-- (none yet)
+- **Bundle-grep false positive in the source map.** `wrangler deploy -c workers/research/wrangler.jsonc --dry-run --outdir <dir>` emits both `index.js` (executable) and `index.js.map` (source map). A `grep -rl "better-sqlite3" <dir>` matches `index.js.map` because its `sourcesContent` embeds `src/db/client.ts`'s JSDoc, which legitimately mentions "better-sqlite3" in describing the port contract. This is HARMLESS — the executable `index.js` has zero `better-sqlite3` imports/requires. The correct bundle-hygiene check is `grep -c "better-sqlite3" <dir>/index.js` (must be 0), NOT a recursive grep over the whole outdir. Phase 6 / final integration: use the `index.js`-scoped grep.
 
 ---
 
@@ -278,7 +277,7 @@ Implements spec §3 (seed). The candidate→message planner with dedup that **ma
 
 ## Phase 5 — `workers/research/` worker + wrangler + deploy
 
-**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07, branch `claude/research-queue-transport-impl-L8Klm`)
+**Execution Status:** ✅ SHIPPED (2026-06-07; SHAs `7e80fba` worker+wrangler+deploy:research, `4ea0837` cast/now NITs). Dedicated `{ scheduled, queue }` worker (no fetch) sharing the web D1; `makeDeps(env)` one-line provider swap point with the PK-poison precondition comment; wrangler.jsonc has `global_fetch_strictly_public`, NO `nodejs_compat`, NO `migrations_dir`, NO `triggers.crons` (dormant), D1 binding matching the web worker. **Load-bearing bundle check PASSED:** `wrangler deploy --dry-run` exits 0, executable `index.js` is `better-sqlite3`-free with no `nodejs_compat` (the Phase-1 split + lint guard proven end-to-end). 3 review rounds: self + spec-compliance APPROVE + code-quality APPROVE; both type-bridges (fetch→FetchImpl cast, queueAdapter for the `QueueSendBatchResponse`→void return) confirmed justified.
 
 Implements spec §1/§4/§5. The dedicated background Worker that wires the transport modules to real bindings. **No `triggers.crons`** (the cron ships dormant — spec §4). No new behavior tests here (the logic is tested in Phases 2–4; the real-binding proof is Phase 6); this phase is the worker entry + config + a build/bundle check.
 
@@ -305,7 +304,7 @@ Implements spec §1/§4/§5. The dedicated background Worker that wires the tran
 
 ## Phase 6 — workers-pool test project + integration tests + CI
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07, branch `claude/research-queue-transport-impl-L8Klm`)
 
 Implements spec §7. Proves the REAL Cloudflare binding/ack/retry/DLQ/cron mapping in `workerd` (Miniflare), which the Node faithful-fake pool cannot. Adds a second vitest project and wires both into CI.
 
