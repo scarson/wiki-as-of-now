@@ -11,6 +11,8 @@ import { makeAuditLog } from "../../src/db/audit-log";
 import { GATE_VERSION } from "../../src/safelane/eligibility";
 import type { ResearchMessage } from "../../src/queue/research-jobs";
 
+const workerEnv = { DB: testEnv.DB, RESEARCH_QUEUE: testEnv.RESEARCH_QUEUE };
+
 const PAGE_ID = 4242;
 const REV_ID = 9001;
 const SECTION = "History";
@@ -40,7 +42,7 @@ describe("research worker — queue handler on real Miniflare D1", () => {
     };
     const { batch, message } = makeBatch(body);
 
-    await worker.queue(batch as unknown as MessageBatch<ResearchMessage>, testEnv as never, ctx);
+    await worker.queue(batch as unknown as MessageBatch<ResearchMessage>, workerEnv, ctx);
 
     // The message was acked (terminal success), not retried.
     expect(message.ack).toHaveBeenCalledTimes(1);
@@ -65,7 +67,9 @@ describe("research worker — genuine failure maps to retry() on real D1 (no pro
   it("a claim whose pageId has no parent article: commitTerminal FK fails inside the atomic batch → message retried, nothing persisted", async () => {
     // Induce a GENUINE failure with real components (an orphan-FK pack insert), NOT a contrived
     // production test-seam. The real DLQ *routing* after max_retries is exercised by the Node-pool
-    // faithful-fake (process-batch.test.ts) + manual `wrangler` verification; see the plan residual.
+    // faithful-fake (process-batch.test.ts) + manual `wrangler` verification; end-to-end
+    // redelivery-to-DLQ after max_retries is a named test residual — see
+    // docs/plans/2026-06-07-research-queue-transport-plan.md §Discoveries.
     const db = d1Executor(testEnv.DB);
     const ORPHAN_PAGE_ID = 999999; // deliberately NOT inserted into articles → FK violation on the pack insert
     const claimKey = await computeClaimKey(ORPHAN_PAGE_ID, SECTION, SENTENCE, YEAR);
@@ -78,7 +82,7 @@ describe("research worker — genuine failure maps to retry() on real D1 (no pro
     const { batch, message } = makeBatch(body);
 
     const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
-    await worker.queue(batch as unknown as MessageBatch<ResearchMessage>, testEnv as never, ctx);
+    await worker.queue(batch as unknown as MessageBatch<ResearchMessage>, workerEnv, ctx);
 
     // The genuine FK failure → retry() (transient signal), never ack().
     expect(message.retry).toHaveBeenCalledTimes(1);
@@ -113,7 +117,7 @@ describe("research worker — scheduled handler on real Miniflare D1 + Queue", (
     const sendBatchSpy = vi.spyOn(testEnv.RESEARCH_QUEUE, "sendBatch");
 
     const controller = { scheduledTime: Date.now(), cron: "", noRetry: () => {} } as unknown as ScheduledController;
-    await worker.scheduled(controller, testEnv as never, ctx);
+    await worker.scheduled(controller, workerEnv, ctx);
 
     expect(sendBatchSpy).toHaveBeenCalled();
     const enqueued = sendBatchSpy.mock.calls.flatMap((call) => call[0] as { body: ResearchMessage }[]);

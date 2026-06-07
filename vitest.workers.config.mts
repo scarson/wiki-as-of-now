@@ -1,5 +1,6 @@
 // ABOUTME: Vitest config for the workerd (Miniflare) test pool — proves real Cloudflare bindings.
 // ABOUTME: Runs test/workers/** against the research worker's wrangler config (real D1 + Queues), migrations applied.
+// This config is .mts (not .ts): @cloudflare/vitest-pool-workers is ESM-only; a .ts config is bundled as CJS and fails to load it.
 import { defineConfig } from "vitest/config";
 import { cloudflareTest, readD1Migrations } from "@cloudflare/vitest-pool-workers";
 import path from "node:path";
