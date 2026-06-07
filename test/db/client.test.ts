@@ -107,12 +107,21 @@ describe("d1Executor", () => {
     let batchCallCount = 0;
     let batchedStatements: unknown[] = [];
 
-    // Each makeStmt returns a distinct object so we can assert identity.
-    const makeStmt = (sql: string, _params: unknown[] = []) => ({
-      bind: (...p: unknown[]) => makeStmt(sql, p),
-      run: async () => ({ success: true }),
-      all: async <T,>(): Promise<{ results: T[] }> => ({ results: [] }),
-    });
+    // Track the native D1 statement objects produced by bind() calls so we can
+    // assert that the adapter passes these exact objects to batch(), not the
+    // port-layer SqlStatement wrappers (s1/s2).
+    const boundNatives: unknown[] = [];
+    const makeStmt = (sql: string, params: unknown[] = []) => {
+      const native = {
+        bind: (...p: unknown[]) => makeStmt(sql, p),
+        run: async () => ({ success: true }),
+        all: async <T,>(): Promise<{ results: T[] }> => ({ results: [] }),
+      };
+      // Only track objects that result from a bind() call (params non-empty);
+      // those are what the executor stores in its WeakMap and passes to batch().
+      if (params.length > 0) boundNatives.push(native);
+      return native;
+    };
 
     const fakeD1 = {
       prepare: (sql: string) => makeStmt(sql),
@@ -132,6 +141,12 @@ describe("d1Executor", () => {
     expect(batchCallCount).toBe(1);
     // The adapter must have passed exactly 2 underlying D1 statements.
     expect(batchedStatements).toHaveLength(2);
+    // The adapter must pass the UNDERLYING D1 statements, not the port wrappers (WeakMap unwrap).
+    expect(batchedStatements[0]).not.toBe(s1);
+    expect(batchedStatements[1]).not.toBe(s2);
+    // Positive identity: the batched objects are the exact native statements from bind().
+    expect(batchedStatements[0]).toBe(boundNatives[0]);
+    expect(batchedStatements[1]).toBe(boundNatives[1]);
   });
 });
 

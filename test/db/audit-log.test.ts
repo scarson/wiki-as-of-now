@@ -3,8 +3,7 @@
 import { describe, it, expect } from "vitest";
 import { makeAuditLog, appendStatement } from "../../src/db/audit-log";
 import { betterSqliteExecutor } from "../../src/db/local-db";
-import { freshTestDb } from "../helpers/db";
-import { freshTestExecutor } from "../helpers/db";
+import { freshTestDb, freshTestExecutor } from "../helpers/db";
 
 const newLog = () => makeAuditLog(betterSqliteExecutor(freshTestDb()));
 
@@ -71,7 +70,7 @@ describe("appendStatement", () => {
     expect(rows[0].ts).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/);
   });
 
-  it("ts is captured at build time (not at run time)", async () => {
+  it("ts is a valid ISO 8601 timestamp set when the statement is built", async () => {
     // Build the statement, then delay, then run — the ts stored is from build time.
     // We approximate this by checking the ts is set before run() is awaited and
     // that the row's ts field is a valid ISO timestamp (cannot exactly time-travel,
