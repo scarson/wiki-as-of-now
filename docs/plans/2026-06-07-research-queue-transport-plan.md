@@ -61,14 +61,14 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 2/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
+**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 3/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — `client.ts` split + lint guard | ✅ Shipped | `6cedbee`, `7299ca8`, `f873bb9` | refactor-neutral; 537 tests green; guard fires |
 | 2 — `SqlExecutor.batch()` + atomic pack+audit | ✅ Shipped | `ee26d6c`, `976ef9f`, `1d650f3`, `3e58b06` | G13 hole closed atomically; OPUS review APPROVE; 551 tests |
-| 3 — `process-batch.ts` | 🚧 In progress | — | sequential ack/retry transport core |
-| 4 — `seed.ts` + `enqueueResearchBatch` | ⬜ Not started | — | dedup identity == has() (opus review) |
+| 3 — `process-batch.ts` | ✅ Shipped | `ad3e158`, `5a5dc8b` | sequential ack/retry+isolation+codes-only warn; 559 tests; 2 reviewers APPROVE |
+| 4 — `seed.ts` + `enqueueResearchBatch` | 🚧 In progress | — | dedup identity == has() (opus review) |
 | 5 — `workers/research/` worker + wrangler + deploy | ⬜ Not started | — | dedicated bg worker; NO triggers.crons (dormant) |
 | 6 — workers-pool test project + integration + CI | ⬜ Not started | — | real Miniflare D1+Queues; both pools in CI |
 
@@ -210,7 +210,7 @@ Implements spec §2 (and §10 D1). Adds an atomic multi-statement primitive to t
 
 ## Phase 3 — `process-batch.ts` (transport core)
 
-**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07, branch `claude/research-queue-transport-impl-L8Klm`)
+**Execution Status:** ✅ SHIPPED (2026-06-07; SHAs `ad3e158` processBatch, `5a5dc8b` test-strengthening). Sequential per-message ack/retry with full isolation (middle throw → siblings still ack'd, no whole-batch throw); incremental-ack proven by call-order assertion (falsifies deferred dispatch); codes-only retry warn (sanitized claimKey + `e.name`, proven non-leaking vs content + PII sentinels); malformed→ack via the real consumer; structural `MessageBatchLike` (no workers-types). 559 tests. 3 review rounds: self + spec-compliance APPROVE + code-quality APPROVE.
 
 Implements spec §3 (`processBatch`). The per-message ack/retry mapping with isolation. Pure transport logic, Node-pool unit-tested with a faithful `MessageBatch` fake.
 
@@ -233,7 +233,7 @@ Implements spec §3 (`processBatch`). The per-message ack/retry mapping with iso
 
 ## Phase 4 — `seed.ts` + `enqueueResearchBatch` (opus review)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07, branch `claude/research-queue-transport-impl-L8Klm`)
 
 Implements spec §3 (seed). The candidate→message planner with dedup that **matches the consumer's `has()` identity exactly**, plus the size-aware batch producer. Opus review (the dedup-identity correctness is load-bearing for G14 spend-avoidance).
 
