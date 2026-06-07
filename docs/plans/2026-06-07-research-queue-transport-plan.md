@@ -61,18 +61,20 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 3/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
+**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 4/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — `client.ts` split + lint guard | ✅ Shipped | `6cedbee`, `7299ca8`, `f873bb9` | refactor-neutral; 537 tests green; guard fires |
 | 2 — `SqlExecutor.batch()` + atomic pack+audit | ✅ Shipped | `ee26d6c`, `976ef9f`, `1d650f3`, `3e58b06` | G13 hole closed atomically; OPUS review APPROVE; 551 tests |
 | 3 — `process-batch.ts` | ✅ Shipped | `ad3e158`, `5a5dc8b` | sequential ack/retry+isolation+codes-only warn; 559 tests; 2 reviewers APPROVE |
-| 4 — `seed.ts` + `enqueueResearchBatch` | 🚧 In progress | — | dedup identity == has() (opus review) |
+| 4 — `seed.ts` + `enqueueResearchBatch` | ✅ Shipped | `f7ab10a`, `d64e397`, `ffff6fe` | dedup == has() (OPUS APPROVE); NFC/NFD collapse; ≤100+≤256KB chunking; 574 tests |
+| 5 — `workers/research/` worker + wrangler + deploy | 🚧 In progress | — | dedicated bg worker; NO triggers.crons (dormant) |
 | 5 — `workers/research/` worker + wrangler + deploy | ⬜ Not started | — | dedicated bg worker; NO triggers.crons (dormant) |
 | 6 — workers-pool test project + integration + CI | ⬜ Not started | — | real Miniflare D1+Queues; both pools in CI |
 
 ### Deviations
+- **Phase 4 Task 4.1 (`OVERSELECT_FACTOR` comment rephrased to comply with CLAUDE.md).** The plan instructed the comment to mark the constant "a v1 placeholder valid only because the cron is off … deferred to the Gemini slice." Code-quality review flagged that wording as roadmap/temporal, which CLAUDE.md (overriding) forbids in comments. Rephrased (commit `ffff6fe`) to state the same load-bearing meaning as an evergreen invariant: the fixed multiplier is sufficient only while no scheduled job continuously drains/re-seeds the queue; a continuation-cursor seeder would be required to lift that, with inline-oriented spec ref. Meaning preserved; roadmap phrasing removed.
 - **Phase 1 Task 1.2 (lint guard scope broadened).** The plan enumerated the guard's `files` as the specific worker-reachable set (`src/db/client.ts`, `src/db/research-packs.ts`, `src/db/audit-log.ts`, …). Code-quality review flagged that this omits the other production data-layer modules (`src/db/articles.ts`, `src/db/eligibility-verdicts.ts`), which a future transitive import could drag into the worker bundle uncaught. Broadened to `src/db/**/*.ts` with `ignores: ["src/db/local-db.ts"]` (commit `f873bb9`). Zero-risk (verified no current `src/db` module imports `better-sqlite3`/`local-db`); strictly improves bundle hygiene; within the plan's intent. The Phase-5 `wrangler deploy --dry-run` bundle grep remains the authoritative backstop.
 
 ### Discoveries
@@ -233,7 +235,7 @@ Implements spec §3 (`processBatch`). The per-message ack/retry mapping with iso
 
 ## Phase 4 — `seed.ts` + `enqueueResearchBatch` (opus review)
 
-**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07, branch `claude/research-queue-transport-impl-L8Klm`)
+**Execution Status:** ✅ SHIPPED (2026-06-07; SHAs `f7ab10a` selectResearchSeeds, `d64e397` enqueueResearchBatch, `ffff6fe` review-fixes). Dedup identity is `packExists` on `(claim_key, source_revision_id)` — the SAME function/identity the consumer's `has()` uses (disagreement structurally precluded; both directions of full-PK identity tested). In-memory `claimKey` Set collapses NFC/NFD byte-variants SQL DISTINCT keeps separate (escape-clean test, hygiene grep verified). Live-revision-only join; deterministic total ORDER BY; limit honored; `enqueueResearchBatch` ≤100-count + ≤256KB-byte chunking (both paths tested), oversized singleton skipped+codes-only-warned (no leak), `SEED_BATCH_LIMIT=50` asserted ≤100 at module load. 574 tests. 3 review rounds: self + **OPUS APPROVE** (dedup-identity gate) + code-quality (1 typo + DRY/ABOUTME/evergreen-comment + byte-split-test findings fixed).
 
 Implements spec §3 (seed). The candidate→message planner with dedup that **matches the consumer's `has()` identity exactly**, plus the size-aware batch producer. Opus review (the dedup-identity correctness is load-bearing for G14 spend-avoidance).
 
@@ -276,7 +278,7 @@ Implements spec §3 (seed). The candidate→message planner with dedup that **ma
 
 ## Phase 5 — `workers/research/` worker + wrangler + deploy
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07, branch `claude/research-queue-transport-impl-L8Klm`)
 
 Implements spec §1/§4/§5. The dedicated background Worker that wires the transport modules to real bindings. **No `triggers.crons`** (the cron ships dormant — spec §4). No new behavior tests here (the logic is tested in Phases 2–4; the real-binding proof is Phase 6); this phase is the worker entry + config + a build/bundle check.
 
