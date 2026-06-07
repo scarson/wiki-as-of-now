@@ -204,3 +204,84 @@ export async function enqueueResearch(
   const claimKey = await computeClaimKey(pageId, input.sectionHeading, input.claimText, input.year);
   await queue.send({ claimKey, pageId, sourceRevisionId, input });
 }
+
+// ---------------------------------------------------------------------------
+// Producer: enqueueResearchBatch
+// ---------------------------------------------------------------------------
+
+/** Maximum messages per Cloudflare Queue sendBatch call. */
+const MAX_BATCH_COUNT = 100;
+
+/** Maximum byte size per sendBatch call (256 KB). */
+const MAX_BATCH_BYTES = 256 * 1024;
+
+/** Threshold above which a single message is skipped rather than included in any batch. */
+const MAX_MESSAGE_BYTES = 128 * 1024;
+
+/**
+ * Upper bound on the seed fan-out — the number of ResearchMessages a seeder
+ * may produce in one invocation. Must never exceed MAX_BATCH_COUNT so one
+ * seed fit fits in a single sendBatch call without chunking at the seed level.
+ */
+export const SEED_BATCH_LIMIT = 50;
+
+// Invariant enforced at module load: a future bump that violates the queue cap fails loudly.
+if (SEED_BATCH_LIMIT > MAX_BATCH_COUNT) {
+  throw new Error("SEED_BATCH_LIMIT must be <= MAX_BATCH_COUNT");
+}
+
+/** 64-char lowercase hex pattern — matches real computeClaimKey output. */
+const HEX64_PATTERN = /^[0-9a-f]{64}$/;
+
+/**
+ * Batch producer for seed fan-out — sends pre-built ResearchMessages to a Cloudflare Queue
+ * via sendBatch, chunked to <=100 messages AND <=256 KB per chunk.
+ *
+ * claimKey is already computed by the seed; it is passed through unchanged and never
+ * recomputed from the input fields.
+ *
+ * A single message whose JSON size exceeds ~128 KB is skipped and logged (codes-only)
+ * rather than failing the entire batch. This ensures one pathological message never
+ * blocks the rest of the seed fan-out.
+ */
+export async function enqueueResearchBatch(
+  queue: { sendBatch(msgs: { body: ResearchMessage }[]): Promise<void> },
+  msgs: ResearchMessage[],
+): Promise<void> {
+  const chunks: { body: ResearchMessage }[][] = [];
+  let current: { body: ResearchMessage }[] = [];
+  let currentBytes = 0;
+
+  for (const msg of msgs) {
+    const size = JSON.stringify(msg).length;
+
+    if (size > MAX_MESSAGE_BYTES) {
+      // Codes-only warn (G13): sanitize claimKey to 64-hex-or-"unknown"; never log message body/claimText.
+      const rawKey = msg.claimKey;
+      const safeKey = typeof rawKey === "string" && HEX64_PATTERN.test(rawKey) ? rawKey : "unknown";
+      console.warn("research.batch.message_skipped", { claimKey: safeKey, reason: "oversized_message_skipped" });
+      continue;
+    }
+
+    // Start a new chunk BEFORE adding when the current would exceed either limit.
+    if (
+      current.length > 0 &&
+      (current.length >= MAX_BATCH_COUNT || currentBytes + size > MAX_BATCH_BYTES)
+    ) {
+      chunks.push(current);
+      current = [];
+      currentBytes = 0;
+    }
+
+    current.push({ body: msg });
+    currentBytes += size;
+  }
+
+  if (current.length > 0) {
+    chunks.push(current);
+  }
+
+  for (const chunk of chunks) {
+    await queue.sendBatch(chunk);
+  }
+}

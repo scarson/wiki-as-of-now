@@ -4,6 +4,8 @@ import { describe, it, expect, vi } from "vitest";
 import {
   handleResearchMessage,
   enqueueResearch,
+  enqueueResearchBatch,
+  SEED_BATCH_LIMIT,
   makeResearchPackStore,
   type ResearchMessage,
   type ResearchConsumerDeps,
@@ -896,6 +898,118 @@ describe("handleResearchMessage — terminal path uses commitTerminal (G13 atomi
     const rows = await realAuditLog.read();
     const completedRows = rows.filter(r => r.eventType === "research.completed");
     expect(completedRows).toHaveLength(1);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Producer: enqueueResearchBatch
+// ---------------------------------------------------------------------------
+
+/** Build a minimal ResearchMessage with the given claimKey (pre-computed, not derived). */
+function makeBatchMsg(claimKey: string, overrides: Partial<ResearchMessage> = {}): ResearchMessage {
+  return {
+    claimKey,
+    pageId: PAGE_ID,
+    sourceRevisionId: SOURCE_REVISION_ID,
+    input: {
+      claimText: "The fleet will reach full strength by 2025.",
+      sectionHeading: "History",
+      year: 2025,
+      sourceRevisionId: SOURCE_REVISION_ID,
+    },
+    ...overrides,
+  };
+}
+
+describe("enqueueResearchBatch", () => {
+  it("(a) sends pre-built messages unchanged — claimKey is NOT recomputed", async () => {
+    // The producer for seed fan-out receives messages with already-computed claimKeys.
+    // It must pass them through as-is, never recomputing from the input fields.
+    const recognizable = "a".repeat(64);
+    const msg = makeBatchMsg(recognizable);
+    const sendBatch = vi.fn().mockResolvedValue(undefined);
+    const queue = { sendBatch };
+
+    await enqueueResearchBatch(queue, [msg]);
+
+    expect(sendBatch).toHaveBeenCalledTimes(1);
+    const [chunk] = sendBatch.mock.calls[0] as [{ body: ResearchMessage }[]];
+    expect(chunk).toHaveLength(1);
+    // Message is wrapped as { body: msg }
+    expect(chunk[0].body).toEqual(msg);
+    // claimKey comes through unchanged
+    expect(chunk[0].body.claimKey).toBe(recognizable);
+  });
+
+  it("(b) chunks 250 messages into sendBatch calls of <=100 each: [100, 100, 50]", async () => {
+    const safeClaimKey = (i: number) => i.toString(16).padStart(64, "0");
+    const safeMsgs = Array.from({ length: 250 }, (_, i) => makeBatchMsg(safeClaimKey(i)));
+
+    const sendBatch = vi.fn().mockResolvedValue(undefined);
+    const queue = { sendBatch };
+
+    await enqueueResearchBatch(queue, safeMsgs);
+
+    expect(sendBatch).toHaveBeenCalledTimes(3);
+    const sizes = sendBatch.mock.calls.map((call) => (call[0] as unknown[]).length);
+    expect(sizes).toEqual([100, 100, 50]);
+    // Every chunk must be <=100
+    for (const size of sizes) {
+      expect(size).toBeLessThanOrEqual(100);
+    }
+  });
+
+  it("(c) oversized single message is skipped + codes-only warned + batch resolves without throw", async () => {
+    allowConsole();
+    const normalClaimKey = "c".repeat(64);
+    const oversizedClaimKey = "d".repeat(64);
+
+    const normalMsg = makeBatchMsg(normalClaimKey);
+    // A message that exceeds 128 KB when JSON-stringified
+    const oversizedMsg = makeBatchMsg(oversizedClaimKey, {
+      input: {
+        claimText: "x".repeat(200_000),
+        sectionHeading: "History",
+        year: 2025,
+        sourceRevisionId: SOURCE_REVISION_ID,
+      },
+    });
+
+    const sendBatch = vi.fn().mockResolvedValue(undefined);
+    const queue = { sendBatch };
+    const warnSpy = vi.spyOn(console, "warn");
+
+    await expect(enqueueResearchBatch(queue, [normalMsg, oversizedMsg])).resolves.toBeUndefined();
+
+    // Normal message must be sent
+    expect(sendBatch).toHaveBeenCalledTimes(1);
+    const [chunk] = sendBatch.mock.calls[0] as [{ body: ResearchMessage }[]];
+    const sentKeys = chunk.map((m) => m.body.claimKey);
+    expect(sentKeys).toContain(normalClaimKey);
+    // Oversized message must NOT be sent
+    expect(sentKeys).not.toContain(oversizedClaimKey);
+
+    // A console.warn must have fired for the oversized message
+    expect(warnSpy).toHaveBeenCalled();
+
+    // The warn must NOT contain the giant claimText (codes-only)
+    const warnArgs = warnSpy.mock.calls.map((c) => JSON.stringify(c));
+    for (const arg of warnArgs) {
+      expect(arg).not.toContain("x".repeat(100)); // no fragment of the oversized text
+    }
+  });
+
+  it("(d) SEED_BATCH_LIMIT is defined and <=100", () => {
+    expect(typeof SEED_BATCH_LIMIT).toBe("number");
+    expect(SEED_BATCH_LIMIT).toBeLessThanOrEqual(100);
+  });
+
+  it("(e) empty input: sendBatch not called, resolves", async () => {
+    const sendBatch = vi.fn().mockResolvedValue(undefined);
+    const queue = { sendBatch };
+
+    await expect(enqueueResearchBatch(queue, [])).resolves.toBeUndefined();
+    expect(sendBatch).not.toHaveBeenCalled();
   });
 });
 
