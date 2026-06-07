@@ -11,9 +11,13 @@ import type { ResearchMessage } from "./research-jobs";
 /**
  * Over-select multiplier for the SQL LIMIT.
  *
- * A v1 placeholder valid ONLY because the cron is off — after one drain every
- * easy-win claim for a revision is packed, so a fixed over-select suffices; a
- * continuation-cursor seeder is deferred to the Gemini slice (spec §3).
+ * Absorbs the shrinkage from SQL DISTINCT non-dedup and the in-memory claimKey/packed-skip
+ * filters so the final set can still reach the requested `limit` after both filter passes.
+ *
+ * A fixed multiplier is sufficient ONLY while no scheduled job continuously drains and
+ * re-seeds the queue (once every easy-win claim for a revision is packed, seeding goes idle).
+ * A continuation-cursor seeder would be required to lift that constraint
+ * (see the research-queue seeder design, spec §3).
  */
 export const OVERSELECT_FACTOR = 3;
 

@@ -1,5 +1,5 @@
 // ABOUTME: Tests for the research-job queue consumer and producer (src/queue/research-jobs.ts).
-// ABOUTME: Covers idempotency, terminal persistence, audit allowlist+sentinel (G13), retry signaling, malformed messages.
+// ABOUTME: Covers idempotency, terminal atomic persistence, audit allowlist+sentinel (G13), retry signaling, malformed messages, and batch-producer chunking / SEED_BATCH_LIMIT.
 import { describe, it, expect, vi } from "vitest";
 import {
   handleResearchMessage,
@@ -1010,6 +1010,42 @@ describe("enqueueResearchBatch", () => {
 
     await expect(enqueueResearchBatch(queue, [])).resolves.toBeUndefined();
     expect(sendBatch).not.toHaveBeenCalled();
+  });
+
+  it("(f) byte-driven split: 3 messages each ~90 KB produces 2 sendBatch calls ([2, 1]), not count-driven", async () => {
+    // Each message has a ~90 KB claimText. JSON.stringify of each is ~90 KB — well under the
+    // 128 KB single-message skip threshold, so none is skipped. Two fit in a 256 KB chunk
+    // (2 × 90 KB = 180 KB < 256 KB), but adding a third would exceed the limit, forcing a
+    // second chunk. Count (3) is far under the 100-message cap, so the split is byte-driven.
+    const key1 = "1".repeat(64);
+    const key2 = "2".repeat(64);
+    const key3 = "3".repeat(64);
+
+    const bigText = "x".repeat(90_000);
+    const msg1 = makeBatchMsg(key1, { input: { claimText: bigText, sectionHeading: "History", year: 2025, sourceRevisionId: SOURCE_REVISION_ID } });
+    const msg2 = makeBatchMsg(key2, { input: { claimText: bigText, sectionHeading: "History", year: 2025, sourceRevisionId: SOURCE_REVISION_ID } });
+    const msg3 = makeBatchMsg(key3, { input: { claimText: bigText, sectionHeading: "History", year: 2025, sourceRevisionId: SOURCE_REVISION_ID } });
+
+    const sendBatch = vi.fn().mockResolvedValue(undefined);
+    const queue = { sendBatch };
+
+    await enqueueResearchBatch(queue, [msg1, msg2, msg3]);
+
+    // Byte-driven split: 2 chunks even though only 3 messages (far under count cap of 100)
+    expect(sendBatch).toHaveBeenCalledTimes(2);
+
+    const chunk1 = sendBatch.mock.calls[0][0] as { body: ResearchMessage }[];
+    const chunk2 = sendBatch.mock.calls[1][0] as { body: ResearchMessage }[];
+
+    // First chunk: 2 messages; second chunk: 1 message
+    expect(chunk1).toHaveLength(2);
+    expect(chunk2).toHaveLength(1);
+
+    // All 3 messages were sent (none skipped — all are under the 128 KB per-message limit)
+    const allSent = [...chunk1, ...chunk2].map((m) => m.body.claimKey);
+    expect(allSent).toContain(key1);
+    expect(allSent).toContain(key2);
+    expect(allSent).toContain(key3);
   });
 });
 

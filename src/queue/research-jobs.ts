@@ -1,5 +1,5 @@
 // ABOUTME: Research-job queue consumer — total/contained handler that drives the research provider.
-// ABOUTME: Also exports a thin producer (enqueueResearch) for posting to a Cloudflare Queue binding.
+// ABOUTME: Also exports queue producers (enqueueResearch, enqueueResearchBatch) and the atomic pack+audit pack store.
 import type { AuditEntry } from "../db/audit-log";
 import { appendStatement } from "../db/audit-log";
 import type { ResearchInput } from "../research/provider";
@@ -111,7 +111,7 @@ export async function handleResearchMessage(
     // could smuggle content/PII into the append-only audit log. Only pass through a claimKey that is a
     // genuine computeClaimKey output (64-char lowercase hex); otherwise use a fixed placeholder.
     const rawKey = (msg as Record<string, unknown> | null)?.claimKey;
-    const claimKey = typeof rawKey === "string" && /^[0-9a-f]{64}$/.test(rawKey) ? rawKey : "malformed";
+    const claimKey = typeof rawKey === "string" && HEX64_PATTERN.test(rawKey) ? rawKey : "malformed";
     await deps.audit.append({
       actor: "system",
       eventType: "research.failed",
@@ -220,8 +220,8 @@ const MAX_MESSAGE_BYTES = 128 * 1024;
 
 /**
  * Upper bound on the seed fan-out — the number of ResearchMessages a seeder
- * may produce in one invocation. Must never exceed MAX_BATCH_COUNT so one
- * seed fit fits in a single sendBatch call without chunking at the seed level.
+ * may produce in one invocation. Must never exceed MAX_BATCH_COUNT so an entire
+ * seed fan-out fits in a single sendBatch call without seed-level chunking.
  */
 export const SEED_BATCH_LIMIT = 50;
 
