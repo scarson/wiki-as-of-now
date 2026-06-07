@@ -61,11 +61,11 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started. 0/6 phases shipped. Branch `feat/research-queue-transport` (off `dev` `d737f91`, which includes merged slice A).
+**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 0/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — `client.ts` split + lint guard | ⬜ Not started | — | foundation; refactor-only, no behavior change |
+| 1 — `client.ts` split + lint guard | 🚧 In progress | — | foundation; refactor-only, no behavior change |
 | 2 — `SqlExecutor.batch()` + atomic pack+audit | ⬜ Not started | — | touches merged G13/compliance code (opus review) |
 | 3 — `process-batch.ts` | ⬜ Not started | — | sequential ack/retry transport core |
 | 4 — `seed.ts` + `enqueueResearchBatch` | ⬜ Not started | — | dedup identity == has() (opus review) |
@@ -105,7 +105,7 @@ Follow TDD: failing test → run it, confirm it fails for the RIGHT reason → m
 
 ## Phase 1 — `client.ts` split + lint guard
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z, branch `claude/research-queue-transport-impl-L8Klm`)
 
 Implements spec §6. Refactor-only (no behavior change): move the Node-only `better-sqlite3` code out of `src/db/client.ts` so the workerd bundle (Phase 5) never references the native module. The gate trio MUST stay green throughout (this is the regression gate — there are no new tests, just moved code + updated imports). TDD's failing-test-first does not apply to a pure move; the existing suite is the safety net.
 
