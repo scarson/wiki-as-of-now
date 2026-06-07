@@ -61,7 +61,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 🚧 IN PROGRESS (claimed 2026-06-07T00:00:00Z). 5/6 phases shipped. Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
+**Overall:** ✅ ALL PHASES SHIPPED (2026-06-07). 6/6 phases complete; both test pools green + pristine (Node 574 / workerd 3), tsc + lint clean, bundle dry-run `better-sqlite3`-free with no `nodejs_compat`. PR to `dev` opened as **Review — compliance** (awaiting Sam's merge — do NOT self-merge). Branch `claude/research-queue-transport-impl-L8Klm` (off `dev` `e078c73`, which includes merged slice A + this plan/spec via merged PR #18). Executed via subagent-driven development.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
@@ -70,7 +70,7 @@ notes and commit messages.
 | 3 — `process-batch.ts` | ✅ Shipped | `ad3e158`, `5a5dc8b` | sequential ack/retry+isolation+codes-only warn; 559 tests; 2 reviewers APPROVE |
 | 4 — `seed.ts` + `enqueueResearchBatch` | ✅ Shipped | `f7ab10a`, `d64e397`, `ffff6fe` | dedup == has() (OPUS APPROVE); NFC/NFD collapse; ≤100+≤256KB chunking; 574 tests |
 | 5 — `workers/research/` worker + wrangler + deploy | ✅ Shipped | `7e80fba`, `4ea0837` | dormant cron; bundle better-sqlite3-free, no nodejs_compat (dry-run proven); 2 reviewers APPROVE |
-| 6 — workers-pool test project + integration + CI | 🚧 In progress | — | real Miniflare D1+Queues; both pools in CI |
+| 6 — workers-pool test project + integration + CI | ✅ Shipped | `1e28f2d`, `1677602`, `9bfcc78`, `1ba3d68` | real Miniflare D1+Queues; 3 integration tests; both pools in CI; 2 reviewers APPROVE |
 
 ### Deviations
 - **Phase 6 (`@cloudflare/vitest-pool-workers` v4 API differs from the plan's v3 form).** The plan/spec assumed `import { defineWorkersConfig } from "@cloudflare/vitest-pool-workers/config"`. The installed latest `0.16.13` (the version that peers `vitest ^4.1`, matching our 4.1.8) REMOVED that API: there is no `./config` subpath and no `defineWorkersConfig`/`defineWorkersProject` export. The v4 form (confirmed via the package's own `vitest-v3-to-v4` codemod) is `defineConfig` (from `vitest/config`) + a `cloudflareTest(options)` **vite plugin** in `plugins:`, where `options` is the old `poolOptions.workers` shape (`{ wrangler: { configPath }, miniflare: {...} }`). The config MUST be `.mts` (the package is ESM-only; a `.ts` config is bundled as CJS and fails to load it). D1 migrations: `readD1Migrations()` (Node side, in the config) → injected as a Miniflare binding → `applyD1Migrations(env.DB, env.TEST_MIGRATIONS)` in a `setupFiles` hook (workerd side). Implemented at `1e28f2d`. Net effect identical to the plan's intent (a real-binding workerd pool); only the config mechanics changed.
@@ -307,7 +307,7 @@ Implements spec §1/§4/§5. The dedicated background Worker that wires the tran
 
 ## Phase 6 — workers-pool test project + integration tests + CI
 
-**Execution Status:** 🚧 IMPLEMENTED, UNDER REVIEW (2026-06-07; SHAs `1e28f2d` pool project, `1677602` integration tests, `9bfcc78` CI). Implemented directly by the orchestrator after an environment spike (the plan's v3 pool API was obsolete — see Deviations). `pnpm test:workers` → 3 tests green in workerd: happy-path delivery proving **atomic pack+audit commit on REAL Miniflare D1** (status `no_proposals`, model `fake-provider/0`); genuine-FK-failure→`retry()` on real D1 (nothing persisted, codes-only warn, no production seam); `scheduled()` enqueues the seeded easy-win claim to the real `RESEARCH_QUEUE`. Node pool stays 574 (excludes `test/workers/**`); CI runs both. Neither workers-pool test makes outbound fetch (stub → zero `fetchSource`). DLQ-routing residual recorded (Discoveries). Spec-compliance + code-quality review rounds pending.
+**Execution Status:** ✅ SHIPPED (2026-06-07; SHAs `1e28f2d` pool project, `1677602` integration tests, `9bfcc78` CI, `1ba3d68` review-fixes). 3 review rounds: self-implement+verify + spec-compliance APPROVE (all 10 checks; the 3 load-bearing claims — atomic commit on REAL D1, no faked DLQ, no project overlap — verified) + code-quality (3 findings fixed: type-safe `workerEnv` replacing `as never`, self-identifying DLQ cross-ref, `.mts` ESM comment). Earlier note: Implemented directly by the orchestrator after an environment spike (the plan's v3 pool API was obsolete — see Deviations). `pnpm test:workers` → 3 tests green in workerd: happy-path delivery proving **atomic pack+audit commit on REAL Miniflare D1** (status `no_proposals`, model `fake-provider/0`); genuine-FK-failure→`retry()` on real D1 (nothing persisted, codes-only warn, no production seam); `scheduled()` enqueues the seeded easy-win claim to the real `RESEARCH_QUEUE`. Node pool stays 574 (excludes `test/workers/**`); CI runs both. Neither workers-pool test makes outbound fetch (stub → zero `fetchSource`). DLQ-routing residual recorded (Discoveries). Spec-compliance + code-quality review rounds pending.
 
 Implements spec §7. Proves the REAL Cloudflare binding/ack/retry/DLQ/cron mapping in `workerd` (Miniflare), which the Node faithful-fake pool cannot. Adds a second vitest project and wires both into CI.
 
@@ -350,9 +350,9 @@ Implements spec §7. Proves the REAL Cloudflare binding/ack/retry/DLQ/cron mappi
 
 ## Final integration
 
-- [ ] Both test projects green + pristine: `pnpm test` (Node) + `pnpm test:workers` (workerd); `pnpm exec tsc --noEmit`; `pnpm lint`. CI green on the branch's PR (both jobs).
-- [ ] `pnpm exec wrangler deploy -c workers/research/wrangler.jsonc --dry-run` succeeds, bundle `better-sqlite3`-free, no `nodejs_compat`.
-- [ ] Rebase onto latest `origin/dev` if it moved; resolve conflicts in `src/db/client.ts` / `src/queue/research-jobs.ts` / `.github/workflows/ci.yml` by re-running both test projects.
+- [x] Both test projects green + pristine: `pnpm test` (Node, 574) + `pnpm test:workers` (workerd, 3); `pnpm exec tsc --noEmit` clean; `pnpm lint` clean. CI runs both jobs (verify green on the PR).
+- [x] `pnpm exec wrangler deploy -c workers/research/wrangler.jsonc --dry-run` succeeds (exit 0), executable `index.js` `better-sqlite3`-free (grep count 0), no `nodejs_compat`.
+- [x] Rebase onto latest `origin/dev` — not needed; `origin/dev` unchanged at `e078c73` (our branch base) at finalization time.
 - [ ] Open a PR to `dev`. `## Merge classification`: **Review — compliance** (this slice changes the merged G13 audit-commit path to atomic and adds the SSRF-fetching background worker). Link the spec + this plan. Do NOT self-merge.
 
 ### Gemini-slice preconditions (recorded — handled in the NEXT slice, not here)
