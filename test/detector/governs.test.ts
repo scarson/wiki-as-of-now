@@ -211,6 +211,58 @@ describe("governedYears — real mixed cases (target governed across an incident
   });
 });
 
+describe("governedYears — leading subordinate clause (§2.1 line 126)", () => {
+  // Gap 3 — line 126: sentence opens with a subordinating conjunction (Though/Although/While/…),
+  // the year is in the leading clause (before the first comma), and the marker appears after that
+  // comma → the year is incidental to the leading clause, not the marker's target.
+  it("DROPS a year inside a leading 'Though … , … scheduled to …' subordinate clause", () => {
+    // "Though tunneling had still not begun by mid-2020, the tunnel was scheduled to open later."
+    // 2020 is before the first comma, the marker "scheduled to" is after it — line 126 fires.
+    expect(
+      governedYears(
+        "Though tunneling had still not begun by 2020, the tunnel was scheduled to open later.",
+        "scheduled to",
+        [2020]
+      )
+    ).toEqual([]);
+  });
+  it("DROPS a year inside a leading 'Although … , … expected to …' subordinate clause", () => {
+    expect(
+      governedYears(
+        "Although construction finished in 2018, the line is expected to open next year.",
+        "expected to",
+        [2018]
+      )
+    ).toEqual([]);
+  });
+  it("DROPS a year inside a leading 'While … , … plans to …' subordinate clause", () => {
+    expect(
+      governedYears(
+        "While the agency reported losses in 2017, it plans to recover.",
+        "plans to",
+        [2017]
+      )
+    ).toEqual([]);
+  });
+
+  // Gap 3 — line 126 else path: sentence opens with a subordinating conjunction and a boundary
+  // exists between marker and year, but the year is NOT in the leading clause (it's in the main
+  // clause after the comma) → the year IS kept as a valid target (not dropped).
+  it("KEEPS a year in the main clause of a leading-subordinate sentence when geometry doesn't match (else path)", () => {
+    // "Although it plans to — deliver in 2019 — the schedule is unclear."
+    // marker "plans to" is at position ~11, year 2019 is at ~32, em-dash between them →
+    // boundaryBetween=true, LEADING_SUBORDINATE=true, but firstComma=-1 (no comma) so
+    // firstComma > occ.start is false → else path fires → year is NOT dropped.
+    expect(
+      governedYears(
+        "Although it plans to — deliver in 2019 — the schedule is unclear.",
+        "plans to",
+        [2019]
+      )
+    ).toContain(2019);
+  });
+});
+
 describe("governedYears — parenthetical / range", () => {
   it("DROPS a parenthetical year '(2003)'", () => {
     expect(governedYears("the game (2003) will get a sequel", "will", [2003])).toEqual([]);

@@ -150,4 +150,25 @@ describe("lookupAndPersist", () => {
     const verdict = await exec.prepare("SELECT revision_id FROM eligibility_verdicts WHERE page_id = ?").bind(PAGE_ID).all<{ revision_id: number }>();
     expect(verdict[0].revision_id).toBe(REVISION_ID);
   });
+
+  // Gap 6 — lookup.ts lines 49 and 64: default clock paths (asOfYear ?? new Date().getUTCFullYear()
+  // and options.now ?? new Date()). All other tests inject both values; this one omits both so the
+  // production defaults execute. We assert structural correctness only — exact year/time is
+  // non-deterministic. The fetchFn/userAgent defaults route to the real network and are NOT
+  // unit-testable (they would require live HTTP); that path is documented here and skipped.
+  it("succeeds and persists a result when asOfYear and now are omitted (default clock path)", async () => {
+    const exec = freshTestExecutor();
+    // Omit asOfYear and now — both default to new Date()/getUTCFullYear() inside lookupAndPersist.
+    const result = await lookupAndPersist(exec, "Artemis program", { fetchFn: fixtureFetch });
+
+    expect(result.pageId).toBe(PAGE_ID);
+    expect(result.revisionId).toBe(REVISION_ID);
+    // candidateCount may be 0 if the default year is in the fixture's past — structural check only.
+    expect(typeof result.candidateCount).toBe("number");
+    expect(result.eligibility).toMatch(/^(easy_win|human_only)$/);
+    // Persisted rows exist (article row was inserted).
+    const rows = await exec.prepare("SELECT page_id FROM articles WHERE page_id = ?")
+      .bind(PAGE_ID).all<{ page_id: number }>();
+    expect(rows).toHaveLength(1);
+  });
 });

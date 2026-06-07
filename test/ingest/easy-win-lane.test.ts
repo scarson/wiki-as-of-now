@@ -453,4 +453,32 @@ describe("getEasyWinLane", () => {
     expect(DEFAULT_MAX_PAGES).toBe(25);
     expect(DEFAULT_FETCH_TIMEOUT_MS).toBe(10_000);
   });
+
+  // Gap 4 — line 73: a non-fetch error (not WikimediaUnavailableError/WikimediaResponseError/
+  // ArticleNotFoundError) is rethrown, never silently swallowed as "fetch_unavailable".
+  // This proves the containment boundary is exactly fetch-errors, not all errors.
+  it("propagates (rethrows) a non-Wikimedia error from the re-fetch rather than treating it as fetch_unavailable", async () => {
+    const exec = freshTestExecutor();
+    await seedEasyWin(exec);
+
+    const unexpectedError = new TypeError("boom — unexpected network failure");
+    const throwingFetch: FetchLike = async () => { throw unexpectedError; };
+
+    await expect(getEasyWinLane(exec, { fetchFn: throwingFetch, now: NOW })).rejects.toBe(unexpectedError);
+  });
+
+  // Gap (easy-win-lane.ts line 125): options.now ?? new Date() — the default clock path.
+  // All other tests inject `now`; this one omits it so the production default executes.
+  // We assert structural correctness only — exact eligibility timing is non-deterministic.
+  it("uses the default clock (new Date()) when now is omitted", async () => {
+    const exec = freshTestExecutor();
+    await seedEasyWin(exec);
+
+    // Omit `now` — getEasyWinLane falls back to new Date() at line 125.
+    const result = await getEasyWinLane(exec, { fetchFn: seedFetch });
+
+    // The lane ran (considered = 1) and produced a structural result.
+    expect(result.summary.considered).toBe(1);
+    expect(result.summary.surfaced + result.summary.skipped.length).toBe(1);
+  });
 });

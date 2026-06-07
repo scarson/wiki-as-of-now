@@ -20,6 +20,14 @@ describe("canonicalizeCategoryTitle", () => {
     const decomposed = "Café people"; // e + combining acute
     expect(canonicalizeCategoryTitle(decomposed)).toBe("Café people".normalize("NFC"));
   });
+
+  // Gap 5 — denylists.ts line 6: upperFirst("") returns "" (the s.length === 0 branch).
+  // Reached when the entire title after stripping the prefix, folding, and trimming is empty.
+  // "Category:" strips to "" → trim → "" → upperFirst("") → "".
+  it("returns empty string for a prefix-only input (exercises the s.length === 0 branch in upperFirst)", () => {
+    expect(canonicalizeCategoryTitle("Category:")).toBe("");
+    expect(canonicalizeCategoryTitle("category:")).toBe("");
+  });
 });
 
 describe("canonicalizeTemplateName", () => {

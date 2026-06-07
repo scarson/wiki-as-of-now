@@ -38,3 +38,11 @@ describe("parseArticle", () => {
     expect(a.revisionId).toBe(42);
   });
 });
+
+// Gap 7 — parse.ts line 28: Array.isArray(rawSentences) ? rawSentences : [rawSentences]
+// UNREACHABLE/SKIPPED: wtf_wikipedia's sentences() always returns an array in practice.
+// The non-array branch is a purely defensive guard against the bundled TypeScript declaration
+// typing sentences() as `object | object[]`. No combination of wikitext causes wtf to return
+// a bare object here — faking it by mocking wtf would test mocked behavior (prohibited by
+// testing policy), not real logic. This branch cannot be exercised without violating policy.
+// Coverage gap accepted; defensive guard retained for type safety.
