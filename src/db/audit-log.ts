@@ -1,6 +1,6 @@
 // ABOUTME: Append-only audit-log module — insert and read audit_log rows.
 // ABOUTME: Compliance invariant: exposes only append and read; no mutation or deletion.
-import type { SqlExecutor } from "./client";
+import type { SqlExecutor, SqlStatement } from "./client";
 
 /** Input shape for a single audit-log entry. Payload is identifiers only — never PII or document content. */
 export interface AuditEntry {
@@ -28,18 +28,27 @@ interface RawAuditRow {
 }
 
 /**
+ * Returns a bound SqlStatement for one audit_log insert without executing it.
+ * The timestamp is captured at call time (not at .run() time) so the statement
+ * can be batched with other statements while preserving a deterministic ts.
+ * Callers can pass this to `db.batch([...])` for atomic multi-statement commits.
+ */
+export function appendStatement(db: SqlExecutor, entry: AuditEntry): SqlStatement {
+  const ts = new Date().toISOString();
+  const payloadJson = JSON.stringify(entry.payload);
+  return db
+    .prepare("INSERT INTO audit_log (ts, actor, event_type, payload_json) VALUES (?, ?, ?, ?)")
+    .bind(ts, entry.actor, entry.eventType, payloadJson);
+}
+
+/**
  * Creates the append-only audit log bound to the given database.
  * Only `append` and `read` are exposed — no update, delete, or truncate.
  */
 export function makeAuditLog(db: SqlExecutor) {
   return {
     async append(entry: AuditEntry): Promise<void> {
-      const ts = new Date().toISOString();
-      const payloadJson = JSON.stringify(entry.payload);
-      await db
-        .prepare("INSERT INTO audit_log (ts, actor, event_type, payload_json) VALUES (?, ?, ?, ?)")
-        .bind(ts, entry.actor, entry.eventType, payloadJson)
-        .run();
+      await appendStatement(db, entry).run();
     },
 
     // Reads all audit rows in insertion order, parsing each payload from JSON.

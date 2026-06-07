@@ -16,6 +16,7 @@ import { allowConsole } from "../setup/pristine";
 import type { ResearchOutcome } from "../../src/research/pipeline";
 import type { EvidenceCard } from "../../src/research/provider";
 import type { DroppedProposal } from "../../src/research/verify-proposal";
+import type { SqlExecutor, SqlStatement } from "../../src/db/client";
 
 // ---------------------------------------------------------------------------
 // Shared fixtures
@@ -634,6 +635,196 @@ describe("handleResearchMessage — concurrent double-write", () => {
 
     // researchClaim called exactly once (second was skipped by has() check)
     expect(researchClaim).toHaveBeenCalledTimes(1);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// PackStore.commitTerminal — atomic pack+audit
+// ---------------------------------------------------------------------------
+
+describe("PackStore.commitTerminal", () => {
+  it("happy path: persists both the pack and exactly one audit row using the real executor", async () => {
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, {
+      pageId: PAGE_ID,
+      title: "Test Article",
+      revisionId: SOURCE_REVISION_ID,
+      fetchedAt: FIXED_NOW.toISOString(),
+    });
+
+    const input = makeInput();
+    const claimKey = await computeClaimKey(PAGE_ID, input.sectionHeading, input.claimText, input.year);
+
+    const pack = {
+      claimKey,
+      sourceRevisionId: SOURCE_REVISION_ID,
+      pageId: PAGE_ID,
+      sectionHeading: input.sectionHeading,
+      sentenceText: input.claimText,
+      year: input.year,
+      providerName: "fake-provider",
+      modelVersion: "fake-provider/1.0",
+      status: "no_proposals" as const,
+      queries: ["q1"],
+      cards: [],
+      dispositions: [],
+      evaluatedAt: FIXED_NOW.toISOString(),
+    };
+
+    const auditEntry = {
+      actor: "system",
+      eventType: "research.completed",
+      payload: { claimKey, providerName: "fake-provider", modelVersion: "fake-provider/1.0", status: "no_proposals", cardCount: 0, overCapCount: 0, dispositionTally: {} },
+    };
+
+    const store = makeResearchPackStore(exec);
+    await store.commitTerminal(pack, auditEntry);
+
+    // Pack must be persisted
+    const packResult = await getPack(exec, claimKey, SOURCE_REVISION_ID);
+    expect(packResult.state).toBe("found");
+    if (packResult.state === "found") {
+      expect(packResult.pack.claimKey).toBe(claimKey);
+    }
+
+    // Exactly one audit row
+    const rows = await makeAuditLog(exec).read();
+    expect(rows).toHaveLength(1);
+    expect(rows[0].actor).toBe("system");
+    expect(rows[0].eventType).toBe("research.completed");
+  });
+
+  it("atomic both-or-neither: FK violation on pack insert rolls back the audit row too (real executor, no mock)", async () => {
+    // The pack references a page_id with NO parent articles row — the FK constraint
+    // fires inside the batch, rolling back both the pack insert AND the audit insert.
+    const exec = freshTestExecutor();
+
+    const orphanPageId = 9999; // no articles row exists for this page_id
+    const claimKey = "orphan-claim-key-for-atomicity-test";
+
+    const pack = {
+      claimKey,
+      sourceRevisionId: SOURCE_REVISION_ID,
+      pageId: orphanPageId, // orphan — FK will fail inside the batch
+      sectionHeading: "History",
+      sentenceText: "Some claim text.",
+      year: 2025,
+      providerName: "fake-provider",
+      modelVersion: "fake-provider/1.0",
+      status: "no_proposals" as const,
+      queries: [],
+      cards: [],
+      dispositions: [],
+      evaluatedAt: FIXED_NOW.toISOString(),
+    };
+
+    const auditEntry = {
+      actor: "system",
+      eventType: "research.completed",
+      payload: { claimKey, cardCount: 0, overCapCount: 0 },
+    };
+
+    const store = makeResearchPackStore(exec);
+
+    // commitTerminal must reject (FK error)
+    await expect(store.commitTerminal(pack, auditEntry)).rejects.toThrow(/FOREIGN KEY/i);
+
+    // Pack must NOT be persisted (rolled back)
+    expect(await packExists(exec, claimKey, SOURCE_REVISION_ID)).toBe(false);
+
+    // Audit row must NOT be persisted (rolled back with the pack — both-or-neither)
+    const rows = await makeAuditLog(exec).read();
+    expect(rows).toHaveLength(0);
+  });
+
+  it("composition proof: commitTerminal issues exactly one batch([packStmt, auditStmt]) — not two independent .run() calls", async () => {
+    // Wrap a real executor in a thin spy that counts batch calls and statement count.
+    const realExec = freshTestExecutor();
+    await upsertArticle(realExec, {
+      pageId: PAGE_ID,
+      title: "Test Article",
+      revisionId: SOURCE_REVISION_ID,
+      fetchedAt: FIXED_NOW.toISOString(),
+    });
+
+    let batchCallCount = 0;
+    let batchStatementCount = 0;
+    let prepareRunCount = 0;
+
+    // Spy executor: intercepts batch + tracks prepare().run() calls.
+    // The WeakMap maps each spy-wrapped SqlStatement back to the real statement
+    // produced by realExec, so batch() can delegate to realExec.batch with the
+    // originals that realExec's internal WeakMap recognises.
+    const underlying = new WeakMap<SqlStatement, SqlStatement>();
+    const spyExec: SqlExecutor = {
+      prepare(sql: string): SqlStatement {
+        const real = realExec.prepare(sql);
+        // Wrap the real statement to count direct .run() calls (not via batch).
+        const wrap = (inner: SqlStatement, innerReal: SqlStatement): SqlStatement => {
+          const wrapped: SqlStatement = {
+            bind: (...params: unknown[]) => {
+              const boundReal = innerReal.bind(...params);
+              return wrap(inner.bind(...params), boundReal);
+            },
+            run: async () => {
+              prepareRunCount++;
+              return inner.run();
+            },
+            all: <T>() => inner.all<T>(),
+          };
+          underlying.set(wrapped, innerReal);
+          return wrapped;
+        };
+        return wrap(real, real);
+      },
+      batch: async (statements: SqlStatement[]): Promise<void> => {
+        batchCallCount++;
+        batchStatementCount = statements.length;
+        // Unwrap each spy-statement to the real statement that realExec produced,
+        // so realExec.batch can find them in its own internal WeakMap.
+        const realStmts = statements.map((s) => {
+          const r = underlying.get(s);
+          if (!r) throw new Error("spy: statement not produced by this executor");
+          return r;
+        });
+        return realExec.batch(realStmts);
+      },
+    };
+
+    const input = makeInput();
+    const claimKey = await computeClaimKey(PAGE_ID, input.sectionHeading, input.claimText, input.year);
+
+    const pack = {
+      claimKey,
+      sourceRevisionId: SOURCE_REVISION_ID,
+      pageId: PAGE_ID,
+      sectionHeading: input.sectionHeading,
+      sentenceText: input.claimText,
+      year: input.year,
+      providerName: "fake-provider",
+      modelVersion: "fake-provider/1.0",
+      status: "no_proposals" as const,
+      queries: [],
+      cards: [],
+      dispositions: [],
+      evaluatedAt: FIXED_NOW.toISOString(),
+    };
+
+    const auditEntry = {
+      actor: "system",
+      eventType: "research.completed",
+      payload: { claimKey, cardCount: 0 },
+    };
+
+    const store = makeResearchPackStore(spyExec);
+    await store.commitTerminal(pack, auditEntry);
+
+    // batch must be called exactly once with exactly 2 statements
+    expect(batchCallCount).toBe(1);
+    expect(batchStatementCount).toBe(2);
+
+    // commitTerminal must NOT have issued independent .run() calls for the terminal path
+    expect(prepareRunCount).toBe(0);
   });
 });
 

@@ -4,6 +4,7 @@ import { describe, it, expect, vi } from "vitest";
 import {
   computeClaimKey,
   insertPackIfAbsent,
+  insertPackStatement,
   packExists,
   getPack,
   deletePack,
@@ -224,6 +225,73 @@ describe("insertPackIfAbsent", () => {
     const exec = freshTestExecutor();
     const pack = makePack({ pageId: 9999 });
     await expect(insertPackIfAbsent(exec, pack)).rejects.toThrow(/FOREIGN KEY/i);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// insertPackStatement — returns a bound statement without executing
+// ---------------------------------------------------------------------------
+
+describe("insertPackStatement", () => {
+  it("building the statement does NOT insert the row — packExists is false before .run()", async () => {
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+    const pack = makePack({ claimKey: "stmt-build-test", pageId: 1 });
+
+    // Build the statement — must not execute
+    insertPackStatement(exec, pack);
+
+    // Row must not exist yet
+    expect(await packExists(exec, pack.claimKey, pack.sourceRevisionId)).toBe(false);
+    const before = await getPack(exec, pack.claimKey, pack.sourceRevisionId);
+    expect(before.state).toBe("not_found");
+  });
+
+  it("calling .run() on the built statement inserts the row (same data as insertPackIfAbsent)", async () => {
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+    const pack = makePack({
+      claimKey: "stmt-run-test",
+      pageId: 1,
+      queries: ["q1", "q2"],
+      cards: [VALID_CARD],
+      dispositions: [VALID_DROPPED],
+      status: "proposals_present",
+    });
+
+    const stmt = insertPackStatement(exec, pack);
+
+    // Still absent before run
+    expect(await packExists(exec, pack.claimKey, pack.sourceRevisionId)).toBe(false);
+
+    await stmt.run();
+
+    // Now present — full round-trip
+    const result = await getPack(exec, pack.claimKey, pack.sourceRevisionId);
+    expect(result.state).toBe("found");
+    if (result.state !== "found") return;
+    expect(result.pack.claimKey).toBe(pack.claimKey);
+    expect(result.pack.queries).toEqual(pack.queries);
+    expect(result.pack.cards).toEqual(pack.cards);
+    expect(result.pack.dispositions).toEqual(pack.dispositions);
+    expect(result.pack.status).toBe("proposals_present");
+  });
+
+  it("is idempotent (ON CONFLICT DO NOTHING) — running twice does not error and preserves original row", async () => {
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+    const pack = makePack({ claimKey: "stmt-idempotent-test", pageId: 1, queries: ["first"] });
+
+    await insertPackStatement(exec, pack).run();
+
+    // Second run: same PK, different content — should be silently ignored
+    const pack2 = makePack({ claimKey: "stmt-idempotent-test", pageId: 1, queries: ["second-attempt"] });
+    await expect(insertPackStatement(exec, pack2).run()).resolves.toBeUndefined();
+
+    const result = await getPack(exec, pack.claimKey, pack.sourceRevisionId);
+    expect(result.state).toBe("found");
+    if (result.state !== "found") return;
+    expect(result.pack.queries).toEqual(["first"]); // original preserved
   });
 });
 

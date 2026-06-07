@@ -1,10 +1,11 @@
 // ABOUTME: Research-job queue consumer — total/contained handler that drives the research provider.
 // ABOUTME: Also exports a thin producer (enqueueResearch) for posting to a Cloudflare Queue binding.
 import type { AuditEntry } from "../db/audit-log";
+import { appendStatement } from "../db/audit-log";
 import type { ResearchInput } from "../research/provider";
 import type { ResearchOutcome } from "../research/pipeline";
 import type { ResearchPack } from "../db/research-packs";
-import { computeClaimKey, packExists, insertPackIfAbsent } from "../db/research-packs";
+import { computeClaimKey, packExists, insertPackIfAbsent, insertPackStatement } from "../db/research-packs";
 import type { SqlExecutor } from "../db/client";
 
 // ---------------------------------------------------------------------------
@@ -23,6 +24,8 @@ export interface ResearchMessage {
 export interface PackStore {
   has(claimKey: string, sourceRevisionId: number): Promise<boolean>;
   insertIfAbsent(pack: ResearchPack): Promise<void>;
+  /** Persists the pack and its completion audit entry atomically (both-or-neither). */
+  commitTerminal(pack: ResearchPack, audit: AuditEntry): Promise<void>;
 }
 
 /** Codes-only audit payload (G13). NEVER quotes/queries/URLs/claim text — ids, enums, counts only. */
@@ -51,7 +54,7 @@ export interface ResearchConsumerDeps {
 // ---------------------------------------------------------------------------
 
 /**
- * Real PackStore adapter backed by packExists + insertPackIfAbsent.
+ * Real PackStore adapter backed by packExists + insertPackIfAbsent + batch.
  * Tests can use makeResearchPackStore(freshTestExecutor()) for the real-store cases.
  */
 export function makeResearchPackStore(db: SqlExecutor): PackStore {
@@ -61,6 +64,9 @@ export function makeResearchPackStore(db: SqlExecutor): PackStore {
     },
     insertIfAbsent(pack: ResearchPack): Promise<void> {
       return insertPackIfAbsent(db, pack);
+    },
+    commitTerminal(pack: ResearchPack, audit: AuditEntry): Promise<void> {
+      return db.batch([insertPackStatement(db, pack), appendStatement(db, audit)]);
     },
   };
 }
