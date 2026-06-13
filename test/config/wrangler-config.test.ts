@@ -185,3 +185,34 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
     expect(research.env?.production?.triggers?.crons ?? []).toEqual([]);
   });
 });
+
+describe("provision.md stays in sync with configs (Task 7.4)", () => {
+  const provision = readFileSync(resolve(root, "scripts/provision.md"), "utf8");
+  it("documents creating every queue the research config references", () => {
+    for (const q of ["research", "research-dlq", "research-dev", "research-dlq-dev"]) {
+      expect(provision).toContain(`bunx wrangler queues create ${q}`);
+    }
+  });
+  it("documents creating both D1 databases by name", () => {
+    expect(provision).toContain("bunx wrangler d1 create wiki-as-of-now-dev");
+    expect(provision).toContain("bunx wrangler d1 create wiki-as-of-now");
+  });
+  it("documents remote migration apply per env", () => {
+    expect(provision).toMatch(/bunx wrangler d1 migrations apply .*--remote/);
+  });
+  it("documents put-ing every Phase-5 secret by name", () => {
+    for (const s of [
+      "SESSION_SECRET",
+      "ADMIN_SECRET",
+      "GOOGLE_CLIENT_ID",
+      "GOOGLE_CLIENT_SECRET",
+      "RESEARCH_KILL_SWITCH",
+      "BRAVE_API_KEY",
+    ]) {
+      expect(provision).toContain(`bunx wrangler secret put ${s}`);
+    }
+  });
+  it("uses bunx, never npx", () => {
+    expect(provision).not.toMatch(/\bnpx wrangler\b/);
+  });
+});
