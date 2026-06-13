@@ -87,8 +87,43 @@ export class WorkersAiResearchProvider implements ResearchProvider {
     return []; // deterministic backstop: no proposals beats fabricated proposals
   }
 
-  // research() lands in Task 1.9.
-  async research(_input: ResearchInput): Promise<ProviderResearch> {
-    throw new Error("not implemented until Task 1.9");
+  /**
+   * Full propose-flow: query-gen → search each query → fetch each de-duped hit → triage surviving pages.
+   * PROPOSES only; the pipeline verifies (caps, host de-dup, verbatim check). A ProviderUnavailableError
+   * from the ai client propagates untouched so the pipeline returns provider_unavailable (CC-15).
+   */
+  async research(input: ResearchInput): Promise<ProviderResearch> {
+    const queries = await this.generateQueries(input);
+
+    // Search each query → collect de-duped real URLs.
+    // braveQueryCount = the number of upstream search calls actually issued — the honest metered unit we DO have.
+    const seen = new Set<string>();
+    const candidateUrls: string[] = [];
+    let braveQueryCount = 0;
+    for (const q of queries) {
+      braveQueryCount += 1;
+      for (const hit of await this.deps.search.search(q)) {
+        if (!seen.has(hit.url)) { seen.add(hit.url); candidateUrls.push(hit.url); }
+      }
+    }
+
+    // Fetch each candidate; drop failures. Only successfully-fetched pages reach triage.
+    const pages: FetchedPage[] = [];
+    for (const url of candidateUrls) {
+      const fetched = await this.deps.fetchSource(url);
+      if (fetched.ok) pages.push({ url, text: fetched.text as unknown as string });
+    }
+
+    const proposals = await this.triage(input, pages);
+    return {
+      providerName: "workers-ai",
+      modelVersion: MODEL_CONFIG.primaryModel, // FULL id for the mechanical-disclosure guardrail (G12)
+      proposals,
+      queries,
+      // braveQueryCount is exact. neurons is left undefined: env.AI.run via Gemma 4 does not reliably surface
+      // per-call neurons through the AiTextClient string seam, and a fabricated count would corrupt the ledger.
+      // An env.AI usage figure can be wired in later (thread it through the seam) without a schema change.
+      usage: { braveQueryCount },
+    };
   }
 }

@@ -3,7 +3,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { WorkersAiResearchProvider } from "../../src/research/workers-ai-provider";
 import type { AiTextClient } from "../../src/research/ai-client";
-import type { SearchProvider } from "../../src/research/search-provider";
+import type { SearchProvider, SearchHit } from "../../src/research/search-provider";
 import type { SourceFetchResult } from "../../src/research/source-fetch";
 import type { ResearchInput } from "../../src/research/provider";
 
@@ -89,5 +89,62 @@ describe("WorkersAiResearchProvider.triage", () => {
     const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
     expect(await p.triage(INPUT, [])).toEqual([]);
     expect(ai.generateText).not.toHaveBeenCalled();
+  });
+});
+
+describe("WorkersAiResearchProvider.research (full orchestration)", () => {
+  const okFetch = (text: string) => async (): Promise<SourceFetchResult> =>
+    ({ ok: true, text: text as never });
+
+  it("runs query-gen → search → fetch → triage and returns ProviderResearch with the full model id (G12)", async () => {
+    const ai = scriptedAi([
+      JSON.stringify({ queries: ["zumwalt 2016 commissioning"] }),                           // query-gen
+      JSON.stringify({ proposals: [{ url: "https://navy.mil/z", proposedQuote: "commissioned on 15 October 2016", advisorySupport: true }] }), // triage
+    ]);
+    const search: SearchProvider = { search: async (): Promise<SearchHit[]> => [{ url: "https://navy.mil/z" }] };
+    const p = new WorkersAiResearchProvider({ ai, search, fetchSource: okFetch("The Zumwalt was commissioned on 15 October 2016.") });
+    const out = await p.research(INPUT);
+    expect(out.modelVersion).toBe("@cf/google/gemma-4-26b-a4b-it");
+    expect(out.providerName).toBe("workers-ai");
+    expect(out.queries).toEqual(["zumwalt 2016 commissioning"]);
+    expect(out.proposals).toEqual([{ url: "https://navy.mil/z", proposedQuote: "commissioned on 15 October 2016", advisorySupport: true }]);
+  });
+
+  it("skips hits whose fetch fails (no page → not passed to triage) and still returns a valid result", async () => {
+    const ai = scriptedAi([JSON.stringify({ queries: ["q"] }), JSON.stringify({ proposals: [] })]);
+    const search: SearchProvider = { search: async () => [{ url: "https://x.gov/dead" }] };
+    const p = new WorkersAiResearchProvider({ ai, search, fetchSource: async () => ({ ok: false, reason: "http_error" }) });
+    const out = await p.research(INPUT);
+    expect(out.proposals).toEqual([]);
+    expect(out.queries).toEqual(["q"]);
+  });
+
+  it("returns empty proposals + the full model id when query-gen yields no queries (no search performed)", async () => {
+    const ai = scriptedAi(["not json", "still not json"]); // query-gen fails both attempts → []
+    const search = { search: vi.fn(async () => []) } as unknown as SearchProvider;
+    const p = new WorkersAiResearchProvider({ ai, search, fetchSource: noFetch });
+    const out = await p.research(INPUT);
+    expect(out.queries).toEqual([]);
+    expect(out.proposals).toEqual([]);
+    expect((search.search as ReturnType<typeof vi.fn>)).not.toHaveBeenCalled();
+    expect(out.modelVersion).toBe("@cf/google/gemma-4-26b-a4b-it");
+  });
+
+  it("reports the exact brave query count it issued in usage (one search call per bound query)", async () => {
+    const ai = scriptedAi([
+      JSON.stringify({ queries: ["q1", "q2"] }),
+      JSON.stringify({ proposals: [] }),
+    ]);
+    const search: SearchProvider = { search: async () => [] };
+    const p = new WorkersAiResearchProvider({ ai, search, fetchSource: noFetch });
+    const out = await p.research(INPUT);
+    expect(out.usage?.braveQueryCount).toBe(2);
+  });
+
+  it("propagates ProviderUnavailableError from the ai client (binding/timeout failure is NOT swallowed)", async () => {
+    const ai: AiTextClient = { generateText: vi.fn(async () => { throw new (await import("../../src/research/provider")).ProviderUnavailableError(); }) };
+    const search: SearchProvider = { search: async () => [] };
+    const p = new WorkersAiResearchProvider({ ai, search, fetchSource: noFetch });
+    await expect(p.research(INPUT)).rejects.toBeInstanceOf((await import("../../src/research/provider")).ProviderUnavailableError);
   });
 });
