@@ -20,6 +20,12 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    // src/app/** route handlers use the "@/*" → "./src/*" alias (the Next.js convention, matching
+    // tsconfig paths). Next's bundler resolves it in production; the workerd pool imports those
+    // route handlers directly, so it needs the same alias to resolve their imports.
+    alias: { "@": path.join(rootDir, "src") },
+  },
   test: {
     include: ["test/workers/**/*.test.ts"],
     setupFiles: ["./test/workers/apply-migrations.ts"],
