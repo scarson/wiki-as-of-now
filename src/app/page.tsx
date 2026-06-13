@@ -71,6 +71,17 @@ export default function Home() {
         </p>
       </header>
 
+      {/* Anonymous-browse signpost. Browsing is open to everyone; requesting research is gated behind
+          sign-in. This banner is advisory only — the server enqueue gate (POST /api/research/:id → 401 for
+          anonymous) is the authoritative access control, not this UI. */}
+      <div className="mb-8 rounded-md border border-hairline-gray bg-shelf-gray px-4 py-3 text-sm text-dust-gray">
+        Browsing as a guest — detected claims are open to read.{" "}
+        <a href="/api/auth/google" className="text-iron-gall underline-offset-2 hover:underline">
+          Sign in
+        </a>{" "}
+        to request research on a claim.
+      </div>
+
       <form onSubmit={lookup} className="flex gap-2">
         <input
           type="text"
