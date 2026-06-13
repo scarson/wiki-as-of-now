@@ -4,8 +4,12 @@ import { describe, it, expect, vi } from "vitest";
 import { WorkersAiResearchProvider } from "../../src/research/workers-ai-provider";
 import type { AiTextClient } from "../../src/research/ai-client";
 import type { SearchProvider, SearchHit } from "../../src/research/search-provider";
-import type { SourceFetchResult } from "../../src/research/source-fetch";
+import type { SourceFetchResult, UntrustedSourceText } from "../../src/research/source-fetch";
+import type { FetchedPage } from "../../src/research/workers-ai-provider";
 import type { ResearchInput } from "../../src/research/provider";
+
+/** Build a FetchedPage with the UntrustedSourceText brand preserved (the production type, G15). */
+const page = (url: string, text: string): FetchedPage => ({ url, text: text as UntrustedSourceText });
 
 const INPUT: ResearchInput = {
   claimText: "The fleet will reach full strength by 2025.",
@@ -55,7 +59,7 @@ describe("WorkersAiResearchProvider.generateQueries", () => {
 });
 
 describe("WorkersAiResearchProvider.triage", () => {
-  const pages = [{ url: "https://navy.mil/z", text: "The Zumwalt was commissioned on 15 October 2016." }];
+  const pages = [page("https://navy.mil/z", "The Zumwalt was commissioned on 15 October 2016.")];
 
   it("returns the model's proposed evidence parsed from JSON", async () => {
     const ai = scriptedAi([JSON.stringify({ proposals: [

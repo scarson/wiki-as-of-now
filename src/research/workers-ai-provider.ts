@@ -3,7 +3,7 @@
 import type { ResearchProvider, ResearchInput, ProviderResearch, ProposedEvidence } from "./provider";
 import type { AiTextClient } from "./ai-client";
 import type { SearchProvider } from "./search-provider";
-import type { SourceFetchResult } from "./source-fetch";
+import type { SourceFetchResult, UntrustedSourceText } from "./source-fetch";
 import { parseModelJson } from "./json-gate";
 import { MODEL_CONFIG } from "./model-config";
 
@@ -18,8 +18,8 @@ const isQueriesShape = (v: unknown): v is { queries: string[] } =>
   Array.isArray((v as { queries?: unknown }).queries) &&
   (v as { queries: unknown[] }).queries.every((q) => typeof q === "string");
 
-/** A fetched page passed into triage — url + extracted/normalized text (untrusted data, G15). */
-export interface FetchedPage { url: string; text: string; }
+/** A fetched page passed into triage — url + extracted/normalized text (untrusted data, brand preserved, G15). */
+export interface FetchedPage { url: string; text: UntrustedSourceText; }
 
 const isProposalsShape = (v: unknown): v is { proposals: ProposedEvidence[] } => {
   if (typeof v !== "object" || v === null || !Array.isArray((v as { proposals?: unknown }).proposals)) return false;
@@ -127,7 +127,7 @@ export class WorkersAiResearchProvider implements ResearchProvider {
     const pages: FetchedPage[] = [];
     for (const url of candidateUrls) {
       const fetched = await this.deps.fetchSource(url);
-      if (fetched.ok) pages.push({ url, text: fetched.text as unknown as string });
+      if (fetched.ok) pages.push({ url, text: fetched.text }); // text is UntrustedSourceText (brand preserved, G15)
     }
 
     const proposals = await this.triage(input, pages);
