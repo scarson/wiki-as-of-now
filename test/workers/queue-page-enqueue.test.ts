@@ -1,11 +1,14 @@
-// ABOUTME: Workers-pool proof of the producer→queue→consumer seam — a candidate enqueued by the queue page's
-// ABOUTME: producer (enqueueCandidatesForResearch) round-trips through the REAL Miniflare queue into a consumer pack.
+// ABOUTME: Workers-pool proof of the producer→queue→consumer seam — a candidate enqueued by the gated batch
+// ABOUTME: producer (gateEnqueueCandidatesForResearch) round-trips through the REAL Miniflare queue into a consumer pack.
 import { describe, it, expect, vi } from "vitest";
 import worker from "../../workers/research/index";
 import { testEnv } from "./test-env";
 import { d1Executor } from "../../src/db/client";
 import { upsertArticle, getCandidatesByPageId } from "../../src/db/articles";
-import { enqueueCandidatesForResearch } from "../../src/queue/enqueue-candidates";
+import { upsertUser } from "../../src/db/users";
+import { upsertVerdict } from "../../src/db/eligibility-verdicts";
+import { GATE_VERSION } from "../../src/safelane/eligibility";
+import { gateEnqueueCandidatesForResearch } from "../../src/queue/enqueue-candidates";
 import { computeClaimKey, getPack } from "../../src/db/research-packs";
 import type { ResearchMessage } from "../../src/queue/research-jobs";
 
@@ -32,6 +35,9 @@ describe("queue-page enqueue → real Miniflare queue → consumer pack", () => 
       .bind(555, SECTION, SENTENCE, YEAR, "will", 1.5, "Forward claim anchored to 2024.", "1.0.0", 70)
       .run();
     const cid = (await getCandidatesByPageId(db, 555))[0].id;
+    // The gated batch producer requires an authenticated user + an easy_win verdict at the live revision.
+    await upsertUser(db, { userId: "u_qp", identityProvider: "google", identitySubject: "qp", email: "qp@e.com", createdAt: new Date().toISOString() });
+    await upsertVerdict(db, { pageId: 555, revisionId: 70, gateVersion: GATE_VERSION, eligibility: "easy_win", reasons: [], evaluatedAt: new Date().toISOString() });
 
     // Collect what enqueueResearch sends into the REAL queue (mirrors the route's void adapter).
     const collected: ResearchMessage[] = [];
@@ -41,10 +47,15 @@ describe("queue-page enqueue → real Miniflare queue → consumer pack", () => 
         await testEnv.RESEARCH_QUEUE.send(m);
       },
     };
-    const result = await enqueueCandidatesForResearch(db, queue, [cid]);
-    expect(result.accepted).toEqual([cid]);
-    expect(result.skipped).toEqual([]);
+    const result = await gateEnqueueCandidatesForResearch({
+      env: {}, db, authContext: { kind: "authenticated", userId: "u_qp" },
+      candidateIds: [cid], now: new Date().toISOString(), queue,
+      quotaConfig: { perUserDailyCap: 10, globalDailyCap: 50 },
+    });
+    expect(result.outcome).toBe("processed");
+    if (result.outcome === "processed") expect(result.results).toEqual([{ candidateId: cid, outcome: "enqueued" }]);
     expect(collected[0].claimKey).toMatch(/^[0-9a-f]{64}$/);
+    expect(collected[0].userId).toBe("u_qp");
 
     // Drive the consumer with the exact enqueued message.
     const message = {

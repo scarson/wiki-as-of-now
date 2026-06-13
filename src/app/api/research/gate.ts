@@ -71,6 +71,9 @@ export async function gateResearchEnqueue(deps: {
       year: deps.candidate.year,
       sourceRevisionId: deps.candidate.sourceRevisionId,
     },
+    // Thread the enqueuer's opaque userId onto the message so the consumer's quota_ledger row is
+    // keyed to the REAL requester (Fix 2) — otherwise the per-user cap reads u_admin and never trips.
+    userId: deps.authContext.userId,
   });
   return { outcome: "enqueued" };
 }

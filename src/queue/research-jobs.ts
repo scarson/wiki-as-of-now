@@ -36,6 +36,9 @@ export interface ResearchMessage {
   pageId: number;
   sourceRevisionId: number;
   input: ResearchInput;
+  /** Opaque id of the user who requested this research — the quota_ledger owner the consumer commits to.
+   *  Absent on cron/seed-originated messages, which the consumer attributes to the single-admin user. */
+  userId?: string;
 }
 
 /** The persistence port the consumer needs (full-PK existence + write-once insert). */
@@ -238,11 +241,11 @@ export async function handleResearchMessage(
  */
 export async function enqueueResearch(
   queue: { send(message: ResearchMessage): Promise<void> },
-  params: { pageId: number; sourceRevisionId: number; input: ResearchInput },
+  params: { pageId: number; sourceRevisionId: number; input: ResearchInput; userId?: string },
 ): Promise<void> {
-  const { pageId, sourceRevisionId, input } = params;
+  const { pageId, sourceRevisionId, input, userId } = params;
   const claimKey = await computeClaimKey(pageId, input.sectionHeading, input.claimText, input.year);
-  await queue.send({ claimKey, pageId, sourceRevisionId, input });
+  await queue.send({ claimKey, pageId, sourceRevisionId, input, userId });
 }
 
 // ---------------------------------------------------------------------------
