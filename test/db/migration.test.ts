@@ -265,3 +265,72 @@ describe("0003_research_packs migration", () => {
     expect(insert).toThrow(/FOREIGN KEY/i);
   });
 });
+
+describe("0008_seed_lists migration — seed_lists / seed_list_entries schema", () => {
+  it("seed_lists is WITHOUT ROWID with a NOT NULL text PK and rejects a NULL topic", () => {
+    const db = freshTestDb();
+    const cols = db
+      .prepare<[], { name: string; notnull: number; pk: number }>(
+        "PRAGMA table_info(seed_lists)"
+      )
+      .all();
+    expect(cols.map((c) => c.name).sort()).toEqual(
+      ["topic", "title", "refreshed_at", "window_start", "window_end", "entry_count"].sort()
+    );
+    const topic = cols.find((c) => c.name === "topic")!;
+    expect(topic.pk).toBe(1);
+    expect(topic.notnull).toBe(1);
+    // WITHOUT ROWID proven by NULL-PK rejection (a rowid table would fabricate a key).
+    const insertNull = () =>
+      db
+        .prepare(
+          "INSERT INTO seed_lists (topic, title, refreshed_at, window_start, window_end, entry_count) VALUES (NULL,'x','t','a','b',0)"
+        )
+        .run();
+    expect(insertNull).toThrow(/NOT NULL|constraint/i);
+  });
+
+  it("seed_list_entries has a composite NOT NULL PK and a FK to seed_lists(topic)", () => {
+    const db = freshTestDb();
+    const cols = db
+      .prepare<[], { name: string; notnull: number; pk: number }>(
+        "PRAGMA table_info(seed_list_entries)"
+      )
+      .all();
+    expect(cols.map((c) => c.name).sort()).toEqual(
+      ["topic", "rank", "page_id", "article_title", "pageview_count"].sort()
+    );
+    expect(cols.filter((c) => c.pk > 0).map((c) => c.name).sort()).toEqual(
+      ["rank", "topic"].sort()
+    );
+    for (const c of cols) if (c.pk > 0) expect(c.notnull).toBe(1);
+    // FK fires: an entry for a topic with no parent seed_lists row is rejected.
+    const insertGhost = () =>
+      db
+        .prepare(
+          "INSERT INTO seed_list_entries (topic, rank, page_id, article_title, pageview_count) VALUES ('ghost',1,123,'X',5)"
+        )
+        .run();
+    expect(insertGhost).toThrow(/FOREIGN KEY|constraint/i);
+  });
+
+  it("schema.sql == ordered migrations for the new tables (parity)", () => {
+    // The existing parity test above already compares ALL sqlite_master DDL.
+    // This assertion guards the two new names explicitly so a missed schema.sql edit is obvious.
+    const dbMig = new Database(":memory:");
+    for (const f of readdirSync("migrations").filter((f) => f.endsWith(".sql")).sort()) {
+      dbMig.exec(readFileSync(`migrations/${f}`, "utf8"));
+    }
+    const dbSchema = new Database(":memory:");
+    dbSchema.exec(readFileSync("src/db/schema.sql", "utf8"));
+    const names = (d: Database.Database) =>
+      d
+        .prepare<[], { name: string }>(
+          "SELECT name FROM sqlite_master WHERE type='table' AND name IN ('seed_lists','seed_list_entries') ORDER BY name"
+        )
+        .all()
+        .map((r) => r.name);
+    expect(names(dbMig)).toEqual(["seed_list_entries", "seed_lists"]);
+    expect(names(dbSchema)).toEqual(["seed_list_entries", "seed_lists"]);
+  });
+});
