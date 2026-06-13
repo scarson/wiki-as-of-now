@@ -171,7 +171,7 @@ export async function enqueueResearch(
   params: { pageId: number; sourceRevisionId: number; input: ResearchInput },
 ): Promise<void>
 ```
-Computes `claimKey` internally via `computeClaimKey(pageId, input.sectionHeading, input.claimText, input.year)`, then `queue.send(...)`. **The caller does NOT construct or pass `claimKey`.** A Cloudflare `Queue<ResearchMessage>` binding satisfies the structural `{ send(...): Promise<void> }` param (CF `Queue.send()` returns `Promise<void>` — no adapter needed for the single-send path).
+Computes `claimKey` internally via `computeClaimKey(pageId, input.sectionHeading, input.claimText, input.year)`, then `queue.send(...)`. **The caller does NOT construct or pass `claimKey`.** A Cloudflare `Queue<ResearchMessage>` binding does NOT directly satisfy the structural `{ send(...): Promise<void> }` param: under the installed runtime types `Queue.send()` returns `Promise<QueueSendResponse>`, not `Promise<void>` (v4-API; same deviation as the `sendBatch` adapter in `workers/research/index.ts`). **CORRECTED 2026-06-13 (Phase 2 deviation D5):** wrap it in a tiny void adapter — `const queue = { send: async (m) => { await env.RESEARCH_QUEUE.send(m); } }` — exactly as `src/app/api/research/[candidateId]/route.ts` does. The caller still does NOT construct or pass `claimKey`.
 
 ### 2.3 Config change — root `wrangler.jsonc` (currently has no `queues` section)
 ```jsonc
