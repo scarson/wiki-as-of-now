@@ -160,14 +160,16 @@ describe("0002_eligibility_verdicts migration", () => {
     dbB.pragma("foreign_keys = ON");
     dbB.exec(readFileSync("src/db/schema.sql", "utf8"));
 
+    // type IN ('table','index') so CREATE UNIQUE INDEX statements (e.g. users_identity_unique)
+    // are parity-checked too — an index present in a migration but missing from schema.sql must fail.
     const tablesA = dbA
       .prepare<[], { name: string; sql: string }>(
-        "SELECT name, sql FROM sqlite_master WHERE type='table' ORDER BY name"
+        "SELECT name, sql FROM sqlite_master WHERE type IN ('table','index') ORDER BY name"
       )
       .all();
     const tablesB = dbB
       .prepare<[], { name: string; sql: string }>(
-        "SELECT name, sql FROM sqlite_master WHERE type='table' ORDER BY name"
+        "SELECT name, sql FROM sqlite_master WHERE type IN ('table','index') ORDER BY name"
       )
       .all();
 
@@ -263,6 +265,44 @@ describe("0003_research_packs migration", () => {
           "2026-06-06T00:00:00.000Z"
         );
     expect(insert).toThrow(/FOREIGN KEY/i);
+  });
+});
+
+describe("0004_users migration", () => {
+  it("creates the users table with the expected columns", () => {
+    const db = freshTestDb();
+    const cols = db
+      .prepare<[], { name: string }>("PRAGMA table_info(users)")
+      .all()
+      .map((r) => r.name);
+    expect(cols).toEqual(
+      expect.arrayContaining(["user_id", "identity_provider", "identity_subject", "email", "created_at"]),
+    );
+  });
+
+  it("rejects a NULL user_id (WITHOUT ROWID natural-key PK)", () => {
+    const db = freshTestDb();
+    // DB-1: a plain INTEGER PRIMARY KEY would silently fabricate a key on NULL.
+    // user_id is a TEXT WITHOUT ROWID PK, so NULL must be rejected loudly.
+    const insertNullPk = () =>
+      db
+        .prepare(
+          "INSERT INTO users (user_id, identity_provider, identity_subject, email, created_at) VALUES (?, ?, ?, ?, ?)",
+        )
+        .run(null, "google", "sub-1", "x@example.com", "2026-06-13T00:00:00.000Z");
+    expect(insertNullPk).toThrow(/NOT NULL/i);
+  });
+
+  it("enforces a unique (identity_provider, identity_subject) so one OAuth identity maps to one user", () => {
+    const db = freshTestDb();
+    const ins = (uid: string) =>
+      db
+        .prepare(
+          "INSERT INTO users (user_id, identity_provider, identity_subject, email, created_at) VALUES (?, ?, ?, ?, ?)",
+        )
+        .run(uid, "google", "same-subject", "a@example.com", "2026-06-13T00:00:00.000Z");
+    ins("user-a");
+    expect(() => ins("user-b")).toThrow(/UNIQUE/i);
   });
 });
 

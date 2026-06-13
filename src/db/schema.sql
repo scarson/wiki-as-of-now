@@ -1,5 +1,5 @@
--- WikiAsOfNow cumulative schema: audit_log, articles, stale_candidates, eligibility_verdicts, research_packs.
--- Equivalent to applying migrations/0001_init.sql, 0002_eligibility_verdicts.sql, 0003_research_packs.sql in order.
+-- WikiAsOfNow cumulative schema: audit_log, articles, stale_candidates, eligibility_verdicts, research_packs, users, seed_lists, seed_list_entries.
+-- Equivalent to applying every migrations/NNNN_*.sql in sorted order; the parity test enforces byte-identity.
 CREATE TABLE audit_log (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   ts TEXT NOT NULL,                 -- ISO 8601 UTC
@@ -50,6 +50,15 @@ CREATE TABLE research_packs (
   evaluated_at       TEXT    NOT NULL,
   PRIMARY KEY (claim_key, source_revision_id)
 ) WITHOUT ROWID;
+CREATE TABLE users (
+  user_id           TEXT NOT NULL,   -- opaque app identity (hashed; never the raw OAuth subject)
+  identity_provider TEXT NOT NULL,   -- e.g. 'google'; 'admin' for the single-admin fallback user
+  identity_subject  TEXT NOT NULL,   -- provider 'sub' claim (admin → a fixed sentinel)
+  email             TEXT NOT NULL,
+  created_at        TEXT NOT NULL,   -- ISO 8601 UTC
+  PRIMARY KEY (user_id)
+) WITHOUT ROWID;
+CREATE UNIQUE INDEX users_identity_unique ON users (identity_provider, identity_subject);
 CREATE TABLE seed_lists (
   topic        TEXT    NOT NULL,   -- topic slug: 'military-procurement' | 'infrastructure-megaprojects'
   title        TEXT    NOT NULL,   -- human-readable topic name
