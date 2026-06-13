@@ -1,5 +1,6 @@
 // ABOUTME: Env-gated ResearchProvider selection. Default = stub (CC-7: keeps the workers stub test on the stub path).
 // ABOUTME: workers-ai + BRAVE_API_KEY → real Brave; workers-ai without a key → real + injected search (dev/Miniflare only).
+import { ProviderUnavailableError } from "./provider";
 import type { ResearchProvider } from "./provider";
 import type { SourceFetchResult } from "./source-fetch";
 import type { AiRunner } from "./ai-client";
@@ -25,11 +26,17 @@ export function selectResearchProvider(env: ProviderSelectionEnv): ResearchProvi
   const ai = makeAiTextClient(env.AI);
   const search: SearchProvider = env.BRAVE_API_KEY
     ? new BraveSearchProvider(env.BRAVE_API_KEY)
-    : (env.searchOverride ?? emptySearch());
+    : (env.searchOverride ?? noSearchBackend());
   return new WorkersAiResearchProvider({ ai, search, fetchSource: env.fetchSource });
 }
 
-/** A no-op search used only when neither a Brave key nor a searchOverride is supplied (manual-URL flow still works upstream). */
-function emptySearch(): SearchProvider {
-  return { search: async () => [] };
+/**
+ * Used only when neither a Brave key nor a searchOverride is supplied. It THROWS
+ * ProviderUnavailableError rather than returning [] so research() routes through the retryable
+ * provider_unavailable path and persists nothing: a returned [] would emit a terminal no_proposals
+ * pack that, being write-once (ON CONFLICT DO NOTHING + packStore.has short-circuit), would
+ * PERMANENTLY block a real retry once a Brave key is added. The manual-URL flow still works upstream.
+ */
+function noSearchBackend(): SearchProvider {
+  return { search: async () => { throw new ProviderUnavailableError("no search backend configured"); } };
 }

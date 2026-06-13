@@ -44,7 +44,8 @@ function makeDeps(env: ResearchWorkerEnv): ResearchConsumerDeps {
   // Env-gated provider selection (Task 1.10): default stays on the stub (CC-7) unless RESEARCH_PROVIDER=workers-ai.
   // The deployed default is NOT flipped here — enabling the real provider end-to-end is a human-confirmed Phase 7 step.
   // The fixture (node:fs) search path is NEVER reachable from this bundle: with no BRAVE_API_KEY and no searchOverride
-  // the selector falls back to an empty search, keeping node:fs out of the worker (CC-5/§5.6).
+  // the selector falls back to a no-search backend that throws ProviderUnavailableError (so research routes through the
+  // retryable provider_unavailable path and persists nothing), keeping node:fs out of the worker (CC-5/§5.6).
   const provider = selectResearchProvider({
     AI: env.AI,
     RESEARCH_PROVIDER: env.RESEARCH_PROVIDER,
