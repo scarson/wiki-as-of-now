@@ -51,7 +51,49 @@
 			"database_id": "00000000-0000-0000-0000-000000000000",
 			"migrations_dir": "migrations"
 		}
-	]
+	],
+	// Per-env remote targets. Top-level `ai`, `compatibility_flags`, `main`, `assets`,
+	// `images`, `observability` are inherited; each env overrides only `name`, `services`,
+	// `d1_databases`, `queues`. The top-level (un-suffixed) config stays the default env for
+	// local Miniflare / `next dev`. Queue names are account-global, so dev/prod must differ
+	// (design §6.2). D1 ids are PLACEHOLDERS until Sam provisions (scripts/provision.md);
+	// both workers MUST point at the same id per env (CC-10).
+	"env": {
+		"dev": {
+			"name": "wiki-as-of-now-dev",
+			"services": [
+				{ "binding": "WORKER_SELF_REFERENCE", "service": "wiki-as-of-now-dev" }
+			],
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "wiki-as-of-now-dev",
+					"database_id": "REPLACE_WITH_DEV_D1_ID",
+					"migrations_dir": "migrations"
+				}
+			],
+			"queues": {
+				"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research-dev" }]
+			}
+		},
+		"production": {
+			"name": "wiki-as-of-now",
+			"services": [
+				{ "binding": "WORKER_SELF_REFERENCE", "service": "wiki-as-of-now" }
+			],
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "wiki-as-of-now",
+					"database_id": "REPLACE_WITH_PROD_D1_ID",
+					"migrations_dir": "migrations"
+				}
+			],
+			"queues": {
+				"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research" }]
+			}
+		}
+	}
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
