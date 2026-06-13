@@ -271,3 +271,36 @@ describe("dormant deploy pipeline (Task 7.6)", () => {
     expect(deploy).not.toMatch(/triggers|crons|--enable-cron/);
   });
 });
+
+describe("go-live runbook ordering guard (Task 7.7)", () => {
+  const runbook = readFileSync(resolve(root, "docs/runbooks/go-live.md"), "utf8");
+  it("orders cron-enable LAST (after smoke-test + stub purge)", () => {
+    const iPurge = runbook.indexOf("purge stub");
+    const iSmoke = runbook.toLowerCase().indexOf("smoke");
+    const iCron = runbook.toLowerCase().indexOf("enable the cron");
+    expect(iPurge).toBeGreaterThan(-1);
+    expect(iSmoke).toBeGreaterThan(-1);
+    expect(iCron).toBeGreaterThan(-1);
+    expect(iCron).toBeGreaterThan(iSmoke);
+    expect(iCron).toBeGreaterThan(iPurge);
+  });
+  it("includes disconnect-Worker-Builds before first deploy", () => {
+    const iDisconnect = runbook.toLowerCase().indexOf("disconnect");
+    const iDeploy = runbook.toLowerCase().indexOf("first deploy");
+    expect(iDisconnect).toBeGreaterThan(-1);
+    expect(iDeploy).toBeGreaterThan(iDisconnect);
+  });
+  it("names both live-smoke targets (Gemma + Brave)", () => {
+    expect(runbook).toMatch(/Gemma/);
+    expect(runbook).toMatch(/Brave/);
+  });
+  it("ties cron interval to worst-case batch drain", () => {
+    expect(runbook.toLowerCase()).toMatch(/interval.*(?:exceed|greater|longer).*(?:drain|batch)/);
+  });
+  it("sets RESEARCH_PROVIDER=workers-ai before enabling the cron", () => {
+    const iProvider = runbook.indexOf("RESEARCH_PROVIDER=workers-ai");
+    const iCron = runbook.toLowerCase().indexOf("enable the cron");
+    expect(iProvider).toBeGreaterThan(-1);
+    expect(iCron).toBeGreaterThan(iProvider);
+  });
+});
