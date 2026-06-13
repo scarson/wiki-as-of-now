@@ -10,6 +10,7 @@ import { upsertVerdict } from "../../src/db/eligibility-verdicts";
 import { GATE_VERSION } from "../../src/safelane/eligibility";
 import { gateEnqueueCandidatesForResearch } from "../../src/queue/enqueue-candidates";
 import { computeClaimKey, getPack } from "../../src/db/research-packs";
+import { surfaceResearchPack } from "../../src/research/surface-pack";
 import type { ResearchMessage } from "../../src/queue/research-jobs";
 
 const workerEnv = { DB: testEnv.DB, RESEARCH_QUEUE: testEnv.RESEARCH_QUEUE, AI: testEnv.AI };
@@ -77,6 +78,18 @@ describe("queue-page enqueue → real Miniflare queue → consumer pack", () => 
     expect(read.state).toBe("found");
     if (read.state === "found") {
       expect(read.pack.modelVersion).toBe("fake-provider/0"); // stub until the real provider is enabled (CC-7)
+    }
+
+    // Close the loop: read the committed pack through the SURFACING read the worksheet actually uses
+    // (surfaceResearchPack over getSurfaceablePack), not getPack directly — covers produce -> commit ->
+    // surface end-to-end. The pack is at the article's live revision (70), so it surfaces (no drift).
+    const surfaced = await surfaceResearchPack(db, { pageId: 555, claimKey, currentRevisionId: 70 });
+    expect(surfaced.state).toBe("surfaced");
+    if (surfaced.state === "surfaced" && read.state === "found") {
+      expect(surfaced.modelVersion).toBe(read.pack.modelVersion);
+      expect(surfaced.cards).toEqual(read.pack.cards);
+      expect(surfaced.dispositions).toEqual(read.pack.dispositions);
+      expect(surfaced.queries).toEqual(read.pack.queries);
     }
   });
 });
