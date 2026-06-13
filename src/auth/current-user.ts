@@ -37,7 +37,7 @@ export async function resolveCurrentUser(req: Request, env: CurrentUserEnv): Pro
 
   if (resolveAuthMode(env) === "single-admin") {
     const presented = req.headers.get(ADMIN_SECRET_HEADER);
-    if (presented !== null && verifyAdminSecret(env, presented)) {
+    if (presented !== null && (await verifyAdminSecret(env, presented))) {
       return { kind: "authenticated", userId: SINGLE_ADMIN_USER_ID };
     }
   }
