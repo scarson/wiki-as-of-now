@@ -306,6 +306,51 @@ describe("0004_users migration", () => {
   });
 });
 
+describe("0005_quota_ledger migration", () => {
+  it("creates quota_ledger with the expected columns", () => {
+    const db = freshTestDb();
+    const cols = db
+      .prepare<[], { name: string }>("PRAGMA table_info(quota_ledger)")
+      .all()
+      .map((r) => r.name);
+    expect(cols).toEqual(
+      expect.arrayContaining([
+        "claim_key",
+        "source_revision_id",
+        "user_id",
+        "evaluated_at",
+        "neurons",
+        "brave_query_count",
+      ]),
+    );
+  });
+
+  it("rejects a NULL PK component (WITHOUT ROWID composite PK)", () => {
+    const db = freshTestDb();
+    db.prepare(
+      "INSERT INTO users (user_id, identity_provider, identity_subject, email, created_at) VALUES (?, ?, ?, ?, ?)",
+    ).run("u_admin", "admin", "admin", "a@e.com", "2026-06-13T00:00:00.000Z");
+    const insertNull = () =>
+      db
+        .prepare(
+          "INSERT INTO quota_ledger (claim_key, source_revision_id, user_id, evaluated_at, neurons, brave_query_count) VALUES (?, ?, ?, ?, ?, ?)",
+        )
+        .run("k1", null, "u_admin", "2026-06-13T00:00:00.000Z", 0, 0);
+    expect(insertNull).toThrow(/NOT NULL/i);
+  });
+
+  it("enforces the quota_ledger -> users foreign key", () => {
+    const db = freshTestDb();
+    const insert = () =>
+      db
+        .prepare(
+          "INSERT INTO quota_ledger (claim_key, source_revision_id, user_id, evaluated_at, neurons, brave_query_count) VALUES (?, ?, ?, ?, ?, ?)",
+        )
+        .run("k1", 100, "ghost-user", "2026-06-13T00:00:00.000Z", 0, 0);
+    expect(insert).toThrow(/FOREIGN KEY/i);
+  });
+});
+
 describe("0008_seed_lists migration — seed_lists / seed_list_entries schema", () => {
   it("seed_lists is WITHOUT ROWID with a NOT NULL text PK and rejects a NULL topic", () => {
     const db = freshTestDb();
