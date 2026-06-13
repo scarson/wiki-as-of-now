@@ -57,12 +57,12 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Phase 0 shipped (foundation); Phases 1–7 not started.
+**Overall:** Phases 0–1 shipped (foundation + Workers AI/Brave research provider); Phases 2–7 not started.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 0 — Foundation (spec v1.1, worker rename, git-strategy) | ✅ Shipped | `cc38f83`, `13b38f8`, `838e4e5`, `7aa6a74` | on `feat/v1-build`; green baseline (574 node + 3 workerd) |
-| 1 — Workers AI + Brave research provider | 🚧 In progress | — | claimed 2026-06-13 on `feat/v1-build` |
+| 1 — Workers AI + Brave research provider | ✅ Shipped | `4ccc837`…`519c972` | on `feat/v1-build`; 625 node + 3 workerd green; report `build-reports/phase-1.md` |
 | 2 — Research reachability | ⬜ Not started | — | — |
 | 3 — Core worksheet flow UI | ⬜ Not started | — | — |
 | 4 — Queue & topic seeding | ⬜ Not started | — | — |
@@ -71,7 +71,10 @@ notes and commit messages.
 | 7 — Provision & deploy prep | ⬜ Not started | — | Sam-gated steps flagged |
 
 ### Deviations
-- _(none yet)_
+- **Phase 1 / D1 — Brave query encoding.** Task 1.6 uses `new URLSearchParams({ q })` (yields `q=…+…`) instead of the plan sketch's `encodeURIComponent` (`%20`), reconciling the plan's own test (asserts `+`) with its impl. Behavior-equivalent against the Brave API. See `build-reports/phase-1.md` D1.
+- **Phase 1 / D2 — Test-fake param declarations.** The plan's illustrative test fakes in `ai-client.test.ts` / `brave-search.test.ts` needed explicit (unused) params so `mock.calls` tuples typecheck under the project's separate `tsc --noEmit` CI step. No behavior change; folded into the Task 1.7 commit.
+- **Phase 1 / D3 — `usage.neurons` left honest/undefined.** The built `AiTextClient` string seam surfaces no neuron figure, so `research()` records exact `usage.braveQueryCount` and leaves `neurons` undefined (per the plan's own no-fabrication directive) rather than wiring the speculative `lastRunNeurons` accumulator. One extra `usage` test added (provider file = 15 tests, not 14). Phase 5 Task 5.6 can thread a real figure later without a schema change. See `build-reports/phase-1.md` D3.
+- **Phase 1 / D4 — `remote: true` on both AI bindings.** Added to root + research-worker wrangler AI bindings to silence Miniflare's stderr AI-binding warning (pristine-output rule, testing-pitfalls §1). AI bindings have no local emulation, so this is the correct setting; the stub path makes no AI call in CI.
 
 ### Discoveries
 - _(none yet)_
@@ -93,7 +96,7 @@ Worker renamed to `wiki-as-of-now` (`cc38f83`); two-branch dev→main gitflow do
 
 ## Phase 1 — Workers AI + Brave research provider (on Miniflare)
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-13T06:17Z on branch `feat/v1-build`
+**Execution Status:** ✅ SHIPPED on 2026-06-13 (branch `feat/v1-build`, commits `4ccc837`…`519c972`). All 12 tasks done; final suite green (tsc + lint clean, 625 Node + 3 workerd). Build report: [build-reports/phase-1.md](build-reports/phase-1.md). Deviations summarized in the top-of-plan Deviations subsection (D1–D4).
 
 **Goal:** Replace `StubResearchProvider` with a real `WorkersAiResearchProvider` (Gemma 4 via the `env.AI` binding for query-generation + relevance-triage, JSON-parse-and-retry-gated, `ProviderUnavailableError` on transport failure), plus a key-gated Brave search client, a fixture-backed search provider, a manual-URL paste path, and the provider-swap preconditions — all verified on Miniflare with real Gemma, never touching the deterministic detection or verbatim-check invariants.
 
