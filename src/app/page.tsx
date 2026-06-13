@@ -160,6 +160,12 @@ export default function Home() {
           )}
         </section>
       )}
+
+      <footer className="mt-12 border-t border-hairline-gray pt-4 text-xs text-dust-gray">
+        <Link href="/about" className="text-iron-gall underline-offset-2 hover:underline">
+          About &amp; compliance
+        </Link>
+      </footer>
     </main>
   );
 }
