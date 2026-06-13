@@ -8,7 +8,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "wikiasofnow",
+	"name": "wiki-as-of-now",
 	"main": ".open-next/worker.js",
 	"compatibility_date": "2026-06-04",
 	"compatibility_flags": [
@@ -29,7 +29,7 @@
 			// Self-reference service binding, the service name must match the worker name
 			// see https://opennext.js.org/cloudflare/caching
 			"binding": "WORKER_SELF_REFERENCE",
-			"service": "wikiasofnow"
+			"service": "wiki-as-of-now"
 		}
 	],
 	"observability": {
@@ -39,7 +39,7 @@
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_name": "wikiasofnow",
+			"database_name": "wiki-as-of-now",
 			"database_id": "00000000-0000-0000-0000-000000000000",
 			"migrations_dir": "migrations"
 		}

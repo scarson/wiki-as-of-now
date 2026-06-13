@@ -3,14 +3,14 @@
 	// The `research` and `research-dlq` queues must be created once before the first real deploy:
 	//   wrangler queues create research
 	//   wrangler queues create research-dlq
-	"name": "wikiasofnow-research",
+	"name": "wiki-as-of-now-research",
 	"main": "index.ts",
 	"compatibility_date": "2026-06-04",
 	"compatibility_flags": ["global_fetch_strictly_public"],
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_name": "wikiasofnow",
+			"database_name": "wiki-as-of-now",
 			"database_id": "00000000-0000-0000-0000-000000000000"
 		}
 	],
