@@ -2,6 +2,7 @@
 // ABOUTME: Anonymous is browse-only; the research enqueue gate (gate.ts) is what refuses anonymous with 401. No PII surfaces (CC-12).
 import { verifySession } from "./session";
 import { resolveAuthMode, verifyAdminSecret, SINGLE_ADMIN_USER_ID } from "./mode";
+import { readCookie } from "./cookies";
 import type { AuthContext } from "../app/api/research/gate";
 
 export const SESSION_COOKIE = "wan_session";
@@ -13,17 +14,6 @@ interface CurrentUserEnv {
   GOOGLE_CLIENT_ID?: string;
   GOOGLE_CLIENT_SECRET?: string;
   ADMIN_SECRET?: string;
-}
-
-/** Parses one cookie value out of a Cookie header. Returns undefined if absent. */
-function readCookie(header: string | null, name: string): string | undefined {
-  if (!header) return undefined;
-  for (const part of header.split(";")) {
-    const eq = part.indexOf("=");
-    if (eq === -1) continue;
-    if (part.slice(0, eq).trim() === name) return part.slice(eq + 1).trim();
-  }
-  return undefined;
 }
 
 /**
