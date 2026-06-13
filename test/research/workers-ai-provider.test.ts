@@ -66,7 +66,8 @@ describe("WorkersAiResearchProvider.triage", () => {
     expect(out).toEqual([{ url: "https://navy.mil/z", proposedQuote: "commissioned on 15 October 2016", advisorySupport: true }]);
   });
   it("caps proposals at MODEL_CONFIG.maxProposals (5)", async () => {
-    const many = Array.from({ length: 9 }, (_, i) => ({ url: `https://x.gov/${i}`, proposedQuote: `quote number ${i}`, advisorySupport: false }));
+    // All proposals point at the single fetched page (in-set) so the cap, not the url filter, is what trims.
+    const many = Array.from({ length: 9 }, (_, i) => ({ url: pages[0].url, proposedQuote: `quote number ${i}`, advisorySupport: false }));
     const ai = scriptedAi([JSON.stringify({ proposals: many })]);
     const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
     expect((await p.triage(INPUT, pages)).length).toBe(5);
@@ -83,6 +84,15 @@ describe("WorkersAiResearchProvider.triage", () => {
     ] })]);
     const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
     expect(await p.triage(INPUT, pages)).toEqual([]);
+  });
+  it("drops a proposal whose url is not one of the fetched pages (G9 job-c / G15: box the model to a retrieved page)", async () => {
+    const ai = scriptedAi([JSON.stringify({ proposals: [
+      { url: "https://navy.mil/z", proposedQuote: "in-set quote", advisorySupport: true },
+      { url: "https://evil.example/inject", proposedQuote: "off-set quote", advisorySupport: true },
+    ] })]);
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    const out = await p.triage(INPUT, pages); // pages = [{ url: "https://navy.mil/z", ... }]
+    expect(out).toEqual([{ url: "https://navy.mil/z", proposedQuote: "in-set quote", advisorySupport: true }]);
   });
   it("returns [] when given no pages (nothing to triage)", async () => {
     const ai = scriptedAi(["unused"]);

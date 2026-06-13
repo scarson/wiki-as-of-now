@@ -86,7 +86,13 @@ export class WorkersAiResearchProvider implements ResearchProvider {
         maxTokens: MODEL_CONFIG.maxTokens, timeoutMs: MODEL_CONFIG.callTimeoutMs,
       });
       const gate = parseModelJson(raw, isProposalsShape);
-      if (gate.ok) return gate.value.proposals.slice(0, MODEL_CONFIG.maxProposals);
+      if (gate.ok) {
+        // Box the model to a RETRIEVED page (G9 job (c)): drop any proposal whose url is not one of the
+        // pages we actually fetched and put in front of it. Page text is attacker-controllable (G15) — an
+        // injected page must not steer a proposal at an off-search url.
+        const pageUrls = new Set(triagePages.map((pg) => pg.url));
+        return gate.value.proposals.filter((p) => pageUrls.has(p.url)).slice(0, MODEL_CONFIG.maxProposals);
+      }
     }
     return []; // deterministic backstop: no proposals beats fabricated proposals
   }
