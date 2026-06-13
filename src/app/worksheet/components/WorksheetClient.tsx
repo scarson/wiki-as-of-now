@@ -3,6 +3,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { WorksheetView } from "@/worksheet/view-types";
 import { EvidenceCard } from "./EvidenceCard";
 import { SourceOpenGate } from "./SourceOpenGate";
@@ -30,7 +31,16 @@ export function WorksheetClient({ view, accessedDate }: WorksheetClientProps) {
   return (
     <div className="space-y-6">
       <section className="space-y-4">
-        <h2 className="font-serif text-lg text-ink-white">Evidence</h2>
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <h2 className="font-serif text-lg text-ink-white">Evidence</h2>
+          {/* G6/G7 reachability: the show-your-work view (selected + dropped candidates + the LLM query log). */}
+          <Link
+            href={`/articles/${view.claim.pageId}/transparency?claimKey=${view.claimKey}`}
+            className="font-mono text-xs text-iron-gall underline-offset-2 hover:underline"
+          >
+            How this was researched →
+          </Link>
+        </div>
         {view.cards.map((card) => (
           <div key={card.url}>
             <EvidenceCard card={card} />
