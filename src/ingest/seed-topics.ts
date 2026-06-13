@@ -1,7 +1,7 @@
 // ABOUTME: The two v1 launch topics (category seed sets) + buildSeedList: members→counts→rank→persist.
 // ABOUTME: Sequential pageview fetch (G14); deps injected so tests use fixtures, prod wires live clients.
 import type { SqlExecutor } from "../db/client";
-import { upsertSeedList, replaceSeedListEntries } from "../db/seed-lists";
+import { upsertSeedList, replaceSeedListEntries, getSeedListWithEntries, type SeedListRead } from "../db/seed-lists";
 import { pageviewWindow, rankByPageviews } from "./pageviews";
 import type { CategoryMember } from "./category-members";
 
@@ -77,4 +77,25 @@ export async function buildSeedList(
     }))
   );
   return { entryCount: ranked.length };
+}
+
+const REFRESH_AFTER_MS = 7 * 86_400_000;
+
+/**
+ * Serves the stored seed list for a known topic, recomputing it first if it is missing or its
+ * `refreshed_at` is older than the 7-day cadence. Unknown topics return `not_found` without a fetch.
+ * The recompute is a bounded, sequential operation (the topic's ≤2 categories × ≤100 members) — G14.
+ */
+export async function getOrRefreshSeedList(
+  db: SqlExecutor,
+  topicSlug: string,
+  deps: BuildSeedListDeps
+): Promise<SeedListRead> {
+  if (!SEED_TOPICS[topicSlug]) return { state: "not_found" };
+  const existing = await getSeedListWithEntries(db, topicSlug);
+  const isStale =
+    existing.state !== "found" ||
+    deps.now.getTime() - new Date(existing.list.refreshedAt).getTime() > REFRESH_AFTER_MS;
+  if (isStale) await buildSeedList(db, topicSlug, deps);
+  return getSeedListWithEntries(db, topicSlug);
 }
