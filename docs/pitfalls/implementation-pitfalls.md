@@ -30,6 +30,7 @@ This document serves three audiences. Start here, then go directly to the sectio
 | 2 | [Detector (deterministic stale-claim detection)](#section-2-detector-deterministic-stale-claim-detection) | `src/detector/*` — markers, suppression, scoring, orchestration, fixtures | DET-1 – DET-3 | §2.C |
 | 3 | [Safe-lane / untrusted-content scanning](#section-3-safe-lane--untrusted-content-scanning) | `src/safelane/*` — wikitext signal scans running on attacker-controllable article content | SAFE-1 | §3.C |
 | 4 | [Deploy / CI (wrangler, GitHub Actions, OpenNext)](#section-4-deploy--ci-wrangler-github-actions-opennext) | `wrangler.jsonc`, `workers/research/wrangler.jsonc`, `.github/workflows/*`, OpenNext build | CI-1 – CI-2 | §4.C |
+| 5 | [Research enqueue gating & metered spend](#section-5-research-enqueue-gating--metered-spend) | every path onto the metered/G11 research lane; per-user + global quota | GATE-1 – GATE-2 | §5.C |
 | — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-3 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
@@ -218,6 +219,46 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 - [ ] **A config test pins the step-level dormancy guard and forbids a job-level `secrets.` guard** — so the broken form can't regress in (CI-1)
 - [ ] **Credential-free local validation uses the research-worker `--dry-run` with `--env=""`; the full OpenNext build is trusted to CI** — don't read the pnpm-PATH quirk as a real build breakage (CI-2)
 - [ ] **Every `wrangler deploy`/`--dry-run` on a multi-env config carries an explicit `--env` (or `--env=""`)** — a bare invocation warns about no target environment and trips pristine-output (CI-2)
+
+---
+
+# Section 5: Research enqueue gating & metered spend
+
+> **Reader context:** I'm adding or changing any path that can put a job on the research queue (`RESEARCH_QUEUE.send` / `enqueueResearch`), or anything that meters/limits research spend. The research lane is the project's only metered (LLM + Brave) path and is governed by the **safe-lane guardrail (G11)** — only `easy_win` claims may enter it, BLP/`human_only` never. Both of these were breached by real code that passed every per-component test; they were caught only by adversarial cross-phase review.
+
+---
+
+### GATE-1: EVERY enqueue path onto the metered lane must go through the composed gate — a second route is a silent bypass
+
+**The Flaw:** The single-candidate route `POST /api/research/[candidateId]` was carefully gated (kill-switch → auth → G11 eligibility → quota). A *separate* batch route `POST /api/queue/enqueue-research` → `enqueueCandidatesForResearch` looked up candidates and called `enqueueResearch` directly with **no** auth, kill-switch, G11, or quota check. An anonymous caller could enqueue arbitrary candidate ids — including `human_only`/BLP — driving unbounded metered research. It passed CI because its only tests called the (ungated) helper directly and asserted it enqueued.
+
+**Why It Matters:** This is simultaneously an auth bypass, a **G11 safe-lane breach** (a compliance-contract violation — BLP/`human_only` claims entering the metered path, not merely overspend), and unbounded cost. There is no `middleware.ts` blanket gate; each route is responsible for its own gating, so a new route is a new hole by default.
+
+**The Fix:** Route every enqueue path through the SAME composed gate building blocks — reuse the shared eligibility helper (`evaluatePersistedEligibility`) and `gateResearchEnqueue`; never duplicate or skip G11. The batch path delegates each candidate to `gateResearchEnqueue` (kill-switch + auth checked once up front; per-candidate eligibility + quota). Add a gating test for EACH route asserting anonymous → 401, `human_only`/no-verdict → refused (fail-closed), kill-switch → 503, over-quota → refused.
+
+**The Lesson:** "The gate" is not a place, it's an invariant that must hold at every entrance. When you add a route, page action, cron, or admin tool that can reach `enqueueResearch`/`RESEARCH_QUEUE.send`, grep every call site and confirm each is behind the composed gate. A per-component test that calls the inner helper directly will not catch an ungated outer route — test the route, as an anonymous and as a `human_only` request.
+
+---
+
+### GATE-2: bound metered spend at the sequential consumer's commit, not with a producer-side pre-check alone
+
+**The Flaw:** The per-user/global daily cap was enforced only by an advisory **producer-side** pre-check that counts `quota_ledger` rows — but ledger rows exist only AFTER a pack commits. A burst of distinct candidates all read a low count, all pass the pre-check, all enqueue, and all commit, overrunning the cap unbounded. Separately, `ResearchMessage` carried no `userId`, so the consumer keyed every ledger row to the single-admin id — the per-user cap could never trip for a real OAuth user (only the global cap functioned).
+
+**Why It Matters:** "Write-once ledger committed atomically with the pack" gives idempotency (no double-charge for the *same* claim), NOT a daily-count bound. The advisory pre-check is racy by construction. Together these made the documented per-user budget guarantee false.
+
+**The Fix:** Thread the enqueuer's real `userId` end-to-end (gate → `ResearchMessage` → `commitTerminal` → `quota_ledger`, seeding that user in the same atomic batch). Enforce the cap at the **sequential consumer's commit** (`handleResearchMessage`): count committed packs for the pack's UTC day (per-user + global) and if at/over cap, do not insert — ACK with a codes-only `quota_exceeded` audit (drop, don't retry-loop). The consumer is sequential (CC-16), so count-then-insert there is race-free; the pre-check stays as advisory fast-fail UX.
+
+**The Lesson:** A cap is only as strong as its most-serialized enforcement point. Don't claim a hard bound from a pre-check that reads state written after the action it gates. Enforce at the single serialized writer (here, the sequential queue consumer), and make sure the identity the cap is keyed to actually travels to that writer — a metered unit charged to the wrong user is an uncapped user.
+
+---
+
+### Review Checklist
+
+- [ ] **Every call site of `enqueueResearch` / `RESEARCH_QUEUE.send` is behind the composed gate** (kill-switch → auth → G11 eligibility, fail-closed to `human_only` → quota) — a new route/action/cron is an ungated hole by default; grep them all (GATE-1)
+- [ ] **Each enqueue route has its own gating test** asserting anonymous → 401, `human_only`/no-verdict → refused, kill-switch → 503 — a test that calls the inner helper directly does not prove the route is gated (GATE-1)
+- [ ] **G11 lives in ONE shared helper** used by every gate, never a divergent copy (GATE-1)
+- [ ] **The metered cap is enforced at the sequential consumer's commit**, not only by the advisory producer-side pre-check (GATE-2)
+- [ ] **The enqueuer's real `userId` travels on `ResearchMessage` to the ledger row** — a hardcoded/wrong owner makes the per-user cap unenforceable; a coupled test must drive the real commit as a non-admin user and assert the per-user cap trips (GATE-2)
 
 ---
 
