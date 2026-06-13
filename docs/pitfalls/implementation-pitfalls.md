@@ -29,6 +29,7 @@ This document serves three audiences. Start here, then go directly to the sectio
 | 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 – DB-2 | §1.C |
 | 2 | [Detector (deterministic stale-claim detection)](#section-2-detector-deterministic-stale-claim-detection) | `src/detector/*` — markers, suppression, scoring, orchestration, fixtures | DET-1 – DET-3 | §2.C |
 | 3 | [Safe-lane / untrusted-content scanning](#section-3-safe-lane--untrusted-content-scanning) | `src/safelane/*` — wikitext signal scans running on attacker-controllable article content | SAFE-1 | §3.C |
+| 4 | [Deploy / CI (wrangler, GitHub Actions, OpenNext)](#section-4-deploy--ci-wrangler-github-actions-opennext) | `wrangler.jsonc`, `workers/research/wrangler.jsonc`, `.github/workflows/*`, OpenNext build | CI-1 – CI-2 | §4.C |
 | — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-3 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
@@ -179,6 +180,47 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ---
 
+# Section 4: Deploy / CI (wrangler, GitHub Actions, OpenNext)
+
+> **Reader context:** I'm editing `wrangler.jsonc` / `workers/research/wrangler.jsonc`, a `.github/workflows/*.yml`, or the OpenNext build wiring — anything in the provision/deploy path.
+>
+> These are silent footguns: the config/workflow *looks* right, lints/parses fine, and the failure only shows up at deploy time (or never visibly fails at all — it just never runs).
+
+---
+
+### CI-1: GitHub Actions Forbids the `secrets` Context in a JOB-Level `if:` — It Silently Never Runs
+
+**The Flaw:** Gating a whole job on a secret's presence with `jobs.<id>.if: ${{ secrets.SOME_TOKEN != '' }}` to make a deploy pipeline "dormant until the secret is added." GitHub Actions does **not** expose the `secrets` context in a job-level `if:` — only `github`, `needs`, `vars`, and `inputs` are available there. The expression evaluates `secrets.SOME_TOKEN` to empty, the condition is always false, and the job **silently never runs** — even after the secret is added. No error, no warning; the job just stays grey forever.
+
+**Why It Matters:** A dormant deploy pipeline that "skips cleanly until the secret arrives" is exactly the intended design — but a job-level `secrets.*` guard inverts it into "never deploys, ever," and the failure is invisible because a skipped job looks identical to a correctly-dormant one. You discover it only when the first real deploy mysteriously doesn't happen.
+
+**The Fix:** Use a **step-level** `if: ${{ secrets.SOME_TOKEN != '' }}` on each meaningful step (the `secrets` context IS available at step level), and map the secret into job-level `env:` for the step bodies to consume. With the secret absent the steps skip (green, not red); once it's added they run. `.github/workflows/deploy.yml` implements this. Assert the step-level form in a config test and assert the guard is NOT on the job's own `if:` so the broken form can't regress back in.
+
+**The Lesson:** Context availability in GitHub Actions is position-dependent and not symmetric — `secrets` works in `env:`, `with:`, and step `if:`, but not job `if:`. When a workflow "doesn't run and doesn't error," suspect a context-availability mismatch before anything else, and verify against GitHub's contexts table rather than assuming an expression that parses also evaluates.
+
+---
+
+### CI-2: The OpenNext Build Shells Out to `pnpm build` — `--env=""` Silences the Multi-Env Dry-Run Warning
+
+**The Flaw (two parts):** (1) `opennextjs-cloudflare build` internally runs `pnpm build` via a child process — so a session where `pnpm` is not on PATH (the fnm / `node`-not-on-PATH setup) can't complete the OpenNext build locally even though the underlying `next build` runs fine. CI has the pnpm toolchain (`pnpm/action-setup`), so it's the authoritative gate for the OpenNext build + app-worker dry-run; the cheaper research-worker `wrangler deploy --dry-run` runs credential-free anywhere and is the in-session check. (2) Once a wrangler config has `env.*` blocks, `wrangler deploy --dry-run` (no `--env`) emits a `no target environment specified` WARNING that trips the pristine-output rule.
+
+**Why It Matters:** "The OpenNext build failed locally" reads as a real breakage when it's just the pnpm-PATH quirk; and a benign multi-env warning in CI output looks like a config defect. Both waste a debugging cycle if you don't know they're expected.
+
+**The Fix:** For local credential-free validation, run the research-worker dry-run (`bunx wrangler deploy --dry-run --env="" -c workers/research/wrangler.jsonc`) and trust CI for the full OpenNext build. Pass `--env=""` to target the top-level/default config explicitly and silence the multi-env warning — both the CI steps and local checks use it. The static bundle-cleanliness backstop (`scripts/check-research-bundle-clean.mjs`) runs under plain `node` and needs neither pnpm nor wrangler.
+
+**The Lesson:** A "build" command that shells out to your package manager inherits your package manager's PATH assumptions — a clean `node` is not enough. And once you add named environments to a wrangler config, every bare `--dry-run`/`deploy` invocation needs an explicit `--env` (or `--env=""`) or it warns; bake the flag into the committed CI step, not just your shell history.
+
+---
+
+### Review Checklist
+
+- [ ] **No deploy/job is gated on `secrets.*` in a job-level `if:`** — that condition silently never runs; the dormancy guard must be a step-level `if:` (or `env:`-mapped), verified against GitHub's contexts table (CI-1)
+- [ ] **A config test pins the step-level dormancy guard and forbids a job-level `secrets.` guard** — so the broken form can't regress in (CI-1)
+- [ ] **Credential-free local validation uses the research-worker `--dry-run` with `--env=""`; the full OpenNext build is trusted to CI** — don't read the pnpm-PATH quirk as a real build breakage (CI-2)
+- [ ] **Every `wrangler deploy`/`--dry-run` on a multi-env config carries an explicit `--env` (or `--env=""`)** — a bare invocation warns about no target environment and trips pristine-output (CI-2)
+
+---
+
 ## Orchestration
 
 Pitfalls that arise when a session dispatches parallel subagents and consolidates their output. The canonical rules live in `docs/git-strategy.md` → §Multi-agent coordination → Output persistence. This section is the discovery hook for plan writers who arrive here via the `writing-plans-enhanced` (or equivalent) mandated-read path — it does NOT restate the rules in full.
@@ -260,6 +302,8 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 | DET-2 | Precision-Over-Recall Means Named, Accepted Recall Gaps | MEDIUM | VALIDATED | Detector |
 | DET-3 | Incidental Historical Years Are an Irreducible False-Positive Class | MEDIUM | VALIDATED | Detector |
 | SAFE-1 | Untrusted-Input Scans MUST Be Linear-Time in Input Length | HIGH | VALIDATED | Safe-lane / untrusted-content scanning |
+| CI-1 | GitHub Actions Forbids the `secrets` Context in a JOB-Level `if:` — It Silently Never Runs | HIGH | VALIDATED | Deploy / CI |
+| CI-2 | The OpenNext Build Shells Out to `pnpm build`; `--env=""` Silences the Multi-Env Dry-Run Warning | LOW | VALIDATED | Deploy / CI |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
 
