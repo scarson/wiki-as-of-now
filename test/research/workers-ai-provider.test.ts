@@ -56,6 +56,12 @@ describe("WorkersAiResearchProvider.generateQueries", () => {
     expect(out).not.toContain(long);
     expect(out.length).toBeLessThanOrEqual(8);
   });
+  it("returns [] on valid JSON of the WRONG SHAPE both attempts (queries is not an array)", async () => {
+    const ai = scriptedAi(['{"queries":"not array"}', '{"queries":"not array"}']);
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    expect(await p.generateQueries(INPUT)).toEqual([]);
+    expect(ai.generateText).toHaveBeenCalledTimes(2);
+  });
 });
 
 describe("WorkersAiResearchProvider.triage", () => {
@@ -98,6 +104,12 @@ describe("WorkersAiResearchProvider.triage", () => {
     const out = await p.triage(INPUT, pages); // pages = [{ url: "https://navy.mil/z", ... }]
     expect(out).toEqual([{ url: "https://navy.mil/z", proposedQuote: "in-set quote", advisorySupport: true }]);
   });
+  it("returns [] on valid JSON of the WRONG SHAPE both attempts (proposals is an object, not an array)", async () => {
+    const ai = scriptedAi(['{"proposals":{}}', '{"proposals":{}}']);
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    expect(await p.triage(INPUT, pages)).toEqual([]);
+    expect(ai.generateText).toHaveBeenCalledTimes(2);
+  });
   it("returns [] when given no pages (nothing to triage)", async () => {
     const ai = scriptedAi(["unused"]);
     const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
@@ -124,11 +136,23 @@ describe("WorkersAiResearchProvider.research (full orchestration)", () => {
     expect(out.proposals).toEqual([{ url: "https://navy.mil/z", proposedQuote: "commissioned on 15 October 2016", advisorySupport: true }]);
   });
 
-  it("skips hits whose fetch fails (no page → not passed to triage) and still returns a valid result", async () => {
-    const ai = scriptedAi([JSON.stringify({ queries: ["q"] }), JSON.stringify({ proposals: [] })]);
-    const search: SearchProvider = { search: async () => [{ url: "https://x.gov/dead" }] };
-    const p = new WorkersAiResearchProvider({ ai, search, fetchSource: async () => ({ ok: false, reason: "http_error" }) });
+  it("skips hits whose fetch fails: the dead URL never appears in the triage prompt", async () => {
+    let triagePrompt = "";
+    const ai: AiTextClient = {
+      generateText: vi.fn(async (_model: string, prompt: string, _opts) => {
+        if (prompt.includes("generate neutral web-search queries")) return JSON.stringify({ queries: ["q"] });
+        triagePrompt = prompt; // the triage call
+        return JSON.stringify({ proposals: [] });
+      }),
+    };
+    const search: SearchProvider = { search: async () => [{ url: "https://x.gov/live" }, { url: "https://x.gov/dead" }] };
+    // live fetches ok; dead fails.
+    const fetchSource = async (url: string): Promise<SourceFetchResult> =>
+      url === "https://x.gov/dead" ? { ok: false, reason: "http_error" } : { ok: true, text: "live page body" as never };
+    const p = new WorkersAiResearchProvider({ ai, search, fetchSource });
     const out = await p.research(INPUT);
+    expect(triagePrompt).toContain("https://x.gov/live"); // the live page reached triage
+    expect(triagePrompt).not.toContain("https://x.gov/dead"); // the dead URL did NOT
     expect(out.proposals).toEqual([]);
     expect(out.queries).toEqual(["q"]);
   });
@@ -142,6 +166,21 @@ describe("WorkersAiResearchProvider.research (full orchestration)", () => {
     expect(out.proposals).toEqual([]);
     expect((search.search as ReturnType<typeof vi.fn>)).not.toHaveBeenCalled();
     expect(out.modelVersion).toBe("@cf/google/gemma-4-26b-a4b-it");
+  });
+
+  it("de-dups a URL shared across two queries: fetchSource is called once for the shared URL", async () => {
+    const ai = scriptedAi([JSON.stringify({ queries: ["q1", "q2"] }), JSON.stringify({ proposals: [] })]);
+    // Both queries surface the same shared URL; q2 also surfaces a distinct one.
+    const search: SearchProvider = {
+      search: async (q: string) =>
+        q === "q1" ? [{ url: "https://shared.gov/p" }] : [{ url: "https://shared.gov/p" }, { url: "https://other.gov/q" }],
+    };
+    const fetchSource = vi.fn(async (_url: string): Promise<SourceFetchResult> => ({ ok: true, text: "body" as never }));
+    const p = new WorkersAiResearchProvider({ ai, search, fetchSource });
+    await p.research(INPUT);
+    const fetched = fetchSource.mock.calls.map((c) => c[0]);
+    expect(fetched.filter((u) => u === "https://shared.gov/p").length).toBe(1); // de-duped across queries
+    expect(fetched).toContain("https://other.gov/q");
   });
 
   it("reports the exact brave query count it issued in usage (one search call per bound query)", async () => {

@@ -37,4 +37,10 @@ describe("BraveSearchProvider", () => {
     const p = new BraveSearchProvider("k", fetchFn as never);
     expect(await p.search("q")).toEqual([]);
   });
+  it("drops results with a missing or empty url (keeps only the valid url)", async () => {
+    const body = { web: { results: [{ url: "https://a.gov/x" }, { title: "no url" }, { url: "" }] } };
+    const fetchFn = vi.fn(async () => ({ ok: true, status: 200, json: async () => body }));
+    const p = new BraveSearchProvider("k", fetchFn as never);
+    expect(await p.search("q")).toEqual([{ url: "https://a.gov/x" }]);
+  });
 });
