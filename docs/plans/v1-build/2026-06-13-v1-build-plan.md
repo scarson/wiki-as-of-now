@@ -77,7 +77,7 @@ notes and commit messages.
 - **Phase 1 / D4 — `remote: true` on both AI bindings.** Added to root + research-worker wrangler AI bindings to silence Miniflare's stderr AI-binding warning (pristine-output rule, testing-pitfalls §1). AI bindings have no local emulation, so this is the correct setting; the stub path makes no AI call in CI.
 
 ### Discoveries
-- _(none yet)_
+- **Double-fetch of the same URL (deferred follow-up).** The provider fetches each candidate URL during triage (`src/research/workers-ai-provider.ts` `research()`), and the pipeline then re-fetches the proposed URL during verbatim verification (`src/research/verify-proposal.ts` / `pipeline.ts`). Now that FIX 1 caps candidates to ~12, this is ~5 extra re-fetches per claim — a minor cost optimization, not a correctness bug, so it is deferred. Suggested fix: a per-claim memoizing fetch (cache keyed on canonicalized URL) shared by the provider and the pipeline so each source page is fetched at most once per claim.
 
 ---
 

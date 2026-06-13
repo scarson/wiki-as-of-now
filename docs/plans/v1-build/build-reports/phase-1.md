@@ -137,3 +137,25 @@ The stub path never calls `env.AI.run`, so no actual AI call is made in CI.
 4. **`usage.neurons` is honestly undefined.** The `quota_ledger` (Phase 5 Task 5.6) will record
    `braveQueryCount` (exact) and `0` neurons until an `env.AI` usage figure is threaded through the
    `AiTextClient` seam — see deviation D3. No schema change is needed to add it later.
+
+## Hardening pass (2026-06-13)
+
+Post-ship adversarial bug-hunt against the Phase 1 provider surfaced real defects; fixed with strict TDD
+(failing test → fix → green → commit). Phase 1 banner stays ✅ SHIPPED — these are hardening fixes on the
+already-shipped surface, not new scope. Suite remained green throughout; final counts 638 Node + 3 workerd,
+tsc + lint clean (baseline was 625 Node + 3 workerd).
+
+| # | Sev | Fix | Commit |
+|---|-----|-----|--------|
+| 1 | HIGH | **Bound `research()` fetch + triage volume.** Without ceilings, `research()` collected candidates across all ≤8 queries unbounded, fetched every one (~160 with real Brave), and `triage()` concatenated every full ≤2MB page into one prompt → Gemma context overflow → JSON gate fails → silent `[]` (a false "no evidence" result). Added `maxCandidateUrls:12`, `perQueryHitCap:3`, `perPageChars:4000`, `maxTriagePages:12`, `braveCount:5` to `model-config.ts`; enforce the candidate cap + per-query take (stop issuing searches once the candidate list is full), truncate+cap pages before the triage prompt, and send `count` to Brave. `braveQueryCount` still equals the searches actually issued. | `9d47ef6` |
+| 2 | MEDIUM (compliance) | **Constrain triage proposals to fetched URLs.** After the JSON gate parses, drop any proposal whose `url` is not one of the pages actually fetched and shown to the model — boxes the model to a RETRIEVED page (G9 job (c)); page text is attacker-controllable (G15), so an injected page cannot steer a proposal at an off-search URL. | `a89b235` |
+| 3 | MEDIUM (availability/poisoning) | **Keyless workers-ai fails retryably, not a poisoning pack.** `RESEARCH_PROVIDER=workers-ai` with no `BRAVE_API_KEY` and no search override previously returned `[]` → terminal `no_proposals` pack that (write-once: `ON CONFLICT DO NOTHING` + `packStore.has` short-circuit) PERMANENTLY blocked a real retry once a key was added. The no-search backend now throws `ProviderUnavailableError` → routes through the retryable `provider_unavailable` path, persists nothing. Fixed the misleading select-provider test name and the stale worker comment. | `709ac49` |
+| 4 | MEDIUM (yield) | **JSON gate recovers JSON wrapped in prose.** The gate only parsed bare JSON or a whole-output fence; Gemma's prose-then-fenced-JSON, trailing commentary, and mid-paragraph fences all fell through to parse-fail → wasted retry → `[]`. The gate now tries a non-anchored fenced-block extract, then slices the first balanced JSON object/array out of prose (respecting strings/escapes). Still total/throw-free. | `80c0fa7` |
+| 5 | LOW (G15 type safety) | **Preserve the `UntrustedSourceText` brand into triage.** `FetchedPage.text` is now typed `UntrustedSourceText` and `fetched.text` is assigned directly, removing the `as unknown as string` double cast that stripped the brand. | `b56c65a` |
+| 6 | LOW (test coverage) | **Close bug-hunt test gaps:** (a) cross-query URL de-dup → one fetch for the shared URL; (b) valid-JSON-WRONG-SHAPE → `[]` for both `generateQueries` and `triage` shape validators; (c) Brave url-filter drop arm; (d) strengthen "skips hits whose fetch fails" to assert the dead URL is absent from the triage prompt. | `0e52cc7` |
+
+**Deferred follow-up (documented, not fixed):** Double-fetch of the same URL — the provider fetches each
+candidate during triage and the pipeline re-fetches the proposed URL during verbatim verification
+(`verify-proposal.ts:17`). With FIX 1's ~12-candidate cap this is ~5 extra re-fetches per claim — a minor
+cost optimization, not a correctness bug. Suggested fix: a per-claim memoizing fetch (keyed on canonicalized
+URL) shared by the provider and the pipeline. Recorded in the plan's top-of-plan Discoveries subsection.
