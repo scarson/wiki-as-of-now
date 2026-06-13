@@ -12,6 +12,7 @@ import {
   type ResearchConsumerDeps,
 } from "../../src/queue/research-jobs";
 import { processBatch } from "../../src/queue/process-batch";
+import { isResearchKillSwitchOn } from "../../src/research/kill-switch";
 import { researchClaim, DEFAULT_MAX_PROPOSALS, DEFAULT_PER_HOST_CAP } from "../../src/research/pipeline";
 import { selectResearchProvider } from "../../src/research/select-provider";
 import { fetchSourceText, type FetchImpl } from "../../src/research/source-fetch";
@@ -29,6 +30,9 @@ interface ResearchWorkerEnv {
   AI: Ai;
   RESEARCH_PROVIDER?: string;
   BRAVE_API_KEY?: string;
+  // Admin research kill-switch. Set via `wrangler secret put RESEARCH_KILL_SWITCH` (or a plain var) on the
+  // research worker. Absent ⇒ research enabled; an explicit truthy value pauses the consumer + scheduler.
+  RESEARCH_KILL_SWITCH?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -72,6 +76,8 @@ function makeDeps(env: ResearchWorkerEnv): ResearchConsumerDeps {
 
 export default {
   async scheduled(_controller: ScheduledController, env: ResearchWorkerEnv, _ctx: ExecutionContext): Promise<void> {
+    // Kill-switch: when research is paused, the scheduler enqueues nothing (no new work to drain).
+    if (isResearchKillSwitchOn(env)) return;
     const db = d1Executor(env.DB);
     const msgs = await selectResearchSeeds(db, { gateVersion: GATE_VERSION, limit: SEED_BATCH_LIMIT });
     // Adapt Queue.sendBatch (returns QueueSendBatchResponse) to the void-return contract enqueueResearchBatch expects.
@@ -81,6 +87,12 @@ export default {
     await enqueueResearchBatch(queueAdapter, msgs);
   },
   async queue(batch: MessageBatch<ResearchMessage>, env: ResearchWorkerEnv, _ctx: ExecutionContext): Promise<void> {
+    // Kill-switch: pause in-flight research. Retry (not ack) every message so paused work is not lost —
+    // it resumes when the switch is turned off. Nothing is researched or persisted while paused.
+    if (isResearchKillSwitchOn(env)) {
+      for (const m of batch.messages) m.retry();
+      return;
+    }
     await processBatch(batch, makeDeps(env));
   },
 } satisfies ExportedHandler<ResearchWorkerEnv, ResearchMessage>;

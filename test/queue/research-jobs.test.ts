@@ -680,7 +680,7 @@ describe("PackStore.commitTerminal", () => {
     };
 
     const store = makeResearchPackStore(exec);
-    await store.commitTerminal(pack, auditEntry);
+    await store.commitTerminal(pack, auditEntry, { neurons: 0, braveQueryCount: 0 });
 
     // Pack must be persisted
     const packResult = await getPack(exec, claimKey, SOURCE_REVISION_ID);
@@ -694,6 +694,11 @@ describe("PackStore.commitTerminal", () => {
     expect(rows).toHaveLength(1);
     expect(rows[0].actor).toBe("system");
     expect(rows[0].eventType).toBe("research.completed");
+
+    // The same atomic batch also wrote exactly one quota-ledger row (the metered unit) for the admin user.
+    const ledger = await exec.prepare("SELECT user_id FROM quota_ledger WHERE claim_key = ?").bind(claimKey).all<{ user_id: string }>();
+    expect(ledger).toHaveLength(1);
+    expect(ledger[0].user_id).toBe("u_admin");
   });
 
   it("atomic both-or-neither: FK violation on pack insert rolls back the audit row too (real executor, no mock)", async () => {
@@ -729,7 +734,7 @@ describe("PackStore.commitTerminal", () => {
     const store = makeResearchPackStore(exec);
 
     // commitTerminal must reject (FK error)
-    await expect(store.commitTerminal(pack, auditEntry)).rejects.toThrow(/FOREIGN KEY/i);
+    await expect(store.commitTerminal(pack, auditEntry, { neurons: 0, braveQueryCount: 0 })).rejects.toThrow(/FOREIGN KEY/i);
 
     // Pack must NOT be persisted (rolled back)
     expect(await packExists(exec, claimKey, SOURCE_REVISION_ID)).toBe(false);
@@ -737,9 +742,13 @@ describe("PackStore.commitTerminal", () => {
     // Audit row must NOT be persisted (rolled back with the pack — both-or-neither)
     const rows = await makeAuditLog(exec).read();
     expect(rows).toHaveLength(0);
+
+    // The quota-ledger row must also roll back with the pack (the FK failure aborts the whole batch).
+    const ledger = await exec.prepare("SELECT COUNT(*) AS n FROM quota_ledger WHERE claim_key = ?").bind(claimKey).all<{ n: number }>();
+    expect(ledger[0].n).toBe(0);
   });
 
-  it("composition proof: commitTerminal issues exactly one batch([packStmt, auditStmt]) — not two independent .run() calls", async () => {
+  it("composition proof: commitTerminal issues exactly one batch([userStmt, packStmt, ledgerStmt, auditStmt]) — not independent .run() calls", async () => {
     // Wrap a real executor in a thin spy that counts batch calls and statement count.
     const realExec = freshTestExecutor();
     await upsertArticle(realExec, {
@@ -819,11 +828,11 @@ describe("PackStore.commitTerminal", () => {
     };
 
     const store = makeResearchPackStore(spyExec);
-    await store.commitTerminal(pack, auditEntry);
+    await store.commitTerminal(pack, auditEntry, { neurons: 0, braveQueryCount: 0 });
 
-    // batch must be called exactly once with exactly 2 statements
+    // batch must be called exactly once with exactly 4 statements (admin upsert, pack, quota ledger, audit)
     expect(batchCallCount).toBe(1);
-    expect(batchStatementCount).toBe(2);
+    expect(batchStatementCount).toBe(4);
 
     // commitTerminal must NOT have issued independent .run() calls for the terminal path
     expect(prepareRunCount).toBe(0);

@@ -10,6 +10,8 @@ interface ResearchTestEnv {
   // The AI binding is provided by Miniflare from workers/research/wrangler.jsonc. RESEARCH_PROVIDER is left
   // unset so the env-gated selector defaults to the stub (Task 1.10) and the stub-asserting tests stay green.
   AI: Ai;
+  // Research kill-switch var (miniflare binding); empty/absent by default so research is enabled in tests.
+  RESEARCH_KILL_SWITCH?: string;
   TEST_MIGRATIONS: D1Migration[];
 }
 

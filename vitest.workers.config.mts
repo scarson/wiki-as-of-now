@@ -16,7 +16,9 @@ export default defineConfig({
     cloudflareTest({
       wrangler: { configPath: "./workers/research/wrangler.jsonc" },
       miniflare: {
-        bindings: { TEST_MIGRATIONS: migrations },
+        // RESEARCH_KILL_SWITCH is empty here so research is ENABLED by default in tests; the kill-switch
+        // test overrides it per-call (passing "1" to worker.queue) to prove the consumer pauses.
+        bindings: { TEST_MIGRATIONS: migrations, RESEARCH_KILL_SWITCH: "" },
       },
     }),
   ],

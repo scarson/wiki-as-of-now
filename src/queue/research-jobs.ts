@@ -6,7 +6,25 @@ import type { ResearchInput } from "../research/provider";
 import type { ResearchOutcome } from "../research/pipeline";
 import type { ResearchPack } from "../db/research-packs";
 import { computeClaimKey, packExists, insertPackIfAbsent, insertPackStatement } from "../db/research-packs";
+import { upsertUserStatement } from "../db/users";
+import { quotaEntryFor } from "../quota/reconcile";
+import { SINGLE_ADMIN_USER_ID } from "../auth/mode";
 import type { SqlExecutor } from "../db/client";
+
+/** Per-pack metered-spend stats recorded on the quota ledger (observability; the metered unit is the row itself). */
+export interface PackUsage {
+  neurons: number;
+  braveQueryCount: number;
+}
+
+/** The single-admin identity that owns consumer/cron-originated packs (the audit-log actor + quota_ledger user). */
+const CONSUMER_USER: Parameters<typeof upsertUserStatement>[1] = {
+  userId: SINGLE_ADMIN_USER_ID,
+  identityProvider: "admin",
+  identitySubject: "admin",
+  email: "admin@localhost",
+  createdAt: "1970-01-01T00:00:00.000Z",
+};
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -24,8 +42,9 @@ export interface ResearchMessage {
 export interface PackStore {
   has(claimKey: string, sourceRevisionId: number): Promise<boolean>;
   insertIfAbsent(pack: ResearchPack): Promise<void>;
-  /** Persists the pack and its completion audit entry atomically (both-or-neither). */
-  commitTerminal(pack: ResearchPack, audit: AuditEntry): Promise<void>;
+  /** Persists the pack, its write-once quota-ledger row, and the completion audit entry atomically
+   *  (both-or-neither). The ledger row is the metered unit (one per pack); usage is observability stats. */
+  commitTerminal(pack: ResearchPack, audit: AuditEntry, usage: PackUsage): Promise<void>;
 }
 
 /** Codes-only audit payload (G13). NEVER quotes/queries/URLs/claim text — ids, enums, counts only. */
@@ -65,8 +84,18 @@ export function makeResearchPackStore(db: SqlExecutor): PackStore {
     insertIfAbsent(pack: ResearchPack): Promise<void> {
       return insertPackIfAbsent(db, pack);
     },
-    commitTerminal(pack: ResearchPack, audit: AuditEntry): Promise<void> {
-      return db.batch([insertPackStatement(db, pack), appendStatement(db, audit)]);
+    commitTerminal(pack: ResearchPack, audit: AuditEntry, usage: PackUsage): Promise<void> {
+      // All four statements come from the SAME executor instance (CC-3) and commit atomically (CC §3.5):
+      //  - upsertUser seeds the single-admin owner so the quota_ledger FK is always satisfiable
+      //    (idempotent; ON CONFLICT keeps the existing row's email — never clobbers a real user).
+      //  - the pack insert and the quota-ledger insert are both ON CONFLICT DO NOTHING (write-once):
+      //    a re-delivered claim that no-ops the pack also no-ops the ledger row — no double-count.
+      return db.batch([
+        upsertUserStatement(db, CONSUMER_USER),
+        insertPackStatement(db, pack),
+        quotaEntryFor(db, { userId: CONSUMER_USER.userId, pack, neurons: usage.neurons, braveQueryCount: usage.braveQueryCount }),
+        appendStatement(db, audit),
+      ]);
     },
   };
 }
@@ -180,11 +209,22 @@ export async function handleResearchMessage(
     dispositionTally,
   };
 
-  await deps.packStore.commitTerminal(pack, {
-    actor: "system",
-    eventType: "research.completed",
-    payload: auditPayload,
-  });
+  // Usage stats for the quota ledger. The stub provider surfaces no usage, so both default to 0
+  // (honest, not fabricated — ?? 0 per the Phase 1 usage-threading contract).
+  const usage: PackUsage = {
+    neurons: outcome.usage?.neurons ?? 0,
+    braveQueryCount: outcome.usage?.braveQueryCount ?? 0,
+  };
+
+  await deps.packStore.commitTerminal(
+    pack,
+    {
+      actor: "system",
+      eventType: "research.completed",
+      payload: auditPayload,
+    },
+    usage,
+  );
   // return (ACK)
 }
 
