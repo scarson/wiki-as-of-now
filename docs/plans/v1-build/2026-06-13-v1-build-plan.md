@@ -57,13 +57,13 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Phases 0–1 shipped (foundation + Workers AI/Brave research provider); Phases 2–7 not started.
+**Overall:** Phases 0–2 shipped (foundation + Workers AI/Brave research provider + research reachability); Phases 3–7 not started.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 0 — Foundation (spec v1.1, worker rename, git-strategy) | ✅ Shipped | `cc38f83`, `13b38f8`, `838e4e5`, `7aa6a74` | on `feat/v1-build`; green baseline (574 node + 3 workerd) |
 | 1 — Workers AI + Brave research provider | ✅ Shipped | `4ccc837`…`519c972` | on `feat/v1-build`; 625 node + 3 workerd green; report `build-reports/phase-1.md` |
-| 2 — Research reachability | ⬜ Not started | — | — |
+| 2 — Research reachability | ✅ Shipped | `1355c83`…`e2023bf` | on `feat/v1-build`; 650 node + 10 workerd green; report `build-reports/phase-2.md` |
 | 3 — Core worksheet flow UI | ⬜ Not started | — | — |
 | 4 — Queue & topic seeding | ⬜ Not started | — | — |
 | 5 — Auth, quotas, kill-switch | ⬜ Not started | — | Review trigger (auth/secrets) |
@@ -75,6 +75,9 @@ notes and commit messages.
 - **Phase 1 / D2 — Test-fake param declarations.** The plan's illustrative test fakes in `ai-client.test.ts` / `brave-search.test.ts` needed explicit (unused) params so `mock.calls` tuples typecheck under the project's separate `tsc --noEmit` CI step. No behavior change; folded into the Task 1.7 commit.
 - **Phase 1 / D3 — `usage.neurons` left honest/undefined.** The built `AiTextClient` string seam surfaces no neuron figure, so `research()` records exact `usage.braveQueryCount` and leaves `neurons` undefined (per the plan's own no-fabrication directive) rather than wiring the speculative `lastRunNeurons` accumulator. One extra `usage` test added (provider file = 15 tests, not 14). Phase 5 Task 5.6 can thread a real figure later without a schema change. See `build-reports/phase-1.md` D3.
 - **Phase 1 / D4 — `remote: true` on both AI bindings.** Added to root + research-worker wrangler AI bindings to silence Miniflare's stderr AI-binding warning (pristine-output rule, testing-pitfalls §1). AI bindings have no local emulation, so this is the correct setting; the stub path makes no AI call in CI.
+- **Phase 2 / D5 — `Queue.send` needs a void-return adapter (v4-API deviation).** Integration-contract §2.2 says `Queue.send()` returns `Promise<void>` so no adapter is needed on the single-send path; under the installed runtime types (`workerd@1.20260603.1`) it returns `QueueSendResponse`, so `tsc` rejects passing `env.RESEARCH_QUEUE` directly to `handleResearchEnqueue`'s `{ send(m): Promise<void> }` param. The production `POST` wiring wraps `env.RESEARCH_QUEUE.send` with a thin void adapter, exactly mirroring the existing `sendBatch` adapter in `workers/research/index.ts:79` (same deviation flagged in commit `1ba3d68`). The handler signature + test `fakeQueue` are unchanged. **Contract §2.2's single-send claim is stale and should be corrected.** See `build-reports/phase-2.md` deviation #2.
+- **Phase 2 / D6 — `@/*` alias added to `vitest.workers.config.mts`.** The `src/app/**` route handlers use the `@/*` → `./src/*` alias (Next.js convention; all four route files use it). Next's bundler resolves it in production, but the workerd vitest pool imports the route handlers directly and could not resolve `@/`, so a `resolve.alias` entry was added to the workers config to resolve identically to production. Chosen over making one route an inconsistent relative-import outlier; does not affect the Node pool. See `build-reports/phase-2.md` deviation #3.
+- **Phase 2 / D7 — plan test-code fidelity fixes (no impl change).** Two of the plan's illustrative tests needed corrections to match project invariants the plan itself mandates: (i) `verdict-read.test.ts` needed an `articles` parent row before inserting a verdict, because `eligibility_verdicts.page_id` has an FK and the mandated FK-on test DB rejects orphans; (ii) `surface-pack.test.ts`'s corrupt-row case needed `allowConsole()` because `getSurfaceablePack`'s defensive read logs via `console.error` and the pristine-output setup fails un-asserted console output. Both implementations are exactly as specified. See `build-reports/phase-2.md` deviations #1 and #4.
 
 ### Discoveries
 - **Double-fetch of the same URL (deferred follow-up).** The provider fetches each candidate URL during triage (`src/research/workers-ai-provider.ts` `research()`), and the pipeline then re-fetches the proposed URL during verbatim verification (`src/research/verify-proposal.ts` / `pipeline.ts`). Now that FIX 1 caps candidates to ~12, this is ~5 extra re-fetches per claim — a minor cost optimization, not a correctness bug, so it is deferred. Suggested fix: a per-claim memoizing fetch (cache keyed on canonicalized URL) shared by the provider and the pipeline so each source page is fetched at most once per claim.
@@ -1227,7 +1230,7 @@ Real-Gemma verbatim-quote yield (does Gemma 4 actually return EXACT excerpts tha
 
 ## Phase 2 — Research reachability (enqueue route + surfacing read)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED on 2026-06-13 (branch `feat/v1-build`, commits `1355c83`…`e2023bf`). All 5 tasks done; final suite green (tsc + lint clean, 650 Node + 10 workerd). Build report: [build-reports/phase-2.md](build-reports/phase-2.md). Deviations summarized in the top-of-plan Deviations subsection (D5–D7).
 
 **Goal:** Make the research backend reachable from the app worker — add the `RESEARCH_QUEUE` producer binding to the root config, build `POST /api/research/[candidateId]` (force-dynamic, eligibility-gated to easy-win only, enqueues via `enqueueResearch`), and build the surfacing read that consumes `getSurfaceablePack` (currently zero consumers) with revision-drift re-validation, returning the pack's verified `EvidenceCard[]` + dispositions for the UI.
 
