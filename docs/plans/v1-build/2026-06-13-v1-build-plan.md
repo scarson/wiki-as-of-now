@@ -62,7 +62,7 @@ notes and commit messages.
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 0 — Foundation (spec v1.1, worker rename, git-strategy) | ✅ Shipped | `cc38f83`, `13b38f8`, `838e4e5`, `7aa6a74` | on `feat/v1-build`; green baseline (574 node + 3 workerd) |
-| 1 — Workers AI + Brave research provider | ⬜ Not started | — | — |
+| 1 — Workers AI + Brave research provider | 🚧 In progress | — | claimed 2026-06-13 on `feat/v1-build` |
 | 2 — Research reachability | ⬜ Not started | — | — |
 | 3 — Core worksheet flow UI | ⬜ Not started | — | — |
 | 4 — Queue & topic seeding | ⬜ Not started | — | — |
@@ -93,7 +93,7 @@ Worker renamed to `wiki-as-of-now` (`cc38f83`); two-branch dev→main gitflow do
 
 ## Phase 1 — Workers AI + Brave research provider (on Miniflare)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-13T06:17Z on branch `feat/v1-build`
 
 **Goal:** Replace `StubResearchProvider` with a real `WorkersAiResearchProvider` (Gemma 4 via the `env.AI` binding for query-generation + relevance-triage, JSON-parse-and-retry-gated, `ProviderUnavailableError` on transport failure), plus a key-gated Brave search client, a fixture-backed search provider, a manual-URL paste path, and the provider-swap preconditions — all verified on Miniflare with real Gemma, never touching the deterministic detection or verbatim-check invariants.
 
