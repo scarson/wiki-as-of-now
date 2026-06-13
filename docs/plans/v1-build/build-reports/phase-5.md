@@ -22,7 +22,9 @@ load-bearing compliance invariant (detection stays LLM-free; the audit log stays
   `none`) and rejects wrong-secret, tampered, expired, and malformed tokens — all proven with **real jose**.
 - **Auth mode** — `resolveAuthMode` returns `oauth` when both Google creds exist, else `single-admin`
   (`src/auth/mode.ts`). `verifyAdminSecret` is fail-closed (no `ADMIN_SECRET` → no admin access) with a
-  length-constant compare. `resolveCurrentUser` (`src/auth/current-user.ts`) resolves a request to
+  constant-time compare (hardening pass below: hash both inputs, compare fixed-length digests — the original
+  length-mismatch early return leaked the secret length via timing). `resolveCurrentUser`
+  (`src/auth/current-user.ts`) resolves a request to
   authenticated (session cookie → opaque userId; single-admin header fallback → `u_admin`) or anonymous.
 - **OAuth** — gated Arctic Google flow (`src/auth/oauth.ts` + three routes). `makeGoogleClient` returns
   `null` when creds/origin are absent so the routes 404 cleanly (soft gate; single-admin carries self-test).
@@ -33,8 +35,10 @@ load-bearing compliance invariant (detection stays LLM-free; the audit log stays
   source_revision_id)`, FK → `users`). **The metered unit is research-pack inserts** — one write-once ledger
   row per committed pack. `neurons` / `brave_query_count` are observability stats, never the metered
   quantity. Per-user + global daily caps on a **UTC** calendar-day window (`src/quota/reconcile.ts`,
-  `src/quota/config.ts`). The pre-enqueue check is **advisory**; the authoritative bound is the write-once
-  ledger committed atomically with the pack on the sequential consumer (documented honestly in code + tests).
+  `src/quota/config.ts`). The pre-enqueue check is **advisory fast-fail** (count-then-enqueue races, so it
+  cannot bound concurrent enqueues); the **authoritative cap is the sequential consumer's count-at-commit**
+  (the only race-free point), added in the security hardening pass below. _(Originally this report claimed the
+  write-once ledger alone was the authoritative bound; the hardening pass found that untrue — see below.)_
 - **Kill-switch** — `RESEARCH_KILL_SWITCH` (`src/research/kill-switch.ts`), default **enabled** (only an
   explicit truthy value disables). It blocks **both** the enqueue route (503) **and** the consumer (the
   worker retries-and-pauses every message so paused work resumes, never drops).
@@ -183,10 +187,12 @@ Notes:
   raw `sub`/`email` are stored only in `users` (email for display, subject for re-login lookup) and never in the
   JWT or any audit payload. Spot-checked: the new auth/quota/gate code makes **zero** audit writes; the only
   audit writes remain the pre-existing codes-only research-completion ones.
-- **Quota is two-layer and honestly documented** — the pre-enqueue `assertQuotaAvailable` is advisory (a
-  count-then-act check, the textbook concurrency-bypass shape); the authoritative bound is the write-once
-  `quota_ledger` row committed atomically with the pack on the single-threaded sequential consumer. The
-  docstrings and tests say so explicitly so a reviewer can't "tighten" the pre-check into a false guarantee.
+- **Quota is two-layer** — the pre-enqueue `assertQuotaAvailable` is advisory fast-fail (a count-then-act
+  check, the textbook concurrency-bypass shape). **Correction (hardening pass below):** the original report
+  claimed the write-once `quota_ledger` row alone was the authoritative bound — that was untrue. The ledger
+  rows it counts exist only *after* commit, so a burst of distinct candidates all pass the low-count pre-check
+  and all commit. The authoritative cap is now the **sequential consumer's count-at-commit** in
+  `handleResearchMessage` (the only race-free point, CC-16); the docstrings and tests were corrected to say so.
 - **Kill-switch defaults to ENABLED research** (only a truthy value disables) — research-on is the normal
   state, so an unset/empty value must not silently break research. This deliberately differs from the
   admin-secret fail-closed default (admin is the privileged path; research-on is the normal path).
@@ -229,3 +235,37 @@ No automated render test exists (no jsdom/RTL in the project, by design). One su
 ## Status
 
 **DONE.**
+
+## Security hardening pass (2026-06-13)
+
+A post-ship security bug-hunt over this phase found four real defects in the just-shipped auth/quota/kill-switch
+surface. All four were fixed with strict TDD (a failing security test first, then the minimal fix, then green),
+each with real D1 / real jose assertions — never a test of the mock. The full suite stays green
+(`tsc` + `eslint` clean; **817 Node + 26 workers**, up from 810 + 17). The Phase 5 banner stays **✅ SHIPPED**;
+this is a hardening amendment, not a re-scope.
+
+| # | Severity | Defect | Fix | Commit |
+|---|----------|--------|-----|--------|
+| 1 | CRITICAL | `POST /api/queue/enqueue-research` was **fully ungated** — anonymous callers could enqueue arbitrary candidate ids (incl. `human_only`/no-verdict) onto the metered path, bypassing kill-switch + auth + the G11 safe-lane guardrail + quota. A second door past the correctly-gated single-candidate route. | Route the batch path through the SAME composed building blocks via `gateEnqueueCandidatesForResearch`, which delegates each candidate to `gateResearchEnqueue` (no G11 duplication): kill-switch → auth (401 anonymous) → per candidate lookup → `evaluatePersistedEligibility` (fail-closed to `human_only`) → quota → enqueue, returning a per-candidate disposition. New workers-pool gating test mirrors `research-route-gating`. | `f68baf2` |
+| 2 | HIGH | `ResearchMessage` carried no `userId`, so `commitTerminal` hardcoded every `quota_ledger.user_id` to `u_admin`. In OAuth mode the gate's per-user pre-check reads the real opaque userId and always saw 0 → the **per-user cap never tripped** (masked because no test drove the consumer as a non-admin user). | Thread the enqueuer's `userId` onto the message (gate + batch + `enqueueResearch`) through to `commitTerminal`, which keys the ledger row to `msg.userId ?? SINGLE_ADMIN_USER_ID` and seeds THAT user in the same atomic batch via `seedUserIfAbsentStatement` (ON CONFLICT DO NOTHING — never clobbers a real login). `u_admin` stays only for the cron/seed path. Coupled test drives the REAL commit as a non-admin user and asserts the per-user pre-check then trips. | `bf6ca33` |
+| 3 | HIGH | `assertQuotaAvailable` is a producer-side pre-check counting ledger rows that exist only **after** commit, so a burst of distinct candidates all pass the low-count pre-check and all commit, overrunning per-user/global caps unbounded. The cap was enforced **nowhere race-free**. | Enforce the cap at the **sequential consumer's commit** (count-then-insert is race-free, CC-16): `countCommittedPacksOnDay(user+global)` before insert; at/over cap → drop (no pack, no ledger), write a codes-only `research.quota_exceeded` audit, ACK (re-researchable after the UTC day rolls over). Workers-pool test: N+1 distinct easy-wins with cap N → exactly N packs+ledger, the (N+1)th dropped. | `bf6ca33` |
+| 4 | LOW | `timingSafeEqual` early-returned on a length mismatch, leaking `ADMIN_SECRET`'s length via timing and contradicting its own "length-constant" comment. | Genuine constant-time compare: hash BOTH inputs to a fixed-length SHA-256 digest, then compare the 32-byte digests byte-by-byte with no early return. `verifyAdminSecret` is now async; its sole caller (`resolveCurrentUser`) awaits it. | `7155ab8` |
+
+### Corrected quota-bound description
+
+The original report (and several code docstrings) claimed *"the authoritative bound is the write-once
+quota_ledger row committed atomically with the pack."* **That was untrue.** The write-once ledger guarantees
+no double-count on a re-delivered claim, but it does NOT bound the count of *distinct* claims — each commits
+its own ledger row. The authoritative cap is the **sequential consumer's count-at-commit** in
+`handleResearchMessage` (count the day's committed packs, then insert; race-free only because the consumer is
+single-threaded per CC-16). The producer-side `assertQuotaAvailable` is an **advisory fast-fail** that keeps
+the queue from filling with work that will be dropped at commit — nothing more. Code docstrings
+(`gate.ts`, `reconcile.ts`) and this report were corrected to state this.
+
+### Boundaries honored (hardening pass)
+
+- Detection untouched (no imports into `src/detector/**`); the audit log stays append-only and **codes-only**
+  — the new `research.quota_exceeded` audit carries `{ claimKey, scope }` only (no claim text, no userId, G13/CC-12).
+- The G11 safe-lane guardrail is enforced on the batch path by reusing `evaluatePersistedEligibility` (not duplicated).
+- The metered unit stays **pack inserts**, never provider calls; the consumer commit stays atomic (one `db.batch`, CC-3).
+- No `better-sqlite3`/`local-db` imports in worker-bundled code (CC-5); no secrets in fixtures/config/flags.
