@@ -53,3 +53,41 @@ describe("WorkersAiResearchProvider.generateQueries", () => {
     expect(out.length).toBeLessThanOrEqual(8);
   });
 });
+
+describe("WorkersAiResearchProvider.triage", () => {
+  const pages = [{ url: "https://navy.mil/z", text: "The Zumwalt was commissioned on 15 October 2016." }];
+
+  it("returns the model's proposed evidence parsed from JSON", async () => {
+    const ai = scriptedAi([JSON.stringify({ proposals: [
+      { url: "https://navy.mil/z", proposedQuote: "commissioned on 15 October 2016", advisorySupport: true },
+    ] })]);
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    const out = await p.triage(INPUT, pages);
+    expect(out).toEqual([{ url: "https://navy.mil/z", proposedQuote: "commissioned on 15 October 2016", advisorySupport: true }]);
+  });
+  it("caps proposals at MODEL_CONFIG.maxProposals (5)", async () => {
+    const many = Array.from({ length: 9 }, (_, i) => ({ url: `https://x.gov/${i}`, proposedQuote: `quote number ${i}`, advisorySupport: false }));
+    const ai = scriptedAi([JSON.stringify({ proposals: many })]);
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    expect((await p.triage(INPUT, pages)).length).toBe(5);
+  });
+  it("retries once on malformed JSON then returns []", async () => {
+    const ai = scriptedAi(["garbage", "more garbage"]);
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    expect(await p.triage(INPUT, pages)).toEqual([]);
+    expect(ai.generateText).toHaveBeenCalledTimes(2);
+  });
+  it("drops a proposal whose advisorySupport is not a boolean (schema guard)", async () => {
+    const ai = scriptedAi([JSON.stringify({ proposals: [
+      { url: "https://navy.mil/z", proposedQuote: "valid quote here", advisorySupport: "yes" },
+    ] })]);
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    expect(await p.triage(INPUT, pages)).toEqual([]);
+  });
+  it("returns [] when given no pages (nothing to triage)", async () => {
+    const ai = scriptedAi(["unused"]);
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    expect(await p.triage(INPUT, [])).toEqual([]);
+    expect(ai.generateText).not.toHaveBeenCalled();
+  });
+});
