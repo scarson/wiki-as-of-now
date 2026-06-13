@@ -24,6 +24,9 @@
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
 	},
+	// Workers AI binding (research provider model calls run here per build design §6.1).
+	// remote:true — AI bindings have no local emulation; this also keeps `next dev` from warning.
+	"ai": { "binding": "AI", "remote": true },
 	"services": [
 		{
 			// Self-reference service binding, the service name must match the worker name
