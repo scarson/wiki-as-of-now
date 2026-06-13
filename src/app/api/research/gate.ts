@@ -34,7 +34,8 @@ export interface EnqueueGateResult {
  *                      missing/corrupt verdict. Runs before quota so an ineligible claim never
  *                      consumes a quota check or a slot. COMPOSES WITH (does not replace) the
  *                      Phase 2 safe-lane gate — same persisted-verdict read.
- *   (4) quota        — advisory pre-check; the write-once ledger on the consumer is authoritative.
+ *   (4) quota        — advisory pre-check (count-then-enqueue races, so it cannot be a hard bound); the
+ *                      sequential consumer's count-at-commit is the authoritative cap (the only race-free point).
  *   (5) enqueue.
  */
 export async function gateResearchEnqueue(deps: {

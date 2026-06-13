@@ -1,5 +1,5 @@
 // ABOUTME: Quota reconciliation — the metered unit is research-pack inserts, counted on a UTC-day window.
-// ABOUTME: assertQuotaAvailable is the advisory pre-enqueue check; the write-once ledger committed with the pack is authoritative.
+// ABOUTME: assertQuotaAvailable is the advisory pre-enqueue fast-fail; the sequential consumer's count-at-commit is the authoritative cap.
 import type { SqlExecutor, SqlStatement } from "../db/client";
 import type { ResearchPack } from "../db/research-packs";
 import { insertQuotaEntryStatement, countPacksForUserOnDay, countPacksGlobalOnDay } from "../db/quota-ledger";
@@ -34,11 +34,12 @@ export function quotaEntryFor(
 }
 
 /**
- * Advisory pre-enqueue check. Throws QuotaExceededError if the user or global UTC-day cap is
+ * Advisory pre-enqueue fast-fail. Throws QuotaExceededError if the user or global UTC-day cap is
  * already reached. NOT a hard guarantee against concurrent enqueues (count-then-act — testing-pitfalls §5):
- * the authoritative bound is the write-once ledger committed atomically with the pack on the
- * sequential consumer (CC-16). This check fails fast and keeps the queue from filling with
- * work that will be capped at commit time.
+ * the ledger rows it counts exist only AFTER commit, so a burst of distinct candidates can all pass this
+ * low-count pre-check. The authoritative cap is the SEQUENTIAL consumer's count-at-commit (CC-16) in
+ * handleResearchMessage — the only race-free point. This check just fails fast and keeps the queue from
+ * filling with work that will be dropped at commit time.
  */
 export async function assertQuotaAvailable(
   db: SqlExecutor,

@@ -44,6 +44,19 @@ export async function upsertUser(db: SqlExecutor, u: User): Promise<void> {
   await upsertUserStatement(db, u).run();
 }
 
+/** Bound, UNEXECUTED seed insert — ON CONFLICT DO NOTHING. A pure foreign-key safety net for batches that
+ *  must reference a user row (e.g. the consumer's quota_ledger commit): it inserts the row only when absent
+ *  and NEVER overwrites an existing user's email/identity (so a real login's row is left untouched). */
+export function seedUserIfAbsentStatement(db: SqlExecutor, u: User): SqlStatement {
+  return db
+    .prepare(
+      "INSERT INTO users (user_id, identity_provider, identity_subject, email, created_at) " +
+        "VALUES (?, ?, ?, ?, ?) " +
+        "ON CONFLICT(user_id) DO NOTHING",
+    )
+    .bind(u.userId, u.identityProvider, u.identitySubject, u.email, u.createdAt);
+}
+
 export async function getUserById(db: SqlExecutor, userId: string): Promise<User | undefined> {
   const rows = await db
     .prepare(

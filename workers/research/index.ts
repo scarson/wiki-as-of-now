@@ -17,6 +17,7 @@ import { researchClaim, DEFAULT_MAX_PROPOSALS, DEFAULT_PER_HOST_CAP } from "../.
 import { selectResearchProvider } from "../../src/research/select-provider";
 import { fetchSourceText, type FetchImpl } from "../../src/research/source-fetch";
 import { GATE_VERSION } from "../../src/safelane/eligibility";
+import { loadQuotaConfig } from "../../src/quota/config";
 import type { ResearchInput } from "../../src/research/provider";
 
 // ---------------------------------------------------------------------------
@@ -33,6 +34,9 @@ interface ResearchWorkerEnv {
   // Admin research kill-switch. Set via `wrangler secret put RESEARCH_KILL_SWITCH` (or a plain var) on the
   // research worker. Absent ⇒ research enabled; an explicit truthy value pauses the consumer + scheduler.
   RESEARCH_KILL_SWITCH?: string;
+  // Per-user + global daily pack-insert caps (the count-at-commit quota). Absent ⇒ safe defaults.
+  QUOTA_PER_USER_DAILY?: string;
+  QUOTA_GLOBAL_DAILY?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -67,6 +71,7 @@ function makeDeps(env: ResearchWorkerEnv): ResearchConsumerDeps {
     packStore: makeResearchPackStore(db),
     audit: makeAuditLog(db),
     now,
+    quotaConfig: loadQuotaConfig(env),
   };
 }
 

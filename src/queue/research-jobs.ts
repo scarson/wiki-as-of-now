@@ -6,9 +6,11 @@ import type { ResearchInput } from "../research/provider";
 import type { ResearchOutcome } from "../research/pipeline";
 import type { ResearchPack } from "../db/research-packs";
 import { computeClaimKey, packExists, insertPackIfAbsent, insertPackStatement } from "../db/research-packs";
-import { upsertUserStatement } from "../db/users";
-import { quotaEntryFor } from "../quota/reconcile";
+import { seedUserIfAbsentStatement } from "../db/users";
+import { quotaEntryFor, utcDayKey } from "../quota/reconcile";
+import { countPacksForUserOnDay, countPacksGlobalOnDay } from "../db/quota-ledger";
 import { SINGLE_ADMIN_USER_ID } from "../auth/mode";
+import type { QuotaConfig } from "../quota/config";
 import type { SqlExecutor } from "../db/client";
 
 /** Per-pack metered-spend stats recorded on the quota ledger (observability; the metered unit is the row itself). */
@@ -17,14 +19,32 @@ export interface PackUsage {
   braveQueryCount: number;
 }
 
-/** The single-admin identity that owns consumer/cron-originated packs (the audit-log actor + quota_ledger user). */
-const CONSUMER_USER: Parameters<typeof upsertUserStatement>[1] = {
+/** The single-admin identity that owns cron/seed-originated packs (no enqueuer userId on the message). */
+const CONSUMER_USER = {
   userId: SINGLE_ADMIN_USER_ID,
   identityProvider: "admin",
   identitySubject: "admin",
   email: "admin@localhost",
   createdAt: "1970-01-01T00:00:00.000Z",
-};
+} as const;
+
+/**
+ * Builds the bound, UNEXECUTED user-seed statement for the ledger row's owner so the quota_ledger FK is
+ * always satisfiable inside the atomic commit (CC-3). DO-NOTHING-on-conflict: it never overwrites an
+ * existing user's identity/email, so a real OAuth login's row is left untouched (idempotent FK safety net).
+ * The single-admin owner uses its fixed seed identity; any OAuth userId is seeded with a placeholder
+ * identity used only if no real user row exists yet.
+ */
+function ledgerOwnerSeed(db: SqlExecutor, userId: string) {
+  if (userId === SINGLE_ADMIN_USER_ID) return seedUserIfAbsentStatement(db, CONSUMER_USER);
+  return seedUserIfAbsentStatement(db, {
+    userId,
+    identityProvider: "pending",
+    identitySubject: userId,
+    email: "",
+    createdAt: "1970-01-01T00:00:00.000Z",
+  });
+}
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -41,13 +61,24 @@ export interface ResearchMessage {
   userId?: string;
 }
 
-/** The persistence port the consumer needs (full-PK existence + write-once insert). */
+/** The committed-pack counts for one UTC day — the count-at-commit cap inputs (Fix 3). */
+export interface CommittedPackCounts {
+  user: number;
+  global: number;
+}
+
+/** The persistence port the consumer needs (full-PK existence + write-once insert + count-at-commit). */
 export interface PackStore {
   has(claimKey: string, sourceRevisionId: number): Promise<boolean>;
   insertIfAbsent(pack: ResearchPack): Promise<void>;
-  /** Persists the pack, its write-once quota-ledger row, and the completion audit entry atomically
-   *  (both-or-neither). The ledger row is the metered unit (one per pack); usage is observability stats. */
-  commitTerminal(pack: ResearchPack, audit: AuditEntry, usage: PackUsage): Promise<void>;
+  /** Counts already-committed packs on a UTC day, for the owner `userId` and globally — the inputs to the
+   *  sequential consumer's count-at-commit cap (the only race-free enforcement point; the producer pre-check
+   *  is advisory). Called immediately before commitTerminal, so it reflects every earlier sequential commit. */
+  countCommittedPacksOnDay(userId: string, utcDay: string): Promise<CommittedPackCounts>;
+  /** Persists the pack, its write-once quota-ledger row (owned by `userId`), and the completion audit entry
+   *  atomically (both-or-neither). The ledger row is the metered unit (one per pack); usage is observability
+   *  stats. Seeds `userId` in the same batch so the quota_ledger FK is always satisfiable (idempotent). */
+  commitTerminal(pack: ResearchPack, audit: AuditEntry, usage: PackUsage, userId: string): Promise<void>;
 }
 
 /** Codes-only audit payload (G13). NEVER quotes/queries/URLs/claim text — ids, enums, counts only. */
@@ -67,8 +98,10 @@ export interface ResearchConsumerDeps {
   researchClaim: (input: ResearchInput) => Promise<ResearchOutcome>;
   packStore: PackStore;
   audit: { append(entry: AuditEntry): Promise<void> };
-  /** Stamps pack.evaluatedAt via now.toISOString(). */
+  /** Stamps pack.evaluatedAt via now.toISOString(); also the UTC-day key for the count-at-commit cap. */
   now: Date;
+  /** Per-user + global daily pack-insert caps. Enforced at commit (the sequential, race-free point — Fix 3). */
+  quotaConfig: QuotaConfig;
 }
 
 // ---------------------------------------------------------------------------
@@ -87,16 +120,24 @@ export function makeResearchPackStore(db: SqlExecutor): PackStore {
     insertIfAbsent(pack: ResearchPack): Promise<void> {
       return insertPackIfAbsent(db, pack);
     },
-    commitTerminal(pack: ResearchPack, audit: AuditEntry, usage: PackUsage): Promise<void> {
+    async countCommittedPacksOnDay(userId: string, utcDay: string): Promise<CommittedPackCounts> {
+      // Sequential consumer (CC-16): these counts reflect every earlier committed pack today, so the
+      // subsequent count-then-insert in handleResearchMessage is race-free.
+      const user = await countPacksForUserOnDay(db, userId, utcDay);
+      const global = await countPacksGlobalOnDay(db, utcDay);
+      return { user, global };
+    },
+    commitTerminal(pack: ResearchPack, audit: AuditEntry, usage: PackUsage, userId: string): Promise<void> {
       // All four statements come from the SAME executor instance (CC-3) and commit atomically (CC §3.5):
-      //  - upsertUser seeds the single-admin owner so the quota_ledger FK is always satisfiable
-      //    (idempotent; ON CONFLICT keeps the existing row's email — never clobbers a real user).
+      //  - ledgerOwnerSeed seeds the ledger row's owner (the enqueuer's userId, or the single-admin for
+      //    cron/seed packs) so the quota_ledger FK is always satisfiable — ON CONFLICT DO NOTHING, so a
+      //    real OAuth login's existing user row is never clobbered.
       //  - the pack insert and the quota-ledger insert are both ON CONFLICT DO NOTHING (write-once):
       //    a re-delivered claim that no-ops the pack also no-ops the ledger row — no double-count.
       return db.batch([
-        upsertUserStatement(db, CONSUMER_USER),
+        ledgerOwnerSeed(db, userId),
         insertPackStatement(db, pack),
-        quotaEntryFor(db, { userId: CONSUMER_USER.userId, pack, neurons: usage.neurons, braveQueryCount: usage.braveQueryCount }),
+        quotaEntryFor(db, { userId, pack, neurons: usage.neurons, braveQueryCount: usage.braveQueryCount }),
         appendStatement(db, audit),
       ]);
     },
@@ -219,6 +260,26 @@ export async function handleResearchMessage(
     braveQueryCount: outcome.usage?.braveQueryCount ?? 0,
   };
 
+  // The ledger row's owner: the enqueuer's real userId, or the single-admin for cron/seed-originated packs.
+  const ledgerUserId = msg.userId ?? SINGLE_ADMIN_USER_ID;
+
+  // Count-at-commit cap (Fix 3): the metered unit is the pack insert. The producer pre-check is advisory
+  // (count-then-enqueue races); the SEQUENTIAL consumer (CC-16) is the only race-free enforcement point —
+  // counting committed packs here reflects every earlier commit today. At/over either cap → drop this
+  // claim: no pack, no ledger row, a codes-only quota_exceeded audit, then ACK (not a retry-loop). A
+  // dropped claim writes no pack, so it can be re-researched after the UTC day rolls over.
+  const day = utcDayKey(deps.now.toISOString());
+  const counts = await deps.packStore.countCommittedPacksOnDay(ledgerUserId, day);
+  if (counts.user >= deps.quotaConfig.perUserDailyCap || counts.global >= deps.quotaConfig.globalDailyCap) {
+    const scope: "user" | "global" = counts.user >= deps.quotaConfig.perUserDailyCap ? "user" : "global";
+    await deps.audit.append({
+      actor: "system",
+      eventType: "research.quota_exceeded",
+      payload: { claimKey: msg.claimKey, scope }, // codes only (G13): no claim text, no userId
+    });
+    return; // ACK — drop. No pack/ledger written; re-researchable after the day rolls over.
+  }
+
   await deps.packStore.commitTerminal(
     pack,
     {
@@ -227,6 +288,7 @@ export async function handleResearchMessage(
       payload: auditPayload,
     },
     usage,
+    ledgerUserId,
   );
   // return (ACK)
 }
