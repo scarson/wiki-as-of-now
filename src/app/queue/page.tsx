@@ -98,13 +98,25 @@ export default function QueuePage() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ candidateIds }),
       });
-      const body = (await res.json()) as { error?: string; accepted?: number[]; skipped?: number[] };
+      const body = (await res.json()) as {
+        error?: string;
+        results?: { candidateId: number; outcome: string; reasons?: string[] }[];
+      };
       if (!res.ok) {
-        setEnqueueMsg(typeof body.error === "string" ? body.error : `Enqueue failed (${res.status})`);
+        // The route now requires auth (401 unauthenticated) and honors the kill-switch (503 disabled);
+        // surface those distinctly so a signed-out or paused user isn't told the request silently failed.
+        if (res.status === 401) {
+          setEnqueueMsg("Sign in to request research on these candidates.");
+        } else if (res.status === 503) {
+          setEnqueueMsg("Research is currently disabled — try again later.");
+        } else {
+          setEnqueueMsg(typeof body.error === "string" ? body.error : `Enqueue failed (${res.status})`);
+        }
         return;
       }
-      const accepted = body.accepted?.length ?? 0;
-      const skipped = body.skipped?.length ?? 0;
+      const results = body.results ?? [];
+      const accepted = results.filter((r) => r.outcome === "enqueued").length;
+      const skipped = results.length - accepted;
       setEnqueueMsg(
         `Queued ${accepted} for research${skipped > 0 ? `, ${skipped} skipped` : ""}.`
       );
