@@ -57,17 +57,17 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Phases 0–2 shipped (foundation + Workers AI/Brave research provider + research reachability); Phases 3–7 not started.
+**Overall:** Phases 0–6 shipped (foundation + Workers AI/Brave research provider + research reachability + core worksheet UI + queue/topic seeding + auth/quotas/kill-switch + transparency/About/feedback); Phase 7 (provision & deploy prep) not started.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 0 — Foundation (spec v1.1, worker rename, git-strategy) | ✅ Shipped | `cc38f83`, `13b38f8`, `838e4e5`, `7aa6a74` | on `feat/v1-build`; green baseline (574 node + 3 workerd) |
 | 1 — Workers AI + Brave research provider | ✅ Shipped | `4ccc837`…`519c972` | on `feat/v1-build`; 625 node + 3 workerd green; report `build-reports/phase-1.md` |
 | 2 — Research reachability | ✅ Shipped | `1355c83`…`e2023bf` | on `feat/v1-build`; 650 node + 10 workerd green; report `build-reports/phase-2.md` |
-| 3 — Core worksheet flow UI | ⬜ Not started | — | — |
-| 4 — Queue & topic seeding | ⬜ Not started | — | — |
-| 5 — Auth, quotas, kill-switch | ⬜ Not started | — | Review trigger (auth/secrets) |
-| 6 — Transparency, About, polish | ⬜ Not started | — | — |
+| 3 — Core worksheet flow UI | ✅ Shipped | `e3a0a02`…`c6b2dff` | on `feat/v1-build`; 696 node + 14 workerd green; report `build-reports/phase-3.md` |
+| 4 — Queue & topic seeding | ✅ Shipped | `7724ad4`…`dcb1d7a` | on `feat/v1-build`; 740 node + 15 workerd green; report `build-reports/phase-4.md` |
+| 5 — Auth, quotas, kill-switch | ✅ Shipped | `53e483d`…`d2b7cee` | on `feat/v1-build`; 810 node + 17 workerd green; report `build-reports/phase-5.md`; Review trigger (auth/secrets) |
+| 6 — Transparency, About, polish | ✅ Shipped | `4605985`…`a5c96bc` | on `feat/v1-build`; 857 node + 26 workerd green; report `build-reports/phase-6.md`; Review trigger (audit-log write path + public compliance surface) |
 | 7 — Provision & deploy prep | ⬜ Not started | — | Sam-gated steps flagged |
 
 ### Deviations
@@ -95,6 +95,11 @@ notes and commit messages.
 - **Phase 5 / D-4 — OAuth-flow cookies are named `oauth_state` / `oauth_verifier`, path-scoped to `/api/auth`, 10-min TTL; the session cookie `wan_session` is site-wide, 7-day TTL.** A shared `src/auth/cookies.ts` serializer pins HttpOnly/Secure/SameSite=Lax in one place. The plan specified the attributes without names/scope. See `build-reports/phase-5.md` D-4.
 - **Phase 5 / D-5 — the `schema.sql` cumulative-header comment was refreshed** to name the full table set (it listed only `0001..0003` and was already stale before this phase) and point at the parity test as the source of truth. Comment-only; no DDL/behavior change. See `build-reports/phase-5.md` D-5.
 - **Phase 5 / D-6 — `pnpm`/`bunx wrangler` in the plan ran as `node_modules/.bin/*` under `fnm`** (this session's `node`-not-on-PATH environment): `eval "$(fnm env)"` + `node_modules/.bin/{vitest,tsc,eslint}`. Same gate, no behavior change. The `wrangler secret put` commands in the build report are written as `bunx wrangler` per project convention for Sam to run. See `build-reports/phase-5.md` D-6.
+- **Phase 6 / D-1 — new non-app modules use relative imports, not `@/`** (same as Phase 3 D8). The Node-pool vitest config has no `resolve.alias`, and no `src/` module outside `src/app/**` uses `@/`; so `src/transparency/*.ts`, `src/db/audit-queries.ts`, `src/db/feedback.ts`, `src/abuse/report.ts` use relative imports, while only the `.tsx`/route files under `src/app/**` use `@/` (resolved by Next + the workers alias). The plan's Task 6.1–6.6 sketches showed `@/` — a sketch detail, not a behavior change. See `build-reports/phase-6.md` D-1.
+- **Phase 6 / D-2 — reason-label keys aligned to the REAL `SourceFetchFailureReason` union, not the plan sketch's invented names.** The plan's Task 6.1 sketch used `fetch_failed`/`fetch_timeout`/`fetch_blocked`/`not_html` and explicitly instructed (its own "Note on the fetch-reason keys") to grep the real union and align. The real union (`src/research/source-fetch.ts`) is `blocked_scheme | blocked_host | redirect_not_allowed | timeout | too_large | unsupported_content_type | decode_error | http_error | network_error | empty_after_extraction`; the label map names all ten, with the unknown-code fallback covering future additions. The plan's `labelForReason("fetch_failed")` test still passes (the fallback satisfies it). See `build-reports/phase-6.md` D-2.
+- **Phase 6 / D-3 — About-page test regex corrected to match the contract's verbatim wording.** The plan's Task 6.5 test asserted `/citation the human has not verified/i`; the contract's §5 wording (transcribed verbatim into the builder) is "a citation **that** the human has not verified". The transcription is faithful to the contract; the test regex was a sketch typo (missing "that"). Fixed the regex, not the verbatim transcription — no weakening. See `build-reports/phase-6.md` D-3.
+- **Phase 6 / D-4 — UI uses Tailwind utility classes mapped to design tokens, not the plan's `className="transparency"`/`"evidence-card"` hooks.** The Phase-3 design system (`globals.css`, Tailwind v4 `@theme inline`) exposes the dark-archival palette as Tailwind utilities; there are no bespoke `.transparency`/`.evidence-card` CSS classes. The pages use the established utility-class convention (matching `page.tsx` + the `EvidenceCard` component, which the transparency view reuses for selected cards) and define no new color tokens; the Two Lanes / Reserved Red / No-Parchment / Borders-Not-Shadows rules are honored. See `build-reports/phase-6.md` D-4.
+- **Phase 6 / D-5 — `pnpm` in the plan ran as `node_modules/.bin/*` under `fnm`** (same operational note as Phase 5 D-6): `eval "$(fnm env)"` + `node_modules/.bin/{vitest,tsc,eslint,next}`. Same gate, no behavior change. See `build-reports/phase-6.md` D-5.
 
 ### Discoveries
 - **Double-fetch of the same URL (deferred follow-up).** The provider fetches each candidate URL during triage (`src/research/workers-ai-provider.ts` `research()`), and the pipeline then re-fetches the proposed URL during verbatim verification (`src/research/verify-proposal.ts` / `pipeline.ts`). Now that FIX 1 caps candidates to ~12, this is ~5 extra re-fetches per claim — a minor cost optimization, not a correctness bug, so it is deferred. Suggested fix: a per-claim memoizing fetch (cache keyed on canonicalized URL) shared by the provider and the pipeline so each source page is fetched at most once per claim.
@@ -5621,7 +5626,7 @@ These are NEW exports defined in Phase 5 (later phases reference these consisten
 
 ## Phase 6 — Transparency, About, polish
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — SHA range `4605985..a5c96bc` (7 commits) · 2026-06-13 · Node 817→857 (+40), workers 26 (unchanged) · tsc + lint clean; `next build` succeeds. Build report: [build-reports/phase-6.md](build-reports/phase-6.md). **Merge: Review — domain (audit-log write path + public compliance surface); Sam merges (agent does NOT self-merge).** No `0009` migration (feedback is additive `session.feedback` audit rows, per the DEFAULT DECISION). Deviations D-1..D-5 (Phase 6) in the top-of-plan Deviations subsection. Outstanding: the live dark-mode render of `/about` and `/articles/[id]/transparency` needs the lead's visual QA — see the build report's "UI surfaces needing the lead's visual review".
 
 **Goal:** Surface the research pack's full candidate set (selected evidence + dropped dispositions + the LLM query log) in a defensive show-your-work view, render the public About/compliance page directly from the binding compliance contract, wire an abuse-report path, and record quality-not-volume session-completion feedback as additive columns over the existing append-only audit log — all in the dark archival visual system, with zero machine-written article prose.
 
