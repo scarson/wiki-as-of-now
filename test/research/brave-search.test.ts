@@ -11,7 +11,7 @@ const okResponse = () => ({ ok: true, status: 200, json: async () => JSON.parse(
 
 describe("BraveSearchProvider", () => {
   it("sends the API key in the X-Subscription-Token header and the query in the q param", async () => {
-    const fetchFn = vi.fn(async () => okResponse());
+    const fetchFn = vi.fn(async (_url: string, _init: { headers: Record<string, string> }) => okResponse());
     const p = new BraveSearchProvider("test-key", fetchFn as never);
     await p.search("Zumwalt 2016");
     const [url, init] = fetchFn.mock.calls[0];

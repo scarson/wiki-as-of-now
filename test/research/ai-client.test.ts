@@ -4,9 +4,11 @@ import { describe, it, expect, vi } from "vitest";
 import { makeAiTextClient } from "../../src/research/ai-client";
 import { ProviderUnavailableError } from "../../src/research/provider";
 
-/** Minimal fake of the env.AI binding: run() resolves with { response }. */
+/** Minimal fake of the env.AI binding: run() resolves with { response }. Params declared so mock.calls is typed. */
 function fakeAi(response: string) {
-  return { run: vi.fn(async () => ({ response })) };
+  return {
+    run: vi.fn(async (_model: string, _inputs: { prompt: string; max_tokens: number }, _options: { signal: AbortSignal }) => ({ response })),
+  };
 }
 
 describe("makeAiTextClient.generateText", () => {
