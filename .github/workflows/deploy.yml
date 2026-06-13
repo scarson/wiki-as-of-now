@@ -1,0 +1,52 @@
+# Dormant dev->main deploy pipeline — inert until CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID
+# repo secrets are added. main push -> production; dev push -> dev (preview). Deploys both
+# workers; applies migrations first. Never enables the scheduled job (that is a human go-live step).
+#
+# Dormancy: GitHub forbids the `secrets` context in a JOB-level `if:` (only github/needs/vars/
+# inputs are allowed there). So the guard is a STEP-level `if: ${{ secrets.CLOUDFLARE_API_TOKEN
+# != '' }}` on each deploy step — the secrets context IS available at step level. With the secret
+# absent the steps skip cleanly (they do not fail), so this workflow stays green until Sam wires
+# the deploy token.
+name: Deploy
+on:
+  push:
+    branches: [dev, main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # Branch -> environment. main = production, dev = dev (preview). Computed even when the
+      # secret is absent so the workflow shape is always valid; the deploy steps below are the
+      # ones gated on the secret.
+      - name: Resolve environment
+        id: env
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "name=production" >> "$GITHUB_OUTPUT"
+          else
+            echo "name=dev" >> "$GITHUB_OUTPUT"
+          fi
+      # Migrations FIRST (both workers share the env's D1), then deploy. Each step is dormant
+      # until the deploy token secret exists.
+      - name: Apply D1 migrations
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        run: pnpm exec wrangler d1 migrations apply wiki-as-of-now --remote --env ${{ steps.env.outputs.name }}
+      - name: Build OpenNext bundle
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        run: pnpm exec opennextjs-cloudflare build
+      - name: Deploy app worker
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        run: pnpm exec opennextjs-cloudflare deploy --env ${{ steps.env.outputs.name }}
+      - name: Deploy research worker
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        run: pnpm exec wrangler deploy -c workers/research/wrangler.jsonc --env ${{ steps.env.outputs.name }}

@@ -237,3 +237,37 @@ describe("CI gates the bundle build + dry-run (Task 7.5)", () => {
     for (const line of deployLines) expect(line).toMatch(/--dry-run/);
   });
 });
+
+describe("dormant deploy pipeline (Task 7.6)", () => {
+  const deploy = readFileSync(resolve(root, ".github/workflows/deploy.yml"), "utf8");
+  it("triggers on dev and main pushes only", () => {
+    expect(deploy).toMatch(/branches:\s*\[\s*dev\s*,\s*main\s*\]|branches:[\s\S]*?-\s*dev[\s\S]*?-\s*main/);
+  });
+  it("is dormant until the deploy token secret exists", () => {
+    // GitHub forbids `secrets.*` in a JOB-level if: (only github/needs/vars/inputs are allowed there).
+    // The dormancy guard is therefore a STEP-level if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }},
+    // where the secrets context IS available. Steps skip cleanly (never fail) when the secret is absent.
+    expect(deploy).toMatch(/if:.*secrets\.CLOUDFLARE_API_TOKEN/);
+    // Defensive: the guard must NOT live on the job's own `if:` (that would silently never run).
+    const jobIfMatch = /^\s{4}deploy:[\s\S]*?^\s{6}if:.*$/m.exec(deploy);
+    if (jobIfMatch) {
+      expect(jobIfMatch[0]).not.toMatch(/^\s{6}if:.*secrets\./m);
+    }
+  });
+  it("maps main to production and dev to preview/dev", () => {
+    // The pipeline resolves the branch -> env once (main -> production, else dev) and feeds the
+    // result to every deploy via `--env ${{ steps.env.outputs.name }}` (DRY; one source of truth).
+    expect(deploy).toMatch(/name=production/);
+    expect(deploy).toMatch(/github\.ref_name.*=.*"?main"?/);
+    expect(deploy).toMatch(/name=dev/);
+    expect(deploy).toMatch(/--env \$\{\{ steps\.env\.outputs\.name \}\}/);
+  });
+  it("deploys both workers and applies migrations before deploy", () => {
+    expect(deploy).toMatch(/opennextjs-cloudflare (?:build|deploy)/);
+    expect(deploy).toMatch(/wrangler deploy -c workers\/research\/wrangler\.jsonc/);
+    expect(deploy).toMatch(/d1 migrations apply .*--remote/);
+  });
+  it("never enables a cron in the deploy pipeline", () => {
+    expect(deploy).not.toMatch(/triggers|crons|--enable-cron/);
+  });
+});
