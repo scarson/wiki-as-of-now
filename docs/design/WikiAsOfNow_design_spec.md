@@ -4,10 +4,10 @@
 **Project name:** WikiAsOfNow  
 **Working subtitle:** Find articles whose “as of” reality has expired.  
 
-**Status:** Draft v1.0  
+**Status:** Draft v1.1  
 **Intended audience:** Human maintainers, coding agents, and future contributors  
 **Primary implementation target:** Cloudflare Workers + D1  
-**Primary research layer:** Google Gemini API with Google Search grounding  
+**Primary research layer:** Cloudflare Workers AI (Gemma 4 primary, Kimi K2 escalation) with Brave Search retrieval; deterministic source fetch + verbatim-quote verification  
 **Frontend framework:** Deliberately left open as a tracked decision item  
 **Hosting posture:** Public open-source project on GitHub; initially personal-tool-first, but designed so limited public usage is feasible without redesign
 
@@ -29,7 +29,7 @@ The goal is **not** to auto-write Wikipedia article text. The goal is to:
 1. detect likely stale claims or stale status sections,
 2. rank them by confidence and likely editor usefulness,
 3. retrieve fresh, relevant, preferably high-quality sources,
-4. present those sources with structured reasoning and evidence,
+4. present those sources with deterministic labels and verified verbatim evidence (no machine-authored prose — the no-machine-written-text guardrail G1),
 5. help a human editor manually update Wikipedia.
 
 This is intentionally aligned with a human-in-the-loop editing workflow.
@@ -37,7 +37,7 @@ This is intentionally aligned with a human-in-the-loop editing workflow.
 The system is built around a **cheap deterministic core** and an **optional, metered LLM research layer**:
 
 - Deterministic / cheap layer: corpus ingestion, stale-claim heuristics, change tracking, topic labeling, ranking, search index management.
-- LLM / expensive layer: query reformulation, source triage, claim-current-state synthesis, evidence pack generation, and optional semantic clustering / semantic search assist.
+- LLM / expensive layer (bounded to propose-only jobs per the bounded-LLM-role guardrail G9): query generation (neutral search queries), source relevance triage, and proposing verbatim quotes for deterministic verification. It never writes article prose, summaries, or citations. Optional semantic clustering / search assist is a separate, later use.
 
 The architecture should support both:
 
@@ -99,7 +99,7 @@ The system may assist with 1–3. It should not assume authority to perform 4 au
 - Identify likely stale claims at sentence/section level.
 - Support topic-based filtering and browsing.
 - Support article-level research workflow for a stale claim.
-- Use fresh web-grounded research to answer “what is the current state now?”
+- Use web search plus deterministic source fetch to help a human answer “what is the current state now?”
 - Present evidence in a way a human editor can validate and use.
 - Keep fixed hosting costs low.
 - Keep public abuse exposure low.
@@ -116,7 +116,7 @@ The system may assist with 1–3. It should not assume authority to perform 4 au
 #### Advanced goals
 - WikiProject-oriented feeds.
 - Change alerts when a previously stale candidate likely now has sufficient sourcing.
-- Better claim decomposition and multi-source synthesis.
+- Better claim decomposition (the human still writes every claim from a single source; the machine never synthesizes across sources — the no-cross-source-synthesis guardrail G4).
 - Local semantic index over stale claims and topical article embeddings.
 - Exportable evidence packs and maybe sandbox notes for editors.
 
@@ -137,7 +137,7 @@ The selected base architecture is:
 - **Cloudflare Workers** for API/backend orchestration
 - **Cloudflare D1** for relational storage
 - **Cloudflare Pages** or Worker-served frontend assets for the web UI
-- **Google Gemini API** for the main LLM-backed research layer, especially grounded web research and structured outputs
+- **Cloudflare Workers AI** (Gemma 4 / Kimi K2) for the bounded, propose-only LLM research layer, paired with the **Brave Search API** for source discovery and the tool's own deterministic fetch + verbatim-quote check
 - **Optional Cloudflare Workers AI + Vectorize** for embeddings and semantic retrieval features
 
 ### 4.2 Why this architecture
@@ -211,13 +211,13 @@ Needs:
 1. User opens a candidate.
 2. App shows extracted stale claim and context paragraph/section.
 3. App shows article revision metadata and existing citation metadata.
-4. App optionally calls Gemini grounded search.
-5. App returns:
-   - likely current status summary,
-   - source list with titles and domains,
-   - source relevance rationale,
-   - classification of source type (primary, secondary, tertiary),
-   - suggested facts to verify before editing.
+4. On request, the app generates neutral search queries (Workers AI), retrieves candidate source URLs (Brave Search), fetches those pages itself (deterministic, SSRF-hardened), and asks the model to propose verbatim quotes that it then verifies deterministically.
+5. App returns a per-claim evidence pack of:
+   - verified verbatim quotes, each anchored to one real resolving source URL,
+   - source domain and a deterministic source-type label (primary, secondary, tertiary),
+   - an advisory support flag per source (the human must verify),
+   - honesty/degradation states when support is weak or no current source was found.
+   The app never returns a machine-written status summary or machine-authored prose (the no-machine-written-text guardrail G1).
 
 ### 6.3 Workflow C: Direct article lookup
 1. User pastes a Wikipedia URL or title.
@@ -533,28 +533,27 @@ Embeddings become valuable for:
 
 ---
 
-## 11. LLM Research Layer Design (Gemini)
+## 11. LLM Research Layer Design (Workers AI)
 
-### 11.1 Why Gemini is selected for the main research layer
-The main research layer needs:
+### 11.1 Why Cloudflare Workers AI is selected for the research layer
+The research layer needs:
 
-- good low-latency general reasoning,
-- web-grounded retrieval capability,
-- structured outputs,
-- potential tool use / function-calling path,
-- cost efficiency for user-triggered research.
+- strong instruction-following for extractive verbatim-quote mining,
+- a large context window so a full source page fits,
+- structured (JSON) output,
+- low cost for user-triggered research,
+- same-platform operation: one binding, no external LLM vendor or key.
 
-Gemini is selected because the product’s “what happened after this?” workflow maps well to grounded web research and structured result generation.
+It does **not** need built-in web grounding, because search is handled by Brave (returning real source URLs) and verification is the tool's own deterministic fetch + verbatim check. Workers AI runs Gemma 4 (primary) and Kimi K2 (escalation) on Cloudflare's platform alongside the data and audit log.
 
 ### 11.2 LLM job boundaries
-The LLM should **not** be used for initial stale-candidate extraction. It should be used for bounded higher-value work such as:
+The LLM should **not** be used for initial stale-candidate extraction. It should be used for exactly three bounded, propose-only jobs (the bounded-LLM-role guardrail G9):
 
-1. claim normalization,
-2. query generation,
-3. source triage,
-4. current-state synthesis,
-5. evidence extraction into schema,
-6. secondary scoring of source relevance.
+1. claim normalization into neutral, answerable current-state questions;
+2. neutral search-query generation (no verbatim claim-echo; bounded count and length);
+3. relevance triage of real retrieved documents, proposing a verbatim quote + advisory support flag per candidate source.
+
+The LLM never writes article prose, never authors or derives citations, never synthesizes across sources, and never decides what "resolves" a claim — a deterministic verbatim-quote check (the support-checking guardrail G8) verifies every proposed quote, and the human verifies and writes the edit.
 
 ### 11.3 Research pipeline for one stale claim
 Proposed pipeline:
@@ -567,67 +566,58 @@ Proposed pipeline:
    - dates/citations already attached.
 
 2. **Question framing**
-   - Gemini reformulates the stale claim into one or more “answerable current-state questions.”
+   - The model reframes the stale claim into one or more neutral, answerable current-state questions.
    - Example: “Did DoD issue the competitive RFP? If so, when and what happened after it?”
 
-3. **Grounded search**
-   - Gemini uses Google Search grounding to retrieve current web evidence.
+3. **Search & retrieval**
+   - The model generates neutral queries; the Brave Search API returns candidate source URLs; the tool fetches those pages itself with its deterministic, SSRF-hardened fetcher (the untrusted-fetched-content guardrail G15) — the model never fetches and the tool never trusts a model-asserted answer.
 
-4. **Structured extraction**
-   - model outputs structured JSON with:
-     - likely status,
-     - candidate facts,
-     - source list,
-     - source types,
-     - confidence notes,
-     - unresolved questions.
+4. **Propose-and-verify**
+   - The model proposes, per source, a verbatim quote (8–300 code points) it claims is on the fetched page; a deterministic NFC-normalized substring check (the support-checking guardrail G8) accepts or rejects each — a paraphrase is rejected.
 
 5. **Application-side validation**
    - app verifies source URLs/domains, de-dupes, and normalizes metadata.
 
 6. **Presentation layer**
-   - evidence pack shown to user with source labels and human-readable rationale.
+   - evidence pack shown to user with deterministic source-type labels and honesty/degradation states (never machine-authored rationale or prose — the no-machine-written-text guardrail G1).
 
 ### 11.4 Research output schema
-Example schema fields:
+The provider returns `ProviderResearch`, an **unverified** propose-only payload:
 
-- `claim_id`
-- `question`
-- `status_summary`
-- `status_class`
-  - unresolved
-  - likely updated
-  - likely completed
-  - likely canceled
-  - likely moved / redeployed / renamed
-- `candidate_facts[]`
-- `sources[]`
-  - title
-  - url
-  - domain
-  - source_type
-  - publication_date
-  - relevance_reason
-- `confidence`
-- `editor_notes[]`
-- `open_questions[]`
+- `providerName`
+- `modelVersion` — the full model id (for the mechanical-disclosure guardrail G12)
+- `queries[]` — the neutral search queries used
+- `proposals[]` — each a `ProposedEvidence`:
+  - `url`
+  - `proposedQuote`
+  - `advisorySupport`
+
+After the deterministic verbatim-quote check, each surfaced item becomes an `EvidenceCard`:
+
+- `url` — a real resolving source URL
+- `verbatimQuote` — a deterministically-verified verbatim quote
+- `advisorySupport` — an advisory support flag (the human must verify)
+
+An `EvidenceCard` carries **only** these three fields — never a `status_summary`, `candidate_facts`, `editor_notes`, or any machine-authored prose field. The v1.0 fields `status_summary` / `candidate_facts[]` / `editor_notes[]` are **REMOVED** as prohibited by the no-machine-written-text guardrail (G1).
 
 ### 11.5 Model selection strategy
 Do not hardcode one model forever. Instead define logical model roles:
 
-#### Role 1: cheap interactive grounded research model
-Default for most user-triggered tasks.
+#### Role 1: primary research model (query-gen + triage)
+Default for most user-triggered tasks → Gemma 4.
 
-#### Role 2: higher-quality fallback / batch synthesis model
-Use for difficult or ambiguous claims.
+#### Role 2: higher-quality escalation model for difficult claims
+Use for difficult or ambiguous claims → Kimi K2.
 
-#### Role 3: optional non-grounded classification model
+#### Role 3: optional cheaper classification model
 Use for cheaper metadata classification if needed.
 
-Model names should be configuration, not architecture.
+Model names should be configuration, not architecture. Model IDs live in config because Workers AI's deprecation cadence is fast.
 
-### 11.6 Why not use Workers AI for this main research step
-Workers AI is useful, but the main research step specifically benefits from built-in search-grounding capabilities and richer web-aware synthesis. Workers AI remains useful for embeddings or certain auxiliary inference jobs, but is not the first choice for the “find the current state with sources” workflow.
+### 11.6 Why Workers AI + Brave, not Gemini grounding
+Gemini "Grounding with Google Search" returns redirect-proxy URLs (`vertexaisearch.cloud.google.com/grounding-api-redirect/...`) rather than real source URLs, and its terms mandate rendering Google "Search Suggestions" — both incompatible with a tool that must fetch and verify the real source itself (the anchor-to-a-real-URL guardrail G3, the mechanical-citation guardrail G2, the support-checking guardrail G8). Google's general web-search API (Custom Search JSON API) is closed to new customers (sunsetting 2027-01-01). Cost is a wash at hobby volume (both effectively free). So the project separates search (Brave, real URLs) from a propose-only LLM (Workers AI) — which is a better fit for deterministic verification than bundled grounding.
+
+This reverses the v1.0 §11.6 rejection of Workers AI; the cost/rationale is recorded in [docs/design/2026-06-13-wikiasofnow-v1-build-design.md](2026-06-13-wikiasofnow-v1-build-design.md) §3.2 and §11.
 
 ---
 
@@ -777,9 +767,12 @@ Possible strategy:
 - research pack ID
 - candidate ID
 - latest article revision checked
-- model version/config
-- prompt/input fingerprint
-- structured summary JSON
+- model version/config (full model identifier — the mechanical-disclosure guardrail G12)
+- prompt/input fingerprint (claim key)
+- queries used (the neutral search queries — the bounded-LLM-role guardrail G9)
+- verified evidence cards (EvidenceCard[] of {url, verbatimQuote, advisorySupport} — never a machine-authored summary or prose field, the no-machine-written-text guardrail G1)
+- dispositions (non-selected / rejected proposals with reasons — the show-your-work guardrail G6)
+- status (no_proposals / proposals_present)
 - generated-at timestamp
 - cache status
 
@@ -892,7 +885,7 @@ Use Cloudflare protections for:
 ### 14.6 Quota model
 Quotas should apply to:
 
-- grounded research requests per day,
+- research requests per day,
 - source-pack generation requests,
 - article deep-refresh requests,
 - optional semantic search requests if they become expensive.
@@ -1009,7 +1002,7 @@ Recommended service boundaries in code:
 - `admin-jobs`
 
 ### 16.3 Research orchestration boundary
-The research layer should be cleanly encapsulated so that Gemini can be swapped or supplemented later.
+The research layer should be cleanly encapsulated so that the research provider (Workers AI) can be swapped or supplemented later.
 
 Define a provider interface like:
 
@@ -1111,7 +1104,7 @@ Potential signals:
 
 ### 18.4 Evidence pack output goals
 An evidence pack should include:
-- concise current-state synthesis,
+- verified verbatim quotes, each anchored to one real resolving source URL (no machine-written summary — the no-machine-written-text guardrail G1),
 - source table,
 - notes about what is primary vs secondary,
 - caution flags if only primary sources exist,
@@ -1136,7 +1129,7 @@ The chosen stack is good for this because the core platform cost remains small r
 ### 19.2 Primary variable cost drivers
 The likely cost drivers are:
 
-1. LLM grounded research calls,
+1. LLM research calls (query-gen + triage),
 2. optional embedding generation and vector queries,
 3. optional large object storage if raw dumps/artifacts are stored long term,
 4. heavy live Wikipedia/API traffic if used incorrectly.
@@ -1149,7 +1142,7 @@ The likely cost drivers are:
 - article lookup is mostly cheap.
 
 #### Expensive only on explicit action
-- grounded research only runs when user requests it,
+- research only runs when the user requests it,
 - research results are cached,
 - repeated requests reuse prior packs when valid.
 
@@ -1269,7 +1262,7 @@ Use curated Wikipedia excerpts or synthetic fixtures for:
 - persist research pack
 
 #### Provider contract tests
-- Gemini structured output shape
+- Workers AI structured (JSON) output shape
 - graceful failure / timeout handling
 - cache and retry behavior
 
@@ -1332,7 +1325,7 @@ Implement these first:
 3. score and rank them,
 4. browse by topic,
 5. open candidate detail,
-6. trigger Gemini grounded research,
+6. trigger research (Workers AI query-gen + Brave retrieval + deterministic verify),
 7. view structured evidence pack,
 8. basic auth + quotas for research.
 
@@ -1414,7 +1407,7 @@ Need decision on:
 - or preserving some wikitext structure.
 
 ### 25.3 Source metadata extraction depth
-Need decision on whether to fetch and parse source pages deeply or rely mostly on Gemini-grounded summaries plus URL metadata.
+Need decision on whether to fetch and parse source pages deeply or rely mostly on URL metadata. The compliance contract resolves this: the tool MUST fetch and parse the real source page itself to run the deterministic verbatim-quote check (the support-checking guardrail G8) — it never relies on model-asserted summaries.
 
 ### 25.4 Scope of local Wikipedia storage
 Need decision on whether to:
@@ -1454,7 +1447,7 @@ A coding agent should implement in this order:
 3. stale-candidate extraction with fixture tests,
 4. candidate ranking and explanation rendering,
 5. research provider interface,
-6. Gemini provider implementation,
+6. Workers AI research provider implementation (with Brave retrieval),
 7. auth and quotas,
 8. batch ingestion,
 9. optional semantic layer.
@@ -1494,7 +1487,7 @@ Do not bury app-critical logic in unversioned ad hoc JSON blobs if a typed relat
 - evidence pack panel.
 
 ### Research result page / panel
-- concise likely-current-state summary,
+- verified verbatim quotes anchored to real source URLs (no machine-written summary),
 - sources table,
 - source-type labels,
 - notes and caveats,
@@ -1509,13 +1502,13 @@ Do not bury app-critical logic in unversioned ad hoc JSON blobs if a typed relat
 
 ## 28. Final Recommendation
 
-Build **WikiAsOfNow** as a **deterministic stale-claim finder with a selective Gemini-backed research assistant**, not as a generalized AI editor.
+Build **WikiAsOfNow** as a **deterministic stale-claim finder with a selective Workers AI-backed research assistant**, not as a generalized AI editor.
 
 The strongest starting architecture is:
 
 - **Cloudflare Workers** for the app and orchestration,
 - **D1** for relational storage,
-- **Google Gemini** for grounded current-state research,
+- **Cloudflare Workers AI** (Gemma 4 / Kimi K2) + **Brave Search** for bounded, propose-only current-state research,
 - **optional Workers AI + Vectorize** later for embeddings and semantic features,
 - **React + TypeScript** on the frontend, with the exact framework choice deferred briefly.
 
@@ -1539,10 +1532,16 @@ These notes summarize key external facts that informed the design and should be 
 - Cloudflare D1 pricing and included reads/writes/storage.
 - Cloudflare Workers AI pricing and available embedding model support.
 - Cloudflare Vectorize pricing and dimensions-based billing model.
-- Gemini pricing and Google Search grounding pricing.
-- Gemini support for structured outputs combined with built-in tools.
+- Cloudflare Workers AI pricing (neurons) and model availability (model deprecation cadence).
+- Brave Search API pricing, rate limits, and result-storage terms.
 - Wikimedia guidance to use dumps for bulk data and live APIs for narrower access.
 - Wikimedia API rate-limiting and etiquette guidance.
 - Wikimedia EventStreams for near-real-time recent changes.
 
 Do not hardcode these commercial details into business logic. Keep them in docs/config and revisit periodically.
+
+---
+
+## 30. Document change log
+
+- **2026-06-13 — v1.1 — Research layer: Workers AI + Brave (reverses §11.6); removed prohibited machine-synthesis output.** The LLM research layer is now Cloudflare Workers AI (Gemma 4 primary, Kimi K2 escalation) paired with the Brave Search API and the tool's own deterministic fetch + verbatim-quote check, replacing the v1.0 plan of Google Gemini with Google Search grounding. §11.6 reversed (Gemini grounding returns redirect-proxy URLs and mandates Search-Suggestions display; Google's general search API is closed to new customers; cost is a wash) — rationale in docs/design/2026-06-13-wikiasofnow-v1-build-design.md §3.2/§11. The research output schema (§11.4, §6.2, §18.4, §27) was rewritten to the built propose-only contract (ProposedEvidence → deterministically-verified EvidenceCard of {url, verbatimQuote, advisorySupport}); the v1.0 machine-authored fields status_summary / candidate_facts[] / editor_notes[] / 'current-state synthesis' were REMOVED as prohibited by the no-machine-written-text (G1) and no-cross-source-synthesis (G4) guardrails. This amendment removes spec text that contradicted the compliance contract; the contract itself is unchanged. Human sign-off: Sam (authorized, to review in PR).
