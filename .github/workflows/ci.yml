@@ -19,3 +19,12 @@ jobs:
       - run: pnpm lint
       - run: pnpm test
       - run: pnpm test:workers
+      # --- Phase 7: bundle build + config validation (no real deploy; no account/secret needed) ---
+      # Backstop: the research worker bundle must stay better-sqlite3/local-db-free (CC-5).
+      - run: node scripts/check-research-bundle-clean.mjs
+      # Build the OpenNext bundle so the app-worker dry-run has an entry-point to validate (design §6.4).
+      - run: pnpm exec opennextjs-cloudflare build
+      # `--dry-run` validates + bundles WITHOUT deploying. `--env=""` targets the top-level config
+      # (placeholder D1 id) and silences the multi-env "no target specified" warning.
+      - run: pnpm exec wrangler deploy --dry-run --env=""
+      - run: pnpm exec wrangler deploy --dry-run --env="" -c workers/research/wrangler.jsonc

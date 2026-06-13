@@ -216,3 +216,24 @@ describe("provision.md stays in sync with configs (Task 7.4)", () => {
     expect(provision).not.toMatch(/\bnpx wrangler\b/);
   });
 });
+
+describe("CI gates the bundle build + dry-run (Task 7.5)", () => {
+  const ci = readFileSync(resolve(root, ".github/workflows/ci.yml"), "utf8");
+  it("CI builds the OpenNext bundle", () => {
+    expect(ci).toMatch(/opennextjs-cloudflare build/);
+  });
+  it("CI dry-run-deploys both workers (no real deploy)", () => {
+    // CI uses `pnpm exec wrangler` (the pnpm toolchain); human runbooks use `bunx wrangler`.
+    expect(ci).toMatch(/(?:bunx|pnpm exec) wrangler deploy --dry-run/);
+    expect(ci).toMatch(/(?:bunx|pnpm exec) wrangler deploy --dry-run.*-c workers\/research\/wrangler\.jsonc/);
+  });
+  it("CI runs the research bundle-cleanliness backstop", () => {
+    expect(ci).toMatch(/check:bundle|check-research-bundle-clean/);
+  });
+  it("CI never does a real (non-dry-run) deploy", () => {
+    // Every wrangler deploy line in ci.yml MUST carry --dry-run (the PR job never touches the live account).
+    const deployLines = ci.split("\n").filter((l) => /wrangler deploy/.test(l));
+    expect(deployLines.length).toBeGreaterThan(0);
+    for (const line of deployLines) expect(line).toMatch(/--dry-run/);
+  });
+});
