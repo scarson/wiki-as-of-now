@@ -11,11 +11,10 @@ import { DisclosureSummary } from "./DisclosureSummary";
 
 interface WorksheetClientProps {
   view: WorksheetView;
-  actor: string;
   accessedDate: string;
 }
 
-export function WorksheetClient({ view, actor, accessedDate }: WorksheetClientProps) {
+export function WorksheetClient({ view, accessedDate }: WorksheetClientProps) {
   const [openedUrls, setOpenedUrls] = useState<Set<string>>(new Set());
   const markOpened = (url: string) => setOpenedUrls((prev) => new Set(prev).add(url));
 
@@ -39,7 +38,6 @@ export function WorksheetClient({ view, actor, accessedDate }: WorksheetClientPr
               claimKey={view.claimKey}
               sourceRevisionId={view.claim.sourceRevisionId}
               url={card.url}
-              actor={actor}
               opened={openedUrls.has(card.url)}
               onOpened={markOpened}
             />

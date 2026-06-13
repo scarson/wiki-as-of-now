@@ -8,12 +8,11 @@ interface SourceOpenGateProps {
   claimKey: string;
   sourceRevisionId: number;
   url: string;
-  actor: string;
   opened: boolean;
   onOpened: (url: string) => void;
 }
 
-export function SourceOpenGate({ claimKey, sourceRevisionId, url, actor, opened, onOpened }: SourceOpenGateProps) {
+export function SourceOpenGate({ claimKey, sourceRevisionId, url, opened, onOpened }: SourceOpenGateProps) {
   const [checked, setChecked] = useState(false);
   const [status, setStatus] = useState<"idle" | "confirming" | "error">("idle");
 
@@ -23,7 +22,7 @@ export function SourceOpenGate({ claimKey, sourceRevisionId, url, actor, opened,
       const res = await fetch("/api/sources/open", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ claimKey, sourceRevisionId, url, actor }),
+        body: JSON.stringify({ claimKey, sourceRevisionId, url }),
       });
       const body = (await res.json()) as { unlocked?: boolean };
       if (res.ok && body.unlocked === true) {

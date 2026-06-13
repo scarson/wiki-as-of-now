@@ -3,6 +3,7 @@
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { d1Executor } from "@/db/client";
 import { confirmSourceOpened, type ConfirmInput } from "@/worksheet/source-gate";
+import { resolveCurrentUser } from "@/auth/current-user";
 
 export const dynamic = "force-dynamic";
 
@@ -20,14 +21,20 @@ export async function POST(request: Request): Promise<Response> {
     return json({ error: "Body must be JSON" }, 400);
   }
   if (typeof body.claimKey !== "string" || typeof body.url !== "string" ||
-      typeof body.actor !== "string" || typeof body.sourceRevisionId !== "number") {
-    return json({ error: "claimKey, url, actor, sourceRevisionId are required" }, 400);
+      typeof body.sourceRevisionId !== "number") {
+    return json({ error: "claimKey, url, sourceRevisionId are required" }, 400);
   }
   if (!HEX64.test(body.claimKey)) return json({ error: "claimKey must be 64-char lowercase hex" }, 400);
 
   const { env } = getCloudflareContext();
+  // The actor is resolved SERVER-SIDE — never taken from the request body — so a client cannot plant an
+  // arbitrary string (PII or otherwise) into the append-only audit log (CC-12/G13). The session/admin
+  // secrets aren't in the generated CloudflareEnv types (CC-9); read them through the runtime-only view
+  // of the same object, mirroring the feedback route.
+  const auth = await resolveCurrentUser(request, env as unknown as Parameters<typeof resolveCurrentUser>[1]);
+  const actor = auth.kind === "authenticated" ? auth.userId : "system";
   try {
-    const res = await confirmSourceOpened(d1Executor(env.DB), body as ConfirmInput);
+    const res = await confirmSourceOpened(d1Executor(env.DB), body as ConfirmInput, actor);
     return json(res, 200);
   } catch {
     return json({ error: "Could not record source open" }, 500);

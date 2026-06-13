@@ -19,8 +19,6 @@ export default async function WorksheetPage({ params }: { params: Promise<{ cand
   const view = await loadWorksheetView(d1Executor(env.DB), id);
   if (view === null) notFound();
 
-  // No auth yet (users table lands in a later phase) — the audit actor is 'system' for now.
-  const actor = "system";
   const accessedDate = new Date().toISOString().slice(0, 10);
 
   return (
@@ -43,7 +41,7 @@ export default async function WorksheetPage({ params }: { params: Promise<{ cand
       </div>
 
       <div className="mt-8">
-        <WorksheetClient view={view} actor={actor} accessedDate={accessedDate} />
+        <WorksheetClient view={view} accessedDate={accessedDate} />
       </div>
     </main>
   );

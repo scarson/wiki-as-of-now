@@ -26,7 +26,7 @@ describe("confirmSourceOpened (G5 gate, real D1)", () => {
   beforeEach(async () => { db = await freshTestExecutor(); });
 
   it("appends exactly one codes-only audit row and reports unlocked", async () => {
-    const res = await confirmSourceOpened(db, { actor: "admin", claimKey: "c".repeat(64), sourceRevisionId: 100, url: "https://example.gov/report" });
+    const res = await confirmSourceOpened(db, { claimKey: "c".repeat(64), sourceRevisionId: 100, url: "https://example.gov/report" }, "admin");
     expect(res.unlocked).toBe(true);
 
     const rows = await makeAuditLog(db).read();
@@ -39,7 +39,7 @@ describe("confirmSourceOpened (G5 gate, real D1)", () => {
   });
 
   it("logs a stable hash identifier of the source, not the raw url", async () => {
-    await confirmSourceOpened(db, { actor: "admin", claimKey: "c".repeat(64), sourceRevisionId: 100, url: "https://example.gov/report" });
+    await confirmSourceOpened(db, { claimKey: "c".repeat(64), sourceRevisionId: 100, url: "https://example.gov/report" }, "admin");
     const rows = await makeAuditLog(db).read();
     const payload = rows[0].payload as Record<string, unknown>;
     expect(typeof payload.urlHash).toBe("string");
@@ -47,7 +47,7 @@ describe("confirmSourceOpened (G5 gate, real D1)", () => {
   });
 
   it("rejects a non-64-hex claimKey before any audit write (no malformed identifiers in the log)", async () => {
-    await expect(confirmSourceOpened(db, { actor: "admin", claimKey: "not-hex", sourceRevisionId: 100, url: "https://x/y" }))
+    await expect(confirmSourceOpened(db, { claimKey: "not-hex", sourceRevisionId: 100, url: "https://x/y" }, "admin"))
       .rejects.toThrow(/claimKey/);
     const rows = await makeAuditLog(db).read();
     expect(rows).toHaveLength(0); // nothing written on rejection

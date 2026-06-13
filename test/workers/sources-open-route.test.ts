@@ -1,7 +1,18 @@
-// ABOUTME: Workers-pool test for POST /api/sources/open request validation (the 400 paths before any binding access).
-// ABOUTME: The happy-path G5 audit-commit logic is tested against real D1 in test/worksheet/source-gate.test.ts (Node pool).
-import { describe, it, expect } from "vitest";
-import { POST } from "../../src/app/api/sources/open/route";
+// ABOUTME: Workers-pool test for POST /api/sources/open — request validation AND the server-resolved actor (CC-12/G13).
+// ABOUTME: Asserts the append-only audit row records the SERVER-resolved actor, never a client-supplied string.
+import { describe, it, expect, vi, beforeEach } from "vitest";
+import { testEnv } from "./test-env";
+import { d1Executor } from "../../src/db/client";
+import { makeAuditLog } from "../../src/db/audit-log";
+
+// The route reads its bindings via getCloudflareContext(); back it with the real Miniflare D1
+// (and no SESSION_SECRET, so an unauthenticated request resolves to the "system" actor).
+vi.mock("@opennextjs/cloudflare", () => ({
+  getCloudflareContext: () => ({ env: { DB: testEnv.DB } }),
+}));
+
+// Import AFTER vi.mock so the route picks up the mocked getCloudflareContext.
+const { POST } = await import("../../src/app/api/sources/open/route");
 
 function req(body: unknown): Request {
   return new Request("https://x/api/sources/open", {
@@ -25,14 +36,37 @@ describe("POST /api/sources/open — request validation (no binding access on th
   });
 
   it("returns 400 when sourceRevisionId is not a number", async () => {
-    const res = await POST(req({ actor: "a", claimKey: "c".repeat(64), url: "https://x/y", sourceRevisionId: "100" }));
+    const res = await POST(req({ claimKey: "c".repeat(64), url: "https://x/y", sourceRevisionId: "100" }));
     expect(res.status).toBe(400);
   });
 
   it("returns 400 when the claimKey is not 64-char lowercase hex", async () => {
-    const res = await POST(req({ actor: "a", claimKey: "not-hex", url: "https://x/y", sourceRevisionId: 100 }));
+    const res = await POST(req({ claimKey: "not-hex", url: "https://x/y", sourceRevisionId: 100 }));
     expect(res.status).toBe(400);
     const body = await res.json() as { error: string };
     expect(body.error).toMatch(/claimKey/);
+  });
+});
+
+describe("POST /api/sources/open — server-resolved actor (no client-supplied PII in the audit log)", () => {
+  beforeEach(async () => {
+    await testEnv.DB.exec("DELETE FROM audit_log");
+  });
+
+  it("records the server-resolved actor ('system' when unauthenticated), ignoring any client-supplied actor", async () => {
+    const claimKey = "a".repeat(64);
+    // A malicious client tries to plant an arbitrary actor string in the append-only log.
+    const res = await POST(req({ claimKey, url: "https://example.gov/report", sourceRevisionId: 100, actor: "attacker@evil.test" }));
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ unlocked: true });
+
+    const rows = await makeAuditLog(d1Executor(testEnv.DB)).read();
+    expect(rows).toHaveLength(1);
+    expect(rows[0].eventType).toBe("source.opened");
+    // The actor is resolved server-side, NOT taken from the request body.
+    expect(rows[0].actor).toBe("system");
+    expect(rows[0].actor).not.toBe("attacker@evil.test");
+    // Codes-only payload — the raw url is never logged (CC-12).
+    expect(JSON.stringify(rows[0].payload)).not.toContain("example.gov");
   });
 });

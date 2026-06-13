@@ -30,8 +30,12 @@ export async function hashUrl(url: string): Promise<string> {
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
+/**
+ * The client-supplied portion of a source-open request. Carries NO actor: the audit actor is resolved
+ * server-side and passed separately, so a client can never plant an arbitrary actor into the append-only
+ * log (CC-12/G13).
+ */
 export interface ConfirmInput {
-  actor: string;
   claimKey: string;
   sourceRevisionId: number;
   url: string;
@@ -41,12 +45,17 @@ export interface ConfirmInput {
  * The G5 gate: hashes the source URL, appends a codes-only append-only audit row, and reports unlocked
  * ONLY after the append commits (G5: a card cannot produce a finished citation until the source is opened
  * and that open is logged). Rejects a non-64-hex claimKey before any write (G13 — no malformed identifiers).
+ * The `actor` is resolved by the caller (server-side), never taken from the request body (CC-12/G13).
  */
-export async function confirmSourceOpened(db: SqlExecutor, input: ConfirmInput): Promise<{ unlocked: true }> {
+export async function confirmSourceOpened(
+  db: SqlExecutor,
+  input: ConfirmInput,
+  actor: string,
+): Promise<{ unlocked: true }> {
   if (!HEX64.test(input.claimKey)) throw new Error("claimKey must be 64-char lowercase hex");
   const urlHash = await hashUrl(input.url);
   await makeAuditLog(db).append(
-    gateAuditEntry({ actor: input.actor, claimKey: input.claimKey, sourceRevisionId: input.sourceRevisionId, urlHash }),
+    gateAuditEntry({ actor, claimKey: input.claimKey, sourceRevisionId: input.sourceRevisionId, urlHash }),
   );
   return { unlocked: true };
 }
