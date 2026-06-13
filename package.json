@@ -17,6 +17,7 @@
 		"upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
+		"check:bundle": "node scripts/check-research-bundle-clean.mjs",
 		"gen:nfc-golden": "node scripts/gen-nfc-golden.ts"
 	},
 	"dependencies": {
