@@ -31,4 +31,11 @@ describe("MODEL_CONFIG", () => {
   it("caps triage proposals at the pipeline's DEFAULT_MAX_PROPOSALS (5)", () => {
     expect(MODEL_CONFIG.maxProposals).toBe(5);
   });
+  it("bounds research() fetch + triage volume so the triage prompt cannot overflow Gemma's context", () => {
+    expect(MODEL_CONFIG.maxCandidateUrls).toBe(12);
+    expect(MODEL_CONFIG.perQueryHitCap).toBe(3);
+    expect(MODEL_CONFIG.perPageChars).toBe(4000);
+    expect(MODEL_CONFIG.maxTriagePages).toBe(12);
+    expect(MODEL_CONFIG.braveCount).toBe(5);
+  });
 });

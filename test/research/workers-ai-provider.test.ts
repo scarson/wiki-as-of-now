@@ -147,4 +147,40 @@ describe("WorkersAiResearchProvider.research (full orchestration)", () => {
     const p = new WorkersAiResearchProvider({ ai, search, fetchSource: noFetch });
     await expect(p.research(INPUT)).rejects.toBeInstanceOf((await import("../../src/research/provider")).ProviderUnavailableError);
   });
+
+  it("bounds fetch + triage volume: ≤ maxCandidateUrls fetches, prompt within budget, braveQueryCount = searches issued (bug-hunt HIGH)", async () => {
+    const { MODEL_CONFIG } = await import("../../src/research/model-config");
+    // 8 queries, each returning many distinct hits — far more candidates than the cap allows.
+    const eightQueries = Array.from({ length: 8 }, (_, i) => `query ${i}`);
+    let generateTextCalls = 0;
+    let triagePrompt = "";
+    const ai: AiTextClient = {
+      generateText: vi.fn(async (_model: string, prompt: string) => {
+        generateTextCalls += 1;
+        if (generateTextCalls === 1) return JSON.stringify({ queries: eightQueries }); // query-gen
+        triagePrompt = prompt; // triage
+        return JSON.stringify({ proposals: [] });
+      }),
+    };
+    // Each query yields 10 distinct hits, none overlapping across queries.
+    const search = vi.fn(async (q: string): Promise<SearchHit[]> =>
+      Array.from({ length: 10 }, (_, j) => ({ url: `https://src.gov/${encodeURIComponent(q)}/${j}` })));
+    const fetchSource = vi.fn(async (): Promise<SourceFetchResult> =>
+      ({ ok: true, text: "X".repeat(50_000) as never })); // each page far exceeds perPageChars
+    const p = new WorkersAiResearchProvider({ ai, search: { search } as SearchProvider, fetchSource });
+    const out = await p.research(INPUT);
+
+    // (a) candidate cap: never fetch more than maxCandidateUrls URLs.
+    expect(fetchSource.mock.calls.length).toBeLessThanOrEqual(MODEL_CONFIG.maxCandidateUrls);
+    // We only issue as many searches as are needed to fill the candidate list, never all 8.
+    const searchesIssued = search.mock.calls.length;
+    expect(searchesIssued).toBeLessThan(8);
+    expect(out.usage?.braveQueryCount).toBe(searchesIssued);
+    // perQueryHitCap × searchesIssued is the most candidates we could have collected; cap still wins.
+    expect(fetchSource.mock.calls.length).toBeLessThanOrEqual(MODEL_CONFIG.perQueryHitCap * searchesIssued);
+    // (b) triage prompt stays under a sane bound: maxTriagePages × perPageChars + a fixed overhead.
+    const overhead = 8_000;
+    expect(triagePrompt.length).toBeLessThan(MODEL_CONFIG.maxTriagePages * MODEL_CONFIG.perPageChars + overhead);
+    expect(out.proposals).toEqual([]);
+  });
 });

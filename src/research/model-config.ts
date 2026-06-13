@@ -16,4 +16,20 @@ export const MODEL_CONFIG = {
   maxQueryLen: 256,
   /** Mirrors pipeline.ts:14 DEFAULT_MAX_PROPOSALS. */
   maxProposals: 5,
+  /**
+   * research() fetch + triage volume bounds. Without these, 8 queries × ~20 Brave hits → ~160 fetches,
+   * and triage concatenates every full ≤2MB page into one prompt → Gemma context overflow → JSON gate
+   * fails → silent [] (a false "no evidence" result). These cap the candidate set, the per-query take,
+   * and the per-page text fed to triage so the assembled prompt stays inside the model's context window.
+   */
+  /** Hard ceiling on de-duped candidate URLs collected (and fetched) across all queries. */
+  maxCandidateUrls: 12,
+  /** Most hits taken from any one query's results before moving on. */
+  perQueryHitCap: 3,
+  /** Code points of each page's text fed into the triage prompt (truncated past this). */
+  perPageChars: 4000,
+  /** Most fetched pages assembled into a single triage prompt. */
+  maxTriagePages: 12,
+  /** `count` sent to Brave per query — fewer results per call keeps the candidate funnel tight. */
+  braveCount: 5,
 } as const;

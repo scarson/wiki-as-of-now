@@ -1,6 +1,7 @@
 // ABOUTME: Brave Search API client (gated on BRAVE_API_KEY) — query → ranked REAL URLs.
 // ABOUTME: Retains ONLY result URLs (never Brave titles/snippets; storage-ToS §3.2). Transport failure → ProviderUnavailableError.
 import { ProviderUnavailableError } from "./provider";
+import { MODEL_CONFIG } from "./model-config";
 import type { SearchProvider, SearchHit } from "./search-provider";
 
 const BRAVE_ENDPOINT = "https://api.search.brave.com/res/v1/web/search";
@@ -14,7 +15,7 @@ export class BraveSearchProvider implements SearchProvider {
 
   async search(query: string): Promise<SearchHit[]> {
     // URLSearchParams encodes spaces as `+` (application/x-www-form-urlencoded); Brave accepts both `+` and %20.
-    const url = `${BRAVE_ENDPOINT}?${new URLSearchParams({ q: query }).toString()}`;
+    const url = `${BRAVE_ENDPOINT}?${new URLSearchParams({ q: query, count: String(MODEL_CONFIG.braveCount) }).toString()}`;
     let res: Awaited<ReturnType<BraveFetch>>;
     try {
       res = await this.fetchFn(url, {
