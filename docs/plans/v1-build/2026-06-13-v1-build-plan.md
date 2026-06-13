@@ -59,6 +59,10 @@ notes and commit messages.
 
 **Overall:** All 7 phases shipped (foundation + Workers AI/Brave research provider + research reachability + core worksheet UI + queue/topic seeding + auth/quotas/kill-switch + transparency/About/feedback + provision & deploy prep). Phase 7 landed the per-env deploy topology, CI build/dry-run gates, the dormant deploy pipeline, and the human-run go-live runbook — config + CI + docs only. **Go-live itself is Sam-gated:** real provisioning, deploy, secret-put, and cron-enable are the human steps in `docs/runbooks/go-live.md`, none executed in the build.
 
+**Post-build adversarial review (after Phase 7):** a final holistic integration review caught and fixed two HIGH cross-phase defects (a "Queued 0" response-shape seam on the batch route; a client-supplied `actor` reaching the append-only audit log — now resolved server-side, CC-12) and two orphaned-but-required surfaces (the G6/G7 transparency view and the `/queue` journey were unreachable — now wired via a global nav + a worksheet link). Earlier per-phase bug-hunts fixed a Phase-1 unbounded-fetch issue and a **CRITICAL Phase-5 G11/auth bypass on the batch enqueue route** (captured as pitfalls GATE-1/GATE-2). Final: tsc + lint clean, **895 Node + 27 workerd tests**.
+
+**PR:** [wiki-as-of-now#20](https://github.com/scarson/wiki-as-of-now/pull/20) (`feat/v1-build` → `dev`) — **Review — Domain**; Sam reviews + merges (agent does not self-merge). Production promotion `dev → main` is a separate Sam-only step.
+
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 0 — Foundation (spec v1.1, worker rename, git-strategy) | ✅ Shipped | `cc38f83`, `13b38f8`, `838e4e5`, `7aa6a74` | on `feat/v1-build`; green baseline (574 node + 3 workerd) |
