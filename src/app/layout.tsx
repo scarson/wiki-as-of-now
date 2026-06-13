@@ -1,7 +1,7 @@
 // ABOUTME: Root layout — global fonts, styles, and document metadata for the WikiAsOfNow app.
 // ABOUTME: Wraps every page; sets the app title/description shown in the browser and to crawlers.
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +11,15 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
+	subsets: ["latin"],
+});
+
+// Scholarly serif for display moments and claim sentences under review
+// (DESIGN.md §3 — serif display over humanist sans, weight 500–600).
+const sourceSerif = Source_Serif_4({
+	variable: "--font-source-serif",
+	weight: ["400", "500", "600"],
+	style: ["normal", "italic"],
 	subsets: ["latin"],
 });
 
@@ -29,7 +38,7 @@ export default function RootLayout({
 			<head>
 				<link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
 			</head>
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+			<body className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} antialiased`}>{children}</body>
 		</html>
 	);
 }
