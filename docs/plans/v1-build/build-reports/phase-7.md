@@ -119,3 +119,27 @@ bunx wrangler deploy -c workers/research/wrangler.jsonc --env dev
 - The OpenNext build (`opennextjs-cloudflare build`) internally shells out to `pnpm build`. In this build session `pnpm` is not on PATH (the fnm/`node`-not-on-PATH quirk, Phase 5 D-6), so the full OpenNext build could not complete locally — but the underlying `next build` runs credential-free and succeeds, and the research worker `--dry-run` bundles credential-free. CI (which has the pnpm toolchain via `pnpm/action-setup`) is the authoritative gate for the OpenNext build + app-worker dry-run; the research-worker dry-run was verified end-to-end in-session.
 - After adding `env` blocks, `wrangler deploy --dry-run` emits a "no target environment specified" WARNING. `--env=""` (target the top-level/default config) silences it and keeps CI output pristine (testing-pitfalls §1). Both the CI steps and the in-session verification use `--env=""`.
 - The dormant `deploy.yml` only triggers on `dev`/`main` pushes — it does not fire on the `feat/v1-build` feature branch, and when it eventually fires without the deploy-token secret the guarded steps skip (green, not red).
+
+---
+
+## Integration-review fixes
+
+The final holistic integration review of the v1 build surfaced six cross-phase seam/wiring
+defects. All six are fixed below (TDD where testable); the suite stayed green throughout
+(895 Node + 27 workerd — the workerd count rose from 26 with FIX 2's new server-resolved-actor
+test; tsc + lint clean; `next build` compiles all pages).
+
+| # | Sev | Fix | Commit | Visual QA |
+|---|-----|-----|--------|-----------|
+| 1 | HIGH | Queue page parses the batch route's `{ results: [{ outcome }] }` shape (was reading `accepted`/`skipped`, so a successful enqueue always rendered "Queued 0"); also surfaces the 401/503 cases the now-auth-gated route returns. | `ea26726` | `/queue` — enqueue toast wording + 401/503 messages |
+| 2 | HIGH (compliance) | `source.opened` resolves `actor` SERVER-SIDE via `resolveCurrentUser` (authenticated → userId, else "system"), mirroring the feedback route. Removed `actor` from the request body, from `ConfirmInput`, and from the `SourceOpenGate`/`WorksheetClient`/worksheet-page prop chain. Closes a CC-12/G13 hole where a client-supplied string was written verbatim into the append-only `audit_log`. Failing-first workers test asserts the audit row records the server-resolved actor. | `45a78f5` | `/worksheet/[candidateId]` — source-open gate still confirms + unlocks |
+| 3 | MEDIUM | Wired the orphaned show-your-work transparency page (G6/G7 — selected evidence + full dropped-candidate set + LLM query log) — added an iron-gall "How this was researched →" Link next to the Evidence heading, rendered only when a pack surfaced. Previously zero inbound links → unreachable. | `eed6642` | `/worksheet/[candidateId]` (link placement/style) → `/articles/[id]/transparency` (target renders) |
+| 4 | MEDIUM | Added a minimal global nav (`WikiAsOfNow` / "Easy-win lane" → `/queue` / "About" → `/about`) to the root layout so the second user journey and About have a cross-page entry point. Styled per DESIGN.md: iron-gall links (Two Lanes Rule), hairline-bordered shelf-gray bar, keyboard-reachable via the existing global iron-gall `:focus-visible` ring. | `58247b3` | global nav on every page — alignment, focus ring, hover |
+| 5 | LOW | Extended the produce→commit→surface round-trip workers test to ALSO read the committed pack through the worksheet's surfacing read (`surfaceResearchPack` over `getSurfaceablePack`) at the live revision, asserting surfaced state/cards/dispositions/queries/modelVersion match the committed pack — covering the full chain through the read the UI consumes (was only reading via `getPack` directly). | `650e22c` | n/a (test only) |
+| 6 | LOW | Confirmed `readAuditTrail` / `summarizeFeedback` (`src/db/audit-queries.ts`) are global/admin-scoped reads, NOT a fit for the per-claim (pack-scoped) transparency page — wiring them there would surface unrelated audit rows/actors. Retained as tested infrastructure for a future admin/transparency surface; recorded in the plan's `### Discoveries` subsection. No code change. | (plan note in same commit as this report) | n/a (note only) |
+
+**.tsx surfaces needing visual QA** (verified by tsc + eslint + `next build`, not by automated rendering):
+- `src/app/layout.tsx` — new global nav (FIX 4): bar alignment with page `max-w-3xl`, iron-gall link colour, keyboard focus ring, hover underline.
+- `src/app/queue/page.tsx` — enqueue result toast (FIX 1): "Queued N for research, M skipped." copy, plus the new signed-out (401) and disabled (503) messages.
+- `src/app/worksheet/components/WorksheetClient.tsx` — "How this was researched →" Link (FIX 3) next to the Evidence heading: placement/wrapping at narrow widths, iron-gall mono style; and the source-open gate still confirms+unlocks after the FIX 2 prop removal.
+- `src/app/articles/[id]/transparency/page.tsx` — the now-reachable transparency target (FIX 3): renders selected/dropped/queries for a real surfaced pack.
