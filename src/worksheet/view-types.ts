@@ -20,6 +20,10 @@ export interface EvidenceCardView {
   url: string;
   verbatimQuote: string;
   advisorySupport: boolean;
+  /** Deterministic source text before the quote in its paragraph; null at paragraph start (design 2026-06-21). */
+  contextBefore: string | null;
+  /** Deterministic source text after the quote in its paragraph; null at paragraph end (design 2026-06-21). */
+  contextAfter: string | null;
 }
 
 /** The claim under review, as the article/worksheet views render it. */

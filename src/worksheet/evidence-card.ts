@@ -1,5 +1,5 @@
 // ABOUTME: Builds the evidence-card render model from a verified EvidenceCard.
-// ABOUTME: Projects ONLY url/verbatimQuote/advisorySupport — no slot for model-authored prose (G1).
+// ABOUTME: Projects ONLY url/verbatimQuote/advisorySupport + the deterministic source context sides — no slot for model-authored prose (G1).
 import type { EvidenceCard } from "../research/provider";
 import type { EvidenceCardView } from "./view-types";
 
@@ -9,5 +9,7 @@ export function toEvidenceCardView(card: EvidenceCard): EvidenceCardView {
     url: card.url,
     verbatimQuote: card.verbatimQuote,
     advisorySupport: card.advisorySupport,
+    contextBefore: card.contextBefore,
+    contextAfter: card.contextAfter,
   };
 }

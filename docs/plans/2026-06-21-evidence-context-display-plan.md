@@ -79,8 +79,8 @@ notes and commit messages.
 |---|---|---|---|
 | 1 — Slice helper (`quote-context.ts`) | ✅ SHIPPED | (see branch) | the deterministic core |
 | 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 1 |
-| 3 — View projection (`view-types.ts`, `evidence-card.ts`) | 🚧 IN PROGRESS | — | depends on Phase 2 |
-| 4 — Read-path validation (`research-packs.ts`) | ⬜ Not started | — | depends on Phase 1 (cap) + 2 (fields) |
+| 3 — View projection (`view-types.ts`, `evidence-card.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 2 |
+| 4 — Read-path validation (`research-packs.ts`) | 🚧 IN PROGRESS | — | depends on Phase 1 (cap) + 2 (fields) |
 | 5 — Render (`EvidenceCard.tsx`) | ⬜ Not started | — | depends on Phase 3 |
 
 ### Deviations
@@ -493,7 +493,7 @@ BEFORE marking this task complete:
 
 ## Phase 3 — View projection (`view-types.ts`, `evidence-card.ts`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — 2026-06-21. Full suite 920/920 green; tsc + lint clean. `toEvidenceCardView` projects the two sides explicitly; `load-worksheet-view` closed-shape assertion updated to the 5-key set (the Phase-2-noted follow-through).
 
 ### Task 3: Project context into the view model
 

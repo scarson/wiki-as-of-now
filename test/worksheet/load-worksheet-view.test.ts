@@ -40,7 +40,7 @@ describe("loadWorksheetView", () => {
     expect(view.honesty.revisionDrift).toBe(false);
     expect(view.cards).toHaveLength(1);
     expect(view.cards[0].verbatimQuote).toBe("It delivered its first unit in 2024.");
-    expect(Object.keys(view.cards[0]).sort()).toEqual(["advisorySupport", "url", "verbatimQuote"]);
+    expect(Object.keys(view.cards[0]).sort()).toEqual(["advisorySupport", "contextAfter", "contextBefore", "url", "verbatimQuote"]);
     expect(view.modelVersion).toBe("fake-provider/0");
   });
 
