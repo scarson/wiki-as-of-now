@@ -9,6 +9,7 @@ import { makeAiTextClient } from "./ai-client";
 import { StubResearchProvider } from "./stub-provider";
 import { WorkersAiResearchProvider } from "./workers-ai-provider";
 import { BraveSearchProvider } from "./brave-search";
+import { excludeCircularSources } from "./source-exclusion";
 
 export interface ProviderSelectionEnv {
   AI: AiRunner;
@@ -24,9 +25,11 @@ export function selectResearchProvider(env: ProviderSelectionEnv): ResearchProvi
     return new StubResearchProvider(); // default — PK-poison but isolated to the stub path (CC-7)
   }
   const ai = makeAiTextClient(env.AI);
-  const search: SearchProvider = env.BRAVE_API_KEY
+  const backend: SearchProvider = env.BRAVE_API_KEY
     ? new BraveSearchProvider(env.BRAVE_API_KEY)
     : (env.searchOverride ?? noSearchBackend());
+  // Wikipedia + mirrors can't source Wikipedia (WP:CIRCULAR) — filter every backend, provider-agnostically.
+  const search = excludeCircularSources(backend);
   return new WorkersAiResearchProvider({ ai, search, fetchSource: env.fetchSource });
 }
 
