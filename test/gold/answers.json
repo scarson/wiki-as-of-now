@@ -138,5 +138,24 @@
     "supersededBy": null,
     "certification": "human_confirmed",
     "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "hiv_vaccine_development.wikitext",
+    "sentenceSubstring": "phase one trial is expected to conclude July 2023",
+    "expectedYear": 2023,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/40737434/",
+        "snapshot": "test/gold/sources/2025-07-30-vaccination-with-mrna-encoded-membrane-anchored-hiv-envelope-trimers-elicited-ti.md",
+        "contentHashSha256": "9c4918e86940a3036d6a106c42351c32c03b80e832c4fde1b00bf9f415d65833",
+        "verbatimQuote": "We evaluated the safety and immunogenicity of three mRNA-encoded envelope trimers, including two doses of soluble and membrane-anchored forms, in a randomized, open-label, phase 1 clinical trial",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
   }
 ]
