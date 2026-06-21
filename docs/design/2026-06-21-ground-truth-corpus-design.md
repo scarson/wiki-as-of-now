@@ -56,13 +56,31 @@ of the following hold:
 - **Source authority.** The source host is on a curated high-reliability allowlist
   *by type*: government/military (`.gov`, `.mil`, official national domains),
   major news agencies, the **primary official org named in the claim** (the
-  manufacturer / agency / program office), or standards / peer-reviewed bodies.
-  This is a deterministic host check, the same shape as `isCircularSource`.
-- **Self-evident support.** The verbatim quote contains, in **one contiguous
-  span**, BOTH the claim's subject anchor (the program / entity) AND the resolving
-  fact (the changed status + a date or number). The support must not require
-  stitching multiple passages or supplying background knowledge — the agent must
-  be able to point at the exact span that resolves the claim.
+  manufacturer / agency / program office), standards / peer-reviewed bodies, or
+  **curated high-reliability analysis / trade press** — established institutions
+  and journals with real editorial standards (e.g. Jane's, RAND, CSIS and named
+  peers) reporting that something definitive happened. Lazy blogs, SEO
+  aggregators, and content farms never qualify, whatever the topic. This is a
+  deterministic host check, the same shape as `isCircularSource`; adding an outlet
+  to the trade-press list is itself a curation decision. **Prefer the primary
+  source:** when a Tier-1 trade-press item cites the official source it drew from
+  (a good outlet says where its facts came from), follow the citation through and
+  ground the quote on that official source — the trade-press lead is enough to
+  certify, but the official capture is the better fixture.
+- **Self-evident support.** The evidence — **one span, or several non-contiguous
+  spans from the same source** — together contains the claim's subject anchor (the
+  program / entity) AND the resolving fact (the changed status + a date or number).
+  Real sources rarely package the answer in one block (*"Program X concluded
+  testing on $date. … The DoD awarded a production contract for Program X to
+  $vendor on $otherDate."*), so multiple spans are allowed — **but the
+  co-reference between them must be self-evident on the face of the quoted text**:
+  each span either names the subject anchor explicitly, or is tied to it by a
+  shared proper noun / identifier **present in the quoted spans**, not supplied by
+  the agent from the surrounding narrative. Prefer quoting a little wider to pull
+  the anchor into each span. If linking the spans needs cross-paragraph pronoun
+  resolution, article context, or background knowledge, that is **stitching →
+  Tier 2**. The agent must be able to point at the exact span(s) that resolve the
+  claim; each span independently passes the deterministic verbatim gate (§2.1).
 - **Unambiguous disposition.** Exactly one disposition fits; no competing reading
   is plausible.
 
@@ -89,10 +107,16 @@ Every record stores `certification` (`agent_auto` | `human_confirmed`) and
 disposition" judgments are themselves the kind of relevance call the contract
 reserves for humans (G8), the auto-tier is **not** taken on faith:
 
-- Sam **spot-checks a random sample** of `agent_auto` records (target ~20% of the
-  pilot, adjustable). If the sampled error rate exceeds a small threshold, we
-  **tighten the gate and re-run** the auto-tier — the gate is calibrated against
-  observed error, not assumed correct.
+- A **second agent independently proposes** answers for the same claims, and the
+  two passes are diffed (an **inter-rater** check). Agreement is a cheap pre-Sam
+  calibration signal; any divergence on an `agent_auto` item forces it to
+  escalation, and the disagreements are exactly the items most worth Sam's eye.
+  This runs before the spot-check and narrows what reaches it. Run for the pilot;
+  whether to extend it corpus-wide is a pilot-data decision (§A.4).
+- Sam **spot-checks a random sample** of the surviving `agent_auto` records (target
+  ~20% of the pilot, adjustable). If the sampled error rate exceeds a small
+  threshold, we **tighten the gate and re-run** the auto-tier — the gate is
+  calibrated against observed error, not assumed correct.
 - Any `agent_auto` item can be promoted to `human_confirmed` (or corrected) at any
   time; the field records provenance, not a permanent verdict.
 
@@ -114,22 +138,29 @@ identity the gold-set uses: `(fixture, sentenceSubstring)`.
   "disposition": "confirmed_stale",      // coarse, 4-value (§3.1)
   "outcome": "event_occurred",           // granular, 6-value, nests under disposition (§3.1)
 
-  "evidence": [
-    {
+  "evidence": [                          // 1+ byte-present spans; >1 when the answer
+    {                                    //   is split across the page (§2.2)
       "sourceUrl": "https://www.navy.mil/...",
       "snapshot": "test/gold/sources/2026-06-21-navy-cps-test.md",
       "contentHashSha256": "…",          // copied from the snapshot's url-to-markdown frontmatter
-      "verbatimQuote": "…exact span, passes evaluateQuote against the snapshot…",
+      "verbatimQuote": "…exact span carrying the subject anchor + resolving fact; passes evaluateQuote…",
       "supportsStaleness": true          // advisory: this span shows the claim is now outdated
     }
   ],
 
+  "supersededBy": null,                  // only on `superseded` records: the replacement (new plan / number / date)
   "certification": "agent_auto",         // agent_auto | human_confirmed
   "verifiedAsOf": "2026-06-21"
 }
 ```
 
-`unverifiable` records carry `evidence: []` and are always `human_confirmed`.
+`unverifiable` records carry `evidence: []` and are always `human_confirmed`. A
+record may carry **multiple `evidence` entries** when the answer is split across
+non-contiguous spans of one source (§2.2); each entry is independently byte-present
+and, for Tier 1, carries the subject anchor per the self-evident-co-reference rule.
+`supersededBy` is present only on `superseded` records and names the replacement
+(new plan / number / date), making them useful for "what changed," not just "is it
+stale."
 
 ### 3.1 Dispositions — record both, compare side by side
 
@@ -203,7 +234,9 @@ Per claim (independent, parallelizable across subagents):
    (G9 — no leading/loaded phrasing).
 2. Brave search → candidate URLs; drop circular sources via `isCircularSource`.
 3. Fetch candidates with the project's own fetcher; find a source that states the
-   resolving fact.
+   resolving fact. When the best hit is trade press that cites an official primary
+   source, follow the citation through and prefer grounding on that official
+   source (§2.1).
 4. Transcribe that source with `url-to-markdown`; **commit the snapshot**.
 5. Extract the verbatim span; run `evaluateQuote` against the snapshot — **must
    pass** or the candidate is rejected.
@@ -230,9 +263,12 @@ auto-tier (§2.3).
   entries across the 68 fixtures. Pure detector-mechanics entries (det2/det3 false-
   positive probes that assert no world fact) are **skipped with a recorded reason**,
   not answered.
-- **Pilot first (approved):** build **one article batch (~8–10 claims)** end to
-  end, then Sam reviews the result *and* the auto/escalate calibration before the
-  rest is green-lit. The pilot is the calibration instrument for §2.3.
+- **Pilot first (approved):** build **one deliberately mixed article batch
+  (~8–10 claims)** — chosen to span clean official sourcing *and* messier cases
+  that exercise the escalation path — end to end, then Sam reviews the result
+  *and* the auto/escalate calibration before the rest is green-lit. The pilot is
+  the calibration instrument for §2.3 and runs the independent second-agent
+  (inter-rater) pass described there.
 
 ---
 
@@ -260,7 +296,8 @@ reasoning is captured as a first-class part of the doc.
 - **Conservative, objective-leaning auto-certify criteria + bias-to-escalate.**
   The "self-evident support" test can't be made fully deterministic — it's a
   relevance judgment. We make it *conservative and objective where we can* (host
-  allowlist by type; single-contiguous-span requirement) and accept that residual
+  allowlist by type; the requirement that multi-span support be self-evident in the
+  quoted text) and accept that residual
   judgment by pairing it with a Sam-audited spot-check that **calibrates** the
   gate against observed error. The asymmetry (cheap over-escalation vs. expensive
   silent corruption) sets the bias.
@@ -278,6 +315,30 @@ reasoning is captured as a first-class part of the doc.
 - **Reuse `isCircularSource` and `evaluateQuote` rather than reimplement.** The
   corpus must be verified by the *system under test's own* backstop, or it isn't a
   faithful fixture for that system. Defense-in-depth, not duplication.
+
+- **High-reliability trade press can auto-certify.** Per Sam: definitive reporting
+  from established defense/security analysis institutions and trade journals
+  (Jane's, RAND, CSIS and peers) is good enough to certify a current-state answer
+  for a wiki-grade citation — with the quality bar explicit (no lazy blogs or
+  aggregators, ever) and a standing preference for following the outlet's own
+  citation to the official primary source. Implemented as a curated named-host
+  allowlist so it stays a deterministic check rather than a reputation judgment at
+  classification time.
+
+- **Evidence may be several non-contiguous spans from one source.** Real sources
+  split the answer across the page, so forcing a single contiguous span would push
+  obviously-clean cases into the escalation queue for no gain. Tier 1 now admits
+  multiple byte-present spans, but preserves the fail-closed bias by requiring the
+  co-reference between them to be self-evident *in the quoted text* — each span
+  carries the anchor or an explicit shared identifier. If connecting the spans
+  needs the surrounding narrative, that is stitching and escalates. This admits the
+  realistic case without admitting agent inference.
+
+- **Inter-rater pass and `supersededBy` included now.** Both are cheap and Sam's
+  call is to do them rather than defer: a second independent agent pass on the
+  pilot is a calibration signal that runs before (and narrows) Sam's spot-check,
+  and a `supersededBy` pointer makes `superseded` records useful for "what changed"
+  analysis, not just "is it stale."
 
 ### A.2 Considered and ruled out
 
@@ -298,24 +359,19 @@ reasoning is captured as a first-class part of the doc.
 
 ### A.3 What I'm still uncertain about
 
-- **The exact authority allowlist boundary.** "Major news agency" and "primary
-  official org named in the claim" are clear at the center, fuzzy at the edge
-  (is a trade-press outlet like a defense-industry journal Tier 1?). The pilot's
-  spot-check is partly there to calibrate this; I expect to tighten the allowlist
-  after seeing real escalation/auto splits.
+- **Which specific outlets clear the trade-press bar.** The principle is settled
+  (high-reliability analysis / trade press auto-certifies; lazy blogs never), but
+  the exact curated host list — especially for less-famous defense/industry
+  journals — gets filled in and tightened against the pilot's real escalation/auto
+  splits rather than guessed up front.
 - **Whether `slipped_still_pending` is reliably distinguishable from
   `unverifiable`.** "The date passed and it hasn't happened" can be hard to source
   positively (absence of evidence). These may collapse in practice — a thing the
   side-by-side disposition data should reveal.
-- **Pilot batch selection.** Whether to pick the *easiest* article (clean .mil/.gov
-  sourcing, to validate the happy path) or a *deliberately mixed* one (to exercise
-  the escalation path). Leaning mixed, so the calibration sample is meaningful —
-  but open to Sam's preference.
 
 ### A.4 What I'd add with more time
 
-- A small `inter-rater` check: have a second agent independently propose answers
-  for the pilot batch and diff against the first, as an additional calibration
-  signal beyond Sam's spot-check.
-- A `supersededBy` pointer on `superseded` records (the new plan/number), to make
-  the corpus useful for "what changed" analysis, not just "is it stale."
+- Extend the independent second-agent (inter-rater) pass from the pilot to the
+  **full corpus** if the pilot shows it catches errors the spot-check would miss.
+  Held back only because it roughly doubles build cost corpus-wide — a genuine
+  scope call the pilot's data should settle, not an arbitrary deferral.
