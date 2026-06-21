@@ -1,5 +1,5 @@
 // ABOUTME: Brave Search API client (gated on BRAVE_API_KEY) — query → ranked REAL URLs.
-// ABOUTME: Retains ONLY result URLs (never Brave titles/snippets; storage-ToS §3.2). Transport failure → ProviderUnavailableError.
+// ABOUTME: Retains ONLY result URLs (never Brave titles/snippets). Result-storage ToS posture + accepted-risk decision: docs/design/2026-06-21-brave-vs-tavily-search-backend-research.md §4. Transport failure → ProviderUnavailableError.
 import { ProviderUnavailableError } from "./provider";
 import { MODEL_CONFIG } from "./model-config";
 import type { SearchProvider, SearchHit } from "./search-provider";

@@ -27,7 +27,7 @@ Everything Tavily and Brave-Grounding sell on top of raw URLs — clean extracte
 | **Tavily Search API** | **REJECT (switch not justified)** | Headline benchmarks measure answer-synthesis we discard; independent relevance ranks it *below* Brave; aggregator with no own index (upstream-fragile); pricier per query; stale-link reports. |
 | **Brave Grounding API** | **REJECT (wrong shape)** | Returns model-authored prose, no raw-results-only mode — same category problem as the already-rejected Gemini grounding. |
 | **Tavily Extract / Crawl / Map** | **REJECT (redundant)** | Duplicates the project's own SSRF-hardened fetcher and the prose it is compliance-bound to discard. |
-| **Result-storage ToS** | **ACTION ITEM (provider-agnostic)** | Brave §3.1(b)(i) and Tavily §3.2 both restrict storing results; the tool durably persists source URLs in `research_packs`. Resolve regardless of provider. |
+| **Result-storage ToS** | **RESOLVED — accepted risk (Sam, 2026-06-21)** | Brave §3.1(b)(i) and Tavily §3.2 both restrict storing results; the tool durably persists source URLs in `research_packs`. Decision: defensible on its merits + de-minimis volume — see §4. |
 
 ---
 
@@ -86,6 +86,8 @@ This is the most important practical discovery, and it is **largely independent 
 - **The honest nuance (don't overclaim):** the persisted URL is one the tool **independently fetched and verified**, surfaced as a *citation the user is encouraged to open* — arguably no longer "Brave's Search Result" but "a source the human is citing." Whether that, or the "transient storage required for operation" exception, covers the `research_packs` write is a **genuine legal judgment call**, not a clear violation. It is also not unique to Brave.
 
 **Action (provider-agnostic):** get explicit confirmation from Brave (support/legal, or the Enterprise tier) that transiently holding and citing a verified result URL is permitted, **or** confirm the citation-not-result framing, **and** update the stale `brave-search.ts` comment to cite the current clause and the resolution. This is the same question whichever provider we pick, so it is **not** a reason to prefer one over the other.
+
+**Decision (Sam, 2026-06-21): accept the risk; no escalation to Brave legal.** Rationale, recorded as the durable judgment call: (a) the persisted item is a real source URL the tool **independently fetched and verified** and surfaces as a **citation the human is meant to open** — the "a source the user is citing," not "a database of Brave's Search Results," framing is the operative reading, and is defensible on its merits; (b) usage sits at **de-minimis, effectively-free-tier volume** (a single solo, open-source, Wikipedia-improving project within Brave's ~1,000-search $5 monthly credit), so enforcement risk against this use is negligible. The `brave-search.ts` ABOUTME comment is updated to drop the stale §3.2 reference and the unsupported URL-only-carve-out premise, pointing here instead. This decision is **provider-agnostic** — it does not depend on or favor Brave vs Tavily — and is **revisitable** if the project ever moves to non-trivial public volume, at which point Brave Enterprise / written clarification becomes the right path.
 
 ---
 
