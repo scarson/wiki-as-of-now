@@ -73,7 +73,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Phases 1–2 shipped on branch `claude/corpus-build-schema` (off `origin/dev`), in a draft PR for Sam. Phases 3–4 deferred (need live Brave + outbound web + Sam's pilot-batch confirmation). 2/4 phases shipped.
+**Overall:** Phases 1–2 shipped on branch `claude/corpus-build-schema` (off `origin/dev`) in **draft PR [#23](https://github.com/scarson/wiki-as-of-now/pull/23)** for Sam (not auto-merged — Review classification). Phases 3–4 deferred (need live Brave + outbound web + Sam's pilot-batch confirmation). 2/4 phases shipped.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
