@@ -51,5 +51,17 @@ Merging into `dev` is outward/hard-to-reverse; leaving a vetted PR ready is ~zer
 **Execution:** dispatched a background agent on `claude/corpus-pilot` (off `claude/corpus-build-schema`) to: select a deliberately-mixed ~8–10 claim batch (documented), run the per-claim neutral-query→Brave+circular-filter→fetch→`url-to-markdown`→verbatim-gate→tier-classify→record runbook, build the escalation queue, append the calibration-log entry, fold in the D1 design-doc nit, and open a draft PR for Sam's calibration. Inter-rater pass (Phase 4 Task 4.1) held as a follow-up to dispatch after the first pass lands.
 **(Results — batch, per-claim dispositions, auto/escalate split — to be appended when the pilot agent reports.)**
 
-### D4 — Context-display PR (agent still running)
-Will adversarially review on completion. Per the merge principle it modifies the production evidence/citation path + `EvidenceCard` serialization contract + G16 rendering → **leave for Sam** after review (mark ready / summarize), do not auto-merge.
+### D4 — Context-display PR #25 (`claude/evidence-context-display`) — reviewed clean; LEFT FOR SAM
+**Agent result:** all 5 phases; `pnpm test` 922 pass + `pnpm test:workers` 27 pass; tsc/lint clean; required-field churn (15 `EvidenceCard` literals + 2 round-trip assertions across 8 files) kept the suite green; 3-round review clean; Phase-5 visual check deferred (D1 unprovisioned — agent did NOT claim it passed). Draft PR #25, base `dev`.
+**My adversarial review (read the actual production diff, 8 `src/` files / 107 insertions):**
+- `quote-context.ts` — byte-identical to the plan's reviewed implementation (SAFE-1 cap + `MAX_PAGE_CHARS` reuse, first-occurrence, nullable edges, word-snap). Correct.
+- `EvidenceCard.tsx` — `{contextBefore span}` + `<strong italic>quote</strong>` + `{contextAfter span}`, context de-emphasized (`text-dust-gray not-italic`); **no copy button, no `"use client"`, no `dangerouslySetInnerHTML`** (grep-verified). G16 posture correct.
+- `provider.ts`/`verify-proposal.ts` — fields `string | null` documented "NOT model prose"; sliced from the same `fetched.text` on match. Correct.
+- **G5 gate files (`SourceOpenGate`/`WorksheetClient`/`source-gate.ts`) untouched** — confirmed.
+**Note for Sam (handled, not a defect):** context now also appears in the transparency/show-your-work view (it forwards the full `EvidenceCard[]`). It's deterministic source text (G1-clean); the agent correctly tightened the G1 closed-shape test to exactly the 5 source fields. Worth a glance only because it widens where context renders.
+**Decision — LEAVE FOR SAM (no auto-merge).** Compliance-core: modifies the production evidence/citation path + the `EvidenceCard` serialization contract + G16-sensitive rendering → the git-strategy's Review-domain trigger reserves this for human merge, and the cost asymmetry favors waiting. Review verdict: **clean, faithful to the approved plan, ready for your merge** once you've eyeballed the render. Required `test` CI was `in_progress` at last check (local verification green; webhooks don't deliver CI success, so confirm green before merging).
+
+### Session state snapshot (as of this entry)
+- On `dev`: #22 (designs+plans), #23 (corpus schema, merged by Sam).
+- Open for Sam: **#25** (context-display, reviewed clean — merge when ready), **#24** (this log).
+- Still running: **pilot agent** (corpus Phase 3) → will open a draft PR + report; I'll review + dispatch the inter-rater pass (Phase 4) after, and append results here.
