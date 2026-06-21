@@ -73,14 +73,14 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started. 0/4 phases shipped.
+**Overall:** Phases 1–2 shipped on branch `claude/corpus-build-schema` (off `origin/dev`) in **draft PR [#23](https://github.com/scarson/wiki-as-of-now/pull/23)** for Sam (not auto-merged — Review classification). Phases 3–4 deferred (need live Brave + outbound web + Sam's pilot-batch confirmation). 2/4 phases shipped.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Schema + scaffolding (`answer-record.ts`, READMEs) | ⬜ Not started | — | TDD; pure code |
-| 2 — Integrity harness (`answers-integrity.test.ts`) | ⬜ Not started | — | TDD; depends on Phase 1 |
-| 3 — Pilot fetch runbook (records + snapshots) | ⬜ Not started | — | agent-driven research; gated by Phase 2; needs live Brave + web |
-| 4 — Inter-rater + calibration handoff | ⬜ Not started | — | process; STOPs for Sam |
+| 1 — Schema + scaffolding (`answer-record.ts`, READMEs) | ✅ Shipped (2026-06-21) | `e409ede`, `7aff6c2` | TDD; pure code; 10 tests |
+| 2 — Integrity harness (`answers-integrity.test.ts`) | ✅ Shipped (2026-06-21) | `595ee93` | TDD; 5 tests; vacuous on empty answers.json |
+| 3 — Pilot fetch runbook (records + snapshots) | ⏸ Deferred | — | agent-driven research; gated by Phase 2; needs live Brave + web |
+| 4 — Inter-rater + calibration handoff | ⏸ Deferred | — | process; STOPs for Sam; pending Phase 3 |
 
 ### Deviations
 - _(none yet)_
@@ -92,7 +92,7 @@ notes and commit messages.
 
 ## Phase 1 — Schema + scaffolding
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — 2026-06-21 on branch `claude/corpus-build-schema`. Task 1.1 `e409ede` (answer-record.ts + 10 tests); Task 1.2 `7aff6c2` (empty answers.json + READMEs). 3 review rounds clean.
 
 The deterministic foundation. Pure types + validators + storage skeleton; everything downstream slots into this.
 
@@ -356,7 +356,7 @@ Review the batch from multiple perspectives. Minimum 3 review rounds. If round 3
 
 ## Phase 2 — Integrity harness
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — 2026-06-21 on branch `claude/corpus-build-schema`. Task 2.1 `595ee93` (synthetic snapshot fixture + `answers-integrity.test.ts`, 5 tests; real-corpus describe vacuous on empty answers.json). 3 review rounds clean.
 
 The acceptance gate every real record must pass. Built and tested NOW (against synthetic fixtures), so it is ready before any pilot data lands. It runs vacuously-green on the empty `answers.json` and tightens automatically as Phase 3 adds records.
 
@@ -496,7 +496,7 @@ Review the batch from multiple perspectives. Minimum 3 review rounds. If round 3
 
 ## Phase 3 — Pilot fetch runbook
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ⏸ DEFERRED — unblock condition: Sam confirms the pilot batch (Task 3.1 Step 2) AND an environment with live Brave search + outbound web is available. This phase produces real data via live Brave + `url-to-markdown` + the real web; the current execution environment lacks network access and the pilot batch is not yet Sam-confirmed. Unblocker signal: re-run this plan in a network-enabled session after Sam confirms the batch; the Phase 2 integrity harness (this branch) is the acceptance gate that gates every record once fetching resumes.
 
 **This phase is agent-executed research, NOT TDD.** It produces data — `AnswerRecord`s + committed snapshots — whose acceptance gate is the Phase 2 harness (`pnpm test test/gold/` green) plus the §2.2 tier rules. It uses **live** Brave search + **live** `url-to-markdown` + the real web (no mocks; real data, real APIs). Requires an environment where Brave search and outbound web fetches are reachable; if the network policy blocks them, mark this phase ⏸ DEFERRED (unblock condition: run where Brave + outbound web are reachable) and proceed no further.
 
@@ -546,7 +546,7 @@ BEFORE marking Phase 3 complete:
 
 ## Phase 4 — Inter-rater + calibration handoff
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ⏸ DEFERRED — pending Phase 3. Cannot run an inter-rater pass over pilot records that do not yet exist; unblocks once Phase 3 (above) ships pilot records. Unblocker signal: Phase 3's Execution Status banner flips to ✅ SHIPPED.
 
 Process phase. Produces the calibration signal and STOPs for Sam before any scale-up.
 
