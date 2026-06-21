@@ -85,3 +85,18 @@ Merging into `dev` is outward/hard-to-reverse; leaving a vetted PR ready is ~zer
 - Open for Sam: **#25** (context-display, reviewed clean — merge when ready), **#26** (corpus pilot, zumwalt-corrected — will grow to full corpus), **#24** (this log).
 - **Done:** both execution agents (#25 context-display, #26 pilot); pilot assessed (D6); zumwalt re-grounded.
 - **Running:** 3 scaling agents (`corpus-rest-a/b/c`) → 23 remaining claims. Next: union-merge → full 32-record corpus on #26; then optionally the inter-rater pass (Phase 4) if time allows, else flagged for Sam.
+
+### D7 — Full corpus COMPLETE (the deliverable Sam asked for)
+All 3 scaling agents finished (A 8/8, B 8/8, C 5 grounded + 2 unverifiable). **Union-merged** the pilot (9, corrected) + 23 into the full **32-record** corpus on `claude/corpus-pilot` (`ce767ee`), #26 retitled to the complete corpus.
+- **Merge mechanics:** collected snapshots from all 3 branches (`git checkout … -- test/gold/sources/`, accumulating), unioned `answers.json` by `(fixture, sentenceSubstring)` preferring the corrected pilot-9, assembled the escalation queue (pilot + 3 batch sections), appended the calibration log (append-only).
+- **Validation:** integrity harness green on all 32 (byte-presence + body-hash + nesting + stale-key); full suite **919 passed**, tsc + lint clean.
+- **Result:** 30 grounded / 2 `unverifiable`; all `human_confirmed`; outcomes 14 event_occurred / 12 slipped / 1 cancelled / 3 superseded / 2 unverifiable.
+- **Gotcha caught + fixed mid-merge:** running the full suite from the main worktree picked up the 5 finished agent worktrees' test files as "(0 test)" failures (vitest globbed `.claude/worktrees/**`). Not a real failure (0 tests failed). Pruned the finished worktrees (`git worktree remove --force`; branches are all on origin) → clean 919-pass run. CI runs on a clean checkout so it was never affected.
+- **Inter-rater pass (Phase 4): NOT run.** Out of scope for "evaluate the full corpus," ~doubles build cost, and Sam's spot-check is the primary calibration. Flagged as an available follow-up — say the word and I dispatch it.
+
+### Final session disposition (for Sam, morning)
+Open PRs, all reviewed/validated, none auto-merged (all touch Review-domain areas — yours to merge):
+- **#25** — evidence-card context display (5 phases). Reviewed clean; confirm the render visually (needs a provisioned D1) + green `test` CI, then merge.
+- **#26** — full ground-truth corpus (32 records). Harness-green; every record `human_confirmed` and in the escalation queue for your spot-check. Merge after #25 or independently (disjoint files).
+- **#24** — this decision log.
+Nothing is blocked on me. If you want the inter-rater pass or the auto-tier promotions (TSMC/PCI-SIG/Gates MRI/Gateway/Janes records are clean candidates), point me at it.
