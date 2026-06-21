@@ -4,6 +4,7 @@ import { test } from "vitest";
 import { writeFileSync } from "node:fs";
 import { fetchSourceText, type FetchImpl, type UntrustedSourceText, type SourceFetchFailureReason } from "../../src/research/source-fetch";
 import { evaluateQuote } from "../../src/research/verbatim-check";
+import { isCircularSource } from "../../src/research/source-exclusion";
 
 // Faithfully reproduce production: source-fetch rejects any 3xx (redirect_not_allowed), which only
 // fires if the underlying fetch does NOT auto-follow. Default undici follows; force redirect:"manual"
@@ -11,19 +12,9 @@ import { evaluateQuote } from "../../src/research/verbatim-check";
 const fetchImpl = ((url, init) => fetch(url, { ...init, redirect: "manual" })) as FetchImpl;
 const RESULTS_PER_QUERY = 8;
 
-/** Wikipedia + obvious Wikipedia-derived mirrors — excluded because Wikipedia can't source Wikipedia (WP:CIRCULAR). */
-function isCircular(host: string): boolean {
-  const h = host.toLowerCase();
-  return (
-    h === "wikipedia.org" || h.endsWith(".wikipedia.org") ||
-    h.endsWith(".m.wikipedia.org") ||
-    h === "wikiwand.com" || h.endsWith(".wikiwand.com") ||   // verbatim Wikipedia mirror
-    h === "dbpedia.org" || h.endsWith(".dbpedia.org") ||      // structured extract of Wikipedia
-    h === "wikipedia.com"
-  );
-}
+// Circular-source classification reuses the SHIPPED production filter so the eval matches reality.
 
-const CASES: { query: string; expected: string }[] = [
+const EASY_CASES: { query: string; expected: string }[] = [
   { query: "capital city of Australia", expected: "Canberra" },
   { query: "author of the novel Pride and Prejudice", expected: "Jane Austen" },
   { query: "scientist who developed the theory of general relativity", expected: "Albert Einstein" },
@@ -40,6 +31,27 @@ const CASES: { query: string; expected: string }[] = [
   { query: "landmark iron lattice tower in Paris France", expected: "Eiffel Tower" },
   { query: "largest coral reef system in the world", expected: "Great Barrier Reef" },
 ];
+
+// HARD set — niche / recent / date-anchored facts (the product's real distribution), each with a
+// verbatim-stable answer (>= 8 code points) verifiable on a NON-Wikipedia authoritative source.
+// Author-constructed proxy (real detector output needs Workers AI, unavailable here) — a documented limitation.
+const HARD_CASES: { query: string; expected: string }[] = [
+  { query: "2024 Nobel Prize in Literature laureate", expected: "Han Kang" },
+  { query: "company that acquired Activision Blizzard", expected: "Microsoft" },
+  { query: "chief executive officer of OpenAI", expected: "Sam Altman" },
+  { query: "2024 Nobel Peace Prize laureate organization", expected: "Nihon Hidankyo" },
+  { query: "winner of the 2024 United States presidential election", expected: "Donald Trump" },
+  { query: "NASA spacecraft that returned samples from asteroid Bennu", expected: "OSIRIS-REx" },
+  { query: "Prime Minister of the United Kingdom since July 2024", expected: "Keir Starmer" },
+  { query: "2024 Masters Tournament golf champion", expected: "Scottie Scheffler" },
+  { query: "country that won the 2022 FIFA World Cup", expected: "Argentina" },
+  { query: "2024 Nobel Prize in Physics laureate", expected: "Geoffrey Hinton" },
+  { query: "team that won the 2023 Cricket World Cup", expected: "Australia" },
+  { query: "person who invented the World Wide Web", expected: "Tim Berners-Lee" },
+];
+
+const EVAL_SET = process.env.EVAL_SET === "hard" ? "hard" : "easy";
+const CASES = EVAL_SET === "hard" ? HARD_CASES : EASY_CASES;
 
 type Rec = { rank: number; host: string; isWiki: boolean; ok: boolean; reason?: SourceFetchFailureReason; matched: boolean };
 
@@ -70,7 +82,7 @@ async function probe(urls: string[], expected: string): Promise<Rec[]> {
   for (let i = 0; i < urls.length; i++) {
     let host = "";
     try { host = new URL(urls[i]).hostname; } catch { /* leave blank */ }
-    const isWiki = isCircular(host);
+    const isWiki = isCircularSource(host);
     const r = await fetchSourceText(urls[i], { fetchImpl });
     if (!r.ok) { recs.push({ rank: i + 1, host, isWiki, ok: false, reason: r.reason, matched: false }); continue; }
     recs.push({ rank: i + 1, host, isWiki, ok: true, matched: evaluateQuote(r.text as UntrustedSourceText, expected) === "matched" });
@@ -126,8 +138,8 @@ test("brave vs tavily — wiki-excluded recall + fetch-failure breakdown", { tim
   summarize("brave");
   summarize("tavily");
 
-  const report = `\n========== LIVE EVAL v2 (n=${n}, top-${RESULTS_PER_QUERY}, real fetchSource+evaluateQuote) ==========` + lines.join("\n") + "\n";
-  writeFileSync("/tmp/search-eval-v2.txt", report);
+  const report = `\n========== LIVE EVAL [${EVAL_SET.toUpperCase()}] (n=${n}, top-${RESULTS_PER_QUERY}, real fetchSource+evaluateQuote) ==========` + lines.join("\n") + "\n";
+  writeFileSync(`/tmp/search-eval-${EVAL_SET}.txt`, report);
   // eslint-disable-next-line no-console
   console.log(report);
 });
