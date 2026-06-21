@@ -73,12 +73,12 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started. 0/5 phases shipped.
+**Overall:** In progress. 0/5 phases shipped. Branch `claude/evidence-context-display`.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Slice helper (`quote-context.ts`) | ⬜ Not started | — | the deterministic core |
-| 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`) | ⬜ Not started | — | depends on Phase 1 |
+| 1 — Slice helper (`quote-context.ts`) | ✅ SHIPPED | (see branch) | the deterministic core |
+| 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`) | 🚧 IN PROGRESS | — | depends on Phase 1 |
 | 3 — View projection (`view-types.ts`, `evidence-card.ts`) | ⬜ Not started | — | depends on Phase 2 |
 | 4 — Read-path validation (`research-packs.ts`) | ⬜ Not started | — | depends on Phase 1 (cap) + 2 (fields) |
 | 5 — Render (`EvidenceCard.tsx`) | ⬜ Not started | — | depends on Phase 3 |
@@ -93,7 +93,7 @@ notes and commit messages.
 
 ## Phase 1 — Slice helper (`quote-context.ts`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — 2026-06-21, commit recorded in top-of-plan table. 12/12 helper tests green; tsc + lint clean.
 
 The deterministic lake — boil it. A pure function with exhaustive edge-case tests; everything downstream just plumbs its output.
 

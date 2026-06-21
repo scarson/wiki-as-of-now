@@ -17,7 +17,7 @@ export const MIN_QUOTE_LEN = 8;
  * smell. Re-validated at the research-packs read path (defense in depth). Code points.
  */
 export const MAX_QUOTE_LEN = 300;
-const MAX_PAGE_CHARS = 4_000_000; // hard bound before normalization (linear-time guarantee on untrusted text)
+export const MAX_PAGE_CHARS = 4_000_000; // hard bound before normalization (linear-time guarantee on untrusted text)
 
 export type QuoteResult = "matched" | "quote_too_short" | "quote_too_long" | "quote_not_found";
 
