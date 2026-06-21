@@ -1,6 +1,6 @@
 // ABOUTME: researchClaim — the pure, total orchestrator for the research pipeline. Applies cap ordering,
 // ABOUTME: runs verifyProposal on survivors, and returns a discriminated-union outcome (no DB, no crypto, no audit).
-import type { ResearchInput, ResearchProvider, EvidenceCard } from "./provider";
+import type { ResearchInput, ResearchProvider, EvidenceCard, ProviderUsage } from "./provider";
 import { ProviderUnavailableError } from "./provider";
 import type { DroppedProposal } from "./verify-proposal";
 import { verifyProposal } from "./verify-proposal";
@@ -30,6 +30,10 @@ export type ResearchOutcome =
       cards: EvidenceCard[];
       dispositions: DroppedProposal[];
       overCapCount: number;
+      // OPTIONAL metered-spend figures forwarded straight from the provider (Phase 5 quota_ledger source).
+      // The provider owns the figures; the pipeline does not compute them. The provider_unavailable arm
+      // carries no usage (nothing ran to meter).
+      usage?: ProviderUsage;
     };
 
 export interface ResearchClaimDeps {
@@ -108,7 +112,7 @@ export async function researchClaim(input: ResearchInput, deps: ResearchClaimDep
     throw e;
   }
 
-  const { providerName, modelVersion, proposals: raw, queries } = res;
+  const { providerName, modelVersion, proposals: raw, queries, usage } = res;
 
   // -------------------------------------------------------------------------
   // G9 query bound
@@ -135,6 +139,7 @@ export async function researchClaim(input: ResearchInput, deps: ResearchClaimDep
       cards: [],
       dispositions: [],
       overCapCount,
+      usage,
     };
   }
 
@@ -186,5 +191,6 @@ export async function researchClaim(input: ResearchInput, deps: ResearchClaimDep
     cards,
     dispositions,
     overCapCount,
+    usage,
   };
 }

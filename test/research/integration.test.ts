@@ -217,6 +217,7 @@ describe("integration — real handleResearchMessage end-to-end chain", () => {
       packStore,
       audit,
       now: NEW_DATE,
+      quotaConfig: { perUserDailyCap: 1_000_000, globalDailyCap: 1_000_000 },
     });
 
     // --- Pack assertions ---

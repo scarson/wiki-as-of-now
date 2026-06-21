@@ -127,3 +127,14 @@ export async function getCandidatesByPageId(
     sourceRevisionId: row.source_revision_id,
   }));
 }
+
+/** Reads a single article's persisted record by its natural key (page_id), or null if unknown. */
+export async function getArticleByPageId(db: SqlExecutor, pageId: number): Promise<ArticleRecord | null> {
+  const rows = await db
+    .prepare("SELECT page_id, title, revision_id, fetched_at FROM articles WHERE page_id = ?")
+    .bind(pageId)
+    .all<{ page_id: number; title: string; revision_id: number; fetched_at: string }>();
+  const r = rows[0];
+  if (!r) return null;
+  return { pageId: r.page_id, title: r.title, revisionId: r.revision_id, fetchedAt: r.fetched_at };
+}

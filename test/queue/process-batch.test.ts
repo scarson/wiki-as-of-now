@@ -173,6 +173,7 @@ describe("processBatch — malformed body → ack (real consumer)", () => {
       packStore,
       audit: auditLog,
       now: new Date("2026-06-07T00:00:00.000Z"),
+      quotaConfig: { perUserDailyCap: 1_000_000, globalDailyCap: 1_000_000 },
     };
 
     // Malformed body: missing required fields (sourceRevisionId and input) — real consumer will audit+return (resolve)

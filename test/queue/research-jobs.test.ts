@@ -27,6 +27,9 @@ import type { SqlExecutor, SqlStatement } from "../../src/db/client";
 const PAGE_ID = 42;
 const SOURCE_REVISION_ID = 100;
 const FIXED_NOW = new Date("2026-06-06T12:00:00.000Z");
+// Generous caps so these (non-quota) tests are never throttled — the count-at-commit cap is exercised in
+// consumer-quota-cap.test.ts. The metered unit is the pack insert (Fix 3).
+const TEST_QUOTA = { perUserDailyCap: 1_000_000, globalDailyCap: 1_000_000 };
 
 function makeInput(overrides: Partial<{
   claimText: string;
@@ -98,7 +101,7 @@ describe("handleResearchMessage — proposals_present terminal", () => {
     const auditLog = makeAuditLog(exec);
     const packStore = makeResearchPackStore(exec);
 
-    const deps: ResearchConsumerDeps = { researchClaim, packStore, audit: auditLog, now: FIXED_NOW };
+    const deps: ResearchConsumerDeps = { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA };
     await handleResearchMessage(msg, deps);
 
     // Pack persisted
@@ -141,7 +144,7 @@ describe("handleResearchMessage — no_proposals terminal", () => {
     const auditLog = makeAuditLog(exec);
     const packStore = makeResearchPackStore(exec);
 
-    const deps: ResearchConsumerDeps = { researchClaim, packStore, audit: auditLog, now: FIXED_NOW };
+    const deps: ResearchConsumerDeps = { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA };
     await handleResearchMessage(msg, deps);
 
     // Pack persisted with no_proposals status
@@ -194,7 +197,7 @@ describe("handleResearchMessage — audit allowlist + sentinel (G13)", () => {
     const auditLog = makeAuditLog(exec);
     const packStore = makeResearchPackStore(exec);
 
-    const deps: ResearchConsumerDeps = { researchClaim, packStore, audit: auditLog, now: FIXED_NOW };
+    const deps: ResearchConsumerDeps = { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA };
     await handleResearchMessage(msg, deps);
 
     const rows = await auditLog.read();
@@ -269,7 +272,7 @@ describe("handleResearchMessage — audit allowlist + sentinel (G13)", () => {
     const auditLog = makeAuditLog(exec);
     const packStore = makeResearchPackStore(exec);
 
-    await handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW });
+    await handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA });
 
     const rows = await auditLog.read();
     const completed = rows.find(r => r.eventType === "research.completed");
@@ -300,7 +303,7 @@ describe("handleResearchMessage — provider_unavailable", () => {
     const packStore = makeResearchPackStore(exec);
 
     // Handler MUST throw (retry signal)
-    await expect(handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW }))
+    await expect(handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA }))
       .rejects.toThrow();
 
     // NOTHING persisted in research_packs
@@ -315,7 +318,7 @@ describe("handleResearchMessage — provider_unavailable", () => {
     expect(payload.status).toBe("provider_unavailable");
 
     // A redelivery can still re-attempt (no blocking row)
-    await expect(handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW }))
+    await expect(handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA }))
       .rejects.toThrow();
     expect(await packExists(exec, claimKey, SOURCE_REVISION_ID)).toBe(false);
   });
@@ -341,7 +344,7 @@ describe("handleResearchMessage — unexpected error containment", () => {
     const packStore = makeResearchPackStore(exec);
 
     // Handler MUST reject (retry)
-    await expect(handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW }))
+    await expect(handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA }))
       .rejects.toThrow();
 
     // Audit row is codes-only — must NOT contain the raw error message
@@ -365,7 +368,7 @@ describe("handleResearchMessage — unexpected error containment", () => {
     // Malformed: missing input
     const badMsg = { claimKey: "some-key", pageId: PAGE_ID, sourceRevisionId: SOURCE_REVISION_ID } as unknown as ResearchMessage;
     // Handler MUST resolve (ack permanently-bad input, do NOT retry)
-    await expect(handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW }))
+    await expect(handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA }))
       .resolves.toBeUndefined();
 
     expect(researchClaim).not.toHaveBeenCalled();
@@ -385,7 +388,7 @@ describe("handleResearchMessage — unexpected error containment", () => {
 
     const input = makeInput();
     const badMsg: ResearchMessage = { claimKey: "", pageId: PAGE_ID, sourceRevisionId: SOURCE_REVISION_ID, input };
-    await expect(handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW }))
+    await expect(handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA }))
       .resolves.toBeUndefined();
 
     expect(researchClaim).not.toHaveBeenCalled();
@@ -405,7 +408,7 @@ describe("handleResearchMessage — unexpected error containment", () => {
     // A crafted/corrupted message smuggling PII/content in claimKey, missing input → fails validation.
     const sentinel = `SENTINEL_LEAK_${Math.random().toString(36).slice(2).toUpperCase()}`;
     const badMsg = { claimKey: `${sentinel} John Doe SSN 123-45-6789`, pageId: PAGE_ID, sourceRevisionId: SOURCE_REVISION_ID } as unknown as ResearchMessage;
-    await expect(handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW }))
+    await expect(handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA }))
       .resolves.toBeUndefined();
 
     expect(researchClaim).not.toHaveBeenCalled();
@@ -437,6 +440,7 @@ describe("handleResearchMessage — null / non-object message (isValidMessage br
         packStore,
         audit: auditLog,
         now: FIXED_NOW,
+        quotaConfig: TEST_QUOTA,
       })
     ).resolves.toBeUndefined();
 
@@ -460,6 +464,7 @@ describe("handleResearchMessage — null / non-object message (isValidMessage br
         packStore,
         audit: auditLog,
         now: FIXED_NOW,
+        quotaConfig: TEST_QUOTA,
       })
     ).resolves.toBeUndefined();
 
@@ -494,7 +499,7 @@ describe("handleResearchMessage — non-number pageId / sourceRevisionId (isVali
     } as unknown as ResearchMessage;
 
     await expect(
-      handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW })
+      handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA })
     ).resolves.toBeUndefined();
 
     expect(researchClaim).not.toHaveBeenCalled();
@@ -521,7 +526,7 @@ describe("handleResearchMessage — non-number pageId / sourceRevisionId (isVali
     } as unknown as ResearchMessage;
 
     await expect(
-      handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW })
+      handleResearchMessage(badMsg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA })
     ).resolves.toBeUndefined();
 
     expect(researchClaim).not.toHaveBeenCalled();
@@ -563,7 +568,7 @@ describe("handleResearchMessage — idempotency skip on full PK", () => {
     const auditLog = makeAuditLog(exec);
     const packStore = makeResearchPackStore(exec);
 
-    const deps: ResearchConsumerDeps = { researchClaim, packStore, audit: auditLog, now: FIXED_NOW };
+    const deps: ResearchConsumerDeps = { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA };
 
     const msg1: ResearchMessage = { claimKey, pageId: PAGE_ID, sourceRevisionId: SOURCE_REVISION_ID, input };
 
@@ -621,7 +626,7 @@ describe("handleResearchMessage — concurrent double-write", () => {
     // Real packStore — insertIfAbsent is idempotent (ON CONFLICT DO NOTHING)
     const packStore = makeResearchPackStore(exec);
 
-    const deps: ResearchConsumerDeps = { researchClaim, packStore, audit: auditLog, now: FIXED_NOW };
+    const deps: ResearchConsumerDeps = { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA };
 
     // Fully await first, then second (deterministic sequencing)
     await handleResearchMessage(msg, deps);
@@ -680,7 +685,7 @@ describe("PackStore.commitTerminal", () => {
     };
 
     const store = makeResearchPackStore(exec);
-    await store.commitTerminal(pack, auditEntry);
+    await store.commitTerminal(pack, auditEntry, { neurons: 0, braveQueryCount: 0 }, "u_admin");
 
     // Pack must be persisted
     const packResult = await getPack(exec, claimKey, SOURCE_REVISION_ID);
@@ -694,6 +699,11 @@ describe("PackStore.commitTerminal", () => {
     expect(rows).toHaveLength(1);
     expect(rows[0].actor).toBe("system");
     expect(rows[0].eventType).toBe("research.completed");
+
+    // The same atomic batch also wrote exactly one quota-ledger row (the metered unit) for the admin user.
+    const ledger = await exec.prepare("SELECT user_id FROM quota_ledger WHERE claim_key = ?").bind(claimKey).all<{ user_id: string }>();
+    expect(ledger).toHaveLength(1);
+    expect(ledger[0].user_id).toBe("u_admin");
   });
 
   it("atomic both-or-neither: FK violation on pack insert rolls back the audit row too (real executor, no mock)", async () => {
@@ -729,7 +739,7 @@ describe("PackStore.commitTerminal", () => {
     const store = makeResearchPackStore(exec);
 
     // commitTerminal must reject (FK error)
-    await expect(store.commitTerminal(pack, auditEntry)).rejects.toThrow(/FOREIGN KEY/i);
+    await expect(store.commitTerminal(pack, auditEntry, { neurons: 0, braveQueryCount: 0 }, "u_admin")).rejects.toThrow(/FOREIGN KEY/i);
 
     // Pack must NOT be persisted (rolled back)
     expect(await packExists(exec, claimKey, SOURCE_REVISION_ID)).toBe(false);
@@ -737,9 +747,13 @@ describe("PackStore.commitTerminal", () => {
     // Audit row must NOT be persisted (rolled back with the pack — both-or-neither)
     const rows = await makeAuditLog(exec).read();
     expect(rows).toHaveLength(0);
+
+    // The quota-ledger row must also roll back with the pack (the FK failure aborts the whole batch).
+    const ledger = await exec.prepare("SELECT COUNT(*) AS n FROM quota_ledger WHERE claim_key = ?").bind(claimKey).all<{ n: number }>();
+    expect(ledger[0].n).toBe(0);
   });
 
-  it("composition proof: commitTerminal issues exactly one batch([packStmt, auditStmt]) — not two independent .run() calls", async () => {
+  it("composition proof: commitTerminal issues exactly one batch([userStmt, packStmt, ledgerStmt, auditStmt]) — not independent .run() calls", async () => {
     // Wrap a real executor in a thin spy that counts batch calls and statement count.
     const realExec = freshTestExecutor();
     await upsertArticle(realExec, {
@@ -819,11 +833,11 @@ describe("PackStore.commitTerminal", () => {
     };
 
     const store = makeResearchPackStore(spyExec);
-    await store.commitTerminal(pack, auditEntry);
+    await store.commitTerminal(pack, auditEntry, { neurons: 0, braveQueryCount: 0 }, "u_admin");
 
-    // batch must be called exactly once with exactly 2 statements
+    // batch must be called exactly once with exactly 4 statements (admin upsert, pack, quota ledger, audit)
     expect(batchCallCount).toBe(1);
-    expect(batchStatementCount).toBe(2);
+    expect(batchStatementCount).toBe(4);
 
     // commitTerminal must NOT have issued independent .run() calls for the terminal path
     expect(prepareRunCount).toBe(0);
@@ -852,7 +866,7 @@ describe("handleResearchMessage — terminal path uses commitTerminal (G13 atomi
 
     // Handler MUST reject (retry signal) — FK failure inside commitTerminal propagates out.
     await expect(
-      handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW })
+      handleResearchMessage(msg, { researchClaim, packStore, audit: auditLog, now: FIXED_NOW, quotaConfig: TEST_QUOTA })
     ).rejects.toThrow();
 
     // Pack must NOT exist (rolled back).
@@ -885,7 +899,7 @@ describe("handleResearchMessage — terminal path uses commitTerminal (G13 atomi
     });
     const spyAudit = { append: appendSpy };
 
-    await handleResearchMessage(msg, { researchClaim, packStore, audit: spyAudit, now: FIXED_NOW });
+    await handleResearchMessage(msg, { researchClaim, packStore, audit: spyAudit, now: FIXED_NOW, quotaConfig: TEST_QUOTA });
 
     // deps.audit.append must NOT have been called for research.completed (it goes via commitTerminal).
     const completedCalls = appendSpy.mock.calls.filter(([e]) => e.eventType === "research.completed");

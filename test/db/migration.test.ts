@@ -160,14 +160,16 @@ describe("0002_eligibility_verdicts migration", () => {
     dbB.pragma("foreign_keys = ON");
     dbB.exec(readFileSync("src/db/schema.sql", "utf8"));
 
+    // type IN ('table','index') so CREATE UNIQUE INDEX statements (e.g. users_identity_unique)
+    // are parity-checked too — an index present in a migration but missing from schema.sql must fail.
     const tablesA = dbA
       .prepare<[], { name: string; sql: string }>(
-        "SELECT name, sql FROM sqlite_master WHERE type='table' ORDER BY name"
+        "SELECT name, sql FROM sqlite_master WHERE type IN ('table','index') ORDER BY name"
       )
       .all();
     const tablesB = dbB
       .prepare<[], { name: string; sql: string }>(
-        "SELECT name, sql FROM sqlite_master WHERE type='table' ORDER BY name"
+        "SELECT name, sql FROM sqlite_master WHERE type IN ('table','index') ORDER BY name"
       )
       .all();
 
@@ -263,5 +265,157 @@ describe("0003_research_packs migration", () => {
           "2026-06-06T00:00:00.000Z"
         );
     expect(insert).toThrow(/FOREIGN KEY/i);
+  });
+});
+
+describe("0004_users migration", () => {
+  it("creates the users table with the expected columns", () => {
+    const db = freshTestDb();
+    const cols = db
+      .prepare<[], { name: string }>("PRAGMA table_info(users)")
+      .all()
+      .map((r) => r.name);
+    expect(cols).toEqual(
+      expect.arrayContaining(["user_id", "identity_provider", "identity_subject", "email", "created_at"]),
+    );
+  });
+
+  it("rejects a NULL user_id (WITHOUT ROWID natural-key PK)", () => {
+    const db = freshTestDb();
+    // DB-1: a plain INTEGER PRIMARY KEY would silently fabricate a key on NULL.
+    // user_id is a TEXT WITHOUT ROWID PK, so NULL must be rejected loudly.
+    const insertNullPk = () =>
+      db
+        .prepare(
+          "INSERT INTO users (user_id, identity_provider, identity_subject, email, created_at) VALUES (?, ?, ?, ?, ?)",
+        )
+        .run(null, "google", "sub-1", "x@example.com", "2026-06-13T00:00:00.000Z");
+    expect(insertNullPk).toThrow(/NOT NULL/i);
+  });
+
+  it("enforces a unique (identity_provider, identity_subject) so one OAuth identity maps to one user", () => {
+    const db = freshTestDb();
+    const ins = (uid: string) =>
+      db
+        .prepare(
+          "INSERT INTO users (user_id, identity_provider, identity_subject, email, created_at) VALUES (?, ?, ?, ?, ?)",
+        )
+        .run(uid, "google", "same-subject", "a@example.com", "2026-06-13T00:00:00.000Z");
+    ins("user-a");
+    expect(() => ins("user-b")).toThrow(/UNIQUE/i);
+  });
+});
+
+describe("0005_quota_ledger migration", () => {
+  it("creates quota_ledger with the expected columns", () => {
+    const db = freshTestDb();
+    const cols = db
+      .prepare<[], { name: string }>("PRAGMA table_info(quota_ledger)")
+      .all()
+      .map((r) => r.name);
+    expect(cols).toEqual(
+      expect.arrayContaining([
+        "claim_key",
+        "source_revision_id",
+        "user_id",
+        "evaluated_at",
+        "neurons",
+        "brave_query_count",
+      ]),
+    );
+  });
+
+  it("rejects a NULL PK component (WITHOUT ROWID composite PK)", () => {
+    const db = freshTestDb();
+    db.prepare(
+      "INSERT INTO users (user_id, identity_provider, identity_subject, email, created_at) VALUES (?, ?, ?, ?, ?)",
+    ).run("u_admin", "admin", "admin", "a@e.com", "2026-06-13T00:00:00.000Z");
+    const insertNull = () =>
+      db
+        .prepare(
+          "INSERT INTO quota_ledger (claim_key, source_revision_id, user_id, evaluated_at, neurons, brave_query_count) VALUES (?, ?, ?, ?, ?, ?)",
+        )
+        .run("k1", null, "u_admin", "2026-06-13T00:00:00.000Z", 0, 0);
+    expect(insertNull).toThrow(/NOT NULL/i);
+  });
+
+  it("enforces the quota_ledger -> users foreign key", () => {
+    const db = freshTestDb();
+    const insert = () =>
+      db
+        .prepare(
+          "INSERT INTO quota_ledger (claim_key, source_revision_id, user_id, evaluated_at, neurons, brave_query_count) VALUES (?, ?, ?, ?, ?, ?)",
+        )
+        .run("k1", 100, "ghost-user", "2026-06-13T00:00:00.000Z", 0, 0);
+    expect(insert).toThrow(/FOREIGN KEY/i);
+  });
+});
+
+describe("0008_seed_lists migration — seed_lists / seed_list_entries schema", () => {
+  it("seed_lists is WITHOUT ROWID with a NOT NULL text PK and rejects a NULL topic", () => {
+    const db = freshTestDb();
+    const cols = db
+      .prepare<[], { name: string; notnull: number; pk: number }>(
+        "PRAGMA table_info(seed_lists)"
+      )
+      .all();
+    expect(cols.map((c) => c.name).sort()).toEqual(
+      ["topic", "title", "refreshed_at", "window_start", "window_end", "entry_count"].sort()
+    );
+    const topic = cols.find((c) => c.name === "topic")!;
+    expect(topic.pk).toBe(1);
+    expect(topic.notnull).toBe(1);
+    // WITHOUT ROWID proven by NULL-PK rejection (a rowid table would fabricate a key).
+    const insertNull = () =>
+      db
+        .prepare(
+          "INSERT INTO seed_lists (topic, title, refreshed_at, window_start, window_end, entry_count) VALUES (NULL,'x','t','a','b',0)"
+        )
+        .run();
+    expect(insertNull).toThrow(/NOT NULL|constraint/i);
+  });
+
+  it("seed_list_entries has a composite NOT NULL PK and a FK to seed_lists(topic)", () => {
+    const db = freshTestDb();
+    const cols = db
+      .prepare<[], { name: string; notnull: number; pk: number }>(
+        "PRAGMA table_info(seed_list_entries)"
+      )
+      .all();
+    expect(cols.map((c) => c.name).sort()).toEqual(
+      ["topic", "rank", "page_id", "article_title", "pageview_count"].sort()
+    );
+    expect(cols.filter((c) => c.pk > 0).map((c) => c.name).sort()).toEqual(
+      ["rank", "topic"].sort()
+    );
+    for (const c of cols) if (c.pk > 0) expect(c.notnull).toBe(1);
+    // FK fires: an entry for a topic with no parent seed_lists row is rejected.
+    const insertGhost = () =>
+      db
+        .prepare(
+          "INSERT INTO seed_list_entries (topic, rank, page_id, article_title, pageview_count) VALUES ('ghost',1,123,'X',5)"
+        )
+        .run();
+    expect(insertGhost).toThrow(/FOREIGN KEY|constraint/i);
+  });
+
+  it("schema.sql == ordered migrations for the new tables (parity)", () => {
+    // The existing parity test above already compares ALL sqlite_master DDL.
+    // This assertion guards the two new names explicitly so a missed schema.sql edit is obvious.
+    const dbMig = new Database(":memory:");
+    for (const f of readdirSync("migrations").filter((f) => f.endsWith(".sql")).sort()) {
+      dbMig.exec(readFileSync(`migrations/${f}`, "utf8"));
+    }
+    const dbSchema = new Database(":memory:");
+    dbSchema.exec(readFileSync("src/db/schema.sql", "utf8"));
+    const names = (d: Database.Database) =>
+      d
+        .prepare<[], { name: string }>(
+          "SELECT name FROM sqlite_master WHERE type='table' AND name IN ('seed_lists','seed_list_entries') ORDER BY name"
+        )
+        .all()
+        .map((r) => r.name);
+    expect(names(dbMig)).toEqual(["seed_list_entries", "seed_lists"]);
+    expect(names(dbSchema)).toEqual(["seed_list_entries", "seed_lists"]);
   });
 });

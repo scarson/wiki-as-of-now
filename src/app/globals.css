@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
+/* Dark archival palette — "The Archivist's Desk Lamp" (DESIGN.md §2).
+   OKLCH values transcribed verbatim from the DESIGN.md frontmatter; chroma 0 on
+   every neutral surface (the No-Parchment Rule). Two accent lanes only:
+   rust = staleness, iron-gall = evidence/links/focus (the Two Lanes Rule). */
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	--archive-black: oklch(0.14 0 0);
+	--shelf-gray: oklch(0.18 0 0);
+	--hairline-gray: oklch(0.30 0 0);
+	--ink-white: oklch(0.93 0.005 110);
+	--body-gray: oklch(0.86 0 0);
+	--dust-gray: oklch(0.66 0.01 110);
+	--ledger-olive: oklch(0.42 0.08 110);
+	--ledger-olive-bright: oklch(0.82 0.09 110);
+	--ledger-olive-shadow: oklch(0.26 0.06 110);
+	--oxidized-rust: oklch(0.74 0.13 40);
+	--rust-shadow: oklch(0.28 0.08 40);
+	--iron-gall: oklch(0.74 0.09 255);
+	--iron-gall-shadow: oklch(0.28 0.05 255);
+
+	/* Canonical dark surface — Archive Black body, Body Gray text (≥7:1). */
+	--background: var(--archive-black);
+	--foreground: var(--body-gray);
 }
 
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
+	--color-archive-black: var(--archive-black);
+	--color-shelf-gray: var(--shelf-gray);
+	--color-hairline-gray: var(--hairline-gray);
+	--color-ink-white: var(--ink-white);
+	--color-body-gray: var(--body-gray);
+	--color-dust-gray: var(--dust-gray);
+	--color-ledger-olive: var(--ledger-olive);
+	--color-ledger-olive-bright: var(--ledger-olive-bright);
+	--color-ledger-olive-shadow: var(--ledger-olive-shadow);
+	--color-oxidized-rust: var(--oxidized-rust);
+	--color-rust-shadow: var(--rust-shadow);
+	--color-iron-gall: var(--iron-gall);
+	--color-iron-gall-shadow: var(--iron-gall-shadow);
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
+	--font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
 }
 
 body {
 	background: var(--background);
 	color: var(--foreground);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* The only permitted shadow-like treatment: a functional iron-gall focus ring
+   (DESIGN.md §4 — Borders-Not-Shadows Rule). Keyboard-first triage depends on it. */
+:focus-visible {
+	outline: 2px solid var(--iron-gall);
+	outline-offset: 2px;
+}
+
+/* Reduced-motion alternative for every animation (DESIGN.md §1, §6 Do). */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+	}
 }

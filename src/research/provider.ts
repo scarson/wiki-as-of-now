@@ -38,12 +38,22 @@ export interface EvidenceCard {
   advisorySupport: boolean;
 }
 
+/** Best-effort metered-spend figures the provider can surface (optional; threaded to quota_ledger in Phase 5). */
+export interface ProviderUsage {
+  /** Number of upstream search calls actually issued — exact, the honest metered unit we always have. */
+  braveQueryCount?: number;
+  /** Per-run Workers AI neurons, when env.AI surfaces a usage figure; left undefined (never fabricated) otherwise. */
+  neurons?: number;
+}
+
 /** What a provider returns: proposals (unverified) + the neutral queries it used (G9) + model identity (G12). */
 export interface ProviderResearch {
   providerName: string;
   modelVersion: string;     // full model identifier for G12 disclosure; fake → "fake-provider/0"
   proposals: ProposedEvidence[];
   queries: string[];
+  /** OPTIONAL metered-spend figures (Phase 5 quota_ledger source). Optional so every existing caller still typechecks. */
+  usage?: ProviderUsage;
 }
 
 /** Thrown when the provider backend is unreachable (caught by the pipeline → status: provider_unavailable). */

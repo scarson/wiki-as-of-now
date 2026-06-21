@@ -11,7 +11,7 @@ import { makeAuditLog } from "../../src/db/audit-log";
 import { GATE_VERSION } from "../../src/safelane/eligibility";
 import type { ResearchMessage } from "../../src/queue/research-jobs";
 
-const workerEnv = { DB: testEnv.DB, RESEARCH_QUEUE: testEnv.RESEARCH_QUEUE };
+const workerEnv = { DB: testEnv.DB, RESEARCH_QUEUE: testEnv.RESEARCH_QUEUE, AI: testEnv.AI };
 
 const PAGE_ID = 4242;
 const REV_ID = 9001;

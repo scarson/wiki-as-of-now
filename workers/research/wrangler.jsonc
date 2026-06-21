@@ -3,14 +3,15 @@
 	// The `research` and `research-dlq` queues must be created once before the first real deploy:
 	//   wrangler queues create research
 	//   wrangler queues create research-dlq
-	"name": "wikiasofnow-research",
+	"name": "wiki-as-of-now-research",
 	"main": "index.ts",
 	"compatibility_date": "2026-06-04",
 	"compatibility_flags": ["global_fetch_strictly_public"],
+	"ai": { "binding": "AI", "remote": true },
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_name": "wikiasofnow",
+			"database_name": "wiki-as-of-now",
 			"database_id": "00000000-0000-0000-0000-000000000000"
 		}
 	],
@@ -32,5 +33,37 @@
 	},
 	"observability": {
 		"enabled": true
+	},
+	// Per-env remote targets. Top-level `ai`, `compatibility_flags` (NO nodejs_compat — CC-5),
+	// `main` are inherited; each env overrides `name`, `d1_databases`, `queues`. Queues are
+	// account-global single-consumer, so dev/prod queue + DLQ names must differ (design §6.2).
+	// `max_batch_size: 1` is load-bearing — exactly one message per queue() invocation (G14).
+	// The DLQ is inferred from `dead_letter_queue`, NEVER a separate binding (contract §2.6).
+	// D1 ids are PLACEHOLDERS until Sam provisions; the id MUST match the app worker per env (CC-10).
+	"env": {
+		"dev": {
+			"name": "wiki-as-of-now-research-dev",
+			"d1_databases": [
+				{ "binding": "DB", "database_name": "wiki-as-of-now-dev", "database_id": "REPLACE_WITH_DEV_D1_ID" }
+			],
+			"queues": {
+				"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research-dev" }],
+				"consumers": [
+					{ "queue": "research-dev", "max_batch_size": 1, "max_retries": 3, "dead_letter_queue": "research-dlq-dev" }
+				]
+			}
+		},
+		"production": {
+			"name": "wiki-as-of-now-research",
+			"d1_databases": [
+				{ "binding": "DB", "database_name": "wiki-as-of-now", "database_id": "REPLACE_WITH_PROD_D1_ID" }
+			],
+			"queues": {
+				"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research" }],
+				"consumers": [
+					{ "queue": "research", "max_batch_size": 1, "max_retries": 3, "dead_letter_queue": "research-dlq" }
+				]
+			}
+		}
 	}
 }

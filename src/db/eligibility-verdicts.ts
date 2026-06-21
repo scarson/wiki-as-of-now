@@ -1,6 +1,7 @@
 // ABOUTME: Persistence + pre-filter query for safe-lane eligibility verdicts (advisory, never the surfacing authority).
 // ABOUTME: Keyed (page_id, revision_id, gate_version); upsert on re-eval; Stage-1 pre-filter for the easy-win lane.
 import type { SqlExecutor } from "./client";
+import type { EligibilityDecision } from "../domain/types";
 
 export interface VerdictRecord {
   pageId: number;
@@ -49,4 +50,22 @@ export async function selectEasyWinPageIds(db: SqlExecutor, gateVersion: string)
     .bind(gateVersion)
     .all<{ page_id: number }>();
   return rows.map(r => r.page_id);
+}
+
+/** Reads the persisted eligibility verdict for one (page, revision, gateVersion) as an EligibilityDecision,
+ *  or null if absent. Defensive: a corrupt reasons_json reads as null (the route fails closed to human_only). */
+export async function getVerdict(
+  db: SqlExecutor, pageId: number, revisionId: number, gateVersion: string,
+): Promise<EligibilityDecision | null> {
+  const rows = await db
+    .prepare("SELECT eligibility, reasons_json FROM eligibility_verdicts WHERE page_id = ? AND revision_id = ? AND gate_version = ?")
+    .bind(pageId, revisionId, gateVersion)
+    .all<{ eligibility: string; reasons_json: string }>();
+  const r = rows[0];
+  if (!r) return null;
+  if (r.eligibility !== "easy_win" && r.eligibility !== "human_only") return null;
+  let reasons: unknown;
+  try { reasons = JSON.parse(r.reasons_json); } catch { return null; }
+  if (!Array.isArray(reasons) || !reasons.every((x) => typeof x === "string")) return null;
+  return { eligibility: r.eligibility, reasons: reasons as string[] };
 }

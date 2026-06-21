@@ -29,6 +29,8 @@ This document serves three audiences. Start here, then go directly to the sectio
 | 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 – DB-2 | §1.C |
 | 2 | [Detector (deterministic stale-claim detection)](#section-2-detector-deterministic-stale-claim-detection) | `src/detector/*` — markers, suppression, scoring, orchestration, fixtures | DET-1 – DET-3 | §2.C |
 | 3 | [Safe-lane / untrusted-content scanning](#section-3-safe-lane--untrusted-content-scanning) | `src/safelane/*` — wikitext signal scans running on attacker-controllable article content | SAFE-1 | §3.C |
+| 4 | [Deploy / CI (wrangler, GitHub Actions, OpenNext)](#section-4-deploy--ci-wrangler-github-actions-opennext) | `wrangler.jsonc`, `workers/research/wrangler.jsonc`, `.github/workflows/*`, OpenNext build | CI-1 – CI-2 | §4.C |
+| 5 | [Research enqueue gating & metered spend](#section-5-research-enqueue-gating--metered-spend) | every path onto the metered/G11 research lane; per-user + global quota | GATE-1 – GATE-2 | §5.C |
 | — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-3 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
@@ -179,6 +181,101 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ---
 
+# Section 4: Deploy / CI (wrangler, GitHub Actions, OpenNext)
+
+> **Reader context:** I'm editing `wrangler.jsonc` / `workers/research/wrangler.jsonc`, a `.github/workflows/*.yml`, or the OpenNext build wiring — anything in the provision/deploy path.
+>
+> These are silent footguns: the config/workflow *looks* right, lints/parses fine, and the failure only shows up at deploy time (or never visibly fails at all — it just never runs).
+
+---
+
+### CI-1: GitHub Actions Forbids the `secrets` Context in a JOB-Level `if:` — It Silently Never Runs
+
+**The Flaw:** Gating a whole job on a secret's presence with `jobs.<id>.if: ${{ secrets.SOME_TOKEN != '' }}` to make a deploy pipeline "dormant until the secret is added." GitHub Actions does **not** expose the `secrets` context in a job-level `if:` — only `github`, `needs`, `vars`, and `inputs` are available there. The expression evaluates `secrets.SOME_TOKEN` to empty, the condition is always false, and the job **silently never runs** — even after the secret is added. No error, no warning; the job just stays grey forever.
+
+**Why It Matters:** A dormant deploy pipeline that "skips cleanly until the secret arrives" is exactly the intended design — but a job-level `secrets.*` guard inverts it into "never deploys, ever," and the failure is invisible because a skipped job looks identical to a correctly-dormant one. You discover it only when the first real deploy mysteriously doesn't happen.
+
+**The Fix:** Use a **step-level** `if: ${{ secrets.SOME_TOKEN != '' }}` on each meaningful step (the `secrets` context IS available at step level), and map the secret into job-level `env:` for the step bodies to consume. With the secret absent the steps skip (green, not red); once it's added they run. `.github/workflows/deploy.yml` implements this. Assert the step-level form in a config test and assert the guard is NOT on the job's own `if:` so the broken form can't regress back in.
+
+**The Lesson:** Context availability in GitHub Actions is position-dependent and not symmetric — `secrets` works in `env:`, `with:`, and step `if:`, but not job `if:`. When a workflow "doesn't run and doesn't error," suspect a context-availability mismatch before anything else, and verify against GitHub's contexts table rather than assuming an expression that parses also evaluates.
+
+---
+
+### CI-2: The OpenNext Build Shells Out to `pnpm build` — `--env=""` Silences the Multi-Env Dry-Run Warning
+
+**The Flaw (two parts):** (1) `opennextjs-cloudflare build` internally runs `pnpm build` via a child process — so a session where `pnpm` is not on PATH (the fnm / `node`-not-on-PATH setup) can't complete the OpenNext build locally even though the underlying `next build` runs fine. CI has the pnpm toolchain (`pnpm/action-setup`), so it's the authoritative gate for the OpenNext build + app-worker dry-run; the cheaper research-worker `wrangler deploy --dry-run` runs credential-free anywhere and is the in-session check. (2) Once a wrangler config has `env.*` blocks, `wrangler deploy --dry-run` (no `--env`) emits a `no target environment specified` WARNING that trips the pristine-output rule.
+
+**Why It Matters:** "The OpenNext build failed locally" reads as a real breakage when it's just the pnpm-PATH quirk; and a benign multi-env warning in CI output looks like a config defect. Both waste a debugging cycle if you don't know they're expected.
+
+**The Fix:** For local credential-free validation, run the research-worker dry-run (`bunx wrangler deploy --dry-run --env="" -c workers/research/wrangler.jsonc`) and trust CI for the full OpenNext build. Pass `--env=""` to target the top-level/default config explicitly and silence the multi-env warning — both the CI steps and local checks use it. The static bundle-cleanliness backstop (`scripts/check-research-bundle-clean.mjs`) runs under plain `node` and needs neither pnpm nor wrangler.
+
+**The Lesson:** A "build" command that shells out to your package manager inherits your package manager's PATH assumptions — a clean `node` is not enough. And once you add named environments to a wrangler config, every bare `--dry-run`/`deploy` invocation needs an explicit `--env` (or `--env=""`) or it warns; bake the flag into the committed CI step, not just your shell history.
+
+---
+
+### CI-3: `remote: true` Bindings Open a Login-Gated Proxy in Credential-Free Contexts (Test Pool + `next build`)
+
+**The Flaw:** Workers AI has no local emulation, so both wrangler configs mark the `ai` binding `remote: true`. That flag is right for `wrangler dev`/deploy, but two contexts that must run credential-free *also* read it and open a wrangler remote-proxy session that requires a logged-in Cloudflare account: (1) `@cloudflare/vitest-pool-workers` at pool start, so `pnpm test:workers` tries remote mode; and (2) `initOpenNextCloudflareForDev()`, which `next.config.ts` called unconditionally — so it ran during `next build` (not just `next dev`) and opened the same proxy via `getPlatformProxy`. Both failed in CI with `You must be logged in to use wrangler dev in remote mode`, but passed locally because the dev was logged in.
+
+**Why It Matters:** The failure is invisible to whoever authored it — their machine is authenticated — and surfaces only in CI, a fresh clone, or a teammate's checkout. It also masquerades as two unrelated problems: identical error message, two different fix sites (vitest config vs. next.config).
+
+**The Fix:** Scope the remote binding to runtime only, disabling it at each credential-free entry point. (1) Test pool: set `remoteBindings: false` in `vitest.workers.config.mts` — the workerd tests thread `env.AI` through but never call `.run()`, so Miniflare still supplies the binding object. (2) Build: gate `initOpenNextCloudflareForDev()` on `NODE_ENV === "development"` in `next.config.ts` so it runs only under `next dev`; in production the worker entrypoint supplies the Cloudflare context, so a build never needs it. Keep `remote: true` in both wrangler configs — it's correct for `wrangler dev`/deploy.
+
+**The Lesson:** A binding marked `remote` is a runtime convenience that leaks into *every* tool that parses the wrangler config — test pools, dev-context shims, anything calling `getPlatformProxy`. When you add `remote: true`, audit each credential-free entry point (CI test step, build, dry-run) and disable remote there explicitly, then verify in a shell with cloud credentials unset so local login can't mask the failure (testing-pitfalls §7).
+
+---
+
+### Review Checklist
+
+- [ ] **No deploy/job is gated on `secrets.*` in a job-level `if:`** — that condition silently never runs; the dormancy guard must be a step-level `if:` (or `env:`-mapped), verified against GitHub's contexts table (CI-1)
+- [ ] **A config test pins the step-level dormancy guard and forbids a job-level `secrets.` guard** — so the broken form can't regress in (CI-1)
+- [ ] **Credential-free local validation uses the research-worker `--dry-run` with `--env=""`; the full OpenNext build is trusted to CI** — don't read the pnpm-PATH quirk as a real build breakage (CI-2)
+- [ ] **Every `wrangler deploy`/`--dry-run` on a multi-env config carries an explicit `--env` (or `--env=""`)** — a bare invocation warns about no target environment and trips pristine-output (CI-2)
+- [ ] **`remote: true` bindings are disabled in every credential-free context** — the workerd test pool sets `remoteBindings: false` and `initOpenNextCloudflareForDev()` is gated to `next dev`, so neither opens a login-gated remote-proxy session in CI (CI-3)
+- [ ] **`initOpenNextCloudflareForDev()` runs only under `NODE_ENV=development`** — it must not execute during `next build`; the production Cloudflare context comes from the worker entrypoint (CI-3)
+
+---
+
+# Section 5: Research enqueue gating & metered spend
+
+> **Reader context:** I'm adding or changing any path that can put a job on the research queue (`RESEARCH_QUEUE.send` / `enqueueResearch`), or anything that meters/limits research spend. The research lane is the project's only metered (LLM + Brave) path and is governed by the **safe-lane guardrail (G11)** — only `easy_win` claims may enter it, BLP/`human_only` never. Both of these were breached by real code that passed every per-component test; they were caught only by adversarial cross-phase review.
+
+---
+
+### GATE-1: EVERY enqueue path onto the metered lane must go through the composed gate — a second route is a silent bypass
+
+**The Flaw:** The single-candidate route `POST /api/research/[candidateId]` was carefully gated (kill-switch → auth → G11 eligibility → quota). A *separate* batch route `POST /api/queue/enqueue-research` → `enqueueCandidatesForResearch` looked up candidates and called `enqueueResearch` directly with **no** auth, kill-switch, G11, or quota check. An anonymous caller could enqueue arbitrary candidate ids — including `human_only`/BLP — driving unbounded metered research. It passed CI because its only tests called the (ungated) helper directly and asserted it enqueued.
+
+**Why It Matters:** This is simultaneously an auth bypass, a **G11 safe-lane breach** (a compliance-contract violation — BLP/`human_only` claims entering the metered path, not merely overspend), and unbounded cost. There is no `middleware.ts` blanket gate; each route is responsible for its own gating, so a new route is a new hole by default.
+
+**The Fix:** Route every enqueue path through the SAME composed gate building blocks — reuse the shared eligibility helper (`evaluatePersistedEligibility`) and `gateResearchEnqueue`; never duplicate or skip G11. The batch path delegates each candidate to `gateResearchEnqueue` (kill-switch + auth checked once up front; per-candidate eligibility + quota). Add a gating test for EACH route asserting anonymous → 401, `human_only`/no-verdict → refused (fail-closed), kill-switch → 503, over-quota → refused.
+
+**The Lesson:** "The gate" is not a place, it's an invariant that must hold at every entrance. When you add a route, page action, cron, or admin tool that can reach `enqueueResearch`/`RESEARCH_QUEUE.send`, grep every call site and confirm each is behind the composed gate. A per-component test that calls the inner helper directly will not catch an ungated outer route — test the route, as an anonymous and as a `human_only` request.
+
+---
+
+### GATE-2: bound metered spend at the sequential consumer's commit, not with a producer-side pre-check alone
+
+**The Flaw:** The per-user/global daily cap was enforced only by an advisory **producer-side** pre-check that counts `quota_ledger` rows — but ledger rows exist only AFTER a pack commits. A burst of distinct candidates all read a low count, all pass the pre-check, all enqueue, and all commit, overrunning the cap unbounded. Separately, `ResearchMessage` carried no `userId`, so the consumer keyed every ledger row to the single-admin id — the per-user cap could never trip for a real OAuth user (only the global cap functioned).
+
+**Why It Matters:** "Write-once ledger committed atomically with the pack" gives idempotency (no double-charge for the *same* claim), NOT a daily-count bound. The advisory pre-check is racy by construction. Together these made the documented per-user budget guarantee false.
+
+**The Fix:** Thread the enqueuer's real `userId` end-to-end (gate → `ResearchMessage` → `commitTerminal` → `quota_ledger`, seeding that user in the same atomic batch). Enforce the cap at the **sequential consumer's commit** (`handleResearchMessage`): count committed packs for the pack's UTC day (per-user + global) and if at/over cap, do not insert — ACK with a codes-only `quota_exceeded` audit (drop, don't retry-loop). The consumer is sequential (CC-16), so count-then-insert there is race-free; the pre-check stays as advisory fast-fail UX.
+
+**The Lesson:** A cap is only as strong as its most-serialized enforcement point. Don't claim a hard bound from a pre-check that reads state written after the action it gates. Enforce at the single serialized writer (here, the sequential queue consumer), and make sure the identity the cap is keyed to actually travels to that writer — a metered unit charged to the wrong user is an uncapped user.
+
+---
+
+### Review Checklist
+
+- [ ] **Every call site of `enqueueResearch` / `RESEARCH_QUEUE.send` is behind the composed gate** (kill-switch → auth → G11 eligibility, fail-closed to `human_only` → quota) — a new route/action/cron is an ungated hole by default; grep them all (GATE-1)
+- [ ] **Each enqueue route has its own gating test** asserting anonymous → 401, `human_only`/no-verdict → refused, kill-switch → 503 — a test that calls the inner helper directly does not prove the route is gated (GATE-1)
+- [ ] **G11 lives in ONE shared helper** used by every gate, never a divergent copy (GATE-1)
+- [ ] **The metered cap is enforced at the sequential consumer's commit**, not only by the advisory producer-side pre-check (GATE-2)
+- [ ] **The enqueuer's real `userId` travels on `ResearchMessage` to the ledger row** — a hardcoded/wrong owner makes the per-user cap unenforceable; a coupled test must drive the real commit as a non-admin user and assert the per-user cap trips (GATE-2)
+
+---
+
 ## Orchestration
 
 Pitfalls that arise when a session dispatches parallel subagents and consolidates their output. The canonical rules live in `docs/git-strategy.md` → §Multi-agent coordination → Output persistence. This section is the discovery hook for plan writers who arrive here via the `writing-plans-enhanced` (or equivalent) mandated-read path — it does NOT restate the rules in full.
@@ -260,6 +357,8 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 | DET-2 | Precision-Over-Recall Means Named, Accepted Recall Gaps | MEDIUM | VALIDATED | Detector |
 | DET-3 | Incidental Historical Years Are an Irreducible False-Positive Class | MEDIUM | VALIDATED | Detector |
 | SAFE-1 | Untrusted-Input Scans MUST Be Linear-Time in Input Length | HIGH | VALIDATED | Safe-lane / untrusted-content scanning |
+| CI-1 | GitHub Actions Forbids the `secrets` Context in a JOB-Level `if:` — It Silently Never Runs | HIGH | VALIDATED | Deploy / CI |
+| CI-2 | The OpenNext Build Shells Out to `pnpm build`; `--env=""` Silences the Multi-Env Dry-Run Warning | LOW | VALIDATED | Deploy / CI |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
 
