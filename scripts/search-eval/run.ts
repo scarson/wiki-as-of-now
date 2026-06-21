@@ -1,6 +1,7 @@
 // ABOUTME: One-off LIVE empirical eval — Brave vs Tavily URL-discovery recall, reusing the project's
 // ABOUTME: real fetchSourceText + evaluateQuote. NOT part of the suite (run via its own vitest config). Needs BRAVE_API_KEY/TAVILY_API_KEY.
 import { test } from "vitest";
+import { writeFileSync } from "node:fs";
 import { fetchSourceText, type FetchImpl, type UntrustedSourceText } from "../../src/research/source-fetch";
 import { evaluateQuote } from "../../src/research/verbatim-check";
 
@@ -142,6 +143,7 @@ test("brave vs tavily — live URL-discovery recall", { timeout: 20 * 60_000 }, 
     `search errors     | ${pad(String(fmt(brave).searchErrors))} | ${fmt(tavily).searchErrors}\n` +
     `page fetch ok     | ${pad(fmt(brave).fetchSuccess)} | ${fmt(tavily).fetchSuccess}\n` +
     `\nPer-case (brave / tavily):\n` + perCase.join("\n") + "\n";
+  writeFileSync("/tmp/search-eval-results.txt", report);
   // eslint-disable-next-line no-console
   console.log(report);
 });

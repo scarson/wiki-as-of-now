@@ -29,6 +29,8 @@ Everything Tavily and Brave-Grounding sell on top of raw URLs — clean extracte
 | **Tavily Extract / Crawl / Map** | **REJECT (redundant)** | Duplicates the project's own SSRF-hardened fetcher and the prose it is compliance-bound to discard. |
 | **Result-storage ToS** | **RESOLVED — accepted risk (Sam, 2026-06-21)** | Brave §3.1(b)(i) and Tavily §3.2 both restrict storing results; the tool durably persists source URLs in `research_packs`. Decision: defensible on its merits + de-minimis volume — see §4. |
 
+**Empirical confirmation (live, 2026-06-21 — §8):** a 15-case head-to-head through the project's *own* `fetchSourceText` + `evaluateQuote` shows Brave and Tavily tied at **100% recall@5** on an easy set, but Brave wins on result authority — **MRR 1.000 (verifiable source at rank 1 every time) vs Tavily 0.802 (mean first-verified rank 1.6)** — the axis a capped fetch-and-verify pipeline is most sensitive to. (Tavily's raw search call was faster, 50 vs 141 ms; immaterial — page-fetch dominates.)
+
 ---
 
 ## 1. How the search backend is actually used (the decisive framing)
@@ -125,17 +127,27 @@ Per the rules, the clean-winner result is itself treated as suspicious — so no
 
 ---
 
-## 8. What documentation can't settle — the empirical test worth running
+## 8. Empirical result — live head-to-head (2026-06-21)
 
-The one thing no source measures is **URL recall on this project's actual distribution**: date-anchored, often-niche Wikipedia staleness claims (e.g., "as of 2019, the contract had not been awarded"). AIMultiple used general queries. With both keys wired into `.dev.vars`, a decisive head-to-head is ~an afternoon:
+Ran with both live keys (provisioned by Sam as environment variables): `scripts/search-eval/run.ts` — 15 ground-truth cases, top-5 results per provider, **every returned URL pushed through the project's real `fetchSourceText` (SSRF-hardened) + `evaluateQuote` (deterministic verbatim check)**. "Verified" = the fetched page contains the ground-truth answer string verbatim. Only the two trivial search clients are new code; the verification machinery is the project's own.
 
-1. Sample ~30–50 real stale candidates from the detector.
-2. Run the existing `generateQueries` prompt to get neutral queries (hold query-gen constant).
-3. Issue each query to **both** Brave and Tavily; collect the URL sets.
-4. Run each returned URL through the existing `fetchSource` + `evaluateQuote` pipeline.
-5. Score the metric that actually matters: **for how many claims did the provider surface ≥1 URL that yields a deterministically-verified supporting quote**, and at what rank/cost.
+| Metric | Brave | Tavily |
+|---|---|---|
+| recall@5 (any verified source in top 5) | **15/15 (100%)** | **15/15 (100%)** |
+| MRR (reciprocal rank of first verified source) | **1.000** | 0.802 |
+| mean rank of first verified source | **1.00** | 1.60 |
+| median search-call latency | 141 ms | **50 ms** |
+| search errors | 0 | 0 |
 
-This would upgrade the recommendation from "strong, doc-based" to "empirically confirmed for our distribution." It does **not** block the current call: keep Brave. (Keys are not currently in the environment; this needs Sam to add them.)
+**Read.** On this set, **both providers always surface a verifiable source within the top 5** (the recall floor is saturated — expected for easy facts). The differentiator is **rank/authority**: **Brave's #1 result is the verifiable authoritative source in all 15 cases (MRR 1.0)**, whereas Tavily's first verifiable source averages rank **1.6** because it interleaves social/video/aggregator URLs ahead of the authoritative page (e.g. for "capital city of Australia," Tavily's #1 was a Facebook video; the verifiable source was #2). This **corroborates the independent AIMultiple source-quality edge — now reproduced on the project's own verification machinery.** It matters disproportionately *here*: the real pipeline caps candidates (`perQueryHitCap=3`, `maxCandidateUrls=12`) and the strict fetcher drops most URLs, so a **rank-1 authoritative hit is far likelier to survive the cap+fetch funnel** than a rank-2–5 one.
+
+**Honest limitations — do not overread:**
+- **Easy set.** General-knowledge facts, *not* the niche, date-anchored Wikipedia staleness claims that are the product's hard case. This is a **lower bound on difficulty**: it differentiates rank/authority, not deep recall. The 100% recall is *not* evidence either provider handles hard claims — to test that, sample real detector candidates and hold `generateQueries` constant (the harness is structured to extend that way).
+- **n=15, single run** — directional, not statistically powered.
+- **Latency cut the other way.** Tavily's raw search call was *faster* here (50 vs 141 ms) — opposite to AIMultiple's end-to-end figure. Both are sub-second and immaterial: page-fetching, not the search call, dominates pipeline latency. Reported as measured, against the narrative.
+- **Page-fetch success was not cleanly isolated** (the harness stops at the first verified hit, so fetch attempts are confounded by early-stop). One robust **side-observation** did surface and is worth a research-engine ticket: the v1 fetcher's `redirect:"error"` + content-type allowlist drops a large fraction of real-world candidate URLs (many sites 301 http→https or to a CDN) — **symmetric across providers**, so not a Brave-vs-Tavily signal, but a real recall tax on the pipeline itself.
+
+**Net:** the live test **confirms the doc-based call** — Brave matches Tavily on raw recall and **beats it on result authority/rank**, the axis this capped, fetch-and-verify pipeline is most sensitive to. Nothing here argues for switching. Reproduce with `pnpm exec vitest run -c scripts/search-eval/vitest.eval.config.mts` (needs `BRAVE_API_KEY` + `TAVILY_API_KEY` in env).
 
 ---
 
