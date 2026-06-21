@@ -89,6 +89,5 @@ test("corpus funnel — real gold-set stale claims, Wikipedia-exclusion impact +
   const report = `\n========== CORPUS FUNNEL (real gold-set, n=${entries.length} stale claims, top-${RESULTS_PER_QUERY}) ==========` +
     `\n(No ground truth — measures source composition + fetch funnel, NOT verbatim recall.)\n` + fmt("brave") + "\n" + fmt("tavily") + "\n";
   writeFileSync("/tmp/search-eval-corpus.txt", report);
-  // eslint-disable-next-line no-console
   console.log(report);
 });

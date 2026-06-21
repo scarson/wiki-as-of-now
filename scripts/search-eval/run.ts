@@ -116,7 +116,7 @@ test("brave vs tavily — wiki-excluded recall + fetch-failure breakdown", { tim
     const cases = all[label];
     let recallWith = 0, recallNoWiki = 0, wikiOnly = 0, rank1Wiki = 0, rrNoWiki = 0;
     const reasons: Record<string, number> = {};
-    let fetched = 0, attempts = 0, okCount = 0;
+    let attempts = 0, okCount = 0;
     cases.forEach((recs) => {
       const withRank = firstRank(recs, () => true);
       const noWikiRank = firstRank(recs, (r) => !r.isWiki);
@@ -124,7 +124,7 @@ test("brave vs tavily — wiki-excluded recall + fetch-failure breakdown", { tim
       if (noWikiRank !== null) { recallNoWiki++; rrNoWiki += 1 / noWikiRank; }
       if (withRank !== null && noWikiRank === null) wikiOnly++;          // excluding wiki DROPS this case
       if (recs[0]?.matched && recs[0]?.isWiki) rank1Wiki++;             // the rank-1 verifier was wiki
-      recs.forEach((r) => { attempts++; if (r.ok) { fetched++; okCount++; } else reasons[r.reason ?? "?"] = (reasons[r.reason ?? "?"] ?? 0) + 1; });
+      recs.forEach((r) => { attempts++; if (r.ok) { okCount++; } else reasons[r.reason ?? "?"] = (reasons[r.reason ?? "?"] ?? 0) + 1; });
     });
     lines.push(
       `\n[${label.toUpperCase()}]  search errors: ${searchErr[label]}` +
@@ -140,6 +140,5 @@ test("brave vs tavily — wiki-excluded recall + fetch-failure breakdown", { tim
 
   const report = `\n========== LIVE EVAL [${EVAL_SET.toUpperCase()}] (n=${n}, top-${RESULTS_PER_QUERY}, real fetchSource+evaluateQuote) ==========` + lines.join("\n") + "\n";
   writeFileSync(`/tmp/search-eval-${EVAL_SET}.txt`, report);
-  // eslint-disable-next-line no-console
   console.log(report);
 });
