@@ -5,7 +5,10 @@ import { writeFileSync } from "node:fs";
 import { fetchSourceText, type FetchImpl, type UntrustedSourceText, type SourceFetchFailureReason } from "../../src/research/source-fetch";
 import { evaluateQuote } from "../../src/research/verbatim-check";
 
-const fetchImpl = ((url, init) => fetch(url, init)) as FetchImpl;
+// Faithfully reproduce production: source-fetch rejects any 3xx (redirect_not_allowed), which only
+// fires if the underlying fetch does NOT auto-follow. Default undici follows; force redirect:"manual"
+// so source-fetch sees the 3xx status and applies its own rejection (matches the v1 "reject redirects" design).
+const fetchImpl = ((url, init) => fetch(url, { ...init, redirect: "manual" })) as FetchImpl;
 const RESULTS_PER_QUERY = 8;
 
 /** Wikipedia + obvious Wikipedia-derived mirrors — excluded because Wikipedia can't source Wikipedia (WP:CIRCULAR). */
