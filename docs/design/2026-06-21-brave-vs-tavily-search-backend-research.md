@@ -29,7 +29,7 @@ Everything Tavily and Brave-Grounding sell on top of raw URLs — clean extracte
 | **Tavily Extract / Crawl / Map** | **REJECT (redundant)** | Duplicates the project's own SSRF-hardened fetcher and the prose it is compliance-bound to discard. |
 | **Result-storage ToS** | **RESOLVED — accepted risk (Sam, 2026-06-21)** | Brave §3.1(b)(i) and Tavily §3.2 both restrict storing results; the tool durably persists source URLs in `research_packs`. Decision: defensible on its merits + de-minimis volume — see §4. |
 
-**Empirical confirmation (live, 2026-06-21 — §8):** a 15-case head-to-head through the project's *own* `fetchSourceText` + `evaluateQuote` shows Brave and Tavily tied at **100% recall@5** on an easy set, but Brave wins on result authority — **MRR 1.000 (verifiable source at rank 1 every time) vs Tavily 0.802 (mean first-verified rank 1.6)** — the axis a capped fetch-and-verify pipeline is most sensitive to. (Tavily's raw search call was faster, 50 vs 141 ms; immaterial — page-fetch dominates.)
+**Empirical confirmation (live, 2026-06-21 — §8, refined in §8.1):** a 15-case head-to-head through the project's *own* `fetchSourceText` + `evaluateQuote`. Both tie at **100% recall** on an easy set (with *and* without Wikipedia). Brave wins on the two axes that matter for a capped fetch-and-verify pipeline: **result authority excluding Wikipedia** (no-wiki MRR 0.594 vs 0.487 — note the first eval's "MRR 1.0" was Wikipedia-at-rank-1 inflation, disallowed by WP:CIRCULAR) and **fetch reliability through the strict fetcher (88% vs 56%)** — Tavily's aggregated links fail far more on redirects (17% vs 2%) and empty extraction. (Tavily's raw search call was faster, 50 vs 141 ms; immaterial — page-fetch dominates.)
 
 ---
 
@@ -149,6 +149,32 @@ Ran with both live keys (provisioned by Sam as environment variables): `scripts/
 
 **Net:** the live test **confirms the doc-based call** — Brave matches Tavily on raw recall and **beats it on result authority/rank**, the axis this capped, fetch-and-verify pipeline is most sensitive to. Nothing here argues for switching. Reproduce with `pnpm exec vitest run -c scripts/search-eval/vitest.eval.config.mts` (needs `BRAVE_API_KEY` + `TAVILY_API_KEY` in env).
 
+### 8.1 Follow-up — Wikipedia exclusion + the redirect tax, re-measured (corrects two §8 claims)
+
+Two prompts from Sam forced a harder, more faithful re-run (`run.ts` v2, top-8, **all** URLs fetched — no early-stop — through the real fetcher with `redirect:"manual"` so `source-fetch`'s 3xx rejection actually fires; plus a Wikipedia/mirror exclusion to honor **WP:CIRCULAR** — Wikipedia can't be a source *for* Wikipedia):
+
+| Metric (n=15, top-8) | Brave | Tavily |
+|---|---|---|
+| recall@8 — **with** Wikipedia | 15/15 | 15/15 |
+| recall@8 — **without** Wikipedia | **15/15 (100%)** | **15/15 (100%)** |
+| MRR — first **non-Wikipedia** verified source | **0.594** | 0.487 |
+| cases where Wikipedia was the **only** verifier | 0/15 | 0/15 |
+| cases where the **rank-1** verifier was Wikipedia | **11/15** | 6/15 |
+| page-fetch success (through the real SSRF-hardened fetcher) | **105/120 (88%)** | 67/120 (56%) |
+| `redirect_not_allowed` drops | **2/120 (2%)** | 20/120 (17%) |
+| `empty_after_extraction` drops (JS/SPA/social pages) | **2** | 19 |
+| `http_error` drops (bot-walls etc.) | 10 | 14 |
+
+**Three findings, two of which correct §8:**
+
+1. **Wikipedia exclusion is recall-safe at top-8 on this set — but §8's headline was Wikipedia-inflated, exactly as suspected.** Neither provider *depended* on Wikipedia (0/15 "only verifier"): there is always a non-circular verifiable source within the top 8. But Brave's rank-1 was Wikipedia in **11/15** cases, so §8's "MRR 1.000" largely measured *Brave-returns-the-Wikipedia-article-first*. With Wikipedia removed, the honest authority metric is **no-wiki MRR 0.594 (Brave) vs 0.487 (Tavily)** — Brave still ahead, gap real but modest, first usable source ~rank 1.7 vs ~2.1. **Caveat stands:** easy set; on hard niche claims, excluding Wikipedia could genuinely *drop* recall (Wikipedia may be the only verbatim host) — that needs the real-candidate test.
+
+2. **The redirect-tax (#3) is mostly a Tavily problem, negligible for Brave — correcting §8's "symmetric, large" side-note.** Faithful measurement: Brave loses only **2/120 (1.7%)** URLs to `redirect_not_allowed`; Tavily loses **20/120 (17%)**. Brave's own index stores canonical URLs that mostly resolve 200 directly; Tavily's aggregated links redirect far more. **So for the chosen provider, `redirect:"error"` costs almost nothing, and the manual-redirect-following hardening (research-engine design §2.3) is correctly left deferred.** I over-weighted #3 initially; the data deflates it. (The §8 note claimed the tax was large *and symmetric* — both wrong; that claim was an artifact of the early-stop + auto-follow harness bug, see §9 "things I almost missed.")
+
+3. **Brave URLs fetch ~1.6× more reliably through the project's own fetcher (88% vs 56%).** Tavily's failures concentrate in `empty_after_extraction` (19 — JS/social/video pages with no extractable text) and redirects (20) — concrete, pipeline-measured corroboration of the independent "Tavily returns junk/stale/aggregated links" reports (§5). More evidence to keep Brave. The larger *residual* for Brave is `http_error` bot-walls (10), which redirect-following would not fix — a separate recall ceiling for any provider.
+
+**Action implications:** (a) **implement Wikipedia/mirror exclusion** — it is mandatory for correctness (WP:CIRCULAR), recall-safe here, and belongs as a deterministic host-filter at the `SearchProvider` seam (config-driven list; provider-native `-site:`/`exclude_domains` only as a budget-saving pre-filter, never the authority; human gate backstops the unbounded mirror/circular-reporting tail); (b) **keep the redirect-following hardening deferred** — it buys ~2% for Brave, not worth the SSRF complexity now; revisit only if the real-candidate test shows redirects dropping genuine sources.
+
 ---
 
 ## 9. Reasoning chain, alternatives considered, and uncertainties
@@ -167,6 +193,11 @@ Ran with both live keys (provisioned by Sam as environment variables): `scripts/
 - **Brave's index-size / freshness figures** — vendor-reported, unaudited.
 - **The exact engines Tavily aggregates** — the *that-it-aggregates* claim is well-corroborated; the *Google+Serper* specifics rest on one independent source; Tavily doesn't disclose.
 - **Brave Grounding citation-URL format and reliability** — docs show only placeholders; a community thread reports missing sources; would need a live smoke test if ever reconsidered.
+
+**Things I almost missed (caught only by Sam's prompts + re-measurement — §8.1):**
+- **The first eval's headline was Wikipedia-inflated.** "Brave MRR 1.000" largely measured "Brave returns the Wikipedia article at rank 1" (11/15 cases). Wikipedia is a *disallowed* source for this product (WP:CIRCULAR), so the real authority metric is the no-wiki MRR (0.594 vs 0.487). Sam flagged the exclusion; without it the eval would have shipped a flattering-for-the-wrong-reason number.
+- **A harness bug masked the redirect tax — in *both* directions.** The eval's `fetchImpl` used default undici (auto-follow), so `source-fetch`'s 3xx rejection never fired: eval v1 *under*-counted redirect drops (reported "0/symmetric/large" — incoherent), while early-stop made the fetch-success rate uninterpretable. Forcing `redirect:"manual"` to faithfully reproduce production flipped the finding: the redirect tax is real but **asymmetric** — negligible for Brave (2%), significant for Tavily (17%). Lesson: an eval that doesn't reproduce the production fetch *policy* measures the wrong system.
+- **Both corrections strengthened, not weakened, the keep-Brave call** — but for *different* reasons than §8 first claimed (fetch-reliability 88% vs 56% and a low redirect tax, not a perfect MRR). The conclusion was right; one of its original supports was an artifact.
 
 **Source-quality caveat:** this niche is dominated by vendor/SEO "comparison" blogs. The load-bearing independent signal is concentrated in a small set — AIMultiple's benchmark, Garden Research, GitHub community/issue threads, implicator.ai, Search Engine Journal — and every vendor-authored claim above is tagged as such inline.
 
