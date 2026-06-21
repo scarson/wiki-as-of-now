@@ -17,5 +17,24 @@
     "supersededBy": null,
     "certification": "agent_auto",
     "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "gordie_howe_international_bridge.wikitext",
+    "sentenceSubstring": "to be completed by the end of 2024",
+    "expectedYear": 2024,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://gordiehoweinternationalbridge.com/personal-travellers-invited-to-breakaway-with-gordie-howe-international-bridge/",
+        "snapshot": "test/gold/sources/2026-03-31-personal-travellers-invited-to-breakaway-with-gordie-howe-international-bridge.md",
+        "contentHashSha256": "cb2f11fea88a8b90fd5fbf028862ac9427f6660e7903931714fff739a52ff30f",
+        "verbatimQuote": "Opening this spring, the Gordie Howe International Bridge will transform how people and goods move across the region",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
   }
 ]
