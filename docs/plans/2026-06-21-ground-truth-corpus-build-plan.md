@@ -73,12 +73,12 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** In progress. 0/4 phases shipped. Phases 1–2 in progress on branch `claude/corpus-build-schema` (off `origin/dev`); Phases 3–4 deferred (need live Brave + outbound web + Sam's pilot-batch confirmation).
+**Overall:** Phases 1–2 shipped on branch `claude/corpus-build-schema` (off `origin/dev`), in a draft PR for Sam. Phases 3–4 deferred (need live Brave + outbound web + Sam's pilot-batch confirmation). 2/4 phases shipped.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Schema + scaffolding (`answer-record.ts`, READMEs) | 🚧 In progress (2026-06-21T06:49Z, `claude/corpus-build-schema`) | — | TDD; pure code |
-| 2 — Integrity harness (`answers-integrity.test.ts`) | 🚧 In progress (2026-06-21T06:49Z, `claude/corpus-build-schema`) | — | TDD; depends on Phase 1 |
+| 1 — Schema + scaffolding (`answer-record.ts`, READMEs) | ✅ Shipped (2026-06-21) | `e409ede`, `7aff6c2` | TDD; pure code; 10 tests |
+| 2 — Integrity harness (`answers-integrity.test.ts`) | ✅ Shipped (2026-06-21) | `595ee93` | TDD; 5 tests; vacuous on empty answers.json |
 | 3 — Pilot fetch runbook (records + snapshots) | ⏸ Deferred | — | agent-driven research; gated by Phase 2; needs live Brave + web |
 | 4 — Inter-rater + calibration handoff | ⏸ Deferred | — | process; STOPs for Sam; pending Phase 3 |
 
@@ -92,7 +92,7 @@ notes and commit messages.
 
 ## Phase 1 — Schema + scaffolding
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-21T06:49Z on branch `claude/corpus-build-schema` (off `origin/dev`).
+**Execution Status:** ✅ SHIPPED — 2026-06-21 on branch `claude/corpus-build-schema`. Task 1.1 `e409ede` (answer-record.ts + 10 tests); Task 1.2 `7aff6c2` (empty answers.json + READMEs). 3 review rounds clean.
 
 The deterministic foundation. Pure types + validators + storage skeleton; everything downstream slots into this.
 
@@ -356,7 +356,7 @@ Review the batch from multiple perspectives. Minimum 3 review rounds. If round 3
 
 ## Phase 2 — Integrity harness
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-06-21T06:49Z on branch `claude/corpus-build-schema` (off `origin/dev`).
+**Execution Status:** ✅ SHIPPED — 2026-06-21 on branch `claude/corpus-build-schema`. Task 2.1 `595ee93` (synthetic snapshot fixture + `answers-integrity.test.ts`, 5 tests; real-corpus describe vacuous on empty answers.json). 3 review rounds clean.
 
 The acceptance gate every real record must pass. Built and tested NOW (against synthetic fixtures), so it is ready before any pilot data lands. It runs vacuously-green on the empty `answers.json` and tightens automatically as Phase 3 adds records.
 
