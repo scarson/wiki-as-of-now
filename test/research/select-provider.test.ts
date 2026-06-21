@@ -6,6 +6,7 @@ import { StubResearchProvider } from "../../src/research/stub-provider";
 import { WorkersAiResearchProvider } from "../../src/research/workers-ai-provider";
 import { ProviderUnavailableError } from "../../src/research/provider";
 import { FixtureSearchProvider } from "../../src/research/fixture-search";
+import type { SearchProvider } from "../../src/research/search-provider";
 
 const fakeAi = { run: async () => ({ response: "{}" }) };
 const fetchSource = async () => ({ ok: false as const, reason: "network_error" as const });
@@ -34,5 +35,18 @@ describe("selectResearchProvider", () => {
       searchOverride: new FixtureSearchProvider({}),
     });
     expect(p).toBeInstanceOf(WorkersAiResearchProvider);
+  });
+  it("applies circular-source exclusion to the selected search backend — a Wikipedia hit never reaches fetch (WP:CIRCULAR)", async () => {
+    const fetched: string[] = [];
+    const recordingFetch = async (url: string) => { fetched.push(url); return { ok: false as const, reason: "network_error" as const }; };
+    let call = 0;
+    const ai = { run: async () => { call += 1; return { response: call === 1 ? JSON.stringify({ queries: ["q"] }) : JSON.stringify({ proposals: [] }) }; } };
+    const searchOverride: SearchProvider = {
+      search: async () => [{ url: "https://en.wikipedia.org/wiki/X" }, { url: "https://www.britannica.com/Y" }],
+    };
+    const p = selectResearchProvider({ AI: ai as never, RESEARCH_PROVIDER: "workers-ai", fetchSource: recordingFetch, searchOverride });
+    await p.research(INPUT);
+    expect(fetched).toContain("https://www.britannica.com/Y");
+    expect(fetched).not.toContain("https://en.wikipedia.org/wiki/X");
   });
 });
