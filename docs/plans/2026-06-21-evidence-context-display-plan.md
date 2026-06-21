@@ -73,7 +73,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Code complete. 5/5 phases shipped (Phase 5 visual check deferred to Sam — no provisioned D1 in env). Branch `claude/evidence-context-display`.
+**Overall:** Code complete. 5/5 phases shipped (Phase 5 visual check deferred to Sam — no provisioned D1 in env). Branch `claude/evidence-context-display`. Draft PR [#25](https://github.com/scarson/wiki-as-of-now/pull/25) (base `dev`; Review — extends the EvidenceCard serialization contract + G16 evidence rendering; left for Sam, not auto-merged). Node suite 922/922, workers 27/27, tsc + lint clean.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
