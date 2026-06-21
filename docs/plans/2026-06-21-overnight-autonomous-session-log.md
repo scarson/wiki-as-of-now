@@ -15,8 +15,8 @@ What I will do autonomously tonight:
 
 Bounds I will NOT cross without Sam:
 - I will **not** weaken any compliance guardrail or the design/spec invariants.
-- I will **not** scale the corpus beyond the pilot (~8–10 claims) — the design reserves the green-light for the rest until Sam's spot-check.
-- The pilot's ground-truth answers are **proposals for Sam's calibration**, not a final verdict; every `agent_auto` record stays auditable and any genuine uncertainty escalates (bias-to-escalate).
+- ~~I will not scale the corpus beyond the pilot~~ — **SUPERSEDED by Sam's instruction (see D5): scale to the full corpus after I assess the pilot.** The assessment is the gate — I scale only if the pilot's quality holds; a systematic flaw means tighten-and-re-run, not scale the flaw.
+- The ground-truth answers are **proposals for Sam's review**, not a final verdict; every `agent_auto` record stays auditable and any genuine uncertainty escalates (bias-to-escalate).
 
 ### Merge-decision principle (cost asymmetry)
 
@@ -60,6 +60,15 @@ Merging into `dev` is outward/hard-to-reverse; leaving a vetted PR ready is ~zer
 - **G5 gate files (`SourceOpenGate`/`WorksheetClient`/`source-gate.ts`) untouched** — confirmed.
 **Note for Sam (handled, not a defect):** context now also appears in the transparency/show-your-work view (it forwards the full `EvidenceCard[]`). It's deterministic source text (G1-clean); the agent correctly tightened the G1 closed-shape test to exactly the 5 source fields. Worth a glance only because it widens where context renders.
 **Decision — LEAVE FOR SAM (no auto-merge).** Compliance-core: modifies the production evidence/citation path + the `EvidenceCard` serialization contract + G16-sensitive rendering → the git-strategy's Review-domain trigger reserves this for human merge, and the cost asymmetry favors waiting. Review verdict: **clean, faithful to the approved plan, ready for your merge** once you've eyeballed the render. Required `test` CI was `in_progress` at last check (local verification green; webhooks don't deliver CI success, so confirm green before merging).
+
+### D5 — Full-corpus mandate (Sam's instruction)
+**Instruction:** "After the pilot set of answer verifications runs, assess, then do the rest so we have the full corpus evaluated." → scale beyond the pilot to **all 32 `stale: true` gold-set claims**, gated on my assessment of the pilot.
+**Plan:**
+1. **Assess the pilot** (adversarial, multi-perspective; documented here): are the answers genuinely grounded (re-check a sample's byte-presence + that the quote actually resolves the claim, not just matches)? Is the `agent_auto` tier sound (spot-check the auto-certified ones against the §2.2 criteria — authority, self-evident support, unambiguous disposition)? Any systematic failure mode (e.g. circular sources slipping through, over-confident auto-certs, queries that aren't neutral)? Is the per-claim cost/reliability good enough to parallelize the rest?
+2. **Gate:** scale only if the pilot quality holds. If the assessment finds a systematic flaw, **tighten the gate / fix the process and re-run** the affected items before scaling — do not propagate a flaw across 24 more claims (this IS the design §2.3 calibration loop, with me doing the first-pass calibration since Sam delegated it).
+3. **Do the rest** (~22–24 remaining stale claims): choose execution strategy based on what the pilot showed (likely fan-out across a few agents writing scratch records, then a single serialized merge into `answers.json` — never concurrent `answers.json` edits, per the build plan's parallel-write boundary). Each record passes the integrity harness; escalations accumulate in the queue.
+4. **Present the full corpus** for Sam: the complete `answers.json`, the full escalation queue, the auto/escalate split, and my assessment notes. Sam's spot-check remains the final calibration.
+**Still bias-to-escalate at scale** — uncertain → `human_confirmed`; the harness still makes fabrication impossible.
 
 ### Session state snapshot (as of this entry)
 - On `dev`: #22 (designs+plans), #23 (corpus schema, merged by Sam).
