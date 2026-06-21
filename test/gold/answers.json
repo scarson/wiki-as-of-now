@@ -157,5 +157,24 @@
     "supersededBy": null,
     "certification": "human_confirmed",
     "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "honolulu_rail_transit.wikitext",
+    "sentenceSubstring": "is expected to be completed in August 2025",
+    "expectedYear": 2025,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://honolulutransit.org/hart-faqs/what-is-the-current-status-of-the-construction-for-the-honolulu-rail-transit-project/",
+        "snapshot": "test/gold/sources/2026-04-21-what-is-the-current-status-of-the-construction-for-the-honolulu-rail-transit-pro.md",
+        "contentHashSha256": "b094530fead228ca1f9e4c71af5f33d0554b239eacf13faec72fe613d1d5cfa6",
+        "verbatimQuote": "Utility relocation work along Dillingham Boulevard is ongoing, along with roadway improvements such as widening and paving. This work is anticipated to be complete by the end of 2026",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
   }
 ]
