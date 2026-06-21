@@ -93,5 +93,24 @@
     "supersededBy": null,
     "certification": "human_confirmed",
     "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "gaganyaan.wikitext",
+    "sentenceSubstring": "scheduled to be launched no earlier than 2024",
+    "expectedYear": 2024,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.space.com/space-exploration/human-spaceflight/india-delays-1st-gaganyaan-astronaut-launch-to-2027",
+        "snapshot": "test/gold/sources/2025-05-08-india-delays-1st-gaganyaan-astronaut-launch-to-2027.md",
+        "contentHashSha256": "72922f1c11621094288579d4dcfa1e4fe549aae7efd5631bda4eae624ce20fde",
+        "verbatimQuote": "The first crewed mission, dubbed H1, will fly in the first quarter of 2027",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
   }
 ]
