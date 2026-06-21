@@ -73,7 +73,7 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** In progress. 0/5 phases shipped. Branch `claude/evidence-context-display`.
+**Overall:** Code complete. 5/5 phases shipped (Phase 5 visual check deferred to Sam — no provisioned D1 in env). Branch `claude/evidence-context-display`.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
@@ -81,7 +81,7 @@ notes and commit messages.
 | 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 1 |
 | 3 — View projection (`view-types.ts`, `evidence-card.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 2 |
 | 4 — Read-path validation (`research-packs.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 1 (cap) + 2 (fields) |
-| 5 — Render (`EvidenceCard.tsx`) | 🚧 IN PROGRESS | — | depends on Phase 3 |
+| 5 — Render (`EvidenceCard.tsx`) | ✅ SHIPPED (code) | (see branch) | visual check deferred to Sam (no D1 in env) |
 
 ### Deviations
 - **Phase 5 renders the full stored window with no client-side "show more" toggle** (server component, no new client code). The design's §3.5 sketched a client line-clamp + expand; the design's own §A.3 flags this as uncertain and cheap to flip. With `CONTEXT_SIDE_CAP = 240`/side the stored window is already modest, so v1 shows it in full and the terminal "more" is the open source. Flagged for Sam; trivially revisited if real paragraphs read too long.
@@ -733,7 +733,7 @@ BEFORE marking this task complete:
 
 ## Phase 5 — Render (`EvidenceCard.tsx`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED (code) — 2026-06-21. tsc + lint clean; server component (no `"use client"`, no copy affordance); full stored window, no show-more toggle (Deviations). **Visual check NOT performed** — a meaningful render needs a provisioned D1 with seeded packs (D1 is unprovisioned in this env per the design spec), so the running-app visual confirmation is left for Sam. The static posture is confirmed: quote in `<strong italic>`, context in de-emphasized `<span text-dust-gray not-italic>`, plain-string spans (no `dangerouslySetInnerHTML`).
 
 ### Task 5: Render `before` + emphasized quote + `after`
 
