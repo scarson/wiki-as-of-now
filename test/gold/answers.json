@@ -74,5 +74,24 @@
     "supersededBy": null,
     "certification": "human_confirmed",
     "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "introduction is expected in 2017",
+    "expectedYear": 2017,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.defensenews.com/digital-show-dailies/navy-league/2021/08/24/us-navy-completes-testing-of-littoral-combat-ships-minesweeper-system/",
+        "snapshot": "test/gold/sources/2021-08-24-us-navy-completes-testing-of-littoral-combat-ship-s-minesweeper-system.md",
+        "contentHashSha256": "40ccdf6414e21f21d38bd96ba34c0b2e396cb882fea5af6935c1477921bb6b3f",
+        "verbatimQuote": "The U.S. Navy has completed the initial operational test and evaluation of its Unmanned Influence Sweep System (UISS) program, bringing a key element of the littoral combat ship’s mine countermeasures mission package",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
   }
 ]
