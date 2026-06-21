@@ -45,5 +45,4 @@ escalation queue + diff.
 
 | Date | Event | Notes |
 |------|-------|-------|
-
-_(no entries yet)_
+| 2026-06-21 | Pilot batch fetched (Phase 3) | Batch size 9 (see [pilot-batch-rationale.md](pilot-batch-rationale.md)). Auto/escalate split: **1 `agent_auto`** (zumwalt-class_destroyer, grounded on USNI News) / **8 `human_confirmed`** (see [escalation-queue.md](escalation-queue.md)). Heavy escalation is expected and intended (bias-to-escalate; no human in the loop at fetch time). Outcomes: 6 `slipped_still_pending`, 2 `event_occurred`, 0 `unverifiable`. Inter-rater pass: not yet run (Phase 4). First-snapshot hash cross-check (`hashSnapshotBody` === tool `metadata.content_hash_sha256`): **PASS** (zumwalt snapshot, `8698afec…`). |

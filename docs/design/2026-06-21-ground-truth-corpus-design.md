@@ -142,7 +142,7 @@ identity the gold-set uses: `(fixture, sentenceSubstring)`.
     {                                    //   is split across the page (§2.2)
       "sourceUrl": "https://www.navy.mil/...",
       "snapshot": "test/gold/sources/2026-06-21-navy-cps-test.md",
-      "contentHashSha256": "…",          // copied from the snapshot's url-to-markdown frontmatter
+      "contentHashSha256": "…",          // the url-to-markdown --json envelope's metadata.content_hash_sha256 (a SHA-256 of the body markdown, excluding the YAML frontmatter)
       "verbatimQuote": "…exact span carrying the subject anchor + resolving fact; passes evaluateQuote…",
       "supportsStaleness": true          // advisory: this span shows the claim is now outdated
     }
@@ -184,7 +184,8 @@ machine-comparable labels over it. No machine-authored prose is stored.
 ## 4. Grounding — archived snapshots, not live URLs
 
 Each cited source is transcribed with the **`url-to-markdown` skill** (faithful
-markdown + a `content_hash_sha256` in frontmatter; see
+markdown; the tool's `--json` envelope reports a `metadata.content_hash_sha256` —
+a SHA-256 of the body markdown, excluding the YAML frontmatter; see
 [docs/policy/sources/](../policy/sources/) for the existing convention) and the
 snapshot is **committed**. This is load-bearing:
 
