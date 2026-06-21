@@ -36,5 +36,24 @@
     "supersededBy": null,
     "certification": "human_confirmed",
     "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "m109_howitzer.wikitext",
+    "sentenceSubstring": "plans to buy 133 vehicles",
+    "expectedYear": 2014,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://thedefensepost.com/2024/08/05/us-army-bae-m109a7/",
+        "snapshot": "test/gold/sources/2024-08-05-us-army-awards-bae-additional-493m-m109a7-howitzer-contract.md",
+        "contentHashSha256": "60285306553b8eb47b232599a6ef3c399cf89fb78b826da7cb445e6d404aed70",
+        "verbatimQuote": "The M109A7 entered full rate production in 2020. Since then, $3 billion in contracts have been awarded by the US Army for the howitzer",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
   }
 ]
