@@ -55,5 +55,24 @@
     "supersededBy": null,
     "certification": "human_confirmed",
     "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "precision_strike_missile.wikitext",
+    "sentenceSubstring": "achieve initial operational capability in 2023",
+    "expectedYear": 2023,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://news.lockheedmartin.com/2023-12-11-lockheed-martin-delivers-first-prsm-to-us-army",
+        "snapshot": "test/gold/sources/2023-12-11-lockheed-martin-delivers-first-precision-strike-missiles-to-us-army.md",
+        "contentHashSha256": "bd5dd252f9c80d2d6a4ecfd34e515ddf1b4fe72e1e1db2a3852d69d2ba890f48",
+        "verbatimQuote": "Lockheed Martin (NYSE: LMT) has delivered the first Precision Strike Missiles (PrSM) to the U.S. Army providing long-range precision fires capability and achieving a major modernization milestone",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
   }
 ]
