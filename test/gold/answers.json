@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "will be ready to test the CPS in 2025",
+    "expectedYear": 2025,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://news.usni.org/2024/11/14/navy-wants-to-start-conventional-prompt-strike-tests-aboard-uss-zumwalt-in-2027",
+        "snapshot": "test/gold/sources/2024-11-14-navy-wants-to-start-conventional-prompt-strike-tests-aboard-uss-zumwalt-in-2027.md",
+        "contentHashSha256": "8698afeca9acc8baf10bb7304eb6dbffc87434a562d4d1ddbf9fd7678f0fe48d",
+        "verbatimQuote": "delayed plans to field CPS aboard the Zumwalt class from Fiscal Year 2025 to FY 2026",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "agent_auto",
+    "verifiedAsOf": "2026-06-21"
+  }
+]
