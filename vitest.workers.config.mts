@@ -14,6 +14,13 @@ const migrations = await readD1Migrations(path.join(rootDir, "migrations"));
 export default defineConfig({
   plugins: [
     cloudflareTest({
+      // The research wrangler config marks the AI binding `remote: true` (Workers AI has no local
+      // simulator, so `wrangler dev` proxies to the real account). In the test pool that would start
+      // a remote proxy session, which requires a logged-in Cloudflare account and fails in CI
+      // ("You must be logged in to use wrangler dev in remote mode"). Tests never call env.AI.run()
+      // (the default provider is the stub, CC-7) — they only thread the binding through — so disabling
+      // remote bindings keeps env.AI defined via Miniflare while skipping the login-gated proxy.
+      remoteBindings: false,
       wrangler: { configPath: "./workers/research/wrangler.jsonc" },
       miniflare: {
         // RESEARCH_KILL_SWITCH is empty here so research is ENABLED by default in tests; the kill-switch
