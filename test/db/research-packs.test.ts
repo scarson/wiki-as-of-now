@@ -54,6 +54,8 @@ const VALID_CARD: EvidenceCard = {
   url: "https://example.com/source",
   verbatimQuote: "The fleet reached full strength by 2017.",
   advisorySupport: true,
+  contextBefore: null,
+  contextAfter: null,
 };
 
 const VALID_DROPPED: DroppedProposal = {
@@ -399,7 +401,7 @@ describe("getPack — read-time verbatim quote length validation", () => {
 
     // Build a card with a quote that is one code point over the cap.
     const longQuote = "a".repeat(MAX_QUOTE_LEN + 1);
-    const overCapCard: EvidenceCard = { url: "https://example.com", verbatimQuote: longQuote, advisorySupport: false };
+    const overCapCard: EvidenceCard = { url: "https://example.com", verbatimQuote: longQuote, advisorySupport: false, contextBefore: null, contextAfter: null };
     const pack = makePack({ cards: [overCapCard], status: "proposals_present" });
 
     // Bypass the module's own validation by inserting directly.
@@ -427,7 +429,7 @@ describe("getPack — read-time verbatim quote length validation", () => {
 
     // Minimum length is MIN_QUOTE_LEN; one shorter should be rejected.
     const shortQuote = "a".repeat(MIN_QUOTE_LEN - 1);
-    const underCapCard: EvidenceCard = { url: "https://example.com", verbatimQuote: shortQuote, advisorySupport: false };
+    const underCapCard: EvidenceCard = { url: "https://example.com", verbatimQuote: shortQuote, advisorySupport: false, contextBefore: null, contextAfter: null };
     const pack = makePack({ claimKey: "short-quote-key", cards: [underCapCard], status: "proposals_present" });
 
     await exec

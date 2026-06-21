@@ -8,6 +8,8 @@ const card: EvidenceCard = {
   url: "https://example.gov/2024-report",
   verbatimQuote: "The first unit entered service in March 2024.",
   advisorySupport: true,
+  contextBefore: null,
+  contextAfter: null,
 };
 
 describe("toEvidenceCardView", () => {

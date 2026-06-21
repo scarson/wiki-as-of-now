@@ -78,8 +78,8 @@ notes and commit messages.
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Slice helper (`quote-context.ts`) | ✅ SHIPPED | (see branch) | the deterministic core |
-| 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`) | 🚧 IN PROGRESS | — | depends on Phase 1 |
-| 3 — View projection (`view-types.ts`, `evidence-card.ts`) | ⬜ Not started | — | depends on Phase 2 |
+| 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 1 |
+| 3 — View projection (`view-types.ts`, `evidence-card.ts`) | 🚧 IN PROGRESS | — | depends on Phase 2 |
 | 4 — Read-path validation (`research-packs.ts`) | ⬜ Not started | — | depends on Phase 1 (cap) + 2 (fields) |
 | 5 — Render (`EvidenceCard.tsx`) | ⬜ Not started | — | depends on Phase 3 |
 
@@ -87,7 +87,7 @@ notes and commit messages.
 - **Phase 5 renders the full stored window with no client-side "show more" toggle** (server component, no new client code). The design's §3.5 sketched a client line-clamp + expand; the design's own §A.3 flags this as uncertain and cheap to flip. With `CONTEXT_SIDE_CAP = 240`/side the stored window is already modest, so v1 shows it in full and the terminal "more" is the open source. Flagged for Sam; trivially revisited if real paragraphs read too long.
 
 ### Discoveries
-- _(none yet)_
+- **Task 2 literal worklist had two members beyond the `tsc`-flagged set, both runtime round-trip assertions on the now-5-field card shape (the plan's "second worklist").** (1) `test/transparency/surface-pack.test.ts` — the local `cards` DTO (~line 9) AND the G1 closed-shape assertion (`expect(cardKeys).toEqual([...])`, ~line 93) both needed the two context fields; the closed-shape assertion now lists `contextAfter`/`contextBefore` (deterministic source slices, not prose — they belong in the closed set, so the G1 intent is preserved). (2) `test/worksheet/evidence-card.test.ts` (~line 16/32) and `test/worksheet/load-worksheet-view.test.ts` (~line 43) assert `Object.keys(view).sort()` on the *view*; those stay at the 3-key set through Phase 2 (view unchanged until Phase 3) and are updated in Phase 3 when `toEvidenceCardView` starts projecting the fields.
 
 ---
 
@@ -365,7 +365,7 @@ BEFORE marking this task complete:
 
 ## Phase 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — 2026-06-21. Full suite 918/918 green; tsc + lint clean. EvidenceCard required-field churn fixed across 8 test files (15 tsc literals + 1 runtime closed-shape assertion).
 
 Add the two fields to the durable `EvidenceCard` and populate them at the one place the page is in hand.
 

@@ -28,7 +28,7 @@ describe("loadWorksheetView", () => {
       sentenceText: "It is expected to deliver in 2020.", year: 2020,
       providerName: "fake", modelVersion: "fake-provider/0", status: "proposals_present",
       queries: ["delivery status example program"],
-      cards: [{ url: "https://example.gov/r", verbatimQuote: "It delivered its first unit in 2024.", advisorySupport: true }],
+      cards: [{ url: "https://example.gov/r", verbatimQuote: "It delivered its first unit in 2024.", advisorySupport: true, contextBefore: null, contextAfter: null }],
       dispositions: [], evaluatedAt: "2026-06-13T00:00:00.000Z",
     }).run();
 
@@ -52,7 +52,7 @@ describe("loadWorksheetView", () => {
       sentenceText: "It is expected to deliver in 2020.", year: 2020,
       providerName: "fake", modelVersion: "fake-provider/0", status: "proposals_present",
       queries: ["q"],
-      cards: [{ url: "https://example.gov/r", verbatimQuote: "It delivered its first unit in 2024.", advisorySupport: true }],
+      cards: [{ url: "https://example.gov/r", verbatimQuote: "It delivered its first unit in 2024.", advisorySupport: true, contextBefore: null, contextAfter: null }],
       dispositions: [], evaluatedAt: "2026-06-13T00:00:00.000Z",
     }).run();
     // Advance the article past the pack's source revision (100 → 137).

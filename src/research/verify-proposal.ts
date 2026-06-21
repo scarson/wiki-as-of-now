@@ -3,6 +3,7 @@
 import type { EvidenceCard, ProposedEvidence } from "./provider";
 import type { SourceFetchResult } from "./source-fetch";
 import { evaluateQuote } from "./verbatim-check";
+import { sliceQuoteContext } from "./quote-context";
 
 /** A proposal that did not become a verified card, with a reason code (a fetch-failure reason or a quote_* result). */
 export interface DroppedProposal {
@@ -20,11 +21,15 @@ export async function verifyProposal(
   }
   const result = evaluateQuote(fetched.text, proposal.proposedQuote);
   if (result === "matched") {
-    // Store the RAW proposed quote (design §3 determinism rule), never the normalized page text.
+    // Store the RAW proposed quote (design §3 determinism rule); context is sliced deterministically
+    // from the same fetched page (design 2026-06-21 §3.2) — source text, never model prose.
+    const { contextBefore, contextAfter } = sliceQuoteContext(fetched.text, proposal.proposedQuote);
     return {
       url: proposal.url,
       verbatimQuote: proposal.proposedQuote,
       advisorySupport: proposal.advisorySupport,
+      contextBefore,
+      contextAfter,
     };
   }
   return { url: proposal.url, reason: result };

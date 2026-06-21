@@ -17,7 +17,7 @@ async function seedPack(db: ReturnType<typeof freshTestExecutor>, pageId: number
     claimKey, sourceRevisionId: packRev, pageId, sectionHeading: SECTION, sentenceText: SENTENCE, year: YEAR,
     providerName: "workers-ai", modelVersion: "@cf/google/gemma-4-26b-a4b-it", status: "proposals_present",
     queries: ["fleet readiness 2025"],
-    cards: [{ url: "https://navy.mil/z", verbatimQuote: "reached full strength in 2024", advisorySupport: true }],
+    cards: [{ url: "https://navy.mil/z", verbatimQuote: "reached full strength in 2024", advisorySupport: true, contextBefore: null, contextAfter: null }],
     dispositions: [{ url: "https://x.gov/dead", reason: "http_error" }],
     evaluatedAt: new Date().toISOString(),
   };
@@ -33,7 +33,7 @@ describe("surfaceResearchPack", () => {
     const r = await surfaceResearchPack(db, { pageId: 6001, claimKey, currentRevisionId: 800 });
     expect(r.state).toBe("surfaced");
     if (r.state === "surfaced") {
-      expect(r.cards).toEqual([{ url: "https://navy.mil/z", verbatimQuote: "reached full strength in 2024", advisorySupport: true }]);
+      expect(r.cards).toEqual([{ url: "https://navy.mil/z", verbatimQuote: "reached full strength in 2024", advisorySupport: true, contextBefore: null, contextAfter: null }]);
       expect(r.dispositions).toEqual([{ url: "https://x.gov/dead", reason: "http_error" }]);
       expect(r.queries).toEqual(["fleet readiness 2025"]);
       expect(r.modelVersion).toBe("@cf/google/gemma-4-26b-a4b-it");

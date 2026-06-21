@@ -61,6 +61,8 @@ function makeProposalsPresentOutcome(overrides: Partial<{
         url: "https://example.com/source",
         verbatimQuote: "The fleet reached full strength by 2025.",
         advisorySupport: true,
+        contextBefore: null,
+        contextAfter: null,
       },
     ],
     dispositions: [
@@ -187,6 +189,8 @@ describe("handleResearchMessage — audit allowlist + sentinel (G13)", () => {
           url: `https://${sentinel}.example.com/source`,
           verbatimQuote: `${sentinel} verbatim quote text here for evidence.`,
           advisorySupport: true,
+          contextBefore: null,
+          contextAfter: null,
         },
       ],
       dispositions: [{ url: `https://${sentinel}-dropped.example.com`, reason: "quote_not_found" }],
@@ -258,7 +262,7 @@ describe("handleResearchMessage — audit allowlist + sentinel (G13)", () => {
       modelVersion: "fake-provider/1.0",
       queries: ["q1"],
       cards: [
-        { url: "https://example.com/a", verbatimQuote: "Quote A from source A for this claim.", advisorySupport: true },
+        { url: "https://example.com/a", verbatimQuote: "Quote A from source A for this claim.", advisorySupport: true, contextBefore: null, contextAfter: null },
       ],
       dispositions: [
         { url: "https://example.com/b", reason: "quote_not_found" },
@@ -606,10 +610,10 @@ describe("handleResearchMessage — concurrent double-write", () => {
     const msg: ResearchMessage = { claimKey, pageId: PAGE_ID, sourceRevisionId: SOURCE_REVISION_ID, input };
 
     const outcome1 = makeProposalsPresentOutcome({
-      cards: [{ url: "https://example.com/first", verbatimQuote: "First outcome verbatim quote.", advisorySupport: true }],
+      cards: [{ url: "https://example.com/first", verbatimQuote: "First outcome verbatim quote.", advisorySupport: true, contextBefore: null, contextAfter: null }],
     });
     const outcome2 = makeProposalsPresentOutcome({
-      cards: [{ url: "https://example.com/second", verbatimQuote: "Second outcome different verbatim.", advisorySupport: false }],
+      cards: [{ url: "https://example.com/second", verbatimQuote: "Second outcome different verbatim.", advisorySupport: false, contextBefore: null, contextAfter: null }],
     });
 
     const auditLog = makeAuditLog(exec);
