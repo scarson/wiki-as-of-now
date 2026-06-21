@@ -112,5 +112,31 @@
     "supersededBy": null,
     "certification": "human_confirmed",
     "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "rivian.wikitext",
+    "sentenceSubstring": "Construction is planned to begin in summer 2022",
+    "expectedYear": 2022,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.enr.com/articles/61374-rivian-breaks-ground-on-5b-ev-plant-in-georgia",
+        "snapshot": "test/gold/sources/2025-09-18-rivian-breaks-ground-on-5b-ev-plant-in-georgia.md",
+        "contentHashSha256": "a280020c922b75bf125019951df1fb5a4fbd29e9ae9f656541bdd191d7f3c5ad",
+        "verbatimQuote": "marking the official start of site development. Construction is expected to mobilize in 2026, with vehicle production beginning in 2028, according to the automaker",
+        "supportsStaleness": true
+      },
+      {
+        "sourceUrl": "https://www.enr.com/articles/61374-rivian-breaks-ground-on-5b-ev-plant-in-georgia",
+        "snapshot": "test/gold/sources/2025-09-18-rivian-breaks-ground-on-5b-ev-plant-in-georgia.md",
+        "contentHashSha256": "a280020c922b75bf125019951df1fb5a4fbd29e9ae9f656541bdd191d7f3c5ad",
+        "verbatimQuote": "The car company temporarily paused the Georgia project in 2024 to conserve cash while launching its R2 line at its Normal, Ill., plant",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
   }
 ]
