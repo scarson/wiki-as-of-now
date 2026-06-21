@@ -80,8 +80,8 @@ notes and commit messages.
 | 1 — Slice helper (`quote-context.ts`) | ✅ SHIPPED | (see branch) | the deterministic core |
 | 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 1 |
 | 3 — View projection (`view-types.ts`, `evidence-card.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 2 |
-| 4 — Read-path validation (`research-packs.ts`) | 🚧 IN PROGRESS | — | depends on Phase 1 (cap) + 2 (fields) |
-| 5 — Render (`EvidenceCard.tsx`) | ⬜ Not started | — | depends on Phase 3 |
+| 4 — Read-path validation (`research-packs.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 1 (cap) + 2 (fields) |
+| 5 — Render (`EvidenceCard.tsx`) | 🚧 IN PROGRESS | — | depends on Phase 3 |
 
 ### Deviations
 - **Phase 5 renders the full stored window with no client-side "show more" toggle** (server component, no new client code). The design's §3.5 sketched a client line-clamp + expand; the design's own §A.3 flags this as uncertain and cheap to flip. With `CONTEXT_SIDE_CAP = 240`/side the stored window is already modest, so v1 shows it in full and the terminal "more" is the open source. Flagged for Sam; trivially revisited if real paragraphs read too long.
@@ -604,7 +604,7 @@ BEFORE marking this task complete:
 
 ## Phase 4 — Read-path validation (`research-packs.ts`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — 2026-06-21. `parseRow` rejects an over-cap context side in the same per-card loop as the verbatimQuote check. Node suite + `test:workers` (27 tests, credential-free pool boot) green; tsc + lint clean.
 
 ### Task 4: Re-validate the context cap at the pack read path (defense in depth)
 

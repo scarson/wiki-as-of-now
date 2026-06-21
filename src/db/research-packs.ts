@@ -3,6 +3,7 @@
 import type { EvidenceCard } from "../research/provider";
 import type { DroppedProposal } from "../research/verify-proposal";
 import { MIN_QUOTE_LEN, MAX_QUOTE_LEN } from "../research/verbatim-check";
+import { CONTEXT_SIDE_CAP } from "../research/quote-context";
 import type { SqlExecutor, SqlStatement } from "./client";
 
 // ---------------------------------------------------------------------------
@@ -119,6 +120,11 @@ function parseRow(row: RawPackRow): ResearchPack | null {
     const qLen = [...card.verbatimQuote].length;
     if (qLen < MIN_QUOTE_LEN || qLen > MAX_QUOTE_LEN) {
       return null;
+    }
+    // Read-time cap re-validation for context sides (defense in depth; mirrors the verbatimQuote check).
+    for (const side of [card.contextBefore, card.contextAfter]) {
+      if (side === null || side === undefined) continue;
+      if (typeof side !== "string" || [...side].length > CONTEXT_SIDE_CAP) return null;
     }
   }
 

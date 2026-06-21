@@ -17,6 +17,7 @@ import { allowConsole } from "../setup/pristine";
 import type { EvidenceCard } from "../../src/research/provider";
 import type { DroppedProposal } from "../../src/research/verify-proposal";
 import { MIN_QUOTE_LEN, MAX_QUOTE_LEN } from "../../src/research/verbatim-check";
+import { CONTEXT_SIDE_CAP } from "../../src/research/quote-context";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -464,6 +465,54 @@ describe("getPack — read-time verbatim quote length validation", () => {
     expect(rB.state).toBe("found");
     if (rA.state === "found") expect(rA.pack.status).toBe("no_proposals");
     if (rB.state === "found") expect(rB.pack.status).toBe("proposals_present");
+  });
+
+  it("returns pack_unreadable when a card's contextBefore exceeds CONTEXT_SIDE_CAP code points", async () => {
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+
+    const overCap = "x".repeat(CONTEXT_SIDE_CAP + 1);
+    const overCapCard: EvidenceCard = {
+      url: "https://example.com", verbatimQuote: "The fleet reached full strength by 2017.",
+      advisorySupport: false, contextBefore: overCap, contextAfter: null,
+    };
+    const pack = makePack({ claimKey: "over-cap-context-key", cards: [overCapCard], status: "proposals_present" });
+
+    await exec
+      .prepare(
+        "INSERT INTO research_packs (claim_key, source_revision_id, page_id, section_heading, sentence_text, year, provider_name, model_version, status, queries_json, cards_json, dispositions_json, evaluated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+      )
+      .bind(
+        pack.claimKey, pack.sourceRevisionId, pack.pageId, pack.sectionHeading,
+        pack.sentenceText, pack.year, pack.providerName, pack.modelVersion,
+        pack.status, JSON.stringify(pack.queries), JSON.stringify(pack.cards),
+        JSON.stringify(pack.dispositions), pack.evaluatedAt
+      )
+      .run();
+
+    const result = await getPack(exec, pack.claimKey, pack.sourceRevisionId);
+    expect(result.state).toBe("pack_unreadable");
+    spy.mockRestore();
+  });
+
+  it("reads back a card with null context and an in-cap contextAfter", async () => {
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, article(1));
+
+    const card: EvidenceCard = {
+      url: "https://example.com", verbatimQuote: "The fleet reached full strength by 2017.",
+      advisorySupport: true, contextBefore: null, contextAfter: " after a refit.",
+    };
+    const pack = makePack({ claimKey: "ok-context-key", cards: [card], status: "proposals_present" });
+    await insertPackIfAbsent(exec, pack);
+
+    const result = await getPack(exec, "ok-context-key", 100);
+    expect(result.state).toBe("found");
+    if (result.state === "found") {
+      expect(result.pack.cards[0].contextBefore).toBeNull();
+      expect(result.pack.cards[0].contextAfter).toBe(" after a refit.");
+    }
   });
 });
 
