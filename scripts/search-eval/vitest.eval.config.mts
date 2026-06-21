@@ -5,7 +5,7 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     environment: "node",
-    include: ["scripts/search-eval/run.ts"],
+    include: ["scripts/search-eval/run.ts", "scripts/search-eval/corpus-funnel.ts"],
     testTimeout: 20 * 60_000,
     hookTimeout: 20 * 60_000,
   },
