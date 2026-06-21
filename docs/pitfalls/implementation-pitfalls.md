@@ -213,12 +213,26 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ---
 
+### CI-3: `remote: true` Bindings Open a Login-Gated Proxy in Credential-Free Contexts (Test Pool + `next build`)
+
+**The Flaw:** Workers AI has no local emulation, so both wrangler configs mark the `ai` binding `remote: true`. That flag is right for `wrangler dev`/deploy, but two contexts that must run credential-free *also* read it and open a wrangler remote-proxy session that requires a logged-in Cloudflare account: (1) `@cloudflare/vitest-pool-workers` at pool start, so `pnpm test:workers` tries remote mode; and (2) `initOpenNextCloudflareForDev()`, which `next.config.ts` called unconditionally — so it ran during `next build` (not just `next dev`) and opened the same proxy via `getPlatformProxy`. Both failed in CI with `You must be logged in to use wrangler dev in remote mode`, but passed locally because the dev was logged in.
+
+**Why It Matters:** The failure is invisible to whoever authored it — their machine is authenticated — and surfaces only in CI, a fresh clone, or a teammate's checkout. It also masquerades as two unrelated problems: identical error message, two different fix sites (vitest config vs. next.config).
+
+**The Fix:** Scope the remote binding to runtime only, disabling it at each credential-free entry point. (1) Test pool: set `remoteBindings: false` in `vitest.workers.config.mts` — the workerd tests thread `env.AI` through but never call `.run()`, so Miniflare still supplies the binding object. (2) Build: gate `initOpenNextCloudflareForDev()` on `NODE_ENV === "development"` in `next.config.ts` so it runs only under `next dev`; in production the worker entrypoint supplies the Cloudflare context, so a build never needs it. Keep `remote: true` in both wrangler configs — it's correct for `wrangler dev`/deploy.
+
+**The Lesson:** A binding marked `remote` is a runtime convenience that leaks into *every* tool that parses the wrangler config — test pools, dev-context shims, anything calling `getPlatformProxy`. When you add `remote: true`, audit each credential-free entry point (CI test step, build, dry-run) and disable remote there explicitly, then verify in a shell with cloud credentials unset so local login can't mask the failure (testing-pitfalls §7).
+
+---
+
 ### Review Checklist
 
 - [ ] **No deploy/job is gated on `secrets.*` in a job-level `if:`** — that condition silently never runs; the dormancy guard must be a step-level `if:` (or `env:`-mapped), verified against GitHub's contexts table (CI-1)
 - [ ] **A config test pins the step-level dormancy guard and forbids a job-level `secrets.` guard** — so the broken form can't regress in (CI-1)
 - [ ] **Credential-free local validation uses the research-worker `--dry-run` with `--env=""`; the full OpenNext build is trusted to CI** — don't read the pnpm-PATH quirk as a real build breakage (CI-2)
 - [ ] **Every `wrangler deploy`/`--dry-run` on a multi-env config carries an explicit `--env` (or `--env=""`)** — a bare invocation warns about no target environment and trips pristine-output (CI-2)
+- [ ] **`remote: true` bindings are disabled in every credential-free context** — the workerd test pool sets `remoteBindings: false` and `initOpenNextCloudflareForDev()` is gated to `next dev`, so neither opens a login-gated remote-proxy session in CI (CI-3)
+- [ ] **`initOpenNextCloudflareForDev()` runs only under `NODE_ENV=development`** — it must not execute during `next build`; the production Cloudflare context comes from the worker entrypoint (CI-3)
 
 ---
 
