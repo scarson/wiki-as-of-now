@@ -36,6 +36,10 @@ export interface EvidenceCard {
   verbatimQuote: string;
   /** Advisory flag: whether this card appears to support the claim. Human must verify. */
   advisorySupport: boolean;
+  /** Deterministic source text immediately before the quote in its paragraph; null at paragraph start. NOT model prose. */
+  contextBefore: string | null;
+  /** Deterministic source text immediately after the quote in its paragraph; null at paragraph end. NOT model prose. */
+  contextAfter: string | null;
 }
 
 /** Best-effort metered-spend figures the provider can surface (optional; threaded to quota_ledger in Phase 5). */

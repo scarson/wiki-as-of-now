@@ -6,7 +6,7 @@ import type { ResearchPackRead } from "../../src/db/research-packs";
 
 function packRead(overrides: Partial<{
   status: "no_proposals" | "proposals_present";
-  cards: { url: string; verbatimQuote: string; advisorySupport: boolean }[];
+  cards: { url: string; verbatimQuote: string; advisorySupport: boolean; contextBefore: string | null; contextAfter: string | null }[];
   dispositions: { url: string; reason: string }[];
   queries: string[];
 }>): ResearchPackRead {
@@ -24,7 +24,7 @@ function packRead(overrides: Partial<{
       status: overrides.status ?? "proposals_present",
       queries: overrides.queries ?? ["program delivery status", "program 2023 budget"],
       cards: overrides.cards ?? [
-        { url: "https://example.gov/report", verbatimQuote: "delivery slipped to 2024", advisorySupport: true },
+        { url: "https://example.gov/report", verbatimQuote: "delivery slipped to 2024", advisorySupport: true, contextBefore: null, contextAfter: null },
       ],
       dispositions: overrides.dispositions ?? [
         { url: "https://example.com/blog", reason: "quote_not_found" },
@@ -88,9 +88,10 @@ describe("toTransparencyView", () => {
   it("never exposes a model-authored summary field (G1/G9 — only verbatim quotes, URLs, queries, reasons)", () => {
     const view = toTransparencyView(packRead({}));
     if (view.kind !== "pack") throw new Error("unreachable");
-    // The view shape is closed: assert no stray prose field leaked into a card.
+    // The view shape is closed: assert no stray prose field leaked into a card. The context sides are
+    // deterministic source slices (design 2026-06-21 §3.2), not prose — so they belong in the closed set.
     const cardKeys = Object.keys(view.selected[0]).sort();
-    expect(cardKeys).toEqual(["advisorySupport", "url", "verbatimQuote"]);
+    expect(cardKeys).toEqual(["advisorySupport", "contextAfter", "contextBefore", "url", "verbatimQuote"]);
     // The dropped-view shape is also closed: url + reason + reasonLabel + lane only.
     const droppedKeys = Object.keys(view.dropped[0]).sort();
     expect(droppedKeys).toEqual(["lane", "reason", "reasonLabel", "url"]);

@@ -73,27 +73,27 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started. 0/5 phases shipped.
+**Overall:** Code complete. 5/5 phases shipped (Phase 5 visual check deferred to Sam — no provisioned D1 in env). Branch `claude/evidence-context-display`. Draft PR [#25](https://github.com/scarson/wiki-as-of-now/pull/25) (base `dev`; Review — extends the EvidenceCard serialization contract + G16 evidence rendering; left for Sam, not auto-merged). Node suite 922/922, workers 27/27, tsc + lint clean.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Slice helper (`quote-context.ts`) | ⬜ Not started | — | the deterministic core |
-| 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`) | ⬜ Not started | — | depends on Phase 1 |
-| 3 — View projection (`view-types.ts`, `evidence-card.ts`) | ⬜ Not started | — | depends on Phase 2 |
-| 4 — Read-path validation (`research-packs.ts`) | ⬜ Not started | — | depends on Phase 1 (cap) + 2 (fields) |
-| 5 — Render (`EvidenceCard.tsx`) | ⬜ Not started | — | depends on Phase 3 |
+| 1 — Slice helper (`quote-context.ts`) | ✅ SHIPPED | (see branch) | the deterministic core |
+| 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 1 |
+| 3 — View projection (`view-types.ts`, `evidence-card.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 2 |
+| 4 — Read-path validation (`research-packs.ts`) | ✅ SHIPPED | (see branch) | depends on Phase 1 (cap) + 2 (fields) |
+| 5 — Render (`EvidenceCard.tsx`) | ✅ SHIPPED (code) | (see branch) | visual check deferred to Sam (no D1 in env) |
 
 ### Deviations
 - **Phase 5 renders the full stored window with no client-side "show more" toggle** (server component, no new client code). The design's §3.5 sketched a client line-clamp + expand; the design's own §A.3 flags this as uncertain and cheap to flip. With `CONTEXT_SIDE_CAP = 240`/side the stored window is already modest, so v1 shows it in full and the terminal "more" is the open source. Flagged for Sam; trivially revisited if real paragraphs read too long.
 
 ### Discoveries
-- _(none yet)_
+- **Task 2 literal worklist had two members beyond the `tsc`-flagged set, both runtime round-trip assertions on the now-5-field card shape (the plan's "second worklist").** (1) `test/transparency/surface-pack.test.ts` — the local `cards` DTO (~line 9) AND the G1 closed-shape assertion (`expect(cardKeys).toEqual([...])`, ~line 93) both needed the two context fields; the closed-shape assertion now lists `contextAfter`/`contextBefore` (deterministic source slices, not prose — they belong in the closed set, so the G1 intent is preserved). (2) `test/worksheet/evidence-card.test.ts` (~line 16/32) and `test/worksheet/load-worksheet-view.test.ts` (~line 43) assert `Object.keys(view).sort()` on the *view*; those stay at the 3-key set through Phase 2 (view unchanged until Phase 3) and are updated in Phase 3 when `toEvidenceCardView` starts projecting the fields.
 
 ---
 
 ## Phase 1 — Slice helper (`quote-context.ts`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — 2026-06-21, commit recorded in top-of-plan table. 12/12 helper tests green; tsc + lint clean.
 
 The deterministic lake — boil it. A pure function with exhaustive edge-case tests; everything downstream just plumbs its output.
 
@@ -365,7 +365,7 @@ BEFORE marking this task complete:
 
 ## Phase 2 — Capture + schema (`provider.ts`, `verify-proposal.ts`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — 2026-06-21. Full suite 918/918 green; tsc + lint clean. EvidenceCard required-field churn fixed across 8 test files (15 tsc literals + 1 runtime closed-shape assertion).
 
 Add the two fields to the durable `EvidenceCard` and populate them at the one place the page is in hand.
 
@@ -493,7 +493,7 @@ BEFORE marking this task complete:
 
 ## Phase 3 — View projection (`view-types.ts`, `evidence-card.ts`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — 2026-06-21. Full suite 920/920 green; tsc + lint clean. `toEvidenceCardView` projects the two sides explicitly; `load-worksheet-view` closed-shape assertion updated to the 5-key set (the Phase-2-noted follow-through).
 
 ### Task 3: Project context into the view model
 
@@ -604,7 +604,7 @@ BEFORE marking this task complete:
 
 ## Phase 4 — Read-path validation (`research-packs.ts`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED — 2026-06-21. `parseRow` rejects an over-cap context side in the same per-card loop as the verbatimQuote check. Node suite + `test:workers` (27 tests, credential-free pool boot) green; tsc + lint clean.
 
 ### Task 4: Re-validate the context cap at the pack read path (defense in depth)
 
@@ -733,7 +733,7 @@ BEFORE marking this task complete:
 
 ## Phase 5 — Render (`EvidenceCard.tsx`)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED (code) — 2026-06-21. tsc + lint clean; server component (no `"use client"`, no copy affordance); full stored window, no show-more toggle (Deviations). **Visual check NOT performed** — a meaningful render needs a provisioned D1 with seeded packs (D1 is unprovisioned in this env per the design spec), so the running-app visual confirmation is left for Sam. The static posture is confirmed: quote in `<strong italic>`, context in de-emphasized `<span text-dust-gray not-italic>`, plain-string spans (no `dangerouslySetInnerHTML`).
 
 ### Task 5: Render `before` + emphasized quote + `after`
 

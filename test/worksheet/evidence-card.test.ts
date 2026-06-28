@@ -8,12 +8,14 @@ const card: EvidenceCard = {
   url: "https://example.gov/2024-report",
   verbatimQuote: "The first unit entered service in March 2024.",
   advisorySupport: true,
+  contextBefore: null,
+  contextAfter: null,
 };
 
 describe("toEvidenceCardView", () => {
-  it("carries exactly url, verbatimQuote, advisorySupport — no other text field", () => {
+  it("carries exactly url, verbatimQuote, advisorySupport, and the two deterministic context sides — no other field", () => {
     const view = toEvidenceCardView(card);
-    expect(Object.keys(view).sort()).toEqual(["advisorySupport", "url", "verbatimQuote"]);
+    expect(Object.keys(view).sort()).toEqual(["advisorySupport", "contextAfter", "contextBefore", "url", "verbatimQuote"]);
   });
 
   it("passes the stored verbatim quote through unchanged (it already survived the G8 check)", () => {
@@ -29,6 +31,35 @@ describe("toEvidenceCardView", () => {
     const view = toEvidenceCardView(poisoned);
     expect(JSON.stringify(view)).not.toContain("MODEL-AUTHORED PROSE");
     expect(JSON.stringify(view)).not.toContain("MODEL TEXT");
-    expect(Object.keys(view).sort()).toEqual(["advisorySupport", "url", "verbatimQuote"]);
+    expect(Object.keys(view).sort()).toEqual(["advisorySupport", "contextAfter", "contextBefore", "url", "verbatimQuote"]);
+  });
+
+  it("projects contextBefore/contextAfter and nothing else", () => {
+    const view = toEvidenceCardView({
+      url: "https://navy.mil/x",
+      verbatimQuote: "concluded testing in 2025",
+      advisorySupport: true,
+      contextBefore: "The program ",
+      contextAfter: " after delays.",
+    });
+    expect(view).toEqual({
+      url: "https://navy.mil/x",
+      verbatimQuote: "concluded testing in 2025",
+      advisorySupport: true,
+      contextBefore: "The program ",
+      contextAfter: " after delays.",
+    });
+  });
+
+  it("carries null context sides through unchanged", () => {
+    const view = toEvidenceCardView({
+      url: "https://navy.mil/x",
+      verbatimQuote: "Program X concluded testing",
+      advisorySupport: false,
+      contextBefore: null,
+      contextAfter: " in 2025.",
+    });
+    expect(view.contextBefore).toBeNull();
+    expect(view.contextAfter).toBe(" in 2025.");
   });
 });

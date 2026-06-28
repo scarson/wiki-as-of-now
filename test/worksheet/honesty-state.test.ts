@@ -27,6 +27,8 @@ const card = (advisorySupport: boolean): EvidenceCard => ({
   url: "https://example.gov/report",
   verbatimQuote: "The program delivered its first unit in 2024.",
   advisorySupport,
+  contextBefore: null,
+  contextAfter: null,
 });
 
 describe("deriveHonestyState", () => {

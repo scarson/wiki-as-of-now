@@ -20,7 +20,7 @@ async function seed(db: ReturnType<typeof d1Executor>, pageId: number, packRev: 
   const pack: ResearchPack = {
     claimKey, sourceRevisionId: packRev, pageId, sectionHeading: SECTION, sentenceText: SENTENCE, year: YEAR,
     providerName: "workers-ai", modelVersion: "@cf/google/gemma-4-26b-a4b-it", status: "proposals_present",
-    queries: ["q"], cards: [{ url: "https://navy.mil/z", verbatimQuote: "reached full strength in 2024", advisorySupport: true }],
+    queries: ["q"], cards: [{ url: "https://navy.mil/z", verbatimQuote: "reached full strength in 2024", advisorySupport: true, contextBefore: null, contextAfter: null }],
     dispositions: [], evaluatedAt: new Date().toISOString(),
   };
   await insertPackIfAbsent(db, pack);
@@ -35,7 +35,7 @@ describe("handlePackRead (real Miniflare D1)", () => {
     expect(res.status).toBe(200);
     const body = await res.json() as { state: string; cards: unknown[] };
     expect(body.state).toBe("surfaced");
-    expect(body.cards).toEqual([{ url: "https://navy.mil/z", verbatimQuote: "reached full strength in 2024", advisorySupport: true }]);
+    expect(body.cards).toEqual([{ url: "https://navy.mil/z", verbatimQuote: "reached full strength in 2024", advisorySupport: true, contextBefore: null, contextAfter: null }]);
   });
 
   it("returns 200 with state revision_drift (never a silent empty) when the article advanced past the pack", async () => {

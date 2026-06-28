@@ -102,4 +102,24 @@ describe("verifyProposal", () => {
     expect(drop.url).toBe("https://example.com/p");
     expect(drop.reason).toBe("quote_too_long");
   });
+
+  // Context capture: a matched proposal carries the flanking source slices (design 2026-06-21 §3.2).
+  it("populates contextBefore/contextAfter from the page on a match", async () => {
+    const quote = "NASA confirmed the launch on 3 May 2024";
+    const page = "Earlier reports were cautious. " + quote + " in a press briefing.";
+    const fetch = async (_url: string) => ok(page);
+    const result = await verifyProposal(proposal({ proposedQuote: quote }), { fetchSource: fetch });
+    expect(isDrop(result)).toBe(false);
+    expect(result).toMatchObject({
+      contextBefore: "Earlier reports were cautious. ",
+      contextAfter: " in a press briefing.",
+    });
+  });
+
+  it("yields a null side when the matched quote sits at a paragraph edge", async () => {
+    const quote = "NASA confirmed the launch on 3 May 2024";
+    const fetch = async (_url: string) => ok(quote + " afterwards.");
+    const result = await verifyProposal(proposal({ proposedQuote: quote }), { fetchSource: fetch });
+    expect(result).toMatchObject({ contextBefore: null, contextAfter: " afterwards." });
+  });
 });
