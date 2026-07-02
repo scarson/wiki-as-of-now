@@ -17,11 +17,11 @@ Authority allowlist + self-evidence rules:
 
 ## 1. `littoral_combat_ship.wikitext` — "introduction is expected in 2017"
 
-- **Proposed:** `confirmed_stale` / `slipped_still_pending`
-- **Evidence:** https://www.defensenews.com/digital-show-dailies/navy-league/2021/08/24/us-navy-completes-testing-of-littoral-combat-ships-minesweeper-system/
-  → `test/gold/sources/2021-08-24-us-navy-completes-testing-of-littoral-combat-ship-s-minesweeper-system.md`
-- **Quote:** "The U.S. Navy has completed the initial operational test and evaluation of its Unmanned Influence Sweep System (UISS) program, bringing a key element of the littoral combat ship's mine countermeasures mission package"
-- **Reason:** Source authority — Defense News is reputable but not on the curated trade-press allowlist; and the year of the slip relies on the article date (2021), not an in-span year.
+- **Proposed:** `confirmed_stale` / `event_occurred`
+- **Evidence:** https://www.navalnews.com/naval-news/2022/07/u-s-navy-declares-ioc-for-unmanned-influence-sweep-system-uiss/
+  → `test/gold/sources/2022-07-29-u-s-navy-declares-ioc-for-unmanned-influence-sweep-system-uiss-naval-news.md`
+- **Quote:** "declared UISS IOC on 22 July. The program completed formal testing and delivered a system with logistics and training material with appropriately trained Fleet personnel to execute minesweeping as part of the Mine Countermeasures (MCM) Mission Package (MP)."
+- **Reason:** Re-grounded on independent verification (2026-07-02). The Increment-three sweep system (USSS, renamed UISS) did not merely slip — it reached IOC on 22 July 2022 (first IOC of any U.S. Navy unmanned surface platform), so as of the current-state verification the introduction `event_occurred` (~5 years late), not `slipped_still_pending`. The original grounding was a 2021 IOT&E-completion snapshot that could support only "slipped as of 2021"; swapped to this NAVSEA press release (via Naval News) carrying the IOC resolving fact and tying UISS to the LCS MCM mission package. Source authority: Naval News is reputable defense trade press (would qualify by type; allowlist call is Sam's); the primary navy.mil release is the same NAVSEA text but is 403-blocked to the fetcher. Residual co-reference note: the claim names "USSS," the source names "UISS" (the rename) — self-evident enough for a human_confirmed record.
 
 ## 2. `m109_howitzer.wikitext` — "plans to buy 133 vehicles"
 
@@ -76,10 +76,10 @@ Authority allowlist + self-evidence rules:
 ## 8. `honolulu_rail_transit.wikitext` — "is expected to be completed in August 2025"
 
 - **Proposed:** `confirmed_stale` / `slipped_still_pending`
-- **Evidence:** https://honolulutransit.org/hart-faqs/what-is-the-current-status-of-the-construction-for-the-honolulu-rail-transit-project/
-  → `test/gold/sources/2026-04-21-what-is-the-current-status-of-the-construction-for-the-honolulu-rail-transit-pro.md`
-- **Quote:** "Utility relocation work along Dillingham Boulevard is ongoing, along with roadway improvements such as widening and paving. This work is anticipated to be complete by the end of 2026"
-- **Reason:** Scope nuance — official HART source, but it describes Segment 3 utility relocations "along Dillingham Boulevard," while the claim names the specific "Kūwili–Kaʻākaukukui" span. Whether these are the same work needs human confirmation.
+- **Evidence:** https://honolulutransit.org/hart-faqs/what-is-the-city-center-utilities-relocation-project-and-what-is-the-schedule-for-for-rail-station-and-guideway-construction-work/
+  → `test/gold/sources/2025-10-03-what-is-the-city-center-utilities-relocation-project-and-what-is-the-schedule-fo.md`
+- **Quote:** "Downtown Utilities Relocation**(Kaʻaʻahi Street to Cooke Street): Ongoing since 2022; nearly complete."
+- **Reason:** Re-grounded on independent verification (2026-07-02). The original quote grounded the WRONG segment: it described the "Dillingham Boulevard" relocation, which HART's own contract split (this snapshot) identifies as the separate **Dillingham Utilities Relocation** (Middle St → Kaʻaʻahi St = the fixture's Kahauiki–Kūwili segment, due late 2026) — not the claim's **Kūwili–Kaʻākaukukui** span. Swapped to HART's "City Center Utilities Relocation" FAQ, which names the correct **Downtown Utilities Relocation** (Kaʻaʻahi St → Cooke St = Kūwili–Kaʻākaukukui) as "nearly complete" as of Oct 2025 — i.e. the August 2025 target slipped and the work is still not declared finished, confirming `slipped_still_pending`. Disposition unchanged; grounding corrected. (The `**` in the quote is `url-to-markdown` emphasis bytes, preserved verbatim.)
 
 ---
 

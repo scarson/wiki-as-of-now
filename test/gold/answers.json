@@ -80,19 +80,19 @@
     "sentenceSubstring": "introduction is expected in 2017",
     "expectedYear": 2017,
     "disposition": "confirmed_stale",
-    "outcome": "slipped_still_pending",
+    "outcome": "event_occurred",
     "evidence": [
       {
-        "sourceUrl": "https://www.defensenews.com/digital-show-dailies/navy-league/2021/08/24/us-navy-completes-testing-of-littoral-combat-ships-minesweeper-system/",
-        "snapshot": "test/gold/sources/2021-08-24-us-navy-completes-testing-of-littoral-combat-ship-s-minesweeper-system.md",
-        "contentHashSha256": "40ccdf6414e21f21d38bd96ba34c0b2e396cb882fea5af6935c1477921bb6b3f",
-        "verbatimQuote": "The U.S. Navy has completed the initial operational test and evaluation of its Unmanned Influence Sweep System (UISS) program, bringing a key element of the littoral combat ship’s mine countermeasures mission package",
+        "sourceUrl": "https://www.navalnews.com/naval-news/2022/07/u-s-navy-declares-ioc-for-unmanned-influence-sweep-system-uiss/",
+        "snapshot": "test/gold/sources/2022-07-29-u-s-navy-declares-ioc-for-unmanned-influence-sweep-system-uiss-naval-news.md",
+        "contentHashSha256": "bcff35c5bb7a2b45bf2371b1b05bc21e8060c15b414f270b0e775aa61b74f958",
+        "verbatimQuote": "declared UISS IOC on 22 July. The program completed formal testing and delivered a system with logistics and training material with appropriately trained Fleet personnel to execute minesweeping as part of the Mine Countermeasures (MCM) Mission Package (MP).",
         "supportsStaleness": true
       }
     ],
     "supersededBy": null,
     "certification": "human_confirmed",
-    "verifiedAsOf": "2026-06-21"
+    "verifiedAsOf": "2026-07-02"
   },
   {
     "fixture": "gaganyaan.wikitext",
@@ -166,16 +166,16 @@
     "outcome": "slipped_still_pending",
     "evidence": [
       {
-        "sourceUrl": "https://honolulutransit.org/hart-faqs/what-is-the-current-status-of-the-construction-for-the-honolulu-rail-transit-project/",
-        "snapshot": "test/gold/sources/2026-04-21-what-is-the-current-status-of-the-construction-for-the-honolulu-rail-transit-pro.md",
-        "contentHashSha256": "b094530fead228ca1f9e4c71af5f33d0554b239eacf13faec72fe613d1d5cfa6",
-        "verbatimQuote": "Utility relocation work along Dillingham Boulevard is ongoing, along with roadway improvements such as widening and paving. This work is anticipated to be complete by the end of 2026",
+        "sourceUrl": "https://honolulutransit.org/hart-faqs/what-is-the-city-center-utilities-relocation-project-and-what-is-the-schedule-for-for-rail-station-and-guideway-construction-work/",
+        "snapshot": "test/gold/sources/2025-10-03-what-is-the-city-center-utilities-relocation-project-and-what-is-the-schedule-fo.md",
+        "contentHashSha256": "e616d91ebb88aa609ebe369e33ed4501daadb8939c129497e14e1d9717383047",
+        "verbatimQuote": "Downtown Utilities Relocation**(Kaʻaʻahi Street to Cooke Street): Ongoing since 2022; nearly complete.",
         "supportsStaleness": true
       }
     ],
     "supersededBy": null,
     "certification": "human_confirmed",
-    "verifiedAsOf": "2026-06-21"
+    "verifiedAsOf": "2026-07-02"
   },
   {
     "fixture": "littoral_combat_ship.wikitext",
