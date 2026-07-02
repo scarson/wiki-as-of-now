@@ -37,7 +37,7 @@ Authority allowlist + self-evidence rules:
 - **Evidence:** https://news.lockheedmartin.com/2023-12-11-lockheed-martin-delivers-first-prsm-to-us-army
   → `test/gold/sources/2023-12-11-lockheed-martin-delivers-first-precision-strike-missiles-to-us-army.md`
 - **Quote:** "Lockheed Martin (NYSE: LMT) has delivered the first Precision Strike Missiles (PrSM) to the U.S. Army providing long-range precision fires capability and achieving a major modernization milestone"
-- **Reason:** Disposition ambiguity — the Dec-2023 delivery was *Early* Operational Capability; per the fixture, formal IOC slipped to FY28. `event_occurred` vs `slipped_still_pending` is a judgment call.
+- **Reason:** Grounding + subject note. The Dec-2023 delivery the quote documents was *Early* (Low-Rate) Operational Capability, and the quoted span uses the generic phrase "a major modernization milestone" rather than asserting IOC, so the resolving year rides on the snapshot dateline — the record is defensibly `event_occurred` on the milestone-occurred fact, not an explicit in-span IOC statement. Subject check: this claim is the base missile / **Increment One** (fixture line 58), NOT Increment Two (whose separate FY28 IOC is at fixture line 91). Increment One achieved Milestone C on 2 July 2025 (transition to production and deployment; full-rate production authorized) and is now in U.S. Army service, so the predicted 2023 capability was realized (years late) with no Increment-One IOC pending — `event_occurred` confirmed, not a slip to FY28.
 
 ## 4. `gordie_howe_international_bridge.wikitext` — "to be completed by the end of 2024"
 
