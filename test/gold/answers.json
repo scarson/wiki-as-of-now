@@ -1,1 +1,657 @@
-[]
+[
+  {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "will be ready to test the CPS in 2025",
+    "expectedYear": 2025,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://news.usni.org/2024/11/14/navy-wants-to-start-conventional-prompt-strike-tests-aboard-uss-zumwalt-in-2027",
+        "snapshot": "test/gold/sources/2024-11-14-navy-wants-to-start-conventional-prompt-strike-tests-aboard-uss-zumwalt-in-2027.md",
+        "contentHashSha256": "8698afeca9acc8baf10bb7304eb6dbffc87434a562d4d1ddbf9fd7678f0fe48d",
+        "verbatimQuote": "The Navy wants to start testing its Conventional Prompt Strike missile system aboard guided-missile destroyer USS *Zumwalt* (DG-1000) in 2027 or 2028",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "gordie_howe_international_bridge.wikitext",
+    "sentenceSubstring": "to be completed by the end of 2024",
+    "expectedYear": 2024,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://gordiehoweinternationalbridge.com/personal-travellers-invited-to-breakaway-with-gordie-howe-international-bridge/",
+        "snapshot": "test/gold/sources/2026-03-31-personal-travellers-invited-to-breakaway-with-gordie-howe-international-bridge.md",
+        "contentHashSha256": "cb2f11fea88a8b90fd5fbf028862ac9427f6660e7903931714fff739a52ff30f",
+        "verbatimQuote": "Opening this spring, the Gordie Howe International Bridge will transform how people and goods move across the region",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "m109_howitzer.wikitext",
+    "sentenceSubstring": "plans to buy 133 vehicles",
+    "expectedYear": 2014,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://thedefensepost.com/2024/08/05/us-army-bae-m109a7/",
+        "snapshot": "test/gold/sources/2024-08-05-us-army-awards-bae-additional-493m-m109a7-howitzer-contract.md",
+        "contentHashSha256": "60285306553b8eb47b232599a6ef3c399cf89fb78b826da7cb445e6d404aed70",
+        "verbatimQuote": "The M109A7 entered full rate production in 2020. Since then, $3 billion in contracts have been awarded by the US Army for the howitzer",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "precision_strike_missile.wikitext",
+    "sentenceSubstring": "achieve initial operational capability in 2023",
+    "expectedYear": 2023,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://news.lockheedmartin.com/2023-12-11-lockheed-martin-delivers-first-prsm-to-us-army",
+        "snapshot": "test/gold/sources/2023-12-11-lockheed-martin-delivers-first-precision-strike-missiles-to-us-army.md",
+        "contentHashSha256": "bd5dd252f9c80d2d6a4ecfd34e515ddf1b4fe72e1e1db2a3852d69d2ba890f48",
+        "verbatimQuote": "Lockheed Martin (NYSE: LMT) has delivered the first Precision Strike Missiles (PrSM) to the U.S. Army providing long-range precision fires capability and achieving a major modernization milestone",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "introduction is expected in 2017",
+    "expectedYear": 2017,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.navalnews.com/naval-news/2022/07/u-s-navy-declares-ioc-for-unmanned-influence-sweep-system-uiss/",
+        "snapshot": "test/gold/sources/2022-07-29-u-s-navy-declares-ioc-for-unmanned-influence-sweep-system-uiss-naval-news.md",
+        "contentHashSha256": "bcff35c5bb7a2b45bf2371b1b05bc21e8060c15b414f270b0e775aa61b74f958",
+        "verbatimQuote": "declared UISS IOC on 22 July. The program completed formal testing and delivered a system with logistics and training material with appropriately trained Fleet personnel to execute minesweeping as part of the Mine Countermeasures (MCM) Mission Package (MP).",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-07-02"
+  },
+  {
+    "fixture": "gaganyaan.wikitext",
+    "sentenceSubstring": "scheduled to be launched no earlier than 2024",
+    "expectedYear": 2024,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.space.com/space-exploration/human-spaceflight/india-delays-1st-gaganyaan-astronaut-launch-to-2027",
+        "snapshot": "test/gold/sources/2025-05-08-india-delays-1st-gaganyaan-astronaut-launch-to-2027.md",
+        "contentHashSha256": "72922f1c11621094288579d4dcfa1e4fe549aae7efd5631bda4eae624ce20fde",
+        "verbatimQuote": "The first crewed mission, dubbed H1, will fly in the first quarter of 2027",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "rivian.wikitext",
+    "sentenceSubstring": "Construction is planned to begin in summer 2022",
+    "expectedYear": 2022,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.enr.com/articles/61374-rivian-breaks-ground-on-5b-ev-plant-in-georgia",
+        "snapshot": "test/gold/sources/2025-09-18-rivian-breaks-ground-on-5b-ev-plant-in-georgia.md",
+        "contentHashSha256": "a280020c922b75bf125019951df1fb5a4fbd29e9ae9f656541bdd191d7f3c5ad",
+        "verbatimQuote": "marking the official start of site development. Construction is expected to mobilize in 2026, with vehicle production beginning in 2028, according to the automaker",
+        "supportsStaleness": true
+      },
+      {
+        "sourceUrl": "https://www.enr.com/articles/61374-rivian-breaks-ground-on-5b-ev-plant-in-georgia",
+        "snapshot": "test/gold/sources/2025-09-18-rivian-breaks-ground-on-5b-ev-plant-in-georgia.md",
+        "contentHashSha256": "a280020c922b75bf125019951df1fb5a4fbd29e9ae9f656541bdd191d7f3c5ad",
+        "verbatimQuote": "The car company temporarily paused the Georgia project in 2024 to conserve cash while launching its R2 line at its Normal, Ill., plant",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "hiv_vaccine_development.wikitext",
+    "sentenceSubstring": "phase one trial is expected to conclude July 2023",
+    "expectedYear": 2023,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/40737434/",
+        "snapshot": "test/gold/sources/2025-07-30-vaccination-with-mrna-encoded-membrane-anchored-hiv-envelope-trimers-elicited-ti.md",
+        "contentHashSha256": "9c4918e86940a3036d6a106c42351c32c03b80e832c4fde1b00bf9f415d65833",
+        "verbatimQuote": "We evaluated the safety and immunogenicity of three mRNA-encoded envelope trimers, including two doses of soluble and membrane-anchored forms, in a randomized, open-label, phase 1 clinical trial",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "honolulu_rail_transit.wikitext",
+    "sentenceSubstring": "is expected to be completed in August 2025",
+    "expectedYear": 2025,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://honolulutransit.org/hart-faqs/what-is-the-city-center-utilities-relocation-project-and-what-is-the-schedule-for-for-rail-station-and-guideway-construction-work/",
+        "snapshot": "test/gold/sources/2025-10-03-what-is-the-city-center-utilities-relocation-project-and-what-is-the-schedule-fo.md",
+        "contentHashSha256": "e616d91ebb88aa609ebe369e33ed4501daadb8939c129497e14e1d9717383047",
+        "verbatimQuote": "Downtown Utilities Relocation**(Kaʻaʻahi Street to Cooke Street): Ongoing since 2022; nearly complete.",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-07-02"
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "will be fielded in 2018",
+    "expectedYear": 2018,
+    "disposition": "superseded",
+    "outcome": "event_cancelled",
+    "evidence": [
+      {
+        "sourceUrl": "https://news.usni.org/2016/03/24/navys-remote-minehunting-system-officially-canceld-sonar-may-live-on",
+        "snapshot": "test/gold/sources/2016-03-24-navy-s-remote-minehunting-system-officially-canceled-sonar-may-live-on-usni-news.md",
+        "contentHashSha256": "92ef6bdd2b1bf956d5926b7e5fe50ede11436497ef1607a103a1e68811b91ae7",
+        "verbatimQuote": "The Navy has officially canceled the Remote Minehunting System acquisition program, but the AN/AQS-20A advanced minehunting sonar within the RMS program may live on in another capacity",
+        "supportsStaleness": true
+      },
+      {
+        "sourceUrl": "https://news.usni.org/2016/03/24/navys-remote-minehunting-system-officially-canceld-sonar-may-live-on",
+        "snapshot": "test/gold/sources/2016-03-24-navy-s-remote-minehunting-system-officially-canceled-sonar-may-live-on-usni-news.md",
+        "contentHashSha256": "92ef6bdd2b1bf956d5926b7e5fe50ede11436497ef1607a103a1e68811b91ae7",
+        "verbatimQuote": "Service officials said then that the Navy would upgrade most of the 10 Remote Multimission Vehicles – the unmanned vehicle at the center of RMS",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": "Remote Minehunting System acquisition program canceled; minehunting role to be recompeted among Knifefish UUV and Textron CUSV",
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "littoral_combat_ship.wikitext",
+    "sentenceSubstring": "Knifefish unmanned underwater vehicle (UUV) to find and detect buried mines in 2019",
+    "expectedYear": 2019,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.navsea.navy.mil/Media/News/Article-View/Article/1944024/us-navys-knifefish-uuv-program-achieves-milestone-c/",
+        "snapshot": "test/gold/sources/2019-08-26-us-navy-s-knifefish-uuv-program-achieves-milestone-c.md",
+        "contentHashSha256": "03ce6a34f0a1336dd76fb29b83340aee13402f5136ae7beddb34722d218f54ea",
+        "verbatimQuote": "granted Milestone C approval to the Knifefish Surface Mine Countermeasure Unmanned Undersea Vehicle Program. The decision clears the way for low-rate initial production (LRIP) of the system",
+        "supportsStaleness": true
+      },
+      {
+        "sourceUrl": "https://www.navsea.navy.mil/Media/News/Article-View/Article/1944024/us-navys-knifefish-uuv-program-achieves-milestone-c/",
+        "snapshot": "test/gold/sources/2019-08-26-us-navy-s-knifefish-uuv-program-achieves-milestone-c.md",
+        "contentHashSha256": "03ce6a34f0a1336dd76fb29b83340aee13402f5136ae7beddb34722d218f54ea",
+        "verbatimQuote": "A full-rate production decision is expected in fiscal year 2022 after additional testing of LRIP systems",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "zumwalt-class_destroyer.wikitext",
+    "sentenceSubstring": "will request FY 2022 funding",
+    "expectedYear": 2022,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://news.usni.org/2024/11/14/navy-wants-to-start-conventional-prompt-strike-tests-aboard-uss-zumwalt-in-2027",
+        "snapshot": "test/gold/sources/2024-11-14-navy-wants-to-start-conventional-prompt-strike-tests-aboard-uss-zumwalt-in-2027.md",
+        "contentHashSha256": "8698afeca9acc8baf10bb7304eb6dbffc87434a562d4d1ddbf9fd7678f0fe48d",
+        "verbatimQuote": "Part of that overhaul is removing the destroyer’s 155mm Advanced Gun Systems and fitting it with four large diameter tubes to accommodate the missiles for CPS. Wolfe said this work is complete and went well",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "ground_combat_vehicle.wikitext",
+    "sentenceSubstring": "will each receive $50 million in FY 2015",
+    "expectedYear": 2015,
+    "disposition": "superseded",
+    "outcome": "superseded",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.militaryaerospace.com/power/article/16718673/army-asks-bae-systems-and-general-dynamics-to-recycle-gcv-vetronics-for-future-fighting-vehicle",
+        "snapshot": "test/gold/sources/2014-08-18-army-asks-bae-systems-and-general-dynamics-to-recycle-gcv-vetronics-for-future-f.md",
+        "contentHashSha256": "e092938c9234524f59d2753943ce193db71d757e058757a93aa1b96938d45e37",
+        "verbatimQuote": "awarded $7.9 million study contracts last week to GCV contractors BAE Systems Land & Armaments LP in Sterling Heights, Mich., and to General Dynamics Land Systems (GDLS)",
+        "supportsStaleness": true
+      },
+      {
+        "sourceUrl": "https://www.militaryaerospace.com/power/article/16718673/army-asks-bae-systems-and-general-dynamics-to-recycle-gcv-vetronics-for-future-fighting-vehicle",
+        "snapshot": "test/gold/sources/2014-08-18-army-asks-bae-systems-and-general-dynamics-to-recycle-gcv-vetronics-for-future-f.md",
+        "contentHashSha256": "e092938c9234524f59d2753943ce193db71d757e058757a93aa1b96938d45e37",
+        "verbatimQuote": "The Ground Combat Vehicle program, cancelled in February due to budget constraints",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": "$7.9 million FFV-technology study contracts to BAE Systems and General Dynamics Land Systems (Aug 2014) after the GCV program's February 2014 cancellation",
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "future_vertical_lift.wikitext",
+    "sentenceSubstring": "build technology demonstration aircraft with flight tests starting in 2017",
+    "expectedYear": 2017,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://news.bellflight.com/en-US/162449-bell-v-280-valor-achieves-first-flight/",
+        "snapshot": "test/gold/sources/2017-12-18-bell-v-280-valor-achieves-first-flight.md",
+        "contentHashSha256": "623aac10122aa0fa655118c816d126110cc5ef2fc22180857759212b11418d89",
+        "verbatimQuote": "today announced that its V-280 Valor has achieved first flight. The V-280 Valor is a next-generation tiltrotor",
+        "supportsStaleness": true
+      },
+      {
+        "sourceUrl": "https://news.bellflight.com/en-US/162449-bell-v-280-valor-achieves-first-flight/",
+        "snapshot": "test/gold/sources/2017-12-18-bell-v-280-valor-achieves-first-flight.md",
+        "contentHashSha256": "623aac10122aa0fa655118c816d126110cc5ef2fc22180857759212b11418d89",
+        "verbatimQuote": "The Bell V-280 Valor program is part of the Joint Multi Role   Technology Demonstrator (JMR-TD) initiative",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "HSW will begin producing PK9 chassis starting in 2017",
+    "expectedYear": 2017,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://defence24.com/armed-forces/land/series-manufactured-krab-howitzers-for-the-polish-military",
+        "snapshot": "test/gold/sources/2019-03-21-series-manufactured-krab-howitzers-for-the-polish-military.md",
+        "contentHashSha256": "46d4ad3585a2ba4211f6c839e01065164bffdeb91e2877e8a343f10fc367a1fd",
+        "verbatimQuote": "It was assumed that to the introductory DMO element would use readymade PK9/K9PL platforms delivered by the licensor and HSW S.A.’s partner, the Hanwha Techwin company",
+        "supportsStaleness": true
+      },
+      {
+        "sourceUrl": "https://defence24.com/armed-forces/land/series-manufactured-krab-howitzers-for-the-polish-military",
+        "snapshot": "test/gold/sources/2019-03-21-series-manufactured-krab-howitzers-for-the-polish-military.md",
+        "contentHashSha256": "46d4ad3585a2ba4211f6c839e01065164bffdeb91e2877e8a343f10fc367a1fd",
+        "verbatimQuote": "ready to deliver the first battery (8 howitzers, 4 command/staff command vehicles, 2 WA ammunition carriers and 1 WRUiE repair vehicles) during the last quarter of 2018",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "All Korean K9s will receive A1 upgrades",
+    "expectedYear": 2018,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.janes.com/osint-insights/defence-news/land/south-korea-to-upgrade-k9a1-howitzers",
+        "snapshot": "test/gold/sources/2023-06-01-south-korea-to-upgrade-k9a1-howitzers.md",
+        "contentHashSha256": "736342d1ee7bb353d2941b7527acdb7f908b45907239d795f8cd0cdcffbafa5e",
+        "verbatimQuote": "According to *Janes World Armies, *the RoKA operates 1,136 K9 and K9A1 SPHs",
+        "supportsStaleness": true
+      },
+      {
+        "sourceUrl": "https://www.janes.com/osint-insights/defence-news/land/south-korea-to-upgrade-k9a1-howitzers",
+        "snapshot": "test/gold/sources/2023-06-01-south-korea-to-upgrade-k9a1-howitzers.md",
+        "contentHashSha256": "736342d1ee7bb353d2941b7527acdb7f908b45907239d795f8cd0cdcffbafa5e",
+        "verbatimQuote": "The enhanced K9A1 version, which features an improved mission system was deployed from 2018",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "robotic_combat_vehicle.wikitext",
+    "sentenceSubstring": "Testing of the vehicle is expected to begin in 2020",
+    "expectedYear": 2020,
+    "disposition": "superseded",
+    "outcome": "superseded",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.defensenews.com/land/2020/01/16/army-takes-step-back-on-bradley-replacement-prototyping-effort/",
+        "snapshot": "test/gold/sources/2020-01-16-us-army-cancels-current-effort-to-replace-bradley-vehicle.md",
+        "contentHashSha256": "322a957fd01dfe57844c965003b931c55fd9e6763ebdcc9d8ccf68946f012f3e",
+        "verbatimQuote": "Today the U.S. Army will cancel the current solicitation for the Section 804 Middle Tier acquisition rapid prototyping phase of the [optionally manned fighting vehicle]",
+        "supportsStaleness": true
+      },
+      {
+        "sourceUrl": "https://www.defensenews.com/land/2020/01/16/army-takes-step-back-on-bradley-replacement-prototyping-effort/",
+        "snapshot": "test/gold/sources/2020-01-16-us-army-cancels-current-effort-to-replace-bradley-vehicle.md",
+        "contentHashSha256": "322a957fd01dfe57844c965003b931c55fd9e6763ebdcc9d8ccf68946f012f3e",
+        "verbatimQuote": "we have determined it is necessary to revisit the requirements, acquisition strategy and schedule moving forward",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": "Original OMFV Section 804 prototyping solicitation cancelled Jan 2020 (single bidder); requirements/acquisition strategy/schedule restarted under a new solicitation",
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "24 units will be manufactured in South Korea",
+    "expectedYear": 2015,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.technology.org/2023/03/16/why-did-it-take-almost-20-years-for-poland-to-develop-ahs-krab/",
+        "snapshot": "test/gold/sources/2023-03-16-why-did-it-take-almost-20-years-for-poland-to-develop-ahs-krab.md",
+        "contentHashSha256": "0f0ff9522c6ba6bd65cf2b7851c0bf67efafe2a3686999bacb30ffe2b6a1ccd7",
+        "verbatimQuote": "In 2014 a new chassis developed by the Korean Samsung Techwin was chosen, but the first 24 chassis were to be delivered in 2017. This means that the full-rate production of 120 Krabs for the Polish Army has started only in 2016",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "long_range_discrimination_radar.wikitext",
+    "sentenceSubstring": "The first operation is expected to start from 2025",
+    "expectedYear": 2025,
+    "disposition": "superseded",
+    "outcome": "superseded",
+    "evidence": [
+      {
+        "sourceUrl": "https://news.lockheedmartin.com/2025-07-07-Aegis-System-Equipped-Vessel-Takes-Shape-Lockheed-Martin-Delivers-AN-SPY-7-V-1-Radar-Antennas-to-Japan",
+        "snapshot": "test/gold/sources/2025-07-07-aegis-system-equipped-vessel-takes-shape-lockheed-martin-delivers-an-spy-7-v-1-r.md",
+        "contentHashSha256": "2c2b53e2db5fe2139bf453bde6a0d465f375374ba88c0a74920a5877ac101ee6",
+        "verbatimQuote": "The JMOD is acquiring two ASEVs, and both are on track for commissioning in Japan Fiscal Year 2027 and 2028",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": "Aegis System Equipped Vessels (ASEV) — two SPY-7-equipped destroyers commissioning Japan Fiscal Year 2027 and 2028, replacing the cancelled land-based Aegis Ashore deployment",
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "dark_eagle.wikitext",
+    "sentenceSubstring": "field the weapon aboard its Zumwalt-class destroyers by 2025",
+    "expectedYear": 2025,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://news.usni.org/2024/11/14/navy-wants-to-start-conventional-prompt-strike-tests-aboard-uss-zumwalt-in-2027",
+        "snapshot": "test/gold/sources/2024-11-14-navy-wants-to-start-conventional-prompt-strike-tests-aboard-uss-zumwalt-in-2027.md",
+        "contentHashSha256": "8698afeca9acc8baf10bb7304eb6dbffc87434a562d4d1ddbf9fd7678f0fe48d",
+        "verbatimQuote": "delayed plans to field CPS aboard the Zumwalt class from Fiscal Year 2025 to FY 2026",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "precision_strike_missile.wikitext",
+    "sentenceSubstring": "upgraded seeker is expected to be part of a major program improvement",
+    "expectedYear": 2025,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.janes.com/osint-insights/defence-news/industry/pentagon-budget-2025-precision-strike-missile-inc-2-procurement-delayed",
+        "snapshot": "test/gold/sources/2024-03-13-pentagon-budget-2025-precision-strike-missile-inc-2-procurement-delayed.md",
+        "contentHashSha256": "4df5e7ada9434c36c934bb02c66f59e9124f03278963540dd91781437599736e",
+        "verbatimQuote": "The multimode seeker that makes the US Army's Precision Strike Missile Increment 2 (PrSM Inc 2) unique and more advanced than Inc 1 is holding the capability back from its scheduled procurement in fiscal year (FY) 2025",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "manufacturing is expected to start in Q4 2024",
+    "expectedYear": 2024,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.hanwha-defence.com.au/news/first-australian-made-as9s-debut-in-geelong",
+        "snapshot": "test/gold/sources/2026-02-26-first-australian-made-as9s-debut-in-geelong.md",
+        "contentHashSha256": "1d76d96457c47bb182369ec7067d8140bcadd8f2cb832a7df85afd7282ab75e0",
+        "verbatimQuote": "Hanwha Defence Australia (HDA) has welcomed the first three Australian-made AS9 HuntsmanSelf-Propelled Howitzers (SPH) made at the Hanwha Armoured Vehicle Centre of Excellence (H-ACE) in Victoria",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "k9_thunder.wikitext",
+    "sentenceSubstring": "The manufacturing will start in 2022",
+    "expectedYear": 2022,
+    "disposition": "confirmed_stale",
+    "outcome": "slipped_still_pending",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.janes.com/osint-insights/defence-news/defence/south-korea-to-mass-produce-extended-range-projectiles-for-k9-howitzers",
+        "snapshot": "test/gold/sources/2024-02-08-south-korea-to-mass-produce-extended-range-projectiles-for-k9-howitzers.md",
+        "contentHashSha256": "8c392f61af9f9d44912ad222cfae6201dd93f0e7167505460a1783a8ad4bd44b",
+        "verbatimQuote": "South Korean metal and munition manufacturer Poongsan will initiate the mass production of the extended-range 155 mm artillery shells for the Hanwha Land Systems K9 Thunder self-propelled howitzers (SPHs) in 2024",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "m1156_precision_guidance_kit.wikitext",
+    "sentenceSubstring": "will be designed to operate with the GPS-M satellite constellation",
+    "expectedYear": 2022,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.janes.com/osint-insights/defence-news/defence/northrop-grumman-integrating-m-code-into-precision-artillery",
+        "snapshot": "test/gold/sources/2023-01-30-northrop-grumman-integrating-m-code-into-precision-artillery.md",
+        "contentHashSha256": "c1f154899f8a64f937579b88f55fc4bc98cd564155841e90c969c816a61fbabf",
+        "verbatimQuote": "CAES, a Northern Virginia-based company specialising in advanced radio frequency (RF) technologies, will carry out the M-Code GPS integration work into Northrop Grumman's Precision Guidance Kit (PGK)",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "boeing_insitu_rq-21_blackjack.wikitext",
+    "sentenceSubstring": "plans to add a sensor to the Blackjack",
+    "expectedYear": 2020,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.navalnews.com/naval-news/2021/04/logos-technologies-successfully-tests-wami-sensor-on-rq-21a-blackjack/",
+        "snapshot": "test/gold/sources/2021-04-26-logos-technologies-successfully-tests-wami-sensor-on-rq-21a-blackjack-naval-news.md",
+        "contentHashSha256": "c4d75f7be44818750fc57af2e185714e84317ef54580b78112ddb5f922df6e0e",
+        "verbatimQuote": "We are very excited by our recent test aboard the RQ-21A Blackjack",
+        "supportsStaleness": true
+      },
+      {
+        "sourceUrl": "https://seapowermagazine.org/logos-technologies-successfully-flight-tests-sprite-multi-sensor-pod-for-onr/",
+        "snapshot": "test/gold/sources/2021-07-28-logos-technologies-successfully-flight-tests-sprite-multi-sensor-pod-for-onr-sea.md",
+        "contentHashSha256": "34b069a2f9cb500ba408a6d8ff62e5b5a607f422ffe792746a36b9c445b7b027",
+        "verbatimQuote": "with the successful test flight of the Spectral and Reconnaissance Imaging for Tactical Exploitation (SPRITE) pod earlier this year, has met all the goals of its five-year contract with the Office of Naval Research",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "aducanumab.wikitext",
+    "sentenceSubstring": "is expected to continue for existing commercial patients until November 2024",
+    "expectedYear": 2024,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.alz.org/alzheimers-dementia/treatments/aducanumab",
+        "snapshot": "test/gold/sources/2026-06-21-aducanumab-discontinued-as-alzheimers-treatment-alz-org.md",
+        "contentHashSha256": "b89b5eae04e741d78957626436b4bce043a38aa0fcea4ed49ff32f7aae300935",
+        "verbatimQuote": "Biogen announced in January 2024 that Aduhelm would be discontinued in November 2024, allowing clinical trial participants access until May 1, 2024, and those receiving it by prescription until Nov. 1, 2024.",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "TSMC plans to start volume production",
+    "expectedYear": 2023,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://pr.tsmc.com/english/news/2986",
+        "snapshot": "test/gold/sources/2022-12-29-tsmc-holds-3nm-volume-production-and-capacity-expansion-ceremony-marking-a-key-m.md",
+        "contentHashSha256": "c57c4eff57a7d868f6cad77e558794f0b49385566f3d9d75d6d619255019a4ed",
+        "verbatimQuote": "**HSINCHU, Taiwan, R.O.C. – Dec. 29, 2022 **-** **TSMC (TWSE: 2330, NYSE: TSM) today held a 3 nanometer (3nm) Volume Production and Capacity Expansion Ceremony",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "project_kuiper.wikitext",
+    "sentenceSubstring": "is expected to open in June 2024",
+    "expectedYear": 2024,
+    "disposition": "unverifiable",
+    "outcome": "unverifiable",
+    "evidence": [],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "pci_express.wikitext",
+    "sentenceSubstring": "The specification is expected to be finalized in 2025",
+    "expectedYear": 2025,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.businesswire.com/news/home/20250611299049/en/PCI-SIG-Releases-PCIe-7.0-Specification-to-Support-the-Bandwidth-Demands-of-Artificial-Intelligence-at-128.0-GTs-Transfer-Rates",
+        "snapshot": "test/gold/sources/2025-06-11-pci-sig-releases-pcie-7-0-specification-to-support-the-bandwidth-demands-of-arti.md",
+        "contentHashSha256": "334673eb7945fca795d4937a8028f6cab2c68724c33f7ace0cea9171b3a50ec7",
+        "verbatimQuote": "PCI-SIG announced the official release of the PCI Express (PCIe) 7.0 specification, reaching 128.0 GT/s.",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "m72_as01e.wikitext",
+    "sentenceSubstring": "is scheduled to begin in 2024",
+    "expectedYear": 2024,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.gatesmri.org/mri-initiates-phase-3-clinical-trial-tuberculosis-vaccine-candidate/",
+        "snapshot": "test/gold/sources/2024-03-19-bill-melinda-gates-medical-research-institute-initiates-phase-3-clinical-trial-o.md",
+        "contentHashSha256": "6b03f7f221a945947c7f7c6219f243345e9de8f87ec0424abc5de5cc656644ab",
+        "verbatimQuote": "**Cambridge, Mass., USA (19 March 2024)** – The Bill & Melinda Gates Medical Research Institute (Gates MRI) today announced that a Phase 3 clinical trial to assess the efficacy of the M72/AS01E tuberculosis (TB) vaccine candidate is now underway, with first doses given in South Africa",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "gateway_program_northeast_corridor.wikitext",
+    "sentenceSubstring": "was expected to be completed in October 2025",
+    "expectedYear": 2025,
+    "disposition": "confirmed_stale",
+    "outcome": "event_occurred",
+    "evidence": [
+      {
+        "sourceUrl": "https://www.gatewayprogram.org/tonnelle-avenue-bridge-utility-relocation-project.html",
+        "snapshot": "test/gold/sources/2026-06-21-tonnelle-avenue-bridge-utility-relocation-gateway-program.md",
+        "contentHashSha256": "9d10de9ef1c39b1ce8ab84cbb58d0aa318f417addb3ad98253edfd00226fe272",
+        "verbatimQuote": "Ground broke on the Tonnelle Avenue Project in November 2023, marking the start of Hudson Tunnel Project construction in New Jersey. The project was completed in 2026.",
+        "supportsStaleness": true
+      }
+    ],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  },
+  {
+    "fixture": "brightline_west.wikitext",
+    "sentenceSubstring": "to be completed by the end of 2013",
+    "expectedYear": 2013,
+    "disposition": "unverifiable",
+    "outcome": "unverifiable",
+    "evidence": [],
+    "supersededBy": null,
+    "certification": "human_confirmed",
+    "verifiedAsOf": "2026-06-21"
+  }
+]
