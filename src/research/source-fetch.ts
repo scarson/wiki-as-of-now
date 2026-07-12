@@ -310,9 +310,12 @@ export async function fetchSourceText(
   // -------------------------------------------------------------------------
   // Steps 2–10 — Network I/O under the abort signal
   // -------------------------------------------------------------------------
+  // Detach before calling: `opts.fetchImpl(...)` would pass `opts` as the receiver, and workerd's
+  // global fetch validates its receiver (TypeError: Illegal invocation). A bare call is receiver-neutral.
+  const { fetchImpl } = opts;
   let response: { status: number; headers: Headers; body: ReadableStream<Uint8Array> };
   try {
-    response = await opts.fetchImpl(url, {
+    response = await fetchImpl(url, {
       headers: {
         "User-Agent": opts.userAgent ?? DEFAULT_USER_AGENT,
         "Accept-Encoding": "identity",

@@ -48,7 +48,10 @@ function makeDeps(env: ResearchWorkerEnv): ResearchConsumerDeps {
   const now = new Date();
   // The Workers runtime always provides a non-null body for non-opaque fetch responses;
   // the cast aligns the global fetch signature with FetchImpl's stricter non-null body contract.
-  const fetchSource = (url: string) => fetchSourceText(url, { fetchImpl: fetch as FetchImpl, now });
+  // The lambda (not a detached `fetch` reference) keeps the call receiver-neutral: workerd's
+  // global fetch rejects a re-receivered invocation with TypeError: Illegal invocation.
+  const fetchSource = (url: string) =>
+    fetchSourceText(url, { fetchImpl: ((input, init) => fetch(input, init)) as FetchImpl, now });
   // Env-gated provider selection (Task 1.10): default stays on the stub (CC-7) unless RESEARCH_PROVIDER=workers-ai.
   // The deployed default is NOT flipped here — enabling the real provider end-to-end is a human-confirmed Phase 7 step.
   // The fixture (node:fs) search path is NEVER reachable from this bundle: with no BRAVE_API_KEY and no searchOverride
