@@ -44,6 +44,8 @@ interface EnvBlock {
   triggers?: { crons?: string[] };
   routes?: RouteBinding[];
   vars?: Record<string, string>;
+  ai?: { binding: string; remote?: boolean };
+  images?: { binding: string };
 }
 interface WranglerConfig {
   ai?: { binding: string; remote?: boolean };
@@ -86,6 +88,19 @@ describe("wrangler config — AI binding (Task 7.1)", () => {
   it("research worker env type declares AI by hand (cf-typegen does not see it)", () => {
     const src = readFileSync(resolve(root, "workers/research/index.ts"), "utf8");
     expect(src).toMatch(/interface ResearchWorkerEnv[\s\S]*?\bAI\s*:\s*Ai\b/);
+  });
+
+  it("every named env re-declares the bindings wrangler does NOT inherit (ai on both workers; images on the app)", () => {
+    // Bindings are non-inheritable: a named-env deploy silently drops any binding declared
+    // only at the top level (wrangler warns '"ai" exists at the top level, but not on "env.dev"').
+    // A dev/production research worker without env.AI crashes the consumer at the first message.
+    const app = readJsonc("wrangler.jsonc");
+    const research = readJsonc("workers/research/wrangler.jsonc");
+    for (const which of ["dev", "production"] as const) {
+      expect(app.env?.[which]?.ai?.binding).toBe("AI");
+      expect(app.env?.[which]?.images?.binding).toBe("IMAGES");
+      expect(research.env?.[which]?.ai?.binding).toBe("AI");
+    }
   });
 });
 

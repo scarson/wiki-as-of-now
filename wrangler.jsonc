@@ -52,15 +52,17 @@
 			"migrations_dir": "migrations"
 		}
 	],
-	// Per-env remote targets. Top-level `ai`, `compatibility_flags`, `main`, `assets`,
-	// `images`, `observability` are inherited; each env overrides only `name`, `services`,
-	// `d1_databases`, `queues`. The top-level (un-suffixed) config stays the default env for
-	// local Miniflare / `next dev`. Queue names are account-global, so dev/prod must differ
-	// (design §6.2). D1 ids are PLACEHOLDERS until Sam provisions (scripts/provision.md);
-	// both workers MUST point at the same id per env (CC-10).
+	// Per-env remote targets. Top-level SETTINGS (`compatibility_flags`, `main`, `assets`,
+	// `observability`) are inherited, but BINDINGS are not — every named env must re-declare
+	// `ai`, `images`, `services`, `d1_databases`, `queues` or the deploy silently drops them.
+	// The top-level (un-suffixed) config stays the default env for local Miniflare / `next dev`.
+	// Queue names are account-global, so dev/prod must differ (design §6.2). Both workers MUST
+	// point at the same D1 id per env (CC-10).
 	"env": {
 		"dev": {
 			"name": "wiki-as-of-now-dev",
+			"ai": { "binding": "AI", "remote": true },
+			"images": { "binding": "IMAGES" },
 			"services": [
 				{ "binding": "WORKER_SELF_REFERENCE", "service": "wiki-as-of-now-dev" }
 			],
@@ -81,6 +83,8 @@
 			// Production serves ONLY the custom domain (the OAuth redirect origin must match exactly).
 			"routes": [{ "pattern": "wikinow.scarson.io", "custom_domain": true }],
 			"vars": { "APP_ORIGIN": "https://wikinow.scarson.io" },
+			"ai": { "binding": "AI", "remote": true },
+			"images": { "binding": "IMAGES" },
 			"services": [
 				{ "binding": "WORKER_SELF_REFERENCE", "service": "wiki-as-of-now" }
 			],
