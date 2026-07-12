@@ -234,10 +234,10 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
     expect(research.vars?.RESEARCH_PROVIDER).toBeUndefined();
   });
 
-  it("dev research worker runs the real workers-ai provider; production stays on the stub until its go-live flip", () => {
+  it("both deployed envs run the real workers-ai provider (production flipped at go-live, runbook step 8)", () => {
     const research = readJsonc("workers/research/wrangler.jsonc");
     expect(envOf(research, "dev").vars?.RESEARCH_PROVIDER).toBe("workers-ai");
-    expect(envOf(research, "production").vars?.RESEARCH_PROVIDER).toBeUndefined();
+    expect(envOf(research, "production").vars?.RESEARCH_PROVIDER).toBe("workers-ai");
   });
 });
 

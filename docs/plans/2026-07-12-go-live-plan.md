@@ -79,15 +79,15 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** 1/7 phases shipped (pending batch-review verdict), Phase 2 in progress.
+**Overall:** Phases 1-4 shipped (go-live PR #28 merged at `bbb9b2f`; production live at https://wikinow.scarson.io); Phase 5 in flight (this PR).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Repo fixes (CI guard, vitest, domain/vars, docs) | ✅ Shipped (pre-PR) | `cd23036` `d5107f2` `79378da` `854d2d0` | full gate green (tsc/eslint/940 node/27 workerd); independent diff review in flight |
 | 2 — Provision + real D1 ids | ✅ Shipped | `83a5686` | dev D1 `9f4d0701…`, prod D1 `aa530ffb…`, 4 queues; both migrated (9 tables each); `apply DB` binding form proven |
-| 3 — Secrets + dev deploy + bootstrap + QA + dev research smoke | ✅ Smoke PASSED; PR open | `bc05a5b`…`2af90e7` | the go-live PR: [#28](https://github.com/scarson/wiki-as-of-now/pull/28) (chore/go-live → dev), awaiting CI |
-| 4 — Production deploy + OAuth + bootstrap | ⬜ Not started | — | — |
-| 5 — Provider flip (production) + purge | ⬜ Not started | — | — |
+| 3 — Secrets + dev deploy + bootstrap + QA + dev research smoke | ✅ Shipped | merge `bbb9b2f` | the go-live PR [#28](https://github.com/scarson/wiki-as-of-now/pull/28) merged on green CI; dev-push Deploy run 29186049941 green with guarded steps EXECUTED (migrations log shows real wrangler output — empirical proof of the CI-1 fix) |
+| 4 — Production deploy + OAuth + bootstrap | ✅ Done (hand-run, no PR) | n/a | wikinow.scarson.io serves the app (scaffold replaced; custom domain adopted silently); research worker `wiki-as-of-now-research` created; secrets SET (SESSION_SECRET+GOOGLE_* app, BRAVE_API_KEY research; no ADMIN_SECRET — oauth mode); OAuth 302 verified BUT Google rejects with `Error 400: redirect_uri_mismatch` — Sam must add `https://wikinow.scarson.io/api/auth/google/callback` to the OAuth client's Authorized redirect URIs in Google Cloud Console (agent has no access); 8 easy-win articles bootstrapped from 13 captures, lane surfaces 8/8, anonymous worksheet renders |
+| 5 — Provider flip (production) + purge | 🚧 This PR | — | purge gate: 0 stub packs on prod (verified pre-flip); PR number recorded on open |
 | 6 — Cron enable (production, LAST) + first-tick watch | ⬜ Not started | — | — |
 | 7 — Promote dev→main, cleanup, report | ⬜ Not started | — | — |
 
@@ -347,7 +347,7 @@ bunx wrangler d1 execute wiki-as-of-now-dev --remote --env dev --command \
 
 ## Phase 4 — Production deploy, OAuth, bootstrap
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ DONE 2026-07-12 ~08:45Z (hand-run from the realigned main checkout at `bbb9b2f`, per Task 4.1; no PR — deploys are not commits). Evidence in the top-of-plan table. OPEN ITEM FOR SAM: Google OAuth client registration lacks the production callback — sign-in dies at `Error 400: redirect_uri_mismatch`; add `https://wikinow.scarson.io/api/auth/google/callback` under Authorized redirect URIs (the app side is verified correct: 302 to accounts.google.com with that exact redirect_uri + the registered client id + scope `openid email`).
 
 **Ordering note (mirrors Task 3.1's lesson):** deploy each worker BEFORE putting its secrets — `wrangler secret put` on a nonexistent worker prompts to create a draft and fails non-interactively. The app-worker name (`wiki-as-of-now`) exists today only as the Hello-world scaffold; the research prod worker (`wiki-as-of-now-research`) does not exist at all until Task 4.1 Step 2.
 
@@ -377,7 +377,7 @@ bunx wrangler d1 execute wiki-as-of-now-dev --remote --env dev --command \
 
 ## Phase 5 — Production provider flip + stub purge (runbook steps 7–8a)
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-07-12T08:55Z (branch `chore/provider-flip`). Purge gate passed pre-flip (0 stub packs on prod). This PR carries the phase 3/4 plan-banner updates too.
 
 **Depends on:** the go-live PR merged (Phase 3 Task 3.6). Work in a FRESH worktree off the updated dev: `git fetch origin dev && git worktree add .claude/worktrees/provider-flip -b chore/provider-flip origin/dev && cd .claude/worktrees/provider-flip && pnpm install --frozen-lockfile`.
 
