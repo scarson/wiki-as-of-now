@@ -5,8 +5,12 @@ export const MODEL_CONFIG = {
   primaryModel: "@cf/google/gemma-4-26b-a4b-it",
   /** Escalation tier (build design §3.3); general kimi-k2.6, never the code-tuned variant. */
   escalationModel: "@cf/moonshotai/kimi-k2.6",
-  /** Explicit — Workers AI per-model defaults vary and silently truncate JSON (build design §3.3). */
-  maxTokens: 1024,
+  /**
+   * Explicit — Workers AI per-model defaults vary and silently truncate JSON (build design §3.3).
+   * Sized for a reasoning model: Gemma 4's thinking output shares this budget with the JSON
+   * content (observed live: ~1k reasoning tokens BEFORE any content; 1024 starved content to null).
+   */
+  maxTokens: 2048,
   /** Per-message abort budget (build design §3.3: ~25-30s). */
   callTimeoutMs: 28_000,
   /** One retry on malformed/invalid JSON (build design §3.3). */

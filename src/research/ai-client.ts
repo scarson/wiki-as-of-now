@@ -4,7 +4,11 @@ import { ProviderUnavailableError } from "./provider";
 
 /** Structural shape of the env.AI binding's run() we depend on (Gemma 4 isn't in the generated AiModels union). */
 export interface AiRunner {
-  run(model: string, inputs: { prompt: string; max_tokens: number }, options: { signal: AbortSignal }): Promise<unknown>;
+  run(
+    model: string,
+    inputs: { messages: { role: string; content: string }[]; max_tokens: number },
+    options: { signal: AbortSignal },
+  ): Promise<unknown>;
 }
 
 export interface AiTextClient {
@@ -18,17 +22,33 @@ export function makeAiTextClient(ai: AiRunner): AiTextClient {
       const timer = setTimeout(() => controller.abort(), opts.timeoutMs);
       let raw: unknown;
       try {
-        raw = await ai.run(model, { prompt, max_tokens: opts.maxTokens }, { signal: controller.signal });
+        // Chat/messages mode is load-bearing: raw `prompt` mode bypasses the chat template, and
+        // instruction-tuned Gemma 4 then free-continues the text instead of following it.
+        raw = await ai.run(
+          model,
+          { messages: [{ role: "user", content: prompt }], max_tokens: opts.maxTokens },
+          { signal: controller.signal },
+        );
       } catch {
         // Binding failure, capacity (429), timeout-abort — all map to the one caught class (CC-15).
         throw new ProviderUnavailableError();
       } finally {
         clearTimeout(timer);
       }
-      // Two envelope shapes exist across Workers AI text models: the legacy { response }
-      // and the OpenAI-compatible text_completion { choices: [{ text }] } (what Gemma 4 returns).
-      const shaped = raw as { response?: unknown; choices?: { text?: unknown }[] };
-      const response = typeof shaped.response === "string" ? shaped.response : shaped.choices?.[0]?.text;
+      // Envelope shapes across Workers AI text models: OpenAI-compatible chat.completion
+      // { choices: [{ message: { content } }] } (what Gemma 4 returns in messages mode; a
+      // `reasoning` sibling may hold thinking text), text_completion { choices: [{ text }] },
+      // and the legacy { response }. A reasoning model can burn the whole token budget on
+      // thinking and return content: null — that is "no usable text", not a string to pass on.
+      const shaped = raw as {
+        response?: unknown;
+        choices?: { text?: unknown; message?: { content?: unknown } }[];
+      };
+      const first = shaped.choices?.[0];
+      const response =
+        typeof shaped.response === "string" ? shaped.response
+        : typeof first?.message?.content === "string" ? first.message.content
+        : first?.text;
       if (typeof response !== "string" || response.length === 0) {
         throw new ProviderUnavailableError("model returned no response text");
       }
