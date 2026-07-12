@@ -8,11 +8,16 @@ export const MODEL_CONFIG = {
   /**
    * Explicit — Workers AI per-model defaults vary and silently truncate JSON (build design §3.3).
    * Sized for a reasoning model: Gemma 4's thinking output shares this budget with the JSON
-   * content (observed live: ~1k reasoning tokens BEFORE any content; 1024 starved content to null).
+   * content. Observed live on real claim prompts: thinking alone exceeded 2048 tokens
+   * (finish_reason "length", content null), so the budget carries thinking + JSON with headroom.
    */
-  maxTokens: 2048,
-  /** Per-message abort budget (build design §3.3: ~25-30s). */
-  callTimeoutMs: 28_000,
+  maxTokens: 4096,
+  /**
+   * Per-call abort budget. Reasoning generation at the 4096 budget runs ~40-50s worst case
+   * (observed ~26s to emit 2048 tokens); the queue consumer has ample wall-time, so the
+   * timeout guards against hangs, not against slow-but-progressing generation.
+   */
+  callTimeoutMs: 60_000,
   /** One retry on malformed/invalid JSON (build design §3.3). */
   jsonRetries: 1,
   /** G9 query bounds — provider self-bounds before send; the pipeline is the authority (pipeline.ts:16-17). */
