@@ -79,12 +79,12 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Not started.
+**Overall:** 1/7 phases shipped (pending batch-review verdict), Phase 2 in progress.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Repo fixes (CI guard, vitest, domain/vars, docs) | ⬜ Not started | — | branch `chore/go-live` |
-| 2 — Provision + real D1 ids | ⬜ Not started | — | — |
+| 1 — Repo fixes (CI guard, vitest, domain/vars, docs) | ✅ Shipped (pre-PR) | `cd23036` `d5107f2` `79378da` `854d2d0` | full gate green (tsc/eslint/940 node/27 workerd); independent diff review in flight |
+| 2 — Provision + real D1 ids | ✅ Shipped | `83a5686` | dev D1 `9f4d0701…`, prod D1 `aa530ffb…`, 4 queues; both migrated (9 tables each); `apply DB` binding form proven |
 | 3 — Secrets + dev deploy + bootstrap + QA + dev research smoke | ⬜ Not started | — | — |
 | 4 — Production deploy + OAuth + bootstrap | ⬜ Not started | — | — |
 | 5 — Provider flip (production) + purge | ⬜ Not started | — | — |
@@ -92,7 +92,7 @@ notes and commit messages.
 | 7 — Promote dev→main, cleanup, report | ⬜ Not started | — | — |
 
 ### Deviations
-- (none yet)
+- **Task 2.0 Step 3 (Worker Builds):** the runbook's dashboard-disconnect pre-flight was replaced by an empirical check — `wrangler deployments list --name wiki-as-of-now` shows no deployment since the 2026-06-12 scaffold upload across dozens of pushes, so no git-connected auto-build exists to disconnect. Standing watch: any deployment not made by this session or an expected Deploy-workflow run → STOP.
 
 ### Discoveries
 - **deploy.yml startup failure root cause (empirical):** GitHub rejects `secrets` in STEP-level `if:` too — every run since 2026-06-21 failed at 0s with `Unrecognized named-value: 'secrets'` (lines 42/45/48/51). Pitfalls CI-1's prescribed fix was wrong; correction is part of Phase 1.
@@ -101,12 +101,15 @@ notes and commit messages.
 - **`scripts/purge-stub-packs.ts` has no CLI entry** — runbook step 7 executes as `wrangler d1 execute` SQL identical to the tested function.
 - **pnpm now on PATH** (11.5.1 == pinned `packageManager`) — local OpenNext build verified working this session; phase-7.md's "CI is the only OpenNext gate" note is stale.
 - **Stale worktrees made the local node suite sweep 3× duplicate tests** — two clean merged worktrees removed; `laughing-chaplygin-ce1c13` left untouched (35 uncommitted gold-corpus changes — surfaced to Sam in the final report); vitest exclude added in Phase 1.
+- **wrangler does NOT inherit bindings into named envs** — the v1 config comments claimed `ai` was inherited; the first real `--env dev` deploy shipped the research worker with NO AI binding (wrangler warned at deploy time). Fixed at `dd76acb`: `ai` (+ `images` on the app) re-declared in every env block, comments corrected, drift test pins env-level bindings. The June "Phase 7" config tests never caught this because no env deploy had ever run.
+- **DET-3 residual observed live:** SoFi Stadium claim flagged at year 1960 ("played their inaugural season in 1960" — incidental year). Documented residual FP class; detector untouched (compliance boundary).
+- **Live Gemma 4 broke three fixture-blind assumptions in the AI seam** (found by the runbook's deferred real-model smoke test, fixed at `0240ec0` + `5faa733`): (1) the model returns OpenAI-compatible envelopes, not the legacy `{ response }` shape; (2) raw `prompt` mode bypasses the chat template, so the instruction-tuned model free-continues the text — every JSON gate failed and packs committed as `no_proposals` with zero queries; (3) it is a reasoning model whose thinking shares the `max_tokens` budget — at 1024, `content` came back null (`finish_reason: length`) with ~1k tokens of reasoning. Fixes: chat-messages mode, tolerant envelope extraction (message.content → choices[].text → response), maxTokens 2048. One defect-artifact `no_proposals` pack was deleted from the DEV research_packs table (data table, not the append-only audit log) to unblock re-research of that claim.
 
 ---
 
 ## Phase 1 — Repo fixes: deploy.yml guard, vitest exclude, domain/vars wiring, doc corrections
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED at `cd23036`/`d5107f2`/`79378da`/`854d2d0` on 2026-07-12 (branch `chore/go-live`, pre-PR; merges with the go-live PR in Task 3.6)
 
 All work in worktree `.claude/worktrees/go-live` on branch `chore/go-live`. BEFORE starting: invoke `superpowers:test-driven-development`; read `docs/pitfalls/testing-pitfalls.md` (§1 pristine output, §6 config validation) and `docs/pitfalls/implementation-pitfalls.md` §4 (CI-1..CI-3).
 
@@ -226,7 +229,7 @@ After completing Tasks 1.1–1.4: review the batch from multiple perspectives (c
 
 ## Phase 2 — Provision Cloudflare + commit real D1 ids
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED at `83a5686` on 2026-07-12. Pre-flight: account confirmed; queues-create succeeded (Workers Paid proven); scaffold worker's newest deployment still 2026-06-12 (no auto-build race — Worker Builds dashboard-disconnect step replaced by this empirical check, recorded in Deviations).
 
 **Context:** Wrangler OAuth (samuel.carson@gmail.com, account 0387b81a63e32850b33e897e1268fe2a) verified with d1/queues/workers write scopes. NOTHING provisioned yet (`d1 list`/`queues list` show no wiki-* resources). The `wiki-as-of-now` worker that EXISTS is a 2026-06-12 "Hello world" scaffold already bound to wikinow.scarson.io — production deploy intentionally replaces it.
 
@@ -278,7 +281,7 @@ After completing Tasks 1.1–1.4: review the batch from multiple perspectives (c
 
 ## Phase 3 — Secrets, dev deploy, bootstrap, visual QA, dev research smoke
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-07-12T05:50Z (branch `chore/go-live`). Tasks 3.1–3.3 done (dev deployed at wiki-as-of-now-dev.samuel-carson.workers.dev; secrets set; 5 easy-win articles bootstrapped, lane surfaces 5/5, worksheets render). Task 3.4 QA: nav/queue/401/worksheet-pre-pack PASS; transparency checks pending a pack. Task 3.5: provider flipped (`dd76acb` also fixed non-inheritable env bindings — see Discoveries); smoke run currently failing retryable `research.unavailable` — root-cause in progress via wrangler tail.
 
 ### Task 3.1: first dev deploy (hand-run, per runbook step 5 — BEFORE secrets: `wrangler secret put` on a nonexistent worker prompts to create a draft, which fails non-interactively)
 

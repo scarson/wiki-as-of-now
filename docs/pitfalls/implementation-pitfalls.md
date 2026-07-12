@@ -31,6 +31,7 @@ This document serves three audiences. Start here, then go directly to the sectio
 | 3 | [Safe-lane / untrusted-content scanning](#section-3-safe-lane--untrusted-content-scanning) | `src/safelane/*` — wikitext signal scans running on attacker-controllable article content | SAFE-1 | §3.C |
 | 4 | [Deploy / CI (wrangler, GitHub Actions, OpenNext)](#section-4-deploy--ci-wrangler-github-actions-opennext) | `wrangler.jsonc`, `workers/research/wrangler.jsonc`, `.github/workflows/*`, OpenNext build | CI-1 – CI-2 | §4.C |
 | 5 | [Research enqueue gating & metered spend](#section-5-research-enqueue-gating--metered-spend) | every path onto the metered/G11 research lane; per-user + global quota | GATE-1 – GATE-2 | §5.C |
+| 6 | [Workers AI model integration](#section-6-workers-ai-model-integration) | `src/research/ai-client.ts`, model-config, anything calling `env.AI.run()` | AI-1 | §6.C |
 | — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-3 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
@@ -276,6 +277,33 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ---
 
+# Section 6: Workers AI model integration
+
+> **Reader context:** I'm touching `src/research/ai-client.ts`, `src/research/model-config.ts`, or anything that calls `env.AI.run()` — the seam between the research pipeline and a live Workers AI model.
+
+---
+
+### AI-1: Validate the LIVE Model's Envelope, Input Mode, and Reasoning Budget — Fixtures Can't
+
+**The Flaw:** The AI seam was built and hardened entirely against fixtures shaped like the legacy Workers-AI contract (`{ prompt }` in, `{ response }` out). Live `@cf/google/gemma-4-26b-a4b-it` violated all three of its silent assumptions at go-live: (1) it returns **OpenAI-compatible envelopes** (`{ choices: [...] }`, `object: text_completion`/`chat.completion`), so `raw.response` was always undefined; (2) raw **`prompt` mode bypasses the chat template**, so the instruction-tuned model free-continued the prompt text instead of following it — every JSON gate failed and the deterministic backstop committed `no_proposals` packs with zero queries; (3) it is a **reasoning model whose thinking shares `max_tokens`** — at 1024 the entire budget went to a `reasoning` field and `message.content` came back null (`finish_reason: "length"`).
+
+**Why It Matters:** Each failure is invisible in CI (fixtures pass) and non-obvious in production: (1) and (2) surface as retry-looping `provider_unavailable` or as plausible-looking `no_proposals` packs — and a wrong terminal pack is WRITE-ONCE, permanently blocking real research for its `(claim_key, source_revision_id)`. The audit trail is codes-only by design, so nothing names the failing stage.
+
+**The Fix:** Call chat models via `messages` (one user message carrying the prompt); extract text tolerantly (`choices[0].message.content` → `choices[0].text` → legacy `response`); treat null/empty content as `ProviderUnavailableError` (never a string to pass on); size `maxTokens` for reasoning burn (2048 here — observed ~1k thinking tokens before any content). Before trusting a new/changed model id, probe the LIVE model once with the real prompt shape and inspect the raw envelope (a scratch `wrangler dev` worker with the AI binding takes minutes); capture the observed envelope verbatim as the test fixture.
+
+**The Lesson:** A model id in config is an external API contract, not a string. Envelope shape, input-mode semantics, and token accounting all vary per model and per serving runtime, and Workers AI's deprecation cadence means they change under you. The go-live runbook's "smoke-test the LIVE model before enabling the cron" step exists precisely because fixtures cannot catch this class — treat that smoke test as load-bearing, never skippable.
+
+---
+
+### Review Checklist
+
+- [ ] **Chat models are called via `messages`, never raw `prompt`** — prompt mode skips the chat template and an instruction-tuned model free-continues the text (AI-1)
+- [ ] **Envelope extraction accepts chat.completion, text_completion, and legacy shapes, and maps null/empty content to ProviderUnavailableError** (AI-1)
+- [ ] **`maxTokens` budgets for reasoning burn on thinking models** — content starved to null with `finish_reason: length` is the symptom (AI-1)
+- [ ] **Any new/changed model id was probed live (raw envelope inspected) before deploy, and the observed envelope is a committed test fixture** (AI-1)
+
+---
+
 ## Orchestration
 
 Pitfalls that arise when a session dispatches parallel subagents and consolidates their output. The canonical rules live in `docs/git-strategy.md` → §Multi-agent coordination → Output persistence. This section is the discovery hook for plan writers who arrive here via the `writing-plans-enhanced` (or equivalent) mandated-read path — it does NOT restate the rules in full.
@@ -328,6 +356,9 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 <!-- - Added PREFIX-N (<title>) — <what and why> -->
 <!-- - Updated PREFIX-M — <what changed> -->
 
+## 2026-07-12 — Go-live: live-Gemma smoke test caught the fixture-blind AI seam
+- Added Section 6 (Workers AI model integration) with AI-1 (validate the live model's envelope, input mode, and reasoning budget — live Gemma 4 returned OpenAI-compat envelopes, ignored raw-prompt instructions, and starved content to null at maxTokens 1024; fixed in `src/research/ai-client.ts` + `model-config.ts`, live-captured envelopes committed as test fixtures).
+
 ## 2026-07-12 — Go-live: CI-1's prescribed fix was itself wrong
 - Rewrote CI-1: the `secrets` context is rejected in ALL `if:` expressions, step-level included — every `deploy.yml` run since 2026-06-21 failed at parse in 0 seconds with `Unrecognized named-value: 'secrets'` (run 29179389863). The entry's original step-level-guard prescription was the exact failing pattern. Working fix (shipped in `.github/workflows/deploy.yml`): job-level `env:` mapping + `if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}` step guards, pinned by a line-anchored drift test. §4.C checklist bullets updated in lockstep.
 
@@ -361,6 +392,7 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 | DET-3 | Incidental Historical Years Are an Irreducible False-Positive Class | MEDIUM | VALIDATED | Detector |
 | SAFE-1 | Untrusted-Input Scans MUST Be Linear-Time in Input Length | HIGH | VALIDATED | Safe-lane / untrusted-content scanning |
 | CI-1 | GitHub Actions Rejects the `secrets` Context in ANY `if:` — Guard on env-Mapped Values Instead | HIGH | VALIDATED | Deploy / CI |
+| AI-1 | Validate the LIVE Model's Envelope, Input Mode, and Reasoning Budget — Fixtures Can't | HIGH | VALIDATED | Workers AI model integration |
 | CI-2 | The OpenNext Build Shells Out to `pnpm build`; `--env=""` Silences the Multi-Env Dry-Run Warning | LOW | VALIDATED | Deploy / CI |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
