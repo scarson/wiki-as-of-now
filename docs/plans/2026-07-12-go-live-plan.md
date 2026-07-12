@@ -87,8 +87,8 @@ notes and commit messages.
 | 2 — Provision + real D1 ids | ✅ Shipped | `83a5686` | dev D1 `9f4d0701…`, prod D1 `aa530ffb…`, 4 queues; both migrated (9 tables each); `apply DB` binding form proven |
 | 3 — Secrets + dev deploy + bootstrap + QA + dev research smoke | ✅ Shipped | merge `bbb9b2f` | the go-live PR [#28](https://github.com/scarson/wiki-as-of-now/pull/28) merged on green CI; dev-push Deploy run 29186049941 green with guarded steps EXECUTED (migrations log shows real wrangler output — empirical proof of the CI-1 fix) |
 | 4 — Production deploy + OAuth + bootstrap | ✅ Done (hand-run, no PR) | n/a | wikinow.scarson.io serves the app (scaffold replaced; custom domain adopted silently); research worker `wiki-as-of-now-research` created; secrets SET (SESSION_SECRET+GOOGLE_* app, BRAVE_API_KEY research; no ADMIN_SECRET — oauth mode); OAuth 302 verified BUT Google rejects with `Error 400: redirect_uri_mismatch` — Sam must add `https://wikinow.scarson.io/api/auth/google/callback` to the OAuth client's Authorized redirect URIs in Google Cloud Console (agent has no access); 8 easy-win articles bootstrapped from 13 captures, lane surfaces 8/8, anonymous worksheet renders |
-| 5 — Provider flip (production) + purge | 🚧 This PR | — | purge gate: 0 stub packs on prod (verified pre-flip); PR number recorded on open |
-| 6 — Cron enable (production, LAST) + first-tick watch | ⬜ Not started | — | — |
+| 5 — Provider flip (production) + purge | ✅ Shipped | merge `ebd9447` | the provider-flip PR [#29](https://github.com/scarson/wiki-as-of-now/pull/29) merged on green CI; production research worker hand-redeployed (version `ab487ed6`, RESEARCH_PROVIDER=workers-ai live); purge gate 0 stub packs |
+| 6 — Cron enable (production, LAST) + first-tick watch | 🚧 This PR | — | interval RE-DERIVED per the stale-drain-math banner: `0 */8 * * *` (observed smoke walls 23-170s/message; 50-seed batch ≈2.4h at observed max, ≈5.8h theoretical worst; 8h clears it with margin at zero yield cost — quota caps the first tick at 10 packs/day). First tick lands at the next 8h UTC boundary; watch scheduled |
 | 7 — Promote dev→main, cleanup, report | ⬜ Not started | — | — |
 
 ### Deviations
@@ -377,7 +377,7 @@ bunx wrangler d1 execute wiki-as-of-now-dev --remote --env dev --command \
 
 ## Phase 5 — Production provider flip + stub purge (runbook steps 7–8a)
 
-**Execution Status:** 🚧 IN PROGRESS — claimed 2026-07-12T08:55Z (branch `chore/provider-flip`). Purge gate passed pre-flip (0 stub packs on prod). This PR carries the phase 3/4 plan-banner updates too.
+**Execution Status:** ✅ SHIPPED — merge `ebd9447` (PR #29) 2026-07-12 ~09:00Z; production research worker hand-redeployed with the flip (version `ab487ed6`). Purge gate 0 stub packs pre-flip; production research idle until the cron (no agent enqueue path on prod, by design).
 
 **Depends on:** the go-live PR merged (Phase 3 Task 3.6). Work in a FRESH worktree off the updated dev: `git fetch origin dev && git worktree add .claude/worktrees/provider-flip -b chore/provider-flip origin/dev && cd .claude/worktrees/provider-flip && pnpm install --frozen-lockfile`.
 
@@ -390,7 +390,7 @@ bunx wrangler d1 execute wiki-as-of-now-dev --remote --env dev --command \
 
 ## Phase 6 — Enable the research cron (production, LAST) + watch the first tick
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** 🚧 IN PROGRESS — claimed 2026-07-12T09:05Z (branch `chore/research-cron`). Interval re-derived (see the recompute note below): `0 */8 * * *` chosen over `0 */6 * * *` — the theoretical all-timeout worst (~5.8h) leaves no margin under 6h, and 8h costs zero yield (the 10-pack/day quota is consumed by the first tick either way).
 
 **Interval decision — RECOMPUTE BEFORE EXECUTING (drain math is stale):** the original `0 */6 * * *` justification assumed 28 s AI-call budgets; `bc05a5b` raised `callTimeoutMs` to 60 s and `maxTokens` to 4096 for Gemma's thinking burn. New worst-case per message ≈ 2 stages × 2 attempts × 60 s + 12×10 s fetches + Brave ≈ ~7 min; serial worst for a 50-message batch ≈ ~5.8 h — inside 6 h but with thin margin. Executor MUST re-derive from the timings observed in the Task 3.5 smoke (per-message wall from `wrangler tail`) and pick `0 */6 * * *` or `0 */8 * * *` accordingly, updating the cron drift test to the chosen expression. Queues autoscaling makes realistic drain minutes either way; effective yield stays quota-bounded at ≤10 packs/UTC-day (Global Constraints note).
 

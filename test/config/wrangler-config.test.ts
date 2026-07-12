@@ -203,7 +203,7 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
     expect(research.compatibility_flags).not.toContain("nodejs_compat");
   });
 
-  it("no cron triggers are declared in either config yet (cron is the last go-live step)", () => {
+  it("the research cron runs on production ONLY, 8-hourly (above worst-case batch drain; dev is a verification env with no scheduled spend)", () => {
     const app = readJsonc("wrangler.jsonc");
     const research = readJsonc("workers/research/wrangler.jsonc");
     expect(app.triggers?.crons ?? []).toEqual([]);
@@ -211,7 +211,7 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
     expect(app.env?.dev?.triggers?.crons ?? []).toEqual([]);
     expect(app.env?.production?.triggers?.crons ?? []).toEqual([]);
     expect(research.env?.dev?.triggers?.crons ?? []).toEqual([]);
-    expect(research.env?.production?.triggers?.crons ?? []).toEqual([]);
+    expect(research.env?.production?.triggers?.crons).toEqual(["0 */8 * * *"]);
   });
 
   it("production app worker serves the custom domain with APP_ORIGIN matching (go-live)", () => {
