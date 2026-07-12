@@ -61,40 +61,97 @@ describe("makeAiTextClient.generateText", () => {
   });
 
   it("throws ProviderUnavailableError when env.AI.run rejects (binding/transport failure)", async () => {
-    const ai = { run: vi.fn(async () => { throw new Error("AI capacity exceeded"); }) };
-    const client = makeAiTextClient(ai as never);
-    await expect(
-      client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 }),
-    ).rejects.toBeInstanceOf(ProviderUnavailableError);
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    try {
+      const ai = { run: vi.fn(async () => { throw new Error("AI capacity exceeded"); }) };
+      const client = makeAiTextClient(ai as never);
+      await expect(
+        client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 }),
+      ).rejects.toBeInstanceOf(ProviderUnavailableError);
+      expect(warn).toHaveBeenCalledWith("research.ai_call.failed", { reason: "Error" });
+    } finally {
+      warn.mockRestore();
+    }
+  });
+
+  it("logs a codes-only warn naming the failure class when the AI call rejects (never message text)", async () => {
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    try {
+      class InferenceUpstreamError extends Error {
+        constructor() { super("secret detail that must not leak"); this.name = "InferenceUpstreamError"; }
+      }
+      const ai = { run: vi.fn(async () => { throw new InferenceUpstreamError(); }) };
+      const client = makeAiTextClient(ai as never);
+      await expect(
+        client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 }),
+      ).rejects.toBeInstanceOf(ProviderUnavailableError);
+      expect(warn).toHaveBeenCalledWith("research.ai_call.failed", { reason: "InferenceUpstreamError" });
+      const dumped = JSON.stringify(warn.mock.calls);
+      expect(dumped).not.toContain("secret detail");
+    } finally {
+      warn.mockRestore();
+    }
+  });
+
+  it("logs a codes-only warn when the envelope carries no usable text", async () => {
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    try {
+      const ai = fakeAi({ choices: [{ finish_reason: "length", message: { content: null } }] });
+      const client = makeAiTextClient(ai as never);
+      await expect(
+        client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 }),
+      ).rejects.toBeInstanceOf(ProviderUnavailableError);
+      expect(warn).toHaveBeenCalledWith("research.ai_call.empty", { finish: "length" });
+    } finally {
+      warn.mockRestore();
+    }
   });
 
   it("throws ProviderUnavailableError (not a generic AbortError) when the call exceeds timeoutMs", async () => {
-    const ai = { run: vi.fn((_m: unknown, _i: unknown, opts: { signal: AbortSignal }) =>
-      new Promise((_res, rej) => { opts.signal.addEventListener("abort", () => rej(new Error("aborted"))); })) };
-    const client = makeAiTextClient(ai as never);
-    await expect(
-      client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 5 }),
-    ).rejects.toBeInstanceOf(ProviderUnavailableError);
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    try {
+      const ai = { run: vi.fn((_m: unknown, _i: unknown, opts: { signal: AbortSignal }) =>
+        new Promise((_res, rej) => { opts.signal.addEventListener("abort", () => rej(new Error("aborted"))); })) };
+      const client = makeAiTextClient(ai as never);
+      await expect(
+        client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 5 }),
+      ).rejects.toBeInstanceOf(ProviderUnavailableError);
+      expect(warn).toHaveBeenCalledWith("research.ai_call.failed", { reason: "Error" });
+    } finally {
+      warn.mockRestore();
+    }
   });
 
   it("throws ProviderUnavailableError when the model returns no usable text in any known envelope", async () => {
-    const ai = fakeAi({}); // neither response, choices[].text, nor choices[].message.content
-    const client = makeAiTextClient(ai as never);
-    await expect(
-      client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 }),
-    ).rejects.toBeInstanceOf(ProviderUnavailableError);
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    try {
+      const ai = fakeAi({}); // neither response, choices[].text, nor choices[].message.content
+      const client = makeAiTextClient(ai as never);
+      await expect(
+        client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 }),
+      ).rejects.toBeInstanceOf(ProviderUnavailableError);
+      expect(warn).toHaveBeenCalledWith("research.ai_call.empty", { finish: "unknown" });
+    } finally {
+      warn.mockRestore();
+    }
   });
 
   it("throws ProviderUnavailableError when reasoning burned the whole budget (content null, finish_reason length)", async () => {
     // Observed live at max_tokens=1024: reasoning consumed every completion token and
     // message.content came back null. The client must treat this as no-usable-text.
-    const ai = fakeAi({
-      choices: [{ finish_reason: "length", message: { content: null, reasoning: "…4164 chars…", role: "assistant" } }],
-      object: "chat.completion",
-    });
-    const client = makeAiTextClient(ai as never);
-    await expect(
-      client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 }),
-    ).rejects.toBeInstanceOf(ProviderUnavailableError);
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    try {
+      const ai = fakeAi({
+        choices: [{ finish_reason: "length", message: { content: null, reasoning: "…4164 chars…", role: "assistant" } }],
+        object: "chat.completion",
+      });
+      const client = makeAiTextClient(ai as never);
+      await expect(
+        client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 }),
+      ).rejects.toBeInstanceOf(ProviderUnavailableError);
+      expect(warn).toHaveBeenCalledWith("research.ai_call.empty", { finish: "length" });
+    } finally {
+      warn.mockRestore();
+    }
   });
 });

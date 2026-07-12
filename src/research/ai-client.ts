@@ -29,8 +29,10 @@ export function makeAiTextClient(ai: AiRunner): AiTextClient {
           { messages: [{ role: "user", content: prompt }], max_tokens: opts.maxTokens },
           { signal: controller.signal },
         );
-      } catch {
+      } catch (e) {
         // Binding failure, capacity (429), timeout-abort — all map to the one caught class (CC-15).
+        // Codes-only observability (G13): the error CLASS name, never its message text.
+        console.warn("research.ai_call.failed", { reason: e instanceof Error ? e.name : "unknown" });
         throw new ProviderUnavailableError();
       } finally {
         clearTimeout(timer);
@@ -50,6 +52,9 @@ export function makeAiTextClient(ai: AiRunner): AiTextClient {
         : typeof first?.message?.content === "string" ? first.message.content
         : first?.text;
       if (typeof response !== "string" || response.length === 0) {
+        // Codes-only: finish_reason distinguishes reasoning-burn ("length") from a shape mismatch.
+        const finish = (first as { finish_reason?: unknown } | undefined)?.finish_reason;
+        console.warn("research.ai_call.empty", { finish: typeof finish === "string" ? finish : "unknown" });
         throw new ProviderUnavailableError("model returned no response text");
       }
       return response;
