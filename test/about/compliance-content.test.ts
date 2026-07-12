@@ -43,6 +43,14 @@ describe("aboutContent", () => {
     expect(c.abuseReportUrl).toMatch(/^https:\/\//);
   });
 
+  it("links the Wikipedia LLM guideline the guardrails exist to comply with (the contract's cited core guideline)", () => {
+    const c = aboutContent();
+    expect(c.wikipediaPolicyUrl).toBe(
+      "https://en.wikipedia.org/wiki/Wikipedia:Writing_articles_with_large_language_models",
+    );
+    expect(c.wikipediaPolicyTitle).toBe("Wikipedia: Writing articles with large language models");
+  });
+
   it("provides a human-authored intro and a non-empty 'will do' list", () => {
     const c = aboutContent();
     expect(c.intro.length).toBeGreaterThan(0);
