@@ -41,7 +41,41 @@ describe("makeAiTextClient.generateText", () => {
   });
 
   it("throws ProviderUnavailableError when the model returns no usable response string", async () => {
-    const ai = { run: vi.fn(async () => ({})) }; // no `response` field
+    const ai = { run: vi.fn(async () => ({})) }; // neither `response` nor `choices[].text`
+    const client = makeAiTextClient(ai as never);
+    await expect(
+      client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 }),
+    ).rejects.toBeInstanceOf(ProviderUnavailableError);
+  });
+
+  it("extracts the text from an OpenAI-compatible text_completion envelope (real Gemma 4 shape)", async () => {
+    // Verbatim shape (trimmed) observed from a live @cf/google/gemma-4-26b-a4b-it run on
+    // 2026-07-12: the model returns { choices: [{ text }], object: "text_completion", ... },
+    // NOT the legacy Workers-AI { response } envelope.
+    const envelope = {
+      choices: [
+        {
+          finish_reason: "stop",
+          index: 0,
+          logprobs: null,
+          text: '{"queries":["zumwalt commissioning date"]}',
+          token_ids: null,
+        },
+      ],
+      created: 1783836558,
+      id: "cmpl-02499b93-72c5-4c00-be0c-73008f05292b",
+      model: "@cf/google/gemma-4-26b-a4b-it",
+      object: "text_completion",
+      usage: { prompt_tokens: 7, completion_tokens: 10, total_tokens: 17 },
+    };
+    const ai = { run: vi.fn(async () => envelope) };
+    const client = makeAiTextClient(ai as never);
+    const out = await client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 });
+    expect(out).toBe('{"queries":["zumwalt commissioning date"]}');
+  });
+
+  it("throws ProviderUnavailableError when the choices envelope carries an empty text", async () => {
+    const ai = { run: vi.fn(async () => ({ choices: [{ text: "" }], object: "text_completion" })) };
     const client = makeAiTextClient(ai as never);
     await expect(
       client.generateText("@cf/google/gemma-4-26b-a4b-it", "P", { maxTokens: 512, timeoutMs: 28_000 }),

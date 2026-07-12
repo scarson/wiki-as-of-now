@@ -25,7 +25,10 @@ export function makeAiTextClient(ai: AiRunner): AiTextClient {
       } finally {
         clearTimeout(timer);
       }
-      const response = (raw as { response?: unknown }).response;
+      // Two envelope shapes exist across Workers AI text models: the legacy { response }
+      // and the OpenAI-compatible text_completion { choices: [{ text }] } (what Gemma 4 returns).
+      const shaped = raw as { response?: unknown; choices?: { text?: unknown }[] };
+      const response = typeof shaped.response === "string" ? shaped.response : shaped.choices?.[0]?.text;
       if (typeof response !== "string" || response.length === 0) {
         throw new ProviderUnavailableError("model returned no response text");
       }
