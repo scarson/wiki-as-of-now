@@ -78,6 +78,9 @@
 		},
 		"production": {
 			"name": "wiki-as-of-now",
+			// Production serves ONLY the custom domain (the OAuth redirect origin must match exactly).
+			"routes": [{ "pattern": "wikinow.scarson.io", "custom_domain": true }],
+			"vars": { "APP_ORIGIN": "https://wikinow.scarson.io" },
 			"services": [
 				{ "binding": "WORKER_SELF_REFERENCE", "service": "wiki-as-of-now" }
 			],

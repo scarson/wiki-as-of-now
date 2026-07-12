@@ -32,17 +32,24 @@ interface ServiceBinding {
   binding: string;
   service: string;
 }
+interface RouteBinding {
+  pattern: string;
+  custom_domain?: boolean;
+}
 interface EnvBlock {
   name?: string;
   services?: ServiceBinding[];
   d1_databases?: D1Binding[];
   queues?: QueuesBlock;
   triggers?: { crons?: string[] };
+  routes?: RouteBinding[];
+  vars?: Record<string, string>;
 }
 interface WranglerConfig {
   ai?: { binding: string; remote?: boolean };
   compatibility_flags?: string[];
   triggers?: { crons?: string[] };
+  vars?: Record<string, string>;
   env?: { dev?: EnvBlock; production?: EnvBlock };
 }
 
@@ -183,6 +190,26 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
     expect(app.env?.production?.triggers?.crons ?? []).toEqual([]);
     expect(research.env?.dev?.triggers?.crons ?? []).toEqual([]);
     expect(research.env?.production?.triggers?.crons ?? []).toEqual([]);
+  });
+
+  it("production app worker serves the custom domain with APP_ORIGIN matching (go-live)", () => {
+    const app = readJsonc("wrangler.jsonc");
+    const prod = envOf(app, "production");
+    expect(prod.routes).toEqual([{ pattern: "wikinow.scarson.io", custom_domain: true }]);
+    expect(prod.vars?.APP_ORIGIN).toBe("https://wikinow.scarson.io");
+  });
+
+  it("dev app worker stays on workers.dev with no custom routes or APP_ORIGIN", () => {
+    const app = readJsonc("wrangler.jsonc");
+    expect(envOf(app, "dev").routes).toBeUndefined();
+    expect(envOf(app, "dev").vars?.APP_ORIGIN).toBeUndefined();
+  });
+
+  it("RESEARCH_PROVIDER never appears in the research worker top-level config (CC-7 / workerd pool)", () => {
+    // The workerd vitest pool loads the research config TOP-LEVEL (test/workers/test-env.ts);
+    // a top-level provider var would flip the pool off the stub default the CC-7 tests hardwire.
+    const research = readJsonc("workers/research/wrangler.jsonc");
+    expect(research.vars?.RESEARCH_PROVIDER).toBeUndefined();
   });
 });
 
