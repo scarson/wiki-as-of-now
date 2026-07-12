@@ -31,7 +31,7 @@ This document serves three audiences. Start here, then go directly to the sectio
 | 3 | [Safe-lane / untrusted-content scanning](#section-3-safe-lane--untrusted-content-scanning) | `src/safelane/*` — wikitext signal scans running on attacker-controllable article content | SAFE-1 | §3.C |
 | 4 | [Deploy / CI (wrangler, GitHub Actions, OpenNext)](#section-4-deploy--ci-wrangler-github-actions-opennext) | `wrangler.jsonc`, `workers/research/wrangler.jsonc`, `.github/workflows/*`, OpenNext build | CI-1 – CI-2 | §4.C |
 | 5 | [Research enqueue gating & metered spend](#section-5-research-enqueue-gating--metered-spend) | every path onto the metered/G11 research lane; per-user + global quota | GATE-1 – GATE-2 | §5.C |
-| 6 | [Workers AI model integration](#section-6-workers-ai-model-integration) | `src/research/ai-client.ts`, model-config, anything calling `env.AI.run()` | AI-1 | §6.C |
+| 6 | [Workers AI model integration](#section-6-workers-ai-model-integration) | `src/research/ai-client.ts`, model-config, anything calling `env.AI.run()` | AI-1 – AI-2 | §6.C |
 | — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-3 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
@@ -295,12 +295,25 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ---
 
+### AI-2: Never Pass a Detached Global `fetch` — workerd Validates the Receiver
+
+**The Flaw:** Two research seams stored the global `fetch` as a value and invoked it through a property: `BraveSearchProvider`'s default parameter (`fetchFn = fetch`, called as `this.fetchFn(...)`) and the research worker's `fetchImpl: fetch` (called as `opts.fetchImpl(...)`). In workerd, the global `fetch` validates its receiver: invoking it with any receiver other than the global scope (or a bare, receiver-less call) throws `TypeError: Illegal invocation` **before any network I/O**. Node's `fetch` is receiver-insensitive, so every unit test passed.
+
+**Why It Matters:** The failure is instant, silent, and shape-shifting: the Brave seam surfaced it as a retryable `provider_unavailable` (an infinite queue retry loop), while the source-fetch seam **caught it as `network_error`** and produced false, WRITE-ONCE `no_proposals` packs with empty dispositions — plausible-looking "no evidence found" results that permanently block real research for their `(claim_key, source_revision_id)` pairs. Nothing in CI or the workerd test pool can see it: the workerd tests run the stub provider path, and injected test fakes are plain receiver-insensitive functions.
+
+**The Fix:** Wrap, don't detach: default parameters and dependency wiring use a lambda (`(url, init) => fetch(url, init)`), and callee-side call sites detach into a local before calling (`const { fetchImpl } = opts; await fetchImpl(...)`) so the invocation is receiver-neutral. Both receiver contracts are pinned by tests that pass a `this`-recording fake and assert the receiver is `undefined`/`globalThis` (`test/research/brave-search.test.ts`, `test/research/source-fetch.test.ts`). Bare-identifier calls of a detached reference (`const f = globalThis.fetch; f(url)`) are receiver-less and safe — `src/ingest/wikimedia.ts`/`pageviews.ts` use that form and are proven live.
+
+**The Lesson:** In workerd, platform globals are methods of the global scope, not free functions. Any pattern that later re-receivers them — class-property defaults, options-bag members, object spreads — is a live-only time bomb. When a live pipeline "finds nothing" suspiciously fast, check the seams for a re-receivered global before believing the empty result.
+
+---
+
 ### Review Checklist
 
 - [ ] **Chat models are called via `messages`, never raw `prompt`** — prompt mode skips the chat template and an instruction-tuned model free-continues the text (AI-1)
 - [ ] **Envelope extraction accepts chat.completion, text_completion, and legacy shapes, and maps null/empty content to ProviderUnavailableError** (AI-1)
 - [ ] **`maxTokens` budgets for reasoning burn on thinking models** — content starved to null with `finish_reason: length` is the symptom (AI-1)
 - [ ] **Any new/changed model id was probed live (raw envelope inspected) before deploy, and the observed envelope is a committed test fixture** (AI-1)
+- [ ] **No detached global `fetch` (or other platform global) is stored and invoked through a property** — wrap in a lambda or detach to a local before calling; receiver-contract tests pin the seams (AI-2)
 
 ---
 
@@ -356,6 +369,9 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 <!-- - Added PREFIX-N (<title>) — <what and why> -->
 <!-- - Updated PREFIX-M — <what changed> -->
 
+## 2026-07-12 — Go-live: workerd rejected detached-global-fetch calls in two research seams
+- Added AI-2 (never pass a detached global `fetch` — workerd throws `TypeError: Illegal invocation` on a re-receivered call; Node's fetch is receiver-insensitive so no unit test saw it). Live symptoms: infinite `provider_unavailable` retry loops (Brave seam) and false write-once `no_proposals` packs with empty dispositions (source-fetch seam). Fixed in `src/research/brave-search.ts` (lambda default) + `src/research/source-fetch.ts` (receiver-neutral call site) + `workers/research/index.ts` (lambda wiring); receiver contracts pinned by tests.
+
 ## 2026-07-12 — Go-live: live-Gemma smoke test caught the fixture-blind AI seam
 - Added Section 6 (Workers AI model integration) with AI-1 (validate the live model's envelope, input mode, and reasoning budget — live Gemma 4 returned OpenAI-compat envelopes, ignored raw-prompt instructions, and starved content to null at maxTokens 1024; fixed in `src/research/ai-client.ts` + `model-config.ts`, live-captured envelopes committed as test fixtures).
 
@@ -393,6 +409,7 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 | SAFE-1 | Untrusted-Input Scans MUST Be Linear-Time in Input Length | HIGH | VALIDATED | Safe-lane / untrusted-content scanning |
 | CI-1 | GitHub Actions Rejects the `secrets` Context in ANY `if:` — Guard on env-Mapped Values Instead | HIGH | VALIDATED | Deploy / CI |
 | AI-1 | Validate the LIVE Model's Envelope, Input Mode, and Reasoning Budget — Fixtures Can't | HIGH | VALIDATED | Workers AI model integration |
+| AI-2 | Never Pass a Detached Global `fetch` — workerd Validates the Receiver | HIGH | VALIDATED | Workers AI model integration |
 | CI-2 | The OpenNext Build Shells Out to `pnpm build`; `--env=""` Silences the Multi-Env Dry-Run Warning | LOW | VALIDATED | Deploy / CI |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
