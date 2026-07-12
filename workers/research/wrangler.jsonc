@@ -62,6 +62,13 @@
 			"ai": { "binding": "AI", "remote": true },
 			// Real provider on every deployed env (CC-7: top-level stays stub for the Miniflare/workerd pool).
 			"vars": { "RESEARCH_PROVIDER": "workers-ai" },
+			// Interval MUST exceed worst-case batch drain (runbook step 8). Derivation from the 2026-07-12
+			// dev smoke: observed per-message wall 23-170s over the sequential consumer; a full 50-seed
+			// batch at the observed max ≈ 2.4h, theoretical all-timeout worst (2 AI stages × 2 attempts
+			// × 60s + 12 × 10s fetches) ≈ 5.8h. 8-hourly clears the theoretical worst with margin, and
+			// costs no yield: the per-user daily quota (10 packs) is consumed by the first tick either way.
+			// Production only — dev is a verification env with no scheduled metered spend.
+			"triggers": { "crons": ["0 */8 * * *"] },
 			"d1_databases": [
 				{ "binding": "DB", "database_name": "wiki-as-of-now", "database_id": "aa530ffb-16bf-4ab2-8f22-04f2dcc03922" }
 			],
