@@ -1,0 +1,711 @@
+{{short description|Line of consumer electronic devices}}
+{{about|the line of hardware products|the first-generation Pixel phone|Pixel (1st generation)}}
+{{Use American English|date=July 2021}}{{Use mdy dates|date=August 2025}}
+{{infobox information appliance
+| name = Google Pixel
+| logo = Pixel wordmark.svg
+| logo_size = 160px
+| caption = Google Pixel logo
+| developer = [[Google]]
+| manufacturer = Various
+| type = {{Flatlist|
+* [[Smartphone]]s
+* [[Tablet computer|tablets]]
+* [[laptop]]s
+}}
+| release_date = {{start date and age|20<!--Please do not change this to 2016. This is the release date of the line, not the phone. Thanks.-->13|2|21}}
+| os = {{ubl| Laptops: [[ChromeOS]]|Portables: [[Android (operating system)|Android]]|Wearables: [[WearOS]]}}
+| online_services = {{ubl|[[Google Play]] (2015–present)|[[Chrome Web Store]] (2013–present)}}
+| website = {{URL|pixel.google.com}}
+| predecessor = [[Google Nexus]]
+}}
+'''Google Pixel''' is a brand of portable [[Consumer electronics|consumer electronic]] devices developed by [[Google]] that runs the Pixel version of the [[Android (operating system)|Android]] operating system or the [[ChromeOS]] [[operating system]]. The primary line of Pixel products consists of Android-powered smartphones, produced since October 2016 as the replacement for the older [[Google Nexus|Nexus]] line, with the current models being the [[Pixel 10]], [[Pixel 10 Pro]], [[Pixel 10 Pro XL]], [[Pixel 10 Pro Fold]], and [[Pixel 10a]]. The Pixel brand also includes laptop and tablet computers, as well as several accessories, and was originally introduced in February 2013 with the [[Chromebook Pixel]].
+
+== Phones ==
+{{see also|Comparison of Google Pixel smartphones}}
+{|class="wikitable"
+|-
+!Legend:
+|{{Legend|#f8f9fa|{{abbr|Unsupported|Support has been discontinued.}}}}
+|{{Legend|#d4f4b4|{{abbr|Supported|Device is supported.}}}}
+|{{Legend|#c1e6f5|{{abbr|Upcoming|Device has been announced but not released.}}}}
+|}
+{| class="wikitable"
+! rowspan="2" | Model
+! rowspan="2" | Announcement
+! colspan="2" | Release
+! colspan="2" | Support<ref name="pixel-eol" />
+! rowspan="2" | Lifespan{{efn|For unsupported devices, lifespan describes the time between initial release and final software update. For supported devices it's the time from initial release to the present date in years and months.}}
+|-
+! Date
+! Launch OS
+! Date<ref name="factory images">{{Cite web |url=https://developers.google.com/android/images |title=Factory Images for Nexus and Pixel Devices |website=Android Developers|access-date=February 10, 2023}}</ref>
+! Final OS<ref name="factory images" />
+|-
+! style="text-align: left; background: #f8f9fa" | [[Pixel (1st generation)|Pixel / XL]]
+| October 4, 2016
+| October 20, 2016
+| [[Android Nougat|7.1 Nougat]]
+| December 2, 2019
+| [[Android 10|10]]
+| {{age in years and months|2016|10|20|2019|12|02}}
+|-
+! style="text-align: left; background: #f8f9fa" | [[Pixel 2|Pixel 2 / XL]]
+| October 4, 2017
+| October 19, 2017
+| [[Android Oreo|8.0 Oreo]]
+| December 7, 2020
+| [[Android 11|11]]
+| {{age in years and months|2017|10|19|2020|12|07}}
+|-
+! style="text-align: left; background: #f8f9fa" | [[Pixel 3|Pixel 3 / XL]]
+| October 9, 2018
+| October 18, 2018
+| rowspan="2" | [[Android Pie|9 Pie]]
+| June 6, 2022
+| [[Android 12|12]]
+| {{age in years and months|2018|10|18|2022|06|06}}
+|-
+! style="text-align: left; background: #f8f9fa" | [[Pixel 3a|Pixel 3a / XL]]
+| May 7, 2019
+| May 15, 2019
+| September 5, 2022
+| [[Android 12|12L]]
+| {{age in years and months|2019|05|15|2022|09|05}}
+|-
+! style="text-align: left; background: #f8f9fa" | [[Pixel 4|Pixel 4 / XL]]
+| October 15, 2019
+| October 23, 2019
+| rowspan="2" | [[Android 10|10]]
+| February 6, 2023
+| rowspan="2" | [[Android 13|13]]
+| {{age in years and months|2019|10|23|2023|02|06}}
+|-
+! style="text-align: left; background: #f8f9fa" | [[Pixel 4a]]
+| rowspan="2" | August 3, 2020
+| August 20, 2020
+| November 6, 2023
+| {{age in years and months|2020|08|20|2023|11|06}}
+|-
+! style="text-align: left; background: #f8f9fa" | [[Pixel 4a|Pixel 4a (5G)]]
+| November 5, 2020
+| rowspan="3" | [[Android 11|11]]
+| rowspan="2" | February 5, 2024
+| rowspan="3" | [[Android 14|14]]
+| {{age in years and months|2020|11|05|2024|02|05}}
+|-
+! style="text-align: left; background: #f8f9fa" | [[Pixel 5]]
+| September 30, 2020
+| October 15, 2020
+| {{age in years and months|2020|10|15|2024|02|05}}
+|-
+! style="text-align: left; background: #f8f9fa" | [[Pixel 5a]]
+| August 17, 2021
+| August 26, 2021
+| November 4, 2024
+| {{age in years and months|2021|08|26|2024|11|04}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 6|Pixel 6 / Pro]]
+| October 19, 2021
+| October 28, 2021
+| rowspan="2" | [[Android 12|12]]
+| At least October 2026
+| rowspan="14" | —
+| {{age in years and months|2021|10|28}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 6a]]
+| May 11, 2022
+| July 21, 2022
+| At least July 2027
+| {{age in years and months|2022|07|21}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 7|Pixel 7 / Pro]]
+| October 6, 2022
+| October 13, 2022
+| rowspan="3" | [[Android 13|13]]
+| At least October 2027
+| {{age in years and months|2022|10|13}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 7a]]
+| rowspan="2" | May 10, 2023
+| May 10, 2023
+| At least May 2028
+| {{age in years and months|2023|05|10}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel Fold]]
+| June 20, 2023
+| At least June 2028
+| {{age in years and months|2023|06|20}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 8|Pixel 8 / Pro]]
+| October 4, 2023
+| October 12, 2023
+| rowspan="4" | [[Android 14|14]]
+| At least October 2030
+| {{age in years and months|2023|10|12}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 8a]]
+| May 7, 2024
+| May 14, 2024
+| At least May 2031
+| {{age in years and months|2024|05|14}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 9|Pixel 9 / Pro / Pro XL]]
+| rowspan="2" | August 13, 2024
+| August 22, 2024
+| At least August 2031
+| {{age in years and months|2024|08|22}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 9 Pro Fold]]
+| September 4, 2024
+| At least September 2031
+| {{age in years and months|2024|09|04}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 9a]]
+| March 19, 2025
+| April 10, 2025 
+| [[Android 15|15]]
+| At least March 2032
+| {{age in years and months|2025|04|10}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 10]]
+| rowspan="3" | August 20, 2025
+| August 28, 2025
+| rowspan="3" | [[Android 16|16]]
+| rowspan="2" | At least August 2032
+| rowspan="2" | {{age in years and months|2025|08|28}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 10 Pro|Pixel 10 Pro / Pro XL]]
+| August 28, 2025
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 10 Pro Fold]]
+| October 9, 2025
+| At least October 2032
+| {{age in years and months|2025|10|09}}
+|-
+! style="text-align: left; background: #d4f4b4" | [[Pixel 10a]]
+|February 18, 2026
+| March 5, 2026
+|[[Android 16|16]]
+|At least February 2033
+| {{age in years and months|2026|02|25}}
+|}
+
+=== Pixel and Pixel XL ===
+{{main|Pixel (1st generation)}}
+[[File:Pixel 1 and 1 XL front.svg|thumb|Pixel and Pixel XL smartphones]]
+[[File:Google Pixel and Pixel XL smartphones (30155272575).jpg|thumb|"Very Silver" and "Quite Black" Pixel smartphones]]
+
+Google announced the first generation Pixel smartphones, the '''Pixel,''' and the '''Pixel XL''', on October 4, 2016, during the #MadeByGoogle event.<ref name="verge-pixelannounce">{{cite web |title=Pixel 'Phone by Google' Announced |url=https://www.theverge.com/2016/10/4/13161028/google-phone-announced-pixel-xl-price-release-date-specs |website=The Verge |date=October 4, 2016|access-date=October 4, 2016}}</ref> Google emphasized the camera on the two phones, which ranked as the best smartphone camera on DxOMarkMobile with 90{{nbsp}}points until [[HTC]] released the [[HTC U11|U11]], which also scored 90{{nbsp}}points.<ref>{{Cite web |url=https://www.dxomark.com/Mobiles|archive-url=https://web.archive.org/web/20131018184136/http://www.dxomark.com/Mobiles|url-status=dead|archive-date=October 18, 2013 |title=DxOMark Mobile |website=Dxomark.com |language=en|access-date=February 21, 2017}}</ref> This is largely due to software optimizations such as HDR+. The Pixel phones also include unlimited cloud storage for pictures on [[Google Photos]]<ref>{{Cite web |url=https://www.theverge.com/2016/10/4/13163338/google-is-giving-free-unlimited-original-quality-photo-and-video |title=Google is giving free, unlimited original-quality photo and video backups with the Pixel phones |date=October 4, 2016 |website=The Verge|access-date=March 21, 2017}}</ref> and, for devices purchased directly from Google, an [[Bootloader unlocking|unlockable bootloader]].<ref>{{Cite news |url=https://android.gadgethacks.com/news/its-official-pixel-phones-from-google-store-will-be-rootable-with-unlockable-bootloaders-0174285/ |title=It's Official: Pixel Phones from the Google Store Will Be Rootable with Unlockable Bootloaders |work=WonderHowTo|access-date=October 6, 2017 |language=en}}</ref> In 2019, a class action lawsuit<ref>{{Cite web |last=Villas-Boas |first=Antonio |title=Google Pixel owners have a week to get up to $500 as the result of a lawsuit over faulty microphones — here's how to claim your money |url=https://www.businessinsider.com/google-pixel-microphone-lawsuit-how-file-claim-for-settlement-money-2019-8|access-date=February 12, 2021 |website=[[Business Insider]]}}</ref> over faulty microphones in some devices enabled Pixel owners to claim up to $500 in compensation.
+
+* Display: 5.0" 60{{nbsp}}[[Refresh rate|Hz]] AMOLED display with 1080×1920 pixel resolution (Pixel); 5.5" AMOLED 60&nbsp;Hz display with 1440×2560 pixel resolution (Pixel XL)
+* Processor: Qualcomm [[List of Qualcomm Snapdragon systems on chips#Snapdragon 800 series (2013–2021)|Snapdragon 821]]
+* Storage: UFS 2.0 with 32&nbsp;GB or 128&nbsp;GB
+* [[Random-access memory|RAM]]: 4&nbsp;GB [[LPDDR#LPDDR4|LPDDR4]]
+* Cameras: 12.3{{nbsp}}[[Pixel#Megapixel|MP]] rear camera Sony Exmor IMX378<ref>{{Citation |title=Choosing a Lens |date=January 25, 2013 |url=http://dx.doi.org/10.4324/9780080888248-15 |work=Sony Software |pages=87–95 |publisher=Routledge |doi=10.4324/9780080888248-15 |isbn=978-0-08-088824-8|access-date=March 9, 2022|url-access=subscription}}</ref> sensor with f/2.0 lens and IR laser-assisted autofocus;<ref name="IMX378-XDA" /> 1.55 μm pixel size.<ref name=":0">{{Cite web |url=https://madeby.google.com/intl/de_de/phone/ |title=Google Pixel product page |website=Made by Google |language=de|access-date=February 21, 2017}}</ref> 8 MP front camera with f/2.4 lens
+* Headphone Jack
+* Battery: 2,770{{nbsp}}mAh (Pixel); 3,450{{nbsp}}mAh (Pixel XL); both are non-removable and have fast charging
+* Materials: Aluminum unibody design with hybrid coating; IP53 water and dust resistance
+* Colors: Very Silver {{Colorbox|#c5c5c3}}, Quite Black {{Colorbox|Black}} or Really Blue {{Colorbox|#6483f8}} (Limited Edition)
+* Operating system: [[Android Nougat|Android 7.1 Nougat]]; upgradable to [[Android 10]]<ref>{{Cite web |url=https://android-developers.googleblog.com/2019/03/introducing-android-q-beta.html |title=Introducing Android Q Beta |date=March 13, 2019 |website=Android Developers Blog|access-date=March 14, 2019}}</ref>
+
+=== Pixel 2 and 2 XL ===
+{{main|Pixel 2}}
+[[File:Pixel 2 and 2 XL front.svg|thumb|Pixel 2 and Pixel 2 XL smartphones]]
+Google announced the Pixel 2 series, consisting of the '''Pixel 2''' and '''Pixel 2 XL''', on October 4, 2017.
+
+* Display: 5.0" AMOLED 60&nbsp;Hz display with 1080×1920 pixel resolution (Pixel 2); 6" P-OLED 60&nbsp;Hz display with 1440×2880 pixel resolution (Pixel 2 XL); Both displays have Corning Gorilla Glass 5
+* Processor: Qualcomm [[List of Qualcomm Snapdragon systems on chips#Snapdragon 800 series (2013–2021)|Snapdragon 835]]
+* Storage: UFS 2.1 with 64&nbsp;GB or 128&nbsp;GB
+* RAM: 4&nbsp;GB [[LPDDR#LPDDR4X|LPDDR4X]]
+* Cameras: 12.2{{nbsp}}[[Pixel#Megapixel|MP]] rear camera Sony Exmor IMX362 with f/1.8 lens, IR laser-assisted autofocus, optical and electronic [[image stabilization]]; 8 MP front camera with f/2.4 lens
+* Battery: 2,700{{nbsp}}mAh (Pixel 2); 3,520{{nbsp}}mAh (Pixel 2 XL); both are non-removable and have fast charging
+* Materials: Aluminum unibody design with hybrid coating; IP67 water and dust resistance
+* Colors: Just Black {{Colorbox|Black}}, Clearly White {{Colorbox|White}} or Kinda Blue {{Colorbox|#9eb0bf}} (Pixel 2); Just Black {{Colorbox|Black}} or Black and White {{Colorbox|Black}}{{Colorbox|White}} (Pixel 2 XL)
+* Operating system: [[Android Oreo|Android 8.0 Oreo]]; upgradable to [[Android 11]]<ref name=":3">{{Cite web |title=Compare Pixel Phones and Specs |url=https://store.google.com/us/magazine/compare_pixel?hl=en-US|access-date=April 3, 2024 |website=Google Store |language=en-US}}</ref>
+
+=== Pixel 3 and 3 XL ===
+{{main|Pixel 3}}
+[[File:Pixel 3 and 3 XL front.svg|thumb|Pixel 3 and Pixel 3 XL smartphones]]
+[[File:Pixel 3 と Pixel 3 XL を初触。本体をギュッと握ると Google Assistant が立ち上がるのがおもしろい。 ワシントンDC (44519013945).jpg|thumb|upright|Pixel 3 and Pixel 3 XL on retail display with [[Pixel Buds]] and wireless charging accessories]]
+
+Google announced the '''Pixel 3''' and '''Pixel 3 XL''' at an event on October 9, 2018, alongside several other products.
+
+* Display: Pixel 3 5.5" OLED, 60&nbsp;Hz, 2160×1080 (18:9) pixel resolution; Pixel 3 XL 6.3" OLED, 60&nbsp;Hz, 2960×1440 (18.5:9) pixel resolution; both displays have Corning Gorilla Glass 5.
+* Processor: Qualcomm [[List of Qualcomm Snapdragon systems on chips#Snapdragon 800 series (2013–2021)|Snapdragon 845]]
+* Storage: UFS 2.1 with 64&nbsp;GB or 128&nbsp;GB
+* RAM: 4&nbsp;GB [[LPDDR#LPDDR4X|LPDDR4X]]
+* Cameras: 12.2{{nbsp}}[[Pixel#Megapixel|MP]] rear camera Sony Exmor IMX363 with f/1.8 lens, IR laser-assisted autofocus, optical and electronic image stabilization; 8 MP front camera with f/1.8 lens and 75° lens, second front camera with 8 MP, f/2.2, fixed focus and 97° lens; [[stereophonic sound|stereo audio]] added to video recording<ref>{{cite web |title=Google Pixel 3 review |url=https://www.gsmarena.com/google_pixel_3-review-1847p5.php |website=GSMArena.com |page=5 |date=October 31, 2018 |quote=Audio is recorded in stereo at 192&nbsp;kbps - a new development after the Pixel 2's mono audio}}</ref>
+* Battery: 2,915 mAh{{nbsp}}(Pixel 3); 3,430{{nbsp}}mAh (Pixel 3 XL); both are non-removable and have fast charging and wireless charging
+* Materials: Aluminum frame, matte glass back, IP68 water and dust resistance
+* Colors: Just Black {{Colorbox|Black}}, Clearly White {{Colorbox|White}}, and Not Pink {{Colorbox|#decfca}}
+* Operating system: [[Android Pie|Android 9.0 Pie]]; upgradable to [[Android 12]]<ref name=":3" />
+
+=== Pixel 3a and 3a XL ===
+[[File:GooglePixel3aAndroid12.jpg|thumb|Google Pixel 3a running Android 12]]
+{{Main|Pixel 3a}}
+
+On May 7, at [[Google I/O#2019|I/O 2019]], Google announced the '''Pixel 3a''' and '''Pixel 3a XL''', budget alternatives to the original two Pixel 3 devices.<ref>{{Cite web |url=https://www.engadget.com/2019/05/07/google-pixel-3a-xl/ |title=Google unveils the lower-cost Pixel 3a and Pixel 3a XL |work=[[Engadget]] |last=Fingas |first=Jon |date=May 7, 2019}}</ref>
+
+* Display: Pixel 3a 5.6" OLED, 60&nbsp;Hz, 2220×1080 (18.5:9) pixel resolution; Pixel 3a XL 6" OLED, 60&nbsp;Hz, 2160×1080 (18:9) pixel resolution; both displays have Asahi [[Dragontrail]] Glass
+* Processor: Qualcomm [[List of Qualcomm Snapdragon systems on chips#Snapdragon 600 series (2013–2023)|Snapdragon 670]]
+* Storage: 64&nbsp;GB
+* RAM: 4&nbsp;GB [[LPDDR#LPDDR4X|LPDDR4X]]
+* Cameras: 12.2{{nbsp}}[[Pixel#Megapixel|MP]] rear camera with f/1.8 lens, IR laser-assisted autofocus, optical and electronic image stabilization; 8 MP front camera with f/2.0 lens and 84° lens
+* Headphone Jack
+* Battery: 3,000{{nbsp}}mAh (Pixel 3a); 3700{{nbsp}}mAh (Pixel 3a XL); both are non-removable and have fast charging, but no wireless charging
+* Materials: Polycarbonate body
+* Colors: Just Black {{Colorbox|Black}}, Clearly White {{Colorbox|White}} and Purple-ish {{Colorbox|#d8dbef}}
+* [[File:Google Pixel 5 back.jpg|thumb|Google Pixel 5 back in Just Black]]Operating system: [[Android 9]], upgradable to [[Android 12]]<ref name=":3" />
+
+=== Pixel 4 and 4 XL ===
+[[File:Google Pixel 5 front.jpg|thumb|Google Pixel 5 running Android 14]]
+{{main|Pixel 4}}
+
+Google announced the '''Pixel 4''' and '''Pixel 4 XL''' at an event on October 15, 2019, alongside several other products.<ref>{{Cite web |url=https://www.theverge.com/2019/9/16/20868670/google-pixel-4-event-date-time-october-15-announcement |title=Google announces October 15th hardware event for Pixel 4 |last=Welch |first=Chris |date=September 16, 2019 |website=The Verge |language=en|access-date=September 24, 2019}}</ref>
+
+* Display: Pixel 4 5.7" OLED, 90&nbsp;Hz, 2280×1080 (19:9) pixel resolution; Pixel 4 XL 6.3" OLED, 90&nbsp;Hz, 3040×1440 (19:9) pixel resolution; both displays have Corning Gorilla Glass 5.
+* Processor: Qualcomm [[List of Qualcomm Snapdragon systems on chips#Snapdragon 800 series (2013–2021)|Snapdragon 855]]
+* Storage: 64&nbsp;GB or 128&nbsp;GB
+* RAM: 6&nbsp;GB [[LPDDR#LPDDR4X|LPDDR4X]]
+* Cameras: 12.2{{nbsp}}[[Pixel#Megapixel|MP]] sensor with f/1.8 lens and 16{{nbsp}}MP telephoto sensor with f/2.4 lens, IR laser-assisted autofocus, optical and electronic image stabilization; 8{{nbsp}}MP front camera with f/2.0 lens and 90° lens
+* Battery: 2,800{{nbsp}}mAh (Pixel 4); 3,700{{nbsp}}mAh (Pixel 4 XL); both are non-removable and have fast charging and wireless charging
+* Materials: Aluminum frame, matte or glossy glass back, IP68 water and dust resistance
+* Colors: Just Black {{Colorbox|Black}}, Clearly White {{Colorbox|White}} and Oh So Orange {{Colorbox|#ff6a3f}}
+* Operating system: [[Android 10]], upgradable to [[Android 13]]<ref name=":3" />
+
+In 2019, Google offered a [[bug bounty program]] of up to $1.5{{nbsp}}million for the [[list of Google products#Processors|Titan M]] security chip built into Pixel 3, Pixel 3a and Pixel 4.<ref>{{Cite news |url=https://www.bbc.com/news/technology-50515647 |title=$1.5m 'reward' for spotting bugs in Google phones |date=November 22, 2019|access-date=November 25, 2019}}</ref>
+
+=== Pixel 4a and 4a (5G) ===
+{{Main|Pixel 4a}}
+Google announced the '''Pixel 4a''' on August 3, 2020, and the '''Pixel 4a (5G)''' on September 30, 2020, as budget alternatives to the original two Pixel 4 devices.
+
+* Display: 5.8" OLED (4a) 6.2" OLED (4a 5G), 60&nbsp;Hz, 2340×1080 (19.5:9) pixel resolution; the display uses Corning Gorilla Glass 3. Both have a hole punch for the front camera.
+* Processor: Qualcomm [[List of Qualcomm Snapdragon systems on chips#Snapdragon 700 series (2018–2022)|Snapdragon 730G]] (4a); Qualcomm [[List of Qualcomm Snapdragon systems on chips#Snapdragon 700 series (2018–2022)|Snapdragon 765G]] (4a 5G)
+* Storage: 128&nbsp;GB
+* RAM: 6&nbsp;GB [[LPDDR#LPDDR4X|LPDDR4X]]
+* Camera: 12.2{{nbsp}}[[Pixel#Megapixel|MP]] dual-pixel sensor with f/1.7{{nbsp}}lens, autofocus with dual-pixel phase detection, optical and electrical image stabilization. In addition, the 4a 5G has a 16&nbsp;MP ultrawide sensor with f/2.2&nbsp;lens. Both have an 8&nbsp;MP front camera with f/2.0&nbsp;lens.
+* Battery: 3,140&nbsp;mAh (4a); Typical - 3,885&nbsp;mAh, Minimum - 3,800&nbsp;mAh (4a 5G); both are non-removable and feature all day battery as well as fast charging
+* 3.5&nbsp;mm headset jack
+* Materials: Polycarbonate body
+* Colors: Just Black {{Colorbox|Black}} or Barely Blue {{Colorbox|#d0e7f7}} (Limited Edition) (Pixel 4a); Just Black {{Colorbox|Black}} or Clearly White {{Colorbox|White}} (Pixel 4a 5G)
+* Operating System: [[Android 10]], upgradable to [[Android 13]] (4a); Android 11 (4a 5G), upgradable to [[Android 14]]<ref>{{Cite web |title=Compare Pixel 4a 5G Tech Specs - Google Store |url=https://store.google.com/product/pixel_4a_5g_specs|access-date=September 30, 2020}}</ref><ref>{{Cite web |title=Pixel 4a Hardware Specs - Google Store |url=https://store.google.com/product/pixel_4a_specs|access-date=September 30, 2020}}</ref>
+
+=== Pixel 5 ===
+{{Main|Pixel 5}}
+Google announced the '''Pixel 5''' on September 30, 2020.
+
+* Display: 6.0" OLED, 90&nbsp;Hz, 2340×1080 (19.5:9) pixel resolution; the display uses Corning Gorilla Glass 6.
+* Processor: Qualcomm [[List of Qualcomm Snapdragon systems on chips#Snapdragon 700 series (2018–2022)|Snapdragon 765G]]
+* Storage: 128&nbsp;GB
+* RAM: 8&nbsp;GB [[LPDDR#LPDDR4X|LPDDR4X]]
+* Camera: 12.2&nbsp;[[Pixel#Megapixel|MP]] sensor with f/1.7&nbsp;lens and 16&nbsp;MP ultrawide sensor with f/2.2&nbsp;lens, autofocus with dual-pixel phase detection, optical and electrical image stabilization; 8&nbsp;MP front camera with f/2.0&nbsp;lens.
+* Battery: 4,080&nbsp;mAh; it is non-removable and features fast charging and wireless charging, all day battery, and Battery Share.
+* Materials: Brushed aluminum body, IP68 water and dust resistance
+* Colors: Just Black {{Colorbox|Black}} and Sorta Sage {{Colorbox|#97aca5}}
+* Operating System: [[Android 11]], upgradable to [[Android 14]]<ref>{{Cite web |title=Compare Pixel 5 Tech Specs - Google Store |url=https://store.google.com/product/pixel_5_specs|access-date=September 30, 2020}}</ref>
+
+=== Pixel 5a ===
+{{Main|Pixel 5a}}
+Google announced the '''Pixel 5a''' on August 17, 2021.
+
+* Display: 6.34" OLED, 60&nbsp;Hz, 2400×1080 (20:9) pixel resolution; the display uses Corning Gorilla Glass 3. It has a hole punch for the front camera.
+* Processor: Qualcomm [[List of Qualcomm Snapdragon systems on chips#Snapdragon 700 series (2018–2022)|Snapdragon 765G]]
+* Storage: 128&nbsp;GB
+* RAM: 6&nbsp;GB [[LPDDR#LPDDR4X|LPDDR4X]]
+* Camera: 12.2&nbsp;[[Pixel#Megapixel|MP]] sensor with f/1.7&nbsp;lens and 16&nbsp;MP ultrawide sensor with f/2.2&nbsp;lens, autofocus with dual-pixel phase detection, optical and electrical image stabilization; 8&nbsp;MP front camera with f/2.0 lens.
+* Battery: 4,680&nbsp;mAh; non-removable and features all day battery as well as fast charging
+* Materials: Brushed aluminum body, IP67 water and dust resistance
+* Colors: Mostly Black {{Colorbox|Black}}
+* Operating System: [[Android 11]], upgradable to [[Android 14]]<ref>{{Cite web |title=Pixel 5a Hardware Specs - Google Store |url=https://store.google.com/product/pixel_5a_5g_specs|access-date=August 17, 2021}}</ref>
+
+=== Pixel 6 and 6 Pro ===
+{{Main|Pixel 6}}
+
+Google announced the '''Pixel 6''' and '''Pixel 6 Pro''' on October 19, 2021.
+
+* Display: Pixel 6 6.4" OLED, 90&nbsp;Hz, 2400×1080 FHD+ pixel resolution; Pixel 6 Pro 6.7" LTPO OLED, 120&nbsp;Hz, 3120×1440 QHD+ pixel resolution; both have Corning Gorilla Glass Victus.
+* Processor: [[Google Tensor]]
+* Storage: Pixel 6 128 or 256&nbsp;GB; Pixel 6 Pro 128, 256, or 512&nbsp;GB
+* RAM: 8&nbsp;GB [[LPDDR#LPDDR5|LPDDR5]] (Pixel 6); 12&nbsp;GB [[LPDDR#LPDDR5|LPDDR5]] (Pixel 6 Pro)
+* Cameras:
+** Pixel 6: Rear 50&nbsp;[[Pixel#Megapixel|MP]] sensor with f/1.85&nbsp;lens, laser detect autofocus, optical image stabilization; Rear 12&nbsp;MP ultrawide sensor with f/2.2&nbsp;lens; Front 8&nbsp;MP sensor with f/2.0&nbsp;lens and 84° field of view;
+** Pixel 6 Pro: Rear 50&nbsp;[[Pixel#Megapixel|MP]] sensor with f/1.85&nbsp;lens, laser detect autofocus, optical image stabilization; Rear 12&nbsp;MP ultrawide sensor with f/2.2&nbsp;lens; Rear 48&nbsp;MP telephoto sensor with f/3.5&nbsp;lens; Front 11.1 MP&nbsp;front camera with f/2.2&nbsp;lens and 94° field of view.
+* Battery: 4,614&nbsp;mAh (Pixel 6); 5,003&nbsp;mAh (Pixel 6 Pro); both are non-removable and have fast charging, wireless charging and reverse wireless charging
+* Materials: Aluminum frame, glass back, IP68 water and dust resistance
+* Colors: Pixel 6 Stormy Black {{Colorbox|#27292b}}, Kinda Coral {{Colorbox|#eac9b4}} and Sorta Seafoam {{Colorbox|#c0c9c8}} ; Pixel 6 Pro Stormy Black {{Colorbox|#27292b}}, Cloudy White {{Colorbox|#e4e4e4}} and Sorta Sunny {{Colorbox|#c0c9c8}}
+* Operating system: [[Android 12]], upgradable to [[Android 16]], with minimum 5 years of major OS/security update support.<ref>{{Cite web |title=Pixel 6 |url=https://store.google.com/product/pixel_6|access-date=October 19, 2021 |website=Google Store |language=en}}</ref><ref>{{Cite web |title=Pixel 6 Pro |url=https://store.google.com/product/pixel_6_pro_specs|access-date=October 19, 2021 |website=Google Store |language=en}}</ref>
+
+=== Pixel 6a ===
+{{Main|Pixel 6a}}
+Google announced the '''Pixel 6a''' on May 11, 2022.
+
+* Display: 6.1" OLED, 60&nbsp;Hz, 2400×1080 (20:9) pixel resolution; the display uses Corning Gorilla Glass 3. It has a hole punch for the front camera.
+* Processor: [[Google Tensor]]
+* Storage: 128&nbsp;GB
+* RAM: 6&nbsp;GB [[LPDDR#LPDDR5|LPDDR5]]
+* Camera: 12.2&nbsp;[[Pixel#Megapixel|MP]] sensor with f/1.7&nbsp;lens and 12&nbsp;MP ultrawide sensor with f/2.2&nbsp;lens, autofocus with dual-pixel phase detection, optical and electrical image stabilization; 8&nbsp;MP front camera with f/2.0&nbsp;lens.
+* Battery: 4,410&nbsp;mAh; non-removable battery with 18&nbsp;W charging
+* Materials: Aluminum frame, plastic back, IP67 water and dust resistance
+* Colors: Charcoal {{Colorbox|#2e2f33}}, Chalk {{Colorbox|#e5e5e5}} and Sage {{Colorbox|#9cb0a5}}
+* Operating System: [[Android 12]], upgradable to [[Android 16]], with minimum 5 years of major OS/security update support.<ref>{{Cite web |title=Pixel 6a Hardware Specs - Google Store |url=https://store.google.com/product/pixel_6a_specs|access-date=May 12, 2022}}</ref>
+
+=== Pixel 7 and 7 Pro ===
+{{main|Pixel 7}}
+Google announced the '''Pixel 7''' and '''Pixel 7 Pro''' on October 6, 2022.
+
+* Display: ''Pixel 7'' 6.3" OLED, 90&nbsp;Hz, 2400×1080 FHD+ pixel resolution; ''Pixel 7 Pro'' 6.7" LTPO OLED, 120&nbsp;Hz, 3120×1440 QHD+ pixel resolution; both have Corning Gorilla Glass Victus.
+* Processor: [[Google Tensor#G2|Google Tensor G2]]
+* Storage: ''Pixel 7'' 128 or 256&nbsp;GB; ''Pixel 7 Pro'' 128, 256, or 512&nbsp;GB
+* RAM: 8&nbsp;GB [[LPDDR#LPDDR5|LPDDR5]] (Pixel 7); 12&nbsp;GB [[LPDDR#LPDDR5|LPDDR5]] (Pixel 7 Pro)
+* Cameras: ''Pixel 7'' Rear 50&nbsp;[[Pixel#Megapixel|MP]] sensor with f/1.85&nbsp;lens and 12&nbsp;MP ultrawide sensor with f/2.2&nbsp;lens, front 8&nbsp;MP sensor with f/2.2&nbsp;lens and 92.8° field of view; ''Pixel 7 Pro'' Rear 50&nbsp;[[Pixel#Megapixel|MP]] sensor with f/1.85&nbsp;lens, 12&nbsp;MP ultrawide sensor with f/2.2&nbsp;lens and 48&nbsp;MP telephoto sensor with f/3.5&nbsp;lens, front 11.1&nbsp;MP sensor with f/2.2&nbsp;lens and 92.8° field of view; Laser detect autofocus, optical image stabilization.
+* Battery: 4,355&nbsp;mAh (Pixel 7); 5,000&nbsp;mAh (Pixel 7 Pro); both are non-removable and have fast charging, wireless charging and reverse-wireless charging
+* Materials: Aluminum frame, glass back, IP68 water and dust resistance
+* Colors: ''Pixel 7'' Obsidian {{Colorbox|#292929}}, Snow {{Colorbox|#e9e9e9}} and Lemongrass {{Colorbox|#e6ecd6}} ; ''Pixel 7'' Pro Obsidian {{Colorbox|#292929}}, Snow {{Colorbox|#e9e9e9}} and Hazel {{Colorbox|#828582}}
+* Operating system: [[Android 13]], with minimum 5 years of major OS/security update support.<ref>{{Cite web |title=Pixel 7 |url=https://store.google.com/product/pixel_7|access-date=October 6, 2022 |website=Google Store |language=en}}</ref><ref>{{Cite web |title=Pixel 7 Pro |url=https://store.google.com/product/pixel_7_pro_specs|access-date=October 6, 2022 |website=Google Store |language=en}}</ref>
+
+=== Pixel 7a ===
+{{Main|Pixel 7a}}
+Google announced the '''Pixel 7a''' at its annual [[Google I/O]] on May 10, 2023.<ref name=":2">{{cite web |url=https://www.cnbc.com/2023/05/10/google-io-2023-live-updates.html |title=Here's everything Google just announced: A $1,799 folding phone, A.I. in Search and more |website=CNBC |date=May 10, 2023 |author1=Kif Leswing |author2=Jennifer Elias |author3=Jordan Novet |author4=Rohan Goswami|access-date=August 11, 2023}}</ref>
+
+*Display: 6.1" FHD OLED (2400×1080, 429&nbsp;ppi) 90&nbsp;Hz, and has Corning Gorilla Glass 3
+*Processor: Google Tensor G2
+*Storage: 128&nbsp;GB
+*Memory: 8&nbsp;GB
+*Camera: Rear 64&nbsp;MP (f/1.89) main; 13&nbsp;MP (f/2.2) (ultrawide); Front 13&nbsp;MP (f/2.2)
+*Battery: Non-removable 4385&nbsp;mAh battery, with 18 W fast charging and 7.5 W Qi wireless charging
+*Materials: Aluminium frame, plastic back, IP67 dust/water-resistant
+*Colors: Charcoal {{Colorbox|#545454}}, Sea {{Colorbox|#daeef9}}, Snow {{Colorbox|#ebebeb}} and Coral {{Colorbox|#ff7a67}}
+*Operating System: [[Android 13]]
+
+=== Pixel Fold ===
+{{Main|Pixel Fold}}
+Google announced the '''Pixel Fold''' at its annual [[Google I/O]] on May 10, 2023.<ref name=":2" />
+
+* Display: 5.8-inch FHD OLED (1080×2092, 408&nbsp;PPI) 120&nbsp;Hz with Corning Gorilla Glass Victus [External Cover Display]; 7.6" OLED (2208×1840, 380&nbsp;ppi) 120 Hz [Internal Folding Display]
+* Processor: Google Tensor G2
+* Storage: 256 or 512&nbsp;GB
+* RAM: 12&nbsp;GB LPDDR5
+* Camera: ''Rear'' 48&nbsp;MP (f/1.7) main, 10.8&nbsp;MP (f/2.2) ultrawide, 10.8&nbsp;MP (f/3.05) telephoto; ''Front'' 9.5&nbsp;MP (f/2.2); ''Inner'' 8&nbsp;MP (f/2.0)
+* Battery: Non-removable 4821&nbsp;mAh (typical) battery with Qi-certified wireless charging
+* Materials: Aluminum frame, Stainless-steel hinge, Corning [[Gorilla Glass]] Victus Back, IPX8 water resistance
+* Colors: Obsidian {{Colorbox|#1c1c1c}} and Porcelain {{Colorbox|#ddd3cd}}
+* Operating System: [[Android 13]]<ref name=":3" />
+
+=== Pixel 8 and 8 Pro===
+{{main|Pixel 8}}
+[[File:Pixel 8 and 8 Pro front.svg|thumb|Pixel 8 and Pixel 8 Pro smartphones]]
+Google announced the '''Pixel 8 and 8 Pro''' at a #MadeByGoogle event on October 4, 2023. They were released 8 days later on October 12, 2023.<ref name="Pixel8Announcement">{{Cite web |last=Rich |first=Jason R. |date=October 4, 2023 |title=Google just announced the new Pixel 8 and Pixel 8 Pro smartphones. Our phone experts reveal if they're worth it |url=https://www.cbsnews.com/essentials/google-pixel-8-and-pixel-8-pro-smartphone-announcement/|url-status=live|archive-url=https://web.archive.org/web/20240129205045/https://www.cbsnews.com/essentials/google-pixel-8-and-pixel-8-pro-smartphone-announcement/|archive-date=January 29, 2024|access-date=February 14, 2024 |publisher=[[CBS News]]}}</ref>
+
+*Display: ''Pixel 8'': 6.2-inch OLED (1080×2400, 20:9, 428&nbsp;ppi) Smooth display 60&nbsp;HZ — 120&nbsp;HZ; ''Pixel 8 Pro'': 6.7" OLED (1344×2992, 20:9, 489&nbsp;ppi) Smooth display 1&nbsp;HZ — 120&nbsp;HZ
+*Processor: Google Tensor G3
+*Storage: ''Pixel 8'': 128&nbsp;GB / 256&nbsp;GB UFS 3.1; ''Pixel 8 Pro'': 128&nbsp;GB / 256&nbsp;GB / 512&nbsp;GB / 1&nbsp;TB UFS 3.1
+*Memory: ''Pixel 8'': 8&nbsp;GB LPDDR5X RAM; ''Pixel 8 Pro'': 12&nbsp;GB LPDDR5X RAM
+*Camera: ''Pixel 8'': ''Rear'' 50&nbsp;MP Octa PD (f/1.68) main; 12&nbsp;MP (f/2.2) ultrawide; ''Front'' 10.5&nbsp;MP (f/2.2); ''Pixel 8 Pro'': ''Rear'' 50&nbsp;MP Octa PD (f/1.68) main; 48&nbsp;MP Quad PD (f/1.95) ultrawide; 48&nbsp;MP Quad PD (f/2.8) telephoto;''Front'' 10.5&nbsp;MP Dual PD (f/2.2)
+*Battery: ''Pixel 8'': Non-removable 4575&nbsp;mAh battery, with fast and wireless charging; ''Pixel 8 Pro'': Non-removable 5050&nbsp;mAh battery, with fast and wireless charging
+*Materials: ''Pixel 8'': Aluminum housing & frame, scratch-resistant Corning Gorilla Glass Victus cover glass, glass back; ''Pixel 8 Pro'': Aluminum housing & frame, scratch-resistant Corning Gorilla Glass Victus 2 cover glass, glass back
+*Colors: Mint {{Colorbox|#dbefe4}}, Obsidian {{Colorbox|#232323}}, Hazel {{Colorbox|#8a8b87}} (Pixel 8 only), Rose {{Colorbox|#fee0ca}} (Pixel 8 only), Bay {{Colorbox|#8bbfed}} (Pixel 8 Pro only), and Porcelain {{Colorbox|#e1dacf}} (Pixel 8 Pro only)
+*Operating System: [[Android 14]], with 7 years of OS/security updates for both
+
+=== Pixel 8a ===
+{{main|Pixel 8a}}
+The Pixel 8a is a mid-range addition to the Pixel 8 series. It was announced on the [[Made by Google]] blog on May 7, 2024.<ref>{{Cite web |date=May 7, 2024 |title=Meet Pixel 8a: The Google AI phone at an unbeatable value |url=https://blog.google/products/pixel/pixel-8a-launch/|access-date=May 7, 2024 |website=[[Google]] |language=en-us}}</ref>
+*Display: 6.1" OLED (1080×2400, 20:9, 430&nbsp;ppi) Smooth display 60&nbsp;HZ - 120&nbsp;HZ
+*Processor: Google Tensor G3
+*Storage: 128&nbsp;GB / 256&nbsp;GB UFS 3.1
+*Memory: 8&nbsp;GB LPDDR5X RAM
+*Camera: ''Rear'' 64&nbsp;MP Octa PD (f/1.89) main; 13&nbsp;MP (f/2.2) ultrawide; ''Front'' 13&nbsp;MP (f/2.2)
+*Battery: Non-removable 4492&nbsp;mAh battery, with 18 W fast charging and 7.5 W Qi wireless charging
+*Materials: Aluminum frame, scratch-resistant Corning Gorilla Glass 3 cover glass, plastic back, IP67 dust/water-resistant
+*Colors: Aloe {{Colorbox|#AEFDC0}}, Bay {{Colorbox|#8bbfed}}, Porcelain {{Colorbox|#e1dacf}}, Obsidian {{Colorbox|#232323}}
+*Operating System: [[Android 14]], with 7 years of OS/security updates<ref>{{cite web|access-date=May 23, 2024 |title=Pixel 8a Battery, Screen, Processor and AI Specs |url=https://store.google.com/us/product/pixel_8a_specs?hl=en-US |website=Google Store}}</ref>
+
+=== Pixel 9 ===
+{{main|Pixel 9}}
+Google announced the '''Pixel 9''' at the [[Made by Google]] event, along with the '''Pixel 9 Pro, Pixel 9 Pro XL, and Pixel 9 Pro Fold''' on August 13, 2024.<ref name=":4">{{Cite web |date=August 13, 2024 |title=New Pixel 9, Pixel 9 Pro, Pixel 9 Pro XL: Specs, design, price and more |url=https://blog.google/products/pixel/google-pixel-9-pro-xl/|access-date=September 25, 2024 |website=[[Google]] |language=en-us}}</ref>
+*Display: 6.3" Actua (1080×2424 OLED,<ref name="Pixel9specs">{{Cite web|access-date=September 25, 2024 |title=Pixel 9 Tech Specs, Features, Screen Size & Battery Life |url=https://store.google.com/us/product/pixel_9_specs?hl=en-US |website=Google Store}}</ref> 20:9, 422&nbsp;ppi) Smooth display 60-120&nbsp;Hz
+*Processor: Google Tensor G4
+*Storage: 128&nbsp;GB / 256&nbsp;GB UFS 3.1
+*Memory: 12&nbsp;GB LPDDR5X RAM
+*Camera: ''Rear'' 50&nbsp;MP Octa PD (f/1.68) main; 48&nbsp;MP Quad PD (f/1.7) ultrawide; ''Front'' 10.5&nbsp;MP (f/2.2)
+*Battery: 4558&nbsp;mAh battery, with fast and wireless charging
+*Materials: 100% recycled aluminum frame, scratch-resistant Corning Gorilla Glass Victus 2 cover glass, Corning Gorilla Glass Victus 2 polished back with satin finish metal frame, IP68 dust/water-resistant
+*Colors: Peony {{Colorbox|#FEB1BD}}, Wintergreen {{Colorbox|#DEF4DF}}, Porcelain {{Colorbox|#FBF3ED}}, Obsidian {{Colorbox|#484848}}
+*Operating System: [[Android 14]], with 7 years of OS/security updates<ref name="Pixel9specs"/>
+
+=== Pixel 9 Pro & Pro XL ===
+{{main|Pixel 9 Pro}}
+Google announced the '''Pixel 9 Pro''' and '''Pixel 9 Pro XL''' at the [[Made by Google]] event, alongside the '''Pixel 9''' and the '''Pixel 9 Pro Fold''' on August 13, 2024.<ref name=":4" />
+*Display: 6.3" Super Actua (LTPO) display (1280×2856, 20:9, 495&nbsp;ppi) Smooth display 1-120&nbsp;Hz (Pro); 6.8" Super Actua (LTPO) display (1344×2992, 20:9, 486&nbsp;ppi) Smooth display 1-120&nbsp;Hz (Pro XL)
+*Processor: Google Tensor G4
+*Storage: 128&nbsp;GB / 256&nbsp;GB / 512&nbsp;GB / 1&nbsp;TB UFS 3.1
+*Memory: 16&nbsp;GB LPDDR5X RAM
+*Camera: ''Rear'' 50&nbsp;MP Octa PD (f/1.68) main; 48&nbsp;MP Quad PD ultrawide (f/1.7); 48&nbsp;MP Quad PD telephoto (f/2.8); 42&nbsp;MP Dual PD selfie (f/2.2)
+*Battery: 4558&nbsp;mAh (Pro) and 4942&nbsp;mAh (Pro XL) batteries, both with fast and wireless charging
+*Materials: 100% recycled aluminum frame, scratch-resistant Corning Gorilla Glass Victus 2 cover glass, Corning Gorilla Glass Victus 2 silky matte back with polished finish metal frame, IP68 dust/water-resistant
+*Colors: Rose Quartz {{Colorbox|#fee2ee}}, Porcelain {{Colorbox|#f8f1e9}}, Hazel {{Colorbox|#a8ada7}}, Obsidian {{Colorbox|#424242}}
+*Operating System: [[Android 14]], with 7 years of OS/security updates<ref>{{cite web|access-date=September 25, 2024 |title=Tech Specs of Pixel 9 Pro and Pixel 9 Pro XL |url=https://store.google.com/us/product/pixel_9_pro_specs?hl=en-US |website=Google Store}}</ref>
+
+=== Pixel 9 Pro Fold ===
+{{main|Pixel 9 Pro Fold}}
+Google announced the '''Pixel 9 Pro Fold''' at the [[Made by Google]] event, alongside the '''Pixel 9''' and the '''Pixel 9 Pro''' on August 13, 2024.<ref name=":4" />
+
+* Display (External Cover): 6.3" Actua display (1080×2424, 20:9, 422&nbsp;PPI) Smooth Display (60-120Hz)
+* Display (Internal Folding): 8" Super Actua Flex (LTPO) display (2076×2152, 373&nbsp;PPI) Smooth Display (1-120Hz)
+* Processor: Google Tensor G4
+* Storage: 256&nbsp;GB / 512&nbsp;GB / UFS 3.1
+* Memory: 16&nbsp;GB LPDDR5X RAM
+* Rear Camera: 48&nbsp;MP Quad PD (f/1.7) main; 10.5&nbsp;MP Dual PD ultrawide (f/2.2); 10.8&nbsp;MP Dual PD telephoto (f/3.1)
+* Front & Inner Camera: 10&nbsp;MP Dual PD (f/2.2)
+* Battery: 4560&nbsp;mAh, with fast and wireless charging
+* Materials: 100% recycled aluminum frame, scratch-resistant Corning Gorilla Glass Victus 2 cover glass, Corning Gorilla Glass Victus 2 silky matte back with polished finish metal frame, IPX8 water-resistant
+* Colors: Porcelain {{Colorbox|#f8f1e9}} and Obsidian {{Colorbox|#424242}}
+* Operating System: [[Android 14]], with 7 years of OS/security updates<ref>{{Cite web |title=Pixel 9 Pro Fold Features and Specs |url=https://store.google.com/us/product/pixel_9_pro_fold_specs?hl=en-US|access-date=September 27, 2024 |website=Google Store |language=en-US}}</ref>
+
+=== Pixel 9a ===
+{{main|Pixel 9a}}
+The '''Pixel 9a''' is a mid-range variant of the Pixel 9 series. It was announced on March 19, 2025, through a Google blog post.<ref>{{Cite web |date=March 19, 2025 |title=Pixel 9a: The latest A-series phone with Google AI smarts at an unbeatable value |url=https://blog.google/products/pixel/pixel-9a-the-latest-a-series-phone-with-google-ai-smarts-at-an-unbeatable-value/ |access-date=March 20, 2025 |website=[[Google]] |language=en-us}}</ref>
+*Display: 6.3" OLED (1080×2424, 20:9, 422.2&nbsp;ppi) Smooth display (60-120&nbsp;Hz)
+*Processor: Google Tensor G4
+*Storage: 128&nbsp;GB / 256&nbsp;GB UFS 3.1
+*Memory: 8&nbsp;GB LPDDR5X RAM
+*Camera: ''Rear'' 48&nbsp;MP Quad PD (f/1.7) main; 13&nbsp;MP (f/2.2) ultrawide; ''Front'' 13&nbsp;MP (f/2.2)
+*Battery: 5100&nbsp;mAh battery, with 23 W fast charging and 7.5 W Qi wireless charging
+*Materials: 100% recycled aluminum frame, scratch-resistant Corning Gorilla Glass 3 cover glass, plastic back, IP68 dust/water-resistant
+*Colors: Iris {{Colorbox|#B3BCDF}}, Peony {{Colorbox|#FF9CA9}}, Porcelain {{Colorbox|#EEE9E8}}, Obsidian {{Colorbox|#343434}}
+*Operating System: [[Android 15]], with 7 years of OS/security updates<ref>{{cite web|access-date=April 14, 2025 |title=Pixel 9a Phone Specs |url=https://store.google.com/us/product/pixel_9a_specs?hl=en-US |website=Google Store}}</ref>
+
+=== Pixel 10 ===
+{{main|Pixel 10}}
+
+Google launched the '''Pixel 10''' at the 2025 [[Made by Google]] event, alongside the '''Pixel 10 Pro''', '''Pixel 10 Pro XL''' and '''Pixel 10 Pro Fold'''.<ref name="10release">{{Cite web |date=2025-08-20 |title=Powerful and proactive: Pixel 10 phones are here |url=https://blog.google/products/pixel/google-pixel-10-pro-xl/ |access-date=21 August 2025|website=[[Google]] |language=en-us}}</ref>
+
+*Display: 6.3" Actua display (1080×2424, 20:9, OLED, 422 ppi) Smooth Display (60-120 Hz)
+*Processor: Google Tensor G5
+*Storage: 128 GB / 256 GB
+*Memory: 12 GB
+*Camera: ''Rear'' 48 MP Quad PD main (f/1.7), 13 MP Quad PD ultrawide (f/1.7), 10.8 MP Dual PD telephoto (f/1.3); ''Front'' 10.5 MP Dual PD selfie (f/2.2)
+*Battery: 4970 mAh battery with fast charging and Qi2-certified wireless charging
+*Materials: 100% recycled aluminum frame, scratch-resistant Corning Gorilla Glass Victus 2 cover glass, glass back, IP68 dust/water-resistant
+*Colors: Indigo {{Colorbox|#4975d2}}, Frost {{Colorbox|#e0e9fc}}, Lemongrass {{Colorbox|#e4ffb1}}, Obsidian {{Colorbox|#474c4b}}
+*Operating system: [[Android 16]], with 7 years of OS/security updates<ref>{{cite web |title=Google Pixel 10 Features & Specs |url=https://store.google.com/product/pixel_10_specs |website=Google Store |access-date=15 September 2025}}</ref>
+
+=== Pixel 10 Pro & Pro XL ===
+{{main|Pixel 10 Pro}}
+
+Google launched the '''Pixel 10 Pro''' and the '''Pixel 10 Pro XL''' at the 2025 [[Made by Google]] event, alongside the '''Pixel 10''' and the '''Pixel 10 Pro Fold'''.<ref name="10release" />
+
+*Display: 6.3" Super Actua display (1280×2856, 20:9, LTPO OLED, 495 ppi) Smooth Display (1-120 Hz) (Pro); 6.8" Super Actua display (1344×2992, 20:9, LTPO OLED, 486 ppi) Smooth Display (1-120 Hz) (Pro XL)
+*Processor: Google Tensor G5
+*Storage: 128 GB (Pro only); 256 GB / 512 GB / 1 TB (Pro & Pro XL)
+*Memory: 16 GB
+*Camera: ''Rear'' 50 MP Octa PD wide (f/1.68), 48 MP Quad PD ultrawide (f/1.7), 48 MP Quad PD telephoto (f/2.8); ''Front'' 42 MP Dual PD selfie (f/2.2)
+*Battery: 4870 mAh battery with 30 W fast charging and 15 W Qi2-certified wireless charging (Pro); 5200mAh battery with 45W fast charging and 25W Qi2-certified wireless charging (Pro XL)
+*Materials: 100% recycled aluminum frame, scratch-resistant Corning Gorilla Glass Victus 2 cover glass, glass back, IP68 dust/water-resistant
+*Colors: Moonstone {{Colorbox|#9399a8}}, Jade {{Colorbox|#e3efd5}}, Porcelain {{Colorbox|#faf5ee}}, Obsidian {{Colorbox|#565b5b}}
+*Operating system: [[Android 16]], with 7 years of OS/security updates<ref>{{cite web |title=Review Features & Specs of Pixel 10 Pro & Pixel 10 Pro XL |url=https://store.google.com/product/pixel_10_pro_specs |website=Google Store |access-date=14 November 2025}}</ref>
+
+=== Pixel 10 Pro Fold ===
+{{main|Pixel 10 Pro Fold}}
+
+Google launched the '''Pixel 10 Pro Fold''' at the 2025 [[Made by Google]] event, alongside the '''Pixel 10''', '''Pixel 10 Pro''', and '''Pixel 10 Pro Fold'''.<ref name="10release" />
+
+*Display (External Cover): 6.4" Actua display (1080×2364, 20:9, OLED, 408 ppi) Smooth Display (60-120 Hz)
+*Display (Inner Folding): 8" Super Actua Flex display (2076×2152, OLED, 373 PPI) Smooth Display (1-120 Hz)
+*Processor: Google Tensor G5
+*Storage: 256 GB / 512 GB / 1 TB
+*Memory: 16 GB
+*Camera: ''Rear'' 48 MP Quad PD main (f/1.7), 10.8 MP Duel PD ultrawide (f/2.2), 10.8 MP Dual PD telephoto (f/3.1); ''Inner'' 10 MP Dual PD (f/2.2); ''Front'' 10 MP Dual PD selfie (f/2.2)
+*Battery: 5015 mAh battery with 30 W fast charging and 15 W Qi2-certified wireless charging
+*Materials: 100% recycled aluminum frame, scratch-resistant Corning Gorilla Glass Victus 2 cover glass, glass back, IP68 dust/water-resistant
+*Colors: Moonstone {{Colorbox|#9ea6b7}}, Jade {{Colorbox|#dae9cc}}
+*Operating system: [[Android 16]], with 7 years of OS/security updates<ref>{{cite web |title=Review the Specs of the Pixel 10 Pro Fold |url=https://store.google.com/product/pixel_10_pro_fold_specs |website=Google Store |access-date=14 November 2025}}</ref>
+
+=== Pixel 10a ===
+{{main|Pixel 10a}}
+Google announced the '''Pixel 10a''' through a blog post on February 18, 2026. It serves as a mid-range variant of the Pixel 10 series.
+*Display: 6.3" OLED (1080×2424, 20:9, 422.2&nbsp;ppi) Smooth display (60-120&nbsp;Hz)
+*Processor: Google Tensor G4
+*Storage: 128&nbsp;GB / 256&nbsp;GB UFS 3.1
+*Memory: 8&nbsp;GB LPDDR5X RAM
+*Camera: ''Rear'' 48&nbsp;MP Quad PD (f/1.7) main; 13&nbsp;MP (f/2.2) ultrawide; ''Front'' 13&nbsp;MP (f/2.2)
+*Battery: 5100&nbsp;mAh battery, with 30 W fast charging and 10 W Qi wireless charging
+*Materials: 100% recycled aluminum frame, scratch-resistant Corning Gorilla Glass 7i cover glass, plastic back, IP68 dust/water-resistant
+*Colors: Lavender {{Colorbox|#C9D1F8}}, Berry {{Colorbox|#F34656}}, Fog {{Colorbox|#E7EFEE}}, Obsidian {{Colorbox|#2B2B2B}}
+*Operating System: [[Android 16]], with 7 years of OS/security updates<ref>{{Cite web |title=Explore the Pixel 10a Specs |url=https://store.google.com/sg/product/pixel_10a_specs?hl=en-GB |access-date=2026-02-18 |website=store.google.com}}</ref>
+
+== Tablets ==
+
+=== Pixel C ===
+{{Main|Pixel C}}
+
+The Pixel C was announced by Google at an event on September 29, 2015,<ref>{{cite web |last1=Opam |first1=Kwame |title=Google unveils Android-based Pixel C tablet |url=https://www.theverge.com/2015/9/29/9415607/google-pixel-c-tablet-android-marshmallow |website=The Verge |date=September 29, 2015 |publisher=[[Vox Media, Inc.]]}}</ref> alongside the [[Nexus 5X]] and [[Nexus 6P]] phones (among other products). The Pixel C includes a [[USB-C]] port and a 3.5&nbsp;mm headphone jack.<ref>{{cite web |title=Pixel C specifications |url=https://support.google.com/pixel/answer/6328677?hl=en|access-date=September 2, 2016}}</ref> The device shipped with [[Android Marshmallow|Android 6.0.1 Marshmallow]], and later received Android 7.x Nougat and Android 8.x Oreo. Google stopped selling the Pixel C in December 2017.<ref>{{Cite news |url=http://www.androidpolice.com/2017/12/28/pixel-c-dropped-google-store/ |title=The Pixel C has been dropped from the Google Store |last=Whitwam |first=Ryan |date=December 28, 2017 |work=Android Police|access-date=January 7, 2018}}</ref>
+
+* Display: 10.2" display with 2560×1800 pixel resolution
+* Processor: NVIDIA Tegra X1
+* Storage: 32 or 64&nbsp;GB
+* RAM: 3&nbsp;GB
+* Cameras: 8&nbsp;MP rear camera; 2&nbsp;MP front camera
+* Battery: 9000&nbsp;mAh (non-removable)
+
+=== Pixel Slate ===
+{{Main|Pixel Slate}}
+
+The Pixel Slate, a {{convert|12.3|in|cm|abbr=on}} [[2-in-1 laptop|2-in-1 tablet and laptop]], was announced by Google in New York City on October 9, 2018,<ref>{{cite web |url=https://www.cnet.com/news/pixel-3-google-hub-and-pixel-slate-everything-google-just-announced/ |title=Pixel 3, Google Home Hub and Pixel Slate: Everything Google Just Announced |first1=Lori |last1=Grunan |first2=Alina |last2=Bradford |date=October 9, 2018 |publisher=CNET}}</ref> alongside the Pixel 3 and 3 XL. The Pixel Slate includes two USB-C ports but omits the headphone jack. The device runs [[ChromeOS]] on [[Intel]] [[Kaby Lake]] processors, with options ranging from a [[Celeron]] on the low end to an i7 on the high end. In June 2019, Google announced it will not further develop the product line, and cancelled two models that were under development.<ref>{{Cite web |url=https://www.computerworld.com/article/3404206/googles-officially-done-making-its-own-tablets.html |title=Google's officially done making its own tablets |first=J. R. |last=Raphael |date=June 20, 2019 |website=Computerworld}}</ref>
+
+=== Pixel Tablet ===
+{{main|Pixel Tablet}}
+The Pixel Tablet was announced by Google at [[Google I/O#2022|I/O 2022]]. It comes with a stand, similar to that of a [[Google Nest (smart speakers)#Home Hub / Nest Hub|Home Hub]]; however, it is detachable.<ref>{{Cite web |title=The new Google Pixel Tablet, coming in 2023 |url=https://store.google.com/intl/en/ideas/articles/new-pixel-tablet/ |access-date=November 27, 2022 |website=Google Store |language=en}}</ref> It was released on June 20, 2023.<ref>{{Cite web |title=Google Pixel Tablet is finally here: Price, specs, features, dock, and more |url=https://www.androidauthority.com/google-pixel-tablet-3163922/ |access-date=May 11, 2023 |website=Android Authority}}</ref>
+*Display: 10.95-inch LCD (2560×1600, 16:10 [[aspect ratio]]), 60&nbsp;Hz, 500&nbsp;nits
+*Processor: Google Tensor G2
+*Storage: 128&nbsp;GB or 256&nbsp;GB; are non-expandable
+*Memory: 8&nbsp;GB LPDDR5 RAM
+*Camera: Rear and front: 8&nbsp;MP (ƒ/2.0, 1/4" sensor, 1.12&nbsp;μm, 84° FoV) fixed-focus
+*Battery: Non-removable 7,020&nbsp;mAh; charges at 15&nbsp;W, both wired and through the dock; No wireless charging supported.
+*Materials: Aluminium frame, nano ceramic back, no water/dust resistance
+*Colors: Hazel {{Colorbox|#7c817d}}, Porcelain {{Colorbox|#dacfc7}} and Rose {{Colorbox|#e9d0c2}} ; not available in certain areas.
+*Operating system: Android 13 with Pixel UI, at least 3 years of software updates and 5 years of security updates
+
+== Laptops ==
+
+=== Chromebook Pixel (2013) ===
+{{Main|Chromebook Pixel}}
+
+[[File:Chromebook Pixel (WiFi) open.JPG|thumb|upright|Chromebook Pixel (2013)]]
+
+Google announced the first-generation Chromebook Pixel in a blog post on February 21, 2013.<ref>{{cite web |title=The Chromebook Pixel, for what's next |url=https://chrome.googleblog.com/2013/02/the-chromebook-pixel-for-whats-next.html|access-date=September 2, 2016}}</ref> The laptop includes an SD/multi-card reader, [[Mini DisplayPort]], combination headphone/microphone jack, and two USB 2.0 ports. Some of the device's other features include a backlit keyboard, a "fully clickable etched glass touchpad," integrated stereo speakers, and two built-in microphones.<ref>{{cite web |title=Chromebook Pixel specifications |url=https://support.google.com/chromebook/answer/2762037?hl=en|access-date=September 2, 2016|archive-date=October 11, 2016|archive-url=https://web.archive.org/web/20161011052035/https://support.google.com/chromebook/answer/2762037?hl=en|url-status=dead}}</ref>
+
+* Display: 12.85" display with 2560×1700 pixel resolution
+* Processor: 3rd generation ([[Ivy Bridge (microarchitecture)|Ivy Bridge]]) Intel Core i5 processor
+* Storage: 32&nbsp;GB internal storage and 1&nbsp;TB [[Google Drive]] storage for 3 years
+* RAM: 4&nbsp;GB
+* Battery: 59&nbsp;[[Watt-hour|Wh]]
+
+=== Chromebook Pixel (2015) ===
+{{Main|Chromebook Pixel}}
+
+On March 11, 2015, Google announced the second generation of the Chromebook Pixel in a blog post.<ref>{{cite web |title=Meet the updated Chromebook Pixel and the new Google Store |url=https://blog.google/products/chromebooks/meet-updated-chromebook-pixel-and-new/ |access-date=October 22, 2025 |date=March 11, 2015 |first1=Andrew |last1=Bowers}}</ref> The laptop includes two USB-C ports, two USB 3.0 ports, an SD card slot, and a combination headphone/microphone jack. The device also has a backlit keyboard, a "multi-touch, clickable glass touchpad," built-in stereo speakers, and two built-in microphones, among other features.<ref>{{cite web |title=Chromebook Pixel (2015) specifications |url=https://support.google.com/chromebook/answer/6164568|access-date=September 2, 2016|archive-date=October 11, 2016|archive-url=https://web.archive.org/web/20161011051941/https://support.google.com/chromebook/answer/6164568|url-status=dead}}</ref>
+
+Google discontinued the 2015 Chromebook Pixel on August 29, 2016.<ref>{{cite web |last1=Novet |first1=Jordan |title=Google discontinues the Chromebook Pixel 2 |date=August 30, 2016 |url=https://venturebeat.com/2016/08/29/chromebook-pixel-2-discontinued/ |access-date=September 2, 2016 |archive-date=September 2, 2016 |archive-url=https://web.archive.org/web/20160902042451/https://venturebeat.com/2016/08/29/chromebook-pixel-2-discontinued/ |url-status=dead }}</ref><ref>{{cite web |last1=Parker |first1=Peter |title=Google discontinues the Pixel 4 less than 1 year after launch |url=https://theappdevelopers.co.uk/portfolio/google-discontinues-the-pixel-4-nine-months-after-release/|access-date=August 7, 2020|archive-date=June 24, 2021|archive-url=https://web.archive.org/web/20210624124125/https://theappdevelopers.co.uk/portfolio/google-discontinues-the-pixel-4-nine-months-after-release/|url-status=dead}}</ref>
+
+* Display: 12.85" display with 2560×1700 pixel resolution
+* Processor: 5th generation ([[Broadwell (microarchitecture)|Broadwell]]) Intel Core i5 or i7 processor
+* Storage: 32 or 64&nbsp;GB internal storage and 1&nbsp;TB Google Drive storage for 3 years
+* RAM: 8 or 16&nbsp;GB
+* Battery: 72&nbsp;Wh
+
+=== Pixelbook ===
+{{Main|Pixelbook}}
+
+On October 4, 2017, Google launched the first generation of the Pixelbook at its Made by Google 2017 event.<ref>{{Cite news |url=https://www.engadget.com/2017/10/04/google-pixelbook-chromebook/ |title=Google's Pixelbook is a 2-in-1 premium Chromebook |work=Engadget|access-date=October 4, 2017 |language=en-US}}</ref>
+
+* Display: 12.3" display with 2400×1600 pixel resolution (235 PPI)
+* Processor: 7th generation ([[Kaby Lake]]) Intel Core i5 or i7 processor
+* Storage: 128, 256, or 512&nbsp;GB internal storage
+* RAM: 8 or 16&nbsp;GB
+
+=== Pixelbook Go ===
+{{main|Pixelbook Go}}
+
+On October 15, 2019, Google announced a mid-range version of the Pixelbook, named the Pixelbook Go, at its Made by Google 2019 event.<ref>{{Cite web |url=https://www.theverge.com/2019/10/15/20908076/google-pixelbook-go-chromebook-photos-video-price-specs-features-hands-on |title=Pixelbook Go: Google finally made a reasonably priced Chromebook |work=[[The Verge]] |last=Bohn |first=Dieter |date=October 15, 2019|access-date=October 16, 2019}}</ref>
+
+* Display: 13.3" display with 1920×1080 pixel resolution (166 ppi) or "Molecular Display" 3840×2160 pixel resolution (331 PPI)
+* Processor: 8th generation ([[Kaby Lake#Amber Lake|Amber Lake]]) Intel Core m3, i5 or i7 processor
+* Storage: 64, 128, or 256&nbsp;GB internal storage
+* RAM: 8 or 16&nbsp;GB
+* Battery: 47&nbsp;Wh, 56&nbsp;Wh (Molecular Display)
+
+== Smartwatches ==
+
+=== Pixel Watch ===
+{{main|Pixel Watch}}
+The Google Pixel Watch is a first-generation wearable made by Google that released in October 2022. It features a circular display. Multiple wristbands for the watch are available on the [[Store.google.com|Google Store]] for purchase.
+
+=== Pixel Watch 2 ===
+{{main|Pixel Watch 2}}
+The Pixel Watch 2 is a second-generation wearable made by Google that released in October 2023. It features a similar design to the first-generation [[Pixel Watch]]'s circular display. Multiple wristbands for the watch are available on the [[Store.google.com|Google Store]] for purchase.
+
+=== Pixel Watch 3 ===
+{{main|Pixel Watch 3}}
+The Pixel Watch 3 is a third-generation wearable made by Google that released in August 2024.
+
+=== Pixel Watch 4 ===
+{{main|Pixel Watch 4}}
+The Pixel Watch 4 is a fourth-generation wearable made by Google, announced in August 2025.
+
+== Accessories ==
+
+=== Pixel Buds ===
+{{main|Pixel Buds}}
+
+At Google's October 2017 hardware event, a set of [[wireless communication|wireless]] [[Headphones#Earphones|earbuds]] were unveiled alongside the Pixel 2 smartphones.<ref>{{Cite web |url=https://9to5google.com/2017/10/04/google-earphones-assistant-headphones/ |title=Google Pixel Buds: Assistant-enabled Bluetooth neckbuds from Google |last=Li |first=Abner |date=October 4, 2017 |website=[[9to5Google]]|access-date=October 4, 2017}}</ref> The earbuds are designed for phones running Android Marshmallow or higher, and work with [[Google Assistant]].<ref>{{Cite news |url=https://www.theverge.com/circuitbreaker/2017/10/4/16401132/google-pixel-buds-wireless-headphones-announced-price-release-date |title=Google's Pixel Buds are the company's first wireless headphones |last=Carman |first=Ashley |date=October 4, 2017 |work=[[The Verge]]|access-date=October 4, 2017}}</ref> In addition to audio playback and answering calls, the earbuds support translation in 40 languages through [[Google Translate]].<ref>{{Cite news |url=https://arstechnica.com/gadgets/2017/10/google-pixel-buds-are-wireless-earbuds-that-translate-conversations-in-real-time/ |title=Google Pixel Buds are wireless earbuds that translate conversations in real time |last=Pallandino |first=Valentina |date=October 4, 2017 |work=[[Ars Technica]]|access-date=October 4, 2017}}</ref> The earbuds can auto-pair with the [[Pixel 2]] with the help of the [[Google Assistant]] and "Nearby".<ref>{{Cite news |url=https://9to5google.com/2017/10/04/googles-pixel-buds-use-assistant-to-auto-pair-your-phone-just-like-apples-airpods/ |title=Google's Pixel Buds use Assistant to auto-pair to your phone, just like Apple's AirPods [Update] |date=October 4, 2017 |work=[[9to5Google]]|access-date=February 8, 2018 |language=en-US}}</ref> The Pixel Buds are available in the colors Just Black, Clearly White and Kinda Blue. The earbuds have a battery capacity of 120&nbsp;mAh, while the charging case that comes with the Pixel Buds have a battery capacity of 620&nbsp;mAh.<ref name=":1">{{Cite web |url=https://store.google.com/product/google_pixel_buds |title=Google Pixel Buds |website=Google Store |language=en-US|access-date=February 8, 2018}}</ref> The earbuds are priced at $159.<ref name=":1" />
+
+A [[Pixel Buds#Second generation|second generation of Pixel Buds]] were released in 2020, omitting the cord between the two earbuds. In June 2021, a mid-range variant of the second-generation earbuds were released as the [[Pixel_Buds#Pixel_Buds_A-Series|Pixel Buds A-Series]].
+
+At the [[Google I/O#2022|2022 Google I/O event]], an enhanced version of the second-generation earbuds was announced and later released in May 2022, as the [[Pixel_Buds#Pixel_Buds_Pro|Pixel Buds Pro]], which featured [[Active noise control|Active Noise Cancellation]] mode, transparency mode, and [[3D audio effect|spatial audio]] (added in a subsequent software update). The "Pro" earbuds are priced at $199.
+
+At Google's 2025 Made by Google event, the [[Pixel Buds#Pixel Buds 2a|Pixel Buds 2a]] were announced.
+
+=== Pixelbook Pen ===
+Alongside the launch of the Pixelbook in October 2017, Google announced the Pixelbook Pen, a [[stylus]] to be used with the Pixelbook. It has pressure sensitivity as well as support for [[Google Assistant]]. The Pen is powered by a replaceable [[AAAA battery]] and is priced at US$99.<ref>{{Cite news |url=https://www.engadget.com/2017/10/04/google-pixelbook-pen/ |title=Google's Pixelbook Pen searches for what you circle |work=Engadget|access-date=October 14, 2017 |language=en-US}}</ref>
+
+=== Pixel Stand ===
+In October 2018, Google announced the Pixel Stand alongside the Pixel 3 smartphones.<ref name="PixelStandCNet">{{cite web |url=https://www.cnet.com/how-to/pixel-stand-5-things-to-know/ |date=October 22, 2018 |last=Cipriani |first=Jason|access-date=January 4, 2019 |publisher=[[CNET]] |title=Pixel Stand: 5 things to know about Google's wireless charger}}</ref> In addition to standard 5&nbsp;watt [[Qi (standard)|Qi]] wireless charging, the Pixel Stand has wireless 10&nbsp;watt charging using a proprietary technology from Google.<ref name="PixelStandDigitalTrends">{{cite web |url=https://www.digitaltrends.com/cell-phone-accessories-reviews/google-pixel-stand-review/ |date=October 26, 2018 |last=Chokkattu |first=Julian|access-date=January 4, 2019 |work=[[Digital Trends]] |title=Google Pixel Stand Review}}</ref> It also enables a software mode on the Pixel 3 that allows it to act as a [[Smart speaker|smart display]] similar to the [[Google Home Hub]]. In October 2021, alongside the release of the [[Pixel 6]] and [[Pixel 6 Pro]] smartphones, a second-generation Pixel Stand was made to support the phones' new wireless charging speeds of 23 watts.<ref>{{Cite web |date=October 19, 2021 |title=Pixel Stand 2 brings 23W wireless charging to new Pixel 6 and more |url=https://www.trustedreviews.com/news/pixel-stand-2-brings-23w-wireless-charging-to-new-pixel-6-and-more-4174707 |access-date=May 12, 2023 |website=Trusted Reviews |language=en}}</ref>
+
+== Software ==
+
+=== Pixel UI (Pixel Launcher) ===
+{{Infobox OS
+| name = Pixel Launcher
+| screenshot = 
+| screenshot_size = 130px
+| caption = [[Android 13]] home screen with Pixel Launcher
+| developer = [[Google]]
+| family = [[Unix-like]] (modified [[Linux kernel]])
+| working state = Current
+| latest release version = [[Android 16]]
+| latest release date = {{Start date and age|2025|1|3}}
+| marketing_target = [[Smartphone]]s and [[tablet computer]]s
+| other articles = [[Android version history]]
+}}
+Google Pixel UI<ref>{{Cite web |url=https://www.androidauthority.com/google-pixel-ui-3025558/ |date=June 1, 2022 |last=Brown |first=C. Scott |publisher=Android Authority |title=Pixel UI guide: Everything you need to know about Google's Android skin |access-date=July 12, 2022}}</ref> is an Android skin used for the Pixel phones and the Pixel Tablet, developed by Google. Beginning with the first generation of Google Pixel phones,<ref>{{Cite web |url=https://play.google.com/store/apps/details?id=com.google.android.apps.nexuslauncher |title=Pixel Launcher |access-date=January 15, 2018 |website=Play Store}}</ref><ref>{{Cite web |url=https://store.google.com/us/product/pixel_phone?hl=en-US |work=Google |title=Pixel – The First Phone by Google|access-date=January 15, 2018}}</ref> Google replaced the launcher for their smartphones with Pixel Launcher instead of Google Now Launcher which is the default launcher for Nexus series.
+
+Unlike the Nexus phones, which Google shipped with "stock" Android (AOSP), the Pixel UI that came with the first generation Pixel phones were slightly modified compared to "stock" Android. Currently, Pixel UI and its home launcher are available on Pixel family devices only. (However, third-party modifications allow non-Pixel smartphones to install the Pixel Launcher with Google Now feed integration).<ref>{{Cite web |url=https://forum.xda-developers.com/android/apps-games/app-rootless-pixel-2-launcher-google-t3688393 |work=paphonb – XDA-Developers |title=Rootless Pixel 2 Launcher with Google Now page working |date=October 13, 2017 |access-date=January 16, 2018}}</ref>
+
+During the launch of Android 4.x "Ice Cream Sandwich", Google had started to replace some stock Android apps with Google apps, including the stock Android music apps with Google Play Music, and Android browser with Google Chrome. By the launch of Android 4.4.x "KitKat", most of the stock Android apps had been replaced with Google apps, such as the stock Android gallery being replaced with Google Photos, etc.<ref>{{Cite web |url=https://arstechnica.com/gadgets/2013/10/googles-iron-grip-on-android-controlling-open-source-by-any-means-necessary/3/ |work=Ars Technica |title=Google's iron grip on Android: Controlling open source by any means necessary |date=October 31, 2013 |access-date=January 11, 2018}}</ref> This also includes the Android home launcher being replaced with the Google Now Launcher, allowing users to access to their Google Now feed more conveniently.<ref>{{Cite web |url=https://www.androidcentral.com/android-44-google-now-finally-part-your-home-screen |work=Android Central |title=In Android 4.4, Google Now is finally part of your home screen|access-date=January 11, 2018}}</ref> However, the rest of the UI was still similar to stock Android, including the settings menu and toggles buttons colors.<ref>{{Cite web |url=https://arstechnica.com/gadgets/2016/12/android-7-1-1-in-pictures-nexus-versus-pixel/ |work=Ars Technica |title=Android 7.1.1 in pictures: Nexus versus Pixel |date=December 6, 2016 |access-date=January 11, 2018}}</ref>
+
+Google officially launched the Pixel Launcher and Pixel UI together in the Pixel phones; unlike the Google Now Launcher which allowed non Nexus phones to install, the Pixel Launcher was only available on the Pixel phones. Most Android smartphones including Nexus phones are incompatible with the launcher.<ref>{{Cite web |url=https://www.techrepublic.com/article/goodbye-google-now-launcher-hello-pixel-launcher/ |work=TechRepublic |title=Goodbye Google Now Launcher, hello Pixel Launcher|access-date=January 11, 2018}}</ref> Some modifications Google had done to differentiate Pixel UI with stock Android included the setting toggle's buttons colors, and 24/7 online support which allowed the user to get direct support from Google's customer support.<ref>{{Cite web |url=https://www.androidcentral.com/pixels-secret-weapon-247-support |work=Android Central |title=The Pixel's secret weapon: 24/7 support |date=October 18, 2016 |access-date=January 11, 2018}}</ref>
+
+=== Pixel Camera ===
+{{main|Pixel Camera}}
+
+The [[Pixel Camera]] is a camera software shipped with Pixel devices. The app features a basic [[camera]] interface along with several other features, such as Night Vision, Super Res Zoom, and Motion Photos. Initially released on April 16, 2014, as [[Google Camera]], the application could be used on the Google Pixel phone until October 2023, when the software was renamed and delisted from [[Google Play]]. Multiple unofficial [[Port (computer software)|ports]] have been created to install features of the Pixel Camera on non-Google branded devices or older models of the phone.{{Citation needed|date=July 2025}}
+
+== See also ==
+* [[List of Google Play edition devices]]
+* [[List of Google products]]
+
+== Notes ==
+{{notelist}}
+
+== References ==
+{{Reflist|refs =
+
+<ref name="IMX378-XDA">{{cite web |first=Steven |last=Zimmerman |url=http://www.xda-developers.com/sony-imx378-comprehensive-breakdown-of-the-google-pixels-sensor-and-its-features/ |title=Sony IMX378: Comprehensive Breakdown of the Google Pixel's Sensor and its Features |publisher=[[XDA Developers]] |date=October 12, 2016  |access-date=October 17, 2016}}</ref>
+<ref name="pixel-eol">{{cite web |author=<!--Not stated--> |url=https://support.google.com/nexus/answer/4457705?hl=en |title=Learn when you'll get software updates on Google Pixel phones - Nexus Help |publisher=Google Inc.  |access-date=June 21, 2023}}</ref>
+
+}}
+
+== External links ==
+{{commons category|Google Pixel}}
+* [http://store.google.com/ Google Store]
+
+{{Google Pixel}}
+{{Android}}
+{{Portal bar|Internet}}
+
+[[Category:Google Pixel| ]]
+[[Category:Android (operating system)]]
+[[Category:Computer-related introductions in 2013]]
+[[Category:Google hardware|Pixel]]
+[[Category:Tablet computers]]

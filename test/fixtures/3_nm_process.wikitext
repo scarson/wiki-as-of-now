@@ -1,0 +1,244 @@
+{{Short description|Semiconductor manufacturing process}}
+{{Semiconductor manufacturing processes}}
+{{Use dmy dates|date=November 2023}}
+In [[Semiconductor device fabrication|semiconductor manufacturing]], the '''"3&nbsp;nm process"''' is the next [[die shrink]] after the "[[5 nm process|5 nm]]" [[MOSFET]] (metal–oxide–semiconductor field-effect transistor) [[Semiconductor device fabrication#Technology node|technology node]]. South Korean chipmaker [[Samsung]] started shipping its "3&nbsp;nm" [[Multigate device#GAAFET|gate all around]] (GAA) process, named 3GAA, in mid-2022.<ref name=":0" /><ref name="samsung-3nm-gaa" /> On 29 December 2022, Taiwanese chip manufacturer [[TSMC]] announced that volume production using its "3&nbsp;nm" [[Semiconductor device fabrication#Semiconductor node|semiconductor node]] (N3) was underway with good [[Semiconductor device fabrication#Device yield|yields]].<ref name=n3vm /> An enhanced "3&nbsp;nm" chip process called "N3E" may have started production in 2023.<ref name="Zafar2022">{{cite web |url=https://wccftech.com/tsmc-exceeds-3nm-yield-expectations-production-can-start-sooner-than-planned/ |author=Ramish Zafar |title=TSMC Exceeds 3nm Yield Expectations & Production Can Start Sooner Than Planned |website=wccftech.com |date=4 March 2022 |access-date=19 March 2022 |archive-date=16 March 2022 |archive-url=https://web.archive.org/web/20220316084750/https://wccftech.com/tsmc-exceeds-3nm-yield-expectations-production-can-start-sooner-than-planned/ |url-status=live}}</ref> American manufacturer [[Intel]] planned to start "3&nbsp;nm" production in 2023.<ref name=intel_rm_2025 /><ref>{{cite news |last1=Gartenberg |first1=Chaim |title=Intel has a new architecture roadmap and a plan to retake its chipmaking crown in 2025 |url=https://www.theverge.com/2021/7/26/22594074/intel-acclerated-new-architecture-roadmap-naming-7nm-2025 |access-date=22 December 2021 |work=[[The Verge]] |date=26 July 2021 |archive-date=20 December 2021 |archive-url=https://web.archive.org/web/20211220083235/https://www.theverge.com/2021/7/26/22594074/intel-acclerated-new-architecture-roadmap-naming-7nm-2025 |url-status=live}}</ref><ref>{{Cite web|title=Intel Technology Roadmaps and Milestones|url=https://www.intel.com/content/www/us/en/newsroom/news/intel-technology-roadmaps-milestones.html#gs.tuhd2s|access-date=17 February 2022|website=Intel|language=en|archive-date=16 July 2022|archive-url=https://web.archive.org/web/20220716192641/https://www.intel.com/content/www/us/en/newsroom/news/intel-technology-roadmaps-milestones.html#gs.tuhd2s|url-status=live}}</ref>
+
+Samsung's "3&nbsp;nm" process is based on [[Multigate device#GAAFET|GAAFET]] (gate-all-around field-effect transistor) technology, a type of [[Multigate device|multi-gate MOSFET]] technology, while TSMC's 3&nbsp;nm process still uses [[FinFET]] (fin field-effect transistor) technology,<ref>{{Cite web|url=https://www.anandtech.com/show/16041/where-are-my-gaafets-tsmc-to-stay-with-finfet-for-3nm|title=Where are my GAA-FETs? TSMC to Stay with FinFET for 3nm|first=Dr Ian|last=Cutress|website=AnandTech|access-date=12 September 2020|archive-date=2 September 2020|archive-url=https://web.archive.org/web/20200902075730/https://www.anandtech.com/show/16041/where-are-my-gaafets-tsmc-to-stay-with-finfet-for-3nm|url-status=dead}}</ref> despite TSMC developing GAAFET transistors.<ref name="auto1">{{Cite web|url=https://www.extremetech.com/computing/314204-tsmc-plots-an-aggressive-course-for-3nm-lithography-and-beyond|title=TSMC Plots an Aggressive Course for 3nm Lithography and Beyond – ExtremeTech|website=Extremetech.com|date=25 August 2020 |access-date=12 September 2020|archive-date=22 September 2020|archive-url=https://web.archive.org/web/20200922235956/https://www.extremetech.com/computing/314204-tsmc-plots-an-aggressive-course-for-3nm-lithography-and-beyond|url-status=live}}</ref> Specifically, Samsung planned to use its own variant of GAAFET called MBCFET (multi-bridge channel field-effect transistor).<ref>{{Cite web|url=https://techxplore.com/news/2019-05-samsung-foundry-event-3nm-mbcfet.html|title=Samsung at foundry event talks about 3nm, MBCFET developments|website=Techxplore.com|access-date=22 November 2021|archive-date=22 November 2021|archive-url=https://web.archive.org/web/20211122203559/https://techxplore.com/news/2019-05-samsung-foundry-event-3nm-mbcfet.html|url-status=live}}</ref> Intel's process (dubbed "Intel&nbsp;3", without the "nm" suffix) would use a refined, enhanced and optimized version of FinFET technology compared to its previous process nodes in terms of performance gained per watt, use of [[Extreme ultraviolet lithography|EUV lithography]], and power and area improvement.<ref>{{Cite web |url=https://www.forbes.com/sites/patrickmoorhead/2021/07/26/intel-updates-idm-20-strategy-with-new-node-naming-and-technologies/?sh=59b7592729d5 |title=Intel Updates IDM 2.0 Strategy With New Node Naming And Transistor And Packaging Technologies |date=26 July 2021 |author=Patrick Moorhead |website=Forbes |access-date=18 October 2021 |archive-date=18 October 2021 |archive-url=https://web.archive.org/web/20211018091320/https://www.forbes.com/sites/patrickmoorhead/2021/07/26/intel-updates-idm-20-strategy-with-new-node-naming-and-technologies/?sh=59b7592729d5 |url-status=live}}</ref>
+
+{| class="wikitable" style="float:right"
+|+ style="text-align:left" | Projected node properties according to International Roadmap for Devices and Systems (2021)<ref name=IRDS/>
+|-
+! Node<br />name !! Gate<br />pitch !! Metal<br />pitch !! Year
+|-
+| "[[5 nm process|5&nbsp;nm]]" || 51&nbsp;nm || 30&nbsp;nm || 2020
+|-
+| "3&nbsp;nm" || 48&nbsp;nm || 24&nbsp;nm || 2022
+|-
+| "[[2 nm process|2&nbsp;nm]]" || 45&nbsp;nm || 20&nbsp;nm || 2025
+|-
+| "[[1 nm process|1&nbsp;nm]]" || 40&nbsp;nm || 16&nbsp;nm || 2027
+|}
+
+The term "3&nbsp;nanometer" has no direct relation to any actual physical feature (such as gate length, metal pitch, or gate pitch) of the transistors. According to the projections contained in the 2021 update of the [[International Roadmap for Devices and Systems]] published by [[IEEE Standards Association]] Industry Connection, a "3&nbsp;nm" node is expected to have a contacted gate pitch of 48 nanometers, and a tightest metal pitch of 24&nbsp;nanometers.<ref name=IRDS>{{Citation |url=https://irds.ieee.org/editions/2021/more-moore |title=INTERNATIONAL ROADMAP FOR DEVICES AND SYSTEMS: More Moore |year=2021 |publisher=IEEE |page=7 |access-date=7 August 2022 |archive-date=7 August 2022 |archive-url=https://web.archive.org/web/20220807181530/https://irds.ieee.org/editions/2021/more-moore}}</ref>
+
+However, in real world commercial practice, "3&nbsp;nm" is used primarily as a marketing term by individual microchip manufacturers (foundries) to refer to a new, improved generation of silicon semiconductor chips in terms of increased transistor density (i.e. a higher degree of miniaturization), increased speed and reduced power consumption.<ref>{{Cite web |url=https://www.pcgamesn.com/amd/tsmc-7nm-5nm-and-3nm-are-just-numbers |title=TSMC's 7nm, 5nm, and 3nm "are just numbers... it doesn't matter what the number is" |website=Pcgamesn.co |date=10 September 2019 |access-date=20 April 2020 |archive-date=17 June 2020 |archive-url=https://web.archive.org/web/20200617230408/https://www.pcgamesn.com/amd/tsmc-7nm-5nm-and-3nm-are-just-numbers |url-status=live}}</ref><ref>{{Cite journal |url=https://spectrum.ieee.org/a-better-way-to-measure-progress-in-semiconductors |author=Samuel K. Moore |title=A Better Way to Measure Progress in Semiconductors: It's time to throw out the old Moore's Law metric |publisher=IEEE |journal=IEEE Spectrum |date=21 July 2020 |access-date=20 April 2021 |archive-date=2 December 2020 |archive-url=https://web.archive.org/web/20201202002819/https://spectrum.ieee.org/semiconductors/devices/a-better-way-to-measure-progress-in-semiconductors |url-status=live}}</ref> There is no industry-wide agreement among different manufacturers about what numbers would define a "3&nbsp;nm" node.<ref name=IRDS2>{{Citation |url=https://irds.ieee.org/editions/2021/more-moore |title=INTERNATIONAL ROADMAP FOR DEVICES AND SYSTEMS: More Moore |year=2021 |publisher=IEEE |page=6 |access-date=7 August 2022 |archive-date=7 August 2022 |archive-url=https://web.archive.org/web/20220807181530/https://irds.ieee.org/editions/2021/more-moore}}, according to which "There is not yet a
+consensus on the node naming across different foundries and integrated device manufacturers (IDMs)".</ref> Typically the chip manufacturer refers to its own previous process node (in this case the "[[5 nm process|5&nbsp;nm]] node") for comparison. For example, TSMC stated in August 2020 that its 3&nbsp;nm FinFET chips would reduce power consumption by 25–30% at the same speed, increase speed by 10–15% at the same amount of power and increase transistor density by about 33% compared to its previous "5&nbsp;nm" FinFET chips.<ref>{{Cite web |title=TSMC details its future 5nm and 3nm manufacturing processes—here's what it means for Apple silicon |publisher=Macworld |url=https://www.macworld.com/article/234529/tsmc-details-its-future-5nm-and-3nm-manufacturing-processesheres-what-it-means-for-apple-silicon.html |date=25 August 2020 |author=Jason Cross |access-date=20 April 2021 |archive-date=20 April 2021 |archive-url=https://web.archive.org/web/20210420104726/https://www.macworld.com/article/234529/tsmc-details-its-future-5nm-and-3nm-manufacturing-processesheres-what-it-means-for-apple-silicon.html |url-status=live}}</ref><ref>{{Cite web|title=The future of leading-edge chips according to TSMC: 5nm, 4nm, 3nm and beyond|author=Anton Shilov|website=Techradar.com|date=31 August 2020|access-date=20 April 2021|url=https://www.techradar.com/news/the-future-of-leading-edge-chips-according-to-tsmc-5nm-4nm-3nm-and-beyond|archive-date=20 April 2021|archive-url=https://web.archive.org/web/20210420104725/https://www.techradar.com/news/the-future-of-leading-edge-chips-according-to-tsmc-5nm-4nm-3nm-and-beyond|url-status=live}}</ref> On the other hand, Samsung stated in June 2022 that its "3&nbsp;nm" process would reduce power consumption by 45%, improve performance by 23%, and decrease surface area by 16% compared to its previous "5&nbsp;nm" process.<ref>{{Cite web |url=https://news.samsung.com/global/samsung-begins-chip-production-using-3nm-process-technology-with-gaa-architecture |title=Samsung Begins Chip Production Using 3nm Process Technology With GAA Architecture |date=30 June 2022 |access-date=8 July 2022 |archive-date=8 July 2022 |archive-url=https://web.archive.org/web/20220708021931/https://news.samsung.com/global/samsung-begins-chip-production-using-3nm-process-technology-with-gaa-architecture |url-status=live}}</ref> EUV lithography faces new challenges at "3&nbsp;nm" which lead to the required use of [[multiple patterning|multipatterning]].<ref>{{cite web|url=https://www.linkedin.com/pulse/euvs-pupil-fill-resist-limitations-3nm-frederick-chen|title=EUV's Pupil Fill and Resist Limitations at 3nm|last=Chen|first=Frederick|website=LinkedIn|date=17 July 2022|archive-url=https://web.archive.org/web/20220729121139/https://www.linkedin.com/pulse/euvs-pupil-fill-resist-limitations-3nm-frederick-chen|archive-date=29 July 2022}}</ref>
+
+==History==
+===Research and technology demos===
+In 2003, a research team at [[NEC]] fabricated the first MOSFETs with a channel length of 3&nbsp;nm, using the [[PMOS logic|PMOS]] and [[NMOS logic|NMOS]] processes.<ref name="Schwierz">{{cite book |last1=Schwierz |first1=Frank |last2=Wong |first2=Hei |last3=Liou |first3=Juin J. |title=Nanometer CMOS |date=2010 |publisher=Pan Stanford Publishing |isbn=9789814241083 |page=17 |url=https://books.google.com/books?id=IljcLHKwM3EC&pg=PA17 |language=en |access-date=11 October 2019 |archive-date=24 May 2020 |archive-url=https://web.archive.org/web/20200524083159/https://books.google.com/books?id=IljcLHKwM3EC&pg=PA17 |url-status=live}}</ref><ref>{{cite conference |last1=Wakabayashi |first1=Hitoshi |last2=Yamagami |first2=Shigeharu |last3=Ikezawa |first3=Nobuyuki |last4=Ogura |first4=Atsushi |last5=Narihiro |first5=Mitsuru |last6=Arai |first6=K. |last7=Ochiai |first7=Y. |last8=Takeuchi |first8=K. |last9=Yamamoto |first9=T. |last10=Mogami |first10=T. |conference=IEEE International Electron Devices Meeting 2003 |title=Sub-10-nm planar-bulk-CMOS devices using lateral junction control |s2cid=2100267 |date=December 2003 |pages=20.7.1–20.7.3 |doi=10.1109/IEDM.2003.1269446|isbn=0-7803-7872-5}}</ref> In 2006, a team from the [[KAIST|Korea Advanced Institute of Science and Technology]] (KAIST) and the National Nano Fab Center, developed a 3&nbsp;nm width [[Multigate device|multi-gate]] MOSFET, the world's smallest [[Nanoelectronics|nanoelectronic]] device, based on gate-all-around ([[Multigate device#GAAFET|GAAFET]]) technology.<ref>{{citation |url=http://www.highbeam.com/doc/1G1-145838158.html|archive-url=https://web.archive.org/web/20121106011401/http://www.highbeam.com/doc/1G1-145838158.html|url-status=dead|archive-date=6 November 2012|title=Still Room at the Bottom (nanometer transistor developed by Yang-kyu Choi from the Korea Advanced Institute of Science and Technology )|date=1 April 2006|work = Nanoparticle News}}</ref><ref>{{Cite conference|last1=Lee |first1=Hyunjin |last2=Choi |first2=Yang-Kyu |last3=Yu |first3=Lee-Eun |last4=Ryu |first4=Seong-Wan |last5=Han |first5=Jin-Woo |last6=Jeon |first6=K. |last7=Jang |first7=D.Y. |last8=Kim |first8=Kuk-Hwan |last9=Lee |first9=Ju-Hyun |book-title=2006 Symposium on VLSI Technology, 2006. Digest of Technical Papers |title=Sub-5nm All-Around Gate FinFET for Ultimate Scaling |date=June 2006 |pages=58–59 |doi=10.1109/VLSIT.2006.1705215 |display-authors=etal|isbn=978-1-4244-0005-8 |hdl=10203/698 |s2cid=26482358 |hdl-access=free}}</ref>
+
+===Commercialization history===
+In late 2016, [[TSMC]] announced plans to construct a "5&nbsp;nm"–"3&nbsp;nm" node [[semiconductor fabrication plant]] with a co-commitment investment of around US$15.7 billion.<ref>{{citation | url = https://www.eetimes.com/tsmc-plans-new-fab-for-3nm/ | title = TSMC Plans New Fab for 3nm | first = Alan | last = Patterson | date = 12 December 2016 | website = [[EE Times]] | access-date = 22 July 2023}}</ref>
+
+In 2017, TSMC announced it was to begin construction of the "3&nbsp;nm" semiconductor fabrication plant at the [[Tainan Science Park]] in Taiwan.<ref>{{citation | url = https://www.eetimes.com/tsmc-aims-to-build-worlds-first-3-nm-fab/ | title = TSMC Aims to Build World's First 3-nm Fab | first = Alan | last = Patterson | date = 2 October 2017 | website = [[EE Times]] | access-date = 22 July 2023}}</ref> TSMC plans to start volume production of the "3&nbsp;nm" process node in 2023.<ref>{{cite web | url = https://wccftech.com/tsmc-2nm-research-taiwan/ | title = TSMC To Commence 2nm Research In Hsinchu, Taiwan Claims Report | first = Ramish | last = Zafar | website = Wccftech.com | date = 15 May 2019 | access-date = 6 December 2019 | archive-date = 7 November 2020 | archive-url = https://web.archive.org/web/20201107234628/https://wccftech.com/tsmc-2nm-research-taiwan/ | url-status = live}}</ref><ref>{{Cite web|url=https://www.techspot.com/news/83080-tsmc-start-production-5nm-second-half-2020-3nm.html|title=TSMC to start production on 5nm in second half of 2020, 3nm in 2022|website=Techspot.com|date=8 December 2019 |access-date=12 January 2020|archive-date=19 December 2019|archive-url=https://web.archive.org/web/20191219211202/https://www.techspot.com/news/83080-tsmc-start-production-5nm-second-half-2020-3nm.html|url-status=live}}</ref><ref>{{cite web|url=https://www.tomshardware.com/news/report-tsmc-to-start-3nm-volume-production-in-2022|title=Report: TSMC To Start 3nm Volume Production In 2022|first=Lucian|last=Armasu |website=Tom's Hardware|date=6 December 2019 |access-date=19 December 2019|archive-date=15 September 2022|archive-url=https://web.archive.org/web/20220915124610/https://www.tomshardware.com/news/report-tsmc-to-start-3nm-volume-production-in-2022|url-status=live}}</ref><ref>{{Cite web|url=https://www.gizchina.com/2019/10/25/tsmc-3nm-process-fab-starts-construction-mass-production-in-2023/|title=TSMC 3nm process fab starts construction - mass production in 2023|date=25 October 2019|website=Gizchina.com|access-date=12 January 2020|archive-date=12 January 2020|archive-url=https://web.archive.org/web/20200112210328/https://www.gizchina.com/2019/10/25/tsmc-3nm-process-fab-starts-construction-mass-production-in-2023/|url-status=live}}</ref><ref>{{Cite web|url=https://www.phonearena.com/news/TSMC-starts-building-facilities-to-manufacture-3nm-chips_id119977|title=TSMC starts constructing facilities to turn out 3nm chips by 2023|first=Alan|last=Friedman|website=Phone Arena|date=27 October 2019 |access-date=12 January 2020|archive-date=12 January 2020|archive-url=https://web.archive.org/web/20200112210316/https://www.phonearena.com/news/TSMC-starts-building-facilities-to-manufacture-3nm-chips_id119977|url-status=live}}</ref>
+
+In early 2018, [[IMEC]] (Interuniversity Microelectronics Centre) and [[Cadence Design Systems|Cadence]] stated they had taped out "3&nbsp;nm" test chips, using [[extreme ultraviolet lithography]] (EUV) and 193&nbsp;nm [[immersion lithography]].<ref>{{cite press release |url=https://www.cadence.com/en_US/home/company/newsroom/press-releases/pr/2018/imec-and-cadence-tape-out-industry-s-first-3nm-test-chip.html |title=Imec and Cadence Tape Out Industry's First 3nm Test Chip |date=28 February 2018 |website=[[Cadence Design Systems|Cadence]] |access-date=18 April 2019}}</ref>
+
+In early 2019, [[Samsung]] presented plans to manufacture "3&nbsp;nm" [[Multigate device#GAAFET|GAAFET]] ([[Multigate device|gate-all-around]] [[field-effect transistor]]s) at the "3&nbsp;nm" node in 2021, using its own MBCFET transistor structure that uses nanosheets; delivering a 35% performance increase, 50% power reduction and a 45% reduction in area when compared with "7&nbsp;nm".<ref>{{Cite web|url=https://www.extremetech.com/extreme/291507-samsung-unveils-3nm-gate-all-around-design-tools|title=Samsung Unveils 3nm Gate-All-Around Design Tools - ExtremeTech|website=[[ExtremeTech]]|date=16 May 2019 |access-date=22 July 2023}}</ref><ref>{{citation | url = https://www.elinfor.com/news/samsung-3nm-process-is-one-year-ahead-of-tsmc-in-gaa-and-three-years-ahead-of-intel-p-11201 | title = Samsung Plans Mass Production of 3nm GAAFET Chips in 2021 | first = Lucian | last = Armasu | date = 11 January 2019 | website = Tom's Hardware | access-date = 6 December 2019 | archive-date = 6 December 2019 | archive-url = https://web.archive.org/web/20191206223148/https://www.elinfor.com/news/samsung-3nm-process-is-one-year-ahead-of-tsmc-in-gaa-and-three-years-ahead-of-intel-p-11201}}</ref><ref>{{citation | url = https://www.tomshardware.com/news/samsung-3nm-gaafet-production-2021,38426.html | title = Samsung: 3nm process is one year ahead of TSMC in GAA and three years ahead of Intel | date = 6 August 2019 | access-date = 18 April 2019 | archive-date = 15 September 2022 | archive-url = https://web.archive.org/web/20220915124609/https://www.tomshardware.com/news/samsung-3nm-gaafet-production-2021,38426.html}}</ref> Samsung's semiconductor roadmap also included products at "8", "7", "6", "5", and "4&nbsp;nm" nodes.<ref>{{citation | url = https://www.tomshardware.com/news/samsung-4nm-foundry-roadmap-revealed,34515.html | title = Samsung Reveals 4nm Process Generation, Full Foundry Roadmap | first = Lucian | last = Armasu | date = 25 May 2017 | website = Tom's Hardware | access-date = 18 April 2019 | archive-date = 15 September 2022 | archive-url = https://web.archive.org/web/20220915124610/https://www.tomshardware.com/news/samsung-4nm-foundry-roadmap-revealed,34515.html}}</ref><ref>{{Cite web|url=https://www.anandtech.com/show/14333/samsung-announces-3nm-gaa-mbcfet-pdk-version-01|title=Samsung Announces 3nm GAA MBCFET PDK, Version 0.1|first=Ian|last=Cutress|website=AnandTech|access-date=19 December 2019|archive-date=14 October 2019|archive-url=https://web.archive.org/web/20191014033656/https://www.anandtech.com/show/14333/samsung-announces-3nm-gaa-mbcfet-pdk-version-01|url-status=dead}}</ref>
+
+In December 2019, Intel announced plans for "3&nbsp;nm" production in 2025.<ref name="auto">{{Cite web|url=https://www.anandtech.com/show/15217/intels-manufacturing-roadmap-from-2019-to-2029|title=Intel's Manufacturing Roadmap from 2019 to 2029: Back Porting, 7nm, 5nm, 3nm, 2nm, and 1.4 nm|first=Dr Ian|last=Cutress|website=AnandTech|access-date=11 December 2019|archive-date=12 January 2021|archive-url=https://web.archive.org/web/20210112092150/https://www.anandtech.com/show/15217/intels-manufacturing-roadmap-from-2019-to-2029|url-status=dead}}</ref>
+
+In January 2020, Samsung announced the production of the world's first "3&nbsp;nm" GAAFET process prototype, and said that it was targeting mass production in 2021.<ref>{{cite web|url=https://www.tomshardware.com/news/samsung-prototypes-first-ever-3nm-gaafet-semiconductor|title=Samsung Prototypes First Ever 3nm GAAFET Semiconductor|last=Broekhuijsen |first=Niels|website=Tom's Hardware|date=3 January 2020 |language=en|access-date=10 February 2020|archive-date=15 September 2022|archive-url=https://web.archive.org/web/20220915124610/https://www.tomshardware.com/news/samsung-prototypes-first-ever-3nm-gaafet-semiconductor|url-status=live}}</ref>
+
+In August 2020, TSMC announced details of its "N3" process, which was new rather than being an improvement over its "N5" process.<ref>{{Cite web|url=https://www.anandtech.com/show/14666/tsmc-3nm-euv-development-progress-going-well-early-customers-engaged|title=TSMC: 3nm EUV Development Progress Going Well, Early Customers Engaged|first=Anton|last=Shilov|website=AnandTech|access-date=12 September 2020|archive-date=3 September 2020|archive-url=https://web.archive.org/web/20200903023151/https://www.anandtech.com/show/14666/tsmc-3nm-euv-development-progress-going-well-early-customers-engaged|url-status=dead}}</ref> Compared with the "N5" process, the "N3" process was projected to offer a 10–15% increase in performance, or a 25–35% decrease in power consumption, with a 70% increase in logic density, a 20% increase in SRAM cell density, and a 10% increase in analog circuitry density. Since many designs included considerably more SRAM than logic - a common ratio being 70% SRAM to 30% logic = die shrinks were expected to be around 26%. TSMC was planning volume production in the second half of 2022.<ref name=tsmc_rm_2022>{{cite web|url=https://www.anandtech.com/print/17356/tsmc-roadmap-update-n3e-in-2024-n2-in-2026-major-changes-incoming|title=TSMC roadmap update: N3E in 2024, N2 in 2026, major changes incoming|website=AnandTech|date=22 April 2022|access-date=12 May 2022|archive-date=9 May 2022|archive-url=https://web.archive.org/web/20220509122111/https://www.anandtech.com/print/17356/tsmc-roadmap-update-n3e-in-2024-n2-in-2026-major-changes-incoming|url-status=dead}}</ref>{{and then what|date=February 2024}}
+
+In July 2021, Intel presented brand new process [[technology roadmap]], according to which "Intel 3" process (previously named Intel 7+), the company's second node to use EUV and the last one to use FinFET before switching to Intel's RibbonFET transistor architecture, was scheduled to enter product manufacturing phase in H2 2023.<ref name=intel_rm_2025 />{{and then what|date=February 2024}}
+
+In October 2021, Samsung adjusted earlier plans and announced that the company was scheduled to start producing its customers' first "3&nbsp;nm"-based chip designs in the first half of 2022, while its second generation of "3&nbsp;nm" was expected in 2023.<ref name = samsung/>{{and then what|date=February 2024}}
+
+In June 2022, at TSMC Technology Symposium, the company shared details of its N3E process technology scheduled for volume production in 2023 H2: 1.6× higher logic transistor density, 1.3× higher chip transistor density, 10–15% higher performance at iso power or 30–35% lower power at ISO performance compared to TSMC N5 v1.0 process technology, FinFLEX technology, allowing to intermix libraries with different track heights within a block etc. TSMC also introduced new members of the "3&nbsp;nm" process family: high-density variant N3S, high-performance variants N3P and N3X, and N3RF for RF applications.<ref>{{cite web
+ |url=https://semiwiki.com/semiconductor-manufacturers/tsmc/314415-tsmc-2022-technology-symposium-review-process-technology-development/
+ |title=TSMC Technology Symposium Review
+ |website=SemiWiki
+ |date=22 June 2022
+}}</ref><ref>{{cite web
+ |url=https://www.anandtech.com/print/17452/tsmc-readies-five-3nm-process-technologies-with-finflex
+ |archive-url=https://web.archive.org/web/20220617115333/https://www.anandtech.com/print/17452/tsmc-readies-five-3nm-process-technologies-with-finflex
+ |url-status=dead
+ |archive-date=17 June 2022
+ |title=TSMC Readies Five 3nm Process Technologies, Adds FinFlex For Design Flexibility
+ |website=AnandTech
+ |date=16 June 2022
+}}</ref><ref name=tsmc_wikichip>{{cite web
+ |url=https://fuse.wikichip.org/news/7048/n3e-replaces-n3-comes-in-many-flavors/
+ |title=N3E Replaces N3; Comes In Many Flavors
+ |website=WikiChip Fuse
+ |date=4 September 2022
+}}</ref>
+
+In June 2022, Samsung started "initial" production of a low-power, high-performance chip using 3&nbsp;nm process technology with GAA architecture.<ref name=":0">{{Cite press release |title=Samsung Begins Chip Production Using 3nm Process Technology With GAA Architecture |url=https://news.samsung.com/global/samsung-begins-chip-production-using-3nm-process-technology-with-gaa-architecture |access-date=30 June 2022 |publisher=Samsung |language=en |archive-date=30 June 2022 |archive-url=https://web.archive.org/web/20220630035207/https://news.samsung.com/global/samsung-begins-chip-production-using-3nm-process-technology-with-gaa-architecture |url-status=live}}</ref><ref>{{cite web|title=Samsung Starts 3nm Production: The Gate-All-Around (GAAFET) Era Begins|url=https://www.anandtech.com/print/17474/samsung-starts-3nm-production-the-gaafet-era-begins|website=AnandTech|date=30 June 2022|access-date=7 July 2022|archive-date=7 July 2022|archive-url=https://web.archive.org/web/20220707100515/https://www.anandtech.com/print/17474/samsung-starts-3nm-production-the-gaafet-era-begins|url-status=dead}}</ref> According to industry sources, Qualcomm had reserved some "3&nbsp;nm" production capacity from Samsung.<ref>{{cite web|title=Samsung Electronics begins 'trial production' of 3-nano foundry...The first customer is a Chinese ASIC company|url=https://www-thelec-kr.translate.goog/news/articleView.html?idxno=17300&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp|website=TheElec|date=28 June 2022|access-date=28 July 2022|archive-date=28 July 2022|archive-url=https://web.archive.org/web/20220728080413/https://www-thelec-kr.translate.goog/news/articleView.html?idxno=17300&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp|url-status=live}}</ref>
+
+On 25 July 2022, Samsung celebrated the first shipment of "3&nbsp;nm Gate-All-Around" chips to a Chinese [[cryptocurrency]] mining firm PanSemi.<ref>{{cite web|title=Samsung's 3nm trial production run this week to make Bitcoin miner chips|url=https://www.sammobile.com/news/samsung-3nm-trial-production-run-this-week-make-bitcoin-miner-chips/|website=SamMobile|date=28 June 2022|access-date=27 July 2022|archive-date=27 July 2022|archive-url=https://web.archive.org/web/20220727165146/https://www.sammobile.com/news/samsung-3nm-trial-production-run-this-week-make-bitcoin-miner-chips/|url-status=live}}</ref><ref>{{cite web|title=Samsung ships its first set of 3nm chips, marking an important milestone|url=https://www.sammobile.com/news/samsung-3nm-chips-shipped-important-milestone/|website=SamMobile|date=25 July 2022|access-date=27 July 2022|archive-date=27 July 2022|archive-url=https://web.archive.org/web/20220727151146/https://www.sammobile.com/news/samsung-3nm-chips-shipped-important-milestone/|url-status=live}}</ref><ref>{{cite web|title=Samsung celebrates the first shipment of 3nm Gate-All-Around chips|url=https://www.gsmarena.com/samsung_celebrates_the_first_shipment_of_3nm_gateallaround_chips-news-55179.php|website=www.gsmarena.com|date=25 July 2022|access-date=26 July 2022|archive-date=26 July 2022|archive-url=https://web.archive.org/web/20220726001943/https://www.gsmarena.com/samsung_celebrates_the_first_shipment_of_3nm_gateallaround_chips-news-55179.php|url-status=live}}</ref><ref>{{cite press release|title=Samsung Electronics Holds 3 Nano Foundry Mass Production Shipment Ceremony|url=https://news-samsung-com.translate.goog/kr/삼성전자-3나노-파운드리-양산-출하식-개최?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp|publisher=Samsung|date=25 July 2022}}</ref> It was revealed that the newly introduced "3&nbsp;nm" MBCFET process technology offers 16% higher transistor density,<ref name=3gae_density>{{cite web|title=Samsung holds ceremony to mark 1st shipment of most advanced 3nm chips|url=https://m-en.yna.co.kr/view/AEN20220725002400320|website=Yonhap News Agency|date=25 July 2022|access-date=28 July 2022|archive-date=28 July 2022|archive-url=https://web.archive.org/web/20220728052349/https://m-en.yna.co.kr/view/AEN20220725002400320|url-status=live}}</ref> 23% higher performance or 45% lower power draw compared to an unspecified 5&nbsp;nm process technology.<ref name=3gae_bw>{{cite web|title=Samsung Begins Chip Production Using 3nm Process Technology with GAA Architecture|url=https://www.businesswire.com/news/home/20220629005894/en|website=BusinessWire|date=29 June 2022|access-date=28 July 2022|archive-date=28 July 2022|archive-url=https://web.archive.org/web/20220728080413/https://www.businesswire.com/news/home/20220629005894/en|url-status=live}}</ref> Goals for the second-generation "3&nbsp;nm" process technology include up to 35% higher transistor density,<ref name=3gae_density/> further reduction of power draw by up to 50% or higher performance by 30%.<ref name=3gae_bw /><ref>{{cite web|title=Samsung starts shipping world's first 3nm chips|url=https://m.koreaherald.com/view.php?ud=20220725000623|website=The Korea Herald|date=25 July 2022|access-date=27 July 2022|archive-date=27 July 2022|archive-url=https://web.archive.org/web/20220727170728/https://m.koreaherald.com/view.php?ud=20220725000623|url-status=live}}</ref><ref name=3gae_density/>
+
+On 29 December 2022, TSMC announced that volume production using its "3&nbsp;nm" process technology N3 was underway with good yields.<ref name=n3vm>{{cite web
+ |url=https://www.tomshardware.com/news/tsmc-kicks-off-3nm-production
+ |title=TSMC Kicks Off 3nm Production: A Long Node to Power Leading Chips
+ |website=Tom's Hardware
+ |date=29 December 2022
+}}</ref> In January 2023, the company planned to start volume manufacturing using refined "3&nbsp;nm" process technology called N3E in the second half of 2023.<ref>{{cite web
+ |url=https://www.anandtech.com/print/18727/tsmcs-3nm-journey-slow-ramp-huge-investments-big-future
+ |archive-url=https://web.archive.org/web/20230119102038/https://www.anandtech.com/print/18727/tsmcs-3nm-journey-slow-ramp-huge-investments-big-future
+ |url-status=dead
+ |archive-date=19 January 2023
+ |title=TSMC's 3nm Journey: Slow Ramp, Huge Investments, Big Future
+ |website=AnandTech
+ |date=17 January 2023
+}}</ref>
+
+In December 2022, at IEDM 2022 conference, TSMC disclosed a few details about their "3&nbsp;nm" process technologies: contacted gate pitch of N3 is 45&nbsp;nm, minimum metal pitch of N3E is 23&nbsp;nm, and SRAM cell area is 0.0199 μm<sup>2</sup> for N3 and 0.021 μm<sup>2</sup> for N3E (same as in N5). For N3E process, depending on the number of fins in cells used for design, area scaling compared to N5 2–2 fin cells ranges from 0.64x to 0.85x, performance gains range from 11% to 32% and energy savings range from 12% to 30% (the numbers refer to Cortex-A72 core). TSMC's FinFlex technology allowed intermixing cells with different number of fins in a single chip.<ref>{{cite web
+ |first=Dylan
+ |last=Patel
+ |url=https://www.semianalysis.com/p/tsmcs-3nm-conundrum-does-it-even
+ |title=TSMC's 3nm Conundrum, Does It Even Make Sense? – N3 & N3E Process Technology & Cost Detailed
+ |website=SemiAnalysis
+ |date=21 December 2022
+}}</ref><ref>{{cite web
+ |first=Dylan
+ |last=Patel
+ |url=https://www.semianalysis.com/p/iedm2022p1
+ |title=IEDM 2022 Round-Up
+ |website=SemiAnalysis
+ |date=2 February 2023
+}}</ref><ref name=3nm_iedm>{{cite web
+ |first=Scotten
+ |last=Jones
+ |url=https://semiwiki.com/semiconductor-manufacturers/tsmc/322688-iedm-2022-tsmc-3nm/
+ |title=IEDM 2022 – TSMC 3nm
+ |website=SemiWiki
+ |date=1 February 2023
+}}</ref><ref>{{cite web
+ |first=David
+ |last=Schor
+ |url=https://fuse.wikichip.org/news/7343/iedm-2022-did-we-just-witness-the-death-of-sram/
+ |title=IEDM 2022: Did We Just Witness The Death Of SRAM?
+ |website=WikiChip Fuse
+ |date=14 December 2022
+}}</ref>
+
+Reporting from IEDM 2022, semiconductor industry expert Dick James stated that TSMC's "3&nbsp;nm" processes offered only incremental improvements, because limits had been reached for fin height, gate length, and number of fins per transistor (single fin). Following the implementation of features such as single diffusion break, contact over active gate and FinFlex, no more room was left for improvement of FinFET-based process technologies.<ref>{{cite web
+ |first=Dick
+ |last=James
+ |url=https://www.techinsights.com/blog/tsmc-reveals-3nm-process-details
+ |title=TSMC Reveals 3nm Process Details
+ |website=TechInsights
+ |access-date=16 February 2023
+}}</ref>
+
+In April 2023, at its Technology Symposium, TSMC revealed some details about their N3P and N3X processes the company had introduced earlier: N3P would offer 5% higher speed or 5–10% lower power and 1.04× higher "chip density" compared to N3E, while N3X would offer 5% speed gain at the cost of ~3.5× higher leakage and the same density compared to N3P. N3P was scheduled to enter volume production in the second half of 2024, and N3X would follow in 2025.<ref name=tsmc2023>
+{{cite web
+ |url=https://www.anandtech.com/print/18833/tsmc-details-3nm-evolution-n3e-on-schedule-n3p-n3x-deliver-five-percent-gains
+ |archive-url=https://web.archive.org/web/20230429124045/https://www.anandtech.com/print/18833/tsmc-details-3nm-evolution-n3e-on-schedule-n3p-n3x-deliver-five-percent-gains
+ |url-status=dead
+ |archive-date=29 April 2023
+ |title=TSMC Details 3nm Evolution: N3E On Schedule, N3P and N3X To Deliver 5% Performance Gains
+ |website=AnandTech
+ |date=26 April 2023
+}}</ref>
+
+In July 2023, semiconductor industry research firm TechInsights said it had found that Samsung's 3&nbsp;nm GAA (gate-all-around) process had been incorporated into the crypto miner ASIC (Whatsminer M56S++) from a Chinese manufacturer, MicroBT.<ref>{{Cite web |date=18 July 2023 |title=TechInsights: Samsung's 3nm GAA process identified in a crypto-mining ASIC designed by China startup MicroBT |url=https://www.digitimes.com/news/a20230718VL203/samsung-china-3nm-asic.html |access-date=21 July 2023 |website=DIGITIMES |language=en}}</ref>
+
+On 7 September 2023, [[MediaTek]] and TSMC announced that MediaTek had developed their first 3&nbsp;nm chip, volume production was expected to commence in 2024.<ref>{{Cite web |last=Neowin · |first=Omer Dursun |date=7 September 2023 |title=MediaTek develops its first 3nm chip using TSMC process, coming in 2024 |url=https://www.neowin.net/news/mediatek-develops-its-first-3nm-chip-using-tsmc-process-coming-in-2024/ |access-date=7 September 2023 |website=Neowin |language=en}}</ref>
+
+On 22 May 2025, Xiaomi announced its first 3&nbsp;nm chip XRING O1, volume production under TSMC N3E process, which had been equipped on its Xiaomi 15S Pro phone and Xiaomi Pad 7 Ultra.<ref>{{cite news|title=Xiaomi Unveils Xiaomi XRING Chips, Xiaomi 15S Pro, Xiaomi Pad 7 Ultra and Multiple AIoT Products in Beijing Launch Event|date=22 May 2025|website=Xiaomi|url=https://www.mi.com/global/discover/article?id=4926}}</ref><ref>{{cite news|title=China's Xiaomi claims new phone chip rivals Apple at a cheaper price|date= 22 May 2025|author1=Evelyn Cheng|url=https://www.cnbc.com/2025/05/22/chinas-xiaomi-claims-new-phone-chip-rivals-apple-at-a-cheaper-price.html|website=CNBC}}</ref>
+
+==3 nm process nodes==
+{| class="wikitable" style="text-align:center"
+!
+! colspan=2|[[Samsung Electronics|Samsung]]<ref name=samsung>{{cite press release|url=https://news.samsung.com/global/samsung-foundry-innovations-power-the-future-of-big-data-ai-ml-and-smart-connected-devices|title=Samsung Foundry Innovations Power the Future of Big Data, AI/ML and Smart, Connected Devices|publisher=Samsung|date=7 October 2021|access-date=23 March 2022|archive-date=8 April 2022|archive-url=https://web.archive.org/web/20220408182045/https://news.samsung.com/global/samsung-foundry-innovations-power-the-future-of-big-data-ai-ml-and-smart-connected-devices|url-status=live}}</ref><ref name=sw_jones2020>{{cite web|url=https://semiwiki.com/semiconductor-manufacturers/intel/285192-can-tsmc-maintain-their-process-technology-lead/|title=Can TSMC maintain their process technology lead|website=SemiWiki|date=29 April 2020|access-date=14 May 2022|archive-date=13 May 2022|archive-url=https://web.archive.org/web/20220513103058/https://semiwiki.com/semiconductor-manufacturers/intel/285192-can-tsmc-maintain-their-process-technology-lead/|url-status=live}}</ref><ref name=sams_wikichip>{{cite web
+ |url=https://fuse.wikichip.org/news/6932/samsung-3nm-gaafet-enters-risk-production-discusses-next-gen-improvements/
+ |title=Samsung 3nm GAAFET Enters Risk Production; Discusses Next-Gen Improvements
+ |website=WikiChip Fuse
+ |date=5 July 2022
+}}</ref><ref>{{cite web | url=https://www.anandtech.com/show/18854/-samsung-foundry-vows-to-surpass-tsmc-within-five-years | archive-url=https://web.archive.org/web/20230508172156/https://www.anandtech.com/show/18854/-samsung-foundry-vows-to-surpass-tsmc-within-five-years | url-status=dead | archive-date=8 May 2023 | title=Samsung Foundry Vows to Surpass TSMC within Five Years |website=AnandTech}}</ref>
+! colspan=5|[[TSMC]]<ref name="tsmc">{{cite web |url=https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_3nm |title=TSMC 3nm |date=15 April 2022 |website=www.tsmc.com |language=en-us |access-date=15 April 2022 |archive-date=20 April 2022 |archive-url=https://web.archive.org/web/20220420180950/https://www.tsmc.com/english/dedicatedFoundry/technology/logic/l_3nm |url-status=live}}</ref>
+! [[Intel]]<ref name=intel_rm_2025>{{cite web|last=Cutress|first=Dr Ian|title=Intel's Process Roadmap to 2025: with 4nm, 3nm, 20A and 18A?!|url=https://www.anandtech.com/show/16823/intel-accelerated-offensive-process-roadmap-updates-to-10nm-7nm-4nm-3nm-20a-18a-packaging-foundry-emib-foveros|access-date=27 July 2021|website=AnandTech|archive-date=3 November 2021|archive-url=https://web.archive.org/web/20211103110548/https://www.anandtech.com/show/16823/intel-accelerated-offensive-process-roadmap-updates-to-10nm-7nm-4nm-3nm-20a-18a-packaging-foundry-emib-foveros|url-status=dead}}</ref>
+|-
+! Process name
+| 3GAE<br />SF3E
+| 3GAP<br />SF3
+| N3 <br /> <small>(a.k.a. N3B)</small><ref>{{cite web |last1=Shilov |first1=Anton |title=TSMC: Performance-Optimized 3nm N3P Process on Track for Mass Production This Year |url=https://www.anandtech.com/show/21394/tsmc-performanceoptimized-3nm-process-technology-on-track-for-mass-production-this-year |archive-url=https://web.archive.org/web/20240515235257/https://www.anandtech.com/show/21394/tsmc-performanceoptimized-3nm-process-technology-on-track-for-mass-production-this-year |url-status=dead |archive-date=15 May 2024 |website=AnandTech |access-date=25 September 2024}}</ref>
+| N3E
+| N3P
+| N3X
+| N3C
+| 3
+|-
+! Transistor type
+| colspan=2|[[Multigate device#MBCFET|MBCFET]]
+| colspan=6|[[Fin field-effect transistor|FinFET]]
+|- style="white-space:nowrap"
+! Transistor&nbsp;density (MTr/mm<sup>2</sup>)
+| 150<ref name=sams_wikichip />
+| 190<ref name=sams_techinsights>{{cite web | url=https://www.techinsights.com/blog/samsung-exynos-w1000-processor | title=Samsung Exynos W1000 Processor: A Dive into the 3nm Gate-All-Around Process | date=18 July 2024}}</ref>
+| 197<ref name=tsmc_wikichip />
+| 216<ref name="wikichip-tsnm-n3-challenges-ahead">{{cite web | url=https://fuse.wikichip.org/news/7375/tsmc-n3-and-challenges-ahead/ | title=TSMC N3, and Challenges Ahead | work=WikiChip Fuse | date=27 May 2023}}</ref>
+| colspan=2|224<ref name="anandtech-TSMC-Details-3nm-Evolution">{{cite web | url=https://www.anandtech.com/print/18833/tsmc-details-3nm-evolution-n3e-on-schedule-n3p-n3x-deliver-five-percent-gains | archive-url=https://web.archive.org/web/20230429124045/https://www.anandtech.com/print/18833/tsmc-details-3nm-evolution-n3e-on-schedule-n3p-n3x-deliver-five-percent-gains | url-status=dead | archive-date=29 April 2023 | title=TSMC Details 3nm Evolution: N3E On Schedule, N3P and N3X To Deliver 5% Performance Gains | date=26 April 2023}}</ref>
+| {{Unknown}}
+| 143.37<ref name="VLSI24">{{cite web | url=https://semiwiki.com/semiconductor-manufacturers/intel/346992-vlsi-technology-symposium-intel-describes-i3-process-how-does-it-measure-up/ | title=VLSI Technology Symposium – Intel describes i3 process, how does it measure up? | date=28 June 2024}}</ref>
+|-
+! SRAM bit-cell size (μm<sup>2</sup>)
+| {{Unknown}}
+| {{Unknown}}
+| 0.0199<ref name=3nm_iedm />
+| 0.021<ref name=3nm_iedm />
+| {{Unknown}}
+| {{Unknown}}
+| {{Unknown}}
+| 0.024<ref>{{cite web | url=https://www.hardwareluxx.de/index.php/news/hardware/prozessoren/66415-25-schneller-oder-36-sparsamer-intel-vergleicht-intel-18a-gegen-intel-3.html | title=25 % schneller oder 36 % sparsamer: Intel vergleicht Intel 18A gegen Intel 3| date=18 June 2025}}</ref>
+|-
+! {{nowarp|Transistor gate pitch}} (nm)
+| 40
+| 48<ref name="Geekerwan">https://www.youtube.com/watch?v=7m4FJm-VPlg</ref>
+| 45<ref name=3nm_iedm />
+| 48<ref name="wikichip-tsnm-n3-challenges-ahead" />
+| 47<ref name="Geekerwan" />
+| {{Unknown}}
+| {{Unknown}}
+| 50<ref name="VLSI24" />
+|-
+! Interconnect pitch (nm)
+| 32
+| {{Unknown}}
+| {{Unknown}}
+| 23<ref name=3nm_iedm />
+| {{Unknown}}
+| {{Unknown}}
+| {{Unknown}}
+| 30<ref name="VLSI24" />
+|-
+! Release status
+| {{yes|2022 risk production<ref name=samsung /><br />2022 production<ref name=":0" /><br />2022 shipping<ref name="samsung-3nm-gaa">{{cite news |title=History is made! Samsung beats out TSMC and starts shipping 3nm GAA chipsets |url=https://www.phonearena.com/news/samsung-first-to-ship-3nm-gaa-chips_id141505 |date=25 July 2022 |access-date=23 August 2022 |archive-date=23 August 2022 |archive-url=https://web.archive.org/web/20220823050949/https://www.phonearena.com/news/samsung-first-to-ship-3nm-gaa-chips_id141505 |url-status=live}}</ref>}}
+| {{yes|2024 Q1 risk production<ref>{{cite web | url=https://www.gizchina.com/2024/01/21/samsung-sf3-trial-production-semiconductor-industry/ | title=Samsung's 2nd-Gen 3nm process, SF3, has begun trial production | date=21 January 2024}}</ref><br />2024 H2 production}}<ref name="sams_techinsights" />
+| {{yes|2021 risk production<br />2022 Q4 volume production<ref name="tsmc" /><ref name=n3vm /><ref name="TH">{{cite web | url=https://www.tomshardware.com/tech-industry/tsmcs-3nm-update-n3p-in-production-n3x-on-track | title=TSMC's 3nm update: N3P in production, N3X on track | date=23 April 2025}}</ref><br />2023 H1 shipping for revenue<ref>{{cite web|url=https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2022-07/185efaefea866a5e944499cda9eeecc65315449c/TSMC%202Q22%20Transcript.pdf|title=TSMC Q2 2022 Earnings Call|website=TSMC|date=14 July 2022|access-date=22 July 2022|archive-date=15 July 2022|archive-url=https://web.archive.org/web/20220715105421/https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2022-07/185efaefea866a5e944499cda9eeecc65315449c/TSMC%202Q22%20Transcript.pdf|url-status=live}}</ref>}}
+| {{yes|2023 Q4 production<ref name="tsmc" /><ref name="TH" />}}
+| {{yes|2024 H2 production<ref name=tsmc2023 />}}
+| {{yes|2025 H2 production<ref name=tsmc2023 />}}
+| {{no|2026 production<ref name="TSMC_Symposium">{{cite web
+ | url=https://semiwiki.com/semiconductor-manufacturers/tsmc/355121-tsmc-2025-technical-symposium-briefing/
+ | title=TSMC 2025 Technical Symposium Briefing
+ |website=SemiWiki
+ | date=23 April 2025
+ |access-date=10 August 2025
+}}</ref>}}
+| {{yes|2024 Q2 production<ref>{{cite web | title=Intel 3 '3nm-class' process technology is in high-volume production: Intel | date=19 June 2024 | url=https://www.tomshardware.com/tech-industry/intel-3-3nm-class-process-technology-is-in-high-volume-production-intel }}</ref><br />2024 H2 shipping for revenue<ref>{{Cite web|last=Cutress|first=Dr Ian|url=https://www.anandtech.com/show/17259/intel-discloses-multigeneration-xeon-scalable-roadmap-new-ecore-only-xeons-in-2024|title=Intel Discloses Multi-Generation Xeon Scalable Roadmap: New E-Core Only Xeons in 2024|date=17 February 2022|website=AnandTech|access-date=23 March 2022|archive-date=15 March 2022|archive-url=https://web.archive.org/web/20220315132342/https://www.anandtech.com/show/17259/intel-discloses-multigeneration-xeon-scalable-roadmap-new-ecore-only-xeons-in-2024|url-status=dead}}</ref>}}
+|}
+
+==References==
+{{reflist}}
+
+==Further reading==
+* {{citation | url = https://semiengineering.com/big-trouble-at-3nm/ | title = Big Trouble At 3nm | date = 21 June 2018 | first = Mark | last = Lapedus | work = semiengineering.com}}
+* {{cite conference| title =3nm GAA Technology featuring Multi-Bridge-Channel FET for Low Power and High Performance Applications | date = December 2018 | doi = 10.1109/IEDM.2018.8614629 | conference = 2018 IEEE International Electron Devices Meeting (IEDM) | pages = 28.7.1–28.7.4 | last1 = Bae | first1 = Geumjong | last2 = Bae | first2 = D.-I. | last3 = Kang | first3 = M. | last4 = Hwang | first4 = S.M. | last5 = Kim | first5 = S.S. | last6 = Seo | first6 = B. | last7 = Kwon | first7 = T.Y. | last8 = Lee | first8 = T.J. | last9 = Moon | first9 = C. | last10 = Choi | first10 = Y.M. | last11 = Oikawa | first11 = K. | last12 = Masuoka | first12 = S. | last13 = Chun | first13 = K.Y. | last14 = Park | first14 = S.H. | last15 = Shin | first15 = H.J. | last16 = Kim | first16 = J.C. | last17 = Bhuwalka | first17 = K.K. | last18 = Kim | first18 = D.H. | last19 = Kim | first19 = W.J. | last20 = Yoo | first20 = J. | last21 = Jeon | first21 = H.Y. | last22 = Yang | first22 = M.S. | last23 = Chung | first23 = S.-J. | last24 = Kim | first24 = D. | last25 = Ham | first25 = B.H. | last26 = Park | first26 = K.J. | last27 = Kim | first27 = W.D. | last28 = Park | first28 = S.H. | last29 = Song | first29 = G. | last30 = Kim | first30 = Y.H. | display-authors = 29 | isbn = 978-1-7281-1987-8 | s2cid = 58673284}}
+
+==External links==
+* [https://en.wikichip.org/wiki/3_nm_lithography_process 3 nm lithography process]
+
+{{sequence
+| prev = [[5 nm process|5&nbsp;nm]] ([[FinFET]])
+| list = [[MOSFET]] [[semiconductor device fabrication]] process
+| next = [[2 nm process|2&nbsp;nm]] ([[GAAFET]])
+}}
+
+[[Category:International Technology Roadmap for Semiconductors lithography nodes|*003]]
+[[Category:Application-specific integrated circuits]]

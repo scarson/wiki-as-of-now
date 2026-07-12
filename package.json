@@ -1,0 +1,52 @@
+{
+	"name": "wikiasofnow",
+	"version": "0.1.0",
+	"private": true,
+	"packageManager": "pnpm@11.5.1",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"test": "vitest run",
+		"test:workers": "vitest run -c vitest.workers.config.mts",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage",
+		"lint": "eslint .",
+		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+		"deploy:research": "wrangler deploy -c workers/research/wrangler.jsonc",
+		"upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
+		"check:bundle": "node scripts/check-research-bundle-clean.mjs",
+		"gen:nfc-golden": "node scripts/gen-nfc-golden.ts"
+	},
+	"dependencies": {
+		"@opennextjs/cloudflare": "^1.19.9",
+		"arctic": "^3.7.0",
+		"htmlparser2": "^12.0.0",
+		"ipaddr.js": "^2.4.0",
+		"jose": "^6.2.3",
+		"next": "16.2.6",
+		"react": "^19.1.7",
+		"react-dom": "^19.1.7",
+		"wtf_wikipedia": "^10.4.2"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.16.13",
+		"@eslint/eslintrc": "^3",
+		"@tailwindcss/postcss": "^4",
+		"@types/better-sqlite3": "^7.6.13",
+		"@types/node": "^24.13.0",
+		"@types/react": "^19.1.7",
+		"@types/react-dom": "^19.1.7",
+		"@vitest/coverage-v8": "^4.1.8",
+		"better-sqlite3": "^12.10.0",
+		"eslint": "^9",
+		"eslint-config-next": "16.2.6",
+		"fast-check": "^4.8.0",
+		"tailwindcss": "^4",
+		"typescript": "^5.7.4",
+		"vitest": "^4.1.8",
+		"wrangler": "^4.98.0"
+	}
+}

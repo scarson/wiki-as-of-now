@@ -1,0 +1,52 @@
+{{short description|Ground radar system}}
+{{Use dmy dates|date=June 2025}}
+[[File:Q-53 Counterfire Target Acquisition Radar.jpg|thumb|AN/TPQ-53 [[phased array radar]] ]]'''AN/TPQ-53 Quick Reaction Capability Radar''' is a mobile [[active electronically scanned array]] [[counter-battery radar]] system manufactured by [[Lockheed Martin]]. The radar is specifically designed to locate the firing positions of both rocket and mortar launchers. It has a maximum detection range of {{convert|56|mi|km|abbr=on}} and has an operating frequency of {{convert|2|{{en dash}}|4|GHz|cm|abbr=on}}.
+
+In accordance with the [[Joint Electronics Type Designation System]] (JETDS), the "''AN/TPQ-53''" designation represents the 53rd design of an Army-Navy [[Electronics|electronic device]] for ground transportable special combination radar system. The JETDS system also now is used to name all [[Department of Defense]] electronic systems.
+
+==History==
+The TPQ-53 radar's delivery on 2 July 2009 followed its successful live-fire performance testing against indirect fire from mortars, artillery and rockets from a simulated enemy. The system has been tested and approved by the US Army. TPQ-53 radar systems will replace the aging [[AN/TPQ-36]] and [[AN/TPQ-37]] medium-range radars now in the Army's inventory.{{r|did}}
+
+Prior to September 2011, the system was known as "EQ-36 Counterfire Target Acquisition Radar".<ref>{{cite journal|last=Fein|first=Geoff|title=Weapon Finding Radars|journal=Jane's International Defence Review|date=March 2012|page=37}}</ref> EQ-36 was a Lockheed reference to the “Enhanced AN/TPQ-36", their program to develop what eventually became the AN/TPQ-53.{{r|did}}
+
+In June 2013, the United States Army exercised a contract option to finish out the total production of 51 systems.<ref name=did>{{Cite web|url=http://www.defenseindustrydaily.com/843m-adds-12-eq-36-radars-asap-05006/|title=TPQ-53 Counterfire Radars: Incoming Where?|website=Defense Industry Daily|access-date=June 20, 2025}}</ref> After a contract award 24 April 2017 has completed production, the Army will hold more than 170 such systems.<ref>{{Cite web|url=https://www.prnewswire.com/news-releases/protecting-the-soldier-us-army-orders-more-q-53-counterfire-radars-from-lockheed-martin-300444049.html|title=Protecting the Soldier: U.S. Army Orders More Q-53 Counterfire Radars from Lockheed Martin|date=April 24, 2017|website=PR Newswire|type=Press Release|access-date=June 20, 2025}}</ref> In April 2020, the first TPQ-53s with [[Gallium nitride]] (GaN) transmit-receive modules were delivered providing additional power, reliability and the possibility for extended range, and counterfire target acquisition (CTA).<ref>{{cite web |url=https://news.lockheedmartin.com/first-q-53-radar-equipped-with-gallium-nitride-delivered-us-army |title=First Q-53 Radar Equipped with Gallium Nitride Delivered to U.S. Army |date= April 30, 2020 |archive-url=https://web.archive.org/web/20200506160723/https://news.lockheedmartin.com/first-q-53-radar-equipped-with-gallium-nitride-delivered-us-army |archive-date=2020-05-06 |url-status=live |access-date= June 20, 2025 |website= [[Lockheed Martin]] |type= Press Release}}</ref>
+
+After Russian-backed separatists started operating tanks in Eastern Ukraine, the U.S. started sending military items to Ukraine, including twenty AN/TPQ-53 radar systems in 2015. As a result, Ukraine's units thus equipped saw casualty rates decline from 47 percent to around 18 percent.<ref name=defnews>{{Cite news |url= https://www.defensenews.com/congress/2019/09/25/what-you-need-to-know-about-the-us-aid-package-to-ukraine-that-trump-delayed/ |title= Here's what you need to know about the US aid package to Ukraine that Trump delayed |last1= Gould |first1= Joe |last2 = Altman |first2= Howard |date= September 25, 2019 |access-date= February 7, 2022 |website= DefenseNews}}</ref> Ukrainian combat expertise with the system led to their providing training to U.S. forces.{{r|defnews}}
+
+==Operators==
+; {{ROU}}<ref name="Janes">{{cite web|url=https://www.janes.com/osint-insights/defence-news/defence/ausa-2022-lockheed-martin-eyes-multimission-variant-of-antpq-53-radar|title=AUSA 2022: Lockheed Martin eyes multimission variant of AN/TPQ-53 radar|website=[[Janes Information Services|Janes]]|author=Carlo Munoz|date=10 October 2022}}</ref>
+* [[Romanian Land Forces]]
+; {{SAU}}<ref name="Janes"/>
+* [[Saudi Arabian Army]]
+; {{SIN}}<ref name="Janes"/>
+* [[Singapore Army]]
+; {{UKR}}<ref>{{cite web|url=https://taskandpurpose.com/tech-tactics/army-border-air-defense-drones/|title=Soldiers on US-Mexico border hunt drones with air defense radars typically used in combat|author=Patty Nieberg|website=taskandpurpose.com|date=4 June 2025}}</ref>
+* [[Ukrainian Ground Forces]]
+; {{USA}}<ref name="Janes"/>
+* [[United States Army]]
+
+==See also==
+{{Portal|Electronics}}
+*[[List of radars]]
+*[[List of military electronics of the United States]]
+*[[ARTHUR (military)]]
+*[[AN/TPS-80 Ground/Air Task Oriented Radar]]
+*[[Swathi Weapon Locating Radar]]
+*[[Red Color]]
+*[[Type 704 Radar]]
+
+==Notes==
+{{reflist}}
+
+== External links ==
+*[https://web.archive.org/web/20090713030057/http://frontierindia.net/us-army-receives-first-eq-36-counterfire-target-acquisition-radar-system ''FrontierIndia.net'' - U.S. Army Receives First EQ-36 Counterfire Target Acquisition Radar System (7 July 2009)]
+{{Lockheed Martin|state=collapsed}}
+{{Raytheon}}
+
+[[Category:Ground radars]]
+[[Category:Military radars of the United States]]
+[[Category:Raytheon Company products]]
+[[Category:Lockheed Martin]]
+[[Category:Weapon locating radar]]
+[[Category:Military electronics of the United States]]
+[[Category:Targeting (warfare)]]

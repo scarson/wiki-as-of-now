@@ -1,0 +1,288 @@
+{{Short description|U.S. guided-missile frigates under construction}}
+{{redirect-distinguish|FFG(X)|FF(X)}}
+{{Use mdy dates|date = November 2025}}
+{{Use American English|date = November 2025}}
+{{Infobox ship
+|section1={{Infobox ship/image
+ |image = U.S. Navy guided-missile frigate FFG(X) artist rendering, 30 April 2020 (200430-N-NO101-150).JPG
+ |image_caption = An artist's rendering of the final ''Constellation''-class design
+ }}
+|section2={{Infobox ship/class overview
+ |name = ''Constellation'' class
+ |builders = [[Fincantieri Marinette Marine]]
+ |operators = {{naval|United States}} (projected)
+ |class_before = * {{sclass|Freedom|littoral combat ship|5}} and {{sclass|Independence|littoral combat ship|4}}es
+                 * {{sclass|Oliver Hazard Perry|frigate|4}} (last class with FFG [[hull code]])
+ |class_after = [[FF(X)]]<ref name="SL19122025USNI" />
+ |subclasses = 
+ |cost = * [[United States dollar|US$]]1.28&nbsp;billion for the first ship<ref name=report_Congr_summ>[https://news.usni.org/2022/02/01/report-to-congress-on-constellation-class-frigate-program-ffg-62-8 "Report to Congress on Constellation-class Frigate Program (FFG-62)"] summary. USNI, 1 February 2022.</ref>
+         * US$1.05&nbsp;billion for the second ship<ref name=report_Congr_summ/>
+ |built_range = 2024–present
+ |in_commission_range = 2029 (planned)<ref>{{cite web |last=Shelbourne |first=Mallory |date= 2 April 2024|title=Constellation Frigate Delivery Delayed 3 Years, Says Navy |url=https://news.usni.org/2024/04/02/constellation-frigate-delivery-delayed-3-years-says-navy |access-date=2024-04-05 |publisher=USNI News}}</ref>
+ |total_ships_on_order = 1
+ |total_ships_building = 1
+ |total_ships_planned = 20<ref name="USNI Five Contenders" />
+ |total_ships_completed = 0
+ |total_ships_cancelled = 18
+ |total_ships_active = 0
+ |total_ships_laid_up =
+ |total_ships_lost =
+ |total_ships_retired =
+ |total_ships_scrapped =
+ |total_ships_preserved =
+ }}
+
+|section3={{Infobox ship/characteristics
+ |type = [[Frigate|Guided-missile frigate]]
+ |displacement = 7,291 tons, fully loaded<ref name="defensenews 2021.3.4" />
+ |length = {{convert|496|ft|m|2|abbr=on}}<ref name="defensenews 2021.3.4" />
+ |beam = {{convert|65|ft|m|2|abbr=on}}<ref name="defensenews 2021.3.4" />
+ |draft = <!-- {{convert|18|ft|m|2|abbr=on}}{{cn|date=December 2021}} -->
+ |propulsion = * [[Combined diesel-electric and gas|CODLAG]]
+               ** 1 × General Electric [[LM2500|LM2500+G4]] gas turbine<ref>[https://www.geaviation.com/marine/engines/military/lm2500-plus-g4] GE, The LM2500+G4 Engine</ref>
+               ** 2 × electric propulsion motors: INDAR 2 x 3.4 MW
+               ** 4 × ship service diesel generators Rolls-Royce MTU 20V 4000 M53B engine 3000 kW for a total output of 12 MW
+               ** Reduction gears by Philadelphia Gears<ref>{{cite web |title=Timken's Philadelphia Gear to Supply Critical Components for U.S. Navy Frigate Program |url=https://news.timken.com/2020-10-21-Timkens-Philadelphia-Gear-to-Supply-Critical-Components-for-U-S-Navy-Frigate-Program}}</ref>
+               ** 2 x fixed-pitch propellers
+               ** 1 × auxiliary propulsion unit Thrustmasters of Texas Hydrologic Retractable Thruster<ref name="defensenews 2021.3.4" />
+ |speed = in excess of {{convert|26|kn|abbr=on}}
+ |range = {{convert|6000|nmi|lk=in|abbr=on}} at {{convert|16|kn|abbr=on}}, electric drive
+ |complement = 24 officers and 176 enlisted crew
+ |capacity = 200 accommodations
+ |sensors = * Aegis Baseline 10 Combat System<ref name="defensenews 2021.3.4" />
+            * [[AN/SPY-6]](V)3 Enterprise Air Surveillance Radar (EASR)<ref name="SNA 2018" />
+            * AN/SPS-73(V)18 - Next Generation Surface Search Radar
+            * [[Thales Group]] CAPTAS-4 Low Frequency [[Sonar#Anti-submarine warfare|Variable-Depth]] Sonar<ref>{{cite web |last=O'Rourke |first=Ronald |date= |title=Navy Constellation (FFG-62) Class Frigate Program: Background and Issues for Congress |url=https://sgp.fas.org/crs/weapons/R44972.pdf |access-date=2023-06-17 |publisher=Congressional Research Service |page=15 |id=R44972}}</ref>
+            * TB-37 Multi-Function [[Towed array sonar|Towed Array]]<ref name="FFG(X) Update" />
+            * AN/SQQ-89(V)16 undersea warfare/anti-submarine warfare combat system<ref>{{cite web |last1=Burgess |first1=Richard R. |title=First Steel Cut for Navy's Constellation-Class Frigate |url=https://seapowermagazine.org/first-steel-cut-for-navys-constellation-class-frigate/ |website=Seapower |access-date=4 September 2023 |date=31 August 2022}}</ref>
+            * [[Cooperative Engagement Capability]]
+ |EW = * [[AN/SLQ-32|AN/SLQ-32(V)6]] electronic warfare suite<ref>{{Cite web |title=FY22 DOT&E Annual Report |url=https://www.dote.osd.mil/Portals/97/pub/reports/FY2022/FY22DOTEAnnualReport.pdf |access-date=19 January 2024 |publisher=[[Director, Operational Test and Evaluation]] |page=186}}</ref>
+       * 4 × [[Nulka|Mark 53 Nulka]] decoy launching system
+       * AN/SLQ-61 Lightweight Tow Torpedo Defense Mission Module<ref name="FFG(X) Update">{{Cite web |last=Campbell |first=Regan |date=15 January 2019 |title=FFG(X) Update: National Symposium – Surface Navy Association |url=https://www.navsea.navy.mil/Portals/103/Documents/Exhibits/SNA2019/FFGX-Campbell.pdf?ver=2019-01-17-125642-573 |access-date=17 June 2023 |website=navsea.navy.mil |page=3}}</ref><ref>{{Cite web |date=4 May 2018 |title=Navy Completes Lightweight Torpedo Defense Mission Module Testing |url=https://www.navy.mil/Press-Office/News-Stories/Article/2249361/navy-completes-lightweight-torpedo-defense-mission-module-testing/ |access-date=17 June 2023 |website=navy.mil}}</ref>
+ |armament = * 32 [[Mark 41 Vertical Launching System|Mark 41 VLS]] cells with:
+             ** [[Tomahawk cruise missile|BGM-109 Tomahawk Cruise Missile]]<ref name="2023_NDAA">{{Cite web|url=https://www.congress.gov/bill/117th-congress/house-bill/7776/text|title=Text - H.R.7776 - 117th Congress (2021-2022): James M. Inhofe National Defense Authorization Act for Fiscal Year 2023 &#124; Congress.gov &#124; Library of Congress |date=23 December 2022}}</ref>
+             ** Possibly [[RIM-162 ESSM]] Block 2 and/or [[RIM-174 Standard ERAM]] missiles
+             ** Planned [[RIM-66 Standard]] SM-2 Block 3C
+             * 16 × canister-launched [[anti-ship missile|over-the-horizon anti-ship weapon]]s (likely [[Naval Strike Missile]])
+             * [[RIM-116 Rolling Airframe Missile]] launched from Mk 49 Guided Missile Launching System (21 cell)
+             * [[Bofors 57 mm L/70 naval artillery gun|Mk 110 57{{nbsp}}mm gun]] with the Advanced Low Cost Munition Ordnance (ALaMO) projectile and related systems<ref name="2017-07-10_DN" />
+             * Various machine guns [[M240]] or [[M2 Browning|M2]]
+ |boats = 2 × [[rigid-hulled inflatable boat]]s
+ |aircraft = 1 × [[MH-60R Seahawk]] helicopter
+ |aircraft_facilities = * extra-large hangar for helicopter
+                        * RAST Secure & Traverse Aircraft Handling System
+                        * Horizontal Reference System
+                        * Night Vision Device Compatibility
+ }}
+}}
+
+The '''''Constellation''''' is a [[Ship class|class]] of multi-mission [[guided-missile frigate]]s of the [[United States Navy]] based on the [[Italian Navy]]'s version of the European multipurpose frigate or [[FREMM multipurpose frigate|FREMM]].<ref>{{cite web |author=<!-- not stated --> |date=4 September 2024 |title=Constellation-class: the US Navy's struggle to forge a new generation of frigates |url=https://www.navylookout.com/constellation-class-the-us-navys-struggle-to-forge-a-new-generation-of-frigates/ |website=Navy Lookout}}</ref> ''Constellation'' follows the modular but troubled [[littoral combat ship]]s of the [[Freedom-class littoral combat ship|''Freedom'']] and [[Independence-class littoral combat ship|''Independence'']] classes.<ref name="CRS FFG(X) Report">{{cite web |url=https://fas.org/sgp/crs/weapons/R44972.pdf |title=Navy Frigate (FFG[X]) Program: Background and Issues for Congress |last=O'Rourke |first=Ronald |publisher=[[Congressional Research Service]] |date=8 December 2017 |access-date=17 February 2018}}</ref> The U.S. Navy announced the '''FFG(X)''' frigate project in the [[United States Department of Defense]]'s [[Request For Information]] (RFI) in July 2017.<ref name="2017-07-10_DN">{{cite web |url=https://www.defensenews.com/breaking-news/2017/07/10/frigate-competition-wide-open-navy-specs-reveal-major-design-shift/ |title=Frigate competition wide open: Navy specs reveal major design shift |last=Larter |first=David B. |work=[[Defense News]] |publisher=Sightline Media Group |date=10 July 2017 |access-date=19 January 2018}}</ref><ref name="USNI FFG(X) RFI">{{cite news |url=https://news.usni.org/2017/07/10/navy-releases-details-of-new-ffgx-guided-missile-frigate-program-in-request-to-industry |title= Navy Releases Details of New FFG(X) Guided-Missile Frigate Program in Request to Industry |last=Eckstein |first=Megan |date=10 July 2017 |work=USNI News |publisher=[[United States Naval Institute|U.S. Naval Institute]] |access-date=17 February 2018}}</ref>
+
+The Navy selected five shipbuilders to present their design concepts for a prospective class of up to twenty FFG(X) guided-missile frigates.<ref name="USNI Five Contenders">{{cite news |url=https://news.usni.org/2018/02/16/navy-picks-five-contenders-next-generation-frigate-ffgxprogram |title=Navy Picks Five Contenders for Next Generation Frigate FFG(X) Program |last1=LaGrone |first1=Sam |last2=Eckstein |first2=Megan |date=16 February 2018 |work=USNI News |publisher=[[United States Naval Institute|U.S. Naval Institute]] |access-date=17 February 2018}}</ref> In April 2020, the Navy announced that [[Fincantieri Marinette Marine]] had won the contract with a modified design based on the Italian version of FREMM designed by [[Fincantieri]]. The project was later renamed '''FFG-62 program''' after the [[lead ship]] of her class.<ref>{{Cite web |date=2021-08-31 |title=Report to Congress on Constellation-class Frigate Program (FFG-62) |url=https://news.usni.org/2021/08/31/report-to-congress-on-constellation-class-frigate-program-ffg-62-6 |access-date=2021-09-05 |website=USNI News |language=en-US}}</ref>
+
+The program was cancelled in November 2025, with only the first two ships already under construction to be finished and remaining four on order cancelled.<ref name=USNI_Constell_cancel/> A month later, in December 2025, it was announced that the design of the [[Legend-class cutter|National Security Cutter]] will serve as basis of a new US Navy frigate program that is named [[FF(X)]].<ref name="SL19122025USNI">{{cite web |author=Sam Lagrone |date=19 December 2025 |title=SECNAV: New Frigate will be Based on National Security Cutter, First FF(X) to be Built at Ingalls |url=https://news.usni.org/2025/12/19/secnav-new-frigate-will-be-based-on-national-security-cutter-first-ffx-to-be-built-at-ingalls |website=U.S. Naval Institute}}</ref><ref>{{cite web |author=Joseph Trevithick |date=19 December 2025 |title=This Will Be The Navy's New FF(X) Frigate |url=https://www.twz.com/sea/this-will-be-the-navys-new-ffx-frigate |website=The War Zone}}</ref>
+
+== Development ==
+The U.S. Navy contracted for the first FFG 62 in FY2020.<ref name=USS_Congr_award/> The second ship contract was awarded in April 2021, and the third in FY22.{{Citation needed|date=December 2025}} The U.S. Navy's proposed FY2020 budget request was $1.281-billion for the procurement of the first FFG 62. The U.S. Navy's FY2020 budget submission shows that subsequent ships in the class were estimated by the Navy to cost $850 to $950-million each in then-year dollars.<ref>{{Cite web |url=https://news.usni.org/2019/10/18/report-to-congress-on-u-s-navy-frigate-ffgx-program-5 |title=Report to Congress on U.S. Navy Frigate FFG(X) Program |date=2019-10-18 |website=USNI News |language=en-US |access-date=2019-10-19}}</ref><ref name="defensenews 2021.3.4">{{Cite web |last1=Larter |first1=David |title=Here's the latest on the US Navy's new Constellation-class frigate |url=https://www.defensenews.com/digital-show-dailies/surface-navy-association/2021/01/12/heres-the-latest-on-the-us-navys-new-constellation-class-frigate |work= Breaking Defense |date=12 January 2021 |access-date=4 March 2021}}</ref>
+
+==Design==
+[[File:Proposed Government Furnished Equipment for FFG(X).png|thumb|left|The proposed government furnished equipment for the FFG(X)]]
+
+The U.S. Navy's intention to contract for the first FFG(X) in 2020 did not allow enough time to develop a completely new design for the platform. Consequently, the U.S. Navy intended for the design of the FFG(X) to be a modified version of an existing "parent" ship design.<ref name="CRS FFG(X) Report" />{{rp|8}} The RFI says, "A competition for FFG(X) is envisioned to consider existing parent designs for a Small Surface Combatant that can be modified to accommodate the specific capability requirements prescribed by the U.S. Navy."<ref name="2017-07-10_DN" />
+
+The U.S. Navy wanted a frigate that could keep up with the [[aircraft carrier]]s and have sensors networked in with the rest of the fleet to expand the overall tactical picture available to the group. It was planned in 2017 that the FFG(X) would "normally aggregate into strike groups and Large Surface Combatant led surface action groups but also possess the ability to robustly defend itself during conduct of independent operations while connected and contributing to the fleet tactical grid."<ref name="2017-07-10_DN" />
+
+In January 2019, the U.S. Navy announced that the new frigate design would have a minimum of 32 Mark 41 Vertical Launch System cells aboard the ship for primarily anti-air warfare for self-defense or escort missions.<ref>{{Cite web |last=LaGrone |first=Sam |date=2019-01-22 |title=Navy Squeezing Costs Out of FFG(X) Program as Requirements Solidify |url=https://news.usni.org/2019/01/22/navy-squeezing-costs-ffgx-program-requirements-solidify |access-date=2019-02-09 |website=USNI News |language=en-US}}</ref>
+
+The U.S. Navy would like for the ship to be able to:<ref name="2017-07-10_DN" />
+* Destroy surface ships over the horizon
+* Detect enemy submarines
+* Defend convoy ships
+* Employ active and passive electronic warfare systems
+* Defend against swarming small boat attacks
+
+The class was to have used a [[Combined diesel-electric and gas|Combined Diesel Electric and Gas]] Hull, Mechanical and Electrical (HM&E) propulsion system, which had never been used in any other U.S. Navy ship.<ref name=":4">{{Cite web |last=Larter |first=David B. |date=2020-12-06 |title=Citing littoral combat ship failures, Congress pushes the US Navy to get FFG(X) right |url=https://www.defensenews.com/naval/2020/12/04/citing-littoral-combat-ship-failures-congress-pushes-the-us-navy-to-get-ffgx-right/ |access-date=2021-01-16 |website=Defense News |language=en-US}}</ref> The new propulsion system was planned to be tested on land in order to reduce the risk of engine failure, which has plagued the previous [[littoral combat ship]] (LCS) program.<ref name=":4" />
+
+The ongoing difficulties with the LCS were a major factor in the US Navy's original decision to kickstart the ''Constellation'' program. According to the [[Congressional Research Service]], ongoing concerns include LCS survivability in a conflict, their limited armament, and their ability to complete the missions they were designed for.<ref>{{Cite news |last=Thomas |first=Richard |date=2023-01-24 |title=Was the US Navy's Littoral Combat Ship a mistake? |url=https://www.naval-technology.com/features/was-the-us-navys-littoral-combat-ship-a-mistake/ |access-date=2023-03-21 |website=Naval Technology |language=en-US}}</ref> Other problems included their high cost (double original projection) and high maintenance costs.<ref>{{Cite news |date=2023-02-04 |title=The Pentagon Saw a Warship Boondoggle. Congress Saw Jobs. |language=en-US |work=The New York Times |url=https://www.nytimes.com/2023/02/04/us/politics/littoral-combat-ships-lobbying.html |access-date=2023-03-21}}</ref>
+
+=== Contenders ===
+Six shipbuilders submitted proposals for conceptual designs to the U.S. Navy FFG(X) Frigate program.<ref name="SNA 2018">{{cite web |url=https://www.armyrecognition.com/archives/archives-naval-defense/naval-defense-2018/sna-2018-contenders-for-the-u-s-navy-ffg-x-frigate-program |title=SNA 2018: Contenders for the U.S. Navy FFG(X) Frigate Program |editor-last=Vavasseur |editor-first=Xavier |work=Navy Recognition |date=18 January 2018 |access-date=19 January 2018}}</ref><ref name="CR-032-18">{{cite press release |url=https://www.defense.gov/News/Contracts/Contract-View/Article/1444724/ |archive-url=https://web.archive.org/web/20180608231925/https://www.defense.gov/News/Contracts/Contract-View/Article/1444724/ |archive-date=June 8, 2018 |title= Contracts |date=16 February 2018 |id= CR-032-18 |publisher=U.S. Department of Defense |access-date=17 February 2018 |quote="...six offers received."}}</ref> In February 2018, the U.S. Navy announced that from these proposals they had selected five shipbuilders with each awarded a $15-million contract to produce conceptual designs for the FFG(X).<ref name="USNI Five Contenders" /> These shipbuilders were [[Austal USA]], [[Fincantieri|Fincantieri Marine Group]], [[General Dynamics]], [[Huntington Ingalls Industries]], and [[Lockheed Martin]].<ref name="USNI Five Contenders" />
+
+[[Atlas Elektronik|Atlas North America]] submitted the [[Meko A-200|MEKO A-200]], but was not selected for a conceptual design contract.<ref name="SNA 2018" /><ref name="USNI Five Contenders" /> Ship designs from the other five shipbuilders were evaluated by the U.S. Navy to inform the final specifications to be used for the FFG(X) request for proposal in 2019, and the intended contract award in 2020.<ref name="USNI Five Contenders" />
+
+In May 2019, Lockheed Martin withdrew from the competition,<ref name=":0">{{cite web|last=LaGrone|first=Sam|date=28 May 2019|title=Lockheed Martin Won't Submit Freedom LCS Design for FFG(X) Contest|url=https://news.usni.org/2019/05/28/lockheed-martin-wont-submit-freedom-lcs-design-for-ffgx-contest|access-date=28 May 2019|publisher=USNI News}}</ref> leaving four competitors for the Navy ship contract.
+
+{| class="wikitable"
+!Shipbuilder
+!Parent Design
+!Proposal Name
+!Length (m)
+!Crew
+!Contract Awarded
+|-
+![[Austal USA]]
+|[[Independence-class littoral combat ship|''Independence''-class LCS]]<ref name="SNA 2018" />
+|"Austal Frigate"<ref name="SNA 2018" />
+|127.7<ref name="SNA 2018" />
+|to 130<ref name="SNA 2018" />
+|Design<ref name="SNA 2018" />
+|-
+![[Fincantieri|Fincantieri Marine Group]]
+|[[FREMM multipurpose frigate|European multipurpose frigate (FREMM)]]<ref name="SNA 2018" />
+|FREMM
+|143.8<ref name="SNA 2018" />
+|133<ref name="SNA 2018" />
+|Detail Design and Construction (DD&C)<ref>{{Cite web |date=2022-07-15 |title=Report to Congress on Constellation-class Frigate Program (FFG-62) |url=https://news.usni.org/2022/07/15/report-to-congress-on-constellation-class-frigate-program-ffg-62-11 |access-date=2022-12-18 |website=USNI News |language=en-US}}</ref>
+|-
+![[General Dynamics]] / [[Bath Iron Works]]
+|[[Álvaro de Bazán-class frigate|''Álvaro de Bazán''-class Spanish frigate]]<ref name="SNA 2018" />
+|"F100"<ref name="SNA 2018" />
+|146.7<ref name="SNA 2018" />
+|to 234<ref name="SNA 2018" />
+|Design<ref name="SNA 2018" />
+|-
+![[Huntington Ingalls Industries]]
+|[[Legend-class cutter|''Legend''-class National Security Cutter]]<ref name="SNA 2018" />
+|"Patrol Frigate"<ref name="SNA 2018" />
+|127.4<ref name="SNA 2018" />
+|Unspecified<ref name="SNA 2018" />
+|Design<ref name="SNA 2018" />
+|-
+![[Lockheed Martin]]
+|[[Freedom-class littoral combat ship|''Freedom''-class LCS]]<ref name="SNA 2018" />
+|"Freedom Frigate"<ref name="SNA 2018" />
+|125<ref name="SNA 2018" />
+|130<ref name="SNA 2018" />
+|Design<ref name="SNA 2018" /> (company withdrew in 2019)<ref name=":0" />
+|-
+![[Atlas Elektronik|Atlas North America]]
+|[[Meko A-200|MEKO A-200]]<ref name="SNA 2018" />
+|[[Meko A-200|MEKO A-200]]
+|121<ref name="SNA 2018" />
+|100-120<ref name="SNA 2018" />
+|None
+|}
+
+=== Contract award ===
+On 30 April 2020, it was announced that [[Fincantieri Marinette Marine]]'s FREMM design had won the contest. Fincantieri Marinette Marine (FMM), in [[Marinette, Wisconsin]], was awarded a $795-million contract for detailed design and construction of the lead ship, ''Constellation,'' with options for nine additional ships.<ref name="cost1">{{cite news |last1=Eckstein |first1=Megan |title=Fincantieri Wins $795M Contract for Navy Frigate Program |url=https://news.usni.org/2020/04/30/fincantieri-wins-795m-contract-for-navy-frigate-program |work= USNI News |access-date=30 April 2020 |date=30 April 2020}}</ref> In May 2021, the U.S. Navy issued FMM a $554-million contract to start building the future {{USS|Congress|FFG-63}}.<ref name=USS_Congr_award>{{Cite web|date=2021-05-20|title=Navy Issues $554M Contract Modification for Second Navy Frigate|url=https://news.usni.org/2021/05/20/navy-issues-554m-contract-modification-for-second-navy-frigate|access-date=2021-05-21|website=USNI News|language=en-US}}</ref>  By May 2024, a total of six ships had been contracted for with FMM,<ref>{{cite web | url=https://www.navalnews.com/naval-news/2024/05/fincantieri-awarded-fifth-and-sixth-constellation-class-frigates-for-u-s-navy/ |title=Fincantieri Awarded Fifth and Sixth Constellation-class Frigates for U.S. Navy |publisher=Naval News |date=24 May 2024 |access-date=26 November 2025}}</ref> and the Navy's 2025 budget included funds for the seventh ship.<ref>{{cite web |url=https://news.usni.org/2024/11/26/report-to-congress-on-navy-constellation-class-frigate-program |title=Report to Congress on Navy Constellation-class Frigate Program |publisher=USNI News |date=26 November 2024 |access-date=26 November 2025 |author=Congressional Research Service}}</ref>
+
+==Construction==
+On 2 April 2024, [[United States Naval Institute|USNI News]] reported that the ''Constellation''-class frigates were delayed by three years by issues concerning shipyard backlogs and a [[Labour shortage|lack of skilled workers]].<ref>{{Cite web |last1=Shelbourne |first1=Mallory |last2=LaGrone |first2=Sam |date=April 2, 2024 |title=Constellation Frigate Delivery Delayed 3 Years, Says Navy |url=https://news.usni.org/2024/04/02/constellation-frigate-delivery-delayed-3-years-says-navy |access-date=April 5, 2024 |website=USNI News}}</ref> In April 2025, it was reported that the first frigate of the class, ''Constellation'', was only 10 percent complete.<ref name="JosephTWZ42025">{{cite web |author=Joseph Trevithick |date=10 April 2025 |title=First Constellation Frigate Only 10% Complete, Design Still Being Finalized |url=https://www.twz.com/sea/first-constellation-frigate-only-10-complete-design-still-being-finalized |website=The War Zone}}</ref> Furthermore, the design had yet to be finalized and approved.<ref name="JosephTWZ42025" />
+
+On 25 November 2025, then-Secretary of the Navy [[John C. Phelan]] announced that all but the first two ships in the class had been canceled as part of a Navy review of its fleet strategy, with an emphasis on designs that can be constructed more rapidly.<ref name=USNI_Constell_cancel>{{Cite web |last=LaGrone |first=Sam |date=2025-11-25 |title=Navy Cancels Constellation-class Frigate Program |url=https://news.usni.org/2025/11/25/navy-cancels-constellation-class-frigate-program-considering-new-small-surface-combatants |access-date=2025-11-25 |website=USNI News |language=en-US}}</ref>  At the time, ''Constellation'' was reported to be 12 percent complete.<ref name=USNI_Constell_cancel/>
+
+== Ships of the class ==
+{| class="wikitable plainrowheaders"
+! scope="col" | Name
+! scope="col" | Hull Number
+! scope="col" | Builder
+! scope="col" | Laid Down
+! scope="col" | Launched
+! scope="col" | Commissioned
+! scope="col" | Homeport<ref name="Correll" />
+! scope="col" | Status
+|-
+! scope="row" | {{USS|Constellation|FFG-62|2}}
+| FFG-62
+| rowspan="8" |[[Fincantieri Marinette Marine]]
+| 12 April 2024<ref>{{cite press release|url=https://www.navy.mil/Press-Office/Press-Releases/display-pressreleases/Article/3740071/secnav-del-toro-celebrates-the-keel-laying-of-the-future-uss-constellation-ffg/|title= SECNAV Del Toro Celebrates the Keel Laying of the Future USS Constellation (FFG 62)|publisher=United States Navy|date=12 April 2024|access-date=22 December 2025}}</ref>
+|
+|
+|[[Naval Station Everett|NS Everett, WA]]
+|Under construction<ref name="Navy 202404">{{cite press release|url=https://www.navy.mil/Press-Office/Press-Releases/display-pressreleases/Article/3740071/secnav-del-toro-celebrates-the-keel-laying-of-the-future-uss-constellation-ffg/|title= SECNAV Del Toro Celebrates the Keel Laying of the Future USS Constellation (FFG 62)|publisher=United States Navy|date=12 April 2024|access-date=12 April 2024}}</ref>
+|-
+! scope="row" | {{USS|Congress|FFG-63|2}}
+| FFG-63
+|
+|
+|
+|NS Everett, WA
+|Awarded<ref name=":2">{{cite press release |title=SECNAV Names Future Guided Missile Frigate USS Congress |url=https://www.navy.mil/Press-Office/Press-Releases/display-pressreleases/Article/2435589/secnav-names-future-guided-missile-frigate-uss-congress/ |archive-url=https://web.archive.org/web/20201205010702/https://www.navy.mil/Press-Office/Press-Releases/display-pressreleases/Article/2435589/secnav-names-future-guided-missile-frigate-uss-congress/ |archive-date=December 5, 2020 |publisher=United States Navy |date=4 December 2020 |access-date=16 January 2021}}</ref><ref>{{cite news |last=Harkins |first=Gina |title=The Navy is Naming its Next New Frigate USS Congress |url=https://www.military.com/daily-news/2020/12/03/navy-naming-its-next-new-frigate-uss-congress.html |website=Military.com |date=3 December 2020 |access-date=16 January 2021}}</ref><ref name=USS_Congr_award/>
+|-
+! scope="row" | ''Chesapeake''
+| FFG-64
+|
+|
+|
+|NS Everett, WA
+|Cancelled<ref name=":1">{{Cite web |last=LaGrone |first=Sam |date=2025-11-25 |title=Navy Cancels Constellation-class Frigate Program |url=https://news.usni.org/2025/11/25/navy-cancels-constellation-class-frigate-program-considering-new-small-surface-combatants |access-date=2025-11-25 |website=USNI News |language=en-US}}</ref>
+|-
+! scope="row" | ''Lafayette''
+| FFG-65
+|
+|
+|
+|NS Everett, WA
+|Cancelled<ref name=":1" />
+|-
+! scope="row" | ''Hamilton''
+|FFG-66
+|
+|
+|
+|NS Everett, WA
+|Cancelled<ref name=":1" />
+|-
+! scope="row" | ''Galvez''
+|FFG-67
+|
+|
+|
+|NS Everett, WA
+|Cancelled<ref name=":1" />
+|-
+! scope="row" | ''Everett Alvarez Jr.''
+|FFG-68
+|
+|
+|
+|NS Everett, WA
+|Cancelled<ref name=":1" />
+|-
+! scope="row" | ''Joy Bright Hancock''
+|FFG-69
+|
+|
+|
+|NS Everett, WA
+|Cancelled<ref name=":1" />
+|}
+
+In June 2021, the Navy announced that [[Naval Station Everett]] in Washington would be the future home of the first 12 ships of the class.<ref name="Correll">{{cite news |last1=Correll |first1=Diana |title=Naval Station Everett selected as homeport for Constellation-class frigates |url=https://www.navytimes.com/news/your-navy/2021/06/03/naval-station-everett-selected-as-homeport-for-constellation-class-frigates/ |work=Navy Times |publisher=Sightline Media Group |date=3 June 2021 |access-date=9 November 2021}}</ref>
+
+=== Naming ===
+In April 2020, four ship names were proposed by outgoing acting [[United States Secretary of the Navy|Secretary of the Navy]], [[Thomas Modly]] as part of a draft announcement. He expressed a desire for the first ship to be named ''Agility'' with the class designated ''Agility'' class.{{Citation needed|date=September 2025}} Other names put forward were ''Intrepid'', ''Endeavor'', and ''Dauntless''. However, Navy leaders said Modly's proposed names would not be adopted.<ref>{{cite news |first=Ben |last=Werner |title=Navy Leaders Sink Ship Names Proposed in SECNAV Modly's Last Days |url=https://news.usni.org/2020/04/08/navy-leaders-sink-ship-names-proposed-in-secnav-modlys-last-days |work=USNI News |publisher=United States Naval Institute |date=8 April 2020 |access-date=17 July 2020}}</ref> In July 2020, it was reported by ''The War Zone'' that the lead ship would be named USS ''Brooke'' (FFG-80).<ref>{{cite news |first=Joseph |last=Trevithick |url=https://www.thedrive.com/the-war-zone/34948/pentagon-notice-says-the-first-of-the-navys-new-frigates-will-be-named-uss-brooke |title=Pentagon Notice Says The First Of The Navy's New Frigates Will Be Named USS Brooke |work=The War Zone |publisher=The Drive |date=17 July 2020 |access-date=17 July 2020}}</ref> Later the U.S. Navy clarified via Twitter that reports about reusing the USS ''Brooke'' name for a new warship were erroneous.<ref name="Def Brief 201007">{{cite news |title= No, the US Navy will not name first of new class of frigates USS Brooke |url=https://defbrief.com/2020/07/18/no-the-us-navy-will-not-name-first-of-new-class-of-frigates-uss-brooke/ |publisher=Defense Brief |date=18 July 2020 |access-date=7 October 2020}}</ref>
+
+In October 2020, Navy Secretary [[Kenneth Braithwaite]] announced the first FFG(X) frigate would be named USS ''Constellation'' (FFG-62).<ref name="USNI Braithwaite">{{cite news |first=Megan |last=Eckstein |title=SECNAV Braithwaite Names First FFG(X) USS Constellation |url=https://news.usni.org/2020/10/07/secnav-braithwaite-names-first-ffgx-uss-constellation |work=USNI News |publisher=United States Naval Institute |date=7 October 2020 |access-date=7 October 2020}}</ref> In December 2020, Secretary Braithwaite announced that the second ship of the class will be named USS ''Congress'' (FFG-63).<ref name=":2" /><ref>{{cite news |first1=Geoff |last1=Ziezulewicz |title=Navy bringing back U.S. Atlantic Fleet |url=https://www.navytimes.com/news/your-navy/2020/12/02/navy-bringing-back-us-atlantic-fleet/ |work=Navy Times |publisher=Sightline Media Group |date=2 December 2020 |access-date=2 December 2020}}</ref> In January 2021, Secretary Braithwaite announced that the third ship of the class will be named USS ''Chesapeake'' (FFG-64). All three ships are named after three of the U.S. Navy's [[Original six frigates of the United States Navy|original six frigates]].<ref name=":3">{{cite press release |title=SECNAV Names Future Vessels while aboard Historic Navy Ship |date=15 January 2021 |publisher=United States Navy |url=https://www.navy.mil/Press-Office/News-Stories/Article/2474454/secnav-names-future-vessels-while-aboard-historic-navy-ship/ |access-date=16 January 2021}}</ref>
+
+[[United States ship naming conventions]] have historically named frigates after U.S. Navy and [[United States Marine Corps|Marine Corps]] heroes or leaders. A report to Congress in February 2021 advised that the U.S. Navy had not stated that this naming scheme was a change in their rules for naming ships.<ref>{{cite web |title=Navy Ship Names: Background for Congress |url=https://crsreports.congress.gov/product/pdf/RS/RS22478 |publisher=Congressional Research Service |id=RS22478 |date=4 February 2021}}</ref>
+
+==See also==
+{{Portal|United States}}
+* {{sclass|Admiral Gorshkov|frigate|2}} (Russia)
+* {{sclass|Daegu|frigate|2}} (South Korea)
+* [[Defence and intervention frigate]] (France)
+* [[Istanbul-class frigate]] (Turkey)
+* {{sclass|Mogami|frigate|2}} (Japan, Australia)
+* {{sclass|Nilgiri|frigate|2||2019}} (India)
+* {{sclass|Tamandaré|frigate|2}} (Brazil)
+* [[Thaon di Revel-class offshore patrol vessel|Thaon di Revel-class]] frigates (Italy)
+* [[Type 054B frigate]] (China)
+* [[Type 26 frigate|Type 26]] frigates (United Kingdom, Australia, Canada, and Norway)
+* [[Type 31 frigate|Type 31]] frigates (United Kingdom, Poland, and Indonesia)
+
+==References==
+{{Reflist}}
+{{US government sources}}
+
+==External links==
+* [https://www.fbo.gov/index?s=opportunity&mode=form&id=cdf24447b8015337e910d330a87518c6&tab=core&_cview=0 RFI Solicitation Number: N0002418R2300] - 2017-07-10; response by 24 August 2017
+
+{{Constellation-class frigate}}
+{{Active ship classes of the United States Navy}}
+{{Marinette Marine}}
+
+[[Category:Constellation-class frigates]]
+[[Category:Proposed ships of the United States Navy]]
+[[Category:CODLAG ships]]
+[[Category:Cancelled frigates]]

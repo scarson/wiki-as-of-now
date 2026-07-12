@@ -1,0 +1,110 @@
+[
+  {
+    "fixture": "sbx-1.wikitext",
+    "sentenceSubstring": "The first such vessel is scheduled to be based in Adak Island",
+    "stale": true,
+    "reachable": false,
+    "expectedYear": null,
+    "shapeClass": "inline-year-absent",
+    "note": "Scheduling claim ('is scheduled to be based') for a homeport assignment that never happened; no 4-digit year in the sentence, so the detector cannot reach it. Canonical not-reachable example (rubric Example 4)."
+  },
+  {
+    "fixture": "robotic_combat_vehicle.wikitext",
+    "sentenceSubstring": "Testing of the vehicle is expected to begin in 2020",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2020,
+    "shapeClass": "simple",
+    "note": "Forward expectation ('is expected to') with a now-past target year (2020); no leading dateline, not resolved nearby. In-lexicon marker + inline past year, so the detector catches it (rubric Example 1)."
+  },
+  {
+    "fixture": "gordie_howe_international_bridge.wikitext",
+    "sentenceSubstring": "The bridge was to be completed by the end of 2024",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2024,
+    "shapeClass": "simple",
+    "note": "Completion claim ('to be completed by the end of 2024') with a now-past year (2024) and no leading dateline. In-lexicon marker + inline year; the detector catches it. (Borderline: the article revises the date many sentences later, but not in an adjacent sentence, so Exclusion B does not fire.)"
+  },
+  {
+    "fixture": "long_range_discrimination_radar.wikitext",
+    "sentenceSubstring": "Construction in Alaska for the LRDR was scheduled to begin in 2019",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2019,
+    "shapeClass": "marker-gap",
+    "note": "Forward scheduling claim with a now-past year (2019); no leading dateline, not resolved nearby. The phrase 'was scheduled to' is NOT in the lexicon (only 'is scheduled to'), so the detector misses it."
+  },
+  {
+    "fixture": "long_range_discrimination_radar.wikitext",
+    "sentenceSubstring": "Testing for Full Operational Capability is expected by 2023",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2023,
+    "shapeClass": "marker-gap",
+    "note": "Forward expectation with a now-past year (2023); no leading dateline. The phrase 'is expected by' is NOT in the lexicon ('is expected to' requires a following 'to'), so the detector misses it."
+  },
+  {
+    "fixture": "long_range_discrimination_radar.wikitext",
+    "sentenceSubstring": "The first operation is expected to start from 2025",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2025,
+    "shapeClass": "simple",
+    "note": "Forward expectation ('is expected to start') with a now-past year (2025) for Japan's AN/SPY-7 first operation; no leading dateline. In-lexicon marker + inline year; the detector catches it."
+  },
+  {
+    "fixture": "hiv_vaccine_development.wikitext",
+    "sentenceSubstring": "The phase one trial is expected to conclude July 2023",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2023,
+    "shapeClass": "simple",
+    "note": "Forward expectation ('is expected to conclude') with a now-past year (2023) for the NIH mRNA phase-one trial; no leading dateline, not resolved nearby. In-lexicon marker + inline year; the detector catches it."
+  },
+  {
+    "fixture": "m72_as01e.wikitext",
+    "sentenceSubstring": "It is scheduled to begin in 2024 with results available in 2028",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2024,
+    "shapeClass": "simple",
+    "note": "Scheduling claim ('is scheduled to begin') with a now-past start year (2024); no leading dateline. In-lexicon marker + inline year; the detector catches it (rubric Example 2). The 2028 results date is a future milestone, not the stale claim."
+  },
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "TSMC plans to start volume production of the \"3 nm\" process node in 2023",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2023,
+    "shapeClass": "simple",
+    "note": "Forward plan ('plans to start') with a now-past year (2023); no leading dateline. In-lexicon marker + inline year; the detector catches it."
+  },
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "American manufacturer Intel planned to start \"3 nm\" production in 2023",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2023,
+    "shapeClass": "marker-gap",
+    "note": "Forward plan with a now-past year (2023); no leading dateline, not resolved nearby. The phrase 'planned to' is NOT in the lexicon (only 'plans to'), so the detector misses it."
+  },
+  {
+    "fixture": "3_nm_process.wikitext",
+    "sentenceSubstring": "N3P was scheduled to enter volume production in the second half of 2024",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2024,
+    "shapeClass": "marker-gap",
+    "note": "Forward scheduling claim with a now-past year (2024); no leading dateline, not resolved nearby. The phrase 'was scheduled to' is NOT in the lexicon (only 'is scheduled to'), so the detector misses it."
+  },
+  {
+    "fixture": "project_kuiper.wikitext",
+    "sentenceSubstring": "A logistics center in Everett, Washington, is expected to open in June 2024",
+    "stale": true,
+    "reachable": true,
+    "expectedYear": 2024,
+    "shapeClass": "simple",
+    "note": "Forward expectation ('is expected to open') with a now-past year (2024) for the Everett logistics center; no leading dateline, not resolved nearby. In-lexicon marker + inline year; the detector catches it."
+  }
+]

@@ -1,0 +1,689 @@
+{{short description|Nuclear power plant in Burke County, Georgia, US}}
+{{Use American English|date=July 2025}}
+{{Use mdy dates|date=June 2023}}
+{{Infobox power station
+| name = Plant Vogtle
+| name_official = Alvin W. Vogtle Electric Generating Plant
+| logo = 
+| image = Vogtle NPP.jpg
+| image_size = 
+| image_caption = Vogtle 1 & 2 [[containment building]]s and [[cooling tower]]s
+| image_alt = 
+| location_map_alt = 
+| coordinates = {{coord|33|8|36|N|81|45|38|W|region:US-GA_type:landmark|display=inline,title}}
+| country = United States
+| location = [[Burke County, Georgia]]
+| status = O
+| construction_began = Units 1–2: August 1, 1976<br />Unit 3: March 12, 2013<br />Unit 4: November 19, 2013
+| commissioned = Unit 1: June 1, 1987<br />Unit 2: May 20, 1989<br />Unit 3: July 31, 2023<br />Unit 4: April 29, 2024
+| decommissioned = 
+| cost = Units 1–2: $8.87 billion (1989 USD)<ref name="doe"/><br />(${{format price|{{Inflation|US-GDP|8.87e9|1989}}}} in {{Inflation-year|US-GDP}} dollars{{Inflation-fn|US-GDP}})<br />Units 3–4: $36.8 Billion<ref name="auto1">{{cite web | url=https://www.gcvoters.org/blog/2024/05/29/report-new-nuclear-reactors-to-cost-georgia-ratepayers-extra-420-annually-on-average/#:~:text=Construction%20and%20financing%20costs%20for,other%20one%20in%20early%202024 | title=REPORT: NEW NUCLEAR REACTORS TO COST GEORGIA RATEPAYERS EXTRA $420 ANNUALLY, ON AVERAGE | date=May 29, 2024 }}</ref>
+| owner = [[Georgia Power]] (45.7%)<br />{{abbrlink|OPC|Oglethorpe Power Corporation}} (30%)<br />{{abbr|MEAG|Municipal Electrical Authority of Georgia}} (22.7%)<br />Dalton Utilities (1.6%)
+| operator = [[Southern Nuclear]]
+<!------------------------- NUCLEAR POWER STATIONS -->| np_reactor_type = PWR
+| np_reactor_supplier = [[Westinghouse Electric Company|Westinghouse]]
+| np_fuel_type = 
+| np_fuel_supplier = 
+| ps_cogeneration = 
+| ps_cooling_source = [[Savannah River]]
+| ps_cooling_towers = 4 × [[Natural Draft]]
+<!------------------------- GENERAL -->| ps_units_operational = 1 × 1150 MW<sub>e</sub> <br />1 × 1152 MW<sub>e</sub><br />2 × 1117 MW<sub>e</sub>
+| ps_units_manu_model = Unit 1–2: 2 × [[Westinghouse Electric Company|WH]] 4-loop (DRYAMB)<br />Units 3–4: 2 × [[Westinghouse Electric Company|WH]] [[AP1000]]
+| ps_units_uc = 
+| ps_units_planned = 
+| ps_units_cancelled = 2 × 1113 MW<!-- Vogtle was originally planned to be a four-unit plant, but Units 3–4 were canceled in 1974. The two additional planned reactors later began construction in 2013, and were commissioned between 2023 and 2024. -->
+| ps_units_decommissioned = 
+| ps_thermal_capacity = Units 1–2: 2 × 3626 MW<sub>th</sub><br />Units 3–4: 2 × 3400 MW<sub>th</sub>
+| ps_heating_capacity = 
+| ps_electrical_capacity = 4536 MW<sub>e</sub>
+| ps_electrical_cap_fac = 95.09% (2017)<br />91.25% (lifetime)
+| ps_storage_capacity = 
+| ps_annual_generation = 33,871 GWh (2024)
+| website = [https://www.georgiapower.com/company/plant-vogtle.html Plant Vogtle]
+| extra = 
+}}
+
+The '''Alvin W. Vogtle Electric Generating Plant''', also known as '''Plant Vogtle''' ({{IPAc-en|ˈ|v|oʊ|g|əl}} {{respell|VOH|gəl}}),<ref>{{cite AV media |url=https://www.youtube.com/watch?v=POW86gZXC8Q |archive-url=https://web.archive.org/web/20140116145732/http://www.youtube.com/watch?v=POW86gZXC8Q&gl=US&hl=en |archive-date=January 16, 2014 |url-status=bot: unknown |title=Inside the Nuclear Energy Renaissance: Plant Vogtle |publisher=Southern Company |date=January 7, 2014 |access-date=May 26, 2017 |via=YouTube }}</ref> is a four-unit [[nuclear power plant]] located in [[Burke County, Georgia|Burke County]], near [[Waynesboro, Georgia|Waynesboro]], [[Georgia (U.S. state)|Georgia]], in the [[southeastern United States]]. With a power capacity of 4,536 [[watt|megawatts]], it is the largest nuclear power plant in the United States (as of 2025), after Units 3 & 4 began operating.<ref>{{Cite web |last=Granholm |first=Jennifer |date=2024-05-31 |title=Remarks as Delivered by Secretary Jennifer M. Granholm on Startup of Vogtle Unit 4 and Growth of U.S. Nuclear Industry |url=https://www.energy.gov/articles/remarks-delivered-secretary-jennifer-m-granholm-startup-vogtle-unit-4-and-growth-us |url-status=live |archive-url=https://web.archive.org/web/20240604100349/https://www.energy.gov/articles/remarks-delivered-secretary-jennifer-m-granholm-startup-vogtle-unit-4-and-growth-us |archive-date=2024-06-04 |access-date=2024-06-04 |website=Department of Energy}}</ref> It is also the only nuclear plant in the country with four reactors. It is named after a former [[Alabama Power]] and [[Southern Company]] board chairman, [[Alvin Vogtle]].
+
+The first two units are [[Westinghouse Electric Company|Westinghouse]] [[pressurized water reactor]]s (PWR), with a [[General Electric]] [[steam turbine]] and [[electric generator]]. Units&nbsp;1&nbsp;and&nbsp;2 were completed in 1987 and 1989, respectively, and have a gross electricity generation capacity of 1,215&nbsp;MW, for a combined capacity of 2,430&nbsp;MW.<ref name="southernco">{{cite web  | title=Plant Vogtle - Southern Company  | publisher=Southern Company  | url=http://www.southernco.com/southernnuclear/vogtle.asp  | access-date= March 2, 2007 |archive-url = https://web.archive.org/web/20070205113659/http://www.southernco.com/southernnuclear/vogtle.asp <!-- Bot retrieved archive --> |archive-date = February 5, 2007}}</ref> The twin natural-draft [[cooling towers]] are {{convert|548|ft|m|abbr=on}} tall and provide cooling to the plant's main condensers. 
+Four smaller mechanical draft cooling towers provide nuclear service cooling water (NSCW) to safety and auxiliary non-safety components, as well as remove the [[decay heat]] from the reactor when the plant is offline. One natural-draft tower and two NSCW towers serve each unit. In 2009, the [[Nuclear Regulatory Commission]] (NRC) renewed the licenses for both units for an additional 20&nbsp;years<ref>{{cite news| url= http://chronicle.augusta.com/stories/2009/06/04/met_526417.shtml| title= Licenses for Vogtle current reactors renewed| last= Pavey | first= Rob | date= June 4, 2009 | work= [[Augusta Chronicle]] | access-date= June 5, 2009}}</ref> to January 16, 2047 for Unit 1,<ref>{{cite web |url= https://www.nrc.gov/info-finder/reactors/vog1.html |title= Vogtle Electric Generating Plant, Unit 1 |date= February 10, 2017 |work= NRC |publisher= [[Nuclear Regulatory Commission]] |access-date= March 18, 2018 }}</ref> and September 2, 2049 for Unit 2.<ref>{{cite web |url= https://www.nrc.gov/info-finder/reactors/vog2.html |title= Vogtle Electric Generating Plant, Unit 1 |date= February 10, 2017 |work= NRC |publisher= [[Nuclear Regulatory Commission]] |access-date= March 18, 2018 }}</ref><ref name="construction">{{cite news|last=Gertner|first=Jon|url=https://www.nytimes.com/2006/07/16/magazine/16nuclear.html|newspaper= [[The New York Times]]|title= Atomic Balm?|date=July 16, 2006}}</ref> During the construction of Vogtle's first two units, capital investment required jumped from an estimated $660&nbsp;million to $8.87&nbsp;billion.<ref name="doe">{{cite web  |last=Moens  |first=John  |title=U.S. Nuclear Plants - Vogtle  |publisher=[[Energy Information Administration]], [[U.S. Department of Energy]]  |date=March 18, 2005 |url=http://www.eia.doe.gov/cneaf/nuclear/page/at_a_glance/reactors/vogtle.html  |access-date=March 2, 2007  |url-status=dead  |archive-url=https://web.archive.org/web/20010208074946/http://www.eia.doe.gov/cneaf/nuclear/page/at_a_glance/reactors/vogtle.html  |archive-date=February 8, 2001   }}</ref> (${{format price|{{Inflation|US-GDP|8.87e9|1989}}}} in {{Inflation-year|US-GDP}} dollars{{Inflation-fn|US-GDP}})
+
+Two additional units utilizing [[Westinghouse AP1000]] reactors began preliminary construction in 2009, with Unit 3 being completed in July 2023.<ref name="unit3beginscnbc" /><ref>{{cite news| url= http://chronicle.augusta.com/stories/2009/11/22/bus_556611.shtml| title= Vogtle lays groundwork for first U.S. reactors in decades| last= Pavey | first= Rob | date= November 22, 2009 | work= [[Augusta Chronicle]] | access-date= October 22, 2009}}</ref> Natural-draft type cooling towers were also selected, and the two new cooling towers are nearly {{convert|600|ft|m|abbr=on}} tall. During construction, the units suffered several delays and cost overruns. The certified construction and capital costs for these two new units were originally $14 billion, according to the Seventeenth Semi-annual Vogtle Construction Monitoring Report in 2017.<ref name="17thReport">{{cite news|url=http://www.psc.state.ga.us/factsv2/Document.aspx?documentNumber=169459|publisher= [[Georgia Power]]|title=Seventeenth Semi-Annual Construction Monitoring Report for Plant Vogtle Units 3 and 4.|date=August 2017}}</ref> This last report blames the latest increase in costs on the contractor not completing work as scheduled. Another complicating factor in the construction process is the bankruptcy of Westinghouse in 2017.<ref name=retuers-rb>{{cite news|url= https://www.reuters.com/article/us-toshiba-accounting-board-idUSKBN17006K |title= Toshiba's Westinghouse files for bankruptcy as charges jump |website= [[reuters.com]] |first1= Makiko |last1= Yamazaki |first2= Tim |last2= Kelly |date= March 29, 2017 |access-date=March 29, 2017}}</ref>
+In 2018, costs were estimated to be about $25 billion.<ref name=power-eng-20180809/> By 2021, they were estimated to be over $28.5 billion.<ref>{{Cite web|url=https://www.augustachronicle.com/story/news/2021/11/04/georgia-power-nuclear-reactors-plant-vogtle-cost-doubles-energy-costs/6286729001/|title='Outrageous' price tag: Plant Vogtle cost doubles to $28.5 billion as other owners balk|website=The Augusta Chronicle|accessdate=July 28, 2023}}</ref> In 2023, costs had increased to $34 billion, with work still to be completed on Vogtle 4.<ref name="auto1"/>
+
+Unit 3 began commercial operations on July 31, 2023, becoming the first new nuclear reactor in the United States in 7 years.<ref name="unit3beginscnbc">{{cite news |last1=Clifford |first1=Catherine |title=America's first new nuclear reactor in nearly seven years starts operations |url=https://www.cnbc.com/2023/07/31/vogtle-unit-3-nuclear-reactor-long-delayed-starts-delivering-power.html |access-date=4 August 2023 |work=CNBC |date=31 July 2023}}</ref> Unit 4 entered commercial operation on April 29, 2024.<ref name=":2" />
+
+As of the reported FY 2024 3rd quarter financial statements, for units 3-4, the net capital costs incurred by Georgia Power was $10.65 billion in total, with an additional estimated $83 million in completion costs related to site demobilization. This is inclusive of $1.2 billion not shared with other Vogtle owners, net of ~$1.9 billion received from Toshiba in settlement and related customer refunds. With Georgia Power's 45.7% ownership interest implying a total capitalized construction cost of $23.76 billion for Unit 3-4. This is not inclusive of the non-capitalized financing charges incurred (interest) totaling $3.53 billion by Georgia Power, as this was recovered via ratepayer surcharges before completion.<ref>{{Cite web | url=https://s27.q4cdn.com/273397814/files/doc_financials/2024/q3/7b5aa5c3-65a1-46f4-a186-b63385f82e11.pdf | title=FORM 10-Q | website=s27.q4cdn.com}}</ref>
+
+==Units 1 and 2==
+{{more citations needed section|date=December 2025}}
+Vogtle units 1 and 2 are a set of identical Westinghouse 4-Loop reactors. Like many North American nuclear power stations, each of the Vogtle units are constructed of a steel-lined, prestressed, post-tensioned
+concrete cylinder with a hemispherical dome. The containment was designed by the Los Angeles Regional Office of the [[Bechtel Corporation]].<ref>{{Cite web | url=https://www.nrc.gov/docs/ML1633/ML16330A389.pdf | title=Final Safety Analysis Report (FSAR) - Vogtle Electric Generating Plant | website=www.nrc.gov}}</ref>
+
+===Power Uprate===
+
+In 2008, reactors 1 and 2 were increased in power by 1.7% by an "Appendix&nbsp;K" uprate,<ref>{{cite web|url=https://www.nrc.gov/reading-rm/doc-collections/cfr/part050/part050-appk.html|title=NRC: 10 CFR Appendix K to Part 50—ECCS Evaluation Models|website=www.nrc.gov}}</ref> also called a Measurement Uncertainty Recapture (MUR) uprate. Measurement uncertainty recapture power uprates are less than 2&nbsp;percent, and are achieved by implementing enhanced techniques for calculating reactor power. This involves the use of state-of-the-art feedwater flow measurement devices to more precisely measure feedwater flow, which is used to calculate reactor power.<ref name="auto">{{cite web|url=https://www.nrc.gov/reactors/operating/licensing/power-uprates.html|title=NRC: Power Uprates|website=www.nrc.gov}}</ref>
+
+More precise measurements reduce the degree of uncertainty in the power level, which is used by analysts to predict the ability of the reactor to be safely shut down under postulated accident conditions.<ref name="auto"/> Because the reactor power can be calculated with much greater accuracy than with the older [[Venturi effect|venturi]] type measurement, the plant can safely run within a tighter margin of error to its limits. The newer [[ultrasonic flowmeter]] works by comparing the time it takes [[Ultrasound|ultrasonic]] sound pulses to travel upstream versus downstream inside the pipe, and uses the time differential to figure the flow rate of the water in the pipe.
+
+The NRC approved Vogtle's License Amendment Request (LAR) in March&nbsp;2008. The NRC staff determined that Southern Nuclear could safely increase the reactor's power output primarily through more accurate means of measuring feedwater flow. NRC staff also reviewed Southern Nuclear's evaluations showing that the plant's design can handle the increased power level.<ref>{{cite web|url=http://www.nrc.gov/reading-rm/doc-collections/news/2008/08-043.html|archive-url=https://web.archive.org/web/20090512132415/http://www.nrc.gov/reading-rm/doc-collections/news/2008/08-043.html|url-status=dead|archive-date=May 12, 2009|title=NRC: News Release - 2008-043 - NRC Approves Power Uprate for Vogtle Nuclear Power Plant|date=May 12, 2009}}</ref> Unit&nbsp;1 was uprated during its Spring 2008 refueling outage, and Unit&nbsp;2 was uprated in the Fall outage of the same year.
+
+=== Electricity production ===
+{| class="wikitable"
+|+'''Generation ('''[[Kilowatt-hour|MWh]]''') of Vogtle Electric Generating Plant'''<ref>{{Cite web |title=Electricity Data Browser |url=https://www.eia.gov/beta/electricity/data/browser/#/plant/649/ |access-date=2026-04-26 |website=www.eia.gov}}</ref>
+!Year
+!Jan
+!Feb
+!Mar
+!Apr
+!May
+!Jun
+!Jul
+!Aug
+!Sep
+!Oct
+!Nov
+!Dec
+!Annual (Total)
+|-
+!2001
+|<small>1,771,298</small>
+|<small>1,595,018</small>
+|<small>1,741,308</small>
+|<small>1,016,060</small>
+|<small>1,589,508</small>
+|<small>1,677,918</small>
+|<small>1,728,650</small>
+|<small>1,590,577</small>
+|<small>1,668,988</small>
+|<small>1,756,972</small>
+|<small>1,700,826</small>
+|<small>1,763,938</small>
+!19,601,061
+|-
+!2002
+|<small>1,766,985</small>
+|<small>1,595,144</small>
+|<small>1,003,394</small>
+|<small>1,063,031</small>
+|<small>1,748,812</small>
+|<small>1,680,300</small>
+|<small>1,727,932</small>
+|<small>1,723,792</small>
+|<small>1,668,444</small>
+|<small>993,370</small>
+|<small>851,998</small>
+|<small>1,234,136</small>
+!17,057,338
+|-
+!2003
+|<small>1,756,418</small>
+|<small>1,597,739</small>
+|<small>1,594,304</small>
+|<small>1,699,505</small>
+|<small>1,659,413</small>
+|<small>1,679,656</small>
+|<small>1,727,929</small>
+|<small>1,431,140</small>
+|<small>1,477,732</small>
+|<small>1,078,977</small>
+|<small>1,673,705</small>
+|<small>1,770,700</small>
+!19,147,218
+|-
+!2004
+|<small>1,758,609</small>
+|<small>1,605,957</small>
+|<small>1,628,483</small>
+|<small>1,314,845</small>
+|<small>1,224,113</small>
+|<small>1,669,584</small>
+|<small>1,717,020</small>
+|<small>1,646,446</small>
+|<small>1,674,477</small>
+|<small>1,744,280</small>
+|<small>1,588,754</small>
+|<small>1,758,389</small>
+!19,330,957
+|-
+!2005
+|<small>1,688,533</small>
+|<small>1,588,104</small>
+|<small>1,195,063</small>
+|<small>1,369,839</small>
+|<small>1,481,221</small>
+|<small>1,380,875</small>
+|<small>1,713,562</small>
+|<small>1,715,446</small>
+|<small>1,298,644</small>
+|<small>1,225,946</small>
+|<small>1,692,494</small>
+|<small>1,463,302</small>
+!17,813,029
+|-
+!2006
+|<small>1,753,949</small>
+|<small>1,186,635</small>
+|<small>1,422,733</small>
+|<small>1,403,832</small>
+|<small>1,733,444</small>
+|<small>1,654,782</small>
+|<small>1,715,255</small>
+|<small>1,574,770</small>
+|<small>1,226,224</small>
+|<small>867,031</small>
+|<small>1,672,989</small>
+|<small>1,735,509</small>
+!17,947,153
+|-
+!2007
+|<small>1,736,443</small>
+|<small>1,557,456</small>
+|<small>923,930</small>
+|<small>813,673</small>
+|<small>1,577,666</small>
+|<small>1,636,196</small>
+|<small>1,685,127</small>
+|<small>1,674,106</small>
+|<small>1,606,215</small>
+|<small>1,703,033</small>
+|<small>1,665,714</small>
+|<small>1,717,334</small>
+!18,296,893
+|-
+!2008
+|<small>1,722,551</small>
+|<small>1,607,474</small>
+|<small>1,242,777</small>
+|<small>950,508</small>
+|<small>1,725,749</small>
+|<small>1,652,026</small>
+|<small>1,704,667</small>
+|<small>1,704,456</small>
+|<small>1,159,653</small>
+|<small>1,040,027</small>
+|<small>1,501,696</small>
+|<small>1,765,969</small>
+!17,777,553
+|-
+!2009
+|<small>1,772,030</small>
+|<small>1,599,207</small>
+|<small>1,739,139</small>
+|<small>1,701,696</small>
+|<small>1,743,997</small>
+|<small>1,672,730</small>
+|<small>1,730,046</small>
+|<small>1,727,776</small>
+|<small>1,325,345</small>
+|<small>1,067,476</small>
+|<small>1,681,867</small>
+|<small>1,524,615</small>
+!19,285,924
+|-
+!2010
+|<small>1,771,935</small>
+|<small>1,601,769</small>
+|<small>1,044,133</small>
+|<small>1,466,689</small>
+|<small>1,740,841</small>
+|<small>1,668,687</small>
+|<small>1,721,356</small>
+|<small>1,719,760</small>
+|<small>1,678,059</small>
+|<small>1,736,954</small>
+|<small>1,697,292</small>
+|<small>1,763,002</small>
+!19,610,477
+|-
+!2011
+|<small>1,772,047</small>
+|<small>1,577,982</small>
+|<small>998,399</small>
+|<small>1,471,153</small>
+|<small>1,743,916</small>
+|<small>1,670,138</small>
+|<small>1,719,965</small>
+|<small>1,696,948</small>
+|<small>1,227,831</small>
+|<small>1,378,417</small>
+|<small>1,706,924</small>
+|<small>1,765,579</small>
+!18,729,299
+|-
+!2012
+|<small>1,767,029</small>
+|<small>1,650,456</small>
+|<small>1,751,254</small>
+|<small>1,621,961</small>
+|<small>1,738,311</small>
+|<small>1,678,238</small>
+|<small>1,716,979</small>
+|<small>1,723,812</small>
+|<small>1,238,671</small>
+|<small>1,200,884</small>
+|<small>1,708,873</small>
+|<small>1,761,729</small>
+!19,558,197
+|-
+!2013
+|<small>1,759,700</small>
+|<small>1,521,749</small>
+|<small>1,064,929</small>
+|<small>1,593,994</small>
+|<small>1,742,955</small>
+|<small>1,444,462</small>
+|<small>1,719,712</small>
+|<small>1,722,736</small>
+|<small>1,674,648</small>
+|<small>1,405,239</small>
+|<small>1,671,106</small>
+|<small>1,757,723</small>
+!19,078,953
+|-
+!2014
+|<small>1,766,152</small>
+|<small>1,573,760</small>
+|<small>1,289,366</small>
+|<small>1,045,619</small>
+|<small>1,734,271</small>
+|<small>1,664,928</small>
+|<small>1,559,250</small>
+|<small>1,572,578</small>
+|<small>1,123,013</small>
+|<small>1,260,339</small>
+|<small>1,707,757</small>
+|<small>1,763,157</small>
+!18,060,190
+|-
+!2015
+|<small>1,767,479</small>
+|<small>1,597,689</small>
+|<small>1,639,709</small>
+|<small>1,690,751</small>
+|<small>1,699,520</small>
+|<small>1,666,461</small>
+|<small>1,715,610</small>
+|<small>1,720,074</small>
+|<small>1,358,956</small>
+|<small>1,029,560</small>
+|<small>1,701,017</small>
+|<small>1,754,382</small>
+!19,341,208
+|-
+!2016
+|<small>1,770,487</small>
+|<small>1,651,326</small>
+|<small>1,073,319</small>
+|<small>1,698,641</small>
+|<small>1,686,965</small>
+|<small>1,658,443</small>
+|<small>1,715,368</small>
+|<small>1,718,451</small>
+|<small>1,673,737</small>
+|<small>1,744,574</small>
+|<small>1,705,910</small>
+|<small>1,763,008</small>
+!19,860,229
+|-
+!2017
+|<small>1,760,272</small>
+|<small>1,463,126</small>
+|<small>1,181,658</small>
+|<small>1,560,675</small>
+|<small>1,736,830</small>
+|<small>1,636,063</small>
+|<small>1,726,003</small>
+|<small>1,726,126</small>
+|<small>1,272,373</small>
+|<small>1,634,109</small>
+|<small>1,708,479</small>
+|<small>1,772,149</small>
+!19,177,863
+|-
+!2018
+|<small>1,778,425</small>
+|<small>1,595,567</small>
+|<small>1,769,826</small>
+|<small>1,708,980</small>
+|<small>1,746,083</small>
+|<small>1,677,112</small>
+|<small>1,666,049</small>
+|<small>1,728,966</small>
+|<small>1,251,325</small>
+|<small>1,545,491</small>
+|<small>1,716,325</small>
+|<small>1,774,977</small>
+!19,959,126
+|-
+!2019
+|<small>1,776,734</small>
+|<small>1,596,282</small>
+|<small>1,113,145</small>
+|<small>1,624,150</small>
+|<small>1,742,464</small>
+|<small>1,660,324</small>
+|<small>1,579,918</small>
+|<small>1,720,092</small>
+|<small>1,671,583</small>
+|<small>1,743,399</small>
+|<small>1,717,369</small>
+|<small>1,728,840</small>
+!19,674,300
+|-
+!2020
+|<small>1,769,498</small>
+|<small>1,649,399</small>
+|<small>1,064,981</small>
+|<small>1,676,789</small>
+|<small>1,749,791</small>
+|<small>1,586,667</small>
+|<small>1,722,035</small>
+|<small>1,274,347</small>
+|<small>1,350,907</small>
+|<small>1,749,984</small>
+|<small>1,500,222</small>
+|<small>1,763,198</small>
+!18,857,818
+|-
+!2021
+|<small>1,771,536</small>
+|<small>1,599,483</small>
+|<small>1,758,828</small>
+|<small>1,682,038</small>
+|<small>1,748,480</small>
+|<small>1,677,184</small>
+|<small>1,726,530</small>
+|<small>1,691,270</small>
+|<small>1,140,978</small>
+|<small>1,528,661</small>
+|<small>1,716,082</small>
+|<small>1,745,838</small>
+!19,786,908
+|-
+!2022
+|<small>1,766,154</small>
+|<small>1,581,724</small>
+|<small>1,005,105</small>
+|<small>1,488,894</small>
+|<small>1,634,978</small>
+|<small>1,680,528</small>
+|<small>1,690,426</small>
+|<small>1,734,548</small>
+|<small>1,688,918</small>
+|<small>1,763,780</small>
+|<small>1,708,724</small>
+|<small>1,771,427</small>
+!19,515,206
+|-
+!2023
+|<small>1,773,225</small>
+|<small>1,589,357</small>
+|<small>986,828</small>
+|<small>1,864,548</small>
+|<small>2,075,533</small>
+|<small>1,969,453</small>
+|<small>1,852,722</small>
+|<small>2,402,000</small>
+|<small>1,839,998</small>
+|<small>2,547,462</small>
+|<small>2,452,679</small>
+|<small>2,419,378</small>
+!23,500,183
+|-
+!2024
+|<small>2,440,742</small>
+|<small>2,396,014</small>
+|<small>2,808,229</small>
+|<small>2,796,427</small>
+|<small>3,347,115</small>
+|<small>3,045,617</small>
+|<small>3,066,161</small>
+|<small>3,335,603</small>
+|<small>2,202,990</small>
+|<small>2,732,845</small>
+|<small>2,464,777</small>
+|<small>3,235,291</small>
+!33,871,811
+|-
+!2025
+|<small>3,466,318</small>
+|<small>3,083,870</small>
+|<small>2,430,789</small>
+|<small>2,848,753</small>
+|<small>2,702,715</small>
+|<small>3,257,743</small>
+|<small>3,360,561</small>
+|<small>3,345,035</small>
+|<small>2,607,596</small>
+|<small>3,225,001</small>
+|<small>3,345,220</small>
+|<small>3,470,814</small>
+!37,144,415
+|-
+!2026
+|<small>3,469,411</small>
+|<small>2,898,695</small>
+|<small>2,302,096</small>
+|
+|
+|
+|
+|
+|
+|
+|
+|
+!--
+|-
+|}
+
+===Loss of power incident===
+A loss of electrical power in the plant occurred on March 20, 1990.
+
+At 9:20&nbsp;a.m., a truck carrying fuel and lubricants in the plant's 230&nbsp;kV switchyard backed into a support column for the feeder line supplying power to the Unit&nbsp;1-A reserve auxiliary transformer (RAT). At the time, the 1-B RAT was de-energized for maintenance and RAT 1-A was powering both trains of emergency electrical power.  The non-emergency electrical trains were being powered by back-feeding from the switchyard through the main step-up transformer to the 1-A and 1-B unit auxiliary transformers (UAT). Emergency diesel generator (EDG) 1-B was out of service for planned maintenance.
+
+After the power loss, EDG 1-A failed to start due to a protective safety trip. The resulting loss of electrical power in the plant's "vital circuits" shut down the [[Residual Heat Removal System|residual heat removal]] (RHR) pump that was cooling the core of Unit&nbsp;1 (which was nearing the end of a refueling outage) and prevented the backup RHR from activating. Even though Unit&nbsp;1 was offline at the time, residual heat from the natural decay of the radioactive fuel must be removed to prevent a dangerous rise in core temperature. While the non-safety power was not interrupted, there was no physical connection between the vital and non-vital electrical trains, preventing the vital trains from receiving power from the unaffected path through the UATs.
+
+At 9:40&nbsp;a.m., the plant operators declared a site area emergency (SAE) per existing procedures which called for an SAE whenever "vital" power is lost for more than 15&nbsp;minutes. At 9:56&nbsp;a.m., after trying multiple times to start the 1-A EDG normally, plant operators performed an emergency startup of the EDG by activating the generator's emergency start "break-glass" which bypassed most of the EDG's safeties and forced it to start. The startup was successful.
+
+RHR-A was then started using power from EDG-A. With core cooling restored, the SAE was downgraded to an alert at 10:15&nbsp;a.m. At 11:40&nbsp;a.m., crews energized RAT 1-B which had been shut down for maintenance, restoring power to the "B" safety electrical train. At 12:57&nbsp;p.m., the "A" safety train was switched from the EDG to RAT 1-B and the EDG was shut down. With both trains receiving offsite power, the alert was terminated at 1:47&nbsp;p.m.
+
+The temperature of the Unit&nbsp;1 core coolant increased from {{convert|90|F|C}} to {{convert|136|F|C}} during the 36&nbsp;minutes required to re-energize the A-side bus. Throughout the event, non-vital power was continuously available to Unit&nbsp;1 from off-site sources. However, the Vogtle electrical system was not designed to permit easy interconnection of the Unit&nbsp;1 vital busses to non-vital power or the Unit&nbsp;2 electrical busses.<ref>{{cite web|url=https://www.nrc.gov/reading-rm/doc-collections/gen-comm/info-notices/1990/in90025.html|title=NRC: Information Notice No. 90-25: Loss of Vital AC Power With Subsequent Reactor Coolant System Heat-Up|website=www.nrc.gov}}</ref> Since this incident, Plant Vogtle has implemented changes to the plant that allow the non-vital electrical buses to transfer power to the vital buses in this type of scenario.
+
+This electrical fault also affected Unit&nbsp;2 by causing breakers in the 230&nbsp;kV switchyard to trip, cutting off power to RAT 2-B and vital bus "B." EDG 2-B subsequently started and restored power to the vital bus. At the same time, the electrical disturbance from the falling line striking the ground was detected by protective safeties on the Unit&nbsp;2 main step-up transformer and a protective relay actuated, opening the transformer's output breaker. This caused a full load rejection to Unit&nbsp;2, leading to a turbine trip and subsequently, a reactor [[scram]].
+
+After Unit&nbsp;2 tripped, the "B" non-vital electrical train lost power as it attempted to transfer from UAT 2-B (powered by the turbine generator) to the failed RAT 2-B, causing two of the reactor coolant pumps and one of the main feedwater pumps to trip. Despite this, plant cool-down proceeded safely. At 9:03&nbsp;p.m., the RAT 2-B breakers in the switchyard were reset and offsite power was restored to the vital and non-vital "B" electrical trains, allowing reactor coolant pumps 2 and 4 to be restarted. EDG 2-B was shut down.
+
+It was later determined that the fault disturbance caused by the line falling was not of significant magnitude to trip the protective relay per design and should not have caused Unit&nbsp;2 to shut down. Further investigation found that current transformers on the main transformer were improperly set. The controls were adjusted to the proper setting. Had the CTs been properly set initially, the Unit&nbsp;2 would have remained online.
+
+==Units 3 and 4==
+{{more citations needed section|date=December 2025}}
+===Planning phase===
+[[File:Construction at Vogtle Nuclear Plant.jpg|thumb|Construction underway at Vogtle, October 2011]]
+{{wikinews|US regulators approve new nuclear reactors for first time in 34 years}}
+[[File:Vogtle Unit 3 Condenser B time-lapse video.webm|thumb|Vogtle Unit 3 Condenser B time-lapse video]]
+
+In August 2006, [[Southern Nuclear]] formally applied for an Early Site Permit (ESP)<ref name="nrc_esp">{{cite web| title=NRC: Early Site Permits - Licensing Reviews| publisher=United States Nuclear Regulatory Commission| url=https://www.nrc.gov/reactors/new-reactors/esp.html| access-date= May 31, 2007}}</ref> for two additional units, and in March 2008, submitted an application for a [[Combined Construction and Operating License]] (COL).<ref name="nrc_col">{{cite news| title=Southern utilities apply for new nuclear licenses| work=Reuters| url=https://www.reuters.com/article/environmentNews/idUSN3143208820080331| access-date= April 2, 2008| first=Eileen| last=O'Grady| date=March 31, 2008}}</ref> 
+In April 2008, Georgia Power Company reached a contract agreement for two [[AP1000]] reactors designed by [[Westinghouse Electric Company|Westinghouse]], owned by [[Toshiba]]. 
+Westinghouse partnered with the [[Shaw Group]] (Baton Rouge, LA) and its Stone & Webster division to manage the project with Westinghouse responsible for engineering, design, and overall management, and Shaw responsible for manufacturing the pre-fabricated component modules and managing the on-site construction.<ref name="contract_1">{{cite news| title= Westinghouse wins first US nuclear deal in 30 years| publisher=Guardian News and Media Limited| url=https://www.theguardian.com/world/2008/apr/10/nuclear.nuclearpower| access-date= April 9, 2008| location=London| first=Terry| last=MacAlister| date=April 9, 2008}}</ref> 
+The contract represented the first agreement for new nuclear development in the United States since the [[Three Mile Island accident]] in 1979. It received approval from the Georgia Public Service Commission in March 2009.<ref name="contract_1" /><ref name="contract_2">{{cite news |title=Two Nuclear Reactors Get Green Light |newspaper=The Atlanta Journal-Constitution |url=http://www.ajc.com/services/content/printedition/2009/03/18/nukepsc0318.html |access-date=April 18, 2009 |url-status=dead |archive-url=https://web.archive.org/web/20110622094720/http://www.ajc.com/services/content/printedition/2009/03/18/nukepsc0318.html |archive-date=June 22, 2011  }}</ref>
+
+===Construction===
+In August 2009, the [[Nuclear Regulatory Commission]] (NRC) issued an Early Site Permit and a Limited Work Authorization. 
+Limited construction at the new reactor sites began, with Unit 3 then expected to be operational in 2016, followed by Unit 4 in 2017, pending final issuance of the Combined Construction and Operating License by the NRC.<ref>{{cite press release| title = Southern Company Plant Vogtle Media Guide| publisher = [[Southern Company]]| date = June 2011| url = http://www.southerncompany.com/nuclearenergy/SNCmedia/Vogtle_Media_Guide.pdf|archive-date=December 27, 2011|archive-url=https://web.archive.org/web/20111227121317/http://southerncompany.com/nuclearenergy/SNCmedia/Vogtle_Media_Guide.pdf| access-date = November 1, 2011}}</ref><ref>{{cite press release |title=Vogtle Units Receive NRC Staff Approval for Final Safety Report |publisher=[[Southern Company]] |date=August 9, 2011 |url=http://southerncompany.mediaroom.com/index.php?s=43&item=2373 |access-date=November 20, 2011 |url-status=dead |archive-url=https://web.archive.org/web/20111127043632/http://southerncompany.mediaroom.com/index.php?s=43&item=2373 |archive-date=November 27, 2011  }}</ref>
+
+In December 2011, taking into account findings from the [[Fukushima nuclear accident]] caused by the [[2011 Tōhoku earthquake and tsunami]], a 19th revision was written for the AP1000 Design Certification, which effectively included a complete redesign of the containment building:<blockquote>The wall is appropriately reinforced and sized where the composite wall module joins the reinforced concrete sections and as appropriate '''to accommodate seismic loads''' and aircraft loads. '''This design is new to the amendment; previously the structure was all reinforced concrete.''' [emphasis added]</blockquote>As this change to the design requirements was made after engineering contracts were already signed and manufacturing had begun on the reactor's long-lead-time components, it resulted in a [[Construction delay|halting of construction]] as the [[containment building]] had to be redesigned.<ref>{{Cite web |title=Root cause of Vogtle and VC Summer delays |url=https://www.ans.org/news/article-1646/root-cause-of-vogtle-and-vc-summer-delays/ |access-date=April 7, 2022 |website=www.ans.org |language=en}}</ref>
+
+On February&nbsp;16, 2010, President [[Barack Obama]] announced $8.33&nbsp;billion in federal loan guarantees toward the construction cost,<ref>{{cite news| title=Obama Administration Announces Loan Guarantees to Construct New Nuclear Power Reactors in Georgia| publisher=The White House Office of the Press Secretary| url=https://obamawhitehouse.archives.gov/the-press-office/obama-administration-announces-loan-guarantees-construct-new-nuclear-power-reactors| access-date= April 30, 2010 | archive-url= https://web.archive.org/web/20170121023107/https://obamawhitehouse.archives.gov/the-press-office/obama-administration-announces-loan-guarantees-construct-new-nuclear-power-reactors| archive-date= January 21, 2017}}</ref> although as of December 2013, Georgia Power had not availed itself of those guarantees, at first awaiting the construction license, and after the construction stop lawsuit outcome.
+The expected building cost for the two reactors was $14 billion.<ref>{{cite news |url=http://chronicle.augusta.com/news/business/local-business/2012-05-11/price-vogtle-expansion-could-increase-900-million |title=Price of Vogtle expansion could increase $900 million |author=Rob Pavey |newspaper=The Augusta Chronicle |date=May 11, 2012 |access-date=July 25, 2012}}</ref> 
+Georgia Power's share was around $6.1 billion, while the remaining ownership of the two reactors is split among [[Oglethorpe Power|Oglethorpe Power Corp.]], the [[Municipal Electric Authority of Georgia]] (MEAG Power), and Dalton Utilities.<ref name=wsj>{{cite news|title=Obama Unveils Loan Guarantees for Nuclear Plant|url=https://online.wsj.com/news/articles/SB10001424052748704804204575069301926799046|access-date=April 27, 2014|newspaper=wsj|date=February 16, 2010|author=Henry J. Pulizzi|author2=Christine Buurma}}</ref>
+
+In February 2012, the NRC approved the construction license of the two proposed AP1000 reactors at Vogtle.<ref>{{cite news|title=NRC Approves Vogtle Reactor Construction|author=Abernethy, C.|url=http://nuclearstreet.com/nuclear_power_industry_news/b/nuclear_power_news/archive/2012/02/09/nrc-approves-vogtle-reactor-construction-_2d00_-first-new-nuclear-plant-approval-in-34-years-_2800_with-new-plant-photos_2900_-020902.aspx|newspaper=Nuclear Street|date=February 9, 2012|access-date=February 9, 2012}}</ref> NRC Chairman [[Gregory Jaczko]] cast the lone dissenting vote on plans to build and operate the two new nuclear power reactors, citing safety concerns stemming from Japan's 2011 [[Fukushima nuclear disaster]], saying, "I cannot support issuing this license as if Fukushima never happened."<ref>{{cite web |url=https://www.reuters.com/article/us-usa-nuclear-nrc-idUSTRE8182J720120209  |title=U.S. approves first new nuclear plant in a generation  |author=Ayesha Rascoe | date=February 9, 2012 |work=Reuters }}</ref> One week after Southern Company received the license to begin construction, many environmental and [[anti-nuclear]] groups sued to stop the expansion project, claiming "public safety and environmental problems since Japan's [[Fukushima-Daiichi]] nuclear reactor accident have not been taken into account".<ref>{{cite web |url=http://www.ajc.com/business/groups-sue-to-stop-1351830.html |title=Groups sue to stop Vogtle expansion project |author=Kristi E. Swartz |date=February 16, 2012 |work=The Atlanta Journal-Constitution }}</ref> On July 11, 2012, the lawsuit was rejected by the Washington D.C. Circuit Court of Appeals.<ref>{{cite web |url=http://chronicle.augusta.com/news/business/2012-07-12/court-rejects-legal-challenge-plant-vogtle-construction-license?v=1342114200 |title=Court rejects legal challenge to Plant Vogtle construction license |author=Rob Pavey |date=July 12, 2012 |work=The Augusta Chronicle }}</ref>
+
+In February 2013, the project's construction contractor, Shaw, was purchased by [[Chicago Bridge & Iron Company]] (CB&I). On March 12, 2013, construction on Unit&nbsp;3 officially began with the pour of the [[Nuclear island basemat|basemat]] concrete for the nuclear island.<ref name="constr_unit-3">{{cite web|url=http://chronicle.augusta.com/news/metro/2013-03-13/concrete-poured-new-vogtle-reactor-foundation|title=Concrete poured for new Vogtle reactor foundation|author=The Augusta Chronicle|date=March 13, 2013|work=The Augusta Chronicle|access-date=March 14, 2013}}</ref> This operation was completed on March 14.<ref>{{cite web |url=http://southerncompany.mediaroom.com/index.php?s=43&item=2790 |title=First nuclear concrete placed at Plant Vogtle expansion |author=Mark Williams |date=March 14, 2013 |work=Georgia Power |access-date=March 14, 2013 |url-status=dead |archive-url=https://archive.today/20130411103603/http://southerncompany.mediaroom.com/index.php?s=43&item=2790 |archive-date=April 11, 2013  }}</ref> During the weekend of June 1, 2013, assembly of the containment vessel began with the bottom head of the vessel being lifted into place on the nuclear island.<ref name="constr_unit-3-2">{{cite web|url=http://chronicle.augusta.com/news/metro/2013-06-03/vogtles-heaviest-component-date-moved-place|title=Vogtle's heaviest component to date moved into place|author=Pavey, R.|date=June 3, 2013|work=The Augusta Chronicle|access-date=June 3, 2013}}</ref> By June 2013, the construction schedule had been extended by at least 14 months.<ref>{{cite news|url=https://www.nytimes.com/2013/06/12/business/energy-environment/nuclear-powers-future-may-hinge-on-georgia-project.html?pagewanted=all&_r=0|title=Atomic Power's Green Light or Red Flag|author=Matthew L. Wald|date=June 11, 2013|work=The New York Times|access-date=July 12, 2013}}</ref> On November 21, 2013, the basemat pour for Unit 4 was completed.<ref>{{cite web |url= http://www.world-nuclear-news.org/NN-Construction-underway-of-second-Vogtle-AP1000-2211134.html |title= Construction underway of second Vogtle AP1000 |date= November 22, 2013 |work= World Nuclear News |publisher= [[World Nuclear Association]] |access-date= November 22, 2013 }}</ref>
+
+In February 2014, the Department of Energy approved a $6.5 billion loan guarantee for Southern Company subsidiary Georgia Power and Oglethorpe Power Corp. The Department of Energy initially demanded a credit subsidy fee, but the demand was ultimately dropped given the financial strength of Southern Co. and the Vogtle project.<ref>{{Cite web|url=http://www.marketwatch.com/story/southern-company-subsidiary-doe-finalize-vogtle-nuclear-project-loan-guarantees-2014-02-20|title=Southern Company subsidiary, DOE finalize Vogtle nuclear project loan guarantees|accessdate=July 28, 2023}}</ref><ref>{{cite web|url=http://www.power-eng.com/articles/2014/02/doe-finalizes-65bn-loan-guarantee-for-new-plant-vogtle-nuclear-reactors.html|title=DOE finalizes $6.5bn loan guarantee for new Plant Vogtle nuclear reactors|website=www.power-eng.com}}</ref><ref>{{cite news|url=https://www.nytimes.com/2014/02/19/business/energy-environment/loan-program-for-reactors-is-fizzling.html|title=Loan Program for Reactors Is Fizzling|first=Matthew L.|last=Wald|work=The New York Times |date=February 18, 2014|via=NYTimes.com}}</ref>
+
+Further delays and cost increases were incorporated in a revised schedule in early 2015. As a result of the increased delays and cost overruns, contractor CB&I exited the project and Westinghouse took direct control of the project as contractor and hired construction firm [[Fluor Corporation|Fluor]] to replace CB&I/Shaw on-site managing the day-to-day work. Westinghouse purchased certain assets of the former Shaw Group from CB&I to allow the project to go forward. In 2016, Southern Company and Westinghouse added construction firm Bechtel to the project to share construction management responsibilities.<ref>{{cite web|url=http://chronicle.augusta.com/news/metro/2015-08-28/plant-vogtle-track-after-schedule-revised|title=Plant Vogtle on track after schedule revised}}</ref>
+
+Recent construction milestones include setting the final of the "big six" structural modules for Unit&nbsp;3 (CA-02 and CA-03, which form the walls of a storage tank that is part of the reactor's passive cooling system). The "big six" modules also include the previously installed CA-01, CA-04, and CA-05 in-containment structural modules, as well as the previously installed CA-20 structural module which forms part of the internal structure of the auxiliary building, containing many of the reactor's support systems.
+
+CA-02 and CA-03 were placed within the containment vessel in May 2016. The setting of these modules is a fairly significant milestone and allows other construction activities to commence. In June 2016, the final reactor coolant pump for Unit&nbsp;3 was received on site. In November 2016, the reactor vessel for Unit&nbsp;3 was set within the nuclear island.
+
+2017 progress includes the installation of the reactor coolant loop piping and both steam generators at Unit&nbsp;3. Progress has also been made in the turbine, auxiliary, and annex building. Unit&nbsp;4 has also seen progress with the installation of the final two "big six" structural modules. Construction of both cooling towers is complete, with each nearly {{convert|600|ft|m|abbr=on}} tall.{{citation needed|date=April 2019}}
+
+====Westinghouse bankruptcy 2017====
+In March 2017, [[Westinghouse Electric Company]] filed for [[Chapter 11 bankruptcy]] due to losses from its two U.S. nuclear construction projects.<ref>{{cite web
+ |url=https://www.reuters.com/article/us-toshiba-accounting-idUSKBN16G0QO
+ |title=Toshiba's Westinghouse brings in bankruptcy lawyers; disclosure deadlines loom
+ |last1=DiNapoli
+ |first1=Jessica
+ |last2=Yamazaki
+ |first2=Makiko
+ |date=March 9, 2017
+|website=www.reuters.com
+ |publisher=[[Reuters]]
+ |archive-url=https://web.archive.org/web/20181213082346/http://www.reuters.com/article/us-toshiba-accounting-idUSKBN16G0QO
+ |archive-date=December 13, 2018
+|url-status=live
+ |access-date=February 21, 2019}}</ref> The U.S. government has given $8.3 billion of loan guarantees to help finance construction of the Vogtle reactors,<ref>{{cite web |url=https://energy.gov/lpo/portfolio/portfolio-projects |title=Loan Programs Project Under Construction: Vogtle |access-date=September 7, 2017}}</ref> and a way forward to completing the plant has been agreed upon.<ref name=reuters-20170330>{{cite news |url=https://www.reuters.com/article/us-toshiba-accounting-board-idUSKBN17006K |title=Huge nuclear cost overruns push Toshiba's Westinghouse into bankruptcy |first1=Tom | last1=Hals | first2=Makiko | last2=Yamazaki | first3=Tim | last3=Kelly |work=Reuters |date=March 30, 2017 |access-date=March 31, 2017}}</ref> On July 31, 2017 Southern Company division, Southern Nuclear, took over construction from Westinghouse and opened a bid for a new construction management contract to manage the day-to-day work on the site. Southern received bids from Fluor and Bechtel. On August 31, 2017, Southern announced its decision to move forward with Bechtel to be the day-to-day construction manager for the remainder of the project. Bechtel replaced Fluor, who would no longer be involved in the project.<ref>{{Cite web|url=https://markets.businessinsider.com/news/stocks/bechtel-selected-to-complete-construction-of-u-s-nuclear-plant-expansion-1002299131|title=Bechtel Selected to Complete Construction of U.S. Nuclear Plant Expansion|website=markets.businessinsider.com|accessdate=July 28, 2023}}</ref>
+
+===Continuation of construction approved, 2017===
+[[File:NRC Vogtle 3 Site Visit.jpg|thumb|Vogtle Unit 3 under construction in October 2020]]
+In November 2017 the [[Georgia Public Service Commission]] (GPSC) requested additional documentation following concerns that design blueprints had not been approved by appropriately licensed engineers, which has legal implications. On December 21, 2017, the PSC approved the continuation of construction on Units&nbsp;3&nbsp;and&nbsp;4, with conditions that reduced the costs that can be recovered from ratepayers over the life of the project,<ref>{{Cite news|url=http://savannahnow.com/news/2017-12-21/plant-vogtle-growth-wins-approval-penalties-public-service-commission |title=Plant Vogtle growth wins approval, penalties from Public Service Commission|last=Corwin|first=Tom |date=December 21, 2017|work=Savannah Morning News|access-date=December 21, 2017}}</ref> causing a scheduled monthly consumer rate increase of $3.78 after first power.<ref name=":0"/>
+
+In the February 2018 Vogtle Construction Monitoring Report (VCM), GPSC approved November 2021 and November 2022 as the target in-service dates for Units 3 & 4 respectively. The report notes that the project is being completed on an accelerated schedule and is tracking ahead of the 2021 & 2022 in-service target dates.<ref>{{Cite web|url=https://resources.georgiapower.com/content/assets/PDFS/VCM-18_Report_Final.pdf |title=Eighteenth Semi-annual Vogtle Construction Monitoring Report|date=February 2018|website=www.georgiapower.com|access-date=April 3, 2018}}</ref>
+
+In August 2018 a $2.3 billion increase in costs was recognized.<ref name=wnn-20180809>{{cite news |url=http://www.world-nuclear-news.org/Articles/Progress-at-Vogtle,-but-cost-forecast-rises |title=Progress at Vogtle, but cost forecast rises |publisher=World Nuclear News |date=August 9, 2018 |access-date=August 16, 2018}}</ref> The total cost, including financing costs, is estimated at about $25 billion.<ref name=power-eng-20180809>{{cite news |url=https://www.power-eng.com/articles/2018/08/vogtle-cost-upgrade-causes-rethinking-of-nuclear-plant-s-future.html |title=Vogtle Cost Upgrade Causes Rethinking of $25B Nuclear Plant's Future |last=Walton |first=Rod |work=Power Engineering |date=August 9, 2018 |access-date=August 16, 2018}}</ref>
+In September 2018, in order to sustain the project, Georgia Power agreed to pay an additional proportion of the costs of the smaller project partners if the cost of completion went beyond $9.2 billion.<ref name=wnn-20180927>{{cite news |url=http://www.world-nuclear-news.org/Articles/Vogtle-construction-to-continue |title=Vogtle owners vote to continue construction |publisher=World Nuclear News |date=September 27, 2018 |access-date=September 28, 2018}}</ref>
+
+In March 2019 further federal loan guarantees of $3.7 billion were given to the various build partners, taking total federal loan guarantees up to $12 billion. The Georgia Power CEO said the loan guarantees played a key role in reducing financing costs for the build.<ref name=wnn-20190322>{{cite news |url=http://www.world-nuclear-news.org/Articles/Perry-Vogtle-project-is-critically-important |title=Perry: Vogtle project is 'critically important' |publisher=World Nuclear News |date=March 22, 2019 |access-date=March 22, 2019}}</ref> Also in March 2019, Georgia Power confirmed that the Unit 3 containment cap had been lowered into place and the reactor would be ready to load nuclear fuel in 2020.<ref>{{Cite web|url=https://apnews.com/38189fb0550e401da6b339ad9870a007 |title=Trump adds $3.7B in support to finish 2 new nuclear reactors|last=Bynum|first=Russ |date=March 22, 2019|website=AP NEWS|access-date=March 25, 2019}}</ref> This was preceded by the containment vessel third ring, as well as reactor coolant pump and polar crane installation in unit 3 during 2018 and 2019. The containment vessel's top head was set during a site visit by Secretary of Energy [[Rick Perry]] and executives of the plant's owners. Recent progress on unit 4 includes the installation of the final steam generator and pressurizer.
+
+Unit 4 is being constructed utilizing lessons learned from Unit 3 and from the failed [[Virgil C. Summer Nuclear Generating Station]] (V.C. Summer) project and as a result, the order in which some components are being installed has been modified.{{citation needed|date=April 2019}} On November 22, 2019 the third ring of the containment vessel was set for unit 4, and on December 8, 2019 the unit 3 shield building roof was set above the unit 3 containment vessel. On December 16, 2019 the control room of unit 3 became operational and available for testing systems. On February 11, 2020, Southern Nuclear announced that the final concrete placement inside the Unit 3 containment vessel was completed, allowing installation of the reactor's fueling machine. As of February 2020, assembly continued on the final topmost vertical feature of the overall Unit 3 reactor building, the passive containment cooling system storage tank, which will be set on top of the Shield Building Roof.
+
+A three-month delay to completion of both units was announced in October 2021, with unit 3 expected operational in the third quarter of 2022 and unit 4 in the second quarter of 2023.<ref name=nei-20211026>{{cite news |url=https://www.neimagazine.com/news/newsmore-delays-for-vogtle-34-9185401 |title=More delays for Vogtle 3&4 |publisher=Nuclear Engineering International |date=October 26, 2021 |access-date=October 26, 2021}}</ref> In August 2022 a further delay was announced, first quarter of 2023 for unit 3 and the fourth quarter of 2023 for unit 4. Costs were expected to rise to over $30 billion due to the delays.<ref name=nei-20220803>{{cite news |url=https://www.neimagazine.com/news/newsvogtle-npp-faces-more-possible-delays-9897168 |title=Vogtle NPP faces more possible delays |publisher=Nuclear Engineering International |date=August 3, 2022 |access-date=August 3, 2022}}</ref>
+
+=== Commissioning process ===
+
+On October 14, 2022, It was announced that Vogtle Unit 3 had begun loading nuclear fuel.<ref>
+{{Cite web
+ | title= Vogtle Unit 3 starts nuclear fuel load
+ | website= www.georgiapower.com
+ | language= en
+ | url= https://www.georgiapower.com/company/news-center/2022-articles/vogtle-unit-3-nuclear-fuel-load.html
+ | access-date= October 17, 2022
+ | url-status=live
+ | archive-url= https://web.archive.org/web/20221015134412/https://www.georgiapower.com/company/news-center/2022-articles/vogtle-unit-3-nuclear-fuel-load.html
+ | archive-date= October 15, 2022
+}}
+</ref>
+In this process, technicians from Southern Nuclear and Westinghouse work together on the transferring of 157 fuel assemblies from the fuel pool to the reactor one at a time. Once this process is completed, the startup testing phase begins, where the integrity of the primary coolant system and steam systems is verified, and their functioning at design temperatures and pressures is ensured. Operators will also bring the units from a cold start to first [[Criticality (status)|criticality]], where a sustained chain reaction is achieved. The unit will then be synchronized to the electric grid, as power is systematically raised to 100%. Vogtle Unit 3 was projected to enter service in the first quarter of 2023.<ref>{{cite web | url=https://www.world-nuclear-news.org/Articles/Fuel-loading-under-way-at-Vogtle-3 | title=Fuel loading under way at Vogtle 3 : New Nuclear - World Nuclear News }}</ref>
+
+During start-up and pre-operational testing in February 2023 the plant's cooling system suffered from unexpected vibrations. Measures were taken to remedy the problem. The time-plan was set back so that the beginning of regular service was expected for May or June 2023.<ref>
+{{Cite web
+ | title= Revised in-service dates for Vogtle units
+ | website= World Nuclear News
+ | language= en
+ | url= https://www.world-nuclear-news.org/Articles/Revised-in-service-dates-for-Vogtle-units
+ | access-date= February 20, 2023
+ }}
+</ref> On March 6, 2023, Vogtle Unit 3 reached criticality for the first time. The unit was connected to the grid on April 1 and entered commercial operation on July 31.<ref>{{Cite web |date=2023-07-31 |title=The first US nuclear reactor built from scratch in decades enters commercial operation in Georgia |url=https://apnews.com/article/georgia-power-nuclear-reactor-vogtle-9555e3f9169f2d58161056feaa81a425 |access-date=2023-08-01 |website=AP News |language=en}}</ref><ref>
+{{Cite web
+ | title= Vogtle Unit 3 reaches initial criticality
+ | website= Yahoo!
+ | date= March 6, 2023
+ | language= en
+ | url= https://finance.yahoo.com/news/vogtle-unit-3-reaches-initial-210200921.html
+ | access-date= March 6, 2023
+ }}
+</ref><ref name=":0" /><ref name="u3c" />
+
+On May 2, 2023, Georgia Power announced that Vogtle Unit 4 had completed hot functional testing which confirmed that the reactor was ready for its first fuel load.<ref>{{cite web | url=https://www.world-nuclear-news.org/Articles/Hot-functional-testing-complete-at-Vogtle-4 | title=Hot functional testing complete at Vogtle 4 : New Nuclear - World Nuclear News }}</ref>
+On August 18, 2023, fuel loading begins with 264 fuel elements at Unit 4.<ref>{{Cite web |title=Fuel loading begins at Vogtle 4 : New Nuclear - World Nuclear News |url=https://world-nuclear-news.org/Articles/Fuel-loading-begins-at-Vogtle-4 |access-date=2024-08-16 |website=world-nuclear-news.org}}</ref> In October 2023, a reactor coolant pump in Unit 4 developed a motor fault, which delayed Unit 4's in-service date to the first quarter of 2024.<ref name="wnn-20231009">{{cite news |url=https://www.world-nuclear-news.org/Articles/Vogtle-4-start-up-moved-to-2024 |title=Vogtle 4 start-up moved to 2024 |website=World Nuclear News |date=9 October 2023 |access-date=11 October 2023}}</ref> Later, vibrations were found in a cooling system, putting back the in-service date to the second quarter of 2024.<ref name="nei-20240206">{{cite news |url=https://www.neimagazine.com/news/newsmore-delays-for-vogtle-4-11494303 |title=More delays for Vogtle 4 |publisher=Nuclear Engineering International |date=6 February 2024 |access-date=13 February 2024}}</ref> On February 14, 2024, Vogtle Unit 4 reached criticality for the first time. The unit was connected to the grid on March 1.<ref name=":1">{{Cite web |title=Grid connection for Vogtle 4 : New Nuclear - World Nuclear News |url=https://world-nuclear-news.org/Articles/Grid-connection-for-Vogtle-4 |access-date=2024-03-05 |website=world-nuclear-news.org}}</ref> Vogtle 4 entered commercial operation on April 29.<ref name=":2">{{cite press release |date=April 29, 2024 |title=Vogtle Unit 4 enters commercial operation |url=https://www.georgiapower.com/company/news-hub/press-releases/vogtle-unit-4-enters-commercial-operation.html |access-date=2024-04-29 |publisher=Georgia Power |archive-date=April 29, 2024 |archive-url=https://web.archive.org/web/20240429142656/https://www.georgiapower.com/company/news-hub/press-releases/vogtle-unit-4-enters-commercial-operation.html |url-status=dead }}</ref>
+
+==Surrounding population==
+The [[Nuclear Regulatory Commission]] defines two emergency planning zones around nuclear power plants: a plume exposure pathway zone with a radius of {{convert|10|mi}}, concerned primarily with exposure to, and inhalation of, airborne radioactive contamination, and an ingestion pathway zone of about {{convert|50|mi}}, concerned primarily with ingestion of food and liquid contaminated by radioactivity.<ref>{{cite web|url=https://www.nrc.gov/reading-rm/doc-collections/fact-sheets/emerg-plan-prep-nuc-power.html|title=NRC: Backgrounder on Emergency Preparedness at Nuclear Power Plants|website=www.nrc.gov}}</ref>
+
+In 2010, the population within {{convert|10|mi}} of Vogtle was 5,845, a decrease of 16.3 percent over the previous decade. The population within {{convert|50|mi}} was 726,640, an increase of 8.8 percent since 2000. Cities within {{convert|50|mi}} include [[Augusta, Georgia|Augusta]] ({{convert|26|mi}} to city center).<ref>{{Cite web |date=2011-04-14 |title=Nuclear neighbors: Population rises near US reactors |url=https://www.nbcnews.com/id/wbna42555888 |access-date=2023-08-01 |website=NBC News |language=en}}</ref>
+
+==Reactors==
+{| class="wikitable" style="text-align:center"
+|-
+! rowspan="2" | Reactor unit
+! rowspan="2" | Reactor type
+! colspan="2" | Capacity (MWe)
+! rowspan="2" | Construction<br />started
+! rowspan="2" | Grid<br />connection
+! rowspan="2" | Commercial<br />operation
+! rowspan="2" | Shutdown
+|-
+! Net (Summer)
+! Gross
+|-
+| Vogtle-1<ref>{{cite web |url= http://www.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=718|title= Vogtle-1 |date= March 18, 2018 |work= PRIS |publisher= [[IAEA]] |access-date= March 18, 2018 }}</ref>
+| rowspan="2" | Westinghouse<br />4-loop
+| 1150
+| rowspan="2" | 1229
+| rowspan="2" | August 1, 1976
+| March 27, 1987
+| June 1, 1987
+| 
+|-
+| Vogtle-2<ref>{{cite web |url= http://www.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=719 |title= Vogtle-2 |date= March 18, 2018 |work= PRIS |publisher= [[IAEA]] |access-date= March 18, 2018 }}</ref>
+| 1152
+| April 10, 1989
+| May 20, 1989
+| 
+|-
+| Vogtle-3<ref>{{cite web |url= http://www.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=1042 |title= Vogtle-3 |date= November 21, 2013 |work= PRIS |publisher= [[IAEA]] |access-date= November 22, 2013 }}</ref>
+| rowspan="2" | [[AP1000]]
+| rowspan="2" | 1117
+| rowspan="2" | 1250
+| March 12, 2013<ref name="nucnet">{{Cite web |date=March 15, 2013 |title=New Milestone In US As First Concrete Is Poured At Vogtle-3 |url=https://www.nucnet.org/news/new-milestone-in-us-as-first-concrete-is-poured-at-vogtle-3 |access-date=August 3, 2023 |website=nucnet.org}}</ref>
+| March 31, 2023<ref name=":0">{{Cite news|date=April 1, 2023|title=Vogtle 3 & 4 nuclear units take significant steps toward operations|language=en-US|work=Georgia Power|url=https://www.georgiapower.com/company/news-center/2023-articles/vogtle-steps-toward-operations.html|access-date=April 4, 2023}}</ref>
+| July 31, 2023<ref name="u3c">{{Cite news|date=July 31, 2023|title=First U.S. nuclear reactor built from scratch in decades enters commercial operation in Georgia|language=en-US|work=NBC News|url=https://www.nbcnews.com/science/science-news/first-us-nuclear-reactor-built-scratch-decades-enters-commercial-opera-rcna97258|access-date=July 31, 2023}}</ref>
+| 
+|-
+| Vogtle-4<ref>{{cite web |url= https://pris.iaea.org/PRIS/CountryStatistics/ReactorDetails.aspx?current=1043 |title= Vogtle-4 |date= August 2, 2023 |work= PRIS |publisher= [[IAEA]] |access-date= August 3, 2023 }}</ref>
+| November 19, 2013
+| March 6, 2024<ref name=":1" />
+| April 29, 2024
+| 
+|}
+
+==Seismic risk==
+The Nuclear Regulatory Commission's estimate of the risk each year of an earthquake intense enough to cause core damage to either reactor at Vogtle was 1 in 140,845, according to an NRC study published in August 2010.<ref>{{Cite web |date=2011-03-16 |title=What are the odds? US nuke plants ranked by quake risk |url=https://www.nbcnews.com/id/wbna42103936 |access-date=2024-08-16 |website=NBC News |language=en}}</ref><ref>[http://msnbcmedia.msn.com/i/msnbc/Sections/NEWS/quake%20nrc%20risk%20estimates.pdf Risk estimates] MSNBBC {{Webarchive|url=https://web.archive.org/web/20170525170632/http://msnbcmedia.msn.com/i/msnbc/Sections/NEWS/quake%20nrc%20risk%20estimates.pdf |date=May 25, 2017 }}</ref>
+
+==See also==
+*[[List of largest power stations in the United States]]
+*[[List of power stations in Georgia (U.S. state)]]
+*[[Olkiluoto Nuclear Power Plant]]
+*[[Virgil C. Summer Nuclear Generating Station]]
+
+==References==
+{{reflist}}
+
+==External links==
+{{Commons category}}
+*[https://www.southerncompany.com/innovation/vogtle-3-and-4.html Southern Company: Plant Vogtle Units 3 and 4]
+*[https://web.archive.org/web/20070218102213/http://www.eia.doe.gov/cneaf/nuclear/page/at_a_glance/reactors/vogtle.html U.S. Department of Energy: Vogtle]
+*[https://www.nrc.gov/info-finder/reactor/vog1.html NRC: Vogtle Electric Generating Plant, Unit 1]
+*[https://www.nrc.gov/info-finder/reactor/vog2.html NRC: Vogtle Electric Generating Plant, Unit 2]
+*[https://www.nrc.gov/reactors/new-reactors/col/vogtle.html NRC: Vogtle, Units 3 & 4 Application]
+
+{{Georgia Power}}
+{{U.S. Nuclear Plants}}
+{{Portal bar|Georgia (U.S. state)|Energy|Nuclear technology}}
+
+[[Category:Energy infrastructure completed in 1987]]
+[[Category:Energy infrastructure completed in 1989]]
+[[Category:Towers completed in 1987]]
+[[Category:Nuclear power stations using AP1000 reactors]]
+[[Category:Buildings and structures in Burke County, Georgia]]
+[[Category:Towers in Georgia (U.S. state)]]
+[[Category:Nuclear power plants in Georgia (U.S. state)]]
+[[Category:Nuclear power stations using pressurized water reactors]]
+[[Category:Georgia Power]]
+[[Category:Articles containing video clips]]
+[[Category:Oglethorpe Power]]

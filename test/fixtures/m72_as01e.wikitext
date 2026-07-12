@@ -1,0 +1,77 @@
+{{Short description|Experimental tuberculosis vaccine}}
+{{DISPLAYTITLE:M72/AS01<sub>E</sub>}}
+{{Infobox drug
+| drug_name         = M72/AS01<sub>E</sub>
+| type              = vaccine
+| image             = 
+| alt               = 
+| width             = 
+| caption           = 
+| image2            = 
+| alt2              = 
+| width2            = 
+| caption2          = 
+<!-- Vaccine data -->
+| target            = ''Mycobacterium tuberculosis''
+| vaccine_type      = subunit
+<!-- Clinical data -->
+| pronounce         = 
+| tradename         = 
+| Drugs.com         = 
+| MedlinePlus       = 
+| licence_CA        = <!-- Health Canada may use generic or brand name (generic name preferred) -->
+| licence_EU        = <!-- EMA uses INN (or special INN_EMA) -->
+| DailyMedID        = <!-- DailyMed may use generic or brand name (generic name preferred) -->
+| licence_US        = <!-- FDA may use generic or brand name (generic name preferred) -->
+| pregnancy_AU      = <!-- A / B1 / B2 / B3 / C / D / X -->
+| pregnancy_AU_comment = 
+| pregnancy_category= 
+| routes_of_administration = 
+| ATCvet            = 
+| ATC_prefix        = <!-- 'none' if uncategorised -->
+| ATC_suffix        = 
+<!-- Legal status -->
+| legal_AU          = <!-- S2, S3, S4, S5, S6, S7, S8, S9 or Unscheduled -->
+| legal_AU_comment  = 
+| legal_BR          = <!-- OTC, A1, A2, A3, B1, B2, C1, C2, C3, C5, D1, D2, E, F1, F2, F3, F4 -->
+| legal_BR_comment  = 
+| legal_CA          = <!-- OTC, Rx-only, Schedule I, II, III, IV, V, VI, VII, VIII -->
+| legal_CA_comment  = 
+| legal_DE          = <!-- Anlage I, II, III or Unscheduled -->
+| legal_DE_comment  = 
+| legal_NZ          = <!-- Class A, B, C -->
+| legal_NZ_comment  = 
+| legal_UK          = <!-- GSL, P, POM, CD, CD Lic, CD POM, CD No Reg POM, CD (Benz) POM, CD (Anab) POM or CD Inv POM / Class A, B, C -->
+| legal_UK_comment  = 
+| legal_US          = <!-- OTC / Rx-only / Schedule I, II, III, IV, V -->
+| legal_US_comment  = 
+| legal_EU          = 
+| legal_EU_comment  = 
+| legal_UN          = <!-- N I, II, III, IV / P I, II, III, IV -->
+| legal_UN_comment  = 
+| legal_status      = investigational (in phase III)
+<!-- Identifiers -->
+| CAS_number        = 
+| CAS_supplemental  = 
+| PubChem           = 
+| PubChemSubstance  = 
+| IUPHAR_ligand     = 
+| DrugBank          = 
+| ChemSpiderID      = 
+| UNII              = 
+| KEGG              = 
+| ChEBI             = 
+| ChEMBL            = 
+| NIAID_ChemDB      = 
+}}
+'''M72/AS01<sub>E</sub>''' is an experimental [[tuberculosis]] vaccine. If approved, it would be the first [[vaccine]] for tuberculosis in more than a century after the [[BCG vaccine]].<ref name=propublica/><ref>{{cite journal |last1=Tozer |first1=Lilly |title=Promising tuberculosis vaccine gets US$550-million shot in the arm |journal=Nature |date=28 June 2023 |doi=10.1038/d41586-023-02171-x |pmid=37380847 |url=https://www.nature.com/articles/d41586-023-02171-x |language=en|url-access=subscription }}</ref>
+
+The vaccine consists of two main ingredients. The [[antigen]] part is M72, a [[recombinant protein|recombinant]] [[fusion protein]] derived from the sequences of two ''M. tuberculosis'' antigens (Mtb32A {{UniProt|O07175}} and Mtb39A {{UniProt|L7N675}}). The adjuvant part is AS01<sub>E</sub>, a combination of [[QS-21]], cholesterol, and monophosphoryl lipid A (MPL).<ref name=2bfinal/>
+
+It was initially developed by [[GSK plc]] and funded by non-profits and governments due to the limited commercial potential of tuberculosis vaccines, which are mainly needed in poor countries. The vaccine candidate completed a [[Phase II clinical trial]] in 2018, but its development was stalled thereafter due to negotiations between GSK, which was uninterested in the late stage development of the vaccine candidate, and non-commercial backers. After almost two years, the company concluded an agreement with the [[Bill & Melinda Gates Medical Research Institute]]. The Phase III trial is funded by the [[Wellcome Trust]] (up to US$150 million) and the [[Gates Foundation]] (the remaining around US$400 million). It is scheduled to begin in 2024 with results available in 2028. One issue in developing the vaccine is the need for [[QS-21]] bark extract from the tree ''[[Quillaja saponaria]]'' that is used in combination with [[monophosphoryl lipid A]] as an [[immunologic adjuvant]]. This adjuvant is used by several other GSK vaccines—especially the [[Shingrix|shingles vaccine]] that is more profitable—and GSK owns most of the world's supply.<ref name=propublica>{{cite news |last1=Barry-Jester |first1=Anna Maria |title=How a Big Pharma Company Stalled a Potentially Lifesaving Vaccine in Pursuit of Bigger Profits |url=https://www.propublica.org/article/how-big-pharma-company-stalled-tuberculosis-vaccine-to-pursue-bigger-profits |access-date=18 November 2023 |work=ProPublica |date=4 October 2023 |language=en}}</ref><ref>{{cite web |title=Press Release: Funding Late-Stage Development of M72 TB Vaccine Candidate |url=https://www.gatesfoundation.org/ideas/media-center/press-releases/2023/06/funding-commitment-m72-tb-vaccine-candidate |website=Bill & Melinda Gates Foundation |access-date=18 November 2023 |language=en}}</ref><ref name=2bfinal>{{cite journal |last1=Tait |first1=Dereck R. |last2=Hatherill |first2=Mark |last3=Van Der Meeren |first3=Olivier |last4=Ginsberg |first4=Ann M. |last5=Van Brakel |first5=Elana |last6=Salaun |first6=Bruno |last7=Scriba |first7=Thomas J. |last8=Akite |first8=Elaine J. |last9=Ayles |first9=Helen M. |last10=Bollaerts |first10=Anne |last11=Demoitié |first11=Marie-Ange |last12=Diacon |first12=Andreas |last13=Evans |first13=Thomas G. |last14=Gillard |first14=Paul |last15=Hellström |first15=Elizabeth |last16=Innes |first16=James C. |last17=Lempicki |first17=Maria |last18=Malahleha |first18=Mookho |last19=Martinson |first19=Neil |last20=Mesia Vela |first20=Doris |last21=Muyoyeta |first21=Monde |last22=Nduba |first22=Videlis |last23=Pascal |first23=Thierry G. |last24=Tameris |first24=Michele |last25=Thienemann |first25=Friedrich |last26=Wilkinson |first26=Robert J. |last27=Roman |first27=François |title=Final Analysis of a Trial of M72/AS01 E Vaccine to Prevent Tuberculosis |journal=New England Journal of Medicine |date=19 December 2019 |volume=381 |issue=25 |pages=2429–2439 |doi=10.1056/NEJMoa1909953|pmid=31661198 |doi-access=free |hdl=10044/1/74245 |hdl-access=free }} &ndash; phase 2b trial</ref>
+
+==References==
+{{reflist}}
+
+[[Category:Tuberculosis vaccines]]
+[[Category:Drugs developed by GSK plc]]

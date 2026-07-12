@@ -1,0 +1,116 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "wiki-as-of-now",
+	"main": ".open-next/worker.js",
+	"compatibility_date": "2026-06-04",
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".open-next/assets"
+	},
+	"images": {
+		// Enable image optimization
+		// see https://opennext.js.org/cloudflare/howtos/image
+		"binding": "IMAGES"
+	},
+	// Workers AI binding (research provider model calls run here per build design §6.1).
+	// remote:true — AI bindings have no local emulation; this also keeps `next dev` from warning.
+	"ai": { "binding": "AI", "remote": true },
+	// Research queue producer (integration-contract §2.3). The app worker only PRODUCES; the
+	// research worker consumes. The DLQ is inferred from the consumer config — do not declare it here.
+	"queues": {
+		"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research" }]
+	},
+	"services": [
+		{
+			// Self-reference service binding, the service name must match the worker name
+			// see https://opennext.js.org/cloudflare/caching
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "wiki-as-of-now"
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	"upload_source_maps": true,
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "wiki-as-of-now",
+			"database_id": "00000000-0000-0000-0000-000000000000",
+			"migrations_dir": "migrations"
+		}
+	],
+	// Per-env remote targets. Top-level SETTINGS (`compatibility_flags`, `main`, `assets`,
+	// `observability`) are inherited, but BINDINGS are not — every named env must re-declare
+	// `ai`, `images`, `services`, `d1_databases`, `queues` or the deploy silently drops them.
+	// The top-level (un-suffixed) config stays the default env for local Miniflare / `next dev`.
+	// Queue names are account-global, so dev/prod must differ (design §6.2). Both workers MUST
+	// point at the same D1 id per env (CC-10).
+	"env": {
+		"dev": {
+			"name": "wiki-as-of-now-dev",
+			"ai": { "binding": "AI", "remote": true },
+			"images": { "binding": "IMAGES" },
+			"services": [
+				{ "binding": "WORKER_SELF_REFERENCE", "service": "wiki-as-of-now-dev" }
+			],
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "wiki-as-of-now-dev",
+					"database_id": "9f4d0701-ecb7-428b-a3a2-0222aa7e2a4a",
+					"migrations_dir": "migrations"
+				}
+			],
+			"queues": {
+				"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research-dev" }]
+			}
+		},
+		"production": {
+			"name": "wiki-as-of-now",
+			// Production serves ONLY the custom domain (the OAuth redirect origin must match exactly).
+			"routes": [{ "pattern": "wikinow.scarson.io", "custom_domain": true }],
+			"vars": { "APP_ORIGIN": "https://wikinow.scarson.io" },
+			"ai": { "binding": "AI", "remote": true },
+			"images": { "binding": "IMAGES" },
+			"services": [
+				{ "binding": "WORKER_SELF_REFERENCE", "service": "wiki-as-of-now" }
+			],
+			"d1_databases": [
+				{
+					"binding": "DB",
+					"database_name": "wiki-as-of-now",
+					"database_id": "aa530ffb-16bf-4ab2-8f22-04f2dcc03922",
+					"migrations_dir": "migrations"
+				}
+			],
+			"queues": {
+				"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research" }]
+			}
+		}
+	}
+	/**
+	 * Smart Placement
+	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+	 */
+	// "placement": {  "mode": "smart" }
+	/**
+	 * Environment Variables
+	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+	 * Note: Use secrets to store sensitive data.
+	 * https://developers.cloudflare.com/workers/configuration/secrets/
+	 */
+	// "vars": {  "MY_VARIABLE": "production_value" }
+}

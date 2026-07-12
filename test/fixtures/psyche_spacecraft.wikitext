@@ -1,0 +1,386 @@
+{{Short description|Reconnaissance mission of the main belt asteroid 16 Psyche}}
+{{italic title}}
+{{Use American English|date=January 2017}}
+{{Use mdy dates|date=November 2022}}
+{{Infobox spaceflight
+| name               = ''Psyche''
+| names_list         = 
+| image              = PIA21499 - Artist's Concept of Psyche Spacecraft with Five-Panel Array.jpg
+| image_caption      = An artist's concept illustration of the ''Psyche'' spacecraft as it orbits [[16 Psyche]]
+| image_size         = 
+| mission_type       = Asteroid orbiter
+| operator           = {{hlist|[[NASA]]|[[Arizona State University|ASU]]}}
+| COSPAR_ID          = 
+| SATCAT             = 
+| website            = {{ubl|NASA: {{URL|https://www.nasa.gov/psyche}}|ASU: {{URL|https://psyche.asu.edu}}}}
+| mission_duration   = Cruise: {{time interval|October 14, 2023|sep=,}} (in progress)<ref name="jpl-20221028">{{cite web |url=https://www.jpl.nasa.gov/news/nasa-continues-psyche-asteroid-mission |title=NASA Continues Psyche Asteroid Mission |work=[[JPL]] |publisher=[[NASA]] |date=October 28, 2022 |access-date=October 28, 2022 |archive-date=November 8, 2022 |archive-url=https://web.archive.org/web/20221108030113/https://www.jpl.nasa.gov/news/nasa-continues-psyche-asteroid-mission |url-status=live }}</ref><br />Science: 21 months in orbit
+| spacecraft         = Psyche
+| spacecraft_type    = 
+| spacecraft_bus     = 
+| manufacturer       = [[Maxar Technologies]]<ref name="fy2021-summary">{{cite web|url=https://www.nasa.gov/sites/default/files/atoms/files/fy2021_congressional_justification.pdf|title=FY 2021 President's Budget Request Summary|publisher=NASA|pages=437–439|date=February 10, 2020|access-date=February 22, 2020|archive-date=June 17, 2020|archive-url=https://web.archive.org/web/20200617141734/https://www.nasa.gov/sites/default/files/atoms/files/fy2021_congressional_justification.pdf|url-status=live}} {{PD-notice}}</ref>
+| launch_mass        = {{cvt|2608|kg}}<ref name='Gerrit 2015'/>
+| dry_mass           = {{cvt|1648|kg}}<ref>{{Cite web|url=https://www.youtube.com/watch?v=WUEkqnsMDLw|title=Psyche: Journey to a Metallic World|via=www.youtube.com|access-date=February 9, 2021|archive-date=February 11, 2021|archive-url=https://web.archive.org/web/20210211100647/https://www.youtube.com/watch?v=WUEkqnsMDLw|url-status=live}}</ref>
+| payload_mass       = {{cvt|30|kg}}
+| dimensions         = <!-- {{convert| |x| | | |abbr=on}} -->
+| power              = 4.5 [[Watt|kW]]
+| launch_date        = 13 October 2023, 14:19 UTC<ref name="CNN2023_10_13">{{cite web | last=Strickland | first=Ashley | title=NASA launches a spacecraft to visit Psyche, an unseen metal world | website=CNN | date=2023-10-13 | url=https://www.cnn.com/2023/10/13/world/psyche-metal-asteroid-nasa-launch-scn/index.html | access-date=2023-10-13 | archive-date=October 13, 2023 | archive-url=https://web.archive.org/web/20231013152224/https://amp.cnn.com/cnn/2023/10/13/world/psyche-metal-asteroid-nasa-launch-scn/index.html | url-status=live}}</ref><ref name="Clark2023">{{cite web |last=Clark |first=Stephen |url=https://arstechnica.com/space/2023/10/nasa-is-about-to-launch-a-mission-of-pure-discovery-to-a-metal-asteroid/ |title=NASA just launched the Psyche mission—no one knows what it will find |website=Ars Technica |date=October 13, 2025 |access-date=October 14, 2023 |archive-date=October 13, 2023 |archive-url=https://web.archive.org/web/20231013134710/https://arstechnica.com/space/2023/10/nasa-is-about-to-launch-a-mission-of-pure-discovery-to-a-metal-asteroid/ |url-status=live}}</ref>
+| launch_rocket      = [[Falcon Heavy]]<ref name='FalconHeavy'>{{cite web|last=Foust|first=Jeff|url=https://spacenews.com/falcon-heavy-to-launch-nasa-psyche-asteroid-mission/|title=Falcon Heavy to launch NASA Psyche asteroid mission|publisher=SpaceNews|date=February 28, 2020|access-date=February 29, 2020|archive-date=March 1, 2020|archive-url=https://archive.today/20200301115859/https://spacenews.com/falcon-heavy-to-launch-nasa-psyche-asteroid-mission/|url-status=live}}</ref>
+| launch_site        = [[Kennedy Space Center]], [[Kennedy Space Center Launch Complex 39A|LC-39A]]
+| launch_contractor  = [[SpaceX]]
+| interplanetary     =
+{{Infobox spaceflight/IP
+   |type                = flyby
+   |object              = Mars
+   |note                = gravity assist
+   |distance            = 4,500 km (2,800 mi)
+   |arrival_date        = 15 May 2026
+}}
+{{Infobox spaceflight/IP
+  | type           = orbiter
+  | object         = [[16 Psyche]]
+  | arrival_date   = August 2029<ref name="jpl-20221028" />
+  | departure_date = 
+  | periapsis      = 
+  | apoapsis       = 
+  | inclination    = 
+  | apsis          = 
+}}
+| instruments_list   = {{Infobox spaceflight/Instruments
+  | acronym1 = Psyche Multispectral Imager
+  | name1 = Multispectral Imager<ref name="fy2021-summary" />
+  | acronym2 = Gamma Ray and Neutron Spectrometer
+  | name2 = Gamma Ray and Neutron Spectrometer
+  | acronym3 = Magnetometer
+  | name3 = Magnetometer
+  | acronym4 = Gravity Science
+  | name4 = X-band Gravity Science Investigation
+ }}
+| insignia           = Psyche insignia.svg
+| insignia_caption   = Psyche mission patch
+| insignia_size      = 
+| programme          = '''[[Discovery Program]]'''
+| previous_mission   = [[Lucy (spacecraft)|Lucy]]
+| next_mission       = [[VERITAS (spacecraft)|VERITAS]]
+}}
+
+'''''Psyche''''' ({{IPAc-en|ˈ|s|aɪ|k|i}} {{respell|SY|kee}}) is a NASA [[Discovery Program]] space mission launched on October 13, 2023, to explore the origin of [[planetary core]]s by orbiting and studying the metallic asteroid [[16 Psyche]] beginning in 2029.<ref name="NYT-20170106">{{cite news|url=https://www.nytimes.com/2017/01/06/science/nasa-psyche-asteroid.html|title=A Metal Ball the Size of Massachusetts That NASA Wants to Explore|newspaper=The New York Times|last=Chang|first=Kenneth|date=January 6, 2017|access-date=March 3, 2017|archive-date=January 7, 2017|archive-url=https://web.archive.org/web/20170107052013/http://www.nytimes.com/2017/01/06/science/nasa-psyche-asteroid.html|url-status=live}}</ref> NASA's [[Jet Propulsion Laboratory]] (JPL) manages the project.
+
+The spacecraft will orbit the asteroid from August 5, 2029, to October 31, 2031, spending 817 days in orbit. Psyche uses solar-powered [[Hall-effect thruster]]s for propulsion and orbital maneuvering, the first interplanetary spacecraft to use that technology. It is also the first mission to use [[Deep Space Optical Communications|laser optical communications]] beyond the Earth-Moon system.
+
+== History ==
+{{Main|Selection of Discovery Mission 13 and 14}}
+
+The proposal for the ''Psyche'' mission was submitted by [[Lindy Elkins-Tanton]], a principal investigator at [[Arizona State University]], as part of a call for proposals for NASA's [[Discovery Program]] missions 13 and 14 that closed in February 2015. It was shortlisted on September 30, 2015, as one of five finalists, and awarded US$3 million for further concept development.<ref name="NYT-20170106"/><ref name="selection 1st round">{{cite web|url=https://www.nasa.gov/press-release/nasa-selects-investigations-for-future-key-planetary-mission|title=NASA Selects Investigations for Future Key Planetary Mission|publisher=NASA|first1=Dwayne C.|last1=Brown|first2=Laurie|last2=Cantillo|date=September 30, 2015|access-date=October 1, 2015|archive-date=August 9, 2020|archive-url=https://web.archive.org/web/20200809110251/https://www.nasa.gov/press-release/nasa-selects-investigations-for-future-key-planetary-mission/|url-status=live}} {{PD-notice}}</ref>
+
+On January 4, 2017, ''Psyche'' was selected for the 14th Discovery mission, with launch set for 2023.<ref name="Brown">{{cite web|url=https://www.nasa.gov/press-release/nasa-selects-two-missions-to-explore-the-early-solar-system|title=NASA Selects Two Missions to Explore the Early Solar System|publisher=NASA|first1=Dwayne C.|last1=Brown|first2=Laurie|last2=Cantillo|date=January 4, 2017|access-date=January 4, 2017|archive-date=June 17, 2019|archive-url=https://web.archive.org/web/20190617074931/https://www.nasa.gov/press-release/nasa-selects-two-missions-to-explore-the-early-solar-system/|url-status=live}} {{PD-notice}}</ref> In May 2017, the launch date was moved up to target a more efficient trajectory, to July 2022 aboard a [[SpaceX]] [[Falcon Heavy]] launch vehicle with a January 31, 2026 arrival, following a [[Mars]] [[gravity assist]] on May 23, 2023.<ref name=sdc20200522>{{cite news|last=Mathewson|first=Samantha|title=NASA picks SpaceX Falcon Heavy to launch Psyche mission to metal asteroid in 2022|url=https://www.space.com/spacex-falcon-heavy-launching-nasa-psyche-asteroid-mission.html|date=March 2, 2020|publisher=SPACE.com|access-date=May 22, 2020|archive-date=August 9, 2020|archive-url=https://web.archive.org/web/20200809110259/https://www.space.com/spacex-falcon-heavy-launching-nasa-psyche-asteroid-mission.html|url-status=live}}</ref>
+
+In June 2022 NASA found that the late delivery of the testing equipment and Guidance, Navigation, and Control (GNC) flight software for the ''Psyche'' spacecraft did not give them enough time to complete the required testing, and decided to delay the launch, with future windows available in 2023 and 2024 to rendezvous with the [[asteroid]] in 2029 and 2030, respectively.<ref name=":0">{{Cite web |last= |title=NASA Announces Launch Delay for Its Psyche Asteroid Mission |url=https://www.jpl.nasa.gov/news/nasa-announces-launch-delay-for-its-psyche-asteroid-mission |access-date=June 24, 2022 |website=NASA Jet Propulsion Laboratory (JPL) |language=en-US |archive-date=June 24, 2022 |archive-url=https://web.archive.org/web/20220624190158/https://www.jpl.nasa.gov/news/nasa-announces-launch-delay-for-its-psyche-asteroid-mission |url-status=live }}</ref><ref>{{Cite web |last=Zurbuchen |first=Thomas H. |date=2022-11-04 |title=Summary of NASA Responses to Psyche Independent Review Board |url=https://www.nasa.gov/wp-content/uploads/2022/11/psyche_irb_report_and_response_nov_2022.pdf |website=www.nasa.gov}}</ref>
+
+On October 28, 2022, NASA announced that ''Psyche'' was targeting a launch period opening on October 10, 2023, which would correspond with an arrival at the asteroid in August 2029.<ref name="jpl-20221028" />
+
+An independent review of the delays at JPL reported in November 2022 found understaffing, insufficient planning, and communications issues among engineers and with management. The ''[[VERITAS (spacecraft)|VERITAS]]'' Venus mission was delayed to free up staff to focus on ''Psyche''.<ref>{{cite news |author=Foust |first=Jeff |date=November 5, 2022 |title=Psyche review finds institutional problems at JPL |publisher=Space News |url=https://spacenews.com/psyche-review-finds-institutional-problems-at-jpl/ |url-status=live |access-date=March 17, 2023 |archive-url=https://web.archive.org/web/20231016053736/https://spacenews.com/psyche-review-finds-institutional-problems-at-jpl/ |archive-date=October 16, 2023}}</ref>
+
+On April 18, 2023, JPL's mission page for ''Psyche'' was updated to reflect a new launch date of October 5, 2023.<ref name="jpl-20230427">{{cite web |title=Psyche |url=https://www.jpl.nasa.gov/missions/psyche |archive-url=https://web.archive.org/web/20230503003524/https://www.jpl.nasa.gov/missions/psyche |archive-date=May 3, 2023 |access-date=27 April 2023 |website=NASA Jet Propulsion Laboratory (JPL) - Robotic Space Exploration |publisher=NASA/JPL-Caltech}}</ref> On September 28, 2023, the launch was again delayed to no earlier than October 12, 2023, due to an unspecified issue with the spacecraft.<ref>{{cite web|url=https://spaceflightnow.com/2023/09/28/launch-of-nasas-psyche-asteroid-mission-slips-a-week-due-to-spacecraft-issue/|title=Launch of NASA's Psyche asteroid mission slips a week due to spacecraft issue|date=September 28, 2023|access-date=September 28, 2023|website=spaceflightnow.com|archive-date=September 29, 2023|archive-url=https://web.archive.org/web/20230929122714/https://spaceflightnow.com/2023/09/28/launch-of-nasas-psyche-asteroid-mission-slips-a-week-due-to-spacecraft-issue/|url-status=live}}</ref> After one additional delay due to bad weather, ''Psyche'' was launched successfully on October 13, 2023.<ref name="space.com_12oct2023">{{Cite web |date=2023-10-12 |title=Bad weather delays SpaceX Falcon Heavy launch of NASA's Psyche asteroid mission to Oct. 13 |url=https://www.space.com/nasa-psyche-spacex-falcon-heavy-launch-delay-weather |url-status=live |archive-url=https://web.archive.org/web/20231012011137/https://www.space.com/nasa-psyche-spacex-falcon-heavy-launch-delay-weather |archive-date=October 12, 2023 |access-date=2023-10-12 |website=Space.com |language=en}}</ref>
+
+An update in May 2024 reported the spacecraft was in good health and on track to complete its mission on the planned timeline along with commencing fire of its [[Xenon|xenon thrusters]].<ref>{{Cite web |last=NASA |title=NASA's Psyche fires up its sci-fi-worthy thrusters |url=https://phys.org/news/2024-05-nasa-psyche-sci-fi-worthy.html |access-date=2024-05-23 |website=phys.org |language=en}}</ref>
+
+In April 2025, ''Psyche'' experienced an unexpected drop in the pressure of its xenon propulsion system. The spacecraft paused its thrusting while the problem was under investigation and its system engineers considered resorting to the spacecraft's backup redundancy fuel line in order to continue the probe's thrust operation.<ref>{{cite web | title=NASA’s Psyche Mission Looking Into Propulsion System | year=2025 | publisher=NASA | url=https://science.nasa.gov/blogs/psyche/2025/04/29/nasas-psyche-mission-looking-into-propulsion-system/| access-date=2025-05-09 }}</ref> Following a switch to the backup fuel line in May, full thruster operation resumed on June 16, 2025.<ref>{{cite web | title=NASA’s Psyche Spacecraft Resumes Full-Time Propulsion | year=2025 | publisher=NASA | url=https://science.nasa.gov/blogs/psyche/2025/06/20/nasas-psyche-spacecraft-resumes-full-time-propulsion/| access-date=2025-06-20 }}</ref>
+
+[[File:Crescent Mars Psyche.png|left|thumb|A color image of a crescent-shaped [[Mars]], taken by the Psyche space probe as it approached in May 2026.]]
+On May 15, 2026, ''Psyche'' successfully flew by Mars as part of a [[gravity-assist]] maneuver that adjusted its orbital tilt around the Sun, allowing the probe and its path to align with the orbital plane of asteroid Psyche. The probe flew as close as {{convert|4500|km|abbr=on}} above the surface of the Red Planet.<ref name=mars1>{{cite web |url=https://science.nasa.gov/blogs/psyche/2026/05/08/nasas-psyche-mission-to-fly-by-mars-for-gravity-assist/ |title=NASA’s Psyche Mission to Fly by Mars for Gravity Assist | year=2026 | publisher=NASA| access-date=16 May 2026}}</ref> The probe used its multispectral imager instrument to image the planet. Because Psyche approached Mars at a high phase angle, the planet appeared as a thin crescent before the close flyby, illuminated by sunlight reflected from its surface. Images taken by the spacecraft’s multispectral cameras showed the crescent appearing brighter and stretching farther around Mars than expected because sunlight was strongly scattered by the planet’s dusty atmosphere.<ref name=mars2>{{cite web |url=https://science.nasa.gov/photojournal/nasas-psyche-mission-images-the-crescent-of-mars/ |title=NASA’s Psyche Mission Images the Crescent of Mars | year=2026 | publisher=NASA| access-date=20 May 2026}}</ref>
+
+== Target ==
+{{Main|16 Psyche}}
+16 Psyche is the heaviest known [[M-type asteroid]] with a mean diameter of {{convert|220|km}}, and may be an exposed [[Planetary core|iron core]] of a [[protoplanet]],<ref name='mission'>{{cite conference|url=http://www.hou.usra.edu/meetings/lpsc2014/pdf/1253.pdf|title=Journey to a Metal World: Concept for a Discovery Mission to Psyche|conference=45th Lunar and Planetary Science Conference March 17–24, 2014 The Woodlands, Texas|display-authors=1|last1=Elkins-Tanton|first1=L. T.|last2=Asphaug|first2=E.|last3=Bell|first3=J.|last4=Bercovici|first4=D.|last5=Bills|first5=B. G.|last6=Binzel|first6=Richard P.|last7=Bottke|first7=William F.|last8=Jun|first8=I.|last9=Marchi|first9=S.|last10=Oh|first10=D.|last11=Polanskey|first11=C. A.|last12=Weiss|first12=B. P.|last13=Wenkert|first13=D.|last14=Zuber|first14=M. T.|at=1253|date=2014|id=LPI Contribution No. 1777|bibcode=2014LPI....45.1253E|access-date=October 1, 2015|archive-date=February 27, 2014|archive-url=https://web.archive.org/web/20140227025757/http://www.hou.usra.edu/meetings/lpsc2014/pdf/1253.pdf|url-status=live}}</ref> the remnant of a violent collision with another object that stripped off its [[mantle (geology)|mantle]] and [[Crust (geology)|crust]].
+
+Recent studies show that it is "a mixed metal and silicate world".<ref name="Elkins-Tanton_2020">{{cite journal 
+ |last1=Elkins-Tanton 
+ |first1=L. T. 
+ |display-authors=etal 
+ |title=Observations, meteorites, and models: A preflight assessment of the composition and formation of (16) Psyche 
+ |journal=  Journal of Geophysical Research: Planets
+ |year=2020 
+ |volume=125 
+ |issue=3 
+ |pages=23 
+ |doi=10.1029/2019JE006296|pmid=32714727 
+ |pmc=7375145 
+ |bibcode=2020JGRE..12506296E 
+ |s2cid=214018872 
+ }}
+</ref> Another study considers it to be either a metal core of a protoplanet or "a differentiated world with a regolith composition ... peppered with localized regions of high metal concentrations".<ref name=Shepard2021>
+{{cite journal 
+ | doi=10.3847/PSJ/abfdba 
+ | title=Asteroid 16 Psyche: Shape, Features, and Global Map 
+ | year=2021 
+ | last1=Shepard | first1=Michael K. | last2=De Kleer | first2=Katherine |author2-link=Katherine de Kleer| last3=Cambioni | first3=Saverio | last4=Taylor | first4=Patrick A. | last5=Virkki | first5=Anne K. | last6=Rívera-Valentin | first6=Edgard G. | last7=Rodriguez Sanchez-Vahamonde | first7=Carolina | last8=Fernanda Zambrano-Marin | first8=Luisa | last9=Magri | first9=Christopher | last10=Dunham | first10=David | last11=Moore | first11=John | last12=Camarca | first12=Maria 
+ | journal=The Planetary Science Journal | volume=2 | issue=4 | page=125 
+ | arxiv=2110.03635 
+ | bibcode=2021PSJ.....2..125S | s2cid=235918955 
+ | doi-access=free 
+ }}
+</ref> Radar observations of the asteroid from Earth indicate an iron–nickel composition.<ref name="Shepard2017">{{cite journal|title=Radar observations and shape model of asteroid 16 Psyche|journal=Icarus |first1=Michael K.|last1=Shepard|volume=281|pages=388–403|date=January 2017|doi=10.1016/j.icarus.2016.08.011|bibcode=2017Icar..281..388S|doi-access=free}}</ref>
+
+The historical asteroid symbol for Psyche, a butterfly's wing topped by a star ([[File:Psyche symbol (fixed width).svg|12px]]), may have influenced the mission insignia.<ref name=astunicode>{{cite web |url=https://www.unicode.org/L2/L2023/23207-historical-asteroids.pdf |title=Unicode request for historical asteroid symbols |last1=Bala |first1=Gavin Jared |last2=Miller |first2=Kirk |date=18 September 2023 |website=unicode.org |publisher=Unicode |access-date=26 September 2023 |quote=}}</ref>
+
+== Mission overview ==
+The ''Psyche'' spacecraft is designed with [[solar electric propulsion]],<ref name='SEP 2017'>{{cite web|url=https://www.jpl.nasa.gov/news/news.php?feature=6958|title=NASA Glenn Tests Thruster Bound for Metal World|publisher=NASA|first1=D. C.|last1=Agle|first2=Jimi|last2=Russell|first3=Laurie|last3=Cantillo|first4=Dwayne|last4=Brown|date=September 28, 2017|access-date=January 6, 2018|archive-date=April 12, 2020|archive-url=https://web.archive.org/web/20200412010047/https://www.jpl.nasa.gov/news/news.php?feature=6958|url-status=live}} {{PD-notice}}</ref><ref name='Van 2015'>{{cite web|url=http://www.planetary.org/blogs/guest-blogs/van-kane/20140219-mission-to-a-metallic-world.html|title=Mission to a Metallic World: A Discovery Proposal to Fly to the Asteroid Psyche|publisher=The Planetary Society|first=Van|last=Kane|date=February 19, 2014|access-date=October 1, 2015|archive-date=October 4, 2015|archive-url=https://web.archive.org/web/20151004194406/http://www.planetary.org/blogs/guest-blogs/van-kane/20140219-mission-to-a-metallic-world.html|url-status=live}}</ref> and the scientific payload includes a [[multispectral image]]r, a [[magnetometer]], and a [[gamma-ray spectrometer]].<ref name='Van 2015'/><ref>{{cite web|url=https://www.llnl.gov/news/lab-johns-hopkins-team-tapped-work-possible-nasa-effort-explore-asteroid-0|title=Lab-Johns Hopkins team tapped to work on possible NASA effort to explore asteroid|publisher=Lawrence Livermore National Laboratory|first=Stephen|last=Wampler|date=November 4, 2015|access-date=December 21, 2015|archive-date=August 9, 2020|archive-url=https://web.archive.org/web/20200809110308/https://www.llnl.gov/news/lab-johns-hopkins-team-tapped-work-possible-nasa-effort-explore-asteroid-0|url-status=live}} {{PD-notice}}</ref>
+
+The mission is designed to perform 21 months of science. The spacecraft was built by NASA [[Jet Propulsion Laboratory]] (JPL) in collaboration with [[SSL (company)|SSL]] (formerly Space Systems/Loral) and [[Arizona State University]].<ref name="jpl-20221028" /><ref>{{cite news|url=http://sslmda.com/html/pressreleases/pr20151026.html|title=SSL is JPL Industrial Partner for NASA Asteroid Exploration Mission Opportunity|publisher=SSL (company)|last=Lewis|first=Wendy|date=October 26, 2015|access-date=January 4, 2017|archive-date=August 9, 2020|archive-url=https://web.archive.org/web/20200809110313/http://www.sslmda.com/html/pressreleases/pr20151026.php|url-status=live}}</ref>
+
+It was proposed that the rocket launch might be [[secondary payload|shared with a separate mission]] named ''Athena'', that would perform a single flyby of asteroid [[2 Pallas]], the third-largest asteroid in the [[Solar System]].<ref name="FRB-20190310">{{cite news|last=Dorminey|first=Bruce|title=Proposed NASA SmallSat Mission Could Be First To Visit Pallas, Our Third Largest Asteroid|url=https://www.forbes.com/sites/brucedorminey/2019/03/10/proposed-nasa-smallsat-mission-could-be-first-to-visit-pallas-our-third-largest-asteroid|work=Forbes|date=March 10, 2019|access-date=March 10, 2019|archive-date=August 9, 2020|archive-url=https://web.archive.org/web/20200809110316/https://www.forbes.com/sites/brucedorminey/2019/03/10/proposed-nasa-smallsat-mission-could-be-first-to-visit-pallas-our-third-largest-asteroid/|url-status=live}}</ref>
+
+In May 2020, it was announced that the Falcon Heavy carrying ''Psyche'' would include two [[Small satellite|smallsat]] secondary payloads to study the Martian atmosphere and binary asteroids, named ''[[EscaPADE]]'' (''Escape and Plasma Acceleration and Dynamics Explorers'') and ''[[Janus (spacecraft)|Janus]]'' respectively,<ref name="sdc20200522" /> but in September 2020, the ''EscaPADE'' Mars atmosphere probe was removed from the plan.<ref>[https://twitter.com/jeff_foust/status/1305526413257211904 The EscaPADE smallsat mission to study the Martian atmosphere has passed PDR, but won't launch with Psyche as originally planned; will be remanifested on a future flight] {{Webarchive|url=https://web.archive.org/web/20200914152112/https://twitter.com/jeff_foust/status/1305526413257211904 |date=September 14, 2020 }} Jeff Foust, SpaceNews, September 14, 2020</ref>
+
+''Janus'' was later removed from the ''Psyche'' mission as well on November 18, 2022, after an assessment determined that it would not be on the required trajectory to meet its science requirements as a result of ''Psyche's'' new launch period.<ref>{{Cite web |title=Janus Mission Removed from 2023 Psyche Launch Manifest – Janus |url=https://blogs.nasa.gov/janus/2022/11/18/janus-mission-removed-from-2023-psyche-launch-manifest/ |access-date=2022-11-20 |website=blogs.nasa.gov |date=November 18, 2022 |language=en-US |archive-date=November 25, 2022 |archive-url=https://web.archive.org/web/20221125152144/https://blogs.nasa.gov/janus/2022/11/18/janus-mission-removed-from-2023-psyche-launch-manifest/ |url-status=live }}</ref>
+
+=== Science goals and objectives ===
+{{Multiple image
+| image1            = Psyche illustration.jpg
+| caption1          = Artist's illustration depicting the metal-rich asteroid Psyche.
+| image2            = Psyche features Shepard2021.jpg
+| caption2          = Shape model of asteroid Psyche, with some of the observed surface features indicated.
+| total_width       = 500 
+}}
+
+[[Planetary differentiation|Differentiation]] is a fundamental process in shaping many asteroids and all [[terrestrial planet]]s, and direct exploration of a [[Planetary core|core]] could greatly enhance understanding of this process. The ''Psyche'' mission aims to characterize 16 Psyche's geology, shape, elemental composition, [[magnetic field]], and [[mass distribution]]. It is expected that this mission will increase the understanding of [[Nebular hypothesis|planetary formation]] and interiors.
+
+[[File:Psyche-spacecraft-diagram.png|thumb|upright=1.2|Instruments onboard of the spacecraft:<ref>{{cite web|title=Navigation Models for Psyche Electric Propulsion Uncertainty|url=https://trs.jpl.nasa.gov/bitstream/handle/2014/51577/CL%2319-4852.pdf?sequence=1&isAllowed=y|publisher=NASA/Caltech/JPL|access-date=April 30, 2022|archive-date=April 30, 2022|archive-url=https://web.archive.org/web/20220430195928/https://trs.jpl.nasa.gov/bitstream/handle/2014/51577/CL%2319-4852.pdf?sequence=1&isAllowed=y|url-status=live}}</ref><br> 1. Hall-effect thrusters <br> 2. Optical telecommunications system <br> 3. Star trackers <br> 4. Low-gain antenna <br> 5. Sun sensor <br> 6. X-band High-gain antenna <br> 7. Neutron spectrometer <br> 8. Gamma-ray spectrometer <br> 9. Cold gas thrusters <br> 10. -Y Panel <br> 11. Magnetometer <br> 12. Top deck <br> 13. +Y Panel <br> 14. Multispectral imagers (x2)]]
+
+Specifically, the science goals for the mission are:<ref name="NASAJPL">{{cite web |title=Psyche |url=https://www.jpl.nasa.gov/missions/psyche |website=NASA Jet Propulsion Laboratory (JPL) |access-date=April 27, 2023 |archive-date=March 2, 2022 |archive-url=https://web.archive.org/web/20220302102729/https://www.jpl.nasa.gov/missions/psyche |url-status=live }}</ref>
+* Understand a previously unexplored building block of planet formation: iron cores.
+* Look inside terrestrial planets, including Earth, by directly examining the interior of a differentiated body, which otherwise could not be seen.
+* Explore a new type of world, made of metal.
+
+The science questions this mission aims to address are:<ref name="mission" /><ref name="NASAJPL"/>
+* Is 16 Psyche the stripped core of a differentiated [[planetesimal]], or was it formed as an iron-rich body? What were the building blocks of planets? Did planetesimals that formed close to the Sun have very different bulk compositions?
+* If 16 Psyche was stripped of its [[Mantle (geology)|mantle]], when and how did that occur?
+* If 16 Psyche was once molten, did it solidify from the inside out, or the outside in?
+* Did 16 Psyche produce a [[Dynamo theory|magnetic dynamo]] as it cooled?
+* What are the major [[alloy]] elements that coexist in the iron metal of the core?
+* What are the key characteristics of the geologic surface and global topography? Does 16 Psyche look radically different from known stony and icy bodies?
+* How do craters on a metal body differ from those in rock or ice?
+
+== Instruments ==
+
+Payloads installed on ''Psyche'' are:
+{| class="wikitable"
+|+
+!Instrument
+!Function
+!Team 
+|-
+|The ''Psyche'' [[Multispectral imaging|Multispectral Imager]]
+|It will provide high-resolution images using filters to discriminate between 16 Psyche's metallic and [[silicate]] constituents. 
+The instrument consists of a pair of identical cameras designed to acquire [[Geology|geologic]], compositional, and [[Topography|topographic]] data.
+
+The purpose of the second camera is to provide redundancy for mission-critical optical navigation.
+|[[Arizona State University]]
+|-
+|''Psyche'' [[Gamma-ray]] and [[Neutron]] Spectrometer
+|It will detect, measure, and map 16 Psyche's elemental composition. 
+The instrument is mounted on a {{Convert|6|ft|m|adj=on}} boom to distance the sensors from background radiation created by energetic particles interacting with the spacecraft and to provide an unobstructed field of view.  
+|[[Applied Physics Laboratory|Applied Physics Laboratory at Johns Hopkins University.]] 
+|-
+|''Psyche'' [[Magnetometer]]
+|The ''Psyche'' Magnetometer is designed to detect and measure the remanent magnetic field of the asteroid. 
+It is composed of two identical high-sensitivity magnetic field sensors located at the middle and outer end of a {{Convert|6|ft|m|adj=on}} boom. 
+|[[Massachusetts Institute of Technology]] and [[Technical University of Denmark]]
+|-
+|[[Deep Space Optical Communications]] (DSOC)
+|The ''Psyche'' mission will test a sophisticated new laser communication technology that encodes data in infrared-[[photons]] (rather than [[radio wave]]s) to communicate with a probe in deep space from Earth. 
+Using shorter wavelengths allows the spacecraft to transmit more data in a given amount of time.
+|[[Jet Propulsion Laboratory]]
+|}
+
+== Spacecraft ==
+The spacecraft uses the [[Space Systems/Loral]] (SSL) [[SSL 1300|1300 bus platform]].<ref name="Oh2017" /> JPL added the [[command and data handling]] and telecom subsystems and all flight software.<ref name="Oh2017" />
+
+=== Propulsion ===
+[[File:Hall Thruster for Psyche operating at JPL.jpg|thumb|left|upright=0.8|[[SPT-140]] Hall-effect thrusters undergoing testing at NASA's Jet Propulsion Laboratory.]]
+
+{| class="wikitable floatright"
+|-
+! SPT-140 !! Parameter/units<ref name='NAS Myers'>{{cite web|url=http://sites.nationalacademies.org/cs/groups/depssite/documents/webpage/deps_085382.pdf|title=Solar Electric Propulsion: Introduction, Applications and Status|publisher=Aerojet Rocketdyne|first=Roger|last=Myers|access-date=January 6, 2018|archive-date=January 7, 2018|archive-url=https://web.archive.org/web/20180107174824/http://sites.nationalacademies.org/cs/groups/depssite/documents/webpage/deps_085382.pdf|url-status=live}}</ref><ref name='EP conference'>{{cite conference|url=https://iepc2017.org/sites/default/files/speaker-papers/iepc_2017_ssl_electric_propulsion.pdf|title=New Avenues for Research and Development of Electric Propulsion Thrusters at SSL|conference=35th International Electric Propulsion Conference October 8–12, 2017 Atlanta, Georgia|first1=Ian K.|last1=Johnson|first2=Ewan|last2=Kay|first3=Ty|last3=Lee|first4=Ryan|last4=Bae|first5=Negar|last5=Feher|date=2017|id=IEPC-2017-400|access-date=January 6, 2018|archive-url=https://web.archive.org/web/20180107061615/https://iepc2017.org/sites/default/files/speaker-papers/iepc_2017_ssl_electric_propulsion.pdf|archive-date=January 7, 2018|url-status=dead}}</ref>
+|-
+| Type || [[Hall-effect thruster]]
+|-
+| Power<ref name="Oh2017" />|| Max: 4.5&nbsp;kW<br />Min: 900 watts
+
+|-
+| [[Specific impulse]] (I<sub>sp</sub>) || 1800 seconds
+|-
+| Thrust || 280&nbsp;mN<ref name='EP conference'/>
+|-
+| Thruster mass || 8.5&nbsp;kg
+|-
+| Propellant mass || 922&nbsp;kg of [[xenon]]<ref name=NASA-psyche-prop>{{Cite web|url=http://www.nasa.gov/feature/jpl/solar-electric-propulsion-makes-nasa-s-psyche-spacecraft-go|title=Solar Electric Propulsion Makes NASA's Psyche Spacecraft Go|first=Tony|last=Greicius|date=September 20, 2021|website=NASA|access-date=May 11, 2022|archive-date=April 7, 2022|archive-url=https://web.archive.org/web/20220407184105/https://www.nasa.gov/feature/jpl/solar-electric-propulsion-makes-nasa-s-psyche-spacecraft-go/|url-status=live}}</ref>
+|-
+| Total impulse || 8.2 MN·s (for ''Psyche'')
+|}
+
+The spacecraft uses [[Ion thruster|ion propulsion]]. It has four SPT-140 engines, which are [[Hall-effect thruster]]s using [[solar electric propulsion]], where electricity generated from solar panels is transmitted to an electric, rather than chemically powered, rocket engine.<ref name='SEP 2017'/><ref name='SFI 2017'>{{cite news|url=http://www.spaceflightinsider.com/space-centers/glenn-research-center/nasa-glenn-tests-solar-electric-propulsion-thruster-journey-metal-world/|title=NASA Glenn tests solar electric propulsion thruster for journey to metal world|publisher=Spaceflight Insider|first=Michael|last=Cole|date=October 9, 2017|access-date=January 6, 2018|archive-date=January 7, 2018|archive-url=https://web.archive.org/web/20180107181930/http://www.spaceflightinsider.com/space-centers/glenn-research-center/nasa-glenn-tests-solar-electric-propulsion-thruster-journey-metal-world/|url-status=live}}</ref><ref>{{cite web|url=https://www.nasa.gov/centers/glenn/about/fs21grc.html|title=NASA – Ion Propulsion|last=DeFelice|first=David|publisher=NASA|date=August 18, 2015|access-date=January 20, 2018|archive-date=December 31, 2018|archive-url=https://web.archive.org/web/20181231081317/https://www.nasa.gov/centers/glenn/about/fs21grc.html|url-status=live}} {{PD-notice}}</ref> The thruster is nominally rated at 4.5&nbsp;kW operating power,<ref name='U of MI'>{{cite web|url=http://pepl.engin.umich.edu/project/t-140/|title=T-140|publisher=University of Michigan Plasmadynamics & Electric Propulsion Laboratory|access-date=January 6, 2018|archive-date=June 17, 2018|archive-url=https://web.archive.org/web/20180617171051/http://pepl.engin.umich.edu/project/t-140/|url-status=live}}</ref> but it will also operate for long durations at about 900 watts.<ref name='SFI 2017'/> ''Psyche'' is the first interplanetary mission to use Hall-effect thrusters, although not the first to use electric thrusters in general.<ref name="Oh2017"/>
+
+The SPT-140 (SPT stands for ''[[Hall-effect thruster|Stationary Plasma Thruster]]'') is a production line commercial propulsion system<ref name='Gerrit 2015'/> that was invented in the USSR by [[OKB Fakel]] and developed by NASA's [[Glenn Research Center]], [[SSL (company)|Space Systems/Loral]], and [[Pratt & Whitney]] since the late 1980s.<ref name="NK">{{cite web|url=http://novosti-kosmonavtiki.ru/content/numbers/198/35.shtml|title=Native Electric Propulsion Engines Today|publisher=Novosti Kosmonavtiki|date=1999|issue=7|archive-url=https://web.archive.org/web/20110606033558/http://www.novosti-kosmonavtiki.ru/content/numbers/198/35.shtml|archive-date=June 6, 2011|language=ru}}</ref><ref>{{cite conference|title=Qualification of the SPT-140 for use on Western Spacecraft|conference=50th AIAA/ASME/SAE/ASEE Joint Propulsion Conference, July 28–30, 2014, Cleveland, Ohio|first1=Jorge J.|last1=Delgado|first2=Ronald L.|last2=Corey|first3=Vjacheslav M. |last3=Murashko|first4=Alexander I.|last4=Koryakin|first5=Sergei Y.|last5=Pridanikov|date=2014|id=AIAA 2014–3606|doi=10.2514/6.2014-3606}}</ref> The SPT-140 thruster was first tested in the US at the [[Plasmadynamics and Electric Propulsion Laboratory]] in 1997,<ref>{{Cite web |title=SPT-140 {{!}} UM PEPL |url=https://pepl.engin.umich.edu/project/spt-140/ |access-date=2023-10-20 |language=en-US}}</ref> and later as a 3.5&nbsp;kW unit in 2002 as part of the Air Force Integrated High Payoff Rocket Propulsion Technology program.<ref name='U of MI'/><ref name='Gerrit 2015'>{{cite conference |url=http://2015.spacesymposium.org/sites/default/files/downloads/P.Lord_31st_Space_Symposium_Tech_Track_paper.pdf|title=Evolved Commercial Solar Electric Propulsion: A Foundation for Major Space Exploration Missions|conference=31st Space Symposium, Technical Track, April 13–14, 2015, Colorado Springs, Colorado|first1=Peter W.|last1=Lord|first2=Gerrit|last2=van Ommering|date=2015|access-date=January 6, 2018|archive-date=January 7, 2018 |archive-url=https://web.archive.org/web/20180107064430/http://2015.spacesymposium.org/sites/default/files/downloads/P.Lord_31st_Space_Symposium_Tech_Track_paper.pdf|url-status=dead}}</ref>
+
+Using solar electric thrusters will allow the spacecraft to arrive at 16 Psyche (located 3.3 [[astronomical unit]]s from Earth) much faster, while consuming less than 10% of the propellant it would need using conventional chemical propulsion.<ref>{{citation |url=https://www.jpl.nasa.gov/news/solar-electric-propulsion-makes-nasas-psyche-spacecraft-go |title=Solar Electric Propulsion Makes NASA's Psyche Spacecraft Go |date=20 September 2021 |publisher=JPL |access-date=October 14, 2023 |archive-date=October 14, 2023 |archive-url=https://web.archive.org/web/20231014045038/https://www.jpl.nasa.gov/news/solar-electric-propulsion-makes-nasas-psyche-spacecraft-go |url-status=live }}</ref>
+{{Clear}}
+
+=== Power ===
+[[File:One of two solar arrays on NASA’s Psyche spacecraft.jpg|thumb|upright=1.2|left|One of two solar arrays on the spacecraft partially deployed (only horizontally) in JPL's clean room.]]
+
+{| class="wikitable floatright"
+|-
+! Solar panels !! Parameter/units<ref name='NAS Myers'/><ref name='EP conference'/>
+|-
+| Type || Triple-Junction Solar Cells<ref name="Oh2017" />
+|-
+| Power || Solar array performance: At Earth: 20&nbsp;kW<br />At {{nowrap|16 Psyche}}: 2.3&nbsp;kW<ref name="Oh2017" />
+|}
+
+Electricity will be generated by bilateral [[solar panels on spacecraft|solar panels]] in an X-shaped configuration, with five panels on each side. Prior to the mission being moved forward with a new trajectory, the panels were to be arranged in straight lines, with only four panels on each side of the spacecraft.<ref name=Up-2017>{{cite web|url=https://www.jpl.nasa.gov/news/news.php?feature=6854|title=NASA Moves Up Launch of Psyche Mission to a Metal Asteroid|publisher=NASA|first1=D. C.|last1=Agle|first2=Karin|last2=Valentine|first3=Laurie|last3=Cantillo|first4=Dwayne C.|last4=Brown|date=May 24, 2017|access-date=January 6, 2018|archive-date=December 2, 2020|archive-url=https://web.archive.org/web/20201202160156/https://www.jpl.nasa.gov/news/news.php?feature=6854|url-status=live}} {{PD-notice}}</ref>
+{{Clear}}
+
+=== Laser communications experiment ===
+[[File:Psyche DSOC.jpg|thumb|upright=1.2|DSOC's flight transceiver can be identified by its large tube-like sunshade on the ''Psyche'' spacecraft, as seen here inside a clean room at JPL.]]
+[[File:The-Video-NASA’s-Laser-Communications-Experiment-Streamed-From-Deep-Space.mpg|thumb|Stored onboard before launch, the short ultra-high definition video features an orange tabby cat named Taters, the pet of a JPL employee, chasing a laser pointer. Overlaid graphics illustrate several features from the tech demo, such as Psyche's orbital path, Palomar's telescope dome, and technical information about the laser and its data bit rate. Taters' heart rate, color, and breed are also on display.<ref name=stream>{{cite web |title=NASA's Tech Demo Streams First Video From Deep Space via Laser |url=https://www.jpl.nasa.gov/news/nasas-tech-demo-streams-first-video-from-deep-space-via-laser |website=NASA Jet Propulsion Laboratory (JPL) |access-date=22 December 2023}} {{PD-notice}}</ref><ref>{{cite news |last1=McDaniel |first1=Justine |title=Taters the cat stars in NASA's first video streamed from deep space |url=https://www.washingtonpost.com/technology/2023/12/19/nasa-laser-video-streaming-space-mars-cat/ |newspaper=Washington Post |access-date=25 December 2023 |date=21 December 2023}}</ref>]]
+
+The spacecraft is testing an experimental [[Laser communication in space|laser communication]] technology called [[Deep Space Optical Communications]] (DSOC).<ref name=DSOC>{{cite web|url=https://www.jpl.nasa.gov/news/news.php?feature=6967|title=Deep Space Communications via Faraway Photons|publisher=NASA{{\}}Jet Propulsion Laboratory|first=Leonard|last=David|date=October 18, 2017|access-date=October 19, 2017|archive-date=January 11, 2020|archive-url=https://web.archive.org/web/20200111151856/https://www.jpl.nasa.gov/news/news.php?feature=6967|url-status=live}} {{PD-notice}}</ref> It is hoped that the device will increase spacecraft communications performance and efficiency by 10 to 100 times over conventional means.<ref name=DSOC/><ref>{{cite web|url=https://www.nasa.gov/mission_pages/psyche/overview/index.html|title=Psyche Overview|publisher=NASA|last=Greicius|first=Tony|date=September 14, 2017|access-date=September 18, 2017|archive-date=November 10, 2021|archive-url=https://web.archive.org/web/20211110192503/https://www.nasa.gov/mission_pages/psyche/overview/index.html|url-status=live}} {{PD-notice}}</ref> The DSOC experiment is NASA's first demonstration of optical communications beyond the Earth–Moon system. DSOC is a system that consists of a flight laser transceiver, a ground laser transmitter, and a ground laser receiver. New technologies have been implemented in each of these elements. The transceiver is mounted on the ''Psyche'' spacecraft. The DSOC technology demonstration began shortly after launch and continued as the spacecraft traveled from Earth to its gravity-assist flyby of Mars in 2026. DSOC has showcased its capabilities by sending data at up to 2 megabits per second, from distances beyond the orbit of Mars.<ref>{{cite journal |first1=Dan M. |last1=GORBEL |first2=David |last2=Oh |year=2022 |title=Mission to a metal world |journal=IEEE Spectrum |volume=59 |issue=2 |page=29}}</ref> DSOC operations proceeded for one year after launch, with extended-mission opportunities in 2025. [[Palomar Observatory]]'s [[Hale Telescope]] received the high-rate data downlink from the DSOC flight transceiver.<ref name=DSOC1>{{cite web |last1=Harbaugh |first1=Jennifer |title=Deep Space Optical Communications (DSOC) |url=https://www.nasa.gov/mission_pages/tdm/dsoc/index.html |website=NASA |access-date=May 11, 2022 |date=May 22, 2017 |archive-date=May 7, 2022 |archive-url=https://web.archive.org/web/20220507144822/https://www.nasa.gov/mission_pages/tdm/dsoc/index.html |url-status=live }} {{PD-notice}}</ref><ref name=Hall-2017>{{cite web|url=https://www.nasa.gov/directorates/spacetech/tdm/feature/Deep_Space_Communications|title="Lighten Up" – Deep Space Communications via Faraway Photons|publisher=NASA|editor-first=Loura|editor-last=Hall|date=October 18, 2017|access-date=January 6, 2018|archive-date=April 10, 2019|archive-url=https://web.archive.org/web/20190410120009/https://www.nasa.gov/directorates/spacetech/tdm/feature/Deep_Space_Communications/|url-status=live}} {{PD-notice}}</ref>
+
+The Discovery program solicitation offered mission projects an extra $30 M if they would host and test the {{convert|25|kg}} DSOC unit, which needs about 75 Watts.<ref name=DSOC-2014>{{Cite web|url=https://spacenews.com/42466nasa-drops-laser-comm-requirement-from-discovery-solicitation/|title=NASA Drops Laser Comm Requirement From Discovery Solicitation|date=November 6, 2014|website=SpaceNews|access-date=November 28, 2021|archive-date=October 16, 2023|archive-url=https://web.archive.org/web/20231016053737/https://spacenews.com/42466nasa-drops-laser-comm-requirement-from-discovery-solicitation/|url-status=live}}</ref> It is hoped to advance DSOC to [[technology readiness level]] 6.<ref name=Hall-2017/> The test-runs of the laser equipment occurred over distances of 0.2 to 2.7 [[astronomical unit]]s (AU) on the outward-bound probe.<ref name="optical25"/> The first successful test of the system occurred on December 11, 2023, when a [[cat video]] of an employee's cat playing with a laser pointer was streamed back to Earth from a distance of 31 million kilometers. The video signal took 101 seconds to reach Earth, sent at the system's maximum bit rate of 267 megabits per second (Mbps). On the night of December 4, the project demonstrated downlink bit rates of 62.5 Mbit/s, 100 Mbit/s, and 267 Mbit/s, which is comparable to broadband internet download speeds. The team was able to download a total of 1.3 [[terabit]]s of data during that time. As a comparison, NASA's ''Magellan'' mission to Venus downlinked 1.2 terabits during its entire mission from 1990 to 1994.<ref name=stream/>
+During a test on April 8, 2024, the spacecraft transmitted data at a maximum rate of 25 Mbit/s over a distance of 1.5 AU. This easily surpassed the project's goal of proving that at least 1 Mbit/s was possible at the distance of {{convert|226|e6km|AU}}.<ref>{{cite web
+ | title=NASA's Optical Comms Demo Transmits Data Over 140 Million Miles
+ | publisher=NASA Jet Propulsion Laboratory | date=April 25, 2024
+ | url=https://www.jpl.nasa.gov/news/nasas-optical-comms-demo-transmits-data-over-140-million-miles
+ | access-date=2024-05-04 }}</ref>
+
+Initial results and further plans have been published as of early 2025.  Downlink was demonstrated up to 2.7 AU, with rates that depend on distance but exceed 6.25 Mbit/second. Uplink was demonstrated at a fixed rate of 1.8 kbit/s over distances of 0.2–3.3 AU.<ref name="optical25">{{cite journal
+  |title=Overview of the deep space optical communications (DSOC) technology demonstration
+  |last1= Biswas |first1= Abhijit |last2= Srinivasan |first2= Meera |last3= Andrews |first3= Kenneth
+  |last4= Velasco |first4= Angel |last5= Alerstam |first5= Erik |last6= Allmaras |first6= Jason
+  |last7= Wollman |first7= Emma |last8= Meenehan |first8= Sean |last9= Wright |first9= Malcolm
+  |last10= Rogalin |first10= Ryan
+  |journal=Free-Space Laser Communications XXXVII
+  |volume=13355
+  |pages=125–136
+  |year=2025
+  |publisher=SPIE
+  |url=https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13355/133550J/Overview-of-the-deep-space-optical-communications-DSOC-technology-demonstration/10.1117/12.3043966.full }}</ref>
+
+==== Flight hardware ====
+The DSOC flight laser transceiver features a near-infrared laser transmitter to send high-rate data to the ground system, and a sensitive photon-counting camera to receive a ground-transmitted laser. The transceiver's 8.6-inch (22-centimeter) aperture telescope is mounted on an assembly of struts and actuators that stabilizes the optics from spacecraft vibrations. The flight hardware is fitted with a sunshade and protrudes from the side of the spacecraft, making it one of ''Psyche'''s easily identifiable features.<ref name="DSOC1" />
+
+==== Ground systems ====
+A high-power near-infrared laser transmitter at JPL's Table Mountain facility near Wrightwood, California, acts as an uplink by transmitting a modulated laser beam to the flight transceiver to demonstrate the transmission of low-rate data. The uplink laser also acts as a beacon for the flight transceiver to lock onto. The downlink data sent back by the DSOC transceiver on ''Psyche'' is collected by the 200-inch (5.1-meter) [[Hale Telescope]] at Caltech's [[Palomar Observatory]] in San Diego County, California, using a sensitive superconducting nanowire photon-counting receiver to demonstrate high-rate data transfer.<ref name="DSOC1" />
+
+JPL has also experimented with adding mirrors to some of its existing RF antennas of the [[NASA Deep Space Network]].  This can allow simultaneous radio and optical communication with a spacecraft.  These experimental antennas have successfully received optical downlink signals from Psyche.<ref>{{cite web
+|url=https://www.nasa.gov/technology/space-comms/deep-space-network/nasas-new-experimental-antenna-tracks-deep-space-laser/
+|title=NASA’s New Experimental Antenna Tracks Deep Space Laser
+}}</ref>
+
+== Operations ==
+
+=== Launch and trajectory ===
+[[File:Psyche Liftoff (KSC-20231013-PH-KLS01 0067).jpg|thumb|A Falcon Heavy launches ''Psyche'' at 14:19 UTC, Oct. 13, 2023]]
+''Psyche's'' launch period opened at October 5, 2023, with instantaneous [[launch window]]s every day until October 25.<ref name=presskit/> On 28 September, NASA announced that the launch would be delayed by a week due to issues found with the spacecraft's thrusters, moving the launch date from October 5 to October 12.<ref>{{cite web|url= https://spacenews.com/nasa-delays-psyche-launch-a-week/|title= NASA delays Psyche launch a week|website= spacenews.com|date= September 29, 2023|access-date= 14 October 2023|archive-date= October 16, 2023|archive-url= https://web.archive.org/web/20231016053737/https://spacenews.com/nasa-delays-psyche-launch-a-week/|url-status= live}}</ref> The launch was delayed an additional day to October 13 due to bad weather.<ref>{{cite web |title=Weather Delays NASA's Psyche Launch, Now Targeting Oct. 13 |url=https://blogs.nasa.gov/psyche/2023/10/11/weather-delays-nasas-psyche-launch-now-targeting-oct-13/ |website=NASA Blogs – Psyche Mission |date=October 11, 2023 |access-date=14 October 2023 |archive-date=October 12, 2023 |archive-url=https://web.archive.org/web/20231012153751/https://blogs.nasa.gov/psyche/2023/10/11/weather-delays-nasas-psyche-launch-now-targeting-oct-13/ |url-status=live }}</ref>
+
+''Psyche'' launched on October 13, 2023, at 14:19 UTC, on a Falcon Heavy rocket from [[Launch Pad 39A]] at [[Kennedy Space Center]].<ref name=nasalaunch/><ref name="space.com_12oct2023" /><ref name="CNN2023_10_13" /> This was the eighth Falcon Heavy launch, and the first one for NASA. The two side boosters used in the mission made their fourth flight; they landed back at [[Cape Canaveral]] a few minutes after liftoff, to be reused on future flights, including the launch of [[Europa Clipper]] in 2024. The core stage of the rocket was expended. The ''Psyche'' spacecraft was released from the upper stage of the rocket about an hour after liftoff.<ref name="Clark2023" /><ref name=spacenewslaunch>{{cite web |title=NASA launches Psyche mission to metal world |url=https://spacenews.com/nasa-launches-psyche-mission-to-metal-world/ |website=spacenews.com |date=October 13, 2023 |access-date=14 October 2023 |archive-date=October 16, 2023 |archive-url=https://web.archive.org/web/20231016053737/https://spacenews.com/nasa-launches-psyche-mission-to-metal-world/ |url-status=live }}</ref> A carrier wave signal from the spacecraft was received by ground controllers just after separation, providing information on spacecraft status prior to solar array deployment.<ref>{{cite web |date=October 13, 2023 |title=Psyche Spacecraft Separates From Falcon Heavy Second Stage |url=https://blogs.nasa.gov/psyche/2023/10/13/psyche-spacecraft-separates-from-falcon-heavy-second-stage/ |url-status=live |archive-url=https://web.archive.org/web/20231014201652/https://blogs.nasa.gov/psyche/2023/10/13/psyche-spacecraft-separates-from-falcon-heavy-second-stage/ |archive-date=October 14, 2023 |access-date=14 October 2023 |website=NASA Blogs – Psyche Mission}}</ref> Full communication with the spacecraft was established at 15:50 am UTC. The spacecraft then began a 100-day commissioning phase, during which all systems and instruments are tested and calibrated.<ref name=nasalaunch>{{cite web |title=NASA's Psyche Spacecraft, Optical Comms Demo En Route to Asteroid |url=https://www.nasa.gov/news-release/nasas-psyche-spacecraft-optical-comms-demo-en-route-to-asteroid/ |website=NASA |access-date=14 October 2023 |archive-date=October 14, 2023 |archive-url=https://web.archive.org/web/20231014083057/https://www.nasa.gov/news-release/nasas-psyche-spacecraft-optical-comms-demo-en-route-to-asteroid/ |url-status=live }}</ref>
+
+The cost of the launch was US$117 million.<ref name='FalconHeavy'/> 
+
+=== Mars flyby ===
+[[File:Mars Psyche gibbous.png|left|thumb|A gibbous image of Mars, photographed during the flyby on 15 May 2026]]
+On May 15, 2026, ''Psyche'' successfully performed a gravity-assist maneuver at Mars, passing {{cvt|4609|km}} from the planet’s surface and positioning the spacecraft for its arrival at 16 Psyche in August 2029.<ref name="jpl-20221028" /> The flyby shifted the spacecraft's orbital plane by about 1 degree relative to the Sun. During the flyby, instruments onboard ''Psyche'' were powered up for calibration, and took images of Mars from a high phase angle.<ref>{{Cite web |title=NASA’s Psyche Mission Aces Mars Flyby, Targets Metal-Rich Asteroid |url=https://www.jpl.nasa.gov/news/nasas-psyche-mission-aces-mars-flyby-targets-metal-rich-asteroid/ |access-date=2026-05-20 |website=NASA Jet Propulsion Laboratory (JPL) |language=en-US}}</ref>
+
+=== Orbit regimes ===
+The approach sequence will begin in May 2029, when the first navigation images and measurements of 16 Psyche will be taken, the asteroid still just a few pixels wide. The spacecraft will then use its electric propulsion system to position itself to be captured by the asteroid's gravity, which is expected to occur in late July 2029. At this point, the first close-up images of 16 Psyche will be taken, with the asteroid appearing about 500 pixels across. Over the next 20 days the spacecraft will maneuver itself to enter the first of four science orbits.<ref name=presskit/>
+
+''Psyche'' is scheduled to enter orbit around 16 Psyche in August 2029.<ref name="jpl-20221028" /> The spacecraft will orbit the asteroid at four different altitudes, which are named alphabetically from highest (A) to lowest (D). In the original mission plan, the spacecraft would progress through the orbits sequentially from highest to lowest.<ref name="Oh2017">{{cite conference |url=https://iepc2017.org/sites/default/files/speaker-papers/iepc-2017-153_psyche_mission_overview_final_0.pdf|title=Development of the Psyche Mission for NASA's Discovery Program|conference=35th International Electric Propulsion Conference, October 8–12, 2017, Atlanta, Georgia|first1=David Y.|last1=Oh|first2=Steve|last2=Collins|first3=Dan|last3=Goebel|first4=Bill|last4=Hart|first5=Gregory|last5=Lantoine |first6=Steve |last6=Snyder|first7=Greg|last7=Whiffen|first8=Linda|last8=Elkins-Tanton|first9=Peter|last9=Lord|first10=Zack|last10=Pirkl|first11=Lee|last11=Rotlisburger|date=2017|id=IEPC-2017-153|access-date=January 7, 2018 |archive-url=https://web.archive.org/web/20180624202411/https://iepc2017.org/sites/default/files/speaker-papers/iepc-2017-153_psyche_mission_overview_final_0.pdf|archive-date=June 24, 2018|url-status=dead}}</ref> After the 2022 launch delay, the mission plan was updated to reflect the new 2029 arrival date, which meant the spacecraft would arrive at the asteroid at a different point in its orbit around the Sun. In the new mission plan, ''Psyche'' will initially enter Orbit A, then descend to Orbit B1, then Orbit D, back out to Orbit C, and finally it will move out to Orbit B2 (the second portion of Orbit B). This redesign ensures that the asteroid's surface is correctly illuminated by the Sun during Orbit B.<ref>{{cite web |date=March 29, 2023 |title=The Road to October 2023: NASA's Psyche Has an Updated Mission Plan |url=https://blogs.nasa.gov/psyche/2023/03/29/the-road-to-october-2023-nasas-psyche-has-an-updated-mission-plan/ |url-status=live |archive-url=https://web.archive.org/web/20230907025407/https://blogs.nasa.gov/psyche/2023/03/29/the-road-to-october-2023-nasas-psyche-has-an-updated-mission-plan/ |archive-date=September 7, 2023 |access-date=14 October 2023 |website=NASA Blogs – Psyche Mission}}</ref><ref name=orbit />
+
+Its first regime, {{nowrap|Orbit A}}, will see the spacecraft enter a {{cvt|700|km}} orbit for magnetic field characterization and preliminary mapping for a duration of 56 days. It will then descend to {{nowrap|Orbit B}}, set at {{cvt|303|km}} altitude for 92 days, for topography and magnetic field characterization. It will then descend to {{nowrap|Orbit D}}, which is the lowest orbit at {{cvt|75|km}} and is also uniquely inclined to allow direct view of the asteroid's equator (compared to the other orbits that go around its poles), for 100 days to determine the chemical composition of the surface using its gamma-ray and [[neutron spectrometer]]s. After that it will ascend to {{nowrap|Orbit C}} at {{cvt|190|km}} altitude for 100 days to perform gravity investigations and continue magnetic field observations. Finally, the orbiter will return to Orbit B for 100 days, to finish mapping the portion of the asteroid's surface that was under darkness during the first portion of Orbit B. It will also acquire continued imaging, gravity, and magnetic field mapping. In total, the prime mission is expected to last 26 months, ending in November 2031. At the end of the mission, the spacecraft will be left in orbit around the asteroid.<ref name=orbit/><ref name=presskit/><ref name="Oh2017"/><ref>{{Cite web |url=https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2023-157A |title=Psyche |work=[[NSSDC]] |publisher=[[NASA]] |access-date=October 28, 2022 |archive-date=June 16, 2020 |archive-url=https://web.archive.org/web/20200616083700/https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=PSYCHE |url-status=live }}</ref>
+
+<gallery mode=packed heights=160>
+File:Psyche's Mission Plan.jpg|Mission plan of ''Psyche''
+File:Psyche Orbital Operations.jpg|Orbital operations of ''Psyche''
+</gallery>
+{{Clear}}
+
+{|class="wikitable" style="text-align:right;"
+|+Orbit regimes<ref name=orbit>{{cite web |title=Psyche Orbital Operations |url=https://www.jpl.nasa.gov/images/pia26102-psyche-orbital-operations |website=NASA Jet Propulsion Laboratory (JPL) |date=September 1, 2023 |access-date=September 3, 2023 |archive-date=September 3, 2023 |archive-url=https://web.archive.org/web/20230903134948/https://www.jpl.nasa.gov/images/pia26102-psyche-orbital-operations |url-status=live }}</ref><ref name="presskit">{{Cite web |date=2023-09-29 |title=Psyche Press Kit – Mission |url=https://www.jpl.nasa.gov/press-kits/psyche/mission |url-status=live |archive-url=https://web.archive.org/web/20231014015149/https://www.jpl.nasa.gov/press-kits/psyche/mission |archive-date=October 14, 2023 |access-date=2023-10-13 |website=NASA Jet Propulsion Laboratory (JPL) |language=en-US}}</ref>
+!Orbit regime !! Date<br>(UTC) !! Duration<br>(day) !! Orbital period<br>(hour) !! style="text-align:left;|Altitude<br>(km) !! Inclination<br>(degree) 
+!Transfer to<br>next orbit<br>(day)
+! Mission
+|-
+|style="text-align:left;|Orbit A || August 2029||56 ||32.8 ||700 ||90 
+|17|| style="text-align:left;" |Magnetic field characterization and preliminary mapping
+|-
+|style="text-align:left;|Orbit B1 || October 2029 || 92 || 11.6 || 303 || 90 
+|98|| style="text-align:left;" |Topography and magnetic field characterization
+|-
+|style="text-align:left;|Orbit D || May 2030 || 100 || 3.6 || 75 || 160 
+| || style="text-align:left;" |Surface chemical composition determination
+|-
+|style="text-align:left;|Orbit C || January 2031 || 100 || 7.2 || 190 ||90 
+| || style="text-align:left;" |Gravity investigations and Magnetic field observations
+|-
+|style="text-align:left;|Orbit B2 || May 2031 || 100 ||11.6 || 303 ||90 
+| || style="text-align:left;" |Topography and magnetic field characterization
+|}
+
+{{multiple image
+| align             = center
+| direction         = horizontal
+| width             = 300px
+| header            = Animation of ''Psyche'''s orbit
+| image1            = Animation of Psyche around Sun.gif
+| caption1          = Around the Sun
+| image2            = Animation of Psyche around 16 Psyche.gif
+| caption2          = Around 16 Psyche
+| footer            = {{legend2|Magenta| Psyche }}{{·}}{{legend2| Lime| 16 Psyche}}{{·}}{{legend2| RoyalBlue| Earth}}{{·}}{{legend2|Cyan| Mars}}{{·}}{{legend2|Yellow| Sun}}
+}}
+
+=== Ground stations for laser link ===
+The laser beams from the spacecraft will be received by a ground telescope at [[Palomar Observatory]] in California.<ref name=Hall-2017/> Laser beams to the spacecraft will be sent from a smaller telescope at [[Table Mountain Observatory|JPL Table Mountain Facility]].<ref name="Hall-2017" />
+
+==Construction and pre-launch testing==
+[[File:SPacecraft Psyche's Thruster Integration Underway PIA24789.jpg|thumb|''Psyche'''s thruster integration underway]]
+
+Testing began on the spacecraft in December 2021. These tests included but were not limited to electromagnetic testing and TVAC, or [[thermal vacuum chamber]] testing. The electromagnetic testing was conducted to ensure that the electronics and magnetic components that make up the spacecraft will not interfere with each other while conducting the mission. The TVAC testing was conducted inside the 85- by 25-foot vacuum chamber at [[Jet Propulsion Laboratory|JPL's]] facility in Southern California, which replicates the lack of air in space. This allows for the engineers and scientist to observe the effects of the space environment on the orbiter. Inside the TVAC, the JPL employees can observe how well the spacecraft reacts to harsh conditions. Without air surrounding the spacecraft, the heating and cooling of the unit is affected. The spacecraft will be hot in the hours after launch, while it is still close to Earth and facing the Sun, especially with its electronics running, and later, when the spacecraft gets farther from the Sun, it faces intense cold, especially when flying in 16 Psyche's shadow. Vibration tests of the spacecraft by scientists and engineers ensure it can survive the extreme conditions of the rocket launch. They also performed shock testing to ensure the spacecraft could survive the shock of separation from the rocket's second stage. Finally, they performed acoustic testing on the craft. The sound of the launch can be so violent that it can damage the hardware, so intense acoustic testing was performed to ensure mission success.<ref>{{Cite web |last=Greicius |first=Tony |date=April 3, 2022 |title=Shake and Bake: NASA's Psyche Is Tested in Spacelike Conditions |url=http://www.nasa.gov/feature/jpl/shake-and-bake-nasa-s-psyche-is-tested-in-spacelike-conditions |website=NASA |archive-date=May 26, 2022 |archive-url=https://web.archive.org/web/20220526053643/https://www.nasa.gov/feature/jpl/shake-and-bake-nasa-s-psyche-is-tested-in-spacelike-conditions/ |url-status=live |access-date=May 12, 2022 }}</ref>
+
+{{Clear}}
+
+== References ==
+{{reflist}}
+
+== Further reading ==
+* {{cite journal |last1=Zuber |first1=Maria T. |last2=Park |first2=Ryan S. |last3=Elkins-Tanton |first3=Linda T. |last4=Bell |first4=J. F. |last5=Bruvold |first5=Kristoffer N. |last6=Bercovici |first6=David |last7=Bills |first7=Bruce G. |last8=Binzel |first8=Richard P. |last9=Jaumann |first9=R. |last10=Marchi |first10=Simone |last11=Raymond |first11=Carol A. |last12=Roatsch |first12=T. |last13=Wang |first13=Charles C. |last14=Weiss |first14=Benjamin P. |last15=Wenkert |first15=Daniel |last16=Wieczorek |first16=Mark A. |title=The Psyche Gravity Investigation |journal=Space Science Reviews |date=18 October 2022 |volume=218 |issue=8 |pages=57 |doi=10.1007/s11214-022-00905-3 |bibcode=2022SSRv..218...57Z |s2cid=252922565 |language=en |issn=1572-9672|doi-access=free |hdl=1721.1/145937 |hdl-access=free }}
+
+== External links ==
+{{commons category|Psyche (spacecraft)}}
+* [https://www.nasa.gov/psyche Mission website] at NASA.gov
+* [https://psyche.ssl.berkeley.edu/ Mission website] by University of California, Berkeley
+
+{{Planetary Missions Program Office|Discovery=y}}
+{{Asteroid spacecraft}}
+{{Mars spacecraft}}
+{{Orbital launches in 2023}}
+{{Jet Propulsion Laboratory}}
+{{2023 in space}}
+{{2026 in space}}
+{{Portal bar|Astronomy|Spaceflight|Outer space|Solar system}}
+
+{{authority control}}
+
+[[Category:Discovery Program]]
+[[Category:Laser communication in space]]
+[[Category:Missions to main-belt asteroids]]
+[[Category:NASA space probes]]
+[[Category:Space probes launched in 2023]]
+[[Category:Mars flybys]]
+[[Category:October 2023 in the United States]]
+[[Category:2023 in Florida]]
+[[Category:Jet Propulsion Laboratory space probes]]
+[[Category:Spacecraft launched by Falcon Heavy rockets]]
+[[Category:Arizona State University]]
+[[Category:NASA missions to Mars]]
+[[Category:2026 on Mars]]

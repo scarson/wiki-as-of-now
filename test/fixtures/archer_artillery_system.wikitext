@@ -1,0 +1,364 @@
+{{Short description|Swedish 155 mm self-propelled howitzer}}
+{{Use dmy dates|date=September 2025}}
+{{Use British English|date=February 2024}}
+{{Infobox weapon
+| name               = Archer
+| image              = Archerside commons.jpg
+| image_size         = 300
+| caption            = A deployed Archer
+| type               = [[Self-propelled howitzer|Wheeled self-propelled howitzer]]
+| origin             = Sweden
+<!-- Type selection -->| is_ranged          = y
+| is_artillery       = y
+| is_vehicle         = y
+<!-- Service history -->| service            = Since 2016
+| used_by            = [[#Current operators|Operators]]
+| wars               = [[Russian invasion of Ukraine]]
+| Service            = <!-- Production history -->
+| designer           = [[Bofors]]
+| design_date        = 1995–2009
+| manufacturer       = [[BAE Systems AB]]
+| unit_cost          = US$4.5M (2010){{refn|group=note|Unit cost is based on the 2010 US$216 million contract for 48 systems.<ref name=Janes-Archer/>}} <br> US$10.4M (2023){{refn|group=note|Unit cost is based on the 2023 US$500 million contract for 48 systems.<ref name=bae-sep23-contract2/>}}
+| production_date    = Since 2010
+| number             = 48 (+ 102 on order)
+| variants           = <!-- General specifications -->
+| spec_label         = [[#Technical data|See ''technical data'']]
+| caliber            = [[155 mm calibre|155 mm]]
+| primary_armament   = [[Haubits FH77/A|FH 77]] derived howitzer
+| ref                = [[Janes Information Services|Janes]]<ref name=Janes-Archer>{{Citation |author=[[Janes Information Services|Janes]] |url=https://customer.janes.com/Janes/Display/JAA_0472-JAAD |title=FH-77 BW L52 Archer (155 mm) |date=26 August 2022 |website=Janes Land Warfare Platforms: Artillery & Air Defence |publisher=Jane's Group UK |publication-place=[[Coulsdon]], [[Surrey]] |url-access=subscription |access-date=22 January 2023}}</ref>
+}}
+
+The '''Archer artillery system''', or '''Archer – FH77BW L52''', or '''''Artillerisystem'' 08''', is a Swedish [[self-propelled howitzer]] system.<ref>{{Cite web |title=ARCHER: The development of wheeled artillery with a new purpose |url=https://www.baesystems.com/en/feature/archer--the-development-of-wheeled-artillery-with-a-new-purpose |access-date=2 September 2022 |website=BAE Systems {{!}} International |language=en}}</ref><ref>{{cite web |url= http://www.regjeringen.no/nb/dep/fd/pressesenter/pressemeldinger/2007/Norsk-svensk-samarbeid-om-fremtidens-art.html?id=468611 |title=Norwegian-Swedish cooperation on the future of artillery – invitation to the signing of agreement|date=30 May 2007|publisher=[[Norwegian Ministry of Defence]] |language=Norwegian |access-date=30 March 2010}}</ref> The main piece of the system is a fully automated [[155 mm calibre|155 mm]] L52 (52-[[Caliber (artillery)#Barrel length|calibre]]-long) gun-[[howitzer]] and a [[M151 Protector]] remote-controlled weapon station mounted on a modified [[Six-wheel drive|6×6]] [[chassis]] of the [[Volvo Construction Equipment|Volvo]] A30D all-terrain [[articulated hauler]]. The crew and engine compartment is armoured and the cab is fitted with bullet and fragmentation-resistant windows. The system also includes an ammunition resupply vehicle, a support vehicle, [[Bofors/Nexter Bonus|BONUS]] submunitions,<ref>{{cite web|url=http://www.baesystems.com/BAEProd/groups/public/documents/bae_publication/bae_pdf_bonus.pdf |title=155 BONUS Strike and destroy up to 35 km |work= BAE Systems- Bofors AB|date=3 July 2008 |archive-url=https://web.archive.org/web/20100826121452/http://www.baesystems.com/BAEProd/groups/public/documents/bae_publication/bae_pdf_bonus.pdf |archive-date=26 August 2010 |url-status=dead}}</ref> and [[M982 Excalibur]] guided projectiles.
+
+The howitzer's superior attack range and exceptional maneuverability makes it ideal for [[counter-battery fire]].<ref>{{cite web |title=Sweden Reveals How Many People Engaged in Maintenance of Archer Artillery Systems |url=https://en.defence-ua.com/weapon_and_tech/sweden_reveals_how_many_people_engaged_in_maintenance_of_archer_artillery_systems-8571.html |date=15 November 2023}}</ref>
+
+==Development==
+The project began in 1995 as earlier studies for a self-propelled system based on the existing [[Haubits FH77|FH 77 howitzer]]. Further test systems received the designation FH 77BD and FH 77BW. By 2004, two prototypes had been ordered based on a lengthened version of the FH 77B mounted on a modified Volvo Construction Equipment A30D six-wheel drive articulated haul truck.
+
+In September 2006, BAE Systems Bofors received a SEK 40 million contract from the FMV (Försvarets materielverk, [[Swedish Defence Materiel Administration]]) for detailed design work on the Archer program.
+
+In 2008, Sweden ordered a first batch of seven units, while Norway ordered one.<ref name="kuriren12">{{cite web |last=Zerpe |first=Håkan |date=4 September 2008 |title=Klartecken för Archer |url=http://www.kuriren.nu/nyheter/klartecken-for-archer-4134401.aspx |access-date=28 December 2016 |publisher=}}</ref><ref name="milse12">{{cite web |title=Government decision on ARCHER |url=http://www.mil.se/en/News/News-milse/Government-decision-on-Archer/ |url-status=dead |archive-url=https://web.archive.org/web/20090207182631/http://www.mil.se/en/News/News-milse/Government-decision-on-Archer/ |archive-date=7 February 2009 |access-date=30 March 2010 |publisher=[[Ministry of Defence (Sweden)]]}}</ref> In August 2009, Norway and Sweden ordered 24 Archers each, in a cooperative deal.<ref name="milse22">{{cite web |date= |title=Archer FH77 BW L52 Self-Propelled Howitzer, Sweden |url=http://www.army-technology.com/projects/archerhowitzer/ |archive-url=https://web.archive.org/web/20110427150710/http://www.army-technology.com/projects/archerhowitzer/ |archive-date=27 April 2011 |access-date=30 April 2011 |publisher=army-technology.com}}</ref><ref>{{Cite web |date=16 June 2022 |title=Sweden's Archer Self-Propelled Artillery Project |url=https://www.defenseindustrydaily.com/sweden-norway-to-cooperate-on-archer-artillery-project-05142/ |access-date=17 December 2023 |website=www.defenseindustrydaily.com/ |language=en}}</ref>
+
+The howitzer was developed for the [[Swedish Armed Forces]] following a contract awarded to [[Bofors]] (now [[BAE Systems AB|BAE Systems Bofors]]) in 2003 by ''Försvarets Materielverk'' (FMV), the Swedish defence acquisition agency to build two demonstrator howitzers. The prototype FH77 BW L52 self-propelled howitzers entered firing trials in Sweden in 2005 and 2006. In September 2006, the FMV placed a contract for detailed design work on Archer and, in January 2007, a contract for the next development phase. The [[Swedish Army]] had a requirement for 24 systems (two battalions). In September 2008, the Swedish government approved the final development and procurement of the Archer artillery system.
+
+In November 2008, Sweden and Norway signed a co-operative agreement for the development of the Archer system and, in January 2009, awarded BAE Systems a contract to complete development of the artillery system with the exception of the remote weapon system which is made by [[Kongsberg Defence & Aerospace]]. A final prototype was scheduled for completion by September 2009, which was expected to be followed by a contract for 48 systems – 24 for Sweden and 24 for Norway. Archer was planned to enter service in 2011 but was delayed until October 2013. This was because of unforeseen technical problems.<ref>{{cite news |last=Eriksson |first=Anna K |date=17 June 2013 |title=Sverige står helt utan artilleri |url=http://www.svd.se/nyheter/inrikes/sverige-star-helt-utan-artilleri_8272024.svd |access-date=28 December 2016 |newspaper=Svenska Dagbladet |publisher=}}</ref> It caused the Norwegian government to withdraw from the project in December 2013.<ref>{{cite web |date=6 December 2013 |title=Norge avslutter kontrakten om artillerisystemet Archer |url=https://www.regjeringen.no/no/aktuelt/norge-avslutter-kontrakten-om-artilleris/id747473/ |website=Regjeringen.no |language=no}}</ref>
+
+The Swedish Army received its first four pre-serial production FH-77 BW L52 Archer systems on 23 September 2013,<ref>[http://www.armyrecognition.com/september_2013_defense_industry_military_news_uk/swedish_army_has_received_first_pre-serial_production_archer_155mm_6x6_self-propelled_howitzer_23091.html Swedish army has received first pre-serial production of Archer 155mm 6x6 self-propelled howitzer] {{Webarchive|url=https://web.archive.org/web/20190201204852/http://www.armyrecognition.com/september_2013_defense_industry_military_news_uk/swedish_army_has_received_first_pre-serial_production_archer_155mm_6x6_self-propelled_howitzer_23091.html |date=1 February 2019 }}. Armyrecognition.com, 23 September 2013</ref><ref>[http://www.deagel.com/news/Sweden-Takes-Delivery-of-First-Four-Archer-Artillery-Systems_n000011961.aspx Sweden Takes Delivery of First Four Archer Artillery Systems]. Deagel.com, 26 September 2013</ref> and the first guns finally entered service on 1 February 2016.<ref>[http://www.forsvarsmakten.se/en/news/2016/02/a-good-day-at-the-artillery-regiment/ A Good Day at the Artillery Regiment]. Forsvarsmakten.se, 9 February 2016</ref>
+
+In 2019, a new configuration of the Archer, with the howitzer mounted on a [[Rheinmetall MAN Military Vehicles|Rheinmetall MAN]] [[RMMV HX range of tactical trucks|HX2 8×8 tactical truck]], was revealed. Sweden had ordered a number of HX2 trucks in 2014, with deliveries commencing in 2017.<ref>{{Cite web |title=Archer 155 mm - self-propelled gun-howitzer |url=http://www.military-today.com/artillery/archer.htm |archive-url=https://web.archive.org/web/20080912041803if_/http://www.military-today.com/artillery/archer.htm |url-status=usurped |archive-date=12 September 2008 |access-date=24 October 2022}}</ref> On 23 January 2020, [[Janes Information Services]] reported that BAE Systems Bofors had begun trials for the HX2 variant.<ref>{{Cite web |title=BAE Systems Bofors begins trials for HX2-based Archer |url=https://www.janes.com/defence-news/news-detail/bae-systems-bofors-begins-trials-for-hx2-based-archer |access-date=24 October 2022 |website=Janes.com |date=23 January 2020 |language=en}}</ref> The first Archer of this configuration was delivered to FMV in April 2026.<ref>https://forsvarstidningen.se/nyheter/forsta-archer-8x8-levererad-till-fmv</ref>
+
+==Design==
+
+=== Vehicles ===
+
+==== Operational vehicle platform – Volvo A30D ====
+This vehicle platform is a modification of the [[Volvo A30D]] 6×6 articulated all-terrain hauler vehicle. It was developed for the first variant of the Archer artillery system. Operators control the entire gun system in any weather from the safety of the armoured vehicle cabin which is fitted with bullet and fragmentation-proof windows. The cabin seats up to four personnel. The howitzer is operated by three or four crew but can be run by a single operator.<ref name="BAEArcherProd" />
+
+The system also includes a munition carrier consisting of a removable, modified standard container mounted on a ballistic-proofed all-terrain lorry. As per the agreement announced in March 2010, the contract to commence the serial production of 48 Archers was signed for US$200 million, resulting in a unit cost of US$4.17 million.<ref>{{Cite web |title=Sweden's Archer Self-Propelled Artillery Project – Defense Industry Daily |url=https://www.defenseindustrydaily.com/sweden-norway-to-cooperate-on-archer-artillery-project-05142/ |access-date=17 December 2023 |website=www.defenseindustrydaily.com/ |language=en}}</ref>
+
+24 Archer were upgraded to the C-standard by November 2025. The upgrades improve the reliability of the system, and include a new command system. This upgraded variant is also compatible to be used on new platforms.<ref>{{Cite web |date=2025-11-02 |title=Sweden completes modernization of its Archer artillery |url=https://militaeraktuell.at/en/sweden-completes-modernization-of-its-archer-artillery/ |access-date=2026-01-14 |language=en-US}}</ref><ref>{{Cite web |last=Hill |first=John |date=2025-10-31 |title=Sweden receives its last upgraded Archer artillery system |url=https://www.army-technology.com/news/sweden-receives-its-last-upgraded-archer-artillery-system/ |access-date=2026-01-14 |website=Army Technology |language=en-US}}</ref>
+
+==== Future vehicle platform – Rheinmetall HX2 8×8 ====
+The [[RMMV HX range of tactical trucks|Rheinmetall HX2 8×8]] (HX44M) is the second platform for which the Archer artillery system is being developed.<ref>{{Cite web |title=ARCHER: The development of wheeled artillery with a new purpose |url=https://www.baesystems.com/en/feature/archer--the-development-of-wheeled-artillery-with-a-new-purpose |access-date=2 November 2023 |website=www.baesystems.com}}</ref> The Swedish Army ordered 48 in September 2023 for US$500 million. The delivery is planned to start from 2025.<ref>{{Cite web|url=https://defence-blog.com/sweden-orders-more-archer-wheeled-artillery-systems/|title=Sweden orders more ARCHER wheeled artillery systems}}</ref> There are no changes to the system mentioned other than its adaptation to the vehicle.<ref>{{Cite news |date=13 September 2023 |title=Sweden hands UK's BAE extra $500 million order for more artillery systems |url=https://www.reuters.com/markets/europe/sweden-hands-uks-bae-extra-500-mln-order-more-artillery-systems-2023-09-13/ |access-date=2 November 2023 |work=Reuters |language=en}}</ref> The first units were delivered to the Swedish FMV on 21 April 2026.<ref>https://nordicdefencesector.com/sv/article/fmv-receives-first-delivery-of-archer-8x8</ref>
+
+==== Potential vehicle platform – Oshkosh defence trucks ====
+BAE Bofors is proposing this system as an option to the US military, and concept variants based on the [[Heavy Expanded Mobility Tactical Truck|Oshkosh HEMTT]] (8×8) or the [[Palletized Load System|Oshkosh PLS]] (10×10).<ref>{{Cite web |title=ARCHER Mobile Howitzer |url=https://www.baesystems.com/en/product/archer |access-date=2 November 2023 |website=www.baesystems.com}}</ref><ref>{{Cite web|url=https://defence-blog.com/bae-systems-offers-us-army-new-version-of-archer-howitzers/|title=BAE Systems offers US Army new version of Archer howitzers}}</ref><ref>{{Cite web |title=AUSA 2023: New US chassis for Archer {{!}} Shephard |url=https://www.shephardmedia.com/news/landwarfareintl/ausa-2023-new-us-chassis-for-archer/ |access-date=2 November 2023 |website=www.shephardmedia.com |language=en}}</ref>
+
+=== Ammunition ===
+[[File:Artcher commons.JPG|thumb|Another view of a deployed Archer]]
+The vehicle carries 21 155&nbsp;mm projectiles in a fully automatic magazine.<ref name=BAEArcherProd/> Reloading the magazine from the accompanying munitions carrier takes about 10 minutes using the purpose-built lifting device. The howitzer can use [[NATO]] modular charges or Bofors Uniflex 2 modular charges. The Uniflex 2IM modular charge system consists of two sizes of combustible charge cases; one full-size and one half-size case, both filled with the same type of [[Insensitive munition|insensitive]] [[guanylurea dinitramide]] (GuDN) propellant. The modular charge system allows several increments of charge to be available and increases the system's [[multiple rounds simultaneous impact]] (MRSI) capability and good range overlap between the increments. With BAE Bofors/Nexter BONUS rounds the range is {{convert|35|km|mi}}.  Due to the glide wings of the precision-guided [[Raytheon Technologies|Raytheon]]/Bofors [[M982 Excalibur]] rounds, the range of the gun is extended to more than {{convert|50|km|mi}}.<ref name=BAEArcherProd>{{cite web | title=Archer mobile howitzer|access-date=8 September 2022 |url=https://www.baesystems.com/en/product/archer |website=[[BAE Systems]]  |date=24 August 2022}}</ref> The Excalibur shell is corrected in flight towards a pre-programmed trajectory by a GPS guidance system.
+For armoured vehicles, the Bofors 155 BONUS is used.
+
+=== Operational capabilities ===
+The system is designed for high strategic, operational and tactical mobility. The vehicle can reach road speeds of up to {{convert|90|km/h|mph}}, is capable of traversing snow up to a depth of {{convert|1|m|ft|spell=in}}, is rail transportable and can be air-transported in [[Boeing C-17 Globemaster III]] or [[Airbus A400M Atlas]] aircraft.<ref name="BAEArcherProd" /> A large hydraulically operated stabilizer is installed in the rear of the chassis and is lowered with the vehicle in the selected firing position. The gun elevation and traverse ranges are −1° to +70° vertically and −85° to +85° horizontally. The initial deployment time and the redeployment times are less than 30 seconds.<ref name="BAEArcherProd" /> The system provides precision strike and high sustained firepower for support and for deep firing operations with more than 25&nbsp;t of ammunition per gun and 24-hour operation. The howitzer has a continuous fire rate of 75 rounds per hour, an intensive fire rate of 20 rounds (i.e., a full magazine) in 2.5 minutes<ref name="BAEArcherProd" /> (effective rate, 480 rounds per hour), and a salvo fire rate of three rounds in 15 seconds (effective rate, 720 rounds per hour). The MRSI capability, multiple round simultaneous impact, is up to 6 rounds. Direct-sighting can be used for target ranges up to {{convert|2000|m|yd}}.
+
+=== Technical data ===
+The detailed specifications and capabilities of each variant are summarised in the following table.<ref>{{Cite web |title=ARCHER |url=https://www.baesystems.com/en/product/archer |url-status=live |archive-url=https://web.archive.org/web/20230608144504/https://www.baesystems.com/en/product/archer |archive-date=8 June 2023 |access-date=15 December 2023 |website=www.baesystems.com}}</ref>
+{| class="wikitable"
+| style="background:#EAECF0;border-left:solid 2px black;border-top:solid 2px black;border-bottom:solid 2px black;width: 16%;" |'''Parameters'''
+| align="center" style="background:#EAECF0; border-left:solid 2px black;border-top:solid 2px black;border-bottom:solid 2px black;width: 42%" |'''Volvo A30D'''
+<small>(6×6)</small>
+| align="center" style="background:#EAECF0; border-right:solid 2px black;border-top:solid 2px black;border-bottom:solid 2px black;width: 42%" |[[RMMV HX range of tactical trucks|'''Rheinmetall HX2''']] '''(HX44M)'''
+<small>(8×8)</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |
+| colspan="2" align="center" style="background:#EAECF0;border-right:solid 2px black" |'''Vehicle characteristics'''
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Length</small>'''
+| align="center" |<small>{{convert|14.3|m|ft|abbr=on}}</small>
+| align="center" style="border-right:solid 2px black" |<small>{{convert|13.1|m|ft|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Width</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>{{convert|3.0|m|ft|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Height</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>{{convert|3.4|m|ft|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Height (with turret)</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>{{convert|4.0|m|ft|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Gun elevation</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>{{convert|10.4|m|ft|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Mass</small>'''
+| align="center" |<small>{{convert|34.0|t|lb|abbr=on}}</small>
+| align="center" style="border-right:solid 2px black" |<small>{{convert|38.0|t|lb|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |
+| colspan="2" align="center" style="background:#EAECF0;border-right:solid 2px black" |'''Power train'''
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Engine</small>'''
+| align="center" |<small>''Volvo D9B AC E3'' (9,400&nbsp;cm<sup>3</sup>, diesel, inline 6) <ref>{{Cite web |title=A30D with D9 engine – Volvo : Volvo Construction Equipment |url=https://www.volvoce.com/global/en/products-and-services/past-products/articulated-haulers/volvo/a30d-with-d9-engine/ |access-date=15 December 2023 |website=www.volvoce.com |language=en}}</ref></small>
+| align="center" style="border-right:solid 2px black" |<small>''MAN D2066'', (10,518&nbsp;cm<sup>3</sup>, diesel, inline 6)</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Engine power</small>'''
+| align="center" |<small>{{convert|252|kW|PS|abbr=on}}</small>
+| align="center" style="border-right:solid 2px black" |<small>{{convert|324|kW|PS|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Power / mass ratio</small>'''
+| align="center" |<small>{{convert|7.41|kW/t|PS/t|abbr=on}}</small>
+| align="center" style="border-right:solid 2px black" |<small>{{convert|8.53|kW/t|PS/t|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Torque</small>'''
+| align="center" |<small>{{convert|1700|Nm|lbft|abbr=on}}</small>
+| align="center" style="border-right:solid 2px black" |<small>{{convert|2100|Nm|lbft|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Drivetrain</small>'''
+| align="center" |<small>Longitudinal [[Diff lock|diff-lock]] on the move 6×4 or 6×6,</small> [[Diff lock|<small>diff-lock</small>]] <small>on each axle <ref name=":1">{{Cite web |title=A30D with D9 engine – Volvo : Volvo Construction Equipment |url=https://www.volvoce.com/global/en/products-and-services/past-products/articulated-haulers/volvo/a30d-with-d9-engine/ |access-date=15 December 2023 |website=www.volvoce.com |at=Download 21_2_669_4161.indd (PDF, 592.7KB) |language=en}}</ref></small>
+| align="center" style="border-right:solid 2px black" |<small>Longitudinal [[Diff lock|diff-lock]] on the move 8×4 or 8×8,</small> <small>[[Transfer case|Hi-Lo transfer case]] ''MAN G172'', [[Diff lock|diff-lock]] on each axle</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |
+| colspan="2" align="center" style="background:#EAECF0;border-right:solid 2px black" |'''Vehicle performance'''
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Max speed</small>'''
+| align="center" |<small>{{convert|70|km/h|mph|abbr=on}} <ref name=":2">{{Cite web |title=Ur arkivet: Avancerad teknik bakom den svenska superkanonen |url=https://computersweden.idg.se/2.2683/1.646909/haubits |access-date=16 December 2023 |website=Computer Sweden |language=sv}}</ref></small>
+| align="center" style="border-right:solid 2px black" |<small>{{convert|90|km/h|mph|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Cruising range</small>'''
+| align="center" |<small>{{convert|650|km|mi|abbr=on}}</small>
+| align="center" style="border-right:solid 2px black" |<small>{{convert|800|km|mi|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Max slope</small>'''
+| align="center" |<small>58% (30.0°)</small>
+| align="center" style="border-right:solid 2px black" |<small>58% (30.0°)</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Max lateral lean</small>'''
+| align="center" |<small>53.2% (28.0°)</small>
+| align="center" style="border-right:solid 2px black" |<small>34.5% (19°)</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Ground clearance</small>'''
+| align="center" |<small>{{convert|0.45|m|ft|abbr=on}}</small>
+| align="center" style="border-right:solid 2px black" |<small>{{convert|0.40|m|ft|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Fording depth</small>'''
+| align="center" |<small>{{convert|1.00|m|ft|abbr=on}}</small>
+| align="center" style="border-right:solid 2px black" |<small>{{convert|1.00|m|ft|abbr=on}}</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |
+| colspan="2" align="center" style="background:#EAECF0;border-right:solid 2px black" |'''Weapon system'''
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Primary weapon</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>Howitzer [[155 mm caliber|155 mm]] [[FH-77B|FH-77 BW L/52]]</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Elevation</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>-1° to +70°</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Traverse</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>-85° to +85°</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Loading system</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>Automatic loading</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Projectile magazine</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>21 projectiles</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Propellant magazine</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>126 modular propellant charges ''Bofors Uniflex 2'' (made of [[Insensitive munition|insensitive]] [[guanylurea dinitramide]], known as FOX-12 or GUDN).</small> 
+<small>The propellant magazine contains 18 rows with each 6 full charges and 1 "half" charge.<ref name=":2"/></small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Secondary weapon</small>'''
+| colspan="2" align="center" style="border-right:solid 2px black" |[[Remote controlled weapon station|<small>RCWS</small>]] <small>''"Vapenstation 01"''</small> <small>([[Protector RWS|M151 Protector]]</small> <small>with [[M2 Browning]] or [[40mm|40mm automatic grenade launcher]]) <ref>{{Cite web |last=Försvarsmakten |title=Galten med vapenstation till Afghanistan |url=https://www.forsvarsmakten.se/sv/aktuellt/2011/11/galten-med-vapenstation-till-afghanistan/ |access-date=2 January 2024 |website=Försvarsmakten |language=sv}}</ref></small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Crew</small>'''
+| align="center" |<small>1 to 4 crew members: 1 driver, 1 commander, 2 operators</small>
+<small>(The operators and commander can operate remotely)</small>
+| align="center" style="border-right:solid 2px black" |<small>3 crew members: 1 driver, 1 commander, 1 operator</small>
+<small>(The operator and commander can operate remotely)</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |
+| colspan="2" align="center" style="background:#EAECF0;border-right:solid 2px black" |'''Electronic systems'''
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |<small>'''Fire control system'''</small>
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>[[Fire control computer]] with ''NABK'' software (automated ballistics calculation, ammunition management, electronic fuse setting)</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |<small>'''Target acquisition'''</small>
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>[[Open architecture]] for the integration to local battlefield management system for target data transmission</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |<small>'''INS''' (inertial navigation)</small>
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>''[[SAGEM Sigma 30]]'' <ref>{{Cite web|url=https://www.safran-group.com/fr/espace-presse/safran-devoile-eurosatory-2016-sa-nouvelle-gamme-centrales-dartillerie-sigma-30-2016-06-14|title=Safran dévoile à Eurosatory 2016 sa nouvelle gamme de centrales d'artillerie Sigma 30 &#124; Safran}}</ref></small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |<small>'''Muzzle velocity radar'''</small>
+| colspan="2" align="center" style="border-right:solid 2px black" |<small>''[[Weibel Scientific|Weibel]] MVRS-700SC'' muzzle velocity radar</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |
+| colspan="2" align="center" style="background:#EAECF0;border-right:solid 2px black" |'''Weapon performance'''
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Weapon setup</small>'''
+| colspan="2" style="border-right:solid 2px black" |<small>Weapon ready to shoot in 20 seconds, out of action in 20 seconds</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Rate of fire</small>'''
+| colspan="2" style="border-right:solid 2px black" |<small>[[Multiple rounds simultaneous impact|Multiple rounds simultaneous impact (MRSI)]] capable with 4 to 6 rounds depending on the range</small>
+* <small>Burst of 3 rounds in 20 seconds</small>
+* <small>Intensive mission of 21 rounds (full magazine) in 3 minutes</small>
+* <small>Continuous shooting, 54 rounds in 35 minutes</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Shells in use</small>'''
+| colspan="2" style="border-right:solid 2px black" |<small>Qualified shells on Archer:</small>
+* <small>High explosive HE rounds, range < {{convert|30|km|mi|abbr=on}}</small>
+* <small>High explosive extended HEER, range > {{convert|40|km|mi|abbr=on}},</small>
+* <small>[[M982 Excalibur|M982 Excalibur guided rounds]], range < {{convert|50|km|mi|abbr=on}}</small>
+* <small>[[Bofors/Nexter Bonus|Bofors / Nexter BONUS]] anti-armour rounds, range < {{convert|35|km|mi|abbr=on}}</small>
+* <small>Smoke, illumination and training rounds</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |
+| colspan="2" align="center" style="background:#EAECF0;border-right:solid 2px black" |'''Protection <ref>{{Cite web |date=28 September 2018 |title=FH 77BW L52 Archer (155mm samohybná kanónová houfnice) : Sweden (SWE) |url=https://www.armedconflicts.com/FH-77BW-L52-Archer-155mm-samohybna-kanonova-houfnice-t35064 |access-date=2 January 2024 |website=Armedconflicts.com |language=en}}</ref>'''
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Hull</small>'''
+| colspan="2" style="border-right:solid 2px black" |<small>It uses Steel & appliqué armour. The cabin is protected against [[7.62×51mm NATO]] [[Armour-piercing ammunition|AP rounds]] and artillery shell fragments ([[STANAG 4569|STANAG 4569 Level 3]])</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>Floor</small>'''
+| colspan="2" style="border-right:solid 2px black" |<small>The floor of both cabins is protected against 6&nbsp;kg (explosive mass) blast AT mine ([[STANAG 4569|STANAG 4569 Level 2b]])</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-right:solid 2px black" |'''<small>CBRN</small>'''
+| colspan="2" style="border-right:solid 2px black" |<small>Cabin overpressure and air filters</small>
+|-
+| style="background:#EAECF0;border-left:solid 2px black;border-bottom:solid 2px black" |'''<small>Stealth</small>'''
+| style="border-left:solid 2px black;border-bottom:solid 2px black" |<small>Radar absorbent painting, radar stealth geometry and IR stealth and Saab Barracuda camouflage nets with IR and radar stealth features<ref name=":2" /></small>
+| style="border-bottom:solid 2px black;border-right:solid 2px black" |<small>Radar absorbent paint, IR stealth and Saab Barracuda camouflage nets with IR and radar stealth features <ref name=":2" /></small>
+|}
+
+== Operators ==
+[[File:Archer Artillery System at Bold Quest 21.webm|250x250px|thumb|Swedish [[Artillery Regiment (2000)|Artillery Regiment]] (A 9) demonstrates the highly-mobile Archer artillery system on 15 November 2021, at [[Camp Atterbury]].]] [[File:Archer Artillery System.jpg|250x250px|thumb|An Archer Artillery System of the [[British Army]]'s [[19th Regiment Royal Artillery]] displayed in ready position for [[Battle of Cambrai (1917)|Cambrai Day]].]] [[File:Archer Operators.svg|250x250px|thumb|upright=1.8|{{legend|#0B60D4|Current operators}}]]
+
+; {{flagicon|Sweden}} [[Swedish Army]] (26)
+: Archer based on the Volvo A30D:
+:* Purchases:
+:** 24 Archer ordered in March 2010.<ref>{{Cite web |title=Archer |url=https://www.fmv.se/armada/projekt/archer/ |access-date=2026-01-14 |website=www.fmv.se |language=sv}}</ref><ref name=":4">{{Cite web |last=admin |date=2014-01-20 |title=Sweden investigates Norway's withdrawal impact on Archer project |url=https://www.army-technology.com/news/newssweden-investigates-norways-withdrawal-from-archer-project-4162679/ |access-date=2026-01-10 |website=Army Technology |language=en-US}}</ref>
+:** 24 Archer to be ordered, announced by the government in September 2016 (the 24 that were planned for Norway, but whom withdrew from the project in December 2013).<ref>{{Cite web |title=Archer FH77 BW L52 Self-Propelled Howitzer |url=https://www.army-technology.com/projects/archerhowitzer/ |access-date=2026-01-14 |website=Army Technology |language=en-US}}</ref>
+:* Sales:
+:** 14 Archer for the [[British Army]]: approval requested by the government to the [[Riksdag]] the 16 March 2023, which was accepted. The first Archer was delivered to the UK in October 2023.<ref name=":6">{{Cite press release |title=DE&S has delivered the first Archer wheeled artillery system to the British Army |date=6 October 2023 |publisher=[[Defence Equipment and Support]], [[Ministry of Defence (United Kingdom)|Ministry of Defence]] |url=https://des.mod.uk/des-has-delivered-the-first-archer-wheeled-artillery-system-to-the-british-army/ |access-date=14 July 2024 |author=<!--not stated-->}}</ref> The 14 were all delivered by July 2024.<ref>{{Cite web |last=Bisht |first=Inder Singh |date=28 February 2023 |title=UK Seeks Ukraine-Bound AS90 Artillery Replacement Within 12 Months |url=https://www.thedefensepost.com/2023/02/28/uk-as90-artillery-replacement/ |access-date=16 March 2023 |website=The Defense Post |language=en-US}}</ref>
+:* Donations:
+:** 8 Archer for the [[Ukrainian Ground Forces|Ukrainian Army]]: approval requested by the government to the [[Riksdag]] the 16 March 2023, which was accepted.<ref>{{Cite web |date=16 March 2023 |title=Sweden to send 8 Archer artillery systems to Ukraine |url=https://news.yahoo.com/sweden-send-8-archer-artillery-163337832.html |access-date=16 March 2023 |website=Yahoo News |language=en-US}}</ref><ref>{{Cite news |last=Råssjö |first=Pelle |date=2 November 2020 |title=Kanonglädje i Bofors – ska leverera fler Archer i försvarets nya satsning |url=https://www.svt.se/nyheter/lokalt/orebro/utokade-forsvaret-ger-nya-order-till-bofors |access-date=16 March 2021 |work=[[Sveriges Television|SVT]] |language=sv}}</ref><ref name="aftonbladet 2023-03-162">{{Cite news |last=Wallberg |first=Peter |date=16 March 2023 |title=Nu klart: Ukraina får åtta Archer |url=https://www.aftonbladet.se/a/rl966l |access-date=16 March 2023 |work=[[Aftonbladet]] |location=Stockholm, Sweden |language=sv}}</ref> The 8 Archer were delivered to Ukraine by November 2023.<ref>{{cite news |last1=Nyheter |first1=S. V. T. |date=3 November 2023 |title=Svenska Archer på plats i Ukraina |trans-title=Swedish Archer on the ground in Ukraine |url=https://www.svt.se/nyheter/snabbkollen/svenska-archer-pa-plats-i-ukraina--ltds6g |access-date=4 November 2023 |website=[[Sveriges Television|SVT]] |language=sv}}</ref><ref name="strategyPage2">StrategyPage [https://www.strategypage.com/htmw/htart/articles/20231201.aspx (1 Dec 2023) Artillery: Archer, Counterbattery and UAVs]</ref>
+:* Status over time in the Swedish Army.
+:** First batch deliveries: first 4 Archer delivered to the FMV in September 2013 (pre-serie)<ref>{{Cite web |date=26 September 2013 |title=First ARCHER systems delivered in Sweden |url=https://www.baesystems.com/en/article/first-archer-systems-delivered-in-sweden |access-date=2026-01-14 |website=www.baesystems.com}}</ref>, first serial produced Archer delivered in September 2015.<ref>{{Cite web |date=28 September 2015 |title=BAE Systems Delivers ARCHER Artillery System to Sweden |url=https://www.baesystems.com/en/article/bae-systems-delivers-archer-artillery-system-to-sweden |access-date=2026-01-14 |website=www.baesystems.com}}</ref> The initial batch of 24 Archer entered service between February 2016 and December 2016.<ref>{{Cite web |title=Archer FH77 BW L52 Self-Propelled Howitzer |url=https://www.army-technology.com/projects/archerhowitzer/ |access-date=2026-01-14 |website=Army Technology |language=en-US}}</ref>
+:** Deliveries of the second batch completed by November 2022.<ref>{{Cite web |date=2022-11-26 |title=Swedish Army Receives Last Archer 155mm Self-propelled Howitzer from BAE Systems - MilitaryLeak.COM |url=https://militaryleak.com/2022/11/26/swedish-army-receives-last-archer-155mm-self-propelled-howitzer-from-bae-systems/ |access-date=2026-01-14 |language=en-US}}</ref>
+:** March 2023: 24 in service. 24 in storage, among which 22 to be sold and donated, and 2 to be used by the [[Swedish Defence Materiel Administration|FMV]] to further develop the Archer artillery system.<ref name=":8">{{Cite web |date=16 March 2023 |title=Sweden to send 8 Archer artillery systems to Ukraine |url=https://news.yahoo.com/sweden-send-8-archer-artillery-163337832.html |access-date=16 March 2023 |website=Yahoo News |language=en-US}}</ref><ref name=":9">{{Cite news |last=Råssjö |first=Pelle |date=2 November 2020 |title=Kanonglädje i Bofors – ska leverera fler Archer i försvarets nya satsning |url=https://www.svt.se/nyheter/lokalt/orebro/utokade-forsvaret-ger-nya-order-till-bofors |access-date=16 March 2021 |work=[[Sveriges Television|SVT]] |language=sv}}</ref><ref name="aftonbladet 2023-03-163">{{Cite news |last=Wallberg |first=Peter |date=16 March 2023 |title=Nu klart: Ukraina får åtta Archer |url=https://www.aftonbladet.se/a/rl966l |access-date=16 March 2023 |work=[[Aftonbladet]] |location=Stockholm, Sweden |language=sv}}</ref>
+
+; {{flagicon|UK}} [[British Army]] (14)
+: 14 owned as of July 2024.<ref>{{Cite web |last=Bisht |first=Inder Singh |date=28 February 2023 |title=UK Seeks Ukraine-Bound AS90 Artillery Replacement Within 12 Months |url=https://www.thedefensepost.com/2023/02/28/uk-as90-artillery-replacement/ |access-date=16 March 2023 |website=The Defense Post |language=en-US}}</ref> On 16 March 2023, the Swedish Government asked for permission from the [[Riksdag]] to sell 14 Archer Artillery Systems to the British Army as an interim replacement for 32 [[AS-90]] gifted to Ukraine.<ref name="aftonbladet 2023-03-16">{{Cite news |last=Wallberg |first=Peter |date=16 March 2023 |title=Nu klart: Ukraina får åtta Archer |url=https://www.aftonbladet.se/a/rl966l |access-date=16 March 2023 |work=[[Aftonbladet]] |location=Stockholm, Sweden |language=sv}}</ref> Ownership of the systems was transferred in March 2023, and they would be fully operational by the following April.<ref name="des-mod 2023-03-16">{{Cite press release |title=British Army announces new artillery deal with Sweden |date=16 March 2023 |publisher=[[Defence Equipment and Support]], [[Ministry of Defence (United Kingdom)|Ministry of Defence]] |url=https://www.gov.uk/government/news/british-army-announces-new-artillery-deal-with-sweden |access-date=16 March 2023 |author=<!--not stated-->}}</ref> The first Archer was delivered in October 2023<ref>{{Cite press release |author=<!--not stated--> |date=6 October 2023 |title=DE&S has delivered the first Archer wheeled artillery system to the British Army |url=https://des.mod.uk/des-has-delivered-the-first-archer-wheeled-artillery-system-to-the-british-army/ |publisher=[[Defence Equipment and Support]], [[Ministry of Defence (United Kingdom)|Ministry of Defence]] |access-date=14 July 2024}}</ref> and all were delivered by July 2024.<ref>[https://www.forces.net/technology/weapons-and-kit/british-armys-archer-arsenal-now-complete-arrival-10-more-howitzers British Army's Archer arsenal now complete with the arrival of 10 more howitzers]. ''[[Forces.net]]''. 16 July 2024.</ref>
+; {{flagicon|Ukraine}} [[Ukrainian Ground Forces]] (8)
+: Ukraine aid from Sweden:  
+:* Archer based on the Volvo A30D
+:** 8 Archer received as of November 2023.<ref>{{cite news |last1=Nyheter |first1=S. V. T. |date=3 November 2023 |title=Svenska Archer på plats i Ukraina |trans-title=Swedish Archer on the ground in Ukraine |url=https://www.svt.se/nyheter/snabbkollen/svenska-archer-pa-plats-i-ukraina--ltds6g |access-date=4 November 2023 |website=[[Sveriges Television|SVT]] |language=sv}}</ref><ref name="strategyPage">StrategyPage [https://www.strategypage.com/htmw/htart/articles/20231201.aspx (1 Dec 2023) Artillery: Archer, Counterbattery and UAVs]</ref> On 16 March 2023, the Swedish government announced that it would send 8 Archer artillery systems to the Ukrainian armed forces.<ref name="aftonbladet 2023-03-16" />
+:*Spare barrels:
+:**10 pledged in July 2025.<ref>{{Cite web |last=Regeringskansliet |first=Regeringen och |date=2025-07-03 |title=New purchases of defence materiel to Ukraine |url=https://www.government.se/press-releases/2025/07/new-purchases-of-defence-materiel-to-ukraine/ |access-date=2026-06-01 |website=Regeringskansliet |language=en}}</ref>
+
+=== Systems under order ===
+;{{flag|Sweden}} (84)
+:All the new orders are based on the [[RMMV HX range of tactical trucks|Rheinmetall HX2 8×8]]. 
+:;{{flagicon|Sweden}} [[Swedish Army]] (48)
+:: 48 ordered under a contract signed in September 2023, with deliveries scheduled to begin in 2025.<ref name=":0">{{Cite press release |title=Försvarsmakten tillförs 48 nya Archerpjäser |date=13 September 2023 |publisher=[[Swedish Armed Forces|Försvarsmakten]] |url=https://www.forsvarsmakten.se/sv/aktuellt/2023/09/archer/ |access-date=13 September 2023 |author=<!--not stated-->}}</ref><ref name="bae-sep23-contract2">{{Cite press release |title=Sweden awards BAE Systems $500 million contract for additional 48 ARCHER artillery systems |date=13 September 2023 |publisher=[[BAE Systems]] |url=https://www.baesystems.com/en/article/sweden-awards-bae-systems-contract-for-additional-48-archer-artillery-systems |url-status=live |archive-url=https://archive.today/20230913215007/https://www.baesystems.com/en/article/sweden-awards-bae-systems-contract-for-additional-48-archer-artillery-systems |archive-date=13 September 2023 |author=<!--not stated-->}}</ref> The cost for 48 artillery systems was $500 million.<ref name="bae-sep23-contract2" />
+:;{{flagicon|Ukraine}} [[Ukrainian Ground Forces]] (36)
+::Aid packages from Sweden to the Ukrainian Ground Forces: 
+::* 18 pledged in March 2025: The Swedish government authorised the [[Swedish Defence Materiel Administration|FMV]] to purchase 18 Archer systems to be supplied to Ukraine with deliveries starting in 2026.<ref>{{Cite web |last=Regeringskansliet |first=Regeringen och |date=13 March 2025 |title=New Swedish support strengthens Ukraine's artillery capacity |url=https://www.government.se/press-releases/2025/03/new-swedish-support-strengthens-ukraines-artillery-capacity/ |access-date=14 March 2025 |website=Regeringskansliet |language=en}}</ref>
+::* 18 pledged in September 2025: The Swedish government decided on a 20th aid package, worth SEK 9.2 billion, that included a further 18 Archer artillery systems.<ref>{{Cite web |last=Regeringskansliet |first=Regeringen och |date=11 September 2025 |title=New military support package to Ukraine worth over SEK 9 billion |url=https://www.government.se/press-releases/2025/09/new-military-support-package-to-ukraine-worth-over-sek-9-billion/ |access-date=12 September 2025 |website=Regeringskansliet |language=en}}</ref>
+;{{flagicon|Latvia}} [[Latvian Land Forces]] (18)
+: On 11 June 2025, Latvian Minister of Defence [[Andris Sprūds|Andris Spruds]] announced that 18 Archer systems were to be acquired, based on the [[RMMV HX range of tactical trucks|Rheinmetall MAN HX2 8×8]] with deliveries starting in 2026.<ref>{{Cite web |date=11 June 2025 |title=Latvia to acquire 18 Archer self-propelled artillery systems from Sweden |url=https://defence-industry.eu/latvia-to-acquire-18-archer-self-propelled-artillery-systems-from-sweden/ |access-date=12 June 2025 |language=en}}</ref>
+: The parliament approved the order in January 2026.<ref>{{Cite web |title=Purchase of Sweden's 'Archer' howitzers by Latvia rumbles forward |url=https://eng.lsm.lv/article/society/defence/13.01.2026-purchase-of-swedens-archer-howitzers-by-latvia-rumbles-forward.a629830/ |access-date=2026-01-14 |website=eng.lsm.lv |language=en}}</ref>
+=== Potential operators ===
+
+;{{flagicon|CAN}} [[Canadian Army]]
+: Canada is considering the purchase of new artillery systems. On one side, a MLRS system system is considered, and on the other side, a lightweight mobile artillery platform is being looked at, among which the Archer is an option.<ref>{{Cite web |last=Belouizdad |first=Skander |date=2 May 2023 |title=As NATO allies grow impatient, Canada may be quietly planning major increase in defence spending: Richard Shimooka in the Hub |url=https://macdonaldlaurier.ca/as-nato-allies-grow-impatient-canada-may-be-quietly-planning-major-increase-in-defence-spending-richard-shimooka-in-the-hub/ |access-date=12 November 2024 |website=Macdonald-Laurier Institute |language=en-US}}</ref><ref>{{Cite web |date=4 September 2024 |title=ON TARGET: CANADIAN ARMED FORCES: At the Tipping Point |url=https://www.espritdecorps.ca/on-target-4/on-target-canadian-armed-forces-at-the-tipping-point |access-date=12 November 2024 |website=espritdecorps |language=en-CA}}</ref>
+; {{flagicon|ROM}} [[Romanian Land Forces]]
+: BAE is offering the Archer for the Romanian Army, 36 wheeled self-propelled howitzers are planned to be ordered by Romania.<ref>{{Cite web |author=<!--not stated--> |date=24 May 2024 |title=BSDA 2024: BAE Systems to pitch AMPV, CV90, and Archer to Romania |url=https://www.janes.com/osint-insights/defence-news/land/bsda-2024-bae-systems-to-pitch-ampv-cv90-and-archer-to-romania |website=Janes |publisher=[[Janes Information Services]] |access-date=18 June 2024}}</ref><ref>{{Cite web |author=<!--not stated--> |date=11 July 2023 |title=S-a discutat producția în România a unor componente ale obuzierelor K9 Thunder. România demarează achiziția de obuziere autopropulsate |url=https://www.defenseromania.ro/s-a-discutat-productia-in-romania-a-unor-componente-ale-obuzierelor-k9-thunder-romania-demareaza-achizitia-de-obuziere-autopropulsate_623475.html |website=Defence Romania |language=ro |trans-title=Production of some components of the K9 Thunder howitzer in Romania under discussion. Romania begins to purchase self-propelled howitzers |access-date=14 July 2024}}</ref><ref>{{Cite web |last=Dumitrache |first=Ciprian |date=31 May 2024 |title=Pentru România în viitor urmează și obuziere pe roți. Iar Archer ar putea fi integrat pe camioane Iveco produse aici, dar va fi concurență mare |url=https://www.defenseromania.ro/romania-vrea-si-obuziere-autopropulsate-pe-roti-archer-unul-din-posibilii-competitori-ar-putea-fi-integrat-pe-camioane-iveco-produse-in-tara_628492.html |website=Defence Romania |language=ro |trans-title=In the future, there will also be wheeled howitzers for Romania. And Archer could be integrated with Iveco trucks produced here, but there will be a lot of competition |access-date=18 June 2024}}</ref>
+;{{flagicon|US}} [[US Army]]
+: In July 2020, the [[United States Army|US Army]] released a request for proposals to evaluate wheeled self-propelled howitzers. In October 2020, BAE Systems offered the Archer as a participant to the RFP.<ref>{{Cite web |title=ARCHER wheeled howitzer offered for U.S. Army's 155 mm gun system |url=https://www.baesystems.com/en/article/bae-systems-offers-archer-wheeled-howitzer-for-us-army-155-mm-gun-system |access-date=3 January 2024 |website=www.baesystems.com}}</ref> The other platforms tested were the [[ATMOS 2000]], the [[CAESAR self-propelled howitzer|CAESAr]], the Brutus and the [[Nora B-52]].<ref>{{Cite web |last=Bisht |first=Inder Singh |date=12 January 2022 |title=US Army Seeking Next-Gen 155mm Truck-Mounted Howitzer |url=https://www.thedefensepost.com/2022/01/11/us-army-truck-mounted-howitzer/ |access-date=13 November 2023 |website=The Defense Post |language=en-us}}</ref> Throughout 2021, the various wheeled self-propelled howitzers conducted a shoot off evaluation at the Yuma Proving Ground in Arizona and at [[Camp Atterbury]]. The Archer was tested in November 2021.<ref>{{Cite web |last=admin |date=6 January 2022 |title=Swedish Armed Forces Demonstrates Archer Artillery System At Camp Atterbury, Indiana - MilitaryLeak.COM |url=https://militaryleak.com/2022/01/06/swedish-armed-forces-demonstrates-archer-artillery-system-at-camp-atterbury-indiana/ |access-date=3 January 2024 |website=militaryleak.com |language=en-US}}</ref> As part of the evaluation, [[Lieutenant General (United States)|Lieutenant General]] [[Erik C. Peterson (general)|Erik Peterson]], visited Sweden to inspect the system in April 2022.<ref>{{cite web |date=29 April 2022 |title=USA:s armé intresserad av att köpa svenskt artilleri |url=https://www.di.se/nyheter/usa-s-arme-intresserad-av-att-kopa-svenskt-artilleri/}}</ref><ref>{{Cite web |title=Artilleripjäsen väcker USA:s intresse: "Kvalificerad kund" |url=https://www.tv4.se/artikel/7tIiEtoV2mWQPSxRVQtgy7/artilleripjaesen-som-vaecker-usa-s-intresse-en-kvalificerad-kund |website=www.tv4.se|date=4 May 2022 }}</ref>
+: The interest for a wheeled self-propelled howitzer aims at increasing the mobility of the artillery capabilities, and to take a position between the [[M109 howitzer|M109]] and the [[M777 howitzer|M777]]. At the same time, the platforms tested would offer an artillery system with an increased range as the greatest operational calibre in the US Army is the 155mm L/39. The US Army ultimately did not move forward with acquiring a wheeled howitzer system.<ref>{{cite web |last1=Judson |first1=Jen |date=9 October 2023 |title=Change of plans: US Army embraces lessons learned from war in Ukraine |url=https://www.defensenews.com/land/2023/10/09/change-of-plans-us-army-embraces-lessons-learned-from-war-in-ukraine/ |access-date=16 October 2023 |website=defensenews.com}}</ref>
+: At AUSA 2024, the US military mentioned its renewed interest for a wheeled howitzer under the ''"mobile tactical cannon"'' capability. The system will be selected in 2026, and a contract for a certain number of cannons is planned for 2027. The systems mentioned include the Archer and the [[RCH 155]].<ref>{{Cite web |last=Judson |first=Jen |date=15 October 2024 |title=Why the Army is looking abroad to close a widening artillery gun gap |url=https://www.defensenews.com/land/2024/10/15/why-the-army-is-looking-abroad-to-close-a-widening-artillery-gun-gap/ |access-date=15 October 2024 |website=Defense News |language=en}}</ref>
+
+=== Evaluation only ===
+
+;{{flagicon|UK}} [[British Army]]
+: The Archer system was one of the contenders for the British Army's ''Mobile Fires Platform'' programme. The variant offered was based on the Rheinmetall HX2 8×8 truck. As of December 2023, [[Babcock International|Babcock]] and [[Rheinmetall|Rheinmetall UK]] formally joined forces with [[BAE Systems AB|BAE Bofors]] to pitch the Archer to the British Army. Among the competitors, there were: [[CAESAR self-propelled howitzer|CAESAR]] ([[Nexter Systems|Nexter]]), the [[RCH 155|RCH-155]] ([[Krauss-Maffei Wegmann|KMW]]), the [[K9 Thunder]] ([[Hanwha Aerospace]]) and the ATI (Artillery Truck Interface, a module based on a HX3 10×10, made by [[Rheinmetall]]) which could eventually use a 155 L/60 calibre.<ref>{{Cite web |last=Chuter |first=Andrew |date=16 March 2023 |title=British Army buys 14 Archer howitzers to fill gap left by Ukraine aid |url=https://www.defensenews.com/land/2023/03/16/british-army-buys-14-archer-howitzers-to-fill-gap-left-by-ukraine-aid/ |access-date=13 November 2023 |website=Defense News |language=en}}</ref>
+: In April 2024, a defence agreement was reached between Germany and the United Kingdom and the choice to purchase the [[RCH 155|RCH-155]] was made.<ref>{{Cite web |last=Allison |first=George |date=24 April 2024 |title=Britain to purchase Boxer-based RCH155 artillery systems |url=https://ukdefencejournal.org.uk/britain-to-purchase-boxer-based-rch155-artillery-systems/ |access-date=24 April 2024 |language=en-GB}}</ref><ref>{{Cite web |title=PM: UK and Germany open 'new chapter' in defence partnership |url=https://www.gov.uk/government/news/pm-uk-and-germany-open-new-chapter-in-defence-partnership |access-date=24 April 2024 |website=GOV.UK |language=en}}</ref>
+
+=== Failed bid ===
+
+;{{flagicon|SWI}} [[Swiss Armed Forces]]
+: BAE Systems Bofors announced in June 2022 that Switzerland had shortlisted the Archer for the final round of its Future Artillery System competition "''Artillerie Wirkplattform und Wirkmittel 2026''".<ref>{{cite press release |title=BAE Systems' ARCHER 155mm mobile howitzer shortlisted by Swiss Armed Forces |date=10 June 2022 |publisher=BAE Systems |url=https://www.baesystems.com/en-us/article/bae-systems-archer-155mm-mobile-howitzer-shortlisted-by-swiss-armed-forces |access-date=14 July 2024}}</ref> The version selected is the one based on the [[RMMV HX range of tactical trucks|Rheinmetall HX2 8×8]]. On 11 August 2022, the Swiss [[Armasuisse|Federal Office for Defence Procurement]] confirmed this decision and announced that the Archer would compete against the [[RCH 155]]. One of the variant was based on the [[Boxer (armoured fighting vehicle)|Boxer]] platform and one based on the [[Mowag Piranha IV|Mowag Piranha IV 10×10]], and were evaluated in 2024.<ref>{{Cite press release |title=Neues Artilleriesystem: Shortlist-Entscheid getroffen |date=11 August 2022 |publisher=[[Armasuisse]] |url=https://www.news.admin.ch/de/nsb?id=89927 |language=de |access-date=16 March 2023 |trans-title=New artillery system: Shortlist decision made |author=<!--not stated-->}}</ref>
+: In November 2024, the Swiss Armed Forces selected the RCH-155 based on the [[Mowag Piranha IV|Mowag Piranha IV 10×10]].<ref>{{Cite web |date=5 November 2024 |title=Swiss Armed Forces selects AGM Artillery Gun Module from KNDS Deutschland |url=https://defence-industry.eu/swiss-armed-forces-selects-agm-artillery-gun-module-from-knds-deutschland/ |access-date=5 November 2024 |language=en}}</ref>
+
+=== Cancelled order ===
+
+; {{flagicon|Norway}} [[Norwegian Army]]
+: 24 ordered for [[Artilleribataljonen|Royal Norwegian Artillery Battalion]]<ref name="SNC2">{{cite web |date=16 June 2022 |title=Sweden's Archer Self-Propelled Artillery Project |url=http://www.defenseindustrydaily.com/Sweden-Norway-to-Cooperate-on-Archer-Artillery-Project-05142/ |access-date=28 December 2016 |website=Defense Industry Daily}}</ref> but the order was cancelled in December 2013 due to delays in the development and production, therefore not meeting needs within the time remaining available.<ref>[http://dmilt.com/index.php?option=com_content&view=article&id=8692:norway-mod-cancels-participation-in-swedish-archer-155mm&catid=1:europe&Itemid=57 Norway; Mod cancels participation in Swedish ARCHER 155mm] {{webarchive|url=https://archive.today/20131211210323/http://dmilt.com/index.php?option=com_content&view=article&id=8692:norway-mod-cancels-participation-in-swedish-archer-155mm&catid=1:europe&Itemid=57|date=11 December 2013}}. Dmilt.com, 11 December 2013</ref> Norway later chose to purchase the [[K9 Thunder]] in December 2017.<ref>[https://www.defensenews.com/land/2017/12/20/norway-orders-k9-howitzers-in-latest-win-for-south-korean-arms-industry/ Norway orders K9 howitzers in latest win for South Korean arms industry]. ''[[Defense News]]''. 20 December 2017.</ref>
+
+== Operational history ==
+
+In January 2024, a Ukrainian documentary crew from [[United24]] observed the FH77BW Archer howitzer firing during combat missions. The news crew interviewed Ukrainian soldiers operating the system in the Luhansk region. One of the soldiers interviewed had previously worked with the Soviet-built [[152 mm gun-howitzer D-20|D-20 howitzer]]. In contrast to the towed D-20's manual operation the Ukrainian soldier praised the automation and rapid emplacement of the FH77BW, describing it as "Sniper Artillery" for its one shot - one kill ability.<ref>{{Cite web |title=Swedish Archer FH77BW L52 Howitzer in the Donetsk Region. Sniper Artillery in Action |url=https://www.youtube.com/watch?v=NbEvpXuNfCE |access-date=10 May 2024 |website=www.youtube.com| date=18 January 2024 }}</ref>
+
+In February 2024, an Archer artillery system was hit by a Russian [[loitering munition]] close to the city of [[Kupiansk]]. Russian sources claimed that the howitzer was destroyed while Ukrainian sources claimed that the damage done to the vehicle was likely repairable.<ref>{{Cite news |last=Norbergh |first=Erik |date=24 January 2022 |title=Uppgifter: En svensk Archer förstörd i Ukraina – Senaste nytt om kriget i Ukraina |url=https://www.svt.se/nyheter/utrikes/direktrapport-forsamrat-sakerhetslage?inlagg=9fd68e51f3d90abd824eb5012b1b1ab4 |access-date=2 June 2024 |work=SVT Nyheter |language=sv}}</ref>
+
+In March 2024, a reconnaissance unit of the Ukrainian [[63rd Mechanized Brigade (Ukraine)|63rd Mechanized Brigade]] detected multiple Russian D-20 howitzers near the city of [[Kreminna]]. The coordinates of the Russian howitzers was then passed on to the Ukrainian [[45th Artillery Brigade (Ukraine)|45th Artillery Brigade]] which performed counter-battery fire using an Archer artillery system, with drone footage showing the destruction of three D-20 howitzers.<ref>{{Cite AV media |url=https://www.youtube.com/watch?v=7OPLWSYB010 |title=Уражено 3 ворожі Д-20 артилеристами 45 ОАБр у взаємодії із аеророзвідкою 63 ОМБр. Східний напрямок |date=9 March 2024 |last=((45 окрема артилерійська бригада ЗСУ)) |access-date=2 June 2024 |via=YouTube}}</ref><ref>{{Cite web |title=Archer ACS destroyed enemy D-20 howitzers |url=https://mil.in.ua/en/news/archer-acs-destroyed-enemy-d-20-howitzers/ |access-date=2 June 2024 |website=Militarnyi |language=en-US}}</ref>
+
+In May 2024, the Ukrainian 45th Artillery Brigade used the Archer system in combat during operations in the Luhansk region. The brigade's artillerymen, operating an FH77BW Archer howitzer successfully destroyed a Russian [[2S19 Msta-S]] self-propelled artillery system near the village of [[Chervonopopivka]]. The Russian gun had been spotted by a Ukrainian reconnaissance team and the destruction was verified by a [[Unmanned aerial vehicle|drone]].<ref>{{Cite web |title=Ukrainian brigade destroys Russian artillery with cutting-edge Howitzer |url=https://essanews.com/ukrainian-brigade-destroys-russian-artillery-with-cutting-edge-howitzer,7024333182543489a |access-date=10 May 2024 |website=www.essanews.com|date=5 May 2024 }}</ref>
+
+In 2025, the Swedish Army claimed Archer has challenges operating in subarctic terrain with deep snow and limited road infrastructure. Therefore, Sweden is looking for tracked howitzer to complement wheeled Archer artillery. The Army aims to establish two battalions equipped with [[K9 Thunder]], aligning with Finland and Norway to enhance interoperability and logistics within the Nordic defense cooperation.<ref>https://www.dn.se/sverige/archer-racker-inte-armen-vill-kopa-artilleri-pa-larvfotter/</ref>
+
+==See also==
+<!-- Add only similar WHEELED systems! Compare armoured systems only with similar armoured systems and nothing else! -->
+* '''[[List of wheeled self-propelled howitzers]]'''
+* [[ATMOS 2000]] – [[155 mm caliber|155 mm]] wheeled [[Self-propelled artillery|SPH]] on 6×6 and 8×8 truck, Israeli system.
+** [[AHS Kryl]] – [[155 mm caliber|155 mm]] [[Self-propelled artillery|SPH]] on 6×6 truck, Polish derivative of ATMOS 2000
+** [[ATROM]] – [[155 mm caliber|155 mm]] [[Self-propelled artillery|SPH]] on 6×6 truck, Romanian derivative of ATMOS 2000
+* [[A-222E Bereg-E 130mm coastal mobile artillery system|А-222 “Bereg]] – [[AK-130|130 mm]] [[Coastal artillery|coastal artillery system]] on 8×8 truck, Russian system
+* [[CAESAR self-propelled howitzer|CAESAr]] – [[155 mm caliber|155 mm]] wheeled [[Self-propelled artillery|SPH]] on 6×6 and 8×8 truck, French system
+* [[152 mm SpGH DANA|DANA]] – 152&nbsp;mm wheeled [[Self-propelled artillery|SPH]] on 8×8 truck, Czech system
+* [[152 mm SpGH DANA|DITA]] and [[152 mm SpGH DANA|MORANA]] – [[155 mm caliber|155 mm]] wheeled [[Self-propelled artillery|SPH]] on 8×8 truck, Czech system
+* [[G6 howitzer|G6 Rhino]] – [[155 mm caliber|155 mm]] wheeled [[Self-propelled artillery|SPH]] on 6×6 truck, South African system
+* [[PCL-09]]  – 122&nbsp;mm wheeled [[Self-propelled artillery|SPH]] on 6×6 truck, Chinese system
+* [[PCL-161]]  – 122&nbsp;mm wheeled [[Self-propelled artillery|SPH]] on 4×4 truck, Chinese system
+* [[PCL-171]] – 122&nbsp;mm wheeled [[Self-propelled artillery|SPH]] on 6×6 [[Armoured fighting vehicle|AFV]] ([[Dongfeng Mengshi#CTL181/CTL181A|Dongfeng CTL181A]]), Chinese system
+* [[PCL-181]]  – [[155 mm caliber|155 mm]] wheeled [[Self-propelled artillery|SPH]] on 6×6 truck, Chinese system
+** [[PCL-181|SH-15]]  – [[155 mm caliber|155 mm]] wheeled [[Self-propelled artillery|SPH]] on 6×6 truck, Chinese system for export, derived from PCL-181
+* {{ill|PLL-09|ru}} – 122&nbsp;mm wheeled [[Self-propelled artillery|SPH]] on 8×8 [[Armoured fighting vehicle|AFV]] ([[Type 08|ZBL-08]]), Chinese system
+* SH-1 – [[155 mm caliber|155 mm]] wheeled [[Self-propelled artillery|SPH]] on 6×6 truck, Chinese system for export
+* [[RCH 155|RCH-155]] – German [[155 mm caliber|155 mm]] [[Self-propelled artillery|SPH]] available on
+** 8×8 wheeled [[Armoured fighting vehicle|AFV]] ([[Boxer (armoured fighting vehicle)|Boxer]]) and 10×10 wheeled [[Armoured fighting vehicle|AFV]] ([[Mowag Piranha IV|Piranha IV]], prototype)
+** tracked [[Armoured fighting vehicle|AFV]] (Donar on [[ASCOD|ASCOD 2]], prototypes, or RCH-155 Boxer module on [[Boxer (armoured fighting vehicle)|tracked Boxer]])
+** possible on 6×6 and 8×8 trucks (prototypes)
+* [[Type 19 155 mm wheeled self-propelled howitzer|Type 19]] – [[155 mm caliber|155 mm]] wheeled [[Self-propelled artillery|SPH]] on 8×8 truck, Japanese system
+* [[155 mm SpGH Zuzana|Zuzana]] and [[Zuzana 2]] – [[155 mm caliber|155 mm]] wheeled [[Self-propelled artillery|SPH]] on 8×8 truck, Slovak system
+* [[2S22 Bohdana]] – [[155 mm caliber|155 mm]] wheeled [[Self-propelled artillery|SPH]] on 6×6 and 8×8 trucks, Ukrainian system
+
+==Footnotes==
+{{reflist|group=note}}
+
+==References==
+{{Reflist}}
+
+==External links==
+{{Commons category|ARCHER Artillery System}}
+*[https://web.archive.org/web/20111019034819/http://www.fmv.se/WmTemplates/Page.aspx?id=1373 Swedish Defence Materiel Administration: ARCHER – Artillery system]
+*{{in lang|sv}} [https://web.archive.org/web/20070430022252/http://www.artreg.mil.se/ Swedish Artillery Regiment]
+*[http://www.baesystems.se/ BAE Systems in Sweden]
+*[https://web.archive.org/web/20090207183242/http://www.mil.se/en/News/Mission-and-defence/A-unique-Forestry-carrier-conversion/  A unique Forestry carrier conversion Article in mil.se]
+;Video links
+*{{youTube|E3QoVvtPqXY|BAE Systems promotional video of Archer Artillery System}}
+
+[[Category:Field artillery]]
+[[Category:Bofors]]
+[[Category:155 mm artillery]]
+[[Category:Wheeled self-propelled howitzers]]
+[[Category:Military vehicles introduced in the 2010s]]
+[[Category:Six-wheeled vehicles]]

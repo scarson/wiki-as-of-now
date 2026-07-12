@@ -1,0 +1,137 @@
+{{Short description|German anti-vehicle "smart" artillery round}}
+{{Infobox weapon
+| name               = SMArt 155
+| image              = SMArt 155 SubMunition for Artillery 2 cutaway.jpg
+| image_size         = 80
+| alt                = 
+| caption            = A [[cutaway drawing|cutaway]] view of a SMArt 155 round, showing both submunitions.  In this picture the lower submunition is itself shown in cutaway.
+| type               = Smart submunition artillery projectile
+| origin             = [[Germany]]
+<!-- Type selection -->
+| is_ranged          = y
+| is_bladed          = 
+| is_explosive       = y
+| is_artillery       = 
+| is_vehicle         = 
+| is_missile         = 
+| is_UK              = 
+<!-- Service history -->
+| service            = Since 2000
+| used_by            = See [[#Operators|operators]]
+| wars               = 
+<!-- Production history -->
+| designer           = 
+| design_date        = 1989–1995
+| manufacturer       = {{ubl|Gesellschaft für Intelligente WirkSysteme mbH|(50% [[Rheinmetall]]|50% [[Diehl BGT Defence]])}}
+| unit_cost          = 
+| production_date    = Since 1998
+| number             = 
+| variants           = 
+<!-- General specifications -->
+| spec_label         = 
+| mass               = {{cvt|47.3|kg|lb}} fused
+| length             = {{cvt|898|mm|in}} fused
+| width              = 
+| height             = 
+| diameter           = [[155 mm caliber|{{cvt|155|mm|in}}]]
+<!-- Ranged weapon specifications --> 
+| velocity           = 
+| range              = 
+| max_range          = {{ubl|{{cvt|22.5|km|mi|0}} from 39‐[[Caliber (artillery)|caliber]] barrels|{{cvt|27.5|km|mi}} from 52‐caliber barrels}}
+<!-- Explosive specifications --> 
+| filling            = 2 x autonomous anti‐armour and anti‐artillery submunitions
+| filling_weight     = 
+| detonation         = 
+| yield              = 
+<!-- For all -->
+| ref                = [[Janes Information Services|Janes]]<ref name=Janes-M864>{{Citation |author=[[Janes Information Services|Janes]] |url=https://customer.janes.com/display/JAH_0487-JAH_ |title=155 mm DM 702 SMArt 155 ammunition system |date=19 July 2022 |website=Janes Land Warfare Weapons: Ammunition |publisher=Jane's Group UK Limited. |publication-place=[[Coulsdon]], [[Surrey]] |url-access=subscription |access-date=4 August 2023 |archive-date=15 March 2024 |archive-url=https://web.archive.org/web/20240315173503/https://customer.janes.com/portal/Account/PreAuthenticate?callingurl=https%3A%2F%2Fcustomer.janes.com%2Fdisplay%2FJAH_0487-JAH_ |url-status=live }}</ref>
+}}
+'''The SMArt 155''' is a German [[155&nbsp;mm]] [[Guided artillery shell|guided artillery round]] designed for a long-range, [[indirect fire]] [[top attack|top-attack]] role against armoured vehicles. The projectile was developed in 1989 by [[Diehl BGT Defence]] in Überlingen, Germany, with [[Rheinmetall]] and started full-rate production for the German Army in 1998. It consists of a {{convert|47|kg|adj=on}} heavy artillery projectile containing two autonomous, sensor-fused, "[[fire-and-forget]]" submunitions.
+Due to the submunitions, it has been considered by some to be a [[cluster munition]]. As of 2008, representatives of the German defense ministry have referred to it as not being classified as submunition weapons, which were prohibited by the 2008 [[Convention on Cluster Munitions]].
+
+==Description==
+The name SMArt 155 is a contraction of its German name, ''Suchzünder Munition für die Artillerie 155'' (meaning "sensor-fuse munition for 155mm artillery").
+
+==History==
+The projectile was developed in 1989,<ref>{{Cite book |last=Jenzen-Jones |first=N.R. |title=Munitions Employing Sensor-fuzed Submunitions: Do they Comply with the Convention on Cluster Munitions? |publisher=[[Armament Research Services]] |year=2021 |isbn=978-0-6485267-9-7 |location=Australia |pages=19 |language=English}}</ref> and GIWS started full-rate production for the German Army in 1998.<ref name="atk_1"/>
+
+==Design==
+[[image:Smart155 detail.svg|center|Schematic of the SMArt 155 round]]
+[[File:GIWS SMArt 155 cutaway Klietz 2025.jpg|thumb|right|Cut away photo of SMArt 155 submunition.]]
+SMArt 155 is a 155&nbsp;mm NATO artillery round designed to be fired from the [[Panzerhaubitze 2000]] and the [[M109 howitzer]]s, including the Paladin variant.<ref name="defense-update">{{cite web | url=https://defense-update.com/20080810_smart.html | title=SMArt Sensor-Fuzed Ammunition for 155mm guns | publisher=Defense-Update.com | date=10 August 2008 | accessdate=13 July 2022 | archive-date=13 July 2022 | archive-url=https://web.archive.org/web/20220713200803/https://defense-update.com/20080810_smart.html | url-status=live }}</ref> It consists of a {{convert|47|kg|adj=on}} heavy artillery projectile containing two autonomous, sensor-fused, [[fire-and-forget]] submunitions.<ref name="defense-update" /> The submunitions each contain a high-penetration [[Explosively formed penetrator|EFP]] warhead for use against heavy [[armoured fighting vehicle]]s such as [[main battle tank]]s. The EFP warhead uses a heavy metal liner.<ref name="GiwsDesign">{{cite web | url=http://www.giws.de/en/smart/design.html | title=SMArt 155 Family of intelligent munition | publisher=GIWS mbh | accessdate=4 December 2010 | archive-date=22 September 2011 | archive-url=https://web.archive.org/web/20110922092420/http://www.giws.de/en/smart/design.html | url-status=dead }}</ref>
+
+After the submunition is released, it opens a parachute. While slowly descending, the submunition rotates, scanning the area below with an [[infra-red|infrared]] sensor and a [[millimeter wave]] radar.<ref name="defense-update" /><ref name="GiwsDesign" />
+
+The utilization of several types of sensors allows SMArt 155 to be used in all terrain types and weather conditions.<ref name="GiwsProducts">{{cite web | url=http://www.giws.de/en/smart/system.html | title=SMArt 155: A new Dimension for Artillery | publisher=GIWS mbh | accessdate=4 December 2010 | archive-date=15 March 2012 | archive-url=https://web.archive.org/web/20120315180949/http://www.giws.de/en/smart/system.html | url-status=dead }}</ref>
+
+==Operation==
+[[image:Smart155 overview.svg|700px|center]]1: A SMArt 155 round is fired from a standard [[155 mm caliber#NATO standard|NATO 155mm]] artillery tube.
+
+2: The round flies on a [[External ballistics|ballistic]] arc, with a range of {{convert|27.5|km|mi|1}}.<ref name="deagel">{{cite web |date=December 30, 2010 |title=SMArt 155 |url=http://www.deagel.com/Projectiles/SMArt-155_a001141001.aspx |url-status=live |archive-url=https://web.archive.org/web/20111223153750/http://www.deagel.com/Projectiles/SMArt-155_a001141001.aspx |archive-date=23 December 2011 |accessdate=7 January 2011 |publisher=deagel.com}}</ref>
+
+3: Mid-flight, a [[Fuze#Time|time fuze]] ignites an ejection charge in the nose that pushes the submunitions out of the base of the projectile.
+
+4: The submunitions deploy parachutes and independently fall over the target area while scanning for targets.
+
+5: Once a submunition detects a target vehicle beneath it, it detonates its explosive payload. This creates a high-velocity [[explosively formed projectile]] which strikes the target vehicle from above, where the armour is relatively weak, for maximum effect.
+
+==Competing systems==
+US artillery largely deploys the [[M712 Copperhead]] laser-guided round for the anti-tank role.
+
+GIWS formed a partnership with US defence contractor [[Alliant Techsystems]], hoping to sell SMArt 155 to the United States armed forces; as of 2002, no sale had been made.<ref name="atk_1">{{cite web  |url=http://atk.mediaroom.com/index.php?s=118&item=80  |title=ATK Partner GIWS Achieves 100-Percent Reliability In Tests of Extended Footprint SMArt 155 Munition Precision-Guided Projectile is Part of ATK's Newly Formed Precision Systems Group  |publisher=ATK press release  |date=May 9, 2002  |url-status=dead|archiveurl=https://web.archive.org/web/20110714065149/http://atk.mediaroom.com/index.php?s=118&item=80  |archivedate=July 14, 2011  }}</ref> The US developed the similar [[Sense and Destroy ARMor|M898 SADARM]] system (which also descended on a ballute to attack the top surfaces of armoured vehicles), but this was discontinued in favour of the [[Global Positioning System|GPS]] guided [[M982 Excalibur]] round.
+
+SMArt 155 is very similar to the [[Bofors 155 Bonus|155 BONUS]] system; BONUS descends on a system of winglets rather than a parachute.
+
+==Operators==
+[[File:SMArt 155 operators.svg|thumb|400px|Map with SMArt 155 operators in blue with former operators in red]]
+
+===Current operators===
+As of 2008, 25,000 shells have been sold to various clients.<ref>{{Cite web |title=Alternative Streumunition - Problem oder Lösung? (page 7) |url=https://www.landmine.de/fileadmin/user_upload/pdf/Publi/alternative_streumunition.pdf |url-status=dead |archive-url=https://web.archive.org/web/20200711204608/https://www.landmine.de/fileadmin/user_upload/pdf/Publi/alternative_streumunition.pdf |archive-date=11 July 2020 |access-date=14 February 2024 |website=landmine.de}}</ref><ref>{{Cite web |title=Cluster Munition Ban Policy {{!}} Reports {{!}} Monitor |url=http://www.the-monitor.org/en-gb/reports/2015/germany/cluster-munition-ban-policy.aspx |access-date=2024-02-14 |website=www.the-monitor.org |archive-date=2024-02-14 |archive-url=https://web.archive.org/web/20240214080241/http://www.the-monitor.org/en-gb/reports/2015/germany/cluster-munition-ban-policy.aspx |url-status=live }}</ref>
+
+; {{flagicon|GBR}} [[British Army]] and {{flagicon|AUS}} [[Australian Army]]
+: The DM-702 SMArt-155 can be used with the [[M777 howitzer|M777 towed howitzer]] and the [[AS-90]]. 
+: The sale of the SMArt-155 took place in 2008 for €120 million, for an estimated of 2,000 shells. The share between the UK and Australia isn't public.<ref>{{Cite web |last=OuinetAdmin |date=2008-01-06 |title=Australia, UK Order 155mm SMArt Munition |url=https://www.defense-aerospace.com/australia-uk-order-155mm-smart-munition/ |access-date=2024-02-14 |website=Defense aerospace |language=en-US |archive-date=2024-02-14 |archive-url=https://web.archive.org/web/20240214080240/https://www.defense-aerospace.com/australia-uk-order-155mm-smart-munition/ |url-status=live }}</ref><ref>{{Cite web |url=https://www.researchgate.net/publication/293338370 |title=Australia and UK buy SMArt 155 munition |access-date=2024-02-14 |archive-date=2024-03-15 |archive-url=https://web.archive.org/web/20240315173537/https://www.researchgate.net/publication/293338370_Australia_and_UK_buy_SMArt_155_munition |url-status=live }}</ref>
+
+; {{flagicon|GER}} [[German Army]] (9,000)
+: The DM-702 SMArt-155 is used with the [[Panzerhaubitze 2000]].<ref name="BehoerdenSpiegel">{{cite web |title=SMArt 155&nbsp;mm Munition für Australien |url=http://www.behoerden-spiegel.de/Internet/sub/63d/63d709c0-0329-5711-a3b2-1718a438ad1b,,,aaaaaaaa-aaaa-aaaa-bbbb-000000000011&uMen=f6810068-1671-1111-be59-264f59a5fb42&page=586&pagesize=10&all=true.htm |accessdate=2 December 2010 |publisher=Behörden Spiegel Online |language=German }}{{Dead link|date=March 2024 |bot=InternetArchiveBot |fix-attempted=yes }}</ref>
+: 9,000 shells were ordered, some of which were used for training, and others were donated to Ukraine.<ref name=":0">{{Cite web |date=2022-10-28 |title=Germany to resume production of SMArt 155 projectiles following an exceptional performance in Ukraine - Technology Org |url=https://www.technology.org/2022/10/28/germany-to-resume-production-of-smart-155-projectiles-following-an-exceptional-performance-in-ukraine/ |access-date=2024-02-14 |language=en-US |archive-date=2024-03-15 |archive-url=https://web.archive.org/web/20240315173519/https://www.technology.org/2022/10/28/germany-to-resume-production-of-smart-155-projectiles-following-an-exceptional-performance-in-ukraine/ |url-status=live }}</ref> In 2023, the Bundeswehr announced a restart of the production planned, with 10,000 shells expected.<ref name=":0" />
+
+; {{flagicon|GRE}} [[Hellenic Army]] (1,000)
+: The DM-702 SMArt-155 is used with the [[Panzerhaubitze 2000]]<ref name="BehoerdenSpiegel" />
+: The first 500 shells were ordered in 2002, delivered in 2003, 500 additional shells were ordered in 2003, delivered in 2006.<ref>{{Cite web |title=Trade Registers |url=https://armstrade.sipri.org/armstrade/page/trade_register.php |access-date=2024-02-14 |website=armstrade.sipri.org |archive-date=2010-04-14 |archive-url=https://web.archive.org/web/20100414022558/http://armstrade.sipri.org/armstrade/page/trade_register.php |url-status=live }}</ref>
+
+; {{flagicon|SWI}} [[Swiss Army]] (2,000)
+: The DM-702 SMArt-155 is used with the [[M109#M109 KAWEST|M109 KAWEST WE]].
+: The order for this shell type was made with the ''Armament Programme 2001'', with most deliveries to take place from 2004 and 2005 for a budget of CHF168 million.<ref>{{Cite web |date=3 July 2001 |title=Page 26 - Message concernant l’acquisition de matériel d’armement (Programme d’armement 2001) |url=https://entscheidsuche.ch/docs/CH_VB/CH_VB_001_4534-2001-1187_2001-09-18.pdf |url-status=live |archive-url=https://web.archive.org/web/20240214080241/https://entscheidsuche.ch/docs/CH_VB/CH_VB_001_4534-2001-1187_2001-09-18.pdf |archive-date=2024-02-14 |access-date=2024-02-14}}</ref><ref>{{Cite web |title=Defence Business: Why the Swiss are SMArt {{!}} ADM Mar 07 - Australian Defence Magazine |url=https://www.australiandefence.com.au/E89739E0-F806-11DD-8DFE0050568C22C9 |url-status=live |archive-url=https://web.archive.org/web/20240214080243/https://www.australiandefence.com.au/E89739E0-F806-11DD-8DFE0050568C22C9 |archive-date=2024-02-14 |access-date=2024-02-14 |website=www.australiandefence.com.au |language=en}}</ref>
+
+; {{Flagicon|United Arab Emirates}} [[United Arab Emirates Army]] (11,000) 
+: The American company ATK (Alliant TechSystems) partnered with GIWS to produce shells under license.<ref>{{Cite web |last=Heiming |first=Gerhard |date=2018-11-30 |title=SMArt 155-mm-Produktion soll wieder anlaufen |url=https://esut.de/2018/11/meldungen/land/8278/smart-155-mm-produktion-soll-wieder-anlaufen/ |access-date=2023-03-22 |website= Europäische Sicherheit & Technik |language=de-DE |archive-date=2023-03-22 |archive-url=https://web.archive.org/web/20230322143850/https://esut.de/2018/11/meldungen/land/8278/smart-155-mm-produktion-soll-wieder-anlaufen/ |url-status=live}}</ref>
+: Trials in the UAE on the [[G6 howitzer|G6 Howitzer]] took place in 2005 with satisfactory results, and led to the sale of 11,000 shells produced in the USA.<ref>{{Cite web |author=<!--not stated--> |date=2005-01-10 |title=Sensor-Fuzed Munition Passes Desert Tests (Jan. 11) |url=https://www.defense-aerospace.com/sensor-fuzed-munition-passes-desert-tests-jan-11/ |access-date=2024-02-14 |website=Defense aerospace |language=en-US |archive-date=2024-02-14 |archive-url=https://web.archive.org/web/20240214080240/https://www.defense-aerospace.com/sensor-fuzed-munition-passes-desert-tests-jan-11/ |url-status=live }}</ref><ref>http://www.janes.com/articles/Janes-Missiles-And-Rockets-2005/SMArt-155-demonstrated-in-UAE.html {{Dead link|date=February 2022}}</ref>
+
+; {{flagicon|UKR}} [[Armed Forces of Ukraine]]
+: Supplied by the German Army, used with the Panzerhaubitze 2000<ref>{{cite web |last=Nikolov |first=Boyko |date=15 July 2022 |title=Ukraine uses 155mm SMArt carrier shell that seeks and destroys by itself |url=https://bulgarianmilitary.com/2022/07/15/ukraine-uses-155mm-smart-carrier-shell-that-seeks-and-destroys-by-itself/ |access-date=3 August 2022 |publisher=bulgarianmilitary.com |language=English |archive-date=3 August 2022 |archive-url=https://web.archive.org/web/20220803055603/https://bulgarianmilitary.com/2022/07/15/ukraine-uses-155mm-smart-carrier-shell-that-seeks-and-destroys-by-itself/ |url-status=live }}</ref>
+
+==Controversy about classification as submunition vs cluster munition==
+Various human rights organizations, such as "Aktionsbündnis Landmine.de" and [[Handicap International]] view the SMArt 155 as a cluster munition. Germany’s representatives managed to ensure that SMArt 155 did not meet criteria for cluster munition of the [[Convention on Cluster Munitions|Oslo Agreement on the Prohibition of Cluster Bombs]].<ref>{{Cite news |last=Nagel |first=Sarah |title=Riestern für die Rüstungsindustrie (nd-aktuell.de) |language=de |work=Neues Deutschland |url=https://www.nd-aktuell.de/artikel/209157.riestern-fuer-die-ruestungsindustrie.html |access-date=2023-03-22 |archive-date=2023-03-22 |archive-url=https://web.archive.org/web/20230322221726/https://www.nd-aktuell.de/artikel/209157.riestern-fuer-die-ruestungsindustrie.html |url-status=live }}</ref>  Critics view this exempting definition in contradiction to the United Nations' understanding of cluster munitions.<ref>{{Cite news |last=Zumach |first=Andreas |date=2009-03-02 |title=Rüstungsfirma Diehl: Waffen bauen, Sprache säubern |language=de |work=Die Tageszeitung: taz |url=https://taz.de/!5167001/ |access-date=2023-03-22 |issn=0931-9085 |archive-date=2023-03-22 |archive-url=https://web.archive.org/web/20230322221727/https://taz.de/!5167001/ |url-status=live }}</ref> Critics also point out the similar effects of cluster munitions on the civilian population as in the case of [[unexploded ordnance]] or mistargeting.<ref>{{Cite web  |title=Alternative cluster munitions - problem or solution?  |url=https://www.landmine.de/fileadmin/user_upload/pdf/Publi/alternative_streumunition.pdf  |access-date=2023-03-22  |archive-date=2022-01-29  |archive-url=https://web.archive.org/web/20220129003158/https://www.landmine.de/fileadmin/user_upload/pdf/Publi/alternative_streumunition.pdf  |url-status=dead  }}</ref>
+
+In July 2008, the journalist Stefan Aigner wrote: " Today, Diehl is one of the most successful German arms producers. According to its own information, around one third of its profit of 2.3 billion euros comes from armaments production. Among other things, cluster munitions are produced."  Diehl’s lawyers demanded a cease-and-desist declaration from Aigner. The lawyers referred to the exceptions made in the Oslo Agreement, which allegedly pose no danger to civilians. In the trial before the Munich Regional Court, Aigner and Diehl reached a [[settlement (law)|settlement]] on March 2, 2009, after the judge made it clear that he would accept Diehl’s claim.  The settlement includes that Diehl s ammunition may not be referred to as cluster munitions.<ref name="taz">{{Cite news |last=Zumach |first=Andreas |date=2009-03-04 |title=Streit über Rüstungsbegriff: Vergleich im Prozess um "Streumunition" |language=de |work=Die Tageszeitung: taz |url=https://taz.de/!5166905/ |access-date=2023-03-22 |issn=0931-9085 |archive-date=2023-03-22 |archive-url=https://web.archive.org/web/20230322221724/https://taz.de/!5166905/ |url-status=live }}</ref><ref>{{Cite news |last=Duwe |first=Silvio |title=Punktzielmunition trifft Pressefreiheit |language=de |url=https://www.telepolis.de/features/Punktzielmunition-trifft-Pressefreiheit-3422003.html |access-date=2023-03-22 |archive-date=2023-03-22 |archive-url=https://web.archive.org/web/20230322221724/https://www.telepolis.de/features/Punktzielmunition-trifft-Pressefreiheit-3422003.html |url-status=live }}</ref> In return, Diehl assumed the costs of the proceedings.
+
+"Intelligent Working System" came in third place in the election for [[Unwort des Jahres]] 2009.<ref>{{Cite news |last=Stefan Aigner |date=2010-01-10 |title=Intelligenter bomben mit blöden Worten |language=de-DE |url=https://www.regensburg-digital.de/intelligenter-bomben-mit-bloden-worten/20012010/ |access-date=2023-03-22 |archive-date=2023-03-22 |archive-url=https://web.archive.org/web/20230322221724/https://www.regensburg-digital.de/intelligenter-bomben-mit-bloden-worten/20012010/ |url-status=live }}</ref> Behind the harmless term "intelligent active systems" the jury saw technologically advanced types of ammunition, which are produced by a subsidiary of two armaments companies with the equally disguised company name "Gesellschaft für Intelligente Wirksysteme mbH".<ref>{{Cite news |date=2010-01-19 |title=Sprachforscher: "Betriebsratsverseucht" ist Unwort des Jahres |language=de |work=FAZ.NET |url=https://www.faz.net/aktuell/gesellschaft/sprachforscher-betriebsratsverseucht-ist-unwort-des-jahres-1581819.html |access-date=2023-03-22 |issn=0174-4909 |archive-date=2023-03-22 |archive-url=https://web.archive.org/web/20230322221724/https://www.faz.net/aktuell/gesellschaft/sprachforscher-betriebsratsverseucht-ist-unwort-des-jahres-1581819.html |url-status=live }}</ref>
+
+==References==
+{{reflist|30em}}
+
+==External links==
+{{Commons category}}
+* [http://www.diehl-bgt-defence.de/index.php?id=561&L=1 Intelligent ammunition] {{Webarchive|url=https://web.archive.org/web/20120302044912/http://www.diehl-bgt-defence.de/index.php?id=561&L=1 |date=2012-03-02 }} on Diehl's website
+* [https://web.archive.org/web/20110723233327/http://www.rheinmetall-detec.de/index.php?fid=1475&lang=3&pdb=1 Artillery rounds] on Rheimetall-DeTec.de
+
+{{DEFAULTSORT:Smart 155}}
+[[Category:155 mm artillery shells]]
+[[Category:Anti-tank rounds]]
+[[Category:Cluster munitions]]
+[[Category:Fire-and-forget weapons]]
+[[Category:Cannon-launched guided projectiles]]
+[[Category:Military equipment introduced in the 1990s]]
+[[Category:Post–Cold War artillery of Germany]]
+[[Category:Rheinmetall]]

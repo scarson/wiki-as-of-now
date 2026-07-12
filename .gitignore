@@ -27,6 +27,8 @@ yarn-error.log*
 # local env files
 .env*.local
 .env
+.env*
+!.env.example
 
 # vercel
 .vercel
@@ -35,5 +37,29 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# OpenNext
+/.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+
+# pnpm debug log
+.pnpm-debug.log*
+
 # Git worktrees — see docs/git-strategy.md
 .claude/worktrees/
+
+# Python bytecode caches (e.g. from gstack skills like url-to-markdown)
+__pycache__/
+*.pyc
+
+# Gas City (gc) — local agent runtime. The .beads/ dir is a Dolt issue DB plus
+# absolute symlinks into ~/Code/samtown/.gc; none of it is portable. Keep only
+# the two small config files so the gc/beads setup is reproducible.
+.beads/*
+!.beads/config.yaml
+!.beads/metadata.json
+# gc skill symlinks (absolute paths into samtown) — local, never commit.
+.claude/skills/core.gc-*

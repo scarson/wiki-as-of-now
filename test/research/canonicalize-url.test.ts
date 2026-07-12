@@ -1,0 +1,54 @@
+// ABOUTME: Unit tests for canonicalizeUrl — the SSRF host-classification guard shared by
+// ABOUTME: the source-fetch guard and per-host fan-out cap. Covers MUST-PASS and MUST-REJECT cases.
+import { describe, it, expect } from "vitest";
+import { armDeterminismTraps } from "../helpers/determinism";
+import { canonicalizeUrl } from "../../src/research/canonicalize-url";
+
+describe("canonicalizeUrl", () => {
+  armDeterminismTraps(); // pure + non-fetching: ambient fetch/clock/RNG must throw
+
+  it("is synchronous (returns a value, not a Promise)", () => {
+    const r = canonicalizeUrl("https://en.wikipedia.org/wiki/Artemis_program");
+    expect(typeof (r as { then?: unknown }).then).toBe("undefined");
+  });
+
+  // MUST-PASS (composition guard — a guard that blocks everything is useless):
+  it.each([
+    "https://en.wikipedia.org/wiki/Artemis_program",
+    "https://www.defense.gov/News/Releases/",
+    "https://example.co.uk/report?id=5",
+    "https://8.8.8.8/",                   // public IPv4 — guard must not over-block
+    "https://[2001:db8::1]/",              // public IPv6 — guard must not over-block
+    "https://en.wikipedia.org./",          // trailing-dot public FQDN — valid after strip
+  ])("allows legitimate public https URL %s", (u) => {
+    expect(canonicalizeUrl(u).ok).toBe(true);
+  });
+
+  // MUST-REJECT:
+  it.each([
+    "http://en.wikipedia.org/",            // non-https
+    "data:text/html,hi", "file:///etc/passwd", "ftp://x/",
+    "https://user:pass@evil.com/",         // userinfo
+    "https://127.0.0.1/", "https://localhost/", "https://0.0.0.0/",
+    "https://169.254.169.254/",            // cloud metadata
+    "https://2130706433/",                 // decimal 127.0.0.1
+    "https://0x7f000001/", "https://0177.0.0.1/", "https://127.1/", // hex/octal/short
+    "https://[::1]/", "https://[::]/",
+    "https://[::ffff:169.254.169.254]/",   // IPv4-mapped IPv6
+    "https://10.0.0.5/", "https://192.168.1.1/", "https://172.16.0.1/",
+    "not a url",
+    "https://localhost./",                 // trailing-dot denylist bypass — BLOCKER fix
+    "https://metadata.google.internal./",  // trailing-dot metadata bypass
+    "https://[::ffff:0:1]/",              // true IPv4-mapped 0.0.0.1 (in 0/8); parser spells mapped low addrs this way
+    "https://[64:ff9b::7f00:1]/",         // NAT64 well-known prefix (rfc6052) — now closed via ipaddr.js
+  ])("rejects %s", (u) => {
+    expect(canonicalizeUrl(u).ok).toBe(false);
+  });
+
+  // Documented residual: deprecated IPv4-compatible ::/96 prefix (e.g. ::7f00:1).
+  // ipaddr.js classifies these as "unicast" and does not route them to the embedded IPv4 —
+  // consistent with modern stack behaviour (RFC 4291 §2.5.5.1 deprecated). Accepted pass-through.
+  it("allows [::7f00:1] — accepted IPv4-compatible ::/96 residual", () => {
+    expect(canonicalizeUrl("https://[::7f00:1]/").ok).toBe(true);
+  });
+});

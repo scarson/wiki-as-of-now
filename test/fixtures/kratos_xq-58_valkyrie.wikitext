@@ -1,0 +1,313 @@
+{{short description|Planned stealth unmanned combat air vehicle for the US Air Force}}
+{{use dmy dates|date=March 2019}}
+{{Infobox aircraft
+| name                = XQ-58 Valkyrie
+| logo                = 
+| logo_size           = 
+| image               = File:XQ-58A Valkyrie demonstrator first flight.jpg
+| alt                 = 
+| caption             = The XQ-58A Valkyrie demonstrator on its inaugural flight, 5 March 2019 at [[Yuma Proving Ground]], Arizona
+| long_caption        = 
+| other_names         = 
+| aircraft_type       = *Experimental [[unmanned combat aerial vehicle]]
+* [[Manned-unmanned teaming|Loyal wingman]]
+| aim                 = 
+| outcome             = 
+| related             = 
+| national_origin     = United States
+| manufacturer        = [[Kratos Defense & Security Solutions]]
+| design_group        = 
+| designer            = 
+| builder             = 
+| issuer              = 
+| status              = In development 
+(to jointly developed by Kratos and [[Northrop Grumman]] into a loyal wingman aircraft for the [[United States Marine Corps]])
+| owners              = 
+| primary_user        = [[United States Marine Corps]] (future version) 
+| more_users          = 
+| service             = 
+| major_applications  = 
+| proposals           = 
+| prototypes          = 
+| number_built        = 
+| construction_number = 
+| civil_registration  = 
+| military_serial     = 
+| radio_code          = 
+| requirement         = 
+| aircraft_carried    = 
+| flights             = 
+| total_hours         = 
+| total_distance      = 
+| construction_date   = 
+| introduction        = 
+| retired             = 
+| first_flight        = 5 March 2019
+| initiated           = 
+| in_service          = 
+| last_flight         = 
+| expected            = 
+| developed_from      = 
+| variants            = 
+| developed_into      = 
+| preservation        = 
+| fate                = 
+| predecessors        = 
+| successors          = 
+| concluded           = 
+}}
+
+The '''Kratos XQ-58 Valkyrie''' is an experimental [[Stealth technology|stealth]] [[unmanned combat aerial vehicle]] (UCAV) designed and built by [[Kratos Defense & Security Solutions]] for the [[United States Air Force]]'s Low Cost Attritable Strike Demonstrator (LCASD) program, under the [[Air Force Research Laboratory|USAF Research Laboratory]]'s Low Cost Attritable Aircraft Technology (LCAAT) project portfolio. It was initially designated the '''XQ-222'''. The Valkyrie completed its first flight on 5 March 2019 at [[Yuma Proving Ground]], Arizona.<ref name="WPAFB">{{cite web |date=6 March 2019 |title=XQ-58A Valkyrie demonstrator completes inaugural flight |url=https://www.wpafb.af.mil/News/Article-Display/Article/1777743/xq-58a-valkyrie-demonstrator-completes-inaugural-flight/ |url-status=live |archive-url=https://web.archive.org/web/20230925101816/https://www.wpafb.af.mil/News/Article-Display/Article/1777743/xq-58a-valkyrie-demonstrator-completes-inaugural-flight/ |archive-date=25 September 2023 |access-date=7 March 2019 |website=Wright Patterson AFB}}</ref>
+
+==Development and design==
+[[File:Valkyrie deploys Altius-600.JPG|thumb|A XQ-58 Valkyrie deploys an [[Altius-600]] unmanned aircraft system]]
+
+The XQ-58 Valkyrie fell within the [[Air Force Research Laboratory|USAF Research Laboratory's]] Low Cost Attritable Aircraft Technology (LCAAT) portfolio, whose objectives included designing and building [[unmanned combat aerial vehicle]]s (UCAVs) faster, by developing better design tools and maturing and using commercial manufacturing processes to reduce production time and cost.<ref name=WPAFB/> The LCAAT was to escort the [[Lockheed Martin F-22 Raptor|F-22]] or [[Lockheed Martin F-35 Lightning II|F-35]] during combat missions and to deploy weapons or surveillance systems.<ref>{{cite web |date=15 June 2017 |title=Kratos to launch XQ-222 Valkyrie, UTAP-22 Mako at Paris Air Show 2017 |url=https://www.airforce-technology.com/news/newskratos-to-launch-xq-222-valkyrie-utap-22-mako-at-paris-air-show-2017-5845491/ |url-status=live |archive-url=https://web.archive.org/web/20230409090149/https://www.airforce-technology.com/news/newskratos-to-launch-xq-222-valkyrie-utap-22-mako-at-paris-air-show-2017-5845491/ |archive-date=9 April 2023 |website=Airforce Technology}}</ref><ref name="auto">{{cite web |last=Rogoway |first=Tyler |date=7 February 2017 |title=More Details On Kratos' Optionally Expendable Air Combat Drones Emerge |url=http://www.thedrive.com/the-war-zone/7449/more-details-on-kratos-optionally-expendable-air-combat-drones-emerge |url-status=live |archive-url=https://web.archive.org/web/20230609103032/https://www.thedrive.com/the-war-zone/7449/more-details-on-kratos-optionally-expendable-air-combat-drones-emerge |archive-date=9 June 2023 |access-date=31 December 2018 |website=The Drive}}</ref> The LCAAT was eventually turned into the Off-Board Sensing Station (OBSS) program, which Kratos was awarded a contract for in 2021 but lost out to [[General Atomics]] in 2023, which developed the [[General Atomics XQ-67A|XQ-67A]].<ref>[https://www.airandspaceforces.com/xq-67-first-flight-afrl-cca/ USAF Logs First Flight of General Atomics’ Autonomous XQ-67 Drone] {{Webarchive|url=https://web.archive.org/web/20240303181933/https://www.airandspaceforces.com/xq-67-first-flight-afrl-cca/ |date=3 March 2024 }}. ''Air & Space Forces Magazine''. 1 March 2024.</ref><ref>[https://www.twz.com/air/the-xq-67a-has-a-secretive-higher-performance-deadly-cousin The XQ-67A Has A Secretive, Higher-Performance, Deadly Cousin] {{Webarchive|url=https://web.archive.org/web/20240303203102/https://www.twz.com/air/the-xq-67a-has-a-secretive-higher-performance-deadly-cousin |date=3 March 2024 }}. ''The War Zone''. 29 February 2024.</ref> The USAF determined the XQ-58 airframe was too small to meet the requirements of the [[Collaborative combat aircraft]] program.<ref>[https://www.airandspaceforces.com/cca-contract-expected-fall-first-version-under-construction/ CCA Contract Expected in Fall; First Versions Under Construction] {{Webarchive|url=https://web.archive.org/web/20240714154409/https://www.airandspaceforces.com/cca-contract-expected-fall-first-version-under-construction/ |date=14 July 2024 }}. ''Air & Space Forces Magazine''. 6 July 2024.</ref>
+
+The XQ-58 is designed to act as a [[loyal wingman]] that is controlled by a parent aircraft to accomplish tasks such as scouting, defensive fire, or absorbing enemy fire.<ref>{{Cite web |last=Liptak |first=Andrew |date=22 May 2019 |title='Skyborg' could let F-35 and F-15 fighter jets control their own companion drones |url=https://www.theverge.com/2019/5/22/18636313/us-air-force-xq58-a-valkyrie-loyal-wingman-f-35-15ex-artificial-intelligence-fighter-jet |url-status=live |archive-url=https://web.archive.org/web/20240107222708/https://www.theverge.com/2019/5/22/18636313/us-air-force-xq58-a-valkyrie-loyal-wingman-f-35-15ex-artificial-intelligence-fighter-jet |archive-date=7 January 2024 |access-date=23 May 2019 |website=The Verge}}</ref> It features stealth technology with a trapezoidal [[fuselage]] with a [[Chine (aeronautics)|chined]] edge, [[V-tail]], and an [[S-duct|S-shaped]] air intake.<ref name="auto" /> The XQ-58 can operate as part of a swarm of drones, with or without direct pilot control. There are three variants of XQ-58A -- one designed for rocket boosted launch from a rail system, one designed for trolley launch and parachute landing, and one with landing gear that is capable of conventional take-offs and landings but sacrifices payload capacity from four to two GBU-39 Small Diameter Bombs.<ref name=":0">{{Cite web |last=Rogoway |first=Tyler |date=2025-05-05 |title=Kratos Close To "A Couple" Final Versions Of XQ-58 Valkyrie For The Marines |url=https://www.twz.com/air/kratos-close-to-a-couple-final-versions-of-xq-58-valkyrie-for-the-marines |access-date=2025-05-09 |website=The War Zone |language=en-US}}</ref> All three versions can be launched from "nondescript launch modules", such as [[Auxiliary ship|support ships]], [[shipping container]]s, and [[semi-trailer truck]]s.<ref name=":0" /><ref>{{Cite web |last=Mizokami |first=Kyle |date=8 March 2020 |title=The Air Force's New Weapon Is…Shipping Containers? |url=https://www.popularmechanics.com/military/aviation/a31263609/air-force-shipping-containers/ |archive-url=https://web.archive.org/web/20231108025311/https://www.popularmechanics.com/military/aviation/a31263609/air-force-shipping-containers/ |archive-date=8 November 2023 |access-date=6 May 2022 |website=Popular Mechanics |language=en-US}}</ref><ref>{{Cite web |last=Trevithick |first=Joseph |date=16 October 2019 |title=This Containerized Launcher For The XQ-58A Valkyrie Combat Drone Could Be A Game Changer |url=https://www.thedrive.com/the-war-zone/30474/this-containerized-launcher-for-the-xq-58a-valkyrie-combat-drone-could-be-a-game-changer |archive-url=https://web.archive.org/web/20231028180419/http://www.thedrive.com/the-war-zone/30474/this-containerized-launcher-for-the-xq-58a-valkyrie-combat-drone-could-be-a-game-changer |archive-date=28 October 2023 |access-date=6 May 2022 |website=The Drive |language=en}}</ref>
+
+Kratos officials have said the company could produce 250 to 500 Valkyries per year.<ref>{{Cite web |last=Losey |first=Stephen |date=18 July 2022 |title=Valkyrie success may push Skyborg drone concept to other programs, Kratos says |url=https://www.defensenews.com/air/2022/07/18/valkyrie-success-may-push-skyborg-drone-concept-to-other-programs-kratos-herro-says/ |url-status=live |archive-url=https://archive.today/20240109031446/https://www.defensenews.com/air/2022/07/18/valkyrie-success-may-push-skyborg-drone-concept-to-other-programs-kratos-herro-says/ |archive-date=9 January 2024 |access-date=19 April 2023 |website=Defense News |language=en}}</ref> It can be produced at a unit cost of $4 million at an annual production rate of 50 aircraft, and possibly for less than $2 million if over 100 airframes are built per year.<ref>{{Cite web |last=Newdick |first=Thomas |last2=Rogoway |first2=Tyler |date=4 May 2023 |title=Marine XQ-58 Valkyries Will Be Electronic Warfare Platforms For F-35s |url=https://www.thedrive.com/the-war-zone/marine-xq-58-valkyries-will-be-electronic-warfare-platforms-for-f-35 |url-status=live |archive-url=https://web.archive.org/web/20231009174105/https://www.thedrive.com/the-war-zone/marine-xq-58-valkyries-will-be-electronic-warfare-platforms-for-f-35 |archive-date=9 October 2023 |website=The Drive}}</ref>
+
+In April 2025, Kratos officials stated that “...we’re pretty close to having a couple final versions of the aircraft” for the Marine Corps, which had been testing it extensively as part of the PAACK-P (Penetrating Affordable Autonomous Collaborative Killer Program).<ref name=":0" /> At least two mission configurations of the system were announced to exist in a production status at Kratos' Oklahoma facilities, with Kratos indicating readiness to accept a more substantial production order.<ref name=":0" /> At least five XQ-58 variants are in development, and it is unclear which variants were in production, though defense analysts speculated that one would be optimized for electronic attack and the other for kinetic strikes.<ref name=":0" />
+
+On 13th July 2025, [[Airbus Defence and Space|Airbus]] announced a partnership with Kratos to develop an [[Manned-Unmanned Teaming|uncrewed collaborative combat aircraft]] (UCCA) based on the XQ-58A for the [[German Air Force]].<ref name=":Airbus">{{Cite web |date=2025-07-16 |title=Airbus to team with US Kratos Defense, deploying German mission system {{!}} Airbus |url=https://www.airbus.com/en/newsroom/press-releases/2025-07-airbus-to-team-with-us-kratos-defense-deploying-german-mission |access-date=2025-08-02 |website=www.airbus.com |language=en |archive-date=4 August 2025 |archive-url=https://web.archive.org/web/20250804133332/https://www.airbus.com/en/newsroom/press-releases/2025-07-airbus-to-team-with-us-kratos-defense-deploying-german-mission |url-status=live }}</ref> The UCCA will feature an Airbus-made mission system and is expected to be combat-ready by 2029.<ref name=":Airbus" /> The programme forms part of a broader [[Bundeswehr]] procurement initiative to introduce a stealthy, subsonic, deep-strike drone capable of ranges exceeding 540 nmi (621 mi, 1,000km) by 2029.<ref name=":2">{{Cite web |last=Fasse |first=Markus |date=29 July 2025 |title=Industrie startet Wettbewerb um deutsche Deep-Strike-Drohne |url=https://www.handelsblatt.com/unternehmen/industrie/ruestungsindustrie-industrie-startet-wettbewerb-um-deutsche-deep-strike-drohne-02/100143378.html |access-date=2025-08-02 |website=Handelsblatt |language=de |archive-date=30 July 2025 |archive-url=https://web.archive.org/web/20250730145500/https://www.handelsblatt.com/unternehmen/industrie/ruestungsindustrie-industrie-startet-wettbewerb-um-deutsche-deep-strike-drohne-02/100143378.html |url-status=live }}</ref> On January 8, 2026, The [[United States Marine Corps|U.S. Marine Corps]] has officially selected [[Northrop Grumman]] and [[Kratos Defense & Security Solutions|Kratos]] to develop its first operational "Collaborative Combat Aircraft (CCA)." This announcement marks the transition of the Kratos XQ-58 Valkyrie from an experimental testbed into a loyal wingman aircraft.<ref name="Northrop Grumman to Rapidly Develop Marine Corps CCA with Kratos Valkyrie UAS">{{cite web |last1=Kratos Defense |title=Northrop Grumman to Rapidly Develop Marine Corps CCA with Kratos Valkyrie UAS |url=https://www.kratosdefense.com/newsroom/northrop-grumman-to-rapidly-develop-marine-corps-cca-with-kratos-valkyrie-uas |website=Kratos Defense |access-date=May 22, 2024 |archive-date=8 January 2026 |archive-url=https://web.archive.org/web/20260108183817/https://www.kratosdefense.com/newsroom/northrop-grumman-to-rapidly-develop-marine-corps-cca-with-kratos-valkyrie-uas |url-status=live }}</ref><ref name="Northrop, Kratos team picked for Marine Corps drone wingmen">{{cite web |last1=Roque |first1=Ashley |title=Northrop, Kratos team picked for Marine Corps drone wingmen |url=https://breakingdefense.com/2026/01/northrop-kratos-team-picked-for-marine-corps-drone-wingmen/ |website=Breaking Defense |date=January 9, 2026 |access-date=January 11, 2026 |archive-date=10 January 2026 |archive-url=https://web.archive.org/web/20260110051527/https://breakingdefense.com/2026/01/northrop-kratos-team-picked-for-marine-corps-drone-wingmen/ |url-status=live }}</ref>
+
+== Operational history ==
+[[File:U.S. Marine Corps XQ-58A Valkyrie.jpg|thumb|A U.S. Marine Corps XQ-58A Valkyrie]]
+
+The XQ-58's first flight took place on 5 March 2019, about two and a half years after Kratos received the contract. Five test flights were planned in two phases to evaluate system functionality, aerodynamic performance, and launch and recovery systems.<ref name="WPAFB" />
+
+On 23 July 2020, the Air Force gave contracts to Kratos, [[Boeing]], [[Northrop Grumman]], and [[General Atomics]] to compete for the [[Skyborg]] program, an effort to field an unmanned wingman for manned fighters, at a price that makes it somewhat expendable.<ref>{{Cite web |last=Insinna |first=Valerie |date=24 July 2020 |title=Four companies win contracts to build the Air Force's Skyborg drone |url=https://www.defensenews.com/unmanned/2020/07/23/four-companies-got-contracts-to-build-the-air-forces-skyborg-drone/ |url-status=live |archive-url=https://archive.today/20230818154054/https://www.defensenews.com/unmanned/2020/07/23/four-companies-got-contracts-to-build-the-air-forces-skyborg-drone/ |archive-date=18 August 2023 |access-date=19 April 2023 |website=Defense News |language=en}}</ref><ref>{{Cite web |last=McCullough |first=Amy |date=24 July 2020 |title=4 Companies Move Forward in Skyborg Competition |url=https://www.airandspaceforces.com/4-companies-move-forward-in-skyborg-competition/ |url-status=live |archive-url=https://web.archive.org/web/20230601080825/https://www.airandspaceforces.com/4-companies-move-forward-in-skyborg-competition/ |archive-date=1 June 2023 |access-date= |website=Air & Space Forces Magazine |language=en-US}}</ref><ref>{{Cite web |last=Hitchens |first=Theresa |date=24 July 2020 |title=Air Force Chooses Four Contractors To Compete For Skyborg Drone |url=https://breakingdefense.sites.breakingmedia.com/2020/07/air-force-chooses-four-contractors-to-compete-for-skyborg-drone/ |url-status=dead |archive-url=https://web.archive.org/web/20230409202025/https://breakingdefense.com/2020/07/air-force-chooses-four-contractors-to-compete-for-skyborg-drone/ |archive-date=9 April 2023 |access-date=19 April 2023 |website=Breaking Defense |language=en-US}}</ref><ref>{{Cite web |last=Hitchens |first=Theresa |date=28 July 2020 |title=AF Will Choose Skyborg Prototypes This Summer |url=https://breakingdefense.sites.breakingmedia.com/2020/07/af-will-choose-skyborg-prototypes-this-summer/ |url-status=live |archive-url=https://web.archive.org/web/20230409045031/https://breakingdefense.com/2020/07/af-will-choose-skyborg-prototypes-this-summer/ |archive-date=9 April 2023 |access-date=19 April 2023 |website=Breaking Defense |language=en-US}}</ref> Northrop was eliminated in December 2020. Kratos, Boeing, and General Atomics delivered their entries by May 2021 for flight tests in July 2021.<ref>{{Cite web |last=Insinna |first=Valerie |date=7 December 2020 |title=These 3 companies will build prototypes for the Air Force’s Skyborg drone |url=https://www.defensenews.com/air/2020/12/07/these-three-companies-will-build-prototypes-for-the-air-forces-skyborg-drone/ |url-status=live |archive-url=https://archive.today/20201209233109/https://www.defensenews.com/air/2020/12/07/these-three-companies-will-build-prototypes-for-the-air-forces-skyborg-drone/ |archive-date=9 December 2020 |website=Defense News}}</ref><ref>{{Cite web |last=Cohen |first=Rachel S. |date=8 December 2020 |title=Three Companies Win New Skyborg Prototyping Contracts |url=https://www.airandspaceforces.com/three-companies-win-new-skyborg-prototyping-contracts/ |url-status=live |archive-url=https://web.archive.org/web/20230409202015/https://www.airandspaceforces.com/three-companies-win-new-skyborg-prototyping-contracts/ |archive-date=9 April 2023 |website=Air & Space Forces Magazine}}</ref>
+
+In March 2021, the XQ-58A completed its sixth test flight, opening the doors of its internal weapons bay for the first time and releasing a {{cvt|27|lb|abbr=on}} Area-I Altius-600 small [[unmanned aircraft system]] (UAS).<ref>{{Cite web |last=Insinna |first=Valerie |date=5 April 2021 |title=Valkyrie drone launches even smaller drone from inside payload bay |url=https://www.defensenews.com/air/2021/04/05/the-valkyrie-drone-launches-an-even-smaller-drone-from-inside-its-payload-bay/ |url-status=live |archive-url=https://archive.today/20210418121546/https://www.defensenews.com/air/2021/04/05/the-valkyrie-drone-launches-an-even-smaller-drone-from-inside-its-payload-bay/ |archive-date=18 April 2021 |access-date=19 April 2023 |website=Defense News |language=en}}</ref><ref>{{Cite web |last=Donald |first=David |date=6 April 2021 |title=Valkyrie UAS Launches Small UAS from Weapons Bay |url=https://www.ainonline.com/aviation-news/defense/2021-04-06/valkyrie-uas-launches-small-uas-weapons-bay |url-status=live |archive-url=https://web.archive.org/web/20210406220825/https://www.ainonline.com/aviation-news/defense/2021-04-06/valkyrie-uas-launches-small-uas-weapons-bay |archive-date=6 April 2021 |access-date=19 April 2023 |website=Aviation International News |language=en}}</ref><ref>{{Cite web |title=AFRL successfully completes XQ-58A Valkyrie flight and payload release test |url=https://www.airrecognition.com/index.php/news/defense-aviation-news/2021/april/7146-afrl-successfully-completes-xq-58a-valkyrie-flight-and-payload-release-test.html |url-status=live |archive-url=https://web.archive.org/web/20210406084058/https://airrecognition.com/index.php/news/defense-aviation-news/2021/april/7146-afrl-successfully-completes-xq-58a-valkyrie-flight-and-payload-release-test.html |archive-date=6 April 2021 |access-date=19 April 2023 |website=Air Recognition}}</ref>
+
+In August 2023, a report with pictures<ref>{{Cite web |date=4 August 2023 |title=XQ-58A Valkyrie unmanned combat vehicle completes formation flight |url=https://www.defenceconnect.com.au/air/12511-xq-58a-valkyrie-unmanned-combat-vehicle-completes-formation-flight |url-status=live |archive-url=https://web.archive.org/web/20230807133737/https://www.defenceconnect.com.au/air/12511-xq-58a-valkyrie-unmanned-combat-vehicle-completes-formation-flight |archive-date=7 August 2023 |website=Defence Connect}}</ref> showed the XQ-58A in formation with an [[F-15E Strike Eagle]] from the [[96th Test Wing]]’s [[40th Flight Test Squadron]] at [[Eglin Air Force Base]], [[Florida]].
+
+In December 2022, the [[United States Marine Corps]] ordered two XQ-58s for testing under the Marine Corps Penetrating Affordable Autonomous Collaborative Killer – Portfolio (PAACK-P) program, and conducted first test flights at Eglin Air Force Base in October 2023. In January 2023, the [[United States Navy]] ordered two XQ-58s for tests similar to those being undertaken by the Marines.<ref name="navy">{{cite web |author=Aaron-Matthew Lariosa |date=5 October 2023 |title=Marine Corps Experimental ‘Loyal Wingman’ Drone Makes First Flight |url=https://news.usni.org/2023/10/05/marine-corps-experimental-loyal-wingman-drone-makes-first-flight |url-status=live |archive-url=https://web.archive.org/web/20231016205844/https://news.usni.org/2023/10/05/marine-corps-experimental-loyal-wingman-drone-makes-first-flight |archive-date=16 October 2023 |access-date=6 October 2023 |website=U.S. Naval Institute}}</ref>
+
+On 2 April 2024, Kratos made a press release concerning an XQ-58 test with electronic warfare equipment, where it also mentioned the MQ-58B model.<ref name="TWZ MQ-58B">{{cite web |last1=Trevithick |first1=Joseph |title=MQ-58B Electronic Attack-Enabled Version Of Valkyrie Drone For USMC Revealed |url=https://www.twz.com/air/mq-58b-electronic-attack-enabled-version-of-valkyrie-drone-for-usmc-revealed |website=The Drive |access-date=3 April 2024}}</ref><ref name="Kratos EA Cap. USMC">{{cite web |title=Kratos Demonstrates XQ-58A Electronic Warfare Capabilities for United States Marine Corps |url=https://ir.kratosdefense.com/news-releases/news-release-details/kratos-demonstrates-xq-58a-electronic-warfare-capabilities |website=Kratos Defense |access-date=3 April 2024 |archive-date=3 April 2024 |archive-url=https://web.archive.org/web/20240403215635/https://ir.kratosdefense.com/news-releases/news-release-details/kratos-demonstrates-xq-58a-electronic-warfare-capabilities |url-status=live }}</ref> The MQ-58B, which is intended to fulfill the role of [[suppression of enemy air defenses]], or SEAD, is one of at least five variants of the XQ-58 under development by Kratos. This news comes alongside an announcement that the future variants of the Valkyrie will include underwing hardpoints for munitions, where a rendering of an XQ-58 was shown with two underwing hardpoints, each carrying an [[AIM-120 AMRAAM]].<ref name="TWZ Five Variants">{{cite web |last1=Trevithink |first1=Joseph |title=XQ-58 Valkyrie Drone Family Has Grown To Five Variants |url=https://www.twz.com/air/xq-58-valkyrie-drone-family-has-grown-to-five-variants |website=The Warzone |access-date=3 April 2024 |archive-date=3 April 2024 |archive-url=https://web.archive.org/web/20240403215635/https://www.twz.com/air/xq-58-valkyrie-drone-family-has-grown-to-five-variants |url-status=live }}</ref>
+==Variants==
+* '''XQ-58A''': Original prototype variant being tested with the branches of the U.S. Military.
+* '''MQ-58B''': An electronic attack version intended for production and service currently under development for the [[United States Marine Corps]]. It is intended for use in the [[suppression of enemy air defenses|SEAD]] role as a collaborative combat aircraft, to be operated alongside USMC F-35s.<ref name="TWZ MQ-58B"></ref>
+
+==Operators==
+
+=== Future operators ===
+;{{USA}}
+* [[United States Marine Corps]]<ref name="Northrop, Kratos team picked for Marine Corps drone wingmen"/><ref name=navy/>
+
+=== Potential operators ===
+;{{USA}}
+* [[United States Air Force]]<ref name=navy/>
+'''{{Flag|Germany}}'''
+* [[German Air Force]]<ref name=":Airbus" /><ref name=":2" />
+
+==Specifications==
+<!-- THESE ARE FROM AN UNRELIABLE SOURCE -->
+[[File:Valkyrie launch 201209-F-UT482-9117.jpg|thumb|The second XQ-58 Valkyrie, using [[JATO]] during takeoff from [[Laguna Army Airfield]].]]{{Aircraft specs
+|ref=Kratos Defense Data sheet <ref>{{cite web |title=XQ-58A Valkyrie |url=https://www.kratosdefense.com/-/media/k/pdf/usd/xq-58a-valkyrie.pdf |website=Kratos Defense |access-date=12 September 2022 |date=25 January 2018 }}{{Dead link|date=May 2026 |bot=InternetArchiveBot }}</ref><ref>{{cite web|title=Kratos Places Engine Orders Ahead of First XQ-58A Valkyrie Production Contracts|url=https://www.uasvision.com/2019/08/07/kratos-places-engine-orders-ahead-of-first-xq-58a-valkyrie-production-contracts/|website=UAS Vision|date=7 August 2019|access-date=26 November 2024|archive-date=4 December 2024|archive-url=https://web.archive.org/web/20241204015730/https://www.uasvision.com/2019/08/07/kratos-places-engine-orders-ahead-of-first-xq-58a-valkyrie-production-contracts/|url-status=live}}</ref>
+|prime units?=kts
+<!--
+        General characteristics
+-->
+|capacity=600 lb (272 kg) internal, 600 lb (272 kg) external
+|length m=
+|length ft=30
+|length in=
+|length note=
+|span m=
+|span ft=27
+|span in=
+|span note=
+|upper span m=
+|upper span ft=
+|upper span in=
+|upper span note=
+|mid span m=
+|mid span ft=
+|mid span in=
+|mid span note=
+|lower span m=
+|lower span ft=
+|lower span in=
+|lower span note=
+|swept m=<!-- swing-wings -->
+|swept ft=<!-- swing-wings -->
+|swept in=<!-- swing-wings -->
+|swept note=
+|dia m=<!-- airships etc -->
+|dia ft=<!-- airships etc -->
+|dia in=<!-- airships etc -->
+|dia note=
+|width m=<!-- if applicable -->
+|width ft=<!-- if applicable -->
+|width in=<!-- if applicable -->
+|width note=
+|height m=
+|height ft=
+|height in=
+|height note=
+|wing area sqm=
+|wing area sqft=
+|wing area note=
+|swept area sqm=<!-- swing-wings -->
+|swept area sqft=<!-- swing-wings -->
+|swept area note=
+|volume m3=<!-- lighter-than-air -->
+|volume ft3=<!-- lighter-than-air -->
+|volume note=
+|aspect ratio=<!-- sailplanes -->
+|airfoil=
+|empty weight kg=
+|empty weight lb=2500
+|empty weight note=
+|gross weight kg=
+|gross weight lb=
+|gross weight note=
+|max takeoff weight kg=
+|max takeoff weight lb=6000
+|max takeoff weight note=
+|fuel capacity=
+|lift kg=<!-- lighter-than-air -->
+|lift lb=<!-- lighter-than-air -->
+|lift note=
+|more general=
+<!--
+        Powerplant
+-->
+|eng1 number=1
+|eng1 name=[[Williams FJ33]]
+|eng1 type=turbofan
+|eng1 kw=<!-- prop engines -->
+|eng1 hp=<!-- prop engines -->
+|eng1 shp=<!-- prop engines -->
+|eng1 kn=<!-- jet/rocket engines -->
+|eng1 lbf=2000
+|eng1 note=
+|power original=
+|thrust original=
+|eng1 kn-ab=<!-- afterburners -->
+|eng1 lbf-ab=<!-- afterburners -->
+<!--
+        Performance
+-->
+|max speed kmh=
+|max speed mph=
+|max speed kts=566
+|max speed note=
+|max speed mach=
+|cruise speed kmh=882
+|cruise speed mph=
+|cruise speed kts=
+|cruise speed note=
+|stall speed kmh=
+|stall speed mph=
+|stall speed kts=
+|stall speed note=
+|never exceed speed kmh=
+|never exceed speed mph=
+|never exceed speed kts=
+|never exceed speed note=
+|minimum control speed kmh=
+|minimum control speed mph=
+|minimum control speed kts=
+|minimum control speed note=
+|range km=
+|range miles=
+|range nmi=3000
+|range note=approximate
+|combat range km=
+|combat range miles=
+|combat range nmi=
+|combat range note=
+|ferry range km=
+|ferry range miles=
+|ferry range nmi=
+|ferry range note=
+|endurance=<!-- if range unknown -->
+|ceiling m=
+|ceiling ft=45000
+|ceiling note=
+|g limits=<!-- aerobatic -->
+|roll rate=<!-- aerobatic -->
+|glide ratio=<!-- sailplanes -->
+|climb rate ms=
+|climb rate ftmin=
+|climb rate note=
+|time to altitude=
+|sink rate ms=<!-- sailplanes -->
+|sink rate ftmin=<!-- sailplanes -->
+|sink rate note=
+|lift to drag=
+|wing loading kg/m2=
+|wing loading lb/sqft=
+|wing loading note=
+|disk loading kg/m2=
+|disk loading lb/sqft=
+|disk loading note=
+|fuel consumption kg/km=
+|fuel consumption lb/mi=
+|power/mass=
+|thrust/weight=
+
+|more performance=
+<!--
+        Armament
+-->
+|armament=
+* Up to {{convert|600|lb|kg|abbr=on}} in internal weapons bay
+* Up to {{convert|600|lb|kg|abbr=on}} on mid-wing hardpoints
+|guns= 
+|bombs=
+|rockets= 
+|missiles= 
+|hardpoints=
+|hardpoint capacity= 
+|hardpoint rockets=
+|hardpoint missiles=
+|hardpoint bombs=
+|hardpoint other= 
+
+|avionics=
+}}
+
+==See also==
+{{aircontent
+|related=
+|similar aircraft=
+* [[Boeing MQ-25 Stingray]]
+* [[Boeing MQ-28 Ghost Bat]]
+* [[AVIC Dark Sword]]
+* [[Baykar Bayraktar Kızılelma]]
+* [[HAL Combat Air Teaming System]]
+* [[HAL CATS Warrior]]
+* [[Feihong FH-97]]
+* [[TAI Anka-3]]
+* [[Bayraktar Kızılelma]]
+|lists=
+* [[Stealth aircraft#List of stealth aircraft|List of stealth aircraft]]
+|see also=
+}}
+
+==References==
+{{Reflist}}
+
+==External links==
+{{Commons category}}
+* [https://www.kratosdefense.com/systems-and-platforms/unmanned-systems/aerial/tactical-uavs Kratos XQ-58 Valkyrie page]
+
+{{Kratos Defense}}
+{{US unmanned aircraft}}
+{{US experimental aircraft}}
+{{Stealth aircraft}}
+
+[[Category:Unmanned military aircraft of the United States]]
+[[Category:2010s United States experimental aircraft]]
+[[Category:Aircraft first flown in 2019]]
+[[Category:Unmanned stealth aircraft]]
+[[Category:Kratos aircraft|XQ-58]]
+[[Category:Mid-wing aircraft]]
+[[Category:V-tail aircraft]]
+[[Category:Single-engined jet aircraft]]
+[[Category:Aircraft with auxiliary rocket engines]]
+[[Category:Loyal wingman unmanned aircraft]]

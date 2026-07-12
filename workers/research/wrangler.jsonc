@@ -1,0 +1,83 @@
+{
+	"$schema": "../../node_modules/wrangler/config-schema.json",
+	// The `research` and `research-dlq` queues must be created once before the first real deploy:
+	//   wrangler queues create research
+	//   wrangler queues create research-dlq
+	"name": "wiki-as-of-now-research",
+	"main": "index.ts",
+	"compatibility_date": "2026-06-04",
+	"compatibility_flags": ["global_fetch_strictly_public"],
+	"ai": { "binding": "AI", "remote": true },
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "wiki-as-of-now",
+			"database_id": "00000000-0000-0000-0000-000000000000"
+		}
+	],
+	"queues": {
+		"producers": [
+			{
+				"binding": "RESEARCH_QUEUE",
+				"queue": "research"
+			}
+		],
+		"consumers": [
+			{
+				"queue": "research",
+				"max_batch_size": 1,
+				"max_retries": 3,
+				"dead_letter_queue": "research-dlq"
+			}
+		]
+	},
+	"observability": {
+		"enabled": true
+	},
+	// Per-env remote targets. Top-level SETTINGS (`compatibility_flags` — NO nodejs_compat, CC-5 —
+	// and `main`) are inherited, but BINDINGS are not: every named env must re-declare `ai`,
+	// `d1_databases`, `queues` or the deploy silently drops them. Queues are
+	// account-global single-consumer, so dev/prod queue + DLQ names must differ (design §6.2).
+	// `max_batch_size: 1` is load-bearing — exactly one message per queue() invocation (G14).
+	// The DLQ is inferred from `dead_letter_queue`, NEVER a separate binding (contract §2.6).
+	// D1 ids are PLACEHOLDERS until Sam provisions; the id MUST match the app worker per env (CC-10).
+	"env": {
+		"dev": {
+			"name": "wiki-as-of-now-research-dev",
+			"ai": { "binding": "AI", "remote": true },
+			// Real provider on every deployed env (CC-7: top-level stays stub for the Miniflare/workerd pool).
+			"vars": { "RESEARCH_PROVIDER": "workers-ai" },
+			"d1_databases": [
+				{ "binding": "DB", "database_name": "wiki-as-of-now-dev", "database_id": "9f4d0701-ecb7-428b-a3a2-0222aa7e2a4a" }
+			],
+			"queues": {
+				"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research-dev" }],
+				"consumers": [
+					{ "queue": "research-dev", "max_batch_size": 1, "max_retries": 3, "dead_letter_queue": "research-dlq-dev" }
+				]
+			}
+		},
+		"production": {
+			"name": "wiki-as-of-now-research",
+			"ai": { "binding": "AI", "remote": true },
+			// Real provider on every deployed env (CC-7: top-level stays stub for the Miniflare/workerd pool).
+			"vars": { "RESEARCH_PROVIDER": "workers-ai" },
+			// Interval MUST exceed worst-case batch drain (runbook step 8). Derivation from the 2026-07-12
+			// dev smoke: observed per-message wall 23-170s over the sequential consumer; a full 50-seed
+			// batch at the observed max ≈ 2.4h, theoretical all-timeout worst (2 AI stages × 2 attempts
+			// × 60s + 12 × 10s fetches) ≈ 5.8h. 8-hourly clears the theoretical worst with margin, and
+			// costs no yield: the per-user daily quota (10 packs) is consumed by the first tick either way.
+			// Production only — dev is a verification env with no scheduled metered spend.
+			"triggers": { "crons": ["0 */8 * * *"] },
+			"d1_databases": [
+				{ "binding": "DB", "database_name": "wiki-as-of-now", "database_id": "aa530ffb-16bf-4ab2-8f22-04f2dcc03922" }
+			],
+			"queues": {
+				"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research" }],
+				"consumers": [
+					{ "queue": "research", "max_batch_size": 1, "max_retries": 3, "dead_letter_queue": "research-dlq" }
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+{{Short description|US radar system}}
+{{Infobox radar
+| name        = AN/SPY-7
+| image       = 211026-D-D0500-101.jpg
+| caption     = The Long Range Discrimination Radar (LRDR) at Clear Space Force Station, Alaska
+| country     = [[United States]]
+| introdate   = <!--{{Start date|YYYY|MM|DD}}-->
+| number      =
+| type        = [[Active electronically scanned array]] [[early-warning radar]]
+| frequency   = [[S band]]
+| PRF         = <!--pulse repetition frequency-->
+| beamwidth   = <!--X° (horizontal), X° (vertical)-->
+| pulsewidth  = <!--pulse width-->
+| RPM         = <!--revolutions per minute-->
+| range       = <!--{{convert|X|m|ft|abbr=on}}-->
+| altitude    = <!--{{convert|X|m|ft|abbr=on}}-->
+| diameter    = <!--{{convert|X|m|ft|abbr=on}}-->
+| azimuth     = <!--X-Yº-->
+| elevation   = <!--X-Yº-->
+| precision   = <!--{{convert|X|m|ft|abbr=on}}-->
+| power       =
+| other names = Long Range Discrimination Radar (LRDR)
+}}
+
+The '''Long Range Discrimination Radar''' '''(LRDR)''' in [[Alaska]] is part of the United States's [[Ground-Based Midcourse Defense]] [[anti-ballistic missile]] system. The main contractor is [[Lockheed Martin]], under a [[US$]]784 million contract from the [[Missile Defense Agency]] in October 2015.<ref name="2016-08-16_DN">[http://www.defensenews.com/story/defense/show-daily/smd16/2016/08/16/alaskas-long-range-discrimination-radar-track-2020/88871568/ Alaska's Long Range Discrimination Radar on Track for 2020]{{dead link|date=August 2021|bot=medic}}{{cbignore|bot=medic}}, Jen Judson, DefenseNews.com, 16 August 2016</ref>
+
+LRDR is a [[gallium nitride]] (GaN)–based, [[Solid-state electronics|solid-state]] [[active electronically scanned array]] (AESA) [[early-warning radar]]<ref name="2016-08-16_DN" /> that allows for continuous coverage, even when it is undergoing maintenance.<ref>{{Cite web|url=https://missilethreat.csis.org/defsys/lrdr/|title = Long Range Discrimination Radar (LRDR)}}</ref> The radar consists of individual solid state radar blocks that can be combined to scale up the size of the radar. The multi-purpose GaN device used on the prototype version of the LRDR is from the Japanese electronics company [[Fujitsu]], according to Lockheed Martin.<ref>[https://news.lockheedmartin.com/2018-01-11-Lockheed-Martin-Demonstrates-Next-Generation-Aegis-Ashore-Solution Lockheed Martin Demonstrates Next Generation Aegis Ashore Solution] Lockheed Martin, Jan 11 2018</ref>
+
+Construction in Alaska for the LRDR was scheduled to begin in 2019,<ref name="2016-08-16_DN" /> tentatively at [[Clear Space Force Station]] in central Alaska.<ref>[https://www.war.gov/News/Releases/Release/Article/605521/department-of-defense-identifies-planned-site-of-future-long-range-discriminati/ Department of Defense Identifies Planned Site of Future Long Range Discrimination Radar (LRDR)], DoD press release NR-193-15, 22 May 2015, accessed 17 August 2016</ref> Each AESA's dimensions are {{convert|60|ft}} high by {{convert|60|ft}} wide; the field of view is 220 degrees.<ref name=60x60 >C. Todd Lopez, DOD News  [https://www.war.gov/News/News-Stories/Article/Article/2865134/long-range-discrimination-radar-reshapes-adversaries-calculus-for-attacks-again/ (7 Dec 2021) Long-Range Discrimination Radar Reshapes Adversaries' Calculus for Attacks Against U.S. Homeland]</ref>
+
+In late February 2021, the [[Missile Defense Agency]] said that the radar installation was underway, with [[Initial Operational Capability]] to be achieved in 2021.<ref name="2021-03-03_DN">[https://www.defensenews.com/pentagon/2021/03/02/mda-says-alaska-based-missile-defense-radar-will-be-operational-in-2021/ MDA says Alaska-based missile defense radar will be operational in 2021], Jen Judson, DefenseNews, 2021-03-03</ref> Testing for [[Full Operational Capability]] is expected by 2023.<ref name=60x60 />
+
+In mid-August 2023, the Flight Test Other-26 (FTX-26) was cancelled due to an anomaly with the live ballistic missile target. When operational, the LRDR will be tied into the [[Ground-Based Midcourse Defense]] system and the [[Missile_defense#Command_and_control%2C_battle_management%2C_and_communications_%28C2BMC%29|Command and Control, Battle Management and Communications system]].<ref name="defensenews_2023-09-01">[https://www.defensenews.com/pentagon/2023/09/01/missile-defense-agency-cancels-test-of-long-range-discrimination-radar/ Missile Defense Agency cancels test of Long-Range Discrimination Radar], Jen Judson, [[Defense News]], 2023-09-02</ref>
+
+The LRDR may become part of [[Golden Dome (missile defense system)|Golden Dome]].<ref>{{cite news |last=Stone |first=Mike |url=https://www.staradvertiser.com/2025/06/24/breaking-news/u-s-tests-long-range-radar-to-detect-possible-missile-threats/ |title=U.S. tests long-range radar to detect possible missile threats |work=[[Reuters]] |via=[[Star-Advertiser]] |date=24 June 2025 |access-date=25 June 2025 |archive-url=https://archive.today/20250625225528/https://www.staradvertiser.com/2025/06/24/breaking-news/u-s-tests-long-range-radar-to-detect-possible-missile-threats/ |archive-date=25 June 2025}}</ref>
+
+==Variants==
+===AN/SPY-7(V)1===
+The '''AN/SPY-7(V)1''' is the official designation of an LRDR-derivative used with the [[Aegis Ballistic Missile Defense System]]. On 30 July 2018, the Japanese government approved a plan to purchase two pairs of AN/SPY-7(V)1 for the [[Aegis Ashore]] facility and will be installed in [[Yamaguchi Prefecture]] and [[Akita Prefecture]]. The first operation is expected to start from 2025, by [[Japan Ground Self Defense Force]].<ref>[https://www.mod.go.jp/j/approach/agenda/meeting/aegis-ashore/30a_1.pdf On the result of component selection of the Aegis system (Aegis Ashore) on land deployment(Japanese)] Ministry of Defense Japan, 30 July 2018</ref>
+
+[[Missile Defense Agency]] has also decided to use AN/SPY-7(V)1 for the [[Aegis Ashore]] to be installed in [[Hawaii]]. Derivatives of the AN/SPY-7(V)1 will be used on the Canadian [[Canadian Surface Combatant|River-class destroyer]] and the Spanish [[F110-class frigate|F-110 frigate]].<ref>{{Cite web|url=https://news.lockheedmartin.com/2019-11-14-U-S-Government-Designates-Lockheed-Martins-Latest-Generation-Radar-AN-SPY-7-V-1|title=U.S. Government Designates Lockheed Martin's Latest Generation Radar: AN/SPY-7(V)1 - Nov 14, 2019|website=Media - Lockheed Martin|language=en-us|access-date=2019-12-24}}</ref>
+
+Lockheed Martin promoted this version of radar as the [[AN/SPY-1]] refurbishment program to the [[US Navy]] to extend the lifespan of the [[Ticonderoga-class cruiser|''Ticonderoga''-class cruiser]] and [[Arleigh Burke-class destroyer|''Arleigh Burke''-class destroyer]] to beyond the 2040s.<ref>[https://news.usni.org/2017/01/10/lockheed-martin-advocates-quickening-aegis-spy-1-upgrade-programs Lockheed Martin Advocates Accelerating Aegis, SPY-1 Upgrades] USNI.org January 10, 2017</ref> In December 2021, the [[AN/SPY-6]] AESA radar from [[Raytheon]] was selected to retrofit Flight IIA ''Arleigh Burke'' destroyers; the same radar is used on Flight III ships.<ref>{{Cite web |title=US Navy SPY 6 Radars |url=https://www.rtx.com/raytheon/what-we-do/sea/spy6-radars |access-date=2025-10-22 |website=www.rtx.com |language=en}}</ref><ref name= 30xCapable >Justin Katz [https://breakingdefense.com/2022/01/raytheon-to-start-back-fitting-destroyers-with-spy-6-radar/ Raytheon to start backfitting destroyers with SPY-6 radar]. Breaking Defense (11 Jan 2022) </ref>
+
+===AN/SPY-7(V)2===
+The '''AN/SPY-7(V)2''' is the official designation of an LRDR-derivative used by the [[F110-class frigate]]s for the [[Spanish Navy]].<ref>{{cite news |last1=Willett |first1=Dr Lee |title=Live Tracking Test Demonstrates SPY-7 Capability and Scalability |url=https://www.navalnews.com/event-news/sna-2025/2025/01/live-tracking-test-demonstrates-spy-7-capability-and-scalability/ |access-date=17 January 2026 |work=Naval News |date=15 January 2025}}</ref>
+
+===AN/SPY-7(V)3===
+The '''AN/SPY-7(V)3''' is the official designation of an LRDR-derivative used by the future [[River-class destroyer (2030s)|River-class destroyer]]s for the [[Royal Canadian Navy]].<ref name="2022 LMT PR">{{Cite press release |title=The Canadian Surface Combatant SPY-7 Radar Earns Official Government of Canada Designation, Setting a New Standard in Airspace Threat Detection |date=2022-06-02 |publisher=Lockheed Martin Corporation |url=https://lockheedmartin.ca.mediaroom.com/index.php?s=2429&item=122571}}</ref>
+
+In September 2020, the AN/SPY-7 was chosen by the Canadian government as the primary radar for the River-class destroyer,<ref>{{Cite news|work=Naval News|url=https://www.navalnews.com/naval-news/2020/11/lockheed-martin-signs-spy-7-radar-contract-for-csc-frigate/|title = Lockheed Martin Signs SPY-7 Radar Contract for CSC Frigate|date=11 November 2020}}</ref> and received the official AN/SPY-7(V)3 designation in June 2022.<ref name="2022 LMT PR" /> 
+
+==See also==
+{{Portal|Electronics}}
+*{{anl|Joint Electronics Type Designation System}}
+*[[List of radars]]
+*[[List of military electronics of the United States]]
+
+==References==
+{{reflist}}
+
+==External links==
+* [https://www.lockheedmartin.com/en-us/products/long-range-discrimination-radar.html Lockheed Martin - LRDR]
+
+{{Lockheed Martin|state=collapsed}}
+{{United States Missile Defense}}
+
+[[Category:Early warning systems]]
+[[Category:Military radar networks]]
+[[Category:United States Space Surveillance Network]]
+[[Category:Missile defense]]
+[[Category:Equipment of the United States Space Force]]
+[[Category:Military electronics of the United States]]

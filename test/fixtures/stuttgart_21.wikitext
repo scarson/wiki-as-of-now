@@ -1,0 +1,176 @@
+{{short description|Railway and urban development project in Stuttgart, Baden-Württemberg, Germany}}
+[[File:Map Stuttgart 21 outer.svg|thumb|upright=1.41|Map of Stuttgart
+21 project<ref name="src-karte">based on brochures presenting the Planfeststellungsabschnitte at [http://www.stuttgart21.de/site/stuttgart21/de/verbindungen21/baugenehmigungsverfahren/baugenehmigungsverfahren.html www.stuttgart21.de] {{webarchive|url=https://web.archive.org/web/20080502033312/http://www.stuttgart21.de/site/stuttgart21/de/verbindungen21/baugenehmigungsverfahren/baugenehmigungsverfahren.html |date=2008-05-02 }}, as of December 2007</ref>]]
+[[File:Landesamt für Geoinformation und Landentwicklung BaWü – dop20rgb 32 513 5403 1 bw 2022.tif|thumb|350px|Terminus station and S21 underground through-station, with white pedestrian bridge over the pit providing access to 16 platforms]]
+
+'''Stuttgart 21''' (for 21st century) is a major railway and urban development project in [[Stuttgart]], Germany, that is replacing the surface railway lines with tunnels. It is a part of the [[Stuttgart–Augsburg new and upgraded railway]] and the [[Main Line for Europe]] (Paris—[[Vienna]]) within the framework of the [[Trans-European Networks]]. Its core is a renewed underground [[Stuttgart Hauptbahnhof]], among some {{convert|57|km|mi|abbr=off}} of new railways, including some {{convert|30|km|mi|abbr=off}} of tunnels and {{convert|25|km|mi|abbr=off}} of high-speed lines. The project was highly controversial up to 2010, and still is since, due to destruction of old structures, large area construction works, high costs, and ongoing duration. 
+The still operational central [[Train_station#Terminus|terminus station]], with 16 surface platforms shortened and with impeded access due to the large construction pit, is going to be replaced by an underground [[Through station|through-station]] with only 8 platforms.
+
+The project was officially announced in April 1994. Construction work began on 2 February 2010.<ref name=rt7march2013>{{cite web|url=http://www.railway-technology.com/news/newsdeutsche-bahn-backs-stuttgart-21-project-despite-cost-increase|title=Deutsche Bahn backs Stuttgart 21 project despite cost increase|date=6 March 2013|access-date=7 March 2013|archive-date=25 January 2019|archive-url=https://web.archive.org/web/20190125073428/https://www.railway-technology.com/news/newsdeutsche-bahn-backs-stuttgart-21-project-despite-cost-increase|url-status=dead}}</ref> In March 2013, total costs were officially estimated at €6.5&nbsp;billion, the previous estimate being €4.5&nbsp;billion in 2009.<ref name=rt7march2013/> In March 2022, Deutsche Bahn estimated the total cost at €9.15&nbsp;billion.<ref>{{cite news|url=https://www.zeit.de/wirtschaft/2022-03/stuttgart-21-kosten-neun-milliarden|title=Kosten für Stuttgart 21 steigen auf über neun Milliarden Euro|trans-title=Costs for Stuttgart 21 rise to over nine billion euros |date=March 18, 2022|publisher=Die Zeit |language=de}}</ref> Heated debate ensued on a broad range of issues, including the relative costs and benefits, geological and environmental concerns, as well as performance issues.
+
+In 2019, operations had been expected to start in December 2025,<ref>{{cite news|url=http://www.bahnprojekt-stuttgart-ulm.de/projekt/ueberblick/projektstatus/|title=Projektstatus|date=October 28, 2019|publisher=Bahnprojekt Stuttgart-Ulm|language=de|archive-date=March 8, 2021|access-date=October 28, 2019|archive-url=https://web.archive.org/web/20210308004738/https://www.bahnprojekt-stuttgart-ulm.de/projekt/ueberblick/projektstatus/|url-status=dead}}</ref> delayed from the initial estimation of 2019 (made in 2010). In 2024, the opening date for main elements of the project was delayed again, to December 2026.<ref name="yahoo finance 2024 delayed to 2026">{{cite news |last1=Atack |first1=Patrick Rhys |title=Stuttgart 21 confirms yet another setback |url=https://finance.yahoo.com/news/stuttgart-21-confirms-yet-another-135549654.html?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAEUIZyAhz0-rlX3HkB2cj-fX-UYDdPlr8TZK3QIsVcGZ8LlCEe5TLV9tKvOw9Ci2wyMGLf-PWBZ5u3TkkIZkWWV9cuVNZuRdpuB3gRbF2rWUiL0s470K0i8BQ0EGAgaGBR44I5hliUMh0_hKfolDvigpqjLnv2q09azl9bvWv_fo |access-date=14 June 2024 |work=Yahoo! Finance |date=13 June 2024}}</ref><ref>{{cite web|url=https://www.msn.com/de-de/nachrichten/welt/stuttgart-21-vollst%C3%A4ndige-er%C3%B6ffnung-verschoben-neuer-zeitplan-bekannt/ar-AA1ICEvZ?|title=Stuttgart-21-Start soll teilweise auf 2027 verschoben werden|trans-title=start partially delayed till july 27|date=2025-07-18|accessdate=2025-07-19|work=msn}}</ref> In 2025, the planned opening date of December 2026 was canceled, officially due to technical issues with the new signaling system.<ref>{{cite news|last1=Hallam|first1= Mark|title='Stuttgart 21' high-speed rail opening delayed once more|url=https://www.dw.com/en/stuttgart-21-high-speed-rail-opening-delayed-once-more/a-74805775| access-date=20 November 2025|work=Deutsche Welle|date=19 November 2025}}</ref>
+
+==Concept==
+[[File:Gleisplan 3.svg|thumb|Principal track layout of the future Stuttgart main railway station]]
+[[File:Flughafenschleife Stuttgart 21.png|thumb|Stuttgart airport and fair grounds. Both the existing and a new station are to be connected with the Stuttgart–Wendlingen high-speed line (red).]]
+The concept attempts to combine plans for high-speed links from Stuttgart to other cities with the improvement of local infrastructure and replacement of the current terminal station. The current 16-track station is to be replaced by an underground 8-track through station which is currently under construction.
+
+The new tracks are planned to cross below ground at right angles to the northern end of the existing building. Parts of the historic [[Paul Bonatz|Bonatzbau]] building, the platforms and approach tracks are to be demolished, and the land sold for urban development.
+
+The plans include new surface and underground lines connecting the station in Stuttgart's enclosed central valley with existing lines. The [[Stuttgart–Wendlingen high-speed railway|Stuttgart–Wendlingen high-speed line]] running through a new tunnel, the Filder Tunnel, would connect the replacement Hauptbahnhof with a new Filder station (''Filderbahnhof''), serving the [[Stuttgart Airport|Airport]], the [[Stuttgart Trade Fair|''Messe'' (trade fair)]] and the [[Filderstadt]] district. The line would then connect to the new [[Wendlingen-Ulm high-speed railway line|Wendlingen-Ulm high-speed line]], which was opened in late 2022. The carriage sidings would be moved to the area of [[Stuttgart-Untertürkheim station|Untertürkheim station]] to clear land for redevelopment.
+
+On 2 April 2009, the Premier of [[Baden-Württemberg]], [[Günther Oettinger]], signed the finance agreement with the [[Federal Ministry of Transport, Building and Urban Affairs (Germany)|German Minister of Transport]], [[Wolfgang Tiefensee]] and [[Deutsche Bahn]] board member Stefan Garber.<ref>{{cite news |url=http://www.spiegel.de/reise/aktuell/0,1518,617037,00.html |website=
+spiegel.de|language=de |title=Minister besiegeln Milliardenprojekt der Bahn |trans-title=Ministers sealrailway project worth several billions |date=2009-04-02 |access-date=2023-09-21}}</ref><ref name=TR2009June>{{Cite journal|journal=[[Today's Railways Europe]]| title=Stuttgart 21 and Stuttgart-Ulm NBS funding agreed |page=9|date=June 2009}}</ref>
+
+On 23 November 2009, it was announced that construction would commence in February 2010, on condition that the overall costs do not exceed €4.5&nbsp;billion.<ref>{{cite news |url=http://www.stuttgarter-zeitung.de/stz/page/2287550_0_4248_-drexler-nennt-termin-februar-2010-baubeginn-fuer-stuttgart-21.html |trans-title=Drexler: Excavators will start work in February |title=Drexler: Bagger rücken im Februar an |archive-url=https://web.archive.org/web/20091126024601/http://www.stuttgarter-zeitung.de/stz/page/2287550_0_4248_-drexler-nennt-termin-februar-2010-baubeginn-fuer-stuttgart-21.html |archive-date=2009-11-26 |publisher=Stuttgarter Zeitung |date=23 November 2009 |language=de}}</ref>
+
+DB subsidiary [[DB ProjektBau]] has planned the project on behalf of [[DB Netze]] and [[DB Station & Service]] and is its promoter for the development approval process.
+[[File:S21-Baustelle-pjt.jpg|thumb|Construction site for the new underground station (April 2022)]]
+
+==Debate and opposition==
+The Stuttgart 21 project has been a controversial issue among politicians and local people ever since the idea of a through station for long-distance trains – running under the existing station – was first proposed in the mid-1980s.
+
+[[File:MittlererSchlossgartenKundgebung 2010-10-01.jpg|thumb|More than 50,000 people demonstrated against Stuttgart 21 on 1 October 2010.]]
+[[File:Stuttgart 21 Ende.svg|Symbol of the protest against Stuttgart 21|thumb]]
+[[File:StuttgartHauptbahnhofNordfluegel 2010-08-26.jpg|thumb|Demolition works and protest demonstration at the north wing of Stuttgart Hauptbahnhof, 26 August 2010]]
+
+Since late 2006, there have been negotiations between [[Deutsche Bahn|DB]], the Federal Government, the Baden-Württemberg Government and the city of Stuttgart over the sharing of the costs of the project. On 28 June 2007, a high-level conference was held and adjourned between DB chairman [[Hartmut Mehdorn]], Baden-Württemberg Minister of Finance Gerhard Stratthaus and Stuttgart mayor [[Wolfgang Schuster]]. At the meeting, agreement could not be reached over the allocation of construction cost risks.<ref name="stuttgart-2007-06-29">{{Cite news | title =Entscheidung über Baukostenrisiken vertagt |trans-title=Decision on construction cost risks postponed | language =de | publisher =Stuttgart Nachrichten | date =29 June 2007 | url =http://www.stuttgarter-nachrichten.de/stn/page/detail.php/1457698?_suchtag=2007-06-29 | access-date =2007-07-20 | url-status =dead | archive-url =https://archive.today/20070712080204/http://www.stuttgarter-nachrichten.de/stn/page/detail.php/1457698?_suchtag=2007-06-29 | archive-date =12 July 2007 }}</ref>
+
+On 19 July 2007, it was announced by the Federal Government, the State of Baden-Württemberg and DB that the project had been approved. Identified funding sources are: DB (€1,115 million), the State of Baden-Württemberg (€685 million), and the Federal Government (€500 million). The agreement also made provision for possible increases over the €2.8 billion estimate of up to €1 billion, with Baden-Württemberg agreeing to fund up to €780 million and DB agreeing to fund up to €220 million. According to the statement, €2 billion would also be invested in the railway to [[Ulm]], with the total budget amounting to €4.8&nbsp;billion.<ref name="stuttgart-2007-07-19">{{Cite news
+| title =Einigung auf Finanzierung von Stuttgart 21
+| trans-title =Agreement on financing Stuttgart 21 
+| language =de
+| publisher =SWR3 Radio news
+| date =19 July 2007
+| url =http://www.swr.de/nachrichten/bw/-/id=1622/nid=1622/did=2387316/pyrcro/index.html
+| accessdate =2007-07-20
+| archive-date =2020-04-14
+| archive-url =https://web.archive.org/web/20200414140751/http://www.swr.de/nachrichten/bw/-/id=1622/nid=1622/did=2387316/pyrcro/index.html
+| url-status =dead
+}}</ref><ref name="spiegel-2007-07-19">{{cite news
+| title =Finanzierung für Stuttgart 21 steht
+| trans-title =Financing for Stuttgart 21 is set 
+| language =de
+| work =Spiegel online
+| date =19 July 2007
+| url =http://www.spiegel.de/reise/aktuell/0,1518,495398,00.html
+| access-date = 2007-07-20 }}</ref><ref name="bmvbs-2007-04">{{cite press release
+ |title       = Tiefensee: Durchbruch für die Neubaustrecke Stuttgart – Ulm – Augsburg und "Stuttgart 21"
+ |trans-title = Tiefensee: Breakthrough for the new line Stuttgart – Ulm – Augsburg and "Stuttgart 21" 
+ |publisher   = Federal Ministry of Transport, Building and Urban Affairs
+ |date        = 19 July 2007
+ |url         = http://www.bmvbs.de/-,302.1003300/Tiefensee-Durchbruch-fuer-die-.htm
+ |language    = de
+ |access-date  = 2007-07-20
+ |url-status     = dead
+ |archive-url  = https://web.archive.org/web/20071221064027/http://www.bmvbs.de/-,302.1003300/Tiefensee-Durchbruch-fuer-die-.htm
+ |archive-date = 21 December 2007
+}}</ref><ref>{{Cite web
+| title =Memorandum of Understanding
+| publisher =Federal Ministry of Transport, Building and Urban Affairs
+| date =19 July 2007
+| url =http://www.bmvbs.de/Anlage/original_1003311/Memorandum-of-Understanding.pdf
+| language =de
+| accessdate =2007-07-20
+| archive-date =2020-04-14
+| archive-url =https://web.archive.org/web/20200414140755/http://www.bmvbs.de/Anlage/original_1003311/Memorandum-of-Understanding.pdf
+| url-status =dead
+}}</ref>
+
+Shortly after the funding agreement was announced, the political opponents of [[Wolfgang Schuster]] were quick to condemn the Stuttgart mayor for backtracking on a promise made during the 2004 mayoral elections – namely that he would allow the population of Stuttgart to decide the fate of Stuttgart 21 if the additional costs of the project amounted to more than €200&nbsp;million. On hearing the promise at the time, [[Alliance '90/The Greens]] candidate [[Boris Palmer]] withdrew his candidacy for the second round vote, recommending that his supporters should back Schuster instead.<ref name="stuttgart-2007-07-21">{{Cite news
+| title =Stuttgart 21 – Gegner erinnern an Wahlzusage
+| trans-title = Stuttgart 21 – Opponents remind of election promise 
+| language =de
+| publisher =SWR Radio news
+| date =21 July 2007
+| url =http://www.swr.de/nachrichten/bw/-/id=1622/nid=1622/did=2387316/pyrcro/index.html
+| accessdate =2007-07-21
+| archive-date =2020-04-14
+| archive-url =https://web.archive.org/web/20200414140751/http://www.swr.de/nachrichten/bw/-/id=1622/nid=1622/did=2387316/pyrcro/index.html
+| url-status =dead
+}}</ref>
+
+In October 2007, a [[petition]] and public demonstrations were started, sponsored by private individuals with the backing of [[Alliance '90/The Greens]] and a variety of citizens' and environmental organisations. The aim was to collect 20,000 signatures and thus force politicians to take the issue to a local referendum. The petition gained 67,000 signatures{{Citation needed|date=September 2010}} but political wrangling began over whether the issue could be decided by a local referendum in the first place. Legal experts claimed that, as the project was not being financed solely from Stuttgart coffers, it was not for the city of Stuttgart to make the final decision.<ref name="stuttgart-2007-11-17">{{cite news
+| title =Stuttgart 21 – Juristischer Streit gewinnt an Schärfe
+| trans-title =Stuttgart 21 – Legal dispute getting more heated 
+| language =de
+| newspaper =Stuttgarter Zeitung
+| date =17 November 2007
+| url =http://www.stuttgarter-zeitung.de/stz/page/detail.php/1568790
+| accessdate =2007-11-19
+| archive-date =2019-12-11
+| archive-url =https://web.archive.org/web/20191211150344/https://www.stuttgarter-zeitung.de/
+| url-status =dead
+}}</ref>
+
+On 11 October 2008, about 4,000 citizens of Stuttgart demonstrated against the demolition of the Hauptbahnhof's north wing.{{Citation needed|date=September 2010}} Since the fall of 2009, there have been weekly demonstrations on Monday evenings. On 1 October 2010, the biggest protest so far took place with an estimated 100,000 people taking part in the demonstration against the project.<ref>{{cite news|url=http://www.irishtimes.com/newspaper/world/2010/1005/1224280400563.html|title=Protest threatens to derail Merkel's election plans|newspaper=The Irish Times|date=2010-10-05|archive-date=2012-10-22|access-date=2010-10-05|archive-url=https://web.archive.org/web/20121022090729/http://www.irishtimes.com/newspaper/world/2010/1005/1224280400563.html|url-status=dead}}</ref>
+
+[[File:StuttgartHauptbahnhofNordfluegelBauzaun.jpg|thumb|Protest manifestations on the fence during demolition works]]
+The protests are organized by, among others, a [[grassroots]] initiative, ''Leben in Stuttgart'' (Life in Stuttgart), the local branch of [[Alliance 90/The Greens|The Greens]] and the environmental organisation [[Bund für Umwelt und Naturschutz Deutschland]]. They are suggesting a renovation of the current railway station, including creation of some new railways, but respecting the [[cultural heritage]] of the Hauptbahnhof terminus and the [[natural heritage]] of the adjacent ''Schlossgarten'' (Palace Park). The park (see [[Old Castle (Stuttgart)]] and [[New Castle (Stuttgart)]]) by [[Nikolaus Friedrich von Thouret]], is part of a cherished green space that connects the inner city with the banks of the [[Neckar]] river. During the estimated construction time of at least 10 years, the project would cut off connections to other park areas of the city, known collectively as the ''Green U'' due to their U-shaped form. In November 2009, members of the [[International Council on Monuments and Sites]] stated that the Hauptbahnhof was a building of exceptional quality, whose integrity should be maintained.<ref>{{cite news|url=http://stuttgarter-zeitung.de/stz/page/2290433_0_7998_-denkmalschuetzer-appell-bonatzbau-soll-weltkulturerbe-werden.html|title=Bonatzbau soll Weltkulturerbe werden | trans-title =Bonatzbau should become a world cultural heritage site |newspaper=Stuttgarter Zeitung|date=2009-11-25|url-status=dead|archive-url=https://web.archive.org/web/20091127073958/http://www.stuttgarter-zeitung.de/stz/page/2290433_0_7998_-denkmalschuetzer-appell-bonatzbau-soll-weltkulturerbe-werden.html|archive-date=2009-11-27}}</ref>
+
+=== "Black Thursday" ===
+Since 2009 numerous protests against the disputed project had taken place. On 30 September 2010, hundreds of demonstrators were injured when the police used [[water cannon]], [[pepper spray]] and [[Baton (law enforcement)|batons]] against protestors.<ref name="stuttgart-2010-09-30">{{cite news | title =Germany Shocked by 'Disproportionate' Police Action in Stuttgart
+| work =Spiegel Online
+| date =1 October 2010
+| url =http://www.spiegel.de/international/germany/0,1518,720735,00.html
+| accessdate = 2010-10-01}}</ref> One citizen, [[Dietrich Wagner]], permanently lost his eyesight.<ref>{{cite news| url=https://www.spiegel.de/politik/deutschland/stuttgart-21-fast-erblindeter-aktivist-will-entschuldigung-von-mappus-a-736829.html | title =Stuttgart 21 – fast erblindeter Aktivist will Entschuldigung von Mappus| trans-title =Stuttgart 21 – almost blind activist wants apology from Mappus |newspaper=Der Spiegel |date= December 28, 2010 |language=de}}</ref> The event was widely referred to as "Black Thursday" in the media. The police chief of Stuttgart, who was present at the scene, was subsequently charged with, and convicted of [[Battery_(crime)|battery]].<ref>{{cite news| url=https://www.stuttgarter-zeitung.de/inhalt.schwarzer-donnerstag-ex-polizeichef-stumpf-akzeptiert-geldstrafe.4e89f361-d7f0-4d6d-8f41-c6284c0abf59.html | title =Schwarzer Donnerstag. Ex-Polizeichef Stumpf akzeptiert Geldstrafe | trans-title =Black Thursday.  Former police chief Stumpf accepts fine |newspaper=Stuttgarter Zeitung |date= March 18, 2015 |language=de}}</ref>
+
+The following day, more than 50,000 people took part in the biggest demonstration against the project so far.
+
+Prior to that escalation, [[Frei Otto]], one of the architects responsible for the project, cited a 2003 report for calling for a halt to the project, saying the ground in the area is too unstable for large scale underground works.<ref name="stuttgart-2010-10-01-2">{{Cite news
+| title = Stuttgart 21-Architekt fordert den sofortigen Baustopp
+| trans-title =Stuttgart 21 architect calls for an immediate stop to construction 
+| language = de
+| publisher = Stern
+| date = 26 August 2010
+| url = http://www.stern.de/wirtschaft/immobilien/gefahr-fuer-leib-und-leben-stuttgart-21-architekt-fordert-den-sofortigen-baustopp-1596547.html
+| accessdate = 2010-10-02}}</ref> Some critics suggest the cost of the project might rise to €18.7&nbsp;billion.<ref name="stuttgart-2010-01-02">{{cite news
+| title =Experten geben Politik Schuld am Demo-Debakel
+| trans-title =Experts blame politics for the protest debacle
+| language = de
+| work = Spiegel Online
+| date = 2 October 2010
+| url =http://www.spiegel.de/politik/deutschland/0,1518,720882,00.html
+| accessdate = 2010-10-02}}</ref>
+
+==Referendum==
+{{infobox referendum
+| name         = Referendum on Stuttgart 21
+| country      = Baden-Württemberg
+| date         = {{start date|2011|11|27|df=y}}
+| title        = Do you agree to the bill "Act on the Exercise of Termination Rights in Contractual Agreements for the Stuttgart 21 Railway Project (S 21 Termination Act)"?
+| yes          = 1,507,961
+| no           = 2,160,411
+| invalid      =    14,300
+| turnoutpct   = 48.3
+| outcome      = Construction of Stuttgart 21 continues
+}}
+On 27 November 2011, a referendum was held to decide whether the state of Baden-Württemberg should cease funding for the project. 58.8 percent of the votes cast were against such a withdrawal.<ref name="statbw-va">{{cite web|url=http://www.statistik-bw.de/Wahlen/Volksabstimmung_2011/Land.asp |title=Vorläufiges Ergebnis der Volksabstimmung am 27.11.2011 über die Gesetzesvorlage "Gesetz über die Ausübung von Kündigungsrechten bei den vertraglichen Vereinbarungen für das Bahnprojekt Stuttgart 21 (S 21-Kündigungsgesetz)"|publisher=[[Statistisches Landesamt Baden-Württemberg]]|date=2011-11-27|access-date=2011-11-27|url-status=dead|archive-url=https://web.archive.org/web/20111206171901/http://www.statistik-bw.de/Wahlen/Volksabstimmung_2011/Land.asp|archive-date=2011-12-06 |language=de}}</ref><ref>{{cite web|url=https://www.lpb-bw.de/volksabstimmung-stuttgart21/|title=Volksabstimmung zu Stuttgart 21 am 27. November 2011 (Archiv)|trans-title=Referendum on Stuttgart 21 on November 27, 2011 (archive)|work=Baden-Württemberg State Center for Political Education|lang=de|access-date=2022-11-13}}</ref>
+While some consider this proof that a majority is in favour of the project, others point out this might in parts be owed to questionable allegations which were floated before the referendum, e.g. that consequences of a withdrawal in the end might already be significantly more expensive than completing the project; as well as the fact that the wording might have been misleading for some voters (a 'yes' vote would have been in favour of pulling out of the project, and a 'no' in favour of its implementation) although the meaning of 'yes' or 'no' was explained on the ballot.<ref>[https://upload.wikimedia.org/wikipedia/commons/2/29/Stuttgart-21-abstimmung-wahlzettel.png Image of the ballot on Wikimedia]</ref>
+
+==Effects on politics==
+
+According to the German newspaper ''[[Die Welt]]'', in June 2009 the [[Alliance '90/The Greens|Greens]] changed the balance of power in the city council as a direct result of disgruntlement with the controversial Stuttgart 21 rail project. The victory marked the Greens' first majority in a German city with more than 500,000 inhabitants. This meant an enormous loss for the [[Christian Democratic Union (Germany)|CDU]], who had held a majority of seats in Stuttgart continuously since 1972.<ref>{{Cite news|url=https://www.welt.de/politik/article3881313/Stuttgart-21-zieht-CDU-und-SPD-nach-unten.html | title =Stuttgart 21 zieht CDU und SPD nach unten |trans-title=Stuttgart 21 pulls down CDU and SPD |newspaper=Die Welt |date=7 June 2009 |accessdate=2009-06-19 |language=de}}</ref>
+[[File:Kundgebung s21.jpg|thumb|center|upright=2.5|Stuttgart, 13 August 2010]]
+The Stuttgart 21 project was a major issue in the [[2011 Baden-Württemberg state election|state elections held in March 2011]]. While the CDU again won the largest number of seats in the [[Landtag]] of Baden-Württemberg, they and their FDP allies lost too many to maintain control. Instead, the Green party led a coalition government with the SPD.<ref>{{Cite web|url=http://www.landtagswahl-bw.de/ |title=Landtagswahl 2011 |access-date=2011-04-03 |archive-url=https://web.archive.org/web/20110511091316/http://www.landtagswahl-bw.de/ |archive-date=2011-05-11|url-status=dead}}</ref> In the [[2016 Baden-Württemberg state election]], the Greens became the largest party and, in the [[2021 Baden-Württemberg state election]], won the most seats again.
+
+==References==
+{{Reflist|30em}}
+
+==External links==
+{{Commons category}}
+* {{Cite AV media |url=https://www.youtube.com/watch?v=2XQtdKU5D_4 |title=Stuttgart 21: Europe’s Most Controversial Rail Project |date=2024-10-25 |last=[[DW News]] |via=YouTube}}
+* {{Official website|bahnprojekt-stuttgart-ulm.de/en/}}
+
+{{coord|48.7840|9.1813}}
+
+{{Baden-Württemberg state elections}}
+{{Authority control}}
+
+[[Category:Buildings and structures under construction in Germany]]
+[[Category:Proposed rail infrastructure in Germany]]
+[[Category:Transport in Stuttgart]]
+[[Category:2026 in rail transport]]
+[[Category:21st century in Stuttgart]]
+[[Category:2011 referendums]]
+[[Category:2010s in Baden-Württemberg]]

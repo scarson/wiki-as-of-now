@@ -1,0 +1,269 @@
+{{Short description|HTTP network protocol introduced in 2022}}
+{{Infobox protocol
+| standard  = {{IETF RFC|9114}}{{Ref RFC|9114}} (HTTP/3 also uses the completed [[QUIC]] protocol described in RFC 9000 and related RFCs such as RFC 9001)
+<!--
+Seems will be published as {{IETF RFC|9114}}
+RFC-to-be 9110, also relevant at least mentions HTTP/3, also RFC-to-be 9111?
+RFC-to-be 9112 relevant(?), will obsolete parts of HTTP/1.1
+RFC-to-be 9163, unrelated, just to HTTP
+"[to be] Published: February 2022" RFC-to-be 9204 QPACK: Header Compression for HTTP/3
+-->
+<!-- "HTTP/3 supports O-RTT QUIC connections" RFC 9001: Using TLS to Secure QUIC|url=https://www.rfc-editor.org/rfc/rfc9001.html|access-date=2022-02-08<ref>{{Cite web|last=Thomson|first=Martin|title=RFC 9001: Using TLS to Secure QUIC|url=https://www.rfc-editor.org/rfc/rfc9001.html|access-date=2022-02-08|website=www.rfc-editor.org|language=en}}</ref> -->
+| developer = [[IETF]]
+| introdate = June 2022
+| newer     = 
+}}
+
+'''HTTP/3''' is the third <!-- Please do not add simplistic claims about HTTP/3 speed (only to the lead), HTTP protocol speed comparison should be addressed in a separate section which can include all the nuances of these protocols. --> major version of the [[Hypertext Transfer Protocol]] used to exchange information on the [[World Wide Web]], complementing the widely deployed [[HTTP/1.1]] and [[HTTP/2]]. Unlike previous versions which relied on the well-established [[Transmission Control Protocol|TCP]] (published in 1974),{{Ref RFC|675}} HTTP/3 uses [[QUIC]] (officially introduced in 2021),{{Ref RFC|9000}} a [[Multiplexing|multiplexed]] transport protocol built on [[User Datagram Protocol|UDP]].<ref>{{Cite web |date= |title=What is HTTP/3? |url=https://www.cloudflare.com/learning/performance/what-is-http3/ |url-status=live |archive-url=https://web.archive.org/web/20220704035921/https://www.cloudflare.com/learning/performance/what-is-http3/ |archive-date=4 July 2022 |access-date=12 July 2022 |website=Cloudflare}}</ref>
+
+HTTP/3 uses similar semantics compared to earlier revisions of the protocol, including the same [[HTTP#Request methods|request methods]], [[HTTP#Response status codes|status codes]], and [[List of HTTP header fields|message fields]], but encodes them and maintains session state differently. However, partially due to the protocol's adoption of QUIC, HTTP/3 has lower latency and loads more quickly in real-world usage when compared with previous versions: in some cases over four times faster than with HTTP/1.1 (which, for many websites, is the only HTTP version deployed).<ref>{{Cite journal |last1=Perna |first1=Gianluca |last2=Trevisan |first2=Martino |last3=Giordano |first3=Danilo |last4=Drago |first4=Idilio |date=2022-04-01 |title=A first look at HTTP/3 adoption and performance |url=https://www.sciencedirect.com/science/article/pii/S0140366422000421 |journal=Computer Communications |language=en |volume=187 |pages=115–124 |doi=10.1016/j.comcom.2022.02.005 |s2cid=246936473 |issn=0140-3664|hdl=11368/3025202 |hdl-access=free }}</ref><!-- The article written before HTTP/3 standardization, but after OUIC standardized, and that part of the article (and the link there links to older standard: "0-RTT should not be blindly enabled. There are some possible security concerns depending on your threat model." --><ref>{{Cite web |title=HTTP/3 is Fast |url=https://requestmetrics.com/web-performance/http3-is-fast |access-date=2022-07-01 |website=Request Metrics |language=en}}</ref>
+
+As of September 2024, HTTP/3 is supported by more than 95% of major web browsers in use<ref name="canIuse" /> and 34% <!-- 28.7% --> of the top 10 million websites.<ref name="W3Techs">{{cite web|title=Usage of HTTP/3 for websites|url=https://w3techs.com/technologies/details/ce-http3|access-date=11 August 2024|website=World Wide Web Technology Surveys|publisher=W3Techs}}</ref> It has been supported by [[Chromium (web browser)|Chromium]] (and derived projects including [[Google Chrome]], [[Microsoft Edge]], [[Samsung Internet]], and [[Opera (web browser)|Opera]])<ref name="Enabling QUIC in tip-of-tree">{{Cite web|title=Enabling QUIC in tip-of-tree|url=https://groups.google.com/a/chromium.org/g/net-dev/c/5M9Z5mtvg_Y/m/iw9co1VrBQAJ|access-date=2021-04-08|website=groups.google.com}}</ref> since April 2020 and by [[Mozilla Firefox]] since May 2021.<ref name="canIuse" /><ref name=":2">{{Cite web|last=Damjanovic|first=Dragana|date=16 April 2021|title=QUIC and HTTP/3 Support now in Firefox Nightly and Beta|url=https://hacks.mozilla.org/2021/04/quic-and-http-3-support-now-in-firefox-nightly-and-beta|access-date=2021-04-17|website=Mozilla Hacks – the Web developer blog|language=en-US}}</ref> [[Safari (web browser)|Safari]] adopted it since Sept 2024 (16+ supports HTTP3 for all users, previously it was limited to a subset of users) <ref name="Jen Simmons">{{Cite web |author=Jen Simmons|date=2024-10-30 |title=Updating Safari support for HTTP3|url=https://github.com/Fyrd/caniuse/pull/7200|access-date=2025-07-20 |website=GitHub}}</ref>
+
+== History ==
+<imagemap>
+file:HTTP-1.1 vs. HTTP-2 vs. HTTP-3 Protocol Stack.svg|frame|Protocol stack of HTTP/3 compared to HTTP/1.1 and HTTP/2
+
+rect 0 44 85 94 [[HTTP/1.1]]
+rect 0 95 85 137 [[Transport Layer Security]]
+rect 0 138 85 189 [[Transmission Control Protocol]]
+
+rect 126 44 210 94 [[HTTP/2]]
+rect 126 95 210 137 [[TLS 1.2]]
+rect 126 138 210 189 [[Transmission Control Protocol]]
+
+rect 251 44 336 74 [[HTTP/3]]
+rect 255 90 328 121 [[TLS 1.3]]
+rect 251 125 336 158 [[QUIC]]
+rect 251 159 336 189 [[User Datagram Protocol]]
+
+rect 0 189 336 231 [[Internet Protocol]]
+</imagemap>
+
+HTTP/3 originates from an [[Internet Draft]] adopted by the QUIC working group. The original proposal was named "HTTP/2 Semantics Using The QUIC Transport Protocol",<ref>{{Cite IETF|title=HTTP/2 Semantics Using The QUIC Transport Protocol|draft=draft-shade-quic-http2-mapping|last=Shade|first=Robbie|date=8 July 2016|publisher=[[Internet Engineering Task Force|IETF]]}}</ref> and later renamed "Hypertext Transfer Protocol (HTTP) over QUIC".<ref name=":0">{{Cite news|last=Cimpanu|first=Catalin|date=12 November 2018|title=HTTP-over-QUIC to be renamed HTTP/3|language=en|work=ZDNet|url=https://www.zdnet.com/article/http-over-quic-to-be-renamed-http3/|access-date=12 November 2018}}</ref>
+
+On 28 October 2018 in a mailing list discussion, Mark Nottingham, Chair of the [[Internet Engineering Task Force|IETF]] HTTP and QUIC Working Groups, proposed renaming HTTP-over-QUIC to HTTP/3, to "clearly identify it as another binding of HTTP semantics to the wire protocol [...] so people understand its separation from QUIC".<ref>{{Cite journal|last=Nottingham|first=Mark|date=28 October 2018|title=Identifying our deliverables|url=https://mailarchive.ietf.org/arch/msg/quic/RLRs4nB1lwFCZ_7k0iuz0ZBa35s|journal=IETF Mail Archive}}</ref> Nottingham's proposal was accepted by fellow IETF members a few days later. The HTTP working group was chartered to assist the QUIC working group during the design of HTTP/3, then assume responsibility for maintenance after publication.<ref>{{Cite web|title=Hypertext Transfer Protocol Charter|url=https://datatracker.ietf.org/doc/charter-ietf-httpbis/08/|access-date=2020-09-02|website=ietf.org}}</ref>
+
+Support for HTTP/3 was added to [[Google Chrome|Chrome]] (Canary build) in September 2019 and then eventually reached stable builds, but was disabled by a feature flag. It was enabled by default in April 2020.<ref name="Enabling QUIC in tip-of-tree"/> Firefox added support for HTTP/3 in November 2019 through a feature flag<ref name="canIuse">{{Cite web |title="HTTP/3" {{!}} Can I use... Support tables for HTML5, CSS3, etc |url=https://caniuse.com/http3 |access-date=2024-08-11 |website=canIuse.com}}</ref><ref>{{cite web|last1=Daniel|first1=Stenberg|title=Daniel Stenberg announces HTTP/3 support in Firefox Nightly|url=https://twitter.com/bagder/status/1191482712739196928|access-date=5 November 2019|website=Twitter}}</ref><ref>{{cite web|last=Cimpanu|first=Catalin|date=26 Sep 2019|title=Cloudflare, Google Chrome, and Firefox add HTTP/3 support|url=https://www.zdnet.com/article/cloudflare-google-chrome-and-firefox-add-http3-support/|access-date=27 Sep 2019|website=ZDNet|df=dmy-all}}</ref> and started enabling it by default in April 2021 in Firefox 88.<ref name="canIuse" /><ref name=":2" /> Experimental support for HTTP/3 was added to Safari Technology Preview on April 8, 2020<ref>{{Cite web|url=https://webkit.org/blog/10264/release-notes-for-safari-technology-preview-104/|title=Release Notes for Safari Technology Preview 104|date=8 April 2020|access-date=7 August 2020|website=webkit.org}}</ref> and was included with Safari 14 that ships with [[iOS 14]] and [[macOS 11]],.<ref name="safari14">{{Cite web|title=Safari 14 Release Notes|url=https://developer.apple.com/documentation/safari-release-notes/safari-14-release-notes|access-date=4 December 2020|website=developer.apple.com}}</ref><ref>{{Cite web|title=Apple's Safari Adds Support for HTTP3 in iOS 14 and macOS 11|url=https://www.iphoneincanada.ca/news/apple-safari-http3-ios-14/|date=23 June 2020|access-date=25 June 2021|website=iphoneincanada.ca|last=Ng|first=Gary}}</ref>
+Starting September 2024, HTTP/3 is supported for all users on Safari 16 or newer.<ref name="Jen Simmons"/>
+
+On 6 June 2022, [[IETF]] published HTTP/3 as a [[Proposed Standard]] in {{Sum RFC|9114|title=no|ref=yes}}.
+
+== Comparison with HTTP/1.1 and HTTP/2 ==
+HTTP semantics are consistent across versions: the same [[Hypertext Transfer Protocol#Request methods|request methods]], [[Hypertext Transfer Protocol#Response status codes|status codes]], and [[List of HTTP header fields|message fields]] are typically applicable to all versions. The differences are in the mapping of these semantics to underlying transports. Both [[HTTP/1.1]] and [[HTTP/2]] use [[Transmission Control Protocol|TCP]] as their transport. HTTP/3 uses [[QUIC]], a [[transport layer]] [[network protocol]] which uses [[user space]] [[congestion control]] over the [[User Datagram Protocol]] (UDP). The switch to QUIC aims to fix a major problem of HTTP/2 called "[[head-of-line blocking]]": because the parallel nature of HTTP/2's multiplexing is not visible to TCP's [[Packet loss#Packet recovery for reliable delivery|loss recovery mechanisms]], a lost or reordered [[Network packet|packet]] causes all active [[Transaction processing|transactions]] to experience a stall regardless of whether that transaction was impacted by the lost packet. Because QUIC provides native multiplexing, lost packets only impact the streams where data has been lost.
+
+The HTTPS [[List of DNS record types#HTTPS|DNS resource record]] as defined in {{IETF RFC|9460}}{{Ref RFC|9460}} allows for connecting without first receiving the Alt-Svc header via previous HTTP versions, therefore removing the 1 RTT of handshaking of TCP.<ref>{{cite web|url=https://developer.mozilla.org/en-US/docs/Glossary/https_rr|accessdate=2022-10-25|title=HTTPS RR|website=[[MDN Web Docs|MDN]]|publisher=[[Mozilla]]}}</ref><ref>{{Cite IETF|title=Service binding and parameter specification via the DNS|draft=draft-ietf-dnsop-svcb-https|first1=Benjamin M.|last1=Schwartz|first2=Mike|last2=Bishop|first3=Erik|last3=Nygren|date=2020-06-12|publisher=[[Internet Engineering Task Force|IETF]]}}</ref> There is client support for HTTPS resource records since Firefox 92, iOS 14, reported Safari 14 support, and Chromium supports it behind a flag.<ref>{{cite web|url=https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/92|accessdate=2022-10-25|title=Firefox 92 for developers|date=7 September 2021|publisher=[[Mozilla Corporation]]}}</ref><ref>{{cite web|url=https://chromestatus.com/feature/5485544526053376|accessdate=2022-10-25|title=Feature: HTTP->HTTPS redirect for HTTPS DNS records|publisher=[[Google Inc.]]}}</ref><ref>{{cite web|url=https://serverfault.com/questions/1075522/whats-the-use-case-of-svcb-type-65-service-binding-rr|accessdate=2022-10-25|title=What's the use case of SVCB (type 65, service binding) RR|date=24 August 2021|author1=Patrick Mevzek|publisher=[[Stack Exchange Inc.]]}}</ref>
+
+== Implementations ==
+
+=== Client ===
+
+{| class="wikitable"
+|+ Browser support for HTTP/3
+!Browser
+! colspan="2" |Version implemented (disabled by default)
+! colspan="2" |Version shipped (enabled by default)
+!Comment
+|-
+|[[Google Chrome|Chrome]]
+|Stable build (79)
+|December 2019
+|87<ref name="canIuse" />
+|April 2020<ref>{{Cite web|title=Enabling QUIC in tip-of-tree|url=https://groups.google.com/a/chromium.org/g/net-dev/c/5M9Z5mtvg_Y/m/iw9co1VrBQAJ|access-date=2021-04-09|website=groups.google.com}}</ref>
+|Earlier versions implemented other drafts of QUIC
+|-
+|[[Microsoft Edge|Edge]]
+|Stable build (79)
+|December 2019
+|87
+|April 2020
+|Edge 79 was the first version based on Chromium
+|-
+|[[Firefox]]
+|Stable build (72.0.1)
+|January 2020
+|88<ref name=":2" />
+|April 2021<ref>{{Cite web|title=Firefox Release Owners - MozillaWiki|url=https://wiki.mozilla.org/Release_Management/Release_owners|access-date=2021-04-09|website=wiki.mozilla.org}}</ref>
+|
+|-
+|[[Safari (web browser)|Safari]]
+|Stable build (14.0)
+|September 2020
+|16.4
+|September 2024
+|Apple tested HTTP/3 support on some Safari users starting with Safari 16.4.<ref>{{Cite web |author=Jen Simmons|date=2023-04-04 |title=HTTP/3 support shipped in Safari 14.0|url=https://github.com/Fyrd/caniuse/pull/6664#issuecomment-1496429847|access-date=2025-07-20 |website=GitHub}}</ref><br>
+Starting September 2024, HTTP/3 is supported for all users on Safari 16 or newer.<ref name="Jen Simmons"/>
+|}
+
+=== Libraries ===
+
+[[Open-source software|Open-source]] [[Library (computing)|libraries]] that implement client or server logic for QUIC and HTTP/3 include<ref>{{Cite web|title=QUIC Implementations|url=https://github.com/quicwg/base-drafts/wiki/Implementations|access-date=2021-04-08|website=GitHub|language=en}}</ref>
+{| class="wikitable sortable"
+|+
+Libraries implementing HTTP/3
+!Name
+!Client
+!Server
+!Programming language
+!Company
+!Repository
+|-
+|lsquic
+|{{yes}}
+|{{yes}}
+|C
+|[[LiteSpeed]]
+|https://github.com/litespeedtech/lsquic
+|-
+|nghttp3
+|{{yes}}
+|{{yes}}
+|C
+|
+|https://github.com/ngtcp2/nghttp3
+|-
+|[[H2O (web server)|h2o]]
+|{{no}}
+|{{yes}}
+|C
+|
+|https://github.com/h2o/h2o
+|-
+|[[cURL|libcurl]]<ref name="danielhaxxse">{{Cite web|url=https://daniel.haxx.se/blog/2019/08/05/first-http-3-with-curl/|title=First HTTP/3 with curl|date=August 5, 2019|publisher=Daniel Stenberg|access-date=October 2, 2019}}</ref><ref name="curlgit">{{Cite web|url=https://github.com/curl/curl/blob/master/docs/HTTP3.md|title=HTTP3 (and QUIC)|date=August 23, 2023|publisher=Daniel Stenberg|access-date=August 27, 2023}}</ref>
+|{{yes}}
+|{{no}}
+|C
+|
+|https://github.com/curl/curl
+|-
+|[[MsQuic]]<ref name="microsoft">{{Cite web|url=https://techcommunity.microsoft.com/t5/networking-blog/msquic-is-open-source/ba-p/1345441|title=MsQuic is Open Source|date=April 28, 2020|access-date=April 28, 2020}}</ref>
+|{{yes}}
+|{{yes}}
+|C
+|[[Microsoft]]
+|https://github.com/microsoft/msquic
+|-
+|proxygen
+|{{yes}}
+|{{yes}}
+|C++
+|[[Facebook]]
+|https://github.com/facebook/proxygen#quic-and-http3
+|-
+|Cronet
+|{{yes}}
+|{{yes}}
+|C++
+|[[Google]]
+|https://github.com/chromium/chromium/tree/main/net/quic
+|-
+|[[.NET]]<ref name="dotnet">{{Cite web|url=https://devblogs.microsoft.com/dotnet/http-3-support-in-dotnet-6/|title=HTTP/3 support in .NET 6|date=September 17, 2021|access-date=September 17, 2021}}</ref>
+|{{yes}}
+|{{yes}}
+|C# (using MsQuic)<ref>{{Cite web|date=2021-09-17|title=HTTP/3 support in .NET 6|url=https://devblogs.microsoft.com/dotnet/http-3-support-in-dotnet-6/|access-date=2022-01-12|website=.NET Blog|language=en-US}}</ref>
+|[[Microsoft]]
+|https://github.com/dotnet
+|-
+|quic-go
+|{{yes}}
+|{{yes}}
+|Go
+|
+|https://github.com/quic-go/quic-go
+|-
+|http3
+|{{yes}}
+|{{yes}}
+|Haskell
+|
+|https://github.com/kazu-yamamoto/http3
+|-
+|Kwik
+|{{yes}}
+|{{yes}}
+|Java
+|
+|https://github.com/ptrd/kwik
+|-
+|Flupke
+|{{yes}}
+|{{yes}}
+|Java
+|
+|https://bitbucket.org/pjtr/flupke
+|-
+|aioquic
+|{{yes}}
+|{{yes}}
+|Python
+|
+|https://github.com/aiortc/aioquic
+|-
+|niquests
+|{{yes}}
+|{{no}}
+|Python
+|
+|https://github.com/jawah/niquests
+|-
+|quiche
+|{{yes}}
+|{{yes}}
+|Rust
+|[[Cloudflare]]
+|https://github.com/cloudflare/quiche
+|-
+|neqo
+|{{yes}}
+|{{yes}}
+|Rust
+|[[Mozilla]]
+|https://github.com/mozilla/neqo
+|-
+|quinn
+|{{yes}}
+|{{yes}}
+|Rust
+|
+|https://github.com/quinn-rs/quinn
+|-
+|s2n-quic
+|{{yes}}
+|{{yes}}
+|Rust
+|[[Amazon Web Services]]
+|https://github.com/aws/s2n-quic
+|}
+
+=== Server ===
+
+* On 7 June 2021, [[LiteSpeed Web Server]] (and OpenLiteSpeed) 6.0.2 was released and became the first version to enable HTTP/3 by default.<ref>{{Cite web|title=LiteSpeed Web Server Release Log - LiteSpeed Technologies|url=https://www.litespeedtech.com/products/litespeed-web-server/release-log|access-date=2022-02-12|website=www.litespeedtech.com|quote=Enable HTTP/3 v1 by default.}}</ref>
+* [[Caddy (web server)|Caddy]] web server v2.6.0 (released 20 September 2022) has HTTP/3 enabled by default.<ref>{{Cite web|url=https://github.com/caddyserver/caddy/releases/tag/v2.6.0|title=Release 2.6.0 · caddyserver/caddy|date=2022-09-22|website=Github|language=en-US|access-date=2022-09-20}}</ref>
+* [[Nginx]] supports HTTP/3 since 1.25.0 (released 23 May 2023). A technology preview of nginx with HTTP/3 support was released in June 2020.<ref>{{Cite web|date=2020-06-10|title=Introducing a Technology Preview of NGINX Support for QUIC and HTTP/3|url=https://www.nginx.com/blog/introducing-technology-preview-nginx-support-for-quic-http-3/|access-date=2020-06-11|website=NGINX|language=en-US}}</ref> Binary packages of nginx with HTTP/3 support have been released in February 2023.<ref>{{Cite web|date=2023-02-08|title=Binary Packages Now Available for the Preview NGINX QUIC+HTTP/3 Implementation|url=https://www.nginx.com/blog/binary-packages-for-preview-nginx-quic-http3-implementation/|access-date=2023-03-30|website=NGINX|language=en-US}}</ref>
+* Cloudflare distributes a patch for nginx that integrates the quiche HTTP/3 library into it.<ref>{{Cite web|url=https://blog.cloudflare.com/experiment-with-http-3-using-nginx-and-quiche/|title=Experiment with HTTP/3 using NGINX and quiche|date=2019-10-17|website=The Cloudflare Blog|language=en|access-date=2019-11-09}}</ref>
+* [[Internet Information Services|Microsoft IIS]] support for HTTP/3 is enabled natively with Windows Server 2022/Windows 11.<ref>{{Cite web |last=Tratcher |title=Use ASP.NET Core with HTTP/3 on IIS |url=https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/http3 |access-date=2022-04-29 |website=docs.microsoft.com |language=en-us}}</ref>
+* [[HAProxy]] supports HTTP/3 over QUIC since version 2.6 released on 31 May 2022.<ref>{{Cite web|title=Announcing HAProxy 2.6|website=HAProxy Blog|date=31 May 2022 |url=https://www.haproxy.com/blog/announcing-haproxy-2-6/#http-3-over-quic}}</ref><ref>{{Cite web|title=QUIC Implementation in HAProxy|website=HAProxyConf video presentation|date=25 January 2023 |url=https://www.youtube.com/watch?v=e2aQBva_HH0}}</ref>
+* [[Nimble Streamer]] supports HTTP/3 since 4.1.8-1<ref>{{Cite web|date=2025-02-14|title=HTTP/3 and QUIC support in Nimble Streamer|url=https://softvelum.com/2025/02/http3-quic-support-nimble-streamer/|access-date=2025-02-17|website=NGINX|language=en-US}}</ref> for HTTP-based protocols.
+
+== See also ==
+{{Portal|Internet}}
+* {{annotated link|Fast and Secure Protocol}}
+
+== References ==
+{{reflist}}
+
+== External links ==
+* {{Official website}}
+* {{github|quicwg|IETF QUIC Working Group}}
+* [https://http3-explained.haxx.se/ HTTP/3 explained] ([[Daniel Stenberg]])
+* [https://caniuse.com/http3 HTTP/3 on canIuse.com]
+* [https://github.com/quicwg/base-drafts/wiki/Implementations List of QUIC implementations on the IETF QUIC Working Group Wiki]
+
+{{Web interfaces}}
+{{Web browsers|fsp}}
+
+{{Use dmy dates|date=January 2019}}
+
+[[Category:Hypertext Transfer Protocol]]
+[[Category:Application layer protocols]]
+[[Category:Internet properties established in 2018]]

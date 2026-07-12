@@ -1,0 +1,1196 @@
+{{short description|Computer expansion bus standard}}
+{{Distinguish|PCI-X|UCIe}}
+{{For|Engineering, Procurement, Construction and Installation|EPCI}}
+{{Use dmy dates|date=October 2020}}
+{{Infobox computer hardware bus
+| name = PCI Express
+| fullname = Peripheral Component Interconnect Express
+| image = PCI Express.svg{{!}}class=skin-invert
+| invent-date = {{Start date and age|2003}}
+| invent-name = {{Hlist
+  | [[Intel]]
+  | [[Dell]]
+  | [[Hewlett-Packard|HP]]
+  | [[IBM]]
+  }}
+| super-name =
+| super-date =
+| replaces = {{Hlist
+  | [[Peripheral Component Interconnect|PCI]]
+  | [[PCI-X]]
+  | [[Accelerated Graphics Port|AGP]]
+  }}
+| width = 1 per lane, up to 16 lanes<ref name="auto">{{cite book | url=https://books.google.com/books?id=ZjyrAgAAQBAJ&dq=pcie+dual+simplex&pg=PA69 | isbn=978-0-7384-5121-3 | title=IBM Power 770 and 780 Technical Overview and Introduction | date=6 June 2013 | publisher=IBM Redbooks }}</ref>
+| numdev = 1 on each endpoint of each connection{{Efn|Switches can create multiple endpoints out of one to allow sharing it with multiple devices.}}
+| speed = [[Dual simplex]], up to 242&nbsp;GB/s
+| style = s
+| hotplug = Optional (supported with [[ExpressCard]], [[#PCI Express OCuLink|OCuLink]], [[CFexpress]] or [[U.2]])
+| external = Optional (supported with [[#PCI Express OCuLink|OCuLink]] or other forms of [[#PCI Express External Cabling|PCI Express External Cabling]], tunneled over [[USB4]] and [[Thunderbolt (interface)|Thunderbolt]])
+| website = {{URL|https://pcisig.com/}}
+}}
+[[File:LSI_9207-4i4e_PCI-E_SAS_HBA.jpg|thumb|A PCIe 3.0 ×8 [[host bus adapter]]]]
+
+[[File:PCI-E & PCI slots on DFI LanParty nF4 SLI-DR 20050531.jpg|thumb|Various slots on a [[computer motherboard]], from top to bottom: {{unordered list
+ | PCI Express ×4
+ | PCI Express ×16
+ | PCI Express ×1
+ | PCI Express ×16
+ | [[Conventional PCI]] (32-bit, 5&nbsp;V)
+}}]]
+
+'''PCI Express''' ('''Peripheral Component Interconnect Express'''), officially abbreviated as '''PCIe''',<ref name="s5NDG" /> is a high-speed standard used to connect hardware components inside computers. It is designed to replace older [[expansion bus]] standards such as [[Peripheral Component Interconnect|PCI]], [[PCI-X]] and [[Accelerated Graphics Port|AGP]]. Developed and maintained by the [[PCI-SIG]] (PCI Special Interest Group), PCIe is commonly used to connect [[graphics card]]s, [[sound card]]s, [[Wi-Fi]] and [[Ethernet]] adapters, and storage devices such as [[solid-state drive]]s and [[hard disk drive]]s.<ref name="DQmzv" />
+
+Compared to earlier standards, PCIe supports faster data transfer, uses fewer pins, takes up less space, and allows devices to be added or removed while the computer is running ([[hot swapping]]). It also includes better error detection and supports newer features like [[I/O virtualization]] for advanced computing needs.<ref name="gf9Lm" />
+
+PCIe connections are made through ''lanes'', which are pairs of conductors that send and receive data. Devices can use one or more lanes depending on how much data they need to transfer.<ref name="sxOen" /> PCIe technology is also used in laptop expansion cards (like [[ExpressCard]]) and in storage connectors such as [[M.2]], [[U.2]], and [[SATA Express]].
+
+== Architecture ==
+[[File:Example PCI Express Topology.svg|thumb|upright=1.25|Example of the PCI&nbsp;Express topology:<br />white "junction boxes" represent PCI&nbsp;Express device downstream ports. The gray ones represent upstream ports.<ref name="pcie-basics" />{{rp|7}}]]
+[[File:RouterBOARD RB14e, top view.jpg|thumb|upright=1.25|PCI Express ×1 card containing a PCI Express switch (covered by a small [[heat sink]]), which creates multiple endpoints out of one endpoint and lets multiple devices share it]]
+
+[[File:PCie lanes.jpg|thumb|The PCIe slots on a motherboard are often labeled with the number of PCIe lanes they have. Sometimes what may seem like a large slot may only have a few lanes. For instance, a ×16 slot with only 4 PCIe lanes (bottom slot) is quite common.<ref>{{cite web |title=What are PCIe Slots and Their Uses |date=18 May 2021 |url=https://pcguide101.com/motherboard/what-are-pcie-slots/ |publisher=PC Guide 101 |access-date=21 June 2021}}</ref>]]
+
+Conceptually, the PCI Express bus is a high-speed [[serial communication|serial]] replacement of the older PCI/PCI-X bus.<ref name="howstuffworks1" /> One of the key differences between the PCI Express bus and the older PCI is the bus topology; PCI uses a shared [[parallel communications|parallel]] [[Bus (computing)|bus]] architecture, in which the PCI host and all devices share a common set of address, data, and control lines. In contrast, PCI Express is based on point-to-point [[Network topology|topology]], with separate [[serial communication|serial]] links connecting every device to the [[root complex]] (host). Because of its shared bus topology, access to the older PCI bus is arbitrated (in the case of multiple masters), and limited to one master at a time, in a single direction. Furthermore, the older PCI clocking scheme limits the bus clock to the slowest peripheral on the bus (regardless of the devices involved in the bus transaction). In contrast, a PCI Express bus link supports [[Full-duplexed|full-duplex]] communication between any two endpoints, with no inherent limitation on concurrent access across multiple endpoints.
+
+In terms of bus protocol, PCI Express communication is encapsulated in packets. The work of packetizing and de-packetizing data and status-message traffic is handled by the transaction layer of the PCI Express port (described later). Radical differences in electrical signaling and bus protocol require the use of a different mechanical form factor and expansion connectors (and thus, new motherboards and new adapter boards); PCI slots and PCI Express slots are not interchangeable. At the software level, PCI Express preserves [[backward compatibility]] with PCI; legacy PCI system software can detect and configure newer PCI Express devices without explicit support for the PCI Express standard, though new PCI Express features are inaccessible.
+
+The PCI Express link between two devices can vary in size from one to 16 [[#Lane|lane]]s. In a multi-lane link, the packet data is striped across lanes, and peak data throughput scales with the overall link width. The lane count is automatically negotiated during device initialization and can be restricted by either endpoint. For example, a single-lane PCI Express (×1) card can be inserted into a multi-lane slot (×4, ×8, etc.), and the initialization cycle auto-negotiates the highest mutually supported lane count. The link can dynamically down-configure itself to use fewer lanes, providing a failure tolerance in case bad or unreliable lanes are present. The PCI Express standard defines link widths of ×1, ×2, ×4, ×8, and ×16. Up to and including PCIe 5.0, ×12, and ×32 links were defined as well but virtually{{clarification needed|date=January 2025}} never used.<ref name="4TrCr" /> This allows the PCI Express bus to serve both cost-sensitive applications where high throughput is not needed, and performance-critical applications such as 3D graphics, networking ([[10 Gigabit Ethernet]] or multiport [[Gigabit Ethernet]]), and enterprise storage ([[Serial attached SCSI|SAS]] or [[Fibre Channel]]). Slots and connectors are only defined for a subset of these widths, with link widths in between using the next larger physical slot size.
+
+As a point of reference, a PCI-X (133&nbsp;MHz 64-bit) device and a PCI Express&nbsp;1.0 device using four lanes (×4) have roughly the same peak single-direction transfer rate of 1064&nbsp;MB/s. The PCI Express bus has the potential to perform better than the PCI-X bus in cases where multiple devices are transferring data simultaneously, or if communication with the PCI Express peripheral is [[Two-way communication|bidirectional]].
+
+=== Interconnect <span class="anchor" id="LINK"></span> ===
+[[File:PCI Express Terminology.svg|thumb|A PCI Express link between two devices consists of one or more lanes, which are [[dual simplex]] channels using two [[differential signaling]] pairs.<ref name="pcie-basics" />{{rp|3}}]]
+
+PCI Express devices communicate via a logical connection called an ''interconnect''<ref name="faq1" /> or ''link''. A link is a point-to-point communication channel between two PCI Express ports allowing both of them to send and receive ordinary PCI requests (configuration, I/O or memory read/write) and [[interrupt]]s ([[Peripheral Component Interconnect#Interrupts|INTx]], [[Message Signaled Interrupts|MSI or MSI-X]]). At the physical level, a link is composed of one or more ''lanes''.<ref name="faq1" /> Low-speed peripherals (such as an [[IEEE 802.11|802.11]] [[Wi-Fi]] [[Wireless network interface card|card]]) use a single-lane (×1) link, while a graphics adapter typically uses a much wider and therefore faster 16-lane (×16) link.
+
+=== Lane <span class="anchor" id="LANE"></span> ===
+A lane is composed of two [[differential signaling]] pairs, with one pair for receiving data and the other for transmitting. Thus, each lane is composed of four wires or [[signal trace]]s. Conceptually, each lane is used as a [[full-duplex]] [[byte stream]], transporting data packets in eight-bit "byte" format simultaneously in both directions between endpoints of a link.<ref name="2Nt8T" /> Physical PCI Express links may contain 1, 4, 8 or 16 lanes.<ref name="Gchhw" /><ref name="pcie-basics" />{{rp|4,5}}<ref name="faq1" /> Lane counts are written with an "x" prefix (for example, "×8" represents an eight-lane card or slot), with ×16 being the largest size in common use.<ref name="odC7t" /> Lane sizes are also referred to via the terms "width" or "by" e.g., an eight-lane slot could be referred to as a "by 8" or as "8 lanes wide."
+
+For mechanical card sizes, see [[#Form factors|below]].
+
+=== Serial bus ===
+{{unreferenced section|date=March 2018}}
+The bonded serial [[Bus (computing)|bus]] architecture was chosen over the traditional parallel bus because of the inherent limitations of the latter, including [[half-duplex]] operation, excess signal count, and inherently lower [[Bandwidth (computing)|bandwidth]] due to [[timing skew]]. Timing skew results from separate electrical signals within a parallel interface traveling through conductors of different lengths, on potentially different [[printed circuit board]] (PCB) layers, and at possibly different [[Signal velocity|signal velocities]]. Despite being transmitted simultaneously as a single [[Word (data type)|word]], signals on a parallel interface have different travel duration and arrive at their destinations at different times. When the interface clock period is shorter than the largest time difference between signal arrivals, recovery of the transmitted word is no longer possible. Since timing skew over a parallel bus can amount to a few nanoseconds, the resulting bandwidth limitation is in the range of hundreds of megahertz.
+
+[[File:PCIe vs PCI.gif|thumb|'''Highly simplified''' topologies of the Legacy PCI Shared (Parallel) Interface and the PCIe Serial Point-to-Point Interface<ref name="P7MD8" />]]
+
+A serial interface does not exhibit timing skew because there is only one differential signal in each direction within each lane, and there is no external clock signal since clocking information is [[Clock recovery|embedded]] within the serial signal itself. As such, typical bandwidth limitations on serial signals are in the multi-gigahertz range. PCI Express is one example of the general trend toward replacing parallel buses with serial interconnects; other examples include [[Serial ATA]] (SATA), [[USB]], [[Serial Attached SCSI]] (SAS), [[FireWire]] (IEEE 1394), and [[RapidIO]]. In digital video, examples in common use are [[Digital Visual Interface|DVI]], [[HDMI]], and [[DisplayPort]], but they were replacements for analog VGA, not for a parallel bus.
+
+Multichannel serial design increases flexibility with its ability to allocate fewer lanes for slower devices.
+
+=== Switch <span class="anchor" id="SWITCH"></span> ===
+A '''PCIe switch''' is like a [[network switch]], except that it works with PCIe connections. In the tree topology is one ''upstream'' port where it connects to a higher-level device (another switch or directly a PCIe bus) and a number of ''downstream'' ports. The switch is responsible for receiving a packet from one port and forwarding it to an appropriate, different port. By doing packet-switching, the bandwidth is effectively shared across multiple downstream ports (compared to static lane bifurcation). A more advanced multi-host topology contains multiple upstream ports.<ref>{{cite web |last1=Do |first1=Vanessa |title=Rethinking AI Infrastructure: The Rise Of PCIe Switches |url=https://semiengineering.com/rethinking-ai-infrastructure-the-rise-of-pcie-switches/ |website=Semiconductor Engineering |date=11 September 2025}}</ref>
+
+== Form factors ==
+
+=== PCI Express add-in card<span class="anchor" id="HHHL"></span><span class="anchor" id="FHHL"></span> ===
+<!--"FHHL" and "HHHL" redirect here.-->
+[[File:Intel P3608 NVMe flash SSD, PCI-E add-in card.jpg|thumb|Intel P3608 NVMe flash SSD, PCIe add-in card|alt=]]
+
+A PCI Express add-in card fits into a slot of its physical size or larger (with ×16 as the largest used), but may not fit into a smaller PCI Express slot; for example, a ×16 card may not fit into a ×4 or ×8 slot. Some slots use open-ended sockets to permit physically longer cards and negotiate the best available electrical and logical connection.
+
+The number of lanes actually connected to a slot may also be fewer than the number supported by the physical slot size. An example is a ×16 slot that runs at ×4, which accepts any ×1, ×2, ×4, ×8 or ×16 card, but provides only four lanes. Its specification may read as "×16 (×4 mode)" or "×16 (×4 signal)", while "mechanical @ electrical" notation (e.g. "×16&nbsp;@&nbsp;×4") is also common.{{Citation needed|date=July 2022}} The advantage is that such slots can accommodate a larger range of PCI Express cards without requiring motherboard hardware to support the full transfer rate. Standard mechanical sizes are ×1, ×4, ×8, and ×16. Cards using a number of lanes other than the standard mechanical sizes need to physically fit the next larger mechanical size (e.g. an ×2 card uses the ×4 size, or an ×12 card uses the ×16 size).
+
+The cards themselves are designed and manufactured in various sizes. For example, [[solid-state drive]]s (SSDs) that come in the form of PCI Express cards often use [[Conventional PCI#Low-profile cards|HHHL]] (half height, half length) and [[Conventional PCI#Half-length full-height card|FHHL]] (full height, half length) to describe the physical dimensions of the card. The concept of "full" and "half" heights and lengths are inherited from Conventional PCI.<ref name="8AKZj" /><ref name="c1yve" />
+
+{| class="wikitable"
+|+ PCI express add-in card dimensions<ref name="CEM4">{{cite book |title=PCI Express Card Electromechanical Specification Revision 4.0, Version 0.9=|date=November 2018}} (PCIe_CEM_SPEC_R4_V9_12072018_NCB.pdf)</ref>
+|-
+! rowspan=2" colspan=2 | PCI card type
+! colspan="2" | Dimensions 
+! rowspan=2 | Notes
+|-
+! (mm) !! (in)
+|-
+! rowspan=2 | Height
+| Standard (Full) || 111.15 || 4.376 || Fits 3U chassis.
+|-
+| Low profile (Half) || 68.90 || 2.731 || Fits 2U chassis.
+|-
+! rowspan=3 | Length
+| Full || 312.00 || 4.376 × 12.283 || Enough space for ×16.
+|-
+| Three-quarter || 254.00 || 4.376 × 10.00 || Enough space for ×16.
+|-
+| Half ||167.65 || 4.376 × 6.60 || Enough space for ×16.
+|-
+! rowspan=3 | Width
+| Single slot || 18.71 || 0.737 || Fits 1U chassis if rotated.
+|-
+| Dual slot || 39.04 || 1.537 || Fits 1U chassis if rotated.
+|-
+| Triple slot || 59.36 || 2.337 || Fits 2U chassis if rotated.
+|}
+
+The length levels beside full are not a PCIe standard, but only a manufacturer agreement. Half length provides sufficient space for a ×16 connector. Below that narrower data connectors need to be used.
+
+These dimensions can be freely mixed and matched, but larger dimensions tend to co-occur.
+
+There is a fixed distance of {{convert|57.15|mm|in}} between the connector's key notch (middle ridge diving data and power) and the end of the card, which may be covered by an end plate with a screw-hole for installing onto the computer case. This fixed length ensures that cards do not protrude out of the chassis.
+
+The slot spacing is exactly {{convert|0.8|in|mm}} on [[ATX]] motherboards.
+
+For further specifications of the slot, see [[#Physical layer]] below.
+
+==== Non-standard video card form factors ====
+Modern (since {{circa|2012}}<ref name="j6TTS" />) gaming [[video card]]s usually exceed the height as well as thickness specified in the PCI Express standard, due to the need for more capable and quieter [[Computer fan|cooling fans]], as gaming video cards often emit hundreds of watts of heat.<ref name="RAreG" /> Modern computer cases are often wider to accommodate these taller cards, but not always. Since full-length cards (312&nbsp;mm) are uncommon, modern cases sometimes cannot accommodate them. The thickness of these cards also typically occupies the space of 2 to 5<ref>{{Cite web |last=Discuss |first=btarunr |date=2023-01-06 |title=ASUS × Noctua RTX 4080 Graphics Card is 5 Slots Thick, We Go Hands-on |url=https://www.techpowerup.com/303148/asus-x-noctua-rtx-4080-graphics-card-is-5-slots-thick-we-go-hands-on |access-date=2024-09-19 |website=TechPowerUp }}</ref> PCIe slots. In fact, even the methodology of how to measure the cards varies between vendors, with some including the metal bracket size in dimensions and others not.
+
+For instance, comparing three high-end video cards released in 2020: a [[Sapphire Technology|Sapphire]] [[Radeon RX 5000 series|Radeon RX 5700 XT]] card measures 135&nbsp;mm in height (excluding the metal bracket), which exceeds the PCIe standard height by 28&nbsp;mm,<ref name="E0Tsg" /> another Radeon RX 5700 XT card by [[XFX]] measures 55&nbsp;mm thick (i.e. 2.7 PCI slots at 20.32&nbsp;mm), taking up 3 PCIe slots,<ref name="mAt96" /> while an [[Asus]] [[GeForce 30 series|GeForce RTX 3080]] video card takes up two slots and measures 140.1{{nbsp}}mm × 318.5{{nbsp}}mm × 57.8{{nbsp}}mm, exceeding PCI Express's maximum height, length, and thickness respectively.<ref name="kk3xz" />
+
+==== Pinout ====
+The following table identifies the conductors on each side of the [[edge connector]] on a PCI Express card. The solder side of the [[printed circuit board]] (PCB) is the A-side, and the component side is the B-side.<ref name="IM1RH" /> PRSNT1# and PRSNT2# pins must be slightly shorter than the rest, to ensure that a hot-plugged card is fully inserted. The WAKE# pin uses full voltage to wake the computer, but must be [[pull up resistor|pulled high]] from the standby power to indicate that the card is wake capable.<ref name="PCIe card 2" />
+{{sticky-header}}
+{|class="wikitable sticky-header" style="font-size:80%"
+|+ PCI Express connector pinout (×1, ×4, ×8 and ×16 variants)
+|-
+! Pin !! Side B !! Side A !! border="0" | Description
+!
+! Pin !! Side B !! Side A !! Description
+|-
+! {{0}}1
+| style="background:#FF8888" | +12&nbsp;V || style="background:#9f9" | PRSNT1# || align="left" | Must connect to farthest PRSNT2# pin
+| rowspan=54 border="0" |
+! 50
+| style="background:#99f" | HSOp(8) || style="background:#ff9" | Reserved || rowspan="2" style="text-align:left" | Lane 8 transmit data, {{nowrap|+ and −}}
+|-
+! {{0}}2
+| style="background:#FF8888" | +12&nbsp;V || style="background:#FF8888" | +12&nbsp;V || rowspan="2" style="text-align:left" |Main power pins
+! 51
+| style="background:#99f" | HSOn(8) || style="background:#999" | Ground
+|-
+! {{0}}3
+| style="background:#FF8888" | +12&nbsp;V || style="background:#FF8888" | +12&nbsp;V
+! 52
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(8) || rowspan="2" style="text-align:left" | Lane 8 receive data, {{nowrap|+ and −}}
+|-
+! {{0}}4
+| style="background:#999" | Ground || style="background:#999" | Ground ||
+! 53
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(8)
+|-
+! {{0}}5
+| style="background:#fc6" | SMCLK || style="background:#99f" | TCK || rowspan="5" style="text-align:left" | [[SMBus]] and [[JTAG]] port pins
+! 54
+| style="background:#99f" | HSOp(9) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 9 transmit data, {{nowrap|+ and −}}
+|-
+! {{0}}6
+| style="background:#fc6" | SMDAT || style="background:#99f" | TDI
+! 55
+| style="background:#99f" | HSOn(9) || style="background:#999" | Ground
+|-
+! {{0}}7
+| style="background:#999" | Ground || style="background:#f9f" | TDO
+! 56
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(9) || rowspan="2" style="text-align:left" | Lane 9 receive data, {{nowrap|+ and −}}
+|-
+! {{0}}8
+| style="background:#FF8888" | +3.3&nbsp;V || style="background:#99f" | TMS
+! 57
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(9)
+|-
+! {{0}}9
+| style="background:#99f" | TRST# || style="background:#FF8888" | +3.3&nbsp;V
+! 58
+| style="background:#99f" | HSOp(10) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 10 transmit data, {{nowrap|+ and −}}
+|-
+! 10
+| style="background:#FF8888" |+3.3&nbsp;V aux || style="background:#FF8888" | +3.3&nbsp;V || align="left" | Aux power & [[standby power]]
+! 59
+| style="background:#99f" | HSOn(10) || style="background:#999" | Ground
+|-
+! 11
+| style="background:#fc6" | WAKE# || style="background:#fc6" | PERST# || align="left" | Link reactivation; fundamental reset<ref name="ajnim" />
+! 60
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(10) || rowspan="2" style="text-align:left" | Lane 10 receive data, {{nowrap|+ and −}}
+|-
+!colspan=4| Key notch
+! 61
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(10)
+|-
+! 12
+| style="background:#f9f" | CLKREQ# || style="background:#999" | Ground || align="left" | Clock request signal<ref name="vj2hg" />
+! 62
+| style="background:#99f" | HSOp(11) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 11 transmit data, {{nowrap|+ and −}}
+|-
+! 13
+| style="background:#999" | Ground || style="background:#99f" | REFCLK+ || align="left" | Reference clock differential pair
+! 63
+| style="background:#99f" | HSOn(11) || style="background:#999" | Ground
+|-
+! 14
+| style="background:#99f" | HSOp(0) || style="background:#99f" | REFCLK− || rowspan="2" style="text-align:left" | Lane 0 transmit data, {{nowrap|+ and −}}
+! 64
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(11) || rowspan="2" style="text-align:left" | Lane 11 receive data, {{nowrap|+ and −}}
+|-
+! 15
+| style="background:#99f" | HSOn(0) || style="background:#999" | Ground
+! 65
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(11)
+|-
+! 16
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(0) || rowspan="2" style="text-align:left" | Lane 0 receive data, {{nowrap|+ and −}}
+! 66
+| style="background:#99f" | HSOp(12) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 12 transmit data, {{nowrap|+ and −}}
+|-
+! 17
+| style="background:#9f9" | PRSNT2# || style="background:#f9f" | HSIn(0)
+! 67
+| style="background:#99f" | HSOn(12) || style="background:#999" | Ground
+|-
+! 18
+| style="background:#999" | Ground || style="background:#999" | Ground ||
+! 68
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(12) || rowspan="2" style="text-align:left" | Lane 12 receive data, {{nowrap|+ and −}}
+|-
+!colspan=4|PCI Express ×1 cards end at pin 18
+! 69
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(12)
+|-
+! 19
+| style="background:#99f" | HSOp(1) || style="background:#ff9" | Reserved || rowspan="2" style="text-align:left" | Lane 1 transmit data, {{nowrap|+ and −}}
+! 70
+| style="background:#99f" | HSOp(13) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 13 transmit data, {{nowrap|+ and −}}
+|-
+! 20
+| style="background:#99f" | HSOn(1) || style="background:#999" | Ground
+! 71
+| style="background:#99f" | HSOn(13) || style="background:#999" | Ground
+|-
+! 21
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(1) || rowspan="2" style="text-align:left" | Lane 1 receive data, {{nowrap|+ and −}}
+! 72
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(13) || rowspan="2" style="text-align:left" | Lane 13 receive data, {{nowrap|+ and −}}
+|-
+! 22
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(1)
+! 73
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(13)
+|-
+! 23
+| style="background:#99f" | HSOp(2) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 2 transmit data, {{nowrap|+ and −}}
+! 74
+| style="background:#99f" | HSOp(14) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 14 transmit data, {{nowrap|+ and −}}
+|-
+! 24
+| style="background:#99f" | HSOn(2) || style="background:#999" | Ground
+! 75
+| style="background:#99f" | HSOn(14) || style="background:#999" | Ground
+|-
+! 25
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(2) || rowspan="2" style="text-align:left" | Lane 2 receive data, {{nowrap|+ and −}}
+! 76
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(14) || rowspan="2" style="text-align:left" | Lane 14 receive data, {{nowrap|+ and −}}
+|-
+! 26
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(2)
+! 77
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(14)
+|-
+! 27
+| style="background:#99f" | HSOp(3) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 3 transmit data, {{nowrap|+ and −}}
+! 78
+| style="background:#99f" | HSOp(15) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 15 transmit data, {{nowrap|+ and −}}
+|-
+! 28
+| style="background:#99f" | HSOn(3) || style="background:#999" | Ground
+! 79
+| style="background:#99f" | HSOn(15) || style="background:#999" | Ground
+|-
+! 29
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(3) || rowspan="2" style="text-align:left" | Lane 3 receive data, {{nowrap|+ and −}}<br />"Power brake", active-low to reduce device power
+! 80
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(15) || rowspan="2" style="text-align:left" | Lane 15 receive data, {{nowrap|+ and −}}
+|-
+! 30
+| style="background:#fc6" | PWRBRK# || style="background:#f9f" | HSIn(3)
+! 81
+| style="background:#9f9" | PRSNT2# || style="background:#f9f" | HSIn(15)
+|-
+! 31
+| style="background:#9f9" | PRSNT2# || style="background:#999" | Ground ||rowspan=2|
+! 82
+| style="background:#ff9" | Reserved || style="background:#999" | Ground ||
+|-
+! 32
+| style="background:#999" | Ground || style="background:#ff9" | Reserved 
+| colspan="4" rowspan="12" |
+|-
+!colspan=4|PCI Express ×4 cards end at pin 32
+|-
+! 33
+| style="background:#99f" | HSOp(4) || style="background:#ff9" | Reserved || rowspan="2" style="text-align:left" | Lane 4 transmit data, {{nowrap|+ and −}}
+|-
+! 34
+| style="background:#99f" | HSOn(4) || style="background:#999" | Ground
+|-
+! 35
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(4) || rowspan="2" style="text-align:left" | Lane 4 receive data, {{nowrap|+ and −}}
+|-
+! 36
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(4)
+|-
+! 37
+| style="background:#99f" | HSOp(5) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 5 transmit data, {{nowrap|+ and −}}
+|-
+! 38
+| style="background:#99f" | HSOn(5) || style="background:#999" | Ground
+|-
+! 39
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(5) || rowspan="2" style="text-align:left" | Lane 5 receive data, {{nowrap|+ and −}}
+|-
+! 40
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(5)
+|-
+! 41
+| style="background:#99f" | HSOp(6) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 6 transmit data, {{nowrap|+ and −}}
+|-
+! 42
+| style="background:#99f" | HSOn(6) || style="background:#999" | Ground
+|-
+! 43
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(6) || rowspan="2" style="text-align:left" | Lane 6 receive data, {{nowrap|+ and −}}
+!colspan=4| Legend
+|-
+! 44
+| style="background:#999" | Ground || style="background:#f9f" | HSIn(6)
+! style="background:#FF8888" colspan=2 | Power
+| colspan="2" style="text-align:left" | Supplies power to the card
+|-
+! 45
+| style="background:#99f" | HSOp(7) || style="background:#999" | Ground || rowspan="2" style="text-align:left" | Lane 7 transmit data, {{nowrap|+ and −}}
+! style="background:#9f9" colspan=2 | Sense
+| colspan="2" style="text-align:left" | Tied together on card
+|-
+! 46
+| style="background:#99f" | HSOn(7) || style="background:#999" | Ground
+! style="background:#999" colspan=2 | Ground
+| colspan="2" style="text-align:left" | Zero volt reference
+|-
+! 47
+| style="background:#999" | Ground || style="background:#f9f" | HSIp(7) || rowspan="2" style="text-align:left" | Lane 7 receive data, {{nowrap|+ and −}}
+! style="background:#fc6" colspan=2 | [[Open drain]]
+| colspan="2" style="text-align:left" | May be pulled low or sensed by multiple cards<ref name="YpQVq" /> 
+|-
+! 48
+| style="background:#9f9" | PRSNT2# || style="background:#f9f" | HSIn(7)
+! style="background:#99f" colspan=2 | Host-to-card
+| colspan="2" style="text-align:left" | Signal from the motherboard to the card
+|-
+! 49
+| style="background:#999" | Ground || style="background:#999" | Ground ||
+! style="background:#f9f" colspan=2 | Card-to-host
+| colspan="2" style="text-align:left" | Signal from the card to the motherboard
+|-
+! colspan=4 |PCI Express ×8 cards end at pin 49
+! style="background:#ff9" colspan=2 | Reserved
+| colspan="2" style="text-align:left" | Not presently used
+|}
+
+==== Power ====
+[[File:Powering of PCIe Slot.png|thumb|upright=1.25|The main {{val|12|ul=V}} power supply for the PCIe slot is pins B2, B3 (side B) and pins A2, A3 (side A). Power standby {{val|3.3|ul=V}} is pin B10 and A10. PCIe ×1 cards can draw up to {{val|25|ul=W}} and ×16 graphics cards can draw up to {{val|75|ul=W}}, combined.<ref>{{cite web |date=2022-01-16 |title=Where Does PCIe Cable Go? |url=https://greatpcreview.com/guides/where-does-pcie-cables-go/ |access-date=2022-06-10 }}</ref>]]
+
+===== Slot power =====
+<!--
+Please DO NOT add the claim that the PCI express 2.x standard adds support for up to 150&nbsp;W from the slot itself without a very good reference. While several references make the claim, particularly around the time of release, other references particularly those relying on the spec. dispute this. See the talk page discussion dated November 2012 for details.
+-->
+All PCI express cards may consume up to {{val|3|ul=A}} at {{val|+3.3|ul=V}} ({{val|9.9|ul=W}}). The amount of +12&nbsp;V and total power they may consume depends on the form factor and the role of the card:<ref name="CEM1.1" />{{rp|35–36}}<ref name="jArAO" /><ref>''PCI Express Base Specification, Revision 1.1'' Page 332</ref>
+* ×1 cards are limited to 0.5&nbsp;A at +12{{nbsp}}V (6&nbsp;W) and 10&nbsp;W combined.
+* ×4 and wider cards are limited to 2.1&nbsp;A at +12{{nbsp}}V (25&nbsp;W) and 25&nbsp;W combined.
+* A full-sized ×1 card may draw up to the 25&nbsp;W limits after initialization and software configuration as a high-power device.
+* A full-sized ×16 graphics card may draw up to 5.5&nbsp;A at +12{{nbsp}}V (66&nbsp;W) and 75&nbsp;W combined after initialization and software configuration as a high-power device.<ref name="PCIe card 2" />{{rp|38–39}}
+
+===== 6- and 8-pin power connectors =====
+[[File:PCI Express Power Supply Connector-female PNr°0438.jpg|thumb|upright=1.25|8-pin (left) and 6-pin (right) [[Molex Mini-fit Jr.|power connectors]] used on PCI Express cards]]
+
+Optional connectors add {{val|75|ul=W}} (6-pin) or {{val|150|ul=W}} (8-pin) of +12&nbsp;V power for up to {{val|300|ul=W}} total ({{nowrap|2 @ 75&nbsp;W + 1 @ 150&nbsp;W}}).
+* Sense0 pin is connected to ground by the cable or power supply, or float on board if cable is not connected.
+* Sense1 pin is connected to ground by the cable or power supply, or float on board if cable is not connected.
+
+Some cards use two 8-pin connectors, allowing 375&nbsp;W total ({{nowrap|1 @ 75&nbsp;W + 2 @ 150&nbsp;W}}). This was newly standardized in PCI Express 4.0 CEM of 2018, though it was already in use before then.<ref name=CEM4/> The 8-pin PCI Express connector should not be confused with the [[EPS12V]] connector, which is mainly used for powering SMP and multi-core systems. The power connectors are variants of the Molex Mini-Fit Jr. series connectors.<ref name="JuErgh" />
+
+{| class="wikitable"
+|+ Molex Mini-Fit Jr. part numbers<ref name="JuErgh" />
+|-
+! Pins
+! Female/receptacle <br />on PS cable
+!Male/right-angle <br />header on PCB
+|-
+|6-pin
+|45559-0002
+|45558-0003
+|-
+|8-pin
+|45587-0004
+|45586-0005, 45586-0006
+|}
+
+{{Col-begin|width=auto}}
+{{Col-break}}
+{| class="wikitable"
+|+ 6-pin power connector (75&nbsp;W)<ref name="o2GFI" />
+|-
+! Pin !! Description
+|-
+| {{0}}1 || +12&nbsp;V
+|-
+| {{0}}2 || {{n/a|Not connected (usually +12&nbsp;V as well)}}
+|-
+| {{0}}3 || +12&nbsp;V
+|-
+| colspan="2" {{n/a}}
+|-
+| {{0}}4 || Ground
+|-
+| {{0}}5 || Sense
+|-
+| {{0}}6 || Ground
+|-
+| colspan="2" {{n/a}}
+|}
+{{Col-break|gap=1em}}
+{| class="wikitable"
+|+ 8-pin power connector (150&nbsp;W)<ref name="uLc7Q" /><ref name="CEM3.0" /><ref name="mcd6L" />
+! Pin !! Description
+|-
+| {{0}}1 || +12&nbsp;V
+|-
+| {{0}}2 || +12&nbsp;V
+|-
+| {{0}}3 || +12&nbsp;V
+|-
+| {{0}}4 || Sense 1 (8-pin connected{{efn-ua|When a 6-pin connector is plugged into an 8-pin receptacle the card is notified by a missing ''Sense1'' that it may only use up to 75&nbsp;W.}})
+|-
+| {{0}}5 || Ground
+|-
+| {{0}}6 || Sense 0 (6-pin or 8-pin connected)
+|-
+| {{0}}7 || Ground
+|-
+| {{0}}8 || Ground
+|}
+{{Col-break}}
+{|
+| [[File:PCIe6connector.svg|thumb|185px|<small>6 pin power connector pin map</small>]]
+|-
+| [[File:PCIe8connector.svg|thumb|224px|<small>8 pin power connector pin map</small>]]
+|}
+{{Col-end}}
+{{notelist-ua}}
+
+===== 12VHPWR connector =====
+{{Excerpt|16-Pin 12vHPWR connector|templates=-Advert}}
+
+===== 48VHPWR connector =====
+In 2021, PCIe Card Electromechanical (CEM, pronounced like "chem" in "chemistry") Specification introduced a connector for 48 Volts with two current-carrying contacts and four sense pins. It was retained into PCIe-CEM 5.1 of 2023.<ref name="PCIe5.1 CEM">''PCI Express Card Electromechanical Specification Revision 5.1, Version 1.0'', 30 March 2023 – 10. PCI Express 48VHPWR Auxiliary Power Connector Definition</ref> The contacts are rated for 15 Amps continuous current. The 48VHPWR connector can carry 720 watts.
+
+{| class="wikitable" style="table-layout: fixed; width: 45em"
+|+ 48VHPWR pinout, Plug side
+|-
+!colspan=2|P1
+!colspan=2|P2
+|-
+|colspan=2|+48V (15&nbsp;A)
+|colspan=2|Ground (15&nbsp;A)
+|-
+! S1 !! S2 !! S3 !! S4
+|-
+|CARD_PWR_STABLE
+|CARD_CBL_PRES#
+|SENSE0
+|SENSE1
+|}
+
+Later{{when|date=September 2025}} it was removed and an incompatible 48V 1×2 connector was introduced where Sense0 and Sense1 are located farthest from each other.
+
+===== Power excursion =====
+Power excursion refers to short peaks of power draw exceeding the rated maximum (sustained) power level. Since an add-on Engineering Change Notice (ECN) to PCIe-CEM 5.0, the additional power connectors need to be able to handle 100-microsecond power draw at 3× of maximum sustained power, reducing to 1× at the 1-second window level following a logarithmic line. Since PCIe-ECM 5.1, slot power has a similar excursion expansion at 2.5× over 100&nbsp;μs. In CEM 5.1, the added excursion limit is only provided after software configuration, specifically the Set_​Slot_​Power_​Limit message. The ECN is part of ATX 3.0 and PCIe CEM 5.1 is part of ATX 3.1.<ref>{{multiref2|{{cite web |title=ATX Version 3 Multi Rail Desktop Platform Power Supply (2.1a, ATX 3.1) ::  PCIe* Add-in Card Power Excursions |url=https://edc.intel.com/content/www/us/en/design/ipla/software-development-platforms/client/platforms/alder-lake-desktop/atx-version-3-0-multi-rail-desktop-platform-power-supply-design-guide/2.1a/pcie-add-in-card-power-excursions/}}|{{cite web |title=ATX Version 3 Multi Rail Desktop Platform Power Supply (2.01, ATX 3.0) ::  PCIe* Add-in Card Power Excursions |url=https://edc.intel.com/content/www/us/en/design/ipla/software-development-platforms/client/platforms/alder-lake-desktop/atx-version-3-0-multi-rail-desktop-platform-power-supply-design-guide/2.0/2.01/pcie-add-in-card-power-excursions/}}}}</ref>
+
+=== PCI Express Mini Card <span class="anchor" id="MINI-CARD"></span> ===
+<!-- [[PCI Express Mini Card]], [[Mini PCI Express]], [[Mini PCIe]], [[Mini PCI-E]], and [[M-PCIe]] redirect here. -->
+[[File:Intel WM3945ABG MOW2 and its connector 20070216.jpg|thumb|A [[WLAN]] PCI Express Mini Card and its connector]]
+[[File:MiniPCI and MiniPCI Express cards.jpg|thumb|MiniPCI and MiniPCI Express cards in comparison]]
+
+'''PCI Express Mini Card''' (also known as '''Mini PCI Express''', '''Mini PCIe''', '''Mini PCI-E''', '''mPCIe''', and '''PEM'''), based on PCI Express, is a replacement for the [[Mini PCI]] form factor. It is developed by the [[PCI-SIG]]. The host device supports both PCI Express and [[USB]]&nbsp;2.0 connectivity, and each card may use either standard. Most laptop computers built between 2005 and 2013 use Mini PCI Express for expansion cards; however, {{as of|2015|lc=yes}}, many vendors have moved toward using the newer [[M.2]] form factor for this purpose.<ref>{{cite web | url=https://arstechnica.com/gadgets/2015/02/understanding-m-2-the-interface-that-will-speed-up-your-next-ssd/ | title=Understanding M.2, the interface that will speed up your next SSD | date=8 February 2015 }}</ref>
+
+Due to different dimensions, PCI Express Mini Cards are not physically compatible with standard full-size PCI Express slots; however, passive adapters exist that let them be used in full-size slots.<ref name="DmwJz" />
+
+==== Physical dimensions ====
+Dimensions of PCI Express Mini Cards are 30&nbsp;mm × 50.95&nbsp;mm (width&nbsp;× length) for a Full Mini Card. There is a 52-pin [[edge connector]], consisting of two staggered rows on a 0.8&nbsp;mm pitch. Each row has eight contacts, a gap equivalent to four contacts, then a further 18 contacts. [[Printed circuit board|Boards]] have a thickness of 1.0&nbsp;mm, excluding the components. A "Half Mini Card" (sometimes abbreviated as HMC) is also specified, having approximately half the physical length of 26.8&nbsp;mm. There are also half size mini PCIe cards that are 30 × 31.90 mm which is about half the length of a full size mini PCIe card.<ref>{{cite book | url=https://books.google.com/books?id=otfPEAAAQBAJ&dq=pci+express+micro&pg=PT628 | isbn=978-0-13-816625-0 | title=IT Essentials Companion Guide v8 | date=9 July 2023 | publisher=Cisco Press }}</ref><ref>{{cite book | url=https://google.com.pa/books/edition/Mobile_Computing_Deployment_and_Manageme/rP5gBgAAQBAJ?hl=en&gbpv=1&dq=mini+pcie+full+size+half+size&pg=PA491&printsec=frontcover | isbn=978-1-118-82461-0 | title=Mobile Computing Deployment and Management: Real World Skills for CompTIA Mobility+ Certification and Beyond | date=24 February 2015 | publisher=John Wiley & Sons }}</ref>
+
+==== Electrical interface ====
+PCI Express Mini Card edge connectors provide multiple connections and buses:
+* PCI Express ×1 (with SMBus)
+* USB&nbsp;2.0
+* Wires to diagnostics LEDs for wireless network (i.e., [[Wi-Fi]]) status on computer's chassis
+* [[Subscriber Identity Module|SIM]] card for [[GSM]] and [[WCDMA]] applications (UIM signals on spec.)
+* Future extension for another PCIe lane
+* 1.5&nbsp;V and 3.3&nbsp;V power
+
+==== Mini-SATA (mSATA) variant <span class="anchor" id="MSATA"></span> ====
+[[File:Intel 525 mSATA SSD.jpg|thumb|upright|An Intel mSATA SSD]]
+Despite sharing the Mini PCI Express form factor, an [[mSATA]] slot is not necessarily electrically compatible with Mini PCI Express. For this reason, only certain notebooks are compatible with mSATA drives. Most compatible systems are based on Intel's Sandy Bridge processor architecture, using the Huron River platform. Notebooks such as Lenovo's ThinkPad T, W and X series, released in March–April 2011, have support for an mSATA SSD card in their [[Wireless WAN|WWAN]] card slot. The ThinkPad Edge E220s/E420s, and the Lenovo IdeaPad Y460/Y560/Y570/Y580 also support mSATA.<ref name="5xxpo" /> On the contrary, the L-series among others can only support M.2 cards using the PCIe standard in the WWAN slot.
+
+Some notebooks (notably the [[Asus Eee PC]], the [[Apple Inc.|Apple]] [[MacBook Air]], and the Dell mini9 and mini10) use a variant of the PCI Express Mini Card as an [[solid-state drive|SSD]]. This variant uses the reserved and several non-reserved pins to implement SATA and IDE interface passthrough, keeping only USB, ground lines, and sometimes the core PCIe ×1 bus intact.<ref name="EeePC" /> This makes the "miniPCIe" flash and solid-state drives sold for netbooks largely incompatible with true PCI Express Mini implementations.
+
+Also, the typical Asus miniPCIe SSD is 71&nbsp;mm long, causing the Dell 51&nbsp;mm model to often be (incorrectly) referred to as half length. A true 51&nbsp;mm Mini PCIe SSD was announced in 2009, with two stacked PCB layers that allow for higher storage capacity. The announced design preserves the PCIe interface, making it compatible with the standard mini PCIe slot. No working product has yet been developed.
+
+Intel has numerous desktop boards with the PCIe ×1 Mini-Card slot that typically do not support mSATA SSD. A list of desktop boards that natively support mSATA in the PCIe ×1 Mini-Card slot (typically multiplexed with a SATA port) is provided on the Intel Support site.<ref name="xpI66" />
+
+=== PCI Express M.2 ===
+{{Main|M.2}}
+M.2 replaces the mSATA standard and Mini PCIe.<ref name="oL68r" /> Computer bus interfaces provided through the M.2 connector are PCI Express 3.0 or higher (up to four lanes), Serial ATA 3.0, and USB 3.0 (a single logical port for each of the latter two). It is up to the manufacturer of the M.2 host or device to choose which interfaces to support, depending on the desired level of host support and device type.
+
+=== PCI Express External Cabling <span class="anchor" id="EXTERNAL-CABLING"></span> ===
+''PCI Express External Cabling'' (also known as ''External PCI Express'', ''Cabled PCI Express'', or ''ePCIe'') specifications were released by the [[PCI-SIG]] in February 2007.<ref name="pcie_cabling1.0" /><ref name="ZTXPi" />
+
+Standard cables and connectors have been defined for ×1, ×4, ×8, and ×16 link widths, with a transfer rate of 250&nbsp;MB/s per lane. The PCI-SIG also expects the norm to evolve to reach 500&nbsp;MB/s, as in PCI Express 2.0. An example of the uses of Cabled PCI Express is a metal enclosure, containing a number of PCIe slots and PCIe-to-ePCIe adapter circuitry. This device would not be possible had it not been for the ePCIe specification.
+
+==== PCI Express OCuLink <span class="anchor" id="OCULINK"></span> ====
+''OCuLink'' (standing for "optical-copper link", as ''Cu'' is the [[Symbol (chemistry)|chemical symbol]] for [[copper]]) is an extension for the "cable version of PCI Express". Version 1.0 of OCuLink, released in Oct 2015, supports up to 4 PCIe 3.0 lanes (3.9&nbsp;GB/s) over copper cabling; a [[fiber optic]] version may appear in the future.
+
+The most recent version of OCuLink, OCuLink-2, supports 8&nbsp;GB/s or 16&nbsp;GB/s (PCIe 4.0 ×4 or ×8)<ref name="OCuLink2" /> while the maximum bandwidth of a USB 80Gbit/s ([[USB4 Gen 4]]) or [[Thunderbolt 5]] connection is 10&nbsp;GB/s.
+
+OCulink is principally intended for PCIe (or SATA breakout) interconnections in servers, but also finds limited adoption on laptops for the connection of external GPU boxes.<ref name="6MiK5" />
+
+==== CopprLink ====
+CopprLink uses SFF-TA-1032 connectors to support external PCIe cable for PCIe 5.0 x16 and PCIe 6.0 x16.<ref>{{Cite web |last=published |first=Anton Shilov |date=2024-05-02 |title=PCI-SIG unveils CopprLink cables for PCIe 5 and 6 connections — PCIe 7.0 versions are under development |url=https://www.tomshardware.com/desktops/servers/pci-sig-unveils-copprlink-cables-for-pcie-5-and-6-connections-pcie-70-versions-are-under-development |access-date=2026-04-16 |website=Tom's Hardware |language=en}}</ref><ref>{{Cite web |title=PCIe® Cabling – The Journey to CopprLink™ {{!}} PCI-SIG |url=https://pcisig.com/blog/pcie%C2%AE-cabling-%E2%80%93-journey-copprlink%E2%84%A2 |access-date=2026-04-16 |website=pcisig.com}}</ref><ref>{{Cite AV media |url=https://www.youtube.com/watch?v=OxdINiIFEVA |title=This eGPU embarrasses the rest |date=2026-04-09 |last=PCWorld |access-date=2026-04-16 |via=YouTube}}</ref>
+
+=== Derivative forms ===
+Numerous other form factors use, or are able to use, PCIe. These include:
+* Low-height card
+* [[ExpressCard]]: Successor to the [[PC Card]] form factor (with ×1 PCIe and USB 2.0; hot-pluggable)
+* PCI Express ExpressModule: A hot-pluggable modular form factor defined for servers and workstations
+* [[XQD card]]: A PCI Express-based flash card standard by the [[CompactFlash Association]] with ×2 PCIe
+* [[CFexpress]] card: A PCI Express-based flash card by the CompactFlash Association in three form factors supporting 1 to 4 PCIe lanes
+* SD card: The [[SD card#SD Express|SD Express]] bus, introduced in version 7.0 of the SD specification uses a ×1 PCIe link
+* [[Switched Mezzanine Card|XMC]]: Similar to the [[Common Mezzanine Card|CMC]]/[[PCI Mezzanine Card|PMC]] form factor (VITA 42.3)
+* [[Advanced Telecommunications Computing Architecture|AdvancedTCA]]: A complement to [[CompactPCI]] for larger applications; supports serial based backplane topologies
+* [[Advanced Mezzanine Card|AMC]]: A complement to the [[Advanced Telecommunications Computing Architecture|AdvancedTCA]] specification; supports processor and I/O modules on ATCA boards (×1, ×2, ×4 or ×8 PCIe).
+* [[FeaturePak]]: A tiny expansion card format (43{{nbsp}}mm × 65&nbsp;mm) for embedded and small-form-factor applications, which implements two ×1 PCIe links on a high-density connector along with USB, I2C, and up to 100 points of I/O
+* [[Universal IO]]: A variant from [[Supermicro|Super Micro Computer]] Inc designed for use in low-profile rack-mounted chassis.<ref name="tNP5L" /> It has the connector bracket reversed so it cannot fit in a normal PCI Express socket, but it is pin-compatible and may be inserted if the bracket is removed.
+* [[M.2]] (formerly known as NGFF)
+* [[M-PCIe]] brings PCIe 3.0 to mobile devices (such as tablets and smartphones), over the [[M-PHY]] physical layer.<ref name="osiit" /><ref name="PoRghEr" />
+* [[Serial Attached SCSI]]-related ports:
+** [[SATA Express]], [[U.2]] (formerly known as SFF-8639), U.3 use the same port
+** [[SlimSAS]] (SFF-8654)
+** SFF-TA-1016 (M-XIO connector)
+** SFF-TA-1026, SFF-TA-1033
+
+The PCIe slot connector can also carry protocols other than PCIe. Some [[List of Intel chipsets|9xx series Intel chipsets]] support [[Serial Digital Video Out]], a proprietary technology that uses a slot to transmit video signals from the host CPU's [[Intel GMA|integrated graphics]] instead of PCIe, using a supported add-in.
+
+The PCIe transaction-layer protocol can also be used over some other interconnects, which are not electrically PCIe:
+* [[Thunderbolt (interface)|Thunderbolt]]: A royalty-free (as of Thunderbolt 3) interconnect standard by Intel that combines [[DisplayPort]] and PCIe protocols in a form factor compatible with [[Mini DisplayPort]]. Thunderbolt 3.0 also combines USB 3.1 and uses the [[USB-C]] form factor as opposed to Mini DisplayPort.
+** [[USB4]] is an extension of Thunderbolt 3.0. Thunderbolt 4 and Thunderbolt 5 are [[Profile (engineering)|profiles]] of USB4 specifying higher levels of mandatory features.
+
+== History and revisions ==
+While in early development, PCIe was initially referred to as ''HSI'' (for ''High Speed Interconnect''), and underwent a name change to ''3GIO'' (for ''3rd Generation I/O'') before finally settling on its [[PCI-SIG]] name ''PCI Express''. A technical working group named the ''Arapaho Work Group'' (AWG) drew up the standard. For initial drafts, the AWG consisted only of Intel engineers; subsequently, the AWG expanded to include industry partners.
+
+Since, PCIe has undergone several large and smaller revisions, improving on performance and other features.
+
+=== Comparison table ===
+{| class="wikitable" style="text-align:left"
+|+ PCI Express link performance<ref name="faq4" /><ref name="faq3" /><ref>{{cite web | title=PCI-Express-Schnittstelle: PCIe 7.0 und die Basis für optische Verbindungen stehen, PCIe 8.0 folgt | date=11 June 2025 | url=https://www.computerbase.de/news/mainboards/pci-express-schnittstelle-pcie-7-0-und-die-basis-fuer-optische-verbindungen-stehen-pcie-8-0-folgt.92986/ }}</ref>
+|- style="line-height:120%"
+! scope="col" rowspan=2 | Version
+! scope="col" rowspan=2 | {{Abbr|Year|Year introduced}}
+! scope="col" rowspan=2 colspan=2 | Line code
+! scope="col" rowspan=2 | Transfer rate<br>(per lane){{Efn-lr|name="both-directions"|In each direction (each lane is a dual simplex channel).}}{{Efn-lr|name="transfer-rate"|Transfer rate refers to the encoded serial bit rate; 2.5 GT/s means 2.5&nbsp;Gbit/s serial data rate.}}
+! scope="col" colspan=5 | Throughput ([[GB/s]]){{Efn-lr|name="both-directions"}}{{Efn-lr|name="throughput"|Throughput indicates the usable bandwidth (i.e. only including the payload, not the 8b/10b, 128b/130b, or 242B/256B encoding overhead). The PCIe 1.0 transfer rate of 2.5&nbsp;GT/s per lane means a 2.5&nbsp;Gbit/s serial bit rate; after applying a 8b/10b encoding, this corresponds to a useful throughput of 2.0&nbsp;Gbit/s {{=}} 250&nbsp;MB/s.}}
+|-
+! scope="col" | ×1
+! scope="col" | ×2
+! scope="col" | ×4
+! scope="col" | ×8
+! scope="col" | ×16
+|-
+! scope="row" | 1.0
+| 2003
+| rowspan=5 | [[Non-return-to-zero|NRZ]]
+| rowspan=2 | [[8b/10b]]
+| 2.5&nbsp;[[GT/s]]
+| {{shade|0.25|align=left}}
+| {{shade|0.5|align=left}}
+| {{shade|1|align=left}}
+| {{shade|2|align=left}}
+| {{shade|4|align=left}}
+|-
+! scope="row" | 2.0
+| 2007
+| 5.0&nbsp;GT/s
+| {{shade|0.5|align=left}}
+| {{shade|1|align=left}}
+| {{shade|2|align=left}}
+| {{shade|4|align=left}}
+| {{shade|8|align=left}}
+|-
+! scope="row" | 3.0
+| 2010
+| rowspan=3 | [[128b/130b]]
+| 8.0&nbsp;GT/s
+| {{shade|0.985|align=left}}
+| {{shade|1.969|align=left}}
+| {{shade|3.938|align=left}}
+| {{shade|7.877|align=left}}
+| {{shade|15.754|align=left}}
+|-
+! scope="row" | 4.0
+| 2017
+| 16.0&nbsp;GT/s
+| {{shade|1.969|align=left}}
+| {{shade|3.938|align=left}}
+| {{shade|7.877|align=left}}
+| {{shade|15.754|align=left}}
+| {{shade|31.508|align=left}}
+|-
+! scope="row" | 5.0
+| 2019
+| 32.0&nbsp;GT/s
+| {{shade|3.938|align=left}}
+| {{shade|7.877|align=left}}
+| {{shade|15.754|align=left}}
+| {{shade|31.508|align=left}}
+| {{shade|63.015|align=left}}
+|-
+! scope="row" | 6.0 
+| 2022 (first implemented 2025)
+| rowspan=3 | {{Nowrap|[[PAM-4]]}}<br />[[Forward error correction|FEC]]
+| rowspan=3 | 1b/1b<br />242B/256B [[Flit (computer networking)|FLIT]]
+| 64.0&nbsp;GT/s
+| {{shade|7.563|align=left}}
+| {{shade|15.125|align=left}}
+| {{shade|30.25|align=left}}
+| {{shade|60.5|align=left}}
+| {{shade|121|align=left}}
+|-
+! scope="row" | 7.0 
+| 2025 (specification released)
+| 128.0&nbsp;GT/s
+| {{shade|15.125|align=left}}
+| {{shade|30.25|align=left}}
+| {{shade|60.5|align=left}}
+| {{shade|121|align=left}}
+| {{shade|242|align=left}}
+|-
+! scope="row" | 8.0
+| ''2028''<br>{{small|''(planned)''}}
+| 256.0&nbsp;GT/s
+| {{shade|30.25|align=left}}
+| {{shade|60.5|align=left}}
+| {{shade|121|align=left}}
+| {{shade|242|align=left}}
+| {{shade|484|align=left}}
+|}
+
+; Notes
+{{Notelist-lr}}
+
+=== PCI Express 1.0a <span class="anchor" id="1.0"></span><span class="anchor" id="1.0a"></span> ===
+In 2003, PCI-SIG introduced PCIe 1.0a, with a per-lane data rate of 0.25 [[gigabytes per second]] (GB/s) and a transfer rate of 2.5 [[Transfers per second|gigatransfers per second]] (GT/s).
+
+Transfer rate is expressed in transfers per second instead of bits per second because the number of transfers includes the overhead bits, which do not provide additional throughput;<ref name="HroAC" /> PCIe 1.x uses an [[8b/10b encoding]] scheme, resulting in a 20% (=&nbsp;2/10) overhead on the raw channel bandwidth.<ref name="tfQxK" /> So in the PCIe terminology, transfer rate refers to the encoded bit rate: 2.5&nbsp;GT/s is 2.5&nbsp;Gbit/s on the encoded serial link. This corresponds to 2.0&nbsp;Gbit/s of pre-coded data or 0.25&nbsp;GB/s, which is referred to as throughput in PCIe.
+
+==== PCI Express 1.1 <span class="anchor" id="1.1"></span> ====
+In 2005, PCI-SIG<ref name="n9qGs" /> introduced PCIe 1.1. This updated specification includes clarifications and several improvements, but is fully compatible with PCI Express 1.0a. No changes were made to the data rate.
+
+=== PCI Express 2.0 <span class="anchor" id="2.0"></span> ===
+[[File:Rosewill-USB3-PCI-Express-Card.jpg|thumb|A PCI Express&nbsp;2.0 ×1 expansion card that provides USB&nbsp;3.0 connectivity{{Efn|The card's [[Serial ATA#Standard connector|Serial ATA power connector]] is present because the USB&nbsp;3.0 ports require more power than the PCI Express bus can supply. More often, a [[Molex connector#Disk drive|4-pin Molex power connector]] is used.}}]]
+
+[[PCI-SIG]] announced the availability of the PCI Express Base 2.0 specification on 15 January 2007.<ref name="PCIExpressPressRelease" /> The PCIe 2.0 standard doubles the transfer rate compared with PCIe 1.0 to 5{{nbsp}}GT/s and the per-lane throughput rises from 250&nbsp;MB/s to 500&nbsp;MB/s. Consequently, a 16-lane PCIe connector (×16) can support an aggregate throughput of up to 8&nbsp;GB/s.
+
+PCIe 2.0 motherboard slots are fully [[backward compatible]] with PCIe v1.x cards. PCIe 2.0 cards are also generally backward compatible with PCIe 1.x motherboards, using the available bandwidth of PCI Express 1.1. Overall, graphic cards or motherboards designed for v2.0 work, with the other being v1.1 or v1.0a.
+
+The PCI-SIG also said that PCIe 2.0 features improvements to the point-to-point data transfer protocol and its software architecture.<ref name="UaYlc" />
+
+[[Intel Corporation|Intel]]'s first PCIe 2.0 capable chipset was the [[G35 (chipset)|X38]] and boards began to ship from various vendors ([[Universal abit|Abit]], [[Asus]], [[Gigabyte Technology|Gigabyte]]) as of 21 October 2007.<ref name="wHHTf" /> AMD started supporting PCIe 2.0 with its [[AMD 700 chipset series]] and nVidia started with the [[nForce 700|MCP72]].<ref name="gL2GQ" /> All of Intel's prior chipsets, including the [[Intel P35]] chipset, supported PCIe 1.1 or 1.0a.<ref name="mUQKD" />
+
+Like 1.x, PCIe 2.0 uses an [[8b/10b encoding]] scheme, therefore delivering, per-lane, an effective 4&nbsp;Gbit/s max. transfer rate from its 5&nbsp;GT/s raw data rate.
+
+==== PCI Express 2.1 <span class="anchor" id="2.1"></span> ====
+PCI Express 2.1 (with its specification dated 4 March 2009) supports a large proportion of the management, support, and troubleshooting systems planned for full implementation in PCI Express 3.0. However, the speed is the same as PCI Express 2.0. The increase in power from the slot breaks backward compatibility between PCI Express 2.1 cards and some older motherboards with 1.0/1.0a, but most motherboards with PCI Express 1.1 connectors are provided with a BIOS update by their manufacturers through utilities to support backward compatibility of cards with PCIe 2.1.
+
+=== PCI Express 3.0 <span class="anchor" id="3.0"></span> ===
+PCI Express 3.0 Base specification revision 3.0 was made available in November 2010, after multiple delays. In August 2007, PCI-SIG announced that PCI Express 3.0 would carry a bit rate of 8 [[gigatransfer]]s per second (GT/s), and that it would be backward compatible with existing PCI Express implementations. At that time, it was also announced that the final specification for PCI Express 3.0 would be delayed until Q2 2010.<ref name="cVjNG" /> New features for the PCI Express 3.0 specification included a number of optimizations for enhanced signaling and data integrity, including transmitter and receiver equalization, [[phase-locked loop|PLL]] improvements, clock data recovery, and channel enhancements of currently supported topologies.<ref name="extrmetech" />
+
+Following a six-month technical analysis of the feasibility of scaling the PCI Express interconnect bandwidth, PCI-SIG's analysis found that 8 gigatransfers per second could be manufactured in mainstream silicon process technology, and deployed with existing low-cost materials and infrastructure, while maintaining full compatibility (with negligible impact) with the PCI Express protocol stack.
+
+PCI Express&nbsp;3.0 upgraded the line encoding scheme to 128b/130b from the previous [[8b/10b encoding]], reducing the bandwidth overhead from 20% of  PCI Express&nbsp;2.0 to approximately 1.54% (=&nbsp;2/130). PCI Express 3.0's 8&nbsp;GT/s bit rate effectively delivers 985&nbsp;MB/s per lane, nearly doubling the lane bandwidth relative to PCI Express 2.0.<ref name="faq3" />
+
+On 18 November 2010, the PCI-SIG officially published the finalized PCI Express 3.0 specification to its members to build devices based on this new version of PCI Express.<ref name="ajVA3" />
+
+==== PCI Express 3.1 <span class="anchor" id="3.1"></span> ====
+In September 2013, PCI Express&nbsp;3.1 specification was announced for release in late 2013 or early 2014, consolidating various improvements to the published PCI Express&nbsp;3.0 specification in three areas: power management, performance and functionality.<ref name="PoRghEr" /><ref name="5lvIH" /> It was released in November 2014.<ref name="9EIkz" />
+
+=== PCI Express 4.0 <span class="anchor" id="4.0"></span> ===
+On 29 November 2011, PCI-SIG preliminarily announced PCI Express 4.0,<ref name="W466M" /> providing a 16&nbsp;GT/s bit rate that doubles the bandwidth provided by PCI Express 3.0 to 31.5&nbsp;GB/s in each direction for a 16-lane configuration, while maintaining backward and [[forward compatibility]] in both software support and used mechanical interface.<ref name="QNZsy" /> PCI Express 4.0 specs also bring OCuLink-2, an alternative to [[Thunderbolt (interface)|Thunderbolt]]. OCuLink version 2 has up to 16&nbsp;GT/s (16{{nbsp}}GB/s total for ×8 lanes),<ref name="OCuLink2" /> while the maximum bandwidth of a Thunderbolt 3 link is 5{{nbsp}}GB/s.
+
+At the [https://pcisig.com/past-events 2016 PCI-SIG Developers Conference], [[Cadence Design Systems|Cadence]], [[Rambus|PLDA]], and [[Synopsys]] demonstrated their development of PCIe 4.0 physical layer, controller, switch, and other IP blocks.<ref name="EE_4+5" />
+ 
+[[Mellanox Technologies]] announced the first 100{{nbsp}}Gbit/s network adapter with PCIe 4.0 on 15 June 2016,<ref name="FZ4hQ" /> and the first 200{{nbsp}}Gbit/s network adapter with PCIe 4.0 on 10 November 2016.<ref name="zovf4" />
+
+In August 2016, Synopsys presented a test setup with FPGA clocking a lane to PCIe 4.0 speeds at the [[Intel Developer Forum]]. Their IP has been licensed to several firms planning to present their chips and products at the end of 2016.<ref name="heise_idf_2016" />
+
+On the IEEE Hot Chips Symposium in August 2016 [[IBM]] announced the first CPU with PCIe 4.0 support, [[POWER9]].<ref name="HC28-IBM-Power9">{{Cite web|url=https://old.hotchips.org/wp-content/uploads/hc_archives/hc28/HC28.23-Tuesday-Epub/HC28.23.90-High-Perform-Epub/HC28.23.921-.POWER9-Thompto-IBM-final.pdf|title=Brian Thompto, POWER9 Processor for the Cognitive Era}}</ref><ref name="IEEE-Power9">[https://ieeexplore.ieee.org/xpl/conhome/7932734/proceeding 2016 IEEE Hot Chips 28 Symposium (HCS), 21–23 Aug. 2016]</ref>
+
+PCI-SIG officially announced the release of the final PCI Express 4.0 specification on 8 June 2017.<ref name="TR_pcie4" /> The spec includes improvements in flexibility, scalability, and lower-power.
+
+On 5 December 2017 IBM announced the first system with PCIe 4.0 slots, Power AC922.<ref name="2HOSh" /><ref name="IBM-ZG17-0147">{{Cite web|url=https://www.ibm.com/docs/en/announcements/archive/ENUSZG17-0147|title=IBM Power System AC922 (8335-GTG) server helps you to harness breakthrough accelerated AI, HPDA, and HPC performance for faster time to insight|date=2017-12-05|access-date=2025-04-25|website=www.ibm.com|archive-url=https://web.archive.org/web/20240627011358/https://www.ibm.com/docs/en/announcements/archive/ENUSZG17-0147|archive-date=2024-06-27|url-status=live}}</ref>
+
+NETINT Technologies introduced the first [[NVM Express|NVMe]] SSD based on PCIe 4.0 on 17 July 2018, ahead of Flash Memory Summit 2018<ref name="ChNhD" />
+
+[[Advanced Micro Devices|AMD]] announced on 9 January 2019 its upcoming [[Zen 2]]-based processors and X570 chipset would support PCIe 4.0.<ref name="Akskd" /> AMD had hoped to enable partial support for older chipsets, but instability caused by motherboard traces not conforming to PCIe 4.0 specifications made that impossible.<ref name="KDBMK" /><ref name="CAY71" />
+
+Intel released their first mobile CPUs with PCI Express 4.0 support in mid-2020, as a part of the [[Tiger Lake (microprocessor)|Tiger Lake]] microarchitecture.<ref name="C02lC" />
+
+=== PCI Express 5.0 <span class="anchor" id="5.0"></span> ===
+[[File:Detailaufnahme des ASRock TRX50 WS 20240406 HOF1835-HDR RAW-Export 000185.png|thumb|Three PCIe 5.0 ×16 (first and third slots at ×16, fourth slot at ×8 throughput) and two PCIe 4.0 ×16 slots (second slot at ×4, fifth slot at ×8 throughput) on a 2023 workstation mainboard.]]
+In June 2017, PCI-SIG announced the PCI Express 5.0 preliminary specification.<ref name="TR_pcie4" /> Bandwidth was expected to increase to 32{{nbsp}}GT/s, yielding 63{{nbsp}}GB/s<!-- 32 GT/s × 16 × 128/130 / 8 = 63,015,384,615 B/s --> in each direction in a 16-lane configuration. The draft spec was expected to be standardized in 2019.{{citation needed|date=July 2019}} Initially, {{Nowrap|25.0 GT/s}} was also considered for technical feasibility.
+
+On 7 June 2017 at PCI-SIG DevCon, Synopsys recorded the first demonstration of PCI Express 5.0 at 32&nbsp;GT/s.<ref name="Syn50" />
+
+On 31 May 2018, PLDA announced the availability of their XpressRICH5 PCIe 5.0 Controller IP based on draft 0.7 of the PCIe 5.0 specification on the same day.<ref name="n6z9y" /><ref name="9OVm8" />
+
+On 10 December 2018, the PCI SIG released version 0.9 of the PCIe 5.0 specification to its members,<ref name="PCIe5r09" />
+and on 17 January 2019, PCI SIG announced the version 0.9 had been ratified, with version 1.0 targeted for release in the first quarter of 2019.<ref name="ETVqe" />
+
+On 29 May 2019, PCI-SIG officially announced the release of the final PCI Express 5.0 specification.<ref name="MW69U" /> The PCI Express 5.0 retained [[backward compatibility]] with previous versions of PCI Express specifications.
+
+On 20 November 2019, [[Jiangsu Huacun]] presented the first PCIe 5.0 Controller HC9001 in a 12&nbsp;nm manufacturing process<ref name="yk5Nd" /> and production started in 2020.
+
+On 17 August 2020, IBM announced the [[Power10]] processor with PCIe 5.0 and up to 32 lanes per single-chip module (SCM) and up to 64 lanes per double-chip module (DCM).<ref>{{Cite web|url=https://hc32.hotchips.org/assets/program/conference/day1/HotChips2020_Server_Processors_IBM_Starke_POWER10_v33.pdf|title=IBM's POWER10 Processor, Hot Chips 32, August 16–18, 2020}}</ref>
+
+On 9 September 2021, IBM announced the Power E1080 Enterprise server with planned availability date 17 September.<ref name="IBM-ENUSZG21-0059">[https://www.ibm.com/common/ssi/rep_ca/9/877/ENUSZG21-0059/index.html Power E1080 Enterprise server delivers a uniquely architected platform to help securely and efficiently scale core operational and AI applications in a hybrid cloud, IBM Europe Hardware Announcement ZG21-0059]</ref> It can have up to 16 Power10 SCMs with maximum of 32 slots per system which can act as PCIe 5.0 ×8 or PCIe 4.0 ×16.<ref name="IBM-REDP-5649-00">[http://www.redbooks.ibm.com/redpapers/pdfs/redp5649.pdf IBM Power E1080 Technical Overview and Introduction]</ref> Alternatively they can be used as PCIe 5.0 ×16 slots for optional optical CXP converter adapters connecting to external PCIe expansion drawers.
+
+On 27 October 2021, Intel announced the 12th Gen Intel Core CPU family, the world's first consumer x86-64 processors with PCIe 5.0 (up to 16 lanes) connectivity.<ref>{{cite web|url=https://www.intel.com/content/www/us/en/newsroom/news/12th-gen-core-processors.html |title=Intel Unveils 12th Gen Intel Core, Launches World's Best Gaming |date=31 December 2021 |publisher=Intel.com |accessdate=2022-02-16}}</ref>
+
+On 22 March 2022, Nvidia announced Nvidia Hopper GH100 GPU, the world's first PCIe 5.0 GPU.<ref>{{cite web|url=https://nvidianews.nvidia.com/news/nvidia-announces-hopper-architecture-the-next-generation-of-accelerated-computing|title = NVIDIA Announces Hopper Architecture, the Next Generation of Accelerated Computing}}</ref>
+
+On 23 May 2022, AMD announced its Zen 4 architecture with support for up to 24 lanes of PCIe 5.0 connectivity on consumer platforms and 128 lanes on server platforms.<ref>{{cite web|url=https://www.amd.com/en/press-releases/2022-05-23-amd-showcases-growth-gaming-commercial-and-mainstream-mobile-and-industry|title=AMD Showcases Industry-Leading Gaming, Commercial, and Mainstream PC Technologies at COMPUTEX 2022|publisher=AMD.com|accessdate=2022-05-23}}</ref><ref>{{cite web|url=
+https://www.amd.com/en/campaigns/epyc-9004-architecture|title=4th Gen AMD EPYC Processor Architecture|publisher=AMD.com|accessdate=2022-11-12}}</ref>
+
+=== PCI Express 6.0 <span class="anchor" id="6.0"></span> ===
+On 18 June 2019, PCI-SIG announced the development of PCI Express 6.0 specification. Bandwidth is expected to increase to 64{{nbsp}}GT/s, yielding 128{{nbsp}}GB/s in each direction in a 16-lane configuration, with a target release date of 2021.<ref name="businesswire.com" /> The new standard uses 4-level [[pulse-amplitude modulation]] (PAM-4) with a low-latency [[forward error correction]] (FEC) in place of [[non-return-to-zero]] (NRZ) modulation.<ref name="O5gOe" /> Unlike previous PCI Express versions, forward error correction is used to increase data integrity and PAM-4 is used as line code so that two bits are transferred per transfer. With 64{{nbsp}}GT/s data transfer rate (raw bit rate), up to 121{{nbsp}}GB/s in each direction is possible in ×16 configuration.<ref name="businesswire.com" />
+
+On 24 February 2020, the PCI Express 6.0 revision 0.5 specification (a "first draft" with all architectural aspects and requirements defined) was released.<ref name="puGmx" />
+
+On 5 November 2020, the PCI Express 6.0 revision 0.7 specification (a "complete draft" with electrical specifications validated via test chips) was released.<ref name="ltCSi" />
+
+On 6 October 2021, the PCI Express 6.0 revision 0.9 specification (a "final draft") was released.<ref name="60r9">{{cite web |last=Yanes |first=Al |title=PCIe 6.0 Specification, Version 0.9: One Step Closer to Final Release {{!}} PCI-SIG |url=https://pcisig.com/blog/pcie®-60-specification-version-09-one-step-closer-final-release |website=pcisig.com |access-date=6 October 2021}}</ref>
+
+On 11 January 2022, PCI-SIG officially announced the release of the final PCI Express 6.0 specification.<ref>{{cite web|url=https://www.businesswire.com/news/home/20220111005011/en/PCI-SIG%C2%AE-Releases-PCIe%C2%AE-6.0-Specification-Delivering-Record-Performance-to-Power-Big-Data-Applications |title=PCI-SIG Releases PCIe 6.0 Specification Delivering Record Performance to Power Big Data Applications |publisher=Business Wire |date=2022-01-11 |accessdate=2022-02-16}}</ref> The PCI Express 6.0 retained [[backward compatibility]] with previous versions of PCI Express specifications.
+
+[[PAM-4]] coding results in a vastly higher [[bit error rate]] (BER) of 10<sup>−6</sup> (vs. 10<sup>−12</sup> previously), so in place of 128b/130b encoding, a 3-way interlaced [[forward error correction]] (FEC) is used in addition to [[cyclic redundancy check]] (CRC). A fixed 256 byte [[Flit (computer networking)|Flow Control Unit]] (FLIT) block carries 242 bytes of data, which includes variable-sized transaction level packets (TLP) and data link layer payload (DLLP); remaining 14 bytes are reserved for 8-byte CRC and 6-byte FEC.<ref name=pcie6_evolution_blog>{{cite web|url=https://pcisig.com/blog/evolution-pci-express-specification-its-sixth-generation-third-decade-and-still-going-strong |title=The Evolution of the PCI Express Specification: On its Sixth Generation, Third Decade and Still Going Strong |publisher=Pci-Sig |date=2022-01-11 |accessdate=2022-02-16}}</ref><ref name="PCIe6_fut">{{cite web|url=https://www.youtube.com/watch?v=jhehXwnu0Ss | archive-url=https://ghostarchive.org/varchive/youtube/20211030/jhehXwnu0Ss| archive-date=2021-10-30|title=PCIe 6.0 Specification: The Interconnect for I/O Needs of the Future |page=8 |author=Debendra Das Sharma | date=8 June 2020|publisher=PCI-SIG}}{{cbignore}}</ref> 3-way [[Gray code]] is used in PAM-4/FLIT mode to reduce error rate; the interface does not switch to NRZ and 128/130b encoding even when retraining to lower data rates.<ref name=cadence_pice6>{{cite web|url=https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/tools/ip/design-ip/pushing-the-envelope-with-pcie-6-wp.pdf |title=Pushing the Envelope with PCIe 6.0: Bringing PAM4 to PCIe |date= |accessdate=2022-02-16}}</ref><ref name=pcie6_webinar>{{cite web|url=https://pcisig.com/sites/default/files/files/PCIe%206.0%20Webinar_Final_.pdf |title=PowerPoint Presentation |date= |accessdate=2022-02-16}}</ref>
+
+PCIe 6.0 hardware was not launched until August 2025,<ref>{{Cite web |last=Hachman |first=Mark |date=August 1, 2025 |title=The world's first bleeding-edge PCIe 6.0 SSD is here (but not for you) |url=https://www.pcworld.com/article/2865008/the-worlds-first-bleeding-edge-pcie-6-0-ssd-is-here-but-not-for-you.html |access-date=2025-09-16 |website=PCWorld |language=en}}</ref> roughly three years after the release of the final specifications and shortly after the publication of the PCIe 7.0 specifications.<ref>{{Cite web |last=Hachman |first=Mark |date=June 11, 2025 |title=PCIe 6.0 devices poised for 2025 launch, ushering in next-gen connectivity |url=https://www.pcworld.com/article/2805679/pci-express-6-products-might-finally-ship-in-2025.html |access-date=2025-09-16 |website=PCWorld |language=en}}</ref> The delay was described as unprecedented, with ''[[PCWorld]]'' noting that for many years PCIe 6.0 existed "solely on paper".<ref name=":0">{{Cite web |last=Hachman |first=Mark |date=March 19, 2025 |title=PCI Express 7.0's blazing speeds are nearly here, but PCIe 6 is still vapor |url=https://www.pcworld.com/article/2643020/pci-express-7-0-is-nearly-here-on-paper-but-pcie-6-is-still-vapor.html |access-date=2025-07-01 |website=[[PCWorld]] |language=en}}</ref>
+
+=== PCI Express 7.0 <span class="anchor" id="7.0"></span> ===
+On 21 June 2022, PCI-SIG announced the development of PCI Express 7.0 specification.<ref>{{cite web|url=https://www.businesswire.com/news/home/20220621005137/en |title=PCI-SIG Announces PCI Express 7.0 Specification to Reach 128 GT/s |publisher=Business Wire |date=2022-06-21 |accessdate=2022-06-25}}</ref> It will deliver 128&nbsp;GT/s raw bit rate and up to 242&nbsp;GB/s per direction in ×16 configuration, using the same [[Pulse-amplitude modulation|PAM4]] signaling as version 6.0. Doubling of the data rate will be achieved by fine-tuning channel parameters to decrease signal losses and improve power efficiency, but signal integrity is expected to be a challenge. The specification is expected to be finalized in 2025.
+
+On 3 April 2024, the PCI Express 7.0 revision 0.5 specification (a "first draft") was released.<ref name="PCIe70v05"/>
+
+On 17 January 2025, PCI-SIG announced the release of PCIe 7.0 specification version 0.7 (a "complete draft").<ref name="PCIe70v07"/>
+
+On 19 March 2025, PCI-SIG announced the release of PCIe 7.0 specification version 0.9 (a "final draft"); planned final release is still in 2025.<ref name="PCIe70v09"/>
+
+The following main points were formulated as objectives of the new standard:
+* Delivering 128 GT/s raw bit rate and up to 512 GB/s bi-directionally via ×16 configuration
+* Utilizing PAM4 (Pulse Amplitude Modulation with 4 levels) signaling
+* Focusing on the channel parameters and reach
+* Improving power efficiency
+* Continuing to deliver the low-latency and high-reliability targets
+* Maintaining backwards compatibility with all previous generations of PCIe technology
+
+On 11 June 2025, PCI-SIG officially announced the release of the final PCI Express 7.0 specification.<ref>{{cite web|url=https://www.businesswire.com/news/home/20250611299049/en/PCI-SIG-Releases-PCIe-7.0-Specification-to-Support-the-Bandwidth-Demands-of-Artificial-Intelligence-at-128.0-GTs-Transfer-Rates |title=PCI-SIG Releases PCIe 7.0 Specification to Support the Bandwidth Demands of Artificial Intelligence at 128.0 GT/s Transfer Rates |publisher=Business Wire |date=2025-06-11 |accessdate=2025-06-11}}</ref>
+
+At its release, PCI-SIG commented that it did not see the PCIe 7.0 coming to the PC market for some time. Instead the interface is initially targeted at cloud computing, 800-gigabit Ethernet, and artificial intelligence applications.<ref name=":0"/>
+
+=== PCI Express 8.0 ===
+On 5 August 2025, PCI-SIG announced the development of PCI Express 8.0. The specification is planned for release by year 2028. It will deliver double the speed of the previous version, 256.0 GT/s raw bit rate and up to 1 TB/s bi-directionally via ×16 configuration.<ref>{{Cite web |title=PCI-SIG Announces PCIe 8.0 Specification Targeted for Release by 2028 {{!}} PCI-SIG |url=https://pcisig.com/pci-sig-announces-pcie-80-specification-targeted-release-2028 |access-date=2025-08-06 |website=pcisig.com}}</ref>
+
+== Extensions and future directions <span class="anchor" id="M-PCIE"></span><span class="anchor" id="Thunderbolt"></span> ==
+Some vendors offer PCIe over fiber products,<ref name="PCIeFiber" /><ref name="adnacoPCIe" /><ref name="g6np3" /> with active optical cables (AOC) for PCIe switching at increased distance in PCIe expansion drawers,<ref name="IBM-REDP-5137-00">{{Cite web|url=http://www.redbooks.ibm.com/redpapers/pdfs/redp5137.pdf|title=IBM Power Systems E870 and E880 Technical Overview and Introduction}}</ref><ref name="IBM-REDP-5649-00"/> or in specific cases where transparent PCIe bridging is preferable to using a more mainstream standard (such as [[InfiniBand]] or [[Ethernet]]) that may require additional software to support it.
+
+''[[Thunderbolt (interface)|Thunderbolt]]'' was co-developed by [[Intel]] and [[Apple Inc.|Apple]] as a general-purpose high speed interface combining a logical PCIe link with [[DisplayPort]] and was originally intended as an all-fiber interface, but due to early difficulties in creating a consumer-friendly fiber interconnect, nearly all implementations are copper systems. A notable exception, the [[Sony Vaio Z series|Sony VAIO Z]] VPC-Z2, uses a nonstandard USB port with an optical component to connect to an outboard PCIe display adapter. Apple has been the primary driver of Thunderbolt adoption through 2011, though several other vendors<ref name="kZCuH" /> have announced new products and systems featuring Thunderbolt. Thunderbolt 3 forms the basis of the [[USB4]] standard.
+
+''Mobile PCIe'' specification (abbreviated to ''M-PCIe'') allows PCI Express architecture to operate over the [[MIPI Alliance]]'s [[M-PHY]] physical layer technology. Building on top of already existing widespread adoption of M-PHY and its low-power design, Mobile PCIe lets mobile devices use PCI Express.<ref name="RKmF2" /> [[iPhone]] is one example that utilizing integrated [[NVMe]] storage with M-PCIe.
+
+=== Draft process ===
+There are 5 primary releases/checkpoints in a PCI-SIG specification:<ref name="yT5P8" />
+* Draft 0.3 (Concept): this release may have few details, but outlines the general approach and goals.
+* Draft 0.5 (First draft): this release has a complete set of architectural requirements and must fully address the goals set out in the 0.3 draft.
+* Draft 0.7 (Complete draft): this release must have a complete set of functional requirements and methods defined, and no new functionality may be added to the specification after this release. Before the release of this draft, electrical specifications must have been validated via test silicon.
+* Draft 0.9 (Final draft): this release allows PCI-SIG member companies to perform an internal review for intellectual property, and no functional changes are permitted after this draft.
+* 1.0 (Final release): this is the final and definitive specification, and any changes or enhancements are through Errata documentation and Engineering Change Notices (ECNs) respectively.
+
+Historically, the earliest adopters of a new PCIe specification generally begin designing with the Draft 0.5 as they can confidently build up their application logic around the new bandwidth definition and often even start developing for any new protocol features. At the Draft 0.5 stage, however, there is still a strong likelihood of changes in the actual PCIe protocol layer implementation, so designers responsible for developing these blocks internally may be more hesitant to begin work than those using interface IP from external sources.
+
+== Hardware protocol summary ==
+The PCIe link is built around dedicated unidirectional couples of serial (1-bit), point-to-point connections known as ''lanes''. This is in sharp contrast to the earlier PCI connection, which is a bus-based system where all the devices share the same bidirectional, 32-bit or 64-bit parallel bus.
+
+PCI Express is a [[layered protocol]], consisting of a ''[[#Transaction layer|transaction layer]]'', a ''[[#Data link layer|data link layer]]'', and a ''[[#Physical layer|physical layer]]''. The Data Link Layer is subdivided to include a [[media access control]] (MAC) sublayer. The Physical Layer is subdivided into logical and electrical sublayers. The Physical logical-sublayer contains a physical coding sublayer (PCS). The terms are borrowed from the [[IEEE 802]] networking protocol model.
+
+=== Physical layer <span class="anchor" id="PHYSICAL-LAYER"></span> ===
+{| class="wikitable floatright"
+|+ Connector pins and lengths
+|-
+! rowspan="3" | Lanes
+! colspan="2" rowspan="2" | Pins<ref name="9tQ3g" />
+! colspan="4" |Length in mm (in)
+|-
+! colspan="2" |Board connector
+! colspan="2" |Connector slot
+|-
+! Total
+! Variable
+! Total
+! Variable
+! Total
+! Variable
+|- style="text-align:right"
+| ×1 || 2×18=36 || 2×7=14 || {{Convert|20.3|mm|in|1|abbr=values}} || {{Convert|7.2|mm|in|2|abbr=values}} || {{Convert|25|mm|in|1|abbr=values}} || {{Convert|7.65|mm|in|2|abbr=values}}
+|- style="text-align:right"
+| ×4 || 2×32=64 || 2×21=42 || {{Convert|34.3|mm|in|1|abbr=values}} || {{Convert|21.2|mm|in|1|abbr=values}} || {{Convert|39|mm|in|1|abbr=values}} || {{Convert|21.65|mm|in|2|abbr=values}}
+|- style="text-align:right"
+| ×8 || 2×49=98 || 2×38=76 || {{Convert|51.3|mm|in|1|abbr=values}} || {{Convert|38.2|mm|in|1|abbr=values}} || {{Convert|56|mm|in|1|abbr=values}} || {{Convert|38.65|mm|in|2|abbr=values}}
+|- style="text-align:right"
+| ×16 || 2×82=164 || 2×71=142 || {{Convert|84.3|mm|in|1|abbr=values}} || {{Convert|71.2|mm|in|1|abbr=values}} || {{Convert|89|mm|in|1|abbr=values}} || {{Convert|71.65|mm|in|2|abbr=values}}
+|}
+
+[[File:PCIe J1900 SoC ITX Mainboard IMG 1820.JPG|thumb|An open-end PCI Express ×1 connector lets longer cards that use more lanes be plugged while operating at ×1 speeds.]]
+
+The PCIe Physical Layer (''PHY'', ''PCIEPHY'', ''PCI Express PHY'', or ''PCIe PHY'') specification is divided into two sub-layers, corresponding to electrical and logical specifications. The logical sublayer is sometimes further divided into a MAC sublayer and a PCS, although this division is not formally part of the PCIe specification. A specification published by Intel, the PHY Interface for PCI Express (PIPE),<ref name="pipe_spec" /> defines the MAC/PCS functional partitioning and the interface between these two sub-layers. The PIPE specification also identifies the ''physical media attachment'' (PMA) layer, which includes the [[SerDes]] (serializer/deserializer) and other analog circuitry; however, since SerDes implementations vary greatly among [[Application-specific integrated circuit|ASIC]] vendors, PIPE does not specify an interface between the PCS and PMA.
+
+At the electrical level, each lane consists of two unidirectional [[Differential signaling|differential pair]]s operating at 2.5, 5, 8, 16 or 32&nbsp;[[Gigabit|Gbit]]/s, depending on the negotiated capabilities. Transmit and receive are separate differential pairs, for a total of four data wires per lane.
+
+A connection between any two PCIe devices is known as a ''link'', and is built up from a collection of one or more ''lanes''. All devices must minimally support single-lane (×1) link. Devices may optionally support wider links composed of up to 32 lanes.<ref name="PCIe-System-Architecture">{{Cite web|url=https://www.mindshare.com/files/ebooks/PCI%20Express%20System%20Architecture.pdf|title=PCI Express System Architecture}}</ref><ref name="Intel-PCIe">{{Cite web|url=https://www.intel.com/content/www/us/en/support/ru-banner.html|title=Communications|website=Intel}}</ref> This allows for very good compatibility in two ways:
+* A PCIe card physically fits (and works correctly) in any slot that is at least as large as it is (e.g., a ×1 sized card works in any sized slot);
+* A slot of a large physical size (e.g., ×16) can be wired electrically with fewer lanes (e.g., ×1, ×4, ×8, or ×12) as long as it provides the ground connections required by the larger physical slot size.
+In both cases, PCIe negotiates the highest mutually supported number of lanes. Many graphics cards, motherboards and [[BIOS]] versions are verified to support ×1, ×4, ×8 and ×16 connectivity on the same connection.
+
+The width of a PCIe connector is 8.8&nbsp;mm, while the height is 11.25&nbsp;mm, and the length is variable. The fixed section of the connector is 11.65&nbsp;mm in length and contains two rows of 11 pins each (22 pins total), while the length of the other section is variable depending on the number of lanes. The pins are spaced at 1&nbsp;mm intervals, and the thickness of the card going into the connector is 1.6&nbsp;mm.<ref name="pcie_schematics1" /><ref name="pcie_schematics2" />
+
+==== Data transmission ====
+PCIe sends all control messages, including interrupts, over the same links used for data. The serial protocol can never be blocked, so latency is still comparable to conventional PCI, which has dedicated interrupt lines. When the problem of IRQ sharing of pin based interrupts is taken into account and the fact that message signaled interrupts (MSI) can bypass an I/O APIC and be delivered to the CPU directly, MSI performance ends up being substantially better.<ref name="vV4Hv" />
+
+Data transmitted on multiple-lane links is interleaved, meaning that each successive byte is sent down successive lanes. The PCIe specification refers to this interleaving as ''data striping''. While requiring significant hardware complexity to synchronize (or [[clock skew|deskew]]) the incoming striped data, striping can significantly reduce the latency of the ''n''th byte on a link. While the lanes are not tightly synchronized, there is a limit to the ''lane to lane skew'' of 20/8/6&nbsp;ns for 2.5/5/8&nbsp;GT/s so the hardware buffers can re-align the striped data.<ref name="iPAaS" /> Due to padding requirements, striping may not necessarily reduce the latency of small data packets on a link.
+
+As with other high data rate serial transmission protocols, the clock is [[self-clocking signal|embedded]] in the signal. At the physical level, PCI Express 2.0 utilizes the [[8b/10b encoding]] scheme<ref name="faq3" /> (line code) to ensure that strings of consecutive identical digits (zeros or ones) are limited in length. This coding was used to prevent the receiver from losing track of where the bit edges are. In this coding scheme every eight (uncoded) payload bits of data are replaced with 10 (encoded) bits of transmit data, causing a 20% overhead in the electrical bandwidth. To improve the available bandwidth, PCI Express version 3.0 instead uses [[64b/66b encoding|128b/130b]] encoding (1.54% overhead). [[Line encoding]] limits the run length of identical-digit strings in data streams and ensures the receiver stays synchronised to the transmitter via [[clock recovery]].
+
+A desirable balance (and therefore [[spectral density]]) of 0 and 1 bits in the data stream is achieved by [[XOR]]ing a known [[Linear-feedback shift register|binary polynomial]] as a "[[scrambler]]" to the data stream in a feedback topology. Because the scrambling polynomial is known, the data can be recovered by applying the XOR a second time. Both the scrambling and descrambling steps are carried out in hardware.
+
+Dual simplex in PCIe means there are two simplex channels on every PCIe lane. Simplex means communication is only possible in one direction. By having two simplex channels, two-way communication is made possible. One differential pair is used for each channel.<ref>{{cite web |title=PCIe Data Transmission Overview  |website=[[Microchip Technology]] |url=https://ww1.microchip.com/downloads/aemDocuments/documents/TCG/ProductDocuments/Brochures/00003818.pdf }}</ref><ref name="auto"/><ref>{{cite book | url=https://books.google.com/books?id=k_HJCgAAQBAJ&dq=pcie+differential+pair&pg=PT128 | isbn=978-0-7686-9003-3 | title=CompTIA A+ Exam Cram (Exams 220-602, 220-603, 220-604) | date=19 July 2007 | publisher=Pearson Education }}</ref>
+
+=== Data link layer ===
+The data link layer performs three vital services for the PCIe link:
+# sequence the transaction layer packets (TLPs) that are generated by the transaction layer,
+# ensure reliable delivery of TLPs between two endpoints via an acknowledgement protocol ([[Acknowledge character|ACK]] and [[Negative-acknowledge character|NAK]] signaling) that explicitly requires replay of unacknowledged/bad TLPs,
+# initialize and manage flow control credits
+
+On the transmit side, the data link layer generates an incrementing sequence number for each outgoing TLP. It serves as a unique identification tag for each transmitted TLP, and is inserted into the header of the outgoing TLP. A 32-bit [[cyclic redundancy check]] code (known in this context as Link CRC or LCRC) is also appended to the end of each outgoing TLP.
+
+On the receive side, the received TLP's LCRC and sequence number are both validated in the link layer. If either the LCRC check fails (indicating a data error), or the sequence-number is out of range (non-consecutive from the last valid received TLP), then the bad TLP, as well as any TLPs received after the bad TLP, are considered invalid and discarded. The receiver sends a negative acknowledgement message (NAK) with the sequence-number of the invalid TLP, requesting re-transmission of all TLPs forward of that sequence-number. If the received TLP passes the LCRC check and has the correct sequence number, it is treated as valid. The link receiver increments the sequence-number (which tracks the last received good TLP), and forwards the valid TLP to the receiver's transaction layer. An ACK message is sent to remote transmitter, indicating the TLP was successfully received (and by extension, all TLPs with past sequence-numbers.)
+
+If the transmitter receives a NAK message, or no acknowledgement (NAK or ACK) is received until a timeout period expires, the transmitter must retransmit all TLPs that lack a positive acknowledgement (ACK). Barring a persistent malfunction of the device or transmission medium, the link-layer presents a reliable connection to the transaction layer, since the transmission protocol ensures delivery of TLPs over an unreliable medium.
+
+In addition to sending and receiving TLPs generated by the transaction layer, the data-link layer also generates and consumes data link layer packets (DLLPs). ACK and NAK signals are communicated via DLLPs, as are some power management messages and flow control credit information (on behalf of the transaction layer).
+
+In practice, the number of in-flight, unacknowledged TLPs on the link is limited by two factors: the size of the transmitter's replay buffer (which must store a copy of all transmitted TLPs until the remote receiver ACKs them), and the flow control credits issued by the receiver to a transmitter. PCI Express requires all receivers to issue a minimum number of credits, to guarantee a link allows sending PCIConfig TLPs and message TLPs.
+
+=== Transaction layer ===
+PCI Express implements split transactions (transactions with request and response separated by time), allowing the link to carry other traffic while the target device gathers data for the response.
+
+PCI Express uses credit-based flow control. In this scheme, a device advertises an initial amount of credit for each received buffer in its transaction layer. The device at the
+opposite end of the link, when sending transactions to this device, counts the number of credits each TLP consumes from its account. The sending device may only transmit a TLP when doing so does not make its consumed credit count exceed its credit limit. When the receiving device finishes processing the TLP from its buffer, it signals a return of credits to the sending device, which increases the credit limit by the restored amount. The credit counters are modular counters, and the comparison of consumed credits to credit limit requires [[modular arithmetic]]. The advantage of this scheme (compared to other methods such as wait states or handshake-based transfer protocols) is that the latency of credit return does not affect performance, provided that the credit limit is not encountered. This assumption is generally met if each device is designed with adequate buffer sizes.
+
+PCIe 1.x is often quoted to support a data rate of 250&nbsp;MB/s in each direction, per lane. This figure is a calculation from the physical signaling rate (2.5&nbsp;[[gigabaud]]) divided by the encoding overhead (10 bits per byte). This means a sixteen lane (×16) PCIe card would then be theoretically capable of 16×250&nbsp;MB/s = 4&nbsp;GB/s in each direction. While this is correct in terms of data bytes, more meaningful calculations are based on the usable data payload rate, which depends on the profile of the traffic, which is a function of the high-level (software) application and intermediate protocol levels.
+
+Like other high data rate serial interconnect systems, PCIe has a protocol and processing overhead due to the additional transfer robustness (CRC and acknowledgements). Long continuous unidirectional transfers (such as those typical in high-performance storage controllers) can approach >95% of PCIe's raw (lane) data rate. These transfers also benefit the most from increased number of lanes (×2, ×4, etc.) But in more typical applications (such as a [[Universal Serial Bus|USB]] or [[Ethernet]] controller), the traffic profile is characterized as short data packets with frequent enforced acknowledgements.<ref name="traffic_profile" /> This type of traffic reduces the efficiency of the link, due to overhead from packet parsing and forced interrupts (either in the device's host interface or the PC's CPU). Being a protocol for devices connected to the same [[printed circuit board]], it does not require the same tolerance for transmission errors as a protocol for communication over longer distances, and thus, this loss of efficiency is not particular to PCIe.
+
+=== Efficiency of the link ===
+As for any network-like communication links, some of the raw bandwidth is consumed by protocol overhead:<ref name="Xilinx">{{cite web|title=Understanding Performance of PCI Express Systems|url=https://www.xilinx.com/support/documentation/white_papers/wp350.pdf|last=Lawley|first=Jason|publisher=Xilinx|version=1.2|date=2014-10-28}}</ref>
+
+A PCIe 1.x lane for example offers a data rate on top of the physical layer of 250&nbsp;MB/s (simplex). This is due to a 2.5&nbsp;GT/s bit rate multiplied by the efficiency of the 8b/10b line code (see [[#Comparison table]]). This is not the payload bandwidth but the physical layer bandwidth – a PCIe lane has to carry additional information for full functionality.{{r|Xilinx}}
+
+{| class="wikitable"
+|+Gen 2 Transaction Layer Packet{{r|Xilinx|p=3}}
+!scope="row" scope="col" style="width: 80px;" |Layer
+!scope="col" style="width: 20px;" |PHY
+!scope="col" style="width: 120px;" |Data Link Layer
+!scope="col" style="width: 400px;" colspan="3" |Transaction
+!scope="col" style="width: 120px;" |Data Link Layer
+!scope="col" style="width: 20px;" |PHY
+|-
+!scope="row" |Data
+|Start
+|Sequence
+|scope="col" style="width: 75px;" |Header
+|scope="col" style="text-align:center; width: 250px;" |Payload
+|scope="col" style="width: 75px;" |ECRC
+|LCRC
+|End
+|-
+!scope="row" |Size (Bytes)
+|1
+|2
+|12 or 16
+|scope="col" style="text-align:center;" |0 to 4096
+|4 (optional)
+|4
+|1
+|}
+The Gen2 overhead is then 20, 24, or 28 bytes per transaction.
+
+{| class="wikitable"
+|+Gen 3 Transaction Layer Packet{{r|Xilinx|p=3}}
+!scope="row" scope="col" style="width: 80px;" |Layer
+!scope="col" style="width: 40px;" |PHY
+!scope="col" style="width: 120px;" |Data Link Layer
+!scope="col" colspan="3" style="width: 400px;" |Transaction Layer
+!scope="col" style="width: 120px;" |Data Link Layer
+|-
+!scope="row" |Data
+|Start
+|Sequence
+|scope="col" style="width: 75px;" |Header
+|scope="col" style="width: 250px;text-align:center;" |Payload
+|scope="col" style="width: 75px;" |ECRC
+|LCRC
+|-
+!scope="row" |Size (Bytes)
+|4
+|2
+|12 or 16
+|scope="col" style="text-align:center; |0 to 4096
+|4 (optional)
+|4
+|}
+The Gen3 overhead is then 22, 26 or 30 bytes per transaction.<!-- Seriously how did somebody get odd numbers out of this? -->
+
+The {{math|Packet Efficiency {{=}} {{sfrac|Payload|Payload + Overhead}} }} for a 128 byte payload is 86%, and 98% for a 1024 byte payload. For small accesses like register settings (4 bytes), the efficiency drops as low as 16%. That said, most PCIe config registers reside in a DMA region mapped to the CPU's control registers and require no bus access.{{Citation needed|reason=4 bytes remains dubious |date=September 2021}}
+
+The maximum payload size (MPS) is set on all devices based on smallest maximum on any device in the chain. If one device has an MPS of 128 bytes, ''all'' devices of the tree must set their MPS to 128 bytes. In this case the bus will have a maximum efficiency of 86% for writes.{{r|Xilinx|p=3}}
+
+== Applications ==
+[[File:ASUS GTX-650 Ti TOP Cu-II PCI Express 3.0 x16 graphics card.jpg|thumb|[[Asus]] Nvidia GeForce GTX 650 Ti, a PCI Express 3.0 ×16 graphics card]]
+[[File:NVIDIA-GTX-1070-FoundersEdition-FL.jpg|thumb|The [[Nvidia]] GeForce GTX 1070, a PCI Express 3.0 ×16 Graphics card]]
+[[File:An Intel 82574L Gigabit Ethernet NIC, PCI Express x1 card.jpg|thumb|[[Intel]] 82574L Gigabit Ethernet [[Network interface controller|NIC]], a PCI Express ×1 card]]
+[[File:SATA 6 Gbit-s controller, in form of a PCI Express card.jpg|thumb|A [[Marvell Technology|Marvell]]-based [[SATA&nbsp;3.0]] controller, as a PCI Express ×1 card]]
+
+PCI Express operates in consumer, server, and industrial applications, as a motherboard-level interconnect (to link motherboard-mounted peripherals), a passive backplane interconnect and as an [[expansion card]] interface for add-in boards.
+
+In virtually all modern ({{as of|2012|lc=on}}) PCs, from consumer laptops and desktops to enterprise servers, the PCIe bus serves as the primary motherboard-level interconnect, connecting the host system-processor with both integrated peripherals (surface-mounted ICs) and add-on peripherals (expansion cards). In some of these systems, the PCIe bus co-exists with one or more legacy PCI buses, for backward compatibility with the large body of legacy PCI peripherals.
+
+{{As of | 2013}}, PCI Express has replaced [[Accelerated Graphics Port|AGP]] as the default interface for graphics cards on new systems. Almost all models of [[graphics card]]s released since 2010 by [[AMD Graphics|AMD]] (ATI) and [[Nvidia]] use PCI Express. AMD, Nvidia, and Intel have released motherboard chipsets that support as many as four PCIe ×16 slots, allowing tri-GPU and quad-GPU card configurations.
+
+=== External GPUs ===
+Theoretically, external PCIe could give a notebook the graphics power of a desktop, by connecting a notebook with any PCIe desktop video card (enclosed in its own external housing, with a power supply and cooling); this is possible with an ExpressCard or [[Thunderbolt (interface)|Thunderbolt]] interface. An ExpressCard interface provides [[bit rate]]s of 5&nbsp;Gbit/s (0.5&nbsp;GB/s throughput), whereas a Thunderbolt interface provides bit rates of up to 40&nbsp;Gbit/s (5&nbsp;GB/s throughput).
+
+In 2006, [[Nvidia]] developed the [[Nvidia Quadro Plex|Quadro Plex]] external PCIe family of [[Graphics processing unit|GPUs]] that can be used for advanced graphic applications for the professional market.<ref name="gxHZT" /> These video cards require a PCI Express ×8 or ×16 slot for the host-side card, which connects to the Plex via a [[VHDCI]] carrying eight PCIe lanes.<ref name="zJYg8" />
+
+In 2008, AMD announced the [[ATI XGP]] technology, based on a proprietary cabling system that is compatible with PCIe ×8 signal transmissions.<ref name="HgxXj" /> This connector is available on the Fujitsu Amilo and the Acer Ferrari One notebooks. Fujitsu launched their AMILO GraphicBooster enclosure for XGP soon thereafter.<ref name="WHU07" /> Around 2010 Acer launched the Dynavivid graphics dock for XGP.<ref name="mvR09" />
+
+In 2010, external card hubs were introduced that can connect to a laptop or desktop through a PCI ExpressCard slot. These hubs can accept full-sized graphics cards. Examples include MSI GUS,<ref name="ZAJ0y" /> Village Instrument's ViDock,<ref name="J5UtH" /> the Asus [[XG Station]], Bplus PE4H V3.2 adapter,<ref name="jWWJt" /> as well as more improvised DIY devices.<ref name="ERk1e" /> However such solutions are limited by the size (often only ×1) and version of the available PCIe slot on a laptop.
+
+The Intel Thunderbolt interface has provided a new option to connect with a PCIe card externally. Magma has released the ExpressBox 3T, which can hold up to three PCIe cards (two at ×8 and one at ×4).<ref name="CvJwZ" /> MSI also released the Thunderbolt GUS II, a PCIe chassis dedicated for video cards.<ref name="OLzu7" /> Other products such as the Sonnet's Echo Express<ref name="5LOrR" /> and mLogic's mLink are Thunderbolt PCIe chassis in a smaller form factor.<ref name="apXPa" />
+
+In 2017, more fully featured external card hubs were introduced, such as the Razer Core, which has a full-length PCIe ×16 interface.<ref name="PXbHS" />
+
+=== Storage devices ===
+[[File:PCIe card full height.jpg|thumb|An [[OCZ]] RevoDrive [[Solid-state drive|SSD]], a full-height ×4 PCI Express card]]
+{{See also|SATA Express|NVMe}}
+
+The PCI Express protocol can be used as data interface to [[flash memory]] devices, such as [[memory card]]s and [[solid-state drive]]s (SSDs).
+
+The [[XQD card]] is a memory card format utilizing PCI Express, developed by the CompactFlash Association, with transfer rates of up to 1&nbsp;GB/s.<ref name="49G×4" />
+
+Many high-performance, enterprise-class SSDs are designed as PCI Express [[RAID controller]] cards.{{Citation needed|date=September 2021}} Before NVMe was standardized, many of these cards utilized proprietary interfaces and custom drivers to communicate with the operating system; they had much higher transfer rates (over 1&nbsp;GB/s) and IOPS (over one million I/O operations per second) when compared to Serial ATA or [[Serial attached SCSI|SAS]] drives.{{Quantify |reason=Listing numbers isn't a comparison.|date=September 2021}}<ref name="P3Feb" /><ref name="NeWKh" /> For example, in 2011 OCZ and Marvell co-developed a native PCI Express solid-state drive controller for a PCI Express 3.0 ×16 slot with maximum capacity of 12&nbsp;TB and a performance of to 7.2&nbsp;GB/s sequential transfers and up to 2.52&nbsp;million IOPS in random transfers.<ref name="VLf63" />{{Relevance inline|reason=Can't find any info on whether this product was even sold, and I can't imagine it was when the other thing OCZ was in the news for at the time were their PCIe based SSDs being constantly failing nightmares that were impossible to recover because of the proprietary interface and required drivers... Enterprise would have rightfully scoffed at those numbers, thrown a couple thousand more regular SSDs in their giant storage arrays if they needed more than the billions of IOPS they were already achieving, maybe updated from 40&nbsp;Gbps to 100&nbsp;Gbps runs between the storage servers, and called it a day.|date=September 2021}}
+
+[[SATA Express]] was an interface for connecting SSDs through SATA-compatible ports, optionally providing multiple PCI Express lanes as a pure PCI Express connection to the attached storage device.<ref name="ymSig" /> [[M.2]] is a specification for internally mounted computer [[expansion card]]s and associated connectors, which can use up to four PCI Express lanes.<ref name="SNLQe" />
+
+PCI Express storage devices can implement both [[AHCI]] logical interface for backward compatibility, and [[NVM Express]] logical interface for much faster I/O operations provided by utilizing internal parallelism offered by such devices. Enterprise-class SSDs can also implement [[SCSI over PCI Express]].<ref name="FJvMX" />
+
+=== Cluster interconnect ===
+Certain [[data-center]] applications (such as large [[computer cluster]]s) require the use of fiber-optic interconnects due to the distance limitations inherent in copper cabling. Typically, a network-oriented standard such as Ethernet or [[Fibre Channel]] suffices for these applications, but in some cases the overhead introduced by [[routing|routable]] protocols is undesirable and a lower-level interconnect, such as [[InfiniBand]], [[RapidIO]], or [[NUMAlink]] is needed. Local-bus standards such as PCIe and [[HyperTransport]] can in principle be used for this purpose,<ref name="YUum6" /> but {{as of | 2015 | lc = on}}, solutions are only available from niche vendors such as [[Dolphin Interconnect Solutions|Dolphin ICS]], and TTTech Auto.
+
+== Competing protocols ==
+PCIe 1.0 initially competed with [[PCI-X#PCI-X 2.0|PCI-X 2.0]], with both specifications being ratified in 2003 and offering roughly the same maximum bandwidth (~4&nbsp;GB/s). By 2005, however, PCIe emerged as the dominant technology.
+
+Other communications standards based on high bandwidth serial architectures include [[InfiniBand]], [[RapidIO]], [[HyperTransport]], [[Intel QuickPath Interconnect]], the [[Mobile Industry Processor Interface]] (MIPI), and [[NVLink]]. Differences are based on the trade-offs between flexibility and extensibility vs latency and overhead. For example, making the system hot-pluggable, as with Infiniband but not PCI Express, requires that software track network topology changes.{{citation needed|date=February 2021}}
+
+Another example is making the packets shorter to decrease latency (as is required if a bus must operate as a memory interface). Smaller packets mean packet headers consume a higher percentage of the packet, thus decreasing the effective bandwidth. Examples of bus protocols designed for this purpose are RapidIO and HyperTransport.{{citation needed|date=February 2021}}
+
+{{Clarify|date=September 2024|text=PCI Express falls somewhere in the middle,|reason=In the middle of *what*? What are the endpoints? Nothing above talks about device interconnects or routed network protocols; some discussion of routing was removed in a February 2019 edit, leaving this paragraph missing some context.}} targeted by design as a system interconnect ([[local bus]]) rather than a device interconnect or routed network protocol. Additionally, its design goal of software transparency constrains the protocol and raises its latency somewhat.{{citation needed|date=February 2021}}
+
+Delays in PCIe 4.0 implementations led to the [[Gen-Z (consortium)|Gen-Z]] consortium, the CCIX effort and an open [[Coherent Accelerator Processor Interface]] (CAPI) all being announced by the end of 2016.<ref name="1Jwlv" />
+
+On 11 March 2019, Intel presented [[Compute Express Link]] (CXL), a new interconnect bus, based on the PCI Express 5.0 physical layer infrastructure. The initial promoters of the CXL specification included: [[Alibaba Group|Alibaba]], [[Cisco]], [[Dell EMC]], [[Facebook]], [[Google]], [[Hewlett Packard Enterprise|HPE]], [[Huawei]], [[Intel]] and [[Microsoft]].<ref name="aJ00L" />
+
+== Integrators list ==
+The PCI-SIG Integrators List lists products made by PCI-SIG member companies that have passed compliance testing. The list include switches, bridges, NICs, SSDs, etc.<ref name="9ps7Q" />
+
+== See also ==
+{{Portal|Electronics}}
+
+{{Div col|colwidth=22em}}
+* [[Active State Power Management]] (ASPM)
+* [[Peripheral Component Interconnect]] (PCI)
+* [[PCI configuration space]]
+* [[PCI-X]] (PCI Extended)
+* [[PCI/104-Express]]
+* [[PCIe/104]]
+* [[Root complex]]
+* [[Serial Digital Video Out]] (SDVO)
+* {{Section link|List of device bit rates|Main buses}}
+* [[UCIe]]
+* [[Compute Express Link]] (CXL)
+{{div col end}}
+
+== Notes ==
+{{notelist}}
+
+== References ==
+{{reflist|1=30em|refs=
+<ref name="pcie-basics">{{cite web |url = http://www.pcisig.com/developers/main/training_materials/get_document?doc_id=4e00a39acaa5c5a8ee44ebb07baba982e5972c67 |title = PCI Express Basics |date = 2007-08-21 |access-date = 2014-07-15 |author = Ravi Budruk |publisher = [[PCI-SIG]] |format = PDF |url-status = dead |archive-url = https://web.archive.org/web/20140715120034/http://www.pcisig.com/developers/main/training_materials/get_document?doc_id=4e00a39acaa5c5a8ee44ebb07baba982e5972c67 |archive-date = 2014-07-15}}</ref>
+<ref name="howstuffworks1">{{cite web | url = http://computer.howstuffworks.com/pci-express.htm | work = How Stuff Works | title = How PCI Express Works | access-date = 2009-12-07 | url-status = live | archive-url = https://web.archive.org/web/20091203053924/http://computer.howstuffworks.com/pci-express.htm | archive-date = 2009-12-03 | date = 2005-08-17|first1=Tracy V. |last1=Wilson}}</ref>
+<ref name="faq1">{{cite web |url = http://www.pcisig.com/news_room/faqs/faq_express/ |title = PCI Express Architecture Frequently Asked Questions |publisher = PCI-SIG |access-date = 23 November 2008 |url-status = dead |archive-url = https://web.archive.org/web/20081113163608/http://www.pcisig.com/news_room/faqs/faq_express/ |archive-date = 13 November 2008}}</ref>
+<ref name="PCIe card 2">{{Citation | title = PCI Express Card Electromechanical Specification Revision 2.0}}</ref>
+<ref name="CEM1.1">''PCI Express Card Electromechanical Specification Revision 1.1''</ref>
+<ref name="JuErgh">{{cite web|title=Mini-Fit PCI Express* Wire to Board Connector System|url=https://www.molex.com/pdm_docs/ps/PS-45558-001-001.pdf|access-date=4 December 2020}}</ref>
+<ref name="CEM3.0">''PCI Express Card Electromechanical Specification Revision 3.0''</ref>
+<ref name="EeePC">{{cite web|url=http://beta.ivancover.com/wiki/index.php/Eee_PC_Research|title=Eee PC Research|type=wiki|work=ivc|access-date=26 October 2009|url-status=usurped|archive-url=https://web.archive.org/web/20100330035948/http://beta.ivancover.com/wiki/index.php/Eee_PC_Research|archive-date=30 March 2010}}</ref>
+<ref name="pcie_cabling1.0">{{cite web| title = PCI Express External Cabling 1.0 Specification| access-date = 9 February 2007| url = http://www.pcisig.com/specifications/pciexpress/pcie_cabling1.0/| url-status = live| archive-url = https://web.archive.org/web/20070210055546/http://www.pcisig.com/specifications/pciexpress/pcie_cabling1.0/| archive-date = 10 February 2007}}</ref>
+<ref name="PoRghEr">{{Citation | title = PCI SIG discusses M-PCIe oculink & 4th gen PCIe | date = 13 September 2013 | newspaper = The Register | place = [[United Kingdom|UK]] | url = https://www.theregister.co.uk/Print/2013/09/13/pci_sig_discusses_m_pcie_oculink_and_fourth_gen_pcie/ | url-status = live | archive-url = https://web.archive.org/web/20170629201006/http://www.theregister.co.uk/Print/2013/09/13/pci_sig_discusses_m_pcie_oculink_and_fourth_gen_pcie/ | archive-date = 29 June 2017}}</ref>
+<ref name="faq4">{{cite web|url = http://www.pcisig.com/news_room/faqs/FAQ_PCI_Express_4.0/#EQ3|archive-url = https://web.archive.org/web/20140518224913/http://www.pcisig.com/news_room/faqs/FAQ_PCI_Express_4.0/#EQ3|title = PCI Express 4.0 Frequently Asked Questions|access-date = 2014-05-18|archive-date = 2014-05-18|publisher = PCI-SIG|work = pcisig.com}}</ref>
+<ref name="PCIExpressPressRelease">{{cite press release | title = PCI Express Base 2.0 specification announced | publisher = [[PCI-SIG]] | date = 15 January 2007 | access-date = 9 February 2007 | url = http://www.pcisig.com/news_room/PCIe2_0_Spec_Release_FINAL2.pdf | url-status = dead | archive-url = https://web.archive.org/web/20070304101327/http://www.pcisig.com/news_room/PCIe2_0_Spec_Release_FINAL2.pdf | archive-date = 4 March 2007}} — note that in this press release the term ''aggregate bandwidth'' refers to the sum of incoming and outgoing bandwidth; using this terminology the aggregate bandwidth of full duplex 100BASE-TX is 200{{nbsp}}Mbit/s.</ref>
+<ref name="extrmetech">{{Cite news |url= http://www.extremetech.com/article2/0,1697,2169018,00.asp |title= PCI Express 3.0 Bandwidth: 8.0 Gigatransfers/s |publisher= ExtremeTech |date= 9 August 2007 |access-date= 5 September 2007 |url-status= live |archive-url= https://web.archive.org/web/20071024140702/http://www.extremetech.com/article2/0,1697,2169018,00.asp |archive-date= 24 October 2007}}</ref>
+<ref name="faq3">{{cite web | url = http://www.pcisig.com/news_room/faqs/pcie3.0_faq/#EQ2 | archive-url = https://web.archive.org/web/20140201172536/http://www.pcisig.com/news_room/faqs/pcie3.0_faq/#EQ2 | title = PCI Express 3.0 Frequently Asked Questions | access-date = 2014-05-01 | archive-date = 2014-02-01 | publisher = PCI-SIG | work = pcisig.com}}</ref>
+<ref name="OCuLink2">{{cite web|url=https://www.connectortips.com/oculink-connectors-cables-support-new-pcie-standard/|archiveurl=https://web.archive.org/web/20170313215047/http://www.connectortips.com/oculink-connectors-cables-support-new-pcie-standard/|url-status=dead|title=OCuLink connectors and cables support new PCIe standard|archivedate=March 13, 2017|website=www.connectortips.com}}</ref>
+<ref name="EE_4+5">{{cite magazine |url=http://www.eetimes.com/document.asp?doc_id=1330006 |title=PCIe 4.0 Heads to Fab, 5.0 to Lab |magazine=EE Times |date=2016-06-26 |access-date=2016-08-27 |url-status=live |archive-url=https://web.archive.org/web/20160828221858/http://www.eetimes.com/document.asp?doc_id=1330006 |archive-date=2016-08-28}}</ref>
+<ref name="heise_idf_2016">{{cite web |url=http://www.heise.de/newsticker/meldung/IDF-PCIe-4-0-laeuft-PCIe-5-0-in-Arbeit-3297114.html |title=IDF: PCIe 4.0 läuft, PCIe 5.0 in Arbeit |language=de |website=[[Heise Online]] |date=2016-08-18 |access-date=2016-08-18 |url-status=live |archive-url=https://web.archive.org/web/20160819153631/http://www.heise.de/newsticker/meldung/IDF-PCIe-4-0-laeuft-PCIe-5-0-in-Arbeit-3297114.html |archive-date=2016-08-19}}</ref>
+<ref name="TR_pcie4">{{cite news|last1=Born|first1=Eric|title=PCIe 4.0 specification finally out with 16 GT/s on tap|url=https://techreport.com/news/32064/pcie-4-0-specification-finally-out-with-16-gt-s-on-tap|access-date=8 June 2017|publisher=Tech Report|date=8 June 2017|url-status=live|archive-url=https://web.archive.org/web/20170608155216/http://techreport.com/news/32064/pcie-4-0-specification-finally-out-with-16-gt-s-on-tap|archive-date=8 June 2017}}</ref>
+<ref name="PCIe5r09">{{cite web|url=http://pcisig.com/doubling-bandwidth-under-two-years-pci-express®-base-specification-revision-50-version-09-now|title=Doubling Bandwidth in Under Two Years: PCI Express® Base Specification Revision 5.0, Version 0.9 is Now Available to Members|website=pcisig.com|language=en|access-date=2018-12-12}}</ref>
+<ref name="businesswire.com">{{cite web|url=https://www.businesswire.com/news/home/20190618005945/en/PCI-SIG%C2%AE-Announces-Upcoming-PCI-Express%C2%AE-6.0-Specification-to-Reach-64-GTs|title=PCI-SIG® Announces Upcoming PCI Express® 6.0 Specification to Reach 64 GT/s|date=June 18, 2019|website=www.businesswire.com}}</ref>
+<ref name="PCIeFiber">{{cite web |url=http://www.cablinginstall.com/index/display/article-display/8876181966/articles/cabling-installation-maintenance/news/data-center/2011/6/plx-demo_shows_pcie.html |title=PLX demo shows PCIe over fiber as data center clustering interconnect |publisher=Penn Well |work=Cabling install |access-date=29 August 2012 }}{{Dead link|date=April 2025 |bot=InternetArchiveBot |fix-attempted=yes }}</ref>
+<ref name="adnacoPCIe">{{cite web |url=http://www.adnaco.com/2011/09/03/new1 |date=2011-04-22 |title=Introduced second generation PCI Express Gen 2 over fiber optic systems |publisher=Adnaco |access-date=29 August 2012 |url-status=live |archive-url=https://web.archive.org/web/20121004094357/http://www.adnaco.com/2011/09/03/new1/ |archive-date=4 October 2012}}</ref>
+<ref name="pipe_spec">{{cite web | title = PHY Interface for the PCI Express Architecture | edition = version 2.00 | access-date = 21 May 2008 | publisher = Intel | url = http://download.intel.com/technology/pciexpress/devnet/docs/pipe2_00.pdf | url-status = dead | archive-url = https://web.archive.org/web/20080317171752/http://download.intel.com/technology/pciexpress/devnet/docs/pipe2_00.pdf | archive-date = 17 March 2008}}</ref>
+<ref name="pcie_schematics1">{{cite web | publisher = Interface bus | title = Mechanical Drawing for PCI Express Connector | access-date = 7 December 2007 | url = http://www.interfacebus.com/PCI-Express-Bus-PCIe-Description.html#d}}</ref>
+<ref name="pcie_schematics2">{{cite web | url = http://portal.fciconnect.com/Comergent/fci/drawing/10018783.pdf | title = FCi schematic for PCIe connectors | publisher = FCI connect | access-date = 7 December 2007 | archive-date = 20 September 2008 | archive-url = https://web.archive.org/web/20080920210549/http://portal.fciconnect.com/Comergent//fci/drawing/10018783.pdf | url-status = dead }}</ref>
+<ref name="traffic_profile">{{cite book| url=https://books.google.com/books?id=Xp7-NKsJ8_sC&dq=frequent+enforced+acknowledgements/&pg=PA35| title=Computer Peripherals And Interfaces| year=2008| publisher=Technical Publications Pune| isbn=9788184313086| access-date=23 July 2009| url-status=live| archive-url=https://web.archive.org/web/20140225203956/http://www.google.com/books?id=Xp7-NKsJ8_sC&pg=PA35&dq=frequent+enforced+acknowledgements%2F| archive-date=25 February 2014}}</ref>
+<ref name="s5NDG">{{cite book |chapter=PCI express and advanced switching: Evolutionary path to building next generation interconnects |pages=21–29 |doi=10.1109/CONECT.2003.1231473 |date=August 2003 |title=11th Symposium on High Performance Interconnects, 2003. Proceedings. |last1=Mayhew |first1=D. |last2=Krishnan |first2=V. |isbn=0-7695-2012-X |s2cid=7456382}}</ref>
+<ref name="DQmzv">{{cite web | url=https://www.pcmag.com/encyclopedia/term/48998/pci-express | title=Definition of PCI Express|work = PCMag}}</ref>
+<ref name="gf9Lm">{{cite web | publisher = Fedora project | url = http://ols.fedoraproject.org/OLS/Reprints-2007/zhang-Reprint.pdf | title = Enable PCI Express Advanced Error Reporting in the Kernel | work = Proceedings of the Linux Symposium | first1 = Yanmin | last1 = Zhang | first2 = T Long | last2 = Nguyen | date = June 2007 | url-status = dead | archive-url = https://web.archive.org/web/20160310074031/https://ols.fedoraproject.org/OLS/Reprints-2007/zhang-Reprint.pdf | archive-date = 2016-03-10 | access-date = 2012-05-08}}</ref>
+<ref name="sxOen">https://www.hyperstone.com Flash Memory Form Factors – The Fundamentals of Reliable Flash Storage, Retrieved 19 April 2018</ref>
+<ref name="4TrCr">{{Citation | title=PCI Express Base Specification, Revision 2.1. | chapter=4.2.4.9. Link Width and Lane Sequence Negotiation | date=4 March 2009}}</ref>
+<ref name="2Nt8T">{{cite web | work = Interface bus | url = http://www.interfacebus.com/Design_Connector_PCI_Express.html | title = PCI Express Bus | access-date = 2010-06-12 | url-status = dead | archive-url = https://web.archive.org/web/20071208162241/http://www.interfacebus.com/Design_Connector_PCI_Express.html | archive-date = 2007-12-08}}</ref>
+<ref name="Gchhw">32 lanes are defined by the ''PCIe Base Specification'' up to PCIe 5.0 but there's no card standard in the ''PCIe Card Electromechanical Specification'' and that lane number was never implemented.</ref>
+<ref name="odC7t">{{cite web | url = http://zone.ni.com/devzone/cda/tut/p/id/3767 | title = PCI Express – An Overview of the PCI Express Standard | work = Developer Zone | publisher = National Instruments | date = 2009-08-13 | access-date = 2009-12-07 | url-status = dead | archive-url = https://web.archive.org/web/20100105163040/http://zone.ni.com/devzone/cda/tut/p/id/3767 | archive-date = 2010-01-05}}</ref>
+<ref name="P7MD8">{{cite web |url=https://pcgearlab.com/motherboard/what-are-pcie-slots/ |title=What are PCIe Slots? |last=Qazi |first=Atif |website=PC Gear Lab |access-date=8 April 2020 |archive-date=3 August 2020 |archive-url=https://web.archive.org/web/20200803084213/https://pcgearlab.com/motherboard/what-are-pcie-slots/ |url-status=dead }}</ref>
+<ref name="8AKZj">{{cite web |url=http://www.nvmexpress.org/blog/new-pcie-form-factor-enables-greater-pcie-ssd-adoption/ |date=12 June 2012 |title=New PCIe Form Factor Enables Greater PCIe SSD Adoption |work=NVM Express |url-status=live |archive-url=https://web.archive.org/web/20150906180730/http://www.nvmexpress.org/blog/new-pcie-form-factor-enables-greater-pcie-ssd-adoption/ |archive-date=6 September 2015}}</ref>
+<ref name="c1yve">{{cite web |url=http://www.storagereview.com/memblaze_pblaze4_aic_nvme_ssd_review |date=21 December 2015 |title=Memblaze PBlaze4 AIC NVMe SSD Review |work=StorageReview}}</ref>
+<ref name="j6TTS">{{cite web|url=https://www.techradar.com/news/gaming/19-graphics-cards-that-shaped-the-future-of-gaming-1289666|title=19 graphics cards that shaped the future of gaming|first=Kane|last=Fulton|website=TechRadar|date=20 July 2015 }}</ref>
+<ref name="RAreG">{{cite web|url=https://www.eurogamer.net/articles/digitalfoundry-2020-nvidia-geforce-rtx-3080-review|title=Nvidia GeForce RTX 3080 review: welcome to the next level|first=Richard|last=Leadbetter|website=[[Eurogamer]]|date=September 16, 2020}}</ref>
+<ref name="E0Tsg">{{cite web|url=https://bit-tech.net/reviews/tech/graphics/sapphire-radeon-rx-5700-xt-pulse-review/1/|title=Sapphire Radeon RX 5700 XT Pulse Review {{!}} bit-tech.net|website=bit-tech.net|language=en|access-date=2019-08-26}}</ref>
+<ref name="mAt96">{{cite web|url=http://xfxforce.com/en-gb/Products/product-category/amd-radeon-rx-5700xt-8gb-thicc-ii-rx-57xt8dfd6|title=AMD Radeon RX 5700 XT 8GB GDDR6 THICC II – RX-57XT8DFD6|website=xfxforce.com|access-date=2019-08-25|archive-date=1 September 2019|archive-url=https://web.archive.org/web/20190901193735/http://xfxforce.com/en-gb/Products/product-category/amd-radeon-rx-5700xt-8gb-thicc-ii-rx-57xt8dfd6|url-status=dead}}</ref>
+<ref name="kk3xz">{{cite web|url=https://rog.asus.com/graphics-cards/graphics-cards/rog-strix/rog-strix-rtx3080-o10g-gaming-model/spec|title=ROG Strix GeForce RTX 3080 OC Edition 10GB GDDR6X {{pipe}} Graphics Cards|website=rog.asus.com}}</ref>
+<ref name="IM1RH">{{cite web| title=What is the A side, B side configuration of PCI cards| work=Frequently Asked Questions| publisher=Adex Electronics| year=1998| url=http://www.adexelec.com/faq.htm#pcikeys| access-date=24 October 2011| url-status=dead| archive-url=https://web.archive.org/web/20111102042843/http://www.adexelec.com/faq.htm#pcikeys| archive-date=2 November 2011}}</ref>
+<ref name="ajnim">{{cite web | title = PCI Express Card Electromechanical Specification Revision 4.0, Version 1.0 (Clean)| url = https://members.pcisig.com/wg/PCI-SIG/document/13446}}</ref>
+<ref name="vj2hg">{{cite web | url = https://pcisig.com/sites/default/files/specification_documents/ECN_L1_PM_Substates_with_CLKREQ_31_May_2013_Rev10a.pdf | title = L1 PM Substates with CLKREQ, Revision 1.0a | publisher = PCI-SIG | archive-url = https://web.archive.org/web/20181204125124/http://pcisig.com/sites/default/files/specification_documents/ECN_L1_PM_Substates_with_CLKREQ_31_May_2013_Rev10a.pdf | archive-date = 2018-12-04 | access-date = 2018-11-08}}</ref>
+<ref name="YpQVq">{{cite web | url = https://pcisig.com/sites/default/files/specification_documents/Emergency%20Power%20Reduction%20Mechanism%20with%20PWRBRK%20Signal%20ECN.pdf | title = Emergency Power Reduction Mechanism with PWRBRK Signal ECN | publisher = PCI-SIG | archive-url = https://web.archive.org/web/20181109193739/https://pcisig.com/sites/default/files/specification_documents/Emergency%20Power%20Reduction%20Mechanism%20with%20PWRBRK%20Signal%20ECN.pdf | access-date = 2018-11-08| archive-date = 9 November 2018}}</ref>
+<ref name="jArAO">{{Citation |publisher=PCI-SIG |first=Zale |last=Schoenborn |title=Board Design Guidelines for PCI Express Architecture |year=2004 |pages=19–21 |url=http://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/639/7851.PCIe_5F00_designGuides.pdf#page=19 |url-status=live |archive-url=https://web.archive.org/web/20160327185412/http://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/639/7851.PCIe_5F00_designGuides.pdf#page=19 |archive-date=2016-03-27}}</ref>
+<ref name="o2GFI">''PCI Express ×16 Graphics 150W-ATX Specification Revision 1.0''</ref>
+<ref name="uLc7Q">''PCI Express 225 W/300 W High Power Card Electromechanical Specification Revision 1.0''</ref>
+<ref name="mcd6L">{{cite web |url=http://kavi.pcisig.com/developers/main/training_materials/get_document?doc_id=fa4ec3357012d69821baa0856011c665ac770768 |title=PCIe Electromechanical Updates |author=Yun Ling |date=2008-05-16 |access-date=2015-11-07 |url-status=dead |archive-url=https://web.archive.org/web/20151105083550/http://kavi.pcisig.com/developers/main/training_materials/get_document?doc_id=fa4ec3357012d69821baa0856011c665ac770768 |archive-date=2015-11-05}}</ref>
+<ref name="DmwJz">{{cite web |url = http://www.hwtools.net/Adapter/MP1.html |title = MP1: Mini PCI Express / PCI Express Adapter |date = 2014-07-18 |access-date = 2014-09-28 |website = hwtools.net |url-status = live |archive-url = https://web.archive.org/web/20141003233055/http://www.hwtools.net/Adapter/MP1.html |archive-date = 2014-10-03}}</ref>
+<ref name="5xxpo">{{cite news | url = http://forum.notebookreview.com/lenovo-ibm/574993-msata-faq-basic-primer.html | title = mSATA FAQ: A Basic Primer | publisher = Notebook review | url-status = live | archive-url = https://web.archive.org/web/20120212164949/http://forum.notebookreview.com/lenovo-ibm/574993-msata-faq-basic-primer.html | archive-date = 2012-02-12}}</ref>
+<ref name="xpI66">{{cite web |url = http://www.intel.com/support/motherboards/desktop/sb/CS-032415.htm?wapkw=032415 |publisher = [[Intel]] |title = Desktop Board Solid-state drive (SSD) compatibility |url-status = live |archive-url = https://web.archive.org/web/20160102233130/http://www.intel.com/support/motherboards/desktop/sb/CS-032415.htm?wapkw=032415 |archive-date = 2016-01-02}}</ref>
+<ref name="oL68r">{{cite web|url=https://www.dell.com/support/article/en-us/sln301626/how-to-distinguish-the-differences-between-m-2-cards?lang=en|title=How to distinguish the differences between M.2 cards {{!}} Dell US|website=www.dell.com|access-date=2020-03-24}}</ref>
+<ref name="ZTXPi">{{cite web |url=http://www.pcisig.com/news_room/news/press_release/02_07_07 |title=PCI Express External Cabling Specification Completed by PCI-SIG |publisher=PCI SIG |date=2007-02-07 |access-date=2012-12-07 |url-status=dead |archive-url=https://web.archive.org/web/20131126064157/http://www.pcisig.com/news_room/news/press_release/02_07_07 |archive-date=2013-11-26}}</ref>
+<ref name="6MiK5">{{cite web|last=Mokosiy|first=Vitaliy|date=2020-10-09|title=Untangling terms: M.2, NVMe, USB-C, SAS, PCIe, U.2, OCuLink|url=https://mokosiy.medium.com/untangling-terms-m-2-nvme-usb-c-sas-pcie-6599c044f38e|access-date=2021-03-26|website=Medium|language=en}}</ref>
+<ref name="tNP5L">{{cite web |url=http://www.supermicro.com/products/nfo/uio.cfm |title=Supermicro Universal I/O (UIO) Solutions |publisher=Supermicro.com |access-date=2014-03-24 |url-status=live |archive-url=https://web.archive.org/web/20140324184437/http://www.supermicro.com/products/nfo/uio.cfm |archive-date=2014-03-24}}</ref>
+<ref name="osiit">{{Citation | contribution-url = http://www.edn.com/design/pc-board/4423319/Get-ready-for-M-PCIe-testing | contribution = Get ready for M-PCIe testing | publisher = EDN | title = PC board design}}</ref>
+<ref name="HroAC">{{cite web |url= http://www.tmworld.com/electronics-news/4380071/What-does-GT-s-mean-anyway- |title= What does GT/s mean, anyway? |work= TM World |access-date= 2012-12-07 |url-status= live |archive-url= https://web.archive.org/web/20120814002641/http://www.tmworld.com/electronics-news/4380071/What-does-GT-s-mean-anyway- |archive-date= 2012-08-14}}</ref>
+<ref name="tfQxK">{{cite web | url = http://www.eiscat.se/groups/EISCAT_3D_info/DeliverableWP12.2/preview_popup | title = Deliverable 12.2 | publisher = Eiscat | location = [[Sweden|SE]] | access-date = 2012-12-07 | url-status = dead | archive-url = https://web.archive.org/web/20100817201815/http://www.eiscat.se/groups/EISCAT_3D_info/DeliverableWP12.2/preview_popup | archive-date = 2010-08-17}}</ref>
+<ref name="n9qGs">{{Citation | url = http://www.pcisig.com/ | title = PCI SIG | url-status = live | archive-url = https://web.archive.org/web/20080706134414/http://pcisig.com/ | archive-date = 2008-07-06}}</ref>
+<ref name="UaYlc">{{cite web | first = Tony | last = Smith | website = The Register | title = PCI Express 2.0 final draft spec published | date = 11 October 2006 | access-date = 9 February 2007 | url = http://www.reghardware.co.uk/2006/10/11/pic-sig_posts_pcie_2_final_draft/ | url-status = live | archive-url = https://web.archive.org/web/20070129121731/http://www.reghardware.co.uk/2006/10/11/pic-sig_posts_pcie_2_final_draft/ | archive-date = 29 January 2007}}</ref>
+<ref name="wHHTf">{{Cite news | first1 = Gary | last1 = Key | first2 = Wesley | last2 = Fink | publisher = [[AnandTech]] | title = Intel P35: Intel's Mainstream Chipset Grows Up | date = 21 May 2007 | access-date = 21 May 2007 | url = http://www.anandtech.com/cpuchipsets/showdoc.aspx?i=2993 | url-status = dead | archive-url = https://web.archive.org/web/20070523055011/http://www.anandtech.com/cpuchipsets/showdoc.aspx?i=2993 | archive-date = 23 May 2007}}</ref>
+<ref name="gL2GQ">{{Cite news | first = Anh | last = Huynh | publisher = [[AnandTech]] | title = NVIDIA "MCP72" Details Unveiled | date = 8 February 2007 | access-date = 9 February 2007 | url = http://www.dailytech.com/article.aspx?newsid=6021 | url-status = dead | archive-url = https://web.archive.org/web/20070210200616/http://www.dailytech.com/article.aspx?newsid=6021 | archive-date = 10 February 2007}}</ref>
+<ref name="mUQKD">{{cite web |url=http://download.intel.com/products/chipsets/P35/317304.pdf |title=Intel P35 Express Chipset Product Brief |publisher=Intel |access-date=5 September 2007 |url-status=live |archive-url=https://web.archive.org/web/20070926150158/http://download.intel.com/products/chipsets/P35/317304.pdf |archive-date=26 September 2007}}</ref>
+<ref name="cVjNG">{{cite web |last=Hachman |first=Mark |url=https://www.pcmag.com/article2/0,2817,2351266,00.asp |title=PCI Express 3.0 Spec Pushed Out to 2010 |publisher=PC Mag |date=2009-08-05 |access-date=2012-12-07 |url-status=live |archive-url=https://web.archive.org/web/20140107192535/http://www.pcmag.com/article2/0,2817,2351266,00.asp |archive-date=2014-01-07}}</ref>
+<ref name="ajVA3">{{Cite news | publisher = X bit labs | url = http://www.xbitlabs.com/news/other/display/20101118151837_PCI_Special_Interest_Group_Publishes_PCI_Express_3_0_Standard.html | title = PCI Special Interest Group Publishes PCI Express 3.0 Standard | date = 18 November 2010 | access-date = 18 November 2010 | url-status = dead | archive-url = https://web.archive.org/web/20101121001048/http://www.xbitlabs.com/news/other/display/20101118151837_PCI_Special_Interest_Group_Publishes_PCI_Express_3_0_Standard.html | archive-date = 21 November 2010}}</ref>
+<ref name="5lvIH">{{cite web | url = http://www.eteknix.com/pcie-3-1-and-4-0-specifications-revealed/ | title = PCIe 3.1 and 4.0 Specifications Revealed | website = eteknix.com | date = July 2013 | url-status = live | archive-url = https://web.archive.org/web/20160201102133/http://www.eteknix.com/pcie-3-1-and-4-0-specifications-revealed/ | archive-date = 2016-02-01}}</ref>
+<ref name="9EIkz">{{cite web | url = http://blogs.synopsys.com/expressyourself/2014/11/12/trick-or-treat-pci-express-3-1-released/ | title = Trick or Treat... PCI Express 3.1 Released! | website = synopsys.com | url-status = live | archive-url = https://web.archive.org/web/20150323193106/https://blogs.synopsys.com/expressyourself/2014/11/12/trick-or-treat-pci-express-3-1-released/ | archive-date = 2015-03-23}}</ref>
+<ref name="W466M">{{cite web | type = press release | url = http://www.pcisig.com/news_room/Press_Releases/November_29_2011_Press_Release_/ | publisher = PCI-SIG | title = PCI Express 4.0 evolution to 16&nbsp;GT/s, twice the throughput of PCI Express 3.0 technology | date = 2011-11-29 | access-date = 2012-12-07 | url-status = dead | archive-url = https://web.archive.org/web/20121223043627/http://www.pcisig.com/news_room/Press_Releases/November_29_2011_Press_Release_/ | archive-date = 2012-12-23}}</ref>
+<ref name="QNZsy">{{cite web|url=https://pcisig.com/faq?field_category_value%5B%5D=pci_express_4.0#4415|archiveurl=https://web.archive.org/web/20161020040106/https://pcisig.com/faq?field_category_value%5B%5D=pci_express_4.0|url-status=dead|title=Frequently Asked Questions {{pipe}} PCI-SIG|archivedate=October 20, 2016|website=pcisig.com}}</ref>
+<ref name="FZ4hQ">{{cite web|url=https://www.mellanox.com/news/press_release/mellanox-announces-connectx-5-next-generation-100g-infiniband-and-ethernet-smart-interconnect|title=Mellanox Announces ConnectX-5, the Next Generation of 100G InfiniBand and Ethernet Smart Interconnect Adapter {{pipe}} NVIDIA|website=www.mellanox.com}}</ref>
+<ref name="zovf4">{{cite web|url=https://www.mellanox.com/news/press_release/mellanox-announces-200gbs-hdr-infiniband-solutions-enabling-record-levels-performance-and|title=Mellanox Announces 200Gb/s HDR InfiniBand Solutions Enabling Record Levels of Performance and Scalability {{pipe}} NVIDIA|website=www.mellanox.com}}</ref>
+<ref name="2HOSh">{{cite web|url=https://www-03.ibm.com/press/us/en/pressrelease/53452.wss|archive-url=https://web.archive.org/web/20171208002632/http://www-03.ibm.com/press/us/en/pressrelease/53452.wss|url-status=dead|archive-date=8 December 2017|title=IBM Unveils Most Advanced Server for AI|date=December 5, 2017|website=www-03.ibm.com}}</ref>
+<ref name="ChNhD">{{Cite news|url=https://www.netint.ca/blog/netint-introduces-codensity-with-support-for-pcie-4-0/|title=NETINT Introduces Codensity with Support for PCIe 4.0 – NETINT Technologies|date=2018-07-17|work=NETINT Technologies|access-date=2018-09-28|language=en-US|archive-date=29 September 2018|archive-url=https://web.archive.org/web/20180929041113/https://www.netint.ca/blog/netint-introduces-codensity-with-support-for-pcie-4-0/|url-status=dead}}</ref>
+<ref name="Akskd">{{cite web|url=https://wccftech.com/amd-ryzen-3000-zen-2-desktop-am4-processors-launching-mid-2019/|title=AMD Ryzen 3000 Series CPUs Based on Zen 2 Launching in Mid of 2019|first=Hassan|last=Mujtaba|date=January 9, 2019}}</ref>
+<ref name="KDBMK">{{cite web|url=https://www.tomshardware.com/news/amd-pcie-4.0-socket-am4-motherboard,39559.html|title=AMD Nixes PCIe 4.0 Support on Older Socket AM4 Motherboards, Here's Why|last=Alcorn|first=Paul|date=3 June 2019|website=Tom's Hardware|archive-url=https://archive.today/20190610025155/https://www.tomshardware.com/news/amd-pcie-4.0-socket-am4-motherboard,39559.html|archive-date=10 June 2019|url-status=live|access-date=10 June 2019}}</ref>
+<ref name="CAY71">{{cite web|url=https://www.tomshardware.com/news/amd-ryzen-pcie-4.0-motherboard,38401.html|title=PCIe 4.0 May Come to all AMD Socket AM4 Motherboards (Updated)|last=Alcorn|first=Paul|date=10 January 2019|website=Tom's Hardware|archive-url=https://archive.today/20190610025353/https://www.tomshardware.com/news/amd-ryzen-pcie-4.0-motherboard,38401.html|archive-date=10 June 2019|url-status=live|access-date=10 June 2019}}</ref>
+<ref name="C02lC">{{cite web|url=https://www.anandtech.com/show/15971/intels-11th-gen-core-tiger-lake-soc-detailed-superfin-willow-cove-and-xelp/5|archive-url=https://web.archive.org/web/20201002001525/https://www.anandtech.com/show/15971/intels-11th-gen-core-tiger-lake-soc-detailed-superfin-willow-cove-and-xelp/5|url-status=dead|archive-date=2 October 2020|title=Tiger Lake IO and Power|website=Anandtech|date=2020-08-13|first=Dr. Ian|last=Cutress}}</ref>
+<ref name="n6z9y">{{cite web|url=https://www.plda.com/plda-announces-availability-xpressrich5tm-pcie-50-controller-ip|title=PLDA Announces Availability of XpressRICH5 PCIe 5.0 Controller IP {{!}} PLDA.com|website=www.plda.com|language=en|access-date=2018-06-28}}</ref>
+<ref name="9OVm8">{{cite web|url=https://www.plda.com/products/pcie-solutions-asicsoc/pcie-controller-ip/pcie-soft-ip/pcie-40-soft-ip/xpressrich5-asic|title=XpressRICH5 for ASIC {{!}} PLDA.com|website=www.plda.com|language=en|access-date=2018-06-28}}</ref>
+<ref name="ETVqe">{{cite web |title=PCIe 5.0 Is Ready For Prime Time |url=https://www.tomshardware.com/news/pcie-4.0-5.0-pci-sig-specification,38460.html |website=tomshardware.com |date=17 January 2019 |access-date=18 January 2019}}</ref>
+<ref name="MW69U">{{cite web|url=https://www.businesswire.com/news/home/20190529005766/en/PCI-SIG%C2%AE-Achieves-32GTs-with-New-PCI-Express%C2%AE-5.0-Specification|title=PCI-SIG Achieves 32GT/s with New PCI Express 5.0 Specification|date=May 29, 2019|website=www.businesswire.com}}</ref>
+<ref name="yk5Nd">{{cite web|url=https://www.pcgameshardware.de/Mainboard-Hardware-154107/News/PCI-Express50-China-stellt-ersten-Controller-vor-1337072/|title=PCI-Express 5.0: China stellt ersten Controller vor|date=November 18, 2019|website=PC Games Hardware}}</ref>
+<ref name="O5gOe">{{cite web|url=https://www.anandtech.com/show/14559/pci-express-bandwidth-to-be-doubled-again-pcie-60-announced-spec-to-land-in-2021|archive-url=https://web.archive.org/web/20190618230138/https://www.anandtech.com/show/14559/pci-express-bandwidth-to-be-doubled-again-pcie-60-announced-spec-to-land-in-2021|url-status=dead|archive-date=18 June 2019|title=PCI Express Bandwidth to Be Doubled Again: PCIe 6.0 Announced, Spec to Land in 2021|first=Ryan|last=Smith|website=www.anandtech.com}}</ref>
+<ref name="puGmx">{{cite web|url=https://www.phoronix.com/scan.php?page=news_item&px=PCI-Express-6.0-v0.5|title=PCI Express 6.0 Reaches Version 0.5 Ahead Of Finalization Next Year – Phoronix|website=www.phoronix.com}}</ref>
+<ref name="ltCSi">{{cite web |last1=Shilov |first1=Anton |title=PCIe 6.0 Specification Hits Milestone: Complete Draft Is Ready |url=https://www.tomshardware.com/news/pcie-6-specification-hits-milestone-complete-draft-is-ready |website=Tom's Hardware |date=4 November 2020 |publisher= |access-date=}}</ref>
+<ref name="g6np3">{{cite web |title=PCIe Active Optical Cable System |url=http://www.samtec.com/cable-systems/active-optics/active-optical-cable/pcie.aspx |access-date=23 October 2015 |url-status=live |archive-url=https://web.archive.org/web/20141230122105/http://www.samtec.com/cable-systems/active-optics/active-optical-cable/pcie.aspx |archive-date=30 December 2014}}</ref>
+<ref name="kZCuH">{{cite magazine |url=https://www.pcworld.com/article/240013/acer_asus_to_bring_intels_thunderbolt_speed_technology_to_windows_pcs.html |title=Acer, Asus to Bring Intel's Thunderbolt Speed Technology to Windows PCs |magazine=PC World |date=2011-09-14 |access-date=2012-12-07 |url-status=live |archive-url=https://web.archive.org/web/20120118190546/http://www.pcworld.com/article/240013/acer_asus_to_bring_intels_thunderbolt_speed_technology_to_windows_pcs.html |archive-date=2012-01-18}}</ref>
+<ref name="RKmF2">{{cite web | url = http://www.tomshardware.com/news/M-PCIe-M.2-PCIe-3.1-PCIe-4.0-OCuLink,23259.html | title = PCIe for Mobile Launched; PCIe 3.1, 4.0 Specs Revealed | date = 2013-06-28 | access-date = 2014-07-10 | author = Kevin Parrish | website = Tom's Hardware}}</ref>
+<ref name="yT5P8">{{cite web|url=https://www.chipestimate.com/PCI-Express-40-Draft-07-and-PIPE-44-Specifications-What-Do-They-Mean-to-Designers/Synopsys/Technical-Article/2017/02/21|title=PCI Express 4.0 Draft 0.7 & PIPE 4.4 Specifications – What Do They Mean to Designers? — Synopsys Technical Article {{!}} ChipEstimate.com|website=www.chipestimate.com|language=en|access-date=2018-06-28}}</ref>
+<ref name="9tQ3g">{{cite web |url=http://pinouts.ru/Slots/pci_express_pinout.shtml |title=PCI Express 1× , 4× , 8× , 16×  bus pinout and wiring @ |publisher=Pinouts |location=[[Russia|RU]] |access-date=2009-12-07 |url-status=live |archive-url=https://web.archive.org/web/20091125025800/http://pinouts.ru/Slots/pci_express_pinout.shtml |archive-date=2009-11-25}}</ref>
+<ref name="vV4Hv">{{Cite web|url=https://www.intel.com/content/dam/www/public/us/en/documents/white-papers/msg-signaled-interrupts-paper.pdf|title=Reducing Interrupt Latency Through the Use of Message Signaled Interrupts}}</ref>
+<ref name="iPAaS">''PCI Express Base Specification, Revision 3.0'' Table 4-24</ref>
+<!-- <ref name="EVn7L">{{Cite web|url=http://www.playtool.com/pages/psuconnectors/connectors.html#pciexpress8|title=All about the various PC power supply cables and connectors|website=www.playtool.com|access-date=2018-11-10}}</ref> -->
+<ref name="gxHZT">{{cite web|url=http://www.nvidia.com/object/IO_34527.html|title=NVIDIA Introduces NVIDIA Quadro Plex – A Quantum Leap in Visual Computing|date=2006-08-01|website=Nvidia|archive-url=https://web.archive.org/web/20060824225752/http://www.nvidia.com/object/IO_34527.html|archive-date=2006-08-24|url-status=live|access-date=2018-07-14}}</ref>
+<ref name="zJYg8">{{cite web|url=http://www.nvidia.com/page/quadroplex.html|title=Quadro Plex VCS – Advanced visualization and remote graphics|publisher=nVidia|archive-url=https://web.archive.org/web/20110428042937/http://www.nvidia.com/page/quadroplex.html|archive-date=2011-04-28|url-status=live|access-date=2010-09-11}}</ref>
+<ref name="HgxXj">{{cite web|url=http://ati.amd.com/technology/xgp/|title=XGP|work=ATI|publisher=AMD|archive-url=https://web.archive.org/web/20100129170434/http://ati.amd.com/technology/xgp/|archive-date=2010-01-29|url-status=dead|access-date=2010-09-11}}</ref>
+<ref name="WHU07">{{Citation|title=Fujitsu-Siemens Amilo GraphicBooster External Laptop GPU Released|date=2008-12-03|url=http://www.ubergizmo.com/2008/12/fujitsu-siemens-amilo-graphicbooster-external-laptop-gpu-released/|archive-url=https://web.archive.org/web/20151016192734/http://www.ubergizmo.com/2008/12/fujitsu-siemens-amilo-graphicbooster-external-laptop-gpu-released/|url-status=live|access-date=2015-08-09|archive-date=2015-10-16}}</ref>
+<ref name="mvR09">{{Citation|title=DynaVivid Graphics Dock from Acer arrives in France, what about the US?|date=2010-08-11|url=http://www.ubergizmo.com/2010/08/dynavivid-graphics-dock-from-acer-arrives-in-france-what-about-the-us/|archive-url=https://web.archive.org/web/20151016192734/http://www.ubergizmo.com/2010/08/dynavivid-graphics-dock-from-acer-arrives-in-france-what-about-the-us/|url-status=live|access-date=2015-08-09|archive-date=2015-10-16}}</ref>
+<ref name="ZAJ0y">{{Citation | last1 = Dougherty | first1 = Steve | date = 22 May 2010 | url = http://www.tweaktown.com/news/15382/msi_to_showcase_gus_external_graphics_solution_for_laptops_at_computex/ | title = MSI to showcase 'GUS' external graphics solution for laptops at Computex | newspaper = TweakTown}}</ref>
+<ref name="J5UtH">{{Citation | first1 = Jerry | last1 = Hellstrom | date = 9 August 2011 | url = http://www.pcper.com/news/Editorial/ExpressCard-trying-pull-not-so-fast-one | title = ExpressCard trying to pull a (not so) fast one? | newspaper = PC Perspective | type = editorial | url-status = live | archive-url = https://web.archive.org/web/20160201160254/http://www.pcper.com/news/Editorial/ExpressCard-trying-pull-not-so-fast-one | archive-date = 1 February 2016}}</ref>
+<ref name="jWWJt">{{cite web |url=http://www.hwtools.net/Adapter/PE4H%20V3.2.html |title=PE4H V3.2 (PCIe ×16 Adapter) |publisher=Hwtools.net |access-date=2014-02-05 |url-status=live |archive-url=https://web.archive.org/web/20140214012341/http://www.hwtools.net/Adapter/PE4H%20V3.2.html |archive-date=2014-02-14}}</ref>
+<ref name="ERk1e">{{Citation | newspaper = Notebook review | first1 = Kevin | last1 = O'Brien | date = 8 September 2010 | url = http://www.notebookreview.com/default.asp?newsID=5846&review=how+to+upgrade+laptop+graphics+notebook | title = How to Upgrade Your Notebook Graphics Card Using DIY ViDOCK | url-status = live | archive-url = https://web.archive.org/web/20131213054647/http://www.notebookreview.com/default.asp?newsID=5846&review=how+to+upgrade+laptop+graphics+notebook | archive-date = 13 December 2013}}</ref>
+<ref name="CvJwZ">{{Citation | first1 = Anand | last1 = Lal Shimpi | date = 7 September 2011 | url = http://www.anandtech.com/show/4743/the-thunderbolt-devices-trickle-in-magmas-expressbox-3t | newspaper = AnandTech | title = The Thunderbolt Devices Trickle In: Magma's ExpressBox 3T | url-status = dead | archive-url = https://web.archive.org/web/20160304201352/http://www.anandtech.com/show/4743/the-thunderbolt-devices-trickle-in-magmas-expressbox-3t | archive-date = 4 March 2016}}</ref>
+<ref name="OLzu7">{{cite web |url = https://www.theverge.com/2012/1/10/2698168/msi-GUS-II-external-thunderbolt-gpu-enclosure |title = MSI GUS II external GPU enclosure with Thunderbolt |type = hands-on |website = The Verge |date = 10 January 2012 |access-date = 2012-02-12 |url-status = live |archive-url = https://web.archive.org/web/20120213123659/http://www.theverge.com/2012/1/10/2698168/msi-GUS-II-external-thunderbolt-gpu-enclosure |archive-date = 2012-02-13}}</ref>
+<ref name="5LOrR">{{Citation | title = PCI express graphics, Thunderbolt | newspaper = Tom's hardware | date = 17 September 2012 | url = http://www.tomshardware.com/reviews/pci-express-graphics-thunderbolt,3263-2.html}}</ref>
+<ref name="apXPa">{{Citation | date = 13 Dec 2012 | newspaper = Engadget | title = M logics M link Thunderbold chassis no shipping | url = https://www.engadget.com/2012/12/13/mlogics-mlink-thunderbolt-chassis-now-shipping-399/ | url-status = live | archive-url = https://web.archive.org/web/20170625182008/https://www.engadget.com/2012/12/13/mlogics-mlink-thunderbolt-chassis-now-shipping-399/ | archive-date = 2017-06-25}}</ref>
+<ref name="PXbHS">{{Citation|last1=Burns|first1=Chris|title=2017 Razer Blade Stealth and Core V2 detailed|date=17 October 2017|url=https://www.slashgear.com/2017-razer-blade-stealth-and-core-v2-detailed-17504328/|newspaper=SlashGear|archive-url=https://web.archive.org/web/20171017211631/https://www.slashgear.com/2017-razer-blade-stealth-and-core-v2-detailed-17504328/|url-status=live|archive-date=17 October 2017}}</ref>
+<ref name="49G×4">{{cite web |url=https://www.engadget.com/2011/12/08/compactflash-association-readies-next-gen-xqd-format-promises-w/ |title=CompactFlash Association readies next-gen XQD format, promises write speeds of 125&nbsp;MB/s and up |publisher=Engadget |date=2011-12-08 |access-date=2014-05-18 |url-status=live |archive-url=https://web.archive.org/web/20140519002107/http://www.engadget.com/2011/12/08/compactflash-association-readies-next-gen-xqd-format-promises-w/ |archive-date=2014-05-19}}</ref>
+<ref name="P3Feb">{{cite web |url = http://www.storagesearch.com/ssd-29.html |title = What's so very different about the design of Fusion-io's ioDrives / PCIe SSDs? |date = December 2011 |access-date = 2013-10-02 |author = Zsolt Kerekes |publisher = storagesearch.com |url-status = live |archive-url = https://web.archive.org/web/20130923065816/http://www.storagesearch.com/ssd-29.html |archive-date = 2013-09-23}}</ref>
+<ref name="NeWKh">{{cite web |url = http://www.storagereview.com/fusionio_iodrive_duo_enterprise_pcie_review |title = Fusion-io ioDrive Duo Enterprise PCIe Review |date = 2012-07-16 |access-date = 2013-10-02 |publisher = storagereview.com |url-status = dead |archive-url = https://web.archive.org/web/20131004230049/http://www.storagereview.com/fusionio_iodrive_duo_enterprise_pcie_review |archive-date = 2013-10-04}}</ref>
+<ref name="VLf63">{{cite web | url= http://www.xbitlabs.com/news/storage/display/20120110180208_OCZ_Demos_4TB_16TB_Solid_State_Drives_for_Enterprise.html | title= OCZ Demos 4&nbsp;TiB, 16&nbsp;TiB Solid-State Drives for Enterprise | publisher= X-bit labs | access-date= 2012-12-07 | url-status= dead | archive-url= https://web.archive.org/web/20130325121004/http://www.xbitlabs.com/news/storage/display/20120110180208_OCZ_Demos_4TB_16TB_Solid_State_Drives_for_Enterprise.html | archive-date= 2013-03-25}}</ref>
+<ref name="ymSig">{{cite web |url=http://www.sata-io.org/technology/sataexpress.asp |title=Enabling Higher Speed Storage Applications with SATA Express |publisher=SATA-IO |access-date=2012-12-07 |url-status=live |archive-url=https://web.archive.org/web/20121127010238/http://www.sata-io.org/technology/sataexpress.asp |archive-date=2012-11-27}}</ref>
+<ref name="SNLQe">{{cite web |url = https://www.sata-io.org/sata-m2-card |title = SATA M.2 Card |publisher = SATA-IO |access-date = 2013-09-14 |url-status = live |archive-url = https://web.archive.org/web/20131003103042/https://www.sata-io.org/sata-m2-card |archive-date = 2013-10-03}}</ref>
+<ref name="FJvMX">{{cite web |url= http://www.scsita.org/library/scsi-express/ |publisher= SCSI Trade Association |title= SCSI Express |access-date= 2012-12-27 |url-status= dead |archive-url= https://web.archive.org/web/20130127094133/http://www.scsita.org/library/scsi-express/ |archive-date= 2013-01-27}}</ref>
+<ref name="YUum6">{{cite web | first = Vijay | last = Meduri | url = http://www.hpcwire.com/hpcwire/2011-01-24/a_case_for_pci_express_as_a_high-performance_cluster_interconnect.html | title = A Case for PCI Express as a High-Performance Cluster Interconnect | publisher = HPCwire | date = 2011-01-24 | access-date = 2012-12-07 | url-status = live | archive-url = https://web.archive.org/web/20130114041356/http://www.hpcwire.com/hpcwire/2011-01-24/a_case_for_pci_express_as_a_high-performance_cluster_interconnect.html | archive-date = 2013-01-14}}</ref>
+<ref name="1Jwlv">{{Cite news |title= New PCI Express 4.0 delay may empower next-gen alternatives |author= Evan Koblentz |date= 3 February 2017 |work= Tech Republic |url= http://www.techrepublic.com/article/new-pci-express-4-0-delay-may-empower-next-gen-alternatives/ |access-date= 31 March 2017 |url-status= live |archive-url= https://web.archive.org/web/20170401143837/http://www.techrepublic.com/article/new-pci-express-4-0-delay-may-empower-next-gen-alternatives/ |archive-date= 1 April 2017}}</ref>
+<ref name="aJ00L">{{cite web|url=https://www.anandtech.com/show/14068/cxl-specification-1-released-new-industry-high-speed-interconnect-from-intel|archive-url=https://web.archive.org/web/20190311140105/https://www.anandtech.com/show/14068/cxl-specification-1-released-new-industry-high-speed-interconnect-from-intel|url-status=dead|archive-date=11 March 2019|title=CXL Specification 1.0 Released: New Industry High-Speed Interconnect From Intel|last=Cutress|first=Ian|website=www.anandtech.com|access-date=2019-08-09}}</ref>
+<ref name="9ps7Q">{{cite web|url=http://pcisig.com/developers/integrators-list|title=Integrators List {{!}} PCI-SIG|website=pcisig.com|access-date=2019-03-27}}</ref>
+<ref name="Syn50">{{cite web|url=https://blogs.synopsys.com/expressyourself/2017/08/15/1-2-3-4-5-its-official-pcie-5-0-is-announced | title = 1,2,3,4,5... It's Official, PCIe 5.0 is Announced {{!}} synopsys.com|website=www.synopsys.com|language=en| access-date=2017-06-07 }}</ref>
+<ref name="PCIe70v05">{{cite web|url=https://pcisig.com/blog/pcie%C2%AE-70-specification-version-05-now-available-full-draft-available-members | title = PCIe 7.0 Specification, Version 0.5 Now Available: Full Draft Available to Members|website=pcisig.com|language=en|access-date=2024-04-03}}</ref>
+<ref name="PCIe70v07">{{cite web|url=https://pcisig.com/blog/progressing-track-pcie-70-specification-version-07-now-available-member-review | title = Progressing on Track: PCIe 7.0 Specification, Version 0.7 Now Available for Member Review|website=pcisig.com|language=en|access-date=2025-01-17}}</ref>
+<ref name="PCIe70v09">{{cite web|url=https://pcisig.com/blog/pcie-70-specification-version-09-final-draft-now-available-member-review | title = PCIe 7.0 Specification, Version 0.9: Final Draft Now Available for Member Review|website=pcisig.com|language=en|access-date=2025-03-19}}</ref>
+}}
+
+== Further reading ==
+<!-- WARNING: DO NOT POST LINKS TO ANY PIRATED SPECS. See DMCA take-down notice at [[wmf:File:DMCA PCI.pdf]] -->
+* {{Citation | title = PCI Express System Architecture | series = Mind share PC system architecture | editor-first = Joseph 'Joe' | editor-last = Winkles | first1 = Ravi | last1 = Budruk | first2 = Don | last2 = Anderson | first3 = Tom | last3 = Shanley | year = 2003 | isbn = 978-0-321-15630-3 | publisher = Addison-Wesley}}, 1120 pp.
+* {{Citation | first1 = Edward | last1 = Solari | first2 = Brad | last2 = Congdon | publisher = Intel | title = Complete PCI Express Reference: Design Implications for Hardware and Software Developers | year = 2003 | isbn = 978-0-9717861-9-6}}, 1056 pp.
+* {{Citation | first1 = Adam | last1 = Wilen | first2 = Justin P | last2 = Schade | first3 = Ron | last3 = Thornburg |date=Apr 2003 | title = Introduction to PCI Express: A Hardware and Software Developer's Guide | isbn = 978-0-9702846-9-3 | publisher = Intel}}, 325 pp.
+
+== External links ==
+* {{commons category-inline}}
+* [https://pcisig.com/specifications PCI-SIG Specifications]
+<!-- WARNING: Do NOT post links to any pirated specs. See DMCA take-down notice at [[wmf:File:DMCA PCI.pdf]] -->
+
+{{Computer bus}}
+{{Basic computer components}}
+
+[[Category:Computer-related introductions in 2004]]
+[[Category:Peripheral Component Interconnect]]
+[[Category:Serial buses]]
+[[Category:Computer standards]]
+[[Category:Motherboard expansion slot]]

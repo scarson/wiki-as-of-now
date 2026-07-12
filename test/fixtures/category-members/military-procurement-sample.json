@@ -1,0 +1,36 @@
+{
+    "batchcomplete": true,
+    "continue": {
+        "cmcontinue": "page|2c2a50504032042e4642422a4430011201dc11|23630180",
+        "continue": "-||"
+    },
+    "query": {
+        "categorymembers": [
+            {
+                "pageid": 22024319,
+                "ns": 0,
+                "title": "Military acquisition"
+            },
+            {
+                "pageid": 81705934,
+                "ns": 0,
+                "title": "2020 German Assault Rifle System tender"
+            },
+            {
+                "pageid": 10760786,
+                "ns": 0,
+                "title": "AGATE (architecture framework)"
+            },
+            {
+                "pageid": 27471192,
+                "ns": 0,
+                "title": "Analysis of Alternatives"
+            },
+            {
+                "pageid": 73043703,
+                "ns": 0,
+                "title": "Auxiliary ship replacement program"
+            }
+        ]
+    }
+}

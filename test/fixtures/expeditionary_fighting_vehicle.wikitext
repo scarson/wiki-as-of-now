@@ -1,0 +1,162 @@
+{{Short description|Cancelled American amphibious assault vehicle}}
+{{Distinguish|Expeditionary tank}}
+{{redirect|EFV}}
+{{Use dmy dates|date=October 2020}}
+{{Infobox weapon
+|name=Expeditionary Fighting Vehicle, Advanced Amphibious Assault Vehicle (AAAV)
+|image=File:Expeditionary Fighting Vehicle.jpg
+|image_size=300px
+|caption=[[General Dynamics]] Expeditionary Fighting Vehicle, Advanced Amphibious Assault Vehicle (AAAV)
+|origin=United States
+|type=[[amphibious vehicle|Amphibious]] [[Combat vehicle|assault vehicle]]<ref name="PEO Land Systems">{{cite web|title=EXPEDITIONARY FIGHTING VEHICLE|url=http://www.marcorsyscom.usmc.mil/peolandsystems/efv.aspx|access-date=7 January 2011|author=Glenn W. Goodman Jr.|year=2010|archive-url=https://web.archive.org/web/20110118015932/http://www.marcorsyscom.usmc.mil/peolandsystems/efv.aspx|archive-date=18 January 2011|url-status=dead}}</ref> 
+<!-- Type selection -->
+|is_ranged=
+|is_bladed=
+|is_explosive=
+|is_artillery=
+|is_vehicle=yes
+|is_missile=
+|is_UK=
+<!-- Service history -->
+|service = Project cancelled
+|used_by=[[United States Marine Corps]]
+|wars= 
+<!-- Production history -->
+|designer=
+|design_date=
+|manufacturer=[[General Dynamics]]
+|production_date= 
+|unit_cost= US$22.3&nbsp;million
+|number= 
+|variants=EFVP<br/>EFVC
+<!-- General specifications -->
+|weight=Empty: {{cvt|67300|lb|kg}}<ref>{{cite web|url=http://www.dieselpowermag.com/features/1001dp_expeditionary_fighting_vehicle/|title=Expeditionary Fighting Vehicle - MTU MT883 Diesel Engine - Diesel Power Magazine|date=1 January 2010|work=Diesel Power Magazine|access-date=13 February 2015|archive-date=13 February 2015|archive-url=https://web.archive.org/web/20150213211521/http://www.dieselpowermag.com/features/1001dp_expeditionary_fighting_vehicle/|url-status=dead}}</ref><br/>Fully loaded: {{convert|79300|lb|kg}}
+|length={{convert|10.67|m|ftin|abbr=on|order=flip}}
+|width={{convert|3.66|m| ftin|abbr=on|order=flip}}
+|height={{convert|3.28|m|ftin|abbr=on|order=flip}} (turret roof)<br/>In water: {{cvt|115|in|m}}
+|diameter=
+|crew=3 crew
+|passengers= 17 fully equipped marines (EFVP) <br/> 7 command crew (EFVPC)
+|payload_capacity= {{convert|9,150|lb|kg}}
+<!-- Vehicle/missile specifications -->
+|armour=armor panels made of ceramic, S-2 fiberglass, and a Kevlar-like woven fabric in three separate layers, armor offers protection against machine gun and artillery fragments weighs {{convert|20|psf|Pa}}, 14.5&nbsp;mm AP at 300&nbsp;meters, 155/152&nbsp;mm fragments at 15&nbsp;meters
+|primary_armament=fully stabilized and digitally controlled [[Mk44 Bushmaster II]] Mod 0 30&nbsp;mm cannon (EFVP) <br/>M240 machine gun, 7.62&nbsp;mm coax (EFVPC)
+|secondary_armament=
+|engine=[[MTU Friedrichshafen]] MT 883 Ka-524 90-degree V-12 diesel engine
+|engine_power={{cvt|2702|hp|kW}} (water), {{cvt|1200|hp|kW}} (transition) {{cvt|850|hp|kW}} (land)
+|transmission=Allison X4560 six speed transmission; water propulsion through two {{convert|23|in|m|adj=mid}}-diameter water jets
+|pw_ratio={{convert|34.48|hp/t|kW/t|abbr=on}}
+|suspension=14 retractable independent hydraulic suspension units with two nitrogen gas charges
+|fuel_capacity={{convert|325|USgal|L}}
+|vehicle_range=land: {{cvt|523|km|mi|order=flip}}<br/>water: {{cvt|120|km|mi|order=flip}}
+|speed=road: {{cvt|45|mph|kph}}<br/>water: {{cvt|28.6|mph|kph kn}}<br>transition: {{cvt|11|mph|kph kn}}
+|guidance=
+|steering=
+}}
+
+The '''Expeditionary Fighting Vehicle''' ('''EFV''') (formerly known as the '''Advanced Amphibious Assault Vehicle''' ('''AAAV''')) was an [[amphibious vehicle#Tracked|amphibious assault vehicle]] developed by General Dynamics during the 1990s and 2000s for use by the [[United States Marine Corps|US Marine Corps]]. It would have been launched at sea, from an [[amphibious assault ship]] beyond the horizon, able to transport a full [[Marine (military)|marine]] rifle squad to shore. It would maneuver [[Off-roading|cross country]] with an agility and mobility equal to or greater than the [[M1 Abrams]].
+
+The EFV was designed to replace the aging [[Assault Amphibious Vehicle|AAV-7A1 Assault Amphibious Vehicle]] (AAV),<ref>{{cite web|url=http://www.marcorsyscom.usmc.mil/sites/aav/ |date=19 March 2009 |title=Assault Amphibious Vehicle Systems (AAVS) |publisher=[[Marine Corps Systems Command]] |access-date=6 January 2011 |url-status=dead |archive-url=https://web.archive.org/web/20080327020128/http://www.marcorsyscom.usmc.mil/sites/aav/ |archive-date=27 March 2008}}</ref> which entered service in 1972,<ref>{{cite web|url=http://www.army-technology.com/projects/efv/|title=Expeditionary Fighting Vehicle (EFV) – Advanced Amphibious Assault Vehicle, USA |publisher=army-technology.com |access-date=6 May 2010}}</ref>{{Unreliable source?|reason=domain on WP:BLACKLIST|date=June 2016}} and was the Marine Corps' number one priority ground weapon system acquisition. It was to have had three times the speed in water and about twice the armor of the AAV, as well as superior [[firepower]]. The vehicle was to be deployed in 2015;<ref name="NAVWAR">{{cite web|url=http://www.defensenews.com/story.php?F=2622633&C=navwar|title=U.S. Marine EFV Delivery Delayed to 2015 and Costs Double|publisher=[[Defense News]]}}{{dead link|date=August 2021|bot=medic}}{{cbignore|bot=medic}}</ref> however, on 6 January 2011, [[United States Secretary of Defense|Secretary of Defense]] [[Robert Gates]] recommended the EFV program be canceled.<ref name="statement">{{Citation |last = Office of the Assistant Secretary of Defense (Public Affairs) |title = Statement by the Commandant of the Marine Corps Gen. James Amos on Efficiencies |newspaper = [[United States Department of Defense]] |date = 6 January 2011 |url = https://www.defense.gov/releases/release.aspx?releaseid=14179 |access-date = 6 January 2011 |url-status = dead |archive-url = https://web.archive.org/web/20110301004919/http://www.defense.gov/releases/release.aspx?releaseid=14179 |archive-date = 1 March 2011}}</ref><ref name="efficiencies"/> The program, which was projected to cost $15&nbsp;billion, had already cost $3&nbsp;billion.<ref name="$3&nbsp;Billion">{{cite web|title=Fleet will feel effects of major Corps cuts|url=http://www.navytimes.com/news/2011/01/navy-marine-cuts-affect-fleet-010811/|publisher=Gannett Government Media Corporation|access-date=10 January 2011|author=Christopher P. Cavas|date=8 January 2010}}</ref><ref name="$15&nbsp;billion">{{cite web|title=House Armed Services chairman restructures committee|url=http://www.govexec.com/defense/2011/01/house-armed-services-chairman-restructures-committee/33106/|publisher=National Journal Group Inc|access-date=19 January 2011|author=Megan Scully|date=18 January 2011}}</ref>
+
+The Marines asked for the EFV to be canceled in favor of the Assault Amphibian Vehicle Service Life Extension Program and the [[Marine Personnel Carrier]], which itself became phase one of the [[Amphibious Combat Vehicle]].<ref>Kuiper, Jahn R. [https://www.marines.mil/unit/mcbquantico/Pages/2011/EFVoustedforlesscostlytriumvirate.aspx "EFV ousted for less costly triumvirate."] {{Webarchive|url=https://web.archive.org/web/20120922102813/http://www.marines.mil/unit/mcbquantico/Pages/2011/EFVoustedforlesscostlytriumvirate.aspx |date=22 September 2012 }} ''USMC'', 22 March 2011.</ref>
+
+==History==
+In the 1980s, the US Marine Corps developed an "over the horizon" strategy for ocean-based assaults. The intention was to protect naval ships from enemy [[Naval mine|mine]]s and shore defenses. It included the [[V-22 Osprey|MV-22 Osprey]], the [[Landing Craft Air Cushion]] (LCAC), and the EFV.
+
+Development for the AAAV began in August 1974 with Landing Vehicle Assault (LVA) prototypes that continued in the early 1980s at the command at [[Marine Corps Base Camp Pendleton]]. The AAAV's predecessor, the LVTP-7, had its life expectancy extended in 1983–84 by use of a service life extension program, which modified and upgraded many of the key systems, creating the LVTP7A1 and re-designated it the AAVP7A1. At the time these vehicles were released, the USMC had anticipated and communicated delivery of the AAAV by 1993. As a result of delays, the AAVP7A1 received another service life extension-type upgrade in the mid 1990s while the USMC still awaited final development and delivery of the AAAV, 14 years behind original projected time frames.<ref name="RS22947">{{cite web|url=http://opencrs.com/document/RS22947/2009-08-03/?23741|title=The Marines Expeditionary Fighting Vehicle (EFV): Background and Issues for Congress|last=Feickert|first=Andrew|date=3 August 2009|publisher=[[Congressional Research Service]]|access-date=6 May 2010}}</ref>
+
+In 1988, defense officials authorized the concept exploration and definition phase. In 1995, the program entered into the definition and risk reduction phase, where it won two Department of Defense awards for successful cost and technology management.<ref name="RS22947"/> In June 1996, a contract was awarded to [[General Dynamics Land Systems]] to begin full-scale engineering development of their design. Based on the early success of the program, the Marine Corps awarded a [[cost-plus contract]] to General Dynamics in July 2001 for the systems development and demonstration phase of the program, expected to be completed by October 2003. The AAAV was renamed "EFV" in September 2003. The [[Government Accountability Office]] later stated that the development phase of three years was insufficient, causing delays and prototype failures, particularly in reliability.<ref name="RS22947"/> After the 2006 operational assessment was plagued by reliability issues and maintenance burdens, the Corps began a redesign of the EFV, requiring a new contract for an additional {{USD|143.5 million}} in February 2007.<ref name="RS22947"/> That June, a reset of the development phase delayed completion by an additional four years.<ref name="RS22947"/> Instead of initiating production as planned, the corps asked for seven new prototypes, to address the current deficiencies, which had caused an average of one failure for every four and a half hours of operation.<ref>{{cite news |url=https://www.washingtonpost.com/wp-dyn/content/article/2007/02/06/AR2007020601997.html |title=Problems Stall Pentagon's New Fighting Vehicle – Washington Post |newspaper=The Washington Post |first=Renae |last=Merle |date=7 February 2007 |access-date=2010-05-02}}</ref>
+
+On 7 April 2009, Defense Secretary Gates said that the EFV program would "continue as-is", pending an amphibious review in the 2010 [[Quadrennial Defense Review]].<ref name="AT FCS">{{cite web|url=http://www.armytimes.com/news/2009/04/defense_gates_roundtable_040709/|title=Gates: Cutting FCS was tough|last=Bennett|first=John T.|date=7 April 2009 |work=[[Army Times]]|access-date=6 May 2010}}</ref> The vehicle was called "exquisite", which Gates usually reserved for programs he intended to cancel.<ref name="DN battle">{{cite web|url=http://www.defensenews.com/story.php?i=4296905&c=FEA&s=CVS |title=USMC Battling for the Future |last1=Muradian|first1=Vago |last2=Osborn |first2= Kris |date=28 September 2009 |publisher=Defense News |access-date=6 May 2010}}{{dead link|date=August 2021|bot=medic}}{{cbignore|bot=medic}}</ref> He later questioned the EFV as the proper ship-to-shore platform on 3 May 2010,<ref name="GatesEFV">{{cite web|url=http://www.marinecorpstimes.com/news/2010/05/defense_gates_050310/|title=Gates: U.S. must rethink expensive ships, EFV|last=Bennett|first=John T.|date=4 May 2010|work=[[Marine Corps Times]]|access-date=6 May 2010|archive-date=8 March 2012|archive-url=https://web.archive.org/web/20120308060416/http://www.marinecorpstimes.com/news/2010/05/defense_gates_050310/|url-status=dead}}</ref> the day before the initial prototype was rolled out at a ceremony at [[Marine Corps Base Quantico]].<ref name="MCT rollout">{{cite web |url=http://www.marinecorpstimes.com/news/2010/05/marine_efv_rollout_050410/ |title=Corps shows off long-delayed EFV |last=McCullough |first=Amy |date=5 May 2010 |work=Marine Corps Times |access-date=6 May 2010 |archive-date=8 March 2012 |archive-url=https://web.archive.org/web/20120308060420/http://www.marinecorpstimes.com/news/2010/05/marine_efv_rollout_050410/ |url-status=dead }}</ref>
+
+The USMC had reduced the number to be purchased from 1,013 to 573 AAAVs by 2015 due to escalation in unit cost estimated at $22.3&nbsp;million in 2007.<ref name="RS22947"/><ref name="MCT rollout"/> The EFV might be a baseline vehicle for the [[United States Army|US Army's]] [[BCT Ground Combat Vehicle Program]], however it is more likely that the army will start a new program.<ref name="AW">{{cite web|url=http://www.aviationweek.com/aw/generic/story_channel.jsp?channel=defense&id=news/GCV100809.xml&headline=No%20Options%20Out%20For%20Ground%20Combat%20Vehicle|title=No Options Out For Ground Combat Vehicle|last1=Chavanne|first1=Bettina H.|last2=McLeary |first2= Paul|date=8 October 2009|publisher=[[Aviation Week & Space Technology|Aviation Week]]|access-date=6 May 2010}}</ref>
+
+[[Low rate initial production]] (LRIP) was projected to begin in January 2012.<ref>{{Cite web|url=http://www.aviationweek.com/aw/generic/story_generic.jsp?channel=aerospacedaily&id=news/asd/2010/05/28/04.xml&headline=USMC%20Anticipates%20EFV%20LRIP%20in%202012|title=USMC Anticipates EFV LRIP in 2012}}{{Dead link|date=June 2024 |bot=InternetArchiveBot |fix-attempted=yes }}</ref> Projected total program development cost of the type until first quarter of 2010 was estimated at 15.9&nbsp;billion dollars.<ref>[https://web.archive.org/web/20070423152857/http://www.finance.hq.navy.mil/fmb/08pres/proc/PMC_Book.pdf Exhibit P-40, Budget Item Justification Sheet February 2007]</ref>
+
+=== Controversy ===
+[[Robert O. Work]], while [[Undersecretary of the Navy]], sketched out a future for [[amphibious warfare]] in which either the Marines will land unopposed or it will take a major effort using all the long range weapons of the United States armed forces to clear out ship-killing missiles, so that amphibious ships can safely approach the hostile beach and neither scenario sees much use for the EFV.<ref>{{citation |last=Thompson |first= Loren B. |url=http://www.defpro.com/news/details/20166/?SID=4c48fffcc99a816d63b9392c4f535ae5 |title=A Vision Of Future Amphibious Warfare That Will Not Work|publisher=defence.professionals GmbH |date=1 December 2010}}</ref><ref>Robert O. Work and F. G. Hoffman [http://www.usni.org/magazines/proceedings/2010-11/hitting-beach-21st-century "Hitting the Beach in the 21st Century."] ''[[Proceedings (magazine)|Proceedings]]'', November 2010.</ref> New families of guided anti-ship weapons have extended target ranges of well past {{convert|75|mi|km}} making the EFV's capabilities less of a game-changer than originally hoped.<ref>{{cite web|last=Singer |first=Peter W |title=The Marine Corps Is All Right |url=http://www.brookings.edu/articles/2011/0304_marine_corps_singer.aspx |publisher=The Brookings Institution |access-date=10 March 2011 |url-status=dead |archive-url=https://web.archive.org/web/20110514045102/http://www.brookings.edu/articles/2011/0304_marine_corps_singer.aspx |archive-date=14 May 2011}}</ref>
+
+In a joint report, the US [[Public Interest Research Group]] and the [[National Taxpayers Union]] called the EFV program wasteful spending and asked for its cancellation along with the F-35 Joint Strike Fighter and the V-22 Osprey aircraft.<ref>{{citation |url=http://www.allgov.com/Where_is_the_Money_Going/ViewNews/Left_and_Right_Unite_against_Government_Waste_101105 |title=Left and Right Unite against Government Waste |publisher= [[AllGov]] |date= 5 November 2010}}</ref> The co-chairs of the [[National Commission on Fiscal Responsibility and Reform]] have also supported the cancellation of the EFV.<ref>{{cite web |title=$200&nbsp;Billion IN ILLUSTRATIVE SAVINGS |url=http://www.fiscalcommission.gov/sites/fiscalcommission.gov/files/documents/Illustrative_List_11.10.2010.pdf |date=10 October 2010 |access-date=11 November 2010 |url-status=dead |archive-url=https://web.archive.org/web/20101119153741/http://www.fiscalcommission.gov/sites/fiscalcommission.gov/files/documents/Illustrative_List_11.10.2010.pdf |archive-date=19 November 2010}}</ref> During a Pentagon briefing, on 6 January 2011, revealing budget efficiencies and reinvestment possibilities, Secretary of Defense Gates announced his intention to cancel the EFV program.<ref name="efficiencies">{{Citation |last = Garamone |first = Jim |title = Gates Reveals Budget Efficiencies, Reinvestment Possibilities |newspaper = [[American Forces Press Service]] |date = 6 January 2011 |url = http://www.defense.gov/news/newsarticle.aspx?id=62351 |access-date = 6 January 2011 |url-status = dead |archive-url = https://web.archive.org/web/20110108034831/http://www.defense.gov/news/newsarticle.aspx?id=62351 |archive-date = 8 January 2011}}</ref> In a statement released after Gates' press conference, [[Commandant of the United States Marine Corps|Commandant of the Marine Corps]] General Amos said that he supported the cancellation of the EFV: {{blockquote|Today the Secretary of Defense announced the termination of the Expeditionary Fighting Vehicle (EFV) program.  I support his decision.  After a thorough review of the program within the context of a broader Marine Corps force structure review, I personally recommended to both the Secretary of Defense and the Secretary of the Navy that the EFV be cancelled and that the Marine Corps pursue a more affordable amphibious tracked fighting vehicle. <br/>Despite the critical amphibious and war-fighting capability the EFV represents, the program is not affordable given likely Marine Corps procurement budgets.  The procurement and operations/maintenance costs of this vehicle are onerous.  After examining multiple options to preserve the EFV, I concluded that none of the options meets what we consider reasonable affordability criteria.  As a result, I decided to pursue a more affordable vehicle.<ref name="statement"/>|[[James F. Amos]], 35th Commandant of the Marine Corps}}
+
+[[Loren B. Thompson]], of the [[Lexington Institute]], said that Amos had been ordered to give this statement, which did not reflect his actual feelings on the issue.<ref>{{citation |last=Reed |first= John |url=http://www.dodbuzz.com/2011/01/07/the-reactions-to-gates-spending-plans/ |title=The Reactions to Gates' Spending Plans|archive-url=https://web.archive.org/web/20150923220149/http://www.dodbuzz.com/2011/01/07/the-reactions-to-gates-spending-plans/ |archive-date=23 September 2015 |publisher=[[DOD Buzz]] |date=7 January 2010}}</ref>
+
+In an interview on 5 January 2011 with [[Bloomberg Businessweek]], [[Duncan D. Hunter]], a member of the [[United States House Committee on Armed Services|House Armed Services Committee]], anticipated the cancellation announcement by Gates. However, Hunter predicted that his committee would reject the cancellation.<ref name="Capaccio">{{Citation |last = Capaccio |first=Tony |title = General Dynamics Marine Transport Vehicle Terminated in Budget |newspaper=[[Bloomberg Businessweek]] |date = 6 January 2011 |url = http://www.businessweek.com/news/2011-01-06/general-dynamics-marine-transport-vehicle-terminated-in-budget.html |archive-url = https://web.archive.org/web/20110109192856/http://www.businessweek.com/news/2011-01-06/general-dynamics-marine-transport-vehicle-terminated-in-budget.html |url-status = dead |archive-date = 9 January 2011 |access-date = 7 January 2011}}</ref>
+
+According to Lieutenant General George J. Flynn of the Marine Corps Combat Development Command, the USMC was to use funding from the cancelled EFV for other tactical ground vehicles over the next five years.<ref name="Tiron">{{Citation |last = Tiron |first=Roxan |title = Marines Steer $2.4&nbsp;Billion Toward Tactical Vehicles |newspaper=[[Bloomberg Businessweek]] |date = 12 January 2011 |url = https://www.bloomberg.com/news/2011-01-12/marines-shift-2-4-billion-to-tactical-vehicles-in-wake-of-gates-pruning.html |access-date = 12 January 2011}}</ref> The EFV program was cut from a 2012 proposed budget by the White House.<ref>[https://obamawhitehouse.archives.gov/sites/default/files/omb/budget/fy2012/assets/sustainable.pdf "The Budget for Fiscal Year 2012"]  "Office of Management and Budget", 14 February 2011.</ref>
+
+General Dynamics offered a cut down version of the EFV without the hydroplaning or weapons.<ref>Beidel, Eric. [http://www.nationaldefensemagazine.org/blog/Lists/Posts/Post.aspx?ID=292 "General Dynamics Makes Final Argument for Keeping EFV Alive."] {{Webarchive|url=https://web.archive.org/web/20110129012125/http://www.nationaldefensemagazine.org/blog/Lists/Posts/Post.aspx?ID=292 |date=29 January 2011 }} ''National Defense Industrial Association'', 25 January 2011.</ref> [[Ray Mabus]] has said that new defensive systems will allow navy ships to close to within {{convert|12|mi|km}} off hostile shores so a {{convert|25|kn|kph|order=out|adj=on}} amphibious tracked vehicle is no longer needed.<ref>Steele, Jeanette. [http://www.signonsandiego.com/news/2011/feb/24/q-navy-secretary-ray-mabus/ "Q & A with Navy Secretary Ray Mabus."] ''The San Diego Union-Tribune'', 24 February 2011.</ref>
+
+Deputy Commandant George Flynn has said that the analysis of alternatives to replace the EFV will be accelerated to complete in six to nine months.<ref>Fabey, Michael. [http://www.aviationweek.com/aw/generic/story_channel.jsp?channel=defense&id=news/asd/2011/06/10/05.xml "USMC Expedites EFV Analysis Of Alternatives."] ''Aviation Week'', 10 June 2011.</ref> In the 2012 appropriations bill, Congress ordered that the EFV be one of the alternatives considered in the study.<ref>Brannen, Kate. [https://archive.today/20130122231526/http://www.federaltimes.com/article/20111216/CONGRESS01/112160304/1023/DEPARTMENTS01 "Congress looks to wrap up budget bills."] ''Federal Times'', 16 December 2011.</ref>
+
+==Design==
+[[File:EFVDesign.png|thumb|right|upright=1.7|Diagram of EFVP1 variant]]
+
+The EFV, designed by [[General Dynamics]] Land Systems, was an amphibious armored tracked vehicle with an aluminum hull. The engine is a custom [[MTU Friedrichshafen]] diesel (MT883) with three modes of operation; a high power mode for planing over the sea, a lower speed transition mode when approaching shallow water, and a low power mode for land travel. It has a crew of three and can transport 17 marines and their equipment. The EFV would have been the first heavy tactical vehicle with a [[space frame]] structure.<ref name="AFG">{{cite web|url=http://www.autofieldguide.com/articles/090704.html|title=Engineering A Serious Chassis|last=Kelly|first=Kevin|date=4 July 2009|publisher=AutoFieldGuide.com|access-date=6 May 2010|archive-url=https://web.archive.org/web/20090108150536/http://www.autofieldguide.com/articles/090704.html|archive-date=8 January 2009|url-status=dead}}</ref><ref>{{cite web |last1=Preston |first1=FRank |title=EFV—Corps’ future amphibian visits Combat Center |url=https://www.hqmc.marines.mil/News/Article/Article/551669/efvcorps-future-amphibian-visits-combat-center/ |website=EFV—Corps’ future amphibian visits Combat Center}}</ref><ref>{{cite web |last1=Read |first1=E. A. |title=Building A Better Mousetrap: The Unnecessary Capability of the EFV |url=https://apps.dtic.mil/sti/tr/pdf/ADA505294.pdf |publisher=efense Technical Information Center (DTIC) |access-date=28 May 2026 |format=PDF}}</ref>
+
+The hull had a [[hydraulics|hydraulically]] actuated bow flap to aid [[planing (sailing)|planing]] with a maximum waterborne speed of {{convert|46|km/h|kn kph|order=out}}. Shrouded [[Honeywell]] [[Pump-jet|waterjet]] [[propulsor]]s are integrated into each side of the hull, which create over {{convert|2,800|hp|kW}} of power. It was also outfitted with hydraulically actuated [[Chine (boating)|chine]]s to cover the tracks while in seafaring mode.
+
+The vehicle uses an [[Ethernet]] network connected by the Tactical Switch Router, based on the [[Commercial off-the-shelf|COTS]] [[DuraMAR]] [[Mobile IP]] router for its internal and external communications.<ref>{{cite web|url=http://www.mil-embedded.com/articles/id/?4142|archive-url=https://web.archive.org/web/20110714094113/http://www.mil-embedded.com/articles/id/?4142|url-status=dead|archive-date=14 July 2011|title=Case study: EFV keeps pace with Ethernet to actualize net-centric warfare|work=Military Embedded Systems|access-date=13 February 2015}}</ref>
+
+===Armament===
+The electrically powered two-man MK46 turret on the personnel variant accommodated the commander on the right and gunner on the left, a fire control system, and the main and [[Weapon mount#Coaxial|coaxial weapons]].
+
+The standard version was to have had a [[Mk44 Bushmaster II]] {{cvt|30|mm|in|2}} cannon, which fired up to 200 rounds per minute with [[Semi-automatic firearm|single]], [[Burst mode (weapon)|burst]], and [[Automatic firearm|fully automatic]] capabilities up to {{convert|2000|m|yd|order=flip}} in all weather conditions. A general purpose [[M240 machine gun|M240 {{cvt|7.62|mm|in}} machine gun]] with 600 rounds of ready-to-use ammunition was to be mounted coaxially with the main gun.
+
+===Countermeasures===
+[[File:EFVP1_Testing.png|thumb|right|EFVP1 engineering prototype undergoing shock testing]]
+
+The EFV was fitted with [[Composite armour|composite armor]], mine-blast protection, and a [[Chemical, biological, radiological, and nuclear|nuclear, biological and chemical defense]] system.  Although aluminum hulls have been used for decades in military ground vehicles and watercraft, they have caused some concern due to protection issues.<ref>{{cite web|url=http://www.dodbuzz.com/2009/06/25/murtha-ups-f-22-downs-efv/|title=Murtha Ups F-22, Downs EFV|access-date=13 February 2015}}</ref>
+
+In June 2007 members of the [[United States House Armed Services Subcommittee on Seapower and Expeditionary Forces|House Armed Services Subcommittee on Seapower and Expeditionary Forces]] sent a letter to the [[Commandant of the United States Marine Corps|Commandant of the Marine Corps]] urging that the EFV be redesigned to give troops better protection against roadside bombs.<ref>{{Cite web|url=http://www.portsecuritynews.com/|title=Port Security News|website=www.portsecuritynews.com}}</ref> The Marines suggested that underbelly armor appliqué could be applied after the EFVs come ashore and before they encounter IEDs.<ref name="RS22947"/> The limited protection the EFV offers is an improvement on that offered by the AAV so the replacement is an advantage, given the current doctrine of using landing craft for land patrols.<ref>{{cite web|url=http://www.marinecorpsgazette-digital.com/marinecorpsgazette/200907/?pg=65|title=marinecorpsgazette-digital.com|access-date=13 February 2015}}</ref>
+
+However, tests in January and February 2010 at [[Aberdeen Proving Ground|Aberdeen Test Center]] demonstrated that the EFV offers blast protection equal to a category-2 [[MRAP|Mine Resistant Ambush Protected]] vehicle, including two simulated [[improvised explosive device]]s under its belly and tracks.<ref name="EFV-MRAP">{{cite web |url=http://www.marinecorpstimes.com/news/2010/03/marine_efv_030110w/ |title=EFV has MRAP-level protection, Conway says |last=Lamothe |first=Dan |date=2 March 2010 |work=Marine Corps Times |access-date=3 March 2010 |archive-date=8 March 2012 |archive-url=https://web.archive.org/web/20120308060126/http://www.marinecorpstimes.com/news/2010/03/marine_efv_030110w/ |url-status=dead }}</ref> Tests also show that it has superior protection from direct and indirect fire. The flat hull, which has endured persistent criticism for not being the more blast-resistant [[Glossary of shapes with metaphorical names|V-shape]], was necessary for the EFV to [[Planing (sailing)|plane]] across the surface of the water and reach its high speed, while dealing with [[sea state]]s of Category 4.<ref name="EFV-MRAP"/><ref>{{cite web|url=http://www.dodbuzz.com/2010/03/26/jsf-not-too-hot-for-carriers/|title=JSF Not Too Hot For Carriers|access-date=13 February 2015|archive-url=https://web.archive.org/web/20161105073520/http://www.dodbuzz.com/2010/03/26/jsf-not-too-hot-for-carriers/|archive-date=5 November 2016|url-status=dead}}</ref>
+
+On 13 October 2010 the navy awarded M Cubed Technologies a contract to develop new armor for the EFV to offer better protection and lighter weight.<ref>[http://www.prnewswire.com/news-releases/m-cubed-technologies-inc-wins-contract-to-develop-armor-for-us-marine-corps-fighting-vehicles-104851259.html M Cubed Technologies, Inc. Wins Contract To Develop Armor For U.S. Marine Corps Fighting Vehicles] M Cubed Technologies, Inc. press release, 13 October 2010</ref>
+
+===Mobility===
+[[File:Driving compartment of EFV prototype.jpg|thumb|AAAV Automotive Test Rig (ATR) driver's compartment]]
+Given the increasing ranges of shore launched [[anti-ship missile]]s, the EFV's {{convert|25|nmi|mi km|order=out|adj=on}} range for amphibious landing may no longer provide the anticipated protection predicted for an over the horizon launch.<ref name="RS22947"/> The US Navy began reconsidering the over the horizon approach, and is considering {{convert|10|to|18|mi|km}} appropriate for amphibious launches. This shift in doctrine has made the EFV's high water speeds unnecessary.<ref name="$3&nbsp;Billion" /> The EFV's need for high water speed has resulted in an engine that is {{convert|1,200|hp|kW|abbr=on}} more powerful than the [[M1 Abrams]], even though the EFV weighs far less.<ref>{{Cite web|url=http://www.warisboring.com/images/Hooper%20Nov%2008.pdf|title=Craig Hooper, Proceedings, 2008|access-date=30 May 2010|archive-date=16 February 2010|archive-url=https://web.archive.org/web/20100216065752/http://www.warisboring.com/images/Hooper%20Nov%2008.pdf|url-status=dead}}</ref>
+
+==Variants==
+
+===Personnel variant===
+The EFVP1 with a three-man crew would have conducted the signature mission of the United States Marine Corps, [[expeditionary maneuver warfare]] from [[Seabasing|seabases]] by initiating [[Amphibious warfare|amphibious operations]] from {{convert|20|to|25|mi|km}} over-the-horizon and transporting 17 combat-equipped Marines to inland objectives. The fully armored, tracked combat vehicle would have provided firepower to disembarked or [[mechanized infantry]] with its own fully stabilized MK46 weapon station with the 30&nbsp;mm cannon and 7.62&nbsp;mm machine-gun.
+
+===Command variant===
+[[File:EFVC1 Expeditionary Fighting Vehicle.jpg|thumb|upright=1.3|right|EFVC1]]
+
+The EFVC1 was to have provided the same survival and mobility capabilities found in the EFVP1. The EFVC1 would have been employed as a tactical [[command post]] for maneuver unit commanders at the [[battalion]] and regimental level. The EFVC1 would have provided the supported commander and selected staff with the ability to communicate, via on-board communications, with senior, adjacent, and subordinate maneuver units. The EFVC1 was to be armed with only a 7.62&nbsp;mm machine gun.
+
+==See also==
+
+;Related development
+*[[Assault breacher vehicle]]
+*[[Amphibious Combat Vehicle]]
+*[[Armored Systems Modernization]]
+*[[Marine Personnel Carrier]]
+*[[Ground Combat Vehicle]]
+*[[Stryker]]
+;Comparable ground systems
+*{{lwc|Type 05 amphibious fighting vehicle|Type 05 AFV}}
+
+==References==
+{{Reflist}}
+
+==External links==
+{{Commons}}
+* [https://web.archive.org/web/20040725185750/http://www.efv.usmc.mil/ Official USMC website for the EFV program]
+* [https://web.archive.org/web/20110701143430/http://www.mtu-online.com/mtu/applications/military-vehicles/ MTU diesel engines for military vehicles]
+* [http://www.globalsecurity.org/military/systems/ground/aaav.htm EFV profile] on GlobalSecurity.org
+* [http://armour.ws/pentagon-considers-the-cancellation-of-the-efv/ on Armour.ws]
+
+{{General Dynamics}}
+
+[[Category:Abandoned military projects of the United States]]
+[[Category:Amphibious infantry fighting vehicles]]
+[[Category:Armored personnel carriers of the United States]]
+[[Category:United States Marine Corps projects]]
+[[Category:Tracked amphibious vehicles]]
+[[Category:General Dynamics land vehicles]]
+[[Category:Post–Cold War armored fighting vehicles of the United States]]
+[[Category:Amphibious armoured fighting vehicles]]
+[[Category:Amphibious armoured personnel carriers]]

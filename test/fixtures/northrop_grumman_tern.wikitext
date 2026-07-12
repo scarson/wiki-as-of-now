@@ -1,0 +1,20 @@
+{{Short description|Experimental aircraft}}
+[[File:Tactically Exploited Reconnaissance Node.jpg|thumb|right|Artist conception]]
+'''Tactically Exploited Reconnaissance Node''' ('''TERN'''), a joint program between [[DARPA]] and the U.S. Navy's [[Office of Naval Research]] (ONR), seeks to greatly increase the effectiveness of forward-deployed small-deck ships such as destroyers and frigates by enabling them to serve as mobile launch and recovery sites for specially designed [[unmanned aerial system]]s (UAS).<ref>{{Cite web|url=http://www.darpa.mil/news-events/2016-11-17|title=DARPA Doubles Down on Tern by Funding 2nd Test Vehicle|publisher=DARPA}}</ref> These vehicles are to carry {{convert|600|lb|kg}} of ordnance in order to conduct combat strikes.<ref>{{Cite web|url=https://defensesystems.com/articles/2016/12/01/darpa.aspx|title = DARPA's Tern drone passes milestones| date=16 November 2023 }}</ref><ref>{{Cite web|url=http://www.foxbusiness.com/markets/2016/12/18/northrop-new-combat-drone-could-outclass-boeing-fa-18-lockheed-f-35.html|title=Northrop's New Combat Drone Could Outclass Boeing F/A-18, Lockheed F-35|website=[[Fox Business]]|date=18 December 2016}}</ref>
+
+==History==
+The program culminated in successful Conceptual Design Reviews in summer 2014. In May 2014, DARPA and the ONR signed a Memorandum of Agreement, officially naming the project Tern. In October 2015, the Tern program passed a significant milestone with the successful completion Phase II preliminary design, culminating in a successful Preliminary Design Review.<ref>{{Cite web |title=Tern |url=https://www.darpa.mil/program/tern |access-date=9 September 2024 |website=DARPA}}</ref>
+
+[[Northrop Grumman]] won the contract to develop the project in December 2015 with [[tail-sitter]], [[flying wing]] aircraft with a twin nose-mounted [[contra-rotating propeller]] propulsion system.<ref>{{Cite news|url=https://www.flightglobal.com/news/articles/northrop-grumman-wins-darpa-tern-programme-420385/|title=Northrop Grumman wins DARPA TERN programme|newspaper=Flight Global}}</ref><ref>{{Cite web|url=https://www.fool.com/investing/2018/03/23/general-electric-and-northrop-grumman-will-put-a-d.aspx|title = General Electric and Northrop Grumman Will Put a Drone on Every Boat|date = 23 March 2018}}</ref>
+
+==References==
+{{reflist}}
+
+[[category:DARPA projects]]
+[[Category:Northrop Grumman aircraft|Tern]]
+[[Category:Tailsitter aircraft]]
+[[Category:Flying wings]]
+[[Category:Unmanned military aircraft of the United States]]
+[[Category:VTOL aircraft]]
+
+{{UAV-stub}}

@@ -1,0 +1,250 @@
+{{Short description|Unmanned air vehicle by Boeing Insitu}}
+{{Update|reason=article discusses events of 2015/16 as happening in the future|date=July 2024}}
+{{Use dmy dates|date=September 2019}}
+<!-- This article is a part of [[Wikipedia:WikiProject Aircraft]]. Please see [[Wikipedia:WikiProject Aircraft/page content]] for recommended layout, and guidelines. -->
+{{Infobox aircraft
+| name = RQ-21 Blackjack
+| image = File:Insitu RQ-21 Blackjack (cropped).jpg
+| caption = RQ-21A Small Tactical Unmanned Air System (STUAS) in flight
+| aircraft_type = [[Unmanned surveillance and reconnaissance aerial vehicle]]
+| national_origin = [[United States]]
+| manufacturer = [[Insitu]] wholly owned subsidiary of <br />[[Boeing Defense, Space & Security]]
+| designer = 
+| first_flight = 28 July 2012
+| introduction = April 2014
+| retired = 
+| status = In service
+| produced = 
+| primary_user = [[United States Marine Corps]]
+| more_users = [[United States Navy]]<br /> [[Australian Army]]<ref name="defence1">{{cite web|url=https://www.minister.defence.gov.au/minister/peter-dutton/media-releases/australian-army-invests-650-million-uncrewed-aerial-systems |title=Australian Army invests $650 million in uncrewed aerial systems &#124; Department of Defence Ministers |publisher=Minister.defence.gov.au |date=2022-03-11 |access-date=2022-03-20}}</ref>
+| number_built = 109 systems with 5 air vehicles each (estimated through FY2017)<ref name=navy>{{cite web|title=APPROPRIATION/BUDGET ACTIVITY 1319: Research, Development, Test & Evaluation, Navy BA 7: Operational Systems Development|url=http://www.dtic.mil/descriptivesum/Y2013/Navy/stamped/0305234M_7_PB_2013.pdf|work=PE 0305234M: (U)RQ-21A (STUASL0)|publisher=U.S. Navy|access-date=18 September 2013|pages=1, 3|date=February 2012|archive-url=https://web.archive.org/web/20150624015613/http://www.dtic.mil/descriptivesum/Y2013/Navy/stamped/0305234M_7_PB_2013.pdf|archive-date=24 June 2015}}</ref><ref name=congressreport /><ref name=comptroller>{{cite web|title=PROGRAM ACQUISITION COST BY WEAPON SYSTEM|url=http://comptroller.defense.gov/defbudget/fy2014/FY2014_Weapons.pdf#page=12|work=UNITED STATES DEPARTMENT OF DEFENSE FISCAL YEAR 2014 BUDGET REQUEST|publisher=U.S. Department of Defense|access-date=18 September 2013|author=OFFICE OF THE UNDER SECRETARY OF DEFENSE (COMPTROLLER) / CHIEF FINANCIAL OFFICER|page=12|archive-url=https://web.archive.org/web/20130903031355/http://comptroller.defense.gov/defbudget/fy2014/FY2014_Weapons.pdf#page=12|archive-date=3 September 2013}}</ref>
+| developed_from = [[Boeing Insitu ScanEagle]]
+| variants = 
+| developed_into = 
+}}
+
+The '''Boeing Insitu RQ-21 Blackjack''', company name '''Integrator''', is an American [[Unmanned aerial vehicle|unmanned air vehicle]] designed and built by [[Boeing Insitu]] to meet a [[United States Navy]] requirement for a small tactical unmanned air system (STUAS).<ref name="flight" /> It is a twin-boom, single-engine [[monoplane]], designed as a supplement to the [[Boeing Insitu ScanEagle|Boeing Scan Eagle]].<ref name="flight" /> The Integrator weighs {{Convert|61|kg|abbr=on}} and uses the same launcher and recovery system as the Scan Eagle.<ref name="flight" />
+
+==Development==
+The RQ-21 was selected in June 2010 over the [[Northrop Grumman Bat|Raytheon Killer Bee]], [[AAI Aerosonde]], and [[General Dynamics]]/[[Elbit Systems]] Storm.<ref name="aviationweek12may14"/>
+
+The RQ-21A Integrator first flew on 28 July 2012.<ref name="flight" /> On 10 September 2012, the Integrator entered developmental testing with a 66-minute flight. The Navy launched one using a [[pneumatic]] launcher and a recovery system known as Skyhook. This eliminates the need for runways and enables a safe recovery and expeditionary capability for tactical missions on land or sea. At the current testing rate, [[Initial Operational Capability]] (IOC) was expected in 2013.<ref>[http://newsmilitary.com/pages/6754422-navy-marines-begin-rq-21-developmental-flight-testing Navy, Marines Begin RQ-21 Developmental Flight Testing] {{Webarchive|url=https://web.archive.org/web/20140202161649/http://newsmilitary.com/pages/6754422-navy-marines-begin-rq-21-developmental-flight-testing |date=2 February 2014 }} - Newsmilitary.com, 11 September 2012</ref>
+
+On 10 February 2013, the Integrator completed its first at-sea flight from the [[USS Mesa Verde|USS ''Mesa Verde'']], a [[San Antonio-class amphibious transport dock|''San Antonio''-class amphibious transport dock]]. This followed completing three months of land-based flights.<ref>[http://www.navair.navy.mil/index.cfm?fuseaction=home.NAVAIRNewsStory&id=5262 RQ-21A Small Tactical Unmanned Air System Completes First Ship-Based Flight] {{webarchive |url=https://web.archive.org/web/20160304055559/http://www.navair.navy.mil/index.cfm?fuseaction=home.NAVAIRNewsStory&id=5262 |date=4 March 2016 }} - NAVAIR.Navy.mil, 12 February 2013</ref>
+
+On 19 February 2013, Insitu completed the first flight of the RQ-21A Block II. It weighs {{Convert|121|lb|abbr=on}} and flew for 2 hours. It was controlled by a new ground control system meant to integrate dissimilar UAV systems. The Block II has the sensor from the Nighteagle, the night version of the [[Boeing Insitu ScanEagle|ScanEagle]], and is designed to operate in high-temperature environments.<ref>[http://www.flightglobal.com/news/articles/insitu-completes-rq-21a-block-ii-first-flight-382503/ Insitu completes RQ-21A Block II first flight] {{Webarchive|url=https://web.archive.org/web/20140102225553/http://www.flightglobal.com/news/articles/insitu-completes-rq-21a-block-ii-first-flight-382503/ |date=2 January 2014 }} - Flightglobal.com, 19 February 2013</ref>
+
+On 15 May 2013, the Department of the Navy announced that the RQ-21A Integrator received Milestone C approval authorizing the start of [[Low rate initial production|low-rate initial production]]. With Milestone C approval, the Integrator entered production and deployment.<ref>[http://www.navair.navy.mil/index.cfm?fuseaction=home.NAVAIRNewsStory&id=5357 Navy and Marine Corps Small Tactical UAS Enters Production Phase] {{webarchive |url=https://web.archive.org/web/20131211073321/http://www.navair.navy.mil/index.cfm?fuseaction=home.NAVAIRNewsStory&id=5357 |date=11 December 2013 }} - NAVAIR.Navy.mil, 21 May 2013</ref>
+
+On 12 June 2013, the RQ-21A completed its first East Coast flight from Webster Field Annex, starting the next phase of tests for the Integrator. The UAV was launched with a [[pneumatic]] launcher, flew for 1.8 hours, and was recovered with an Insitu-built system known as the STUAS Recovery System (SRS), which allows safe recovery of the STUAS on land or at sea. This phase of testing was to validate updates made to the aircraft which include software, fuselage, and camera enhancements. The Integrator was test flown at lower density altitudes. Integrated Operational Test and Evaluation (IOT&E) was scheduled for October 2013.<ref>[http://www.navy.mil/submit/display.asp?story_id=74824 RQ-21A Small UAS Completes First East Coast Flight] {{Webarchive|url=https://web.archive.org/web/20131203005937/http://www.navy.mil/submit/display.asp?story_id=74824 |date=3 December 2013 }} - Navy.mil, 14 June 2013</ref>
+
+In September 2013, the Integrator was renamed the RQ-21A Blackjack. On 28 November 2013, the U.S. Navy awarded Boeing Insitu an $8.8 million contract for one low-rate production aircraft in preparation for full-rate production.<ref>[http://www.suasnews.com/2013/11/26235/navy-buys-one-insitu-rq-21a-blackjack-uav-in-preparation-for-ramping-up-production/ Navy buys one Insitu RQ-21A Blackjack UAV in preparation for ramping-up production] {{Webarchive|url=https://web.archive.org/web/20131203001217/http://www.suasnews.com/2013/11/26235/navy-buys-one-insitu-rq-21a-blackjack-uav-in-preparation-for-ramping-up-production/ |date=3 December 2013 }} - sUASNews.com, 29 November 2013</ref>
+
+In January 2014, the first low-rate production RQ-21A Blackjack began IOT&E for the U.S. Navy and [[United States Marine Corps|U.S. Marine Corps]]. Testing was conducted over the next several months to demonstrate its effectiveness in realistic combat conditions.<ref>[http://www.navair.navy.mil/index.cfm?fuseaction=home.NavairNewsStory&id=5536 RQ-21A Blackjack begins operational test phase] {{webarchive |url=https://web.archive.org/web/20140201231617/http://www.navair.navy.mil/index.cfm?fuseaction=home.NavairNewsStory&id=5536 |date=1 February 2014 }} - NAVAIR.Navy.mil, 28 January 2014</ref> The Navy ordered three Blackjack systems in December 2014.<ref>[http://www.flightglobal.com/news/articles/us-navair-orders-three-blackjack-uav-systems-407714/ US NAVAIR orders three Blackjack UAV systems] {{Webarchive|url=https://web.archive.org/web/20150108175523/http://www.flightglobal.com/news/articles/us-navair-orders-three-blackjack-uav-systems-407714/ |date=8 January 2015 }} - Flightglobal.com, 8 January 2015</ref> By July 2015, the Navy had received two Blackjack systems.<ref>[http://www.flightglobal.com/news/articles/us-navy-purchases-six-more-insitu-rq-21a-blackjack-systems-415212/ US Navy purchases six more Insitu RQ-21A Blackjack systems] {{Webarchive|url=https://web.archive.org/web/20150803022913/http://www.flightglobal.com/news/articles/us-navy-purchases-six-more-insitu-rq-21a-blackjack-systems-415212/ |date=3 August 2015 }} - Flightglobal.com, 30 July 2015</ref> In July 2018, the Marines phased out the [[AAI RQ-7 Shadow|RQ-7 Shadow]] in favor of the Blackjack.<ref>[https://www.ainonline.com/aviation-news/defense/2018-08-02/marines-bring-shadow-operations-end Marines Bring Shadow Operations to an End] {{Webarchive|url=https://web.archive.org/web/20180805052136/https://www.ainonline.com/aviation-news/defense/2018-08-02/marines-bring-shadow-operations-end |date=5 August 2018 }}. ''Aviation International News''. 2 August 2018.</ref>
+
+==Design==
+The RQ-21A Blackjack is designed to support the [[U.S. Marine Corps]] by providing forward reconnaissance. A Blackjack system is composed of five air vehicles and two ground control systems. The air vehicles can be launched on land or on a ship by a rail and land using a "skyhook" recovery system, where a vertical wire must be hooked onto its wing; when on the ground, the launch and recovery systems are towable by vehicles. Its wingspan is {{convert|16|ft|abbr=on}} and it can carry a {{convert|39|lb|abbr=on}} payload. The day/night camera can achieve resolution rating of 7 on the [[NIIRS]] scale at {{convert|8000|ft|abbr=on}}.<ref name="aviationweek12may14">[http://aviationweek.com/defense/us-marine-corps-explores-extended-range-blackjack U.S. Marine Corps Explores Extended-Range Blackjack] {{Webarchive|url=https://web.archive.org/web/20140513060621/http://aviationweek.com/defense/us-marine-corps-explores-extended-range-blackjack |date=13 May 2014 }} - Aviationweek.com, 12 May 2014</ref>
+
+The Marines are working with Insitu to modify the Blackjack fuselage to carry greater and more various payloads. Enlarging the fuselage would increase its maximum takeoff weight from {{convert|135|lb|abbr=on}} to {{convert|145|lb|abbr=on}} and lengthen endurance from 16 hours to 24 hours. New turrets are being explored as well as other payloads including a [[synthetic-aperture radar]] to track ground targets, a laser designator to mark targets for precision-guided munitions, and foliage-penetration capabilities for foreign customers operating in lush environments.<ref name="aviationweek12may14"/> The [[Office of Naval Research]] (ONR) plans to add a sensor to the Blackjack that combines an electro-optical camera, wide area imager, short wave infrared [[hyperspectral]] imager, and a high-resolution camera for use as an inspection sensor into a single payload by 2020.<ref>[https://www.flightglobal.com/news/articles/us-navy-orders-super-sensor-for-rq-21-uas-417757/ US Navy orders super-sensor for RQ-21 UAS] {{Webarchive|url=https://web.archive.org/web/20151015141241/https://www.flightglobal.com/news/articles/us-navy-orders-super-sensor-for-rq-21-uas-417757/ |date=15 October 2015 }} - Flightglobal.com, 14 October 2015</ref>
+
+In Marines service, the Blackjack sometimes uses the designation MQ-21,<ref name="aviationweek27oct2016">[https://aviationweek.com/awindefense/marines-want-ew-payloads-insitu-mq-21-blackjack] {{Webarchive|url=https://web.archive.org/web/20161028165626/https://aviationweek.com/awindefense/marines-want-ew-payloads-insitu-mq-21-blackjack|date=28 October 2016}} - Aviationweek.com, 27 October 2016</ref> where the 'M' prefix indicates a multipurpose operations platform, versus the 'R' prefix indicating a primary reconnaissance mission.<ref>[http://designation-systems.net/usmilav/aircraft.html] {{Webarchive|url=https://web.archive.org/web/20190518162122/http://designation-systems.net/usmilav/missiles.html|date=18 May 2019}} - Designationsystems.net, 2018</ref>
+
+==Operational history==
+[[File:RQ-21A Small Tactical Unmanned Air System (STUAS).jpg|thumb|left|Sailors recover a RQ-21A at sea]]
+
+The U.S. Marine Corps deployed its first RQ-21A Blackjack system to Afghanistan in late April 2014. One Blackjack system is composed of five air vehicles, two ground control systems, and launch and recovery support equipment. It supports [[ISTAR#ISR (Intelligence, surveillance and reconnaissance)|intelligence, surveillance, and reconnaissance]] (ISR) missions using multi-intelligence payloads including day and night full-motion video cameras, an infrared marker, a laser range finder, a communications relay package, and automatic identification system receivers.<ref>[http://www.asdnews.com/news-54865/Marines_deploy_with_1st,_unmanned_RQ-21A_Blackjack_system.htm Marines deploy with 1st, unmanned RQ-21A Blackjack system] {{Webarchive|url=https://web.archive.org/web/20140508224813/http://www.asdnews.com/news-54865/Marines_deploy_with_1st,_unmanned_RQ-21A_Blackjack_system.htm |date=8 May 2014 }} - Asdnews.com, 8 May 2014</ref> The models in Afghanistan were early operational capability (EOC) aircraft without shipboard software or testing. Deploying the aircraft on the ground was a method to detect and fix problems early to avoid delaying the project.<ref name="aviationweek12may14"/> The RQ-21 returned from its deployment on 10 September 2014 after flying nearly 1,000 hours in 119 days in theater. EOC Blackjacks will continue to be used for training, while completion of shipboard testing is planned to result in the system's first ship-based deployment in spring 2015.<ref>[https://archive.today/20140926165400/http://www.navair.navy.mil/index.cfm?fuseaction=home.NAVAIRNewsStory&id=5730 Small UAS returns from first operational deployment] - NAVAIR.Navy.mil, 25 September 2014</ref>
+
+During the summer of 2016, [[United States Marine Corps Forces Special Operations Command|MARSOC]] deployed the RQ-21A to Iraq.<ref name="military8oct16">[http://www.military.com/daily-news/2016/10/08/marine-special-operators-fly-new-surveillance-drone-in-iraq.html?ERSC=todayinmil.sm Marine Special Operators Fly New Surveillance Drone in Iraq] {{Webarchive|url=https://web.archive.org/web/20190302090838/https://www.military.com/daily-news/2016/10/08/marine-special-operators-fly-new-surveillance-drone-in-iraq.html?ERSC=todayinmil.sm |date=2 March 2019 }} - Military.com, 8 October 2016</ref>
+
+The fielding of the RQ-21A Blackjack unmanned aerial system achieved full operational capability in 2019.<ref>{{cite magazine |last1=Burgess|first1=Richard R. |date=2020-01-16|title=Blackjack UAS Fielding Complete for Navy, Marine Corps|url=https://seapowermagazine.org/blackjack-uas-fielding-complete-for-navy-marine-corps/|access-date=2021-04-08|magazine=Seapower|language=en-US}}</ref> In March 2020, the RQ-21A Blackjack team at Patuxent River was awarded the NAVAIR Commander's Award for Platform Team With Highest Readiness.<ref>{{cite web|title=Twentieth annual Commander's Awards celebrate teams, teamwork |website=NAVAIR|url=https://www.navair.navy.mil/news/Twentieth-annual-Commanders-Awards-celebrate-teams-teamwork/Mon-03162020-1025|access-date=2021-04-08}}</ref> In April 2021, the Naval Supply Systems Command Weapon Systems Support (NAVSUP WSS) Unmanned Aerial Systems (UAS) Integrated Weapon System Team (IWST) was able to support the achievement of both 100% Mission Capable (MC) and 100% Fully Mission Capable (FMC) rate for the UAS RQ-21A "Blackjack" platform; a feat rarely, if ever, seen by any Type Model Series.<ref>{{cite web|title=NAVSUP WSS supports achievement of 100% readiness rate|url=http://www.dvidshub.net/news/392750/navsup-wss-supports-achievement-100-readiness-rate|access-date=2021-04-08|website=Defense Visual Information Distribution Service |language=en}}</ref>
+
+==Variants==
+* '''RQ-21A Blackjack'''
+* '''CU-172 Blackjack''' - version for the [[Canadian Armed Forces]]<ref name="Pole">{{cite web|url=https://canadianarmytoday.com/blackjack-army-hits-21-with-new-ace-in-the-sky/|title=Blackjack: Army hits 21 with new ace in the sky|last=Pole|first=Ken|date=4 December 2017|work=Canadian Army Today.com/|access-date=15 October 2021}}</ref>
+
+==Operators==
+[[File:RQ-21 operators (2024).png|thumb|400px|Map with RQ-21 Blackjack operators in blue, as of 2024]]
+;{{AUS}}
+*[[Australian Army]] – 24 systems ordered in March 2022.<ref name="defence1"/>
+*[[Royal Australian Navy]]<ref>https://www.defence.gov.au/news-events/news/2025-10-03/navy-launches-new-eye-sky</ref>
+;{{BAN}}
+*[[Bangladesh Army]] and [[Bangladesh Navy]] – Jointly operated.<ref name="US-Bangladesh to hold joint military drills, launch RQ-21 system">{{cite web |last1=Bonik Barta Online |title=US-Bangladesh to hold joint military drills, launch RQ-21 system |url=https://en.bonikbarta.com/bangladesh/IfyGPpTdADOMqF12 |website=Bonik Barta |access-date=December 23, 2025 |date=July 20, 2025 |language=en}}</ref>
+
+;{{BEL}}
+*[[Belgian Army]] – 2 systems ordered in December 2020.<ref>[https://www.nieuwsblad.be/cnt/dmf20201218_96530525 Article about purchase of both RQ-20 and RQ-21]</ref>
+;{{BRU}}
+* [[Royal Brunei Air Force]] - 5 systems acquired in 2022.<ref>{{cite web | url=https://thescoop.co/2021/05/31/rbaf-to-use-drones-for-maritime-security-surveillance/ | title=RBAF to use drones for maritime security surveillance | date=31 May 2021 }}</ref>
+;{{CAN}} 
+*[[Canadian Army]] – 5 systems <ref name="Military Balance 2025">{{cite book |title=The Military Balance |date=2025 |publisher=[[International Institute for Strategic Studies]] |isbn=978-1-041-04967-8}}</ref>{{rp|31}}
+*[[Royal Canadian Navy]] – The RQ-21 Blackjack UAV contract was extended to include the installation of UAV launch, recovery and control capability on all [[Halifax-class]] patrol frigates.<ref>{{cite web |url=http://www.boeing.ca/boeing-in-canada/backgrounder.page |title=Boeing: Boeing Canada - Backgrounder |access-date=24 July 2019 |archive-url=https://web.archive.org/web/20181009232940/http://www.boeing.ca/boeing-in-canada/backgrounder.page |archive-date=9 October 2018 |url-status=live }}</ref>
+;{{NED}}
+*[[Royal Netherlands Army]] – 5 systems on order expected to enter service in 2014.<ref>[http://www.dutchdefencepress.com/?p=9184 Article about ScanEagle and RQ-21] {{Webarchive|url=https://web.archive.org/web/20121116035419/http://www.dutchdefencepress.com/?p=9184 |date=16 November 2012 }} - dutchdefencepress.com, Oktober 12, 2012</ref>
+;{{POL}}
+*[[Polish Land Forces]] – Order for an unknown number of systems placed in February 2018.<ref>{{cite web|last1=Jennings|first1=Gareth|title=Poland to acquire Integrator STUAS|url=http://www.janes.com/article/77727/poland-to-acquire-integrator-stuas|website=IHS Jane's 360|access-date=9 February 2018|archive-url=https://web.archive.org/web/20180209054104/http://www.janes.com/article/77727/poland-to-acquire-integrator-stuas|archive-date=9 February 2018|location=London|date=8 February 2018}}</ref> First aircraft delivered in April 2018.<ref>{{cite web|last1=Jennings|first1=Gareth|title=Poland acquires Blackjack UAS|url=http://www.janes.com/article/78969|website=IHS Jane's 360|access-date=13 April 2018|archive-url=https://archive.today/20180413211845/http://www.janes.com/article/78969/poland-acquires-blackjack-uas|archive-date=13 April 2018|location=London|date=3 April 2018}}</ref>
+*[[Polish Special Forces]] – 1 aircraft ordered in August 2018.<ref>{{cite web |url=https://www.defence24.pl/dodatkowy-blackjack-dla-polskich-specjalsow |title=Dodatkowy Blackjack dla polskich specjalsów - Defence24 |date=23 August 2018 |access-date=24 July 2019 |archive-url=https://web.archive.org/web/20180829000232/https://www.defence24.pl/dodatkowy-blackjack-dla-polskich-specjalsow |archive-date=29 August 2018 |url-status=live }}</ref>
+;{{USA}}
+* [[United States Marine Corps]] – No longer in service.<ref name=congressreport>{{cite web |title=Department of Defense Report to Congress on Future Unmanned Aircraft Systems Training, Operations, and Sustainability |url=https://www.fas.org/irp/program/collect/uas-future.pdf#page=5 |publisher=U.S. Department of Defense |author=Under Secretary of Defense for Acquisition, Technology and Logistics |date=April 2012 |access-date=18 September 2013 |archive-url=https://web.archive.org/web/20130601121613/http://www.fas.org/irp/program/collect/uas-future.pdf#page=5 |archive-date=1 June 2013 |url-status=live }}</ref>
+* [[United States Navy]] – 25 systems on order each with five air vehicles each.<ref name="aviationweek12may14"/>
+
+An unidentified Middle Eastern customer purchased six systems.<ref name="aviationweek12may14"/>
+
+==Specifications==
+{{Aircraft specs
+|ref=<ref>{{cite web |url=http://www.insitu.com/systems/integrator/rq-21a-blackjack |title=RQ-21A Blackjack — Insitu |access-date=25 September 2015 |archive-url=https://web.archive.org/web/20150925204829/http://www.insitu.com/systems/integrator/rq-21a-blackjack |archive-date=25 September 2015 |url-status=live }}</ref> Product Page 
+|prime units?=imp
+<!--
+        General characteristics
+-->
+|genhide=
+
+|crew=
+|capacity=
+|length m=
+|length ft=8.2
+|length in=
+|length note=
+|span m=
+|span ft=16
+|span in=
+|span note=
+|height m=
+|height ft=
+|height in=
+|height note=
+|wing area sqm=
+|wing area sqft=
+|wing area note=
+|airfoil=
+|empty weight kg=
+|empty weight lb= 81
+|empty weight note=
+|gross weight kg=
+|gross weight lb=
+|gross weight note=
+|max takeoff weight kg=
+|max takeoff weight lb= 135
+|max takeoff weight note=
+|lift kg=<!-- lighter-than-air -->
+|lift lb=<!-- lighter-than-air -->
+|lift note=
+|more general=
+<!--
+        Powerplant
+-->
+|eng1 number= 1
+|eng1 name= EFI 
+|eng1 type= Piston Engine
+|eng1 kw=<!-- prop engines -->
+|eng1 hp= 8
+|eng1 kn=<!-- jet/rocket engines -->
+|eng1 lbf=<!-- jet/rocket engines -->
+|eng1 note=
+|power original=
+|thrust original=
+|eng1 kn-ab=<!-- afterburners -->
+|eng1 lbf-ab=<!-- afterburners -->
+
+|prop blade number= 2
+|prop name=
+|prop dia m=<!-- propeller aircraft -->
+|prop dia ft=<!-- propeller aircraft -->
+|prop dia in=<!-- propeller aircraft -->
+|prop note=
+
+<!--
+        Performance
+-->
+|perfhide=
+
+|max speed kmh=
+|max speed mph=
+|max speed kts=90
+|max speed note=
+|max speed mach=<!-- supersonic aircraft -->
+|cruise speed kmh=100
+|cruise speed mph=63
+|cruise speed kts=
+55|cruise speed note=
+|stall speed kmh=<!-- aerobatic -->
+|stall speed mph=<!-- aerobatic -->
+|stall speed kts=
+|stall speed note=
+|never exceed speed kmh=
+|never exceed speed mph=
+|never exceed speed kts=
+|never exceed speed note=
+|minimum control speed kmh=
+|minimum control speed mph=
+|minimum control speed kts=
+|minimum control speed note=
+|range km=
+|range miles=
+|range nmi=50
+|range note=<ref name="military8oct16"/>
+|combat range km=
+|combat range miles=
+|combat range nmi=
+|combat range note=
+|ferry range km=
+|ferry range miles=
+|ferry range nmi=
+|ferry range note=
+|endurance=<!-- if range unknown -->16 hours
+|ceiling m=
+|ceiling ft=19500
+|ceiling note=
+|g limits=<!-- aerobatic -->
+|roll rate=<!-- aerobatic -->
+|glide ratio=<!-- sailplanes -->
+|climb rate ms=
+|climb rate ftmin=
+|climb rate note=
+|sink rate ms=<!-- sailplanes -->
+|sink rate ftmin=<!-- sailplanes -->
+|sink rate note=
+|lift to drag=
+|wing loading kg/m2=
+|wing loading lb/sqft=
+|wing loading note=
+|disk loading kg/m2=
+|disk loading lb/sqft=
+|disk loading note=
+
+|power/mass met=
+|power/mass imp=
+|power/mass note=
+|thrust/weight=
+|thrust/weight note=
+
+|more performance=
+
+|avionics=
+}}
+
+==See also==
+{{aircontent|
+|related=
+* [[Boeing Insitu ScanEagle]]
+|similar aircraft=
+|lists=
+* [[List of active United States military aircraft]]
+|see also=
+}}
+
+==References==
+{{reflist||refs=
+<ref name="flight">{{cite web |url=http://www.flightglobal.com/news/articles/rq-21a-integrator-completes-first-flight-375023/ |title=RQ-21A Integrator completes first flight |access-date=2 August 2012 |archive-url=https://web.archive.org/web/20120810134304/http://www.flightglobal.com/news/articles/rq-21a-integrator-completes-first-flight-375023/ |archive-date=10 August 2012 |url-status=live }}</ref>
+}}
+
+{{Boeing military aircraft}}
+{{Electronic warfare navbox}}
+{{Q-UAVs}}
+{{Canadian Forces aircraft}}
+
+[[Category:Boeing aircraft|RQ-21]]
+[[Category:2010s United States military reconnaissance aircraft]]
+[[Category:Single-engined pusher aircraft]]
+[[Category:Twin-boom aircraft]]
+[[Category:Unmanned military aircraft of the United States]]
+[[Category:High-wing aircraft]]
+[[Category:Aircraft first flown in 2012]]

@@ -1,0 +1,234 @@
+{{Short description|Railway under construction through the Alps}}
+{{Infobox tunnel
+|name         = Brenner Base Tunnel
+|image        = Brenner Base Tunnel Aicha-Mauls.jpg
+|caption      = Exploratory Tunnel Aica–Mules
+|map          = [[File:Brenner base tunnel map.png|250px|center]]
+|line         = 
+|location     = [[Brenner Pass]]
+|coordinates  = 
+|system       = [[Brenner railway]]
+|status       = Under construction
+|start        = [[Innsbruck]], Austria
+|end          = [[Franzensfeste]], Italy
+|startwork    = 2008
+|opened       = 2032 (scheduled)
+|close        = 
+|owner        = 
+|operator     = 
+|traffic      = [[Freight train]]s and [[passenger train]]s
+|character    = Twin tube<br />Passenger and freight<br />Third exploratory tunnel
+|construction = 2007–present
+|length       = {{convert|64|km|abbr=on|lk=on}}
+|linelength   = 
+|tracklength  = 
+|notrack      = [[Double track]]
+|gauge        = {{Track gauge|sg|al=on|allk=on}}
+|el           = [[Rail electrification|Electrified]]<br />15&nbsp;kV 16.7&nbsp;Hz AC (Austria)<br />25&nbsp;kV 50&nbsp;Hz AC (Italy)
+|speed        = {{ubl|class=nowrap|
+ |'''Passenger:'''
+ |{{convert|250|km/h|abbr=on|round=5}}
+ |'''Freight:'''
+ |{{convert|120|km/h|abbr=on|round=5}}
+}}
+|hielevation  = {{convert|840|m}}
+|lowelevation = 
+|height       = {{convert|8.1|m}}
+|grade        = Austria 7.4/1000<br />Italy 5/1000
+|extra        = {{routemap
+|title =Brenner Base Tunnel
+|map =
+CONTg~~ ~~[[New Lower Inn Valley railway|New Lower Inn railway]]~~to [[Rosenheim station|Rosenheim]]
+CONTgq\ABZgr\~~ ~~[[Lower Inn Valley railway|Lower Inn railway]]~~to [[Innsbruck Hauptbahnhof|Innsbruck]]
+hKRZWae~~bridge over [[Inn (river)|river Inn]]
+tSTRa~~ ~~[[Innsbruck bypass]]~~North portal
+tDST~~[[Ampass]] shaft
+tCONTgq\tABZg+r\~~ ~~Brenner Base Tunnel~~North portal to [[Innsbruck Hauptbahnhof|Innsbruck]]
+tDST~~[[Innsbruck|Ahrental]] shaft
+tDST~~[[Steinach am Brenner|Wolf]] shaft
+tZOLL~~[[Austria–Italy border]]
+tDST~~[[Freienfeld|Mauls/Mules]] shaft
+tDST~~[[Natz-Schabs|Aicha/Aica]] shaft
+tSTRe~~ ~~Brenner Base Tunnel~~South portal
+CONTgq\ABZg+r\~~ ~~[[Brenner railway]]~~to [[Brenner railway station|Brenner/Brennero]]
+BHF~~[[Franzensfeste railway station|Franzenfeste/Fortezza]]
+\ABZgl\CONTfq~~ ~~[[Brenner railway]]~~to [[Brixen]]
+CONTf~~ ~~New Brenner railway~~to [[Verona Porta Nuova|Verona]]
+}}
+}}
+
+The '''Brenner Base Tunnel''' ({{langx|de|Brennerbasistunnel}}; {{langx|it|Galleria di base del Brennero}}) is a {{convert|55|km|mi|0|adj=mid|-long}} [[railway tunnel]] under construction through the base of the [[Eastern Alps]] beneath the [[Brenner Pass]]. Once completed, the Brenner Base Tunnel will rank as either the second or third [[List of longest tunnels|longest railway tunnel in the world]], depending on the definition employed. It will be surpassed in length only by the [[Gotthard Base Tunnel]] in Switzerland and, depending on the relative completion dates of these projects, the [[Mont d'Ambin Base Tunnel]] between France and Italy. When combined with the [[Inntal Tunnel]], which forms part of the existing [[Innsbruck bypass]], the Brenner Base Tunnel will reach a length of {{convert|64|km}}, making it the longest underground railway connection in the world.<ref>{{cite web|url=http://www.bbt-se.com/en/did-you-know/ |title=Did you know … |website=BBT-SE.com |access-date=2016-02-01 |url-status=dead |archive-url=https://web.archive.org/web/20160202005914/http://www.bbt-se.com/en/did-you-know/ |archive-date=2 February 2016 }}</ref><ref>{{cite web | url=https://www.tunnel-online.info/en/artikel/tunnel_Start_of_works_on_the_main_tunnel_2323530.html | title=BBT: Start of Works on the main Tunnel – tunnel | access-date=7 December 2019 | archive-date=31 October 2020 | archive-url=https://web.archive.org/web/20201031081602/https://www.tunnel-online.info/en/artikel/tunnel_Start_of_works_on_the_main_tunnel_2323530.html | url-status=live }}</ref>
+
+It will run from near [[Innsbruck]], in [[Austria]], to [[Franzensfeste|Franzensfeste/Fortezza]], in [[Italy]], replacing part of the current [[Brenner railway]].<ref name="urlgetzner_2010-09">{{cite web
+|url=http://www.getzner.com/fileadmin/data/upload/referenzen/case_studies/bahn/en/98-Getzner-Case-Study-Zulaufstrecke-Nord-Brenner-en.pdf
+|title=Case Study: Northern Approach Line to the Brenner Base Tunnel
+|date=September 2010
+|publisher=getzner
+|pages=4
+|accessdate=2014-01-08
+}}</ref> The line is part of [[Berlin–Palermo railway axis|Line 1]], the Berlin to Palermo route, of [[Trans-European Transport Networks]] (TEN-T) and funded by Austria and Italy with large contributions by the [[European Union]]. The tunnel is scheduled to be completed in 2032.<ref>{{cite web |url=https://www.railjournal.com/infrastructure/governors-protest-latest-delay-to-brenner-base-tunnel-construction/ |title=Governors protest latest delay to Brenner Base Tunnel construction |last=Fender |first=Keith |date=2021-05-27 |df=dmy-all |publisher=[[International Railway Journal]] |access-date=2021-08-23 |archive-date=2022-02-01 |archive-url=https://web.archive.org/web/20220201231411/https://www.railjournal.com/infrastructure/governors-protest-latest-delay-to-brenner-base-tunnel-construction/ |url-status=live }}</ref><ref>Brenner Base Tunnel Delayed ''[[Modern Railways]]'' issue 874 July 2021 page 80</ref>
+
+The [[Brenner Pass]], in the Alps at the border between Austria and Italy, is one of the most important traffic connections between northern and southern [[Europe]], and the motorway going over it is infamous for its frequent traffic jams.<ref>{{cite web |url=https://www.politico.eu/article/brenner-pass-austria-italy-spat-disrupts-berlaymonts-summer-break/ |title=Trucking hell in Tyrol |last=Cokelaere |first=Hanne |date=August 5, 2019 |website=Politico |access-date=22 October 2020 |archive-date=22 October 2020 |archive-url=https://web.archive.org/web/20201022060547/https://www.politico.eu/article/brenner-pass-austria-italy-spat-disrupts-berlaymonts-summer-break/ |url-status=live }}</ref> Pollution from transit traffic is a major concern because of the combination of [[Inversion (meteorology)|temperature inversion]] with the narrow shape of the valleys leading to the pass.<ref>{{cite journal |last1=de Franceschi |first1=M. |last2=Zardi |first2=D. |date=March 2009 |title=Study of wintertime high pollution episodes during the Brenner-South ALPNAP measurement campaign |journal=Meteorol Atmos Phys |volume=103 |issue=1–4 |pages=237–250 |doi=10.1007/s00703-008-0327-2 |bibcode=2009MAP...103..237D |s2cid=120275169 |issn=1436-5065}}</ref>
+
+The goal is to relieve this situation by greatly improving the railway connection between [[Germany]] and [[Italy]] with the new tunnel, which will allow trains to cross the Alps much faster. Currently, speeds in the Brenner region barely exceed {{convert|70|km/h|mph|0|abbr=on}} due to the steepness of the existing tracks, which cross the pass at an elevation of {{Convert|1,371|m||abbr=}} above sea level.<ref>{{Cite web|url=http://blog.tuttotreno.it/24565-ferrovia-del-brennero-150-anni-fa-i-primi-treni/|title=Ferrovia del Brennero, 150 anni fa i primi treni|last=Bruzzo|first=Marco|date=18 August 2017|website=Tutto Treno Blog|language=it|url-status=live|archive-url=https://web.archive.org/web/20180209063117/http://blog.tuttotreno.it/24565-ferrovia-del-brennero-150-anni-fa-i-primi-treni/|archive-date=9 February 2018}}</ref>
+
+The travel time from [[Innsbruck]] to [[Bolzano]] will be reduced from current 2 hours to just 50 minutes.<ref name=sdz>
+{{cite news
+ | first = Julius
+ | last = Müller-Meiningen
+ | title = Monumentales Superloch
+ | url = http://www.sueddeutsche.de/automobil/artikel/268/123098/
+ | work = [[Sueddeutsche Zeitung]]
+ | date = 2008-04-30
+ | language = de
+ | url-status = dead
+ | archive-url = https://web.archive.org/web/20080523153234/http://www.sueddeutsche.de/automobil/artikel/268/123098/
+ | archive-date = 2008-05-23
+ }}
+</ref>
+
+==Background==
+
+The passenger and freight traffic across the Alps has increased greatly in recent years and further growth is forecast.<ref>{{cite journal |last1=Pompigna |first1=Andrea |last2=Mauro |first2=Raffaele |date=June 2020 |title=Input/Output models for freight transport demand: a macro approach to traffic analysis for a freight corridor |journal=Archives of Transport |volume=54 |issue=2 |pages=21–42 |doi=10.5604/01.3001.0014.2729 |bibcode=2020ArTr...54...21P |issn=2300-8830|doi-access=free }}</ref> Austria is a key country in movement of freight between northern and southern Europe and between eastern and western Europe. The Brenner region is very politically sensitive with respect to both local and cross-border transport issues. Between 1970 and 1999, highway freight increased seven-fold. (3 million to 22 million tonnes)
+In 1990, 70% of the freight from eastern Europe was transported by rail and the remainder by trucks. These proportions were expected to reverse by 2010.<ref name="EU Policy 2004">{{Google books|kspRHY8UfX0C|Contemporary Issues and Debates in EU Policy: The European Union and ...|page=PA182 ff}} {{ISBN|071906418X}}</ref>{{rp|182ff}}
+About three-quarters of traffic through the Brenner Pass is currently carried by road transport. Local residents have long fought for relief from the associated pollution. The construction of a rail tunnel is considered by its proponents to be necessary for a shift of freight traffic from road to rail.
+
+The railway line from [[Innsbruck]] in [[North Tyrol]] to [[Bolzano]] in [[South Tyrol]] was built between 1860 and 1867. Tight curve radii and gradients of up to 2.6% complicate rail operations. However, improvements on the Italian side in recent years to the existing line, which were completed in late 2008, allow the line theoretically to accommodate 240 trains per day. The grades were not significantly improved.
+
+The new Brenner line would have a maximum gradient of 0.4%-0.7%. Thus, a locomotive would be capable of hauling more than double the weight. The new line (the [[base tunnel]] together with the southern approach from [[Waidbruck|Waidbruck/Ponte Gardena]] to [[Franzensfeste|Franzensfeste/Fortezza]]) would cut travel time between Innsbruck and Bolzano from about two hours today to less than half that.
+
+==Project==
+
+===Main tunnel===
+The {{convert|55|km||abbr=|adj=on}} long, twin-tube tunnel begins in the Innsbruck suburb of Wilten and penetrates the [[Alps]] reaching a height of about {{convert|840|m}} above sea level (ASL). The tunnel will be up to {{convert|1720|m|abbr=on}} below the surface at its deepest point in the [[gneiss]] section stretching south from the Italian border<!--Staatsgrenze-->.<ref name="urlwww.tunneltalk.com">{{cite web|url=http://www.tunneltalk.com/Brenner-Base-Tunnel-Feb11-A-leap-forward.php|title=Brenner project takes a major leap forward|last=Reynolds|first=Patrick|date=February 2011|website=Tunnel Talk|url-status=live|archive-url=https://web.archive.org/web/20130820150827/http://tunneltalk.com/Brenner-Base-Tunnel-Feb11-A-leap-forward.php|archive-date=2013-08-20|accessdate=2013-08-14}}</ref> Since under the most recent plan the tunnel starts as a twin-tube tunnel, the junction already prepared in the [[Inntal Tunnel|Inntal tunnel]] on the [[Innsbruck bypass]] will not be used. Instead, a diversion with several branches is planned.{{citation needed|date=June 2020}}
+
+The volume of rock to be excavated during the construction of the tunnel is estimated at {{Convert|21|e6m3||abbr=off}}, of which approximately 60% will be incurred in Austria, as about 60% of the tunnel will be in Austria. A part of the spoil will be used as [[Fill dirt|fill]] for the approach lines and another part of the spoil material is used to produce the concrete segment for the final lining of the tunnel. The main tunnels will have a circular cross section with a diameter of approx. {{Convert|8.1|m||abbr=on}}.
+
+According to current planning the apex of the tunnel will be at the border at an altitude of about {{convert|810|m|abbr=on}} ASL, although an apex farther south would have been lower. The placing of the apex at the border is set out in the treaty between Austria and Italy. As justification for this choice it is stated that this will allow Austrian water to run in the tunnel to Austria and Italian water to Italy.
+
+===Northern approach===
+On its north end, the base tunnel (BBT) has two entrances, which must go underground a few kilometres before the junction with the main tunnels, and will also be built as part of the BBT. One route leads from the main Innsbruck station under [[Bergisel]] and the other connects with the Innsbruck bypass. This route adds about {{convert|8|km}} more to the length of the tunnel than the Innsbruck station route; with it included, the BBT, at {{convert|62.7|km}}, would become the longest continuous railroad tunnel in the world. However, if the Axentunnel extension is added to the [[Gotthard Base Tunnel]], its length would become {{convert|75|km}}, allowing it to reclaim the 'longest tunnel' title.
+
+The northern approach from Munich within Germany is the {{convert|165|km}} [[Munich–Rosenheim railway|Grafing]]–[[Rosenheim–Kufstein railway|Rosenheim–Kufstein]] route.  The "Brenner Nordzulauf" (Brenner northern link) project aims to construct a high-speed line for speeds of up to 230&nbsp;km/h (143&nbsp;mph) between [[Grafing]] and [[Brannenburg]] in addition to the existing line, adapting the route's capacity to the projected increase as a result of the BBT. The project has reached in-depth planning stages but suffers from lacking support by locals.<ref>{{Cite web|url=https://www.brennernordzulauf.eu/aktuelles.html|title=Aktuelles - Brenner-Nordzulauf|website=www.brennernordzulauf.eu|access-date=2019-04-10|archive-url=https://web.archive.org/web/20190410135950/https://www.brennernordzulauf.eu/aktuelles.html|archive-date=2019-04-10|url-status=live}}</ref>{{Full citation needed|date=March 2020}} A more direct route between Munich and Innsbruck, for example, via [[Garmisch-Partenkirchen]], [[Mittenwald]] and [[Seefeld, Tirol|Seefeld]] was not pursued, though it could have shortened the Munich Innsbruck line to {{convert|129|km}}.
+
+In Austria, a [[New Lower Inn Valley railway|new double-track high-speed line]] supplements the [[Lower Inn Valley railway]] between [[Wörgl]] and [[Baumkirchen]]. It manages to cut travel time between Munich and Innsbruck from 1:50 via the old tracks to merely 0:55 using the high-speed line.<ref>{{Cite web|url=https://www.beg.co.at/fileadmin/downloads/Beg_AMA.pdf|title=Die Neue Unterinntalbahn auf höchstem Niveau Kundl-Baumkirchen|date=October 2007|website=BEG|language=de|url-status=dead|archive-url=https://web.archive.org/web/20170808034817/https://www.beg.co.at/fileadmin/downloads/Beg_AMA.pdf|archive-date=2017-08-08|access-date=2019-04-10}}</ref> About {{convert|32|km}} of the {{convert|40|km||abbr=|adj=on}} line through the [[Lower Inn Valley]] (''Unterinntal'') is built underground, in troughs, or under snow sheds. Noise and vibration mitigation is accomplished by the use of {{convert|80000|m2}} of elastomer in a [[Effective mass (spring-mass system)|mass-spring]] system. The segment's track superstructure is load class E5. It is capable of handling 260–300 trains per day.<ref name="urlgetzner_2010-09" /> This section was opened on 9 December 2012.<ref name="urlobb_2012-11">{{cite web|url=http://konzern.oebb.at/de/Presse/Presseinformationen_aus_den_Bundeslaendern/Tirol/PDF/2012/Q4/2012_11_26_PI_Infra_Tirol_Unterinntal_final.pdf|title=Neue Unterinntalbahn: Highspeed und höchste Sicherheit|date=2012-11-26|publisher=ÖBB-holding AG|pages=3|language=de|archive-url=https://web.archive.org/web/20130930170147/http://konzern.oebb.at/de/Presse/Presseinformationen_aus_den_Bundeslaendern/Tirol/PDF/2012/Q4/2012_11_26_PI_Infra_Tirol_Unterinntal_final.pdf|archive-date=2013-09-30|accessdate=2014-01-08|url-status=dead}}</ref> Planning is under way on the continuation of this line to the German border at Brannenburg.
+
+===Southern approach===
+On the south end, the base tunnel will be connected to a {{convert|180|km}} new line all the way to [[Verona]] with junctions with the old railway and no stations (similarly to the Neue Unterinntalbahn). Planning of the new line started around 2000 and the project was divided in seven, later eight, sections mostly underground (about 90%); first route plans of the new railway were approved in 2009.<ref name="silosIT">{{cite web|url=https://silos.infrastrutturestrategiche.it/Home/Scheda/1406|title=SILOS: Sistema Informativo Legge Opere Strategiche - Direttrice Brennero-Verona-Bologna / Tratta di valico e tratta di adduzione - Potenziamento linea Fortezza-Verona|publisher=[[Chamber of Deputies (Italy)]]|language=it|accessdate=2026-01-16}}</ref> {{As of|2026}} two sections are already under construction with three more deemed "high priority" for their role in routing traffic to the new base tunnel; other three sections were assessed not critical for the base tunnel operations.<ref name="fsQuad">{{cite web|url=https://www.fsitaliane.it/it/opere-strategiche/brennero-e-linea-fortezza-verona.html|title=Brennero e Fortezza-Verona|publisher=[[Ferrovie dello Stato]]|language=it|accessdate=2026-01-16}}</ref>
+
+The construction lots are (status {{as of|January 2026|lc=y}}):<ref name="rfiLotto3A">{{cite web|url=https://www.mit.gov.it/nfsmitgov/files/media/basic/2021-10/21.10.22_Circonvallazione%20Trento_CSLLPP_revA.pdf|title=Lotto 3A: Circonvallazione di Trento - Progetto di fattibilità tecnico economica|date=2021-10-22|publisher=Italferr [[Rete Ferroviaria Italiana|RFI]]|language=it|accessdate=2026-01-16}}</ref><ref name="rfiLotto4">{{cite web|url=https://www.rfi.it/content/dam/rfi/rete/opere-sottoposte-a-dibattito-pubblico/lotto-4-ingresso-verona-da-nord/Relazione_di_Progetto_lotto4.pdf |title=Lotto 4 - Ingresso a Verona da Nord - Relazione di Progetto|publisher=Italferr [[Rete Ferroviaria Italiana|RFI]]|language=it|accessdate=2026-01-16}}</ref>
+* High priority
+** 1 - '''[[Franzensfeste railway station|Fortezza/Franzenfeste]]-[[Waidbruck|Ponte Gardena/Waidbruck]]''': Construction started in 2021
+** 2 - '''[[Bolzano/Bozen railway station|Bolzano/Bozen]] bypass''': Final planning stages
+** 3A - '''[[Trento railway station|Trento]] bypass''': Construction started in 2023
+** 3B - '''[[Rovereto railway station|Rovereto]] bypass''': Route under review
+** 4 - '''[[Verona Porta Nuova railway station|Verona]] north gateway''': Tendering phase
+* Low priority
+** 5 - '''Bolzano/Bozen-Trento'''
+** 6 - '''Rovereto-Verona'''
+** 7 - '''Ponte Gardena-Bolzano'''
+
+==History==
+The Brenner tunnel is the most important link in the [[Berlin–Palermo railway axis]], a series of projects that will create a single railway line from [[Berlin]] in [[Germany]] to [[Palermo]] in [[Sicily]]. In April 2003, the governments of Austria and Italy signed an agreement to build the tunnel.<ref>Brenner Base Tunnel Agreement ''[[International Railway Journal]]'' May 2003 page 2</ref>
+
+===Schedule history===
+Early in the preliminary planning, at a Brussels meeting in June 2005, BBT SE (Brenner Base Tunnel Societas Europae), presented an interim status report. Expectations following the meeting were that the project could be finalized and the pilot tunnel started by 2006. The target for the tunnel to start service was 2015.<ref name="urlwww.infrasite.nl">{{cite web|url=http://www.infrasite.nl/news/news_articles.php?ID_nieuwsberichten=2448|title=EC welcomes progress - Brenner Base tunnel project|date=24 June 2005|website=Infrasite.nl|url-status=live|archive-url=https://web.archive.org/web/20160304070342/http://www.infrasite.nl/news/news_articles.php?ID_nieuwsberichten=2448|archive-date=4 March 2016|accessdate=2013-08-16}}</ref><ref>{{Cite press release|title=Commission welcomes progress of Brenner Base tunnel project|date=23 June 2005|publisher=European Commission|url=http://europa.eu/rapid/press-release_IP-05-781_en.htm?locale=en|access-date=2013-08-06}}</ref>
+
+In 2007 a construction timeline with a 2022 finish date was specified in a memorandum signed by the Austrian and Italian ministers of transport.<ref name="KVM 2007-0910">{{cite web|url= http://ec.europa.eu/ten/transport/coordinators/doc/2006_2007/2007_09_10_pp01_en.pdf|title= Annual activity report by the coordinator Karel Van Miert - PRIORITY PROJECT 1 Berlin-Verona/Milan-Bologna-Naples-Messina-Palermo rail link|accessdate= 2007-12-09|last= van Miert|first= Karel|author-link= Karel Van Miert|date= 2007-09-10|archive-url= https://web.archive.org/web/20080228033203/http://ec.europa.eu/ten/transport/coordinators/doc/2006_2007/2007_09_10_pp01_en.pdf|archive-date= 2008-02-28|url-status= live}}</ref>
+
+===Funding history===
+In December 2008 [[Antonio Tajani]], the European commissioner for transport, approved funds totalling €1.7 billion to finance 11 railway projects that together should establish two major routes across the continent.<ref>{{cite press release|title= Brenner Tunnel: construction of the exploratory gallery begins|publisher= [[European Commission]]|date= 2006-06-29|url= http://europa.eu/rapid/pressReleasesAction.do?reference=IP/06/880&format=HTML&aged=1&language=EN&guiLanguage=en|accessdate= 2006-12-13|archive-url= https://web.archive.org/web/20090831182822/http://europa.eu/rapid/pressReleasesAction.do?reference=IP%2F06%2F880&format=HTML&aged=1&language=EN&guiLanguage=en|archive-date= 2009-08-31|url-status= live}}</ref><ref>{{cite web|url=http://www.railwaygazette.com/nc/news/single-view/view/ten-t-rail-funding-signed.html|title=TEN-T rail funding signed|date=5 December 2008|website=[[Railway Gazette International]]|url-status=live|archive-url=https://web.archive.org/web/20110212012736/http://www.railwaygazette.com/nc/news/single-view/view/ten-t-rail-funding-signed.html|archive-date=12 February 2011|accessdate=2010-10-18}}</ref>
+
+In May 2009 it was confirmed that final go-ahead for the project had been given.<ref name="BBTapproved">{{cite web|url=http://www.railwaygazette.com/nc/news/single-view/view/brenner-base-tunnel-approved.html|title=Brenner base tunnel approved|date=11 May 2009|website=Railway Gazette International|url-status=live|archive-url=https://web.archive.org/web/20110212012703/http://www.railwaygazette.com/nc/news/single-view/view/brenner-base-tunnel-approved.html|archive-date=12 February 2011|accessdate=2010-10-18}}</ref>
+
+The final estimated cost was put at €8.384 billion at 2018 levels.<ref name="KVM 2007-0910"/>
+
+===Construction history===
+In the summer of 2007 work started on a pilot tunnel to run along the line of the future tunnel and to be used for removing water and spoil during the major construction phase. Construction of the pilot tunnel between 2006 and 2009 was estimated to cost €430 million and would be 50% EU funded.
+
+On 6 July 2019, two Austrian segments were connected, and an unbroken {{convert|36|km}} long tunnel was formed – around 65% of the tunnel's {{convert|55|km}} projected length.<ref name=expl>{{Cite web|url=https://www.railjournal.com/infrastructure/contractors-celebrate-brenner-exploratory-tunnel-breakthrough/|title=Contractors celebrate Brenner exploratory tunnel breakthrough|date=10 July 2020|access-date=14 October 2020|archive-date=1 October 2020|archive-url=https://web.archive.org/web/20201001110733/https://www.railjournal.com/infrastructure/contractors-celebrate-brenner-exploratory-tunnel-breakthrough/|url-status=live}}</ref> On 18 September 2025 for the first time the two tunnel sections, from Italy and from Austria, were joined underground by the break-through of the exploratory tunnel.<ref>{{cite news | work=Reuters | date= 18 September 2025|  title=Contractors celebrate Brenner exploratory tunnel breakthrough |  url=https://www.reuters.com/world/historic-tunnel-created-under-alps-connect-italy-austria-2025-09-18/|access-date=12 October 2025}}</ref><ref>{{cite news  | work= Engineering News Record  | date= 22 September 2025  | title= Major Breakthrough for Brenner Base Tunnel Through the Alps  | first= Jeff  | last= Rubenstone  | url= https://www.enr.com/articles/61407-major-breakthrough-for-brenner-base-tunnel-through-the-alps  | access-date= 12 October 2025  | archive-date= 9 October 2025  | archive-url= https://web.archive.org/web/20251009135219/https://www.enr.com/articles/61407-major-breakthrough-for-brenner-base-tunnel-through-the-alps  | url-status= live  }}</ref> The exploratory tunnel runs 12{{nbsp}}metres below where the final tunnel will be bored and it will be used for drainage and maintenance after the rail connection opens.<ref name=expl/>
+
+As of March 2025, at least three workers died while working on the tunnel.<ref>{{Cite web|url=https://www.derstandard.at/story/3000000221087/41-jaehriger-bei-arbeiten-fuer-tiroler-brennerbasistunnel-getoetet|title=41-year-old killed while working for the Brenner Base Tunnel (German)|date=22 May 2024|access-date=18 December 2024|archive-date=29 June 2024|archive-url=https://web.archive.org/web/20240629110451/https://www.derstandard.at/story/3000000221087/41-jaehriger-bei-arbeiten-fuer-tiroler-brennerbasistunnel-getoetet|url-status=live}}</ref><ref>{{cite news|url=https://www.derstandard.at/story/3000000263566/arbeiter-bei-unfall-auf-brennerbasistunnel-baustelle-get246tet|title=Workers killed in Brenner-based accident tunnel construction site|access-date=3 April 2025|archive-date=30 March 2025|archive-url=https://web.archive.org/web/20250330162538/https://www.derstandard.at/story/3000000263566/arbeiter-bei-unfall-auf-brennerbasistunnel-baustelle-get246tet|url-status=live}}</ref>
+
+==Design==
+The final design will consist of two tunnels, {{convert|55|km}} long. A centre tunnel {{convert|12|m}} below the two primary tunnels will be used during construction as a guide tunnel to determine geological conditions, and later for drainage and emergency access. There will be a cross over between the tunnels every {{convert|333|m|ft}}.  Multi-function stations will be located at Trens (in [[Freienfeld]]), St. Jodok, and a third station towards the northern end of the tunnel to provide operational and emergency services. [[European Train Control System|ETCS]] Level 2 will be installed to provide train control.<ref name="BBTapproved"/>
+
+==Funding==
+As the transalpine stretch of the SCAN-MED Corridor, the Brenner Base Tunnel receives substantial funding from the European Union. Between 2015 and 2023, 50% of the costs for the exploratory tunnel (about 330 million Euro) and 40% of the costs for the two main tunnels (about 880 million Euro) were covered by the EU. Austria and Italy will each cover half of the remaining costs.
+
+The 2017 estimate of the basic costs for the Brenner Base Tunnel was 7.8 billion Euro. Considering the planned end date for the project (2028), the estimate total costs, with risk provision and adjustment for inflation are about 8.384 billion Euro. They can be divided into 4 large categories: 60% of the cost comes from the engineering works, 15% is for outfitting, 10% is for planning, services and internal costs, 1% for parcels of land and related issues and 14% for risk provision.<ref>{{cite web |title=Funding |url=https://www.bbt-se.com/en/tunnel/funding/ |website=Brenner Base Tunnel |publisher=BBT SE |accessdate=17 August 2020 |archive-date=27 September 2020 |archive-url=https://web.archive.org/web/20200927132232/https://www.bbt-se.com/en/tunnel/funding/ |url-status=live }}</ref>
+
+==Specifications==
+[[File:Brenner Base Tunnel - Tunnelröhren.jpg|thumb|right|Cutaway view of the Brenner Base Tunnel]]
+Source:<ref>{{cite web|url=http://www.bbt-se.com/en/project/basic-data/|title=Project Overview|website=Brenner Base Tunnel|publisher=BBT SE|url-status=live|archive-url=https://web.archive.org/web/20120922102007/http://www.bbt-se.com/en/project/basic-data/|archive-date=22 September 2012|accessdate=19 February 2013}}</ref>
+
+*Total tunnel length from the Innsbruck bypass to Fortezza/Franzensfeste: {{convert|64|km|mi|3|abbr=on}}
+*Length from the Innsbruck portal to the Fortezza/Franzensfeste portal: {{convert|55|km|mi|3|abbr=on}}
+*Diameter of each of the single-track tubes: {{convert|8.1|m|ft|abbr=on}}
+*Distance between cross passage tunnels: {{convert|333|m|ft|abbr=on}}
+*Elevation at highest point: {{convert|794|m|ft|abbr=on}}
+*Maximum [[overburden]]: {{convert|1720|m|ft|abbr=on}}<ref name="urlwww.tunneltalk.com" />
+*Start of construction: 1999 (preparations), 2007 (exploratory section), 2011 (main tunnel)
+*End of construction: 2032
+*Total cost: [[Euro|€]]8.384 billion 
+*Electrification System:
+**[[15 kV AC railway electrification|15&nbsp;kV 16.7 Hz AC]] (Austrian side) <ref>{{cite web |url=https://www.cifi.it/download/il-tunnel-di-base-del-brennero-bbt-progettazione-e-realizzazione-del-collegamento-ferroviario-8-settembre-2025/ |title=Il Tunnel di Base del Brennero (BBT): progettazione e realizzazione del collegamento ferroviario - 8 settembre 2025 |website=cifi.it |access-date=2025-10-14 |publisher=CIFI - Collegio Ingegneri Ferroviari Italiani |language=italian |archive-date=2025-10-12 |archive-url=https://web.archive.org/web/20251012073557/https://www.cifi.it/download/il-tunnel-di-base-del-brennero-bbt-progettazione-e-realizzazione-del-collegamento-ferroviario-8-settembre-2025/ |url-status=live }}</ref>
+**[[25 kV AC railway electrification|25&nbsp;kV 50 Hz AC]] (Italian side)
+*Control and command system: [[European Train Control System#Level 2|ETCS Level 2]]
+*Operating speed: {{convert|250|km/h|mi/h|0|abbr=on}} for passenger trains and {{convert|160|km/h|mi/h|0|abbr=on}} for freight trains
+
+== Gallery ==
+{{Gallery
+|mode=packed
+|width=160 | height=160
+|align=center
+|File:Galleria TAv.JPG |Start of the [[Tunnel boring machine|TBM]] at [[Natz-Schabs|Aicha]] construction site in April 2008
+|File:Brenner Base Tunnel Eisackunterquerung.jpg |View of the [[Eisack]] underpass construction site in September of 2019
+|File:Brenner Base Tunnel Erkundungsstollen Ahrental-Pfons.jpg |TBM at the [[Innsbruck|Ahrental]]–[[Pfons]] exploratory tunnel
+|File:Brenner Base Tunnel Deponie Ahrental.jpg |[[Construction waste|Excavation material]] processing plant and depot in Ahrental in July 2016
+|File:Brenner Base Tunnel Zufahrtstunnel Wolf.jpg |Loading explosive for [[Drilling and blasting|blasting]] the Wolf access tunnel
+|File:Cunucolo esplorativo Mules.jpg |Open shield TBM excavating the exploratory tunnel near Mauls/Mules
+|File:Fabbrica dei conci.jpg |Hinterrigger concrete lining factory in June 2018
+|File:J40_292_Franzensfeste,_Querschnitt_Brennerbasistunnel.jpg |Example of a tunnel section at the Franzenfeste info point
+}}
+
+==See also==
+*[[NRLA]]
+*[[Austrian Federal Railways]]
+*[[High-speed rail in Italy]]
+*[[Lyon Turin Ferroviaire]]
+*[[Megaproject]]
+*[[Treno Alta Velocità]]
+
+==References==
+{{Reflist|30em}}
+
+==External links==
+{{Commons category|Brenner Basistunnel}}
+*[http://www.bbt-se.com/en/home/ BBT SE] (English)
+*{{in lang|it}} [https://web.archive.org/web/20080501102935/http://www.fsnews.it/fsnews/v/index.jsp?vgnextoid=ba0f51d189499110VgnVCM1000001c42fe0aRCRD Tunnel del Brennero: avviati i lavori alla presenza del Presidente Giorgio Napolitano]
+*[https://www.dieci.com/web/en/the-brenner-base-tunnel/ Brenner Base Tunnel]
+
+{{Austrian Federal Railways}}
+{{Berlin–Palermo railway axis}}
+{{Authority control}}
+
+{{Coord|47|3|24|N|11|29|59|E|type:landmark_scale:100000_region:AT|display=title}}
+
+[[Category:Base tunnels]]
+[[Category:Cross-border railway lines in Austria]]
+[[Category:Cross-border railway lines in Italy]]
+[[Category:High-speed railway lines in Austria]]
+[[Category:High-speed railway lines in Italy]]
+[[Category:International tunnels]]
+[[Category:Proposed public transport in Austria]]
+[[Category:Proposed railway tunnels in Europe]]
+[[Category:Railway tunnels in Austria]]
+[[Category:Railway tunnels in Italy]]
+[[Category:Transport in South Tyrol]]
+<!--[[Category:Tunnels completed in 2032]] -->
+[[Category:2032 in rail transport]]
+[[Category:Buildings and structures under construction in Italy]]
+[[Category:Buildings and structures under construction in Austria]]
+[[Category:Tunnels in Trentino-Alto Adige/Südtirol]]
+[[Category:Tunnels_in_the_Alps]]

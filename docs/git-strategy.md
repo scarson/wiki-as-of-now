@@ -12,6 +12,7 @@ This doc captures the policy so the failure doesn't recur.
 
 ## Contents
 
+- [Branch model (dev → main)](#branch-model-dev--main) — integration trunk vs production branch
 - [Invariants](#invariants)
 - [Day-one workflow for any new work](#day-one-workflow-for-any-new-work)
 - [What NOT to do](#what-not-to-do)
@@ -25,6 +26,31 @@ This doc captures the policy so the failure doesn't recur.
 - [Rationale (failure-mode table)](#rationale-failure-mode-table)
 - [Exceptions](#exceptions)
 
+## Branch model (dev → main)
+
+Two long-lived branches, each with one job:
+
+- **`dev` — integration trunk.** All feature work integrates here. Every rule in this document (worktrees, ephemeral feature branches, PR-to-`dev`, merge authority, the root checkout staying on `dev`) governs the road *into* `dev`. This is where agents auto-merge Routine work on green CI.
+- **`main` — production / live.** `main` is the deployed branch: a push to `main` is what goes live. `main` is advanced **only** by promoting `dev` → `main` — never by direct commits, never by feature branches merging into it. `main` is always an ancestor of `dev` (everything on `main` arrived through `dev` first).
+
+**Promotion (`dev` → `main`) is a release, and a release is the user's call.** Integrating a feature to `dev` is Routine agent work; shipping `dev` to production is not — it carries the Review weight of "this goes live now." An agent does not promote `dev` → `main` autonomously. The user decides when `dev` is ready to release, or explicitly delegates a specific promotion.
+
+**Promotion mechanics** (user-initiated, or agent-executed only on explicit user instruction for a specific release):
+
+```bash
+# From the root checkout (on dev), with dev green and pushed:
+git fetch origin dev main
+# Open a release PR dev -> main (preferred: runs CI on the exact merge and
+# produces a reviewable diff of what ships):
+gh pr create --base main --head dev --title "release: <summary>" --body "<what ships>"
+# ...CI green, user approves...
+gh pr merge --merge        # NEVER --squash / --rebase — preserve dev's history on main
+```
+
+A fast-forward (`git push origin dev:main`, valid only when `main` has no commits `dev` lacks) is acceptable for a low-risk promotion, but the release-PR path is preferred for the CI run and the reviewable record.
+
+**Production deploy is wired to `main`.** CI/deploy jobs deploy to production on push to `main`; `dev` gets a preview/dev-environment deploy (or build + `--dry-run` only until deploy secrets are configured). The deploy topology itself lives in the v1 build design ([docs/design/2026-06-13-wikiasofnow-v1-build-design.md](design/2026-06-13-wikiasofnow-v1-build-design.md) §6, Infrastructure & deploy) and the CI workflow — this section governs only the branch-promotion discipline.
+
 ## Invariants
 
 1. **The root checkout is always on `dev`.** `git branch --show-current` in the root checkout always prints `dev`. No `git checkout <branch>` in the root checkout, ever.
@@ -33,6 +59,7 @@ This doc captures the policy so the failure doesn't recur.
 4. **Branches are ephemeral.** Branch → work → PR → merge → delete branch + worktree **in the same session that performed the merge, before starting the next task**. That's the concrete bar — not "promptly" in the hand-wavy sense, but *this session, now, before I move on*. For day-sized work the branch's whole lifecycle fits in one session. For long campaigns (audits, multi-phase refactors, research with a Living Document), the branch lives for the duration of the campaign and is deleted in the session that merges its final PR. See §Campaign branches for the long-cycle pattern. No branch — regardless of prefix (`feat/*`, `fix/*`, `chore/*`, `audit/*`, etc.) — persists past its PR merge.
 5. **Push after every merge.** Local `dev` never sits ahead of `origin/dev` for more than the single operation between merge and push.
 6. **Only one session writes to local `dev` at a time.** Concurrent merges by different sessions into local `dev` cause the three-way divergence described in §Why this exists.
+7. **`main` is promotion-only.** `main` is advanced solely by promoting `dev` → `main` (see §Branch model). No feature branch targets `main`; no agent commits to or checks out `main` for work; no agent promotes to `main` without explicit user instruction. `main` is always an ancestor of `dev`.
 
    **Concrete test:** if you are running any of `gh pr merge`, `git push origin dev`, or `git reset --hard origin/dev` against local `dev` *right now*, you are the writer for that operation. No other session may run any of those at the same time — full stop, no exceptions, no "probably fine if it's fast." If you don't know whether another session is about to write, wait and ask.
 

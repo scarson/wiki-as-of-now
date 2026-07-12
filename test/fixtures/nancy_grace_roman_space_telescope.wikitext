@@ -1,0 +1,362 @@
+{{short description|NASA infrared space telescope}}
+{{use American English|date=June 2021}}
+{{use dmy dates|date=October 2021}}
+{{infobox spaceflight
+| name               = Nancy Grace Roman Space Telescope
+| names_list         = Roman<br/>Roman Space Telescope (RST)<br/>Wide-Field Infrared Survey Telescope (WFIRST)<br/>Joint Dark Energy Mission (JDEM)
+| image              = ROMANNewModelV8RomanStill00049.png
+| image_caption      = Rendered model of the Roman Space Telescope
+| image_size         = 300px
+| mission_type       = [[Infrared telescope|Infrared]] [[space telescope]]
+| operator           = [[NASA]]{{\}}[[Goddard Space Flight Center|GSFC]]
+| website            = {{URL|http://roman.gsfc.nasa.gov/}}
+| mission_duration   = 5 years (planned){{r|WFIRSTobservatory}}
+| launch_mass        = {{cvt|10500|kg}}{{r|Bartusek2022}}
+| power              = 4.5&nbsp;[[kilowatt|kW]]{{r|Bartusek2022}}
+| launch_date        = August 30th, 2026
+| launch_rocket      = [[Falcon Heavy]]
+| launch_site        = [[Kennedy Space Center|Kennedy]] [[LC-39A]]
+| launch_contractor  = [[SpaceX]]
+| orbit_reference    = [[Lagrange point|Sun–Earth L<sub>2</sub> orbit]]
+| orbit_regime       = [[Halo orbit]]
+| orbit_periapsis    = {{cvt|188420|km}}
+| orbit_apoapsis     = {{cvt|806756|km}}
+| apsis              = gee
+| trans_band         = [[S band|S-band]] (TT&C support)<br/>[[Ka band|K<sub>a</sub>-band]] (data acquisition)
+| trans_bandwidth    = Few kbit/s duplex (S-band)<br/>290&nbsp;Mbit/s (K<sub>a</sub>-band)
+| telescope_type     = [[Three-mirror anastigmat]]
+| manufacturer       = [[NASA Goddard Space Flight Center]]
+| telescope_diameter = {{cvt|2.4|m|ft}}
+| telescope_focal_ratio = {{f/|7.9}}
+| telescope_wavelength = 0.48–2.30&nbsp;μm ([[Visible spectrum|blue]] to [[Infrared|near-infrared]]){{r|WFIreference}}
+| instruments_list   = {{Infobox spaceflight/Instruments
+   | acronym1 = WFI  | name1 = Wide-Field Instrument
+   | acronym2 = CGI  | name2 = Coronagraph Instrument
+ }}
+| insignia_size      = 200px
+| programme          = '''[[Large Strategic Science Missions]]'''{{br}}<small>''Astrophysics Division''</small>
+| previous_mission   = [[James Webb Space Telescope|JWST]]
+| next_mission       = [[Habitable Worlds Observatory|HWO]]
+}}
+
+[[File:The Road to L2.webm|thumb|upright=1.25|right|This visualization follows the Roman Space Telescope on its trajectory to the [[Earth's orbit|Sun–Earth]] [[Lagrange point]] L<sub>2</sub>]]
+
+The '''Nancy Grace Roman Space Telescope''' (shortened as the '''Roman Space Telescope''', '''Roman''', or '''RST''') is a [[NASA]] [[infrared]] [[space telescope]] that completed construction on November 25, 2025, and is scheduled to launch to a [[Lagrange point|Sun–Earth L<sub>2</sub> orbit]] on 30 August 2026.<ref>{{cite web |url=https://science.nasa.gov/blogs/roman/2026/06/03/hello-world-nasa-shares-new-home-for-roman-space-telescope-updates/  |title=Hello, World! NASA Shares New Home for Roman Space Telescope Updates |publisher=NASA Jet Propulsion Laboratory |date=2026-06-03 |access-date=2026-06-03}}</ref>{{r|SN-20260108}}{{r|NASA20260422}}{{r|NASA20240521}} It is named after former NASA Chief of Astronomy [[Nancy Grace Roman]].<ref name="RomanSpaceTelescope" />
+
+The Roman Space Telescope is based on an existing {{cvt|2.4|m|ft|adj=on}} wide [[field of view]] primary mirror [[2012 National Reconnaissance Office space telescope donation to NASA|donated by the National Reconnaissance Office]] and will carry two scientific instruments. The Wide-Field Instrument (WFI) is a 300.8-megapixel multi-band visible and [[Infrared|near-infrared]] camera, providing a sharpness of images comparable to that achieved by the [[Hubble Space Telescope]] over a 0.28 square degree field of view, 100 times larger than imaging cameras on the Hubble. The [[coronagraph|Coronagraph Instrument]] (CGI) is a high-contrast, small field of view camera and [[spectrometer]] covering visible and near-infrared wavelengths using novel starlight-suppression technology.
+
+Stated objectives{{r|2015FinalReport}} include a search for [[Exoplanet|extra-solar planets]] using [[gravitational microlensing]],{{r|NRC}} along with probing the [[chronology of the universe]] and growth of cosmic structure, with the end goal of measuring the effects of [[dark energy]],{{r|RomanGSFC}} the consistency of [[general relativity]], and the [[Spacetime|curvature of spacetime]].
+
+Roman was recommended in 2010 by the [[United States National Research Council]] [[Astronomy and Astrophysics Decadal Survey|Decadal Survey committee]] as the top priority for the next decade of astronomy. It was approved for development and launch on 17 February 2016.{{r|KDP-A}}
+
+== Development of mission ==
+[[File:WFIRST model.stl|thumb|upright=1.0|3D model of the telescope, as of 2020]]
+The design of the Roman Space Telescope shares a heritage with various proposed designs for the [[Joint Dark Energy Mission]] (JDEM) between NASA and the [[United States Department of Energy|Department of Energy]] (DOE).
+
+The original design, called WFIRST (Wide-Field Infrared Survey Telescope) Design Reference Mission 1, was studied in 2011–2012, featuring a {{cvt|1.3|m|ft|adj=on}} diameter unobstructed [[three-mirror anastigmat]] telescope.{{r|FinalReport}} It contained a single instrument, a visible to near-infrared imager/slitless [[prism spectrometer]].
+
+In 2012, another possibility emerged: NASA could use a second-hand [[National Reconnaissance Office]] (NRO) telescope made by [[Harris Corporation]] to accomplish a mission like the one planned for WFIRST. [[2012 National Reconnaissance Office space telescope donation to NASA|NRO offered to donate two telescopes]], the same size as the [[Hubble Space Telescope]] but with a shorter focal length and hence a wider [[field of view]].{{r|TNYT}} This provided important political momentum to the project, even though the telescope represents only a modest fraction of the cost of the mission and the boundary conditions from the NRO design may push the total cost over that of a fresh design. This mission concept, called WFIRST-AFTA (Astrophysics Focused Telescope Assets), was matured by a scientific and technical team;{{r|AFTA}} this mission is now the only present NASA plan for the use of the NRO telescopes.{{r|SN-20130604}} The Roman baseline design includes a [[coronagraph]] to enable the [[Methods of detecting exoplanets#Direct imaging|direct imaging]] of [[exoplanet]]s.{{r|NASA20140430}}
+
+Several implementations of WFIRST/Roman were studied. These included the Joint Dark Energy Mission-Omega configuration, an Interim Design Reference Mission featuring a {{cvt|1.3|m|ft}} telescope,{{r|Green2011}} Design Reference Mission 1{{r|DRM1}} with a 1.3 m telescope, Design Reference Mission 2{{r|DRM2}} with a {{cvt|1.1|m|ft}} telescope, and several iterations of the AFTA {{cvt|2.4|m|ft}} configuration. 
+
+In the 2015 final report,<ref name="2015FinalReport" /> Roman was considered for both [[Geosynchronous orbit|geosynchronous]] orbit and for an orbit around the Sun-Earth [[Lagrange point]] L<sub>2</sub>. L<sub>2</sub> has disadvantages versus geosynchronous orbit in available data rate and propellant required, but advantages for improved observing constraints, better thermal stability, and more benign radiation environment. Some science cases (such as exoplanet [[Gravitational microlensing|microlensing]] parallax) are improved at L<sub>2</sub>, but the possibility of robotic servicing at either of the locations is currently unknown. By February 2016, it had been decided to use a [[halo orbit]] around L<sub>2</sub>.<ref name="KDP-A" />
+
+The project is led by a team at NASA's [[Goddard Space Flight Center]] in [[Greenbelt, Maryland]]. On 30 November 2018, NASA announced it had awarded a contract for the telescope.{{r|Idaho State Journal}} This was for a part called the Optical Telescope Assembly (OTA), and runs to 2025.<ref name="Idaho State Journal"/> This is in conjunction with the Goddard Space Flight Center, for which the OTA is planned for delivery as part of this contract.<ref name="Idaho State Journal"/>
+
+A February 2019 description of the mission's capabilities is available in a white paper issued by members of the Roman team.{{r|weinberg}}
+
+During the [[2025 United States federal government shutdown|2025 federal government shutdown]], NASA's Goddard Space Flight Center began closing multiple buildings and consolidating equipment, which the agency describes as a pre-planned “strategic consolidation” not expected to impact missions.{{r|CNN Goddard shutdown closures}} A NASA spokesperson told CNN that work on the Nancy Grace Roman Space Telescope and the [[Dragonfly (Titan space probe)|Dragonfly]] mission would continue during the shutdown as excepted operations.<ref name="CNN Goddard shutdown closures"/>
+
+According to Space.com, some employees at the center expressed concern that the manner and timing of the closures could disrupt work on those projects,{{r|dinner}} and CNN reported that an internal document compiled by Goddard staff cited potential impacts on specialized testing laboratories.<ref name="CNN Goddard shutdown closures"/>
+
+{{multiple image
+| align             = left
+| direction         = horizontal
+| width             = 250px
+| header            = Animation of Roman Space Telescope
+| image1            = Animation of Roman Space Telescope around Earth.gif
+| caption1          = Around the Earth
+| image2            = Animation of Roman Space Telescope around Sun - Frame rotating with Earth - Top view.gif
+| caption2          = Around the Sun – Frame rotating with Earth – Top view
+| image3            = Animation of Roman Space Telescope around Sun - Frame rotating with Earth - Side view.gif
+| caption3          = Around the Sun – Frame rotating with Earth – Side view
+| image4            = Animation of Roman Space Telescope around Sun - Frame rotating with Earth - Viewed from Sun.gif
+| caption4          = Around the Sun – Frame rotating with Earth – Viewed from the Sun
+| footer            = {{legend2|Magenta| Roman Space Telescope}}{{·}}{{legend2| RoyalBlue| Earth}}{{·}}{{legend2|Cyan| Sun-Earth L2}}{{·}}{{legend2|Gold| Moon}}
+}}
+{{clear}}
+
+== Science objectives ==
+The science objectives of Roman aim to address cutting-edge questions in [[cosmology]] and [[exoplanet]] research, including:
+
+* Answering basic questions about [[dark energy]], complementary to the [[European Space Agency]] (ESA) [[Euclid (spacecraft)|Euclid]] mission, and including: Is cosmic acceleration caused by a new energy component or by the breakdown of [[general relativity]] on cosmological scales? If the cause is a new energy component, is its energy density constant in space and time, or has it evolved over the [[Chronology of the universe|history of the universe]]? Roman will use three independent techniques to probe dark energy: [[baryon acoustic oscillations]], observations of distant [[supernovae]], and [[weak gravitational lensing]].
+* Completing a census of exoplanets to help answer new questions about the potential for [[Astrobiology|life in the universe]]: How common are solar systems like our own? What kinds of planets exist in the cold, outer regions of planetary systems? What determines the [[Planetary habitability|habitability]] of Earth-like worlds? This census makes use of a technique that can find exoplanets down to a mass only a few times that of the Moon: [[gravitational microlensing]]. The census would also include a sample of [[Rogue planet|free-floating planets]] with masses likely down to the mass of [[Mars]].{{r|NASA20200817}}
+* Establishing a guest investigator mode, enabling survey investigations to answer diverse questions about our galaxy and the universe.
+* Providing a [[coronagraph]] for exoplanet [[Methods of detecting extrasolar planets#Direct imaging|direct imaging]] that will provide the first direct images and spectra of planets around our nearest neighbors, similar to our own giant planets.
+* Detection of [[primordial black holes]].{{r|balzer}}
+
+<gallery mode=packed heights=200px>
+File:Scheme of Roman Space Telescope.png|Scheme of the Roman Space Telescope
+File:WFIRST Wide Field Instrument.gif|Wide Field Instrument
+</gallery>
+
+== Instruments ==
+The telescope is to carry two instruments. Both were installed into the telescope in December 2024.{{r|NASA20241212}}
+ [[File:Wide_Field_Instrument_Exploded_View.png|thumb|500x500px|Computer model, images, and labelled components of the Roman Space Telescope Wide Field Instrument. (a) Computer model of WFI. (b) Exploded view with labelled components. ACM: Alignment Compensation mechanism, which moves the focal plane assembly (FPA) into best focus both during commissioning and keeps it there over the lifetime of the mission. COBA: Cold Optical Baffle Assembly, which provides much of the stray light protection to the FPA. EWA: Element Wheel Assembly, which houses the eight science filters, prism and grism spectroscopy elements, and the "dark element", which aids in the calibration of the FPA. sRCS: simplified Relative Calibration Systems, which projects uniform light in two modes onto the focal plane to calibrate the FPA. (c) The completed instrument, wrapped in multilayer insulation. (d) Picture of the EWA prior to being covered during assembly. (e) A single filter prior to installation onto the wheel.<ref name=":0" />]]
+
+;WFI: The Wide-Field Instrument (WFI) is the primary science instrument for the mission. It is a 300.8-[[megapixel]] camera, providing multiband imaging and spectroscopy from the visible to near-infrared (0.48 to 2.30&nbsp;μm).{{r|kruk}} Eight science filters, one wide band, and seven more narrow filters, provide high-quality images in subsets of the total spectral bandwidth of the instrument{{r|NASA20260130}}. It also carries both a high-dispersion [[grism]] and lower-dispersion [[Prism (optics)|prism]]{{r|eegholm}} assemblies for wide-field [[slitless spectroscopy]]. A "dark element" made out of [[spectralon]] can block out the light from space and reflect calibration light onto the detector. The eight filters, two spectroscopy elements, and dark element are all attached to an Element Wheel Assembly (EWA) that rotates one element at a time into the active position{{r|:0}}. This enables the scientists to choose which colors of light are needed for each mission{{r|schlieder}}, or switch between imaging and spectroscopy modes. A [[HgCdTe]]-based focal-plane array (FPA) captures a 0.28 square degree [[field of view]] with a resolution of 0.11 arcseconds. The detector array is composed of 18 H4RG-10 detectors provided by [[Teledyne Technologies|Teledyne]].{{r|NASA20180907}} The instrument carries on-board [[calibration]] capability to help the scientists discern the subtle changes in images from their dark matter mission compared to ordinary distortions of the optics or of the FPA{{r|NASA20260411}}. The FPA is attached to a set of hexapod [[Actuator|actuators]] that can reposition the focal plane into the best focus position based on analysis from the ground to ensure the captured images are always of high quality over the lifetime of the mission. WFI was completed and shipped to NASA in August 2024.{{r|NASA20240813}}
+
+;CGI: The Coronagraph Instrument (CGI) is a high contrast [[coronagraph]] covering shorter wavelengths (575 nm to 825 nm) using dual deformable mirror starlight-suppression technology. It is intended to achieve a part-per-billion suppression of starlight to enable the detection and spectroscopy of planets with a visual separation of as little as 0.15&nbsp;arcseconds from their host stars.{{r|JPL20230222}} CGI is intended as a technology demonstrator for an exoplanet imaging instrument on a future large space-based observatory, such as the [[Habitable Worlds Observatory]] (HWO). 
+
+<gallery mode="packed" heights="180">
+File:Romandet-1681946.jpg|Roman's Wide Field Instrument focal plane Engineering Test Unit, containing 18 non-flight H4RG-10 detectors from Teledyne Technologies
+File:Optical Telescope Assembly for the Roman Space Telescope.jpg|Optical Telescope Assembly
+File:Filters on RST Coronagraph Instrument Color Filter Assembly.jpg|The filters on the Coronagraph Instrument's Color Filter Assembly
+File:The focal plane mask for the Roman Coronagraph Instrument.jpg|The focal plane mask for the Roman Coronagraph Instrument
+</gallery>
+
+== History ==
+[[File:Roman Space Telescope’s spacecraft bus 03.jpg|thumb|Roman Space Telescope's spacecraft bus at Goddard Space Flight Center, September 2024]]
+On 2 March 2020, NASA announced that it had approved WFIRST to proceed to implementation, with an expected development cost of US$3.2 billion and a maximum total cost of US$3.934 billion, including the coronagraph and five years of mission science operations.{{r|Developpement}}
+
+On 20 May 2020, NASA Administrator [[Jim Bridenstine]] announced that the mission would be named the [[Nancy Grace Roman]] Space Telescope in recognition of the former NASA Chief of Astronomy's role in the field of [[astronomy]].{{r|RomanSpaceTelescope}}
+
+On 31 March 2021, the [[NASA Office of Inspector General]] (OIG) released a report that stated that the development of the Nancy Grace Roman Space Telescope had been affected by the [[COVID-19 pandemic]], which hit the US during a particularly important time in the telescope's development. NASA is expecting a total impact of US$400 million due to the pandemic and its effect on subcontractors for the project.{{r|SN-20210331}}
+
+On 29 September 2021, NASA announced that Roman had passed its [[Design review (U.S. government)|Critical Design Review]] (CDR), and that with predicted impacts from [[COVID-19]] disruptions, and with flight hardware fabrication completed by 2024 followed by mission integration, the launch date would be no later than May 2027.{{r|CDR}}
+
+On 19 July 2022, NASA announced that Roman would be launched on a [[Falcon Heavy]] launch vehicle, with a contract specifying readiness by October 2026 and a launch cost of approximately $255 million.<ref name="nasa-20220719" />
+
+In September 2024, the [[satellite bus]] which will carry the telescope, was substantially completed.{{r|NASA20240917}} The following December, the instruments and mirror assembly were successfully integrated onto a section called the "instrument carrier".{{r|Jamison 2024}}
+
+In October 2024, the telescope passed a major ‘spin test’.{{r|corless}} The space telescope had finished construction on 25 November 2025.{{r|nasa-20251204}}
+
+=== Funding history and status ===
+[[File:Nancy Roman Hubblecast.jpg|thumb|upright=1.4|Dr. [[Nancy Grace Roman]], [[NASA]]'s first Chief of Astronomy, is shown at NASA's [[Goddard Space Flight Center]] in Greenbelt, Maryland, in approximately 1972.]]
+
+In the fiscal year 2014, Congress provided US$56&nbsp;million for Roman, and in 2015 Congress provided US$50&nbsp;million.{{r|FY2016}} The fiscal year 2016 spending bill provided US$90&nbsp;million for Roman, far above NASA's request of US$14&nbsp;million, allowing the mission to enter the "formulation phase" in February 2016.<ref name="FY2016"/> On 18 February 2016, NASA announced that Roman had formally become a project (as opposed to a study), meaning that the agency intends to carry out the mission as baselined;<ref name="KDP-A"/> at that time, the "AFTA" portion of the name was dropped, as only that approach is being pursued. Roman is on a plan for a mid-2020s launch. The total cost of Roman at that point was expected at more than US$2 billion;{{r|clery}} NASA's 2015 budget estimate was around US$2.0 billion in 2010 dollars, which corresponds to around US$2.7 billion in real year (inflation-adjusted) dollars.{{r|NA2015}}
+
+In April 2017, NASA commissioned an independent review of the project to ensure that the mission scope and cost were understood and aligned.{{r|NASA20170417}} The review acknowledged that Roman offers "groundbreaking and unprecedented survey capabilities for [[dark energy]], [[exoplanet]], and [[Astrophysics|general astrophysics]]", but directed the mission to "reduce cost and complexity sufficient to have a cost estimate consistent with the US$3.2&nbsp;billion cost target set at the beginning of Phase B".{{r|loff2017}} NASA announced (January 2018) the reductions{{clarify|date=February 2022}} taken in response to this recommendation, and that Roman would proceed to its mission design review in February 2018 and begin Phase B by April 2018.{{r|SN-20180109}} NASA confirmed (March 2018) that the changes{{clarify|date=February 2022}} made to the project had reduced its estimated life cycle cost to US$3.2 billion and that the Phase B decision{{clarify|date=February 2022}} was on track to begin on 11 April 2018.{{r|SN-20180328}}
+
+In February 2018, the [[First presidency of Donald Trump|Trump administration]] proposed an FY2019 budget that would have delayed the funding of the Roman (then called WFIRST), citing higher priorities{{clarify|date=February 2022}} within NASA and the increasing cost of the telescope.{{r|FY19 budget}} The proposed defunding of the project was met with criticism by professional astronomers, who noted that the American astronomical community had rated Roman the highest-priority space mission for the 2020s in the [[Astronomy and Astrophysics Decadal Survey|2010 Decadal Survey]].{{r|space-fy19-cancellation|NYT-20180219}} The [[American Astronomical Society]] expressed "grave concern" about the proposed defunding, and noted that the estimated lifecycle cost for Roman had not changed over the previous two years.{{r|parriott}} In agreement, the [[United States Congress]] approved an FY2018 Roman budget on 22 and 23 March 2018 in excess of the administration's budget request for that year, stating that it "rejects the cancellation of scientific priorities recommended by the National Academy of Sciences decadal survey process", and directed NASA to develop new estimates of Roman's total and annual development costs.{{r|B2018-04|SN-20180328}} The President of the United States announced he had signed the bill on 23 March 2018.{{r|rasouli}} NASA was funded via a FY2019 appropriations bill on 15 February 2019, with US$312&nbsp;million for Roman, rejecting the President's reduced Budget Request and reasserting the desire for completion of Roman with a planning budget of US$3.2 billion.{{r|AASBlog20190222}}
+
+In March 2019 the Trump administration again proposed to defund the Roman in its FY2020 budget proposal to Congress.{{r|FY20 budget}} In testimony on 27 March 2019, NASA Administrator [[Jim Bridenstine]] hinted that NASA would continue Roman after the [[James Webb Space Telescope]], stating "WFIRST will be a critical mission when James Webb is on orbit".{{r|SN-20190328}} In a 26 March 2019, presentation to the [[National Academies of Sciences, Engineering, and Medicine|National Academies']] Committee on Astronomy and Astrophysics, NASA Astrophysics Division Director [[Paul L. Hertz]] stated that Roman "is maintaining its US$3.2 billion cost for now ... We need US$542 million in FY2020 to stay on track". At that time, it was stated that Roman would hold its Preliminary Design Review (PDR) for the overall mission in October 2019 followed by a formal mission confirmation in early 2020.
+
+NASA announced the completion of the [[Design review (U.S. government)|Preliminary Design Review]] (PDR) on 1 November 2019, but warned that though the mission remained on track for a 2025 launch date, shortfalls in the Senate's FY2020 budget proposal for Roman threatened to delay it further.{{r|SN-20191111}}
+
+In April 2025, the [[Second presidency of Donald Trump|second Trump administration]] proposed to cut funding for Roman again as part of its FY2026 budget draft. This was part of wider proposed cuts to NASA's science budget, down to US$3.9 billion from its FY2025 budget of US$7.5 billion.{{r|arstech1}} On April 25, 2025, the White House Office of Management and Budget announced a plan to cancel dozens of space missions, including the Roman Space Telescope, as part of the cuts. These cuts are still being debated in the [[United States Congress]].{{r|stahl2025}}
+
+== Institutions, partnerships, and contracts ==
+[[File:High-Gain Antenna for Roman Space Telescope.jpg|thumb|High-Gain Antenna for the Roman Space Telescope – the dish spans 5.6 feet (1.7 meters) and weighs 24 pounds (10.9 kilograms).]]
+The Roman project office is located at NASA's [[Goddard Space Flight Center]] (GSFC) in [[Greenbelt, Maryland]], and holds responsibility for overall project management. GSFC also leads the development of the Wide-Field Instrument, the spacecraft, and the telescope. The Coronagraph Instrument is being developed at NASA's [[Jet Propulsion Laboratory]] in [[Pasadena, California]]. Science support activities for Roman are shared among the [[Space Telescope Science Institute]] in [[Baltimore|Baltimore, Maryland]], which is the Science Operations Center; the [[Infrared Processing and Analysis Center]] in Pasadena, California; and [[Goddard Space Flight Center|GSFC]].
+
+=== Partners ===
+Four international partners, namely the French space agency [[CNES]], [[European Space Agency]] (ESA), [[JAXA|Japan Aerospace Exploration Agency]] (JAXA), and the [[Max Planck Institute for Astronomy]] have joined with NASA to provide various components and science support for Roman.{{r|AIP2019|SN-20180109|cowing2022}} Beginning in 2016 NASA expressed interest in ESA contributions to the spacecraft, coronagraph and ground station support.{{r|nasahqbenford}} For the coronagraph instrument, contributions from [[Europe]] and [[Japan]] have been established.<ref name="nasahqbenford"/> In 2018, a contribution from [[Germany]]'s [[Max Planck Institute for Astronomy]] (MPIA) was under consideration, namely the filter wheels for the star-blocking mask inside the coronagraph.{{r|cgi201806}} In 2016, the Japanese space agency [[JAXA]] proposed to add a [[polarimeter|polarization module]] for the coronagraph, plus a polarization compensator. An accurate [[polarimetry]] capability on Roman may strengthen the science case for exoplanets and [[protoplanetary disk|planetary disk]]s, which shows polarization.{{r|subaruum2016|sss17}} Ground support will be provided by a new NASA station in [[White_Sands_Test_Facility|White Sands]] in New Mexico, the [[Misasa Deep Space Station|Misasa]] station in Japan and ESA's [[New_Norcia_Station|New Norcia station]] in Australia.{{r|aps}}
+
+=== Construction contracts ===
+In May 2018, NASA awarded a multi-year contract to [[Ball Aerospace & Technologies|Ball Aerospace]] (now called [[BAE Systems]] Space & Mission Systems) to provide key components (the Opto-Mechanical Assembly) for the Wide-Field Instrument on Roman.{{r|NASA20180523}} In June 2018, NASA awarded a contract to [[Teledyne Technologies|Teledyne Scientific and Imaging]] to provide the infrared detectors for the Wide-Field Instrument.{{r|NASA20180615}} On 30 November 2018, NASA announced it had awarded the contract for Optical Telescope Assembly to the [[Harris Corporation]] of [[Rochester, New York]].<ref name="Idaho State Journal"/> Via an agreement signed in June 2022,{{r|NASA20250630}} [[Max Planck Institute for Astronomy|MPIA]] designed, built, and provided all of CGI's Precision Alignment Mechanisms{{r|krause}} (PAM) which operate, stabilize, and control optical elements such as optical filters.{{r|nielbock}}
+
+== Gallery ==
+<gallery mode="packed" heights="200px">
+File:Roman phatSIM clean smaller.jpg|A simulated image of part of the [[Andromeda Galaxy]]
+File:Wfirst-detail-annot.png|This simulated image showcases the red and infrared light of more than 50 million stars in Andromeda, as they would appear with WFIRST
+File:Roman phatSIM context annotated.jpg|A composite figure shows the region of Andromeda covered by the Roman Space Telescope simulation. Roman would be able to image the main body of Andromeda in just a few pointings, surveying the galaxy nearly 1500 times faster than the Hubble Space Telescope.
+</gallery>
+
+== See also ==
+* {{annotated link|Wide-field Infrared Survey Explorer}}
+* {{annotated link|Spitzer Space Telescope}}
+* {{annotated link|Xuntian}}
+
+== References ==
+<references>
+<ref name="WFIRSTobservatory">{{cite web |url=http://wfirst.gsfc.nasa.gov/observatory/ |title=WFIRST Observatory |archive-url=https://web.archive.org/web/20150214063216/https://wfirst.gsfc.nasa.gov/observatory/ |publisher=NASA (GSFC) |date=April 25, 2014 |archive-date=February 14, 2015 |url-status=dead |access-date=March 14, 2021}} {{PD-notice}}</ref>
+<ref name="Bartusek2022">{{cite conference |last1=Bartusek |first1=Lisa M. L. |last2=Davis |first2=Jody L. |last3=Vess |first3=Melissa F. |title=Nancy Grace Roman Space Telescope Observatory Implementation and Challenges |conference=2022 IEEE Aerospace Conference (AERO) |publisher=IEEE |date=5-12 March 2022 |location=Big Sky, MT, USA |doi = 10.1109/AERO53065.2022.9843415 |url=https://ntrs.nasa.gov/citations/20210021677 |access-date=20 April 2026}}</ref>
+<ref name="NASA20260422">{{Cite web |date=2026-04-22 |title=NASA Targets Early September for Roman Space Telescope Launch - NASA |url=https://www.nasa.gov/image-article/nasa-targets-early-september-for-roman-space-telescope-launch/ |access-date=2026-05-08 |language=en-US}}</ref>
+<ref name="nasa-20220719">{{cite press release |url=https://www.nasa.gov/press-release/nasa-awards-launch-services-contract-for-roman-space-telescope |title=NASA Awards Launch Services Contract for Roman Space Telescope |work=[[NASA]] |date=19 July 2022 |access-date=19 July 2022 |archive-date=7 August 2022 |archive-url=https://web.archive.org/web/20220807002558/https://www.nasa.gov/press-release/nasa-awards-launch-services-contract-for-roman-space-telescope/ |url-status=live}}</ref>
+<ref name="WFIreference">{{cite web |date=25 January 2021 |title=Roman Wide-Field Instrument Reference Information |url=https://roman.gsfc.nasa.gov/science/RRI/Roman_WFI_Reference_Information_20210125.pdf |url-status=live |archive-url=https://web.archive.org/web/20210514102750/https://roman.gsfc.nasa.gov/science/RRI/Roman_WFI_Reference_Information_20210125.pdf |archive-date=14 May 2021 |access-date=9 January 2022}}</ref>
+<ref name="NASA20240521">{{Cite web |date=2024-05-21 |title=NASA Tool Gets Ready to Image Faraway Planets |url=https://www.nasa.gov/missions/roman-space-telescope/nasa-tool-gets-ready-to-image-faraway-planets/ |access-date=2024-05-21 |website=NASA.gov |language=en-US}}</ref>
+<ref name="2015FinalReport">{{cite web |date=March 10, 2015 |title=WFIRST-AFTA 2015 Report by the Science Definition Team (SDT) and WFIRST Study Office |url=http://wfirst.gsfc.nasa.gov/science/sdt_public/WFIRST-AFTA_SDT_Report_150310_Final.pdf |url-status=live |archive-url=https://web.archive.org/web/20161009151258/http://wfirst.gsfc.nasa.gov/science/sdt_public/WFIRST-AFTA_SDT_Report_150310_Final.pdf |archive-date=9 October 2016 |access-date=March 14, 2021}} {{PD-notice}}</ref>
+<ref name="NRC">{{cite book |url=http://www.nap.edu/catalog/12951.html |title=New Worlds, New Horizons in Astronomy and Astrophysics |publisher=National Academies Press |last=Blandford | first=Roger D. | others=National Research Council staff and the Committee for a Decadal Survey of Astronomy and Astrophysics |year=2010 |isbn=978-0-309-15802-2 |location=Washington, D.C. |language=en-us |doi=10.17226/12951 |bibcode=2010nwnh.book...... |access-date=March 14, 2021}} {{PD-notice}}</ref>
+<ref name="RomanGSFC">{{cite web |title=Mission Overview |url=https://roman.gsfc.nasa.gov/about.html |url-status=live |archive-url=https://web.archive.org/web/20190904154010/https://wfirst.gsfc.nasa.gov/about.html |archive-date=4 September 2019 |access-date=March 14, 2021 |work=Nancy Grace Roman Space Telescope |publisher=NASA}} {{PD-notice}}</ref>
+<ref name="KDP-A">{{cite web |date=February 18, 2016 |title=NASA Introduces New, Wider Set of Eyes on the Universe |url=http://www.nasa.gov/press-release/nasa-introduces-new-wider-set-of-eyes-on-the-universe |url-status=live |archive-url=https://web.archive.org/web/20160222102742/http://www.nasa.gov/press-release/nasa-introduces-new-wider-set-of-eyes-on-the-universe/ |archive-date=22 February 2016 |access-date=March 14, 2021}} {{PD-notice}}</ref>
+<ref name="HertzJune2022">{{cite web |author=Hertz |first=Paul |date=2022-06-12 |title=NASA Astrophysics Update |url=https://pcos.gsfc.nasa.gov/physpag/meetings/AAS_June2022/presentations/Jun_2022_Joint_PAG_V7_compressed.pdf |url-status=live |archive-url=https://web.archive.org/web/20220719214254/https://pcos.gsfc.nasa.gov/physpag/meetings/AAS_June2022/presentations/Jun_2022_Joint_PAG_V7_compressed.pdf |archive-date=19 July 2022 |accessdate=2022-07-19}}</ref>
+<ref name="NASA20240417">{{Cite web |date=2024-04-17 |title=NASA's Roman Space Telescope's 'Eyes' Pass First Vision Test |url=https://www.nasa.gov/missions/roman-space-telescope/nasas-roman-space-telescopes-eyes-pass-first-vision-test/ |access-date=2024-04-18 |website=NASA.gov |language=en-US}}</ref>
+<ref name="FinalReport">{{cite arXiv |eprint=1208.4012|last1=Green |first1=J. |last2=Schechter |first2=P. |last3=Baltay |first3=C. |last4=Bean |first4=R. |last5=Bennett |first5=D. |last6=Brown |first6=R. |last7=Conselice |first7=C. |last8=Donahue |first8=M. |last9=Fan |first9=X. |last10=Gaudi |first10=B. S. |last11=Hirata |first11=C. |last12=Kalirai |first12=J. |last13=Lauer |first13=T. |last14=Nichol |first14=B. |last15=Padmanabhan |first15=N. |last16=Perlmutter |first16=S. |last17=Rauscher |first17=B. |last18=Rhodes |first18=J. |last19=Roellig |first19=T. |last20=Stern |first20=D. |last21=Sumi |first21=T. |last22=Tanner |first22=A. |last23=Wang |first23=Y. |last24=Weinberg |first24=D. |last25=Wright |first25=E. |last26=Gehrels |first26=N. |last27=Sambruna |first27=R. |last28=Traub |first28=W. |last29=Anderson |first29=J. |last30=Cook |first30=K. |display-authors=3 |title=Wide-Field InfraRed Survey Telescope (WFIRST) Final Report |year=2012 |class=astro-ph.IM}}</ref>
+<ref name="TNYT">{{cite web|url=https://www.nytimes.com/2012/06/05/science/space/repurposed-telescope-may-explore-secrets-of-dark-energy.html|title=Ex-Spy Telescope May Become a Space Investigator|newspaper=The New York Times|date=June 4, 2012|access-date=March 17, 2021|archive-date=4 September 2019|archive-url=https://web.archive.org/web/20190904165335/https://www.nytimes.com/2012/06/05/science/space/repurposed-telescope-may-explore-secrets-of-dark-energy.html|url-status=live}}</ref>
+<ref name="AFTA">{{cite web|url=http://wfirst.gsfc.nasa.gov/science/sdt_public/WFIRST-AFTA_SDT_Final_Report_Rev1_130523.pdf|title=WFIRST-AFTA SDT Final Report, revision 1|date=May 23, 2013|access-date=March 17, 2021|archive-date=4 April 2014|archive-url=https://web.archive.org/web/20140404000259/http://wfirst.gsfc.nasa.gov/science/sdt_public/WFIRST-AFTA_SDT_Final_Report_Rev1_130523.pdf|url-status=live}} {{PD-notice}}</ref>
+<ref name="NASA20140430">{{cite web|url=http://wfirst.gsfc.nasa.gov/science/sdt_public/WFIRST-AFTA_SDT_Interim_Report_April_2014.pdf|title=WFIRST Science Definition Team Interim Report|publisher=NASA|date=April 30, 2014|access-date=August 28, 2014|archive-date=5 April 2015|archive-url=https://web.archive.org/web/20150405184127/http://wfirst.gsfc.nasa.gov/science/sdt_public/WFIRST-AFTA_SDT_Interim_Report_April_2014.pdf|url-status=live}} {{PD-notice}}</ref>
+<ref name="Green2011">{{cite web |author=Green |first1=J. |last2=Schechter |first2=P. |name-list-style=amp |date=July 11, 2011 |title=WFIRST IDRM |url=http://wfirst.gsfc.nasa.gov/science/sdt_public/WFIRST_Interim_Report.pdf |url-status=live |archive-url=https://web.archive.org/web/20161009151130/http://wfirst.gsfc.nasa.gov/science/sdt_public/WFIRST_Interim_Report.pdf |archive-date=9 October 2016 |access-date=February 23, 2016}} {{PD-notice}}</ref>
+<ref name="DRM1">{{cite web|url=http://wfirst.gsfc.nasa.gov/science/sdt/sdt_2010_2011/meetings/2012_May/DRM1_120517.pdf|title=WFIRST DRM1|date=May 17, 2012|access-date=February 23, 2016|archive-date=3 March 2016|archive-url=https://web.archive.org/web/20160303055501/http://wfirst.gsfc.nasa.gov/science/sdt/sdt_2010_2011/meetings/2012_May/DRM1_120517.pdf|url-status=live}} {{PD-notice}}</ref>
+<ref name="DRM2">{{cite arXiv |eprint=1208.4012|title=WFIRST DRM2|date=August 15, 2012|last1=Green |first1=J. |last2=Schechter |first2=P. |last3=Baltay |first3=C. |last4=Bean |first4=R. |last5=Bennett |first5=D. |last6=Brown |first6=R. |last7=Conselice |first7=C. |last8=Donahue |first8=M. |last9=Fan |first9=X. |last10=Gaudi |first10=B. S. |last11=Hirata |first11=C. |last12=Kalirai |first12=J. |last13=Lauer |first13=T. |last14=Nichol |first14=B. |last15=Padmanabhan |first15=N. |last16=Perlmutter |first16=S. |last17=Rauscher |first17=B. |last18=Rhodes |first18=J. |last19=Roellig |first19=T. |last20=Stern |first20=D. |last21=Sumi |first21=T. |last22=Tanner |first22=A. |last23=Wang |first23=Y. |last24=Weinberg |first24=D. |last25=Wright |first25=E. |last26=Gehrels |first26=N. |last27=Sambruna |first27=R. |last28=Traub |first28=W. |last29=Anderson |first29=J. |last30=Cook |first30=K. |display-authors=1 |class=astro-ph.IM}} {{PD-notice}}</ref>
+<ref name="Idaho State Journal">{{cite news |url=https://www.idahostatejournal.com/news/national/nasa-awards-optical-telescope-assembly-for-wide-field-infrared-survey/article_c775c1ae-014d-5e8d-873f-1f5bd8c8c61b.html |title=NASA Awards Optical Telescope Assembly for Wide-Field Infrared Survey Telescope Mission |publisher=Idaho State Journal |access-date=December 2, 2018 |archive-date=3 December 2018 |archive-url=https://web.archive.org/web/20181203174338/https://www.idahostatejournal.com/news/national/nasa-awards-optical-telescope-assembly-for-wide-field-infrared-survey/article_c775c1ae-014d-5e8d-873f-1f5bd8c8c61b.html |url-status=dead}}</ref>
+<ref name="weinberg">{{cite arXiv |last1=Weinberg |first1=David |last2=Wang |first2=Yun |last3=von der Linden |first3=Anja |last4=van der Marel |first4=Roeland |last5=Turnbull |first5=Margaret |last6=Troxel |first6=M. A. |last7=Trauger |first7=John |last8=Szalay |first8=Alexander |last9=Strolger |first9=Louis-Gregory |display-authors=1 |title=The Wide-Field Infrared Survey Telescope: 100 Hubbles for the 2020s |eprint=1902.05569v1 |date=February 14, 2019 |class=astro-ph.IM }}</ref>
+<ref name="CNN Goddard shutdown closures">{{cite web |last1=Nilsen |first1=Ella |last2=Wattles |first2=Jackie |date=November 4, 2025 |title=NASA may be quietly gutting an iconic campus with what it calls strategic closures, workers fear |url=https://edition.cnn.com/2025/11/04/science/nasa-goddard-building-closures-government-shutdown |publisher=CNN.com |access-date=November 7, 2025}}</ref>
+<ref name="dinner">{{cite news |last=Dinner |first=Josh |date=November 3, 2025 |title=NASA is sinking its flagship science center during the government shutdown — critics say it may be breaking the law |url=https://www.space.com/space-exploration/nasa-is-sinking-its-flagship-science-center-during-the-government-shutdown-and-may-be-breaking-the-law-in-the-process |work=Space.com |access-date=November 7, 2025}}</ref>
+<ref name="NASA20200817">{{cite web|url=https://www.nasa.gov/feature/goddard/2020/unveiling-rogue-planets-with-nasas-roman-space-telescope|title=Unveiling Rogue Planets with NASA's Roman Space Telescope|website=nasa.gov|date=August 17, 2020|publisher=NASA|access-date=August 24, 2020|archive-date=27 August 2020|archive-url=https://web.archive.org/web/20200827060106/https://www.nasa.gov/feature/goddard/2020/unveiling-rogue-planets-with-nasas-roman-space-telescope/|url-status=live}} {{PD-notice}}</ref>
+<ref name="balzer">{{cite web |last1=Balzer |first1=Ashley |date=7 May 2024 |title=How NASA's Roman Mission Will Hunt for Primordial Black Holes |url=https://www.nasa.gov/missions/roman-space-telescope/how-nasas-roman-mission-will-hunt-for-primordial-black-holes/ |access-date=12 May 2024 |website=NASA.gov |publisher=NASA}}</ref>
+<ref name="NASA20241212">{{Cite web |date=2024-12-12 |title=NASA Successfully Integrates Roman Mission’s Telescope, Instruments - NASA |url=https://www.nasa.gov/missions/roman-space-telescope/nasa-successfully-integrates-roman-missions-telescope-instruments/ |access-date=2026-04-11 |language=en-US}}</ref>
+<ref name="kruk">{{cite web |last=Kruk |first=Jeffrey |date=12 April 2018 |title=WFIRST Update |url=https://science.nasa.gov/science-pink/s3fs-public/atoms/files/Kruk_WFIRST_APAC_April2018.pdf |url-status=live|archive-url=https://web.archive.org/web/20211010211555/https://science.nasa.gov/science-pink/s3fs-public/atoms/files/Kruk_WFIRST_APAC_April2018.pdf |archive-date=10 October 2021 |access-date=10 October 2021}}</ref>
+<ref name="NASA20260130">{{Cite web |date=2026-01-30 |title=WFI Technical - NASA Science |url=https://science.nasa.gov/mission/roman-space-telescope/wfi-technical/ |access-date=2026-04-11 |language=en-US}}</ref>
+<ref name="eegholm">{{Cite journal |last=Eegholm |first=Bente H. |last2=Marx |first2=Catherine T. |last3=Chambers |first3=Victor J. |last4=Chu |first4=Jenny |last5=Gao |first5=Guangjun |last6=Dominguez |first6=Margaret Z. |last7=Lehan |first7=John P. |last8=Hagopian |first8=John G. |last9=Gong |first9=Qian |last10=Seide |first10=Laurie L. |last11=Bray |first11=Evan |last12=He |first12=Charles |last13=Patel |first13=Jessica B. |last14=Quijada |first14=Manuel A. |last15=Malumuth |first15=Elliot |date=2025-04-18 |title=Compact prism assembly for slit-less spectroscopy capability in Roman Space Telescope Wide-Field Instrument |url=https://www.spiedigitallibrary.org/journals/Journal-of-Astronomical-Telescopes-Instruments-and-Systems/volume-11/issue-02/025001/Compact-prism-assembly-for-slit-less-spectroscopy-capability-in-Roman/10.1117/1.JATIS.11.2.025001.full |journal=Journal of Astronomical Telescopes, Instruments, and Systems |volume=11 |issue=02 |doi=10.1117/1.JATIS.11.2.025001 |issn=2329-4124|url-access=subscription }}</ref>
+<ref name=":0">{{Cite journal |last=Cromey |first=Benjamin |last2=Sabatke |first2=Derek |last3=Finch |first3=Timothy |last4=Frater |first4=Eric |last5=Marx |first5=Catherine T. |last6=Groff |first6=Tyler |last7=Switzer |first7=Eric |last8=Schlieder |first8=Joshua E. |last9=Leviton |first9=Douglas |last10=Choi |first10=Ami |last11=Valencia |first11=Sebastian |last12=Gao |first12=Guangjun |last13=Rizzo |first13=Maxime |last14=Wake |first14=Shane |last15=Meier |first15=Lane |date=2025-10-03 |title=Roman Wide Field Instrument Optomechanical Assembly performance summary |url=https://www.spiedigitallibrary.org/journals/Journal-of-Astronomical-Telescopes-Instruments-and-Systems/volume-11/issue-04/044001/Roman-Wide-Field-Instrument-Optomechanical-Assembly-performance-summary/10.1117/1.JATIS.11.4.044001.full |journal=Journal of Astronomical Telescopes, Instruments, and Systems |volume=11 |issue=04 |doi=10.1117/1.JATIS.11.4.044001 |issn=2329-4124|doi-access=free }}</ref>
+<ref name="schlieder">{{cite journal |last1=Schlieder |first1=Joshua E. |last2=Barclay |first2=Thomas |last3=Barnes |first3=Amethyst |last4=Bray |first4=Evan |last5=Choi |first5=Ami |last6=Cromey |first6=Benjamin |last7=Delker |first7=Thomas |last8=Finch |first8=Timothy |last9=Frater |first9=Eric H. |last10=Hill |first10=Robert J. |last11=Kruk |first11=Jeffrey |last12=Lasco |first12=Jeffrey |last13=Louie |first13=Dana R. |last14=Malhotra |first14=Sangeeta |last15=McEnery |first15=Julie E. |last16=Mosby |first16=Gregory |last17=Paine |first17=Jennie |last18=Perkins |first18=Jeremy S. |last19=Rauscher |first19=Bernard J. |last20=Rhoads |first20=James E. |last21=Rizzo |first21=Maxime |last22=Sabatke |first22=Derek |last23=Schweickart |first23=Rusty |last24=Shukis |first24=Diana |last25=Switzer |first25=Eric R. |last26=Wollack |first26=Edward J. |last27=Zellem |first27=Robert T. |last28=Zimmerman |first28=Neil T. |editor-first1=Laura E. |editor-first2=Marshall D. |editor-first3=Shuji |editor-last1=Coyle |editor-last2=Perrin |editor-last3=Matsuura |title=Survey science with the Nancy Grace Roman Space Telescope Wide Field Instrument |journal=Space Telescopes and Instrumentation 2024: Optical |date=2024 |volume=13092 |page=29 |doi=10.1117/12.3020622 |bibcode=2024SPIE13092E..0SS |isbn=978-1-5106-7507-0}}</ref>
+<ref name="NASA20180907">{{cite web |url=https://wfirst.gsfc.nasa.gov/science/presentations/vugraphs/160202WFIRSTSDTH4RG10C.pdf |title=Introduction to WFIRST H4RG-10 Detector Arrays |last=Rauscher |first=Bernard |publisher=NASA |access-date=September 7, 2018 |archive-date=27 December 2016 |archive-url=https://web.archive.org/web/20161227212745/https://wfirst.gsfc.nasa.gov/science/presentations/vugraphs/160202WFIRSTSDTH4RG10C.pdf |url-status=live}} {{PD-notice}}</ref>
+<ref name="NASA20260411">{{Cite web |date=2023-04-18 |title=Goddard Team Builds, Tests Calibrator for NASA’s Roman in Record Time - NASA |url=https://www.nasa.gov/missions/roman-space-telescope/goddard-team-builds-tests-calibrator-for-nasas-roman-in-record-time/ |access-date=2026-04-11 |language=en-US}}</ref>
+<ref name="NASA20240813">{{Cite web |date=2024-08-13 |title=Primary Instrument for Roman Space Telescope Arrives at NASA Goddard - NASA |url=https://www.nasa.gov/missions/roman-space-telescope/primary-instrument-for-roman-space-telescope-arrives-at-nasa-goddard/ |access-date=2026-04-11 |language=en-US}}</ref>
+<ref name="JPL20230222">{{cite web |title=The Nancy Grace Roman Space Telescope |url=https://www.jpl.nasa.gov/missions/the-nancy-grace-roman-space-telescope |website=NASA Jet Propulsion Laboratory (JPL) |access-date=22 February 2023}}</ref>
+<ref name="Developpement">{{cite web |url=https://www.nasa.gov/feature/nasa-approves-development-of-universe-studying-planet-finding-mission |title=NASA Approves Development of Universe-Studying, Planet-Finding Mission |publisher=NASA |date=March 2, 2020 |access-date=March 14, 2021 |archive-date=3 March 2020 |archive-url=https://web.archive.org/web/20200303195754/https://www.nasa.gov/feature/nasa-approves-development-of-universe-studying-planet-finding-mission |url-status=live}} {{PD-notice}}</ref>
+<ref name="RomanSpaceTelescope">{{cite web |url=https://www.nasa.gov/press-release/nasa-telescope-named-for-mother-of-hubble-nancy-grace-roman/ |title=NASA Telescope Named For "Mother of Hubble" Nancy Grace Roman |publisher=NASA |date=May 20, 2020 |access-date=March 14, 2021 |archive-date=20 May 2020 |archive-url=https://web.archive.org/web/20200520180313/https://www.nasa.gov/press-release/nasa-telescope-named-for-mother-of-hubble-nancy-grace-roman/ |url-status=live }} {{PD-notice}}</ref>
+<ref name="CDR">{{cite web |date=September 29, 2021 |title=NASA Confirms Roman Mission's Flight Design in Milestone Review |url=https://www.nasa.gov/feature/goddard/2021/nasa-confirms-roman-missions-flight-design-in-milestone-review/ |url-status=live |archive-url=https://web.archive.org/web/20210930160105/http://www.nasa.gov/feature/goddard/2021/nasa-confirms-roman-missions-flight-design-in-milestone-review/ |archive-date=30 September 2021 |access-date=2021-09-30 |publisher=NASA }} {{PD-notice}}</ref>
+<ref name="NASA20240917">{{Cite web |date=2024-09-17 |title=NASA Completes Spacecraft to Transport, Support Roman Space Telescope |url=https://www.nasa.gov/missions/roman-space-telescope/nasa-completes-spacecraft-to-transport-support-roman-space-telescope/ |access-date=2024-09-17 |website=NASA.gov |language=en-US}}</ref>
+<ref name="Jamison 2024">{{cite web |last=Jamison |first=Miles |date=December 13, 2024 |title=NASA Completes Roman Space Telescope Payload Integration |url=https://executivegov.com/2024/12/nasa-roman-space-telescope-payload-integration/ |access-date=December 16, 2024 |website=Executive Gov}}</ref>
+<ref name="corless">{{Cite web |author1=Corless |date=2024-10-19 |title=NASA's next-generation Nancy Roman Space Telescope aces crucial 'spin test' |url=https://www.space.com/roman-space-telescope-testing-spin-test |access-date=2024-10-19 |website=Space.com |language=en|first=Victoria}}</ref>
+<ref name="FY2016">{{cite news|last=Foust|first=Jeff|url=http://www.space.com/31533-nasa-wfirst-major-space-telescope-project.html?adbid=10153245128716466&adbpl=fb&adbpr=17610706465|title=NASA's Next Major Space Telescope Project Officially Starts in February|publisher=Space.com|date=January 7, 2016|access-date=January 9, 2016|archive-date=20 October 2017|archive-url=https://web.archive.org/web/20171020135055/https://www.space.com/31533-nasa-wfirst-major-space-telescope-project.html?adbid=10153245128716466&adbpl=fb&adbpr=17610706465|url-status=live}}</ref>
+<ref name="clery">{{cite web |author=Clery |first=Daniel |date=February 19, 2016 |title=NASA moves ahead with its next space telescope |url=https://www.science.org/content/article/nasa-moves-ahead-its-next-space-telescope |url-status=live |archive-url=https://web.archive.org/web/20221205162519/https://www.science.org/content/article/nasa-moves-ahead-its-next-space-telescope |archive-date=5 December 2022 |access-date=February 20, 2016 |publisher=Science Magazine}}</ref>
+<ref name="NA2015">{{cite web |date=October 8, 2015 |title=NASA Astrophysics: Progress toward New Worlds, New Horizons |url=http://sites.nationalacademies.org/cs/groups/ssbsite/documents/webpage/ssb_168722.pdf |url-status=live |archive-url=https://web.archive.org/web/20160307053144/http://sites.nationalacademies.org/cs/groups/ssbsite/documents/webpage/ssb_168722.pdf |archive-date=7 March 2016 |access-date=February 23, 2016 |publisher=NRC |page=44}}</ref>
+<ref name="NASA20170417">{{cite web |url=https://www.nasa.gov/feature/nasa-taking-a-fresh-look-at-next-generation-space-telescope-plans |title=NASA Taking a Fresh Look at Next Generation Space Telescope Plans |publisher=NASA |date=April 17, 2017 |access-date=October 19, 2017 |archive-date=21 May 2017 |archive-url=https://web.archive.org/web/20170521123220/https://www.nasa.gov/feature/nasa-taking-a-fresh-look-at-next-generation-space-telescope-plans/ |url-status=live}} {{PD-notice}}</ref>
+<ref name="loff2017">{{cite web |last1=Loff |first1=Sarah |url=https://www.nasa.gov/feature/nasa-receives-findings-from-wfirst-independent-review-team |title=NASA Receives Findings from WFIRST Independent Review Team |work=NASA |date=October 19, 2017 |access-date=October 19, 2017 |archive-date=21 October 2017 |archive-url=https://web.archive.org/web/20171021094034/https://www.nasa.gov/feature/nasa-receives-findings-from-wfirst-independent-review-team/ |url-status=live}} {{PD-notice}}</ref>
+<ref name="FY19 budget">{{cite web |date=February 12, 2018 |title=FY 2019 budget estimates |url=https://www.nasa.gov/sites/default/files/atoms/files/nasa_fy_2019_budget_overview.pdf |access-date=February 12, 2018 |archive-date=24 August 2019 |archive-url=https://web.archive.org/web/20190824220543/https://www.nasa.gov/sites/default/files/atoms/files/nasa_fy_2019_budget_overview.pdf |url-status=live}} {{PD-notice}}</ref>
+<ref name="space-fy19-cancellation">{{cite news |last=Cofield |first=Calla |date=February 13, 2018 |title=What Would it Mean for Astronomers if the WFIRST Space Telescope is Killed? |publisher=Space.com |url=https://www.space.com/39680-wfirst-space-telescope-cancellation-scientist-reactions.html |access-date=February 13, 2018 |archive-date=31 August 2019 |archive-url=https://web.archive.org/web/20190831085112/https://www.space.com/39680-wfirst-space-telescope-cancellation-scientist-reactions.html |url-status=live}}</ref>
+<ref name="NYT-20180219">{{cite news |last=Overbye |first=Dennis |date=February 19, 2018 |title=Astronomers' Dark Energy Hopes Fade to Gray |newspaper=The New York Times |url=https://www.nytimes.com/2018/02/19/science/nasa-dark-energy-wfirst.html |access-date=February 19, 2018 |archive-date=13 September 2019 |archive-url=https://web.archive.org/web/20190913095405/https://www.nytimes.com/2018/02/19/science/nasa-dark-energy-wfirst.html |url-status=live}}</ref>
+<ref name="parriott">{{cite web |author=Parriott |first=Joel |date=February 14, 2018 |title=American Astronomical Society Leaders Concerned with Proposed Cancellation of WFIRST |url=https://aas.org/posts/news/2018/02/aas-leaders-concerned-proposed-cancellation-wfirst |url-status=live |archive-url=https://web.archive.org/web/20180222043715/https://aas.org/posts/news/2018/02/aas-leaders-concerned-proposed-cancellation-wfirst |archive-date=22 February 2018 |access-date=February 21, 2018 |publisher=American Astronomical Society}}</ref>
+<ref name="B2018-04">{{cite news |last=Brainard |first=Jeffrey |date=March 23, 2018 |title=Planetary science wins big in NASA's new spending plan |publisher=Science (journal) American Association for the Advancement of Science |url=https://www.science.org/content/article/planetary-science-wins-big-nasa-s-new-spending-plan |url-status=live |access-date=April 1, 2018 |archive-url=https://web.archive.org/web/20220315172036/https://www.science.org/content/article/planetary-science-wins-big-nasa-s-new-spending-plan |archive-date=15 March 2022}}</ref>
+<ref name="rasouli">{{cite news |url=https://www.aamc.org/advocacy/washhigh/highlights2018/488058/032318presidentsignsfy2018omnibuswith3billionnihincreaseboostfor.html |title=President Signs FY 2018 Omnibus with US$3 Billion NIH Increase, Boost for Other Health Programs |work=Tannaz Rasouli et al |publisher=Association of American Medical Colleges |date=March 23, 2018 |access-date=April 1, 2018 |archive-date=23 March 2018 |archive-url=https://web.archive.org/web/20180323222550/https://www.aamc.org/advocacy/washhigh/highlights2018/488058/032318presidentsignsfy2018omnibuswith3billionnihincreaseboostfor.html|url-status=live}}</ref>
+<ref name="AASBlog20190222">{{cite web |author=Wilkins |first=Ashlee |date=February 22, 2019 |title=Astronomical Sciences in the Final FY 2019 Spending Agreement |url=https://aas.org/posts/blog/2019/02/astronomical-sciences-final-fy-2019-spending-agreement |url-status=live |archive-url=https://web.archive.org/web/20190401213035/https://aas.org/posts/blog/2019/02/astronomical-sciences-final-fy-2019-spending-agreement |archive-date=1 April 2019 |access-date=April 1, 2019}}</ref>
+<ref name="FY20 budget">{{cite web |url=https://www.nasa.gov/sites/default/files/atoms/files/fy2020_agency_fact_sheet.pdf |title=NASA FY2020 Budget Request |date=March 11, 2019 |access-date=April 1, 2019 |archive-date=15 March 2019 |archive-url=https://web.archive.org/web/20190315185308/https://www.nasa.gov/sites/default/files/atoms/files/fy2020_agency_fact_sheet.pdf |url-status=live}} {{PD-notice}}</ref>
+<ref name="stahl2025">{{cite web |last= Stahl |first= Asa |date= May 8, 2025 |title= Billions wasted, mysteries unsolved: The missions NASA may be forced to abandon |url= https://www.planetary.org/articles/billions-wasted-mysteries-unsolved-the-missions-nasa-may-be-forced-to-abandon |publisher=[[The Planetary Society]] |access-date= 19 May 2025}}</ref>
+<ref name="AIP2019">{{cite web |title=NASA Astrophysics |last1=Hertz |first1=Paul |url=https://www.aip.org/sites/default/files/aipcorp/images/fyi/pdf/hertz-astro2020-kickoff-slides.pdf#page=48 |date=July 15, 2019 |access-date=September 14, 2019 |archive-date=2 September 2019 |archive-url=https://web.archive.org/web/20190902093726/https://www.aip.org/sites/default/files/aipcorp/images/fyi/pdf/hertz-astro2020-kickoff-slides.pdf#page=48 |url-status=live }}</ref>
+<ref name="cowing2022">{{cite web |last=Cowing |first=Keith |date=2022-12-25 |title=Assembly Begins On Roman Space Telescope Coronagraph Instrument Color Filter Assembly To Study Exoplanets |url=https://spaceref.com/science-and-exploration/assembly-begins-on-roman-space-telescope-coronagraph-instrument-color-filter-assembly-to-study-exoplanets/ |access-date=2023-06-12 |website=SpaceRef |language=en-US}}</ref>
+<ref name="nasahqbenford">{{cite web |title=WFIRST Programmatic Overview |url=https://conference.ipac.caltech.edu/wfirst2016/system/media_files/binaries/68/original/WFIRSTCA_Benford_rev2_web.pdf#page=5 |last=Benford |first=Dominic |publisher=NASA |date=March 1, 2016 |access-date=August 27, 2018 |archive-date=27 August 2018 |archive-url=https://web.archive.org/web/20180827195713/https://conference.ipac.caltech.edu/wfirst2016/system/media_files/binaries/68/original/WFIRSTCA_Benford_rev2_web.pdf#page=5 |url-status=live}} {{PD-notice}}</ref>
+<ref name="cgi201806">{{cite web |title=WFIRST Coronagraph Instrument (CGI) Status |url=https://exoplanets.nasa.gov/system/presentations/files/88_Zhao_WFIRST_CGI.pdf |last1=Zhao |first1=Feng |last2=Grady |first2=Trauger |publisher=Jet Propulsion Laboratory |date=July 29, 2018 |access-date=August 28, 2018 |archive-date=27 August 2018 |archive-url=https://web.archive.org/web/20180827195358/https://exoplanets.nasa.gov/system/presentations/files/88_Zhao_WFIRST_CGI.pdf |url-status=live}} {{PD-notice}}</ref>
+<ref name="subaruum2016">{{cite web |url=https://www.naoj.org/Science/SubaruUM/SubaruUM2016/files/d3_1350_Yamada.pdf |title=WFIRST |last=Yamada |first=Toru |publisher=Subaru Telescope |date=January 10, 2017 |access-date=August 30, 2018 |archive-date=30 August 2018 |archive-url=https://web.archive.org/web/20180830005257/https://www.naoj.org/Science/SubaruUM/SubaruUM2016/files/d3_1350_Yamada.pdf |url-status=live}}</ref>
+<ref name="sss17">{{cite journal |url=https://repository.exst.jaxa.jp/dspace/handle/a-is/609734 |title=WFIRST (Wide-Field Infrared Survey Telescope) |last1=Sumi |first1=Takahiro |last2=Yamada |first2=Toru |last3=Tamura |first3=Motohide |last4=Takada |first4=Masahiro |journal=第17回宇宙科学シンポジウム 講演集 |publisher=JAXA |language=ja |date=January 5, 2017 |access-date=August 30, 2018 |archive-date=30 August 2018 |archive-url=https://web.archive.org/web/20180830005154/https://repository.exst.jaxa.jp/dspace/handle/a-is/609734 |url-status=live}}</ref>
+<ref name="aps">{{cite web |url=https://roman.gsfc.nasa.gov/interactive/subparts/ground-antennas/ |title=Ground Antennas |publisher=NASA |access-date=May 30, 2023}} {{PD-notice}}</ref>
+<ref name="NASA20180523">{{cite news |url=https://www.nasa.gov/press-release/nasa-awards-contract-for-space-telescope-mission-0 |title=NASA Awards Contract for Space Telescope Mission |last=Brown |first=Katherine |date=May 23, 2018 |publisher=NASA |access-date=October 9, 2018 |archive-date=28 May 2018 |archive-url=https://web.archive.org/web/20180528180108/https://www.nasa.gov/press-release/nasa-awards-contract-for-space-telescope-mission-0/ |url-status=live}} {{PD-notice}}</ref>
+<ref name="NASA20180615">{{cite news |url=https://www.nasa.gov/press-release/goddard/2018/nasa-awards-the-short-wave-infra-red-sensor-chip-assembly-for-wfirst |title=NASA Awards the Short Wave Infra-Red Sensor Chip Assembly for WFIRST |last=O'Carroll |first=Cynthia M. |date=June 15, 2018 |publisher=NASA |access-date=November 14, 2018 |archive-date=2 February 2023 |archive-url=https://web.archive.org/web/20230202194508/https://www.nasa.gov/press-release/goddard/2018/nasa-awards-the-short-wave-infra-red-sensor-chip-assembly-for-wfirst/ |url-status=live}} {{PD-notice}}</ref>
+<ref name="NASA20250630">{{Cite web |date=2025-06-30 |title=Active International Agreements by Signature Date (as of June 30, 2025) |url=https://www.nasa.gov/wp-content/uploads/2025/07/house-appropriations-international-6-30-2025.pdf?emrc=6e9313 |access-date=2026-03-13 |website=nasa.gov |publisher=NASA |format=PDF}}</ref>
+<ref name="krause">{{Cite journal |last=Krause |first=Oliver |last2=Müller |first2=Friedrich |last3=Klaas |first3=Ulrich |last4=Ebert |first4=Monica |last5=Rohloff |first5=Ralf-Rainer |last6=Böhm |first6=Armin |last7=Stadler |first7=Tobias |last8=Lee |first8=Roger |last9=Shi |first9=Fang |last10=Zhao |first10=Feng |last11=Colavita |first11=Mark |last12=Moore |first12=Douglas |last13=Krein |first13=Guido |last14=Scott |first14=Tobias |last15=Schäfer |first15=Daniel |date=2025-02-24 |title=Precision alignment mechanisms for the Roman Coronagraph Instrument |url=https://www.spiedigitallibrary.org/journals/Journal-of-Astronomical-Telescopes-Instruments-and-Systems/volume-11/issue-02/021405/Precision-alignment-mechanisms-for-the-Roman-Coronagraph-Instrument/10.1117/1.JATIS.11.2.021405.full |journal=Journal of Astronomical Telescopes, Instruments, and Systems |volume=11 |issue=02 |doi=10.1117/1.JATIS.11.2.021405 |issn=2329-4124 |via=SPIE Digital Library |doi-access=free}}</ref>
+<ref name="nielbock">{{Cite web |last=Nielbock |first=Markus |date=2024-07-17 |title=Towards discovering a second Earth |url=https://www.mpia.de/mpia-news/2024-roman-cgi-en |access-date=2026-03-13 |website=www.mpia.de |language=en}}</ref>
+<ref name="arstech1">{{cite web
+| author1= Berger
+| title= Trump White House budget proposal eviscerates science funding at NASA
+| url= https://arstechnica.com/space/2025/04/trump-white-house-budget-proposal-eviscerates-science-funding-at-nasa/
+| website= Ars Technica
+| date= 2025-04-11
+| access-date= 2025-04-12
+| archive-date= 2025-04-11
+| archive-url= https://web.archive.org/web/20250411141320/https://arstechnica.com/space/2025/04/trump-white-house-budget-proposal-eviscerates-science-funding-at-nasa/
+| url-status= live|first=Eric}}</ref>
+<ref name="nasa-20251204">{{cite web
+| author1= Balzer
+| title= NASA Completes Nancy Grace Roman Space Telescope Construction
+| url= https://www.nasa.gov/missions/roman-space-telescope/nasa-completes-nancy-grace-roman-space-telescope-construction/
+| website= www.nasa.gov
+| publisher= [[NASA]]
+| date= 2025-12-04
+| access-date= 2025-12-05|first=A.}}</ref>
+<ref name="SN-20130604">{{cite web
+| author1= Leone
+| title= Only NASA Astrophysics Remains in Running for Donated NRO Telescope – For Now
+| url= https://spacenews.com/35628only-nasa-astrophysics-remains-in-running-for-donated-nro-telescope-for/
+| website= Space News
+| date= 2013-06-04
+| access-date= 2021-03-17
+| archive-date= 2023-02-02
+| archive-url= https://web.archive.org/web/20230202194504/http://spacenews.com/35628only-nasa-astrophysics-remains-in-running-for-donated-nro-telescope-for/
+| url-access= subscription
+| url-status= live|first=D.}}</ref>
+<ref name="SN-20180109">{{cite web
+| author1= Foust
+| title= NASA plans to have WFIRST reviews complete by April
+| url= https://spacenews.com/nasa-plans-to-have-wfirst-reviews-complete-by-april/
+| website= Space News
+| date= 2018-01-09
+| access-date= 2018-01-11
+| archive-date= 2023-02-02
+| archive-url= https://web.archive.org/web/20230202194505/http://spacenews.com/nasa-plans-to-have-wfirst-reviews-complete-by-april/
+| url-access= subscription
+| url-status= live|first=Jeff}}</ref>
+<ref name="SN-20180328">{{cite web
+| author1= Foust
+| title= WFIRST work continues despite budget and schedule uncertainty
+| url= https://spacenews.com/wfirst-work-continues-despite-budget-and-schedule-uncertainty/
+| website= Space News
+| date= 2018-03-28
+| access-date= 2018-04-03
+| archive-date= 2023-02-02
+| archive-url= https://web.archive.org/web/20230202194506/http://spacenews.com/wfirst-work-continues-despite-budget-and-schedule-uncertainty/
+| url-access= subscription
+| url-status= live|first=Jeff}}</ref>
+<ref name="SN-20190328">{{cite web
+| author1= Foust
+| title= WFIRST faces funding crunch
+| url= https://spacenews.com/wfirst-faces-funding-crunch/
+| website= Space News
+| date= 2019-03-28
+| access-date= 2019-04-01
+| archive-date= 2023-02-02
+| archive-url= https://web.archive.org/web/20230202194506/https://spacenews.com/wfirst-faces-funding-crunch/
+| url-access= subscription 
+| url-status= live|first=Jeff}}</ref>
+<ref name="SN-20191111">{{cite web
+| author1= Foust
+| title= WFIRST passes preliminary design review
+| url= https://spacenews.com/wfirst-passes-preliminary-design-review/
+| website= Space News
+| date= 2019-11-11
+| access-date= 2021-03-14
+| archive-date= 2023-02-02
+| archive-url= https://web.archive.org/web/20230202194507/https://spacenews.com/wfirst-passes-preliminary-design-review/
+| url-access= subscription 
+| url-status= live|first=Jeff}}</ref>
+<ref name="SN-20210331">{{cite web
+| author1= Foust
+| title= Pandemic to cost NASA up to US$3 billion
+| url= https://spacenews.com/pandemic-to-cost-nasa-up-to-3-billion/
+| website= Space News
+| date= 2021-03-31
+| access-date= 2021-04-05
+| archive-date= 2023-02-02
+| archive-url= https://web.archive.org/web/20230202194504/https://spacenews.com/pandemic-to-cost-nasa-up-to-3-billion/
+| url-access= subscription
+| url-status= live|first=Jeff}}</ref>
+<ref name="SN-20260108">{{cite web
+| author1= Foust
+| title= Roman Space Telescope on track for September launch
+| url= https://spacenews.com/roman-space-telescope-on-track-for-september-launch/
+| website= Space News
+| date= 2026-01-08
+| access-date= 2026-01-09
+| url-access= subscription|first=Jeff}}</ref>
+</references>
+
+== External links ==
+{{commons category|Nancy Grace Roman Space Telescope}}
+
+* [https://roman.gsfc.nasa.gov/ Roman Science Community page at Goddard Space Flight Center site]
+* [https://web.archive.org/web/20150214042451/https://www.ipac.caltech.edu/wfirst/ Roman Science Data Center page at the Infrared Processing and Analysis Center (IPAC)]
+* [http://www.space.com/news/huge-telescopes-alien-planets-dark-energy-report-100813.html US$1.6 Billion Telescope Would Search Alien Planets and Probe Dark Energy] – [[Space.com]]
+* [http://www.seti.org/weeky-lecture/wfirstafta-astrophysics-mission-bigger-and-better-exoplanets-0 The WFIRST/AFTA astrophysics mission: bigger and better for exoplanets] {{Webarchive|url=https://web.archive.org/web/20160405065231/http://www.seti.org/weeky-lecture/wfirstafta-astrophysics-mission-bigger-and-better-exoplanets-0 |date=5 April 2016 }}, Tom Greene
+* {{cite web|url=http://sites.nationalacademies.org/xpedio/idcplg?IdcService=GET_FILE&dDocName=BPA_058306&RevisionSelectionMethod=Latest|title=Astro2010 Report Release Presentation|access-date=15 August 2010|archive-date=26 July 2011|archive-url=https://web.archive.org/web/20110726094422/http://sites.nationalacademies.org/xpedio/idcplg?IdcService=GET_FILE&dDocName=BPA_058306&RevisionSelectionMethod=Latest|url-status=dead}}
+* {{YouTube|id=-HXYg_BWGpk|title=NASA/ Goddard – WFIRST: Uncovering the Mysteries of the Universe}} {{small|(min. 1:25)}} 30 May 2014
+* {{YouTube|id=zkTHuqiH_1Y|title=WFIRST-AFTA: Coronograph Technology Development}} {{small|(min. 4:20)}} 16 March 2015
+* {{YouTube|id=LbJpVHMV1m4|title=WFIRST: The Best of Both Worlds}} {{small|(min. 3:14)}} 18 February 2016
+* {{YouTube|id=TcjuucVEB5g|title=Introducing NASA's Roman Space Telescope}} {{small|(min. 1:28)}} 25 March 2026
+
+{{NASA space program}}
+{{space observatories}}
+{{exoplanet search projects}}
+{{future spaceflights}}
+{{portal bar|Astronomy|Stars|Spaceflight|Outer space|Solar System}}
+
+[[Category:Infrared telescopes]]
+[[Category:Proposed space telescopes]]
+[[Category:Proposed NASA satellites]]
+[[Category:NASA programs]]
+[[Category:Exoplanet search projects]]
+[[Category:Goddard Space Flight Center]]
+[[Category:2026 in spaceflight]]
+[[Category:Dark energy]]
+[[Category:Jet Propulsion Laboratory satellites]]
+[[Category:NASA space telescopes]]

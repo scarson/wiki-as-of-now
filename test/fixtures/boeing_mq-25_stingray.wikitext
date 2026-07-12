@@ -1,0 +1,218 @@
+{{Short description|American military aerial refuelling drone}}
+{{Infobox aircraft
+| name                = MQ-25 Stingray
+| logo                = 
+| logo_size           = 
+| image               = File:MQ-25 refuels F-35C (cropped).jpg
+| alt                 = 
+| caption             = MQ-25 Stingray during testing
+| long_caption        = 
+| other_names         = 
+| aircraft_type       = [[Unmanned combat aerial vehicle]] for aerial refueling
+| aim                 = 
+| outcome             = 
+| related             = 
+| national_origin     = United States
+| manufacturer        = [[Boeing]]
+| design_group        = 
+| designer            = 
+| builder             = 
+| issuer              = 
+| status              = In development
+| owners              = 
+| primary_user        = [[United States Navy]]
+| more_users          = 
+| service             = 
+| major_applications  = 
+| proposals           = 
+| prototypes          = 
+| number_built        = 
+| construction_number = 
+| civil_registration  = 
+| military_serial     = 
+| radio_code          = 
+| requirement         = 
+| aircraft_carried    = 
+| flights             = 
+| total_hours         = 
+| total_distance      = 
+| construction_date   = 
+| introduction        = 
+| retired             = 
+| first_flight        = 19 September 2019
+| initiated           = 
+| in_service          = 
+| last_flight         = 
+| expected            = 
+| developed_from      = 
+| variants            = 
+| developed_into      = 
+| preservation        = 
+| fate                = 
+| predecessors        = 
+| successors          = 
+| concluded           = 
+}}
+
+The '''Boeing MQ-25 Stingray''' is an [[aerial refueling]] [[Unmanned aerial vehicle|drone]] that resulted from the Carrier-Based Aerial-Refueling System (CBARS) program, which grew out of the earlier [[Unmanned Carrier-Launched Airborne Surveillance and Strike]] (UCLASS) program. On 30 August 2018, the [[United States Navy]] announced Boeing's MQ-25 was the winning selection of the CBARS selection competition. The MQ-25 first flew on 19 September 2019.
+
+The Navy established Unmanned Carrier Launched Multi-Role Squadron 10 (VUQ-10) at [[Naval Air Station Patuxent River]], Maryland, on 1 October 2022, where its four MQ-25s are being used for [[Fleet Replacement Squadron|testing and development of maintenance and operations procedures]]. Two operational units, VUQ-11 and VUQ-12, are planned to be established at later dates.
+
+==Development==
+
+===Background===
+{{main|Unmanned Carrier-Launched Airborne Surveillance and Strike}}
+
+The [[United States Navy]] began its efforts to develop an [[aircraft carrier]]-based UAV in 2006. The original UCLASS concept was for a stealthy strike platform capable of penetrating enemy air defenses. In 2012, lethality and strike requirements were diluted in order to create an [[intelligence, surveillance and reconnaissance]] (ISR)-oriented aircraft that could be developed quickly to conduct low-intensity [[counter-terrorism]] missions.<ref name="usni30aug18">{{cite web |last=LaGrone |first=Sam |date=30 August 2018 |title=Navy Picks Boeing to Build MQ-25A Stingray Carrier-Based Drone |url=https://news.usni.org/2018/08/30/navy-picks-boeing-build-mq-25a-stingray-carrier-based-drone |url-status=live |archive-url=https://web.archive.org/web/20230604204332/https://news.usni.org/2018/08/30/navy-picks-boeing-build-mq-25a-stingray-carrier-based-drone |archive-date=4 June 2023 |access-date=30 August 2018 |work=U.S. Naval Institute}}</ref>
+
+On 1 February 2016, after delays over whether the UCLASS would specialize in strike or ISR roles, it was reported that significant priority would be given to producing a [[Boeing F/A-18E/F Super Hornet|Super Hornet]]-sized carrier-based [[aerial refueling]] tanker as the Carrier-Based Aerial-Refueling System (CBARS), with "a little ISR" and some capabilities for communications relay, and strike capabilities put off to a future variant.<ref name=":0">{{Cite web |last=Freedberg Jr |first=Sydney J. |date=1 February 2016 |title=Good-Bye, UCLASS; Hello, Unmanned Tanker, More F-35Cs In 2017 Budget |url=https://breakingdefense.com/2016/02/good-bye-uclass-hello-unmanned-tanker-more-f-35cs-in-2017-budget/ |url-status=live |archive-url=https://web.archive.org/web/20221204144032/https://breakingdefense.com/2016/02/good-bye-uclass-hello-unmanned-tanker-more-f-35cs-in-2017-budget/ |archive-date=4 December 2022 |website=Breaking Defense}}</ref> The Pentagon apparently made this program change to address the Navy's expected fighter shortfall by directing funds to buy more F/A-18E/F Super Hornets and accelerate purchases of the [[F-35C]]. Having the CBARS as the first carrier-based UAV provides a less complex bridge to the future [[F/A-XX]], should it be an unmanned strike platform. It also addresses the carriers' need for an organic refueling aircraft, proposed for the UCLASS since 2014, freeing up the 20–30 percent of Super Hornets performing the mission in a more capable and cost effective manner than modifying the F-35, [[V-22 Osprey]], and [[Northrop Grumman E-2 Hawkeye|E-2D Hawkeye]], or returning the retired [[S-3 Viking]] to service.<ref name=":0" /><ref>{{Cite web |last=Cavas |first=Christopher P. |date=1 February 2016 |title=US Navy's Unmanned Jet Could Be a Tanker |url=https://www.defensenews.com/naval/2016/02/01/us-navys-unmanned-jet-could-be-a-tanker/ |url-status=live |archive-url=https://archive.today/20240109022752/https://www.defensenews.com/naval/2016/02/01/us-navys-unmanned-jet-could-be-a-tanker/ |archive-date=9 January 2024 |website=Defense News}}</ref><ref>{{Cite web |last=LaGrone |first=Sam |date=9 February 2016 |title=Pentagon to Navy: Convert UCLASS Program Into Unmanned Aerial Tanker, Accelerate F-35 Development, Buy More Super Hornets |url=https://news.usni.org/2016/02/01/pentagon-to-navy-convert-uclass-program-into-unmanned-aerial-tanker-accelerate-f-35-development-buy-more-super-hornets |url-status=live |archive-url=https://web.archive.org/web/20230926093312/https://news.usni.org/2016/02/01/pentagon-to-navy-convert-uclass-program-into-unmanned-aerial-tanker-accelerate-f-35-development-buy-more-super-hornets |archive-date=26 September 2023 |website=U.S. Naval Institute}}</ref>
+
+Four development contracts were issued in 2016, with a formal RFP expected in 2017, with operational status in the early to mid-2020s.<ref>{{cite web |last1=Osborn |first1=Kris |date=24 October 2016 |title=Navy awards MQ-25 Stingray tanker deal |url=https://defensesystems.com/articles/2016/10/24/stingray.aspx |url-status=dead |archive-url=https://web.archive.org/web/20201021051452/https://defensesystems.com/articles/2016/10/24/stingray.aspx |archive-date=21 October 2020 |access-date=22 December 2016 |website=Defense Systems}}</ref><ref>{{cite web |last1=Trimble |first1=Stephen |date=20 October 2016 |title=USN awards MQ-25 risk reduction contract to Northrop Grumman |url=https://www.flightglobal.com/news/articles/usn-awards-mq-25-risk-reduction-contract-to-northrop-430550/ |url-status=dead |archive-url=https://web.archive.org/web/20211020042452/https://www.flightglobal.com/civil-uavs/usn-awards-mq-25-risk-reduction-contract-to-northrop-grumman/122036.article |archive-date=20 October 2021 |access-date=25 October 2016 |website=FlightGlobal}}</ref> In July 2016, it was officially named "MQ-25A Stingray" after being named RAQ-25A previously.<ref>{{cite web |last1=LaGrone |first1=Sam |date=15 July 2016 |title=It's Official: 'MQ-25A Stingray' U.S. Navy's Name For First Carrier UAV |url=https://news.usni.org/2016/07/15/official-mq-25a-stingray-title-navys-first-carrier-uav |url-status=live |archive-url=https://web.archive.org/web/20230531002633/https://news.usni.org/2016/07/15/official-mq-25a-stingray-title-navys-first-carrier-uav |archive-date=31 May 2023 |access-date=18 July 2016 |publisher=U.S. Naval Institute}}</ref>
+
+Rear Adm. Michael Manazir has suggested that three of these UCAVs could fly with an F-35 for refueling and sensor operation.<ref>{{cite web |last1=Whittle |first1=Richard |date=22 March 2016 |title=Navy Refueling Drone May Tie Into F-35s |url=http://breakingdefense.com/2016/03/navy-refueling-drone-may-tie-into-f-35s-f-22s/ |url-status=live |archive-url=https://web.archive.org/web/20221229021054/https://breakingdefense.com/2016/03/navy-refueling-drone-may-tie-into-f-35s-f-22s/ |archive-date=29 December 2022 |access-date=23 March 2016 |website=Breaking Defense |publisher=}}</ref> Vice Adm. Mike Shoemaker said that the MQ-25 can extend the Super Hornet's {{convert|450|nmi|mi km|abbr=on}} unrefueled [[combat radius]] to beyond {{convert|700|nmi|mi km|abbr=on}}. The Navy's goal for the aircraft is to be able to deliver {{convert|15000|lb|kg|abbr=on}} of fuel total to 4 to 6 airplanes at a range of {{convert|500|nmi|mi km|abbr=on}}.<ref>{{Cite web |last=LaGrone |first=Sam |date=1 September 2017 |title=MQ-25 Stingray Unmanned Aerial Tanker Could Almost Double Strike Range of U.S. Carrier Air Wing |url=https://news.usni.org/2017/08/31/mq-25-stingray-unmanned-aerial-tanker-almost-double-strike-range-u-s-carrier-air-wing |url-status=live |archive-url=https://web.archive.org/web/20230516085458/https://news.usni.org/2017/08/31/mq-25-stingray-unmanned-aerial-tanker-almost-double-strike-range-u-s-carrier-air-wing |archive-date=16 May 2023 |website=U.S. Naval Institute}}</ref> The Navy released the final MQ-25 Stingray request for proposals in October 2017 to [[Lockheed Martin]], Boeing, [[Northrop Grumman]], and [[General Atomics]].<ref>{{Cite web |last=LaGrone |first=Sam |date=10 October 2017 |title=Navy Releases Final MQ-25 Stingray RFP; General Atomics Bid Revealed |url=https://news.usni.org/2017/10/10/navy-releases-final-mq-25-stingray-rfp-general-atomics-bid-revealed |url-status=live |archive-url=https://web.archive.org/web/20230605093811/https://news.usni.org/2017/10/10/navy-releases-final-mq-25-stingray-rfp-general-atomics-bid-revealed |archive-date=5 June 2023 |website=U.S. Naval Institute}}</ref>
+
+===Selection===
+Boeing secretly finished building its wing-body-tail in 2014 when the UCLASS program was paused, and revived it for the CBARS mission.<ref name="Rogoway genesis">{{cite web |last1=Rogoway |first1=Tyler |date=13 March 2018 |title=We Finally See The Wings On Boeing's MQ-25 Drone As Details About Its Genesis Emerge |url=https://www.thedrive.com/the-war-zone/19213/we-finally-see-the-wings-on-boeings-mq-25-drone-as-details-about-its-genesis-emerge |url-status=live |archive-url=https://web.archive.org/web/20231227201351/https://www.thedrive.com/the-war-zone/19213/we-finally-see-the-wings-on-boeings-mq-25-drone-as-details-about-its-genesis-emerge |archive-date=27 December 2023 |access-date=31 May 2020 |website=The Drive}}</ref> On 19 December 2017, Boeing unveiled its [[prototype]] aircraft entrant that incorporated lessons learned from the [[Boeing Phantom Ray]] flying wing and its other unmanned aerial systems.<ref name=":1">{{cite web |last=Insinna |first=Valerie |date=20 December 2017 |title=Boeing offers sneak peek of MQ-25 tanker drone |url=https://www.defensenews.com/air/2017/12/19/boeing-offers-sneak-peek-of-mq-25-tanker-drone/ |url-status=live |archive-url=https://archive.today/20171219193259/https://www.defensenews.com/air/2017/12/19/boeing-offers-sneak-peek-of-mq-25-tanker-drone/ |archive-date=19 December 2017 |website=Defense News}}</ref> Boeing's MQ-25 design is not new for the tanking mission, but Boeing says that was considered when designing it.<ref name="Rogoway genesis" />
+
+[[General Atomics]] proposed their [[General Atomics Avenger#Sea Avenger|Sea Avenger]] concept which was enlarged from its [[General Atomics Avenger|Predator-C/Avenger]] for refueling,<ref>{{cite web |last=Trevithick |first=Joseph |date=20 December 2017 |title=General Atomics is the first to show of its MQ-25 tanker drone |url=http://www.thedrive.com/the-war-zone/15037/general-atomics-is-the-first-to-show-off-its-mq-25-drone-tanker-design |url-status=live |archive-url=https://web.archive.org/web/20230719083657/https://www.thedrive.com/the-war-zone/15037/general-atomics-is-the-first-to-show-off-its-mq-25-drone-tanker-design |archive-date=19 July 2023 |website=The Drive}}</ref> while [[Lockheed Martin]] proposed their [[Lockheed Martin Sea Ghost|Sea Ghost]] concept based on the [[RQ-170 Sentinel]].<ref>{{cite web |last=Majumdar |first=Dave |date=20 December 2017 |title=Lockheed reveals Sea Ghost concept for USN UCLASS programme |url=https://www.flightglobal.com/news/articles/lockheed-reveals-sea-ghost-concept-for-usn-uclass-programme-374842/ |url-status=dead |archive-url=https://web.archive.org/web/20200325180616/https://www.flightglobal.com/lockheed-reveals-sea-ghost-concept-for-usn-uclass-programme/106430.article |archive-date=25 March 2020 |website=FlightGlobal}}</ref>
+
+[[Northrop Grumman]] announced on 25 October 2017 that it was withdrawing its [[Northrop Grumman X-47B|X-47B]] from the MQ-25 competition, saying the company would have been unable to execute the program under the terms of the service's request for proposals.<ref>{{cite web |last=Giangreco |first=Leigh |date=25 October 2017 |title=Northrop Grumman pulls out of MQ-25 competition |url=https://www.flightglobal.com/news/articles/northrop-grumman-pulls-out-of-mq-25-competition-442510/ |url-status=dead |archive-url=https://web.archive.org/web/20200804003907/https://www.flightglobal.com/northrop-grumman-pulls-out-of-mq-25-competition/125865.article |archive-date=4 August 2020 |access-date=26 October 2017 |website=FlightGlobal}}</ref> The company's departure signaled to some analysts that the Navy's requirements could favor wing-body-tail designs, not the flying wings thought to be proposed by Northrop Grumman and Lockheed Martin.<ref name=":1" />
+
+[[File:Boeing MQ-25 Stingray.JPG|thumb|right|MQ-25 deck handling demonstration, 2018]]
+On 30 August 2018, the U.S. Navy announced Boeing as the winner of the competition and awarded an $805 million development contract for four MQ-25A aircraft to be completed by August 2024.<ref name="usni30aug18"/> An additional three test MQ-25As were ordered on 2 April 2020 for a current total order of seven.<ref>{{Cite web |last=Donald |first=David |date=7 April 2020 |title=Navy Orders More Test Stingrays from Boeing |url=https://www.ainonline.com/aviation-news/defense/2020-04-07/navy-orders-more-test-stingrays-boeing |url-status=live |archive-url=https://web.archive.org/web/20200410072906/https://www.ainonline.com/aviation-news/defense/2020-04-07/navy-orders-more-test-stingrays-boeing |archive-date=10 April 2020 |website=Aviation International News}}</ref> The program may expand to $13 billion overall and consist of 72 aircraft.<ref>{{cite web |last1=Insinna |first1=Valerie |last2=Larter |first2=David B. |date=30 August 2018 |title=US Navy selects builder for new MQ-25 Stingray aerial refueling drone |url=https://www.defensenews.com/naval/2018/08/30/us-navy-selects-builder-for-new-mq-25-stingray-aerial-refueling-drone/ |archive-url=https://archive.today/20240109024806/https://www.defensenews.com/naval/2018/08/30/us-navy-selects-builder-for-new-mq-25-stingray-aerial-refueling-drone/ |archive-date=9 January 2024 |access-date=30 August 2018 |work=Defense News |language=en-US}}</ref>
+
+===Flight testing===
+[[File:MQ-25 refuels F-35C.jpg|thumb|MQ-25 T1 Stingray test aircraft refuels F-35C, 2021]]
+
+In late April 2019, the first MQ-25 test aircraft (T-1 or "Tail 1") was taken by road from Boeing's technical plant at [[St. Louis]]'s [[Lambert International Airport]] across the Mississippi River to [[MidAmerica St. Louis Airport]], which is conjoined to [[Scott Air Force Base]].<ref>{{Cite web |last=Cone |first=Allen |date=1 May 2019 |title=Boeing's MQ-25 refueling drone moved to air base for flight testing |url=https://www.spacedaily.com/reports/Boeings_MQ-25_refueling_drone_moved_to_air_base_for_flight_testing_999.html |url-status=live |archive-url=https://web.archive.org/web/20230715041520/https://www.spacedaily.com/reports/Boeings_MQ-25_refueling_drone_moved_to_air_base_for_flight_testing_999.html |archive-date=15 July 2023 |website=Space Daily}}</ref> Following taxi tests, the [[Federal Aviation Administration]] certified the aircraft and granted airspace for flight testing. The MQ-25 took its first flight on 19 September 2019.<ref>{{cite web |last=D'Urso |first=Stefano |date=20 September 2019 |title=Boeing MQ-25 Stingray Carrier-Based Aerial Refueling Drone flies for the first time |url=https://theaviationist.com/2019/09/20/boeing-mq-25-stingray-carried-based-aerial-refueling-drone-flies-for-the-first-time/ |url-status=live |archive-url=https://web.archive.org/web/20231121193816/https://theaviationist.com/2019/09/20/boeing-mq-25-stingray-carried-based-aerial-refueling-drone-flies-for-the-first-time/ |archive-date=21 November 2023 |access-date=22 September 2019 |website=The Aviationist |language=en-US}}</ref>
+
+In December 2020, Boeing released video showing the first flight of the MQ-25 with a [[Cobham (company)|Cobham]] aerial refueling store externally mounted.<ref>{{cite web |last=Sampson |first=Ben |date=17 December 2020 |title=Boeing MQ-25 aerial refueler makes first test flight with fuel store |url=https://www.aerospacetestinginternational.com/news/drones-air-taxis/boeing-mq-25-aerial-refueler-makes-first-test-flight-with-fuel-store.html |url-status=live |archive-url=https://web.archive.org/web/20230610223113/https://www.aerospacetestinginternational.com/news/drones-air-taxis/boeing-mq-25-aerial-refueler-makes-first-test-flight-with-fuel-store.html |archive-date=10 June 2023 |access-date=7 January 2021 |website=Aerospace Testing International}}</ref>
+
+[[File:MQ-25 T1 Stingray test aircraft takes off.jpg|thumb|MQ-25 T1 Stingray test aircraft takes off, 2021]]
+[[File:MQ-25 moving into the hangar bay aboard the USS George H.W. Bush.jpg|thumb|MQ-25 T1 on aboard [[USS George H.W. Bush]] 2021]]
+On 4 June 2021, the first refueling test was conducted, with the MQ-25 providing fuel to an [[F/A-18F Super Hornet]]. The MQ-25 originated at [[MidAmerica Airport]] in [[Mascoutah, Illinois]], with support by [[VX-23|Air Test and Evaluation Squadron VX-23]]. The mission lasted about 4.5 hours with the two aircraft performing numerous dry or wet connects for more than 10 minutes and 325 pounds of fuel transferred in total.<ref>{{Cite web |last=Eckstein |first=Megan |date=7 June 2021 |title=US Navy, Boeing conduct first-ever aerial refueling with unmanned tanker |url=https://www.defensenews.com/naval/2021/06/07/us-navy-boeing-conduct-first-ever-aerial-refueling-with-unmanned-tanker/ |url-status=live |archive-url=https://archive.today/20210607181716/https://www.defensenews.com/naval/2021/06/07/us-navy-boeing-conduct-first-ever-aerial-refueling-with-unmanned-tanker/ |archive-date=7 June 2021 |website=Defense News}}</ref> Further refueling tests were performed with E-2 and F-35C.<ref>{{cite web |last1=Tyrrell |first1=Michael |date=14 September 2021 |title=F-35 fighter refuelled in-flight by unmanned Boeing test aircraft - Aerospace Manufacturing |url=https://www.aero-mag.com/mq-25-refuelling-f-35-14092021 |url-status=live |archive-url=https://web.archive.org/web/20221210054230/https://www.aero-mag.com/mq-25-refuelling-f-35-14092021 |archive-date=10 December 2022 |website=aero-mag.com |language=en}}</ref>
+
+==Design==
+Boeing's MQ-25 design is powered by one [[Rolls-Royce AE 3007|Rolls-Royce AE 3007N]] turbofan engine delivering {{cvt|10000|lbf|kN|abbr=on}} of thrust; this is a variant of the engine used to power the Navy's [[MQ-4C Triton]].<ref>{{Cite web |date=6 September 2018 |title=Rolls-Royce to power Boeing MQ-25 aircraft for US Navy |url=https://www.rolls-royce.com/media/press-releases/2018/06-09-2018-rr-to-power-boeing-mq-25-aircraft-for-us-navy.aspx |website=Rolls Royce}}</ref><ref>{{Cite web |title=Rolls-Royce to power Boeing MQ-25 aircraft for US Navy |url=https://www.armyrecognition.com/archives/archives-naval-defense/naval-defense-2018/rolls-royce-to-power-boeing-mq-25-stingray-tanker-drone-for-us-navy |url-status=live |archive-url=https://web.archive.org/web/20221006225829/http://www.navyrecognition.com/index.php/news/defence-news/2018/september-2018-navy-naval-defense-news/6490-rolls-royce-to-power-boeing-mq-25-stingray-tanker-drone-for-us-navy.html |archive-date=6 October 2022 |website=Navy Recognition|date=15 September 2018 }}</ref> Although the aircraft is less stealthy than [[flying wing]] UAVs, it does feature a stealthy fuselage shaping, [[flush inlet]] to shield engine blades from radar, and a [[V-tail]].
+
+Images of an MQ-25 model released in April 2024 showed [[AGM-158C LRASM]] [[anti-ship missile]]s on the underwing hardpoints. The model also showed an [[electro-optical sensor|electro-optical sensor ball]] under the nose in front of the forward landing gear.<ref name="Warzone Apr10"/>
+
+==Operational history==
+{{As of|2020|alt=In 2020}}, the U.S. Navy planned to establish Unmanned Carrier Launched Multi-Role Squadron 10 (VUQ-10) in October 2021 with four aircraft at [[Naval Base Ventura County]], which includes [[Naval Air Station Point Mugu]].<ref>{{cite web |last1=Trevithick |first1=Joseph |date=5 October 2020 |title=Navy Establishes First Squadron To Operate Its Carrier-Based MQ-25 Stingray Tanker Drones |url=https://www.thedrive.com/the-war-zone/36859/navy-establishes-first-squadron-to-operate-its-carrier-based-mq-25-stingray-tanker-drones |url-status=live |archive-url=https://web.archive.org/web/20231004235109/https://www.thedrive.com/the-war-zone/36859/navy-establishes-first-squadron-to-operate-its-carrier-based-mq-25-stingray-tanker-drones |archive-date=4 October 2023 |access-date=19 December 2021 |website=The Drive |language=en}}</ref><ref>{{Cite web |last=Burgess |first=Richard R. |date=2 October 2020 |title=Navy to Establish First MQ-25 Stingray UAV Squadron in 2021 |url=https://seapowermagazine.org/navy-to-establish-first-mq-25-stingray-uav-squadron-in-2021/ |url-status=live |archive-url=https://web.archive.org/web/20230627215145/https://seapowermagazine.org/navy-to-establish-first-mq-25-stingray-uav-squadron-in-2021/ |archive-date=27 June 2023 |website=Seapower Magazine}}</ref><ref>{{cite web |last1=Burgess |first1=Richard R. |date=2 August 2021 |title=Navy to Stand-Up 2 Fleet MQ-25 Squadrons to Deploy Detachments |url=https://seapowermagazine.org/navy-to-stand-up-2-fleet-mq-25-squadrons-to-deploy-detachments/ |url-status=live |archive-url=https://web.archive.org/web/20220909015303/https://seapowermagazine.org/navy-to-stand-up-2-fleet-mq-25-squadrons-to-deploy-detachments/ |archive-date=9 September 2022 |access-date=19 December 2021 |website=Seapower Magazine}}</ref> The Navy established VUQ-10 at [[Naval Air Station Patuxent River]], Maryland, as the [[Fleet Replacement Squadron]] (FRS) for the MQ-25 on 1 October 2022. The unit is working on testing and development of maintenance and operations procedures for the MQ-25.  The unit is to eventually move to [[Naval Air Station Point Mugu]] at [[Naval Base Ventura County]].<ref>{{cite web |title= "America's Navy>Organization>Unmanned Carrier-Launched Multi-Role Squadron 10>About Us" |url=https://www.airpac.navy.mil/Organization/Unmanned-Carrier-Launched-Multi-Role-Squadron-10/About-Us/ |access-date=15 June 2024 |website= airpac.navy.mil}}</ref>
+
+==Operators==
+{{flag|United States}}
+*[[United States Navy]] - 76 aircraft planned. The first [[Fleet Replacement Squadron]], VUQ-10, stood up at Naval Air Station Patuxent River on 1 October 2021. Two operational units, VUQ-11 and VUQ-12 are planned to stand up on later dates.<ref>{{cite web |date=4 August 2021 |title=Two Stingray MQ-25 fleet squadrons to be established |url=https://www.scramble.nl/military-news/two-stingray-mq-25-fleet-squadrons-to-be-established |url-status=live |archive-url=https://web.archive.org/web/20221003234159/https://www.scramble.nl/military-news/two-stingray-mq-25-fleet-squadrons-to-be-established |archive-date=3 October 2022 |website=Scramble - Dutch Aviation Society}}</ref>
+**Pacific Fleet Squadrons
+***VUQ-10 (Fleet Replacement Squadron)
+**Planned Squadrons
+***VUQ-11
+***VUQ-12
+
+==Specifications (MQ-25A)==
+{{Aircraft specs
+|ref= NAVAIR<ref>{{cite web |title=MQ-25™ Stingray |url=https://www.navair.navy.mil/product/Unmanned-Carrier-Aviation |publisher=NAVAIR |access-date=20 Sep 2021}}</ref>'' and ''USN MQ-25A Basing Draft Environmental Assessment<ref>{{cite web |title=Home Basing of the MQ-25A Stingray Carrier-based Unmanned Air System |url=https://media.defense.gov/2020/Oct/23/2002522625/-1/-1/0/MQ-25A-DEA-FINAL.PDF |publisher=US Department of Defense |access-date=22 March 2021}}</ref>
+|prime units?=kts
+<!--  General characteristics
+-->
+|length ft=51.0
+|length in=
+|length note=
+|span ft=75.0
+|span in=
+|span note=wings extended, 31.3 ft (9.54 m) folded
+|height ft=9.8
+|height in=
+|height note=wings extended, 15.7 ft (4.79 m) folded
+|empty weight lb=
+|empty weight note=
+|gross weight lb=
+|gross weight note=
+|max takeoff weight lb=
+|max takeoff weight note=
+|fuel capacity=
+|more general=
+<!--  Powerplant
+-->
+|eng1 number=1
+|eng1 name=[[Rolls-Royce AE 3007|Rolls-Royce AE 3007N]]<ref>{{cite web |title=Rolls-Royce to power Boeing MQ-25 aircraft for US Navy |url=https://www.rolls-royce.com/media/press-releases/2018/06-09-2018-rr-to-power-boeing-mq-25-aircraft-for-us-navy.aspx |publisher=Rolls-Royce |access-date=22 March 2021}}</ref>
+|eng1 type=[[turbofan]],
+|eng1 lbf=
+|eng1 note=>10,000 lbf (>44 kN) thrust
+<!--  Performance
+-->
+|max speed kts=
+|max speed note=
+|cruise speed kts=
+|cruise speed note=
+|stall speed kts=
+|stall speed note=
+|never exceed speed kts=
+|never exceed speed note=
+|minimum control speed kts=
+|minimum control speed note=
+|range nmi=500
+|range note=when delivering ≥16,000 lb (7,250 kg) of fuel<ref>{{cite web |title=Selected Acquisition Report |url=https://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/Selected_Acquisition_Reports/FY_2019_SARS/20-F-0568_DOC_62_MQ-25_SAR_Dec_2019_Full.pdf |publisher=Washington Headquarters Services |access-date=20 Sep 2021}}</ref>
+|combat range nmi=
+|combat range note=
+|ferry range nmi=
+|ferry range note=
+|endurance=
+|ceiling ft=
+|ceiling note=
+|g limits=
+|roll rate=
+|climb rate ftmin=
+|climb rate note=
+|time to altitude=
+|lift to drag=
+|wing loading lb/sqft=
+|wing loading note=
+|fuel consumption lb/mi=
+|thrust/weight=
+
+|more performance=<!--<br />-->
+<!--   Armament
+-->
+|hardpoints= 2 × under-wing stations
+** [[Anti-ship missile]]s:
+***2 x [[AGM-158C LRASM]]<ref name="Warzone Apr10">{{cite web |last1=Newdick |first1=Thomas |last2=Tyler |first2=Rogoway |title=MQ-25 Stingray Tanker Drone Armed With Stealthy Anti-Ship Missiles Makes Perfect Sense |url=https://www.twz.com/air/mq-25-stingray-tanker-drone-armed-with-stealthy-anti-ship-missiles-makes-perfect-sense |website=The Warzone |date=10 April 2024 |access-date=11 April 2024}}</ref>
+*'''Others:'''
+**Cobham Aerial Refueling Store (ARS)<ref>{{cite web |last1=Reim |first1=Garrett |title=Boeing flies MQ-25 with aerial refuelling pod for first time |url=https://www.flightglobal.com/military-uavs/boeing-flies-mq-25-with-aerial-refuelling-pod-for-first-time/141566.article |website=FlightGlobal |publisher=DVV Media International Ltd |access-date=22 March 2021}}</ref>
+}}
+
+==See also==
+{{aircontent
+|see also=
+|related=
+|similar aircraft=
+* [[General Atomics Sea Avenger]]
+* [[Lockheed Martin Sea Ghost]]
+* [[Boeing MQ-28 Ghost Bat]]
+* [[TAI Anka-3]]
+* [[Bayraktar Kızılelma]]
+|lists=
+* [[List of tanker aircraft]]
+* [[Stealth aircraft#List of stealth aircraft]]
+}}
+
+==References==
+{{reflist}}
+
+==External links==
+{{Commons category-inline}}
+* [https://www.boeing.com/defense/mq25/ Boeing MQ-25 website]
+
+{{Boeing military aircraft}}
+{{US unmanned aircraft}}
+{{Stealth aircraft}}
+
+[[Category:Stealth aircraft]]
+[[Category:Unmanned military aircraft of the United States]]
+[[Category:Boeing aircraft]]
+[[Category:Unmanned stealth aircraft]]
+[[Category:V-tail aircraft]]
+[[Category:Aircraft first flown in 2019]]
+[[Category:Single-engined jet aircraft]]
+[[Category:Aircraft with retractable tricycle landing gear]]
+[[Category:Mid-wing aircraft]]

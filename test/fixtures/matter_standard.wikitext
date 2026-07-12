@@ -1,0 +1,310 @@
+{{Short description|Smart-home connectivity standard}}
+{{EngvarB |date=March 2022}}
+{{Use dmy dates|date=October 2025}}
+<div class=skin-invert-image>{{Infobox technology standard
+| long_name = Matter smart home connectivity standard
+| image = Logo of Matter connectivity standard.svg
+| alt = A picture of the matter logo with the text matter and a logo showing three arrows pointing into the centre with curved and rounded edges.
+| abbreviation = 
+| native_name = 
+| native_name_lang = 
+| status = Published<ref name="gh22" />
+| year_started = {{Start date and age |df=yes|2019|12|18 }}
+| first_published = {{Start date and age |df=yes|2022|10|04 }}
+| version = 1.5.0.1
+| version_date = 2 December 2025
+| preview = 
+| preview_date = 
+| organization = 
+| committee = {{ubl
+|[[Connectivity Standards Alliance]] (CSA)
+}}
+| base_standards = [[Internet Protocol]] (IP)
+| related_standards = [[Zigbee]], [[Z-Wave]], [[Thread (network protocol)|Thread]], [[Wi-Fi]], [[List of digital keys in mobile wallets#Locks|Aliro]]
+| domain = {{ubl 
+|Smart home
+|[[technical standard|Connectivity standard]]
+}}
+| license = Proprietary, by certification. Code and documentation published under the [[Apache License]].
+| website = {{official URL}}
+| authors = The connectivity standards alliance and open source contributors
+}}</div>
+'''Matter''' is a [[technical standard]] for [[Home automation|smart home]] and [[Internet of things]] (IoT) devices.<ref>{{Cite web |title=What Is Matter? The New Smart Home Standard, Explained |url=https://www.pcmag.com/how-to/matter-explained |access-date=17 March 2023 |website=PCMag |language=en}}</ref><ref name="kas19" /><ref name="pur22" /> It aims to improve [[interoperability]] and compatibility between different manufacturers and security, and always allowing local control as an option.<ref name="zdnetjoseph2020">{{Cite web |title=With Amazon, Apple and Google onboard, this new alliance aims to make your smart home work properly |url=https://www.zdnet.com/article/with-amazon-apple-and-google-onboard-this-new-alliance-aims-to-make-your-smart-home-work-properly/ |access-date=17 March 2023 |website=ZDNET |language=en}}</ref><ref>{{cite web |last1=Hall |first1=Christine |title=Matter's Internet of Things standard, certification ready for developers |url=https://techcrunch.com/2022/10/04/matters-internet-of-things-standard |website=TechCrunch |access-date=17 March 2023 |date=4 October 2022}}</ref><ref>{{cite web |last1=Seifert |first1=Dan |title=Amazon, Apple, and Google's smart home partnership is close |url=https://www.theverge.com/2021/4/16/22387252/project-chip-will-finally-ship-later-this-year |website=The Verge |access-date=17 March 2023 |date=16 April 2021}}</ref>
+
+Matter originated in December 2019 as the Project Connected Home over IP (CHIP) working group, founded by [[Amazon (company)|Amazon]], [[Apple Inc.|Apple]], [[Google]], and the [[Connectivity Standards Alliance]] (when it was the Zigbee Alliance).<ref name="kas19" /><ref name="zdnetjoseph2020" /> Subsequent members include [[IKEA]], [[Huawei]], Heiman<ref>{{Cite web |date=2023-03-01 |title=Shenzhen Heiman Technology Co. Ltd. |url=https://csa-iot.org/member/shenzhen-heiman-technology-co-ltd/ |access-date=2026-01-14 |website=CSA-IOT |language=en-US}}</ref>, and [[Schneider Electric|Schneider]].<ref name="mih" /><ref name="mis20" /> Version 1.0 of the specification was published on 4 October 2022.<ref name="gh22" /><ref name="csa22" /><ref name="tv22" /> The Matter [[software development kit]] is [[Open-source software|open-source]] under the [[Apache License]].<ref name="chi21" />
+
+A [[software development kit]] (SDK) is provided [[royalty-free]],<ref>{{cite magazine |last=Hill |first=Simon |date=3 April 2022 |title=What's the Matter? We Explain the New Smart Home Standard |url=https://www.wired.com/story/what-is-matter/ |access-date=30 April 2022 |magazine=Wired |publisher=Condé Nast}}</ref><ref>{{Citation |title=project-chip/connectedhomeip |date=25 June 2024 |url=https://github.com/project-chip/connectedhomeip |access-date=25 June 2024 |publisher=Connectivity Standards Alliance}}</ref> though the ability to commission a finished product into a Matter network in the field mandates certification and membership fees,<ref name=":1">{{Cite web |title=Device Attestation - latest - Silicon Labs Matter Silicon Labs |url=https://docs.silabs.com/matter/latest/matter-device-attestation/ |access-date=26 June 2024 |website=docs.silabs.com}}</ref><ref>{{Cite web |title=Certification Process {{!}} Why Certify {{!}} |url=https://csa-iot.org/certification/why-certify/ |access-date=26 June 2024 |website=CSA-IOT |language=en-US}}</ref> entailing both one-time, recurring, and per-product costs.<ref>{{Cite web |title=Become a Member {{!}} The Future of IOT |url=https://csa-iot.org/become-member/ |access-date=26 June 2024 |website=CSA-IOT |language=en-US}}</ref> This is enforced using a [[public key infrastructure]] (PKI) and so-called device attestation certificates.<ref name=":1" />
+
+Matter-compatible software updates for many existing hubs became available in late 2022,<ref name="msh22" /><ref name="goog22" /><ref name="tv22am" /> with Matter-enabled devices and [[software updates]] starting to release in 2023.<ref name="cnet22" />
+
+The primary goal of Matter is to improve interoperability for the current smart home ecosystem. CSA and its members aim for the Matter logo to become ubiquitous and for consumers to instantly recognise it as a smart home device that will "just work".<ref>{{Cite AV media |title=Matter: Making the smart home a more connected, comfortable, and helpful place |author=Connectivity Standards Alliance |author-link=Connectivity Standards Alliance |date=3 November 2022 |url=https://www.youtube.com/watch?v=oHsnjZPuqKM |access-date=22 April 2024 |via=YouTube}}</ref> However, Matter logos do not imply that devices will "just work"; infrastructure is also still required for full functionality, like a Wi-Fi network (which may need to be dual-band) and a Matter controller, and often, an app for each kind of device.<!-- Not sure how to specify - could list - Apple HomePod or Apple TV for Apple Home, a Google Nest Hub for Google Home, a SmartThings hub for Samsung, an Amazon device for Alexa, etc, or could say recent vintage smart speaker or other smart, recent-vintage, microphone-equipped device supporing Matter.  --> 
+
+== Background ==
+In December 2019, Amazon, Apple, Google, Samsung [[SmartThings]] and the [[Zigbee]] Alliance announced the collaboration and formation of the working group of Project Connected Home over IP. The goal of the project is to simplify development for smart home product brands and manufacturers while increasing the compatibility of the products for consumers.<ref name="guvy19" /><ref name="has19" />
+
+The standard operates on [[Internet Protocol]] (IP) and functions via one or more controllers that connect and manage devices within a local network, eliminating the need for multiple proprietary hubs for each ecosystem. Matter-certified products are engineered to operate locally and do not depend on an internet connection for their core functions.<ref>{{Cite web |title=What is Matter? |url=https://developers.home.google.com/matter/overview |access-date=22 April 2024 |website=Google Home Developers |language=en}}</ref> Leveraging [[IPv6 address]]ing,<ref>{{Cite web |title=Thread and IPv6 {{!}} Matter |url=https://developers.home.google.com/matter/primer/thread-and-ipv6 |access-date=22 April 2024 |website=Google Home Developers |language=en}}</ref> the standard facilitates seamless communication with cloud services. Its goal is to facilitate interoperability among smart home devices, mobile apps, and cloud services, employing a specific suite of IP-based networking technologies such as [[Multicast DNS|mDNS]] and [[IPv6]].<ref>{{cite web|url=https://csa-iot.org/wp-content/uploads/2023/10/Matter-1.2-Core-Specification.pdf|title=Matter Specification - Version 1.2|date=18 October 2023|publisher=Connectivity Standards Alliance}}</ref> By adhering to a network design that operates at the [[Application layer|Application Layer]] of the [[OSI model|OSI 7 layer model]], Matter differs from protocols like Zigbee or [[Z-Wave]] and theoretically can function on any IPv6-enabled network. Presently, official support is limited to [[Wi-Fi]], [[Ethernet]], and the wireless mesh network [[Thread (network protocol)|Thread]].<ref>{{Cite AV media |url=https://www.youtube.com/watch?v=sGPRIkqWh3g |title=Matter Network Transport - Connectivity Standards Alliance |language=en |access-date=22 April 2024 |via=www.youtube.com}}</ref>
+
+== Versions ==
+Updates to the standard are planned to occur biannually.<ref name=":0" />
+* Version 1.0 of the specification was published on 4 October 2022.<ref>{{Cite web |title=Newsroom {{!}} Articles & Blogs {{!}} IOT |url=https://csa-iot.org/newsroom/ |access-date=19 November 2022 |website=CSA-IOT |language=en-US}}</ref> It introduced support for lighting products (such as [[mains power plugs]], [[electric light]]s and [[switch]]es), [[Door security|door lock]]s, [[thermostat]]s and [[heating, ventilation, and air conditioning]] controllers, blinds and shades, home security sensors (such as door, window and [[motion sensors]]), and televisions and streaming video players.<ref>{{Cite web |title=The Matter Smart Home Standard Is Finally Available: Here's What It Means for Your Home |url=https://www.consumerreports.org/smart-home/matter-smart-home-standard-faq-a9475777045/ |access-date=19 November 2022 |website=Consumer Reports |date=3 November 2022 |language=en-US}}</ref>
+* Version 1.1 of the specification was published on 18 May 2023. Although a new version, it did not include any new categories, only bug fixes and enhancements to existing SDK, API and devices.<ref>{{Cite web |date=18 May 2023 |title=Matter 1.1 release — Enhancements for developers and devices |url=https://csa-iot.org/newsroom/matter-1-1-release-enhancements-for-developers-and-devices/ |access-date=14 September 2023 |website=CSA-IOT |language=en-US}}</ref>
+* Version 1.2 of the specification was published on 23 October 2023. This version added nine new device types (refrigerators, portable air conditioners, dishwashers, laundry washers, [[robotic vacuum cleaner]]s, smoke and carbon monoxide alarms, air quality sensors, air purifiers, and fans). It also provides revisions and additions to existing categories, improvements to the specification and SDK, and certification and testing tools.<ref>{{cite web |title=Matter 1.2 Arrives with Nine New Device Types & Improvements Across the Board |url=https://csa-iot.org/newsroom/matter-1-2-arrives-with-nine-new-device-types-improvements-across-the-board/ |website=Connectivity Standards Alliance |date=23 October 2023 |access-date=5 November 2023 }}</ref>
+* Version 1.3 of the specification was published on 8 May 2024. This version added support for water and energy management devices as well as appliance support for ovens, microwave ovens, cooktops, extractor hoods, laundry dryers, and Matter-casting media players. Scenes and command-batching were also added.<ref>{{cite web |title=Matter 1.3 Specification announced |url=https://csa-iot.org/newsroom/matter-1-3-specification-released/|website=Connectivity Standards Alliance |date=8 May 2024 |access-date=16 May 2024 }}</ref>
+* Version 1.4 of the specification was released on 7 November 2024, introducing an expanded focus on electricity-related areas, including batteries, solar systems, home routers, water heaters, and heat pumps. It also featured enhancements to existing areas, such as increased support for electric vehicle chargers, along with significant improvements to Thread devices.<ref>{{Cite web |last=Gomes |first=Vitor |date=7 November 2024 |title=Matter 1.4 chega com suporte a Energia Solar e promessas de economia de energia elétrica. |url=https://www.pontobyte.com/matter-1-4-anunciado-pela-csa/ |access-date=22 December 2024 |website=PontoBYTE |language=pt-BR}}</ref>
+* Version 1.4.1 of the specification was released on 7 May 2025. This minor version adds NFC onboarding and multi-device setup.<ref>{{cite web |title=A Smarter Start: Matter 1.4.1 Makes Setup Easier |url=https://csa-iot.org/newsroom/a-smarter-start-matter-1-4-1-makes-setup-easier/|website=Connectivity Standards Alliance |date=7 May 2025 |access-date=7 May 2025 }}</ref>
+* Version 1.4.2 of the specification was released on 11 August 2025. The minor update made security enhancements to Matter networks and standardized various existing behaviors to improve networking. The update also made some changes to device support requirements for routers and other "network infrastructure managers," requiring them to be certified for Thread 1.4 and support addressing at least 150 devices.<ref>{{Cite web |date=11 August 2025 |title=Matter 1.4.2 {{!}} Enhancing Security and Scalability for Smart Homes |url=https://csa-iot.org/newsroom/matter-1-4-2-enhancing-security-and-scalability-for-smart-homes/ |access-date=30 August 2025 |website=CSA-IOT |language=en-US}}</ref>
+* Version 1.5 of the specification was published on 20 November 2025. This major update adds support for [[camera]]s, [[soil moisture sensor]]s and [[Energy management system (building management)|energy management]] features. Additionally, this version enhances the Closures service, allowing for modular motion types (e.g. sliding, rotating and opening) which can be leveraged by component builders to improve services such blinds, curtains, gates and doors.<ref>{{Cite web |date=2025-11-20 |title=Matter 1.5 Introduces Cameras, Closures, and Enhanced Energy Management Capabilities |url=https://csa-iot.org/newsroom/matter-1-5-introduces-cameras-closures-and-enhanced-energy-management-capabilities/ |access-date=2025-12-08 |website=CSA-IOT |language=en-US}}</ref>
+
+For future versions, the working group has been working on support for ambient motion and presence sensing, environmental sensing and controls, closure sensors, [[energy management]], Wi-Fi access points, cameras, and [[major appliance]]s.<ref name=":0">{{Citation |title=Matter, the new Global Standard for the Smart Home, Debuts at the Amsterdam Launch Event | date=3 November 2022 |url=https://m.youtube.com/watch?v=eFgG8isgMUc&t=15m34s |language=en |access-date=19 November 2022}}</ref>
+
+== Supported devices ==
+CSA maintains the official list of Matter-certified products,<ref name="csaps" /> and restricts use of the Matter logo to certified devices. Matter product certification is also stored on the CSA's Distributed Compliance Ledger (DCL),<ref>{{Cite web |title=Distributed Compliance Ledger |url=https://webui.dcl.csa-iot.org/ |access-date=22 April 2024 |website=webui.dcl.csa-iot.org}}</ref> which publishes attestation information about certified devices.
+
+=== Supported ecosystems and hubs ===
+{| class="wikitable"
+|-
+!rowspan=2|Company
+!rowspan=2|Platforms
+!rowspan=2|Device types
+!colspan=2|Hubs
+|-
+!Product name(s)
+![[Thread (network protocol)|Thread]] support included?
+|-
+| rowspan="26" |[[Amazon (company)|Amazon]]
+| rowspan="26" |Android, iOS, iPadOS
+| rowspan="26" |Air conditioners, air purifiers, dishwashers, fans, lights, locks, outlets, robot vacuums, switches (including generic), sensors (air quality, contact, humidity, light, motion, smoke, and temperature), thermostats, and window coverings<ref>{{Cite web |title=Understand Smart Home Matter Support {{!}} Alexa Skills Kit |url=https://developer.amazon.com/en-US/docs/alexa/smarthome/matter-support.html |access-date=1 December 2023 |website=Amazon Alexa |language=en-US}}</ref>
+|[[Amazon Echo|Echo]] (2nd gen., 3rd gen.)||{{No}}
+|-
+|[[Amazon Echo|Echo]] (4th gen.)
+|{{Yes}}
+|-
+|[[Echo dot|Echo Dot]] (2nd gen. and newer)
+|{{Yes}}
+|-
+|[[Echo dot|Echo Dot with Clock]] (2nd gen. and newer)
+|{{Yes}}
+|-
+|Echo Flex
+|{{No}}
+|-
+|Echo Hub
+|{{Yes}}
+|-
+|Echo Input
+|{{No}}
+|-
+|Echo Plus (2nd gen.)
+|{{Yes}}
+|-
+|Echo Pop
+|{{No}}
+|-
+|Echo Show 5
+|{{No}}
+|-
+|Echo Show 8 (1st gen., 2nd gen.)
+|{{No}}
+|-
+|Echo Show 8 (3rd gen.)
+|{{Yes}}
+|-
+|Echo Show 10 (3rd gen.)
+|{{Yes}}
+|-
+|Echo Show 15 (1st gen.)
+|{{No}}
+|-
+|Echo Show 15 (2nd gen.)
+|{{Yes}}
+|-
+|Echo Show 21
+|{{Yes}}
+|-
+|Echo Spot (2024)
+|{{No}}
+|-
+|Echo Studio (1st gen., 2nd gen.)
+|{{Yes}}
+|-
+|eero 6 and eero 6+
+|{{Yes}}
+|-
+|eero Beacon
+|{{Yes}}
+|-
+|eero Max 7
+|{{Yes}}
+|-
+|eero Outdoor 7
+|{{Yes}}
+|-
+|eero PoE 6
+|{{Yes}}
+|-
+|eero PoE gateway
+|{{Yes}}
+|-
+|eero Pro
+|{{Yes}}
+|-
+|eero Pro 6E and eero Pro 6
+|{{Yes}}
+|-
+|rowspan=6|[[Apple Inc.|Apple]]
+|rowspan=6|[[tvOS]], [[audioOS]], [[macOS]], [[iOS]], [[iPadOS]]
+|rowspan=6|Air purifiers, bridges, lights, locks, outlets, robot vacuums, sensors (air quality, contact,  humidity, illuminance, motion, occupancy & temperature),  thermostats, and window coverings 
+|[[HomePod| HomePod (1st gen.)]]||{{No}}
+|-
+|[[HomePod| HomePod (2nd gen.)]]||{{Yes}}
+|-
+|[[HomePod mini]]||{{Yes}}
+|-
+|[[Apple TV (device)|Apple TV 4K WIFI (2022) ]]||{{No}}
+|-
+|[[Apple TV (device)|Apple TV 4K WIFI + Ethernet (2022) ]]||{{Yes}}
+|-
+|[[Apple TV (device)|Apple TV 4K (2021) ]]||{{Yes}}
+|-
+|rowspan=10|[[Google]]
+|rowspan=10|Android, Wear OS, iOS, iPadOS
+|rowspan=10|Air purifiers, bridges, dishwashers, dryers, lights, locks, outlets, robot vacuums, sensors (air quality, contact, flow, humidity, illuminance, motion, occupancy, pressure, & temperature), speakers, thermostats, washers, and window coverings (except tilting)<ref>{{Cite web |title=Supported devices {{!}} Matter |url=https://developers.home.google.com/matter/supported-devices |access-date=1 December 2023 |website=Google Home Developers |language=en}}</ref><ref>{{Cite web |date=23 July 2025 |title=What's new in the Google Home app |url=https://support.google.com/googlenest/answer/15962877 |access-date=21 August 2025 |website=Google Nest Help}}</ref>
+|[[Chromecast with Google TV|Chromecast with Google TV (4K)]]<ref name=":2">{{Cite web |title=Google TV Streamer (4K) |url=https://store.google.com/product/google_tv_streamer?hl=en-US |access-date=6 August 2024 |website=Google Store |language=en-US}}</ref>||{{No}}
+|-
+|[[Google Nest (smart speakers)|Google Home speaker]]<ref>{{Cite web |date=15 December 2022 |title=Matter is now available on Google Nest and Android devices |url=https://blog.google/products/google-nest/matter-general-availability/ |access-date=1 December 2023 |website=Google |language=en-us}}</ref><ref>{{Cite web |title=Google devices with Matter - Android - Google Nest Help |url=https://support.google.com/googlenest/answer/12391458?hl=en&co=GENIE.Platform=Android&oco=0 |access-date=1 December 2023 |website=support.google.com}}</ref>||{{No}}
+|-
+|[[Google Nest (smart speakers)|Google Home mini]]||{{No}}
+|-
+|[[Google TV Streamer]]||{{Yes}}
+|-
+|Nest Mini||{{No}}
+|-
+|Nest Audio||{{No}}
+|-
+|[[Google Nest (smart speakers)|Nest Hub (1st gen.)]]||{{No}}
+|-
+|Nest Hub (2nd gen.)||{{Yes}}
+|-
+|Nest Hub Max||{{Yes}}
+|-
+|[[Nest Wifi|Nest Wifi Pro]]||{{Yes}}
+|-
+| rowspan="1" |[[IKEA|IKEA]]
+| rowspan="1" |Android, iOS
+| rowspan="1" |Dimming and colour changing lights, remote switches, sensors (water, motion, door/window, temperature and humidity)
+| Dirigera||{{Yes}}
+|-
+| rowspan="1" |[[MikroTik]]
+|[[RouterOS]]
+|Routers
+|hAP be³ Media<ref>{{Cite web|url=https://mikrotik.com/product/hap_be3_media|title=hAP be³ Media &#124; MikroTik|website=mikrotik.com}}</ref>
+|{{yes}}
+|-
+| rowspan="15" |[[Samsung Electronics|Samsung]]
+| rowspan="15" |Android, Wear OS, iOS, iPadOS, watchOS, Windows
+| rowspan="15" |Air conditioners, air purifiers, basic video players, battery storages, cook surfaces, cooktops, dimmable plug-in units, dimming lights, dishwashers, door locks, electric vehicle supply equipments, enhanced color lights, extractor hoods, fans, generic switches (buttons), heat pumps, laundry dryers, laundry washers, matter bridges, microwave ovens, mounted dimmable load controls, mounted on/off controls, on/off lights, on/off plug-in units, oven (ranges), pumps, refrigerators, robotic vacuum cleaners, sensors (air quality, contact, humidity, light, occupancy, pressure, rain, and temperature), smoke & co alarms, solar power devices, speakers, temperature color lights, temperature controlled cabinets, thermostats, water freeze detectors, water heaters, water leak detectors, water valves, and window coverings<ref>{{Cite web |title=Home API Reference {{!}} Developer Documentation {{!}} SmartThings |url=https://developer.smartthings.com/docs/home-api/home-api-reference |access-date=1 December 2023 |website=developer.smartthings.com |language=en}}</ref><ref>{{Cite web |title=Connect Matter Devices with SmartThings {{!}} SmartThings |url=https://partners.smartthings.com/matter |access-date=21 August 2025 |website=Connect Matter Devices with SmartThings {{!}} SmartThings |language=en-US}}</ref>
+|Samsung SmartThings Hub v2<ref>{{Cite web |last=Tuohy |first=Jennifer Pattison |date=27 January 2023 |title=All the smart home products that work with Matter |url=https://www.theverge.com/23568091/matter-compatible-devices-accessories-apple-amazon-google-samsung |access-date=1 December 2023 |website=The Verge |language=en}}</ref><ref>{{Cite web |title=Smart Home Hub - Hub Everywhere {{!}} SmartThings |url=https://www.smartthings.com/hub-everywhere |access-date=1 December 2023 |website=Smart Home Hub - Hub Everywhere {{!}} SmartThings |language=en-US}}</ref>||{{No}}
+|-
+|Samsung Family Hub refrigerator (2017 and newer)||{{No|No<br /><small>(can be added using external dongle)</small>}}
+|-
+|Samsung Smart Monitors 2022 models||{{No}}
+|-
+|Samsung smart TVs 2022 models||{{No}}
+|-
+|[[Aeotec]] SmartThings Smart Home Hub||{{Yes}}
+|-
+|Aeotec SmartThings Smart Home Hub 2
+|{{Yes}}
+|-
+|Samsung SmartThings Station||{{Yes}}
+|-
+|Samsung SmartThings Hub Dongle||{{Yes}}
+|-
+|Samsung SmartThings Hub v3||{{Yes}}
+|-
+|Samsung Smart TVs CU8000 and CU7000 (2023)||{{Yes}}
+|-
+|Samsung MicroLED TV MNA89MS1BA (2023)||{{Yes}}
+|-
+|Samsung Smart Monitor M80C (2023)||{{Yes}}
+|-
+|Samsung Soundbar HW-Q990C (2023)||{{Yes}}
+|-
+|Samsung NEO [[Quantum dot display|QLED]] 8k and 4K (2023)||{{Yes}}
+|-
+|Family Hub refrigerator, model numbers RF29CB9900QKAA (US), RF23CB9900QKAA (US), RF85C9581APW (Korea)||{{Yes}}
+|}
+
+== See also ==
+* [[Amazon Alexa]]{{snd}}Amazon's smart assistant and home control system
+* [[Google Nest]]{{snd}}Google's smart home system, formerly called ''Google Home''
+* [[Apple Home]]{{snd}}Apple's smart home system
+* [[KNX]]{{snd}}an open standard (see EN 50090, ISO/IEC 14543) for commercial and residential building automation
+* [[Thread (network protocol)|Thread]]{{snd}}low-power mesh protocol designed for battery-powered devices, which Matter uses as one of its supported transport layers
+* [[X10 (industry standard)|X10]]{{snd}}a home automation protocol developed in the 1970s
+* [[Zigbee]] and [[Z-Wave]]{{snd}}wireless mesh protocols for home automation, can be used with Matter and a compatible bridge
+
+== References ==
+{{Reflist |refs=
+<!-- unused <ref name="chi">{{cite web |title=Project Connected Home over IP |url=https://www.connectedhomeip.com/ |access-date=19 April 2021 }}</ref> -->
+
+<ref name="chi21">{{cite web |title=project-chip/connectedhomeip |date=14 June 2021 |url=https://github.com/project-chip/connectedhomeip |publisher=Connectivity Standards Alliance |access-date=15 June 2021 }}</ref>
+
+<!--<ref name="dz22">{{cite web |url=https://matter-smarthome.de/en/matter-faq-en/ |title=FAQ – frequently asked questions about matter |website=matter-smarthome |year=2022 |publisher=Digitalzimmer |access-date=20 March 2022 }}</ref>  -->
+
+<!-- unused <ref name="gdb19">{{cite web |title=Project Connected Home over IP |url=https://developers.googleblog.com/2019/12/project-connected-home-over-ip.html |access-date=16 September 2020 |website=Google Developers Blog }}</ref> -->
+
+<ref name="guvy19">{{cite news |url=https://www.bloomberg.com/news/articles/2019-12-18/apple-google-amazon-want-one-language-for-smart-home-devices |title=Apple, Google, Amazon Want One Language for Smart Devices |last1=Gurman |first1=Mark |last2=De Vynck |first2=Gerrit |date=18 December 2019 |work=Bloomberg |access-date=24 December 2019 }}</ref>
+
+<ref name="has19">{{cite web |url=https://www.cnbc.com/2019/12/18/apple-google-amazon-zigbee-partner-on-smart-home.html |title=Apple, Google and Amazon are cooperating to make your home gadgets talk to each other |last=Haselton |first=Todd |date=18 December 2019 |website=CNBC |access-date=24 December 2019 }}</ref>
+
+<ref name="kas19">{{cite web |url=https://www.theverge.com/2019/12/18/21027890/apple-google-amazon-smart-home-standard-zigbee-connected-ip-project |title=Apple, Google, and Amazon are teaming up to develop a smart home standard |last=Kastrenakes |first=Jacob|date=18 December 2019 |website=The Verge |access-date=24 December 2019 }}</ref>
+
+<ref name="mih">{{cite web |url=https://www.cnet.com/news/apple-amazon-google-and-others-want-to-create-a-new-standard-for-smart-home-tech/ |title=Apple, Amazon, Google, and others want to create a new standard for smart home tech |last=Mihalcik |first=Carrie |website=CNET |access-date=24 December 2019 }}</ref>
+
+<ref name="mis20">{{cite web |last=Strategy |first=Moor Insights and |title=CHIP Shot: Will Project Connected Home Over IP Get Us Onto The IoT Green? |url=https://www.forbes.com/sites/moorinsights/2020/05/06/chip-shot-will-project-connected-home-over-ip-get-us-onto-the-iot-green/ |access-date=3 September 2020 |website=Forbes }}</ref>
+
+<ref name="csaps">{{cite web |title=Certified Products Search |year=2024 |website=Connectivity Standards Alliance |url=https://csa-iot.org/csa-iot_products/ |access-date=9 June 2024 }}</ref>
+
+<ref name="pur22">{{cite news |title=Wemo's confused Smart Dimmer shows how hard standardizing IoT may be |first=Kevin |last=Purdy |date=5 August 2022 |work=Ars Technica |publisher=Condé Nast |url=https://arstechnica.com/gadgets/2022/08/wemos-confused-smart-dimmer-shows-the-standardized-smart-home-is-still-far-off/ |access-date=5 August 2022 }}</ref>
+
+<ref name="gh22">{{cite web |url=https://github.com/project-chip/connectedhomeip/releases/tag/v1.0.0 |title=V1.0.0 Release |website=GitHub |date=30 September 2022 |access-date=4 October 2022 }}</ref>
+
+<ref name="csa22">{{cite web |url=https://csa-iot.org/newsroom/matter-arrives/ |title=Matter 1.0 arrives |website=Connectivity Standards Alliance |date=4 October 2022 |access-date=4 October 2022 }}</ref>
+
+<!-- unused <ref name="css22b">{{Cite web |title=Specifications Download Request |url=https://csa-iot.org/developer-resource/specifications-download-request/ |year=2022 |publisher=Connectivity Standards Alliance |access-date=4 October 2022 |website=CSA-IOT |language=en-US}}</ref> -->
+
+<ref name="tv22">{{cite web |first=Jennifer Pattison |last=Tuohy |date=4 October 2022 |title=Matter 1.0 is finally finalized — so what's next? |url=https://www.theverge.com/2022/10/4/23386883/matter-smart-home-standard-apple-google-launch |website=The Verge |access-date=4 October 2022 }}</ref>
+
+<ref name="msh22">{{cite web |url=https://matter-smarthome.de/en/products/apple-rolls-out-software-updates-for-matter/ |title = Apple rolls out software updates for matter |date = 25 October 2022 |access-date=7 January 2023}}</ref>
+
+<ref name="goog22">{{cite web |url=https://blog.google/products/google-nest/matter-general-availability/ |title = Matter is now available on Google Nest and Android devices |date = 15 December 2022 |access-date=7 January 2023}}</ref>
+
+<ref name="tv22am">{{cite web |url=https://www.theverge.com/2022/11/3/23438286/amazon-matter-support-alexa-echo-smart-home-platform |title = Amazon announces a phased rollout of Matter to its Alexa smart home platform |date = 3 November 2022 |access-date=7 January 2023}}</ref>
+
+<ref name="cnet22">{{cite web |url=https://www.cnet.com/home/smart-home/one-brand-dominates-the-ces-smart-home-conversation-this-year/ |title = One Brand Dominates the CES Smart Home Conversation This Year |access-date=7 January 2023}}</ref>
+
+<!-- unused <ref name="ubisys-matter">{{cite web |url=https://www.ubisys.de/en/technology/matter/ |title = Matter - One universal standard to rule them all. |access-date=14 March 2023}}</ref> -->
+
+}}
+
+==Further reading==
+* {{Cite journal |doi = 10.1016/j.iot.2023.101005|title = Connectivity Standards Alliance Matter: State of the Art and Opportunities |journal = Elsevier Internet of Things|volume = 25|year = 2024|last1 = Belli|first1 = Dimitri|last2 = Barsocchi|first2 = Paolo|last3 = Palumbo|first3 = Filippo|article-number = 101005 |doi-access = free}}
+* {{cite web |title=Matter, Explained: What the New Standard Could Mean for Your Smart Home |first=Daniel |last=Wroclawski |date=18 March 2022 |url=https://www.consumerreports.org/smart-home/matter-smart-home-standard-faq-a9475777045/ |work=Consumer Reports |access-date=30 April 2022 }}
+
+== External links ==
+* {{Official website}} <!-- defined in wikidata object linked to this article -->
+
+{{Subject bar |auto=y |d=y |portal= Electronics}}
+
+{{Amazon}}
+{{Apple}}
+{{Google LLC}}
+{{Comcast}}
+
+[[Category:Amazon (company)]]
+[[Category:Apple Inc. peripherals]]
+[[Category:Comcast]]
+[[Category:Computer-related introductions in 2019]]
+[[Category:Google]]
+[[Category:Home automation]]
