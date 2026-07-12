@@ -244,14 +244,17 @@ describe("dormant deploy pipeline (Task 7.6)", () => {
     expect(deploy).toMatch(/branches:\s*\[\s*dev\s*,\s*main\s*\]|branches:[\s\S]*?-\s*dev[\s\S]*?-\s*main/);
   });
   it("is dormant until the deploy token secret exists", () => {
-    // GitHub forbids `secrets.*` in a JOB-level if: (only github/needs/vars/inputs are allowed there).
-    // The dormancy guard is therefore a STEP-level if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }},
-    // where the secrets context IS available. Steps skip cleanly (never fail) when the secret is absent.
-    expect(deploy).toMatch(/if:.*secrets\.CLOUDFLARE_API_TOKEN/);
-    // Defensive: the guard must NOT live on the job's own `if:` (that would silently never run).
-    const jobIfMatch = /^\s{4}deploy:[\s\S]*?^\s{6}if:.*$/m.exec(deploy);
-    if (jobIfMatch) {
-      expect(jobIfMatch[0]).not.toMatch(/^\s{6}if:.*secrets\./m);
+    // GitHub forbids `secrets.*` in ANY `if:` expression (job OR step level) — the file is
+    // rejected at parse with "Unrecognized named-value: 'secrets'" (observed: run 29179389863).
+    // The working dormancy pattern: map the secret into job-level env:, then guard each
+    // deploy step with the env context, which IS available in step-level if:.
+    expect(deploy).toMatch(/CLOUDFLARE_API_TOKEN:\s*\$\{\{ secrets\.CLOUDFLARE_API_TOKEN \}\}/);
+    // Line-anchored so a comment mentioning the guard can never satisfy the count.
+    const guardCount = (deploy.match(/^\s*if: \$\{\{ env\.CLOUDFLARE_API_TOKEN != '' \}\}/gm) ?? []).length;
+    expect(guardCount).toBeGreaterThanOrEqual(4);
+    // No `if:` expression anywhere may reference the secrets context (parse-time rejection).
+    for (const line of deploy.split("\n")) {
+      if (/^\s*if:/.test(line)) expect(line).not.toMatch(/secrets\./);
     }
   });
   it("maps main to production and dev to preview/dev", () => {
@@ -265,7 +268,9 @@ describe("dormant deploy pipeline (Task 7.6)", () => {
   it("deploys both workers and applies migrations before deploy", () => {
     expect(deploy).toMatch(/opennextjs-cloudflare (?:build|deploy)/);
     expect(deploy).toMatch(/wrangler deploy -c workers\/research\/wrangler\.jsonc/);
-    expect(deploy).toMatch(/d1 migrations apply .*--remote/);
+    // Apply by BINDING (DB) — a positional database name can't resolve across both envs
+    // (env.dev's database_name is wiki-as-of-now-dev, so a hardcoded name breaks dev pushes).
+    expect(deploy).toMatch(/d1 migrations apply DB --remote/);
   });
   it("never enables a cron in the deploy pipeline", () => {
     expect(deploy).not.toMatch(/triggers|crons|--enable-cron/);

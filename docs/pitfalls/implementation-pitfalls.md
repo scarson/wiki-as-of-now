@@ -189,15 +189,15 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ---
 
-### CI-1: GitHub Actions Forbids the `secrets` Context in a JOB-Level `if:` — It Silently Never Runs
+### CI-1: GitHub Actions Rejects the `secrets` Context in ANY `if:` — Guard on env-Mapped Values Instead
 
-**The Flaw:** Gating a whole job on a secret's presence with `jobs.<id>.if: ${{ secrets.SOME_TOKEN != '' }}` to make a deploy pipeline "dormant until the secret is added." GitHub Actions does **not** expose the `secrets` context in a job-level `if:` — only `github`, `needs`, `vars`, and `inputs` are available there. The expression evaluates `secrets.SOME_TOKEN` to empty, the condition is always false, and the job **silently never runs** — even after the secret is added. No error, no warning; the job just stays grey forever.
+**The Flaw:** Gating a step or job on a secret's presence with `if: ${{ secrets.SOME_TOKEN != '' }}` to make a deploy pipeline "dormant until the secret is added." GitHub Actions rejects the `secrets` context in **every** `if:` expression, at both job and step level — the workflow file fails validation at parse time with `Unrecognized named-value: 'secrets'`, the run completes in 0 seconds with zero jobs created, and every subsequent push produces the same startup failure. (Observed in this repo: every `deploy.yml` run from 2026-06-21 to 2026-07-12 failed this way, e.g. run 29179389863 — four step-level `secrets.*` guards at lines 42/45/48/51.)
 
-**Why It Matters:** A dormant deploy pipeline that "skips cleanly until the secret arrives" is exactly the intended design — but a job-level `secrets.*` guard inverts it into "never deploys, ever," and the failure is invisible because a skipped job looks identical to a correctly-dormant one. You discover it only when the first real deploy mysteriously doesn't happen.
+**Why It Matters:** A dormant deploy pipeline that "skips cleanly until the secret arrives" is exactly the intended design — but a `secrets.*` guard in `if:` inverts it into "the workflow never parses, ever," and the failure is easy to misread because a red 0-second run with no jobs looks like an infrastructure hiccup rather than a file defect. The first version of this entry claimed step-level `secrets.*` guards work; the parse failures above prove they do not.
 
-**The Fix:** Use a **step-level** `if: ${{ secrets.SOME_TOKEN != '' }}` on each meaningful step (the `secrets` context IS available at step level), and map the secret into job-level `env:` for the step bodies to consume. With the secret absent the steps skip (green, not red); once it's added they run. `.github/workflows/deploy.yml` implements this. Assert the step-level form in a config test and assert the guard is NOT on the job's own `if:` so the broken form can't regress back in.
+**The Fix:** Map the secret into job-level `env:` (`env: { SOME_TOKEN: ${{ secrets.SOME_TOKEN }} }` — the `secrets` context IS valid in `env:` values), then guard each meaningful step with `if: ${{ env.SOME_TOKEN != '' }}` (the `env` context IS valid in step-level `if:`). With the secret absent the steps skip (green, not red); once it's added they run. `.github/workflows/deploy.yml` implements this. Assert the env-guard form with a **line-anchored** config test (a comment quoting the guard must never satisfy the regex) and assert no `if:` line anywhere references `secrets.` so the broken form can't regress back in.
 
-**The Lesson:** Context availability in GitHub Actions is position-dependent and not symmetric — `secrets` works in `env:`, `with:`, and step `if:`, but not job `if:`. When a workflow "doesn't run and doesn't error," suspect a context-availability mismatch before anything else, and verify against GitHub's contexts table rather than assuming an expression that parses also evaluates.
+**The Lesson:** Context availability in GitHub Actions is position-dependent — `secrets` works in `env:`, `with:`, and `run:`, but in no `if:` at any level. Verify context availability EMPIRICALLY (push and watch the run), not by reading the contexts table: this entry's first version misread that table and prescribed the exact pattern that fails. A workflow run that fails in 0 seconds with no jobs is a parse-time error — fetch the run page's "Invalid workflow file" annotation for the exact message.
 
 ---
 
@@ -227,8 +227,8 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ### Review Checklist
 
-- [ ] **No deploy/job is gated on `secrets.*` in a job-level `if:`** — that condition silently never runs; the dormancy guard must be a step-level `if:` (or `env:`-mapped), verified against GitHub's contexts table (CI-1)
-- [ ] **A config test pins the step-level dormancy guard and forbids a job-level `secrets.` guard** — so the broken form can't regress in (CI-1)
+- [ ] **No `if:` expression at ANY level references `secrets.*`** — the workflow file fails parse validation (0-second run, zero jobs, "Unrecognized named-value: 'secrets'"); guard on a job-level `env:`-mapped value instead: `if: ${{ env.TOKEN != '' }}` (CI-1)
+- [ ] **A line-anchored config test pins the env-mapped dormancy guard and forbids `secrets.` on every `if:` line** — anchored so a comment quoting the guard can neither satisfy nor trip it (CI-1)
 - [ ] **Credential-free local validation uses the research-worker `--dry-run` with `--env=""`; the full OpenNext build is trusted to CI** — don't read the pnpm-PATH quirk as a real build breakage (CI-2)
 - [ ] **Every `wrangler deploy`/`--dry-run` on a multi-env config carries an explicit `--env` (or `--env=""`)** — a bare invocation warns about no target environment and trips pristine-output (CI-2)
 - [ ] **`remote: true` bindings are disabled in every credential-free context** — the workerd test pool sets `remoteBindings: false` and `initOpenNextCloudflareForDev()` is gated to `next dev`, so neither opens a login-gated remote-proxy session in CI (CI-3)
@@ -328,6 +328,9 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 <!-- - Added PREFIX-N (<title>) — <what and why> -->
 <!-- - Updated PREFIX-M — <what changed> -->
 
+## 2026-07-12 — Go-live: CI-1's prescribed fix was itself wrong
+- Rewrote CI-1: the `secrets` context is rejected in ALL `if:` expressions, step-level included — every `deploy.yml` run since 2026-06-21 failed at parse in 0 seconds with `Unrecognized named-value: 'secrets'` (run 29179389863). The entry's original step-level-guard prescription was the exact failing pattern. Working fix (shipped in `.github/workflows/deploy.yml`): job-level `env:` mapping + `if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}` step guards, pinned by a line-anchored drift test. §4.C checklist bullets updated in lockstep.
+
 ## 2026-06-06 — Easy-win lane: scan hardening shipped
 - Added Section 3 (Safe-lane / untrusted-content scanning) and SAFE-1 (untrusted-input scans must be linear-time in input length — bound match-start positions, not just per-match body length; prove with a pathological-input perf test). Discovered hardening `scanWikitextSignals` in `src/safelane/wikitext-signals.ts` against delimiter-spam CPU-DoS on the `feat/easy-win-lane` branch (commits `5129686`, `b925dc2`). Fix validated by `test/safelane/wikitext-signals.test.ts` multi-MB spam perf test.
 - Added ORCH-3 (verify subagent reports against git — self-reports can confabulate). Surfaced during subagent-driven execution of the easy-win lane: a Task-2.2 implementer reported its files "were already present from a prior session" when `git cat-file -e HEAD~1:<file>` proved it had created them that task. Controller must verify reports against the repository before review.
@@ -357,7 +360,7 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 | DET-2 | Precision-Over-Recall Means Named, Accepted Recall Gaps | MEDIUM | VALIDATED | Detector |
 | DET-3 | Incidental Historical Years Are an Irreducible False-Positive Class | MEDIUM | VALIDATED | Detector |
 | SAFE-1 | Untrusted-Input Scans MUST Be Linear-Time in Input Length | HIGH | VALIDATED | Safe-lane / untrusted-content scanning |
-| CI-1 | GitHub Actions Forbids the `secrets` Context in a JOB-Level `if:` — It Silently Never Runs | HIGH | VALIDATED | Deploy / CI |
+| CI-1 | GitHub Actions Rejects the `secrets` Context in ANY `if:` — Guard on env-Mapped Values Instead | HIGH | VALIDATED | Deploy / CI |
 | CI-2 | The OpenNext Build Shells Out to `pnpm build`; `--env=""` Silences the Multi-Env Dry-Run Warning | LOW | VALIDATED | Deploy / CI |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
