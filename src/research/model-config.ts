@@ -5,10 +5,19 @@ export const MODEL_CONFIG = {
   primaryModel: "@cf/google/gemma-4-26b-a4b-it",
   /** Escalation tier (build design §3.3); general kimi-k2.6, never the code-tuned variant. */
   escalationModel: "@cf/moonshotai/kimi-k2.6",
-  /** Explicit — Workers AI per-model defaults vary and silently truncate JSON (build design §3.3). */
-  maxTokens: 1024,
-  /** Per-message abort budget (build design §3.3: ~25-30s). */
-  callTimeoutMs: 28_000,
+  /**
+   * Explicit — Workers AI per-model defaults vary and silently truncate JSON (build design §3.3).
+   * Sized for a reasoning model: Gemma 4's thinking output shares this budget with the JSON
+   * content. Observed live on real claim prompts: thinking alone exceeded 2048 tokens
+   * (finish_reason "length", content null), so the budget carries thinking + JSON with headroom.
+   */
+  maxTokens: 4096,
+  /**
+   * Per-call abort budget. Reasoning generation at the 4096 budget runs ~40-50s worst case
+   * (observed ~26s to emit 2048 tokens); the queue consumer has ample wall-time, so the
+   * timeout guards against hangs, not against slow-but-progressing generation.
+   */
+  callTimeoutMs: 60_000,
   /** One retry on malformed/invalid JSON (build design §3.3). */
   jsonRetries: 1,
   /** G9 query bounds — provider self-bounds before send; the pipeline is the authority (pipeline.ts:16-17). */

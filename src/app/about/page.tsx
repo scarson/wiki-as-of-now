@@ -36,7 +36,12 @@ export default function AboutPage() {
       <section aria-label="The guardrails" className="mb-8">
         <h2 className="mb-3 font-serif text-lg font-medium text-ink-white">The guardrails</h2>
         <p className="mb-3 text-sm text-dust-gray">
-          These are the project&apos;s binding invariants. The authoritative text lives in the{" "}
+          These are the project&apos;s binding invariants, written to keep the tool inside Wikipedia&apos;s
+          generative-AI guideline{" "}
+          <a href={c.wikipediaPolicyUrl} className="text-iron-gall underline-offset-2 hover:underline">
+            {c.wikipediaPolicyTitle}
+          </a>
+          . The authoritative text lives in the{" "}
           <a
             href={`${c.repoUrl}/blob/main/${c.complianceContractPath}`}
             className="text-iron-gall underline-offset-2 hover:underline"

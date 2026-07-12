@@ -15,6 +15,9 @@ export interface AboutContent {
   complianceContractPath: string;
   repoUrl: string;
   abuseReportUrl: string;
+  /** The Wikipedia core guideline the guardrails exist to comply with (the contract's cited binding instrument). */
+  wikipediaPolicyUrl: string;
+  wikipediaPolicyTitle: string;
 }
 
 // Derived from `git remote get-url origin` (https://github.com/scarson/wiki-as-of-now.git).
@@ -71,5 +74,8 @@ export function aboutContent(): AboutContent {
     complianceContractPath: "docs/policy/wikipedia-genai-compliance.md",
     repoUrl: REPO_URL,
     abuseReportUrl: ABUSE_REPORT_URL,
+    // The contract's "core guideline" citation (its §1.1 source line) — the binding instrument itself.
+    wikipediaPolicyUrl: "https://en.wikipedia.org/wiki/Wikipedia:Writing_articles_with_large_language_models",
+    wikipediaPolicyTitle: "Wikipedia: Writing articles with large language models",
   };
 }

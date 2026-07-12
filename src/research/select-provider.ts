@@ -41,5 +41,11 @@ export function selectResearchProvider(env: ProviderSelectionEnv): ResearchProvi
  * PERMANENTLY block a real retry once a Brave key is added. The manual-URL flow still works upstream.
  */
 function noSearchBackend(): SearchProvider {
-  return { search: async () => { throw new ProviderUnavailableError("no search backend configured"); } };
+  return {
+    search: async () => {
+      // Codes-only observability (G13): names the failing stage so a missing key is diagnosable from a tail.
+      console.warn("research.search.failed", { status: "no_backend" });
+      throw new ProviderUnavailableError("no search backend configured");
+    },
+  };
 }

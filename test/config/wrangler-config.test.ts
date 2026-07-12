@@ -32,17 +32,27 @@ interface ServiceBinding {
   binding: string;
   service: string;
 }
+interface RouteBinding {
+  pattern: string;
+  custom_domain?: boolean;
+}
 interface EnvBlock {
   name?: string;
   services?: ServiceBinding[];
   d1_databases?: D1Binding[];
   queues?: QueuesBlock;
   triggers?: { crons?: string[] };
+  routes?: RouteBinding[];
+  vars?: Record<string, string>;
+  ai?: { binding: string; remote?: boolean };
+  images?: { binding: string };
 }
 interface WranglerConfig {
   ai?: { binding: string; remote?: boolean };
   compatibility_flags?: string[];
   triggers?: { crons?: string[] };
+  vars?: Record<string, string>;
+  d1_databases?: D1Binding[];
   env?: { dev?: EnvBlock; production?: EnvBlock };
 }
 
@@ -78,6 +88,19 @@ describe("wrangler config — AI binding (Task 7.1)", () => {
   it("research worker env type declares AI by hand (cf-typegen does not see it)", () => {
     const src = readFileSync(resolve(root, "workers/research/index.ts"), "utf8");
     expect(src).toMatch(/interface ResearchWorkerEnv[\s\S]*?\bAI\s*:\s*Ai\b/);
+  });
+
+  it("every named env re-declares the bindings wrangler does NOT inherit (ai on both workers; images on the app)", () => {
+    // Bindings are non-inheritable: a named-env deploy silently drops any binding declared
+    // only at the top level (wrangler warns '"ai" exists at the top level, but not on "env.dev"').
+    // A dev/production research worker without env.AI crashes the consumer at the first message.
+    const app = readJsonc("wrangler.jsonc");
+    const research = readJsonc("workers/research/wrangler.jsonc");
+    for (const which of ["dev", "production"] as const) {
+      expect(app.env?.[which]?.ai?.binding).toBe("AI");
+      expect(app.env?.[which]?.images?.binding).toBe("IMAGES");
+      expect(research.env?.[which]?.ai?.binding).toBe("AI");
+    }
   });
 });
 
@@ -143,13 +166,19 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
     expect(envOf(research, "production").d1_databases?.[0].database_name).toBe("wiki-as-of-now");
   });
 
-  it("D1 ids stay placeholders (no real ids committed; provisioning fills them)", () => {
+  it("per-env D1 ids are real, shared across workers (CC-10), and distinct across envs", () => {
     const app = readJsonc("wrangler.jsonc");
     const research = readJsonc("workers/research/wrangler.jsonc");
-    expect(envOf(app, "dev").d1_databases?.[0].database_id).toBe("REPLACE_WITH_DEV_D1_ID");
-    expect(envOf(app, "production").d1_databases?.[0].database_id).toBe("REPLACE_WITH_PROD_D1_ID");
-    expect(envOf(research, "dev").d1_databases?.[0].database_id).toBe("REPLACE_WITH_DEV_D1_ID");
-    expect(envOf(research, "production").d1_databases?.[0].database_id).toBe("REPLACE_WITH_PROD_D1_ID");
+    const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+    const devId = envOf(app, "dev").d1_databases?.[0].database_id;
+    const prodId = envOf(app, "production").d1_databases?.[0].database_id;
+    expect(devId).toMatch(uuid);
+    expect(prodId).toMatch(uuid);
+    expect(envOf(research, "dev").d1_databases?.[0].database_id).toBe(devId);
+    expect(envOf(research, "production").d1_databases?.[0].database_id).toBe(prodId);
+    expect(devId).not.toBe(prodId);
+    // The top-level (default/Miniflare) ids stay the all-zeros placeholder — CI dry-run target.
+    expect(app.d1_databases?.[0].database_id).toBe("00000000-0000-0000-0000-000000000000");
   });
 
   it("the DLQ is never declared as a producer/consumer binding (inferred from dead_letter_queue only)", () => {
@@ -183,6 +212,32 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
     expect(app.env?.production?.triggers?.crons ?? []).toEqual([]);
     expect(research.env?.dev?.triggers?.crons ?? []).toEqual([]);
     expect(research.env?.production?.triggers?.crons ?? []).toEqual([]);
+  });
+
+  it("production app worker serves the custom domain with APP_ORIGIN matching (go-live)", () => {
+    const app = readJsonc("wrangler.jsonc");
+    const prod = envOf(app, "production");
+    expect(prod.routes).toEqual([{ pattern: "wikinow.scarson.io", custom_domain: true }]);
+    expect(prod.vars?.APP_ORIGIN).toBe("https://wikinow.scarson.io");
+  });
+
+  it("dev app worker stays on workers.dev with no custom routes or APP_ORIGIN", () => {
+    const app = readJsonc("wrangler.jsonc");
+    expect(envOf(app, "dev").routes).toBeUndefined();
+    expect(envOf(app, "dev").vars?.APP_ORIGIN).toBeUndefined();
+  });
+
+  it("RESEARCH_PROVIDER never appears in the research worker top-level config (CC-7 / workerd pool)", () => {
+    // The workerd vitest pool loads the research config TOP-LEVEL (test/workers/test-env.ts);
+    // a top-level provider var would flip the pool off the stub default the CC-7 tests hardwire.
+    const research = readJsonc("workers/research/wrangler.jsonc");
+    expect(research.vars?.RESEARCH_PROVIDER).toBeUndefined();
+  });
+
+  it("dev research worker runs the real workers-ai provider; production stays on the stub until its go-live flip", () => {
+    const research = readJsonc("workers/research/wrangler.jsonc");
+    expect(envOf(research, "dev").vars?.RESEARCH_PROVIDER).toBe("workers-ai");
+    expect(envOf(research, "production").vars?.RESEARCH_PROVIDER).toBeUndefined();
   });
 });
 
@@ -244,14 +299,17 @@ describe("dormant deploy pipeline (Task 7.6)", () => {
     expect(deploy).toMatch(/branches:\s*\[\s*dev\s*,\s*main\s*\]|branches:[\s\S]*?-\s*dev[\s\S]*?-\s*main/);
   });
   it("is dormant until the deploy token secret exists", () => {
-    // GitHub forbids `secrets.*` in a JOB-level if: (only github/needs/vars/inputs are allowed there).
-    // The dormancy guard is therefore a STEP-level if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }},
-    // where the secrets context IS available. Steps skip cleanly (never fail) when the secret is absent.
-    expect(deploy).toMatch(/if:.*secrets\.CLOUDFLARE_API_TOKEN/);
-    // Defensive: the guard must NOT live on the job's own `if:` (that would silently never run).
-    const jobIfMatch = /^\s{4}deploy:[\s\S]*?^\s{6}if:.*$/m.exec(deploy);
-    if (jobIfMatch) {
-      expect(jobIfMatch[0]).not.toMatch(/^\s{6}if:.*secrets\./m);
+    // GitHub forbids `secrets.*` in ANY `if:` expression (job OR step level) — the file is
+    // rejected at parse with "Unrecognized named-value: 'secrets'" (observed: run 29179389863).
+    // The working dormancy pattern: map the secret into job-level env:, then guard each
+    // deploy step with the env context, which IS available in step-level if:.
+    expect(deploy).toMatch(/CLOUDFLARE_API_TOKEN:\s*\$\{\{ secrets\.CLOUDFLARE_API_TOKEN \}\}/);
+    // Line-anchored so a comment mentioning the guard can never satisfy the count.
+    const guardCount = (deploy.match(/^\s*if: \$\{\{ env\.CLOUDFLARE_API_TOKEN != '' \}\}/gm) ?? []).length;
+    expect(guardCount).toBeGreaterThanOrEqual(4);
+    // No `if:` expression anywhere may reference the secrets context (parse-time rejection).
+    for (const line of deploy.split("\n")) {
+      if (/^\s*if:/.test(line)) expect(line).not.toMatch(/secrets\./);
     }
   });
   it("maps main to production and dev to preview/dev", () => {
@@ -265,7 +323,9 @@ describe("dormant deploy pipeline (Task 7.6)", () => {
   it("deploys both workers and applies migrations before deploy", () => {
     expect(deploy).toMatch(/opennextjs-cloudflare (?:build|deploy)/);
     expect(deploy).toMatch(/wrangler deploy -c workers\/research\/wrangler\.jsonc/);
-    expect(deploy).toMatch(/d1 migrations apply .*--remote/);
+    // Apply by BINDING (DB) — a positional database name can't resolve across both envs
+    // (env.dev's database_name is wiki-as-of-now-dev, so a hardcoded name breaks dev pushes).
+    expect(deploy).toMatch(/d1 migrations apply DB --remote/);
   });
   it("never enables a cron in the deploy pipeline", () => {
     expect(deploy).not.toMatch(/triggers|crons|--enable-cron/);

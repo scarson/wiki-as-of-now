@@ -15,9 +15,12 @@ describe("MODEL_CONFIG", () => {
     expect(MODEL_CONFIG.maxTokens).toBeGreaterThanOrEqual(512);
     expect(Number.isInteger(MODEL_CONFIG.maxTokens)).toBe(true);
   });
-  it("bounds the per-call abort budget between 25 and 30 seconds", () => {
-    expect(MODEL_CONFIG.callTimeoutMs).toBeGreaterThanOrEqual(25_000);
-    expect(MODEL_CONFIG.callTimeoutMs).toBeLessThanOrEqual(30_000);
+  it("bounds the per-call abort budget to cover reasoning generation without masking hangs", () => {
+    // Live Gemma 4 is a reasoning model: emitting 2048 tokens took ~26s on real claim prompts,
+    // so a 4096-token generation needs ~40-50s. The floor keeps slow-but-progressing generations
+    // alive; the ceiling keeps the timeout a genuine hang guard within the queue consumer's wall budget.
+    expect(MODEL_CONFIG.callTimeoutMs).toBeGreaterThanOrEqual(45_000);
+    expect(MODEL_CONFIG.callTimeoutMs).toBeLessThanOrEqual(120_000);
   });
   it("allows exactly one JSON retry (parse-and-retry gate)", () => {
     expect(MODEL_CONFIG.jsonRetries).toBe(1);

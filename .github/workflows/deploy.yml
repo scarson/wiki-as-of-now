@@ -2,11 +2,11 @@
 # repo secrets are added. main push -> production; dev push -> dev (preview). Deploys both
 # workers; applies migrations first. Never enables the scheduled job (that is a human go-live step).
 #
-# Dormancy: GitHub forbids the `secrets` context in a JOB-level `if:` (only github/needs/vars/
-# inputs are allowed there). So the guard is a STEP-level `if: ${{ secrets.CLOUDFLARE_API_TOKEN
-# != '' }}` on each deploy step — the secrets context IS available at step level. With the secret
-# absent the steps skip cleanly (they do not fail), so this workflow stays green until Sam wires
-# the deploy token.
+# Dormancy: GitHub rejects the `secrets` context inside ANY `if:` expression — the workflow
+# file fails validation at parse time ("Unrecognized named-value: 'secrets'"). The working
+# pattern: map the secret into job-level env:, then guard each deploy step on the mapped
+# env value (the env context IS valid in step-level if:). With the secret absent the
+# steps skip cleanly, so the workflow stays green until armed.
 name: Deploy
 on:
   push:
@@ -39,14 +39,14 @@ jobs:
       # Migrations FIRST (both workers share the env's D1), then deploy. Each step is dormant
       # until the deploy token secret exists.
       - name: Apply D1 migrations
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
-        run: pnpm exec wrangler d1 migrations apply wiki-as-of-now --remote --env ${{ steps.env.outputs.name }}
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
+        run: pnpm exec wrangler d1 migrations apply DB --remote --env ${{ steps.env.outputs.name }}
       - name: Build OpenNext bundle
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
         run: pnpm exec opennextjs-cloudflare build
       - name: Deploy app worker
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
         run: pnpm exec opennextjs-cloudflare deploy --env ${{ steps.env.outputs.name }}
       - name: Deploy research worker
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
         run: pnpm exec wrangler deploy -c workers/research/wrangler.jsonc --env ${{ steps.env.outputs.name }}

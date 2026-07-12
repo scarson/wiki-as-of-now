@@ -34,8 +34,9 @@
 	"observability": {
 		"enabled": true
 	},
-	// Per-env remote targets. Top-level `ai`, `compatibility_flags` (NO nodejs_compat — CC-5),
-	// `main` are inherited; each env overrides `name`, `d1_databases`, `queues`. Queues are
+	// Per-env remote targets. Top-level SETTINGS (`compatibility_flags` — NO nodejs_compat, CC-5 —
+	// and `main`) are inherited, but BINDINGS are not: every named env must re-declare `ai`,
+	// `d1_databases`, `queues` or the deploy silently drops them. Queues are
 	// account-global single-consumer, so dev/prod queue + DLQ names must differ (design §6.2).
 	// `max_batch_size: 1` is load-bearing — exactly one message per queue() invocation (G14).
 	// The DLQ is inferred from `dead_letter_queue`, NEVER a separate binding (contract §2.6).
@@ -43,8 +44,11 @@
 	"env": {
 		"dev": {
 			"name": "wiki-as-of-now-research-dev",
+			"ai": { "binding": "AI", "remote": true },
+			// Real provider on dev only until the production go-live flip (CC-7: top-level stays stub for Miniflare).
+			"vars": { "RESEARCH_PROVIDER": "workers-ai" },
 			"d1_databases": [
-				{ "binding": "DB", "database_name": "wiki-as-of-now-dev", "database_id": "REPLACE_WITH_DEV_D1_ID" }
+				{ "binding": "DB", "database_name": "wiki-as-of-now-dev", "database_id": "9f4d0701-ecb7-428b-a3a2-0222aa7e2a4a" }
 			],
 			"queues": {
 				"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research-dev" }],
@@ -55,8 +59,9 @@
 		},
 		"production": {
 			"name": "wiki-as-of-now-research",
+			"ai": { "binding": "AI", "remote": true },
 			"d1_databases": [
-				{ "binding": "DB", "database_name": "wiki-as-of-now", "database_id": "REPLACE_WITH_PROD_D1_ID" }
+				{ "binding": "DB", "database_name": "wiki-as-of-now", "database_id": "aa530ffb-16bf-4ab2-8f22-04f2dcc03922" }
 			],
 			"queues": {
 				"producers": [{ "binding": "RESEARCH_QUEUE", "queue": "research" }],

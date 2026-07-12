@@ -31,6 +31,7 @@ This document serves three audiences. Start here, then go directly to the sectio
 | 3 | [Safe-lane / untrusted-content scanning](#section-3-safe-lane--untrusted-content-scanning) | `src/safelane/*` — wikitext signal scans running on attacker-controllable article content | SAFE-1 | §3.C |
 | 4 | [Deploy / CI (wrangler, GitHub Actions, OpenNext)](#section-4-deploy--ci-wrangler-github-actions-opennext) | `wrangler.jsonc`, `workers/research/wrangler.jsonc`, `.github/workflows/*`, OpenNext build | CI-1 – CI-2 | §4.C |
 | 5 | [Research enqueue gating & metered spend](#section-5-research-enqueue-gating--metered-spend) | every path onto the metered/G11 research lane; per-user + global quota | GATE-1 – GATE-2 | §5.C |
+| 6 | [Workers AI model integration](#section-6-workers-ai-model-integration) | `src/research/ai-client.ts`, model-config, anything calling `env.AI.run()` | AI-1 – AI-2 | §6.C |
 | — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-3 | §Orchestration.C |
 | A | [Historical Changelog](#appendix-a-historical-changelog) | Provenance, validation dates, review process meta-observations | — | — |
 | B | [Unified Summary Table](#appendix-b-unified-summary-table) | All pitfalls at a glance, with severity and status | — | — |
@@ -189,15 +190,15 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ---
 
-### CI-1: GitHub Actions Forbids the `secrets` Context in a JOB-Level `if:` — It Silently Never Runs
+### CI-1: GitHub Actions Rejects the `secrets` Context in ANY `if:` — Guard on env-Mapped Values Instead
 
-**The Flaw:** Gating a whole job on a secret's presence with `jobs.<id>.if: ${{ secrets.SOME_TOKEN != '' }}` to make a deploy pipeline "dormant until the secret is added." GitHub Actions does **not** expose the `secrets` context in a job-level `if:` — only `github`, `needs`, `vars`, and `inputs` are available there. The expression evaluates `secrets.SOME_TOKEN` to empty, the condition is always false, and the job **silently never runs** — even after the secret is added. No error, no warning; the job just stays grey forever.
+**The Flaw:** Gating a step or job on a secret's presence with `if: ${{ secrets.SOME_TOKEN != '' }}` to make a deploy pipeline "dormant until the secret is added." GitHub Actions rejects the `secrets` context in **every** `if:` expression, at both job and step level — the workflow file fails validation at parse time with `Unrecognized named-value: 'secrets'`, the run completes in 0 seconds with zero jobs created, and every subsequent push produces the same startup failure. (Observed in this repo: every `deploy.yml` run from 2026-06-21 to 2026-07-12 failed this way, e.g. run 29179389863 — four step-level `secrets.*` guards at lines 42/45/48/51.)
 
-**Why It Matters:** A dormant deploy pipeline that "skips cleanly until the secret arrives" is exactly the intended design — but a job-level `secrets.*` guard inverts it into "never deploys, ever," and the failure is invisible because a skipped job looks identical to a correctly-dormant one. You discover it only when the first real deploy mysteriously doesn't happen.
+**Why It Matters:** A dormant deploy pipeline that "skips cleanly until the secret arrives" is exactly the intended design — but a `secrets.*` guard in `if:` inverts it into "the workflow never parses, ever," and the failure is easy to misread because a red 0-second run with no jobs looks like an infrastructure hiccup rather than a file defect. The first version of this entry claimed step-level `secrets.*` guards work; the parse failures above prove they do not.
 
-**The Fix:** Use a **step-level** `if: ${{ secrets.SOME_TOKEN != '' }}` on each meaningful step (the `secrets` context IS available at step level), and map the secret into job-level `env:` for the step bodies to consume. With the secret absent the steps skip (green, not red); once it's added they run. `.github/workflows/deploy.yml` implements this. Assert the step-level form in a config test and assert the guard is NOT on the job's own `if:` so the broken form can't regress back in.
+**The Fix:** Map the secret into job-level `env:` (`env: { SOME_TOKEN: ${{ secrets.SOME_TOKEN }} }` — the `secrets` context IS valid in `env:` values), then guard each meaningful step with `if: ${{ env.SOME_TOKEN != '' }}` (the `env` context IS valid in step-level `if:`). With the secret absent the steps skip (green, not red); once it's added they run. `.github/workflows/deploy.yml` implements this. Assert the env-guard form with a **line-anchored** config test (a comment quoting the guard must never satisfy the regex) and assert no `if:` line anywhere references `secrets.` so the broken form can't regress back in.
 
-**The Lesson:** Context availability in GitHub Actions is position-dependent and not symmetric — `secrets` works in `env:`, `with:`, and step `if:`, but not job `if:`. When a workflow "doesn't run and doesn't error," suspect a context-availability mismatch before anything else, and verify against GitHub's contexts table rather than assuming an expression that parses also evaluates.
+**The Lesson:** Context availability in GitHub Actions is position-dependent — `secrets` works in `env:`, `with:`, and `run:`, but in no `if:` at any level. Verify context availability EMPIRICALLY (push and watch the run), not by reading the contexts table: this entry's first version misread that table and prescribed the exact pattern that fails. A workflow run that fails in 0 seconds with no jobs is a parse-time error — fetch the run page's "Invalid workflow file" annotation for the exact message.
 
 ---
 
@@ -227,8 +228,8 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ### Review Checklist
 
-- [ ] **No deploy/job is gated on `secrets.*` in a job-level `if:`** — that condition silently never runs; the dormancy guard must be a step-level `if:` (or `env:`-mapped), verified against GitHub's contexts table (CI-1)
-- [ ] **A config test pins the step-level dormancy guard and forbids a job-level `secrets.` guard** — so the broken form can't regress in (CI-1)
+- [ ] **No `if:` expression at ANY level references `secrets.*`** — the workflow file fails parse validation (0-second run, zero jobs, "Unrecognized named-value: 'secrets'"); guard on a job-level `env:`-mapped value instead: `if: ${{ env.TOKEN != '' }}` (CI-1)
+- [ ] **A line-anchored config test pins the env-mapped dormancy guard and forbids `secrets.` on every `if:` line** — anchored so a comment quoting the guard can neither satisfy nor trip it (CI-1)
 - [ ] **Credential-free local validation uses the research-worker `--dry-run` with `--env=""`; the full OpenNext build is trusted to CI** — don't read the pnpm-PATH quirk as a real build breakage (CI-2)
 - [ ] **Every `wrangler deploy`/`--dry-run` on a multi-env config carries an explicit `--env` (or `--env=""`)** — a bare invocation warns about no target environment and trips pristine-output (CI-2)
 - [ ] **`remote: true` bindings are disabled in every credential-free context** — the workerd test pool sets `remoteBindings: false` and `initOpenNextCloudflareForDev()` is gated to `next dev`, so neither opens a login-gated remote-proxy session in CI (CI-3)
@@ -273,6 +274,46 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 - [ ] **G11 lives in ONE shared helper** used by every gate, never a divergent copy (GATE-1)
 - [ ] **The metered cap is enforced at the sequential consumer's commit**, not only by the advisory producer-side pre-check (GATE-2)
 - [ ] **The enqueuer's real `userId` travels on `ResearchMessage` to the ledger row** — a hardcoded/wrong owner makes the per-user cap unenforceable; a coupled test must drive the real commit as a non-admin user and assert the per-user cap trips (GATE-2)
+
+---
+
+# Section 6: Workers AI model integration
+
+> **Reader context:** I'm touching `src/research/ai-client.ts`, `src/research/model-config.ts`, or anything that calls `env.AI.run()` — the seam between the research pipeline and a live Workers AI model.
+
+---
+
+### AI-1: Validate the LIVE Model's Envelope, Input Mode, and Reasoning Budget — Fixtures Can't
+
+**The Flaw:** The AI seam was built and hardened entirely against fixtures shaped like the legacy Workers-AI contract (`{ prompt }` in, `{ response }` out). Live `@cf/google/gemma-4-26b-a4b-it` violated all three of its silent assumptions at go-live: (1) it returns **OpenAI-compatible envelopes** (`{ choices: [...] }`, `object: text_completion`/`chat.completion`), so `raw.response` was always undefined; (2) raw **`prompt` mode bypasses the chat template**, so the instruction-tuned model free-continued the prompt text instead of following it — every JSON gate failed and the deterministic backstop committed `no_proposals` packs with zero queries; (3) it is a **reasoning model whose thinking shares `max_tokens`** — at 1024 the entire budget went to a `reasoning` field and `message.content` came back null (`finish_reason: "length"`).
+
+**Why It Matters:** Each failure is invisible in CI (fixtures pass) and non-obvious in production: (1) and (2) surface as retry-looping `provider_unavailable` or as plausible-looking `no_proposals` packs — and a wrong terminal pack is WRITE-ONCE, permanently blocking real research for its `(claim_key, source_revision_id)`. The audit trail is codes-only by design, so nothing names the failing stage.
+
+**The Fix:** Call chat models via `messages` (one user message carrying the prompt); extract text tolerantly (`choices[0].message.content` → `choices[0].text` → legacy `response`); treat null/empty content as `ProviderUnavailableError` (never a string to pass on); size `maxTokens` for reasoning burn (2048 here — observed ~1k thinking tokens before any content). Before trusting a new/changed model id, probe the LIVE model once with the real prompt shape and inspect the raw envelope (a scratch `wrangler dev` worker with the AI binding takes minutes); capture the observed envelope verbatim as the test fixture.
+
+**The Lesson:** A model id in config is an external API contract, not a string. Envelope shape, input-mode semantics, and token accounting all vary per model and per serving runtime, and Workers AI's deprecation cadence means they change under you. The go-live runbook's "smoke-test the LIVE model before enabling the cron" step exists precisely because fixtures cannot catch this class — treat that smoke test as load-bearing, never skippable.
+
+---
+
+### AI-2: Never Pass a Detached Global `fetch` — workerd Validates the Receiver
+
+**The Flaw:** Two research seams stored the global `fetch` as a value and invoked it through a property: `BraveSearchProvider`'s default parameter (`fetchFn = fetch`, called as `this.fetchFn(...)`) and the research worker's `fetchImpl: fetch` (called as `opts.fetchImpl(...)`). In workerd, the global `fetch` validates its receiver: invoking it with any receiver other than the global scope (or a bare, receiver-less call) throws `TypeError: Illegal invocation` **before any network I/O**. Node's `fetch` is receiver-insensitive, so every unit test passed.
+
+**Why It Matters:** The failure is instant, silent, and shape-shifting: the Brave seam surfaced it as a retryable `provider_unavailable` (an infinite queue retry loop), while the source-fetch seam **caught it as `network_error`** and produced false, WRITE-ONCE `no_proposals` packs with empty dispositions — plausible-looking "no evidence found" results that permanently block real research for their `(claim_key, source_revision_id)` pairs. Nothing in CI or the workerd test pool can see it: the workerd tests run the stub provider path, and injected test fakes are plain receiver-insensitive functions.
+
+**The Fix:** Wrap, don't detach: default parameters and dependency wiring use a lambda (`(url, init) => fetch(url, init)`), and callee-side call sites detach into a local before calling (`const { fetchImpl } = opts; await fetchImpl(...)`) so the invocation is receiver-neutral. Both receiver contracts are pinned by tests that pass a `this`-recording fake and assert the receiver is `undefined`/`globalThis` (`test/research/brave-search.test.ts`, `test/research/source-fetch.test.ts`). Bare-identifier calls of a detached reference (`const f = globalThis.fetch; f(url)`) are receiver-less and safe — `src/ingest/wikimedia.ts`/`pageviews.ts` use that form and are proven live.
+
+**The Lesson:** In workerd, platform globals are methods of the global scope, not free functions. Any pattern that later re-receivers them — class-property defaults, options-bag members, object spreads — is a live-only time bomb. When a live pipeline "finds nothing" suspiciously fast, check the seams for a re-receivered global before believing the empty result.
+
+---
+
+### Review Checklist
+
+- [ ] **Chat models are called via `messages`, never raw `prompt`** — prompt mode skips the chat template and an instruction-tuned model free-continues the text (AI-1)
+- [ ] **Envelope extraction accepts chat.completion, text_completion, and legacy shapes, and maps null/empty content to ProviderUnavailableError** (AI-1)
+- [ ] **`maxTokens` budgets for reasoning burn on thinking models** — content starved to null with `finish_reason: length` is the symptom (AI-1)
+- [ ] **Any new/changed model id was probed live (raw envelope inspected) before deploy, and the observed envelope is a committed test fixture** (AI-1)
+- [ ] **No detached global `fetch` (or other platform global) is stored and invoked through a property** — wrap in a lambda or detach to a local before calling; receiver-contract tests pin the seams (AI-2)
 
 ---
 
@@ -328,6 +369,15 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 <!-- - Added PREFIX-N (<title>) — <what and why> -->
 <!-- - Updated PREFIX-M — <what changed> -->
 
+## 2026-07-12 — Go-live: workerd rejected detached-global-fetch calls in two research seams
+- Added AI-2 (never pass a detached global `fetch` — workerd throws `TypeError: Illegal invocation` on a re-receivered call; Node's fetch is receiver-insensitive so no unit test saw it). Live symptoms: infinite `provider_unavailable` retry loops (Brave seam) and false write-once `no_proposals` packs with empty dispositions (source-fetch seam). Fixed in `src/research/brave-search.ts` (lambda default) + `src/research/source-fetch.ts` (receiver-neutral call site) + `workers/research/index.ts` (lambda wiring); receiver contracts pinned by tests.
+
+## 2026-07-12 — Go-live: live-Gemma smoke test caught the fixture-blind AI seam
+- Added Section 6 (Workers AI model integration) with AI-1 (validate the live model's envelope, input mode, and reasoning budget — live Gemma 4 returned OpenAI-compat envelopes, ignored raw-prompt instructions, and starved content to null at maxTokens 1024; fixed in `src/research/ai-client.ts` + `model-config.ts`, live-captured envelopes committed as test fixtures).
+
+## 2026-07-12 — Go-live: CI-1's prescribed fix was itself wrong
+- Rewrote CI-1: the `secrets` context is rejected in ALL `if:` expressions, step-level included — every `deploy.yml` run since 2026-06-21 failed at parse in 0 seconds with `Unrecognized named-value: 'secrets'` (run 29179389863). The entry's original step-level-guard prescription was the exact failing pattern. Working fix (shipped in `.github/workflows/deploy.yml`): job-level `env:` mapping + `if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}` step guards, pinned by a line-anchored drift test. §4.C checklist bullets updated in lockstep.
+
 ## 2026-06-06 — Easy-win lane: scan hardening shipped
 - Added Section 3 (Safe-lane / untrusted-content scanning) and SAFE-1 (untrusted-input scans must be linear-time in input length — bound match-start positions, not just per-match body length; prove with a pathological-input perf test). Discovered hardening `scanWikitextSignals` in `src/safelane/wikitext-signals.ts` against delimiter-spam CPU-DoS on the `feat/easy-win-lane` branch (commits `5129686`, `b925dc2`). Fix validated by `test/safelane/wikitext-signals.test.ts` multi-MB spam perf test.
 - Added ORCH-3 (verify subagent reports against git — self-reports can confabulate). Surfaced during subagent-driven execution of the easy-win lane: a Task-2.2 implementer reported its files "were already present from a prior session" when `git cat-file -e HEAD~1:<file>` proved it had created them that task. Controller must verify reports against the repository before review.
@@ -357,7 +407,9 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 | DET-2 | Precision-Over-Recall Means Named, Accepted Recall Gaps | MEDIUM | VALIDATED | Detector |
 | DET-3 | Incidental Historical Years Are an Irreducible False-Positive Class | MEDIUM | VALIDATED | Detector |
 | SAFE-1 | Untrusted-Input Scans MUST Be Linear-Time in Input Length | HIGH | VALIDATED | Safe-lane / untrusted-content scanning |
-| CI-1 | GitHub Actions Forbids the `secrets` Context in a JOB-Level `if:` — It Silently Never Runs | HIGH | VALIDATED | Deploy / CI |
+| CI-1 | GitHub Actions Rejects the `secrets` Context in ANY `if:` — Guard on env-Mapped Values Instead | HIGH | VALIDATED | Deploy / CI |
+| AI-1 | Validate the LIVE Model's Envelope, Input Mode, and Reasoning Budget — Fixtures Can't | HIGH | VALIDATED | Workers AI model integration |
+| AI-2 | Never Pass a Detached Global `fetch` — workerd Validates the Receiver | HIGH | VALIDATED | Workers AI model integration |
 | CI-2 | The OpenNext Build Shells Out to `pnpm build`; `--env=""` Silences the Multi-Env Dry-Run Warning | LOW | VALIDATED | Deploy / CI |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).

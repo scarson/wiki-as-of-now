@@ -159,6 +159,24 @@ describe("fetchSourceText — SSRF guard (corpus-driven)", () => {
     );
   });
 
+  describe("fetchImpl receiver contract", () => {
+    it("invokes fetchImpl with a neutral receiver, never the options bag (workerd's global fetch rejects a re-receivered call with TypeError: Illegal invocation; node fetch is receiver-insensitive, so this pins the contract)", async () => {
+      const receivers: unknown[] = [];
+      const impl = function (this: unknown) {
+        receivers.push(this);
+        return Promise.resolve({
+          status: 200,
+          headers: new Headers({ "content-type": "text/html; charset=utf-8" }),
+          body: makeStream([enc.encode("<p>hello</p>")]),
+        });
+      } as unknown as FetchImpl;
+      const result = await fetchSourceText("https://example.org/a", { fetchImpl: impl });
+      expect(result.ok).toBe(true);
+      expect(receivers).toHaveLength(1);
+      expect(receivers[0] === undefined || receivers[0] === globalThis).toBe(true);
+    });
+  });
+
   describe("blocked_scheme vs blocked_host distinction", () => {
     it("returns blocked_scheme for http:// URLs (wrong scheme, not blocked host)", async () => {
       let called = false;

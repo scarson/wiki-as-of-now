@@ -34,7 +34,9 @@
 App worker (per env): `SESSION_SECRET`, `ADMIN_SECRET` (single-admin fallback until OAuth,
 design §3.6), and `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` when OAuth creds arrive.
 Research worker (per env): `BRAVE_API_KEY` (absent → the no-search fallback + manual-URL
-paste path keep the real fetch+verify logic running, design §3.6) and `RESEARCH_KILL_SWITCH`.
+paste path keep the real fetch+verify logic running, design §3.6) and `RESEARCH_KILL_SWITCH`
+(absent ⇒ research enabled; any truthy value pauses the consumer + scheduler — leave it
+UNSET at go-live; put it only when research must be paused).
 - [ ] App-worker secrets put for dev and production.
 - [ ] Research-worker secrets put for dev and production.
 
@@ -42,9 +44,10 @@ paste path keep the real fetch+verify logic running, design §3.6) and `RESEARCH
 - [ ] Confirmed disconnected (pre-flight) before the first deploy.
 
 ## 5. FIRST deploy — both workers (dev first, then production)
+- [ ] `pnpm exec opennextjs-cloudflare build` (deploy does NOT build; build once, reuse per env)
 - [ ] `pnpm exec opennextjs-cloudflare deploy --env dev`
 - [ ] `bunx wrangler deploy -c workers/research/wrangler.jsonc --env dev`
-- [ ] Verify dev, then repeat with `--env production`.
+- [ ] Verify dev, then repeat the two deploys with `--env production`.
 - [ ] (After the deploy-token secrets are added, CI's `deploy.yml` does this on push;
       the first deploy is done by hand to confirm the topology.)
 
@@ -58,10 +61,18 @@ paste path keep the real fetch+verify logic running, design §3.6) and `RESEARCH
       recorded the full `model_version` (G12 disclosure).
 
 ## 7. Purge stub packs
-- [ ] Run `scripts/purge-stub-packs.ts` against the live D1 to **purge stub** packs:
-      delete every `model_version = 'fake-provider/0'` research pack so stub packs don't
-      permanently block real research for their `(claim_key, source_revision_id)` pairs
-      (CC-7; design §3.5). The script reports the count removed; verify before and after.
+- [ ] Delete every `model_version = 'fake-provider/0'` research pack from the live D1 so
+      stub packs don't permanently block real research for their
+      `(claim_key, source_revision_id)` pairs (CC-7; design §3.5). `scripts/purge-stub-packs.ts`
+      exports the tested library function with no CLI entry; run its semantically identical
+      SQL directly (the function binds the sentinel as a parameter):
+```bash
+bunx wrangler d1 execute wiki-as-of-now --remote --env production \
+  --command "SELECT COUNT(*) AS n FROM research_packs WHERE model_version = 'fake-provider/0';"
+bunx wrangler d1 execute wiki-as-of-now --remote --env production \
+  --command "DELETE FROM research_packs WHERE model_version = 'fake-provider/0';"
+```
+- [ ] Re-run the SELECT; `n` must be 0. This is the purge stub gate — verify before and after.
 
 ## 8. Flip the provider, then the cron — LAST, human-confirmed
 - [ ] Only after steps 1–7 are green. Set `RESEARCH_PROVIDER=workers-ai` on the research

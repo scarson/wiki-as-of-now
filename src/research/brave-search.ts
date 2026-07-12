@@ -11,7 +11,14 @@ type BraveFetch = (url: string, init: { headers: Record<string, string> }) => Pr
 }>;
 
 export class BraveSearchProvider implements SearchProvider {
-  constructor(private readonly apiKey: string, private readonly fetchFn: BraveFetch = fetch as unknown as BraveFetch) {}
+  // The default MUST be a lambda, not a detached `fetch` reference: workerd's global fetch
+  // validates its receiver, and a detached reference later invoked as `this.fetchFn(...)`
+  // (receiver = this provider) throws `TypeError: Illegal invocation` before any network I/O.
+  // Node's fetch is receiver-insensitive, which is why unit tests can't see the difference.
+  constructor(
+    private readonly apiKey: string,
+    private readonly fetchFn: BraveFetch = (url, init) => fetch(url, init),
+  ) {}
 
   async search(query: string): Promise<SearchHit[]> {
     // URLSearchParams encodes spaces as `+` (application/x-www-form-urlencoded); Brave accepts both `+` and %20.
@@ -21,10 +28,19 @@ export class BraveSearchProvider implements SearchProvider {
       res = await this.fetchFn(url, {
         headers: { Accept: "application/json", "X-Subscription-Token": this.apiKey },
       });
-    } catch {
+    } catch (e) {
+      // Codes-only observability (G13): the stage, a fixed code, and the error CLASS name —
+      // never the query text or error message text.
+      console.warn("research.search.failed", {
+        status: "transport",
+        reason: e instanceof Error ? e.name : "unknown",
+      });
       throw new ProviderUnavailableError("brave search transport failure");
     }
-    if (!res.ok) throw new ProviderUnavailableError(`brave search http ${res.status}`);
+    if (!res.ok) {
+      console.warn("research.search.failed", { status: res.status });
+      throw new ProviderUnavailableError(`brave search http ${res.status}`);
+    }
     const body = (await res.json()) as { web?: { results?: { url?: unknown }[] } };
     const results = body.web?.results ?? [];
     // Retain ONLY the url — never title/description (ToS §3.2).
