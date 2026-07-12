@@ -85,7 +85,7 @@ notes and commit messages.
 |---|---|---|---|
 | 1 — Repo fixes (CI guard, vitest, domain/vars, docs) | ✅ Shipped (pre-PR) | `cd23036` `d5107f2` `79378da` `854d2d0` | full gate green (tsc/eslint/940 node/27 workerd); independent diff review in flight |
 | 2 — Provision + real D1 ids | ✅ Shipped | `83a5686` | dev D1 `9f4d0701…`, prod D1 `aa530ffb…`, 4 queues; both migrated (9 tables each); `apply DB` binding form proven |
-| 3 — Secrets + dev deploy + bootstrap + QA + dev research smoke | ⬜ Not started | — | — |
+| 3 — Secrets + dev deploy + bootstrap + QA + dev research smoke | ✅ Smoke PASSED; PR open | `bc05a5b`…`2af90e7` | the go-live PR: [#28](https://github.com/scarson/wiki-as-of-now/pull/28) (chore/go-live → dev), awaiting CI |
 | 4 — Production deploy + OAuth + bootstrap | ⬜ Not started | — | — |
 | 5 — Provider flip (production) + purge | ⬜ Not started | — | — |
 | 6 — Cron enable (production, LAST) + first-tick watch | ⬜ Not started | — | — |
