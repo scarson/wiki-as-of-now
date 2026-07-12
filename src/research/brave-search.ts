@@ -21,9 +21,13 @@ export class BraveSearchProvider implements SearchProvider {
       res = await this.fetchFn(url, {
         headers: { Accept: "application/json", "X-Subscription-Token": this.apiKey },
       });
-    } catch {
-      // Codes-only observability (G13): the stage + a fixed code, never the query text or error message.
-      console.warn("research.search.failed", { status: "transport" });
+    } catch (e) {
+      // Codes-only observability (G13): the stage, a fixed code, and the error CLASS name —
+      // never the query text or error message text.
+      console.warn("research.search.failed", {
+        status: "transport",
+        reason: e instanceof Error ? e.name : "unknown",
+      });
       throw new ProviderUnavailableError("brave search transport failure");
     }
     if (!res.ok) {

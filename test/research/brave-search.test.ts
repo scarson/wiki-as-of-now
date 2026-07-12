@@ -30,12 +30,12 @@ describe("BraveSearchProvider", () => {
     expect(warn).toHaveBeenCalledWith("research.search.failed", { status: 429 });
     warn.mockRestore();
   });
-  it("throws ProviderUnavailableError when fetch rejects (transport failure) and warns codes-only (G13)", async () => {
+  it("throws ProviderUnavailableError when fetch rejects (transport failure) and warns the error class name only (G13)", async () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
-    const fetchFn = vi.fn(async () => { throw new Error("network down"); });
+    const fetchFn = vi.fn(async () => { throw new TypeError("Illegal invocation"); });
     const p = new BraveSearchProvider("k", fetchFn as never);
     await expect(p.search("q")).rejects.toBeInstanceOf(ProviderUnavailableError);
-    expect(warn).toHaveBeenCalledWith("research.search.failed", { status: "transport" });
+    expect(warn).toHaveBeenCalledWith("research.search.failed", { status: "transport", reason: "TypeError" });
     warn.mockRestore();
   });
   it("returns [] when Brave returns a body with no web.results", async () => {
