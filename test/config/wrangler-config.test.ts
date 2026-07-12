@@ -50,6 +50,7 @@ interface WranglerConfig {
   compatibility_flags?: string[];
   triggers?: { crons?: string[] };
   vars?: Record<string, string>;
+  d1_databases?: D1Binding[];
   env?: { dev?: EnvBlock; production?: EnvBlock };
 }
 
@@ -150,13 +151,19 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
     expect(envOf(research, "production").d1_databases?.[0].database_name).toBe("wiki-as-of-now");
   });
 
-  it("D1 ids stay placeholders (no real ids committed; provisioning fills them)", () => {
+  it("per-env D1 ids are real, shared across workers (CC-10), and distinct across envs", () => {
     const app = readJsonc("wrangler.jsonc");
     const research = readJsonc("workers/research/wrangler.jsonc");
-    expect(envOf(app, "dev").d1_databases?.[0].database_id).toBe("REPLACE_WITH_DEV_D1_ID");
-    expect(envOf(app, "production").d1_databases?.[0].database_id).toBe("REPLACE_WITH_PROD_D1_ID");
-    expect(envOf(research, "dev").d1_databases?.[0].database_id).toBe("REPLACE_WITH_DEV_D1_ID");
-    expect(envOf(research, "production").d1_databases?.[0].database_id).toBe("REPLACE_WITH_PROD_D1_ID");
+    const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+    const devId = envOf(app, "dev").d1_databases?.[0].database_id;
+    const prodId = envOf(app, "production").d1_databases?.[0].database_id;
+    expect(devId).toMatch(uuid);
+    expect(prodId).toMatch(uuid);
+    expect(envOf(research, "dev").d1_databases?.[0].database_id).toBe(devId);
+    expect(envOf(research, "production").d1_databases?.[0].database_id).toBe(prodId);
+    expect(devId).not.toBe(prodId);
+    // The top-level (default/Miniflare) ids stay the all-zeros placeholder — CI dry-run target.
+    expect(app.d1_databases?.[0].database_id).toBe("00000000-0000-0000-0000-000000000000");
   });
 
   it("the DLQ is never declared as a producer/consumer binding (inferred from dead_letter_queue only)", () => {

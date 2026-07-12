@@ -68,7 +68,7 @@
 				{
 					"binding": "DB",
 					"database_name": "wiki-as-of-now-dev",
-					"database_id": "REPLACE_WITH_DEV_D1_ID",
+					"database_id": "9f4d0701-ecb7-428b-a3a2-0222aa7e2a4a",
 					"migrations_dir": "migrations"
 				}
 			],
@@ -88,7 +88,7 @@
 				{
 					"binding": "DB",
 					"database_name": "wiki-as-of-now",
-					"database_id": "REPLACE_WITH_PROD_D1_ID",
+					"database_id": "aa530ffb-16bf-4ab2-8f22-04f2dcc03922",
 					"migrations_dir": "migrations"
 				}
 			],
