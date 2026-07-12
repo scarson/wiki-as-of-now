@@ -218,6 +218,12 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
     const research = readJsonc("workers/research/wrangler.jsonc");
     expect(research.vars?.RESEARCH_PROVIDER).toBeUndefined();
   });
+
+  it("dev research worker runs the real workers-ai provider; production stays on the stub until its go-live flip", () => {
+    const research = readJsonc("workers/research/wrangler.jsonc");
+    expect(envOf(research, "dev").vars?.RESEARCH_PROVIDER).toBe("workers-ai");
+    expect(envOf(research, "production").vars?.RESEARCH_PROVIDER).toBeUndefined();
+  });
 });
 
 describe("provision.md stays in sync with configs (Task 7.4)", () => {
