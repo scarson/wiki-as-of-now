@@ -79,7 +79,8 @@ App-worker **vars** (non-secret; set in `wrangler.jsonc` `vars` or via the dashb
 # Brave search key — the live search path. Absent → no-search fallback + manual-URL paste
 # path keep the real fetch+verify logic running (design §3.6):
 bunx wrangler secret put BRAVE_API_KEY -c workers/research/wrangler.jsonc --env dev
-# Admin research kill-switch — an explicit truthy value pauses the consumer + scheduler (Phase 5):
+# Admin research kill-switch — an explicit truthy value pauses the consumer + scheduler (Phase 5).
+# Absent ⇒ research enabled: leave it UNSET at go-live; put it only when research must pause:
 bunx wrangler secret put RESEARCH_KILL_SWITCH -c workers/research/wrangler.jsonc --env dev
 ```
 
