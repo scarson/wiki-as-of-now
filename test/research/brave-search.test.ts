@@ -22,15 +22,21 @@ describe("BraveSearchProvider", () => {
     const p = new BraveSearchProvider("k", (async () => okResponse()) as never);
     expect(await p.search("q")).toEqual([{ url: "https://defense.gov/a" }, { url: "https://gao.gov/b" }]);
   });
-  it("throws ProviderUnavailableError on a non-ok HTTP status", async () => {
+  it("throws ProviderUnavailableError on a non-ok HTTP status and warns the status code only (G13)", async () => {
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     const fetchFn = vi.fn(async () => ({ ok: false, status: 429, json: async () => ({}) }));
     const p = new BraveSearchProvider("k", fetchFn as never);
     await expect(p.search("q")).rejects.toBeInstanceOf(ProviderUnavailableError);
+    expect(warn).toHaveBeenCalledWith("research.search.failed", { status: 429 });
+    warn.mockRestore();
   });
-  it("throws ProviderUnavailableError when fetch rejects (transport failure)", async () => {
+  it("throws ProviderUnavailableError when fetch rejects (transport failure) and warns codes-only (G13)", async () => {
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     const fetchFn = vi.fn(async () => { throw new Error("network down"); });
     const p = new BraveSearchProvider("k", fetchFn as never);
     await expect(p.search("q")).rejects.toBeInstanceOf(ProviderUnavailableError);
+    expect(warn).toHaveBeenCalledWith("research.search.failed", { status: "transport" });
+    warn.mockRestore();
   });
   it("returns [] when Brave returns a body with no web.results", async () => {
     const fetchFn = vi.fn(async () => ({ ok: true, status: 200, json: async () => ({}) }));

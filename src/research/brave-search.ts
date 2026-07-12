@@ -22,9 +22,14 @@ export class BraveSearchProvider implements SearchProvider {
         headers: { Accept: "application/json", "X-Subscription-Token": this.apiKey },
       });
     } catch {
+      // Codes-only observability (G13): the stage + a fixed code, never the query text or error message.
+      console.warn("research.search.failed", { status: "transport" });
       throw new ProviderUnavailableError("brave search transport failure");
     }
-    if (!res.ok) throw new ProviderUnavailableError(`brave search http ${res.status}`);
+    if (!res.ok) {
+      console.warn("research.search.failed", { status: res.status });
+      throw new ProviderUnavailableError(`brave search http ${res.status}`);
+    }
     const body = (await res.json()) as { web?: { results?: { url?: unknown }[] } };
     const results = body.web?.results ?? [];
     // Retain ONLY the url — never title/description (ToS §3.2).
