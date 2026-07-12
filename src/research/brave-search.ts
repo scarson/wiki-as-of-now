@@ -11,7 +11,14 @@ type BraveFetch = (url: string, init: { headers: Record<string, string> }) => Pr
 }>;
 
 export class BraveSearchProvider implements SearchProvider {
-  constructor(private readonly apiKey: string, private readonly fetchFn: BraveFetch = fetch as unknown as BraveFetch) {}
+  // The default MUST be a lambda, not a detached `fetch` reference: workerd's global fetch
+  // validates its receiver, and a detached reference later invoked as `this.fetchFn(...)`
+  // (receiver = this provider) throws `TypeError: Illegal invocation` before any network I/O.
+  // Node's fetch is receiver-insensitive, which is why unit tests can't see the difference.
+  constructor(
+    private readonly apiKey: string,
+    private readonly fetchFn: BraveFetch = (url, init) => fetch(url, init),
+  ) {}
 
   async search(query: string): Promise<SearchHit[]> {
     // URLSearchParams encodes spaces as `+` (application/x-www-form-urlencoded); Brave accepts both `+` and %20.

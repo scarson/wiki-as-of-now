@@ -22,6 +22,22 @@ describe("BraveSearchProvider", () => {
     const p = new BraveSearchProvider("k", (async () => okResponse()) as never);
     expect(await p.search("q")).toEqual([{ url: "https://defense.gov/a" }, { url: "https://gao.gov/b" }]);
   });
+  it("invokes the default fetch with the global receiver, never the provider instance (workerd rejects a re-receivered global fetch with TypeError: Illegal invocation; node fetch is receiver-insensitive, so this pins the receiver contract)", async () => {
+    const original = globalThis.fetch;
+    const receivers: unknown[] = [];
+    globalThis.fetch = function (this: unknown) {
+      receivers.push(this);
+      return Promise.resolve({ ok: true, status: 200, json: async () => ({ web: { results: [] } }) });
+    } as never;
+    try {
+      const p = new BraveSearchProvider("k"); // default fetchFn — no injection
+      await p.search("q");
+    } finally {
+      globalThis.fetch = original;
+    }
+    expect(receivers).toHaveLength(1);
+    expect(receivers[0] === undefined || receivers[0] === globalThis).toBe(true);
+  });
   it("throws ProviderUnavailableError on a non-ok HTTP status and warns the status code only (G13)", async () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     const fetchFn = vi.fn(async () => ({ ok: false, status: 429, json: async () => ({}) }));
