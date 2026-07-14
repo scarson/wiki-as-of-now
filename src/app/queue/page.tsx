@@ -50,7 +50,7 @@ export default function QueuePage() {
   const [enqueueMsg, setEnqueueMsg] = useState<string>("");
   const rowRefs = useRef<(HTMLLIElement | null)[]>([]);
   // Auth status aliased: this page already uses `status` for the lane lifecycle.
-  const { status: authStatus } = useBrowseAuthState();
+  const { status: authStatus, setAnonymous } = useBrowseAuthState();
 
   const loadLane = useCallback(async () => {
     setStatus("loading");
@@ -117,6 +117,10 @@ export default function QueuePage() {
         // The route now requires auth (401 unauthenticated) and honors the kill-switch (503 disabled);
         // surface those distinctly so a signed-out or paused user isn't told the request silently failed.
         if (res.status === 401) {
+          // The session expired after the initial auth-state fetch. Reconcile the shared
+          // client state so the nav chip, banner, and this control all flip to anonymous
+          // (surfacing the sign-in affordance) instead of showing stale authenticated UI.
+          setAnonymous();
           setEnqueueMsg("Sign in to request research on these candidates.");
         } else if (res.status === 503) {
           setEnqueueMsg("Research is currently disabled — try again later.");
@@ -135,7 +139,7 @@ export default function QueuePage() {
     } catch {
       setEnqueueMsg("Could not reach the server. Please try again.");
     }
-  }, [selected, authStatus]);
+  }, [selected, authStatus, setAnonymous]);
 
   // Keyboard-first triage: ↑/↓ move focus, space toggles, r researches the selection.
   const onKeyDown = useCallback(
