@@ -68,23 +68,31 @@ Copied verbatim from the design spec ([2026-07-13-auth-state-ui-wiring-design.md
 
 ## Execution Status
 
-**Overall:** Not started.
+**Overall:** All 7 phases implemented on branch `claude/auth-state-ui-wiring-b15a4e`; full verification green (Node 950/950, Workers 30/30, tsc + eslint clean, `next build` OK with `/`, `/about`, `/queue` still static). Awaiting `/codex` diff review → merge.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — Cookie rename | ⬜ Not started | — | isolated, Review (auth) |
-| 2 — /api/auth/state endpoint | ⬜ Not started | — | — |
-| 3 — AuthStateProvider + hook | ⬜ Not started | — | — |
-| 4 — Nav auth chip + sign-out | ⬜ Not started | — | — |
-| 5 — Dynamic home banner | ⬜ Not started | — | — |
-| 6 — Queue proactive gate | ⬜ Not started | — | — |
-| 7 — GitHub community links | ⬜ Not started | — | unrelated, isolated |
+| 1 — Cookie rename | ✅ Shipped | `954bcee` | + scripts/provision.md |
+| 2 — /api/auth/state endpoint | ✅ Shipped | `61414e7` | TDD, workers-pool test |
+| 3 — AuthStateProvider + hook | ✅ Shipped | `c9c0b31` | consolidated with Phase 4 |
+| 4 — Nav auth chip + sign-out | ✅ Shipped | `c9c0b31` | see Deviations |
+| 5 — Dynamic home banner | ✅ Shipped | `78f97b4` | authStatus alias |
+| 6 — Queue proactive gate | ✅ Shipped | `05f94a1` | + r/R keyboard guard |
+| 7 — GitHub community links | ✅ Shipped | `b7e5aed` | URLs from repoUrl |
+
+### Deviations
+- **Phases 3 + 4 consolidated into one commit (`c9c0b31`).** Both edit `src/app/layout.tsx`, and the provider is inert without the chip, so shipping Phase 3 alone would have been a broken/no-op intermediate. Reviewer gains nothing from the split.
+- **Phase 7 links derived from `c.repoUrl`** rather than hardcoded (DRY; matches the existing `${c.repoUrl}/blob/...` pattern on the page). `REPO_URL` confirmed `https://github.com/scarson/wiki-as-of-now`.
+
+### Discoveries
+- **`force-static` safety confirmed at build time.** `next build` prerenders `/about` (and `/`, `/queue`) as `○ (Static)` with the client `AuthStateProvider` mounted in the root layout — the client-fetch design's core claim, now verified empirically (not just by the `/codex` consult).
+- **Interactive browser QA of the authenticated flow is pending** — it needs a real session; done post-deploy on the live site (where Sam is signed in), per the completion report.
 
 ---
 
 ## Phase 1 — Cookie rename `wan_session` → `wikinow_session`
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED at `954bcee` on 2026-07-14
 
 **Nature:** a constant-value rename (refactor), not a feature — so it's a fixture update + full-suite-green + grep-clean, not a red→green cycle. It touches session-issuance code, so it's **Review (auth)** and lands as its own isolated commit ahead of the UI work.
 
@@ -150,7 +158,7 @@ issue/verify/clear, so the rename propagates through all callers."
 
 ## Phase 2 — `GET /api/auth/state` endpoint
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED at `61414e7` on 2026-07-14
 
 **Files:**
 - Create: `src/app/api/auth/state/route.ts`
@@ -263,7 +271,7 @@ Returns {authenticated} for the client auth-state provider."
 
 ## Phase 3 — `AuthStateProvider` + `useBrowseAuthState`
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED at `c9c0b31` on 2026-07-14 (consolidated with Phase 4 — see Deviations)
 
 **Files:**
 - Create: `src/app/auth-state.tsx` (client context + provider + hook)
@@ -354,7 +362,7 @@ unknown→anonymous|authenticated feeds the nav chip, banner, and queue gate."
 
 ## Phase 4 — Nav auth chip + sign-out
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED at `c9c0b31` on 2026-07-14 (consolidated with Phase 3)
 
 **Files:**
 - Create: `src/app/components/NavAuthChip.tsx`
@@ -484,7 +492,7 @@ flips shared state to anonymous."
 
 ## Phase 5 — Dynamic home banner
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED at `78f97b4` on 2026-07-14
 
 **Files:**
 - Modify: `src/app/page.tsx:74-83` (replace the hardcoded banner)
@@ -547,7 +555,7 @@ nothing until state resolves. Fixes the reported always-guest bug."
 
 ## Phase 6 — Queue proactive sign-in gate
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED at `05f94a1` on 2026-07-14
 
 **Files:**
 - Modify: `src/app/queue/page.tsx` (the "Research selected" control area, ~`:214-224`)
@@ -632,7 +640,7 @@ Existing 401 handler retained as the authoritative backstop."
 
 ## Phase 7 — GitHub community links on the About page
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED at `b7e5aed` on 2026-07-14
 
 **Files:**
 - Modify: `src/app/about/page.tsx` (add a "Feedback & community" section)
