@@ -5,6 +5,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { StaleSentence } from "@/app/worksheet/components/StaleSentence";
+import { useBrowseAuthState } from "@/app/auth-state";
+import { canRequestResearch } from "@/app/browse-mode";
 
 // Client mirrors the API shape locally (never imports server modules — integration-contract §4.6).
 interface Candidate {
@@ -47,6 +49,8 @@ export default function QueuePage() {
   const [focusIndex, setFocusIndex] = useState(0);
   const [enqueueMsg, setEnqueueMsg] = useState<string>("");
   const rowRefs = useRef<(HTMLLIElement | null)[]>([]);
+  // Auth status aliased: this page already uses `status` for the lane lifecycle.
+  const { status: authStatus } = useBrowseAuthState();
 
   const loadLane = useCallback(async () => {
     setStatus("loading");
@@ -86,6 +90,13 @@ export default function QueuePage() {
   }, []);
 
   const researchSelected = useCallback(async () => {
+    // Proactive gate covering BOTH the button and the r/R keyboard shortcut. Advisory only —
+    // the server enqueue gate (401) below remains the authoritative backstop for a session
+    // that expires after this check but before the request reaches the server.
+    if (authStatus !== "authenticated") {
+      setEnqueueMsg("Sign in to request research on these candidates.");
+      return;
+    }
     const candidateIds = [...selected];
     if (candidateIds.length === 0) {
       setEnqueueMsg("Select at least one candidate to research.");
@@ -124,7 +135,7 @@ export default function QueuePage() {
     } catch {
       setEnqueueMsg("Could not reach the server. Please try again.");
     }
-  }, [selected]);
+  }, [selected, authStatus]);
 
   // Keyboard-first triage: ↑/↓ move focus, space toggles, r researches the selection.
   const onKeyDown = useCallback(
@@ -211,14 +222,28 @@ export default function QueuePage() {
           )}
 
           <div className="mt-6 flex items-center gap-3">
-            <button
-              type="button"
-              onClick={researchSelected}
-              disabled={selected.size === 0}
-              className="rounded-md bg-iron-gall-shadow px-4 py-2 text-sm font-medium text-ink-white disabled:opacity-50"
-            >
-              Research selected ({selected.size})
-            </button>
+            {authStatus === "unknown" ? (
+              <button
+                type="button"
+                disabled
+                className="rounded-md bg-iron-gall-shadow px-4 py-2 text-sm font-medium text-ink-white disabled:opacity-50"
+              >
+                Research selected ({selected.size})
+              </button>
+            ) : canRequestResearch(authStatus) ? (
+              <button
+                type="button"
+                onClick={researchSelected}
+                disabled={selected.size === 0}
+                className="rounded-md bg-iron-gall-shadow px-4 py-2 text-sm font-medium text-ink-white disabled:opacity-50"
+              >
+                Research selected ({selected.size})
+              </button>
+            ) : (
+              <a href="/api/auth/google" className="text-sm text-iron-gall underline-offset-2 hover:underline">
+                Sign in to request research
+              </a>
+            )}
             <span aria-live="polite" className="text-xs text-dust-gray">
               {enqueueMsg}
             </span>
