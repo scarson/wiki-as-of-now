@@ -5,7 +5,7 @@ import { resolveAuthMode, verifyAdminSecret, SINGLE_ADMIN_USER_ID } from "./mode
 import { readCookie } from "./cookies";
 import type { AuthContext } from "../app/api/research/gate";
 
-export const SESSION_COOKIE = "wan_session";
+export const SESSION_COOKIE = "wikinow_session";
 /** Header carrying the admin secret in single-admin mode (no secret in a query param or flag). */
 export const ADMIN_SECRET_HEADER = "x-admin-secret";
 
