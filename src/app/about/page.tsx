@@ -67,6 +67,34 @@ export default function AboutPage() {
         <AbuseReportForm issueTrackerUrl={c.abuseReportUrl} />
       </section>
 
+      <section aria-label="Feedback and community" className="mb-8">
+        <h2 className="mb-3 font-serif text-lg font-medium text-ink-white">Feedback &amp; community</h2>
+        <ul className="list-disc space-y-1 pl-5 text-sm text-body-gray">
+          <li>
+            General feedback and questions:{" "}
+            <a
+              href={`${c.repoUrl}/discussions`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-iron-gall underline-offset-2 hover:underline"
+            >
+              GitHub Discussions
+            </a>
+          </li>
+          <li>
+            Bug reports:{" "}
+            <a
+              href={`${c.repoUrl}/issues`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-iron-gall underline-offset-2 hover:underline"
+            >
+              GitHub Issues
+            </a>
+          </li>
+        </ul>
+      </section>
+
       <footer className="mt-12 border-t border-hairline-gray pt-4 text-xs text-dust-gray">
         <p>
           Open source:{" "}

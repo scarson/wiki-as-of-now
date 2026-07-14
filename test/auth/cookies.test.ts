@@ -5,8 +5,8 @@ import { serializeCookie, clearCookie } from "../../src/auth/cookies";
 
 describe("auth cookies", () => {
   it("serializes a hardened cookie with HttpOnly, Secure, SameSite=Lax and Max-Age", () => {
-    const c = serializeCookie("wan_session", "tok.en", { maxAgeSeconds: 3600 });
-    expect(c).toContain("wan_session=tok.en");
+    const c = serializeCookie("wikinow_session", "tok.en", { maxAgeSeconds: 3600 });
+    expect(c).toContain("wikinow_session=tok.en");
     expect(c).toContain("HttpOnly");
     expect(c).toContain("Secure");
     expect(c).toContain("SameSite=Lax");
@@ -25,8 +25,8 @@ describe("auth cookies", () => {
   });
 
   it("clearCookie expires the cookie immediately (Max-Age=0)", () => {
-    const c = clearCookie("wan_session");
-    expect(c).toContain("wan_session=;");
+    const c = clearCookie("wikinow_session");
+    expect(c).toContain("wikinow_session=;");
     expect(c).toContain("Max-Age=0");
     expect(c).toContain("HttpOnly");
   });

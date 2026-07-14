@@ -60,7 +60,7 @@ block with `--env production` for the prod environment.
 ### App worker (root `wrangler.jsonc`)
 
 ```bash
-# Session signing key (required for issuing/verifying the wan_session cookie, Phase 5):
+# Session signing key (required for issuing/verifying the wikinow_session cookie, Phase 5):
 bunx wrangler secret put SESSION_SECRET --env dev
 # Single-admin fallback secret (x-admin-secret header; active until OAuth creds land, design §3.6):
 bunx wrangler secret put ADMIN_SECRET --env dev

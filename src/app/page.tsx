@@ -6,6 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { StaleSentence } from "@/app/worksheet/components/StaleSentence";
 import { reasonLabel } from "@/worksheet/reason-label";
+import { useBrowseAuthState } from "./auth-state";
 
 interface Candidate {
   id: number;
@@ -32,6 +33,8 @@ export default function Home() {
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [result, setResult] = useState<LookupResult | null>(null);
   const [error, setError] = useState<string>("");
+  // Auth status aliased: Home() already uses `status` for the lookup lifecycle.
+  const { status: authStatus } = useBrowseAuthState();
 
   async function lookup(e: React.FormEvent) {
     e.preventDefault();
@@ -71,15 +74,26 @@ export default function Home() {
         </p>
       </header>
 
-      {/* Anonymous-browse signpost. Browsing is open to everyone; requesting research is gated behind
-          sign-in. This banner is advisory only — the server enqueue gate (POST /api/research/:id → 401 for
-          anonymous) is the authoritative access control, not this UI. */}
-      <div className="mb-8 rounded-md border border-hairline-gray bg-shelf-gray px-4 py-3 text-sm text-dust-gray">
-        Browsing as a guest — detected claims are open to read.{" "}
-        <a href="/api/auth/google" className="text-iron-gall underline-offset-2 hover:underline">
-          Sign in
-        </a>{" "}
-        to request research on a claim.
+      {/* Auth-aware browse signpost. Browsing is open to everyone; requesting research is gated behind
+          sign-in. This banner is advisory only — the server enqueue gate (→ 401 for anonymous) is the
+          authoritative access control, not this UI. Outer wrapper reserves height so content below does
+          not jump when the auth status resolves. */}
+      <div className="mb-8 min-h-[3.25rem]">
+        {authStatus !== "unknown" && (
+          <div className="rounded-md border border-hairline-gray bg-shelf-gray px-4 py-3 text-sm text-dust-gray">
+            {authStatus === "anonymous" ? (
+              <>
+                Browsing as a guest — detected claims are open to read.{" "}
+                <a href="/api/auth/google" className="text-iron-gall underline-offset-2 hover:underline">
+                  Sign in
+                </a>{" "}
+                to request research on a claim.
+              </>
+            ) : (
+              <>You&apos;re signed in — select a claim and request research on it.</>
+            )}
+          </div>
+        )}
       </div>
 
       <form onSubmit={lookup} className="flex gap-2">
