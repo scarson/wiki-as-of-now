@@ -51,11 +51,17 @@ sign-in identity provider. If any turns out false, the policy wording changes.
   renders it. Because the route is static, the file is read once during `next build`
   (Node) and the Worker serves pre-rendered HTML — no filesystem read and no markdown
   parser at runtime.
-- **Rendering mechanism:** add `markdown-to-jsx` (small, zero-dependency, widely used)
-  to turn the markdown into React elements — no `dangerouslySetInnerHTML`. This is a
-  deliberate dependency addition (flagged for the review gate); it is the minimal way
-  to honor "one authoritative markdown source, rendered." The content is
-  author-controlled (not user input), so there is no injection surface regardless.
+- **Rendering mechanism:** add `markdown-to-jsx` to turn the markdown into React
+  elements — no `dangerouslySetInnerHTML`. This is a deliberate dependency addition
+  (flagged for the review gate); it is the minimal way to honor "one authoritative
+  markdown source, rendered." The content is author-controlled (not user input), so
+  there is no injection surface regardless.
+  - **Verified provenance (do NOT guess the package/PURL):** npm package
+    **`markdown-to-jsx`** — PURL `pkg:npm/markdown-to-jsx`, npm
+    <https://www.npmjs.com/package/markdown-to-jsx>, source repo
+    <https://github.com/quantizor/markdown-to-jsx> (author: quantizor). Before install,
+    confirm the resolved package's `repository` field points at that exact repo; reject
+    any look-alike. Pin an exact version in `package.json` and commit the lockfile.
 - **Discoverability:** link `/privacy` from the global nav footer/About and the home
   footer (alongside "About & compliance"). One click from anywhere.
 - **G1 note:** unlike detection/claim surfaces, this is app-governance prose authored by
