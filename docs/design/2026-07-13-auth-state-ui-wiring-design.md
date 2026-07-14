@@ -75,63 +75,73 @@ this work) so the latent telemetry/worksheet hooks are not lost.
 
 ## 3. The design
 
-### 3.1 The shared mechanism — one read, one context, one hook
+### 3.1 The shared mechanism — one fetch, one context, one hook
 
 ```
-                    root layout.tsx (server component)
-                              │
-              getBrowseAuthState()  ← reads wikinow_session cookie,
-                              │        runs verifySession → BrowseAuthState
-                              ▼
-        <AuthStateProvider state={…}>   (client Context, "use client")
-                              │
-              ┌───────────────┼────────────────────────┐
-              ▼               ▼                         ▼
-        <NavAuthChip/>   {children → page.tsx}   {children → queue/page.tsx}
-        useBrowseAuthState()  banner: useBrowse…()   button: useBrowse…()
+        root layout.tsx (server component, NO cookie read)
+                          │ renders
+        <AuthStateProvider>          (client Context, "use client")
+             │  on mount: fetch GET /api/auth/state → { authenticated }
+             │  holds status: "unknown" → "anonymous" | "authenticated"
+             ▼
+   ┌─────────┼───────────────────────────┐
+   ▼         ▼                            ▼
+<NavAuthChip/>   {children → page.tsx}   {children → queue/page.tsx}
+useBrowseAuthState()  banner: useBrowse…()   button: useBrowse…()
 ```
 
-**Why a context and not prop-drilling or per-page fetch.** In the App Router a root
-layout cannot pass props into separate route-segment pages; it only wraps them as
-`children`. Both consumer pages (`page.tsx`, `queue/page.tsx`) are `"use client"` and
-so cannot call the server helper themselves. A client Context provider seeded by a
-**single** server read is therefore the idiomatic seam: no per-surface cookie logic,
-no `whoami` round-trip, and **no flash** of the wrong state before hydration. This is
-not gratuitous indirection — it is the minimum structure that lets one server read
-reach three client consumers.
+**Why a client fetch and not a root-layout server read.** The obvious approach — read
+the session cookie in the root layout (server) and pass state down — is silently broken
+by this app's static compliance pages. `/about` (and the planned `/privacy`) set
+`export const dynamic = "force-static"`; under that flag Next 16 replaces `cookies()`
+with an **empty store** for the whole route *including the root layout*, with no build
+error. So a root-layout cookie read would render "signed out" on every static page even
+for a signed-in user. This was confirmed against Next.js 16.2.6 source by two
+independent models (see the design-review note in §3.2). `cacheComponents`/PPR could fix
+it but is an app-wide caching-model migration (it disables the `dynamic` / `revalidate`
+/ `fetchCache` segment exports this repo relies on) — far too much churn for a boolean
+nav indicator. Route groups only move the duplication; middleware hint cookies create a
+second, forgeable UI-state source.
+
+So auth state is fetched **client-side**, which works uniformly on static and dynamic
+pages alike — the honest fit, since auth here is *presentation* state, not the
+authorization boundary (the server 401 stays authoritative).
 
 **New units:**
 
-- **`getBrowseAuthState()`** — server helper. Reads the session cookie via
-  `next/headers` `cookies()`, runs the existing `verifySession`, returns
-  `BrowseAuthState` (`"anonymous"` | `"authenticated"`). This is the render-tree
-  mirror of `resolveCurrentUser`, built on the same `verifySession` primitive — it
-  does **not** touch or duplicate the gate chain. Structured so the verify decision is
-  unit-testable without `next/headers` (the cookie-string → state logic is a pure
-  function; the `next/headers` read is a thin adapter around it).
-- **`AuthStateProvider` + `useBrowseAuthState()`** — a `"use client"` Context that
-  carries the server-seeded `BrowseAuthState`. The hook returns it; consumers combine
-  it with `browseModeLabel` / `canRequestResearch` from `browse-mode.ts`.
+- **`GET /api/auth/state`** — a tiny route: `export const dynamic = "force-dynamic"`,
+  calls the existing `resolveCurrentUser(request, env)`, returns `{ authenticated:
+  boolean }` with header `Cache-Control: private, no-store` (never cache a per-user
+  signal). Reuses the resolver; does **not** touch the gate chain.
+- **`AuthStateProvider` + `useBrowseAuthState()`** — a `"use client"` Context. The
+  provider fetches `/api/auth/state` once on mount and holds a **tri-state**
+  `BrowseAuthStatus`: `"unknown"` (pre-fetch) → `"anonymous"` | `"authenticated"`. The
+  hook returns it. Consumers map the two resolved states through `browseModeLabel` /
+  `canRequestResearch` from `browse-mode.ts`; while `"unknown"` they render a neutral,
+  reserved-width placeholder — no wrong CTA, no layout shift.
 
-Reading the cookie in the root layout makes rendering dynamic — already true for this
-app (D1-backed, `force-dynamic` worksheet), so no static-generation regression.
+The tri-state is load-bearing: rendering `"anonymous"` before the fetch resolves would
+flash "Sign in" at a signed-in user. `"unknown"` renders neutral so the chip settles
+into the right state without a wrong-CTA flash. (Refinement from the `/codex` review.)
 
-### 3.2 The one real risk — server-component secret access — and the fallback
+### 3.2 Why this is robust (and what it costs)
 
-`verifySession(token, secret)` needs `SESSION_SECRET`. Routes read it from the
-Cloudflare env via `getCloudflareContext()` (the secret isn't in the generated
-`CloudflareEnv` types — see the runtime-view cast in
-[feedback/route.ts:27-32](../../src/app/api/feedback/route.ts)). **Step 1 of
-implementation is to confirm `getCloudflareContext()` works from a root-layout server
-component on this OpenNext/Workers build** — this is the load-bearing unknown, and it
-echoes the project's workerd-binding pitfalls (see `docs/pitfalls/`).
+- **Uniform correctness:** the same client fetch drives the nav on static `/about`,
+  static `/privacy`, and every dynamic page — no per-route-mode correctness gaps.
+- **Keeps the compliance pages static:** `/about` and `/privacy` stay `force-static`;
+  PR-B's privacy page keeps its clean build-time markdown read, so this decision makes
+  PR-B **simpler**, not harder.
+- **No `getCloudflareContext`-in-root-layout question:** the layout reads nothing; the
+  secret is read only inside the `/api/auth/state` route, exactly like every other route.
+- **Cost:** one same-origin request per app mount, and a brief `"unknown"` → resolved
+  transition in the small corner chip (mitigated by the neutral placeholder + reserved
+  width). Acceptable for presentation state.
 
-**Fallback if the direct read is awkward:** a tiny `GET /api/auth/state` route (calls
-`resolveCurrentUser`, returns `{ authenticated: boolean }`) feeds the provider via a
-client fetch. Same architecture, same three consumers, same hook — only the *seeding*
-changes (fetch instead of direct read), at the cost of one round-trip and a brief
-flash. We commit to the direct read only after Step 1 confirms it; otherwise we take
-the fallback without re-litigating the design.
+**Design-review note (2026-07-13):** this replaced an earlier root-layout server-read
+design after grounding the plan in the actual stack surfaced the `force-static`
+interaction. Both Claude and an independent `/codex` consult confirmed the mechanism
+(Next.js 16.2.6 source) and independently chose this client-fetch approach over the
+all-dynamic alternative and over PPR.
 
 ### 3.3 Consumer — global nav chip + sign-out
 
@@ -143,9 +153,9 @@ The nav ([layout.tsx:46-60](../../src/app/layout.tsx)) gains a right-aligned
 - **Authenticated:** `browseModeLabel` ("Signed in") + a **Sign out** button.
 
 **Sign-out** POSTs the existing `POST /api/auth/logout` (already clears the cookie;
-POST-only, not prefetchable), then calls `router.refresh()` so the root server read
-re-runs against the now-cleared cookie and every consumer updates at once — no full
-reload, no manual state juggling.
+POST-only, not prefetchable), then the `AuthStateProvider` sets its status to
+`"anonymous"` (and `router.refresh()` re-runs any server components) so every consumer
+flips at once — no full reload, no manual per-surface state juggling.
 
 ### 3.4 Consumer — dynamic home banner
 
@@ -203,27 +213,32 @@ Sam prefers more prominence (noted for spec review).
 
 ## 4. Data flow
 
-1. **Request →** root `layout.tsx` (server) calls `getBrowseAuthState()` → reads
-   `wikinow_session`, `verifySession` → `BrowseAuthState`.
-2. **Seed →** `<AuthStateProvider state={…}>` wraps nav + `{children}` (plain string,
-   trivially serializable server→client).
+1. **Mount →** root `layout.tsx` (server, no cookie read) renders the client
+   `<AuthStateProvider>` wrapping the nav + `{children}`. Provider status starts
+   `"unknown"`.
+2. **Fetch →** on mount the provider `fetch`es `GET /api/auth/state`; the route runs
+   `resolveCurrentUser` and returns `{ authenticated }`; status resolves to
+   `"anonymous"` | `"authenticated"`.
 3. **Consume →** `NavAuthChip`, home banner, queue button each call
-   `useBrowseAuthState()` and render via `browseModeLabel` / `canRequestResearch`.
+   `useBrowseAuthState()`; while `"unknown"` they render a neutral placeholder, then map
+   the resolved state through `browseModeLabel` / `canRequestResearch`.
 4. **Sign in →** link to `/api/auth/google` (unchanged OAuth start).
-5. **Sign out →** `NavAuthChip` POSTs `/api/auth/logout` → `router.refresh()` → step 1
-   re-runs against the cleared cookie → all consumers flip to anonymous.
+5. **Sign out →** `NavAuthChip` POSTs `/api/auth/logout` → provider sets `"anonymous"`
+   (+ `router.refresh()`) → all consumers flip at once.
 
 ## 5. Error handling & edge cases
 
-- **Expired/invalid cookie:** `verifySession` fails → `getBrowseAuthState` returns
-  `"anonymous"` (fail-closed). Never throws into render.
+- **Pre-fetch / in-flight:** status `"unknown"` → neutral reserved-width placeholder;
+  never a wrong CTA, never layout shift.
+- **`/api/auth/state` fetch fails** (network/5xx): provider falls closed to
+  `"anonymous"`. The user can still sign in; no crash.
+- **Expired/invalid cookie:** `resolveCurrentUser` treats it as anonymous (it never
+  throws), so the endpoint returns `{ authenticated: false }`.
 - **State says authed but cookie expired mid-session:** UI offers the action; the
   server returns 401; the existing queue 401 handler (§3.5) surfaces "Sign in…". The
   advisory layer degrades gracefully to the authoritative layer.
 - **Sign-out network failure:** button reports a transient error and stays signed-in
   visually (no optimistic flip before the server confirms); user can retry.
-- **Missing `SESSION_SECRET` at render:** treated as `"anonymous"` (fail-closed);
-  covered by Step 1 verification and the §3.2 fallback.
 
 ## 6. Compliance check
 
@@ -236,30 +251,39 @@ requires sign-in; the server 401 is authoritative), and (b) `feedback` /
 `sources/open` stay anonymous-friendly (§2) rather than being newly gated. The cookie
 rename is an auth-mechanism change, not a guardrail change.
 
-## 7. Testing strategy (TDD throughout)
+## 7. Testing strategy (TDD)
 
-- **`getBrowseAuthState` pure logic:** cookie-string present & verifies → authenticated;
-  absent/invalid/expired → anonymous. Tested without `next/headers`.
-- **`AuthStateProvider` / `useBrowseAuthState`:** provided value round-trips to a
-  consumer; default outside a provider is `"anonymous"` (fail-closed).
-- **`NavAuthChip`:** renders correct label + control per state; sign-out click POSTs
-  `/api/auth/logout` and triggers refresh.
-- **Home banner:** correct adaptive copy per state; no "guest" assertion when authed.
-- **Queue button:** anonymous → sign-in affordance, no enqueue POST attempted;
-  authenticated → enqueues as before; **401 backstop path retained** and still tested.
+The codebase has **no React-component test harness** (no `.test.tsx`, no jsdom/RTL) —
+all UI is thin glue over tested pure logic (e.g. `browse-mode.ts`). This work follows
+that established pattern rather than introducing a component-test layer for a few thin
+components (which would be a larger, unasked-for infra change). So: **pure logic gets
+vitest TDD; thin components are verified by TypeScript + the browser QA pass** (the live
+site is already being driven in this session). This is a deliberate deviation from the
+design's first instinct to "component-test" the chip/banner/button; called out for the
+review gate.
+
+- **`GET /api/auth/state`:** authenticated request (valid session cookie) →
+  `{ authenticated: true }`; anonymous → `{ authenticated: false }`; response carries
+  `Cache-Control: private, no-store`. Reuses `resolveCurrentUser` (already tested).
+- **`browse-mode.ts`:** already covered; now exercised through real consumers.
+- **Queue gate:** the anonymous-vs-authenticated decision is `canRequestResearch`
+  (tested); the plan verifies the wiring (anonymous shows the sign-in affordance and
+  does not POST; authenticated enqueues) via TypeScript + browser, with the **401
+  backstop path retained** (never removed).
 - **Cookie rename:** existing `cookies.test.ts` updated; issue→verify→clear round-trip
   green under the new name.
-- **`browse-mode.ts`:** already covered; now exercised through real consumers.
-- Test output must stay pristine (no unhandled-rejection noise from the fail-closed
-  paths); any expected error is captured and asserted.
+- Provider/hook/chip/banner: verified by `tsc`, `eslint`, and browser QA (matches the
+  codebase's no-component-test convention).
+- Test output must stay pristine; any expected error is captured and asserted.
 
 ## 8. Implementation sequencing (isolated, CI-passing commits)
 
 1. `refactor(auth)!: rename session cookie to wikinow_session` — **Review (auth)**;
    breaking (re-login). Isolated.
-2. `feat(auth): add getBrowseAuthState server read` — after Step-1 secret-access
-   verification (§3.2); fallback endpoint only if needed.
-3. `feat(ui): AuthStateProvider + useBrowseAuthState, seeded in root layout`.
+2. `feat(auth): add GET /api/auth/state endpoint` — `force-dynamic`, `no-store`,
+   reuses `resolveCurrentUser`.
+3. `feat(ui): AuthStateProvider + useBrowseAuthState, mounted in root layout` — fetches
+   the endpoint on mount; tri-state `unknown → anonymous | authenticated`.
 4. `feat(ui): nav auth chip with sign-out` — wires `browse-mode.ts` label.
 5. `feat(ui): drive home banner from real auth state`.
 6. `feat(ui): proactive sign-in gate on queue research action`.
@@ -278,12 +302,17 @@ nowhere. (Details in §2; the inventory is the basis for the exclusion decisions
 
 ## Appendix B — reasoning, alternatives considered, dead ends
 
-**Server-read (chosen) vs. client `whoami` fetch (rejected).** A `GET /api/session`
-consumed by client fetch keeps `page.tsx` untouched but reintroduces exactly the wart
-we're fixing — a visible flash of the wrong state before the fetch resolves — plus a
-new public endpoint and a round-trip. Server-read at the root has none of these. The
-`whoami` shape survives only as the §3.2 *fallback* if server-component secret access
-proves unworkable.
+**Client fetch (chosen) vs. root-layout server read (rejected after review).** The
+first design read the cookie in the root layout to avoid any flash. Grounding the plan
+in the actual stack (Next 16, `force-static` `/about`) surfaced that a root-layout
+`cookies()` read is silently neutralized to an empty store on static routes — the nav
+would show "signed out" to a signed-in user on `/about` and `/privacy`, no build error.
+Two independent models (Claude + `/codex`) confirmed the mechanism against Next 16.2.6
+source and both picked the client fetch. The residual "flash" is now a small
+neutral-state settle in a corner chip (tri-state `unknown`), not a wrong-CTA flash — and
+the approach keeps the compliance pages static, which the server-read approach could not.
+This is the §Thinking-documentation "considered and reversed" record: the earlier
+recommendation was wrong for a concrete, cited reason.
 
 **Global nav (chosen) vs. homepage-only banner (rejected).** Sam's call, and correct:
 a sign-out reachable only from the home page is UX that reads as broken — users expect
@@ -302,17 +331,16 @@ compliance-intentional anonymous paths — a case where the "complete" option is
 surfaces, not more. The inventory (Appendix A) turned "boil the lake" from a vague
 maximalism into three precise consumers.
 
-**Context vs. React `cache()` / server-only helper.** We could call
-`getBrowseAuthState()` in each server component and dedupe with React `cache()`. But
-the two consuming *pages* are client components, so a client context is required
-regardless; adding `cache()` would be a second mechanism for the same fact. One
-context, seeded once, is simpler.
+**One context fed by one fetch.** The three consumers include two client-component
+*pages* (`page.tsx`, `queue/page.tsx`) that a root layout cannot prop-drill into, so a
+client context is required regardless. Feeding it from a single `/api/auth/state` fetch
+(rather than N per-surface fetches) keeps one mechanism and one round-trip.
 
-**What I'm still uncertain about.** (1) Whether `getCloudflareContext()` resolves in a
-root-layout server component on this OpenNext build — the §3.2 verification gates the
-whole approach; the fallback de-risks it. (2) Exact queue-button treatment when
-anonymous (disable vs. replace-with-prompt) — spec picks replace-with-prompt; open to
-refinement during implementation without changing the architecture.
+**What I'm still uncertain about.** (1) Exact queue-button treatment when anonymous
+(disable vs. replace-with-prompt) — spec picks replace-with-prompt; open to refinement
+during implementation without changing the architecture. (2) The precise neutral
+placeholder for the `"unknown"` chip state (blank vs. skeleton) — a visual-polish detail
+settled during implementation.
 
 **What I'd add with more time.** Surfacing the latent telemetry endpoint and the
 worksheet "request research" affordance — both real, both out of scope here, both now
