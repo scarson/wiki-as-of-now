@@ -91,6 +91,7 @@ Copied verbatim from the design spec ([2026-07-13-auth-state-ui-wiring-design.md
 **Files:**
 - Modify: `src/auth/current-user.ts:8` (the single `SESSION_COOKIE` constant)
 - Modify: `test/auth/cookies.test.ts` (4 literal `"wan_session"` fixtures)
+- Modify: `scripts/provision.md` (operational doc names `wan_session` at ~`:63` — the `/codex` review caught this; my original `src/ test/` grep missed it)
 
 **Interfaces:**
 - Produces: `SESSION_COOKIE === "wikinow_session"`, imported unchanged by the callback, logout, and resolver (they reference the constant, so the value propagates).
@@ -118,10 +119,14 @@ expect(c).toContain("wikinow_session=;");
 Run: `node_modules/.bin/vitest run test/auth`
 Expected: PASS (issue→verify→clear round-trips still green under the new name; `current-user.test.ts` uses the `SESSION_COOKIE` constant so it follows automatically).
 
+- [ ] **Step 3b: Update the operational doc**
+
+In `scripts/provision.md`, replace the `wan_session` reference (~`:63`) with `wikinow_session`. First read the surrounding lines to confirm it's a *current* operational reference (a live runbook naming the cookie), not a historical note; if historical, leave it. Do NOT rewrite `docs/design/*` or `docs/plans/*` mentions of `wan_session` — those legitimately reference the old name in the rename's own history.
+
 - [ ] **Step 4: Grep-clean verification**
 
-Run: `grep -rn "wan_session" src/ test/`
-Expected: **no output** (zero matches). If any remain, fix them.
+Run: `grep -rn "wan_session" src/ test/ scripts/`
+Expected: **no output** (zero matches). `docs/` is intentionally excluded — the design/plan docs reference the old name historically. If any remain in `src/ test/ scripts/`, fix them.
 
 - [ ] **Step 5: Full suite + typecheck**
 
@@ -131,7 +136,7 @@ Expected: PASS.
 - [ ] **Step 6: Commit**
 
 ```bash
-git add src/auth/current-user.ts test/auth/cookies.test.ts
+git add src/auth/current-user.ts test/auth/cookies.test.ts scripts/provision.md
 git commit -m "refactor(auth)!: rename session cookie to wikinow_session
 
 BREAKING CHANGE: existing wan_session cookies no longer resolve; signed-in
@@ -376,28 +381,38 @@ export function NavAuthChip() {
   const { status, setAnonymous } = useBrowseAuthState();
   const router = useRouter();
   const [busy, setBusy] = useState(false);
+  const [failed, setFailed] = useState(false);
 
-  // Reserve width so the nav doesn't shift when the fetch resolves.
+  // Reserve width so the nav doesn't shift when the fetch resolves (widest resolved
+  // state is "Browsing as a guest" + Sign in).
   if (status === "unknown") {
-    return <span className="ml-auto inline-block w-24" aria-hidden="true" />;
+    return <span className="ml-auto inline-block w-48" aria-hidden="true" />;
   }
 
   if (status === "anonymous") {
     return (
-      <a href="/api/auth/google" className="ml-auto text-sm text-iron-gall underline-offset-2 hover:underline">
-        Sign in
-      </a>
+      <span className="ml-auto flex items-center gap-3 text-sm">
+        <span className="text-dust-gray">{browseModeLabel(status)}</span>
+        <a href="/api/auth/google" className="text-iron-gall underline-offset-2 hover:underline">
+          Sign in
+        </a>
+      </span>
     );
   }
 
   async function signOut() {
     setBusy(true);
+    setFailed(false);
     try {
       const res = await fetch("/api/auth/logout", { method: "POST" });
       if (res.ok) {
         setAnonymous();
         router.refresh();
+      } else {
+        setFailed(true);
       }
+    } catch {
+      setFailed(true);
     } finally {
       setBusy(false);
     }
@@ -414,10 +429,17 @@ export function NavAuthChip() {
       >
         {busy ? "Signing out…" : "Sign out"}
       </button>
+      {failed && (
+        <span role="alert" className="text-oxidized-rust">
+          Sign-out failed — retry
+        </span>
+      )}
     </div>
   );
 }
 ```
+
+(Design fidelity: the anonymous branch now renders `browseModeLabel` + Sign in per design §3.3, so the reserved `unknown` width is `w-48`. Sign-out surfaces network + non-2xx failures per design §5 while keeping the user visually signed in.)
 
 - [ ] **Step 2: Render it in the nav**
 
@@ -478,30 +500,32 @@ In `src/app/page.tsx`, add:
 ```tsx
 import { useBrowseAuthState } from "./auth-state";
 ```
-Inside `Home()`, add near the other hooks:
+Inside `Home()`, add near the other hooks. **`Home()` already declares a lookup `status` at `page.tsx:32`, so alias the auth status to avoid a name collision** (this was a `/codex` blocker):
 ```tsx
-const { status } = useBrowseAuthState();
+const { status: authStatus } = useBrowseAuthState();
 ```
 
 - [ ] **Step 2: Replace the hardcoded banner (lines 74–83)**
 
-Replace the static banner block with a status-driven one (render nothing while `"unknown"` to avoid a wrong-state flash):
+Replace the static banner block with a status-driven one. The **outer wrapper reserves height** so content below doesn't jump when the state resolves; the bordered banner and its copy render only once `authStatus` is known (no wrong-state flash):
 ```tsx
-{status !== "unknown" && (
-  <div className="mb-8 rounded-md border border-hairline-gray bg-shelf-gray px-4 py-3 text-sm text-dust-gray">
-    {status === "anonymous" ? (
-      <>
-        Browsing as a guest — detected claims are open to read.{" "}
-        <a href="/api/auth/google" className="text-iron-gall underline-offset-2 hover:underline">
-          Sign in
-        </a>{" "}
-        to request research on a claim.
-      </>
-    ) : (
-      <>You&apos;re signed in — select a claim and request research on it.</>
-    )}
-  </div>
-)}
+<div className="mb-8 min-h-[3.25rem]">
+  {authStatus !== "unknown" && (
+    <div className="rounded-md border border-hairline-gray bg-shelf-gray px-4 py-3 text-sm text-dust-gray">
+      {authStatus === "anonymous" ? (
+        <>
+          Browsing as a guest — detected claims are open to read.{" "}
+          <a href="/api/auth/google" className="text-iron-gall underline-offset-2 hover:underline">
+            Sign in
+          </a>{" "}
+          to request research on a claim.
+        </>
+      ) : (
+        <>You&apos;re signed in — select a claim and request research on it.</>
+      )}
+    </div>
+  )}
+</div>
 ```
 
 - [ ] **Step 3: Typecheck + lint + browser**
@@ -535,26 +559,41 @@ nothing until state resolves. Fixes the reported always-guest bug."
 
 **Testing note:** `canRequestResearch` is already unit-tested; the wiring is verified by `tsc` + `eslint` + browser QA.
 
-- [ ] **Step 1: Consume the hook**
+- [ ] **Step 1: Consume the hook (aliased)**
 
-In `src/app/queue/page.tsx`, add the imports + hook (both `status` and `canRequestResearch` are used in Step 2 — no unused symbols):
+In `src/app/queue/page.tsx`, add the imports + hook. **`queue/page.tsx` already declares a lane-loading `status` at `:43`, so alias the auth status** (this was a `/codex` blocker):
 ```tsx
 import { useBrowseAuthState } from "@/app/auth-state";
 import { canRequestResearch } from "@/app/browse-mode";
 ```
 ```tsx
-const { status } = useBrowseAuthState();
+const { status: authStatus } = useBrowseAuthState();
 ```
 
-- [ ] **Step 2: Gate the research control**
+- [ ] **Step 2: Guard the handler (covers the keyboard path)**
 
-Where the "Research selected (n)" button + `aria-live` message render (~`:214-224`), replace the single button with a three-way on the resolved status. `"unknown"` → disabled button (no pre-resolution click); a resolved status where `canRequestResearch(status)` is false → the sign-in affordance instead of firing a doomed POST; otherwise → the button unchanged. Keep the existing 401 handler in `researchSelected` intact — the `className="..."` below means keep the button's **existing** classes verbatim:
+The research action fires from BOTH the button and the `r`/`R` keyboard shortcut (`:142-145`), so gating only the button leaves the keyboard path POSTing for anonymous users (a `/codex` finding). Guard inside `researchSelected` itself, at the very top, using the same message setter the existing 401 branch uses (read the function to find it — it sets the `aria-live` message):
 ```tsx
-{status === "unknown" ? (
+async function researchSelected() {
+  if (authStatus !== "authenticated") {
+    setMessage("Sign in to request research on these candidates."); // reuse the existing message state setter
+    return;
+  }
+  // ... existing body unchanged, INCLUDING the 401 handler (backstop for a session that
+  // expired after this check but before the server sees the request).
+}
+```
+Add `authStatus` to `researchSelected`'s dependency array if it is wrapped in `useCallback` (check the source). This is the real enforcement; the Step-3 button three-way is the up-front affordance.
+
+- [ ] **Step 3: Gate the research control (up-front affordance)**
+
+Where the "Research selected (n)" button + `aria-live` message render (~`:214-224`), replace the single button with a three-way on `authStatus`. `"unknown"` → disabled button (no pre-resolution click); a resolved status where `canRequestResearch(authStatus)` is false → the sign-in affordance instead of a doomed POST; otherwise → the button unchanged. `className="..."` means keep the button's **existing** classes verbatim:
+```tsx
+{authStatus === "unknown" ? (
   <button type="button" disabled className="..." /* existing button classes */>
     Research selected ({selected.size})
   </button>
-) : canRequestResearch(status) ? (
+) : canRequestResearch(authStatus) ? (
   <button
     type="button"
     onClick={researchSelected}
@@ -569,22 +608,22 @@ Where the "Research selected (n)" button + `aria-live` message render (~`:214-22
   </a>
 )}
 ```
-`canRequestResearch` (from `browse-mode.ts`, already unit-tested) is the decision predicate: `true` only for `"authenticated"`, so a resolved-anonymous user gets the sign-in affordance.
+`canRequestResearch` (from `browse-mode.ts`, already unit-tested) is `true` only for `"authenticated"`, so a resolved-anonymous user gets the sign-in affordance.
 
-- [ ] **Step 3: Typecheck + lint + browser**
+- [ ] **Step 4: Typecheck + lint + browser**
 
 Run: `npx tsc --noEmit && npx eslint src/app/queue/page.tsx` → PASS.
-Browser: **signed-in** — select a claim, "Research selected" enqueues (200 + "Queued 1 for research." toast) exactly as before. **Anonymous** — the control is replaced by "Sign in to request research"; no enqueue POST is attempted. Confirm the existing 401 handler still exists in `researchSelected`.
+Browser: **signed-in** — select a claim, "Research selected" enqueues (200 + "Queued 1 for research." toast) exactly as before; the `r` shortcut also works. **Anonymous** — the button is replaced by "Sign in to request research"; neither the button nor the `r` shortcut POSTs (the handler guard returns early with the sign-in message). Confirm the existing 401 handler still exists in `researchSelected`.
 
-- [ ] **Step 4: Commit**
+- [ ] **Step 5: Commit**
 
 ```bash
 git add src/app/queue/page.tsx
 git commit -m "feat(ui): proactive sign-in gate on queue research action
 
-Anonymous users see a Sign in affordance instead of firing a doomed 401;
-authenticated flow unchanged. Existing 401 handler retained as the
-authoritative backstop (defense in depth)."
+Anonymous users see a Sign in affordance instead of firing a doomed 401
+(button + r/R keyboard path both guarded); authenticated flow unchanged.
+Existing 401 handler retained as the authoritative backstop."
 ```
 
 **After completing Phases 5–6 (the consumer group):** review (minimum 3 rounds): (1) copy accuracy — every banner/gate string stays true about the anon/auth model? (2) no-regression — signed-in enqueue still returns 200 + toast (closes the go-live QA item)? (3) the 401 backstop is intact? Keep going until clean.
@@ -644,7 +683,7 @@ General feedback -> Discussions, bugs -> Issues. External links, new tab."
 ## Finalization
 
 - [ ] **Full verification:** `node_modules/.bin/vitest run && node_modules/.bin/vitest run -c vitest.workers.config.mts && npx tsc --noEmit && npx eslint .` — all green.
-- [ ] **Build sanity:** `npm run build` (opennextjs build) succeeds — catches any RSC/client-boundary or `force-static` interaction at build time.
+- [ ] **Build sanity:** `npm run build` (this is `next build`, per package.json — NOT the OpenNext package step) succeeds — catches RSC/client-boundary and `force-static` interaction errors at build time. For a full Cloudflare-packaging check, `npm run preview` runs `opennextjs-cloudflare build` — optional here since PR-A adds no new bindings.
 - [ ] **Open PR** with `## Merge classification`. Phase 1 (cookie rename) is auth-domain → note **Review — domain (auth)**; the UI phases are **Routine**. Because they ride one PR, classify the PR **Review — domain (auth)** (the stricter wins) and gate on `/codex`.
 - [ ] **`/codex` review**, address findings, then merge on green CI per Sam's grant. Update this plan's Execution Status table + banners with the merge SHA.
 
