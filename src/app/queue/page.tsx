@@ -105,32 +105,37 @@ export default function QueuePage() {
     }
     setEnqueueMsg("Sending…");
     try {
-      const res = await fetch("/api/queue/enqueue-research", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ candidateIds }),
-      });
-      const body = (await res.json()) as {
-        error?: string;
-        results?: { candidateId: number; outcome: string; reasons?: string[] }[];
-      };
-      if (!res.ok) {
-        // The route now requires auth (401 unauthenticated) and honors the kill-switch (503 disabled);
-        // surface those distinctly so a signed-out or paused user isn't told the request silently failed.
-        if (res.status === 401) {
-          // The session expired after the initial auth-state fetch. Reconcile the shared
-          // client state so the nav chip, banner, and this control all flip to anonymous
-          // (surfacing the sign-in affordance) instead of showing stale authenticated UI.
-          setAnonymous();
-          setEnqueueMsg("Sign in to request research on these candidates.");
-        } else if (res.status === 503) {
-          setEnqueueMsg("Research is currently disabled — try again later.");
-        } else {
-          setEnqueueMsg(typeof body.error === "string" ? body.error : `Enqueue failed (${res.status})`);
+      // The route caps one batch at 50 ids — chunk larger selections so a big lane
+      // never produces a request the server rejects outright.
+      const results: { candidateId: number; outcome: string; reasons?: string[] }[] = [];
+      for (let i = 0; i < candidateIds.length; i += 50) {
+        const res = await fetch("/api/queue/enqueue-research", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ candidateIds: candidateIds.slice(i, i + 50) }),
+        });
+        const body = (await res.json()) as {
+          error?: string;
+          results?: { candidateId: number; outcome: string; reasons?: string[] }[];
+        };
+        if (!res.ok) {
+          // The route requires auth (401 unauthenticated) and honors the kill-switch (503 disabled);
+          // surface those distinctly so a signed-out or paused user isn't told the request silently failed.
+          if (res.status === 401) {
+            // The session expired after the initial auth-state fetch. Reconcile the shared
+            // client state so the nav chip, banner, and this control all flip to anonymous
+            // (surfacing the sign-in affordance) instead of showing stale authenticated UI.
+            setAnonymous();
+            setEnqueueMsg("Sign in to request research on these candidates.");
+          } else if (res.status === 503) {
+            setEnqueueMsg("Research is currently disabled — try again later.");
+          } else {
+            setEnqueueMsg(typeof body.error === "string" ? body.error : `Enqueue failed (${res.status})`);
+          }
+          return;
         }
-        return;
+        results.push(...(body.results ?? []));
       }
-      const results = body.results ?? [];
       const accepted = results.filter((r) => r.outcome === "enqueued").length;
       const skipped = results.length - accepted;
       setEnqueueMsg(
