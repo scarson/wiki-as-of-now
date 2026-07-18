@@ -9,6 +9,7 @@ import { getVerdict } from "@/db/eligibility-verdicts";
 import { GATE_VERSION } from "@/safelane/eligibility";
 import { reasonLabel } from "@/worksheet/reason-label";
 import { StaleSentence } from "@/app/worksheet/components/StaleSentence";
+import { wikipediaArticleUrl, wikipediaSectionUrl } from "@/wikipedia/article-url";
 
 export const dynamic = "force-dynamic";
 
@@ -33,7 +34,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
         page {article.pageId} · revision {article.revisionId}
       </p>
       <h1 className="mt-3 font-serif text-2xl leading-snug text-ink-white" style={{ textWrap: "balance" }}>
-        {article.title}
+        <a
+          href={wikipediaArticleUrl(article.title)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-iron-gall underline-offset-2 hover:underline"
+        >
+          {article.title}
+        </a>
       </h1>
 
       {eligibility === "easy_win" ? (
@@ -69,7 +77,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
               <div className="mt-3 flex flex-wrap gap-2 font-mono text-xs">
                 <span className="rounded-full bg-rust-shadow px-2 py-1 text-oxidized-rust">stale · {c.year}</span>
                 {c.sectionHeading && (
-                  <span className="rounded-full bg-shelf-gray px-2 py-1 text-dust-gray">§ {c.sectionHeading}</span>
+                  <a
+                    href={wikipediaSectionUrl(article.title, c.sectionHeading)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-shelf-gray px-2 py-1 text-iron-gall underline-offset-2 hover:underline"
+                  >
+                    § {c.sectionHeading}
+                  </a>
                 )}
               </div>
             </li>

@@ -30,6 +30,8 @@ export interface EvidenceCardView {
 export interface ArticleClaimView {
   candidateId: number;
   pageId: number;
+  /** Article title from the articles row; null when no row exists (defensive symmetry with the revision fallback). */
+  title: string | null;
   sectionHeading: string;
   sentenceText: string;
   year: number;
