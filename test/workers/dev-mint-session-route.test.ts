@@ -14,7 +14,8 @@ let mockEnv: Record<string, unknown>;
 vi.mock("@opennextjs/cloudflare", () => ({
   getCloudflareContext: () => ({ env: mockEnv }),
 }));
-const { POST } = await import("../../src/app/api/dev/mint-session/route");
+const mintRoute = await import("../../src/app/api/dev/mint-session/route");
+const { POST } = mintRoute;
 const { POST: DELETE_ACCOUNT } = await import("../../src/app/api/account/delete/route");
 
 function fullEnv(): Record<string, unknown> {
@@ -71,6 +72,16 @@ describe("POST /api/dev/mint-session — fail-closed gates", () => {
   it("500s when SESSION_SECRET is missing but the gates pass (misconfiguration, not probing)", async () => {
     delete mockEnv.SESSION_SECRET;
     expect((await POST(mintReq({ secret: ADMIN_SECRET }))).status).toBe(500);
+  });
+
+  it("every other HTTP method 404s explicitly — no framework 405/OPTIONS reveals the route on prod", async () => {
+    delete mockEnv.DEV_SESSION_MINT;
+    for (const method of ["GET", "HEAD", "PUT", "DELETE", "PATCH", "OPTIONS"] as const) {
+      const handler = mintRoute[method];
+      expect(typeof handler, `${method} must be exported`).toBe("function");
+      const res = await handler();
+      expect(res.status, `${method} must 404`).toBe(404);
+    }
   });
 });
 

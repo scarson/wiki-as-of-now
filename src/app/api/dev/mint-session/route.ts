@@ -36,6 +36,21 @@ function notFound(): Response {
   return json({ error: "Not found" }, 404);
 }
 
+/**
+ * Non-POST methods 404 explicitly. Without these, Next.js answers OPTIONS with 204
+ * (+ Allow header) and undefined methods with 405 — enough for a client to discover
+ * the route on production despite the flag being absent. Uniform 404 keeps the
+ * refusal indistinguishable from the route not existing.
+ */
+export async function GET(): Promise<Response> {
+  return notFound();
+}
+export const HEAD = GET;
+export const PUT = GET;
+export const DELETE = GET;
+export const PATCH = GET;
+export const OPTIONS = GET;
+
 export async function POST(request: Request): Promise<Response> {
   const { env } = getCloudflareContext();
   const vars = env as unknown as MintRouteVars;
