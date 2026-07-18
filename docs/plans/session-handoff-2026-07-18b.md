@@ -4,7 +4,7 @@ Successor to [session-handoff-2026-07-18.md](session-handoff-2026-07-18.md) (sam
 
 ## Headline state
 
-- **Prod == dev again.** Release [PR #50](https://github.com/scarson/wiki-as-of-now/pull/50) promoted PRs #47–#49 (merge pending at writing — see the PR for final state; no D1 migrations in it). Suites at dev tip: **976 node + 63 workers green**.
+- **Prod == dev again.** Release [PR #50](https://github.com/scarson/wiki-as-of-now/pull/50) promoted PRs #47–#49 — merged, prod Deploy run succeeded, smoke passed (all pages 200; mint route 404 on prod; capture throttle live — 429 + Retry-After observed once an isolate's budget exhausted, with the per-isolate request-splitting behavior visible exactly as the design documents). No D1 migrations. Suites at dev tip: **976 node + 63 workers green**.
 - **Branch namespace:** only `dev`/`main` remote plus this handoff's `docs/handoff-0718b`. Feature branches from this session (`feat/capture-throttle`, `feat/dev-session-mint`, `feat/gold-answer-eval`) merged and deleted.
 - **Worktrees:** this session used `.claude/worktrees/wikinow-session-handoff-e81ef1` (harness-created; safe to delete after this branch merges). `laughing-chaplygin-ce1c13` remains untouched — still Sam's to triage.
 
