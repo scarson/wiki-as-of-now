@@ -4,7 +4,7 @@
 
 **Goal:** Ship a formal Privacy Policy (rendered at `/privacy`) and basic self-serve account deletion that erases a signed-in user's personal data while preserving service-wide metering.
 
-**Architecture:** The policy is authoritative markdown at `docs/policy/privacy-policy.md`, rendered at a `force-static` `/privacy` route via a build-time file read + `markdown-to-jsx`. Deletion is a `force-dynamic` `POST /api/account/delete` (auth-gated) that atomically **deletes the `users` row** (the email/PII) and **nulls `quota_ledger.user_id`** (keeping the row for the global cost cap), appends `account.deleted`, and clears the cookie. Migration `0006` makes `quota_ledger.user_id` nullable. Separately, anonymous audit actions are relabeled `system` → `AnonUser`.
+**Architecture:** The policy is authoritative markdown at `docs/policy/privacy-policy.md`, rendered at a `force-static` `/privacy` route via a build-time file read + `markdown-to-jsx`. Deletion is a `force-dynamic` `POST /api/account/delete` (auth-gated) that atomically **deletes the `users` row** (the email/PII) and **nulls `quota_ledger.user_id`** (keeping the row for the global cost cap), appends `account.deleted`, and clears the cookie. Migration `0009` makes `quota_ledger.user_id` nullable. Separately, anonymous audit actions are relabeled `system` → `AnonUser`.
 
 **Tech Stack:** Next 16.2.6 App Router on Cloudflare Workers (`@opennextjs/cloudflare`), D1, jose sessions, `markdown-to-jsx` (new dep), vitest (Node + workerd pools). Depends on PR-A (merged): `NavAuthChip`, `useBrowseAuthState`/`setAnonymous`, `/api/auth/state`, `wikinow_session` all exist.
 
@@ -38,14 +38,16 @@ From the design ([2026-07-13-privacy-and-account-deletion-design.md](../design/2
 
 ## Execution Status
 
-**Overall:** Not started. Branch `claude/privacy-account-deletion` (off `dev` with PR-A merged; the design + both plans are already committed on it — see `git log`).
+**Overall:** 🚧 IN PROGRESS — claimed 2026-07-18T02:45:00Z on branch `feat/privacy-account-deletion` (cut off `origin/dev` f2596ad, post-PR-C).
+
+**Deviations:** executing on `feat/privacy-account-deletion` (fresh off current dev), not the original `claude/privacy-account-deletion` doc branch — dev advanced past it (PR-C #39, chore #38); the revised design + this plan were copied onto the executing branch instead of rebasing the stale one. Round-2 item 3 resolved: **option A (disclose)** — Sam delegated, rationale recorded in design Appendix ("Disclose the stored Google identifier vs. stop storing it").
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Verify policy claims | ⬜ Not started | — | gates policy publish |
 | 2 — Privacy policy doc | ⬜ Not started | — | copy design §3.2 verbatim |
 | 3 — /privacy render | ⬜ Not started | — | markdown-to-jsx; build-read risk |
-| 4 — Migration 0006 | ⬜ Not started | — | quota_ledger.user_id nullable |
+| 4 — Migration 0009 | ⬜ Not started | — | quota_ledger.user_id nullable |
 | 5 — Delete endpoint | ⬜ Not started | — | null-attribution; destructive; TDD |
 | 6 — Delete UI | ⬜ Not started | — | operation-state confirm |
 | 7 — AnonUser relabel | ⬜ Not started | — | audit actor fix |
@@ -58,7 +60,7 @@ Found after the plan rebuild; not yet folded into the phases below. Fix these as
 
 1. **[BLOCKER] Migration number:** use `0009_quota_ledger_nullable_user.sql`, NOT `0006` (`0006-0007` reserved per `scripts/provision.md:30`; `0008` exists). Update all `0006` references in this plan + design §7.
 2. **[BLOCKER] Update `src/db/schema.sql`** (the cumulative schema) in Phase 4 too: `quota_ledger.user_id` → nullable + `ON DELETE SET NULL`. A parity test (`test/db/migration.test.ts:150`) enforces schema.sql ↔ migrations; it fails otherwise.
-3. **[BLOCKER — needs Sam] Policy factual accuracy.** The app also stores the **raw Google `sub`** (`users.identity_subject`) + `created_at`, so "store only your email" is false. And "that id can't be traced back to you" is not durable (re-login regenerates the same deterministic id, `src/auth/oauth.ts:16`). **Decision pending (see handoff):** (A) reword the policy to disclose the stored Google identifier + soften the traceability claim to present-tense ("once you delete, we can no longer link that id to you"), or (B) stop storing the raw `sub` (the `user_id` hash is derived from it) so "only email" becomes true — a schema/code change touching the OAuth callback. Do NOT publish the policy until this is resolved.
+3. **[RESOLVED 2026-07-18 — option A, Sam-delegated]** Policy reworded to disclose the stored Google identifier + creation date and to present-tense the traceability claim (design §3.2 updated; rationale in design Appendix). Original finding: **Policy factual accuracy.** The app also stores the **raw Google `sub`** (`users.identity_subject`) + `created_at`, so "store only your email" is false. And "that id can't be traced back to you" is not durable (re-login regenerates the same deterministic id, `src/auth/oauth.ts:16`). **Decision pending (see handoff):** (A) reword the policy to disclose the stored Google identifier + soften the traceability claim to present-tense ("once you delete, we can no longer link that id to you"), or (B) stop storing the raw `sub` (the `user_id` hash is derived from it) so "only email" becomes true — a schema/code change touching the OAuth callback. Do NOT publish the policy until this is resolved.
 4. **[should-fix] Phase 4 upgrade test:** apply through `0005`, seed a ledger row, apply `0009`, then assert row preservation + `user_id` nullable + `ON DELETE SET NULL` + `WITHOUT ROWID`. (Fresh-apply alone doesn't exercise the data-rebuild path.)
 5. **[should-fix] Phase 5 atomicity test** (design §6 promised it): force the audit insert to fail and prove the ledger UPDATE + user DELETE roll back.
 6. **[should-fix] Phase 5 stale-JWT guard:** `resolveCurrentUser` authenticates a JWT without checking the user row exists, so a replayed post-deletion JWT re-appends `account.deleted`. Make the audit append conditional on the user existing (or short-circuit if `users` row absent), returning idempotent 200.
@@ -132,17 +134,17 @@ export default async function PrivacyPage() {
 
 ---
 
-## Phase 4 — Migration `0006`: `quota_ledger.user_id` nullable + `ON DELETE SET NULL`
+## Phase 4 — Migration `0009`: `quota_ledger.user_id` nullable + `ON DELETE SET NULL`
 
 **Execution Status:** ⬜ NOT STARTED
 
-**Files:** Create `migrations/0006_quota_ledger_nullable_user.sql`.
+**Files:** Create `migrations/0009_quota_ledger_nullable_user.sql`.
 
 **BEFORE:** read an existing migration (e.g. `migrations/0005_quota_ledger.sql`) and check how D1 migrations handle FK during a table rebuild (whether `PRAGMA foreign_keys`/`defer_foreign_keys` is used, and D1's default FK enforcement). SQLite requires a table rebuild to change a column's nullability + FK action.
 
 - [ ] **Step 1: Write the migration** (rebuild pattern; adjust PRAGMA usage to match how D1 migrations run in this repo):
 ```sql
--- 0006: quota_ledger.user_id nullable + ON DELETE SET NULL — lets account deletion detach a user's
+-- 0009: quota_ledger.user_id nullable + ON DELETE SET NULL — lets account deletion detach a user's
 -- attribution (UPDATE ... SET user_id = NULL) while KEEPING the row, so the global daily cost cap
 -- (countPacksGlobalOnDay counts all rows) stays honest. Table rebuild: SQLite can't ALTER nullability/FK.
 CREATE TABLE quota_ledger_new (
@@ -160,7 +162,7 @@ DROP TABLE quota_ledger;
 ALTER TABLE quota_ledger_new RENAME TO quota_ledger;
 ```
 - [ ] **Step 2: Verify** the migration applies cleanly in the workers pool (it reads `migrations/`): run any existing `test/workers/**` quota/ledger test green. Confirm inserts still work and the column now accepts NULL.
-- [ ] **Step 3: Commit.** `feat(db): quota_ledger.user_id nullable, ON DELETE SET NULL (migration 0006)`.
+- [ ] **Step 3: Commit.** `feat(db): quota_ledger.user_id nullable, ON DELETE SET NULL (migration 0009)`.
 
 ---
 

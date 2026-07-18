@@ -36,8 +36,9 @@ From the data model (`src/db/users.ts`, `src/db/quota-ledger.ts`, `src/auth/*`):
 **Facts the policy asserts that MUST be verified before publishing** (checked during
 implementation, confirmed at the review gate): (a) there are **no third-party
 analytics/advertising cookies or trackers** in the app; (b) anonymous use associates
-nothing with a person (anonymous actions are recorded only as actor `"system"`, with no
-identifier). If either turns out false, the policy wording changes.
+nothing with a person (anonymous actions are recorded only under a role label —
+`"AnonUser"` after the §3.3 relabel — with no identifier). If either turns out false,
+the policy wording changes.
 
 **Third-party framing (corrected after `/codex` review + Sam's steer).** The original
 draft claimed "Google is the only third party" — imprecise, because **Cloudflare** is
@@ -94,10 +95,11 @@ public-content services never see personal data — nothing more.
 >
 > ## Signing in with Google
 >
-> Signing in is only for requesting research on a claim. When you do, we store only your
-> **email address** and generate an **internal account id** (a one-way hash of your
-> Google account; we never see your password). We use them to let you request research
-> and to enforce daily usage limits.
+> Signing in is only for requesting research on a claim. When you do, we store your
+> **email address**, the **identifier Google uses for your account** (so we can recognize
+> you when you sign back in), and your account's creation date. We also generate an
+> **internal account id** (a one-way hash of that Google identifier; we never see your
+> password). We use these to let you request research and to enforce daily usage limits.
 >
 > **We don't sell your personal data or share it with anyone for their own use.** Google
 > is our sign-in provider, and Cloudflare, our hosting provider, stores and processes
@@ -110,8 +112,9 @@ public-content services never see personal data — nothing more.
 > We keep an append-only log for integrity and abuse-prevention. It records only short
 > codes and identifiers, never your searches, article text, or any free text about you.
 > When you're signed in, entries carry your opaque account id; once you delete your
-> account, that id can't be traced back to you. Anonymous actions carry no personal
-> identifier at all.
+> account, we no longer hold anything that links that id to you (signing back in with
+> the same Google account would recreate the same id). Anonymous actions carry no
+> personal identifier at all.
 >
 > ## Cookies
 >
@@ -121,7 +124,7 @@ public-content services never see personal data — nothing more.
 > ## Deleting your account
 >
 > Delete your account anytime from the account menu while signed in. This removes your
-> email and account profile for good and signs you out. We keep anonymized daily usage
+> email, the Google identifier, and your whole account profile for good and signs you out. We keep anonymized daily usage
 > counts to enforce overall limits, but nothing that links them back to you.
 >
 > ## Questions
@@ -246,8 +249,9 @@ failure, a transient inline error (no optimistic sign-out). Modeled on the teeti
    (the §3.2 text, after verifying §2's factual claims).
 2. `feat(web): render privacy policy at /privacy` — add `markdown-to-jsx`, static route,
    nav/footer links.
-3. `feat(db): quota_ledger.user_id nullable, ON DELETE SET NULL` — migration `0006`
-   (table rebuild) so attribution can be detached without dropping the metered row.
+3. `feat(db): quota_ledger.user_id nullable, ON DELETE SET NULL` — migration `0009`
+   (table rebuild; `0006`–`0007` are reserved per `scripts/provision.md`, `0008` exists)
+   so attribution can be detached without dropping the metered row.
 4. `feat(account): POST /api/account/delete` — atomic null-attribution + user delete +
    audit event + cookie clear (TDD).
 5. `feat(ui): account menu with delete-account confirmation` — wires the endpoint into
@@ -273,7 +277,7 @@ would let spend exceed the global budget. The fix keeps the metered rows (global
 intact) and nulls their `user_id` (attribution gone), while hard-deleting the `users`
 row (the actual PII). A full tombstone on `users` was rejected: `user_id` is a
 deterministic hash, so a re-login would PK-collide with a tombstone; deleting the row and
-letting re-login create a fresh one is cleaner. Migration `0006` makes `user_id` nullable
+letting re-login create a fresh one is cleaner. Migration `0009` makes `user_id` nullable
 to allow the detach.
 
 **Durability: document, don't over-build (Sam's call).** Making the research consumer
@@ -285,6 +289,21 @@ the limit in the policy and defer the queue-drain work. Revisit if real users ar
 **Basic vs. revocable sessions.** Chosen basic per "simple is good" and the teetimes
 precedent; the JWT-until-expiry window is the one honest caveat, surfaced in §4.3 for
 veto rather than buried.
+
+**Disclose the stored Google identifier vs. stop storing it (decided 2026-07-18).**
+Codex round 2 caught that the policy's original "we store only your email + a generated
+id" was false: the app also stores the raw Google `sub` (`users.identity_subject`) and
+`created_at`. Sam delegated the call; Claude chose **disclosure** (the §3.2 text now
+names the Google identifier and the creation date) over dropping the column. Reasons:
+`identity_subject` is load-bearing today — it backs the `users_identity_unique` index
+and the `getUserByIdentity` re-login lookup — so removal means a `users` table rebuild
+plus an OAuth-callback refactor inside an already Review-classified auth PR, for what
+Sam judged a precision nit; and the identifier's lifetime is bounded by the account (the
+whole `users` row is deleted on account deletion). Dropping the raw `sub` (deriving
+lookups from the deterministic `user_id` hash instead) remains a reasonable future
+slimming PR if wanted. The traceability sentence was also made honest: deletion removes
+our link to the id, but re-login with the same Google account recreates the same
+deterministic id, and the policy now says so.
 
 **Still uncertain / to verify before publish:** the three factual assertions in §2
 (no trackers, anonymous-stores-nothing, Google-only) — cheap to confirm in code, but
