@@ -28,9 +28,10 @@ bunx wrangler d1 migrations apply wiki-as-of-now --remote --env production
 ```
 
 Applies all `migrations/*.sql` (wrangler globs the whole dir — currently 0001–0003, 0004,
-0005, 0008, with 0006–0007 permanently reserved/unused; the 4-digit prefix order is
-load-bearing, CC-2). Run once per env. There is no `0009` migration — Phase 6 feedback is
-additive `session.feedback` audit rows, not a schema change.
+0005, 0008, 0009, with 0006–0007 permanently reserved/unused; the 4-digit prefix order is
+load-bearing, CC-2). Run once per env. `0009` rebuilds `quota_ledger` so `user_id` is
+nullable with `ON DELETE SET NULL` (account deletion detaches attribution while keeping the
+metered row).
 
 > If wrangler insists on the literal per-env database name for the apply, the dev command is
 > `bunx wrangler d1 migrations apply wiki-as-of-now-dev --remote --env dev` (already shown) and

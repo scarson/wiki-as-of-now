@@ -8,7 +8,8 @@ export type BrowseAuthStatus = "unknown" | BrowseAuthState;
 
 interface AuthStateValue {
   status: BrowseAuthStatus;
-  /** Flip to anonymous immediately after a successful sign-out (no refetch needed). */
+  /** Reconcile the shared state to anonymous without a refetch — after a successful sign-out,
+   *  account deletion, or a server 401 revealing the session has expired. */
   setAnonymous: () => void;
 }
 

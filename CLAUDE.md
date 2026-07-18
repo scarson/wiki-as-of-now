@@ -13,7 +13,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 <!-- TODO: 1-3 sentence description; list the major subsystems; link the top-priority
 design docs and pitfalls. -->
 
-WikiAsOfNow — a deterministic stale-claim finder for Wikipedia paired with a selective, metered Gemini-backed research assistant, built on Cloudflare Workers + D1.
+WikiAsOfNow — a deterministic stale-claim finder for Wikipedia paired with a selective, metered Workers-AI-backed (Gemma) research assistant, built on Cloudflare Workers + D1.
 
 **Design spec:** [docs/design/WikiAsOfNow_design_spec.md](docs/design/WikiAsOfNow_design_spec.md) — the authoritative product, architecture, and implementation document. Read it before non-trivial work; §26 ("Implementation Recommendations for a Coding Agent") lists the architectural invariants.
 
