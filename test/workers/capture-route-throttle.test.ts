@@ -69,6 +69,17 @@ describe("POST /api/queue/capture — rate limiting via the binding", () => {
     }
   });
 
+  it("fails open when limit() throws — the abuse brake must never become an availability dependency", async () => {
+    mockEnv.CAPTURE_RATE_LIMITER = {
+      async limit(): Promise<{ success: boolean }> {
+        throw new Error("binding unavailable");
+      },
+    };
+    for (let i = 0; i < 3; i++) {
+      expect((await POST(req("203.0.113.6"))).status).toBe(400);
+    }
+  });
+
   it("skips the limiter when CF-Connecting-IP is absent (Cloudflare always sets it at the edge)", async () => {
     const limiter = fakeRateLimiter(2);
     mockEnv.CAPTURE_RATE_LIMITER = limiter;

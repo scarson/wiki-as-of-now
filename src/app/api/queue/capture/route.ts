@@ -39,7 +39,14 @@ export async function POST(request: Request): Promise<Response> {
   const ip = request.headers.get("cf-connecting-ip");
   const limiter = (getCloudflareContext().env as unknown as CaptureRouteBindings).CAPTURE_RATE_LIMITER;
   if (ip !== null && limiter !== undefined) {
-    const { success } = await limiter.limit({ key: ip });
+    // Fail open on a throwing binding, same as an absent one — the abuse brake
+    // must never become an availability dependency for capture.
+    let success = true;
+    try {
+      ({ success } = await limiter.limit({ key: ip }));
+    } catch {
+      success = true;
+    }
     if (!success) {
       // limit() reports only success/failure, so Retry-After is the window length — an upper bound.
       return json({ error: "Too many capture requests from this address — try again shortly" }, 429, {
