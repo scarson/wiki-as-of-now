@@ -40,6 +40,13 @@ describe("POST /api/sources/open — request validation (no binding access on th
     expect(res.status).toBe(400);
   });
 
+  it("returns 400 when sourceRevisionId is not a positive integer (fractional, zero, negative, NaN)", async () => {
+    for (const bad of [1.5, 0, -3, NaN]) {
+      const res = await POST(req({ claimKey: "c".repeat(64), url: "https://x/y", sourceRevisionId: bad }));
+      expect(res.status).toBe(400);
+    }
+  });
+
   it("returns 400 when the claimKey is not 64-char lowercase hex", async () => {
     const res = await POST(req({ claimKey: "not-hex", url: "https://x/y", sourceRevisionId: 100 }));
     expect(res.status).toBe(400);

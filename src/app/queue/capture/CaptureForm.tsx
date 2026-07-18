@@ -6,6 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { StaleSentence } from "@/app/worksheet/components/StaleSentence";
+import { wikipediaArticleUrl, wikipediaSectionUrl } from "@/wikipedia/article-url";
 import { reasonLabel } from "@/worksheet/reason-label";
 import { parseWikiTarget } from "@/app/queue/parse-wiki-target";
 
@@ -108,7 +109,14 @@ export function CaptureForm() {
       {status === "done" && result && (
         <section className="mt-8">
           <h2 className="font-serif text-lg font-medium text-ink-white">
-            {result.title}{" "}
+            <a
+              href={wikipediaArticleUrl(result.title)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-iron-gall underline-offset-2 hover:underline"
+            >
+              {result.title}
+            </a>{" "}
             <span className="font-normal text-dust-gray">
               — {result.candidateCount} candidate{result.candidateCount === 1 ? "" : "s"}
             </span>
@@ -152,9 +160,14 @@ export function CaptureForm() {
                       stale · {c.year}
                     </span>
                     {c.sectionHeading && (
-                      <span className="rounded-full bg-shelf-gray px-2 py-1 text-dust-gray">
+                      <a
+                        href={wikipediaSectionUrl(result.title, c.sectionHeading)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full bg-shelf-gray px-2 py-1 text-iron-gall underline-offset-2 hover:underline"
+                      >
                         § {c.sectionHeading}
-                      </span>
+                      </a>
                     )}
                   </div>
                 </li>

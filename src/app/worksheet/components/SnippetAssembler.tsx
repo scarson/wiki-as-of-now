@@ -17,7 +17,7 @@ export function SnippetAssembler({ url, accessedDate }: SnippetAssemblerProps) {
   const [title, setTitle] = useState("");
   const [publisher, setPublisher] = useState("");
   const [publishedDate, setPublishedDate] = useState("");
-  const [copied, setCopied] = useState(false);
+  const [copyState, setCopyState] = useState<"idle" | "copied" | "failed">("idle");
 
   // The ref is built ONLY from deterministic source metadata — NEVER from `sentence` (G1/G16).
   const ref = useMemo(
@@ -34,9 +34,15 @@ export function SnippetAssembler({ url, accessedDate }: SnippetAssemblerProps) {
 
   async function copy() {
     // Copy the human's sentence followed by the mechanical ref — the two are assembled here, never auto-fused upstream.
-    await navigator.clipboard.writeText(`${sentence.trim()}${ref}`);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1500);
+    // writeText rejects in ordinary conditions (window unfocused, permission denied) — surface that
+    // instead of leaving the button silently inert.
+    try {
+      await navigator.clipboard.writeText(`${sentence.trim()}${ref}`);
+      setCopyState("copied");
+    } catch {
+      setCopyState("failed");
+    }
+    window.setTimeout(() => setCopyState("idle"), 1500);
   }
 
   return (
@@ -95,7 +101,7 @@ export function SnippetAssembler({ url, accessedDate }: SnippetAssemblerProps) {
         onClick={copy}
         className="mt-3 rounded-md border border-hairline-gray px-3 py-1.5 text-sm text-dust-gray transition"
       >
-        {copied ? "Copied" : "Copy sentence + citation"}
+        {copyState === "copied" ? "Copied" : copyState === "failed" ? "Copy failed — try again" : "Copy sentence + citation"}
       </button>
     </section>
   );

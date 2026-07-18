@@ -2,7 +2,7 @@
 // ABOUTME: Thin glue: resolves the current user for the actor id, validates the outcome via src/db/feedback, no PII.
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { d1Executor } from "@/db/client";
-import { recordFeedback, type FeedbackOutcome } from "@/db/feedback";
+import { recordFeedback, isFeedbackOutcome } from "@/db/feedback";
 import { resolveCurrentUser } from "@/auth/current-user";
 
 export const dynamic = "force-dynamic";
@@ -31,14 +31,15 @@ export async function POST(request: Request): Promise<Response> {
   // through the runtime-only view of the same object, mirroring the research route.
   const auth = await resolveCurrentUser(request, env as unknown as Parameters<typeof resolveCurrentUser>[1]);
   const actor = auth.kind === "authenticated" ? auth.userId : "AnonUser";
-  try {
-    await recordFeedback(d1Executor(env.DB), {
-      actor,
-      outcome: String(body.outcome ?? "") as FeedbackOutcome,
-      claimKey: body.claimKey,
-    });
-  } catch {
+  const outcome = body.outcome;
+  if (!isFeedbackOutcome(outcome)) {
     return json({ error: "outcome must be one of edit_made, no_edit, abandoned" }, 400);
+  }
+  try {
+    await recordFeedback(d1Executor(env.DB), { actor, outcome, claimKey: body.claimKey });
+  } catch {
+    // Validation happened above — a failure here is the write itself, not the caller's input.
+    return json({ error: "Internal error" }, 500);
   }
   return json({ ok: true }, 200);
 }

@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last updated: 2026-07-18_
+_Last updated: 2026-07-17_
 
 WikiAsOfNow finds Wikipedia claims that may have gone stale, and lets you request
 research on one if you sign in. It's short because we hold very little.

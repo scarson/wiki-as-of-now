@@ -36,6 +36,7 @@ export function NavAuthChip() {
   async function signOut() {
     setOp("signout");
     setSignOutFailed(false);
+    setDeleteFailed(false);
     try {
       const res = await fetch("/api/auth/logout", { method: "POST" });
       if (res.ok) {
@@ -54,6 +55,7 @@ export function NavAuthChip() {
   async function deleteAccount() {
     setOp("delete");
     setDeleteFailed(false);
+    setSignOutFailed(false);
     try {
       const res = await fetch("/api/account/delete", { method: "POST" });
       if (res.ok) {
@@ -105,7 +107,10 @@ export function NavAuthChip() {
           </button>
           <button
             type="button"
-            onClick={() => setConfirming(false)}
+            onClick={() => {
+              setConfirming(false);
+              setDeleteFailed(false);
+            }}
             disabled={op === "delete"}
             className="text-iron-gall underline-offset-2 hover:underline disabled:opacity-50"
           >

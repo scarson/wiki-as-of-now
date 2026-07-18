@@ -43,7 +43,7 @@ export default function RootLayout({
 			</head>
 			<body className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} antialiased`}>
 				<AuthStateProvider>
-					{/* Global nav — the only cross-page entry point into the easy-win lane and About.
+					{/* Global nav — the only cross-page entry point into the easy-win lane, About, and Privacy.
 					    Iron-gall links per the Two Lanes Rule; the global :focus-visible ring (globals.css)
 					    makes every link keyboard-reachable. The auth chip reflects real sign-in state. */}
 					<nav className="border-b border-hairline-gray bg-shelf-gray">
@@ -57,6 +57,9 @@ export default function RootLayout({
 								</Link>
 								<Link href="/about" className="text-iron-gall underline-offset-2 hover:underline">
 									About
+								</Link>
+								<Link href="/privacy" className="text-iron-gall underline-offset-2 hover:underline">
+									Privacy
 								</Link>
 							</div>
 							<NavAuthChip />
