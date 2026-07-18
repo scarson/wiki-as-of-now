@@ -25,12 +25,12 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   const { env } = getCloudflareContext();
-  // The actor is an identifier (an opaque userId or 'system'), never PII. recordFeedback
+  // The actor is an identifier (an opaque userId or 'AnonUser'), never PII. recordFeedback
   // rejects any outcome outside the codes-only enum, so free text cannot enter the audit log.
   // The session/admin secrets aren't in the generated CloudflareEnv types (CC-9); read them
   // through the runtime-only view of the same object, mirroring the research route.
   const auth = await resolveCurrentUser(request, env as unknown as Parameters<typeof resolveCurrentUser>[1]);
-  const actor = auth.kind === "authenticated" ? auth.userId : "system";
+  const actor = auth.kind === "authenticated" ? auth.userId : "AnonUser";
   try {
     await recordFeedback(d1Executor(env.DB), {
       actor,
