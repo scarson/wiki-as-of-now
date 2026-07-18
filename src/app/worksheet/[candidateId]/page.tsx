@@ -32,16 +32,22 @@ export default async function WorksheetPage({ params }: { params: Promise<{ cand
             </a>
           </h1>
           <p className="mt-2 font-mono text-xs text-dust-gray">
-            page {view.claim.pageId} · revision {view.claim.sourceRevisionId} ·{" "}
-            <a href={wikipediaSectionUrl(view.claim.title, view.claim.sectionHeading)} target="_blank" rel="noopener noreferrer" className="text-iron-gall underline-offset-2 hover:underline">
-              § {view.claim.sectionHeading}
-            </a>
+            page {view.claim.pageId} · revision {view.claim.sourceRevisionId}
+            {view.claim.sectionHeading && (
+              <>
+                {" · "}
+                <a href={wikipediaSectionUrl(view.claim.title, view.claim.sectionHeading)} target="_blank" rel="noopener noreferrer" className="text-iron-gall underline-offset-2 hover:underline">
+                  § {view.claim.sectionHeading}
+                </a>
+              </>
+            )}
           </p>
         </>
       ) : (
         <>
           <p className="font-mono text-xs text-dust-gray">
-            page {view.claim.pageId} · revision {view.claim.sourceRevisionId} · § {view.claim.sectionHeading}
+            page {view.claim.pageId} · revision {view.claim.sourceRevisionId}
+            {view.claim.sectionHeading && <> · § {view.claim.sectionHeading}</>}
           </p>
           <h1 className="mt-3 font-serif text-2xl leading-snug text-ink-white" style={{ textWrap: "balance" }}>
             Research worksheet
