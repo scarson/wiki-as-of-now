@@ -64,7 +64,7 @@ From [2026-07-13-wikipedia-links-and-article-context-design.md](../design/2026-0
 
 ## Execution Status
 
-**Overall:** ✅ All phases implemented 2026-07-18 on branch `feat/wikipedia-links` (off `origin/dev` 57f3666). Full verification green (vitest 956 + 30 workers, tsc, eslint, build). PR to `dev` tracked below.
+**Overall:** ✅ All phases implemented 2026-07-18 on branch `feat/wikipedia-links` (off `origin/dev` 57f3666). Full verification green (vitest 956 + 30 workers, tsc, eslint, build). Merged to `dev` via PR #39 (merge SHA 9d9b69e, 2026-07-18); preview-deploy browser QA green (queue, worksheet, article page).
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
@@ -231,7 +231,7 @@ git commit -m "feat(web): link article titles and sections in easy-win lane and 
 ## Finalization
 
 - [x] Full verification: `node_modules/.bin/vitest run` + `-c vitest.workers.config.mts`, `tsc`+`eslint` clean, `npm run build` OK.
-- [ ] Open PR (base `dev`), `## Merge classification: Routine`. `/codex` review, then merge `--merge --delete-branch` on green CI.
+- [x] Open PR (base `dev`), `## Merge classification: Routine`. `/codex` review, then merge `--merge --delete-branch` on green CI.
 - [ ] Ships to prod at the next dev→main release.
 
 ## Notes for the executor
