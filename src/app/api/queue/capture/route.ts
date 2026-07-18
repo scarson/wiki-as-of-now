@@ -5,6 +5,7 @@ import { d1Executor } from "@/db/client";
 import { lookupAndPersist } from "@/ingest/lookup";
 import { ArticleNotFoundError, WikimediaUnavailableError } from "@/ingest/wikimedia";
 import { parseWikiTarget } from "@/app/queue/parse-wiki-target";
+import { crossOriginRefusal } from "@/auth/origin-guard";
 import {
   createCaptureThrottle,
   loadCaptureThrottleConfig,
@@ -31,6 +32,10 @@ function json(body: unknown, status: number, headers: Record<string, string> = {
 }
 
 export async function POST(request: Request): Promise<Response> {
+  // Before charging the IP budget: a hostile page could otherwise drain a
+  // visitor's capture allowance with cross-origin POSTs from their browser.
+  const refusal = crossOriginRefusal(request);
+  if (refusal) return refusal;
   const ip = request.headers.get("cf-connecting-ip");
   if (ip !== null) {
     throttle ??= createCaptureThrottle(

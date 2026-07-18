@@ -47,4 +47,21 @@ describe("POST /api/queue/capture — per-IP throttle", () => {
       expect((await POST(req(null))).status).toBe(400);
     }
   });
+
+  it("refuses cross-origin POSTs with 403 before charging the IP budget (drive-by budget-drain defense)", async () => {
+    const crossOrigin = (ip: string): Request =>
+      new Request("https://x/api/queue/capture", {
+        method: "POST",
+        headers: { "content-type": "application/json", "cf-connecting-ip": ip, origin: "https://evil.example" },
+        body: "not json",
+      });
+    // A hostile page hammering from the victim's browser gets 403 every time…
+    for (let i = 0; i < 5; i++) {
+      expect((await POST(crossOrigin("203.0.113.4"))).status).toBe(403);
+    }
+    // …and the victim's own (same-origin) budget is untouched: full limit still available.
+    expect((await POST(req("203.0.113.4"))).status).toBe(400);
+    expect((await POST(req("203.0.113.4"))).status).toBe(400);
+    expect((await POST(req("203.0.113.4"))).status).toBe(429);
+  });
 });
