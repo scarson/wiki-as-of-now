@@ -7,6 +7,7 @@ import Link from "next/link";
 import { StaleSentence } from "@/app/worksheet/components/StaleSentence";
 import { useBrowseAuthState } from "@/app/auth-state";
 import { canRequestResearch } from "@/app/browse-mode";
+import { wikipediaArticleUrl, wikipediaSectionUrl } from "@/wikipedia/article-url";
 
 // Client mirrors the API shape locally (never imports server modules — integration-contract §4.6).
 interface Candidate {
@@ -144,6 +145,9 @@ export default function QueuePage() {
   // Keyboard-first triage: ↑/↓ move focus, space toggles, r researches the selection.
   const onKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
+      // Let links/controls handle their own keys — Enter on an in-row Wikipedia link
+      // must follow the link, not toggle the focused candidate.
+      if ((e.target as HTMLElement).closest("a, button, input, select, textarea")) return;
       if (flatCandidates.length === 0) return;
       if (e.key === "ArrowDown" || e.key === "j") {
         e.preventDefault();
@@ -264,7 +268,14 @@ export default function QueuePage() {
               {result.items.map((item) => (
                 <article key={item.pageId}>
                   <h2 className="font-serif text-lg font-medium text-ink-white">
-                    {item.title}
+                    <a
+                      href={wikipediaArticleUrl(item.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-iron-gall underline-offset-2 hover:underline"
+                    >
+                      {item.title}
+                    </a>
                     <span className="ml-2 inline-block rounded-full bg-ledger-olive-shadow px-2 py-0.5 align-middle text-xs font-medium text-ledger-olive-bright">
                       easy win
                     </span>
@@ -312,9 +323,15 @@ export default function QueuePage() {
                                   stale · {c.year}
                                 </span>
                                 {c.sectionHeading && (
-                                  <span className="rounded-full bg-shelf-gray px-2 py-1 text-dust-gray">
+                                  <a
+                                    href={wikipediaSectionUrl(item.title, c.sectionHeading)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="rounded-full bg-shelf-gray px-2 py-1 text-iron-gall underline-offset-2 hover:underline"
+                                  >
                                     § {c.sectionHeading}
-                                  </span>
+                                  </a>
                                 )}
                               </span>
                             </span>
