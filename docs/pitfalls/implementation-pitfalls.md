@@ -26,10 +26,10 @@ This document serves three audiences. Start here, then go directly to the sectio
 
 | § | Section | You're working on... | Entries | Checklist |
 |---|---------|---------------------|---------|-----------|
-| 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 – DB-2 | §1.C |
+| 1 | [Data Layer (D1 / SQLite)](#section-1-data-layer-d1--sqlite) | Schema, migrations, SqlExecutor, audit-log persistence | DB-1 – DB-3 | §1.C |
 | 2 | [Detector (deterministic stale-claim detection)](#section-2-detector-deterministic-stale-claim-detection) | `src/detector/*` — markers, suppression, scoring, orchestration, fixtures | DET-1 – DET-3 | §2.C |
 | 3 | [Safe-lane / untrusted-content scanning](#section-3-safe-lane--untrusted-content-scanning) | `src/safelane/*` — wikitext signal scans running on attacker-controllable article content | SAFE-1 | §3.C |
-| 4 | [Deploy / CI (wrangler, GitHub Actions, OpenNext)](#section-4-deploy--ci-wrangler-github-actions-opennext) | `wrangler.jsonc`, `workers/research/wrangler.jsonc`, `.github/workflows/*`, OpenNext build | CI-1 – CI-2 | §4.C |
+| 4 | [Deploy / CI (wrangler, GitHub Actions, OpenNext)](#section-4-deploy--ci-wrangler-github-actions-opennext) | `wrangler.jsonc`, `workers/research/wrangler.jsonc`, `.github/workflows/*`, OpenNext build | CI-1 – CI-4 | §4.C |
 | 5 | [Research enqueue gating & metered spend](#section-5-research-enqueue-gating--metered-spend) | every path onto the metered/G11 research lane; per-user + global quota | GATE-1 – GATE-2 | §5.C |
 | 6 | [Workers AI model integration](#section-6-workers-ai-model-integration) | `src/research/ai-client.ts`, model-config, anything calling `env.AI.run()` | AI-1 – AI-2 | §6.C |
 | — | [Orchestration](#orchestration) | Parallel subagent dispatch and output persistence | ORCH-1 – ORCH-3 | §Orchestration.C |
@@ -70,12 +70,25 @@ This document serves three audiences. Start here, then go directly to the sectio
 
 ---
 
+### DB-3: An `ALTER TABLE ADD COLUMN` Migration Forces a Specific Splice in `schema.sql` (Byte-Parity)
+
+**The Flaw:** Writing the new column into `src/db/schema.sql`'s `CREATE TABLE` in the "natural" place — indented on its own line among the other columns. The schema-equivalence test compares `sqlite_master.sql` DDL **byte-for-byte** between migrations-applied and schema.sql-applied databases, and SQLite implements `ALTER TABLE ADD COLUMN` by splicing `, <column-def>` immediately before the stored statement's closing paren. The migration path therefore stores `…last_column TYPE\n, new_column TYPE)`, and any prettier formatting in schema.sql fails parity.
+
+**Why It Matters:** The parity test's failure diff is a wall of DDL; without knowing the splice rule you can burn time "fixing" the migration instead of the schema.sql formatting, or worse, switch the migration to a table rebuild just to make the cumulative file pretty.
+
+**The Fix:** In schema.sql, append the column exactly as SQLite's ALTER splice will store it: `\n, surrounding_text TEXT)` before the closing paren of `stale_candidates` (see migration `0010_candidate_surrounding_text.sql` and the matching schema.sql hunk). Run `test/db/migration.test.ts` to confirm parity.
+
+**The Lesson:** The cumulative schema file mirrors what `sqlite_master` *stores*, not what a human would write. Whenever a migration uses `ALTER TABLE ADD COLUMN`, the ugly trailing `, col TYPE)` splice in schema.sql is correct by definition — don't "clean it up."
+
+---
+
 ### Review Checklist
 
 - [ ] **Natural-key tables are `WITHOUT ROWID` with `PRIMARY KEY NOT NULL`** — a plain `INTEGER PRIMARY KEY` silently auto-assigns a rowid on NULL insert; `NOT NULL`/`CHECK` don't stop it (DB-1)
 - [ ] **NULL-rejection is proven by a test, not assumed from the DDL** — insert a NULL key and assert it throws (DB-1)
 - [ ] **Data-layer calls bind via `prepare(sql).bind(...).run()/.all()`** — never pass params to `run`/`all`; that's better-sqlite3-only and breaks on D1 (DB-2)
 - [ ] **The D1 adapter unwraps `all().results` to a plain array** — callers must never see D1's `{ results }` envelope (DB-2)
+- [ ] **`ALTER TABLE ADD COLUMN` migrations splice `, col TYPE)` verbatim into schema.sql** — parity is against `sqlite_master`'s stored text, not pretty formatting (DB-3)
 
 ---
 
@@ -382,6 +395,9 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 <!-- - Added PREFIX-N (<title>) — <what and why> -->
 <!-- - Updated PREFIX-M — <what changed> -->
 
+## 2026-07-18 — Claim-referent-context slice (migration 0010)
+- Added DB-3 (`ALTER TABLE ADD COLUMN` forces a specific splice in `schema.sql`) — the byte-parity test compares `sqlite_master` stored DDL, and SQLite splices `, col TYPE)` before the closing paren; the "pretty" formatting instinct fails parity. Discovered adding `stale_candidates.surrounding_text` ([PR #53](https://github.com/scarson/wiki-as-of-now/pull/53)).
+
 ## 2026-07-17 — PR-B privacy page 500'd on the deployed worker only
 - Added CI-4 (worker bundle has no filesystem outside the app tree) — `/privacy`'s runtime `fs` read of `docs/policy/privacy-policy.md` passed both builds and 500'd live; fixed by inlining the markdown at build via `next.config.ts` `env`; `opennextjs-cloudflare preview` is the load-bearing verification for fs-touching routes.
 
@@ -419,6 +435,7 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 | ORCH-3 | Verify Subagent Reports Against Git — Self-Reports Can Confabulate | MEDIUM | VALIDATED | Orchestration |
 | DB-1 | `NOT NULL` Is a No-Op on an `INTEGER PRIMARY KEY` (Rowid Alias) | MEDIUM | VALIDATED | Data Layer |
 | DB-2 | The `SqlExecutor` Port Must Bind Params via `bind()`, Shaped by D1's Stricter Contract | MEDIUM | VALIDATED | Data Layer |
+| DB-3 | An `ALTER TABLE ADD COLUMN` Migration Forces a Specific Splice in `schema.sql` (Byte-Parity) | LOW | VALIDATED | Data Layer |
 | DET-1 | Historical Dateline Narration Is the Dominant False-Positive Class | HIGH | VALIDATED | Detector |
 | DET-2 | Precision-Over-Recall Means Named, Accepted Recall Gaps | MEDIUM | VALIDATED | Detector |
 | DET-3 | Incidental Historical Years Are an Irreducible False-Positive Class | MEDIUM | VALIDATED | Detector |
@@ -427,6 +444,8 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 | AI-1 | Validate the LIVE Model's Envelope, Input Mode, and Reasoning Budget — Fixtures Can't | HIGH | VALIDATED | Workers AI model integration |
 | AI-2 | Never Pass a Detached Global `fetch` — workerd Validates the Receiver | HIGH | VALIDATED | Workers AI model integration |
 | CI-2 | The OpenNext Build Shells Out to `pnpm build`; `--env=""` Silences the Multi-Env Dry-Run Warning | LOW | VALIDATED | Deploy / CI |
+| CI-3 | `remote: true` Bindings Open a Login-Gated Proxy in Credential-Free Contexts | MEDIUM | VALIDATED | Deploy / CI |
+| CI-4 | The Deployed Worker Bundle Has No Filesystem Outside the App Tree | HIGH | VALIDATED | Deploy / CI |
 
 Severity levels: `CRITICAL` (production data loss / security), `HIGH` (correctness bug under predictable conditions), `MEDIUM` (correctness bug under edge cases), `LOW` (cleanliness / clarity).
 
