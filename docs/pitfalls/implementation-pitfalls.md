@@ -226,6 +226,18 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 
 ---
 
+### CI-4: The Deployed Worker Bundle Has No Filesystem Outside the App Tree — Preview Under workerd Before Shipping Any fs-Reading Route
+
+**The Flaw:** `/privacy` (`force-static`) read `docs/policy/privacy-policy.md` with `node:fs` at render. `next build` prerendered it fine, `opennextjs-cloudflare build` completed clean — and the deployed route 500'd: `no such file or directory, readAll '/bundle/docs/policy/privacy-policy.md'`. The workerd bundle's virtual filesystem simply does not carry files outside the app tree, and `outputFileTracingIncludes` does not help (the traced copy lands in `.open-next/server-functions/` but the worker bundle manifest ignores it).
+
+**Why It Matters:** Both builds succeeding is the exact signal a developer treats as "safe to ship," and the failure only manifests on a deployed (or workerd-previewed) worker. A prerendered route can still execute at runtime on the worker (cache miss/RSC re-render), so "it's static" is not protection.
+
+**The Fix:** Move the read to build time where Node is guaranteed: `next.config.ts` does `readFileSync` and inlines the content via `env.PRIVACY_POLICY_MD`; the page renders from `process.env` with no fs access. The markdown file stays the single source of truth. Verified with `pnpm exec opennextjs-cloudflare preview` (real workerd) — which reproduced the 500 pre-fix and proved the 200 post-fix in minutes.
+
+**The Lesson:** "OpenNext build completes" proves nothing about runtime filesystem reads. Any route that touches `fs` must be exercised under `opennextjs-cloudflare preview` before shipping — it is the cheapest faithful stand-in for the deployed worker.
+
+---
+
 ### Review Checklist
 
 - [ ] **No `if:` expression at ANY level references `secrets.*`** — the workflow file fails parse validation (0-second run, zero jobs, "Unrecognized named-value: 'secrets'"); guard on a job-level `env:`-mapped value instead: `if: ${{ env.TOKEN != '' }}` (CI-1)
@@ -234,6 +246,7 @@ The working fix is NOT whole-sentence suppression but a **year-eligibility filte
 - [ ] **Every `wrangler deploy`/`--dry-run` on a multi-env config carries an explicit `--env` (or `--env=""`)** — a bare invocation warns about no target environment and trips pristine-output (CI-2)
 - [ ] **`remote: true` bindings are disabled in every credential-free context** — the workerd test pool sets `remoteBindings: false` and `initOpenNextCloudflareForDev()` is gated to `next dev`, so neither opens a login-gated remote-proxy session in CI (CI-3)
 - [ ] **`initOpenNextCloudflareForDev()` runs only under `NODE_ENV=development`** — it must not execute during `next build`; the production Cloudflare context comes from the worker entrypoint (CI-3)
+- [ ] **No route reads the filesystem at runtime; anything fs-derived is inlined at build (next.config `env`), and every fs-touching route was exercised under `opennextjs-cloudflare preview`** — both builds succeeding does not prove the worker can read the file (CI-4)
 
 ---
 
@@ -368,6 +381,9 @@ Pitfalls that arise when a session dispatches parallel subagents and consolidate
 <!-- ## YYYY-MM-DD — <event> -->
 <!-- - Added PREFIX-N (<title>) — <what and why> -->
 <!-- - Updated PREFIX-M — <what changed> -->
+
+## 2026-07-17 — PR-B privacy page 500'd on the deployed worker only
+- Added CI-4 (worker bundle has no filesystem outside the app tree) — `/privacy`'s runtime `fs` read of `docs/policy/privacy-policy.md` passed both builds and 500'd live; fixed by inlining the markdown at build via `next.config.ts` `env`; `opennextjs-cloudflare preview` is the load-bearing verification for fs-touching routes.
 
 ## 2026-07-12 — Go-live: workerd rejected detached-global-fetch calls in two research seams
 - Added AI-2 (never pass a detached global `fetch` — workerd throws `TypeError: Illegal invocation` on a re-receivered call; Node's fetch is receiver-insensitive so no unit test saw it). Live symptoms: infinite `provider_unavailable` retry loops (Brave seam) and false write-once `no_proposals` packs with empty dispositions (source-fetch seam). Fixed in `src/research/brave-search.ts` (lambda default) + `src/research/source-fetch.ts` (receiver-neutral call site) + `workers/research/index.ts` (lambda wiring); receiver contracts pinned by tests.
