@@ -32,7 +32,7 @@ export async function POST(request: Request): Promise<Response> {
   // secrets aren't in the generated CloudflareEnv types (CC-9); read them through the runtime-only view
   // of the same object, mirroring the feedback route.
   const auth = await resolveCurrentUser(request, env as unknown as Parameters<typeof resolveCurrentUser>[1]);
-  const actor = auth.kind === "authenticated" ? auth.userId : "system";
+  const actor = auth.kind === "authenticated" ? auth.userId : "AnonUser";
   try {
     const res = await confirmSourceOpened(d1Executor(env.DB), body as ConfirmInput, actor);
     return json(res, 200);

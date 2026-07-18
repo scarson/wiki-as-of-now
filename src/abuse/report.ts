@@ -39,6 +39,6 @@ export async function recordAbuseReport(db: SqlExecutor, input: AbuseReportInput
   if (!v.ok) return v;
   const payload: { category: AbuseCategory; claimKey?: string } = { category: v.category };
   if (v.claimKey) payload.claimKey = v.claimKey; // codes-only; description is intentionally dropped
-  await appendStatement(db, { actor: "system", eventType: "abuse.report", payload }).run();
+  await appendStatement(db, { actor: "AnonUser", eventType: "abuse.report", payload }).run();
   return v;
 }
