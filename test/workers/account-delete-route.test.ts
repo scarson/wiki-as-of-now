@@ -74,6 +74,49 @@ describe("POST /api/account/delete", () => {
     expect(await makeAuditLog(db()).read()).toHaveLength(0); // replays must not spam account.deleted
   });
 
+  it("rejects a POST whose Origin header does not match the request origin (CSRF) and mutates nothing", async () => {
+    await seedUserWithLedger("u_csrf");
+    const token = await issueSession({ userId: "u_csrf" }, SESSION_SECRET, { ttlSeconds: 3600 });
+    const res = await POST(
+      new Request("https://x/api/account/delete", {
+        method: "POST",
+        headers: { cookie: `wikinow_session=${token}`, origin: "https://evil.scarson.io" },
+      }),
+    );
+    expect(res.status).toBe(403);
+    expect(await userExists("u_csrf")).toBe(true);
+    expect(await makeAuditLog(db()).read()).toHaveLength(0);
+  });
+
+  it("accepts a POST whose Origin header matches the request origin", async () => {
+    await seedUserWithLedger("u_sameorigin");
+    const token = await issueSession({ userId: "u_sameorigin" }, SESSION_SECRET, { ttlSeconds: 3600 });
+    const res = await POST(
+      new Request("https://x/api/account/delete", {
+        method: "POST",
+        headers: { cookie: `wikinow_session=${token}`, origin: "https://x" },
+      }),
+    );
+    expect(res.status).toBe(200);
+    expect(await userExists("u_sameorigin")).toBe(false);
+  });
+
+  it("appendIfUserExistsStatement appends only when the user row exists (race-safe replay guard)", async () => {
+    const { appendIfUserExistsStatement } = await import("../../src/db/audit-log");
+    const exec = db();
+    // No users row → the conditional insert must be a no-op even when executed directly
+    // (covers the check-then-batch race: a concurrent delete can remove the row between
+    // the route's fast-path check and the batch executing).
+    await exec.batch([appendIfUserExistsStatement(exec, { actor: "u_gone", eventType: "account.deleted", payload: {} }, "u_gone")]);
+    expect(await makeAuditLog(exec).read()).toHaveLength(0);
+
+    await upsertUser(exec, { userId: "u_here", identityProvider: "google", identitySubject: "s", email: "h@e.com", createdAt: "2026-07-18T00:00:00.000Z" });
+    await exec.batch([appendIfUserExistsStatement(exec, { actor: "u_here", eventType: "account.deleted", payload: {} }, "u_here")]);
+    const rows = await makeAuditLog(exec).read();
+    expect(rows).toHaveLength(1);
+    expect(rows[0].actor).toBe("u_here");
+  });
+
   it("rolls back the ledger UPDATE and user DELETE when the audit append fails (atomic batch)", async () => {
     await seedUserWithLedger("u_atomic");
     await testEnv.DB.exec(
