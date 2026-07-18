@@ -24,6 +24,11 @@ export async function POST(request: Request): Promise<Response> {
       typeof body.sourceRevisionId !== "number") {
     return json({ error: "claimKey, url, sourceRevisionId are required" }, 400);
   }
+  // Revision ids are positive integers; anything else (fractional, zero, negative, NaN)
+  // would be written verbatim into the append-only audit payload — refuse it instead.
+  if (!Number.isInteger(body.sourceRevisionId) || body.sourceRevisionId <= 0) {
+    return json({ error: "sourceRevisionId must be a positive integer" }, 400);
+  }
   if (!HEX64.test(body.claimKey)) return json({ error: "claimKey must be 64-char lowercase hex" }, 400);
 
   const { env } = getCloudflareContext();
