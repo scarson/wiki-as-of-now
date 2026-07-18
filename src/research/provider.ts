@@ -6,7 +6,10 @@ export interface ResearchInput {
   claimText: string;        // the candidate's sentence_text
   sectionHeading: string;
   year: number;
-  surroundingText?: string; // optional; plumbed at detection time in a later slice
+  /** The article's title — resolves pronoun/definite-article claim subjects ("the Authority…"). */
+  articleTitle?: string;
+  /** The claim's contiguous section passage (detection-time capture); absent for pre-capture candidate rows. */
+  surroundingText?: string;
   sourceRevisionId: number;
 }
 

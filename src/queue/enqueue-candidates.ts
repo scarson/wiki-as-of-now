@@ -66,6 +66,8 @@ export async function gateEnqueueCandidatesForResearch(deps: {
         sentenceText: candidate.sentenceText,
         sectionHeading: candidate.sectionHeading,
         year: candidate.year,
+        articleTitle: candidate.articleTitle,
+        surroundingText: candidate.surroundingText,
       },
       now: deps.now,
       queue: deps.queue,

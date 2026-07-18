@@ -58,6 +58,8 @@ export async function handleResearchEnqueue(
       sectionHeading: candidate.sectionHeading,
       year: candidate.year,
       sourceRevisionId: candidate.sourceRevisionId,
+      articleTitle: candidate.articleTitle,
+      ...(candidate.surroundingText !== null ? { surroundingText: candidate.surroundingText } : {}),
     },
   });
   return json({ status: "queued", candidateId }, 202);
@@ -97,6 +99,8 @@ export async function POST(request: Request, { params }: { params: Promise<{ can
       sentenceText: candidate.sentenceText,
       sectionHeading: candidate.sectionHeading,
       year: candidate.year,
+      articleTitle: candidate.articleTitle,
+      surroundingText: candidate.surroundingText,
     },
     now: new Date().toISOString(),
     queue,
