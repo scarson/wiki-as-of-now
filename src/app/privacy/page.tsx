@@ -1,13 +1,14 @@
-// ABOUTME: /privacy — renders the authoritative docs/policy/privacy-policy.md at build (force-static) via markdown-to-jsx.
-// ABOUTME: Single source of truth is the markdown file; this route only presents it (prerendered, no runtime fs read).
-import { readFile } from "node:fs/promises";
-import path from "node:path";
+// ABOUTME: /privacy — renders the authoritative docs/policy/privacy-policy.md (inlined at build via next.config
+// ABOUTME: env) with markdown-to-jsx. Single source of truth is the markdown file; no runtime filesystem read.
 import Markdown from "markdown-to-jsx";
 
 export const dynamic = "force-static";
 
-export default async function PrivacyPage() {
-  const md = await readFile(path.join(process.cwd(), "docs/policy/privacy-policy.md"), "utf8");
+export default function PrivacyPage() {
+  // Inlined at build by next.config.ts (env.PRIVACY_POLICY_MD ← docs/policy/privacy-policy.md).
+  // A runtime fs read is not an option: the deployed worker's bundle has no /docs filesystem.
+  const md = process.env.PRIVACY_POLICY_MD;
+  if (!md) throw new Error("PRIVACY_POLICY_MD missing — next.config.ts must inline docs/policy/privacy-policy.md");
   return (
     <main className="mx-auto max-w-3xl px-6 py-12 text-sm leading-relaxed text-body-gray">
       <Markdown options={{ overrides: {

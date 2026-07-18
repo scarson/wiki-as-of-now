@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
+import { readFileSync } from "node:fs";
 
 const nextConfig: NextConfig = {
-	/* config options here */
+	// /privacy renders the authoritative policy markdown. The file is read HERE, at build
+	// time in Node, and inlined via env — a runtime fs read 500s on the deployed worker
+	// ("no such file or directory, readAll '/bundle/docs/policy/...'"): the workerd bundle's
+	// virtual filesystem does not carry files outside the app tree, even when traced.
+	env: {
+		PRIVACY_POLICY_MD: readFileSync("docs/policy/privacy-policy.md", "utf8"),
+	},
 };
 
 export default nextConfig;
