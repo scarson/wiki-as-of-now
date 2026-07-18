@@ -391,6 +391,23 @@ describe("researchClaim pipeline", () => {
     expect(outcome.queries).toContain(keywordFragment);
   });
 
+  it("G9 bound drops a query that echoes a full surroundingText sentence (answer presupposition), keeps entity fragments", async () => {
+    // A context sentence lifted verbatim as a query is an assertion presupposing the answer —
+    // the same neutrality violation as restating the claim, sourced from the passage instead.
+    const contextEcho = "The final generator entered service in June 2012.";
+    const entityFragment = "France population census"; // borrows entity words from context — legitimate
+    const provider = fakeProvider([], { queries: [contextEcho, entityFragment] });
+    const { stub } = makeStub();
+    const outcome = await researchClaim(
+      { ...CLAIM, surroundingText: `Construction finished earlier. ${CLAIM.claimText} The final generator entered service in June 2012.` },
+      { provider, fetchSource: stub, now: NOW },
+    );
+    expect(outcome.status).toBe("no_proposals");
+    if (outcome.status !== "no_proposals") return;
+    expect(outcome.queries).not.toContain(contextEcho);
+    expect(outcome.queries).toContain(entityFragment);
+  });
+
   it("G9 bound drops queries carrying unfilled [placeholder] template residue", async () => {
     // Observed live: Gemma emitted literal "[Authority] project status" style queries when the
     // claim's subject was a pronoun/definite article — template residue, useless as retrieval terms.

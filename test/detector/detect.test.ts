@@ -95,6 +95,21 @@ describe("detectStaleClaims", () => {
     );
     expect(out[0].surroundingText).toBeNull();
   });
+  it("omits an oversized neighbor sentence from surroundingText (queue-transport bound)", () => {
+    // A pathological giant neighbor must not balloon the passage copied onto every ResearchMessage.
+    const giant = `The list includes ${"item, ".repeat(400)}and more.`; // > 1000 code points
+    const wikitext = `== S ==\n${giant}\nThe Navy plans to act in 2015. A second batch followed.`;
+    const out = detectStaleClaims(parseArticle({ title: "T", revisionId: 1, wikitext }), 2026);
+    expect(out).toHaveLength(1);
+    expect(out[0].surroundingText).toBe("The Navy plans to act in 2015. A second batch followed.");
+  });
+  it("captures null surroundingText when the only neighbor is oversized", () => {
+    const giant = `The list includes ${"item, ".repeat(400)}and more.`;
+    const wikitext = `== S ==\n${giant}\nThe Navy plans to act in 2015.`;
+    const out = detectStaleClaims(parseArticle({ title: "T", revisionId: 1, wikitext }), 2026);
+    expect(out).toHaveLength(1);
+    expect(out[0].surroundingText).toBeNull();
+  });
   it("does not cross section boundaries when building surroundingText", () => {
     const wikitext = `== S1 ==\nUnrelated prior section text.\n\n== S2 ==\nThe Navy plans to act in 2015.\n\n== S3 ==\nUnrelated later section text.`;
     const out = detectStaleClaims(parseArticle({ title: "T", revisionId: 1, wikitext }), 2026);

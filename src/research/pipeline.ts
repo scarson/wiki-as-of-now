@@ -57,13 +57,32 @@ export function hasPlaceholderResidue(query: string): boolean {
 }
 
 /**
+ * True when a query contains a full sentence of the claim's surrounding passage — an
+ * assertion lifted from the article that presupposes the answer, the same neutrality
+ * violation as restating the claim (which the claim-echo rule covers). Keyword fragments
+ * that merely borrow entity names from the passage do not contain a full sentence and pass.
+ */
+export function echoesContextSentence(query: string, surroundingText: string | undefined): boolean {
+  if (surroundingText === undefined) return false;
+  const collapseWs = (s: string): string => s.trim().replace(/\s+/g, " ");
+  const qNorm = collapseWs(query);
+  return surroundingText
+    .split(/(?<=[.!?])\s+/)
+    .some((sentence) => {
+      const sNorm = collapseWs(sentence);
+      return sNorm.length > 0 && qNorm.includes(sNorm);
+    });
+}
+
+/**
  * Apply the G9 cheap sanity filter to the queries returned by the provider:
  * 1. Drop any query whose code-point length > DEFAULT_MAX_QUERY_LEN.
  * 2. Drop any query that echoes the full claimText (normalized comparison).
  * 3. Drop any query carrying [placeholder] template residue.
- * 4. Cap the count to DEFAULT_MAX_QUERIES (keep the first N survivors).
+ * 4. Drop any query echoing a full sentence of the surrounding passage.
+ * 5. Cap the count to DEFAULT_MAX_QUERIES (keep the first N survivors).
  */
-function applyQueryBound(queries: string[], claimText: string): string[] {
+function applyQueryBound(queries: string[], claimText: string, surroundingText?: string): string[] {
   // Collapse all whitespace runs to a single space so an internal-whitespace restatement
   // ("The  claim") still matches the claim. Used ONLY for the echo comparison; the kept
   // query retains its original form.
@@ -77,6 +96,7 @@ function applyQueryBound(queries: string[], claimText: string): string[] {
     // The length guard prevents an empty claimText (every string includes "") dropping everything.
     if (claimNorm.length > 0 && collapseWs(q).includes(claimNorm)) return false;
     if (hasPlaceholderResidue(q)) return false;
+    if (echoesContextSentence(q, surroundingText)) return false;
     return true;
   });
   return filtered.slice(0, DEFAULT_MAX_QUERIES);
@@ -127,7 +147,7 @@ export async function researchClaim(input: ResearchInput, deps: ResearchClaimDep
   // -------------------------------------------------------------------------
   // G9 query bound
   // -------------------------------------------------------------------------
-  const boundQueries = applyQueryBound(queries, input.claimText);
+  const boundQueries = applyQueryBound(queries, input.claimText, input.surroundingText);
 
   // -------------------------------------------------------------------------
   // (1) HARD ceiling — truncate the raw array FIRST, before any per-item processing
