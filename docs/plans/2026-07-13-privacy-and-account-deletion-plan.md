@@ -40,6 +40,8 @@ From the design ([2026-07-13-privacy-and-account-deletion-design.md](../design/2
 
 **Overall:** 🚧 IN PROGRESS — claimed 2026-07-18T02:45:00Z on branch `feat/privacy-account-deletion` (cut off `origin/dev` f2596ad, post-PR-C).
 
+**Discoveries:** the Phase-3 build-read risk was REAL but surfaced only on the deployed worker: `/privacy` 500'd on the dev preview with `no such file or directory, readAll '/bundle/docs/policy/privacy-policy.md'` — the workerd bundle's virtual filesystem omits files outside the app tree even when `next build` + `opennextjs-cloudflare build` both succeed locally, and even with `outputFileTracingIncludes` (the traced copy lands in `.open-next/server-functions/` but the worker bundle manifest ignores it). Fix (post-merge, `fix/privacy-bundle-read`): read the markdown at build time in `next.config.ts` and inline via `env.PRIVACY_POLICY_MD`; the page no longer touches the filesystem. Verified 200 under `opennextjs-cloudflare preview` (real workerd). Lesson: "OpenNext build completes" does NOT prove a runtime fs read works — preview under workerd before shipping any fs-reading route.
+
 **Deviations:** executing on `feat/privacy-account-deletion` (fresh off current dev), not the original `claude/privacy-account-deletion` doc branch — dev advanced past it (PR-C #39, chore #38); the revised design + this plan were copied onto the executing branch instead of rebasing the stale one. Round-2 item 3 resolved: **option A (disclose)** — Sam delegated, rationale recorded in design Appendix ("Disclose the stored Google identifier vs. stop storing it").
 
 | Phase | Status | Ship SHA(s) | Notes |
