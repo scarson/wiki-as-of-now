@@ -31,14 +31,24 @@ From the data model (`src/db/users.ts`, `src/db/quota-ledger.ts`, `src/auth/*`):
 | Opaque account id | `users.user_id` = SHA-256(provider+sub) | Pseudonymous |
 | Session token | `wikinow_session` cookie (JWT, carries only `user_id`) | Pseudonymous |
 | Per-pack metering | `quota_ledger` (claim_key, revision, `user_id`, timestamp, neuron/query counts) | Pseudonymous (no PII) |
-| Outcome/audit events | `audit_log` (actor = `user_id` or `"system"`, codes only) | Pseudonymous; **no free text/content** (G13) |
+| Outcome/audit events | `audit_log` (actor = `user_id` signed-in / `"AnonUser"` anon / `"system"` backend, codes only) | Pseudonymous; **no free text/content** (G13) |
 
 **Facts the policy asserts that MUST be verified before publishing** (checked during
 implementation, confirmed at the review gate): (a) there are **no third-party
 analytics/advertising cookies or trackers** in the app; (b) anonymous use associates
-nothing with a person (anonymous actions are recorded only as actor `"system"`, with no
-identifier); (c) Google is the only third party in the data path, and only as the
-sign-in identity provider. If any turns out false, the policy wording changes.
+nothing with a person (anonymous actions are recorded only under a role label —
+`"AnonUser"` after the §3.3 relabel — with no identifier). If either turns out false,
+the policy wording changes.
+
+**Third-party framing (corrected after `/codex` review + Sam's steer).** The original
+draft claimed "Google is the only third party" — imprecise, because **Cloudflare** is
+also in the *personal-data* path, as a **data processor acting on our behalf** (not a
+party we sell or share to). That is the only correction the policy needs. Codex also
+listed Wikimedia / Brave / Workers AI, but those are **out of a privacy policy's scope**:
+they process only *public* article/source content and **never receive user identity or
+personal data** (Sam's steer). The policy therefore names Cloudflare (processor) + Google
+(sign-in) for personal data, and adds one parenthetical noting the research feature's
+public-content services never see personal data — nothing more.
 
 ## 3. Privacy policy — content and surfacing
 
@@ -73,50 +83,49 @@ sign-in identity provider. If any turns out false, the policy wording changes.
 
 > # Privacy Policy
 >
-> _Last updated: 2026-07-13_
+> _Last updated: 2026-07-17_
 >
-> WikiAsOfNow helps you find time-bound claims in Wikipedia articles that may now be
-> stale, and — if you sign in — request deterministic research on a claim. This policy
-> explains what we store and how to remove it. It is deliberately short because we
-> deliberately hold very little.
+> WikiAsOfNow finds Wikipedia claims that may have gone stale, and lets you request
+> research on one if you sign in. It's short because we hold very little.
 >
-> ## Using WikiAsOfNow without an account
+> ## Browsing without an account
 >
-> You can look up articles and read detected stale claims without signing in. When you
-> use the tool anonymously, we don't associate anything with you personally. Anonymous
-> actions are recorded only as "system," with no identifier that points back to you.
+> You can look up articles and read detected claims without signing in. We don't
+> associate anything with you when you browse anonymously.
 >
-> ## When you sign in with Google
+> ## Signing in with Google
 >
-> Signing in is only needed to request research on a claim (a metered operation). When
-> you sign in with Google, we receive and store:
+> Signing in is only for requesting research on a claim. When you do, we store your
+> **email address**, the **identifier Google uses for your account** (so we can recognize
+> you when you sign back in), and your account's creation date. We also generate an
+> **internal account id** (a one-way hash of that Google identifier; we never see your
+> password). We use these to let you request research and to enforce daily usage limits.
 >
-> - your **email address**, and
-> - an **internal account id** derived from your Google account (a one-way hash — we
->   never store your Google password, and the raw Google identifier is not exposed).
+> **We don't sell your personal data or share it with anyone for their own use.** Google
+> is our sign-in provider, and Cloudflare, our hosting provider, stores and processes
+> this data as our data processor. (Requesting research fetches and searches public web
+> content through other services, which never receive your identity or any personal
+> data.)
 >
-> We use these only to let you request research and to apply per-account daily usage
-> limits. **We don't sell your data or share it with anyone**, other than Google, which
-> acts solely as the sign-in provider.
+> ## Activity log
 >
-> ## Our activity log
->
-> WikiAsOfNow keeps an append-only activity log for integrity and abuse-prevention. By
-> design it records **only short outcome codes and identifiers** — never your searches'
-> content, the article text, or any free-form text about you.
+> We keep an append-only log for integrity and abuse-prevention. It records only short
+> codes and identifiers, never your searches, article text, or any free text about you.
+> When you're signed in, entries carry your opaque account id; once you delete your
+> account, we no longer hold anything that links that id to you (signing back in with
+> the same Google account would recreate the same id). Anonymous actions carry no
+> personal identifier at all.
 >
 > ## Cookies
 >
-> We use a single session cookie (`wikinow_session`) to keep you signed in, and two
-> short-lived cookies during the Google sign-in handshake. We use **no third-party
-> analytics, advertising, or tracking cookies**.
+> One session cookie (`wikinow_session`) keeps you signed in, plus two short-lived
+> cookies during Google sign-in. We use no analytics, advertising, or tracking cookies.
 >
 > ## Deleting your account
 >
-> You can delete your account at any time. While signed in, open the account menu in
-> the top-right corner and choose **Delete account**. This permanently removes your
-> email, your account id, and your research-usage records from our servers, and signs
-> you out. Anonymous activity-log entries remain, but they are no longer linked to you.
+> Delete your account anytime from the account menu while signed in. This removes your
+> email, the Google identifier, and your whole account profile for good and signs you out. We keep anonymized daily usage
+> counts to enforce overall limits, but nothing that links them back to you.
 >
 > ## Questions
 >
@@ -124,8 +133,22 @@ sign-in identity provider. If any turns out false, the policy wording changes.
 >
 > ## Changes
 >
-> If this policy changes, we'll update the date above and the version in our public
-> repository.
+> If this policy changes, we'll update the date above and the version in our public repo.
+
+### 3.3 Audit actor label fix (`system` → `AnonUser`) — Sam's steer
+
+The code currently tags **anonymous** user actions in the audit log with
+`actor = "system"` ([sources-open/route.ts:34](../../src/app/api/sources/open/route.ts),
+[feedback/route.ts:33](../../src/app/api/feedback/route.ts)). That's misleading —
+`"system"` reads as a backend/cron service identity, not a person browsing anonymously.
+Relabel the **anonymous** branch of those routes to **`"AnonUser"`**, leaving the
+authenticated actor (the opaque `user_id`) and the genuine backend/consumer events
+(the research consumer's `actor: "system"` in `research-jobs.ts`, which really *are*
+system actions) unchanged. Update the one test that asserts `"system"` for an anonymous
+source-open ([sources-open-route.test.ts:67](../../test/workers/sources-open-route.test.ts)).
+Append-only-safe: only new rows get the clearer label; existing rows are untouched
+(no rewrite, G13 intact). This keeps the audit log's actor field honest, which the
+privacy policy's accuracy quietly depends on.
 
 ## 4. Account deletion — mechanics
 
@@ -135,49 +158,63 @@ sign-in identity provider. If any turns out false, the policy wording changes.
 the same pattern as the research routes). POST-only. No request body needed; the actor
 is the current session's `user_id`.
 
-### 4.2 What it does (one atomic `db.batch`)
+### 4.2 What it does — null the attribution, delete the profile
 
-The `quota_ledger.user_id → users.user_id` foreign key
-([0005_quota_ledger.sql](../../migrations/0005_quota_ledger.sql), default
-`ON DELETE NO ACTION`) means the user row cannot be deleted while ledger rows reference
-it. So deletion is a single atomic batch, children-before-parent:
+**The trap (found in `/codex` review, verified):** the `quota_ledger` is not just a
+per-user record — a **global daily cost cap** counts *all* ledger rows for the day
+(`countPacksGlobalOnDay` has no `user_id` filter,
+[quota-ledger.ts:36-42](../../src/db/quota-ledger.ts); enforced in
+[reconcile.ts:53-54](../../src/quota/reconcile.ts) against `DEFAULT_GLOBAL_DAILY_CAP`).
+So **deleting a user's ledger rows would lower the global count and let research spend
+blow past the global cost cap.** Hard-delete is out.
 
-1. `DELETE FROM quota_ledger WHERE user_id = ?`
-2. `DELETE FROM users WHERE user_id = ?`
-3. append an `account.deleted` event to the **audit log** (actor = `user_id`, codes
-   only — append-only-consistent, records the deletion for auditability)
+**The fix (Sam-approved):** sever the person-link but keep the row for global metering.
 
-then the response **clears the `wikinow_session` cookie** (`clearCookie`), signing the
-user out immediately. The client (§5) then `router.refresh()`es to the anonymous state.
+- **Migration `0006`:** rebuild `quota_ledger` so `user_id` is **nullable** with
+  `REFERENCES users(user_id) ON DELETE SET NULL` (SQLite table-rebuild: new table → copy
+  → drop → rename; PK `(claim_key, source_revision_id)` and all columns preserved).
+- **Endpoint — one atomic `db.batch`:**
+  1. `UPDATE quota_ledger SET user_id = NULL WHERE user_id = ?` — detaches attribution;
+     the row still counts globally (the global query ignores `user_id`), so the cost cap
+     is untouched.
+  2. `DELETE FROM users WHERE user_id = ?` — removes the profile (email = the only PII).
+  3. append an `account.deleted` event to the **audit log** (actor = `user_id`, codes
+     only — append-only-consistent).
 
-**Why hard-delete the ledger rows** (rather than orphan or anonymize): the FK requires
-addressing them; the rows carry no PII (opaque id only), but deleting them honors the
-policy's "permanently removes … your research-usage records" and keeps the promise
-concrete. This touches the `quota_ledger` (a "write-once" metering ledger), but **not**
-the append-only compliance `audit_log` (G13) — the two are distinct, and the compliance
-doc places no append-only constraint on `quota_ledger`. Still called out explicitly for
-the review gate.
+then the response **clears the `wikinow_session` cookie** (`clearCookie`); the client
+(§5) `router.refresh()`es to anonymous. The explicit `UPDATE … NULL` is the real
+mechanism (robust whether or not D1 enforces `ON DELETE SET NULL`); the FK clause is
+defense-in-depth. Nulled rows don't count toward any user's per-user cap, so a
+re-registered same-id user simply starts a fresh per-user count — global integrity
+holds, per-user resets, which is the intended behavior.
 
-### 4.3 Accepted limitations (basic deletion — Sam's "simple is good")
+### 4.3 Accepted limitations (basic deletion — Sam-approved, documented not mitigated)
 
-- **No server-side session revocation.** Sessions are stateless JWTs; deletion works by
-  clearing the cookie immediately, not by revoking outstanding tokens. Practically the
-  user is signed out at once; a copy of the JWT elsewhere would verify (resolving to a
-  now-dangling `user_id`) until its 7-day expiry. True revocation needs a denylist —
-  out of scope unless Sam wants it. **Flagged for veto at the review gate.**
-- **Quota reset via delete + re-login.** Re-signing-in with the same Google account
-  re-derives the same `user_id` but with the ledger cleared, resetting that day's usage
-  count. The daily cap resets anyway, and re-auth is high-friction; accepted at current
-  usage. Noted, not mitigated.
+Both are stated plainly in the public policy (§3.2), not hidden:
+
+- **No server-side session revocation.** Sessions are stateless JWTs; deletion clears
+  the cookie immediately (instant sign-out here), but a copy of the JWT open elsewhere
+  verifies (resolving to a now-dangling `user_id`) until its 7-day expiry. No denylist.
+- **A queued research job may recreate a PII-free stub.** The research consumer
+  self-seeds a missing ledger-owner (`ledgerOwnerSeed`,
+  [research-jobs.ts:38-47](../../src/queue/research-jobs.ts)) with `email: ""` /
+  `provider: "pending"` — **never the real email** — so a job already queued when you
+  delete can recreate a `users` row that contains **no personal data**. The real email
+  is permanently gone regardless. Making the consumer drop work for deleted users is a
+  larger change (queue semantics) deliberately deferred; documented as an accepted limit.
 
 ### 4.4 Compliance & safety checks (must hold at the review gate)
 
-- Does **not** delete or mutate `audit_log` rows; only appends (G13 intact).
-- Confirm no other table FK-references `users.user_id` beyond `quota_ledger` (grep at
-  implementation time; today only `quota_ledger` does).
-- Destructive + auth-domain → **Review-classified**; ships behind a `/codex` review and
-  a confirmation dialog (§5). This design does not weaken any guardrail; it adds a
-  data-erasure capability the compliance posture lacked.
+- Does **not** delete or mutate `audit_log` rows; only appends (G13 intact). Does **not**
+  delete `quota_ledger` rows — only nulls `user_id` — so global metering (a cost/abuse
+  control) is preserved.
+- Migration `0006` alters only `quota_ledger`'s `user_id` nullability + FK action; the
+  metered unit (row = one committed pack) is unchanged.
+- Confirm no other table FK-references `users.user_id` beyond `quota_ledger` (verified
+  at design time; re-grep at implementation).
+- Destructive + auth-domain + schema migration → **Review-classified**; ships behind a
+  `/codex` review and a confirmation step (§5). Adds a data-erasure capability the
+  compliance posture lacked; weakens no guardrail.
 
 ## 5. Deletion UX
 
@@ -191,10 +228,14 @@ failure, a transient inline error (no optimistic sign-out). Modeled on the teeti
 
 ## 6. Testing strategy (TDD)
 
-- **Delete endpoint (server):** authenticated request removes the user's `users` and
-  `quota_ledger` rows and appends exactly one `account.deleted` audit event, atomically;
+- **Delete endpoint (server):** authenticated request deletes the `users` row, **nulls**
+  the user's `quota_ledger.user_id` (rows remain — assert the global row count is
+  unchanged), and appends exactly one `account.deleted` audit event, atomically;
   anonymous request → 401 with nothing mutated; response clears the cookie. A user with
   zero ledger rows deletes cleanly. Assert the audit_log is otherwise untouched.
+- **Global-metering preservation:** after deletion, `countPacksGlobalOnDay` returns the
+  same count as before (the row survives with `user_id = NULL`); `countPacksForUserOnDay`
+  for the deleted id returns 0.
 - **Atomicity:** a failure mid-batch leaves both tables unchanged (no half-deleted user).
 - **`/privacy` render:** the built page contains the policy's section headings from the
   markdown source (guards the build-time read + `markdown-to-jsx` path).
@@ -208,14 +249,19 @@ failure, a transient inline error (no optimistic sign-out). Modeled on the teeti
    (the §3.2 text, after verifying §2's factual claims).
 2. `feat(web): render privacy policy at /privacy` — add `markdown-to-jsx`, static route,
    nav/footer links.
-3. `feat(account): POST /api/account/delete` — atomic ledger+user delete + audit event +
-   cookie clear (TDD).
-4. `feat(ui): account menu with delete-account confirmation` — wires the endpoint into
+3. `feat(db): quota_ledger.user_id nullable, ON DELETE SET NULL` — migration `0009`
+   (table rebuild; `0006`–`0007` are reserved per `scripts/provision.md`, `0008` exists)
+   so attribution can be detached without dropping the metered row.
+4. `feat(account): POST /api/account/delete` — atomic null-attribution + user delete +
+   audit event + cookie clear (TDD).
+5. `feat(ui): account menu with delete-account confirmation` — wires the endpoint into
    the nav account area.
+6. `fix(audit): label anonymous actions AnonUser, not system` — §3.3; the two routes +
+   the one test. Small, isolatable; can land first or last.
 
-All four are one PR (they're interdependent: the policy promises the delete). PR is
-**Review-classified** (auth + destructive); merged by Claude after a `/codex` review per
-Sam's grant.
+All six are one PR (interdependent: the policy promises the delete). PR is
+**Review-classified** (auth + destructive + schema migration); merged by Claude after a
+`/codex` review per Sam's grant.
 
 ## Appendix — reasoning & alternatives
 
@@ -224,15 +270,40 @@ Sam's grant.
 small build-time dependency, paid once. The `force-static` read keeps it off the Worker
 runtime entirely.
 
-**Hard-delete vs. soft-delete/anonymize the user row.** A soft delete (nulling `email`
-+ `identity_subject`) would keep the FK satisfied without touching `quota_ledger`, but
-`user_id` is a deterministic hash, so a re-login would collide with the tombstone row's
-primary key, and a lingering tombstone is a worse privacy story than "it's gone." Hard
-delete is simpler and matches the policy's plain promise.
+**Delete the profile, null the metering attribution (revised after `/codex`).** The
+first draft hard-deleted the `users` row AND the `quota_ledger` rows. `/codex` caught —
+and I verified — that the global daily cost cap counts all ledger rows, so dropping them
+would let spend exceed the global budget. The fix keeps the metered rows (global cap
+intact) and nulls their `user_id` (attribution gone), while hard-deleting the `users`
+row (the actual PII). A full tombstone on `users` was rejected: `user_id` is a
+deterministic hash, so a re-login would PK-collide with a tombstone; deleting the row and
+letting re-login create a fresh one is cleaner. Migration `0009` makes `user_id` nullable
+to allow the detach.
+
+**Durability: document, don't over-build (Sam's call).** Making the research consumer
+drop queued work for deleted users (and adding a user-existence check at the research
+gate) is a real fix but a larger, queue-semantics change. Since the only thing a queued
+job can recreate is a PII-free stub (email `""`), the honest, small choice is to document
+the limit in the policy and defer the queue-drain work. Revisit if real users arrive.
 
 **Basic vs. revocable sessions.** Chosen basic per "simple is good" and the teetimes
 precedent; the JWT-until-expiry window is the one honest caveat, surfaced in §4.3 for
 veto rather than buried.
+
+**Disclose the stored Google identifier vs. stop storing it (decided 2026-07-18).**
+Codex round 2 caught that the policy's original "we store only your email + a generated
+id" was false: the app also stores the raw Google `sub` (`users.identity_subject`) and
+`created_at`. Sam delegated the call; Claude chose **disclosure** (the §3.2 text now
+names the Google identifier and the creation date) over dropping the column. Reasons:
+`identity_subject` is load-bearing today — it backs the `users_identity_unique` index
+and the `getUserByIdentity` re-login lookup — so removal means a `users` table rebuild
+plus an OAuth-callback refactor inside an already Review-classified auth PR, for what
+Sam judged a precision nit; and the identifier's lifetime is bounded by the account (the
+whole `users` row is deleted on account deletion). Dropping the raw `sub` (deriving
+lookups from the deterministic `user_id` hash instead) remains a reasonable future
+slimming PR if wanted. The traceability sentence was also made honest: deletion removes
+our link to the id, but re-login with the same Google account recreates the same
+deterministic id, and the policy now says so.
 
 **Still uncertain / to verify before publish:** the three factual assertions in §2
 (no trackers, anonymous-stores-nothing, Google-only) — cheap to confirm in code, but

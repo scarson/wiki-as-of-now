@@ -42,6 +42,23 @@ export function appendStatement(db: SqlExecutor, entry: AuditEntry): SqlStatemen
 }
 
 /**
+ * Like {@link appendStatement}, but the insert is conditional on a users row existing —
+ * the EXISTS check runs inside the same transaction as the batch it joins, so a
+ * check-then-write race (e.g. two concurrent account deletions) cannot append a
+ * duplicate event for an already-deleted user. Place it BEFORE the DELETE in the batch.
+ */
+export function appendIfUserExistsStatement(db: SqlExecutor, entry: AuditEntry, requiredUserId: string): SqlStatement {
+  const ts = new Date().toISOString();
+  const payloadJson = JSON.stringify(entry.payload);
+  return db
+    .prepare(
+      "INSERT INTO audit_log (ts, actor, event_type, payload_json) " +
+        "SELECT ?, ?, ?, ? WHERE EXISTS (SELECT 1 FROM users WHERE user_id = ?)",
+    )
+    .bind(ts, entry.actor, entry.eventType, payloadJson, requiredUserId);
+}
+
+/**
  * Creates the append-only audit log bound to the given database.
  * Only `append` and `read` are exposed — no update, delete, or truncate.
  */

@@ -4,6 +4,7 @@ import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { d1Executor } from "@/db/client";
 import { gateEnqueueCandidatesForResearch } from "@/queue/enqueue-candidates";
 import { resolveCurrentUser } from "@/auth/current-user";
+import { crossOriginRefusal } from "@/auth/origin-guard";
 import { loadQuotaConfig } from "@/quota/config";
 import type { ResearchMessage } from "@/queue/research-jobs";
 
@@ -27,17 +28,27 @@ function json(body: unknown, status: number): Response {
   });
 }
 
+/** Upper bound on one batch — the gate reads eligibility + quota per id, so an uncapped
+ *  array is a sequential-D1-read amplifier. The lane never surfaces anywhere near this many. */
+const MAX_BATCH_CANDIDATES = 50;
+
 export async function POST(request: Request): Promise<Response> {
+  const refusal = crossOriginRefusal(request); // this route spends metered quota — see origin-guard
+  if (refusal) return refusal;
   let parsed: unknown;
   try {
     parsed = await request.json();
   } catch {
     return json({ error: "Request body must be valid JSON" }, 400);
   }
-  const ids = (parsed as { candidateIds?: unknown })?.candidateIds;
-  if (!Array.isArray(ids) || !ids.every((i) => Number.isInteger(i) && (i as number) > 0)) {
+  const rawIds = (parsed as { candidateIds?: unknown })?.candidateIds;
+  if (!Array.isArray(rawIds) || !rawIds.every((i) => Number.isInteger(i) && (i as number) > 0)) {
     return json({ error: "'candidateIds' must be an array of positive integers" }, 400);
   }
+  if (rawIds.length > MAX_BATCH_CANDIDATES) {
+    return json({ error: `'candidateIds' must contain at most ${MAX_BATCH_CANDIDATES} ids` }, 400);
+  }
+  const ids = [...new Set(rawIds as number[])];
   const { env } = getCloudflareContext();
   if (!env.RESEARCH_QUEUE) return json({ error: "Research queue is not configured" }, 503);
   const db = d1Executor(env.DB);

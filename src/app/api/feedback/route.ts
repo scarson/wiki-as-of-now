@@ -2,7 +2,7 @@
 // ABOUTME: Thin glue: resolves the current user for the actor id, validates the outcome via src/db/feedback, no PII.
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { d1Executor } from "@/db/client";
-import { recordFeedback, type FeedbackOutcome } from "@/db/feedback";
+import { recordFeedback, isFeedbackOutcome } from "@/db/feedback";
 import { resolveCurrentUser } from "@/auth/current-user";
 
 export const dynamic = "force-dynamic";
@@ -25,20 +25,21 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   const { env } = getCloudflareContext();
-  // The actor is an identifier (an opaque userId or 'system'), never PII. recordFeedback
+  // The actor is an identifier (an opaque userId or 'AnonUser'), never PII. recordFeedback
   // rejects any outcome outside the codes-only enum, so free text cannot enter the audit log.
   // The session/admin secrets aren't in the generated CloudflareEnv types (CC-9); read them
   // through the runtime-only view of the same object, mirroring the research route.
   const auth = await resolveCurrentUser(request, env as unknown as Parameters<typeof resolveCurrentUser>[1]);
-  const actor = auth.kind === "authenticated" ? auth.userId : "system";
-  try {
-    await recordFeedback(d1Executor(env.DB), {
-      actor,
-      outcome: String(body.outcome ?? "") as FeedbackOutcome,
-      claimKey: body.claimKey,
-    });
-  } catch {
+  const actor = auth.kind === "authenticated" ? auth.userId : "AnonUser";
+  const outcome = body.outcome;
+  if (!isFeedbackOutcome(outcome)) {
     return json({ error: "outcome must be one of edit_made, no_edit, abandoned" }, 400);
+  }
+  try {
+    await recordFeedback(d1Executor(env.DB), { actor, outcome, claimKey: body.claimKey });
+  } catch {
+    // Validation happened above — a failure here is the write itself, not the caller's input.
+    return json({ error: "Internal error" }, 500);
   }
   return json({ ok: true }, 200);
 }

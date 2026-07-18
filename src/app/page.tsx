@@ -6,6 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { StaleSentence } from "@/app/worksheet/components/StaleSentence";
 import { reasonLabel } from "@/worksheet/reason-label";
+import { wikipediaArticleUrl, wikipediaSectionUrl } from "@/wikipedia/article-url";
 import { useBrowseAuthState } from "./auth-state";
 
 interface Candidate {
@@ -76,24 +77,28 @@ export default function Home() {
 
       {/* Auth-aware browse signpost. Browsing is open to everyone; requesting research is gated behind
           sign-in. This banner is advisory only — the server enqueue gate (→ 401 for anonymous) is the
-          authoritative access control, not this UI. Outer wrapper reserves height so content below does
-          not jump when the auth status resolves. */}
-      <div className="mb-8 min-h-[3.25rem]">
-        {authStatus !== "unknown" && (
-          <div className="rounded-md border border-hairline-gray bg-shelf-gray px-4 py-3 text-sm text-dust-gray">
-            {authStatus === "anonymous" ? (
-              <>
-                Browsing as a guest — detected claims are open to read.{" "}
-                <a href="/api/auth/google" className="text-iron-gall underline-offset-2 hover:underline">
-                  Sign in
-                </a>{" "}
-                to request research on a claim.
-              </>
-            ) : (
-              <>You&apos;re signed in — select a claim and request research on it.</>
-            )}
-          </div>
-        )}
+          authoritative access control, not this UI. While auth is unknown the guest banner renders
+          invisibly so the reserved height matches the resolved banner exactly at every viewport width
+          (a fixed min-h under-reserved once the text wrapped on narrow screens). */}
+      <div className="mb-8">
+        <div
+          aria-hidden={authStatus === "unknown"}
+          className={`rounded-md border border-hairline-gray bg-shelf-gray px-4 py-3 text-sm text-dust-gray ${
+            authStatus === "unknown" ? "invisible" : ""
+          }`}
+        >
+          {authStatus === "authenticated" ? (
+            <>You&apos;re signed in — select a claim and request research on it.</>
+          ) : (
+            <>
+              Browsing as a guest — detected claims are open to read.{" "}
+              <a href="/api/auth/google" className="text-iron-gall underline-offset-2 hover:underline">
+                Sign in
+              </a>{" "}
+              to request research on a claim.
+            </>
+          )}
+        </div>
       </div>
 
       <form onSubmit={lookup} className="flex gap-2">
@@ -115,7 +120,7 @@ export default function Home() {
       </form>
 
       {status === "error" && (
-        <p role="alert" className="mt-6 rounded-md border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-body-gray">
+        <p role="alert" className="mt-6 rounded-md border border-hairline-gray bg-shelf-gray px-4 py-3 text-sm text-body-gray">
           {error}
         </p>
       )}
@@ -123,7 +128,14 @@ export default function Home() {
       {status === "done" && result && (
         <section className="mt-8">
           <h2 className="font-serif text-lg font-medium text-ink-white">
-            {result.title}{" "}
+            <a
+              href={wikipediaArticleUrl(result.title)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-iron-gall underline-offset-2 hover:underline"
+            >
+              {result.title}
+            </a>{" "}
             <span className="font-normal text-dust-gray">
               — {result.candidateCount} candidate{result.candidateCount === 1 ? "" : "s"}
             </span>
@@ -165,7 +177,14 @@ export default function Home() {
                   <div className="mt-3 flex flex-wrap gap-2 font-mono text-xs">
                     <span className="rounded-full bg-rust-shadow px-2 py-1 text-oxidized-rust">stale · {c.year}</span>
                     {c.sectionHeading && (
-                      <span className="rounded-full bg-shelf-gray px-2 py-1 text-dust-gray">§ {c.sectionHeading}</span>
+                      <a
+                        href={wikipediaSectionUrl(result.title, c.sectionHeading)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full bg-shelf-gray px-2 py-1 text-iron-gall underline-offset-2 hover:underline"
+                      >
+                        § {c.sectionHeading}
+                      </a>
                     )}
                   </div>
                 </li>
@@ -175,9 +194,12 @@ export default function Home() {
         </section>
       )}
 
-      <footer className="mt-12 border-t border-hairline-gray pt-4 text-xs text-dust-gray">
+      <footer className="mt-12 flex gap-4 border-t border-hairline-gray pt-4 text-xs text-dust-gray">
         <Link href="/about" className="text-iron-gall underline-offset-2 hover:underline">
           About &amp; compliance
+        </Link>
+        <Link href="/privacy" className="text-iron-gall underline-offset-2 hover:underline">
+          Privacy
         </Link>
       </footer>
     </main>

@@ -6,6 +6,11 @@ import { appendStatement, type AuditEntry } from "./audit-log";
 export type FeedbackOutcome = "edit_made" | "no_edit" | "abandoned";
 const VALID_OUTCOMES: readonly FeedbackOutcome[] = ["edit_made", "no_edit", "abandoned"];
 
+/** Type guard for the outcome enum — lets callers 400 on bad input before any DB work. */
+export function isFeedbackOutcome(value: unknown): value is FeedbackOutcome {
+  return VALID_OUTCOMES.includes(value as FeedbackOutcome);
+}
+
 export interface FeedbackEntry {
   actor: string;
   outcome: FeedbackOutcome;

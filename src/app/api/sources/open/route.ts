@@ -24,6 +24,11 @@ export async function POST(request: Request): Promise<Response> {
       typeof body.sourceRevisionId !== "number") {
     return json({ error: "claimKey, url, sourceRevisionId are required" }, 400);
   }
+  // Revision ids are positive integers; anything else (fractional, zero, negative, NaN)
+  // would be written verbatim into the append-only audit payload — refuse it instead.
+  if (!Number.isInteger(body.sourceRevisionId) || body.sourceRevisionId <= 0) {
+    return json({ error: "sourceRevisionId must be a positive integer" }, 400);
+  }
   if (!HEX64.test(body.claimKey)) return json({ error: "claimKey must be 64-char lowercase hex" }, 400);
 
   const { env } = getCloudflareContext();
@@ -32,7 +37,7 @@ export async function POST(request: Request): Promise<Response> {
   // secrets aren't in the generated CloudflareEnv types (CC-9); read them through the runtime-only view
   // of the same object, mirroring the feedback route.
   const auth = await resolveCurrentUser(request, env as unknown as Parameters<typeof resolveCurrentUser>[1]);
-  const actor = auth.kind === "authenticated" ? auth.userId : "system";
+  const actor = auth.kind === "authenticated" ? auth.userId : "AnonUser";
   try {
     const res = await confirmSourceOpened(d1Executor(env.DB), body as ConfirmInput, actor);
     return json(res, 200);

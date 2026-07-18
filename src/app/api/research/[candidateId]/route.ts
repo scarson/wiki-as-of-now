@@ -7,6 +7,7 @@ import { enqueueResearch, type ResearchMessage } from "@/queue/research-jobs";
 import { evaluatePersistedEligibility } from "@/safelane/persisted-eligibility";
 import { gateResearchEnqueue } from "@/app/api/research/gate";
 import { resolveCurrentUser } from "@/auth/current-user";
+import { crossOriginRefusal } from "@/auth/origin-guard";
 import { loadQuotaConfig } from "@/quota/config";
 import type { SqlExecutor } from "@/db/client";
 import type { EligibilityDecision } from "@/domain/types";
@@ -62,7 +63,9 @@ export async function handleResearchEnqueue(
   return json({ status: "queued", candidateId }, 202);
 }
 
-export async function POST(_request: Request, { params }: { params: Promise<{ candidateId: string }> }): Promise<Response> {
+export async function POST(request: Request, { params }: { params: Promise<{ candidateId: string }> }): Promise<Response> {
+  const refusal = crossOriginRefusal(request); // this route spends metered quota — see origin-guard
+  if (refusal) return refusal;
   const { candidateId } = await params;
   const id = Number(candidateId);
   if (!Number.isInteger(id) || id <= 0) {
@@ -83,7 +86,7 @@ export async function POST(_request: Request, { params }: { params: Promise<{ ca
   // contract enqueueResearch expects — mirrors the sendBatch adapter in workers/research/index.ts.
   const queue = { send: async (m: ResearchMessage): Promise<void> => { await env.RESEARCH_QUEUE.send(m); } };
 
-  const authContext = await resolveCurrentUser(_request, secrets);
+  const authContext = await resolveCurrentUser(request, secrets);
   const result = await gateResearchEnqueue({
     env: secrets,
     db,

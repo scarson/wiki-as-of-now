@@ -102,9 +102,12 @@ export default function AboutPage() {
             {c.repoUrl}
           </a>
         </p>
-        <p className="mt-1">
+        <p className="mt-1 flex gap-4">
           <Link href="/" className="text-iron-gall underline-offset-2 hover:underline">
             Back to search
+          </Link>
+          <Link href="/privacy" className="text-iron-gall underline-offset-2 hover:underline">
+            Privacy
           </Link>
         </p>
       </footer>

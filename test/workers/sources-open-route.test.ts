@@ -40,6 +40,13 @@ describe("POST /api/sources/open — request validation (no binding access on th
     expect(res.status).toBe(400);
   });
 
+  it("returns 400 when sourceRevisionId is not a positive integer (fractional, zero, negative, NaN)", async () => {
+    for (const bad of [1.5, 0, -3, NaN]) {
+      const res = await POST(req({ claimKey: "c".repeat(64), url: "https://x/y", sourceRevisionId: bad }));
+      expect(res.status).toBe(400);
+    }
+  });
+
   it("returns 400 when the claimKey is not 64-char lowercase hex", async () => {
     const res = await POST(req({ claimKey: "not-hex", url: "https://x/y", sourceRevisionId: 100 }));
     expect(res.status).toBe(400);
@@ -53,7 +60,7 @@ describe("POST /api/sources/open — server-resolved actor (no client-supplied P
     await testEnv.DB.exec("DELETE FROM audit_log");
   });
 
-  it("records the server-resolved actor ('system' when unauthenticated), ignoring any client-supplied actor", async () => {
+  it("records the server-resolved actor ('AnonUser' when unauthenticated), ignoring any client-supplied actor", async () => {
     const claimKey = "a".repeat(64);
     // A malicious client tries to plant an arbitrary actor string in the append-only log.
     const res = await POST(req({ claimKey, url: "https://example.gov/report", sourceRevisionId: 100, actor: "attacker@evil.test" }));
@@ -64,7 +71,7 @@ describe("POST /api/sources/open — server-resolved actor (no client-supplied P
     expect(rows).toHaveLength(1);
     expect(rows[0].eventType).toBe("source.opened");
     // The actor is resolved server-side, NOT taken from the request body.
-    expect(rows[0].actor).toBe("system");
+    expect(rows[0].actor).toBe("AnonUser");
     expect(rows[0].actor).not.toBe("attacker@evil.test");
     // Codes-only payload — the raw url is never logged (CC-12).
     expect(JSON.stringify(rows[0].payload)).not.toContain("example.gov");

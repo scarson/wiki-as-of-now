@@ -419,3 +419,72 @@ describe("0008_seed_lists migration — seed_lists / seed_list_entries schema", 
     expect(names(dbSchema)).toEqual(["seed_list_entries", "seed_lists"]);
   });
 });
+
+describe("0009_quota_ledger_nullable_user migration (upgrade path)", () => {
+  function dbThroughMigration(lastFile: string): Database.Database {
+    const db = new Database(":memory:");
+    db.pragma("foreign_keys = ON");
+    for (const f of readdirSync("migrations").filter((f) => f.endsWith(".sql")).sort()) {
+      if (f > lastFile) break;
+      db.exec(readFileSync(`migrations/${f}`, "utf8"));
+    }
+    return db;
+  }
+
+  it("preserves existing ledger rows and makes user_id nullable with ON DELETE SET NULL, keeping WITHOUT ROWID", () => {
+    const db = dbThroughMigration("0008_seed_lists.sql");
+    db.prepare(
+      "INSERT INTO users (user_id, identity_provider, identity_subject, email, created_at) VALUES (?,?,?,?,?)"
+    ).run("u_mig", "google", "sub-mig", "mig@e.com", "2026-07-18T00:00:00.000Z");
+    db.prepare(
+      "INSERT INTO quota_ledger (claim_key, source_revision_id, user_id, evaluated_at, neurons, brave_query_count) VALUES (?,?,?,?,?,?)"
+    ).run("ck-mig", 1, "u_mig", "2026-07-18T00:00:00.000Z", 3, 2);
+
+    db.exec(readFileSync("migrations/0009_quota_ledger_nullable_user.sql", "utf8"));
+
+    // Row preserved with all values intact
+    const row = db
+      .prepare<[], { claim_key: string; user_id: string; neurons: number; brave_query_count: number }>(
+        "SELECT claim_key, user_id, neurons, brave_query_count FROM quota_ledger"
+      )
+      .all();
+    expect(row).toEqual([{ claim_key: "ck-mig", user_id: "u_mig", neurons: 3, brave_query_count: 2 }]);
+
+    // user_id now nullable
+    const userIdCol = db
+      .prepare<[], { name: string; notnull: number }>("PRAGMA table_info(quota_ledger)")
+      .all()
+      .find((c) => c.name === "user_id");
+    expect(userIdCol?.notnull).toBe(0);
+
+    // FK action is ON DELETE SET NULL
+    const fk = db
+      .prepare<[], { table: string; from: string; on_delete: string }>("PRAGMA foreign_key_list(quota_ledger)")
+      .all()
+      .find((f) => f.from === "user_id");
+    expect(fk?.table).toBe("users");
+    expect(fk?.on_delete).toBe("SET NULL");
+
+    // Still WITHOUT ROWID
+    const ddl = db
+      .prepare<[], { sql: string }>("SELECT sql FROM sqlite_master WHERE type='table' AND name='quota_ledger'")
+      .all()[0].sql;
+    expect(ddl).toContain("WITHOUT ROWID");
+
+    // The detach the deletion endpoint relies on: UPDATE to NULL works, row survives
+    db.prepare("UPDATE quota_ledger SET user_id = NULL WHERE user_id = ?").run("u_mig");
+    expect(db.prepare<[], { n: number }>("SELECT COUNT(*) AS n FROM quota_ledger").all()[0].n).toBe(1);
+
+    // And deleting a user cascades to SET NULL (fresh row to prove the FK action)
+    db.prepare(
+      "INSERT INTO users (user_id, identity_provider, identity_subject, email, created_at) VALUES (?,?,?,?,?)"
+    ).run("u_mig2", "google", "sub-mig2", "mig2@e.com", "2026-07-18T00:00:00.000Z");
+    db.prepare(
+      "INSERT INTO quota_ledger (claim_key, source_revision_id, user_id, evaluated_at, neurons, brave_query_count) VALUES (?,?,?,?,?,?)"
+    ).run("ck-mig2", 1, "u_mig2", "2026-07-18T00:00:00.000Z", 0, 0);
+    db.prepare("DELETE FROM users WHERE user_id = ?").run("u_mig2");
+    expect(
+      db.prepare<[], { user_id: string | null }>("SELECT user_id FROM quota_ledger WHERE claim_key = 'ck-mig2'").all()[0].user_id
+    ).toBeNull();
+  });
+});
