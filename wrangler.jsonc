@@ -64,6 +64,11 @@
 			// Dev-only: enables POST /api/dev/mint-session (still ADMIN_SECRET-gated). MUST stay
 			// out of the production and top-level blocks — test/config/wrangler-config.test.ts enforces.
 			"vars": { "DEV_SESSION_MINT": "enabled" },
+			// Per-IP capture throttle (per-colo counters). namespace_id differs from production's —
+			// a shared id would share counters across envs for the same key.
+			"ratelimits": [
+				{ "name": "CAPTURE_RATE_LIMITER", "namespace_id": "1002", "simple": { "limit": 10, "period": 60 } }
+			],
 			"ai": { "binding": "AI", "remote": true },
 			"images": { "binding": "IMAGES" },
 			"services": [
@@ -86,6 +91,9 @@
 			// Production serves ONLY the custom domain (the OAuth redirect origin must match exactly).
 			"routes": [{ "pattern": "wikinow.scarson.io", "custom_domain": true }],
 			"vars": { "APP_ORIGIN": "https://wikinow.scarson.io" },
+			"ratelimits": [
+				{ "name": "CAPTURE_RATE_LIMITER", "namespace_id": "1001", "simple": { "limit": 10, "period": 60 } }
+			],
 			"ai": { "binding": "AI", "remote": true },
 			"images": { "binding": "IMAGES" },
 			"services": [
