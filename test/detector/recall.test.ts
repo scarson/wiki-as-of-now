@@ -1,5 +1,5 @@
 // ABOUTME: Recall harness — reads recall-set.json and measures the detector's recall.
-// ABOUTME: Phase 1: structural validation + reporting (no hard floor — Task 2.2 sets that).
+// ABOUTME: Structural validation + reporting, plus the durable 0.90 reachable-recall regression floor.
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { parseArticle } from "../../src/detector/parse";
