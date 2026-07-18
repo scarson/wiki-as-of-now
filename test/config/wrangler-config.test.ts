@@ -241,6 +241,21 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
   });
 });
 
+describe("dev-only session mint flag (docs/design/2026-07-18-dev-session-mint-design.md)", () => {
+  it("env.dev enables DEV_SESSION_MINT", () => {
+    const app = readJsonc("wrangler.jsonc");
+    expect(app.env?.dev?.vars?.DEV_SESSION_MINT).toBe("enabled");
+  });
+
+  it("DEV_SESSION_MINT never appears in production or the top-level (default) env", () => {
+    // The mint route 404s unless this var is exactly "enabled"; its absence from these
+    // blocks IS the prod-safety guarantee, so a config edit that leaks it fails CI here.
+    const app = readJsonc("wrangler.jsonc");
+    expect(app.env?.production?.vars?.DEV_SESSION_MINT).toBeUndefined();
+    expect(app.vars?.DEV_SESSION_MINT).toBeUndefined();
+  });
+});
+
 describe("provision.md stays in sync with configs (Task 7.4)", () => {
   const provision = readFileSync(resolve(root, "scripts/provision.md"), "utf8");
   it("documents creating every queue the research config references", () => {
