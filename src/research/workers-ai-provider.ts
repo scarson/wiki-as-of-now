@@ -5,6 +5,7 @@ import type { AiTextClient } from "./ai-client";
 import type { SearchProvider } from "./search-provider";
 import type { SourceFetchResult, UntrustedSourceText } from "./source-fetch";
 import { parseModelJson } from "./json-gate";
+import { hasPlaceholderResidue } from "./pipeline";
 import { MODEL_CONFIG } from "./model-config";
 
 export interface WorkersAiProviderDeps {
@@ -74,6 +75,7 @@ export class WorkersAiResearchProvider implements ResearchProvider {
     return queries
       .filter((q) => [...q.trim()].length <= MODEL_CONFIG.maxQueryLen)
       .filter((q) => claimNorm.length === 0 || !collapse(q).includes(claimNorm))
+      .filter((q) => !hasPlaceholderResidue(q)) // template residue never reaches a metered search
       .slice(0, MODEL_CONFIG.maxQueries);
   }
 

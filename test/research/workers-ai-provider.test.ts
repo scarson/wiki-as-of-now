@@ -47,6 +47,11 @@ describe("WorkersAiResearchProvider.generateQueries", () => {
     const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
     expect(await p.generateQueries(INPUT)).toEqual(["fleet readiness"]);
   });
+  it("drops [placeholder] template-residue queries before any metered search", async () => {
+    const ai = scriptedAi([JSON.stringify({ queries: ["[Authority] project status", "fleet readiness"] })]);
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    expect(await p.generateQueries(INPUT)).toEqual(["fleet readiness"]);
+  });
   it("drops a query longer than 256 code points and caps the count at 8", async () => {
     const long = "x".repeat(257);
     const many = Array.from({ length: 12 }, (_, i) => `q${i}`);

@@ -391,6 +391,22 @@ describe("researchClaim pipeline", () => {
     expect(outcome.queries).toContain(keywordFragment);
   });
 
+  it("G9 bound drops queries carrying unfilled [placeholder] template residue", async () => {
+    // Observed live: Gemma emitted literal "[Authority] project status" style queries when the
+    // claim's subject was a pronoun/definite article — template residue, useless as retrieval terms.
+    const placeholderQuery = "[Authority] high speed rail funding";
+    const bracketedTail = "rail funding [year]";
+    const goodQuery = "California high speed rail funding";
+    const provider = fakeProvider([], { queries: [placeholderQuery, bracketedTail, goodQuery] });
+    const { stub } = makeStub();
+    const outcome = await researchClaim(CLAIM, { provider, fetchSource: stub, now: NOW });
+    expect(outcome.status).toBe("no_proposals");
+    if (outcome.status !== "no_proposals") return;
+    expect(outcome.queries).not.toContain(placeholderQuery);
+    expect(outcome.queries).not.toContain(bracketedTail);
+    expect(outcome.queries).toContain(goodQuery);
+  });
+
   // -------------------------------------------------------------------------
   // Test 8: totality — never throws on adversarial provider/fetch output
   // -------------------------------------------------------------------------

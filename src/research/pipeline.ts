@@ -49,10 +49,19 @@ export interface ResearchClaimDeps {
 // ---------------------------------------------------------------------------
 
 /**
+ * True when a query carries unfilled [placeholder] template residue (observed live: Gemma
+ * emitted literal "[Authority]" queries) — bracketed tokens are never genuine retrieval terms.
+ */
+export function hasPlaceholderResidue(query: string): boolean {
+  return /[[\]]/.test(query);
+}
+
+/**
  * Apply the G9 cheap sanity filter to the queries returned by the provider:
  * 1. Drop any query whose code-point length > DEFAULT_MAX_QUERY_LEN.
  * 2. Drop any query that echoes the full claimText (normalized comparison).
- * 3. Cap the count to DEFAULT_MAX_QUERIES (keep the first N survivors).
+ * 3. Drop any query carrying [placeholder] template residue.
+ * 4. Cap the count to DEFAULT_MAX_QUERIES (keep the first N survivors).
  */
 function applyQueryBound(queries: string[], claimText: string): string[] {
   // Collapse all whitespace runs to a single space so an internal-whitespace restatement
@@ -67,6 +76,7 @@ function applyQueryBound(queries: string[], claimText: string): string[] {
     // words"; keyword fragments of the claim are allowed (they do not contain the full sentence).
     // The length guard prevents an empty claimText (every string includes "") dropping everything.
     if (claimNorm.length > 0 && collapseWs(q).includes(claimNorm)) return false;
+    if (hasPlaceholderResidue(q)) return false;
     return true;
   });
   return filtered.slice(0, DEFAULT_MAX_QUERIES);
