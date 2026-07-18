@@ -77,6 +77,16 @@ export function detectStaleClaims(
           ? ` Appears in section '${section.heading}'.`
           : " Appears in the lead.";
 
+      // The claim passage: up to one adjacent sentence on each side, section-bounded.
+      // Resolves pronoun/definite-article subjects ("The dam…") for the research layer;
+      // null when the claim stands alone (the passage would equal the sentence itself).
+      const prev = section.sentences[sentenceIndex - 1]?.text;
+      const next = section.sentences[sentenceIndex + 1]?.text;
+      const surroundingText =
+        prev === undefined && next === undefined
+          ? null
+          : [prev, text, next].filter((s): s is string => s !== undefined).join(" ");
+
       candidates.push({
         sentenceText: text,
         sectionHeading: section.heading,
@@ -86,6 +96,7 @@ export function detectStaleClaims(
         explanation: scored.explanation + sectionClause,
         sectionIndex,
         sentenceIndex,
+        surroundingText,
       });
     }
   }

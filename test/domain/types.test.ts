@@ -8,7 +8,7 @@ describe("domain types", () => {
     const sb: ScoreBreakdown = { temporalRisk: 1, futureTenseConfidence: 1, suppression: 0, total: 2 };
     const c: StaleCandidate = {
       sentenceText: "x", sectionHeading: "S", year: 2017, marker: "is expected to",
-      score: sb, explanation: "why", sectionIndex: 0, sentenceIndex: 1,
+      score: sb, explanation: "why", sectionIndex: 0, sentenceIndex: 1, surroundingText: null,
     };
     expect(c.score.total).toBe(2);
   });
