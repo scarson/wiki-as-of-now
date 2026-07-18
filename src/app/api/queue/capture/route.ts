@@ -5,17 +5,49 @@ import { d1Executor } from "@/db/client";
 import { lookupAndPersist } from "@/ingest/lookup";
 import { ArticleNotFoundError, WikimediaUnavailableError } from "@/ingest/wikimedia";
 import { parseWikiTarget } from "@/app/queue/parse-wiki-target";
+import { crossOriginRefusal } from "@/auth/origin-guard";
+import {
+  createCaptureThrottle,
+  loadCaptureThrottleConfig,
+  type CaptureThrottle,
+} from "@/abuse/capture-throttle";
 
 export const dynamic = "force-dynamic";
 
-function json(body: unknown, status: number): Response {
+// One throttle per isolate; keyed by CF-Connecting-IP, which Cloudflare sets on
+// every edge request (absent only under local dev/preview, where we skip).
+let throttle: CaptureThrottle | undefined;
+
+/** Runtime-only vars NOT surfaced by cf-typegen (CC-9) — read off env at request time. */
+interface CaptureRouteVars {
+  CAPTURE_THROTTLE_LIMIT?: string;
+  CAPTURE_THROTTLE_WINDOW_SECONDS?: string;
+}
+
+function json(body: unknown, status: number, headers: Record<string, string> = {}): Response {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { "content-type": "application/json; charset=utf-8" },
+    headers: { "content-type": "application/json; charset=utf-8", ...headers },
   });
 }
 
 export async function POST(request: Request): Promise<Response> {
+  // Before charging the IP budget: a hostile page could otherwise drain a
+  // visitor's capture allowance with cross-origin POSTs from their browser.
+  const refusal = crossOriginRefusal(request);
+  if (refusal) return refusal;
+  const ip = request.headers.get("cf-connecting-ip");
+  if (ip !== null) {
+    throttle ??= createCaptureThrottle(
+      loadCaptureThrottleConfig(getCloudflareContext().env as unknown as CaptureRouteVars)
+    );
+    const decision = throttle.check(ip, Date.now());
+    if (!decision.allowed) {
+      return json({ error: "Too many capture requests from this address — try again shortly" }, 429, {
+        "retry-after": String(decision.retryAfterSeconds),
+      });
+    }
+  }
   let parsed: unknown;
   try {
     parsed = await request.json();
