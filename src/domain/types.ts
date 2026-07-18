@@ -44,6 +44,12 @@ export interface StaleCandidate {
   explanation: string;
   sectionIndex: number;
   sentenceIndex: number;
+  /**
+   * The contiguous section passage containing the claim: up to one adjacent sentence on each
+   * side, space-joined. Null when the claim is its section's only sentence (the passage would
+   * add nothing over sentenceText). Deterministic source text — research context, never model prose.
+   */
+  surroundingText: string | null;
 }
 
 /**

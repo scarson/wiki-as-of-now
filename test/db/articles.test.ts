@@ -20,6 +20,7 @@ function candidate(overrides: Partial<StaleCandidate> = {}): StaleCandidate {
     explanation: "Future-tense claim anchored to 2017.",
     sectionIndex: 1,
     sentenceIndex: 0,
+    surroundingText: null,
     ...overrides,
   };
 }
@@ -75,6 +76,19 @@ describe("insertCandidates / getCandidatesByPageId", () => {
       sourceRevisionId: 100,
     });
     expect(typeof rows[0].id).toBe("number");
+  });
+
+  it("round-trips surroundingText, including the null (claim-stands-alone) case", async () => {
+    const exec = freshTestExecutor();
+    await upsertArticle(exec, { pageId: 42, title: "T", revisionId: 100, fetchedAt: "2026-06-05T00:00:00.000Z" });
+    await insertCandidates(exec, 42, 100, [
+      candidate({ sentenceText: "with context", surroundingText: "Before. with context After." }),
+      candidate({ sentenceText: "alone", surroundingText: null }),
+    ]);
+    const rows = await getCandidatesByPageId(exec, 42);
+    const byText = new Map(rows.map(r => [r.sentenceText, r.surroundingText]));
+    expect(byText.get("with context")).toBe("Before. with context After.");
+    expect(byText.get("alone")).toBeNull();
   });
 
   it("replaces the prior set on re-detect (no duplicate/stale rows)", async () => {

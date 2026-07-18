@@ -24,6 +24,8 @@ export interface PersistedCandidate {
   explanation: string;
   detectorVersion: string;
   sourceRevisionId: number;
+  /** The claim's contiguous section passage (detection-time capture); null for rows detected before it existed. */
+  surroundingText: string | null;
 }
 
 /** Raw row shape from the stale_candidates table before mapping to camelCase. */
@@ -38,6 +40,7 @@ interface RawCandidateRow {
   explanation: string;
   detector_version: string;
   source_revision_id: number;
+  surrounding_text: string | null;
 }
 
 /**
@@ -83,8 +86,8 @@ export async function insertCandidates(
     await db
       .prepare(
         "INSERT INTO stale_candidates " +
-          "(page_id, section_heading, sentence_text, year, marker, score, explanation, detector_version, source_revision_id) " +
-          "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+          "(page_id, section_heading, sentence_text, year, marker, score, explanation, detector_version, source_revision_id, surrounding_text) " +
+          "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
       )
       .bind(
         pageId,
@@ -95,7 +98,8 @@ export async function insertCandidates(
         c.score.total,
         c.explanation,
         DETECTOR_VERSION,
-        sourceRevisionId
+        sourceRevisionId,
+        c.surroundingText
       )
       .run();
   }
@@ -108,7 +112,7 @@ export async function getCandidatesByPageId(
 ): Promise<PersistedCandidate[]> {
   const rows = await db
     .prepare(
-      "SELECT id, page_id, section_heading, sentence_text, year, marker, score, explanation, detector_version, source_revision_id " +
+      "SELECT id, page_id, section_heading, sentence_text, year, marker, score, explanation, detector_version, source_revision_id, surrounding_text " +
         "FROM stale_candidates WHERE page_id = ? ORDER BY score DESC, id ASC"
     )
     .bind(pageId)
@@ -125,6 +129,7 @@ export async function getCandidatesByPageId(
     explanation: row.explanation,
     detectorVersion: row.detector_version,
     sourceRevisionId: row.source_revision_id,
+    surroundingText: row.surrounding_text,
   }));
 }
 

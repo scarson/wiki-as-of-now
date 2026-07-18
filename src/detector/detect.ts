@@ -9,6 +9,14 @@ import type { ParsedArticle, StaleCandidate } from "../domain/types";
 export const DETECTOR_VERSION = "1.0.0";
 
 /**
+ * Code-point ceiling for each neighbor sentence included in surroundingText. The passage is
+ * copied onto every ResearchMessage, so a pathological giant neighbor (e.g. a list-like
+ * "sentence") must not balloon the message toward queue size limits; an oversized neighbor
+ * is omitted, never truncated (the passage stays verbatim source text).
+ */
+const SURROUNDING_NEIGHBOR_MAX = 1000;
+
+/**
  * Scans a parsed article for stale expectation claims and returns them sorted
  * by total score descending.
  *
@@ -77,6 +85,20 @@ export function detectStaleClaims(
           ? ` Appears in section '${section.heading}'.`
           : " Appears in the lead.";
 
+      // The claim passage: up to one adjacent sentence on each side, section-bounded.
+      // Resolves pronoun/definite-article subjects ("The dam…") for the research layer;
+      // null when the claim stands alone (the passage would equal the sentence itself).
+      const neighbor = (i: number): string | undefined => {
+        const t = section.sentences[i]?.text;
+        return t !== undefined && [...t].length <= SURROUNDING_NEIGHBOR_MAX ? t : undefined;
+      };
+      const prev = neighbor(sentenceIndex - 1);
+      const next = neighbor(sentenceIndex + 1);
+      const surroundingText =
+        prev === undefined && next === undefined
+          ? null
+          : [prev, text, next].filter((s): s is string => s !== undefined).join(" ");
+
       candidates.push({
         sentenceText: text,
         sectionHeading: section.heading,
@@ -86,6 +108,7 @@ export function detectStaleClaims(
         explanation: scored.explanation + sectionClause,
         sectionIndex,
         sentenceIndex,
+        surroundingText,
       });
     }
   }

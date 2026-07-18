@@ -24,7 +24,7 @@ CREATE TABLE stale_candidates (
   explanation TEXT NOT NULL,
   detector_version TEXT NOT NULL,
   source_revision_id INTEGER NOT NULL
-);
+, surrounding_text TEXT);
 CREATE TABLE eligibility_verdicts (
   page_id      INTEGER NOT NULL REFERENCES articles(page_id),
   revision_id  INTEGER NOT NULL,

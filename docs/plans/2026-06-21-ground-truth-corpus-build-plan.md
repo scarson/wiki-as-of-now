@@ -73,14 +73,14 @@ notes and commit messages.
 
 ## Execution Status
 
-**Overall:** Phases 1–2 shipped on branch `claude/corpus-build-schema` (off `origin/dev`) in **draft PR [#23](https://github.com/scarson/wiki-as-of-now/pull/23)** for Sam (not auto-merged — Review classification). Phases 3–4 deferred (need live Brave + outbound web + Sam's pilot-batch confirmation). 2/4 phases shipped.
+**Overall:** ALL PHASES COMPLETE. Phases 1–2 shipped on branch `claude/corpus-build-schema` (draft PR [#23](https://github.com/scarson/wiki-as-of-now/pull/23), since merged). Phases 3–4 were then executed via the corpus-pilot line (pilot + full build; Sam worked the escalation queue and verified the records) — the full 32-record corpus with committed snapshots is merged on `dev` (`test/gold/answers.json`, `test/gold/sources/`), and the 2026-07-18 session-handoff correction confirmed the superseded `claude/corpus-rest-{a,b,c}` branches were safely deleted. The eval this corpus exists for now consumes it: `test/research/gold-answer-eval.test.ts` (PR [#49](https://github.com/scarson/wiki-as-of-now/pull/49)) replays every evidenced record through the deterministic pipeline.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
 | 1 — Schema + scaffolding (`answer-record.ts`, READMEs) | ✅ Shipped (2026-06-21) | `e409ede`, `7aff6c2` | TDD; pure code; 10 tests |
 | 2 — Integrity harness (`answers-integrity.test.ts`) | ✅ Shipped (2026-06-21) | `595ee93` | TDD; 5 tests; vacuous on empty answers.json |
-| 3 — Pilot fetch runbook (records + snapshots) | ⏸ Deferred | — | agent-driven research; gated by Phase 2; needs live Brave + web |
-| 4 — Inter-rater + calibration handoff | ⏸ Deferred | — | process; STOPs for Sam; pending Phase 3 |
+| 3 — Pilot fetch runbook (records + snapshots) | ✅ Shipped (via corpus-pilot line; on dev) | see git log of `test/gold/answers.json` | 32 records + snapshots; banner updated retroactively 2026-07-18 |
+| 4 — Inter-rater + calibration handoff | ✅ Shipped (via corpus-pilot line; Sam-verified) | — | Sam worked the escalation queue; records carry certification tiers |
 
 ### Deviations
 - _(none yet)_
@@ -496,7 +496,7 @@ Review the batch from multiple perspectives. Minimum 3 review rounds. If round 3
 
 ## Phase 3 — Pilot fetch runbook
 
-**Execution Status:** ⏸ DEFERRED — unblock condition: Sam confirms the pilot batch (Task 3.1 Step 2) AND an environment with live Brave search + outbound web is available. This phase produces real data via live Brave + `url-to-markdown` + the real web; the current execution environment lacks network access and the pilot batch is not yet Sam-confirmed. Unblocker signal: re-run this plan in a network-enabled session after Sam confirms the batch; the Phase 2 integrity harness (this branch) is the acceptance gate that gates every record once fetching resumes.
+**Execution Status:** ✅ SHIPPED (retroactive banner, 2026-07-18) — executed via the corpus-pilot line after the pilot batch was Sam-confirmed; the full 32-record corpus + committed snapshots is merged on `dev` and passes the Phase 2 integrity harness. (This banner previously read ⏸ DEFERRED; the work happened in later sessions without the banner being flipped.)
 
 **This phase is agent-executed research, NOT TDD.** It produces data — `AnswerRecord`s + committed snapshots — whose acceptance gate is the Phase 2 harness (`pnpm test test/gold/` green) plus the §2.2 tier rules. It uses **live** Brave search + **live** `url-to-markdown` + the real web (no mocks; real data, real APIs). Requires an environment where Brave search and outbound web fetches are reachable; if the network policy blocks them, mark this phase ⏸ DEFERRED (unblock condition: run where Brave + outbound web are reachable) and proceed no further.
 
@@ -546,7 +546,7 @@ BEFORE marking Phase 3 complete:
 
 ## Phase 4 — Inter-rater + calibration handoff
 
-**Execution Status:** ⏸ DEFERRED — pending Phase 3. Cannot run an inter-rater pass over pilot records that do not yet exist; unblocks once Phase 3 (above) ships pilot records. Unblocker signal: Phase 3's Execution Status banner flips to ✅ SHIPPED.
+**Execution Status:** ✅ SHIPPED (retroactive banner, 2026-07-18) — the inter-rater/calibration pass ran with the corpus build; Sam worked the escalation queue (`test/gold/escalation-queue.md`) and the merged records carry their certification tiers. (This banner previously read ⏸ DEFERRED; flipped retroactively with Phase 3.)
 
 Process phase. Produces the calibration signal and STOPs for Sam before any scale-up.
 
