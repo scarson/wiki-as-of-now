@@ -43,14 +43,15 @@ async function insertCandidate(
   sentenceText: string,
   year: number,
   sourceRevisionId: number,
+  surroundingText: string | null = null,
 ): Promise<void> {
   await exec
     .prepare(
       "INSERT INTO stale_candidates " +
-        "(page_id, section_heading, sentence_text, year, marker, score, explanation, detector_version, source_revision_id) " +
-        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        "(page_id, section_heading, sentence_text, year, marker, score, explanation, detector_version, source_revision_id, surrounding_text) " +
+        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
     )
-    .bind(pageId, sectionHeading, sentenceText, year, "will", 5.0, "Future-tense claim.", "test/1.0", sourceRevisionId)
+    .bind(pageId, sectionHeading, sentenceText, year, "will", 5.0, "Future-tense claim.", "test/1.0", sourceRevisionId, surroundingText)
     .run();
 }
 
@@ -98,13 +99,28 @@ describe("selectResearchSeeds — happy path", () => {
     const expectedKey = await computeClaimKey(PAGE_ID, "History", "The fleet deployed.", 2025);
     expect(msg.claimKey).toBe(expectedKey);
 
-    // Assert full message shape
+    // Assert full message shape — articleTitle comes from the articles join; no surrounding
+    // text was captured for this row, so the optional field is absent (never a JSON null).
     expect(msg.input).toEqual({
       claimText: "The fleet deployed.",
       sectionHeading: "History",
       year: 2025,
       sourceRevisionId: REV_ID,
+      articleTitle: "Article 10",
     });
+  });
+
+  it("carries surroundingText into the research input when the candidate row has it", async () => {
+    const exec = freshTestExecutor();
+    await seedArticle(exec, 11, 110);
+    await seedEasyWinVerdict(exec, 11, 110);
+    await insertCandidate(exec, 11, "History", "The fleet deployed.", 2025, 110,
+      "Orders were placed. The fleet deployed. Reviews followed.");
+
+    const results = await selectResearchSeeds(exec, { gateVersion: GATE_VERSION, limit: 10 });
+    expect(results).toHaveLength(1);
+    expect(results[0].input.articleTitle).toBe("Article 11");
+    expect(results[0].input.surroundingText).toBe("Orders were placed. The fleet deployed. Reviews followed.");
   });
 });
 

@@ -18,6 +18,8 @@ export interface EnqueueCandidate {
   sentenceText: string;
   sectionHeading: string;
   year: number;
+  articleTitle: string;
+  surroundingText: string | null;
 }
 
 export interface EnqueueGateResult {
@@ -71,6 +73,10 @@ export async function gateResearchEnqueue(deps: {
       sectionHeading: deps.candidate.sectionHeading,
       year: deps.candidate.year,
       sourceRevisionId: deps.candidate.sourceRevisionId,
+      articleTitle: deps.candidate.articleTitle,
+      // Conditional spread: a null (pre-capture row) leaves the optional field ABSENT rather
+      // than serializing a JSON null onto the queue message.
+      ...(deps.candidate.surroundingText !== null ? { surroundingText: deps.candidate.surroundingText } : {}),
     },
     // Thread the enqueuer's opaque userId onto the message so the consumer's quota_ledger row is
     // keyed to the REAL requester (Fix 2) — otherwise the per-user cap reads u_admin and never trips.

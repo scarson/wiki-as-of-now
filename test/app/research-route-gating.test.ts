@@ -22,6 +22,8 @@ const CANDIDATE = {
   sentenceText: "The fleet will reach full strength by 2025.",
   sectionHeading: "History",
   year: 2025,
+  articleTitle: "Zumwalt-class destroyer",
+  surroundingText: "Procurement began in 2020. The fleet will reach full strength by 2025. Delays followed." as string | null,
 };
 
 async function seedAdmin(db: ReturnType<typeof freshTestExecutor>) {
@@ -145,6 +147,32 @@ describe("research enqueue gating", () => {
     expect(result.outcome).toBe("enqueued");
     expect(sent).toHaveLength(1);
     expect(sent[0].claimKey).toMatch(/^[0-9a-f]{64}$/);
+    // The research input carries the claim's referent context (article title + section passage).
+    expect(sent[0].input.articleTitle).toBe("Zumwalt-class destroyer");
+    expect(sent[0].input.surroundingText).toBe(
+      "Procurement began in 2020. The fleet will reach full strength by 2025. Delays followed.",
+    );
+  });
+
+  it("elides a null surroundingText from the research input (pre-migration candidate rows)", async () => {
+    const db = freshTestExecutor();
+    await seedAdmin(db);
+    await upsertArticle(db, { pageId: CANDIDATE.pageId, title: "T", revisionId: CANDIDATE.sourceRevisionId, fetchedAt: "2026-06-13T00:00:00.000Z" });
+    await upsertVerdict(db, { pageId: CANDIDATE.pageId, revisionId: CANDIDATE.sourceRevisionId, gateVersion: GATE_VERSION, eligibility: "easy_win", reasons: [], evaluatedAt: "2026-06-13T00:00:00.000Z" });
+    const { queue, sent } = fakeQueue();
+    const result = await gateResearchEnqueue({
+      env: {},
+      db,
+      authContext: { kind: "authenticated", userId: "u_admin" },
+      candidate: { ...CANDIDATE, surroundingText: null },
+      now: "2026-06-13T12:00:00.000Z",
+      queue,
+      quotaConfig: { perUserDailyCap: 10, globalDailyCap: 50 },
+    });
+    expect(result.outcome).toBe("enqueued");
+    // undefined (absent), not null — the optional ResearchInput field never serializes a JSON null.
+    expect(sent[0].input.surroundingText).toBeUndefined();
+    expect("surroundingText" in sent[0].input).toBe(false);
   });
 
   it("authenticated + easy_win but at the user cap → 'quota_exceeded', nothing enqueued", async () => {

@@ -42,6 +42,7 @@ function candidate(overrides: Partial<StaleCandidate> = {}): StaleCandidate {
     explanation: "Future-tense claim anchored to 2017.",
     sectionIndex: 1,
     sentenceIndex: 0,
+    surroundingText: null,
     ...overrides,
   };
 }

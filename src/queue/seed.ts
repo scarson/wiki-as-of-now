@@ -31,6 +31,8 @@ interface SeedRow {
   sentence_text: string;
   year: number;
   source_revision_id: number;
+  surrounding_text: string | null;
+  article_title: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -59,7 +61,7 @@ export async function selectResearchSeeds(
 
   const rows = await db
     .prepare(
-      "SELECT DISTINCT c.page_id, c.section_heading, c.sentence_text, c.year, c.source_revision_id " +
+      "SELECT DISTINCT c.page_id, c.section_heading, c.sentence_text, c.year, c.source_revision_id, c.surrounding_text, a.title AS article_title " +
       "FROM stale_candidates c " +
       "JOIN articles a ON a.page_id = c.page_id AND c.source_revision_id = a.revision_id " +
       "JOIN eligibility_verdicts v ON v.page_id = a.page_id AND v.revision_id = a.revision_id " +
@@ -94,6 +96,9 @@ export async function selectResearchSeeds(
         sectionHeading: row.section_heading,
         year: row.year,
         sourceRevisionId: row.source_revision_id,
+        articleTitle: row.article_title,
+        // Absent (never a JSON null) when the row predates surrounding-text capture.
+        ...(row.surrounding_text !== null ? { surroundingText: row.surrounding_text } : {}),
       },
     });
   }

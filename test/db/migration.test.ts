@@ -177,6 +177,32 @@ describe("0002_eligibility_verdicts migration", () => {
   });
 });
 
+describe("0010_candidate_surrounding_text migration", () => {
+  it("stale_candidates has a nullable surrounding_text column", () => {
+    const db = freshTestDb();
+    const cols = db
+      .prepare<[], { name: string; notnull: number }>("PRAGMA table_info(stale_candidates)")
+      .all();
+    const col = cols.find((c) => c.name === "surrounding_text");
+    expect(col).toBeDefined();
+    expect(col?.notnull).toBe(0); // nullable: pre-migration rows carry NULL
+  });
+
+  it("accepts an insert that omits surrounding_text (pre-migration writer shape)", () => {
+    const db = freshTestDb();
+    db.prepare(
+      "INSERT INTO articles (page_id, title, revision_id, fetched_at) VALUES (?, ?, ?, ?)"
+    ).run(1, "Test Article", 100, "2026-07-18T00:00:00.000Z");
+    db.prepare(
+      "INSERT INTO stale_candidates (page_id, section_heading, sentence_text, year, marker, score, explanation, detector_version, source_revision_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+    ).run(1, "S", "text", 2015, "will", 1.0, "e", "1.0.0", 100);
+    const row = db
+      .prepare<[], { surrounding_text: string | null }>("SELECT surrounding_text FROM stale_candidates")
+      .get();
+    expect(row?.surrounding_text).toBeNull();
+  });
+});
+
 describe("0003_research_packs migration", () => {
   it("creates the research_packs table", () => {
     const db = freshTestDb();

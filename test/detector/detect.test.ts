@@ -68,6 +68,55 @@ describe("detectStaleClaims", () => {
     expect(detectStaleClaims(parseArticle({ title: "T", revisionId: 1, wikitext }), 2026)).toEqual([]);
   });
 
+  it("captures surroundingText as the claim passage with one adjacent sentence on each side", () => {
+    const wikitext = `== Construction ==\nThe Three Gorges Dam spans the Yangtze River. The dam was expected to reach full capacity in 2009. Its final generator entered service later.`;
+    const out = detectStaleClaims(parseArticle({ title: "T", revisionId: 1, wikitext }), 2026);
+    expect(out).toHaveLength(1);
+    expect(out[0].surroundingText).toBe(
+      "The Three Gorges Dam spans the Yangtze River. The dam was expected to reach full capacity in 2009. Its final generator entered service later.",
+    );
+  });
+  it("captures a one-sided passage when the claim opens or closes its section", () => {
+    const first = detectStaleClaims(
+      parseArticle({ title: "T", revisionId: 1, wikitext: `== S ==\nThe Navy plans to act in 2015. A second batch followed.` }),
+      2026,
+    );
+    expect(first[0].surroundingText).toBe("The Navy plans to act in 2015. A second batch followed.");
+    const last = detectStaleClaims(
+      parseArticle({ title: "T", revisionId: 1, wikitext: `== S ==\nFunding was approved earlier. The Navy plans to act in 2015.` }),
+      2026,
+    );
+    expect(last[0].surroundingText).toBe("Funding was approved earlier. The Navy plans to act in 2015.");
+  });
+  it("captures null surroundingText when the claim is its section's only sentence", () => {
+    const out = detectStaleClaims(
+      parseArticle({ title: "T", revisionId: 1, wikitext: `== S ==\nThe Navy plans to act in 2015.` }),
+      2026,
+    );
+    expect(out[0].surroundingText).toBeNull();
+  });
+  it("omits an oversized neighbor sentence from surroundingText (queue-transport bound)", () => {
+    // A pathological giant neighbor must not balloon the passage copied onto every ResearchMessage.
+    const giant = `The list includes ${"item, ".repeat(400)}and more.`; // > 1000 code points
+    const wikitext = `== S ==\n${giant}\nThe Navy plans to act in 2015. A second batch followed.`;
+    const out = detectStaleClaims(parseArticle({ title: "T", revisionId: 1, wikitext }), 2026);
+    expect(out).toHaveLength(1);
+    expect(out[0].surroundingText).toBe("The Navy plans to act in 2015. A second batch followed.");
+  });
+  it("captures null surroundingText when the only neighbor is oversized", () => {
+    const giant = `The list includes ${"item, ".repeat(400)}and more.`;
+    const wikitext = `== S ==\n${giant}\nThe Navy plans to act in 2015.`;
+    const out = detectStaleClaims(parseArticle({ title: "T", revisionId: 1, wikitext }), 2026);
+    expect(out).toHaveLength(1);
+    expect(out[0].surroundingText).toBeNull();
+  });
+  it("does not cross section boundaries when building surroundingText", () => {
+    const wikitext = `== S1 ==\nUnrelated prior section text.\n\n== S2 ==\nThe Navy plans to act in 2015.\n\n== S3 ==\nUnrelated later section text.`;
+    const out = detectStaleClaims(parseArticle({ title: "T", revisionId: 1, wikitext }), 2026);
+    expect(out).toHaveLength(1);
+    expect(out[0].surroundingText).toBeNull(); // only sentence in its own section — neighbors in S1/S3 excluded
+  });
+
   // Gap 2 — line 60: a later marker (higher strength) causes chosenMarker to be reassigned.
   // "aims to" appears before "to be completed by" in the lexicon (both present in the sentence),
   // so markers[0]="aims to" (strength 1) and markers[1]="to be completed by" (strength 2).
