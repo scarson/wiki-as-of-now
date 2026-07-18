@@ -329,7 +329,7 @@ Group by subsystem if the project has multiple (e.g., backend + frontend).
 
 <!-- TODO: Concise table — language, framework, testing, CI/CD, packaging. -->
 
-**Runtime version policy:** target the latest **Active LTS** only. Node.js **24** (current Active LTS as of 2026; pinned in `.nvmrc`) — Node 22 is now Maintenance LTS. Revisit when a newer line reaches Active LTS. Apply the same "latest stable LTS" rule to every language/framework added to the stack.
+**Runtime version policy:** target the **latest stable** line. Node.js **26** (pinned in `.nvmrc`, which CI and deploy both read) — per Sam 2026-07-18, this app doesn't justify pinning LTS over latest stable. Bump the pin when a newer stable line lands and both test pools pass under it.
 
 ## Architecture (Key Points)
 
