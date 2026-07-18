@@ -36,6 +36,11 @@ interface RouteBinding {
   pattern: string;
   custom_domain?: boolean;
 }
+interface RateLimitBinding {
+  name: string;
+  namespace_id?: string;
+  simple?: { limit: number; period: number };
+}
 interface EnvBlock {
   name?: string;
   services?: ServiceBinding[];
@@ -46,6 +51,7 @@ interface EnvBlock {
   vars?: Record<string, string>;
   ai?: { binding: string; remote?: boolean };
   images?: { binding: string };
+  ratelimits?: RateLimitBinding[];
 }
 interface WranglerConfig {
   ai?: { binding: string; remote?: boolean };
@@ -238,6 +244,26 @@ describe("wrangler config — per-env blocks (Task 7.2)", () => {
     const research = readJsonc("workers/research/wrangler.jsonc");
     expect(envOf(research, "dev").vars?.RESEARCH_PROVIDER).toBe("workers-ai");
     expect(envOf(research, "production").vars?.RESEARCH_PROVIDER).toBe("workers-ai");
+  });
+});
+
+describe("capture rate-limit binding (docs/design/2026-07-18-capture-throttle-design.md)", () => {
+  it("both deployed envs declare CAPTURE_RATE_LIMITER at 10 requests / 60 s", () => {
+    const app = readJsonc("wrangler.jsonc");
+    for (const which of ["dev", "production"] as const) {
+      const rl = app.env?.[which]?.ratelimits?.find((r) => r.name === "CAPTURE_RATE_LIMITER");
+      expect(rl, `env.${which} must declare CAPTURE_RATE_LIMITER`).toBeDefined();
+      expect(rl?.simple).toEqual({ limit: 10, period: 60 });
+    }
+  });
+
+  it("dev and production use distinct namespace_ids (same id would share counters across envs)", () => {
+    const app = readJsonc("wrangler.jsonc");
+    const dev = app.env?.dev?.ratelimits?.find((r) => r.name === "CAPTURE_RATE_LIMITER");
+    const prod = app.env?.production?.ratelimits?.find((r) => r.name === "CAPTURE_RATE_LIMITER");
+    expect(dev?.namespace_id).toBeDefined();
+    expect(prod?.namespace_id).toBeDefined();
+    expect(dev?.namespace_id).not.toBe(prod?.namespace_id);
   });
 });
 
