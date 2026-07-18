@@ -3,5 +3,8 @@ issue-prefix: waon
 dolt.auto-start: false
 gc.endpoint_origin: inherited_city
 gc.endpoint_status: verified
-types.custom: molecule,convoy,message,event,gate,merge-request,agent,role,rig,session,spec,convergence
 export.auto: false
+dolt:
+  disable-event-flush: true
+backup.enabled: false
+types.custom: molecule,convoy,message,event,gate,merge-request,agent,role,rig,session,spec,convergence,step
