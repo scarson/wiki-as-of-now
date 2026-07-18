@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { d1Executor } from "@/db/client";
 import { loadWorksheetView } from "@/worksheet/load-worksheet-view";
+import { wikipediaArticleUrl, wikipediaSectionUrl } from "@/wikipedia/article-url";
 import { StaleSentence } from "@/app/worksheet/components/StaleSentence";
 import { HonestyBanner } from "@/app/worksheet/components/HonestyBanner";
 import { WorksheetClient } from "@/app/worksheet/components/WorksheetClient";
@@ -23,13 +24,30 @@ export default async function WorksheetPage({ params }: { params: Promise<{ cand
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <p className="font-mono text-xs text-dust-gray">
-        page {view.claim.pageId} · revision {view.claim.sourceRevisionId} · § {view.claim.sectionHeading}
-      </p>
-
-      <h1 className="mt-3 font-serif text-2xl leading-snug text-ink-white" style={{ textWrap: "balance" }}>
-        Research worksheet
-      </h1>
+      {view.claim.title ? (
+        <>
+          <h1 className="font-serif text-2xl leading-snug text-ink-white" style={{ textWrap: "balance" }}>
+            <a href={wikipediaArticleUrl(view.claim.title)} target="_blank" rel="noopener noreferrer" className="text-iron-gall underline-offset-2 hover:underline">
+              {view.claim.title}
+            </a>
+          </h1>
+          <p className="mt-2 font-mono text-xs text-dust-gray">
+            page {view.claim.pageId} · revision {view.claim.sourceRevisionId} ·{" "}
+            <a href={wikipediaSectionUrl(view.claim.title, view.claim.sectionHeading)} target="_blank" rel="noopener noreferrer" className="text-iron-gall underline-offset-2 hover:underline">
+              § {view.claim.sectionHeading}
+            </a>
+          </p>
+        </>
+      ) : (
+        <>
+          <p className="font-mono text-xs text-dust-gray">
+            page {view.claim.pageId} · revision {view.claim.sourceRevisionId} · § {view.claim.sectionHeading}
+          </p>
+          <h1 className="mt-3 font-serif text-2xl leading-snug text-ink-white" style={{ textWrap: "balance" }}>
+            Research worksheet
+          </h1>
+        </>
+      )}
 
       <blockquote className="mt-4 text-[0.95rem] leading-relaxed">
         <StaleSentence sentenceText={view.claim.sentenceText} marker={view.claim.marker} />

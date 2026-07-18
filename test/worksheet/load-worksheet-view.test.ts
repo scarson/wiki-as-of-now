@@ -36,6 +36,7 @@ describe("loadWorksheetView", () => {
     if (view === null) throw new Error("expected a view");
     expect(view.claim.sentenceText).toBe("It is expected to deliver in 2020.");
     expect(view.claim.marker).toBe("expected to");
+    expect(view.claim.title).toBe("Example Program");
     expect(view.honesty.kind).toBe("supported");
     expect(view.honesty.revisionDrift).toBe(false);
     expect(view.cards).toHaveLength(1);
