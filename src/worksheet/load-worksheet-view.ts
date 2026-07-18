@@ -34,8 +34,8 @@ export async function loadWorksheetView(
   if (rows.length === 0) return null;
   const c = rows[0];
 
-  const articleRows = await db.prepare("SELECT revision_id FROM articles WHERE page_id = ?")
-    .bind(c.page_id).all<{ revision_id: number }>();
+  const articleRows = await db.prepare("SELECT revision_id, title FROM articles WHERE page_id = ?")
+    .bind(c.page_id).all<{ revision_id: number; title: string }>();
   const currentRevisionId = articleRows.length > 0 ? articleRows[0].revision_id : c.source_revision_id;
 
   const claimKey = await computeClaimKey(c.page_id, c.section_heading, c.sentence_text, c.year);
@@ -50,6 +50,7 @@ export async function loadWorksheetView(
     claim: {
       candidateId: c.id,
       pageId: c.page_id,
+      title: articleRows.length > 0 ? articleRows[0].title : null,
       sectionHeading: c.section_heading,
       sentenceText: c.sentence_text,
       year: c.year,
