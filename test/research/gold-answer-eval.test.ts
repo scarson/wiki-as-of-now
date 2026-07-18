@@ -61,6 +61,8 @@ describe("gold-answer eval — the deterministic pipeline accepts every verified
   });
 
   it("verifyProposal returns a card (never a drop) for every gold evidence entry, with snapshot-sliced context", async () => {
+    let cardsWithContext = 0;
+    let totalCards = 0;
     for (const r of evidenced) {
       const fetchSource = snapshotFetcher(r);
       for (const p of proposalsOf(r)) {
@@ -70,20 +72,28 @@ describe("gold-answer eval — the deterministic pipeline accepts every verified
           `${label(r)} — ${p.url} dropped: ${"reason" in result ? result.reason : "?"}`
         ).toBe(true);
         if ("verbatimQuote" in result) {
+          totalCards++;
           expect(result.verbatimQuote).toBe(p.proposedQuote);
           // Context sides may be null at a paragraph edge (a gold quote can span a whole
-          // paragraph — aducanumab does). Any present side must be genuine normalized
-          // snapshot text, never synthesized.
+          // paragraph — aducanumab does). The reconstructed [before][quote][after] window
+          // must be one contiguous span of the normalized snapshot — this proves both
+          // provenance AND adjacency, not merely that each side appears somewhere.
           const page = normalizeForVerbatim(snapshotBody(byUrlSnapshot(r, p.url)));
-          for (const side of [result.contextBefore, result.contextAfter]) {
-            if (side !== null) {
-              expect(side.length, `${label(r)} — empty context side`).toBeGreaterThan(0);
-              expect(page.includes(side), `${label(r)} — context not from the snapshot`).toBe(true);
-            }
-          }
+          const window =
+            (result.contextBefore ?? "") + normalizeForVerbatim(p.proposedQuote) + (result.contextAfter ?? "");
+          expect(page.includes(window), `${label(r)} — context+quote window is not a contiguous snapshot span`).toBe(
+            true
+          );
+          if (result.contextBefore !== null || result.contextAfter !== null) cardsWithContext++;
         }
       }
     }
+    // Anti-vacuity floor: if context slicing ever regressed to all-null the window check above
+    // would still pass trivially. Today 36/39 cards carry context (three gold quotes span a
+    // whole paragraph — aducanumab among them — which legitimately yields null on both sides);
+    // floor set just under that. Re-baseline only when the corpus itself changes.
+    expect(totalCards).toBe(39);
+    expect(cardsWithContext, "context slicing looks vacuously null across the corpus").toBeGreaterThanOrEqual(35);
   });
 
   it("researchClaim (production caps) yields a card per gold evidence entry — nothing truncated, capped, or dropped", async () => {
@@ -107,8 +117,15 @@ describe("gold-answer eval — the deterministic pipeline accepts every verified
           outcome.dispositions,
           `${label(r)} — pipeline dropped gold evidence`
         ).toEqual([]);
-        expect(outcome.cards.length, label(r)).toBe(r.evidence.length);
         expect(outcome.overCapCount, label(r)).toBe(0);
+        // Each individual gold entry must survive as ITS OWN card, in order — a count
+        // alone would pass if the pipeline duplicated or substituted cards.
+        expect(
+          outcome.cards.map((c) => ({ url: c.url, quote: c.verbatimQuote, advisory: c.advisorySupport })),
+          label(r)
+        ).toEqual(
+          r.evidence.map((ev) => ({ url: ev.sourceUrl, quote: ev.verbatimQuote, advisory: ev.supportsStaleness }))
+        );
       }
     }
   });
