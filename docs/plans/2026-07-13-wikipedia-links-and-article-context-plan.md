@@ -64,19 +64,19 @@ From [2026-07-13-wikipedia-links-and-article-context-design.md](../design/2026-0
 
 ## Execution Status
 
-**Overall:** 🚧 IN PROGRESS — claimed 2026-07-18T02:03:42Z on branch `feat/wikipedia-links` (off `origin/dev` 57f3666).
+**Overall:** ✅ All phases implemented 2026-07-18 on branch `feat/wikipedia-links` (off `origin/dev` 57f3666). Full verification green (vitest 956 + 30 workers, tsc, eslint, build). PR to `dev` tracked below.
 
 | Phase | Status | Ship SHA(s) | Notes |
 |---|---|---|---|
-| 1 — URL helper | ⬜ Not started | — | pure, TDD |
-| 2 — Worksheet linked title | ⬜ Not started | — | loader +title column |
-| 3 — Link queue + article page | ⬜ Not started | — | presentation |
+| 1 — URL helper | ✅ Shipped 2026-07-18 | 13d6275 | pure, TDD |
+| 2 — Worksheet linked title | ✅ Shipped 2026-07-18 | 00ae20f | loader +title column |
+| 3 — Link queue + article page | ✅ Shipped 2026-07-18 | f91bddc | presentation + onKeyDown guard |
 
 ---
 
 ## Phase 1 — Shared Wikipedia URL helper
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-07-18 — 13d6275 (red run observed, then green; tsc clean)
 
 **Files:** Create `src/wikipedia/article-url.ts` + `test/wikipedia/article-url.test.ts`.
 
@@ -86,7 +86,7 @@ From [2026-07-13-wikipedia-links-and-article-context-design.md](../design/2026-0
 
 **BEFORE starting:** invoke `/superpowers:test-driven-development`.
 
-- [ ] **Step 1: Write the failing test** (`test/wikipedia/article-url.test.ts`):
+- [x] **Step 1: Write the failing test** (`test/wikipedia/article-url.test.ts`):
 ```ts
 // ABOUTME: Unit tests for the Wikipedia URL helpers — current-article + section-anchor construction, encoding, edge cases.
 import { describe, it, expect } from "vitest";
@@ -117,8 +117,8 @@ describe("wikipediaSectionUrl", () => {
   });
 });
 ```
-- [ ] **Step 2: Run — expect FAIL.** `node_modules/.bin/vitest run test/wikipedia/article-url.test.ts`
-- [ ] **Step 3: Implement** (`src/wikipedia/article-url.ts`):
+- [x] **Step 2: Run — expect FAIL.** `node_modules/.bin/vitest run test/wikipedia/article-url.test.ts`
+- [x] **Step 3: Implement** (`src/wikipedia/article-url.ts`):
 ```ts
 // ABOUTME: Pure builders for links to the CURRENT English Wikipedia article + section anchor (never a revision-pinned URL).
 // ABOUTME: Section-anchor drift (heading renamed since detection) degrades to top-of-article — acceptable per design.
@@ -138,8 +138,8 @@ export function wikipediaSectionUrl(title: string, sectionHeading: string): stri
   return sectionHeading.trim() ? `${url}#${toToken(sectionHeading)}` : url;
 }
 ```
-- [ ] **Step 4: Run — expect PASS.** Then `npx tsc --noEmit`.
-- [ ] **Step 5: Commit.**
+- [x] **Step 4: Run — expect PASS.** Then `npx tsc --noEmit`.
+- [x] **Step 5: Commit.**
 ```bash
 git add src/wikipedia/article-url.ts test/wikipedia/article-url.test.ts
 git commit -m "feat(wikipedia): article + section URL helpers"
@@ -149,7 +149,7 @@ git commit -m "feat(wikipedia): article + section URL helpers"
 
 ## Phase 2 — Worksheet: linked article title
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-07-18 — 00ae20f (populated-title loader test red→green; worksheet tests 48 pass)
 
 **Files:**
 - Modify: `src/worksheet/load-worksheet-view.ts` (add `title` to the existing `articles` query + the returned claim)
@@ -159,9 +159,9 @@ git commit -m "feat(wikipedia): article + section URL helpers"
 
 **Interfaces:** `ArticleClaimView` gains `title: string | null` (null when no `articles` row exists — preserve the existing fallback).
 
-- [ ] **Step 1: Extend the loader (TDD).** In `src/worksheet/load-worksheet-view.ts`, change the articles query from `SELECT revision_id` to `SELECT revision_id, title` (typed row `{ revision_id: number; title: string }`), and add `title: articleRows.length > 0 ? articleRows[0].title : null` to the returned `claim`. Add/adjust a loader test asserting `view.claim.title` is **populated** when the `articles` row exists (find the existing loader test under `test/worksheet/`; mirror its D1 seeding — it already seeds an `articles` row because `stale_candidates.page_id` FK-references `articles`). **Do NOT test the `null` path** — a candidate with no article row is unseedable under the real FK (a `/codex` finding); the `null` in the ternary is kept only as defensive symmetry with the existing `revision_id` fallback, not a reachable state in tests. Run it red → implement → green.
-- [ ] **Step 2: Add the type field.** In `src/worksheet/view-types.ts`, add `title: string | null;` to `ArticleClaimView` (place it next to `pageId`). `npx tsc --noEmit` will flag the loader return until Step 1's field is present — keep them consistent.
-- [ ] **Step 3: Render the header.** In `src/app/worksheet/[candidateId]/page.tsx`, import the helpers and replace the `page … revision … § …` line + the generic "Research worksheet" h1 with a real header. Link the title and section **only when `title` is non-null** (a section link needs the title; without it, fall back to today's plain line):
+- [x] **Step 1: Extend the loader (TDD).** In `src/worksheet/load-worksheet-view.ts`, change the articles query from `SELECT revision_id` to `SELECT revision_id, title` (typed row `{ revision_id: number; title: string }`), and add `title: articleRows.length > 0 ? articleRows[0].title : null` to the returned `claim`. Add/adjust a loader test asserting `view.claim.title` is **populated** when the `articles` row exists (find the existing loader test under `test/worksheet/`; mirror its D1 seeding — it already seeds an `articles` row because `stale_candidates.page_id` FK-references `articles`). **Do NOT test the `null` path** — a candidate with no article row is unseedable under the real FK (a `/codex` finding); the `null` in the ternary is kept only as defensive symmetry with the existing `revision_id` fallback, not a reachable state in tests. Run it red → implement → green.
+- [x] **Step 2: Add the type field.** In `src/worksheet/view-types.ts`, add `title: string | null;` to `ArticleClaimView` (place it next to `pageId`). `npx tsc --noEmit` will flag the loader return until Step 1's field is present — keep them consistent.
+- [x] **Step 3: Render the header.** In `src/app/worksheet/[candidateId]/page.tsx`, import the helpers and replace the `page … revision … § …` line + the generic "Research worksheet" h1 with a real header. Link the title and section **only when `title` is non-null** (a section link needs the title; without it, fall back to today's plain line):
 ```tsx
 import { wikipediaArticleUrl, wikipediaSectionUrl } from "@/wikipedia/article-url";
 // ...
@@ -189,8 +189,8 @@ import { wikipediaArticleUrl, wikipediaSectionUrl } from "@/wikipedia/article-ur
 )}
 ```
 (Keep the existing `blockquote`/claim rendering below unchanged.)
-- [ ] **Step 4: Verify.** `node_modules/.bin/vitest run test/worksheet`, `npx tsc --noEmit`, `npx eslint src/worksheet/load-worksheet-view.ts src/worksheet/view-types.ts "src/app/worksheet/[candidateId]/page.tsx"`.
-- [ ] **Step 5: Commit.**
+- [x] **Step 4: Verify.** `node_modules/.bin/vitest run test/worksheet`, `npx tsc --noEmit`, `npx eslint src/worksheet/load-worksheet-view.ts src/worksheet/view-types.ts "src/app/worksheet/[candidateId]/page.tsx"`.
+- [x] **Step 5: Commit.**
 ```bash
 git add src/worksheet/load-worksheet-view.ts src/worksheet/view-types.ts "src/app/worksheet/[candidateId]/page.tsx" test/worksheet
 git commit -m "feat(worksheet): show linked article title and section
@@ -204,7 +204,7 @@ article. Falls back to the page-id line when no article row exists."
 
 ## Phase 3 — Link titles + sections in the easy-win lane and article page
 
-**Execution Status:** ⬜ NOT STARTED
+**Execution Status:** ✅ SHIPPED 2026-07-18 — f91bddc (tsc + eslint clean; browser QA deferred to the dev preview deploy post-merge)
 
 **Files:**
 - Modify: `src/app/queue/page.tsx` (each `item.title` → article link; each candidate `§ sectionHeading` → section link)
@@ -212,15 +212,15 @@ article. Falls back to the page-id line when no article row exists."
 
 **Testing note:** presentation only; `tsc`+`eslint`+browser QA (matches convention). The helper is unit-tested (Phase 1).
 
-- [ ] **Step 1: Easy-win lane.** In `src/app/queue/page.tsx`, import the helpers. Where each article group renders its `item.title`, wrap it in `<a href={wikipediaArticleUrl(item.title)} target="_blank" rel="noopener noreferrer" …>`. Where each candidate renders `§ {c.sectionHeading}` (the rounded chip), make it a link `<a href={wikipediaSectionUrl(item.title, c.sectionHeading)} …>§ {c.sectionHeading}</a>` (the section belongs to the item's article). Keep existing styling; add the link classes.
-- [ ] **Step 2: Article page.** In `src/app/articles/[id]/page.tsx`, wrap the `<h1>{article.title}</h1>` content in an article link, and turn each candidate's `§ {c.sectionHeading}` chip into a `wikipediaSectionUrl(article.title, c.sectionHeading)` link.
-- [ ] **Step 2b: Guard the queue keyboard handler (a `/codex` finding).** `queue/page.tsx`'s `onKeyDown` handles bubbled `Enter`/`Space` with `preventDefault()` + toggle, so pressing Enter on a new in-row Wikipedia link would toggle the candidate instead of following the link. At the very top of `onKeyDown`, ignore events from interactive elements:
+- [x] **Step 1: Easy-win lane.** In `src/app/queue/page.tsx`, import the helpers. Where each article group renders its `item.title`, wrap it in `<a href={wikipediaArticleUrl(item.title)} target="_blank" rel="noopener noreferrer" …>`. Where each candidate renders `§ {c.sectionHeading}` (the rounded chip), make it a link `<a href={wikipediaSectionUrl(item.title, c.sectionHeading)} …>§ {c.sectionHeading}</a>` (the section belongs to the item's article). Keep existing styling; add the link classes.
+- [x] **Step 2: Article page.** In `src/app/articles/[id]/page.tsx`, wrap the `<h1>{article.title}</h1>` content in an article link, and turn each candidate's `§ {c.sectionHeading}` chip into a `wikipediaSectionUrl(article.title, c.sectionHeading)` link.
+- [x] **Step 2b: Guard the queue keyboard handler (a `/codex` finding).** `queue/page.tsx`'s `onKeyDown` handles bubbled `Enter`/`Space` with `preventDefault()` + toggle, so pressing Enter on a new in-row Wikipedia link would toggle the candidate instead of following the link. At the very top of `onKeyDown`, ignore events from interactive elements:
 ```tsx
 if ((e.target as HTMLElement).closest("a, button, input, select, textarea")) return;
 ```
 (before the existing `if (flatCandidates.length === 0) return;`). Verify by keyboard: Enter on a title/section link opens it; Enter on a row still toggles.
-- [ ] **Step 3: Verify.** `npx tsc --noEmit`, `npx eslint src/app/queue/page.tsx "src/app/articles/[id]/page.tsx"`. Browser QA (any deploy): a lane title links to the right `/wiki/<title>`, a section chip lands on (or near) the right section, links open in a new tab.
-- [ ] **Step 4: Commit.**
+- [x] **Step 3: Verify.** `npx tsc --noEmit`, `npx eslint src/app/queue/page.tsx "src/app/articles/[id]/page.tsx"`. Browser QA (any deploy): a lane title links to the right `/wiki/<title>`, a section chip lands on (or near) the right section, links open in a new tab.
+- [x] **Step 4: Commit.**
 ```bash
 git add src/app/queue/page.tsx "src/app/articles/[id]/page.tsx"
 git commit -m "feat(web): link article titles and sections in easy-win lane and article page"
@@ -230,7 +230,7 @@ git commit -m "feat(web): link article titles and sections in easy-win lane and 
 
 ## Finalization
 
-- [ ] Full verification: `node_modules/.bin/vitest run` + `-c vitest.workers.config.mts`, `tsc`+`eslint` clean, `npm run build` OK.
+- [x] Full verification: `node_modules/.bin/vitest run` + `-c vitest.workers.config.mts`, `tsc`+`eslint` clean, `npm run build` OK.
 - [ ] Open PR (base `dev`), `## Merge classification: Routine`. `/codex` review, then merge `--merge --delete-branch` on green CI.
 - [ ] Ships to prod at the next dev→main release.
 
