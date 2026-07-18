@@ -1,5 +1,5 @@
-// ABOUTME: Global nav auth chip — reserved-width unknown state, browseModeLabel + Sign in when anonymous, label + sign-out when authenticated.
-// ABOUTME: Sign-out POSTs /api/auth/logout then flips the shared auth state to anonymous (advisory UI; server 401 stays authoritative).
+// ABOUTME: Global nav auth chip — reserved-width unknown state, browseModeLabel + Sign in when anonymous, label +
+// ABOUTME: sign-out + delete-account confirm when authenticated. One op state so the two actions never overlap.
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -9,13 +9,17 @@ import { browseModeLabel } from "@/app/browse-mode";
 export function NavAuthChip() {
   const { status, setAnonymous } = useBrowseAuthState();
   const router = useRouter();
-  const [busy, setBusy] = useState(false);
-  const [failed, setFailed] = useState(false);
+  // One in-flight operation at a time: sign-out and delete share the lock so the
+  // UI never shows conflicting labels ("Signing out…" during a delete).
+  const [op, setOp] = useState<"idle" | "signout" | "delete">("idle");
+  const [signOutFailed, setSignOutFailed] = useState(false);
+  const [confirming, setConfirming] = useState(false);
+  const [deleteFailed, setDeleteFailed] = useState(false);
 
   // Reserve width so the nav doesn't shift when the fetch resolves (widest resolved
-  // state is "Browsing as a guest" + Sign in).
+  // state is the authenticated row: label + Sign out + Delete account).
   if (status === "unknown") {
-    return <span className="ml-auto inline-block w-48" aria-hidden="true" />;
+    return <span className="ml-auto inline-block w-64" aria-hidden="true" />;
   }
 
   if (status === "anonymous") {
@@ -30,20 +34,38 @@ export function NavAuthChip() {
   }
 
   async function signOut() {
-    setBusy(true);
-    setFailed(false);
+    setOp("signout");
+    setSignOutFailed(false);
     try {
       const res = await fetch("/api/auth/logout", { method: "POST" });
       if (res.ok) {
         setAnonymous();
         router.refresh();
       } else {
-        setFailed(true);
+        setSignOutFailed(true);
       }
     } catch {
-      setFailed(true);
+      setSignOutFailed(true);
     } finally {
-      setBusy(false);
+      setOp("idle");
+    }
+  }
+
+  async function deleteAccount() {
+    setOp("delete");
+    setDeleteFailed(false);
+    try {
+      const res = await fetch("/api/account/delete", { method: "POST" });
+      if (res.ok) {
+        setAnonymous();
+        router.refresh();
+      } else {
+        setDeleteFailed(true);
+      }
+    } catch {
+      setDeleteFailed(true);
+    } finally {
+      setOp("idle");
     }
   }
 
@@ -53,14 +75,52 @@ export function NavAuthChip() {
       <button
         type="button"
         onClick={signOut}
-        disabled={busy}
+        disabled={op !== "idle"}
         className="text-iron-gall underline-offset-2 hover:underline disabled:opacity-50"
       >
-        {busy ? "Signing out…" : "Sign out"}
+        {op === "signout" ? "Signing out…" : "Sign out"}
       </button>
-      {failed && (
+      {!confirming ? (
+        <button
+          type="button"
+          onClick={() => {
+            setConfirming(true);
+            setDeleteFailed(false);
+          }}
+          disabled={op !== "idle"}
+          className="text-oxidized-rust underline-offset-2 hover:underline disabled:opacity-50"
+        >
+          Delete account
+        </button>
+      ) : (
+        <span className="flex items-center gap-2">
+          <span className="text-dust-gray">Permanently delete your account?</span>
+          <button
+            type="button"
+            onClick={deleteAccount}
+            disabled={op !== "idle"}
+            className="text-oxidized-rust underline-offset-2 hover:underline disabled:opacity-50"
+          >
+            {op === "delete" ? "Deleting…" : "Delete"}
+          </button>
+          <button
+            type="button"
+            onClick={() => setConfirming(false)}
+            disabled={op === "delete"}
+            className="text-iron-gall underline-offset-2 hover:underline disabled:opacity-50"
+          >
+            Cancel
+          </button>
+        </span>
+      )}
+      {signOutFailed && (
         <span role="alert" className="text-oxidized-rust">
           Sign-out failed — retry
+        </span>
+      )}
+      {deleteFailed && (
+        <span role="alert" className="text-oxidized-rust">
+          Delete failed — retry
         </span>
       )}
     </div>
