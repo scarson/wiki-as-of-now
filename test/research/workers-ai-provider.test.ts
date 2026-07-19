@@ -131,6 +131,52 @@ describe("WorkersAiResearchProvider.triage", () => {
     expect(prompt).toContain("Article: Zumwalt-class destroyer");
     expect(prompt).toContain("Context: Before. Claim. After.");
   });
+  it("carries the operational advisorySupport definition in the triage prompt (current-status test, not topical relevance)", async () => {
+    let prompt = "";
+    const ai: AiTextClient = { generateText: vi.fn(async (_m: string, p: string) => { prompt = p; return '{"proposals":[]}'; }) };
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    await p.triage(INPUT, pages);
+    // The current-status test: true only when the quote states what has since happened.
+    expect(prompt).toContain("advisorySupport = true ONLY if the proposedQuote itself states the current status");
+    // The expectation-echo negation: same-timeframe restatements do not resolve.
+    expect(prompt).toContain("SAME timeframe the claim already names");
+    // The related-background negation: relevance alone is not support.
+    expect(prompt).toContain("even when clearly relevant");
+    // The anti-selection-loss instruction (defends the full-candidate-set guardrail G7).
+    expect(prompt).toContain("STILL propose relevant pages when advisorySupport = false");
+    // The flag stays advisory (support-checking guardrail G8).
+    expect(prompt).toContain("advisorySupport is your advisory guess; a human verifies");
+  });
+  it("puts a Today ISO-date data line in the triage claim block from the injected clock", async () => {
+    let prompt = "";
+    const ai: AiTextClient = { generateText: vi.fn(async (_m: string, p: string) => { prompt = p; return '{"proposals":[]}'; }) };
+    const p = new WorkersAiResearchProvider({
+      ai, search: emptySearch, fetchSource: noFetch,
+      now: () => new Date("2026-07-19T15:30:00Z"),
+    });
+    await p.triage(INPUT, pages);
+    expect(prompt).toContain("Today: 2026-07-19\n");
+    // Sits in the claim data block: after the Anchor-year line, before the PAGES section.
+    expect(prompt.indexOf("Today: 2026-07-19")).toBeGreaterThan(prompt.indexOf("Anchor year:"));
+    expect(prompt.indexOf("Today: 2026-07-19")).toBeLessThan(prompt.indexOf("=== PAGES"));
+  });
+  it("defaults the Today line to the real current date when no clock is injected", async () => {
+    let prompt = "";
+    const ai: AiTextClient = { generateText: vi.fn(async (_m: string, p: string) => { prompt = p; return '{"proposals":[]}'; }) };
+    const p = new WorkersAiResearchProvider({ ai, search: emptySearch, fetchSource: noFetch });
+    await p.triage(INPUT, pages);
+    expect(prompt).toMatch(/Today: \d{4}-\d{2}-\d{2}\n/);
+  });
+  it("does NOT put a Today line in the query-gen prompt (triage-only data field)", async () => {
+    let prompt = "";
+    const ai: AiTextClient = { generateText: vi.fn(async (_m: string, p: string) => { prompt = p; return '{"queries":["q"]}'; }) };
+    const p = new WorkersAiResearchProvider({
+      ai, search: emptySearch, fetchSource: noFetch,
+      now: () => new Date("2026-07-19T15:30:00Z"),
+    });
+    await p.generateQueries(INPUT);
+    expect(prompt).not.toContain("Today:");
+  });
   it("caps proposals at MODEL_CONFIG.maxProposals (5)", async () => {
     // All proposals point at the single fetched page (in-set) so the cap, not the url filter, is what trims.
     const many = Array.from({ length: 9 }, (_, i) => ({ url: pages[0].url, proposedQuote: `quote number ${i}`, advisorySupport: false }));
