@@ -3,7 +3,7 @@
 import type { WorksheetHonestyKind } from "./view-types";
 
 const BANNER_TEXT: Record<WorksheetHonestyKind, string> = {
-  supported: "a current source appears to support an update",
+  supported: "model suggests support — verify sources",
   possible_update_weak_support: "possible update, weak support",
   likely_stale_no_strong_source: "likely stale, no strong current source",
   provider_unavailable: "provider unavailable",

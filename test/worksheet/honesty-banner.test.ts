@@ -20,8 +20,8 @@ describe("honestyBannerText", () => {
     expect(honestyBannerText("article_changed_since_detection")).toBe("article changed since detection");
   });
 
-  it("returns a neutral confirmation (not an alarm) for the supported case", () => {
-    expect(honestyBannerText("supported").length).toBeGreaterThan(0);
+  it("names the supported state's advisory provenance — model suggestion, not a verdict (support-checking guardrail G8)", () => {
+    expect(honestyBannerText("supported")).toBe("model suggests support — verify sources");
   });
 
   it("never returns an empty banner for any kind (every honesty state is shown — G6)", () => {
