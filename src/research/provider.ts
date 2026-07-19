@@ -17,6 +17,7 @@ export interface ResearchInput {
 export interface ProposedEvidence {
   url: string;
   proposedQuote: string;
+  /** Advisory guess: whether the quote states the claim's current status (see EvidenceCard.advisorySupport). */
   advisorySupport: boolean;
 }
 
@@ -37,7 +38,13 @@ export interface EvidenceCard {
   url: string;
   /** A verbatim quote from the source page — deterministically verified as present. */
   verbatimQuote: string;
-  /** Advisory flag: whether this card appears to support the claim. Human must verify. */
+  /**
+   * Advisory flag: whether the quote appears to STATE THE CLAIM'S CURRENT STATUS — what has happened
+   * to the dated expectation since its anchor year (occurred / rescheduled / cancelled / superseded /
+   * explicitly still pending). Related-but-nonresolving quotes (background on the program, same-timeframe
+   * expectation restatements) carry false. Advisory only — the human adjudicates support by opening the
+   * source (support-checking guardrail G8).
+   */
   advisorySupport: boolean;
   /** Deterministic source text immediately before the quote in its paragraph; null at paragraph start. NOT model prose. */
   contextBefore: string | null;
